@@ -6,10 +6,10 @@
   "xDataControlName" : "list",
   "showCaptionBar" : true,
   "getPSDEViewCodeName" : "ListView",
+  "enableDP" : true,
   "caption" : "索引检索",
   "title" : "索引检索列表视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -41,7 +41,6 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
@@ -62,40 +61,40 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/IndexType.json"
       },
-      "dataType" : 25,
-      "name" : "indextype"
+      "name" : "indextype",
+      "dataType" : 25
     }, {
-      "dataType" : 25,
-      "name" : "indexname"
+      "name" : "indexname",
+      "dataType" : 25
     }, {
-      "dataType" : 25,
-      "name" : "orgid"
+      "name" : "orgid",
+      "dataType" : 25
     }, {
-      "dataType" : 1,
-      "name" : "indexid"
+      "name" : "indexid",
+      "dataType" : 1
     }, {
-      "dataType" : 25,
-      "name" : "indexdesc"
+      "name" : "indexdesc",
+      "dataType" : 25
     }, {
-      "dataType" : 25,
-      "name" : "color"
+      "name" : "color",
+      "dataType" : 25
     }, {
-      "dataType" : 25,
-      "name" : "mdeptid"
+      "name" : "mdeptid",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "INDEXID",
         "codeName" : "Indexid"
       },
-      "dataType" : 25,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "INDEXNAME",
         "codeName" : "Indexname"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "INDEX_TYPE",
@@ -105,8 +104,8 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/IndexType.json"
       },
-      "dataType" : 25,
-      "name" : "srfdatatype"
+      "name" : "srfdatatype",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "INDEX_TYPE",
@@ -116,11 +115,11 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/IndexType.json"
       },
-      "dataType" : 25,
-      "name" : "index_type"
+      "name" : "index_type",
+      "dataType" : 25
     } ],
-    "controlType" : "LIST",
     "enableRowEdit" : false,
+    "controlType" : "LIST",
     "codeName" : "IndexMob",
     "enableGroup" : false,
     "pagingSize" : 20,
@@ -154,6 +153,7 @@
       "showBusyIndicator" : true,
       "id" : "LIST"
     },
+    "controlStyle" : "FullTextSearch",
     "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "userDRAction" : "READ",
@@ -224,7 +224,6 @@
       "enableDEFieldPrivilege" : false,
       "id" : "列表控件处理器"
     },
-    "controlStyle" : "FullTextSearch",
     "getPSSysPFPlugin" : {
       "pluginType" : "LIST_RENDER",
       "pluginCode" : "FullTextSearch"
@@ -234,10 +233,10 @@
     "name" : "list",
     "modelid" : "3d749efd9d96f3330022d35dfcdaaf60"
   }, {
+    "searchButtonStyle" : "DEFAULT",
     "enableAdvanceSearch" : false,
     "enableAutoSearch" : false,
     "enableFilterSave" : false,
-    "searchButtonStyle" : "DEFAULT",
     "controlType" : "SEARCHFORM",
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
@@ -311,6 +310,7 @@
     "name" : "searchform",
     "modelid" : "edab1390abda9ac712f0a21d02c0b0e4"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -419,14 +419,6 @@
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "actionAfterWizard" : "DEFAULT",
-      "getWizardPSAppView" : {
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexIndexPickupView.json",
-          "viewType" : "DEPICKUPVIEW"
-        }
-      },
       "getNewDataPSAppViews" : [ {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -463,9 +455,17 @@
         },
         "refMode" : "case"
       } ],
+      "enableWizardAdd" : true,
+      "actionAfterWizard" : "DEFAULT",
+      "getWizardPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexIndexPickupView.json",
+          "viewType" : "DEPICKUPVIEW"
+        }
+      },
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : true,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {
@@ -517,6 +517,13 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexRedirectView.json",
+          "viewType" : "DEREDIRECTVIEW"
+        }
+      },
       "getOpenDataPSAppViews" : [ {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -553,13 +560,6 @@
         },
         "refMode" : "bug"
       } ],
-      "getOpenDataPSAppView" : {
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexRedirectView.json",
-          "viewType" : "DEREDIRECTVIEW"
-        }
-      },
       "viewLogicType" : "APP_OPENDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {

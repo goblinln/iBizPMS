@@ -13,12 +13,12 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
   },
   "orderValue" : 100,
+  "codeName" : "IBizParent",
+  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
   },
-  "codeName" : "IBizParent",
-  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDERS/DER1N__ZT_CASESTEP__ZT_CASESTEP__PARENT.json",
   "name" : "DER1N__ZT_CASESTEP__ZT_CASESTEP__PARENT"
 }

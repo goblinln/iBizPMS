@@ -1,4 +1,5 @@
 {
+  "enableUIActions" : 15,
   "enableUIRemove" : true,
   "getAllPSAppDEUIActions" : [ {
     "getPSAppDataEntity" : {
@@ -20,8 +21,8 @@
     "timeout" : 60000,
     "codeName" : "AddProject",
     "caption" : "添加项目",
-    "actionTarget" : "NONE",
     "reloadData" : true,
+    "actionTarget" : "NONE",
     "dataAccessAction" : "SRFUR__PROJ_CREATE_BUT",
     "uIActionTag" : "AddProject",
     "uIActionType" : "DEUIACTION",
@@ -30,13 +31,13 @@
     "name" : "添加项目",
     "id" : "AddProject@ProjectStats"
   } ],
-  "enableUIActions" : 15,
+  "major" : true,
   "getAllPSAppDEMethods" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Select"
     },
+    "builtinMethod" : false,
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -44,11 +45,11 @@
     },
     "codeName" : "Select"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PROJECTSTATS__DEACTION__CREATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -60,11 +61,11 @@
     },
     "codeName" : "Create"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PROJECTSTATS__DEACTION__UPDATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -76,11 +77,11 @@
     },
     "codeName" : "Update"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PROJECTSTATS__DEACTION__REMOVE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -92,11 +93,11 @@
     },
     "codeName" : "Remove"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PROJECTSTATS__DEACTION__GET"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -108,11 +109,11 @@
     },
     "codeName" : "Get"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -124,11 +125,11 @@
     },
     "codeName" : "GetDraft"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -136,11 +137,11 @@
     },
     "codeName" : "CheckKey"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ProjectQualitySum"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -148,11 +149,11 @@
     },
     "codeName" : "ProjectQualitySum"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -160,11 +161,11 @@
     },
     "codeName" : "Save"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -176,11 +177,11 @@
     },
     "codeName" : "FetchDefault"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchNoOpenProduct"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -192,11 +193,11 @@
     },
     "codeName" : "FetchNoOpenProduct"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectBugType"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -208,11 +209,11 @@
     },
     "codeName" : "FetchProjectBugType"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectInputStats"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -224,11 +225,11 @@
     },
     "codeName" : "FetchProjectInputStats"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectProgress"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -240,11 +241,11 @@
     },
     "codeName" : "FetchProjectProgress"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectQuality"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -256,11 +257,11 @@
     },
     "codeName" : "FetchProjectQuality"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectStoryStageStats"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -272,11 +273,11 @@
     },
     "codeName" : "FetchProjectStoryStageStats"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectStoryStatusStats"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -288,11 +289,11 @@
     },
     "codeName" : "FetchProjectStoryStatusStats"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectTaskCountByTaskStatus"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -304,11 +305,11 @@
     },
     "codeName" : "FetchProjectTaskCountByTaskStatus"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectTaskCountByType"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -320,11 +321,11 @@
     },
     "codeName" : "FetchProjectTaskCountByType"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchTaskTime"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -781,6 +782,22 @@
     "name" : "YESTERDAYRBUGCNT"
   } ],
   "getAllPSAppDEACModes" : [ {
+    "enablePagingBar" : false,
+    "getPSDEACModeDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "value",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "name" : "text",
+      "dataType" : 25
+    } ],
     "getValuePSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
@@ -789,22 +806,6 @@
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "getPSDEACModeDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "dataType" : 25,
-      "name" : "value"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      },
-      "dataType" : 25,
-      "name" : "text"
-    } ],
-    "enablePagingBar" : false,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "defaultMode" : true,
@@ -913,11 +914,11 @@
     "name" : "项目任务类型统计-数据导出"
   } ],
   "getAllPSAppDEActions" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PROJECTSTATS__DEACTION__CREATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -929,11 +930,11 @@
     },
     "codeName" : "Create"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PROJECTSTATS__DEACTION__UPDATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -945,11 +946,11 @@
     },
     "codeName" : "Update"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PROJECTSTATS__DEACTION__REMOVE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -961,11 +962,11 @@
     },
     "codeName" : "Remove"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PROJECTSTATS__DEACTION__GET"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -977,11 +978,11 @@
     },
     "codeName" : "Get"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -993,11 +994,11 @@
     },
     "codeName" : "GetDraft"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1005,11 +1006,11 @@
     },
     "codeName" : "CheckKey"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ProjectQualitySum"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1017,11 +1018,11 @@
     },
     "codeName" : "ProjectQualitySum"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1030,11 +1031,11 @@
     "codeName" : "Save"
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1046,11 +1047,11 @@
     },
     "codeName" : "FetchDefault"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchNoOpenProduct"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1062,11 +1063,11 @@
     },
     "codeName" : "FetchNoOpenProduct"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectBugType"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1078,11 +1079,11 @@
     },
     "codeName" : "FetchProjectBugType"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectInputStats"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1094,11 +1095,11 @@
     },
     "codeName" : "FetchProjectInputStats"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectProgress"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1110,11 +1111,11 @@
     },
     "codeName" : "FetchProjectProgress"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectQuality"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1126,11 +1127,11 @@
     },
     "codeName" : "FetchProjectQuality"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectStoryStageStats"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1142,11 +1143,11 @@
     },
     "codeName" : "FetchProjectStoryStageStats"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectStoryStatusStats"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1158,11 +1159,11 @@
     },
     "codeName" : "FetchProjectStoryStatusStats"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectTaskCountByTaskStatus"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1174,11 +1175,11 @@
     },
     "codeName" : "FetchProjectTaskCountByTaskStatus"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectTaskCountByType"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1190,11 +1191,11 @@
     },
     "codeName" : "FetchProjectTaskCountByType"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchTaskTime"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1206,11 +1207,6 @@
     },
     "codeName" : "FetchTaskTime"
   } ],
-  "major" : true,
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDESERVICEAPIS/ProjectStats.json"
-  },
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -1224,6 +1220,10 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDESERVICEAPIS/ProjectStats.json"
+  },
   "codeName" : "ProjectStats",
   "logicName" : "项目统计",
   "dataAccCtrlMode" : 1,

@@ -5,10 +5,10 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "GridExpView",
+  "enableDP" : true,
   "caption" : "用户联系方式",
   "title" : "用户联系方式表格导航视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -31,7 +31,6 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
@@ -41,43 +40,44 @@
     "xDataControlName" : "gridexpbar_grid",
     "enableSearch" : false,
     "enableCounter" : true,
+    "showTitleBar" : false,
     "getPSControls" : [ {
       "getPSDEGridDataItems" : [ {
         "getPSAppDEField" : {
           "name" : "ID",
           "codeName" : "Id"
         },
-        "dataType" : 1,
-        "name" : "id"
+        "name" : "id",
+        "dataType" : 1
       }, {
         "getPSAppDEField" : {
           "name" : "LISTNAME",
           "codeName" : "ListName"
         },
-        "dataType" : 25,
-        "name" : "srfmajortext"
+        "name" : "srfmajortext",
+        "dataType" : 25
       }, {
         "dataAccessAction" : true,
         "getPSAppDEField" : {
           "name" : "ID",
           "codeName" : "Id"
         },
-        "dataType" : 1,
-        "name" : "srfdataaccaction"
+        "name" : "srfdataaccaction",
+        "dataType" : 1
       }, {
         "getPSAppDEField" : {
           "name" : "ID",
           "codeName" : "Id"
         },
-        "dataType" : 1,
-        "name" : "srfkey"
+        "name" : "srfkey",
+        "dataType" : 1
       }, {
         "getPSAppDEField" : {
           "name" : "LISTNAME",
           "codeName" : "ListName"
         },
-        "dataType" : 25,
-        "name" : "listname"
+        "name" : "listname",
+        "dataType" : 25
       } ],
       "getRemovePSControlAction" : {
         "getPSAppDataEntity" : {
@@ -93,8 +93,6 @@
         "actionType" : "DEACTION",
         "name" : "remove"
       },
-      "singleSelect" : false,
-      "enableColFilter" : false,
       "enableRowNew" : false,
       "enableRowEditOrder" : false,
       "noSort" : false,
@@ -116,16 +114,18 @@
       } ],
       "hasWFDataItems" : false,
       "columnEnableLink" : 2,
-      "controlType" : "GRID",
-      "enableRowEdit" : false,
+      "enableColFilter" : false,
+      "singleSelect" : false,
       "enablePagingBar" : false,
+      "enableRowEdit" : false,
+      "controlType" : "GRID",
       "getPSDEGridColumns" : [ {
-        "excelCaption" : "编号",
-        "dataItemName" : "id",
         "getPSAppDEField" : {
           "name" : "ID",
           "codeName" : "Id"
         },
+        "dataItemName" : "id",
+        "excelCaption" : "编号",
         "cLConvertMode" : "NONE",
         "noPrivDisplayMode" : 1,
         "enableSort" : true,
@@ -137,12 +137,12 @@
         "widthUnit" : "PX",
         "name" : "id"
       }, {
-        "excelCaption" : "标题",
-        "dataItemName" : "listname",
         "getPSAppDEField" : {
           "name" : "LISTNAME",
           "codeName" : "ListName"
         },
+        "dataItemName" : "listname",
+        "excelCaption" : "标题",
         "cLConvertMode" : "NONE",
         "noPrivDisplayMode" : 1,
         "enableSort" : true,
@@ -268,7 +268,6 @@
       "name" : "gridexpbar_grid",
       "modelid" : "1c0be5b2904f415c1e569081594cdbfc"
     } ],
-    "showTitleBar" : false,
     "getPSAppViewRefs" : [ {
       "getRefPSAppView" : {
         "modelref" : true,
@@ -298,13 +297,14 @@
     "name" : "gridexpbar",
     "modelid" : "4a012e784384c1f4ec3b0150e0885018_gridexpbar"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
+      "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "logicType" : "PREDEFINED",
       "name" : "新建数据"

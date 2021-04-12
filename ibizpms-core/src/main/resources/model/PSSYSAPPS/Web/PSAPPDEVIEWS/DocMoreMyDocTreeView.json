@@ -4,10 +4,10 @@
   "xDataControlName" : "tree",
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "MoreMyDocTreeView",
+  "enableDP" : true,
   "caption" : "我的文档",
   "title" : "文档树视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSAppViewNavParams" : [ {
     "rawValue" : false,
     "value" : "srfloginname",
@@ -41,16 +41,13 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
   },
   "getPSControls" : [ {
-    "treeGridMode" : 0,
-    "enableRootSelect" : false,
-    "outputIconDefault" : true,
     "enableSearchDefault" : false,
+    "treeGridMode" : 0,
     "getPSDETreeNodeRSs" : [ {
       "getParentPSDETreeNode" : {
         "modelref" : true,
@@ -64,24 +61,26 @@
       "searchMode" : 3,
       "name" : "默认根节点 - 文档"
     } ],
+    "enableRootSelect" : false,
+    "outputIconDefault" : true,
     "controlType" : "TREEVIEW",
     "getPSDETreeNodes" : [ {
       "nodeValue" : "root",
       "text" : "默认根节点",
       "enableQuickCreate" : false,
-      "rootNode" : true,
-      "hasPSDETreeNodeRSs" : true,
       "appendPNodeId" : false,
+      "enableCheck" : false,
+      "hasPSDETreeNodeRSs" : true,
       "selected" : false,
       "selectFirstOnly" : false,
       "expandFirstOnly" : false,
-      "enableCheck" : false,
+      "rootNode" : true,
       "enableNewData" : false,
       "enableEditData" : false,
       "enableRemoveData" : false,
       "enableViewData" : false,
-      "disableSelect" : false,
       "nodeType" : "ROOT",
+      "disableSelect" : false,
       "enableQuickSearch" : false,
       "counterMode" : 0,
       "treeNodeType" : "STATIC",
@@ -99,28 +98,28 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
       },
-      "getPSAppDEDataSet" : {
-        "modelref" : true,
-        "id" : "FetchDefault"
-      },
       "getTextPSAppDEField" : {
         "name" : "TITLE",
         "codeName" : "Title"
       },
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
+      },
       "maxSize" : -1,
-      "enableQuickCreate" : false,
       "getNavPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocDashboardView.json",
         "viewType" : "DEPORTALVIEW"
       },
-      "rootNode" : false,
-      "hasPSDETreeNodeRSs" : false,
+      "enableQuickCreate" : false,
       "appendPNodeId" : false,
+      "enableCheck" : false,
+      "hasPSDETreeNodeRSs" : false,
       "selected" : false,
       "selectFirstOnly" : false,
       "expandFirstOnly" : false,
-      "enableCheck" : false,
+      "rootNode" : false,
       "getPSDEContextMenu" : {
         "controlType" : "CONTEXTMENU",
         "getPSDEToolbarItems" : [ {
@@ -164,9 +163,9 @@
           "tooltip" : "编辑",
           "groupExtractMode" : "ITEM",
           "showIcon" : true,
+          "showCaption" : false,
           "itemType" : "DEUIACTION",
           "caption" : "编辑",
-          "showCaption" : false,
           "name" : "deuiaction1"
         }, {
           "getPSAppViewUIAction" : {
@@ -193,8 +192,8 @@
             "timeout" : 60000,
             "codeName" : "Delete",
             "caption" : "删除",
-            "actionTarget" : "SINGLEKEY",
             "reloadData" : true,
+            "actionTarget" : "SINGLEKEY",
             "dataAccessAction" : "SRFUR__DOC_DELETE_BUT",
             "uIActionTag" : "Delete",
             "uIActionType" : "DEUIACTION",
@@ -211,9 +210,9 @@
           "tooltip" : "删除",
           "groupExtractMode" : "ITEM",
           "showIcon" : true,
+          "showCaption" : false,
           "itemType" : "DEUIACTION",
           "caption" : "删除",
-          "showCaption" : false,
           "name" : "deuiaction4"
         }, {
           "getPSAppViewUIAction" : {
@@ -240,8 +239,8 @@
             "timeout" : 60000,
             "codeName" : "OnlyCollectDoc",
             "caption" : "收藏",
-            "actionTarget" : "SINGLEKEY",
             "reloadData" : true,
+            "actionTarget" : "SINGLEKEY",
             "dataAccessAction" : "SRFUR__DOC_FAVOUR_BUT",
             "uIActionTag" : "OnlyCollectDoc",
             "uIActionType" : "DEUIACTION",
@@ -257,9 +256,9 @@
           "tooltip" : "收藏",
           "groupExtractMode" : "ITEM",
           "showIcon" : true,
+          "showCaption" : false,
           "itemType" : "DEUIACTION",
           "caption" : "收藏",
-          "showCaption" : false,
           "name" : "deuiaction2"
         }, {
           "getPSAppViewUIAction" : {
@@ -286,8 +285,8 @@
             "timeout" : 60000,
             "codeName" : "OnlyUnCollectDoc",
             "caption" : "取消收藏",
-            "actionTarget" : "SINGLEKEY",
             "reloadData" : true,
+            "actionTarget" : "SINGLEKEY",
             "dataAccessAction" : "SRFUR__DOC_NFAVOUR_BUT",
             "uIActionTag" : "OnlyUnCollectDoc",
             "uIActionType" : "DEUIACTION",
@@ -303,9 +302,9 @@
           "tooltip" : "取消收藏",
           "groupExtractMode" : "ITEM",
           "showIcon" : true,
+          "showCaption" : false,
           "itemType" : "DEUIACTION",
           "caption" : "取消收藏",
-          "showCaption" : false,
           "name" : "deuiaction3"
         }, {
           "getPSAppViewUIAction" : {
@@ -333,8 +332,8 @@
             "timeout" : 60000,
             "codeName" : "DocInfo",
             "caption" : "查看文档详情",
-            "actionTarget" : "SINGLEKEY",
             "reloadData" : true,
+            "actionTarget" : "SINGLEKEY",
             "uIActionTag" : "DocInfo",
             "uIActionType" : "DEUIACTION",
             "uIActionMode" : "FRONT",
@@ -349,9 +348,9 @@
           "tooltip" : "查看",
           "groupExtractMode" : "ITEM",
           "showIcon" : true,
+          "showCaption" : false,
           "itemType" : "DEUIACTION",
           "caption" : "查看",
-          "showCaption" : false,
           "name" : "deuiaction5"
         } ],
         "getPSAppDataEntity" : {
@@ -371,8 +370,8 @@
       "enableEditData" : false,
       "enableRemoveData" : false,
       "enableViewData" : false,
-      "disableSelect" : false,
       "nodeType" : "Doc",
+      "disableSelect" : false,
       "enableQuickSearch" : false,
       "counterMode" : 0,
       "treeNodeType" : "DE",
@@ -506,9 +505,9 @@
         "tooltip" : "编辑",
         "groupExtractMode" : "ITEM",
         "showIcon" : true,
+        "showCaption" : false,
         "itemType" : "DEUIACTION",
         "caption" : "编辑",
-        "showCaption" : false,
         "name" : "deuiaction1"
       }, {
         "getPSAppViewUIAction" : {
@@ -535,8 +534,8 @@
           "timeout" : 60000,
           "codeName" : "Delete",
           "caption" : "删除",
-          "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
+          "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "SRFUR__DOC_DELETE_BUT",
           "uIActionTag" : "Delete",
           "uIActionType" : "DEUIACTION",
@@ -553,9 +552,9 @@
         "tooltip" : "删除",
         "groupExtractMode" : "ITEM",
         "showIcon" : true,
+        "showCaption" : false,
         "itemType" : "DEUIACTION",
         "caption" : "删除",
-        "showCaption" : false,
         "name" : "deuiaction4"
       }, {
         "getPSAppViewUIAction" : {
@@ -582,8 +581,8 @@
           "timeout" : 60000,
           "codeName" : "OnlyCollectDoc",
           "caption" : "收藏",
-          "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
+          "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "SRFUR__DOC_FAVOUR_BUT",
           "uIActionTag" : "OnlyCollectDoc",
           "uIActionType" : "DEUIACTION",
@@ -599,9 +598,9 @@
         "tooltip" : "收藏",
         "groupExtractMode" : "ITEM",
         "showIcon" : true,
+        "showCaption" : false,
         "itemType" : "DEUIACTION",
         "caption" : "收藏",
-        "showCaption" : false,
         "name" : "deuiaction2"
       }, {
         "getPSAppViewUIAction" : {
@@ -628,8 +627,8 @@
           "timeout" : 60000,
           "codeName" : "OnlyUnCollectDoc",
           "caption" : "取消收藏",
-          "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
+          "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "SRFUR__DOC_NFAVOUR_BUT",
           "uIActionTag" : "OnlyUnCollectDoc",
           "uIActionType" : "DEUIACTION",
@@ -645,9 +644,9 @@
         "tooltip" : "取消收藏",
         "groupExtractMode" : "ITEM",
         "showIcon" : true,
+        "showCaption" : false,
         "itemType" : "DEUIACTION",
         "caption" : "取消收藏",
-        "showCaption" : false,
         "name" : "deuiaction3"
       }, {
         "getPSAppViewUIAction" : {
@@ -675,8 +674,8 @@
           "timeout" : 60000,
           "codeName" : "DocInfo",
           "caption" : "查看文档详情",
-          "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
+          "actionTarget" : "SINGLEKEY",
           "uIActionTag" : "DocInfo",
           "uIActionType" : "DEUIACTION",
           "uIActionMode" : "FRONT",
@@ -691,9 +690,9 @@
         "tooltip" : "查看",
         "groupExtractMode" : "ITEM",
         "showIcon" : true,
+        "showCaption" : false,
         "itemType" : "DEUIACTION",
         "caption" : "查看",
-        "showCaption" : false,
         "name" : "deuiaction5"
       } ],
       "getPSAppDataEntity" : {
@@ -849,6 +848,7 @@
     "name" : "tree",
     "modelid" : "b3d06274c6ccd901b80f02223245120b"
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "DocMoreMyDocTreeView",
   "viewType" : "DETREEVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocMoreMyDocTreeView.json",

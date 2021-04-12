@@ -1,8 +1,8 @@
 {
+  "searchButtonStyle" : "DEFAULT",
   "enableAdvanceSearch" : false,
   "enableAutoSearch" : false,
   "enableFilterSave" : false,
-  "searchButtonStyle" : "DEFAULT",
   "controlType" : "SEARCHFORM",
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
@@ -29,15 +29,15 @@
         },
         "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : true,
+        "dataType" : 25,
         "caption" : "Bug创建时间",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 95,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 14,
           "colLG" : 14,
@@ -60,15 +60,15 @@
         },
         "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : true,
+        "dataType" : 25,
         "caption" : "至",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 30,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 10,
           "colLG" : 10,
@@ -84,11 +84,11 @@
         "colLG" : 9,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : false,
       "codeName" : "grouppanel1",
       "caption" : "分组面板",
       "detailType" : "GROUPPANEL",
       "detailStyle" : "DEFAULT",
-      "showCaption" : false,
       "name" : "grouppanel1"
     }, {
       "infoGroupMode" : false,
@@ -110,16 +110,16 @@
         },
         "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 25,
         "needCodeListConfig" : true,
-        "allowEmpty" : true,
         "caption" : "产品",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 50,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 12,
           "colLG" : 12,
@@ -137,17 +137,17 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProjectCodeList.json"
           },
-          "getPSNavigateContexts" : [ {
-            "rawValue" : false,
-            "value" : "producteq",
-            "key" : "PRODUCT",
-            "name" : "PRODUCT"
-          } ],
           "getPSNavigateParams" : [ {
             "rawValue" : false,
             "value" : "producteq",
             "key" : "product",
             "name" : "product"
+          } ],
+          "getPSNavigateContexts" : [ {
+            "rawValue" : false,
+            "value" : "producteq",
+            "key" : "PRODUCT",
+            "name" : "PRODUCT"
           } ],
           "editorType" : "DROPDOWNLIST",
           "editorParams" : {
@@ -158,16 +158,16 @@
         },
         "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 25,
         "needCodeListConfig" : true,
-        "allowEmpty" : true,
         "caption" : "项目",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 50,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 12,
           "colLG" : 12,
@@ -183,11 +183,11 @@
         "colLG" : 15,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : false,
       "codeName" : "grouppanel2",
       "caption" : "分组面板",
       "detailType" : "GROUPPANEL",
       "detailStyle" : "DEFAULT",
-      "showCaption" : false,
       "name" : "grouppanel2"
     } ],
     "getPSLayout" : {

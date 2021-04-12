@@ -1,15 +1,15 @@
 {
   "loadDefault" : true,
+  "enableQuickGroup" : false,
   "enableSearch" : false,
   "expandSearchForm" : false,
-  "enableQuickGroup" : false,
   "enableQuickSearch" : false,
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "PriChartView9",
+  "enableDP" : true,
   "caption" : "累计创建需求-优先级",
   "title" : "需求图表视图（累计创建需求-优先级）",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -32,7 +32,6 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -59,8 +58,6 @@
     },
     "controlType" : "CHART",
     "getPSDEChartSerieses" : [ {
-      "catalogField" : "PRI",
-      "seriesType" : "pie",
       "getCatalogPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__pri.json"
@@ -75,6 +72,7 @@
         "modelref" : true,
         "id" : "0"
       },
+      "catalogField" : "PRI",
       "getPSChartSeriesEncode" : {
         "category" : "PRI",
         "value" : "SRFCOUNT",
@@ -83,6 +81,7 @@
         "name" : "坐标系编码",
         "id" : "0"
       },
+      "seriesType" : "pie",
       "valueField" : "SRFCOUNT",
       "seriesLayoutBy" : "column",
       "index" : 0,
@@ -216,6 +215,7 @@
       "EC.color" : "[\"#CAAC32\",\"#0075A9\",\"#22AC38\",\"#2B4D6D\",'#FF9100','#FF3D00','#F57F17','#00E5FF','#00B0FF','#2979FF','#3D5AFE','#651FFF','#D500F9']"
     }
   } ],
+  "viewStyle" : "STYLE2",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
     "cssClass" : "fa fa-star-o"
@@ -225,25 +225,25 @@
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryPriChartView9.json",
   "name" : "StoryPriChartView9",
   "getPSAppDERSPaths" : [ [ {
-    "getParentPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "Stories",
     "actionRSMode" : 1,
     "dataRSMode" : 0,

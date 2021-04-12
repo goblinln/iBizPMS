@@ -15,8 +15,8 @@
     "codeName" : "Active",
     "text" : "未解决"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "BugCodeList2",
   "emptyText" : "未定义",
   "enableCache" : true,

@@ -4,10 +4,10 @@
   "xDataControlName" : "list",
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "ListView",
+  "enableDP" : true,
   "caption" : "欢迎",
   "title" : "欢迎",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSAppViewNavParams" : [ {
     "rawValue" : false,
     "value" : "srfloginname",
@@ -42,7 +42,6 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
@@ -55,25 +54,25 @@
     "showHeader" : true,
     "enableRowEditGroup" : false,
     "getPSDEListDataItems" : [ {
-      "dataType" : 25,
-      "name" : "realname"
+      "name" : "realname",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 25,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "REALNAME",
         "codeName" : "Realname"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     } ],
-    "controlType" : "LIST",
     "enableRowEdit" : false,
+    "controlType" : "LIST",
     "codeName" : "Welcome",
     "enableGroup" : false,
     "pagingSize" : 1000,
@@ -182,6 +181,7 @@
     "name" : "list",
     "modelid" : "7dc13556e84ad8ff996d25e962c678e4"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -202,7 +202,6 @@
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -210,9 +209,10 @@
           "viewType" : "DEEDITVIEW"
         }
       },
+      "enableWizardAdd" : false,
+      "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {

@@ -11,10 +11,10 @@
   "showCaptionBar" : true,
   "getPSDEViewCodeName" : "GridView",
   "funcViewMode" : "MDATAVIEW",
+  "enableDP" : true,
   "caption" : "更新日志",
   "title" : "系统更新日志表格视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -87,7 +87,6 @@
     },
     "name" : "toolbar_deuiaction6_togglefilter"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysUpdateLog.json"
@@ -139,9 +138,9 @@
       "tooltip" : "新建",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "新建",
-      "showCaption" : true,
       "name" : "deuiaction1"
     }, {
       "getPSAppViewUIAction" : {
@@ -189,9 +188,9 @@
       "tooltip" : "删除",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "删除",
-      "showCaption" : true,
       "name" : "deuiaction4"
     }, {
       "spanMode" : false,
@@ -225,9 +224,9 @@
       "tooltip" : "刷新",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "刷新",
-      "showCaption" : true,
       "name" : "deuiaction2"
     }, {
       "spanMode" : false,
@@ -277,9 +276,9 @@
       "tooltip" : "导出",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "导出",
-      "showCaption" : true,
       "name" : "deuiaction5"
     }, {
       "spanMode" : false,
@@ -331,9 +330,9 @@
       "tooltip" : "过滤",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "过滤",
-      "showCaption" : true,
       "name" : "deuiaction7"
     }, {
       "getPSAppViewUIAction" : {
@@ -381,9 +380,9 @@
       "tooltip" : "过滤",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "过滤",
-      "showCaption" : true,
       "name" : "deuiaction6_togglefilter"
     } ],
     "getPSAppDataEntity" : {
@@ -400,71 +399,71 @@
     "modelid" : "fabf7f1d3c7e790a7cde8db06d1ff66f"
   }, {
     "getPSDEGridDataItems" : [ {
-      "format" : "YYYY-MM-DD",
       "getPSAppDEField" : {
         "name" : "UPDATE",
         "codeName" : "Update"
       },
-      "dataType" : 5,
-      "name" : "update"
+      "format" : "YYYY-MM-DD",
+      "name" : "update",
+      "dataType" : 5
     }, {
       "getPSAppDEField" : {
         "name" : "SYS_UPDATE_LOGNAME",
         "codeName" : "SysUpdateLogName"
       },
-      "dataType" : 25,
-      "name" : "sys_update_logname"
+      "name" : "sys_update_logname",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "LATESTUPDATE",
         "codeName" : "Latestupdate"
       },
-      "dataType" : 9,
-      "name" : "latestupdate"
+      "name" : "latestupdate",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "UPDATEBRANCH",
         "codeName" : "Updatebranch"
       },
-      "dataType" : 25,
-      "name" : "updatebranch"
+      "name" : "updatebranch",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "UPDATEMAN",
         "codeName" : "UpdateMan"
       },
-      "dataType" : 25,
-      "name" : "updateman"
+      "name" : "updateman",
+      "dataType" : 25
     }, {
-      "format" : "YYYY-MM-DD HH:mm:ss",
       "getPSAppDEField" : {
         "name" : "UPDATEDATE",
         "codeName" : "UpdateDate"
       },
-      "dataType" : 5,
-      "name" : "updatedate"
+      "format" : "YYYY-MM-DD HH:mm:ss",
+      "name" : "updatedate",
+      "dataType" : 5
     }, {
       "getPSAppDEField" : {
         "name" : "SYS_UPDATE_LOGNAME",
         "codeName" : "SysUpdateLogName"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "SYS_UPDATE_LOGID",
         "codeName" : "SysUpdateLogId"
       },
-      "dataType" : 25,
-      "name" : "srfdataaccaction"
+      "name" : "srfdataaccaction",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "SYS_UPDATE_LOGID",
         "codeName" : "SysUpdateLogId"
       },
-      "dataType" : 25,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 25
     } ],
     "getRemovePSControlAction" : {
       "getPSAppDataEntity" : {
@@ -480,8 +479,6 @@
       "actionType" : "DEACTION",
       "name" : "remove"
     },
-    "singleSelect" : false,
-    "enableColFilter" : false,
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : false,
@@ -503,9 +500,11 @@
     } ],
     "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "controlType" : "GRID",
-    "enableRowEdit" : false,
+    "enableColFilter" : false,
+    "singleSelect" : false,
     "enablePagingBar" : true,
+    "enableRowEdit" : false,
+    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
       "linkValueItem" : "srfkey",
       "enableLinkView" : true,
@@ -514,12 +513,12 @@
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysUpdateLogTabExpView.json",
         "viewType" : "DETABEXPVIEW"
       },
-      "excelCaption" : "更新名称",
-      "dataItemName" : "sys_update_logname",
       "getPSAppDEField" : {
         "name" : "SYS_UPDATE_LOGNAME",
         "codeName" : "SysUpdateLogName"
       },
+      "dataItemName" : "sys_update_logname",
+      "excelCaption" : "更新名称",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -531,12 +530,12 @@
       "widthUnit" : "STAR",
       "name" : "sys_update_logname"
     }, {
-      "excelCaption" : "更新日期",
-      "dataItemName" : "update",
       "getPSAppDEField" : {
         "name" : "UPDATE",
         "codeName" : "Update"
       },
+      "dataItemName" : "update",
+      "excelCaption" : "更新日期",
       "valueFormat" : "YYYY-MM-DD",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
@@ -549,16 +548,16 @@
       "widthUnit" : "PX",
       "name" : "update"
     }, {
-      "excelCaption" : "更新平台",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/SYS_UPDATE_BRANCH.json"
       },
-      "dataItemName" : "updatebranch",
       "getPSAppDEField" : {
         "name" : "UPDATEBRANCH",
         "codeName" : "Updatebranch"
       },
+      "dataItemName" : "updatebranch",
+      "excelCaption" : "更新平台",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -570,16 +569,16 @@
       "widthUnit" : "PX",
       "name" : "updatebranch"
     }, {
-      "excelCaption" : "最新更新",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo3.json"
       },
-      "dataItemName" : "latestupdate",
       "getPSAppDEField" : {
         "name" : "LATESTUPDATE",
         "codeName" : "Latestupdate"
       },
+      "dataItemName" : "latestupdate",
+      "excelCaption" : "最新更新",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -591,16 +590,16 @@
       "widthUnit" : "PX",
       "name" : "latestupdate"
     }, {
-      "excelCaption" : "更新人",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/SysOperator.json"
       },
-      "dataItemName" : "updateman",
       "getPSAppDEField" : {
         "name" : "UPDATEMAN",
         "codeName" : "UpdateMan"
       },
+      "dataItemName" : "updateman",
+      "excelCaption" : "更新人",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -612,12 +611,12 @@
       "widthUnit" : "PX",
       "name" : "updateman"
     }, {
-      "excelCaption" : "更新时间",
-      "dataItemName" : "updatedate",
       "getPSAppDEField" : {
         "name" : "UPDATEDATE",
         "codeName" : "UpdateDate"
       },
+      "dataItemName" : "updatedate",
+      "excelCaption" : "更新时间",
       "valueFormat" : "YYYY-MM-DD HH:mm:ss",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
@@ -739,7 +738,7 @@
     "name" : "grid",
     "modelid" : "3b4b31345989c5baf176d3ebef6ef74a"
   }, {
-    "quickSearchMode" : 1,
+    "mobileSearchBar" : false,
     "getPSSearchBarFilters" : [ {
       "emptyCaption" : false,
       "getPSEditor" : {
@@ -751,9 +750,11 @@
         "editorType" : "DROPDOWNLIST",
         "name" : "latestupdateeq"
       },
-      "dataType" : 9,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 9,
       "needCodeListConfig" : true,
+      "caption" : "最新更新(=)",
       "getPSDEFSearchMode" : {
         "valueOP" : "EQ",
         "codeName" : "N_LATESTUPDATE_EQ",
@@ -765,10 +766,8 @@
         "name" : "N_LATESTUPDATE_EQ"
       },
       "allowEmpty" : true,
-      "caption" : "最新更新(=)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "LATESTUPDATE",
         "codeName" : "Latestupdate"
@@ -782,8 +781,10 @@
         "editorWidth" : 100.0,
         "name" : "lognamelike"
       },
-      "dataType" : 25,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 25,
+      "caption" : "更新名称(%)",
       "getPSDEFSearchMode" : {
         "valueOP" : "LIKE",
         "codeName" : "N_SYS_UPDATE_LOGNAME_LIKE",
@@ -795,11 +796,9 @@
         "name" : "N_SYS_UPDATE_LOGNAME_LIKE"
       },
       "allowEmpty" : true,
-      "caption" : "更新名称(%)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
       "itemWidth" : 100.0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "SYS_UPDATE_LOGNAME",
         "codeName" : "SysUpdateLogName"
@@ -818,9 +817,11 @@
         "editorWidth" : 100.0,
         "name" : "updatebrancheq"
       },
-      "dataType" : 25,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 25,
       "needCodeListConfig" : true,
+      "caption" : "更新平台(=)",
       "getPSDEFSearchMode" : {
         "valueOP" : "EQ",
         "codeName" : "N_UPDATEBRANCH_EQ",
@@ -832,11 +833,9 @@
         "name" : "N_UPDATEBRANCH_EQ"
       },
       "allowEmpty" : true,
-      "caption" : "更新平台(=)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
       "itemWidth" : 100.0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "UPDATEBRANCH",
         "codeName" : "Updatebranch"
@@ -844,9 +843,9 @@
       "itemType" : "FILTER",
       "name" : "updatebrancheq"
     } ],
-    "mobileSearchBar" : false,
-    "controlType" : "SEARCHBAR",
+    "quickSearchMode" : 1,
     "enableFilter" : true,
+    "controlType" : "SEARCHBAR",
     "codeName" : "Custom",
     "enableQuickSearch" : true,
     "enableGroup" : false,
@@ -863,6 +862,7 @@
     "name" : "searchbar",
     "modelid" : "7064f0009629abf0665cbab04918a121"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -950,7 +950,6 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -958,9 +957,10 @@
           "viewType" : "DEEDITVIEW"
         }
       },
+      "enableWizardAdd" : false,
+      "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {

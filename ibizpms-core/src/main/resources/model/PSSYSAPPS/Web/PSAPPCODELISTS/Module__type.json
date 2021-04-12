@@ -28,8 +28,8 @@
     "codeName" : "Bug",
     "text" : "Bug"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "Module__type",
   "emptyText" : "未定义",
   "enableCache" : true,

@@ -12,8 +12,8 @@
     "codeName" : "Item_3",
     "text" : "3"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "Case__frequency",
   "emptyText" : "未定义",
   "enableCache" : true,

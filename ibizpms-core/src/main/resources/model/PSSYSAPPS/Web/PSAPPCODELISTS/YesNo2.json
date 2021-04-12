@@ -9,8 +9,8 @@
     "codeName" : "Item_0",
     "text" : "否"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "YesNo2",
   "emptyText" : "未定义",
   "enableCache" : true,

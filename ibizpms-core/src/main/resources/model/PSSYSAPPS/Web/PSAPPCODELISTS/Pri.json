@@ -1,9 +1,9 @@
 {
+  "codeItemValueNumber" : true,
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
   },
-  "codeItemValueNumber" : true,
   "getPSCodeItems" : [ {
     "value" : "1",
     "getPSSysCss" : {
@@ -37,8 +37,8 @@
     "codeName" : "Item_4",
     "text" : "最低"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "Pri",
   "emptyText" : "未定义",
   "enableCache" : true,

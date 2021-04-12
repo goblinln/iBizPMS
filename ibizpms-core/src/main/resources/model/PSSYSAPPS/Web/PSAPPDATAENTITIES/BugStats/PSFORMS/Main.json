@@ -1,5 +1,7 @@
 {
   "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -24,8 +26,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : false,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
@@ -44,11 +44,11 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : true,
       "codeName" : "group1",
       "caption" : "Bug统计基本信息",
       "detailType" : "GROUPPANEL",
       "detailStyle" : "DEFAULT",
-      "showCaption" : true,
       "name" : "group1"
     } ],
     "getPSLayout" : {
@@ -73,11 +73,11 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : true,
       "codeName" : "group2",
       "caption" : "操作信息",
       "detailType" : "GROUPPANEL",
       "detailStyle" : "DEFAULT",
-      "showCaption" : true,
       "name" : "group2"
     } ],
     "getPSLayout" : {

@@ -11,10 +11,10 @@
   "showCaptionBar" : true,
   "getPSDEViewCodeName" : "GridView",
   "funcViewMode" : "MDATAVIEW",
+  "enableDP" : true,
   "caption" : "需求模块",
   "title" : "需求模块表格视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -80,7 +80,6 @@
     },
     "name" : "toolbar_deuiaction4"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProStoryModule.json"
@@ -109,8 +108,8 @@
         "timeout" : 60000,
         "codeName" : "syncFromIBIZ",
         "caption" : "同步",
-        "actionTarget" : "NONE",
         "reloadData" : true,
+        "actionTarget" : "NONE",
         "uIActionTag" : "syncFromIBIZ",
         "uIActionType" : "DEUIACTION",
         "uIActionMode" : "FRONT",
@@ -121,9 +120,9 @@
       "tooltip" : "同步",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "同步",
-      "showCaption" : true,
       "name" : "deuiaction3_syncfromibiz"
     }, {
       "spanMode" : false,
@@ -174,9 +173,9 @@
       "tooltip" : "新建",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : false,
       "itemType" : "DEUIACTION",
       "caption" : "新建",
-      "showCaption" : false,
       "name" : "deuiaction1"
     }, {
       "spanMode" : false,
@@ -210,9 +209,9 @@
       "tooltip" : "刷新",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : false,
       "itemType" : "DEUIACTION",
       "caption" : "刷新",
-      "showCaption" : false,
       "name" : "deuiaction2"
     }, {
       "spanMode" : false,
@@ -262,9 +261,9 @@
       "tooltip" : "导出",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "导出",
-      "showCaption" : true,
       "name" : "deuiaction4"
     } ],
     "getPSAppDataEntity" : {
@@ -285,58 +284,58 @@
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "id"
+      "name" : "id",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "IBIZ_ID",
         "codeName" : "IBIZId"
       },
-      "dataType" : 25,
-      "name" : "ibiz_id"
+      "name" : "ibiz_id",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "ROOT",
         "codeName" : "Root"
       },
-      "dataType" : 1,
-      "name" : "root"
+      "name" : "root",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "dataType" : 25,
-      "name" : "name"
+      "name" : "name",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "PARENT",
         "codeName" : "Parent"
       },
-      "dataType" : 1,
-      "name" : "parent"
+      "name" : "parent",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfdataaccaction"
+      "name" : "srfdataaccaction",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 1
     } ],
     "getRemovePSControlAction" : {
       "getPSAppDataEntity" : {
@@ -352,8 +351,6 @@
       "actionType" : "DEACTION",
       "name" : "remove"
     },
-    "singleSelect" : false,
-    "enableColFilter" : false,
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : false,
@@ -375,16 +372,18 @@
     } ],
     "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "controlType" : "GRID",
-    "enableRowEdit" : false,
+    "enableColFilter" : false,
+    "singleSelect" : false,
     "enablePagingBar" : true,
+    "enableRowEdit" : false,
+    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
-      "excelCaption" : "id",
-      "dataItemName" : "id",
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
+      "dataItemName" : "id",
+      "excelCaption" : "id",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -396,12 +395,12 @@
       "widthUnit" : "PX",
       "name" : "id"
     }, {
-      "excelCaption" : "名称",
-      "dataItemName" : "name",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
+      "dataItemName" : "name",
+      "excelCaption" : "名称",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -413,12 +412,12 @@
       "widthUnit" : "PX",
       "name" : "name"
     }, {
-      "excelCaption" : "IBIZ标识",
-      "dataItemName" : "ibiz_id",
       "getPSAppDEField" : {
         "name" : "IBIZ_ID",
         "codeName" : "IBIZId"
       },
+      "dataItemName" : "ibiz_id",
+      "excelCaption" : "IBIZ标识",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -430,12 +429,12 @@
       "widthUnit" : "PX",
       "name" : "ibiz_id"
     }, {
-      "excelCaption" : "编号",
-      "dataItemName" : "root",
       "getPSAppDEField" : {
         "name" : "ROOT",
         "codeName" : "Root"
       },
+      "dataItemName" : "root",
+      "excelCaption" : "编号",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -556,10 +555,10 @@
     "name" : "grid",
     "modelid" : "fe0d7cf4270e20b619a06d78ce203bf2"
   }, {
+    "searchButtonStyle" : "DEFAULT",
     "enableAdvanceSearch" : false,
     "enableAutoSearch" : false,
     "enableFilterSave" : false,
-    "searchButtonStyle" : "DEFAULT",
     "controlType" : "SEARCHFORM",
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
@@ -633,6 +632,7 @@
     "name" : "searchform",
     "modelid" : "1a2d22ffd2e2d8baf66305b397e849bb"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -697,7 +697,6 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -705,9 +704,10 @@
           "viewType" : "DEEDITVIEW"
         }
       },
+      "enableWizardAdd" : false,
+      "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {

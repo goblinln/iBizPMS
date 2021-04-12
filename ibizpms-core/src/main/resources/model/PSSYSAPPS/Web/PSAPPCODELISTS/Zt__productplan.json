@@ -20,8 +20,8 @@
     "codeName" : "Isexpired",
     "text" : "已过期"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "Zt__productplan",
   "emptyText" : "未定义",
   "enableCache" : true,

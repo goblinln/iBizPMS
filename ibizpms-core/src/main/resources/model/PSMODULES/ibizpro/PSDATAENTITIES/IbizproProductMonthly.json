@@ -1,13 +1,16 @@
 {
-  "serviceAPIMode" : 1,
   "getAllPSDEFields" : [ {
-    "dataType" : "TEXT",
     "length" : 2000,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "c9742b3381697c69348370716c9f4874",
+    "codeName" : "Tasks",
+    "logicName" : "任务",
+    "stringLength" : 2000,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -45,20 +48,19 @@
       "autoIncrement" : false,
       "name" : "TASKS"
     } ],
-    "codeName" : "Tasks",
-    "logicName" : "任务",
-    "stringLength" : 2000,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "TASKS"
   }, {
-    "dataType" : "DATE",
     "valueFormat" : "%1$tY-%1$tm-%1$td",
+    "dataType" : "DATE",
     "deployId" : "8be7645861e492a4f99c485bfcdee40c",
+    "codeName" : "Date",
+    "logicName" : "日期",
+    "stdDataType" : 5,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -84,26 +86,27 @@
       "autoIncrement" : false,
       "name" : "DATE"
     } ],
-    "codeName" : "Date",
-    "logicName" : "日期",
-    "stdDataType" : 5,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "DATE"
   }, {
-    "dataType" : "TEXT",
     "length" : 60,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
+    "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "c88c47bea47310b85526061c1939f6cd",
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "stringLength" : 60,
+    "stdDataType" : 25,
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -141,22 +144,21 @@
       "autoIncrement" : false,
       "name" : "UPDATEMAN"
     } ],
-    "codeName" : "UpdateMan",
-    "logicName" : "更新人",
-    "stringLength" : 60,
-    "stdDataType" : 25,
     "predefinedType" : "UPDATEMAN",
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "UPDATEMAN"
   }, {
-    "dataType" : "FLOAT",
-    "precision" : 2,
     "valueFormat" : "%1$s",
+    "precision" : 2,
+    "dataType" : "FLOAT",
     "deployId" : "49bf99c87a1b4d0dc0787052f9915d49",
+    "codeName" : "Totalestimates",
+    "logicName" : "总工时",
+    "stdDataType" : 7,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -182,22 +184,22 @@
       "autoIncrement" : false,
       "name" : "TOTALESTIMATES"
     } ],
-    "codeName" : "Totalestimates",
-    "logicName" : "总工时",
-    "stdDataType" : 7,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "TOTALESTIMATES"
   }, {
-    "dataType" : "DATETIME",
     "length" : 8,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "dataType" : "DATETIME",
     "deployId" : "5204f0b2bc1ca17e05058099a70688b9",
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "stdDataType" : 5,
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -223,23 +225,23 @@
       "autoIncrement" : false,
       "name" : "CREATEDATE"
     } ],
-    "codeName" : "CreateDate",
-    "logicName" : "建立时间",
-    "stdDataType" : 5,
     "predefinedType" : "CREATEDATE",
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "CREATEDATE"
   }, {
-    "dataType" : "DATETIME",
     "length" : 8,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "dataType" : "DATETIME",
     "deployId" : "58482c7b4285fd236077880a8f8a221a",
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "stdDataType" : 5,
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -265,21 +267,22 @@
       "autoIncrement" : false,
       "name" : "UPDATEDATE"
     } ],
-    "codeName" : "UpdateDate",
-    "logicName" : "更新时间",
-    "stdDataType" : 5,
     "predefinedType" : "UPDATEDATE",
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "UPDATEDATE"
   }, {
-    "dataType" : "TEXT",
     "length" : 100,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "2694e2752b72ef29ca890e20cb2d39f0",
+    "codeName" : "YearMonth",
+    "logicName" : "年月",
+    "stringLength" : 100,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -317,23 +320,22 @@
       "autoIncrement" : false,
       "name" : "YEAR_MONTH"
     } ],
-    "codeName" : "YearMonth",
-    "logicName" : "年月",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "YEAR_MONTH"
   }, {
-    "dataType" : "ACID",
     "length" : 100,
     "valueFormat" : "%1$s",
+    "dataType" : "ACID",
     "deployId" : "631beeec9e39f0af126757361475ce6d",
+    "codeName" : "IbizproProductMonthlyId",
+    "logicName" : "产品月报标识",
+    "stdDataType" : 1,
     "pasteReset" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -360,22 +362,23 @@
       "autoIncrement" : true,
       "name" : "IBIZPRO_PRODUCTMONTHLYID"
     } ],
-    "codeName" : "IbizproProductMonthlyId",
-    "logicName" : "产品月报标识",
-    "stdDataType" : 1,
     "keyDEField" : true,
     "importOrder" : 1000,
     "enableDBAutoValue" : true,
     "dEFType" : 1,
     "name" : "IBIZPRO_PRODUCTMONTHLYID"
   }, {
-    "dataType" : "TEXT",
     "length" : 200,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "0351b41ad5b91a29b806d68554b6e0e2",
+    "codeName" : "IbizproProductMonthlyName",
+    "logicName" : "产品月报名称",
+    "stringLength" : 200,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -413,29 +416,29 @@
       "autoIncrement" : false,
       "name" : "IBIZPRO_PRODUCTMONTHLYNAME"
     } ],
-    "codeName" : "IbizproProductMonthlyName",
-    "logicName" : "产品月报名称",
-    "stringLength" : 200,
-    "stdDataType" : 25,
     "majorDEField" : true,
     "enableQuickSearch" : true,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "IBIZPRO_PRODUCTMONTHLYNAME"
   }, {
-    "dataType" : "TEXT",
     "length" : 60,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
+    "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "4b59d5445c7c4a4b9c0c6dfd94caa188",
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "stringLength" : 60,
+    "stdDataType" : 25,
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -473,36 +476,36 @@
       "autoIncrement" : false,
       "name" : "CREATEMAN"
     } ],
-    "codeName" : "CreateMan",
-    "logicName" : "建立人",
-    "stringLength" : 60,
-    "stdDataType" : 25,
     "predefinedType" : "CREATEMAN",
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "CREATEMAN"
   }, {
     "phisicalDEField" : false,
+    "valueFormat" : "%1$s",
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly/PSDERS/DER1N_IBIZPRO_PRODUCTMONTHLY_ZT_PRODUCT_PRODUCT.json"
     },
-    "valueFormat" : "%1$s",
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "PO",
       "codeName" : "PO"
     },
-    "dataType" : "PICKUPDATA",
     "length" : 30,
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
     },
+    "dataType" : "PICKUPDATA",
     "deployId" : "c7f635155f3e95f61d8ab8dd0a20e0d1",
+    "codeName" : "PO",
+    "logicName" : "产品负责人",
+    "stringLength" : 30,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -540,31 +543,31 @@
       "autoIncrement" : false,
       "name" : "PO"
     } ],
-    "codeName" : "PO",
-    "logicName" : "产品负责人",
-    "stringLength" : 30,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 3,
     "name" : "PO"
   }, {
     "phisicalDEField" : false,
+    "valueFormat" : "%1$s",
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly/PSDERS/DER1N_IBIZPRO_PRODUCTMONTHLY_ZT_PRODUCT_PRODUCT.json"
     },
-    "valueFormat" : "%1$s",
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : "PICKUPTEXT",
     "length" : 90,
+    "dataType" : "PICKUPTEXT",
     "deployId" : "ed80870bb0cc3629ea019bd4d71f851a",
+    "codeName" : "ProductName",
+    "logicName" : "产品名称",
+    "stringLength" : 90,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -602,30 +605,29 @@
       "autoIncrement" : false,
       "name" : "PRODUCTNAME"
     } ],
-    "codeName" : "ProductName",
-    "logicName" : "产品名称",
-    "stringLength" : 90,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 3,
     "name" : "PRODUCTNAME"
   }, {
+    "valueFormat" : "%1$s",
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly/PSDERS/DER1N_IBIZPRO_PRODUCTMONTHLY_ZT_PRODUCT_PRODUCT.json"
     },
-    "valueFormat" : "%1$s",
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : "PICKUP",
     "length" : 8,
+    "dataType" : "PICKUP",
     "deployId" : "8710c569cf7e461ca3571493fc0a1810",
+    "codeName" : "Product",
+    "logicName" : "产品编号",
+    "stdDataType" : 1,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -651,21 +653,15 @@
       "autoIncrement" : false,
       "name" : "PRODUCT"
     } ],
-    "codeName" : "Product",
-    "logicName" : "产品编号",
-    "stdDataType" : 1,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "PRODUCT"
   } ],
-  "getMainStatePSDEFields" : [ {
-    "name" : "IBIZPRO_PRODUCTMONTHLYID",
-    "codeName" : "IbizproProductMonthlyId"
-  } ],
   "getAllPSDEDataSets" : [ {
-    "enableBackend" : true,
     "enableFront" : true,
+    "enableBackend" : true,
     "pubServiceDefault" : true,
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -673,9 +669,8 @@
     "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "数据集",
-    "extendMode" : 0,
-    "enableGroup" : false,
     "userDRAction" : "READ",
+    "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
@@ -715,10 +710,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "数据查询",
-    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -726,10 +721,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
@@ -740,8 +735,11 @@
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : false,
-  "orderValue" : 99999,
-  "dSLink" : "DEFAULT",
+  "getMainStatePSDEFields" : [ {
+    "name" : "IBIZPRO_PRODUCTMONTHLYID",
+    "codeName" : "IbizproProductMonthlyId"
+  } ],
+  "serviceAPIMode" : 1,
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -755,17 +753,20 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "extendMode" : 0,
+  "saaSDCIdColumnName" : "SRFDCID",
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "dSLink" : "DEFAULT",
   "saaSMode" : 4,
   "deployId" : "ca7c6b19e7c9bfc7e0aa0c65e47e0156",
-  "enableSQLStorage" : true,
-  "dynaInstMode" : 1,
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
-  "virtualMode" : 0,
   "codeName" : "IbizproProductMonthly",
   "logicName" : "产品月报",
   "tableName" : "T_IBIZPRO_PRODUCTMONTHLY",
+  "enableViewLevel" : 0,
+  "virtualMode" : 0,
+  "enableSQLStorage" : true,
+  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -774,14 +775,13 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
   "serviceCodeName" : "IbizproProductMonthly",
   "enableActions" : 7,
   "enableCreate" : true,
   "enableModify" : true,
-  "extendMode" : 0,
   "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
+  "subSysDE" : false,
+  "virtual" : false,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

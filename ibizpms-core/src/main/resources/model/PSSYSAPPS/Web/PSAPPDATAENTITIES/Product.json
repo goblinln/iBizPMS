@@ -1,4 +1,191 @@
 {
+  "getAllPSDEMainStates" : [ {
+    "allowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "0",
+    "fieldAllowMode" : false,
+    "actionAllowMode" : true,
+    "getPSDEMainStateActions" : [ {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Update.json"
+      },
+      "name" : "Update"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Remove.json"
+      },
+      "name" : "Remove"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Save.json"
+      },
+      "name" : "Save"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Get.json"
+      },
+      "name" : "Get"
+    } ],
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "logicName" : "置顶",
+        "name" : "TOP"
+      },
+      "name" : "TOP"
+    }, {
+      "getPSDEOPPriv" : {
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__PROD_CLOSED_BUT"
+        },
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "PROD_CLOSED_BUT",
+        "logicName" : "产品关闭",
+        "name" : "SRFUR__PROD_CLOSED_BUT"
+      },
+      "name" : "SRFUR__PROD_CLOSED_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "closed_0",
+    "logicName" : "关闭_未置顶",
+    "default" : false,
+    "mSTag" : "closed__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "closed",
+    "name" : "关闭_未置顶"
+  }, {
+    "allowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "1",
+    "fieldAllowMode" : false,
+    "actionAllowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__PROD_CLOSED_BUT"
+        },
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "PROD_CLOSED_BUT",
+        "logicName" : "产品关闭",
+        "name" : "SRFUR__PROD_CLOSED_BUT"
+      },
+      "name" : "SRFUR__PROD_CLOSED_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "未置顶",
+        "name" : "NOTOP"
+      },
+      "name" : "NOTOP"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "closed_1",
+    "logicName" : "关闭_已置顶",
+    "default" : false,
+    "mSTag" : "closed__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "closed",
+    "name" : "关闭_已置顶"
+  }, {
+    "allowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "0",
+    "fieldAllowMode" : false,
+    "actionAllowMode" : true,
+    "getPSDEMainStateActions" : [ {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Close.json"
+      },
+      "name" : "Close"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Get.json"
+      },
+      "name" : "Get"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Update.json"
+      },
+      "name" : "Update"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Remove.json"
+      },
+      "name" : "Remove"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Save.json"
+      },
+      "name" : "Save"
+    } ],
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "logicName" : "置顶",
+        "name" : "TOP"
+      },
+      "name" : "TOP"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "normal_0",
+    "logicName" : "正常_未置顶",
+    "default" : false,
+    "mSTag" : "normal__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "normal",
+    "name" : "正常_未置顶"
+  }, {
+    "allowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "1",
+    "fieldAllowMode" : false,
+    "actionAllowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "logicName" : "未置顶",
+        "name" : "NOTOP"
+      },
+      "name" : "NOTOP"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "normal_1",
+    "logicName" : "正常_已置顶",
+    "default" : false,
+    "mSTag" : "normal__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "normal",
+    "name" : "正常_已置顶"
+  } ],
+  "enableUIActions" : 15,
   "enableUIRemove" : true,
   "getAllPSAppDEUIActions" : [ {
     "getPSAppDataEntity" : {
@@ -20,8 +207,8 @@
     "timeout" : 60000,
     "codeName" : "OpenQuickCfgView",
     "caption" : "编辑",
-    "actionTarget" : "SINGLEKEY",
     "reloadData" : true,
+    "actionTarget" : "SINGLEKEY",
     "dataAccessAction" : "SRFUR__PROD_EDIT_BUT",
     "uIActionTag" : "OpenQuickCfgView",
     "uIActionType" : "DEUIACTION",
@@ -78,8 +265,8 @@
     "timeout" : 60000,
     "codeName" : "delete",
     "caption" : "删除",
-    "actionTarget" : "SINGLEKEY",
     "reloadData" : true,
+    "actionTarget" : "SINGLEKEY",
     "dataAccessAction" : "SRFUR__PROD_DELETE_BUT",
     "closeEditView" : true,
     "uIActionTag" : "delete",
@@ -127,8 +314,8 @@
     "timeout" : 60000,
     "codeName" : "Create",
     "caption" : "新建",
-    "actionTarget" : "NONE",
     "reloadData" : true,
+    "actionTarget" : "NONE",
     "dataAccessAction" : "SRFUR__PROD_CREATE_BUT",
     "uIActionTag" : "Create",
     "uIActionType" : "DEUIACTION",
@@ -155,8 +342,8 @@
     "timeout" : 60000,
     "codeName" : "ProductTop",
     "caption" : "置顶",
-    "actionTarget" : "SINGLEKEY",
     "reloadData" : true,
+    "actionTarget" : "SINGLEKEY",
     "dataAccessAction" : "NOTOP",
     "uIActionTag" : "ProductTop",
     "uIActionType" : "DEUIACTION",
@@ -236,8 +423,8 @@
     "timeout" : 60000,
     "codeName" : "CloseProduct",
     "caption" : "关闭",
-    "actionTarget" : "SINGLEKEY",
     "reloadData" : true,
+    "actionTarget" : "SINGLEKEY",
     "dataAccessAction" : "SRFUR__PROD_CLOSED_BUT",
     "uIActionTag" : "CloseProduct",
     "uIActionType" : "DEUIACTION",
@@ -264,8 +451,8 @@
     "timeout" : 60000,
     "codeName" : "CancelProductTop",
     "caption" : "取消置顶",
-    "actionTarget" : "SINGLEKEY",
     "reloadData" : true,
+    "actionTarget" : "SINGLEKEY",
     "dataAccessAction" : "TOP",
     "uIActionTag" : "CancelProductTop",
     "uIActionType" : "DEUIACTION",
@@ -280,199 +467,13 @@
     "codeName" : "Ungroup",
     "name" : "（未分类）"
   } ],
-  "getAllPSDEMainStates" : [ {
-    "actionAllowMode" : true,
-    "oPPrivAllowMode" : false,
-    "enableViewActions" : false,
-    "state2Value" : "0",
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "getPSDEMainStateActions" : [ {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Update.json"
-      },
-      "name" : "Update"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Remove.json"
-      },
-      "name" : "Remove"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Save.json"
-      },
-      "name" : "Save"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Get.json"
-      },
-      "name" : "Get"
-    } ],
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "logicName" : "置顶",
-        "name" : "TOP"
-      },
-      "name" : "TOP"
-    }, {
-      "getPSDEOPPriv" : {
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROD_CLOSED_BUT"
-        },
-        "mapSysUniRes" : true,
-        "mapSysUniResCode" : "PROD_CLOSED_BUT",
-        "logicName" : "产品关闭",
-        "name" : "SRFUR__PROD_CLOSED_BUT"
-      },
-      "name" : "SRFUR__PROD_CLOSED_BUT"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "closed_0",
-    "logicName" : "关闭_未置顶",
-    "default" : false,
-    "mSTag" : "closed__0",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "stateValue" : "closed",
-    "name" : "关闭_未置顶"
-  }, {
-    "actionAllowMode" : true,
-    "oPPrivAllowMode" : false,
-    "enableViewActions" : false,
-    "state2Value" : "1",
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROD_CLOSED_BUT"
-        },
-        "mapSysUniRes" : true,
-        "mapSysUniResCode" : "PROD_CLOSED_BUT",
-        "logicName" : "产品关闭",
-        "name" : "SRFUR__PROD_CLOSED_BUT"
-      },
-      "name" : "SRFUR__PROD_CLOSED_BUT"
-    }, {
-      "getPSDEOPPriv" : {
-        "logicName" : "未置顶",
-        "name" : "NOTOP"
-      },
-      "name" : "NOTOP"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "closed_1",
-    "logicName" : "关闭_已置顶",
-    "default" : false,
-    "mSTag" : "closed__1",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "stateValue" : "closed",
-    "name" : "关闭_已置顶"
-  }, {
-    "actionAllowMode" : true,
-    "oPPrivAllowMode" : false,
-    "enableViewActions" : false,
-    "state2Value" : "0",
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "getPSDEMainStateActions" : [ {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Close.json"
-      },
-      "name" : "Close"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Get.json"
-      },
-      "name" : "Get"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Update.json"
-      },
-      "name" : "Update"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Remove.json"
-      },
-      "name" : "Remove"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Save.json"
-      },
-      "name" : "Save"
-    } ],
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "logicName" : "置顶",
-        "name" : "TOP"
-      },
-      "name" : "TOP"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "normal_0",
-    "logicName" : "正常_未置顶",
-    "default" : false,
-    "mSTag" : "normal__0",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "stateValue" : "normal",
-    "name" : "正常_未置顶"
-  }, {
-    "actionAllowMode" : true,
-    "oPPrivAllowMode" : false,
-    "enableViewActions" : false,
-    "state2Value" : "1",
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "logicName" : "未置顶",
-        "name" : "NOTOP"
-      },
-      "name" : "NOTOP"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "normal_1",
-    "logicName" : "正常_已置顶",
-    "default" : false,
-    "mSTag" : "normal__1",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "stateValue" : "normal",
-    "name" : "正常_已置顶"
-  } ],
-  "enableUIActions" : 15,
+  "major" : true,
   "getAllPSAppDEMethods" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Select"
     },
+    "builtinMethod" : false,
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -480,11 +481,11 @@
     },
     "codeName" : "Select"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PRODUCT__DEACTION__CREATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -496,11 +497,11 @@
     },
     "codeName" : "Create"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PRODUCT__DEACTION__UPDATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -512,11 +513,11 @@
     },
     "codeName" : "Update"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PRODUCT__DEACTION__REMOVE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -528,11 +529,11 @@
     },
     "codeName" : "Remove"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PRODUCT__DEACTION__GET"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -544,11 +545,11 @@
     },
     "codeName" : "Get"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -560,11 +561,11 @@
     },
     "codeName" : "GetDraft"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CancelProductTop"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -572,11 +573,11 @@
     },
     "codeName" : "CancelProductTop"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -584,11 +585,11 @@
     },
     "codeName" : "CheckKey"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Close"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -596,11 +597,11 @@
     },
     "codeName" : "Close"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "MobProductCounter"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -608,11 +609,11 @@
     },
     "codeName" : "MobProductCounter"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "MobProductTestCounter"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -620,11 +621,11 @@
     },
     "codeName" : "MobProductTestCounter"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ProductTop"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -632,11 +633,11 @@
     },
     "codeName" : "ProductTop"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -644,11 +645,11 @@
     },
     "codeName" : "Save"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchAllList"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -660,11 +661,11 @@
     },
     "codeName" : "FetchAllList"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchAllProduct"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -676,11 +677,11 @@
     },
     "codeName" : "FetchAllProduct"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCheckNameOrCode"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -692,11 +693,11 @@
     },
     "codeName" : "FetchCheckNameOrCode"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCurProject"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -708,11 +709,11 @@
     },
     "codeName" : "FetchCurProject"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCurUer"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -724,11 +725,11 @@
     },
     "codeName" : "FetchCurUer"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -740,11 +741,11 @@
     },
     "codeName" : "FetchDefault"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchESBulk"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -756,11 +757,11 @@
     },
     "codeName" : "FetchESBulk"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProductPM"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -772,11 +773,11 @@
     },
     "codeName" : "FetchProductPM"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProductTeam"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -788,11 +789,11 @@
     },
     "codeName" : "FetchProductTeam"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchStoryCurProject"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1136,6 +1137,22 @@
     "name" : "LINE"
   } ],
   "getAllPSAppDEACModes" : [ {
+    "enablePagingBar" : false,
+    "getPSDEACModeDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "value",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "name" : "text",
+      "dataType" : 25
+    } ],
     "getValuePSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
@@ -1144,22 +1161,6 @@
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "getPSDEACModeDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "dataType" : 25,
-      "name" : "value"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      },
-      "dataType" : 25,
-      "name" : "text"
-    } ],
-    "enablePagingBar" : false,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "defaultMode" : true,
@@ -1179,11 +1180,11 @@
     "codeName" : "Code"
   } ],
   "getAllPSAppDEActions" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PRODUCT__DEACTION__CREATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1195,11 +1196,11 @@
     },
     "codeName" : "Create"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PRODUCT__DEACTION__UPDATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1211,11 +1212,11 @@
     },
     "codeName" : "Update"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PRODUCT__DEACTION__REMOVE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1227,11 +1228,11 @@
     },
     "codeName" : "Remove"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PRODUCT__DEACTION__GET"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1243,11 +1244,11 @@
     },
     "codeName" : "Get"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1259,11 +1260,11 @@
     },
     "codeName" : "GetDraft"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CancelProductTop"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1271,11 +1272,11 @@
     },
     "codeName" : "CancelProductTop"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1283,11 +1284,11 @@
     },
     "codeName" : "CheckKey"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Close"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1295,11 +1296,11 @@
     },
     "codeName" : "Close"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "MobProductCounter"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1307,11 +1308,11 @@
     },
     "codeName" : "MobProductCounter"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "MobProductTestCounter"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1319,11 +1320,11 @@
     },
     "codeName" : "MobProductTestCounter"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ProductTop"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1331,11 +1332,11 @@
     },
     "codeName" : "ProductTop"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1362,11 +1363,11 @@
     "name" : "WizardCreate"
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchAllList"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1378,11 +1379,11 @@
     },
     "codeName" : "FetchAllList"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchAllProduct"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1394,11 +1395,11 @@
     },
     "codeName" : "FetchAllProduct"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCheckNameOrCode"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1410,11 +1411,11 @@
     },
     "codeName" : "FetchCheckNameOrCode"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCurProject"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1426,11 +1427,11 @@
     },
     "codeName" : "FetchCurProject"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCurUer"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1442,11 +1443,11 @@
     },
     "codeName" : "FetchCurUer"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1458,11 +1459,11 @@
     },
     "codeName" : "FetchDefault"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchESBulk"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1474,11 +1475,11 @@
     },
     "codeName" : "FetchESBulk"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProductPM"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1490,11 +1491,11 @@
     },
     "codeName" : "FetchProductPM"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProductTeam"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1506,11 +1507,11 @@
     },
     "codeName" : "FetchProductTeam"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchStoryCurProject"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1522,11 +1523,6 @@
     },
     "codeName" : "FetchStoryCurProject"
   } ],
-  "major" : true,
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDESERVICEAPIS/Product.json"
-  },
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -1540,6 +1536,10 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDESERVICEAPIS/Product.json"
+  },
   "codeName" : "Product",
   "logicName" : "产品",
   "dataAccCtrlMode" : 1,

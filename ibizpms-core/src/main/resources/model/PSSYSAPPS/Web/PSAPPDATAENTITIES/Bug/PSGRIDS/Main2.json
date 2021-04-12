@@ -4,152 +4,152 @@
       "name" : "TOTASK",
       "codeName" : "ToTask"
     },
-    "dataType" : 1,
-    "name" : "totask"
+    "name" : "totask",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "MODULE",
       "codeName" : "Module"
     },
-    "dataType" : 1,
-    "name" : "module"
+    "name" : "module",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "STATUS",
       "codeName" : "Status"
     },
-    "dataType" : 25,
-    "name" : "status"
+    "name" : "status",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "TASK",
       "codeName" : "Task"
     },
-    "dataType" : 1,
-    "name" : "task"
+    "name" : "task",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "TESTTASK",
       "codeName" : "Testtask"
     },
-    "dataType" : 1,
-    "name" : "testtask"
+    "name" : "testtask",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "TOSTORY",
       "codeName" : "ToStory"
     },
-    "dataType" : 1,
-    "name" : "tostory"
+    "name" : "tostory",
+    "dataType" : 1
   }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
+    "name" : "srfmstag",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "DUPLICATEBUG",
       "codeName" : "DuplicateBug"
     },
-    "dataType" : 1,
-    "name" : "duplicatebug"
+    "name" : "duplicatebug",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "id"
+    "name" : "id",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "PRODUCT",
       "codeName" : "Product"
     },
-    "dataType" : 1,
-    "name" : "product"
+    "name" : "product",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "STORY",
       "codeName" : "Story"
     },
-    "dataType" : 1,
-    "name" : "story"
+    "name" : "story",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "PROJECT",
       "codeName" : "Project"
     },
-    "dataType" : 1,
-    "name" : "project"
+    "name" : "project",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "PRI",
       "codeName" : "Pri"
     },
-    "dataType" : 9,
-    "name" : "pri"
+    "name" : "pri",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "dataType" : 25,
-    "name" : "title"
+    "name" : "title",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "PLAN",
       "codeName" : "Plan"
     },
-    "dataType" : 1,
-    "name" : "plan"
+    "name" : "plan",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "REPO",
       "codeName" : "Repo"
     },
-    "dataType" : 1,
-    "name" : "repo"
+    "name" : "repo",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ENTRY",
       "codeName" : "Entry"
     },
-    "dataType" : 1,
-    "name" : "entry"
+    "name" : "entry",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "BRANCH",
       "codeName" : "Branch"
     },
-    "dataType" : 1,
-    "name" : "branch"
+    "name" : "branch",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "CASE",
       "codeName" : "IBizCase"
     },
-    "dataType" : 1,
-    "name" : "case"
+    "name" : "case",
+    "dataType" : 1
   } ],
   "getRemovePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -165,8 +165,6 @@
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "singleSelect" : true,
-  "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -188,20 +186,22 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : false,
+  "enableColFilter" : false,
+  "singleSelect" : true,
+  "enablePagingBar" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
-  "enablePagingBar" : false,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "ID",
-    "dataItemName" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
+    "dataItemName" : "id",
+    "excelCaption" : "ID",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -213,16 +213,16 @@
     "widthUnit" : "PX",
     "name" : "id"
   }, {
-    "excelCaption" : "P",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__pri.json"
     },
-    "dataItemName" : "pri",
     "getPSAppDEField" : {
       "name" : "PRI",
       "codeName" : "Pri"
     },
+    "dataItemName" : "pri",
+    "excelCaption" : "P",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -241,12 +241,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "excelCaption" : "Bug标题",
-    "dataItemName" : "title",
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
+    "dataItemName" : "title",
+    "excelCaption" : "Bug标题",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -258,16 +258,16 @@
     "widthUnit" : "STAR",
     "name" : "title"
   }, {
-    "excelCaption" : "状态",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__status.json"
     },
-    "dataItemName" : "status",
     "getPSAppDEField" : {
       "name" : "STATUS",
       "codeName" : "Status"
     },
+    "dataItemName" : "status",
+    "excelCaption" : "状态",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

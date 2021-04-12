@@ -12,8 +12,8 @@
     "codeName" : "Mob",
     "text" : "MOB"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "SYS_UPDATE_BRANCH",
   "emptyText" : "未定义",
   "enableCache" : true,

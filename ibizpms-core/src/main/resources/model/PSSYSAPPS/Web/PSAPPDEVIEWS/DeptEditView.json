@@ -4,12 +4,12 @@
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "EditView",
   "funcViewMode" : "EDITVIEW",
+  "enableDP" : true,
   "width" : 750,
   "caption" : "部门信息",
   "title" : "部门编辑视图",
   "openMode" : "DRAWER_RIGHT",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -81,7 +81,6 @@
     "uIActionTarget" : "SINGLEKEY",
     "name" : "toolbar_tbitem10"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Dept.json"
@@ -133,9 +132,9 @@
       "tooltip" : "保存",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "保存",
-      "showCaption" : true,
       "name" : "tbitem3"
     }, {
       "getPSAppViewUIAction" : {
@@ -180,9 +179,9 @@
       "tooltip" : "保存并新建",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "保存并新建",
-      "showCaption" : true,
       "name" : "tbitem4"
     }, {
       "getPSAppViewUIAction" : {
@@ -227,9 +226,9 @@
       "tooltip" : "保存并关闭",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "保存并关闭",
-      "showCaption" : true,
       "name" : "tbitem5"
     }, {
       "getPSAppViewUIAction" : {
@@ -277,9 +276,9 @@
       "tooltip" : "删除",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "删除",
-      "showCaption" : true,
       "name" : "tbitem7"
     } ],
     "getPSAppDataEntity" : {
@@ -296,6 +295,8 @@
     "modelid" : "a4eb00b17f8652bdf677cb4ed5231e63"
   }, {
     "enableAutoSave" : false,
+    "infoFormMode" : false,
+    "showFormNavBar" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -320,8 +321,6 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
-    "infoFormMode" : false,
-    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
@@ -349,15 +348,15 @@
             "name" : "NAME",
             "codeName" : "Name"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
-          "allowEmpty" : false,
+          "dataType" : 25,
           "caption" : "部门名称",
+          "allowEmpty" : false,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 12,
             "colLG" : 12,
@@ -370,17 +369,21 @@
         }, {
           "emptyCaption" : false,
           "getPSEditor" : {
+            "enableLinkView" : false,
             "singleSelect" : true,
             "dropDownView" : false,
             "enablePickupView" : true,
-            "enableLinkView" : false,
             "enableAC" : true,
             "forceSelection" : true,
             "showTrigger" : true,
-            "handlerType" : "PickupText",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Dept.json"
+            },
+            "getPickupPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DeptPickupView.json",
+              "viewType" : "DEPICKUPVIEW"
             },
             "getPSAppDEDataSet" : {
               "modelref" : true,
@@ -390,11 +393,7 @@
               "modelref" : true,
               "id" : "Default"
             },
-            "getPickupPSAppView" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DeptPickupView.json",
-              "viewType" : "DEPICKUPVIEW"
-            },
+            "handlerType" : "PickupText",
             "valueItemName" : "parent",
             "editorType" : "PICKER",
             "editorParams" : {
@@ -409,16 +408,16 @@
             "name" : "PARENTNAME",
             "codeName" : "ParentName"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
-          "allowEmpty" : true,
+          "dataType" : 25,
           "caption" : "上级部门",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "valueItemName" : "parent",
           "labelWidth" : 130,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 12,
             "colLG" : 12,
@@ -445,16 +444,16 @@
             "name" : "MANAGER",
             "codeName" : "Manager"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 25,
           "needCodeListConfig" : true,
-          "allowEmpty" : true,
           "caption" : "负责人",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 12,
             "colLG" : 12,
@@ -469,11 +468,11 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : false,
         "codeName" : "group1",
         "caption" : "基本信息",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : false,
         "name" : "group1"
       } ],
       "getPSLayout" : {
@@ -658,6 +657,7 @@
     "name" : "form",
     "modelid" : "fd7e38b5eb93a6a589316b5158e1d42e"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",

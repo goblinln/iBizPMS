@@ -1,8 +1,8 @@
 {
+  "searchButtonStyle" : "DEFAULT",
   "enableAdvanceSearch" : false,
   "enableAutoSearch" : false,
   "enableFilterSave" : false,
-  "searchButtonStyle" : "DEFAULT",
   "controlType" : "SEARCHFORM",
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
@@ -26,27 +26,27 @@
         "name" : "STATUS",
         "codeName" : "Status"
       },
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : false,
+      "dataType" : 25,
       "needCodeListConfig" : true,
-      "allowEmpty" : true,
       "caption" : "项目状态",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 80,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "colLG" : 8,
         "width" : 320,
         "layout" : "TABLE_24COL"
       },
+      "contentWidth" : 320.0,
       "width" : 320.0,
       "codeName" : "n_status_eq",
       "detailType" : "FORMITEM",
       "detailStyle" : "DEFAULT",
-      "contentWidth" : 320.0,
       "name" : "n_status_eq"
     } ],
     "getPSLayout" : {

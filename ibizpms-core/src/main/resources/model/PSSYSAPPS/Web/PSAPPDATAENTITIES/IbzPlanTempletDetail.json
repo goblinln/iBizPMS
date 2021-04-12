@@ -1,12 +1,13 @@
 {
-  "enableUIRemove" : true,
   "enableUIActions" : 15,
+  "enableUIRemove" : true,
+  "major" : false,
   "getAllPSAppDEMethods" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Select"
     },
+    "builtinMethod" : false,
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -14,11 +15,11 @@
     },
     "codeName" : "Select"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZPLANTEMPLETDETAIL__DEACTION__CREATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -30,11 +31,11 @@
     },
     "codeName" : "Create"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZPLANTEMPLETDETAIL__DEACTION__UPDATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -46,11 +47,11 @@
     },
     "codeName" : "Update"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZPLANTEMPLETDETAIL__DEACTION__REMOVE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -62,11 +63,11 @@
     },
     "codeName" : "Remove"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZPLANTEMPLETDETAIL__DEACTION__GET"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -78,11 +79,11 @@
     },
     "codeName" : "Get"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -94,11 +95,11 @@
     },
     "codeName" : "GetDraft"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -106,11 +107,11 @@
     },
     "codeName" : "CheckKey"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -118,11 +119,11 @@
     },
     "codeName" : "Save"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -134,8 +135,8 @@
     },
     "codeName" : "FetchDefault"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -148,8 +149,8 @@
     "codeName" : "CreateTemp",
     "name" : "CreateTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -162,8 +163,8 @@
     "codeName" : "CreateTempMajor",
     "name" : "CreateTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -176,8 +177,8 @@
     "codeName" : "UpdateTemp",
     "name" : "UpdateTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -190,8 +191,8 @@
     "codeName" : "UpdateTempMajor",
     "name" : "UpdateTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -204,8 +205,8 @@
     "codeName" : "RemoveTemp",
     "name" : "RemoveTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -218,8 +219,8 @@
     "codeName" : "RemoveTempMajor",
     "name" : "RemoveTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -232,8 +233,8 @@
     "codeName" : "GetTemp",
     "name" : "GetTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -246,8 +247,8 @@
     "codeName" : "GetTempMajor",
     "name" : "GetTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -260,8 +261,8 @@
     "codeName" : "GetDraftTemp",
     "name" : "GetDraftTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -274,8 +275,8 @@
     "codeName" : "GetDraftTempMajor",
     "name" : "GetDraftTempMajor"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -395,6 +396,22 @@
     "name" : "PLANTEMPLETID"
   } ],
   "getAllPSAppDEACModes" : [ {
+    "enablePagingBar" : false,
+    "getPSDEACModeDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETDETAILID",
+        "codeName" : "IbzPlanTempletDetailId"
+      },
+      "name" : "value",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "IBZ_PLANTEMPLETDETAILNAME",
+        "codeName" : "IbzPlanTempletDetailName"
+      },
+      "name" : "text",
+      "dataType" : 25
+    } ],
     "getValuePSAppDEField" : {
       "name" : "IBZ_PLANTEMPLETDETAILID",
       "codeName" : "IbzPlanTempletDetailId"
@@ -403,22 +420,6 @@
       "name" : "IBZ_PLANTEMPLETDETAILNAME",
       "codeName" : "IbzPlanTempletDetailName"
     },
-    "getPSDEACModeDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "IBZ_PLANTEMPLETDETAILID",
-        "codeName" : "IbzPlanTempletDetailId"
-      },
-      "dataType" : 25,
-      "name" : "value"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "IBZ_PLANTEMPLETDETAILNAME",
-        "codeName" : "IbzPlanTempletDetailName"
-      },
-      "dataType" : 25,
-      "name" : "text"
-    } ],
-    "enablePagingBar" : false,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "defaultMode" : true,
@@ -432,11 +433,11 @@
     "codeName" : "IbzPlanTempletDetailName"
   } ],
   "getAllPSAppDEActions" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZPLANTEMPLETDETAIL__DEACTION__CREATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -448,11 +449,11 @@
     },
     "codeName" : "Create"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZPLANTEMPLETDETAIL__DEACTION__UPDATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -464,11 +465,11 @@
     },
     "codeName" : "Update"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZPLANTEMPLETDETAIL__DEACTION__REMOVE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -480,11 +481,11 @@
     },
     "codeName" : "Remove"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZPLANTEMPLETDETAIL__DEACTION__GET"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -496,11 +497,11 @@
     },
     "codeName" : "Get"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -512,11 +513,11 @@
     },
     "codeName" : "GetDraft"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -524,11 +525,11 @@
     },
     "codeName" : "CheckKey"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -536,8 +537,8 @@
     },
     "codeName" : "Save"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -550,8 +551,8 @@
     "codeName" : "CreateTemp",
     "name" : "CreateTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -564,8 +565,8 @@
     "codeName" : "CreateTempMajor",
     "name" : "CreateTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -578,8 +579,8 @@
     "codeName" : "UpdateTemp",
     "name" : "UpdateTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -592,8 +593,8 @@
     "codeName" : "UpdateTempMajor",
     "name" : "UpdateTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -606,8 +607,8 @@
     "codeName" : "RemoveTemp",
     "name" : "RemoveTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -620,8 +621,8 @@
     "codeName" : "RemoveTempMajor",
     "name" : "RemoveTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -634,8 +635,8 @@
     "codeName" : "GetTemp",
     "name" : "GetTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -648,8 +649,8 @@
     "codeName" : "GetTempMajor",
     "name" : "GetTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -662,8 +663,8 @@
     "codeName" : "GetDraftTemp",
     "name" : "GetDraftTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -677,11 +678,11 @@
     "name" : "GetDraftTempMajor"
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -693,11 +694,6 @@
     },
     "codeName" : "FetchDefault"
   } ],
-  "major" : false,
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTempletDetail/PSDESERVICEAPIS/IbzPlanTempletDetail.json"
-  },
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -711,6 +707,10 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTempletDetail/PSDESERVICEAPIS/IbzPlanTempletDetail.json"
+  },
   "codeName" : "IbzPlanTempletDetail",
   "logicName" : "计划模板详情",
   "dataAccCtrlMode" : 1,

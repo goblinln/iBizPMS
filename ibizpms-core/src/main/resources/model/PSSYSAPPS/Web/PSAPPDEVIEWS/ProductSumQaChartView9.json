@@ -1,15 +1,15 @@
 {
   "loadDefault" : true,
+  "enableQuickGroup" : false,
   "enableSearch" : false,
   "expandSearchForm" : false,
-  "enableQuickGroup" : false,
   "enableQuickSearch" : false,
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "QaChartView9",
+  "enableDP" : true,
   "caption" : "产品汇总表",
   "title" : "产品汇总表图表视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSAppViewNavParams" : [ {
     "rawValue" : false,
     "value" : "curyear",
@@ -44,7 +44,6 @@
     "key" : "CURYEAR",
     "name" : "CURYEAR"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
@@ -71,8 +70,6 @@
     },
     "controlType" : "CHART",
     "getPSDEChartSerieses" : [ {
-      "catalogField" : "name",
-      "seriesType" : "pie",
       "eChartsType" : "pie",
       "getPSChartCoordinateSystem" : {
         "modelref" : true,
@@ -83,6 +80,7 @@
         "modelref" : true,
         "id" : "0"
       },
+      "catalogField" : "name",
       "getPSChartSeriesEncode" : {
         "category" : "name",
         "value" : "bugcnt",
@@ -91,6 +89,7 @@
         "name" : "坐标系编码",
         "id" : "0"
       },
+      "seriesType" : "pie",
       "valueField" : "bugcnt",
       "seriesLayoutBy" : "column",
       "index" : 0,
@@ -220,6 +219,7 @@
       "EC.color" : "[\"#0068B7\",\"#1aa1e6\",\"#81cef2\",\"#FF5D5D\",'#FDC137','#00DA88','#7ECFF','#8666B8','#BD7B46']"
     }
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "ProductSumQaChartView9",
   "viewType" : "DECHARTVIEW9",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumQaChartView9.json",

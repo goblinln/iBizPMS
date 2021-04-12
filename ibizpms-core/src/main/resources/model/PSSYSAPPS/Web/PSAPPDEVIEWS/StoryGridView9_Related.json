@@ -8,11 +8,11 @@
   "xDataControlName" : "grid",
   "showCaptionBar" : true,
   "getPSDEViewCodeName" : "GridView9_Related",
+  "enableDP" : true,
   "caption" : "相关需求",
   "title" : "相关需求",
   "accUserMode" : 2,
   "subCaption" : "相关需求",
-  "enableDP" : true,
   "getPSAppViewNavParams" : [ {
     "rawValue" : false,
     "value" : "linkStories",
@@ -47,7 +47,6 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -58,89 +57,89 @@
         "name" : "PRODUCT",
         "codeName" : "Product"
       },
-      "dataType" : 1,
-      "name" : "product"
+      "name" : "product",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "id"
+      "name" : "id",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "MODULE",
         "codeName" : "Module"
       },
-      "dataType" : 1,
-      "name" : "module"
+      "name" : "module",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "TITLE",
         "codeName" : "Title"
       },
-      "dataType" : 25,
-      "name" : "title"
+      "name" : "title",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "FROMBUG",
         "codeName" : "FromBug"
       },
-      "dataType" : 1,
-      "name" : "frombug"
+      "name" : "frombug",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "BRANCH",
         "codeName" : "Branch"
       },
-      "dataType" : 1,
-      "name" : "branch"
+      "name" : "branch",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "DUPLICATESTORY",
         "codeName" : "DuplicateStory"
       },
-      "dataType" : 1,
-      "name" : "duplicatestory"
+      "name" : "duplicatestory",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "PARENT",
         "codeName" : "Parent"
       },
-      "dataType" : 1,
-      "name" : "parent"
+      "name" : "parent",
+      "dataType" : 1
     }, {
-      "dataType" : 25,
-      "name" : "srfmstag"
+      "name" : "srfmstag",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "TITLE",
         "codeName" : "Title"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "TOBUG",
         "codeName" : "ToBug"
       },
-      "dataType" : 1,
-      "name" : "tobug"
+      "name" : "tobug",
+      "dataType" : 1
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfdataaccaction"
+      "name" : "srfdataaccaction",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 1
     } ],
     "getRemovePSControlAction" : {
       "getPSAppDataEntity" : {
@@ -156,8 +155,6 @@
       "actionType" : "DEACTION",
       "name" : "remove"
     },
-    "singleSelect" : true,
-    "enableColFilter" : false,
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : false,
@@ -179,20 +176,22 @@
     } ],
     "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "controlType" : "GRID",
-    "enableRowEdit" : false,
+    "enableColFilter" : false,
+    "singleSelect" : true,
+    "enablePagingBar" : false,
     "getMinorSortPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "enablePagingBar" : false,
+    "enableRowEdit" : false,
+    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
-      "excelCaption" : "编号",
-      "dataItemName" : "id",
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
+      "dataItemName" : "id",
+      "excelCaption" : "编号",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -211,12 +210,12 @@
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
         "viewType" : "DEPORTALVIEW"
       },
-      "excelCaption" : "需求名称",
-      "dataItemName" : "title",
       "getPSAppDEField" : {
         "name" : "TITLE",
         "codeName" : "Title"
       },
+      "dataItemName" : "title",
+      "excelCaption" : "需求名称",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -338,6 +337,7 @@
     "name" : "grid",
     "modelid" : "ef264f07becfeb27e5e5f59d00ce9336"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -361,7 +361,6 @@
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -369,9 +368,10 @@
           "viewType" : "DEEDITVIEW"
         }
       },
+      "enableWizardAdd" : false,
+      "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {
@@ -418,25 +418,25 @@
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryGridView9_Related.json",
   "name" : "StoryGridView9_Related",
   "getPSAppDERSPaths" : [ [ {
-    "getParentPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "Stories",
     "actionRSMode" : 1,
     "dataRSMode" : 0,

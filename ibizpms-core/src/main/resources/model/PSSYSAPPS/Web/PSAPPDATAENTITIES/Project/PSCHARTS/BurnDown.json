@@ -38,8 +38,6 @@
   "controlType" : "CHART",
   "getPSDEChartSerieses" : [ {
     "stack" : false,
-    "catalogField" : "BEGIN",
-    "seriesType" : "area",
     "eChartsType" : "line",
     "getPSChartCoordinateSystem" : {
       "modelref" : true,
@@ -50,6 +48,7 @@
       "modelref" : true,
       "id" : "0"
     },
+    "catalogField" : "BEGIN",
     "getPSChartSeriesEncode" : {
       "getPSChartXAxis" : {
         "modelref" : true,
@@ -66,6 +65,7 @@
       "name" : "坐标系编码",
       "id" : "0"
     },
+    "seriesType" : "area",
     "valueField" : "ID",
     "seriesLayoutBy" : "column",
     "groupMode" : "DAY",

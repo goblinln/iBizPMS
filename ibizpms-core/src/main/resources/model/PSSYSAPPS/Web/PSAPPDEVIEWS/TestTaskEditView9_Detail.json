@@ -3,10 +3,10 @@
   "showCaptionBar" : false,
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "EditView9_Detail",
+  "enableDP" : true,
   "caption" : "测试版本",
   "title" : "测试版本编辑视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -33,13 +33,14 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
   },
   "getPSControls" : [ {
     "enableAutoSave" : false,
+    "infoFormMode" : false,
+    "showFormNavBar" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -64,8 +65,6 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
-    "infoFormMode" : false,
-    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
@@ -104,15 +103,15 @@
               "name" : "DESC",
               "codeName" : "Desc"
             },
-            "dataType" : 21,
+            "showCaption" : false,
             "hidden" : false,
-            "allowEmpty" : true,
+            "dataType" : 21,
             "caption" : "描述",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "NONE",
             "labelWidth" : 0,
-            "showCaption" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "layout" : "TABLE_24COL"
@@ -126,21 +125,21 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : true,
           "codeName" : "grouppanel1",
           "caption" : "描述",
           "detailType" : "GROUPPANEL",
           "detailStyle" : "DEFAULT",
-          "showCaption" : true,
           "name" : "grouppanel1"
         } ],
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : false,
         "codeName" : "group1",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : false,
         "name" : "group1"
       } ],
       "getPSLayout" : {
@@ -303,6 +302,7 @@
     "name" : "form",
     "modelid" : "89a1b280f369d055342797cdce72f10f"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSSysImage" : {
     "glyph" : "xf0ea@FontAwesome",
     "cssClass" : "fa fa-clipboard"
@@ -312,50 +312,50 @@
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView9_Detail.json",
   "name" : "TestTaskEditView9_Detail",
   "getPSAppDERSPaths" : [ [ {
-    "getParentPSAppDEField" : {
-      "name" : "PROJECT",
-      "codeName" : "Project"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+    "getParentPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "TestTasks",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
     "rSMode" : 2,
     "name" : "项目测试单"
   } ], [ {
-    "getParentPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "TestTasks",
     "actionRSMode" : 1,
     "dataRSMode" : 0,

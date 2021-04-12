@@ -10,10 +10,10 @@
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTCommon"
   },
+  "extendMode" : 0,
   "orderValue" : 99999,
   "codeName" : "PmsEeProjectAllTaskCount",
   "logicName" : "项目立项任务快速分组计数器",
-  "extendMode" : 0,
   "actionMode" : "UNKNOWN",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",

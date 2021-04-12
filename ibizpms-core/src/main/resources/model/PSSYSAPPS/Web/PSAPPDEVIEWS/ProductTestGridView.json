@@ -10,10 +10,10 @@
   "xDataControlName" : "grid",
   "showCaptionBar" : true,
   "getPSDEViewCodeName" : "TestGridView",
+  "enableDP" : true,
   "caption" : "测试",
   "title" : "所有产品",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -54,7 +54,6 @@
     },
     "name" : "toolbar_deuiaction1"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
@@ -79,68 +78,68 @@
         "name" : "LINENAME",
         "codeName" : "LineName"
       },
-      "dataType" : 25,
-      "name" : "linename"
+      "name" : "linename",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "STATUS",
         "codeName" : "Status"
       },
-      "dataType" : 25,
-      "name" : "status"
+      "name" : "status",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "dataType" : 25,
-      "name" : "name"
+      "name" : "name",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "LINE",
         "codeName" : "Line"
       },
-      "dataType" : 1,
-      "name" : "line"
+      "name" : "line",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "CODE",
         "codeName" : "Code"
       },
-      "dataType" : 25,
-      "name" : "code"
+      "name" : "code",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "TYPE",
         "codeName" : "Type"
       },
-      "dataType" : 25,
-      "name" : "type"
+      "name" : "type",
+      "dataType" : 25
     }, {
-      "dataType" : 25,
-      "name" : "srfmstag"
+      "name" : "srfmstag",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfdataaccaction"
+      "name" : "srfdataaccaction",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 1
     } ],
     "getRemovePSControlAction" : {
       "getPSAppDataEntity" : {
@@ -156,8 +155,6 @@
       "actionType" : "DEACTION",
       "name" : "remove"
     },
-    "singleSelect" : false,
-    "enableColFilter" : false,
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : false,
@@ -179,13 +176,15 @@
     } ],
     "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "controlType" : "GRID",
-    "enableRowEdit" : false,
+    "enableColFilter" : false,
+    "singleSelect" : false,
+    "enablePagingBar" : true,
     "getMinorSortPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "enablePagingBar" : true,
+    "enableRowEdit" : false,
+    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
       "linkValueItem" : "srfkey",
       "enableLinkView" : true,
@@ -194,12 +193,12 @@
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductTestTabExpView.json",
         "viewType" : "DETABEXPVIEW"
       },
-      "excelCaption" : "产品名称",
-      "dataItemName" : "name",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
+      "dataItemName" : "name",
+      "excelCaption" : "产品名称",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -211,12 +210,12 @@
       "widthUnit" : "STAR",
       "name" : "name"
     }, {
-      "excelCaption" : "产品代号",
-      "dataItemName" : "code",
       "getPSAppDEField" : {
         "name" : "CODE",
         "codeName" : "Code"
       },
+      "dataItemName" : "code",
+      "excelCaption" : "产品代号",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -228,16 +227,16 @@
       "widthUnit" : "PX",
       "name" : "code"
     }, {
-      "excelCaption" : "状态",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product__status.json"
       },
-      "dataItemName" : "status",
       "getPSAppDEField" : {
         "name" : "STATUS",
         "codeName" : "Status"
       },
+      "dataItemName" : "status",
+      "excelCaption" : "状态",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -249,16 +248,16 @@
       "widthUnit" : "PX",
       "name" : "status"
     }, {
-      "excelCaption" : "产品类型",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product__type.json"
       },
-      "dataItemName" : "type",
       "getPSAppDEField" : {
         "name" : "TYPE",
         "codeName" : "Type"
       },
+      "dataItemName" : "type",
+      "excelCaption" : "产品类型",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -270,12 +269,12 @@
       "widthUnit" : "PX",
       "name" : "type"
     }, {
-      "excelCaption" : "产品线",
-      "dataItemName" : "linename",
       "getPSAppDEField" : {
         "name" : "LINENAME",
         "codeName" : "LineName"
       },
+      "dataItemName" : "linename",
+      "excelCaption" : "产品线",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -397,16 +396,18 @@
     "name" : "grid",
     "modelid" : "8b713f986c5c5069b9a155617ab53fd5"
   }, {
-    "quickSearchMode" : 1,
+    "mobileSearchBar" : false,
     "getPSSearchBarFilters" : [ {
       "emptyCaption" : false,
       "getPSEditor" : {
         "editorType" : "NUMBER",
         "name" : "ideq"
       },
-      "dataType" : 1,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 1,
       "width" : 300.0,
+      "caption" : "编号(=)",
       "getPSDEFSearchMode" : {
         "valueOP" : "EQ",
         "codeName" : "N_ID_EQ",
@@ -418,10 +419,8 @@
         "name" : "N_ID_EQ"
       },
       "allowEmpty" : true,
-      "caption" : "编号(=)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
@@ -435,8 +434,10 @@
         "editorWidth" : 100.0,
         "name" : "nameeq"
       },
-      "dataType" : 25,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 25,
+      "caption" : "产品名称(%)",
       "getPSDEFSearchMode" : {
         "valueOP" : "LIKE",
         "codeName" : "N_NAME_LIKE",
@@ -448,11 +449,9 @@
         "name" : "N_NAME_LIKE"
       },
       "allowEmpty" : true,
-      "caption" : "产品名称(%)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
       "itemWidth" : 100.0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
@@ -471,10 +470,12 @@
         "editorWidth" : 100.0,
         "name" : "typeeq"
       },
-      "dataType" : 25,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 25,
       "width" : 300.0,
       "needCodeListConfig" : true,
+      "caption" : "产品类型(=)",
       "getPSDEFSearchMode" : {
         "valueOP" : "EQ",
         "codeName" : "N_TYPE_EQ",
@@ -486,11 +487,9 @@
         "name" : "N_TYPE_EQ"
       },
       "allowEmpty" : true,
-      "caption" : "产品类型(=)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
       "itemWidth" : 100.0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "TYPE",
         "codeName" : "Type"
@@ -509,9 +508,11 @@
         "editorWidth" : 100.0,
         "name" : "acleq"
       },
-      "dataType" : 25,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 25,
       "needCodeListConfig" : true,
+      "caption" : "访问控制(=)",
       "getPSDEFSearchMode" : {
         "valueOP" : "EQ",
         "codeName" : "N_ACL_EQ",
@@ -523,11 +524,9 @@
         "name" : "N_ACL_EQ"
       },
       "allowEmpty" : true,
-      "caption" : "访问控制(=)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
       "itemWidth" : 100.0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "ACL",
         "codeName" : "Acl"
@@ -546,9 +545,11 @@
         "editorWidth" : 100.0,
         "name" : "statuseq"
       },
-      "dataType" : 25,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 25,
       "needCodeListConfig" : true,
+      "caption" : "状态(=)",
       "getPSDEFSearchMode" : {
         "valueOP" : "EQ",
         "codeName" : "N_STATUS_EQ",
@@ -560,11 +561,9 @@
         "name" : "N_STATUS_EQ"
       },
       "allowEmpty" : true,
-      "caption" : "状态(=)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
       "itemWidth" : 100.0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "STATUS",
         "codeName" : "Status"
@@ -583,9 +582,11 @@
         "editorWidth" : 100.0,
         "name" : "statusisnotnull"
       },
-      "dataType" : 25,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 25,
       "needCodeListConfig" : true,
+      "caption" : "状态(NotNil)",
       "getPSDEFSearchMode" : {
         "valueOP" : "ISNOTNULL",
         "codeName" : "N_STATUS_ISNOTNULL",
@@ -597,11 +598,9 @@
         "name" : "N_STATUS_ISNOTNULL"
       },
       "allowEmpty" : true,
-      "caption" : "状态(NotNil)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
       "itemWidth" : 100.0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "STATUS",
         "codeName" : "Status"
@@ -611,10 +610,10 @@
     }, {
       "emptyCaption" : false,
       "getPSEditor" : {
+        "enableLinkView" : false,
         "singleSelect" : true,
         "dropDownView" : false,
         "enablePickupView" : false,
-        "enableLinkView" : false,
         "enableAC" : true,
         "forceSelection" : true,
         "showTrigger" : true,
@@ -638,8 +637,10 @@
         },
         "name" : "linenameeq"
       },
-      "dataType" : 25,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 25,
+      "caption" : "产品线(=)",
       "getPSDEFSearchMode" : {
         "valueOP" : "EQ",
         "codeName" : "N_LINENAME_EQ",
@@ -651,10 +652,8 @@
         "name" : "N_LINENAME_EQ"
       },
       "allowEmpty" : true,
-      "caption" : "产品线(=)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "LINENAME",
         "codeName" : "LineName"
@@ -664,10 +663,10 @@
     }, {
       "emptyCaption" : false,
       "getPSEditor" : {
+        "enableLinkView" : false,
         "singleSelect" : true,
         "dropDownView" : false,
         "enablePickupView" : false,
-        "enableLinkView" : false,
         "enableAC" : true,
         "forceSelection" : true,
         "showTrigger" : true,
@@ -691,8 +690,10 @@
         },
         "name" : "linenamelike"
       },
-      "dataType" : 25,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 25,
+      "caption" : "产品线(%)",
       "getPSDEFSearchMode" : {
         "valueOP" : "LIKE",
         "codeName" : "N_LINENAME_LIKE",
@@ -704,10 +705,8 @@
         "name" : "N_LINENAME_LIKE"
       },
       "allowEmpty" : true,
-      "caption" : "产品线(%)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "LINENAME",
         "codeName" : "LineName"
@@ -715,9 +714,9 @@
       "itemType" : "FILTER",
       "name" : "linenamelike"
     } ],
-    "mobileSearchBar" : false,
-    "controlType" : "SEARCHBAR",
+    "quickSearchMode" : 1,
     "enableFilter" : true,
+    "controlType" : "SEARCHBAR",
     "codeName" : "Custom",
     "enableQuickSearch" : true,
     "enableGroup" : false,
@@ -734,6 +733,7 @@
     "name" : "searchbar",
     "modelid" : "57930b7b7b9c58c8a1cbaf40b4696add"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,

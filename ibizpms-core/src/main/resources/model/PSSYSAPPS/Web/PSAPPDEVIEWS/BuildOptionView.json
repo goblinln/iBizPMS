@@ -3,11 +3,11 @@
   "showCaptionBar" : true,
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "OptionView",
+  "enableDP" : true,
   "caption" : "版本",
   "title" : "版本选项操作视图",
   "openMode" : "DRAWER_RIGHT",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -34,13 +34,14 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
   },
   "getPSControls" : [ {
     "enableAutoSave" : false,
+    "infoFormMode" : false,
+    "showFormNavBar" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -65,8 +66,6 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
-    "infoFormMode" : false,
-    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
@@ -91,16 +90,16 @@
           "name" : "RELEASETYPE",
           "codeName" : "Releasetype"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 25,
         "needCodeListConfig" : true,
-        "allowEmpty" : true,
         "caption" : "运行模式",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 12,
           "colLG" : 12,
@@ -127,16 +126,16 @@
           "name" : "BACKGROUNDID",
           "codeName" : "Backgroundid"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 25,
         "needCodeListConfig" : true,
-        "allowEmpty" : true,
         "caption" : "后台体系",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 12,
           "colLG" : 12,
@@ -163,16 +162,16 @@
           "name" : "SQLID",
           "codeName" : "Sqlid"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 25,
         "needCodeListConfig" : true,
-        "allowEmpty" : true,
         "caption" : "运行数据库",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 12,
           "colLG" : 12,
@@ -199,16 +198,16 @@
           "name" : "FRONTAPPLICATION",
           "codeName" : "Frontapplication"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 25,
         "needCodeListConfig" : true,
-        "allowEmpty" : true,
         "caption" : "系统应用",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 12,
           "colLG" : 12,
@@ -235,16 +234,16 @@
           "name" : "REBUILD",
           "codeName" : "Rebuild"
         },
-        "dataType" : 9,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 9,
         "needCodeListConfig" : true,
-        "allowEmpty" : true,
         "caption" : "重新构建",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 12,
           "colLG" : 12,
@@ -443,6 +442,7 @@
     "name" : "form",
     "modelid" : "75ab11acbae64a0a9be66f5ab6e9dca8"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSSysImage" : {
     "glyph" : "xf126@FontAwesome",
     "cssClass" : "fa fa-code-fork"
@@ -452,50 +452,50 @@
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BuildOptionView.json",
   "name" : "BuildOptionView",
   "getPSAppDERSPaths" : [ [ {
-    "getParentPSAppDEField" : {
-      "name" : "PROJECT",
-      "codeName" : "Project"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+    "getParentPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "Builds",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
     "rSMode" : 2,
     "name" : "项目版本"
   } ], [ {
-    "getParentPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "Builds",
     "actionRSMode" : 1,
     "dataRSMode" : 0,

@@ -9,10 +9,10 @@
   "xDataControlName" : "grid",
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "MainGridView",
+  "enableDP" : true,
   "caption" : "部门",
   "title" : "部门",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -75,7 +75,6 @@
     },
     "name" : "toolbar_deuiaction4"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Dept.json"
@@ -108,8 +107,8 @@
         "timeout" : 60000,
         "codeName" : "Create",
         "caption" : "新建",
-        "actionTarget" : "NONE",
         "reloadData" : true,
+        "actionTarget" : "NONE",
         "dataAccessAction" : "SRFUR__ADMIN",
         "uIActionTag" : "Create",
         "uIActionType" : "DEUIACTION",
@@ -125,9 +124,9 @@
       "tooltip" : "新建",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "新建",
-      "showCaption" : true,
       "name" : "deuiaction3_create"
     }, {
       "getPSAppViewUIAction" : {
@@ -157,9 +156,9 @@
       "tooltip" : "刷新",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "刷新",
-      "showCaption" : true,
       "name" : "deuiaction2"
     }, {
       "getPSAppViewUIAction" : {
@@ -205,9 +204,9 @@
       "tooltip" : "导出",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "导出",
-      "showCaption" : true,
       "name" : "deuiaction1"
     } ],
     "getPSAppDataEntity" : {
@@ -228,58 +227,58 @@
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "id"
+      "name" : "id",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "MANAGER",
         "codeName" : "Manager"
       },
-      "dataType" : 25,
-      "name" : "manager"
+      "name" : "manager",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "dataType" : 25,
-      "name" : "name"
+      "name" : "name",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "PARENT",
         "codeName" : "Parent"
       },
-      "dataType" : 1,
-      "name" : "parent"
+      "name" : "parent",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "PARENTNAME",
         "codeName" : "ParentName"
       },
-      "dataType" : 25,
-      "name" : "parentname"
+      "name" : "parentname",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfdataaccaction"
+      "name" : "srfdataaccaction",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 1
     } ],
     "getRemovePSControlAction" : {
       "getPSAppDataEntity" : {
@@ -295,8 +294,6 @@
       "actionType" : "DEACTION",
       "name" : "remove"
     },
-    "singleSelect" : false,
-    "enableColFilter" : false,
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : false,
@@ -318,16 +315,18 @@
     } ],
     "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "controlType" : "GRID",
-    "enableRowEdit" : false,
+    "enableColFilter" : false,
+    "singleSelect" : false,
     "enablePagingBar" : true,
+    "enableRowEdit" : false,
+    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
-      "excelCaption" : "ID",
-      "dataItemName" : "id",
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
+      "dataItemName" : "id",
+      "excelCaption" : "ID",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -339,12 +338,12 @@
       "widthUnit" : "PX",
       "name" : "id"
     }, {
-      "excelCaption" : "部门",
-      "dataItemName" : "name",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
+      "dataItemName" : "name",
+      "excelCaption" : "部门",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -356,12 +355,12 @@
       "widthUnit" : "STAR",
       "name" : "name"
     }, {
-      "excelCaption" : "上级部门",
-      "dataItemName" : "parentname",
       "getPSAppDEField" : {
         "name" : "PARENTNAME",
         "codeName" : "ParentName"
       },
+      "dataItemName" : "parentname",
+      "excelCaption" : "上级部门",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -373,16 +372,16 @@
       "widthUnit" : "PX",
       "name" : "parentname"
     }, {
-      "excelCaption" : "负责人",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
       },
-      "dataItemName" : "manager",
       "getPSAppDEField" : {
         "name" : "MANAGER",
         "codeName" : "Manager"
       },
+      "dataItemName" : "manager",
+      "excelCaption" : "负责人",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -416,8 +415,8 @@
             "timeout" : 60000,
             "codeName" : "Delete",
             "caption" : "删除",
-            "actionTarget" : "SINGLEKEY",
             "reloadData" : true,
+            "actionTarget" : "SINGLEKEY",
             "dataAccessAction" : "SRFUR__ADMIN",
             "uIActionTag" : "Delete",
             "uIActionType" : "DEUIACTION",
@@ -427,8 +426,8 @@
             "id" : "Delete@Dept"
           },
           "addSeparator" : false,
-          "detailType" : "DEUIACTION",
           "showCaption" : false,
+          "detailType" : "DEUIACTION",
           "name" : "ud401683"
         }, {
           "showIcon" : true,
@@ -452,8 +451,8 @@
             "timeout" : 60000,
             "codeName" : "Edit",
             "caption" : "编辑",
-            "actionTarget" : "SINGLEKEY",
             "reloadData" : true,
+            "actionTarget" : "SINGLEKEY",
             "dataAccessAction" : "SRFUR__ADMIN",
             "uIActionTag" : "Edit",
             "uIActionType" : "DEUIACTION",
@@ -463,8 +462,8 @@
             "id" : "Edit@Dept"
           },
           "addSeparator" : false,
-          "detailType" : "DEUIACTION",
           "showCaption" : false,
+          "detailType" : "DEUIACTION",
           "name" : "u9c4d5a2"
         } ],
         "name" : "操作列"
@@ -630,6 +629,7 @@
     "name" : "grid",
     "modelid" : "fd7e38b5eb93a6a589316b5158e1d42e"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -696,7 +696,6 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -704,9 +703,10 @@
           "viewType" : "DEEDITVIEW"
         }
       },
+      "enableWizardAdd" : false,
+      "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {

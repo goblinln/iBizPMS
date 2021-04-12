@@ -4,76 +4,76 @@
       "name" : "PROJECT",
       "codeName" : "Project"
     },
-    "dataType" : 1,
-    "name" : "project"
+    "name" : "project",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "TOTALESTIMATES",
       "codeName" : "Totalestimates"
     },
-    "dataType" : 7,
-    "name" : "totalestimates"
+    "name" : "totalestimates",
+    "dataType" : 7
   }, {
     "getPSAppDEField" : {
       "name" : "YEAR_MONTH",
       "codeName" : "YearMonth"
     },
-    "dataType" : 25,
-    "name" : "year_month"
+    "name" : "year_month",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "IBIZPRO_PROJECTMONTHLYNAME",
       "codeName" : "IbizproProjectMonthlyName"
     },
-    "dataType" : 25,
-    "name" : "ibizpro_projectmonthlyname"
+    "name" : "ibizpro_projectmonthlyname",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "PM",
       "codeName" : "PM"
     },
-    "dataType" : 25,
-    "name" : "pm"
+    "name" : "pm",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "PROJECTNAME",
       "codeName" : "ProjectName"
     },
-    "dataType" : 25,
-    "name" : "projectname"
+    "name" : "projectname",
+    "dataType" : 25
   }, {
-    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
-    "dataType" : 5,
-    "name" : "date"
+    "format" : "YYYY-MM-DD",
+    "name" : "date",
+    "dataType" : 5
   }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
+    "name" : "srfmstag",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "IBIZPRO_PROJECTMONTHLYNAME",
       "codeName" : "IbizproProjectMonthlyName"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "IBIZPRO_PROJECTMONTHLYID",
       "codeName" : "IbizproProjectMonthlyId"
     },
-    "dataType" : 25,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "IBIZPRO_PROJECTMONTHLYID",
       "codeName" : "IbizproProjectMonthlyId"
     },
-    "dataType" : 25,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 25
   } ],
   "getRemovePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -89,8 +89,6 @@
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "singleSelect" : false,
-  "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -112,13 +110,15 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : false,
+  "enableColFilter" : false,
+  "singleSelect" : false,
+  "enablePagingBar" : true,
   "getMinorSortPSAppDEField" : {
     "name" : "DATE",
     "codeName" : "Date"
   },
-  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
     "linkValueItem" : "srfkey",
     "enableLinkView" : true,
@@ -127,12 +127,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproProjectMonthlyEditView.json",
       "viewType" : "DEEDITVIEW"
     },
-    "excelCaption" : "项目月报名称",
-    "dataItemName" : "ibizpro_projectmonthlyname",
     "getPSAppDEField" : {
       "name" : "IBIZPRO_PROJECTMONTHLYNAME",
       "codeName" : "IbizproProjectMonthlyName"
     },
+    "dataItemName" : "ibizpro_projectmonthlyname",
+    "excelCaption" : "项目月报名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -144,12 +144,12 @@
     "widthUnit" : "STAR",
     "name" : "ibizpro_projectmonthlyname"
   }, {
-    "excelCaption" : "项目名称",
-    "dataItemName" : "projectname",
     "getPSAppDEField" : {
       "name" : "PROJECTNAME",
       "codeName" : "ProjectName"
     },
+    "dataItemName" : "projectname",
+    "excelCaption" : "项目名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -161,12 +161,12 @@
     "widthUnit" : "PX",
     "name" : "projectname"
   }, {
-    "excelCaption" : "年月",
-    "dataItemName" : "year_month",
     "getPSAppDEField" : {
       "name" : "YEAR_MONTH",
       "codeName" : "YearMonth"
     },
+    "dataItemName" : "year_month",
+    "excelCaption" : "年月",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -178,12 +178,12 @@
     "widthUnit" : "PX",
     "name" : "year_month"
   }, {
-    "excelCaption" : "日期",
-    "dataItemName" : "date",
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
+    "dataItemName" : "date",
+    "excelCaption" : "日期",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -196,16 +196,16 @@
     "widthUnit" : "PX",
     "name" : "date"
   }, {
-    "excelCaption" : "项目负责人",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
-    "dataItemName" : "pm",
     "getPSAppDEField" : {
       "name" : "PM",
       "codeName" : "PM"
     },
+    "dataItemName" : "pm",
+    "excelCaption" : "项目负责人",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -217,12 +217,12 @@
     "widthUnit" : "PX",
     "name" : "pm"
   }, {
-    "excelCaption" : "总工时",
-    "dataItemName" : "totalestimates",
     "getPSAppDEField" : {
       "name" : "TOTALESTIMATES",
       "codeName" : "Totalestimates"
     },
+    "dataItemName" : "totalestimates",
+    "excelCaption" : "总工时",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

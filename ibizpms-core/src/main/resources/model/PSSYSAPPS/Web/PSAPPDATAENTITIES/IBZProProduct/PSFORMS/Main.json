@@ -1,5 +1,7 @@
 {
   "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -24,8 +26,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : false,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
@@ -54,15 +54,15 @@
           "name" : "ID",
           "codeName" : "Id"
         },
-        "dataType" : 1,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : true,
+        "dataType" : 1,
         "caption" : "编号",
+        "allowEmpty" : true,
         "enableCond" : 0,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -84,15 +84,15 @@
           "name" : "NAME",
           "codeName" : "Name"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : false,
+        "dataType" : 25,
         "caption" : "产品名称",
+        "allowEmpty" : false,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -114,15 +114,15 @@
           "name" : "IBIZ_ID",
           "codeName" : "IBIZId"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : true,
+        "dataType" : 25,
         "caption" : "IBIZ标识",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -136,11 +136,11 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : true,
       "codeName" : "group1",
       "caption" : "平台产品基本信息",
       "detailType" : "GROUPPANEL",
       "detailStyle" : "DEFAULT",
-      "showCaption" : true,
       "name" : "group1"
     } ],
     "getPSLayout" : {
@@ -165,11 +165,11 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : true,
       "codeName" : "group2",
       "caption" : "操作信息",
       "detailType" : "GROUPPANEL",
       "detailStyle" : "DEFAULT",
-      "showCaption" : true,
       "name" : "group2"
     } ],
     "getPSLayout" : {

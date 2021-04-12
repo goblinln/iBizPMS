@@ -1,5 +1,7 @@
 {
   "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -24,8 +26,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : false,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
@@ -53,15 +53,15 @@
           "name" : "NAME",
           "codeName" : "Name"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : false,
+        "dataType" : 25,
         "caption" : "部门名称",
+        "allowEmpty" : false,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 12,
           "colLG" : 12,
@@ -74,17 +74,21 @@
       }, {
         "emptyCaption" : false,
         "getPSEditor" : {
+          "enableLinkView" : false,
           "singleSelect" : true,
           "dropDownView" : false,
           "enablePickupView" : true,
-          "enableLinkView" : false,
           "enableAC" : true,
           "forceSelection" : true,
           "showTrigger" : true,
-          "handlerType" : "PickupText",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Dept.json"
+          },
+          "getPickupPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DeptPickupView.json",
+            "viewType" : "DEPICKUPVIEW"
           },
           "getPSAppDEDataSet" : {
             "modelref" : true,
@@ -94,11 +98,7 @@
             "modelref" : true,
             "id" : "Default"
           },
-          "getPickupPSAppView" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DeptPickupView.json",
-            "viewType" : "DEPICKUPVIEW"
-          },
+          "handlerType" : "PickupText",
           "valueItemName" : "parent",
           "editorType" : "PICKER",
           "editorParams" : {
@@ -113,16 +113,16 @@
           "name" : "PARENTNAME",
           "codeName" : "ParentName"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : true,
+        "dataType" : 25,
         "caption" : "上级部门",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "valueItemName" : "parent",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 12,
           "colLG" : 12,
@@ -149,16 +149,16 @@
           "name" : "MANAGER",
           "codeName" : "Manager"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 25,
         "needCodeListConfig" : true,
-        "allowEmpty" : true,
         "caption" : "负责人",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 12,
           "colLG" : 12,
@@ -173,11 +173,11 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : false,
       "codeName" : "group1",
       "caption" : "基本信息",
       "detailType" : "GROUPPANEL",
       "detailStyle" : "DEFAULT",
-      "showCaption" : false,
       "name" : "group1"
     } ],
     "getPSLayout" : {

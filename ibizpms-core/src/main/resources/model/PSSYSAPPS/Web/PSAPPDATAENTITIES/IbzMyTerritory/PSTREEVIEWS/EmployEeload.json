@@ -1,8 +1,6 @@
 {
-  "treeGridMode" : 0,
-  "enableRootSelect" : false,
-  "outputIconDefault" : false,
   "enableSearchDefault" : false,
+  "treeGridMode" : 0,
   "getPSDETreeNodeRSs" : [ {
     "getParentPSDETreeNode" : {
       "modelref" : true,
@@ -52,22 +50,24 @@
     "searchMode" : 3,
     "name" : "默认根节点 - bug解决汇总表"
   } ],
+  "enableRootSelect" : false,
+  "outputIconDefault" : false,
   "controlType" : "TREEVIEW",
   "getPSDETreeNodes" : [ {
     "text" : "公司动态汇总表",
-    "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CompanyStatsCompanyDynamicStatsGridView.json",
       "viewType" : "DEGRIDVIEW"
     },
-    "rootNode" : false,
-    "hasPSDETreeNodeRSs" : false,
+    "enableQuickCreate" : false,
     "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : false,
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
-    "enableCheck" : false,
+    "rootNode" : false,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
@@ -76,8 +76,8 @@
     "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "disableSelect" : false,
     "nodeType" : "CompanyDynamicStats",
+    "disableSelect" : false,
     "enableQuickSearch" : false,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
@@ -86,19 +86,19 @@
     "id" : "CompanyDynamicStats"
   }, {
     "text" : "员工负载表",
-    "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/EmpLoyeeloadGridView.json",
       "viewType" : "DEGRIDVIEW"
     },
-    "rootNode" : false,
-    "hasPSDETreeNodeRSs" : false,
+    "enableQuickCreate" : false,
     "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : false,
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
-    "enableCheck" : false,
+    "rootNode" : false,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
@@ -107,8 +107,8 @@
     "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "disableSelect" : false,
     "nodeType" : "EmployEeload",
+    "disableSelect" : false,
     "enableQuickSearch" : false,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
@@ -117,19 +117,19 @@
     "id" : "EmployEeload"
   }, {
     "text" : "任务完成汇总表",
-    "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskStatsUserFinishTaskGridView.json",
       "viewType" : "DEGRIDVIEW"
     },
-    "rootNode" : false,
-    "hasPSDETreeNodeRSs" : false,
+    "enableQuickCreate" : false,
     "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : false,
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
-    "enableCheck" : false,
+    "rootNode" : false,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskStats.json"
@@ -138,8 +138,8 @@
     "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "disableSelect" : false,
     "nodeType" : "TaskFinish",
+    "disableSelect" : false,
     "enableQuickSearch" : false,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
@@ -148,19 +148,19 @@
     "id" : "TaskFinish"
   }, {
     "text" : "bug解决汇总表",
-    "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsBugResolvedByGridViewZuZhi.json",
       "viewType" : "DEGRIDVIEW"
     },
-    "rootNode" : false,
-    "hasPSDETreeNodeRSs" : false,
+    "enableQuickCreate" : false,
     "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : false,
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
-    "enableCheck" : false,
+    "rootNode" : false,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats.json"
@@ -169,8 +169,8 @@
     "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "disableSelect" : false,
     "nodeType" : "BugResolved",
+    "disableSelect" : false,
     "enableQuickSearch" : false,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
@@ -181,19 +181,19 @@
     "nodeValue" : "root",
     "text" : "默认根节点",
     "enableQuickCreate" : false,
-    "rootNode" : true,
-    "hasPSDETreeNodeRSs" : true,
     "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : true,
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
-    "enableCheck" : false,
+    "rootNode" : true,
     "enableNewData" : false,
     "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "disableSelect" : false,
     "nodeType" : "ROOT",
+    "disableSelect" : false,
     "enableQuickSearch" : false,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",

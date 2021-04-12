@@ -1,6 +1,7 @@
 {
-  "enableUIRemove" : true,
   "enableUIActions" : 15,
+  "enableUIRemove" : true,
+  "major" : false,
   "getAllPSAppDEMethods" : [ {
     "builtinMethod" : true,
     "methodType" : "DEACTION",
@@ -15,8 +16,8 @@
     "codeName" : "Create",
     "name" : "Create"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -29,8 +30,8 @@
     "codeName" : "CreateTemp",
     "name" : "CreateTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -56,8 +57,8 @@
     "codeName" : "Update",
     "name" : "Update"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -70,8 +71,8 @@
     "codeName" : "UpdateTemp",
     "name" : "UpdateTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -97,8 +98,8 @@
     "codeName" : "Remove",
     "name" : "Remove"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -111,8 +112,8 @@
     "codeName" : "RemoveTemp",
     "name" : "RemoveTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -138,8 +139,8 @@
     "codeName" : "Get",
     "name" : "Get"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -152,8 +153,8 @@
     "codeName" : "GetTemp",
     "name" : "GetTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -179,8 +180,8 @@
     "codeName" : "GetDraft",
     "name" : "GetDraft"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -193,8 +194,8 @@
     "codeName" : "GetDraftTemp",
     "name" : "GetDraftTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -234,8 +235,8 @@
     "codeName" : "FetchDefault",
     "name" : "DEFAULT"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -280,25 +281,25 @@
     "name" : "FILTERFETCH"
   } ],
   "getMinorPSAppDERSs" : [ {
-    "getParentPSAppDEField" : {
-      "name" : "CASE",
-      "codeName" : "IBizCase"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibCaseStepTmp.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase.json"
+    "getParentPSAppDEField" : {
+      "name" : "CASE",
+      "codeName" : "IBizCase"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "IbzLibCaseStepTmps",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
@@ -360,6 +361,22 @@
     "name" : "CASE"
   } ],
   "getAllPSAppDEACModes" : [ {
+    "enablePagingBar" : false,
+    "getPSDEACModeDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "value",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "EXPECT",
+        "codeName" : "Expect"
+      },
+      "name" : "text",
+      "dataType" : 25
+    } ],
     "getValuePSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
@@ -368,22 +385,6 @@
       "name" : "EXPECT",
       "codeName" : "Expect"
     },
-    "getPSDEACModeDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "dataType" : 25,
-      "name" : "value"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "EXPECT",
-        "codeName" : "Expect"
-      },
-      "dataType" : 25,
-      "name" : "text"
-    } ],
-    "enablePagingBar" : false,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "defaultMode" : true,
@@ -410,8 +411,8 @@
     "codeName" : "Create",
     "name" : "Create"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -424,8 +425,8 @@
     "codeName" : "CreateTemp",
     "name" : "CreateTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -451,8 +452,8 @@
     "codeName" : "Update",
     "name" : "Update"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -465,8 +466,8 @@
     "codeName" : "UpdateTemp",
     "name" : "UpdateTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -492,8 +493,8 @@
     "codeName" : "Remove",
     "name" : "Remove"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -506,8 +507,8 @@
     "codeName" : "RemoveTemp",
     "name" : "RemoveTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -533,8 +534,8 @@
     "codeName" : "Get",
     "name" : "Get"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -547,8 +548,8 @@
     "codeName" : "GetTemp",
     "name" : "GetTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -574,8 +575,8 @@
     "codeName" : "GetDraft",
     "name" : "GetDraft"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -588,8 +589,8 @@
     "codeName" : "GetDraftTemp",
     "name" : "GetDraftTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -630,11 +631,6 @@
     "codeName" : "FetchDefault",
     "name" : "DEFAULT"
   } ],
-  "major" : false,
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDESERVICEAPIS/IbzLibCaseStepTmp.json"
-  },
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -648,6 +644,10 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDESERVICEAPIS/IbzLibCaseStepTmp.json"
+  },
   "codeName" : "IbzLibCaseStepTmp",
   "logicName" : "用例库用例步骤",
   "dataAccCtrlMode" : 1,

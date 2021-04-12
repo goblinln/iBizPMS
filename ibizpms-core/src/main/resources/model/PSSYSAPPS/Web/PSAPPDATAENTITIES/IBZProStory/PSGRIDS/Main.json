@@ -4,58 +4,58 @@
       "name" : "PRODUCT",
       "codeName" : "Product"
     },
-    "dataType" : 1,
-    "name" : "product"
+    "name" : "product",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "id"
+    "name" : "id",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "MODULE",
       "codeName" : "Module"
     },
-    "dataType" : 1,
-    "name" : "module"
+    "name" : "module",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "dataType" : 25,
-    "name" : "title"
+    "name" : "title",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "IBIZ_ID",
       "codeName" : "IBIZId"
     },
-    "dataType" : 25,
-    "name" : "ibiz_id"
+    "name" : "ibiz_id",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   } ],
   "getRemovePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -71,8 +71,6 @@
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "singleSelect" : false,
-  "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -94,16 +92,18 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : false,
+  "enableColFilter" : false,
+  "singleSelect" : false,
   "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "编号",
-    "dataItemName" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
+    "dataItemName" : "id",
+    "excelCaption" : "编号",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -115,12 +115,12 @@
     "widthUnit" : "PX",
     "name" : "id"
   }, {
-    "excelCaption" : "需求名称",
-    "dataItemName" : "title",
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
+    "dataItemName" : "title",
+    "excelCaption" : "需求名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -132,12 +132,12 @@
     "widthUnit" : "PX",
     "name" : "title"
   }, {
-    "excelCaption" : "IBIZ标识",
-    "dataItemName" : "ibiz_id",
     "getPSAppDEField" : {
       "name" : "IBIZ_ID",
       "codeName" : "IBIZId"
     },
+    "dataItemName" : "ibiz_id",
+    "excelCaption" : "IBIZ标识",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

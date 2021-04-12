@@ -1,5 +1,5 @@
 {
-  "quickSearchMode" : 1,
+  "mobileSearchBar" : false,
   "getPSSearchBarFilters" : [ {
     "emptyCaption" : false,
     "getPSEditor" : {
@@ -7,8 +7,10 @@
       "editorWidth" : 100.0,
       "name" : "namelike"
     },
-    "dataType" : 25,
+    "showCaption" : false,
     "hidden" : false,
+    "dataType" : 25,
+    "caption" : "名称(%)",
     "getPSDEFSearchMode" : {
       "valueOP" : "LIKE",
       "codeName" : "N_NAME_LIKE",
@@ -20,11 +22,9 @@
       "name" : "N_NAME_LIKE"
     },
     "allowEmpty" : true,
-    "caption" : "名称(%)",
     "labelPos" : "NONE",
     "labelWidth" : 0,
     "itemWidth" : 100.0,
-    "showCaption" : false,
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
@@ -42,9 +42,11 @@
       "editorType" : "DROPDOWNLIST",
       "name" : "ownereq"
     },
-    "dataType" : 25,
+    "showCaption" : false,
     "hidden" : false,
+    "dataType" : 25,
     "needCodeListConfig" : true,
+    "caption" : "负责人(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_OWNER_EQ",
@@ -56,10 +58,8 @@
       "name" : "N_OWNER_EQ"
     },
     "allowEmpty" : true,
-    "caption" : "负责人(=)",
     "labelPos" : "NONE",
     "labelWidth" : 0,
-    "showCaption" : false,
     "getPSAppDEField" : {
       "name" : "OWNER",
       "codeName" : "Owner"
@@ -78,9 +78,11 @@
       "editorWidth" : 100.0,
       "name" : "prieq"
     },
-    "dataType" : 9,
+    "showCaption" : false,
     "hidden" : false,
+    "dataType" : 9,
     "needCodeListConfig" : true,
+    "caption" : "优先级(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_PRI_EQ",
@@ -92,11 +94,9 @@
       "name" : "N_PRI_EQ"
     },
     "allowEmpty" : true,
-    "caption" : "优先级(=)",
     "labelPos" : "NONE",
     "labelWidth" : 0,
     "itemWidth" : 100.0,
-    "showCaption" : false,
     "getPSAppDEField" : {
       "name" : "PRI",
       "codeName" : "Pri"
@@ -106,10 +106,10 @@
   }, {
     "emptyCaption" : false,
     "getPSEditor" : {
+      "enableLinkView" : false,
       "singleSelect" : true,
       "dropDownView" : false,
       "enablePickupView" : false,
-      "enableLinkView" : false,
       "enableAC" : true,
       "forceSelection" : true,
       "showTrigger" : true,
@@ -133,8 +133,10 @@
       },
       "name" : "buildnameeq"
     },
-    "dataType" : 25,
+    "showCaption" : false,
     "hidden" : false,
+    "dataType" : 25,
+    "caption" : "版本(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_BUILDNAME_EQ",
@@ -146,10 +148,8 @@
       "name" : "N_BUILDNAME_EQ"
     },
     "allowEmpty" : true,
-    "caption" : "版本(=)",
     "labelPos" : "NONE",
     "labelWidth" : 0,
-    "showCaption" : false,
     "getPSAppDEField" : {
       "name" : "BUILDNAME",
       "codeName" : "BuildName"
@@ -159,10 +159,10 @@
   }, {
     "emptyCaption" : false,
     "getPSEditor" : {
+      "enableLinkView" : false,
       "singleSelect" : true,
       "dropDownView" : false,
       "enablePickupView" : false,
-      "enableLinkView" : false,
       "enableAC" : true,
       "forceSelection" : true,
       "showTrigger" : true,
@@ -186,8 +186,10 @@
       },
       "name" : "buildnamelike"
     },
-    "dataType" : 25,
+    "showCaption" : false,
     "hidden" : false,
+    "dataType" : 25,
+    "caption" : "版本(%)",
     "getPSDEFSearchMode" : {
       "valueOP" : "LIKE",
       "codeName" : "N_BUILDNAME_LIKE",
@@ -199,10 +201,8 @@
       "name" : "N_BUILDNAME_LIKE"
     },
     "allowEmpty" : true,
-    "caption" : "版本(%)",
     "labelPos" : "NONE",
     "labelWidth" : 0,
-    "showCaption" : false,
     "getPSAppDEField" : {
       "name" : "BUILDNAME",
       "codeName" : "BuildName"
@@ -212,10 +212,10 @@
   }, {
     "emptyCaption" : false,
     "getPSEditor" : {
+      "enableLinkView" : false,
       "singleSelect" : true,
       "dropDownView" : false,
       "enablePickupView" : false,
-      "enableLinkView" : false,
       "enableAC" : true,
       "forceSelection" : true,
       "showTrigger" : true,
@@ -239,8 +239,10 @@
       },
       "name" : "productnameeq"
     },
-    "dataType" : 25,
+    "showCaption" : false,
     "hidden" : false,
+    "dataType" : 25,
+    "caption" : "产品(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_PRODUCTNAME_EQ",
@@ -252,10 +254,8 @@
       "name" : "N_PRODUCTNAME_EQ"
     },
     "allowEmpty" : true,
-    "caption" : "产品(=)",
     "labelPos" : "NONE",
     "labelWidth" : 0,
-    "showCaption" : false,
     "getPSAppDEField" : {
       "name" : "PRODUCTNAME",
       "codeName" : "ProductName"
@@ -265,10 +265,10 @@
   }, {
     "emptyCaption" : false,
     "getPSEditor" : {
+      "enableLinkView" : false,
       "singleSelect" : true,
       "dropDownView" : false,
       "enablePickupView" : false,
-      "enableLinkView" : false,
       "enableAC" : true,
       "forceSelection" : true,
       "showTrigger" : true,
@@ -292,8 +292,10 @@
       },
       "name" : "productnamelike"
     },
-    "dataType" : 25,
+    "showCaption" : false,
     "hidden" : false,
+    "dataType" : 25,
+    "caption" : "产品(%)",
     "getPSDEFSearchMode" : {
       "valueOP" : "LIKE",
       "codeName" : "N_PRODUCTNAME_LIKE",
@@ -305,10 +307,8 @@
       "name" : "N_PRODUCTNAME_LIKE"
     },
     "allowEmpty" : true,
-    "caption" : "产品(%)",
     "labelPos" : "NONE",
     "labelWidth" : 0,
-    "showCaption" : false,
     "getPSAppDEField" : {
       "name" : "PRODUCTNAME",
       "codeName" : "ProductName"
@@ -318,10 +318,10 @@
   }, {
     "emptyCaption" : false,
     "getPSEditor" : {
+      "enableLinkView" : false,
       "singleSelect" : true,
       "dropDownView" : false,
       "enablePickupView" : false,
-      "enableLinkView" : false,
       "enableAC" : true,
       "forceSelection" : true,
       "showTrigger" : true,
@@ -345,8 +345,10 @@
       },
       "name" : "projectnameeq"
     },
-    "dataType" : 25,
+    "showCaption" : false,
     "hidden" : false,
+    "dataType" : 25,
+    "caption" : "项目(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_PROJECTTNAME_EQ",
@@ -358,10 +360,8 @@
       "name" : "N_PROJECTTNAME_EQ"
     },
     "allowEmpty" : true,
-    "caption" : "项目(=)",
     "labelPos" : "NONE",
     "labelWidth" : 0,
-    "showCaption" : false,
     "getPSAppDEField" : {
       "name" : "PROJECTTNAME",
       "codeName" : "ProjecttName"
@@ -371,10 +371,10 @@
   }, {
     "emptyCaption" : false,
     "getPSEditor" : {
+      "enableLinkView" : false,
       "singleSelect" : true,
       "dropDownView" : false,
       "enablePickupView" : false,
-      "enableLinkView" : false,
       "enableAC" : true,
       "forceSelection" : true,
       "showTrigger" : true,
@@ -398,8 +398,10 @@
       },
       "name" : "projectnamelike"
     },
-    "dataType" : 25,
+    "showCaption" : false,
     "hidden" : false,
+    "dataType" : 25,
+    "caption" : "项目(%)",
     "getPSDEFSearchMode" : {
       "valueOP" : "LIKE",
       "codeName" : "N_PROJECTTNAME_LIKE",
@@ -411,10 +413,8 @@
       "name" : "N_PROJECTTNAME_LIKE"
     },
     "allowEmpty" : true,
-    "caption" : "项目(%)",
     "labelPos" : "NONE",
     "labelWidth" : 0,
-    "showCaption" : false,
     "getPSAppDEField" : {
       "name" : "PROJECTTNAME",
       "codeName" : "ProjecttName"
@@ -433,9 +433,11 @@
       "editorWidth" : 100.0,
       "name" : "statuseq"
     },
-    "dataType" : 25,
+    "showCaption" : false,
     "hidden" : false,
+    "dataType" : 25,
     "needCodeListConfig" : true,
+    "caption" : "当前状态(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_STATUS_EQ",
@@ -447,11 +449,9 @@
       "name" : "N_STATUS_EQ"
     },
     "allowEmpty" : true,
-    "caption" : "当前状态(=)",
     "labelPos" : "NONE",
     "labelWidth" : 0,
     "itemWidth" : 100.0,
-    "showCaption" : false,
     "getPSAppDEField" : {
       "name" : "STATUS",
       "codeName" : "Status"
@@ -470,9 +470,11 @@
       "editorWidth" : 100.0,
       "name" : "statusnoteq"
     },
-    "dataType" : 25,
+    "showCaption" : false,
     "hidden" : false,
+    "dataType" : 25,
     "needCodeListConfig" : true,
+    "caption" : "当前状态(<>)",
     "getPSDEFSearchMode" : {
       "valueOP" : "NOTEQ",
       "codeName" : "N_STATUS_NOTEQ",
@@ -484,11 +486,9 @@
       "name" : "N_STATUS_NOTEQ"
     },
     "allowEmpty" : true,
-    "caption" : "当前状态(<>)",
     "labelPos" : "NONE",
     "labelWidth" : 0,
     "itemWidth" : 100.0,
-    "showCaption" : false,
     "getPSAppDEField" : {
       "name" : "STATUS",
       "codeName" : "Status"
@@ -496,9 +496,9 @@
     "itemType" : "FILTER",
     "name" : "statusnoteq"
   } ],
-  "mobileSearchBar" : false,
-  "controlType" : "SEARCHBAR",
+  "quickSearchMode" : 1,
   "enableFilter" : true,
+  "controlType" : "SEARCHBAR",
   "codeName" : "Custom",
   "enableQuickSearch" : true,
   "enableGroup" : false,

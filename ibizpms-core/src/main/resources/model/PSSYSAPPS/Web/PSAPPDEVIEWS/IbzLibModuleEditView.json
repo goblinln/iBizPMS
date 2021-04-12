@@ -4,10 +4,10 @@
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "EditView",
   "funcViewMode" : "EDITVIEW",
+  "enableDP" : true,
   "caption" : "用例库模块",
   "title" : "用例库模块编辑视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -42,7 +42,6 @@
     },
     "name" : "toolbar_deuiaction1"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
@@ -92,9 +91,9 @@
       "tooltip" : "保存并关闭",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "保存并关闭",
-      "showCaption" : true,
       "name" : "deuiaction1"
     } ],
     "getPSAppDataEntity" : {
@@ -111,6 +110,8 @@
     "modelid" : "41ec2a0b8e2256c9eee112003a6acd60"
   }, {
     "enableAutoSave" : false,
+    "infoFormMode" : false,
+    "showFormNavBar" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -135,8 +136,6 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
-    "infoFormMode" : false,
-    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
@@ -155,11 +154,11 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : true,
         "codeName" : "group1",
         "caption" : "用例库模块基本信息",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : true,
         "name" : "group1"
       } ],
       "getPSLayout" : {
@@ -184,11 +183,11 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : true,
         "codeName" : "group2",
         "caption" : "操作信息",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : true,
         "name" : "group2"
       } ],
       "getPSLayout" : {
@@ -344,6 +343,7 @@
     "name" : "form",
     "modelid" : "b5a517da8347fb325f166ce299bcd7d7"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",
@@ -361,25 +361,25 @@
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzLibModuleEditView.json",
   "name" : "IbzLibModuleEditView",
   "getPSAppDERSPaths" : [ [ {
-    "getParentPSAppDEField" : {
-      "name" : "ROOT",
-      "codeName" : "Root"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+    "getParentPSAppDEField" : {
+      "name" : "ROOT",
+      "codeName" : "Root"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "IbzLibModules",
     "actionRSMode" : 1,
     "dataRSMode" : 0,

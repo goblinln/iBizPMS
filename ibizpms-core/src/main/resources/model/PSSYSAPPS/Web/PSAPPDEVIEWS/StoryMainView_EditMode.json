@@ -1,17 +1,17 @@
 {
   "showDataInfoBar" : true,
   "loadDefault" : true,
+  "enableQuickGroup" : false,
   "enableSearch" : false,
   "expandSearchForm" : true,
-  "enableQuickGroup" : false,
   "enableQuickSearch" : false,
   "showCaptionBar" : true,
   "getPSDEViewCodeName" : "MainView_EditMode",
+  "enableDP" : true,
   "caption" : "需求",
   "title" : "需求数据看板视图",
   "openMode" : "DRAWER_TOP",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -45,7 +45,6 @@
     "key" : "SRFPARENTKEY",
     "name" : "SRFPARENTKEY"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -72,8 +71,8 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
-        "controlType" : "PORTLET",
         "showTitleBar" : true,
+        "controlType" : "PORTLET",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -94,8 +93,8 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
-      "controlType" : "PORTLET",
       "showTitleBar" : true,
+      "controlType" : "PORTLET",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -131,6 +130,7 @@
     "name" : "dashboard",
     "modelid" : "7e14015af219d302f7d81ff40cdcc418"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
     "cssClass" : "fa fa-star-o"
@@ -140,25 +140,25 @@
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView_EditMode.json",
   "name" : "StoryMainView_EditMode",
   "getPSAppDERSPaths" : [ [ {
-    "getParentPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "Stories",
     "actionRSMode" : 1,
     "dataRSMode" : 0,

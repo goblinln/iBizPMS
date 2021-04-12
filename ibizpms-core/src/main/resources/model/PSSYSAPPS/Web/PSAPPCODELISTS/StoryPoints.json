@@ -48,8 +48,8 @@
     "codeName" : "Item_100",
     "text" : "100"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "StoryPoints",
   "emptyText" : "未定义",
   "enableCache" : true,

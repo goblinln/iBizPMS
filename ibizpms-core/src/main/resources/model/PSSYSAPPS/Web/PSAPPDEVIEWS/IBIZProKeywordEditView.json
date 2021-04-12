@@ -4,10 +4,10 @@
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "EditView",
   "funcViewMode" : "EDITVIEW",
+  "enableDP" : true,
   "caption" : "关键字",
   "title" : "关键字编辑视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -79,7 +79,6 @@
     "uIActionTarget" : "SINGLEKEY",
     "name" : "toolbar_tbitem10"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBIZProKeyword.json"
@@ -131,9 +130,9 @@
       "tooltip" : "保存",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "保存",
-      "showCaption" : true,
       "name" : "tbitem3"
     }, {
       "getPSAppViewUIAction" : {
@@ -178,9 +177,9 @@
       "tooltip" : "保存并新建",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "保存并新建",
-      "showCaption" : true,
       "name" : "tbitem4"
     }, {
       "getPSAppViewUIAction" : {
@@ -225,9 +224,9 @@
       "tooltip" : "保存并关闭",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "保存并关闭",
-      "showCaption" : true,
       "name" : "tbitem5"
     }, {
       "getPSAppViewUIAction" : {
@@ -275,9 +274,9 @@
       "tooltip" : "删除",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "删除",
-      "showCaption" : true,
       "name" : "tbitem7"
     } ],
     "getPSAppDataEntity" : {
@@ -294,6 +293,8 @@
     "modelid" : "a4eb00b17f8652bdf677cb4ed5231e63"
   }, {
     "enableAutoSave" : false,
+    "infoFormMode" : false,
+    "showFormNavBar" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -318,8 +319,6 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
-    "infoFormMode" : false,
-    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
@@ -338,11 +337,11 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : true,
         "codeName" : "group1",
         "caption" : "关键字基本信息",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : true,
         "name" : "group1"
       } ],
       "getPSLayout" : {
@@ -367,11 +366,11 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : true,
         "codeName" : "group2",
         "caption" : "操作信息",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : true,
         "name" : "group2"
       } ],
       "getPSLayout" : {
@@ -519,6 +518,7 @@
     "name" : "form",
     "modelid" : "0dc6b18fcd5450b32724c862d940f880"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",

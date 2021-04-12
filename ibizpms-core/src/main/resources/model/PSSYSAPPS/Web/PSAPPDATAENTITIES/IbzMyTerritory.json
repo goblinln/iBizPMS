@@ -1,12 +1,13 @@
 {
-  "enableUIRemove" : true,
   "enableUIActions" : 15,
+  "enableUIRemove" : true,
+  "major" : true,
   "getAllPSAppDEMethods" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Select"
     },
+    "builtinMethod" : false,
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -14,11 +15,11 @@
     },
     "codeName" : "Select"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZMYTERRITORY__DEACTION__CREATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -30,11 +31,11 @@
     },
     "codeName" : "Create"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZMYTERRITORY__DEACTION__UPDATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -46,11 +47,11 @@
     },
     "codeName" : "Update"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZMYTERRITORY__DEACTION__REMOVE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -62,11 +63,11 @@
     },
     "codeName" : "Remove"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZMYTERRITORY__DEACTION__GET"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -78,11 +79,11 @@
     },
     "codeName" : "Get"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -94,11 +95,11 @@
     },
     "codeName" : "GetDraft"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -106,11 +107,11 @@
     },
     "codeName" : "CheckKey"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "MobMenuCount"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -118,11 +119,11 @@
     },
     "codeName" : "MobMenuCount"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "MyFavoriteCount"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -130,11 +131,11 @@
     },
     "codeName" : "MyFavoriteCount"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "MyTerritoryCount"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -142,11 +143,11 @@
     },
     "codeName" : "MyTerritoryCount"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -154,11 +155,11 @@
     },
     "codeName" : "Save"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -170,11 +171,11 @@
     },
     "codeName" : "FetchDefault"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyWork"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -186,11 +187,11 @@
     },
     "codeName" : "FetchMyWork"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyWorkMob"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -202,11 +203,11 @@
     },
     "codeName" : "FetchMyWorkMob"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyWorkPm"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -218,11 +219,11 @@
     },
     "codeName" : "FetchMyWorkPm"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchPersonInfo"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -234,11 +235,11 @@
     },
     "codeName" : "FetchPersonInfo"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchWelcome"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -588,6 +589,22 @@
     "name" : "PROJECTTEAMJZCNT"
   } ],
   "getAllPSAppDEACModes" : [ {
+    "enablePagingBar" : false,
+    "getPSDEACModeDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "value",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "REALNAME",
+        "codeName" : "Realname"
+      },
+      "name" : "text",
+      "dataType" : 25
+    } ],
     "getValuePSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
@@ -596,22 +613,6 @@
       "name" : "REALNAME",
       "codeName" : "Realname"
     },
-    "getPSDEACModeDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "dataType" : 25,
-      "name" : "value"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "REALNAME",
-        "codeName" : "Realname"
-      },
-      "dataType" : 25,
-      "name" : "text"
-    } ],
-    "enablePagingBar" : false,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "defaultMode" : true,
@@ -625,11 +626,11 @@
     "codeName" : "Realname"
   } ],
   "getAllPSAppDEActions" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZMYTERRITORY__DEACTION__CREATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -641,11 +642,11 @@
     },
     "codeName" : "Create"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZMYTERRITORY__DEACTION__UPDATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -657,11 +658,11 @@
     },
     "codeName" : "Update"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZMYTERRITORY__DEACTION__REMOVE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -673,11 +674,11 @@
     },
     "codeName" : "Remove"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "IBZMYTERRITORY__DEACTION__GET"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -689,11 +690,11 @@
     },
     "codeName" : "Get"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -705,11 +706,11 @@
     },
     "codeName" : "GetDraft"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -717,11 +718,11 @@
     },
     "codeName" : "CheckKey"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "MobMenuCount"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -729,11 +730,11 @@
     },
     "codeName" : "MobMenuCount"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "MyFavoriteCount"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -741,11 +742,11 @@
     },
     "codeName" : "MyFavoriteCount"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "MyTerritoryCount"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -753,11 +754,11 @@
     },
     "codeName" : "MyTerritoryCount"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -766,11 +767,11 @@
     "codeName" : "Save"
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -782,11 +783,11 @@
     },
     "codeName" : "FetchDefault"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyWork"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -798,11 +799,11 @@
     },
     "codeName" : "FetchMyWork"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyWorkMob"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -814,11 +815,11 @@
     },
     "codeName" : "FetchMyWorkMob"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyWorkPm"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -830,11 +831,11 @@
     },
     "codeName" : "FetchMyWorkPm"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchPersonInfo"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -846,11 +847,11 @@
     },
     "codeName" : "FetchPersonInfo"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchWelcome"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -862,11 +863,6 @@
     },
     "codeName" : "FetchWelcome"
   } ],
-  "major" : true,
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDESERVICEAPIS/IbzMyTerritory.json"
-  },
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -880,6 +876,10 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDESERVICEAPIS/IbzMyTerritory.json"
+  },
   "codeName" : "IbzMyTerritory",
   "logicName" : "我的地盘",
   "dataAccCtrlMode" : 1,

@@ -4,12 +4,12 @@
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "EditView",
   "funcViewMode" : "EDITVIEW",
+  "enableDP" : true,
   "width" : 800,
   "caption" : "备注",
   "title" : "备注",
   "openMode" : "POPUPMODAL",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -36,13 +36,14 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
   },
   "getPSControls" : [ {
     "enableAutoSave" : false,
+    "infoFormMode" : false,
+    "showFormNavBar" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -67,8 +68,6 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
-    "infoFormMode" : false,
-    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
@@ -99,14 +98,14 @@
             "name" : "LASTCOMMENT",
             "codeName" : "Lastcomment"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 25,
           "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 1,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -161,6 +160,7 @@
               "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE",
               "id" : "工具栏按钮文本[EDITVIEW.CLOSE]"
             },
+            "showCaption" : true,
             "getPSSysImage" : {
               "glyph" : "xf08b@FontAwesome",
               "cssClass" : "fa fa-sign-out"
@@ -169,7 +169,6 @@
             "caption" : "关闭",
             "detailType" : "BUTTON",
             "detailStyle" : "DEFAULT",
-            "showCaption" : true,
             "name" : "button1"
           }, {
             "getPSAppViewUIAction" : {
@@ -210,6 +209,7 @@
               "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
               "id" : "工具栏按钮文本[EDITVIEW.SAVEANDCLOSE]"
             },
+            "showCaption" : true,
             "getPSSysImage" : {
               "glyph" : "xf0c7@FontAwesome",
               "cssClass" : "fa fa-save"
@@ -218,24 +218,24 @@
             "caption" : "保存",
             "detailType" : "BUTTON",
             "detailStyle" : "DEFAULT",
-            "showCaption" : true,
             "name" : "button2"
           } ],
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : false,
           "codeName" : "grouppanel1",
           "caption" : "分组面板",
           "detailType" : "GROUPPANEL",
           "detailStyle" : "DEFAULT",
-          "showCaption" : false,
           "name" : "grouppanel1"
         } ],
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : false,
         "getPSSysCss" : {
           "cssName" : "form-padding"
         },
@@ -243,7 +243,6 @@
         "caption" : "分组面板",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : false,
         "name" : "grouppanel2"
       }, {
         "emptyCaption" : false,
@@ -257,15 +256,15 @@
           "name" : "OBJECTID",
           "codeName" : "ObjectID"
         },
-        "dataType" : 1,
+        "showCaption" : true,
         "hidden" : true,
-        "allowEmpty" : true,
+        "dataType" : 1,
         "caption" : "对象ID",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -286,15 +285,15 @@
           "name" : "NOTICEUSERS",
           "codeName" : "Noticeusers"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : true,
-        "allowEmpty" : true,
+        "dataType" : 25,
         "caption" : "消息通知用户",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -315,15 +314,15 @@
           "name" : "OBJECTTYPE",
           "codeName" : "ObjectType"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : true,
-        "allowEmpty" : true,
+        "dataType" : 25,
         "caption" : "对象类型",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -552,6 +551,7 @@
     "name" : "form",
     "modelid" : "4b8e0e368790daafceba95dce55776ce"
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "ActionEditView",
   "viewType" : "DEEDITVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionEditView.json",

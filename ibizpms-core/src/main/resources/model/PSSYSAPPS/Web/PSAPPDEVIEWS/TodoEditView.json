@@ -4,11 +4,11 @@
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "EditView",
   "funcViewMode" : "EDITVIEW",
+  "enableDP" : true,
   "caption" : "待办",
   "title" : "编辑待办",
   "openMode" : "DRAWER_RIGHT",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSAppViewNavParams" : [ {
     "rawValue" : false,
     "value" : "srfloginname",
@@ -55,7 +55,6 @@
     "key" : "SRFLOGINNAME",
     "name" : "SRFLOGINNAME"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
@@ -105,9 +104,9 @@
       "tooltip" : "保存并关闭",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "保存并关闭",
-      "showCaption" : true,
       "name" : "deuiaction1"
     } ],
     "getPSAppDataEntity" : {
@@ -124,6 +123,8 @@
     "modelid" : "41ec2a0b8e2256c9eee112003a6acd60"
   }, {
     "enableAutoSave" : false,
+    "infoFormMode" : false,
+    "showFormNavBar" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -148,8 +149,6 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
-    "infoFormMode" : false,
-    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
@@ -181,16 +180,16 @@
             "name" : "DATE",
             "codeName" : "Date"
           },
-          "dataType" : 5,
+          "showCaption" : true,
           "hidden" : false,
-          "allowEmpty" : true,
+          "dataType" : 5,
           "caption" : "日期",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
           "itemWidth" : 230.0,
-          "showCaption" : true,
           "getPSDEFDGroupLogics" : [ {
             "relatedDetailNames" : [ "date_disable" ],
             "logicCat" : "ITEMENABLE",
@@ -227,15 +226,15 @@
             "name" : "CYCLE",
             "codeName" : "Cycle"
           },
-          "dataType" : 9,
+          "showCaption" : true,
           "hidden" : true,
-          "allowEmpty" : true,
+          "dataType" : 9,
           "caption" : "周期",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -267,16 +266,16 @@
               "name" : "CONFIG_TYPE",
               "codeName" : "Config_type"
             },
-            "dataType" : 25,
+            "showCaption" : true,
             "hidden" : false,
+            "dataType" : 25,
             "needCodeListConfig" : true,
-            "allowEmpty" : true,
             "caption" : "周期类型",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "layout" : "TABLE_24COL"
@@ -300,20 +299,20 @@
               },
               "inputTipClosable" : false,
               "noPrivDisplayMode" : 1,
-              "enableUnitName" : true,
               "getPSAppDEField" : {
                 "name" : "CONFIG_DAY",
                 "codeName" : "Config_day"
               },
-              "dataType" : 9,
+              "enableUnitName" : true,
+              "showCaption" : true,
               "hidden" : false,
+              "dataType" : 9,
               "allowEmpty" : true,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
               "labelWidth" : 130,
               "unitName" : "天",
-              "showCaption" : true,
               "getPSDEFDGroupLogics" : [ {
                 "relatedDetailNames" : [ "config_type" ],
                 "logicCat" : "PANELVISIBLE",
@@ -354,15 +353,15 @@
                 "name" : "CONFIG_WEEK",
                 "codeName" : "Config_week"
               },
-              "dataType" : 25,
+              "showCaption" : true,
               "hidden" : false,
+              "dataType" : 25,
               "needCodeListConfig" : true,
               "allowEmpty" : true,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
               "labelWidth" : 130,
-              "showCaption" : true,
               "getPSDEFDGroupLogics" : [ {
                 "relatedDetailNames" : [ "config_type" ],
                 "logicCat" : "PANELVISIBLE",
@@ -402,15 +401,15 @@
                 "name" : "CONFIG_MONTH",
                 "codeName" : "Config_month"
               },
-              "dataType" : 25,
+              "showCaption" : true,
               "hidden" : false,
+              "dataType" : 25,
               "needCodeListConfig" : true,
               "allowEmpty" : true,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
               "labelWidth" : 130,
-              "showCaption" : true,
               "getPSDEFDGroupLogics" : [ {
                 "relatedDetailNames" : [ "config_type" ],
                 "logicCat" : "PANELVISIBLE",
@@ -446,15 +445,15 @@
                 "name" : "IDVALUE",
                 "codeName" : "Idvalue"
               },
-              "dataType" : 1,
+              "showCaption" : true,
               "hidden" : true,
-              "allowEmpty" : true,
+              "dataType" : 1,
               "caption" : "关联编号",
+              "allowEmpty" : true,
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
               "labelWidth" : 130,
-              "showCaption" : true,
               "getPSLayoutPos" : {
                 "colMD" : 24,
                 "layout" : "TABLE_24COL"
@@ -468,11 +467,11 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "showCaption" : false,
             "codeName" : "grouppanel3",
             "caption" : "分组面板",
             "detailType" : "GROUPPANEL",
             "detailStyle" : "DEFAULT",
-            "showCaption" : false,
             "name" : "grouppanel3"
           }, {
             "emptyCaption" : false,
@@ -486,15 +485,15 @@
               "name" : "CONFIG_BEFOREDAYS",
               "codeName" : "Config_beforedays"
             },
-            "dataType" : 9,
+            "showCaption" : true,
             "hidden" : false,
-            "allowEmpty" : true,
+            "dataType" : 9,
             "caption" : "提前",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 8,
@@ -513,15 +512,15 @@
             },
             "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
-            "dataType" : 25,
+            "showCaption" : true,
             "hidden" : false,
-            "allowEmpty" : true,
+            "dataType" : 25,
             "caption" : "天生成待办",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 90,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 8,
@@ -548,16 +547,16 @@
               "name" : "CONFIG_END",
               "codeName" : "Config_end"
             },
-            "dataType" : 5,
+            "showCaption" : true,
             "hidden" : false,
-            "allowEmpty" : true,
+            "dataType" : 5,
             "caption" : "过期时间",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
             "itemWidth" : 230.0,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 16,
@@ -587,11 +586,11 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : true,
           "codeName" : "grouppanel2",
           "caption" : "周期设置",
           "detailType" : "GROUPPANEL",
           "detailStyle" : "DEFAULT",
-          "showCaption" : true,
           "name" : "grouppanel2"
         }, {
           "emptyCaption" : false,
@@ -610,16 +609,16 @@
             "name" : "TYPE",
             "codeName" : "Type"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 25,
           "needCodeListConfig" : true,
-          "allowEmpty" : true,
           "caption" : "类型",
+          "allowEmpty" : true,
           "enableCond" : 0,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
-          "showCaption" : true,
           "getPSDEFDGroupLogics" : [ {
             "relatedDetailNames" : [ "cycle_enable" ],
             "logicCat" : "PANELVISIBLE",
@@ -656,16 +655,16 @@
             "name" : "STORY",
             "codeName" : "Story"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : true,
-          "allowEmpty" : true,
+          "dataType" : 25,
           "caption" : "待办名称",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "valueItemName" : "idvalue",
           "labelWidth" : 130,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -686,16 +685,16 @@
             "name" : "BUG",
             "codeName" : "Bug"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : true,
-          "allowEmpty" : true,
+          "dataType" : 25,
           "caption" : "待办名称",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "valueItemName" : "idvalue",
           "labelWidth" : 130,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -716,16 +715,16 @@
             "name" : "TASK",
             "codeName" : "Task"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : true,
-          "allowEmpty" : true,
+          "dataType" : 25,
           "caption" : "待办名称",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "valueItemName" : "idvalue",
           "labelWidth" : 130,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -751,16 +750,16 @@
             "name" : "PRI",
             "codeName" : "Pri"
           },
-          "dataType" : 9,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 9,
           "needCodeListConfig" : true,
-          "allowEmpty" : true,
           "caption" : "优先级",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 16,
@@ -783,15 +782,15 @@
             "name" : "NAME",
             "codeName" : "Name"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
-          "allowEmpty" : true,
+          "dataType" : 25,
           "caption" : "待办名称",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
-          "showCaption" : true,
           "getPSDEFDGroupLogics" : [ {
             "relatedDetailNames" : [ "type" ],
             "logicCat" : "ITEMENABLE",
@@ -843,15 +842,15 @@
             "name" : "DESC",
             "codeName" : "Desc"
           },
-          "dataType" : 21,
+          "showCaption" : true,
           "hidden" : false,
-          "allowEmpty" : true,
+          "dataType" : 21,
           "caption" : "描述",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -877,16 +876,16 @@
             "name" : "STATUS",
             "codeName" : "Status"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 25,
           "needCodeListConfig" : true,
-          "allowEmpty" : true,
           "caption" : "状态",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 16,
@@ -920,16 +919,16 @@
               "name" : "BEGIN",
               "codeName" : "Begin"
             },
-            "dataType" : 9,
+            "showCaption" : true,
             "hidden" : false,
+            "dataType" : 9,
             "needCodeListConfig" : true,
-            "allowEmpty" : true,
             "caption" : "起止时间",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
-            "showCaption" : true,
             "getPSDEFDGroupLogics" : [ {
               "relatedDetailNames" : [ "formitem10" ],
               "logicCat" : "ITEMENABLE",
@@ -971,16 +970,16 @@
               "name" : "END",
               "codeName" : "End"
             },
-            "dataType" : 9,
+            "showCaption" : false,
             "hidden" : false,
+            "dataType" : 9,
             "needCodeListConfig" : true,
-            "allowEmpty" : true,
             "caption" : "~",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "NONE",
             "labelWidth" : 0,
-            "showCaption" : false,
             "getPSDEFDGroupLogics" : [ {
               "relatedDetailNames" : [ "formitem10" ],
               "logicCat" : "ITEMENABLE",
@@ -1017,15 +1016,15 @@
             },
             "inputTipClosable" : false,
             "noPrivDisplayMode" : 1,
-            "dataType" : 25,
+            "showCaption" : false,
             "hidden" : false,
+            "dataType" : 25,
             "needCodeListConfig" : true,
             "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "NONE",
             "labelWidth" : 0,
-            "showCaption" : false,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 8,
@@ -1040,11 +1039,11 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : false,
           "codeName" : "grouppanel1",
           "caption" : "分组面板",
           "detailType" : "GROUPPANEL",
           "detailStyle" : "DEFAULT",
-          "showCaption" : false,
           "name" : "grouppanel1"
         }, {
           "emptyCaption" : false,
@@ -1062,16 +1061,16 @@
             "name" : "PRIVATE",
             "codeName" : "IBizPrivate"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 25,
           "needCodeListConfig" : true,
-          "allowEmpty" : true,
           "caption" : "私人事务",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -1085,11 +1084,11 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : true,
         "codeName" : "group1",
         "caption" : "编辑待办",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : true,
         "name" : "group1"
       } ],
       "getPSLayout" : {
@@ -1396,6 +1395,7 @@
     "name" : "form",
     "modelid" : "f969134517774d9aa7d9252a5cf8550b"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",

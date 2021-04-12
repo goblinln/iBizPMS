@@ -4,11 +4,11 @@
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "EditView",
   "funcViewMode" : "EDITVIEW",
+  "enableDP" : true,
   "caption" : "用户联系方式",
   "title" : "usercontact编辑视图",
   "openMode" : "DRAWER_RIGHT",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -51,7 +51,6 @@
     "uIActionTarget" : "SINGLEKEY",
     "name" : "toolbar_deuiaction2"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
@@ -103,9 +102,9 @@
       "tooltip" : "保存",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "保存",
-      "showCaption" : true,
       "name" : "deuiaction1"
     }, {
       "getPSAppViewUIAction" : {
@@ -153,9 +152,9 @@
       "tooltip" : "删除",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "删除",
-      "showCaption" : true,
       "name" : "deuiaction2"
     } ],
     "getPSAppDataEntity" : {
@@ -172,6 +171,8 @@
     "modelid" : "7d038957bdbf1d4015a004ec9cc3c876"
   }, {
     "enableAutoSave" : false,
+    "infoFormMode" : false,
+    "showFormNavBar" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -196,8 +197,6 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
-    "infoFormMode" : false,
-    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
@@ -225,15 +224,15 @@
             "name" : "LISTNAME",
             "codeName" : "ListName"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
-          "allowEmpty" : false,
+          "dataType" : 25,
           "caption" : "列表名称",
+          "allowEmpty" : false,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -259,16 +258,16 @@
             "name" : "USERLIST",
             "codeName" : "UserList"
           },
-          "dataType" : 21,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 21,
           "needCodeListConfig" : true,
-          "allowEmpty" : true,
           "caption" : "选择用户",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -282,11 +281,11 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : false,
         "codeName" : "group1",
         "caption" : "usercontact基本信息",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : false,
         "name" : "group1"
       } ],
       "getPSLayout" : {
@@ -456,6 +455,7 @@
     "name" : "form",
     "modelid" : "8ce039b21566185c06243f99ff11cc42"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",

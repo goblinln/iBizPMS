@@ -7,10 +7,10 @@
   "showDataInfoBar" : true,
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "MainTabExpView",
+  "enableDP" : true,
   "caption" : "组织权限",
   "title" : "组织权限",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -29,12 +29,12 @@
     "engineCat" : "VIEW",
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
   },
   "getPSControls" : [ {
+    "tabLayout" : "TOP",
     "getPSTabExpPages" : [ {
       "name" : "tabviewpanel"
     }, {
@@ -46,7 +46,6 @@
     }, {
       "name" : "tabviewpanel4"
     } ],
-    "tabLayout" : "TOP",
     "controlType" : "TABEXPPANEL",
     "getPSControls" : [ {
       "controlType" : "TABVIEWPANEL",
@@ -67,10 +66,10 @@
         "enableQuickSearch" : true,
         "showCaptionBar" : false,
         "getPSDEViewCodeName" : "DeptUserTreeExpView",
+        "enableDP" : true,
         "caption" : "公司",
         "title" : "组织部门人员树导航视图",
         "accUserMode" : 2,
-        "enableDP" : true,
         "getPSViewLayoutPanel" : {
           "useDefaultLayout" : true,
           "layoutPanel" : true,
@@ -93,7 +92,6 @@
           } ],
           "name" : "engine"
         } ],
-        "viewStyle" : "STYLE2",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
@@ -103,11 +101,10 @@
           "xDataControlName" : "treeexpbar_tree",
           "enableSearch" : false,
           "enableCounter" : true,
+          "showTitleBar" : false,
           "getPSControls" : [ {
-            "treeGridMode" : 0,
-            "enableRootSelect" : false,
-            "outputIconDefault" : false,
             "enableSearchDefault" : false,
+            "treeGridMode" : 0,
             "getPSDETreeNodeRSs" : [ {
               "getParentPSDETreeNode" : {
                 "modelref" : true,
@@ -122,11 +119,11 @@
                   "name" : "PARENT",
                   "codeName" : "Parent"
                 },
-                "masterOrder" : -1,
                 "getPSPickupTextDEField" : {
                   "name" : "PARENTNAME",
                   "codeName" : "ParentName"
                 },
+                "masterOrder" : -1,
                 "removeActionType" : -1,
                 "pickupDEFName" : "PARENT",
                 "masterRS" : 0,
@@ -136,21 +133,21 @@
                   "path" : "PSMODULES/zentao/PSDATAENTITIES/Dept.json"
                 },
                 "orderValue" : 100,
+                "codeName" : "IBizParent",
+                "dERType" : "DER1N",
                 "getMinorPSDataEntity" : {
                   "modelref" : true,
                   "path" : "PSMODULES/zentao/PSDATAENTITIES/Dept.json"
                 },
-                "codeName" : "IBizParent",
-                "dERType" : "DER1N",
                 "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Dept/PSDERS/DER1N__ZT_DEPT__ZT_DEPT__PARENT.json",
                 "name" : "DER1N__ZT_DEPT__ZT_DEPT__PARENT"
               },
               "parentValueLevel" : 1,
+              "parentFilter" : "parent",
               "getParentPSAppDEField" : {
                 "name" : "PARENT",
                 "codeName" : "Parent"
               },
-              "parentFilter" : "parent",
               "searchMode" : 3,
               "name" : "根部门 - 子部门"
             }, {
@@ -191,11 +188,11 @@
                   "name" : "PARENT",
                   "codeName" : "Parent"
                 },
-                "masterOrder" : -1,
                 "getPSPickupTextDEField" : {
                   "name" : "PARENTNAME",
                   "codeName" : "ParentName"
                 },
+                "masterOrder" : -1,
                 "removeActionType" : -1,
                 "pickupDEFName" : "PARENT",
                 "masterRS" : 0,
@@ -205,42 +202,44 @@
                   "path" : "PSMODULES/zentao/PSDATAENTITIES/Dept.json"
                 },
                 "orderValue" : 100,
+                "codeName" : "IBizParent",
+                "dERType" : "DER1N",
                 "getMinorPSDataEntity" : {
                   "modelref" : true,
                   "path" : "PSMODULES/zentao/PSDATAENTITIES/Dept.json"
                 },
-                "codeName" : "IBizParent",
-                "dERType" : "DER1N",
                 "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Dept/PSDERS/DER1N__ZT_DEPT__ZT_DEPT__PARENT.json",
                 "name" : "DER1N__ZT_DEPT__ZT_DEPT__PARENT"
               },
               "parentValueLevel" : 1,
+              "parentFilter" : "parent",
               "getParentPSAppDEField" : {
                 "name" : "PARENT",
                 "codeName" : "Parent"
               },
-              "parentFilter" : "parent",
               "searchMode" : 3,
               "name" : "子部门 - 子部门"
             } ],
+            "enableRootSelect" : false,
+            "outputIconDefault" : false,
             "controlType" : "TREEVIEW",
             "getPSDETreeNodes" : [ {
               "nodeValue" : "root",
               "text" : "默认根节点",
               "enableQuickCreate" : false,
-              "rootNode" : true,
-              "hasPSDETreeNodeRSs" : true,
               "appendPNodeId" : false,
+              "enableCheck" : false,
+              "hasPSDETreeNodeRSs" : true,
               "selected" : false,
               "selectFirstOnly" : false,
               "expandFirstOnly" : false,
-              "enableCheck" : false,
+              "rootNode" : true,
               "enableNewData" : false,
               "enableEditData" : false,
               "enableRemoveData" : false,
               "enableViewData" : false,
-              "disableSelect" : false,
               "nodeType" : "ROOT",
+              "disableSelect" : false,
               "enableQuickSearch" : false,
               "counterMode" : 0,
               "treeNodeType" : "STATIC",
@@ -252,44 +251,44 @@
                 "name" : "ID",
                 "codeName" : "Id"
               },
-              "appendCaption" : false,
               "getLeafFlagPSAppDEField" : {
                 "name" : "ISLEAF",
                 "codeName" : "IsLeaf"
               },
+              "appendCaption" : false,
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Dept.json"
-              },
-              "getPSAppDEDataSet" : {
-                "modelref" : true,
-                "id" : "FetchRoot"
               },
               "getTextPSAppDEField" : {
                 "name" : "NAME",
                 "codeName" : "Name"
               },
+              "getPSAppDEDataSet" : {
+                "modelref" : true,
+                "id" : "FetchRoot"
+              },
               "maxSize" : -1,
-              "enableQuickCreate" : false,
               "navFilter" : "n_dept_eq",
               "getNavPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserMainGridView.json",
                 "viewType" : "DEGRIDVIEW"
               },
-              "rootNode" : false,
-              "hasPSDETreeNodeRSs" : true,
+              "enableQuickCreate" : false,
               "appendPNodeId" : false,
+              "enableCheck" : false,
+              "hasPSDETreeNodeRSs" : true,
               "selected" : false,
               "selectFirstOnly" : false,
               "expandFirstOnly" : false,
-              "enableCheck" : false,
+              "rootNode" : false,
               "enableNewData" : false,
               "enableEditData" : false,
               "enableRemoveData" : false,
               "enableViewData" : false,
-              "disableSelect" : false,
               "nodeType" : "RootDept",
+              "disableSelect" : false,
               "enableQuickSearch" : false,
               "counterMode" : 0,
               "treeNodeType" : "DE",
@@ -298,19 +297,19 @@
               "id" : "RootDept"
             }, {
               "text" : "所有部门",
-              "enableQuickCreate" : false,
               "getNavPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserMainGridView.json",
                 "viewType" : "DEGRIDVIEW"
               },
-              "rootNode" : false,
-              "hasPSDETreeNodeRSs" : true,
+              "enableQuickCreate" : false,
               "appendPNodeId" : false,
+              "enableCheck" : false,
+              "hasPSDETreeNodeRSs" : true,
               "selected" : false,
               "selectFirstOnly" : false,
               "expandFirstOnly" : false,
-              "enableCheck" : false,
+              "rootNode" : false,
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
@@ -319,8 +318,8 @@
               "enableEditData" : false,
               "enableRemoveData" : false,
               "enableViewData" : false,
-              "disableSelect" : false,
               "nodeType" : "AllDept",
+              "disableSelect" : false,
               "enableQuickSearch" : false,
               "counterMode" : 0,
               "treeNodeType" : "STATIC",
@@ -332,44 +331,44 @@
                 "name" : "ID",
                 "codeName" : "Id"
               },
-              "appendCaption" : false,
               "getLeafFlagPSAppDEField" : {
                 "name" : "ISLEAF",
                 "codeName" : "IsLeaf"
               },
+              "appendCaption" : false,
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Dept.json"
-              },
-              "getPSAppDEDataSet" : {
-                "modelref" : true,
-                "id" : "FetchDefault"
               },
               "getTextPSAppDEField" : {
                 "name" : "NAME",
                 "codeName" : "Name"
               },
+              "getPSAppDEDataSet" : {
+                "modelref" : true,
+                "id" : "FetchDefault"
+              },
               "maxSize" : -1,
-              "enableQuickCreate" : false,
               "navFilter" : "n_dept_eq",
               "getNavPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserMainGridView.json",
                 "viewType" : "DEGRIDVIEW"
               },
-              "rootNode" : false,
-              "hasPSDETreeNodeRSs" : true,
+              "enableQuickCreate" : false,
               "appendPNodeId" : false,
+              "enableCheck" : false,
+              "hasPSDETreeNodeRSs" : true,
               "selected" : false,
               "selectFirstOnly" : false,
               "expandFirstOnly" : false,
-              "enableCheck" : false,
+              "rootNode" : false,
               "enableNewData" : false,
               "enableEditData" : false,
               "enableRemoveData" : false,
               "enableViewData" : false,
-              "disableSelect" : false,
               "nodeType" : "SubDept",
+              "disableSelect" : false,
               "enableQuickSearch" : false,
               "counterMode" : 0,
               "treeNodeType" : "DE",
@@ -479,7 +478,6 @@
             "name" : "treeexpbar_tree",
             "modelid" : "2bacf72ac2e31833aaa493065e182c54"
           } ],
-          "showTitleBar" : false,
           "getPSAppViewRefs" : [ {
             "getRefPSAppView" : {
               "modelref" : true,
@@ -529,13 +527,14 @@
           "name" : "treeexpbar",
           "modelid" : "589b2861c47f3acccf56c9c2dff633f6_treeexpbar"
         } ],
+        "viewStyle" : "STYLE2",
         "getPSAppViewLogics" : [ {
           "logicTrigger" : "CUSTOM",
           "getPSAppUILogic" : {
+            "enableWizardAdd" : false,
             "actionAfterWizard" : "DEFAULT",
             "enableBatchAdd" : false,
             "batchAddOnly" : false,
-            "enableWizardAdd" : false,
             "viewLogicType" : "APP_NEWDATA",
             "logicType" : "PREDEFINED",
             "name" : "新建数据"
@@ -680,6 +679,7 @@
     "name" : "tabexppanel",
     "modelid" : "ce7d59895df173ceb652f3c63bdef4aa_tabexppanel"
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "CompanyMainTabExpView",
   "viewType" : "DETABEXPVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CompanyMainTabExpView.json",

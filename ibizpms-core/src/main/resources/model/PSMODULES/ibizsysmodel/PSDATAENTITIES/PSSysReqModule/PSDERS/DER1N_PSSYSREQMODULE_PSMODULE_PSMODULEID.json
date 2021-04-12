@@ -3,11 +3,11 @@
     "name" : "PSMODULEID",
     "codeName" : "PSModuleId"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "PSMODULENAME",
     "codeName" : "PSModuleName"
   },
+  "masterOrder" : -1,
   "removeActionType" : 3,
   "pickupDEFName" : "PSMODULEID",
   "masterRS" : 0,
@@ -17,12 +17,12 @@
     "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSModule.json"
   },
   "orderValue" : 100,
+  "codeName" : "PSModule",
+  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqModule.json"
   },
-  "codeName" : "PSModule",
-  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqModule/PSDERS/DER1N_PSSYSREQMODULE_PSMODULE_PSMODULEID.json",
   "name" : "DER1N_PSSYSREQMODULE_PSMODULE_PSMODULEID"
 }

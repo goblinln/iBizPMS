@@ -1,5 +1,7 @@
 {
   "enableAutoSave" : false,
+  "infoFormMode" : true,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -24,8 +26,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : true,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
@@ -45,15 +45,15 @@
         "name" : "ROLE",
         "codeName" : "Role"
       },
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : true,
-      "allowEmpty" : true,
+      "dataType" : 25,
       "caption" : "角色",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 130,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -88,15 +88,15 @@
             "name" : "YEARVISITS",
             "codeName" : "Yearvisits"
           },
-          "dataType" : 9,
+          "showCaption" : true,
           "hidden" : true,
-          "allowEmpty" : true,
+          "dataType" : 9,
           "caption" : "累计登录次数",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -117,15 +117,15 @@
             "name" : "YEARACTIONCNT",
             "codeName" : "Yearactioncnt"
           },
-          "dataType" : 9,
+          "showCaption" : true,
           "hidden" : true,
-          "allowEmpty" : true,
+          "dataType" : 9,
           "caption" : "累计动态数",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
-          "showCaption" : true,
           "getPSDEFDGroupLogics" : [ {
             "relatedDetailNames" : [ "judgerole" ],
             "logicCat" : "PANELVISIBLE",
@@ -168,15 +168,15 @@
               "name" : "YEARLOGCNT",
               "codeName" : "Yearlogcnt"
             },
-            "dataType" : 9,
+            "showCaption" : true,
             "hidden" : true,
-            "allowEmpty" : true,
+            "dataType" : 9,
             "caption" : "累计日志数",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "layout" : "TABLE_24COL"
@@ -197,15 +197,15 @@
               "name" : "YEARESTIMATECNT",
               "codeName" : "Yearestimatecnt"
             },
-            "dataType" : 9,
+            "showCaption" : true,
             "hidden" : true,
-            "allowEmpty" : true,
+            "dataType" : 9,
             "caption" : "累计工时数",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "layout" : "TABLE_24COL"
@@ -234,11 +234,11 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : false,
           "codeName" : "grouppanel1",
           "caption" : "研发",
           "detailType" : "GROUPPANEL",
           "detailStyle" : "DEFAULT",
-          "showCaption" : false,
           "name" : "grouppanel1"
         }, {
           "infoGroupMode" : true,
@@ -259,15 +259,15 @@
               "name" : "YEARCASECNT",
               "codeName" : "Yearcasecnt"
             },
-            "dataType" : 9,
+            "showCaption" : true,
             "hidden" : true,
-            "allowEmpty" : true,
+            "dataType" : 9,
             "caption" : "累计创建用例数",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "layout" : "TABLE_24COL"
@@ -288,15 +288,15 @@
               "name" : "YEARBUGCNT",
               "codeName" : "Yearbugcnt"
             },
-            "dataType" : 9,
+            "showCaption" : true,
             "hidden" : true,
-            "allowEmpty" : true,
+            "dataType" : 9,
             "caption" : "累计创建Bug数",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "layout" : "TABLE_24COL"
@@ -325,11 +325,11 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : false,
           "codeName" : "grouppanel2",
           "caption" : "测试",
           "detailType" : "GROUPPANEL",
           "detailStyle" : "DEFAULT",
-          "showCaption" : false,
           "name" : "grouppanel2"
         }, {
           "infoGroupMode" : true,
@@ -350,15 +350,15 @@
               "name" : "YEARPRODUCTCNT",
               "codeName" : "Yearproductcnt"
             },
-            "dataType" : 9,
+            "showCaption" : true,
             "hidden" : true,
-            "allowEmpty" : true,
+            "dataType" : 9,
             "caption" : "累计参与产品数",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "layout" : "TABLE_24COL"
@@ -379,15 +379,15 @@
               "name" : "YEARPLANCNT",
               "codeName" : "Yearplancnt"
             },
-            "dataType" : 9,
+            "showCaption" : true,
             "hidden" : true,
-            "allowEmpty" : true,
+            "dataType" : 9,
             "caption" : "累计创建计划数",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "layout" : "TABLE_24COL"
@@ -408,15 +408,15 @@
               "name" : "YEARSTORYCNT",
               "codeName" : "Yearstorycnt"
             },
-            "dataType" : 9,
+            "showCaption" : true,
             "hidden" : true,
-            "allowEmpty" : true,
+            "dataType" : 9,
             "caption" : "累计创建需求数",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "layout" : "TABLE_24COL"
@@ -445,33 +445,33 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : false,
           "codeName" : "grouppanel3",
           "caption" : "产品经理",
           "detailType" : "GROUPPANEL",
           "detailStyle" : "DEFAULT",
-          "showCaption" : false,
           "name" : "grouppanel3"
         } ],
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : false,
         "codeName" : "group1",
         "caption" : "基本数据信息",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : false,
         "name" : "group1"
       } ],
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : false,
       "codeName" : "grouppanel9",
       "caption" : "基本信息",
       "detailType" : "GROUPPANEL",
       "detailStyle" : "DEFAULT",
-      "showCaption" : false,
       "name" : "grouppanel9"
     }, {
       "emptyCaption" : false,
@@ -485,15 +485,15 @@
         "name" : "JUDGEROLE",
         "codeName" : "Judgerole"
       },
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : true,
-      "allowEmpty" : true,
+      "dataType" : 25,
       "caption" : "判断角色",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 130,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -503,8 +503,8 @@
       "detailStyle" : "DEFAULT",
       "name" : "judgerole"
     }, {
-      "rawItemWidth" : -1.0,
       "rawItemHeight" : -1.0,
+      "rawItemWidth" : -1.0,
       "contentType" : "RAW",
       "rawContent" : "<div><ul ><li>累计登录次数 <strong>{{data.yearvisits ? data.yearvisits: 0}}</strong></li><li >累计动态数 <strong  >{{data.yearactioncnt ? data.yearactioncnt: 0}}</strong></li><li>累计日志数 <strong>{{data.yearlogcnt ? data.yearlogcnt: 0}}</strong></li><li >累计工时数 <strong>{{data.yearestimatecnt ? data.yearestimatecnt: 0}}</strong></li></ul></div>",
       "getPSDEFDGroupLogics" : [ {
@@ -526,17 +526,17 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : true,
       "getPSSysCss" : {
         "cssName" : "year-stats-info-css"
       },
       "codeName" : "rawitem1",
       "detailType" : "RAWITEM",
       "detailStyle" : "DEFAULT",
-      "showCaption" : true,
       "name" : "rawitem1"
     }, {
-      "rawItemWidth" : -1.0,
       "rawItemHeight" : -1.0,
+      "rawItemWidth" : -1.0,
       "contentType" : "RAW",
       "rawContent" : "<div><ul ><li>累计登录次数 <strong>{{data.yearvisits ? data.yearvisits: 0}}</strong></li><li>累计参与产品数 <strong>{{data.yearproductcnt ? data.yearproductcnt: 0}}</strong></li><li >累计创建计划数 <strong>{{data.yearplancnt ? data.yearplancnt: 0}}</strong></li><li >累计创建需求数 <strong>{{data.yearstorycnt ? data.yearstorycnt: 0}}</strong></li></ul></div>",
       "getPSDEFDGroupLogics" : [ {
@@ -558,17 +558,17 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : true,
       "getPSSysCss" : {
         "cssName" : "year-stats-info-css"
       },
       "codeName" : "rawitem2",
       "detailType" : "RAWITEM",
       "detailStyle" : "DEFAULT",
-      "showCaption" : true,
       "name" : "rawitem2"
     }, {
-      "rawItemWidth" : -1.0,
       "rawItemHeight" : -1.0,
+      "rawItemWidth" : -1.0,
       "contentType" : "RAW",
       "rawContent" : "<div><ul ><li>累计登录次数 <strong>{{data.yearvisits ? data.yearvisits: 0}}</strong></li><li >累计动态数 <strong  >{{data.yearactioncnt ? data.yearactioncnt: 0}}</strong></li><li>累计创建用例数 <strong>{{data.yearcasecnt ? data.yearcasecnt: 0}}</strong></li><li >累计创建Bug数 <strong>{{data.yearbugcnt ? data.yearbugcnt: 0}}</strong></li></ul></div>",
       "getPSDEFDGroupLogics" : [ {
@@ -590,13 +590,13 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : true,
       "getPSSysCss" : {
         "cssName" : "year-stats-info-css"
       },
       "codeName" : "rawitem3",
       "detailType" : "RAWITEM",
       "detailStyle" : "DEFAULT",
-      "showCaption" : true,
       "name" : "rawitem3"
     } ],
     "getPSLayout" : {

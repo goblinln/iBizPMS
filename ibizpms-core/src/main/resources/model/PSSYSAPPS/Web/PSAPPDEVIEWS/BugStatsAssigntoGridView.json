@@ -10,10 +10,10 @@
   "xDataControlName" : "grid",
   "showCaptionBar" : true,
   "getPSDEViewCodeName" : "AssigntoGridView",
+  "enableDP" : true,
   "caption" : "Bug指派表",
   "title" : "Bug统计表格视图（Bug指派表）",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -45,7 +45,6 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats.json"
@@ -56,65 +55,65 @@
         "name" : "PRODUCT",
         "codeName" : "Product"
       },
-      "dataType" : 1,
-      "name" : "product"
+      "name" : "product",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "PROJECT",
         "codeName" : "Project"
       },
-      "dataType" : 1,
-      "name" : "project"
+      "name" : "project",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "ASSIGNEDTO",
         "codeName" : "AssignedTo"
       },
-      "dataType" : 25,
-      "name" : "assignedto"
+      "name" : "assignedto",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "BUGCNT",
         "codeName" : "BugCnt"
       },
-      "dataType" : 9,
-      "name" : "bugcnt"
+      "name" : "bugcnt",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "BUGTOTAL",
         "codeName" : "Bugtotal"
       },
-      "dataType" : 9,
-      "name" : "bugtotal"
+      "name" : "bugtotal",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "TITLE",
         "codeName" : "Title"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfdataaccaction"
+      "name" : "srfdataaccaction",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "PRODUCTNAME",
         "codeName" : "ProductName"
       },
-      "dataType" : 25,
-      "name" : "productname"
+      "name" : "productname",
+      "dataType" : 25
     } ],
     "getRemovePSControlAction" : {
       "getPSAppDataEntity" : {
@@ -130,8 +129,6 @@
       "actionType" : "DEACTION",
       "name" : "remove"
     },
-    "singleSelect" : true,
-    "enableColFilter" : false,
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : true,
@@ -161,20 +158,22 @@
       "name" : "ASSIGNEDTO",
       "codeName" : "AssignedTo"
     },
-    "controlType" : "GRID",
-    "enableRowEdit" : false,
+    "enableColFilter" : false,
+    "singleSelect" : true,
     "enablePagingBar" : false,
+    "enableRowEdit" : false,
+    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
-      "excelCaption" : "姓名",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
       },
-      "dataItemName" : "assignedto",
       "getPSAppDEField" : {
         "name" : "ASSIGNEDTO",
         "codeName" : "AssignedTo"
       },
+      "dataItemName" : "assignedto",
+      "excelCaption" : "姓名",
       "cLConvertMode" : "FRONT",
       "groupItem" : "GROUP1",
       "noPrivDisplayMode" : 1,
@@ -194,12 +193,12 @@
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
         "viewType" : "DETABEXPVIEW"
       },
-      "excelCaption" : "产品",
-      "dataItemName" : "productname",
       "getPSAppDEField" : {
         "name" : "PRODUCTNAME",
         "codeName" : "ProductName"
       },
+      "dataItemName" : "productname",
+      "excelCaption" : "产品",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -211,12 +210,12 @@
       "widthUnit" : "STAR",
       "name" : "productname"
     }, {
-      "excelCaption" : "Bug",
-      "dataItemName" : "bugcnt",
       "getPSAppDEField" : {
         "name" : "BUGCNT",
         "codeName" : "BugCnt"
       },
+      "dataItemName" : "bugcnt",
+      "excelCaption" : "Bug",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -228,12 +227,12 @@
       "widthUnit" : "PX",
       "name" : "bugcnt"
     }, {
-      "excelCaption" : "总计",
-      "dataItemName" : "bugtotal",
       "getPSAppDEField" : {
         "name" : "BUGTOTAL",
         "codeName" : "Bugtotal"
       },
+      "dataItemName" : "bugtotal",
+      "excelCaption" : "总计",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -358,10 +357,10 @@
     "name" : "grid",
     "modelid" : "e1af988897b52fb5d625ce76ddeb1945"
   }, {
+    "searchButtonStyle" : "DEFAULT",
     "enableAdvanceSearch" : false,
     "enableAutoSearch" : false,
     "enableFilterSave" : false,
-    "searchButtonStyle" : "DEFAULT",
     "controlType" : "SEARCHFORM",
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
@@ -385,16 +384,16 @@
           "name" : "PRODUCT",
           "codeName" : "Product"
         },
-        "dataType" : 1,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 1,
         "needCodeListConfig" : true,
-        "allowEmpty" : true,
         "caption" : "产品",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 50,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 6,
@@ -422,16 +421,16 @@
           "name" : "ASSIGNEDTO",
           "codeName" : "AssignedTo"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 25,
         "needCodeListConfig" : true,
-        "allowEmpty" : true,
         "caption" : "指派给",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 70,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 6,
@@ -524,6 +523,7 @@
     "name" : "searchform",
     "modelid" : "cc7f5a94b4584b1a5e7291b41772a553"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -544,7 +544,6 @@
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -552,9 +551,10 @@
           "viewType" : "DEEDITVIEW"
         }
       },
+      "enableWizardAdd" : false,
+      "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {

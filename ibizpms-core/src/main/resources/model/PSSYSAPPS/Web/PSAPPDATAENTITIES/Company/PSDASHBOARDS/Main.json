@@ -15,8 +15,8 @@
       "colMD" : 24,
       "layout" : "TABLE_24COL"
     },
-    "controlType" : "PORTLET",
     "showTitleBar" : true,
+    "controlType" : "PORTLET",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"

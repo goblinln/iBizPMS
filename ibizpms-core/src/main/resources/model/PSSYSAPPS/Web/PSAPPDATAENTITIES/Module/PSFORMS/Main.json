@@ -1,5 +1,7 @@
 {
   "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -24,8 +26,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : false,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
@@ -53,20 +53,20 @@
           "name" : "NAME",
           "codeName" : "Name"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : false,
+        "dataType" : 25,
         "caption" : "模块名称",
+        "allowEmpty" : false,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
-          "colMD" : 12,
-          "colLG" : 12,
           "colSM" : 12,
           "colXS" : 12,
+          "colMD" : 12,
+          "colLG" : 12,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "name",
@@ -86,20 +86,20 @@
           "name" : "SHORT",
           "codeName" : "IBizShort"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : true,
+        "dataType" : 25,
         "caption" : "简称",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
-          "colMD" : 12,
-          "colLG" : 12,
           "colSM" : 12,
           "colXS" : 12,
+          "colMD" : 12,
+          "colLG" : 12,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "short",
@@ -109,17 +109,21 @@
       }, {
         "emptyCaption" : false,
         "getPSEditor" : {
+          "enableLinkView" : false,
           "singleSelect" : true,
           "dropDownView" : false,
           "enablePickupView" : true,
-          "enableLinkView" : false,
           "enableAC" : true,
           "forceSelection" : true,
           "showTrigger" : true,
-          "handlerType" : "PickupText",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
+          },
+          "getPickupPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ModulePickupView.json",
+            "viewType" : "DEPICKUPVIEW"
           },
           "getPSAppDEDataSet" : {
             "modelref" : true,
@@ -129,11 +133,7 @@
             "modelref" : true,
             "id" : "Default"
           },
-          "getPickupPSAppView" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ModulePickupView.json",
-            "viewType" : "DEPICKUPVIEW"
-          },
+          "handlerType" : "PickupText",
           "valueItemName" : "parent",
           "editorType" : "PICKER",
           "editorParams" : {
@@ -148,21 +148,21 @@
           "name" : "PARENTNAME",
           "codeName" : "ParentName"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : true,
+        "dataType" : 25,
         "caption" : "上级模块",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "valueItemName" : "parent",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
-          "colMD" : 12,
-          "colLG" : 12,
           "colSM" : 12,
           "colXS" : 12,
+          "colMD" : 12,
+          "colLG" : 12,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "parentname",
@@ -181,20 +181,20 @@
           "name" : "PARENT",
           "codeName" : "Parent"
         },
-        "dataType" : 1,
+        "showCaption" : true,
         "hidden" : true,
-        "allowEmpty" : true,
+        "dataType" : 1,
         "caption" : "上级模块",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
-          "colMD" : 12,
-          "colLG" : 12,
           "colSM" : 12,
           "colXS" : 12,
+          "colMD" : 12,
+          "colLG" : 12,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "parent",
@@ -213,20 +213,20 @@
           "name" : "ORDER",
           "codeName" : "Order"
         },
-        "dataType" : 9,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : true,
+        "dataType" : 9,
         "caption" : "排序",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
-          "colMD" : 12,
-          "colLG" : 12,
           "colSM" : 12,
           "colXS" : 12,
+          "colMD" : 12,
+          "colLG" : 12,
           "layout" : "TABLE_24COL"
         },
         "codeName" : "order",
@@ -238,11 +238,11 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : false,
       "codeName" : "group1",
       "caption" : "module基本信息",
       "detailType" : "GROUPPANEL",
       "detailStyle" : "DEFAULT",
-      "showCaption" : false,
       "name" : "group1"
     } ],
     "getPSLayout" : {

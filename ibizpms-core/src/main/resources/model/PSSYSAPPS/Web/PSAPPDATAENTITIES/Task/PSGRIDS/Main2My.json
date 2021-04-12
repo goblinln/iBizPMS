@@ -4,146 +4,146 @@
       "name" : "MODULE",
       "codeName" : "Module"
     },
-    "dataType" : 1,
-    "name" : "module"
+    "name" : "module",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "TASKTYPE",
       "codeName" : "Tasktype"
     },
-    "dataType" : 25,
-    "name" : "tasktype"
+    "name" : "tasktype",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "FROMBUG",
       "codeName" : "FromBug"
     },
-    "dataType" : 1,
-    "name" : "frombug"
+    "name" : "frombug",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "STATUS",
       "codeName" : "Status"
     },
-    "dataType" : 25,
-    "name" : "status"
+    "name" : "status",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "STATUS1",
       "codeName" : "Status1"
     },
-    "dataType" : 25,
-    "name" : "status1"
+    "name" : "status1",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "PARENT",
       "codeName" : "Parent"
     },
-    "dataType" : 1,
-    "name" : "parent"
+    "name" : "parent",
+    "dataType" : 1
   }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
+    "name" : "srfmstag",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "id"
+    "name" : "id",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "STORY",
       "codeName" : "Story"
     },
-    "dataType" : 1,
-    "name" : "story"
+    "name" : "story",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "PROJECT",
       "codeName" : "Project"
     },
-    "dataType" : 1,
-    "name" : "project"
+    "name" : "project",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ASSIGNEDTO",
       "codeName" : "AssignedTo"
     },
-    "dataType" : 25,
-    "name" : "assignedto"
+    "name" : "assignedto",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "PRI",
       "codeName" : "Pri"
     },
-    "dataType" : 9,
-    "name" : "pri"
+    "name" : "pri",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "CONSUMED",
       "codeName" : "Consumed"
     },
-    "dataType" : 7,
-    "name" : "consumed"
+    "name" : "consumed",
+    "dataType" : 7
   }, {
     "getPSAppDEField" : {
       "name" : "PLAN",
       "codeName" : "Plan"
     },
-    "dataType" : 1,
-    "name" : "plan"
+    "name" : "plan",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "name"
+    "name" : "name",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "LEFT",
       "codeName" : "Left"
     },
-    "dataType" : 7,
-    "name" : "left"
+    "name" : "left",
+    "dataType" : 7
   }, {
     "getPSAppDEField" : {
       "name" : "ISFAVORITES",
       "codeName" : "Isfavorites"
     },
-    "dataType" : 25,
-    "name" : "isfavorites"
+    "name" : "isfavorites",
+    "dataType" : 25
   }, {
-    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "DEADLINE",
       "codeName" : "Deadline"
     },
-    "dataType" : 5,
-    "name" : "deadline"
+    "format" : "YYYY-MM-DD",
+    "name" : "deadline",
+    "dataType" : 5
   } ],
   "getRemovePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -159,8 +159,6 @@
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "singleSelect" : true,
-  "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -182,20 +180,22 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : false,
+  "enableColFilter" : false,
+  "singleSelect" : true,
+  "enablePagingBar" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
-  "enablePagingBar" : false,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "编号",
-    "dataItemName" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
+    "dataItemName" : "id",
+    "excelCaption" : "编号",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -207,16 +207,16 @@
     "widthUnit" : "PX",
     "name" : "id"
   }, {
-    "excelCaption" : "P",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__pri.json"
     },
-    "dataItemName" : "pri",
     "getPSAppDEField" : {
       "name" : "PRI",
       "codeName" : "Pri"
     },
+    "dataItemName" : "pri",
+    "excelCaption" : "P",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -235,12 +235,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "excelCaption" : "任务名称",
-    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "dataItemName" : "name",
+    "excelCaption" : "任务名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -252,12 +252,12 @@
     "widthUnit" : "STAR",
     "name" : "name"
   }, {
-    "excelCaption" : "截止日期",
-    "dataItemName" : "deadline",
     "getPSAppDEField" : {
       "name" : "DEADLINE",
       "codeName" : "Deadline"
     },
+    "dataItemName" : "deadline",
+    "excelCaption" : "截止日期",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -270,16 +270,16 @@
     "widthUnit" : "PX",
     "name" : "deadline"
   }, {
-    "excelCaption" : "状态",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/TaskStatusCK.json"
     },
-    "dataItemName" : "status1",
     "getPSAppDEField" : {
       "name" : "STATUS1",
       "codeName" : "Status1"
     },
+    "dataItemName" : "status1",
+    "excelCaption" : "状态",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

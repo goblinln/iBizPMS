@@ -4,68 +4,68 @@
       "name" : "LINENAME",
       "codeName" : "LineName"
     },
-    "dataType" : 25,
-    "name" : "linename"
+    "name" : "linename",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "STATUS",
       "codeName" : "Status"
     },
-    "dataType" : 25,
-    "name" : "status"
+    "name" : "status",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "name"
+    "name" : "name",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "LINE",
       "codeName" : "Line"
     },
-    "dataType" : 1,
-    "name" : "line"
+    "name" : "line",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "CODE",
       "codeName" : "Code"
     },
-    "dataType" : 25,
-    "name" : "code"
+    "name" : "code",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
     },
-    "dataType" : 25,
-    "name" : "type"
+    "name" : "type",
+    "dataType" : 25
   }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
+    "name" : "srfmstag",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   } ],
   "getRemovePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -81,8 +81,6 @@
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "singleSelect" : true,
-  "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -104,13 +102,15 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : false,
+  "enableColFilter" : false,
+  "singleSelect" : true,
+  "enablePagingBar" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
-  "enablePagingBar" : false,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
     "linkValueItem" : "srfkey",
     "enableLinkView" : true,
@@ -119,12 +119,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
-    "excelCaption" : "产品名称",
-    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "dataItemName" : "name",
+    "excelCaption" : "产品名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -136,12 +136,12 @@
     "widthUnit" : "STAR",
     "name" : "name"
   }, {
-    "excelCaption" : "产品代号",
-    "dataItemName" : "code",
     "getPSAppDEField" : {
       "name" : "CODE",
       "codeName" : "Code"
     },
+    "dataItemName" : "code",
+    "excelCaption" : "产品代号",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

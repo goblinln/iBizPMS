@@ -1,6 +1,6 @@
 {
-  "enableBackend" : true,
   "enableFront" : false,
+  "enableBackend" : true,
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"
@@ -33,8 +33,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "STORY",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[STORY]"
     } ],
     "logicHolder" : 1,
@@ -53,8 +53,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "PLAN",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[PLAN]"
     } ],
     "logicHolder" : 1,
@@ -71,20 +71,20 @@
   "getPSDELogicLinks" : [ {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "ISNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "ISNULL",
         "dstFieldName" : "PLAN",
         "logicType" : "SINGLE",
         "name" : "Default[PLAN] 值为空(Nil)"
       }, {
+        "condOP" : "ISNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "ISNULL",
         "dstFieldName" : "STORY",
         "logicType" : "SINGLE",
         "name" : "Default[STORY] 值为空(Nil)"
@@ -107,11 +107,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "ISNOTNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "ISNOTNULL",
         "dstFieldName" : "STORY",
         "logicType" : "SINGLE",
         "name" : "Default[STORY] 值不为空(NotNil)"
@@ -134,11 +134,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "ISNOTNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "ISNOTNULL",
         "dstFieldName" : "PLAN",
         "logicType" : "SINGLE",
         "name" : "Default[PLAN] 值不为空(NotNil)"
@@ -160,9 +160,9 @@
     "name" : "连接5784"
   } ],
   "getPSDELogicParams" : [ {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

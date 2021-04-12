@@ -48,8 +48,8 @@
     "codeName" : "Item_11",
     "text" : "间隔11天"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "Burninterval",
   "emptyText" : "未定义",
   "enableCache" : true,

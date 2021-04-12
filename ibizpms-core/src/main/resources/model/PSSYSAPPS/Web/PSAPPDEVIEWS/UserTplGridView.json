@@ -4,22 +4,22 @@
   "enableImport" : true,
   "enableRowEdit" : false,
   "gridRowActiveMode" : 2,
-  "enableSearch" : true,
   "enableQuickGroup" : true,
   "getQuickGroupPSCodeList" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserTplQuickGroup.json"
   },
+  "enableSearch" : true,
   "enableFilter" : true,
   "enableQuickSearch" : true,
   "xDataControlName" : "grid",
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "GridView",
   "funcViewMode" : "MDATAVIEW",
+  "enableDP" : true,
   "caption" : "用户模板",
   "title" : "usertpl表格视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -59,7 +59,6 @@
     },
     "name" : "toolbar_deuiaction1"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserTpl.json"
@@ -111,9 +110,9 @@
       "tooltip" : "新建",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "新建",
-      "showCaption" : true,
       "name" : "deuiaction1"
     } ],
     "getPSAppDataEntity" : {
@@ -134,51 +133,51 @@
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "id"
+      "name" : "id",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "TITLE",
         "codeName" : "Title"
       },
-      "dataType" : 25,
-      "name" : "title"
+      "name" : "title",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "PUBLIC",
         "codeName" : "IBizPublic"
       },
-      "dataType" : 25,
-      "name" : "public"
+      "name" : "public",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "TYPE",
         "codeName" : "Type"
       },
-      "dataType" : 25,
-      "name" : "type"
+      "name" : "type",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "TITLE",
         "codeName" : "Title"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfdataaccaction"
+      "name" : "srfdataaccaction",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 1
     } ],
     "getRemovePSControlAction" : {
       "getPSAppDataEntity" : {
@@ -194,8 +193,6 @@
       "actionType" : "DEACTION",
       "name" : "remove"
     },
-    "singleSelect" : false,
-    "enableColFilter" : false,
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : false,
@@ -217,16 +214,18 @@
     } ],
     "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "controlType" : "GRID",
-    "enableRowEdit" : false,
+    "enableColFilter" : false,
+    "singleSelect" : false,
     "enablePagingBar" : true,
+    "enableRowEdit" : false,
+    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
-      "excelCaption" : "编号",
-      "dataItemName" : "id",
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
+      "dataItemName" : "id",
+      "excelCaption" : "编号",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -238,12 +237,12 @@
       "widthUnit" : "PX",
       "name" : "id"
     }, {
-      "excelCaption" : "模板标题",
-      "dataItemName" : "title",
       "getPSAppDEField" : {
         "name" : "TITLE",
         "codeName" : "Title"
       },
+      "dataItemName" : "title",
+      "excelCaption" : "模板标题",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -255,16 +254,16 @@
       "widthUnit" : "STAR",
       "name" : "title"
     }, {
-      "excelCaption" : "类型",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserTplType.json"
       },
-      "dataItemName" : "type",
       "getPSAppDEField" : {
         "name" : "TYPE",
         "codeName" : "Type"
       },
+      "dataItemName" : "type",
+      "excelCaption" : "类型",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -276,16 +275,16 @@
       "widthUnit" : "PX",
       "name" : "type"
     }, {
-      "excelCaption" : "公开",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo.json"
       },
-      "dataItemName" : "public",
       "getPSAppDEField" : {
         "name" : "PUBLIC",
         "codeName" : "IBizPublic"
       },
+      "dataItemName" : "public",
+      "excelCaption" : "公开",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -326,8 +325,8 @@
             "name" : "表格界面_删除操作"
           },
           "addSeparator" : false,
-          "detailType" : "DEUIACTION",
           "showCaption" : false,
+          "detailType" : "DEUIACTION",
           "name" : "u2daf155"
         } ],
         "name" : "删除"
@@ -469,10 +468,10 @@
     "name" : "grid",
     "modelid" : "27bd6c60b7f81dd3ab5f0b5704156530"
   }, {
+    "searchButtonStyle" : "DEFAULT",
     "enableAdvanceSearch" : false,
     "enableAutoSearch" : false,
     "enableFilterSave" : false,
-    "searchButtonStyle" : "DEFAULT",
     "controlType" : "SEARCHFORM",
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
@@ -546,6 +545,7 @@
     "name" : "searchform",
     "modelid" : "c5e76315f26dc51116975307a27ba2ed"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -579,7 +579,6 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -587,9 +586,10 @@
           "viewType" : "DEEDITVIEW"
         }
       },
+      "enableWizardAdd" : false,
+      "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {

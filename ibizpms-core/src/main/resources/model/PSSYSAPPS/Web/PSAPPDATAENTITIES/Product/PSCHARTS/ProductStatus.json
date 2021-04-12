@@ -20,8 +20,6 @@
   },
   "controlType" : "CHART",
   "getPSDEChartSerieses" : [ {
-    "catalogField" : "STATUS",
-    "seriesType" : "pie",
     "getCatalogPSCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product__status.json"
@@ -36,6 +34,7 @@
       "modelref" : true,
       "id" : "0"
     },
+    "catalogField" : "STATUS",
     "getPSChartSeriesEncode" : {
       "category" : "STATUS",
       "value" : "SRFCOUNT",
@@ -44,6 +43,7 @@
       "name" : "坐标系编码",
       "id" : "0"
     },
+    "seriesType" : "pie",
     "valueField" : "SRFCOUNT",
     "seriesLayoutBy" : "column",
     "groupMode" : "CODELIST",

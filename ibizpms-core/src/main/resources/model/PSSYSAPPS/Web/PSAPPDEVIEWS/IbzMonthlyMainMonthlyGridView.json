@@ -10,10 +10,10 @@
   "xDataControlName" : "grid",
   "showCaptionBar" : true,
   "getPSDEViewCodeName" : "MainMonthlyGridView",
+  "enableDP" : true,
   "caption" : "月报",
   "title" : "月报表格视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSAppViewNavParams" : [ {
     "rawValue" : false,
     "value" : "srfloginname",
@@ -71,7 +71,6 @@
     },
     "name" : "toolbar_deuiaction7"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
@@ -85,12 +84,6 @@
       },
       "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
-        "getPSNavigateContexts" : [ {
-          "rawValue" : false,
-          "value" : "date",
-          "key" : "DATE",
-          "name" : "DATE"
-        } ],
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
@@ -108,6 +101,12 @@
         } ],
         "frontProcessType" : "WIZARD",
         "refreshMode" : 1,
+        "getPSNavigateContexts" : [ {
+          "rawValue" : false,
+          "value" : "date",
+          "key" : "DATE",
+          "name" : "DATE"
+        } ],
         "getNoPrivDisplayMode" : 2,
         "getPSSysImage" : {
           "glyph" : "xf067@FontAwesome",
@@ -116,8 +115,8 @@
         "timeout" : 60000,
         "codeName" : "Create",
         "caption" : "新建",
-        "actionTarget" : "NONE",
         "reloadData" : true,
+        "actionTarget" : "NONE",
         "uIActionTag" : "Create",
         "uIActionType" : "DEUIACTION",
         "uIActionMode" : "FRONT",
@@ -132,9 +131,9 @@
       "tooltip" : "新建",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "新建",
-      "showCaption" : true,
       "name" : "deuiaction2_create"
     }, {
       "getPSAppViewUIAction" : {
@@ -180,9 +179,9 @@
       "tooltip" : "导出",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "导出",
-      "showCaption" : true,
       "name" : "deuiaction7"
     } ],
     "getPSAppDataEntity" : {
@@ -203,69 +202,69 @@
         "name" : "ISSUBMIT",
         "codeName" : "Issubmit"
       },
-      "dataType" : 25,
-      "name" : "issubmit"
+      "name" : "issubmit",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "ACCOUNT",
         "codeName" : "Account"
       },
-      "dataType" : 25,
-      "name" : "account"
+      "name" : "account",
+      "dataType" : 25
     }, {
-      "format" : "YYYY-MM-DD",
       "getPSAppDEField" : {
         "name" : "DATE",
         "codeName" : "Date"
       },
-      "dataType" : 5,
-      "name" : "date"
+      "format" : "YYYY-MM-DD",
+      "name" : "date",
+      "dataType" : 5
     }, {
-      "dataType" : 25,
-      "name" : "srfmstag"
+      "name" : "srfmstag",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "IBZ_MONTHLYID",
         "codeName" : "IbzMonthlyId"
       },
-      "dataType" : 1,
-      "name" : "ibz_monthlyid"
+      "name" : "ibz_monthlyid",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "IBZ_MONTHLYNAME",
         "codeName" : "IbzMonthlyName"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "IBZ_MONTHLYID",
         "codeName" : "IbzMonthlyId"
       },
-      "dataType" : 1,
-      "name" : "srfdataaccaction"
+      "name" : "srfdataaccaction",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "IBZ_MONTHLYID",
         "codeName" : "IbzMonthlyId"
       },
-      "dataType" : 1,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "REPORTTO",
         "codeName" : "Reportto"
       },
-      "dataType" : 25,
-      "name" : "reportto"
+      "name" : "reportto",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "IBZ_MONTHLYNAME",
         "codeName" : "IbzMonthlyName"
       },
-      "dataType" : 25,
-      "name" : "ibz_monthlyname"
+      "name" : "ibz_monthlyname",
+      "dataType" : 25
     } ],
     "getRemovePSControlAction" : {
       "getPSAppDataEntity" : {
@@ -281,8 +280,6 @@
       "actionType" : "DEACTION",
       "name" : "remove"
     },
-    "singleSelect" : false,
-    "enableColFilter" : false,
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : false,
@@ -304,13 +301,15 @@
     } ],
     "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "controlType" : "GRID",
-    "enableRowEdit" : false,
+    "enableColFilter" : false,
+    "singleSelect" : false,
+    "enablePagingBar" : true,
     "getMinorSortPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
-    "enablePagingBar" : true,
+    "enableRowEdit" : false,
+    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
       "linkValueItem" : "srfkey",
       "enableLinkView" : true,
@@ -319,12 +318,12 @@
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMonthlyMonthlyMainMsgEditView.json",
         "viewType" : "DEEDITVIEW"
       },
-      "excelCaption" : "月报名称",
-      "dataItemName" : "ibz_monthlyname",
       "getPSAppDEField" : {
         "name" : "IBZ_MONTHLYNAME",
         "codeName" : "IbzMonthlyName"
       },
+      "dataItemName" : "ibz_monthlyname",
+      "excelCaption" : "月报名称",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -336,16 +335,16 @@
       "widthUnit" : "STAR",
       "name" : "ibz_monthlyname"
     }, {
-      "excelCaption" : "用户",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
       },
-      "dataItemName" : "account",
       "getPSAppDEField" : {
         "name" : "ACCOUNT",
         "codeName" : "Account"
       },
+      "dataItemName" : "account",
+      "excelCaption" : "用户",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -357,12 +356,12 @@
       "widthUnit" : "PX",
       "name" : "account"
     }, {
-      "excelCaption" : "日期",
-      "dataItemName" : "date",
       "getPSAppDEField" : {
         "name" : "DATE",
         "codeName" : "Date"
       },
+      "dataItemName" : "date",
+      "excelCaption" : "日期",
       "valueFormat" : "YYYY-MM-DD",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
@@ -375,16 +374,16 @@
       "widthUnit" : "PX",
       "name" : "date"
     }, {
-      "excelCaption" : "汇报给",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
       },
-      "dataItemName" : "reportto",
       "getPSAppDEField" : {
         "name" : "REPORTTO",
         "codeName" : "Reportto"
       },
+      "dataItemName" : "reportto",
+      "excelCaption" : "汇报给",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -400,12 +399,6 @@
         "getPSUIActionGroupDetails" : [ {
           "showIcon" : true,
           "getPSUIAction" : {
-            "getPSNavigateContexts" : [ {
-              "rawValue" : false,
-              "value" : "date",
-              "key" : "DATE",
-              "name" : "DATE"
-            } ],
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
@@ -423,6 +416,12 @@
             } ],
             "frontProcessType" : "WIZARD",
             "refreshMode" : 1,
+            "getPSNavigateContexts" : [ {
+              "rawValue" : false,
+              "value" : "date",
+              "key" : "DATE",
+              "name" : "DATE"
+            } ],
             "getNoPrivDisplayMode" : 1,
             "getPSSysImage" : {
               "glyph" : "xf044@FontAwesome",
@@ -431,8 +430,8 @@
             "timeout" : 60000,
             "codeName" : "Edit",
             "caption" : "修改",
-            "actionTarget" : "SINGLEKEY",
             "reloadData" : true,
+            "actionTarget" : "SINGLEKEY",
             "dataAccessAction" : "SRFUR__MONTHLY_EDIT_BUT",
             "uIActionTag" : "Edit",
             "uIActionType" : "DEUIACTION",
@@ -442,8 +441,8 @@
             "id" : "Edit@IbzMonthly"
           },
           "addSeparator" : false,
-          "detailType" : "DEUIACTION",
           "showCaption" : false,
+          "detailType" : "DEUIACTION",
           "name" : "u323f136"
         }, {
           "showIcon" : true,
@@ -466,8 +465,8 @@
             "timeout" : 60000,
             "codeName" : "Submit",
             "caption" : "提交",
-            "actionTarget" : "SINGLEKEY",
             "reloadData" : true,
+            "actionTarget" : "SINGLEKEY",
             "dataAccessAction" : "SRFUR__MONTHLY_SUBMIT_BUT",
             "uIActionTag" : "Submit",
             "uIActionType" : "DEUIACTION",
@@ -477,8 +476,8 @@
             "id" : "Submit@IbzMonthly"
           },
           "addSeparator" : false,
-          "detailType" : "DEUIACTION",
           "showCaption" : false,
+          "detailType" : "DEUIACTION",
           "name" : "u57939dc"
         } ],
         "name" : "操作列"
@@ -649,10 +648,10 @@
     "name" : "grid",
     "modelid" : "03867793a7ab1fe4284d9390542be487"
   }, {
+    "searchButtonStyle" : "DEFAULT",
     "enableAdvanceSearch" : false,
     "enableAutoSearch" : false,
     "enableFilterSave" : false,
-    "searchButtonStyle" : "DEFAULT",
     "controlType" : "SEARCHFORM",
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
@@ -726,6 +725,7 @@
     "name" : "searchform",
     "modelid" : "d68eaacb6504941ac21941e396fb02be"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA"
   }, {
@@ -763,10 +763,10 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
+      "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "logicType" : "PREDEFINED",
       "name" : "新建数据"

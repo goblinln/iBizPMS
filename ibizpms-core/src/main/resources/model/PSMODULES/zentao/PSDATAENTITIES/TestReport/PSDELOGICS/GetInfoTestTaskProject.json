@@ -1,6 +1,6 @@
 {
-  "enableBackend" : true,
   "enableFront" : false,
+  "enableBackend" : true,
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"
@@ -21,8 +21,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "PROJECT",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[PROJECT]"
     }, {
       "paramAction" : "SQLPARAM",
@@ -30,8 +30,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "PROJECT",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[PROJECT]"
     } ],
     "logicHolder" : 1,
@@ -54,8 +54,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "PROJECT",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[PROJECT]"
     } ],
     "logicHolder" : 1,
@@ -78,8 +78,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "PRODUCT",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[PRODUCT]"
     }, {
       "paramAction" : "SQLPARAM",
@@ -87,8 +87,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "BEGIN",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[BEGIN]"
     }, {
       "paramAction" : "SQLPARAM",
@@ -96,8 +96,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "PROJECT",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[PROJECT]"
     }, {
       "paramAction" : "SQLPARAM",
@@ -105,8 +105,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "BEGIN",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[BEGIN]"
     }, {
       "paramAction" : "SQLPARAM",
@@ -114,8 +114,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "END",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[END]"
     } ],
     "logicHolder" : 1,
@@ -138,8 +138,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "PROJECT",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[PROJECT]"
     } ],
     "logicHolder" : 1,
@@ -172,8 +172,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "PROJECT",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[PROJECT]"
     } ],
     "logicHolder" : 1,
@@ -196,8 +196,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "PROJECT",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[PROJECT]"
     } ],
     "logicHolder" : 1,
@@ -206,21 +206,21 @@
     "name" : "获取产品数"
   }, {
     "parallelOutput" : true,
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "getDstPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
     },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
     "logicHolder" : 3,
     "codeName" : "Deaction1",
-    "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetInfoTestTaskOvProject.json"
     },
+    "logicNodeType" : "DEACTION",
     "name" : "获取概况信息"
   }, {
     "parallelOutput" : true,
@@ -238,9 +238,9 @@
         "modelref" : true,
         "id" : "Default"
       },
+      "srcFieldName" : "PROJECT",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "OBJECTID",
-      "srcFieldName" : "PROJECT",
       "name" : "Default[PROJECT] ==> Default[OBJECTID]"
     }, {
       "paramAction" : "SETPARAMVALUE",
@@ -273,8 +273,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "PROJECT",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[PROJECT]"
     } ],
     "logicHolder" : 1,
@@ -383,16 +383,16 @@
     "name" : "连接3605"
   } ],
   "getPSDELogicParams" : [ {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "testtask",
     "default" : false,
     "name" : "测试版本"
   }, {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

@@ -6,6 +6,7 @@
   "builtinAction" : false,
   "pubServiceDefault" : true,
   "timeOut" : -1,
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"
@@ -13,7 +14,6 @@
   "orderValue" : 99999,
   "codeName" : "GetTeamUserLeftActivity",
   "logicName" : "获取团队成员剩余工时（激活）",
-  "extendMode" : 0,
   "actionMode" : "READ",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",

@@ -4,12 +4,12 @@
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "EditView",
   "funcViewMode" : "EDITVIEW",
+  "enableDP" : true,
   "width" : 750,
   "caption" : "用户信息",
   "title" : "用户编辑视图",
   "openMode" : "DRAWER_RIGHT",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSAppViewNavParams" : [ {
     "rawValue" : false,
     "value" : "dept",
@@ -56,7 +56,6 @@
     "key" : "DEPT",
     "name" : "DEPT"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
@@ -106,9 +105,9 @@
       "tooltip" : "保存并关闭",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "保存并关闭",
-      "showCaption" : true,
       "name" : "deuiaction1"
     } ],
     "getPSAppDataEntity" : {
@@ -125,6 +124,8 @@
     "modelid" : "41ec2a0b8e2256c9eee112003a6acd60"
   }, {
     "enableAutoSave" : false,
+    "infoFormMode" : false,
+    "showFormNavBar" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -149,8 +150,6 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
-    "infoFormMode" : false,
-    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
@@ -185,15 +184,15 @@
               "name" : "REALNAME",
               "codeName" : "Realname"
             },
-            "dataType" : 25,
+            "showCaption" : true,
             "hidden" : false,
-            "allowEmpty" : true,
+            "dataType" : 25,
             "caption" : "真实姓名",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 100,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 12,
               "colLG" : 12,
@@ -220,17 +219,17 @@
               "name" : "JOIN",
               "codeName" : "Join"
             },
-            "dataType" : 5,
+            "showCaption" : true,
             "hidden" : false,
-            "allowEmpty" : true,
+            "dataType" : 5,
             "caption" : "入职日期",
+            "allowEmpty" : true,
             "createDVT" : "CURTIME",
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 100,
             "itemWidth" : 200.0,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 12,
               "colLG" : 12,
@@ -257,18 +256,18 @@
               "name" : "DEPT",
               "codeName" : "Dept"
             },
-            "dataType" : 9,
+            "showCaption" : true,
             "hidden" : false,
+            "dataType" : 9,
             "needCodeListConfig" : true,
-            "allowEmpty" : true,
             "caption" : "所属部门",
+            "allowEmpty" : true,
             "createDV" : "dept",
             "createDVT" : "CONTEXT",
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 100,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 12,
               "colLG" : 12,
@@ -295,16 +294,16 @@
               "name" : "ROLE",
               "codeName" : "Role"
             },
-            "dataType" : 25,
+            "showCaption" : true,
             "hidden" : false,
+            "dataType" : 25,
             "needCodeListConfig" : true,
-            "allowEmpty" : true,
             "caption" : "职位",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 100,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 12,
               "colLG" : 12,
@@ -330,16 +329,16 @@
               "name" : "GENDER",
               "codeName" : "Gender"
             },
-            "dataType" : 25,
+            "showCaption" : true,
             "hidden" : false,
+            "dataType" : 25,
             "needCodeListConfig" : true,
-            "allowEmpty" : true,
             "caption" : "性别",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 100,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 12,
               "colLG" : 12,
@@ -354,11 +353,11 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : false,
           "codeName" : "group1",
           "caption" : "基本信息",
           "detailType" : "GROUPPANEL",
           "detailStyle" : "DEFAULT",
-          "showCaption" : false,
           "name" : "group1"
         }, {
           "infoGroupMode" : false,
@@ -380,15 +379,15 @@
               "name" : "ACCOUNT",
               "codeName" : "Account"
             },
-            "dataType" : 25,
+            "showCaption" : true,
             "hidden" : false,
-            "allowEmpty" : true,
+            "dataType" : 25,
             "caption" : "账户",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 100,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 12,
               "colLG" : 12,
@@ -411,15 +410,15 @@
               "name" : "EMAIL",
               "codeName" : "Email"
             },
-            "dataType" : 25,
+            "showCaption" : true,
             "hidden" : false,
-            "allowEmpty" : true,
+            "dataType" : 25,
             "caption" : "邮箱",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 100,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 12,
               "colLG" : 12,
@@ -442,15 +441,15 @@
               "name" : "PASSWORD",
               "codeName" : "Password"
             },
-            "dataType" : 25,
+            "showCaption" : true,
             "hidden" : false,
-            "allowEmpty" : true,
+            "dataType" : 25,
             "caption" : "密码",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 100,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 12,
               "colLG" : 12,
@@ -465,11 +464,11 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : true,
           "codeName" : "grouppanel1",
           "caption" : "账号信息",
           "detailType" : "GROUPPANEL",
           "detailStyle" : "DEFAULT",
-          "showCaption" : true,
           "name" : "grouppanel1"
         }, {
           "infoGroupMode" : false,
@@ -491,15 +490,15 @@
               "name" : "MOBILE",
               "codeName" : "Mobile"
             },
-            "dataType" : 25,
+            "showCaption" : true,
             "hidden" : false,
-            "allowEmpty" : true,
+            "dataType" : 25,
             "caption" : "手机",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 100,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 12,
               "colLG" : 12,
@@ -522,15 +521,15 @@
               "name" : "PHONE",
               "codeName" : "Phone"
             },
-            "dataType" : 25,
+            "showCaption" : true,
             "hidden" : false,
-            "allowEmpty" : true,
+            "dataType" : 25,
             "caption" : "电话",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 100,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 12,
               "colLG" : 12,
@@ -553,15 +552,15 @@
               "name" : "QQ",
               "codeName" : "Qq"
             },
-            "dataType" : 25,
+            "showCaption" : true,
             "hidden" : false,
-            "allowEmpty" : true,
+            "dataType" : 25,
             "caption" : "QQ",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 100,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 12,
               "colLG" : 12,
@@ -584,15 +583,15 @@
               "name" : "DINGDING",
               "codeName" : "Dingding"
             },
-            "dataType" : 25,
+            "showCaption" : true,
             "hidden" : false,
-            "allowEmpty" : true,
+            "dataType" : 25,
             "caption" : "钉钉",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 100,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 12,
               "colLG" : 12,
@@ -615,15 +614,15 @@
               "name" : "WEIXIN",
               "codeName" : "Weixin"
             },
-            "dataType" : 25,
+            "showCaption" : true,
             "hidden" : false,
-            "allowEmpty" : true,
+            "dataType" : 25,
             "caption" : "微信",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 100,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 12,
               "colLG" : 12,
@@ -646,15 +645,15 @@
               "name" : "ADDRESS",
               "codeName" : "Address"
             },
-            "dataType" : 25,
+            "showCaption" : true,
             "hidden" : false,
-            "allowEmpty" : true,
+            "dataType" : 25,
             "caption" : "通讯地址",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 100,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 12,
               "colLG" : 12,
@@ -669,22 +668,22 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : true,
           "codeName" : "grouppanel2",
           "caption" : "联系信息",
           "detailType" : "GROUPPANEL",
           "detailStyle" : "DEFAULT",
-          "showCaption" : true,
           "name" : "grouppanel2"
         } ],
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : false,
         "codeName" : "grouppanel3",
         "caption" : "用户信息",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : false,
         "name" : "grouppanel3"
       } ],
       "getPSLayout" : {
@@ -941,6 +940,7 @@
     "name" : "form",
     "modelid" : "03814dd8ec9097fb8dc654dc6e3311d5"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",

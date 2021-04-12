@@ -10,32 +10,32 @@
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 25,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "LINE",
       "codeName" : "Line"
     },
-    "dataType" : 25,
-    "name" : "line"
+    "name" : "line",
+    "dataType" : 25
   }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
+    "name" : "srfmstag",
+    "dataType" : 25
   } ],
-  "controlType" : "LIST",
-  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "enableRowEdit" : false,
+  "controlType" : "LIST",
   "codeName" : "Exp",
   "minorSortDir" : "DESC",
   "enableGroup" : false,
@@ -122,9 +122,9 @@
       "tooltip" : "新建",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "新建",
-      "showCaption" : true,
       "name" : "deuiaction1"
     } ],
     "getPSAppDataEntity" : {
@@ -156,8 +156,8 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
   "controlStyle" : "LISTVIEW",
+  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product/PSLISTS/Exp.json",
   "logicName" : "Exp",
   "modelid" : "33faef68532bd41ec8c3b0e9bd5cfd48"

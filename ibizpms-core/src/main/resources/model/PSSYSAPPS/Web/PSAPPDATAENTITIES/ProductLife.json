@@ -1,17 +1,18 @@
 {
+  "enableUIActions" : 15,
   "enableUIRemove" : true,
   "getAllPSAppPortletCats" : [ {
     "ungroup" : true,
     "codeName" : "Ungroup",
     "name" : "（未分类）"
   } ],
-  "enableUIActions" : 15,
+  "major" : true,
   "getAllPSAppDEMethods" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRoadMapYear"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -24,11 +25,11 @@
     "codeName" : "FetchRoadMapYear",
     "name" : "FetchRoadMapYear"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchGetRoadmapS"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -41,11 +42,11 @@
     "codeName" : "FetchGetRoadmapS",
     "name" : "FetchGetRoadmapS"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchGetRoadmap"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -58,11 +59,11 @@
     "codeName" : "FetchGetRoadmap",
     "name" : "FetchGetRoadmap"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Select"
     },
+    "builtinMethod" : false,
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -284,6 +285,22 @@
     "name" : "END"
   } ],
   "getAllPSAppDEACModes" : [ {
+    "enablePagingBar" : false,
+    "getPSDEACModeDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "IBZ_PRODUCTLIFEID",
+        "codeName" : "ProductLifeId"
+      },
+      "name" : "value",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "IBZ_PRODUCTLIFENAME",
+        "codeName" : "ProductLifeName"
+      },
+      "name" : "text",
+      "dataType" : 25
+    } ],
     "getValuePSAppDEField" : {
       "name" : "IBZ_PRODUCTLIFEID",
       "codeName" : "ProductLifeId"
@@ -292,22 +309,6 @@
       "name" : "IBZ_PRODUCTLIFENAME",
       "codeName" : "ProductLifeName"
     },
-    "getPSDEACModeDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "IBZ_PRODUCTLIFEID",
-        "codeName" : "ProductLifeId"
-      },
-      "dataType" : 25,
-      "name" : "value"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "IBZ_PRODUCTLIFENAME",
-        "codeName" : "ProductLifeName"
-      },
-      "dataType" : 25,
-      "name" : "text"
-    } ],
-    "enablePagingBar" : false,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "defaultMode" : true,
@@ -405,11 +406,11 @@
     "name" : "Save"
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRoadMapYear"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -422,11 +423,11 @@
     "codeName" : "FetchRoadMapYear",
     "name" : "FetchRoadMapYear"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchGetRoadmapS"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -439,11 +440,11 @@
     "codeName" : "FetchGetRoadmapS",
     "name" : "FetchGetRoadmapS"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchGetRoadmap"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -465,11 +466,6 @@
     "codeName" : "FetchDefault",
     "name" : "DEFAULT"
   } ],
-  "major" : true,
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDESERVICEAPIS/ProductLife.json"
-  },
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -483,6 +479,10 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDESERVICEAPIS/ProductLife.json"
+  },
   "codeName" : "ProductLife",
   "logicName" : "产品生命周期",
   "dataAccCtrlMode" : 1,

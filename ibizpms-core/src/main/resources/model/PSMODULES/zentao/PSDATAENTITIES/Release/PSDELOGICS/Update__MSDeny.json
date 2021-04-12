@@ -1,6 +1,6 @@
 {
-  "enableBackend" : true,
   "enableFront" : false,
+  "enableBackend" : true,
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"
@@ -29,9 +29,9 @@
         "modelref" : true,
         "id" : "Default"
       },
+      "srcFieldName" : "ID",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "ID",
-      "srcFieldName" : "ID",
       "name" : "复制主键"
     } ],
     "logicHolder" : 3,
@@ -48,13 +48,13 @@
     "name" : "状态[停止维护]拒绝[Update]操作"
   }, {
     "parallelOutput" : true,
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Temp"
-    },
     "getDstPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Temp"
     },
     "getPSDELogicLinks" : [ {
       "modelref" : true,
@@ -65,11 +65,11 @@
     } ],
     "logicHolder" : 3,
     "codeName" : "Get",
-    "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/Get.json"
     },
+    "logicNodeType" : "DEACTION",
     "name" : "获取数据"
   }, {
     "parallelOutput" : false,
@@ -107,11 +107,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "normal",
         "dstFieldName" : "STATUS",
         "logicType" : "SINGLE",
@@ -135,11 +135,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "terminate",
         "dstFieldName" : "STATUS",
         "logicType" : "SINGLE",
@@ -162,16 +162,16 @@
     "name" : "状态[停止维护]拒绝[Update]操作"
   } ],
   "getPSDELogicParams" : [ {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "默认变量"
   }, {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Temp",
     "default" : false,
     "name" : "临时变量"

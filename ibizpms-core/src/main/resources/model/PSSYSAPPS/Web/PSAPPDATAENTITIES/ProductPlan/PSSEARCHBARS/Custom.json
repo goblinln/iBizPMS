@@ -1,5 +1,5 @@
 {
-  "quickSearchMode" : 1,
+  "mobileSearchBar" : false,
   "getPSSearchBarFilters" : [ {
     "emptyCaption" : false,
     "getPSEditor" : {
@@ -7,8 +7,10 @@
       "editorWidth" : 100.0,
       "name" : "titlelike"
     },
-    "dataType" : 25,
+    "showCaption" : false,
     "hidden" : false,
+    "dataType" : 25,
+    "caption" : "名称(%)",
     "getPSDEFSearchMode" : {
       "valueOP" : "LIKE",
       "codeName" : "N_TITLE_LIKE",
@@ -20,11 +22,9 @@
       "name" : "N_TITLE_LIKE"
     },
     "allowEmpty" : true,
-    "caption" : "名称(%)",
     "labelPos" : "NONE",
     "labelWidth" : 0,
     "itemWidth" : 100.0,
-    "showCaption" : false,
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
@@ -42,9 +42,11 @@
       "editorType" : "DROPDOWNLIST",
       "name" : "producteq"
     },
-    "dataType" : 1,
+    "showCaption" : false,
     "hidden" : false,
+    "dataType" : 1,
     "needCodeListConfig" : true,
+    "caption" : "产品(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_PRODUCT_EQ",
@@ -56,10 +58,8 @@
       "name" : "N_PRODUCT_EQ"
     },
     "allowEmpty" : true,
-    "caption" : "产品(=)",
     "labelPos" : "NONE",
     "labelWidth" : 0,
-    "showCaption" : false,
     "getPSAppDEField" : {
       "name" : "PRODUCT",
       "codeName" : "Product"
@@ -77,8 +77,10 @@
       },
       "name" : "begingteq"
     },
-    "dataType" : 5,
+    "showCaption" : false,
     "hidden" : false,
+    "dataType" : 5,
+    "caption" : "开始日期(>=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "GTANDEQ",
       "codeName" : "N_BEGIN_GTANDEQ",
@@ -91,11 +93,9 @@
       "name" : "N_BEGIN_GTANDEQ"
     },
     "allowEmpty" : true,
-    "caption" : "开始日期(>=)",
     "labelPos" : "NONE",
     "labelWidth" : 0,
     "itemWidth" : 100.0,
-    "showCaption" : false,
     "getPSAppDEField" : {
       "name" : "BEGIN",
       "codeName" : "Begin"
@@ -113,9 +113,11 @@
       "editorType" : "DROPDOWNLIST",
       "name" : "brancheq"
     },
-    "dataType" : 1,
+    "showCaption" : false,
     "hidden" : false,
+    "dataType" : 1,
     "needCodeListConfig" : true,
+    "caption" : "平台/分支(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_BRANCH_EQ",
@@ -127,10 +129,8 @@
       "name" : "N_BRANCH_EQ"
     },
     "allowEmpty" : true,
-    "caption" : "平台/分支(=)",
     "labelPos" : "NONE",
     "labelWidth" : 0,
-    "showCaption" : false,
     "getPSAppDEField" : {
       "name" : "BRANCH",
       "codeName" : "Branch"
@@ -149,9 +149,11 @@
       "editorWidth" : 100.0,
       "name" : "deltaeq"
     },
-    "dataType" : 25,
+    "showCaption" : false,
     "hidden" : false,
+    "dataType" : 25,
     "needCodeListConfig" : true,
+    "caption" : "周期(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_DELTA_EQ",
@@ -163,11 +165,9 @@
       "name" : "N_DELTA_EQ"
     },
     "allowEmpty" : true,
-    "caption" : "周期(=)",
     "labelPos" : "NONE",
     "labelWidth" : 0,
     "itemWidth" : 100.0,
-    "showCaption" : false,
     "getPSAppDEField" : {
       "name" : "DELTA",
       "codeName" : "Delta"
@@ -185,8 +185,10 @@
       },
       "name" : "endlteq"
     },
-    "dataType" : 5,
+    "showCaption" : false,
     "hidden" : false,
+    "dataType" : 5,
+    "caption" : "结束日期(<=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "LTANDEQ",
       "codeName" : "N_END_LTANDEQ",
@@ -199,11 +201,9 @@
       "name" : "N_END_LTANDEQ"
     },
     "allowEmpty" : true,
-    "caption" : "结束日期(<=)",
     "labelPos" : "NONE",
     "labelWidth" : 0,
     "itemWidth" : 100.0,
-    "showCaption" : false,
     "getPSAppDEField" : {
       "name" : "END",
       "codeName" : "End"
@@ -223,9 +223,11 @@
       "editorWidth" : 100.0,
       "name" : "futureeq"
     },
-    "dataType" : 25,
+    "showCaption" : false,
     "hidden" : false,
+    "dataType" : 25,
     "convertToCodeItemText" : true,
+    "caption" : "待定(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_FUTURE_EQ",
@@ -237,11 +239,9 @@
       "name" : "N_FUTURE_EQ"
     },
     "allowEmpty" : true,
-    "caption" : "待定(=)",
     "labelPos" : "NONE",
     "labelWidth" : 0,
     "itemWidth" : 100.0,
-    "showCaption" : false,
     "getPSAppDEField" : {
       "name" : "FUTURE",
       "codeName" : "Future"
@@ -259,9 +259,11 @@
       "editorType" : "DROPDOWNLIST",
       "name" : "isexpiredeq"
     },
-    "dataType" : 25,
+    "showCaption" : false,
     "hidden" : false,
+    "dataType" : 25,
     "needCodeListConfig" : true,
+    "caption" : "是否过期(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_ISEXPIRED_EQ",
@@ -273,10 +275,8 @@
       "name" : "N_ISEXPIRED_EQ"
     },
     "allowEmpty" : true,
-    "caption" : "是否过期(=)",
     "labelPos" : "NONE",
     "labelWidth" : 0,
-    "showCaption" : false,
     "getPSAppDEField" : {
       "name" : "ISEXPIRED",
       "codeName" : "Isexpired"
@@ -286,10 +286,10 @@
   }, {
     "emptyCaption" : false,
     "getPSEditor" : {
+      "enableLinkView" : false,
       "singleSelect" : true,
       "dropDownView" : false,
       "enablePickupView" : false,
-      "enableLinkView" : false,
       "enableAC" : true,
       "forceSelection" : true,
       "showTrigger" : true,
@@ -313,8 +313,10 @@
       },
       "name" : "parentnameeq"
     },
-    "dataType" : 25,
+    "showCaption" : false,
     "hidden" : false,
+    "dataType" : 25,
+    "caption" : "父计划名称(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_PARENTNAME_EQ",
@@ -326,10 +328,8 @@
       "name" : "N_PARENTNAME_EQ"
     },
     "allowEmpty" : true,
-    "caption" : "父计划名称(=)",
     "labelPos" : "NONE",
     "labelWidth" : 0,
-    "showCaption" : false,
     "getPSAppDEField" : {
       "name" : "PARENTNAME",
       "codeName" : "ParentName"
@@ -339,10 +339,10 @@
   }, {
     "emptyCaption" : false,
     "getPSEditor" : {
+      "enableLinkView" : false,
       "singleSelect" : true,
       "dropDownView" : false,
       "enablePickupView" : false,
-      "enableLinkView" : false,
       "enableAC" : true,
       "forceSelection" : true,
       "showTrigger" : true,
@@ -366,8 +366,10 @@
       },
       "name" : "parentnamelike"
     },
-    "dataType" : 25,
+    "showCaption" : false,
     "hidden" : false,
+    "dataType" : 25,
+    "caption" : "父计划名称(%)",
     "getPSDEFSearchMode" : {
       "valueOP" : "LIKE",
       "codeName" : "N_PARENTNAME_LIKE",
@@ -379,10 +381,8 @@
       "name" : "N_PARENTNAME_LIKE"
     },
     "allowEmpty" : true,
-    "caption" : "父计划名称(%)",
     "labelPos" : "NONE",
     "labelWidth" : 0,
-    "showCaption" : false,
     "getPSAppDEField" : {
       "name" : "PARENTNAME",
       "codeName" : "ParentName"
@@ -390,9 +390,9 @@
     "itemType" : "FILTER",
     "name" : "parentnamelike"
   } ],
-  "mobileSearchBar" : false,
-  "controlType" : "SEARCHBAR",
+  "quickSearchMode" : 1,
   "enableFilter" : true,
+  "controlType" : "SEARCHBAR",
   "codeName" : "Custom",
   "enableQuickSearch" : true,
   "enableGroup" : false,

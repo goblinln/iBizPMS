@@ -3,10 +3,10 @@
   "showCaptionBar" : false,
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "ActionEditView",
+  "enableDP" : true,
   "caption" : "历史记录",
   "title" : "测试报告编辑视图（历史记录）",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -33,13 +33,14 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
   },
   "getPSControls" : [ {
     "enableAutoSave" : false,
+    "infoFormMode" : false,
+    "showFormNavBar" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -64,8 +65,6 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
-    "infoFormMode" : false,
-    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
@@ -81,8 +80,8 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
-          "refreshItemsSetParamOnly" : false,
           "needSave" : false,
+          "refreshItemsSetParamOnly" : false,
           "parentDataJO" : {
             "srfparentdename" : "ZT_TESTREPORT",
             "SRFPARENTTYPE" : "CUSTOM"
@@ -93,10 +92,10 @@
             "xDataControlName" : "list",
             "showCaptionBar" : false,
             "getPSDEViewCodeName" : "AddCommentHistoryListView",
+            "enableDP" : true,
             "caption" : "系统日志",
             "title" : "历史记录",
             "accUserMode" : 2,
-            "enableDP" : true,
             "getPSAppViewNavParams" : [ {
               "rawValue" : false,
               "value" : "OBJECTTYPE",
@@ -160,7 +159,6 @@
               "key" : "OBJECTID",
               "name" : "OBJECTID"
             } ],
-            "viewStyle" : "STYLE2",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
@@ -173,30 +171,30 @@
               "showHeader" : true,
               "enableRowEditGroup" : false,
               "getPSDEListDataItems" : [ {
-                "dataType" : 25,
-                "name" : "field"
+                "name" : "field",
+                "dataType" : 25
               }, {
-                "dataType" : 25,
-                "name" : "ibiznew"
+                "name" : "ibiznew",
+                "dataType" : 25
               }, {
-                "dataType" : 1,
-                "name" : "id"
+                "name" : "id",
+                "dataType" : 1
               }, {
-                "dataType" : 21,
-                "name" : "old"
+                "name" : "old",
+                "dataType" : 21
               }, {
-                "dataType" : 21,
-                "name" : "diff"
+                "name" : "diff",
+                "dataType" : 21
               }, {
-                "dataType" : 1,
-                "name" : "action"
+                "name" : "action",
+                "dataType" : 1
               } ],
-              "controlType" : "LIST",
-              "enableRowEdit" : false,
               "getMinorSortPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
               },
+              "enableRowEdit" : false,
+              "controlType" : "LIST",
               "codeName" : "DEFAULT",
               "minorSortDir" : "DESC",
               "enableGroup" : false,
@@ -313,12 +311,6 @@
                 },
                 "noPrivDisplayMode" : 2,
                 "getPSUIAction" : {
-                  "getPSNavigateContexts" : [ {
-                    "rawValue" : false,
-                    "value" : "objectid",
-                    "key" : "OBJECTID",
-                    "name" : "OBJECTID"
-                  } ],
                   "getPSAppDataEntity" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
@@ -330,6 +322,12 @@
                   },
                   "frontProcessType" : "WIZARD",
                   "refreshMode" : 1,
+                  "getPSNavigateContexts" : [ {
+                    "rawValue" : false,
+                    "value" : "objectid",
+                    "key" : "OBJECTID",
+                    "name" : "OBJECTID"
+                  } ],
                   "getNoPrivDisplayMode" : 2,
                   "getPSSysImage" : {
                     "glyph" : "xf1e8@FontAwesome",
@@ -338,8 +336,8 @@
                   "timeout" : 60000,
                   "codeName" : "AddComment",
                   "caption" : "添加备注",
-                  "actionTarget" : "NONE",
                   "reloadData" : true,
+                  "actionTarget" : "NONE",
                   "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
                   "uIActionTag" : "AddComment",
                   "uIActionType" : "DEUIACTION",
@@ -355,9 +353,9 @@
                 "tooltip" : "添加备注",
                 "groupExtractMode" : "ITEM",
                 "showIcon" : true,
+                "showCaption" : true,
                 "itemType" : "DEUIACTION",
                 "caption" : "添加备注",
-                "showCaption" : true,
                 "name" : "deuiaction1"
               } ],
               "getPSAppDataEntity" : {
@@ -380,75 +378,75 @@
               "showHeader" : true,
               "enableRowEditGroup" : false,
               "getPSDEListDataItems" : [ {
-                "dataType" : 25,
-                "name" : "product"
+                "name" : "product",
+                "dataType" : 25
               }, {
-                "dataType" : 5,
                 "format" : "YYYY-MM-DD HH:mm:ss",
-                "name" : "date"
+                "name" : "date",
+                "dataType" : 5
               }, {
-                "dataType" : 21,
-                "name" : "comment"
+                "name" : "comment",
+                "dataType" : 21
               }, {
                 "getPSAppDEField" : {
                   "name" : "ACTION",
                   "codeName" : "Action"
                 },
-                "dataType" : 25,
-                "name" : "actiontype"
+                "name" : "actiontype",
+                "dataType" : 25
               }, {
-                "dataType" : 1,
-                "name" : "id"
+                "name" : "id",
+                "dataType" : 1
               }, {
-                "dataType" : 25,
-                "name" : "objecttype"
+                "name" : "objecttype",
+                "dataType" : 25
               }, {
-                "dataType" : 21,
-                "name" : "extra"
+                "name" : "extra",
+                "dataType" : 21
               }, {
                 "getFrontPSCodeList" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ActionManner.json"
                 },
-                "dataType" : 25,
-                "name" : "actionmanner"
+                "name" : "actionmanner",
+                "dataType" : 25
               }, {
-                "dataType" : 1,
-                "name" : "objectid"
+                "name" : "objectid",
+                "dataType" : 1
               }, {
-                "dataType" : 1,
-                "name" : "isactorss"
+                "name" : "isactorss",
+                "dataType" : 1
               }, {
                 "getFrontPSCodeList" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
                 },
-                "dataType" : 25,
-                "name" : "actor"
+                "name" : "actor",
+                "dataType" : 25
               }, {
-                "dataType" : 1,
-                "name" : "project"
+                "name" : "project",
+                "dataType" : 1
               }, {
                 "getPSAppDEField" : {
                   "name" : "ID",
                   "codeName" : "Id"
                 },
-                "dataType" : 25,
-                "name" : "srfkey"
+                "name" : "srfkey",
+                "dataType" : 25
               }, {
                 "getPSAppDEField" : {
                   "name" : "COMMENT",
                   "codeName" : "Comment"
                 },
-                "dataType" : 25,
-                "name" : "srfmajortext"
+                "name" : "srfmajortext",
+                "dataType" : 25
               } ],
-              "controlType" : "LIST",
-              "enableRowEdit" : false,
               "getMinorSortPSAppDEField" : {
                 "name" : "DATE",
                 "codeName" : "Date"
               },
+              "enableRowEdit" : false,
+              "controlType" : "LIST",
               "codeName" : "ClassifyByType",
               "minorSortDir" : "ASC",
               "enableGroup" : false,
@@ -562,6 +560,7 @@
               "name" : "list",
               "modelid" : "3b94c5ec8c0db8db6a5f36fa82c3ed3b"
             } ],
+            "viewStyle" : "STYLE2",
             "getPSAppViewRefs" : [ {
               "getRefPSAppView" : {
                 "modelref" : true,
@@ -595,7 +594,6 @@
             }, {
               "logicTrigger" : "CUSTOM",
               "getPSAppUILogic" : {
-                "actionAfterWizard" : "DEFAULT",
                 "getNewDataPSAppView" : {
                   "getRefPSAppView" : {
                     "modelref" : true,
@@ -603,9 +601,10 @@
                     "viewType" : "DEEDITVIEW"
                   }
                 },
+                "enableWizardAdd" : false,
+                "actionAfterWizard" : "DEFAULT",
                 "enableBatchAdd" : false,
                 "batchAddOnly" : false,
-                "enableWizardAdd" : false,
                 "viewLogicType" : "APP_NEWDATA",
                 "getPSAppUILogicRefViews" : [ {
                   "getRefPSAppView" : {
@@ -652,21 +651,21 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : true,
           "codeName" : "druipart1",
           "detailType" : "DRUIPART",
           "detailStyle" : "DEFAULT",
-          "showCaption" : true,
           "name" : "druipart1"
         } ],
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : false,
         "codeName" : "group1",
         "caption" : "历史记录",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : false,
         "name" : "group1"
       } ],
       "getPSLayout" : {
@@ -822,6 +821,7 @@
     "name" : "form",
     "modelid" : "bb7b779b250295c163a8ca8103a5ee78"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSSysImage" : {
     "glyph" : "xf0f6@FontAwesome",
     "cssClass" : "fa fa-file-text-o"
@@ -831,50 +831,50 @@
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportActionEditView.json",
   "name" : "TestReportActionEditView",
   "getPSAppDERSPaths" : [ [ {
-    "getParentPSAppDEField" : {
-      "name" : "PROJECT",
-      "codeName" : "Project"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+    "getParentPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "TestReports",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
     "rSMode" : 2,
     "name" : "项目报告"
   } ], [ {
-    "getParentPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "TestReports",
     "actionRSMode" : 1,
     "dataRSMode" : 0,

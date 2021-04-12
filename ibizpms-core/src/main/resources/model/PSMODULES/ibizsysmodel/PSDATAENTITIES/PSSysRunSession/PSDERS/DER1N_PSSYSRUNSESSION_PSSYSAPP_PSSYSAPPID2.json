@@ -3,11 +3,11 @@
     "name" : "PSSYSAPPID2",
     "codeName" : "PSSysAppId2"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "PSSYSAPPNAME2",
     "codeName" : "PSSysAppName2"
   },
+  "masterOrder" : -1,
   "removeActionType" : 0,
   "pickupDEFName" : "PSSYSAPPID2",
   "masterRS" : 0,
@@ -17,12 +17,12 @@
     "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysApp.json"
   },
   "orderValue" : 100,
+  "codeName" : "PSSysApp2",
+  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession.json"
   },
-  "codeName" : "PSSysApp2",
-  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession/PSDERS/DER1N_PSSYSRUNSESSION_PSSYSAPP_PSSYSAPPID2.json",
   "name" : "DER1N_PSSYSRUNSESSION_PSSYSAPP_PSSYSAPPID2"
 }

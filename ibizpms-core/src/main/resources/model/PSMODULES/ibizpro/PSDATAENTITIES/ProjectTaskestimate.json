@@ -1,13 +1,16 @@
 {
-  "serviceAPIMode" : 1,
   "getAllPSDEFields" : [ {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "3378218e9d32b7c92a1db970699e10de",
+    "codeName" : "TwentyfiveEVALUATIONTIME",
+    "logicName" : "二十五号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -25,22 +28,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "TwentyfiveEVALUATIONTIME",
-    "logicName" : "二十五号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYFIVEEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "a566da87261eb67ae989bd81657484dd",
+    "codeName" : "Seventeenconsumed",
+    "logicName" : "十七号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -58,21 +61,21 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Seventeenconsumed",
-    "logicName" : "十七号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "SEVENTEENCONSUMED"
   }, {
-    "dataType" : "BIGINT",
     "valueFormat" : "%1$s",
+    "dataType" : "BIGINT",
     "deployId" : "65fac648d1795671a689d9867ea3d214",
+    "codeName" : "Project",
+    "logicName" : "项目标识",
+    "stdDataType" : 1,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -90,22 +93,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Project",
-    "logicName" : "项目标识",
-    "stdDataType" : 1,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "PROJECT"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "19b67793152c17d7388de0bec56afee9",
+    "codeName" : "FifteenEVALUATIONTIME",
+    "logicName" : "十五号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -123,22 +126,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "FifteenEVALUATIONTIME",
-    "logicName" : "十五号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "FIFTEENEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "bac95ea5e2722fa0c1ee2220db67a231",
+    "codeName" : "Otherconsumed",
+    "logicName" : "其他项目工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -156,22 +159,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Otherconsumed",
-    "logicName" : "其他项目工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "OTHERCONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "dad04c40485425e0ff991da1024ad956",
+    "codeName" : "ThirteenEVALUATIONCOST",
+    "logicName" : "十三号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -189,22 +192,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "ThirteenEVALUATIONCOST",
-    "logicName" : "十三号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "THIRTEENEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "f3644d3bf249cbb23f5e123046194232",
+    "codeName" : "ThirtyEVALUATIONCOST",
+    "logicName" : "三十号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -222,22 +225,21 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "ThirtyEVALUATIONCOST",
-    "logicName" : "三十号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "THIRTYEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "3b7ed33f18380c14ebc169d2a01bff63",
+    "codeName" : "Evaluationcost",
+    "logicName" : "评估成本",
+    "stdDataType" : 7,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -262,20 +264,21 @@
       "autoIncrement" : false,
       "name" : "EVALUATIONCOST"
     } ],
-    "codeName" : "Evaluationcost",
-    "logicName" : "评估成本",
-    "stdDataType" : 7,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "EVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "38dfa17fa34b01980a4eca98dd576ed6",
+    "codeName" : "TwentysixEVALUATIONCOST",
+    "logicName" : "二十六号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -293,22 +296,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "TwentysixEVALUATIONCOST",
-    "logicName" : "二十六号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYSIXEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "c5a26032d86656ba70eb2032ab576ddc",
+    "codeName" : "TwoEVALUATIONTIME",
+    "logicName" : "二号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -326,22 +329,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "TwoEVALUATIONTIME",
-    "logicName" : "二号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWOEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "8b79ebe4b80345b25cc0af376bcaaf5d",
+    "codeName" : "ThirtyEVALUATIONTIME",
+    "logicName" : "三十号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -359,22 +362,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "ThirtyEVALUATIONTIME",
-    "logicName" : "三十号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "THIRTYEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "c1cec60e256f83737620ff1a36ee2d4c",
+    "codeName" : "Twentysixconsumed",
+    "logicName" : "二十六号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -392,22 +395,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Twentysixconsumed",
-    "logicName" : "二十六号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYSIXCONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "0bc68ebb5f9cd8b0deda9f06c1d69bad",
+    "codeName" : "NineteenEVALUATIONTIME",
+    "logicName" : "十九号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -425,22 +428,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "NineteenEVALUATIONTIME",
-    "logicName" : "十九号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "NINETEENEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "582b1e4f0356d1cc3cdf2641e03afbaa",
+    "codeName" : "Twentyoneconsumed",
+    "logicName" : "二十一号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -458,22 +461,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Twentyoneconsumed",
-    "logicName" : "二十一号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYONECONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "42262b3fb06ebcf3d84d818a102bfce6",
+    "codeName" : "Evaluationtime",
+    "logicName" : "评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -491,22 +494,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Evaluationtime",
-    "logicName" : "评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "EVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "d376e7f2ba34f6a114110494c91a908c",
+    "codeName" : "TwentyfourEVALUATIONCOST",
+    "logicName" : "二十四号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -524,22 +527,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "TwentyfourEVALUATIONCOST",
-    "logicName" : "二十四号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYFOUREVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "28d9a2f653ec0e1d0016d6137d0d9cfa",
+    "codeName" : "ThreeEVALUATIONCOST",
+    "logicName" : "三号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -557,22 +560,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "ThreeEVALUATIONCOST",
-    "logicName" : "三号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "THREEEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "02bd2a3d979dd7439ec4fc7b89f802ec",
+    "codeName" : "ThirtyoneEVALUATIONCOST",
+    "logicName" : "三十一号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -590,22 +593,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "ThirtyoneEVALUATIONCOST",
-    "logicName" : "三十一号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "THIRTYONEEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "9230cb2003fedc9148d8dc0e8a7bc70b",
+    "codeName" : "SixEVALUATIONCOST",
+    "logicName" : "六号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -623,22 +626,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "SixEVALUATIONCOST",
-    "logicName" : "六号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "SIXEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "12621c1a10e260b0ee60849bb15b6b0f",
+    "codeName" : "EighteenEVALUATIONTIME",
+    "logicName" : "十八号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -656,22 +659,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "EighteenEVALUATIONTIME",
-    "logicName" : "十八号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "EIGHTEENEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "9ea66a019e47f15b4fcdb546d296c709",
+    "codeName" : "ThirteenEVALUATIONTIME",
+    "logicName" : "十三号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -689,22 +692,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "ThirteenEVALUATIONTIME",
-    "logicName" : "十三号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "THIRTEENEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "c123ae2290f37311ae7355c11cafd6c6",
+    "codeName" : "TwentynineEVALUATIONCOST",
+    "logicName" : "二十九号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -722,22 +725,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "TwentynineEVALUATIONCOST",
-    "logicName" : "二十九号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYNINEEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "bc4e0751805e852fcec662fc797d9741",
+    "codeName" : "TwentyEVALUATIONTIME",
+    "logicName" : "二十号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -755,22 +758,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "TwentyEVALUATIONTIME",
-    "logicName" : "二十号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "8e59d496bc3cae903b4695c8921dee0e",
+    "codeName" : "TwentytwoEVALUATIONTIME",
+    "logicName" : "二十二号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -788,22 +791,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "TwentytwoEVALUATIONTIME",
-    "logicName" : "二十二号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYTWOEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "6c786cfeca3452d49124a7b27e3b512c",
+    "codeName" : "OneEVALUATIONTIME",
+    "logicName" : "一号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -821,22 +824,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "OneEVALUATIONTIME",
-    "logicName" : "一号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "ONEEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "2550c365ca2292e2b746bb86085c8cbd",
+    "codeName" : "Elevenconsumed",
+    "logicName" : "十一号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -854,22 +857,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Elevenconsumed",
-    "logicName" : "十一号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "ELEVENCONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "db0567d0e8d09430fa82636bb1bf07f6",
+    "codeName" : "FourteenEVALUATIONTIME",
+    "logicName" : "十四号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -887,22 +890,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "FourteenEVALUATIONTIME",
-    "logicName" : "十四号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "FOURTEENEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "e8b7d159e030cfc05b91691797df9187",
+    "codeName" : "Twentytwoconsumed",
+    "logicName" : "二十二号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -920,22 +923,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Twentytwoconsumed",
-    "logicName" : "二十二号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYTWOCONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "e7d80e35ca3c9d027a118642b90796c6",
+    "codeName" : "TwentyoneEVALUATIONCOST",
+    "logicName" : "二十一号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -953,22 +956,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "TwentyoneEVALUATIONCOST",
-    "logicName" : "二十一号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYONEEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "dbc6f1e80acd7db0044e8aab3740285f",
+    "codeName" : "Eightconsumed",
+    "logicName" : "八号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -986,22 +989,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Eightconsumed",
-    "logicName" : "八号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "EIGHTCONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "59039272a012d0a974ed184279a7c5de",
+    "codeName" : "TwentyeightEVALUATIONTIME",
+    "logicName" : "二十八号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1019,22 +1022,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "TwentyeightEVALUATIONTIME",
-    "logicName" : "二十八号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYEIGHTEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "46deb31bcc56db8ab7777a0bfa8908ea",
+    "codeName" : "Threeconsumed",
+    "logicName" : "三号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1052,22 +1055,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Threeconsumed",
-    "logicName" : "三号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "THREECONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "a24f04fcff54bb7544f2a9f5b8740200",
+    "codeName" : "TwentythreeEVALUATIONTIME",
+    "logicName" : "二十三号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1085,22 +1088,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "TwentythreeEVALUATIONTIME",
-    "logicName" : "二十三号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYTHREEEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "375fcba9b4f6c0d1955eea51e128d8b5",
+    "codeName" : "TenEVALUATIONTIME",
+    "logicName" : "十号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1118,22 +1121,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "TenEVALUATIONTIME",
-    "logicName" : "十号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TENEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "6221cb4fd67c1b4cbb203957a869d9fa",
+    "codeName" : "Sixconsumed",
+    "logicName" : "六号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1151,22 +1154,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Sixconsumed",
-    "logicName" : "六号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "SIXCONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "3d2fdc012a01617276faee3127ed0856",
+    "codeName" : "Twentyfiveconsumed",
+    "logicName" : "二十五号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1184,22 +1187,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Twentyfiveconsumed",
-    "logicName" : "二十五号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYFIVECONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "865ca976defce4a788370dfa0ad288e1",
+    "codeName" : "Twentyeightconsumed",
+    "logicName" : "二十八号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1217,22 +1220,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Twentyeightconsumed",
-    "logicName" : "二十八号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYEIGHTCONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "f17eccf74ac3d04fa4435c4935565ff7",
+    "codeName" : "Thirteenconsumed",
+    "logicName" : "十三号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1250,22 +1253,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Thirteenconsumed",
-    "logicName" : "十三号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "THIRTEENCONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "7495ecef88df281e3eabd5f6d9d140ac",
+    "codeName" : "FourEVALUATIONCOST",
+    "logicName" : "四号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1283,22 +1286,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "FourEVALUATIONCOST",
-    "logicName" : "四号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "FOUREVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "ef72c67058e44a5035ee4329905618ed",
+    "codeName" : "TwentytwoEVALUATIONCOST",
+    "logicName" : "二十二号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1316,22 +1319,23 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "TwentytwoEVALUATIONCOST",
-    "logicName" : "二十二号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYTWOEVALUATIONCOST"
   }, {
-    "dataType" : "TEXT",
     "length" : 100,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "1a4f0170dff8978740b834bcfdfda989",
+    "codeName" : "Month",
+    "logicName" : "月",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -1361,23 +1365,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Month",
-    "logicName" : "月",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "MONTH"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "6d0f33433c7855ffcb4034c073f53a26",
+    "codeName" : "TwelveEVALUATIONTIME",
+    "logicName" : "十二号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1395,22 +1398,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "TwelveEVALUATIONTIME",
-    "logicName" : "十二号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWELVEEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "0f3fe5e1b6299070aa77b140366b24c0",
+    "codeName" : "TenEVALUATIONCOST",
+    "logicName" : "十号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1428,22 +1431,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "TenEVALUATIONCOST",
-    "logicName" : "十号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TENEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "34bae0c1aef733c9b3553851f01979e8",
+    "codeName" : "SevenEVALUATIONCOST",
+    "logicName" : "七号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1461,22 +1464,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "SevenEVALUATIONCOST",
-    "logicName" : "七号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "SEVENEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "44cc91e73058d6899ab55b174e3693ae",
+    "codeName" : "FifteenEVALUATIONCOST",
+    "logicName" : "十五号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1494,22 +1497,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "FifteenEVALUATIONCOST",
-    "logicName" : "十五号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "FIFTEENEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "aa06db1c906a0646996440d7356d58eb",
+    "codeName" : "NineEVALUATIONCOST",
+    "logicName" : "九号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1527,22 +1530,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "NineEVALUATIONCOST",
-    "logicName" : "九号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "NINEEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "4af69f793af4beebcb22cf4322860b7a",
+    "codeName" : "Thirtyconsumed",
+    "logicName" : "三十号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1560,22 +1563,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Thirtyconsumed",
-    "logicName" : "三十号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "THIRTYCONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "37bece90c85d5745943aa0549b8f1779",
+    "codeName" : "ElevenEVALUATIONCOST",
+    "logicName" : "十一号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1593,22 +1596,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "ElevenEVALUATIONCOST",
-    "logicName" : "十一号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "ELEVENEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "da18cc97c4953a8ea723863c1199c90b",
+    "codeName" : "ThreeEVALUATIONTIME",
+    "logicName" : "三号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1626,22 +1629,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "ThreeEVALUATIONTIME",
-    "logicName" : "三号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "THREEEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "091698a9e219778c785eeb9577219e39",
+    "codeName" : "TwentynineEVALUATIONTIME",
+    "logicName" : "二十九号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1659,22 +1662,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "TwentynineEVALUATIONTIME",
-    "logicName" : "二十九号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYNINEEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "e4ebef9017c5b6ea8d8891de746db163",
+    "codeName" : "Nineconsumed",
+    "logicName" : "九号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1692,22 +1695,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Nineconsumed",
-    "logicName" : "九号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "NINECONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "4be662d5d7d08a6fe5fab720a4929acb",
+    "codeName" : "OneEVALUATIONCOST",
+    "logicName" : "一号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1725,22 +1728,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "OneEVALUATIONCOST",
-    "logicName" : "一号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "ONEEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "79e4b9cc35dddb85504574850b6e3745",
+    "codeName" : "Twentyconsumed",
+    "logicName" : "二十号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1758,22 +1761,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Twentyconsumed",
-    "logicName" : "二十号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYCONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "1677d53c9196b25f27a8ccee30135a56",
+    "codeName" : "FiveEVALUATIONCOST",
+    "logicName" : "五号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1791,22 +1794,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "FiveEVALUATIONCOST",
-    "logicName" : "五号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "FIVEEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "adfc487fc285a7c2398fc8068b0a4e99",
+    "codeName" : "TwentyoneEVALUATIONTIME",
+    "logicName" : "二十一号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1824,22 +1827,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "TwentyoneEVALUATIONTIME",
-    "logicName" : "二十一号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYONEEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "76adc3de8d157eeb57ad29cc275cacdb",
+    "codeName" : "Fourconsumed",
+    "logicName" : "四号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1857,22 +1860,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Fourconsumed",
-    "logicName" : "四号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "FOURONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "dfba3362b97796005b5475f8a53bf824",
+    "codeName" : "Otherevaluationtime",
+    "logicName" : "其他项目评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1890,22 +1893,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Otherevaluationtime",
-    "logicName" : "其他项目评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "OTHEREVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "2c999c4136605c5dc65846e6da947073",
+    "codeName" : "Twentysevenconsumed",
+    "logicName" : "二十七号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1923,22 +1926,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Twentysevenconsumed",
-    "logicName" : "二十七号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYSEVENCONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "8596d09e96eabb487775b59ee54cc605",
+    "codeName" : "Twoconsumed",
+    "logicName" : "二号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1956,22 +1959,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Twoconsumed",
-    "logicName" : "二号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWOCONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "2d370f0e42c1dcbeac31b34799baea3e",
+    "codeName" : "TwentyfourEVALUATIONTIME",
+    "logicName" : "二十四号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1989,22 +1992,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "TwentyfourEVALUATIONTIME",
-    "logicName" : "二十四号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYFOUREVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "f30a05c7a227c261746ee7dc5df03728",
+    "codeName" : "TwentysixEVALUATIONTIME",
+    "logicName" : "二十六号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -2022,22 +2025,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "TwentysixEVALUATIONTIME",
-    "logicName" : "二十六号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYSIXEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "66b2a31d25b9084688a1ade4718d8654",
+    "codeName" : "NineEVALUATIONTIME",
+    "logicName" : "九号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -2055,22 +2058,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "NineEVALUATIONTIME",
-    "logicName" : "九号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "NINEEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "1c91352b40c31e3fc53aeb26259c6844",
+    "codeName" : "EighteenEVALUATIONCOST",
+    "logicName" : "十八号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -2088,22 +2091,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "EighteenEVALUATIONCOST",
-    "logicName" : "十八号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "EIGHTEENEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "88b4dab307ead7036ad96f5756d1a3b8",
+    "codeName" : "TwentythreeEVALUATIONCOST",
+    "logicName" : "二十三号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -2121,22 +2124,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "TwentythreeEVALUATIONCOST",
-    "logicName" : "二十三号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYTHREEEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "723783dabcd85de8001b86d37706de84",
+    "codeName" : "FourEVALUATIONTIME",
+    "logicName" : "四号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -2154,22 +2157,23 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "FourEVALUATIONTIME",
-    "logicName" : "四号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "FOUREVALUATIONTIME"
   }, {
-    "dataType" : "TEXT",
     "length" : 100,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "82ce97309f529c98bc14b93cc3d8c602",
+    "codeName" : "ProjectName",
+    "logicName" : "项目名称",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -2199,23 +2203,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "ProjectName",
-    "logicName" : "项目名称",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "PROJECTNAME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "4e3ec788f58d7404f232abbcfae61527",
+    "codeName" : "EightEVALUATIONCOST",
+    "logicName" : "八号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -2233,22 +2236,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "EightEVALUATIONCOST",
-    "logicName" : "八号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "EIGHTEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "c9def4028b9bf8cba071871173eb3d4c",
+    "codeName" : "EightEVALUATIONTIME",
+    "logicName" : "八号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -2266,22 +2269,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "EightEVALUATIONTIME",
-    "logicName" : "八号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "EIGHTEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "c8d4a69a6752863d19e55e5ad200a191",
+    "codeName" : "Twentynineconsumed",
+    "logicName" : "二十九号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -2299,22 +2302,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Twentynineconsumed",
-    "logicName" : "二十九号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYNINECONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "35679188aa99fbcf0948ed2e665c2fbe",
+    "codeName" : "Consumed",
+    "logicName" : "工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -2332,21 +2335,20 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Consumed",
-    "logicName" : "工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "CONSUMED"
   }, {
-    "dataType" : "DATE",
     "valueFormat" : "%1$tY-%1$tm-%1$td",
+    "dataType" : "DATE",
     "deployId" : "39f3d589d93e0188b51c3d20680c7eef",
+    "codeName" : "Date",
+    "logicName" : "日期",
+    "stdDataType" : 5,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -2371,20 +2373,21 @@
       "autoIncrement" : false,
       "name" : "DATE"
     } ],
-    "codeName" : "Date",
-    "logicName" : "日期",
-    "stdDataType" : 5,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "DATE"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "73566b534944215081f4609cd5471322",
+    "codeName" : "Sixteenconsumed",
+    "logicName" : "十六号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -2402,22 +2405,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Sixteenconsumed",
-    "logicName" : "十六号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "SIXTEENCONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "ccd1c5f017b0bc55a1130510eaff6113",
+    "codeName" : "ThirtyoneEVALUATIONTIME",
+    "logicName" : "三十一号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -2435,22 +2438,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "ThirtyoneEVALUATIONTIME",
-    "logicName" : "三十一号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "THIRTYONEEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "6c37e163f41d273d50d5d116392ae55d",
+    "codeName" : "SixteenEVALUATIONCOST",
+    "logicName" : "十六号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -2468,22 +2471,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "SixteenEVALUATIONCOST",
-    "logicName" : "十六号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "SIXTEENEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "923b95a6389af8d555e96d8e2b1912b0",
+    "codeName" : "SixteenEVALUATIONTIME",
+    "logicName" : "十六号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -2501,22 +2504,23 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "SixteenEVALUATIONTIME",
-    "logicName" : "十六号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "SIXTEENEVALUATIONTIME"
   }, {
-    "dataType" : "TEXT",
     "length" : 100,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "846487457962fad9c20e261484fc871f",
+    "codeName" : "Account",
+    "logicName" : "用户",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -2546,23 +2550,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Account",
-    "logicName" : "用户",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "ACCOUNT"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "2a900be5ada6028847ffd1408b0911c8",
+    "codeName" : "Sevenconsumed",
+    "logicName" : "七号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -2580,22 +2583,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Sevenconsumed",
-    "logicName" : "七号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "SEVENCONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "fca81cd1068ad43582524fec8edf88e4",
+    "codeName" : "Nineteenconsumed",
+    "logicName" : "十九号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -2613,22 +2616,23 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Nineteenconsumed",
-    "logicName" : "十九号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "NINETEENCONSUMED"
   }, {
-    "dataType" : "TEXT",
     "length" : 100,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "8ece989e8eb8be88f05680ba3ea84d1b",
+    "codeName" : "Year",
+    "logicName" : "年",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -2658,23 +2662,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Year",
-    "logicName" : "年",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "YEAR"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "7fcb67b87b02f881177203bbc60d00ff",
+    "codeName" : "SixEVALUATIONTIME",
+    "logicName" : "六号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -2692,22 +2695,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "SixEVALUATIONTIME",
-    "logicName" : "六号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "SIXEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "9cfd6e1822ff8ba26808833b8eb7a401",
+    "codeName" : "TwentyfiveEVALUATIONCOST",
+    "logicName" : "二十五号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -2725,22 +2728,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "TwentyfiveEVALUATIONCOST",
-    "logicName" : "二十五号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYFIVEEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "10de5512b9cf278a8cf03fd19bced616",
+    "codeName" : "SeventeenEVALUATIONTIME",
+    "logicName" : "十七号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -2758,22 +2761,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "SeventeenEVALUATIONTIME",
-    "logicName" : "十七号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "SEVENTEENEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "9d1009a4ffec809adabb5742cb1efd5e",
+    "codeName" : "TwentysevenEVALUATIONTIME",
+    "logicName" : "二十七号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -2791,22 +2794,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "TwentysevenEVALUATIONTIME",
-    "logicName" : "二十七号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYSEVENEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "bd3acc94d5a6eb095ae42c8d7ebc4085",
+    "codeName" : "Fourteenconsumed",
+    "logicName" : "十四号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -2824,22 +2827,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Fourteenconsumed",
-    "logicName" : "十四号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "FOURTEENCONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "144e2a8043a0d4de3270df0761433101",
+    "codeName" : "Eighteenconsumed",
+    "logicName" : "十八号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -2857,23 +2860,24 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Eighteenconsumed",
-    "logicName" : "十八号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "EIGHTEENCONSUMED"
   }, {
-    "dataType" : "TEXT",
     "length" : 100,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "9883b90d566813512945a3fe4132e4f8",
+    "codeName" : "Id",
+    "logicName" : "主键",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "phisicalDEField" : false,
     "pasteReset" : true,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -2903,24 +2907,23 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Id",
-    "logicName" : "主键",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "phisicalDEField" : false,
     "keyDEField" : true,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "ID"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "738fdedaab0e07646c511ee3e3c82217",
+    "codeName" : "Twentyfourconsumed",
+    "logicName" : "二十四号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -2938,22 +2941,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Twentyfourconsumed",
-    "logicName" : "二十四号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYFOURCONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "b5e0147bf615861470e076976336f368",
+    "codeName" : "Thirtyoneconsumed",
+    "logicName" : "三十一号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -2971,22 +2974,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Thirtyoneconsumed",
-    "logicName" : "三十一号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "THIRTYONECONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "d881b7c6a2772523f5f4d7e842829206",
+    "codeName" : "TwelveEVALUATIONCOST",
+    "logicName" : "十二号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -3004,22 +3007,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "TwelveEVALUATIONCOST",
-    "logicName" : "十二号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWELVEEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "1b1ca80456c523e134f5a41ea777b4e1",
+    "codeName" : "SeventeenEVALUATIONCOST",
+    "logicName" : "十七号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -3037,22 +3040,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "SeventeenEVALUATIONCOST",
-    "logicName" : "十七号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "SEVENTEENEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "c8b2bea7f2bc6c964ab59421288c11cc",
+    "codeName" : "TwentyEVALUATIONCOST",
+    "logicName" : "二十号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -3070,22 +3073,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "TwentyEVALUATIONCOST",
-    "logicName" : "二十号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "076a417108957bdad041708dde485fd7",
+    "codeName" : "Tenconsumed",
+    "logicName" : "十号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -3103,22 +3106,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Tenconsumed",
-    "logicName" : "十号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TENCONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "c6b27b61e88bdacadcbc4a1179aee061",
+    "codeName" : "ElevenEVALUATIONTIME",
+    "logicName" : "十一号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -3136,22 +3139,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "ElevenEVALUATIONTIME",
-    "logicName" : "十一号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "ELEVENEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "20865eadb3d72c0281618ed6a6e95534",
+    "codeName" : "FiveEVALUATIONTIME",
+    "logicName" : "五号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -3169,22 +3172,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "FiveEVALUATIONTIME",
-    "logicName" : "五号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "FIVEEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "607b71612941c834fe6a479c14867256",
+    "codeName" : "Fifteenconsumed",
+    "logicName" : "十五号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -3202,22 +3205,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Fifteenconsumed",
-    "logicName" : "十五号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "FIFTEENCONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "09d966096018a61a3ee988e978f4b664",
+    "codeName" : "TwentyeightEVALUATIONCOST",
+    "logicName" : "二十八号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -3235,22 +3238,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "TwentyeightEVALUATIONCOST",
-    "logicName" : "二十八号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYEIGHTEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "ac84ab5e41773069ab94330165473797",
+    "codeName" : "Twelveconsumed",
+    "logicName" : "十二号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -3268,22 +3271,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Twelveconsumed",
-    "logicName" : "十二号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWELVECONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "3e721fd6ba720d96151c1d94339b2379",
+    "codeName" : "FourteenEVALUATIONCOST",
+    "logicName" : "十四号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -3301,22 +3304,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "FourteenEVALUATIONCOST",
-    "logicName" : "十四号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "FOURTEENEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "69aa800c9fdccd8cbc45571675365603",
+    "codeName" : "Fiveconsumed",
+    "logicName" : "五号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -3334,22 +3337,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Fiveconsumed",
-    "logicName" : "五号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "FIVECONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "bbc9b14aa74d11d75a97f602712fc297",
+    "codeName" : "Twentythreeconsumed",
+    "logicName" : "二十三号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -3367,22 +3370,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Twentythreeconsumed",
-    "logicName" : "二十三号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYTHREECONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "a856c1b170cf18caa9e4cc40d3650861",
+    "codeName" : "SevenEVALUATIONTIME",
+    "logicName" : "七号评估工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -3400,22 +3403,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "SevenEVALUATIONTIME",
-    "logicName" : "七号评估工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "SEVENEVALUATIONTIME"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "82c05030eeebc6c419d9767eae6b9b88",
+    "codeName" : "TwentysevenEVALUATIONCOST",
+    "logicName" : "二十七号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -3433,22 +3436,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "TwentysevenEVALUATIONCOST",
-    "logicName" : "二十七号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWENTYSEVENEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "2f2502fe9880e8d3b625a1cb37f660a3",
+    "codeName" : "Oneconsumed",
+    "logicName" : "一号工时",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -3466,22 +3469,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Oneconsumed",
-    "logicName" : "一号工时",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "ONECONSUMED"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "dc490733dfb4321a749858014f2038f0",
+    "codeName" : "TwoEVALUATIONCOST",
+    "logicName" : "二号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -3499,22 +3502,22 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "TwoEVALUATIONCOST",
-    "logicName" : "二号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "TWOEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "4a021bffa451764556b02825352a0745",
+    "codeName" : "NineteenEVALUATIONCOST",
+    "logicName" : "十九号评估成本",
+    "stdDataType" : 7,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -3532,22 +3535,21 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "NineteenEVALUATIONCOST",
-    "logicName" : "十九号评估成本",
-    "stdDataType" : 7,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "NINETEENEVALUATIONCOST"
   }, {
-    "dataType" : "FLOAT",
     "length" : 2,
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "ef29e3178da60ecfd7d91b1891f1bac2",
+    "codeName" : "Inputcost",
+    "logicName" : "投入成本",
+    "stdDataType" : 7,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -3572,17 +3574,15 @@
       "autoIncrement" : false,
       "name" : "INPUTCOST"
     } ],
-    "codeName" : "Inputcost",
-    "logicName" : "投入成本",
-    "stdDataType" : 7,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "INPUTCOST"
   } ],
   "getAllPSDEDataSets" : [ {
-    "enableBackend" : true,
     "enableFront" : true,
+    "enableBackend" : true,
     "pubServiceDefault" : true,
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -3590,18 +3590,18 @@
     "orderValue" : 99999,
     "codeName" : "AccountDetail",
     "logicName" : "用户月工时详情",
-    "extendMode" : 0,
-    "enableGroup" : false,
     "userDRAction" : "READ",
+    "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
     "pageSize" : -1,
     "name" : "AccountDetail"
   }, {
-    "enableBackend" : true,
     "enableFront" : true,
+    "enableBackend" : true,
     "pubServiceDefault" : true,
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -3609,9 +3609,8 @@
     "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "数据集",
-    "extendMode" : 0,
-    "enableGroup" : false,
     "userDRAction" : "READ",
+    "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
@@ -3645,10 +3644,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "AccountDetail",
     "logicName" : "用户月工时详情",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "AccountDetail"
   }, {
@@ -3656,10 +3655,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "数据查询",
-    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -3667,10 +3666,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
@@ -3681,8 +3680,7 @@
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : false,
-  "orderValue" : 99999,
-  "dSLink" : "DEFAULT",
+  "serviceAPIMode" : 1,
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -3696,17 +3694,20 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "extendMode" : 0,
+  "saaSDCIdColumnName" : "SRFDCID",
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "dSLink" : "DEFAULT",
   "saaSMode" : 4,
   "deployId" : "3dc3e64348b5fc2dec9c6f9b7d45b710",
-  "enableSQLStorage" : true,
-  "dynaInstMode" : 1,
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
-  "virtualMode" : 0,
   "codeName" : "ProjectTaskestimate",
   "logicName" : "项目工时统计",
   "tableName" : "zt_taskestimate",
+  "enableViewLevel" : 0,
+  "virtualMode" : 0,
+  "enableSQLStorage" : true,
+  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -3715,14 +3716,13 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
   "serviceCodeName" : "ProjectTaskestimate",
   "enableActions" : 7,
   "enableCreate" : true,
   "enableModify" : true,
-  "extendMode" : 0,
   "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
+  "subSysDE" : false,
+  "virtual" : false,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

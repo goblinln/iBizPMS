@@ -3,10 +3,10 @@
   "showCaptionBar" : false,
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "TitleEditView9",
+  "enableDP" : true,
   "caption" : "标题",
   "title" : "用户年度工作内容统计编辑视图（标题）",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSAppViewNavParams" : [ {
     "rawValue" : false,
     "value" : "srfpersonid",
@@ -65,13 +65,14 @@
     "key" : "USERYEARWORKSTATS",
     "name" : "USERYEARWORKSTATS"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
   },
   "getPSControls" : [ {
     "enableAutoSave" : false,
+    "infoFormMode" : false,
+    "showFormNavBar" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -96,8 +97,6 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
-    "infoFormMode" : false,
-    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
@@ -126,14 +125,14 @@
             "name" : "TITLE",
             "codeName" : "Title"
           },
-          "dataType" : 25,
+          "showCaption" : false,
           "hidden" : false,
+          "dataType" : 25,
           "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "NONE",
           "labelWidth" : 0,
-          "showCaption" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 12,
@@ -164,16 +163,16 @@
             "name" : "CURYEAR",
             "codeName" : "Curyear"
           },
-          "dataType" : 25,
+          "showCaption" : false,
           "hidden" : false,
+          "dataType" : 25,
           "needCodeListConfig" : true,
-          "allowEmpty" : true,
           "caption" : "年度",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "NONE",
           "labelWidth" : 0,
-          "showCaption" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 4,
@@ -188,11 +187,11 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : false,
         "codeName" : "group1",
         "caption" : "用户年度工作内容统计基本信息",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : false,
         "name" : "group1"
       } ],
       "getPSLayout" : {
@@ -362,6 +361,7 @@
     "name" : "form",
     "modelid" : "ce2d73dc64e4f0db19544f61c9be8884"
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "UserYearWorkStatsTitleEditView9",
   "viewType" : "DEEDITVIEW9",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserYearWorkStatsTitleEditView9.json",

@@ -1,8 +1,8 @@
 {
+  "searchButtonStyle" : "DEFAULT",
   "enableAdvanceSearch" : false,
   "enableAutoSearch" : false,
   "enableFilterSave" : false,
-  "searchButtonStyle" : "DEFAULT",
   "controlType" : "SEARCHFORM",
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
@@ -10,8 +10,8 @@
   },
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
-      "rawItemWidth" : -1.0,
       "rawItemHeight" : -1.0,
+      "rawItemWidth" : -1.0,
       "contentType" : "RAW",
       "rawContent" : "<div style=\" padding-top: 6px;  padding-left: 20px;\"> 筛选条件： </div>",
       "getPSLayoutPos" : {
@@ -20,10 +20,10 @@
         "colLGOffset" : 2,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : true,
       "codeName" : "rawitem1",
       "detailType" : "RAWITEM",
       "detailStyle" : "DEFAULT",
-      "showCaption" : true,
       "name" : "rawitem1"
     }, {
       "emptyCaption" : false,
@@ -33,15 +33,15 @@
       },
       "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : false,
-      "allowEmpty" : true,
+      "dataType" : 25,
       "caption" : "关闭产品",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "RIGHT",
       "labelWidth" : 130,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 2,
         "colLG" : 3,
@@ -68,16 +68,16 @@
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
+      "showCaption" : true,
       "hidden" : false,
+      "dataType" : 1,
       "needCodeListConfig" : true,
-      "allowEmpty" : true,
       "caption" : "产品",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 50,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 6,
         "colLG" : 6,

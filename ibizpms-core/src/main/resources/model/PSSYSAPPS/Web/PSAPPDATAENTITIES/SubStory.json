@@ -1,13 +1,12 @@
 {
-  "enableUIRemove" : true,
   "getAllPSDEMainStates" : [ {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateActions" : [ {
       "allowMode" : true,
       "getPSDEAction" : {
@@ -216,13 +215,13 @@
     "stateValue" : "active",
     "name" : "激活_未收藏_不能细分"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -331,13 +330,13 @@
     "stateValue" : "active",
     "name" : "激活_未收藏_细分"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "2",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -386,13 +385,13 @@
     "stateValue" : "active",
     "name" : "激活_未收藏_细分（删除）"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -453,13 +452,13 @@
     "stateValue" : "active",
     "name" : "激活_已收藏_不能细分"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -568,13 +567,13 @@
     "stateValue" : "active",
     "name" : "激活_已收藏_细分"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "2",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -623,13 +622,13 @@
     "stateValue" : "active",
     "name" : "激活_已收藏_细分（删除）"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateActions" : [ {
       "allowMode" : true,
       "getPSDEAction" : {
@@ -826,13 +825,13 @@
     "stateValue" : "changed",
     "name" : "已变更_未收藏_不能细分"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -953,13 +952,13 @@
     "stateValue" : "changed",
     "name" : "已变更_未收藏_细分"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "2",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -1008,13 +1007,13 @@
     "stateValue" : "changed",
     "name" : "已变更_未收藏_细分（删除）"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -1063,13 +1062,13 @@
     "stateValue" : "changed",
     "name" : "已变更_已收藏_不能细分"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -1190,13 +1189,13 @@
     "stateValue" : "changed",
     "name" : "已变更_已收藏_细分"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "2",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -1245,13 +1244,13 @@
     "stateValue" : "changed",
     "name" : "已变更_已收藏_细分（删除）"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateActions" : [ {
       "allowMode" : true,
       "getPSDEAction" : {
@@ -1470,13 +1469,13 @@
     "stateValue" : "closed",
     "name" : "已关闭_未收藏_不能细分"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -1597,13 +1596,13 @@
     "stateValue" : "closed",
     "name" : "已关闭_未收藏_细分"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "2",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -1700,13 +1699,13 @@
     "stateValue" : "closed",
     "name" : "已关闭_未收藏_细分（删除）"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -1791,13 +1790,13 @@
     "stateValue" : "closed",
     "name" : "已关闭_已收藏_不能细分"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -1918,13 +1917,13 @@
     "stateValue" : "closed",
     "name" : "已关闭_已收藏_细分"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "2",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -2021,13 +2020,13 @@
     "stateValue" : "closed",
     "name" : "已关闭_已收藏_细分（删除）"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateActions" : [ {
       "allowMode" : true,
       "getPSDEAction" : {
@@ -2231,13 +2230,13 @@
     "stateValue" : "draft",
     "name" : "草稿-未收藏_不能细分"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -2358,13 +2357,13 @@
     "stateValue" : "draft",
     "name" : "草稿-未收藏_细分"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "2",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -2413,13 +2412,13 @@
     "stateValue" : "draft",
     "name" : "草稿-未收藏_细分（删除）"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateActions" : [ {
       "allowMode" : true,
       "getPSDEAction" : {
@@ -2602,13 +2601,13 @@
     "stateValue" : "draft",
     "name" : "草稿-已收藏_不能细分"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -2729,13 +2728,13 @@
     "stateValue" : "draft",
     "name" : "草稿-已收藏_细分"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "2",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -2785,12 +2784,14 @@
     "name" : "草稿-已收藏_细分（删除）"
   } ],
   "enableUIActions" : 15,
+  "enableUIRemove" : true,
+  "major" : true,
   "getAllPSAppDEMethods" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Select"
     },
+    "builtinMethod" : false,
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -2798,11 +2799,11 @@
     },
     "codeName" : "Select"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SUBSTORY__DEACTION__CREATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2814,11 +2815,11 @@
     },
     "codeName" : "Create"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SUBSTORY__DEACTION__UPDATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2830,11 +2831,11 @@
     },
     "codeName" : "Update"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SUBSTORY__DEACTION__REMOVE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2846,11 +2847,11 @@
     },
     "codeName" : "Remove"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SUBSTORY__DEACTION__GET"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2862,11 +2863,11 @@
     },
     "codeName" : "Get"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2878,11 +2879,11 @@
     },
     "codeName" : "GetDraft"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Activate"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2890,11 +2891,11 @@
     },
     "codeName" : "Activate"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "AllPush"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2902,11 +2903,11 @@
     },
     "codeName" : "AllPush"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "AssignTo"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2914,11 +2915,11 @@
     },
     "codeName" : "AssignTo"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BatchAssignTo"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2926,11 +2927,11 @@
     },
     "codeName" : "BatchAssignTo"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BatchChangeBranch"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2938,11 +2939,11 @@
     },
     "codeName" : "BatchChangeBranch"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BatchChangeModule"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2950,11 +2951,11 @@
     },
     "codeName" : "BatchChangeModule"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BatchChangePlan"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2962,11 +2963,11 @@
     },
     "codeName" : "BatchChangePlan"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BatchChangeStage"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2974,11 +2975,11 @@
     },
     "codeName" : "BatchChangeStage"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BatchClose"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2986,11 +2987,11 @@
     },
     "codeName" : "BatchClose"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BatchReview"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2998,11 +2999,11 @@
     },
     "codeName" : "BatchReview"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BatchUnlinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3010,11 +3011,11 @@
     },
     "codeName" : "BatchUnlinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BugToStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3022,11 +3023,11 @@
     },
     "codeName" : "BugToStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BuildBatchUnlinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3034,11 +3035,11 @@
     },
     "codeName" : "BuildBatchUnlinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BuildLinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3046,11 +3047,11 @@
     },
     "codeName" : "BuildLinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BuildUnlinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3058,11 +3059,11 @@
     },
     "codeName" : "BuildUnlinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BuildUnlinkStorys"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3070,11 +3071,11 @@
     },
     "codeName" : "BuildUnlinkStorys"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Change"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3082,11 +3083,11 @@
     },
     "codeName" : "Change"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3094,11 +3095,11 @@
     },
     "codeName" : "CheckKey"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Close"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3106,11 +3107,11 @@
     },
     "codeName" : "Close"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CreateTasks"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3122,11 +3123,11 @@
     },
     "codeName" : "CreateTasks"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetStorySpec"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3138,11 +3139,11 @@
     },
     "codeName" : "GetStorySpec"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetStorySpecs"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3154,11 +3155,11 @@
     },
     "codeName" : "GetStorySpecs"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ImportPlanStories"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3166,11 +3167,11 @@
     },
     "codeName" : "ImportPlanStories"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "LinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3178,11 +3179,11 @@
     },
     "codeName" : "LinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ProjectBatchUnlinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3190,11 +3191,11 @@
     },
     "codeName" : "ProjectBatchUnlinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ProjectLinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3202,11 +3203,11 @@
     },
     "codeName" : "ProjectLinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ProjectUnlinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3214,11 +3215,11 @@
     },
     "codeName" : "ProjectUnlinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ProjectUnlinkStorys"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3226,11 +3227,11 @@
     },
     "codeName" : "ProjectUnlinkStorys"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Push"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3238,11 +3239,11 @@
     },
     "codeName" : "Push"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ReleaseBatchUnlinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3250,11 +3251,11 @@
     },
     "codeName" : "ReleaseBatchUnlinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ReleaseLinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3262,11 +3263,11 @@
     },
     "codeName" : "ReleaseLinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ReleaseUnlinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3274,11 +3275,11 @@
     },
     "codeName" : "ReleaseUnlinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ResetReviewedBy"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3286,11 +3287,11 @@
     },
     "codeName" : "ResetReviewedBy"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Review"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3298,11 +3299,11 @@
     },
     "codeName" : "Review"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3310,11 +3311,11 @@
     },
     "codeName" : "Save"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SendMessage"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3322,11 +3323,11 @@
     },
     "codeName" : "SendMessage"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SendMsgPreProcess"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3334,11 +3335,11 @@
     },
     "codeName" : "SendMsgPreProcess"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "StoryFavorites"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3346,11 +3347,11 @@
     },
     "codeName" : "StoryFavorites"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "StoryNFavorites"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3358,11 +3359,11 @@
     },
     "codeName" : "StoryNFavorites"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SyncFromIbiz"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3370,11 +3371,11 @@
     },
     "codeName" : "SyncFromIbiz"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "UnlinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3382,11 +3383,11 @@
     },
     "codeName" : "UnlinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchAssignedToMyStory"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3398,11 +3399,11 @@
     },
     "codeName" : "FetchAssignedToMyStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchAssignedToMyStoryCalendar"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3414,11 +3415,11 @@
     },
     "codeName" : "FetchAssignedToMyStoryCalendar"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBugStory"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3430,11 +3431,11 @@
     },
     "codeName" : "FetchBugStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBuildLinkCompletedStories"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3446,11 +3447,11 @@
     },
     "codeName" : "FetchBuildLinkCompletedStories"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBuildLinkableStories"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3462,11 +3463,11 @@
     },
     "codeName" : "FetchBuildLinkableStories"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBuildStories"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3478,11 +3479,11 @@
     },
     "codeName" : "FetchBuildStories"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchByModule"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3494,11 +3495,11 @@
     },
     "codeName" : "FetchByModule"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCaseStory"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3510,11 +3511,11 @@
     },
     "codeName" : "FetchCaseStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3526,11 +3527,11 @@
     },
     "codeName" : "FetchDefault"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchESBulk"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3542,11 +3543,11 @@
     },
     "codeName" : "FetchESBulk"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchGetProductStories"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3558,11 +3559,11 @@
     },
     "codeName" : "FetchGetProductStories"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyAgentStory"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3574,11 +3575,11 @@
     },
     "codeName" : "FetchMyAgentStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyCurOpenedStory"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3590,11 +3591,11 @@
     },
     "codeName" : "FetchMyCurOpenedStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyFavorites"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3606,11 +3607,11 @@
     },
     "codeName" : "FetchMyFavorites"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchNotCurPlanLinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3622,11 +3623,11 @@
     },
     "codeName" : "FetchNotCurPlanLinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchParentDefault"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3638,11 +3639,11 @@
     },
     "codeName" : "FetchParentDefault"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchParentDefaultQ"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3654,11 +3655,11 @@
     },
     "codeName" : "FetchParentDefaultQ"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectLinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3670,11 +3671,11 @@
     },
     "codeName" : "FetchProjectLinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectStories"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3686,11 +3687,11 @@
     },
     "codeName" : "FetchProjectStories"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchReleaseLinkableStories"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3702,11 +3703,11 @@
     },
     "codeName" : "FetchReleaseLinkableStories"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchReleaseStories"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3718,11 +3719,11 @@
     },
     "codeName" : "FetchReleaseStories"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchReportStories"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3734,11 +3735,11 @@
     },
     "codeName" : "FetchReportStories"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchStoryChild"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3750,11 +3751,11 @@
     },
     "codeName" : "FetchStoryChild"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchStoryRelated"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3766,11 +3767,11 @@
     },
     "codeName" : "FetchStoryRelated"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchSubStory"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3782,11 +3783,11 @@
     },
     "codeName" : "FetchSubStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchTaskRelatedStory"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3798,11 +3799,11 @@
     },
     "codeName" : "FetchTaskRelatedStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchView"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3827,11 +3828,11 @@
     "codeName" : "GetTaskReStory",
     "name" : "GetTaskReStory"
   }, {
-    "builtinMethod" : false,
     "getPSAppDELogic" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubStory/PSAPPDELOGICS/GetCurUserConcat.json"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -3889,25 +3890,25 @@
     "name" : "FILTERFETCH"
   } ],
   "getMinorPSAppDERSs" : [ {
-    "getParentPSAppDEField" : {
-      "name" : "PARENT",
-      "codeName" : "Parent"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubStory.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    "getParentPSAppDEField" : {
+      "name" : "PARENT",
+      "codeName" : "Parent"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "SubStory",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
@@ -4357,6 +4358,22 @@
     "name" : "TOBUG"
   } ],
   "getAllPSAppDEACModes" : [ {
+    "enablePagingBar" : false,
+    "getPSDEACModeDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "value",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      },
+      "name" : "text",
+      "dataType" : 25
+    } ],
     "getValuePSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
@@ -4365,22 +4382,6 @@
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "getPSDEACModeDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "dataType" : 25,
-      "name" : "value"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
-      },
-      "dataType" : 25,
-      "name" : "text"
-    } ],
-    "enablePagingBar" : false,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "defaultMode" : true,
@@ -4544,11 +4545,11 @@
     "name" : "数据导出"
   } ],
   "getAllPSAppDEActions" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SUBSTORY__DEACTION__CREATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4560,11 +4561,11 @@
     },
     "codeName" : "Create"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SUBSTORY__DEACTION__UPDATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4576,11 +4577,11 @@
     },
     "codeName" : "Update"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SUBSTORY__DEACTION__REMOVE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4592,11 +4593,11 @@
     },
     "codeName" : "Remove"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SUBSTORY__DEACTION__GET"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4608,11 +4609,11 @@
     },
     "codeName" : "Get"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4624,11 +4625,11 @@
     },
     "codeName" : "GetDraft"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Activate"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4636,11 +4637,11 @@
     },
     "codeName" : "Activate"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "AllPush"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4648,11 +4649,11 @@
     },
     "codeName" : "AllPush"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "AssignTo"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4660,11 +4661,11 @@
     },
     "codeName" : "AssignTo"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BatchAssignTo"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4672,11 +4673,11 @@
     },
     "codeName" : "BatchAssignTo"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BatchChangeBranch"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4684,11 +4685,11 @@
     },
     "codeName" : "BatchChangeBranch"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BatchChangeModule"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4696,11 +4697,11 @@
     },
     "codeName" : "BatchChangeModule"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BatchChangePlan"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4708,11 +4709,11 @@
     },
     "codeName" : "BatchChangePlan"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BatchChangeStage"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4720,11 +4721,11 @@
     },
     "codeName" : "BatchChangeStage"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BatchClose"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4732,11 +4733,11 @@
     },
     "codeName" : "BatchClose"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BatchReview"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4744,11 +4745,11 @@
     },
     "codeName" : "BatchReview"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BatchUnlinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4756,11 +4757,11 @@
     },
     "codeName" : "BatchUnlinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BugToStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4768,11 +4769,11 @@
     },
     "codeName" : "BugToStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BuildBatchUnlinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4780,11 +4781,11 @@
     },
     "codeName" : "BuildBatchUnlinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BuildLinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4792,11 +4793,11 @@
     },
     "codeName" : "BuildLinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BuildUnlinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4804,11 +4805,11 @@
     },
     "codeName" : "BuildUnlinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BuildUnlinkStorys"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4816,11 +4817,11 @@
     },
     "codeName" : "BuildUnlinkStorys"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Change"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4828,11 +4829,11 @@
     },
     "codeName" : "Change"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4840,11 +4841,11 @@
     },
     "codeName" : "CheckKey"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Close"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4852,11 +4853,11 @@
     },
     "codeName" : "Close"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CreateTasks"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4868,11 +4869,11 @@
     },
     "codeName" : "CreateTasks"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetStorySpec"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4884,11 +4885,11 @@
     },
     "codeName" : "GetStorySpec"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetStorySpecs"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4900,11 +4901,11 @@
     },
     "codeName" : "GetStorySpecs"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ImportPlanStories"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4912,11 +4913,11 @@
     },
     "codeName" : "ImportPlanStories"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "LinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4924,11 +4925,11 @@
     },
     "codeName" : "LinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ProjectBatchUnlinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4936,11 +4937,11 @@
     },
     "codeName" : "ProjectBatchUnlinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ProjectLinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4948,11 +4949,11 @@
     },
     "codeName" : "ProjectLinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ProjectUnlinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4960,11 +4961,11 @@
     },
     "codeName" : "ProjectUnlinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ProjectUnlinkStorys"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4972,11 +4973,11 @@
     },
     "codeName" : "ProjectUnlinkStorys"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Push"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4984,11 +4985,11 @@
     },
     "codeName" : "Push"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ReleaseBatchUnlinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -4996,11 +4997,11 @@
     },
     "codeName" : "ReleaseBatchUnlinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ReleaseLinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -5008,11 +5009,11 @@
     },
     "codeName" : "ReleaseLinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ReleaseUnlinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -5020,11 +5021,11 @@
     },
     "codeName" : "ReleaseUnlinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ResetReviewedBy"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -5032,11 +5033,11 @@
     },
     "codeName" : "ResetReviewedBy"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Review"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -5044,11 +5045,11 @@
     },
     "codeName" : "Review"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -5056,11 +5057,11 @@
     },
     "codeName" : "Save"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SendMessage"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -5068,11 +5069,11 @@
     },
     "codeName" : "SendMessage"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SendMsgPreProcess"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -5080,11 +5081,11 @@
     },
     "codeName" : "SendMsgPreProcess"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "StoryFavorites"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -5092,11 +5093,11 @@
     },
     "codeName" : "StoryFavorites"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "StoryNFavorites"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -5104,11 +5105,11 @@
     },
     "codeName" : "StoryNFavorites"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SyncFromIbiz"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -5116,11 +5117,11 @@
     },
     "codeName" : "SyncFromIbiz"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "UnlinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -5141,11 +5142,11 @@
     "codeName" : "GetTaskReStory",
     "name" : "GetTaskReStory"
   }, {
-    "builtinMethod" : false,
     "getPSAppDELogic" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubStory/PSAPPDELOGICS/GetCurUserConcat.json"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -5168,11 +5169,11 @@
     "name" : "toStory"
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchAssignedToMyStory"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -5184,11 +5185,11 @@
     },
     "codeName" : "FetchAssignedToMyStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchAssignedToMyStoryCalendar"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -5200,11 +5201,11 @@
     },
     "codeName" : "FetchAssignedToMyStoryCalendar"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBugStory"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -5216,11 +5217,11 @@
     },
     "codeName" : "FetchBugStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBuildLinkCompletedStories"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -5232,11 +5233,11 @@
     },
     "codeName" : "FetchBuildLinkCompletedStories"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBuildLinkableStories"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -5248,11 +5249,11 @@
     },
     "codeName" : "FetchBuildLinkableStories"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBuildStories"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -5264,11 +5265,11 @@
     },
     "codeName" : "FetchBuildStories"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchByModule"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -5280,11 +5281,11 @@
     },
     "codeName" : "FetchByModule"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCaseStory"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -5296,11 +5297,11 @@
     },
     "codeName" : "FetchCaseStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -5312,11 +5313,11 @@
     },
     "codeName" : "FetchDefault"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchESBulk"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -5328,11 +5329,11 @@
     },
     "codeName" : "FetchESBulk"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchGetProductStories"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -5344,11 +5345,11 @@
     },
     "codeName" : "FetchGetProductStories"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyAgentStory"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -5360,11 +5361,11 @@
     },
     "codeName" : "FetchMyAgentStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyCurOpenedStory"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -5376,11 +5377,11 @@
     },
     "codeName" : "FetchMyCurOpenedStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyFavorites"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -5392,11 +5393,11 @@
     },
     "codeName" : "FetchMyFavorites"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchNotCurPlanLinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -5408,11 +5409,11 @@
     },
     "codeName" : "FetchNotCurPlanLinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchParentDefault"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -5424,11 +5425,11 @@
     },
     "codeName" : "FetchParentDefault"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchParentDefaultQ"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -5440,11 +5441,11 @@
     },
     "codeName" : "FetchParentDefaultQ"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectLinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -5456,11 +5457,11 @@
     },
     "codeName" : "FetchProjectLinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectStories"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -5472,11 +5473,11 @@
     },
     "codeName" : "FetchProjectStories"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchReleaseLinkableStories"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -5488,11 +5489,11 @@
     },
     "codeName" : "FetchReleaseLinkableStories"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchReleaseStories"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -5504,11 +5505,11 @@
     },
     "codeName" : "FetchReleaseStories"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchReportStories"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -5520,11 +5521,11 @@
     },
     "codeName" : "FetchReportStories"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchStoryChild"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -5536,11 +5537,11 @@
     },
     "codeName" : "FetchStoryChild"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchStoryRelated"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -5552,11 +5553,11 @@
     },
     "codeName" : "FetchStoryRelated"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchSubStory"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -5568,11 +5569,11 @@
     },
     "codeName" : "FetchSubStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchTaskRelatedStory"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -5584,11 +5585,11 @@
     },
     "codeName" : "FetchTaskRelatedStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchView"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -5600,15 +5601,6 @@
     },
     "codeName" : "FetchView"
   } ],
-  "major" : true,
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDESERVICEAPIS/SubStory.json"
-  },
-  "getPSSysImage" : {
-    "glyph" : "xf006@FontAwesome",
-    "cssClass" : "fa fa-star-o"
-  },
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -5622,6 +5614,14 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDESERVICEAPIS/SubStory.json"
+  },
+  "getPSSysImage" : {
+    "glyph" : "xf006@FontAwesome",
+    "cssClass" : "fa fa-star-o"
+  },
   "codeName" : "SubStory",
   "logicName" : "子需求",
   "dataAccCtrlMode" : 1,

@@ -10,10 +10,10 @@
   "xDataControlName" : "grid",
   "showCaptionBar" : true,
   "getPSDEViewCodeName" : "ProjectStoryStatusStatsGridView",
+  "enableDP" : true,
   "caption" : "项目需求状态统计",
   "title" : "项目统计表格视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -53,7 +53,6 @@
     },
     "name" : "toolbar_deuiaction7"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
@@ -104,9 +103,9 @@
       "tooltip" : "导出",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "导出",
-      "showCaption" : true,
       "name" : "deuiaction7"
     } ],
     "getPSAppDataEntity" : {
@@ -127,72 +126,72 @@
         "name" : "CLOSEDSTORY",
         "codeName" : "Closedstory"
       },
-      "dataType" : 9,
-      "name" : "closedstory"
+      "name" : "closedstory",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "dataType" : 25,
-      "name" : "name"
+      "name" : "name",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "EMPTYSTORY",
         "codeName" : "Emptystory"
       },
-      "dataType" : 9,
-      "name" : "emptystory"
+      "name" : "emptystory",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "DRAFTSTORY",
         "codeName" : "Draftstory"
       },
-      "dataType" : 9,
-      "name" : "draftstory"
+      "name" : "draftstory",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "CHANGEDSTORY",
         "codeName" : "Changedstory"
       },
-      "dataType" : 9,
-      "name" : "changedstory"
+      "name" : "changedstory",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "STORYCNT",
         "codeName" : "StoryCnt"
       },
-      "dataType" : 9,
-      "name" : "storycnt"
+      "name" : "storycnt",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfdataaccaction"
+      "name" : "srfdataaccaction",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "ACTIVESTORY",
         "codeName" : "Activestory"
       },
-      "dataType" : 9,
-      "name" : "activestory"
+      "name" : "activestory",
+      "dataType" : 9
     } ],
     "getRemovePSControlAction" : {
       "getPSAppDataEntity" : {
@@ -208,8 +207,6 @@
       "actionType" : "DEACTION",
       "name" : "remove"
     },
-    "singleSelect" : true,
-    "enableColFilter" : false,
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : false,
@@ -231,16 +228,18 @@
     } ],
     "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "controlType" : "GRID",
-    "enableRowEdit" : false,
+    "enableColFilter" : false,
+    "singleSelect" : true,
     "enablePagingBar" : false,
+    "enableRowEdit" : false,
+    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
-      "excelCaption" : "项目名称",
-      "dataItemName" : "name",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
+      "dataItemName" : "name",
+      "excelCaption" : "项目名称",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -252,12 +251,12 @@
       "widthUnit" : "STAR",
       "name" : "name"
     }, {
-      "excelCaption" : "空",
-      "dataItemName" : "emptystory",
       "getPSAppDEField" : {
         "name" : "EMPTYSTORY",
         "codeName" : "Emptystory"
       },
+      "dataItemName" : "emptystory",
+      "excelCaption" : "空",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -270,12 +269,12 @@
       "aggMode" : "SUM",
       "name" : "emptystory"
     }, {
-      "excelCaption" : "草稿",
-      "dataItemName" : "draftstory",
       "getPSAppDEField" : {
         "name" : "DRAFTSTORY",
         "codeName" : "Draftstory"
       },
+      "dataItemName" : "draftstory",
+      "excelCaption" : "草稿",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -288,12 +287,12 @@
       "aggMode" : "SUM",
       "name" : "draftstory"
     }, {
-      "excelCaption" : "激活",
-      "dataItemName" : "activestory",
       "getPSAppDEField" : {
         "name" : "ACTIVESTORY",
         "codeName" : "Activestory"
       },
+      "dataItemName" : "activestory",
+      "excelCaption" : "激活",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -306,12 +305,12 @@
       "aggMode" : "SUM",
       "name" : "activestory"
     }, {
-      "excelCaption" : "已关闭",
-      "dataItemName" : "closedstory",
       "getPSAppDEField" : {
         "name" : "CLOSEDSTORY",
         "codeName" : "Closedstory"
       },
+      "dataItemName" : "closedstory",
+      "excelCaption" : "已关闭",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -324,12 +323,12 @@
       "aggMode" : "SUM",
       "name" : "closedstory"
     }, {
-      "excelCaption" : "已变更",
-      "dataItemName" : "changedstory",
       "getPSAppDEField" : {
         "name" : "CHANGEDSTORY",
         "codeName" : "Changedstory"
       },
+      "dataItemName" : "changedstory",
+      "excelCaption" : "已变更",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -342,12 +341,12 @@
       "aggMode" : "SUM",
       "name" : "changedstory"
     }, {
-      "excelCaption" : "总计",
-      "dataItemName" : "storycnt",
       "getPSAppDEField" : {
         "name" : "STORYCNT",
         "codeName" : "StoryCnt"
       },
+      "dataItemName" : "storycnt",
+      "excelCaption" : "总计",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -469,10 +468,10 @@
     "name" : "grid",
     "modelid" : "d001edabb8a8678c69be6de8868a2346"
   }, {
+    "searchButtonStyle" : "DEFAULT",
     "enableAdvanceSearch" : false,
     "enableAutoSearch" : false,
     "enableFilterSave" : false,
-    "searchButtonStyle" : "DEFAULT",
     "controlType" : "SEARCHFORM",
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
@@ -496,27 +495,27 @@
           "name" : "STATUS",
           "codeName" : "Status"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 25,
         "needCodeListConfig" : true,
-        "allowEmpty" : true,
         "caption" : "项目状态",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 80,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 8,
           "width" : 320,
           "layout" : "TABLE_24COL"
         },
+        "contentWidth" : 320.0,
         "width" : 320.0,
         "codeName" : "n_status_eq",
         "detailType" : "FORMITEM",
         "detailStyle" : "DEFAULT",
-        "contentWidth" : 320.0,
         "name" : "n_status_eq"
       } ],
       "getPSLayout" : {
@@ -594,6 +593,7 @@
     "name" : "searchform",
     "modelid" : "a68ca214bdd67b0f293221ea411522ef"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -625,7 +625,6 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -633,9 +632,10 @@
           "viewType" : "DEEDITVIEW"
         }
       },
+      "enableWizardAdd" : false,
+      "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {

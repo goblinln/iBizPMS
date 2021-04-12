@@ -3,11 +3,11 @@
   "showCaptionBar" : true,
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "PlanEditView",
+  "enableDP" : true,
   "caption" : "需求",
   "title" : "需求",
   "openMode" : "DRAWER_RIGHT",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSAppViewNavParams" : [ {
     "rawValue" : false,
     "value" : "plan",
@@ -54,7 +54,6 @@
     "key" : "PLAN",
     "name" : "PLAN"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -104,9 +103,9 @@
       "tooltip" : "保存并关闭",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "保存并关闭",
-      "showCaption" : true,
       "name" : "deuiaction1"
     } ],
     "getPSAppDataEntity" : {
@@ -123,6 +122,8 @@
     "modelid" : "41ec2a0b8e2256c9eee112003a6acd60"
   }, {
     "enableAutoSave" : false,
+    "infoFormMode" : false,
+    "showFormNavBar" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -147,8 +148,6 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
-    "infoFormMode" : false,
-    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
@@ -166,17 +165,17 @@
         "getPSDEFormDetails" : [ {
           "emptyCaption" : false,
           "getPSEditor" : {
-            "getPSNavigateContexts" : [ {
-              "rawValue" : false,
-              "value" : "project",
-              "key" : "SRFPARENTKEY",
-              "name" : "SRFPARENTKEY"
-            } ],
             "getPSNavigateParams" : [ {
               "rawValue" : false,
               "value" : "project",
               "key" : "srfparentkey",
               "name" : "srfparentkey"
+            } ],
+            "getPSNavigateContexts" : [ {
+              "rawValue" : false,
+              "value" : "project",
+              "key" : "SRFPARENTKEY",
+              "name" : "SRFPARENTKEY"
             } ],
             "editorType" : "HIDDEN",
             "editorParams" : {
@@ -191,15 +190,15 @@
             "name" : "PRODUCT",
             "codeName" : "Product"
           },
-          "dataType" : 1,
+          "showCaption" : true,
           "hidden" : true,
-          "allowEmpty" : true,
+          "dataType" : 1,
           "caption" : "所属产品",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 100,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -220,15 +219,15 @@
             "name" : "MODULE",
             "codeName" : "Module"
           },
-          "dataType" : 1,
+          "showCaption" : true,
           "hidden" : true,
-          "allowEmpty" : true,
+          "dataType" : 1,
           "caption" : "所属模块",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 100,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -240,14 +239,13 @@
         }, {
           "emptyCaption" : false,
           "getPSEditor" : {
+            "enableLinkView" : false,
             "singleSelect" : true,
             "dropDownView" : false,
             "enablePickupView" : false,
-            "enableLinkView" : false,
             "enableAC" : true,
             "forceSelection" : true,
             "showTrigger" : true,
-            "handlerType" : "PickupText",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
@@ -260,6 +258,7 @@
               "modelref" : true,
               "id" : "Default"
             },
+            "handlerType" : "PickupText",
             "valueItemName" : "product",
             "editorType" : "PICKEREX_TRIGGER",
             "editorParams" : {
@@ -275,16 +274,16 @@
             "name" : "PRODOCTNAME",
             "codeName" : "ProductName"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
-          "allowEmpty" : false,
+          "dataType" : 25,
           "caption" : "所属产品",
+          "allowEmpty" : false,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "valueItemName" : "product",
           "labelWidth" : 100,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 9,
@@ -303,17 +302,17 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProductBranch.json"
             },
-            "getPSNavigateContexts" : [ {
-              "rawValue" : false,
-              "value" : "product",
-              "key" : "PRODUCT",
-              "name" : "PRODUCT"
-            } ],
             "getPSNavigateParams" : [ {
               "rawValue" : false,
               "value" : "product",
               "key" : "product",
               "name" : "product"
+            } ],
+            "getPSNavigateContexts" : [ {
+              "rawValue" : false,
+              "value" : "product",
+              "key" : "PRODUCT",
+              "name" : "PRODUCT"
             } ],
             "editorType" : "DROPDOWNLIST",
             "editorParams" : {
@@ -328,8 +327,9 @@
             "name" : "BRANCH",
             "codeName" : "Branch"
           },
-          "dataType" : 1,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 1,
           "needCodeListConfig" : true,
           "allowEmpty" : true,
           "enableCond" : 3,
@@ -337,7 +337,6 @@
           "labelPos" : "LEFT",
           "resetItemName" : "prodoctname",
           "labelWidth" : 1,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 3,
@@ -351,14 +350,13 @@
           "emptyCaption" : false,
           "resetItemNames" : [ "branch" ],
           "getPSEditor" : {
+            "enableLinkView" : false,
             "singleSelect" : true,
             "dropDownView" : false,
             "enablePickupView" : false,
-            "enableLinkView" : false,
             "enableAC" : true,
             "forceSelection" : true,
             "showTrigger" : true,
-            "handlerType" : "PickupText",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
@@ -371,18 +369,19 @@
               "modelref" : true,
               "id" : "Default"
             },
+            "handlerType" : "PickupText",
             "valueItemName" : "module",
-            "getPSNavigateContexts" : [ {
-              "rawValue" : false,
-              "value" : "product",
-              "key" : "PRODUCT",
-              "name" : "PRODUCT"
-            } ],
             "getPSNavigateParams" : [ {
               "rawValue" : false,
               "value" : "product",
               "key" : "product",
               "name" : "product"
+            } ],
+            "getPSNavigateContexts" : [ {
+              "rawValue" : false,
+              "value" : "product",
+              "key" : "PRODUCT",
+              "name" : "PRODUCT"
             } ],
             "editorType" : "PICKEREX_TRIGGER",
             "editorParams" : {
@@ -401,17 +400,17 @@
             "name" : "MODULENAME",
             "codeName" : "Modulename"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
-          "allowEmpty" : true,
+          "dataType" : 25,
           "caption" : "所属模块",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "resetItemName" : "branch",
           "valueItemName" : "module",
           "labelWidth" : 75,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 12,
@@ -430,17 +429,17 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/CurProductPlan.json"
             },
-            "getPSNavigateContexts" : [ {
-              "rawValue" : false,
-              "value" : "product",
-              "key" : "PRODUCT",
-              "name" : "PRODUCT"
-            } ],
             "getPSNavigateParams" : [ {
               "rawValue" : false,
               "value" : "product",
               "key" : "product",
               "name" : "product"
+            } ],
+            "getPSNavigateContexts" : [ {
+              "rawValue" : false,
+              "value" : "product",
+              "key" : "PRODUCT",
+              "name" : "PRODUCT"
             } ],
             "editorType" : "DROPDOWNLIST",
             "editorParams" : {
@@ -455,11 +454,12 @@
             "name" : "PLAN",
             "codeName" : "Plan"
           },
-          "dataType" : 21,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 21,
           "needCodeListConfig" : true,
-          "allowEmpty" : true,
           "caption" : "计划",
+          "allowEmpty" : true,
           "createDV" : "plan",
           "createDVT" : "CONTEXT",
           "enableCond" : 3,
@@ -467,7 +467,6 @@
           "labelPos" : "LEFT",
           "resetItemName" : "prodoctname",
           "labelWidth" : 100,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 12,
@@ -494,16 +493,16 @@
             "name" : "SOURCE",
             "codeName" : "Source"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 25,
           "needCodeListConfig" : true,
-          "allowEmpty" : true,
           "caption" : "需求来源",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 75,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 8,
@@ -526,15 +525,15 @@
             "name" : "SOURCENOTE",
             "codeName" : "SourceNote"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
-          "allowEmpty" : true,
+          "dataType" : 25,
           "caption" : "来源备注",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 70,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 4,
@@ -562,17 +561,17 @@
             "name" : "ASSIGNEDTO",
             "codeName" : "AssignedTo"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 25,
           "needCodeListConfig" : true,
-          "allowEmpty" : true,
           "caption" : "由谁评审",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "resetItemName" : "neednotreview",
           "labelWidth" : 100,
-          "showCaption" : true,
           "getPSDEFDGroupLogics" : [ {
             "relatedDetailNames" : [ "neednotreview" ],
             "logicCat" : "ITEMENABLE",
@@ -612,8 +611,9 @@
             "name" : "NEEDNOTREVIEW",
             "codeName" : "Neednotreview"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 25,
           "needCodeListConfig" : true,
           "allowEmpty" : true,
           "createDV" : "1",
@@ -621,7 +621,6 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 10,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 12,
@@ -643,15 +642,15 @@
             "name" : "REVIEWEDBY",
             "codeName" : "ReviewedBy"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : true,
-          "allowEmpty" : true,
+          "dataType" : 25,
           "caption" : "由谁评审",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 100,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 12,
@@ -673,15 +672,15 @@
             "name" : "PROJECT",
             "codeName" : "Project"
           },
-          "dataType" : 1,
+          "showCaption" : true,
           "hidden" : true,
-          "allowEmpty" : true,
+          "dataType" : 1,
           "caption" : "项目",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 100,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -711,15 +710,15 @@
             "name" : "TITLE",
             "codeName" : "Title"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
-          "allowEmpty" : false,
+          "dataType" : 25,
           "caption" : "需求名称",
+          "allowEmpty" : false,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 100,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 12,
@@ -746,16 +745,16 @@
             "name" : "PRI",
             "codeName" : "Pri"
           },
-          "dataType" : 9,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 9,
           "needCodeListConfig" : true,
-          "allowEmpty" : true,
           "caption" : "优先级",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 60,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 4,
@@ -782,16 +781,16 @@
             "name" : "STORYPOINTS",
             "codeName" : "Storypoints"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 25,
           "needCodeListConfig" : true,
-          "allowEmpty" : true,
           "caption" : "故事点",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 60,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 4,
@@ -814,15 +813,15 @@
             "name" : "ESTIMATE",
             "codeName" : "Estimate"
           },
-          "dataType" : 7,
+          "showCaption" : true,
           "hidden" : false,
-          "allowEmpty" : true,
+          "dataType" : 7,
           "caption" : "预计",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 42,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 4,
@@ -844,15 +843,15 @@
             "name" : "COLOR",
             "codeName" : "Color"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : true,
-          "allowEmpty" : true,
+          "dataType" : 25,
           "caption" : "标题颜色",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 100,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -901,15 +900,15 @@
             "name" : "SPEC",
             "codeName" : "Spec"
           },
-          "dataType" : 21,
+          "showCaption" : true,
           "hidden" : false,
-          "allowEmpty" : true,
+          "dataType" : 21,
           "caption" : "需求描述",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 100,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -934,15 +933,15 @@
             "name" : "VERIFY",
             "codeName" : "Verify"
           },
-          "dataType" : 21,
+          "showCaption" : true,
           "hidden" : false,
-          "allowEmpty" : true,
+          "dataType" : 21,
           "caption" : "验收标准",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 100,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -954,8 +953,8 @@
         }, {
           "emptyCaption" : false,
           "getPSEditor" : {
-            "minFileCount" : 0,
             "maxFileCount" : -1,
+            "minFileCount" : 0,
             "maxFileSize" : -1,
             "editorType" : "FILEUPLOADER",
             "editorParams" : {
@@ -974,15 +973,15 @@
             "name" : "FILES",
             "codeName" : "Files"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
-          "allowEmpty" : true,
+          "dataType" : 25,
           "caption" : "附件",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 100,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -994,14 +993,13 @@
         }, {
           "emptyCaption" : false,
           "getPSEditor" : {
+            "enableLinkView" : false,
             "singleSelect" : true,
             "dropDownView" : false,
             "enablePickupView" : false,
-            "enableLinkView" : false,
             "enableAC" : true,
             "forceSelection" : true,
             "showTrigger" : true,
-            "handlerType" : "PickupText",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
@@ -1014,6 +1012,7 @@
               "modelref" : true,
               "id" : "Default"
             },
+            "handlerType" : "PickupText",
             "valueItemName" : "mailtopk",
             "editorType" : "PICKEREX_TRIGGER",
             "editorParams" : {
@@ -1029,16 +1028,16 @@
             "name" : "MAILTOCONACT",
             "codeName" : "Mailtoconact"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
-          "allowEmpty" : true,
+          "dataType" : 25,
           "caption" : "联系人",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "valueItemName" : "mailtopk",
           "labelWidth" : 100,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 18,
             "colLG" : 18,
@@ -1049,11 +1048,11 @@
           "detailStyle" : "DEFAULT",
           "name" : "mailtoconact"
         }, {
+          "emptyCaption" : true,
           "getPSDEFormItemUpdate" : {
             "modelref" : true,
             "id" : "GetUserConcat"
           },
-          "emptyCaption" : true,
           "getPSEditor" : {
             "singleSelect" : false,
             "getPSAppCodeList" : {
@@ -1069,8 +1068,9 @@
             "name" : "MAILTO",
             "codeName" : "Mailto"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 25,
           "needCodeListConfig" : true,
           "allowEmpty" : true,
           "enableCond" : 3,
@@ -1078,7 +1078,6 @@
           "labelPos" : "LEFT",
           "valueItemName" : "mailto",
           "labelWidth" : 10,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 6,
             "colLG" : 6,
@@ -1100,15 +1099,15 @@
             "name" : "MAILTOPK",
             "codeName" : "Mailtopk"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : true,
-          "allowEmpty" : true,
+          "dataType" : 25,
           "caption" : "抄送给",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 100,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -1130,15 +1129,15 @@
             "name" : "KEYWORDS",
             "codeName" : "Keywords"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
-          "allowEmpty" : true,
+          "dataType" : 25,
           "caption" : "关键词",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 100,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -1152,11 +1151,11 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : false,
         "codeName" : "group1",
         "caption" : "需求基本信息",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : false,
         "name" : "group1"
       } ],
       "getPSLayout" : {
@@ -1508,6 +1507,7 @@
     "name" : "form",
     "modelid" : "9468eecb18756cc3605d0f96930032f2"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",
@@ -1529,25 +1529,25 @@
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryPlanEditView.json",
   "name" : "StoryPlanEditView",
   "getPSAppDERSPaths" : [ [ {
-    "getParentPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "Stories",
     "actionRSMode" : 1,
     "dataRSMode" : 0,

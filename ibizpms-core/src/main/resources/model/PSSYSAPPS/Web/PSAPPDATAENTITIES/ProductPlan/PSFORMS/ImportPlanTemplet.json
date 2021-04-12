@@ -1,5 +1,7 @@
 {
   "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -24,8 +26,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : false,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
@@ -50,16 +50,16 @@
         "name" : "PLANTEMPLET",
         "codeName" : "Plantemplet"
       },
-      "dataType" : 25,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 25,
       "needCodeListConfig" : true,
-      "allowEmpty" : true,
       "caption" : "计划模板",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "NONE",
       "labelWidth" : 0,
-      "showCaption" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"

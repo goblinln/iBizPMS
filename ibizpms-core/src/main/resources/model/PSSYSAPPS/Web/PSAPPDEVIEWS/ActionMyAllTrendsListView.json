@@ -4,10 +4,10 @@
   "xDataControlName" : "list",
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "MyAllTrendsListView",
+  "enableDP" : true,
   "caption" : "系统日志",
   "title" : "系统日志列表视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -36,7 +36,6 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
@@ -49,61 +48,61 @@
     "showHeader" : true,
     "enableRowEditGroup" : false,
     "getPSDEListDataItems" : [ {
-      "dataType" : 25,
-      "name" : "action"
+      "name" : "action",
+      "dataType" : 25
     }, {
       "getFrontPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
       },
-      "dataType" : 25,
-      "name" : "actor"
+      "name" : "actor",
+      "dataType" : 25
     }, {
       "getFrontPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ActionManner.json"
       },
-      "dataType" : 25,
-      "name" : "actionmanner"
+      "name" : "actionmanner",
+      "dataType" : 25
     }, {
       "getFrontPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Action__read.json"
       },
-      "dataType" : 25,
-      "name" : "read"
+      "name" : "read",
+      "dataType" : 25
     }, {
-      "dataType" : 25,
-      "name" : "product"
+      "name" : "product",
+      "dataType" : 25
     }, {
-      "dataType" : 1,
-      "name" : "project"
+      "name" : "project",
+      "dataType" : 1
     }, {
-      "dataType" : 1,
-      "name" : "objectid"
+      "name" : "objectid",
+      "dataType" : 1
     }, {
-      "dataType" : 5,
       "format" : "YYYY-MM-DD HH:mm:ss",
-      "name" : "date"
+      "name" : "date",
+      "dataType" : 5
     }, {
-      "dataType" : 25,
-      "name" : "objecttype"
+      "name" : "objecttype",
+      "dataType" : 25
     }, {
-      "dataType" : 1,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 1
     }, {
-      "dataType" : 25,
-      "name" : "date1"
+      "name" : "date1",
+      "dataType" : 25
     }, {
-      "dataType" : 1,
-      "name" : "id"
+      "name" : "id",
+      "dataType" : 1
     } ],
-    "controlType" : "LIST",
-    "enableRowEdit" : false,
     "getMinorSortPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
+    "enableRowEdit" : false,
+    "controlType" : "LIST",
     "codeName" : "Trends",
     "minorSortDir" : "DESC",
     "enableGroup" : false,
@@ -218,6 +217,7 @@
     "name" : "list",
     "modelid" : "999d18662199bb9f2e4a888396b7e2ed"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -240,7 +240,6 @@
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -248,9 +247,10 @@
           "viewType" : "DEEDITVIEW"
         }
       },
+      "enableWizardAdd" : false,
+      "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {

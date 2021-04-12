@@ -17,8 +17,8 @@
     "codeName" : "Custom",
     "text" : "自定义白名单(团队成员和白名单的成员可以访问)"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "Project__acl",
   "emptyText" : "未定义",
   "enableCache" : true,

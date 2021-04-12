@@ -11,6 +11,7 @@
   } ],
   "pubServiceDefault" : true,
   "timeOut" : -1,
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "UPDATE"
@@ -18,7 +19,6 @@
   "orderValue" : 12,
   "codeName" : "UpdateTemp",
   "logicName" : "UpdateTemp",
-  "extendMode" : 0,
   "enableTempData" : true,
   "actionMode" : "UPDATE",
   "actionType" : "BUILTIN",

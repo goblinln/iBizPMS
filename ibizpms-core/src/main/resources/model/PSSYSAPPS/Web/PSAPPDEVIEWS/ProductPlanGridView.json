@@ -4,22 +4,22 @@
   "enableImport" : true,
   "enableRowEdit" : false,
   "gridRowActiveMode" : 2,
-  "enableSearch" : true,
   "enableQuickGroup" : true,
   "getQuickGroupPSCodeList" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Zt__productplan.json"
   },
+  "enableSearch" : true,
   "enableFilter" : true,
   "enableQuickSearch" : true,
   "xDataControlName" : "grid",
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "GridView",
   "funcViewMode" : "MDATAVIEW",
+  "enableDP" : true,
   "caption" : "产品计划",
   "title" : "产品计划表格视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -94,7 +94,6 @@
     },
     "name" : "toolbar_deuiaction4"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
@@ -127,8 +126,8 @@
         "timeout" : 60000,
         "codeName" : "Create",
         "caption" : "创建计划",
-        "actionTarget" : "NONE",
         "reloadData" : true,
+        "actionTarget" : "NONE",
         "dataAccessAction" : "SRFUR__PROP_CREATE_BUT",
         "uIActionTag" : "Create",
         "uIActionType" : "DEUIACTION",
@@ -144,9 +143,9 @@
       "tooltip" : "创建计划",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "创建计划",
-      "showCaption" : true,
       "name" : "deuiaction3_create"
     }, {
       "getPSAppViewUIAction" : {
@@ -155,12 +154,6 @@
       },
       "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
-        "getPSNavigateContexts" : [ {
-          "rawValue" : false,
-          "value" : "product",
-          "key" : "PRODUCT",
-          "name" : "PRODUCT"
-        } ],
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
@@ -177,6 +170,12 @@
           "name" : "product"
         } ],
         "frontProcessType" : "WIZARD",
+        "getPSNavigateContexts" : [ {
+          "rawValue" : false,
+          "value" : "product",
+          "key" : "PRODUCT",
+          "name" : "PRODUCT"
+        } ],
         "getNoPrivDisplayMode" : 2,
         "getPSSysImage" : {
           "glyph" : "xf0ed@FontAwesome",
@@ -201,9 +200,9 @@
       "tooltip" : "导入模板",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "导入模板",
-      "showCaption" : true,
       "name" : "deuiaction3_addplantemplet"
     }, {
       "getPSAppViewUIAction" : {
@@ -233,9 +232,9 @@
       "tooltip" : "刷新",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "刷新",
-      "showCaption" : true,
       "name" : "deuiaction2"
     }, {
       "getPSAppViewUIAction" : {
@@ -281,9 +280,9 @@
       "tooltip" : "导出",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "导出",
-      "showCaption" : true,
       "name" : "deuiaction1"
     }, {
       "getPSAppViewUIAction" : {
@@ -331,9 +330,9 @@
       "tooltip" : "过滤",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "过滤",
-      "showCaption" : true,
       "name" : "deuiaction4"
     } ],
     "getPSAppDataEntity" : {
@@ -354,112 +353,112 @@
         "name" : "ENDSTR",
         "codeName" : "Endstr"
       },
-      "dataType" : 25,
-      "name" : "endstr"
+      "name" : "endstr",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "BEGINSTR",
         "codeName" : "Beginstr"
       },
-      "dataType" : 25,
-      "name" : "beginstr"
+      "name" : "beginstr",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "PARENT",
         "codeName" : "Parent"
       },
-      "dataType" : 1,
-      "name" : "parent"
+      "name" : "parent",
+      "dataType" : 1
     }, {
-      "dataType" : 25,
-      "name" : "srfmstag"
+      "name" : "srfmstag",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "STORYCNT",
         "codeName" : "StoryCnt"
       },
-      "dataType" : 9,
-      "name" : "storycnt"
+      "name" : "storycnt",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "TITLE",
         "codeName" : "Title"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 1
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfdataaccaction"
+      "name" : "srfdataaccaction",
+      "dataType" : 1
     }, {
-      "format" : "YYYY-MM-DD",
       "getPSAppDEField" : {
         "name" : "BEGIN",
         "codeName" : "Begin"
       },
-      "dataType" : 5,
-      "name" : "begin"
+      "format" : "YYYY-MM-DD",
+      "name" : "begin",
+      "dataType" : 5
     }, {
       "getPSAppDEField" : {
         "name" : "PRODUCT",
         "codeName" : "Product"
       },
-      "dataType" : 1,
-      "name" : "product"
+      "name" : "product",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "id"
+      "name" : "id",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "TITLE",
         "codeName" : "Title"
       },
-      "dataType" : 25,
-      "name" : "title"
+      "name" : "title",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "STATUSS",
         "codeName" : "Statuss"
       },
-      "dataType" : 25,
-      "name" : "statuss"
+      "name" : "statuss",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "BUGCNT",
         "codeName" : "BugCnt"
       },
-      "dataType" : 9,
-      "name" : "bugcnt"
+      "name" : "bugcnt",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "BRANCH",
         "codeName" : "Branch"
       },
-      "dataType" : 1,
-      "name" : "branch"
+      "name" : "branch",
+      "dataType" : 1
     }, {
-      "format" : "YYYY-MM-DD",
       "getPSAppDEField" : {
         "name" : "END",
         "codeName" : "End"
       },
-      "dataType" : 5,
-      "name" : "end"
+      "format" : "YYYY-MM-DD",
+      "name" : "end",
+      "dataType" : 5
     } ],
     "getRemovePSControlAction" : {
       "getPSAppDataEntity" : {
@@ -475,8 +474,6 @@
       "actionType" : "DEACTION",
       "name" : "remove"
     },
-    "singleSelect" : false,
-    "enableColFilter" : false,
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : false,
@@ -498,20 +495,22 @@
     } ],
     "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "controlType" : "GRID",
-    "enableRowEdit" : false,
+    "enableColFilter" : false,
+    "singleSelect" : false,
+    "enablePagingBar" : true,
     "getMinorSortPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "enablePagingBar" : true,
+    "enableRowEdit" : false,
+    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
-      "excelCaption" : "编号",
-      "dataItemName" : "id",
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
+      "dataItemName" : "id",
+      "excelCaption" : "编号",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -530,12 +529,12 @@
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanMainDataEditView.json",
         "viewType" : "DEEDITVIEW"
       },
-      "excelCaption" : "名称",
-      "dataItemName" : "title",
       "getPSAppDEField" : {
         "name" : "TITLE",
         "codeName" : "Title"
       },
+      "dataItemName" : "title",
+      "excelCaption" : "名称",
       "cLConvertMode" : "NONE",
       "getPSSysPFPlugin" : {
         "pluginType" : "GRID_COLRENDER",
@@ -551,12 +550,12 @@
       "widthUnit" : "STAR",
       "name" : "title"
     }, {
-      "excelCaption" : "开始日期",
-      "dataItemName" : "beginstr",
       "getPSAppDEField" : {
         "name" : "BEGINSTR",
         "codeName" : "Beginstr"
       },
+      "dataItemName" : "beginstr",
+      "excelCaption" : "开始日期",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -568,12 +567,12 @@
       "widthUnit" : "PX",
       "name" : "beginstr"
     }, {
-      "excelCaption" : "结束日期",
-      "dataItemName" : "endstr",
       "getPSAppDEField" : {
         "name" : "ENDSTR",
         "codeName" : "Endstr"
       },
+      "dataItemName" : "endstr",
+      "excelCaption" : "结束日期",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -585,12 +584,12 @@
       "widthUnit" : "PX",
       "name" : "endstr"
     }, {
-      "excelCaption" : "需求数",
-      "dataItemName" : "storycnt",
       "getPSAppDEField" : {
         "name" : "STORYCNT",
         "codeName" : "StoryCnt"
       },
+      "dataItemName" : "storycnt",
+      "excelCaption" : "需求数",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -602,12 +601,12 @@
       "widthUnit" : "PX",
       "name" : "storycnt"
     }, {
-      "excelCaption" : "bug数",
-      "dataItemName" : "bugcnt",
       "getPSAppDEField" : {
         "name" : "BUGCNT",
         "codeName" : "BugCnt"
       },
+      "dataItemName" : "bugcnt",
+      "excelCaption" : "bug数",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -623,32 +622,6 @@
         "getPSUIActionGroupDetails" : [ {
           "showIcon" : true,
           "getPSUIAction" : {
-            "getPSNavigateContexts" : [ {
-              "rawValue" : false,
-              "value" : "id",
-              "key" : "PLANID",
-              "name" : "PLANID"
-            }, {
-              "rawValue" : false,
-              "value" : "end",
-              "key" : "END",
-              "name" : "END"
-            }, {
-              "rawValue" : false,
-              "value" : "product",
-              "key" : "PRODUCT",
-              "name" : "PRODUCT"
-            }, {
-              "rawValue" : false,
-              "value" : "begin",
-              "key" : "BEGIN",
-              "name" : "BEGIN"
-            }, {
-              "rawValue" : false,
-              "value" : "branch",
-              "key" : "BRANCH",
-              "name" : "BRANCH"
-            } ],
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
@@ -686,6 +659,32 @@
             } ],
             "frontProcessType" : "WIZARD",
             "refreshMode" : 1,
+            "getPSNavigateContexts" : [ {
+              "rawValue" : false,
+              "value" : "id",
+              "key" : "PLANID",
+              "name" : "PLANID"
+            }, {
+              "rawValue" : false,
+              "value" : "end",
+              "key" : "END",
+              "name" : "END"
+            }, {
+              "rawValue" : false,
+              "value" : "product",
+              "key" : "PRODUCT",
+              "name" : "PRODUCT"
+            }, {
+              "rawValue" : false,
+              "value" : "begin",
+              "key" : "BEGIN",
+              "name" : "BEGIN"
+            }, {
+              "rawValue" : false,
+              "value" : "branch",
+              "key" : "BRANCH",
+              "name" : "BRANCH"
+            } ],
             "getNoPrivDisplayMode" : 1,
             "getPSSysImage" : {
               "glyph" : "xf067@FontAwesome",
@@ -694,8 +693,8 @@
             "timeout" : 60000,
             "codeName" : "AddProject",
             "caption" : "添加项目",
-            "actionTarget" : "SINGLEKEY",
             "reloadData" : true,
+            "actionTarget" : "SINGLEKEY",
             "dataAccessAction" : "SRFUR__PROJ_CREATE_BUT",
             "uIActionTag" : "AddProject",
             "uIActionType" : "DEUIACTION",
@@ -705,8 +704,8 @@
             "id" : "AddProject@ProductPlan"
           },
           "addSeparator" : false,
-          "detailType" : "DEUIACTION",
           "showCaption" : false,
+          "detailType" : "DEUIACTION",
           "name" : "ua470664"
         }, {
           "showIcon" : true,
@@ -743,8 +742,8 @@
             "id" : "RelationStory@ProductPlan"
           },
           "addSeparator" : false,
-          "detailType" : "DEUIACTION",
           "showCaption" : false,
+          "detailType" : "DEUIACTION",
           "name" : "u54b2dce"
         }, {
           "showIcon" : true,
@@ -782,8 +781,8 @@
             "id" : "RelationBug@ProductPlan"
           },
           "addSeparator" : false,
-          "detailType" : "DEUIACTION",
           "showCaption" : false,
+          "detailType" : "DEUIACTION",
           "name" : "u02b47f0"
         }, {
           "showIcon" : true,
@@ -816,8 +815,8 @@
             "id" : "MainEdit@ProductPlan"
           },
           "addSeparator" : false,
-          "detailType" : "DEUIACTION",
           "showCaption" : false,
+          "detailType" : "DEUIACTION",
           "name" : "u7d4e6c8"
         }, {
           "showIcon" : true,
@@ -850,8 +849,8 @@
             "id" : "NewSubPlan@ProductPlan"
           },
           "addSeparator" : false,
-          "detailType" : "DEUIACTION",
           "showCaption" : false,
+          "detailType" : "DEUIACTION",
           "name" : "ud7f4fc7"
         }, {
           "showIcon" : true,
@@ -881,8 +880,8 @@
             "name" : "表格界面_拷贝操作"
           },
           "addSeparator" : false,
-          "detailType" : "DEUIACTION",
           "showCaption" : false,
+          "detailType" : "DEUIACTION",
           "name" : "u38dee22"
         }, {
           "showIcon" : true,
@@ -905,8 +904,8 @@
             "timeout" : 60000,
             "codeName" : "Delete",
             "caption" : "删除",
-            "actionTarget" : "SINGLEKEY",
             "reloadData" : true,
+            "actionTarget" : "SINGLEKEY",
             "dataAccessAction" : "SRFUR__PROP_DELETE_BUT",
             "uIActionTag" : "Delete",
             "uIActionType" : "DEUIACTION",
@@ -918,8 +917,8 @@
             "id" : "Delete@ProductPlan"
           },
           "addSeparator" : false,
-          "detailType" : "DEUIACTION",
           "showCaption" : false,
+          "detailType" : "DEUIACTION",
           "name" : "ub056033"
         } ],
         "name" : "计划表格操作列行为组"
@@ -1190,7 +1189,7 @@
     "name" : "grid",
     "modelid" : "a9ee6127927aff3280dcd76d4198bda8"
   }, {
-    "quickSearchMode" : 1,
+    "mobileSearchBar" : false,
     "getPSSearchBarFilters" : [ {
       "emptyCaption" : false,
       "getPSEditor" : {
@@ -1198,8 +1197,10 @@
         "editorWidth" : 100.0,
         "name" : "titlelike"
       },
-      "dataType" : 25,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 25,
+      "caption" : "名称(%)",
       "getPSDEFSearchMode" : {
         "valueOP" : "LIKE",
         "codeName" : "N_TITLE_LIKE",
@@ -1211,11 +1212,9 @@
         "name" : "N_TITLE_LIKE"
       },
       "allowEmpty" : true,
-      "caption" : "名称(%)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
       "itemWidth" : 100.0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "TITLE",
         "codeName" : "Title"
@@ -1233,9 +1232,11 @@
         "editorType" : "DROPDOWNLIST",
         "name" : "producteq"
       },
-      "dataType" : 1,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 1,
       "needCodeListConfig" : true,
+      "caption" : "产品(=)",
       "getPSDEFSearchMode" : {
         "valueOP" : "EQ",
         "codeName" : "N_PRODUCT_EQ",
@@ -1247,10 +1248,8 @@
         "name" : "N_PRODUCT_EQ"
       },
       "allowEmpty" : true,
-      "caption" : "产品(=)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "PRODUCT",
         "codeName" : "Product"
@@ -1268,8 +1267,10 @@
         },
         "name" : "begingteq"
       },
-      "dataType" : 5,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 5,
+      "caption" : "开始日期(>=)",
       "getPSDEFSearchMode" : {
         "valueOP" : "GTANDEQ",
         "codeName" : "N_BEGIN_GTANDEQ",
@@ -1282,11 +1283,9 @@
         "name" : "N_BEGIN_GTANDEQ"
       },
       "allowEmpty" : true,
-      "caption" : "开始日期(>=)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
       "itemWidth" : 100.0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "BEGIN",
         "codeName" : "Begin"
@@ -1304,9 +1303,11 @@
         "editorType" : "DROPDOWNLIST",
         "name" : "brancheq"
       },
-      "dataType" : 1,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 1,
       "needCodeListConfig" : true,
+      "caption" : "平台/分支(=)",
       "getPSDEFSearchMode" : {
         "valueOP" : "EQ",
         "codeName" : "N_BRANCH_EQ",
@@ -1318,10 +1319,8 @@
         "name" : "N_BRANCH_EQ"
       },
       "allowEmpty" : true,
-      "caption" : "平台/分支(=)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "BRANCH",
         "codeName" : "Branch"
@@ -1340,9 +1339,11 @@
         "editorWidth" : 100.0,
         "name" : "deltaeq"
       },
-      "dataType" : 25,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 25,
       "needCodeListConfig" : true,
+      "caption" : "周期(=)",
       "getPSDEFSearchMode" : {
         "valueOP" : "EQ",
         "codeName" : "N_DELTA_EQ",
@@ -1354,11 +1355,9 @@
         "name" : "N_DELTA_EQ"
       },
       "allowEmpty" : true,
-      "caption" : "周期(=)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
       "itemWidth" : 100.0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "DELTA",
         "codeName" : "Delta"
@@ -1376,8 +1375,10 @@
         },
         "name" : "endlteq"
       },
-      "dataType" : 5,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 5,
+      "caption" : "结束日期(<=)",
       "getPSDEFSearchMode" : {
         "valueOP" : "LTANDEQ",
         "codeName" : "N_END_LTANDEQ",
@@ -1390,11 +1391,9 @@
         "name" : "N_END_LTANDEQ"
       },
       "allowEmpty" : true,
-      "caption" : "结束日期(<=)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
       "itemWidth" : 100.0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "END",
         "codeName" : "End"
@@ -1414,9 +1413,11 @@
         "editorWidth" : 100.0,
         "name" : "futureeq"
       },
-      "dataType" : 25,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 25,
       "convertToCodeItemText" : true,
+      "caption" : "待定(=)",
       "getPSDEFSearchMode" : {
         "valueOP" : "EQ",
         "codeName" : "N_FUTURE_EQ",
@@ -1428,11 +1429,9 @@
         "name" : "N_FUTURE_EQ"
       },
       "allowEmpty" : true,
-      "caption" : "待定(=)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
       "itemWidth" : 100.0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "FUTURE",
         "codeName" : "Future"
@@ -1450,9 +1449,11 @@
         "editorType" : "DROPDOWNLIST",
         "name" : "isexpiredeq"
       },
-      "dataType" : 25,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 25,
       "needCodeListConfig" : true,
+      "caption" : "是否过期(=)",
       "getPSDEFSearchMode" : {
         "valueOP" : "EQ",
         "codeName" : "N_ISEXPIRED_EQ",
@@ -1464,10 +1465,8 @@
         "name" : "N_ISEXPIRED_EQ"
       },
       "allowEmpty" : true,
-      "caption" : "是否过期(=)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "ISEXPIRED",
         "codeName" : "Isexpired"
@@ -1477,10 +1476,10 @@
     }, {
       "emptyCaption" : false,
       "getPSEditor" : {
+        "enableLinkView" : false,
         "singleSelect" : true,
         "dropDownView" : false,
         "enablePickupView" : false,
-        "enableLinkView" : false,
         "enableAC" : true,
         "forceSelection" : true,
         "showTrigger" : true,
@@ -1504,8 +1503,10 @@
         },
         "name" : "parentnameeq"
       },
-      "dataType" : 25,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 25,
+      "caption" : "父计划名称(=)",
       "getPSDEFSearchMode" : {
         "valueOP" : "EQ",
         "codeName" : "N_PARENTNAME_EQ",
@@ -1517,10 +1518,8 @@
         "name" : "N_PARENTNAME_EQ"
       },
       "allowEmpty" : true,
-      "caption" : "父计划名称(=)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "PARENTNAME",
         "codeName" : "ParentName"
@@ -1530,10 +1529,10 @@
     }, {
       "emptyCaption" : false,
       "getPSEditor" : {
+        "enableLinkView" : false,
         "singleSelect" : true,
         "dropDownView" : false,
         "enablePickupView" : false,
-        "enableLinkView" : false,
         "enableAC" : true,
         "forceSelection" : true,
         "showTrigger" : true,
@@ -1557,8 +1556,10 @@
         },
         "name" : "parentnamelike"
       },
-      "dataType" : 25,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 25,
+      "caption" : "父计划名称(%)",
       "getPSDEFSearchMode" : {
         "valueOP" : "LIKE",
         "codeName" : "N_PARENTNAME_LIKE",
@@ -1570,10 +1571,8 @@
         "name" : "N_PARENTNAME_LIKE"
       },
       "allowEmpty" : true,
-      "caption" : "父计划名称(%)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "PARENTNAME",
         "codeName" : "ParentName"
@@ -1581,9 +1580,9 @@
       "itemType" : "FILTER",
       "name" : "parentnamelike"
     } ],
-    "mobileSearchBar" : false,
-    "controlType" : "SEARCHBAR",
+    "quickSearchMode" : 1,
     "enableFilter" : true,
+    "controlType" : "SEARCHBAR",
     "codeName" : "Custom",
     "enableQuickSearch" : true,
     "enableGroup" : false,
@@ -1600,6 +1599,7 @@
     "name" : "searchbar",
     "modelid" : "4b530cb960cc7970c9ce4d28b7f331be"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -1677,7 +1677,6 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -1685,9 +1684,10 @@
           "viewType" : "DEEDITVIEW"
         }
       },
+      "enableWizardAdd" : false,
+      "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {
@@ -1730,25 +1730,25 @@
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanGridView.json",
   "name" : "ProductPlanGridView",
   "getPSAppDERSPaths" : [ [ {
-    "getParentPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "ProductPlans",
     "actionRSMode" : 1,
     "dataRSMode" : 0,

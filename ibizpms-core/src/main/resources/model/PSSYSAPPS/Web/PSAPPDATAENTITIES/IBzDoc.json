@@ -1,12 +1,13 @@
 {
-  "enableUIRemove" : true,
   "enableUIActions" : 15,
+  "enableUIRemove" : true,
+  "major" : true,
   "getAllPSAppDEMethods" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Select"
     },
+    "builtinMethod" : false,
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -235,6 +236,22 @@
     "name" : "UPDATEMAN"
   } ],
   "getAllPSAppDEACModes" : [ {
+    "enablePagingBar" : false,
+    "getPSDEACModeDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "IBZ_DOCID",
+        "codeName" : "IBzDocId"
+      },
+      "name" : "value",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "IBZ_DOCNAME",
+        "codeName" : "IBzDocName"
+      },
+      "name" : "text",
+      "dataType" : 25
+    } ],
     "getValuePSAppDEField" : {
       "name" : "IBZ_DOCID",
       "codeName" : "IBzDocId"
@@ -243,22 +260,6 @@
       "name" : "IBZ_DOCNAME",
       "codeName" : "IBzDocName"
     },
-    "getPSDEACModeDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "IBZ_DOCID",
-        "codeName" : "IBzDocId"
-      },
-      "dataType" : 25,
-      "name" : "value"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "IBZ_DOCNAME",
-        "codeName" : "IBzDocName"
-      },
-      "dataType" : 25,
-      "name" : "text"
-    } ],
-    "enablePagingBar" : false,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "defaultMode" : true,
@@ -365,11 +366,6 @@
     "codeName" : "FetchDefault",
     "name" : "DEFAULT"
   } ],
-  "major" : true,
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBzDoc/PSDESERVICEAPIS/IBzDoc.json"
-  },
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -383,6 +379,10 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBzDoc/PSDESERVICEAPIS/IBzDoc.json"
+  },
   "codeName" : "IBzDoc",
   "logicName" : "文档",
   "dataAccCtrlMode" : 1,

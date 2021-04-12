@@ -38,8 +38,6 @@
   "controlType" : "CHART",
   "getPSDEChartSerieses" : [ {
     "stack" : false,
-    "catalogField" : "STATUS",
-    "seriesType" : "bar",
     "getCatalogPSCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Project__status.json"
@@ -54,6 +52,7 @@
       "modelref" : true,
       "id" : "0"
     },
+    "catalogField" : "STATUS",
     "getPSChartSeriesEncode" : {
       "getPSChartXAxis" : {
         "modelref" : true,
@@ -70,6 +69,7 @@
       "name" : "坐标系编码",
       "id" : "0"
     },
+    "seriesType" : "bar",
     "valueField" : "SRFCOUNT",
     "seriesLayoutBy" : "column",
     "groupMode" : "CODELIST",

@@ -3,13 +3,13 @@
   "showCaptionBar" : true,
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "CloseView",
+  "enableDP" : true,
   "height" : 200,
   "width" : 400,
   "caption" : "关闭",
   "title" : "关闭",
   "openMode" : "POPUPMODAL",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -36,13 +36,14 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
   },
   "getPSControls" : [ {
     "enableAutoSave" : false,
+    "infoFormMode" : false,
+    "showFormNavBar" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -67,8 +68,6 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
-    "infoFormMode" : false,
-    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
@@ -77,8 +76,8 @@
     },
     "getPSDEFormPages" : [ {
       "getPSDEFormDetails" : [ {
-        "rawItemWidth" : -1.0,
         "rawItemHeight" : -1.0,
+        "rawItemWidth" : -1.0,
         "contentType" : "RAW",
         "rawContent" : "您确定要关闭这条待办吗？",
         "getPSLayoutPos" : {
@@ -88,10 +87,10 @@
           "colLGOffset" : 4,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : true,
         "codeName" : "rawitem1",
         "detailType" : "RAWITEM",
         "detailStyle" : "DEFAULT",
-        "showCaption" : true,
         "name" : "rawitem1"
       } ],
       "getPSLayout" : {
@@ -247,6 +246,7 @@
     "name" : "form",
     "modelid" : "7b00f4000410083649f964b0d8b48564"
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "TodoCloseView",
   "viewType" : "DEOPTVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoCloseView.json",

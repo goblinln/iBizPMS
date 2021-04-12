@@ -1,22 +1,190 @@
 {
+  "getAllPSDEMainStates" : [ {
+    "allowMode" : true,
+    "oPPrivAllowMode" : true,
+    "enableViewActions" : false,
+    "fieldAllowMode" : false,
+    "actionAllowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "logicName" : "更新",
+        "name" : "UPDATE"
+      },
+      "name" : "UPDATE"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "删除",
+        "name" : "DELETE"
+      },
+      "name" : "DELETE"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "激活",
+        "name" : "ACTIVATE"
+      },
+      "name" : "ACTIVATE"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "closed",
+    "logicName" : "closed",
+    "default" : false,
+    "mSTag" : "closed",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "closed",
+    "name" : "closed"
+  }, {
+    "allowMode" : true,
+    "oPPrivAllowMode" : true,
+    "enableViewActions" : false,
+    "fieldAllowMode" : false,
+    "actionAllowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "logicName" : "完成",
+        "name" : "FINISH"
+      },
+      "name" : "FINISH"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "指派",
+        "name" : "ASSIGNTO"
+      },
+      "name" : "ASSIGNTO"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "删除",
+        "name" : "DELETE"
+      },
+      "name" : "DELETE"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "转任务",
+        "name" : "TOTASK"
+      },
+      "name" : "TOTASK"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "转BUG",
+        "name" : "TOBUG"
+      },
+      "name" : "TOBUG"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "更新",
+        "name" : "UPDATE"
+      },
+      "name" : "UPDATE"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "doing",
+    "logicName" : "doing",
+    "default" : false,
+    "mSTag" : "doing",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "doing",
+    "name" : "doing"
+  }, {
+    "allowMode" : true,
+    "oPPrivAllowMode" : true,
+    "enableViewActions" : false,
+    "fieldAllowMode" : false,
+    "actionAllowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "logicName" : "删除",
+        "name" : "DELETE"
+      },
+      "name" : "DELETE"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "关闭",
+        "name" : "CLOSE"
+      },
+      "name" : "CLOSE"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "更新",
+        "name" : "UPDATE"
+      },
+      "name" : "UPDATE"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "激活",
+        "name" : "ACTIVATE"
+      },
+      "name" : "ACTIVATE"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "done",
+    "logicName" : "done",
+    "default" : false,
+    "mSTag" : "done",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "done",
+    "name" : "done"
+  }, {
+    "allowMode" : true,
+    "oPPrivAllowMode" : true,
+    "enableViewActions" : false,
+    "fieldAllowMode" : false,
+    "actionAllowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "logicName" : "删除",
+        "name" : "DELETE"
+      },
+      "name" : "DELETE"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "完成",
+        "name" : "FINISH"
+      },
+      "name" : "FINISH"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "更新",
+        "name" : "UPDATE"
+      },
+      "name" : "UPDATE"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "转BUG",
+        "name" : "TOBUG"
+      },
+      "name" : "TOBUG"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "指派",
+        "name" : "ASSIGNTO"
+      },
+      "name" : "ASSIGNTO"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "转任务",
+        "name" : "TOTASK"
+      },
+      "name" : "TOTASK"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "wait",
+    "logicName" : "wait",
+    "default" : false,
+    "mSTag" : "wait",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "wait",
+    "name" : "wait"
+  } ],
+  "enableUIActions" : 15,
   "enableUIRemove" : true,
   "getAllPSAppDEUIActions" : [ {
-    "getPSNavigateContexts" : [ {
-      "rawValue" : false,
-      "value" : "name",
-      "key" : "NAME",
-      "name" : "NAME"
-    }, {
-      "rawValue" : false,
-      "value" : "assignedto",
-      "key" : "ASSIGNEDTO",
-      "name" : "ASSIGNEDTO"
-    }, {
-      "rawValue" : false,
-      "value" : "desc",
-      "key" : "DESC",
-      "name" : "DESC"
-    } ],
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
@@ -43,6 +211,22 @@
       "name" : "name"
     } ],
     "frontProcessType" : "WIZARD",
+    "getPSNavigateContexts" : [ {
+      "rawValue" : false,
+      "value" : "name",
+      "key" : "NAME",
+      "name" : "NAME"
+    }, {
+      "rawValue" : false,
+      "value" : "assignedto",
+      "key" : "ASSIGNEDTO",
+      "name" : "ASSIGNEDTO"
+    }, {
+      "rawValue" : false,
+      "value" : "desc",
+      "key" : "DESC",
+      "name" : "DESC"
+    } ],
     "getNoPrivDisplayMode" : 2,
     "getPSSysImage" : {
       "glyph" : "xf188@FontAwesome",
@@ -78,8 +262,8 @@
     "timeout" : 60000,
     "codeName" : "activate",
     "caption" : "激活",
-    "actionTarget" : "SINGLEKEY",
     "reloadData" : true,
+    "actionTarget" : "SINGLEKEY",
     "dataAccessAction" : "ACTIVATE",
     "uIActionTag" : "activate",
     "uIActionType" : "DEUIACTION",
@@ -139,8 +323,8 @@
     "timeout" : 60000,
     "codeName" : "TodoCreate",
     "caption" : "新建",
-    "actionTarget" : "NONE",
     "reloadData" : true,
+    "actionTarget" : "NONE",
     "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
     "uIActionTag" : "TodoCreate",
     "uIActionType" : "DEUIACTION",
@@ -168,8 +352,8 @@
     "timeout" : 60000,
     "codeName" : "assignTo",
     "caption" : "指派",
-    "actionTarget" : "SINGLEKEY",
     "reloadData" : true,
+    "actionTarget" : "SINGLEKEY",
     "dataAccessAction" : "ASSIGNTO",
     "uIActionTag" : "assignTo",
     "uIActionType" : "DEUIACTION",
@@ -245,8 +429,8 @@
     "timeout" : 60000,
     "codeName" : "delete",
     "caption" : "删除",
-    "actionTarget" : "SINGLEKEY",
     "reloadData" : true,
+    "actionTarget" : "SINGLEKEY",
     "dataAccessAction" : "DELETE",
     "uIActionTag" : "delete",
     "uIActionType" : "DEUIACTION",
@@ -274,8 +458,8 @@
     "timeout" : 60000,
     "codeName" : "close",
     "caption" : "关闭",
-    "actionTarget" : "SINGLEKEY",
     "reloadData" : true,
+    "actionTarget" : "SINGLEKEY",
     "dataAccessAction" : "CLOSE",
     "uIActionTag" : "close",
     "uIActionType" : "DEUIACTION",
@@ -285,22 +469,6 @@
     "name" : "todo关闭",
     "id" : "close@Todo"
   }, {
-    "getPSNavigateContexts" : [ {
-      "rawValue" : false,
-      "value" : "name",
-      "key" : "NAME",
-      "name" : "NAME"
-    }, {
-      "rawValue" : false,
-      "value" : "assignedto",
-      "key" : "ASSIGNEDTO",
-      "name" : "ASSIGNEDTO"
-    }, {
-      "rawValue" : false,
-      "value" : "desc",
-      "key" : "DESC",
-      "name" : "DESC"
-    } ],
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
@@ -327,6 +495,22 @@
       "name" : "name"
     } ],
     "frontProcessType" : "WIZARD",
+    "getPSNavigateContexts" : [ {
+      "rawValue" : false,
+      "value" : "name",
+      "key" : "NAME",
+      "name" : "NAME"
+    }, {
+      "rawValue" : false,
+      "value" : "assignedto",
+      "key" : "ASSIGNEDTO",
+      "name" : "ASSIGNEDTO"
+    }, {
+      "rawValue" : false,
+      "value" : "desc",
+      "key" : "DESC",
+      "name" : "DESC"
+    } ],
     "getNoPrivDisplayMode" : 2,
     "getPSSysImage" : {
       "glyph" : "xf0ae@FontAwesome",
@@ -393,8 +577,8 @@
     "timeout" : 60000,
     "codeName" : "deleteCz",
     "caption" : "删除",
-    "actionTarget" : "SINGLEKEY",
     "reloadData" : true,
+    "actionTarget" : "SINGLEKEY",
     "dataAccessAction" : "DELETE",
     "closeEditView" : true,
     "uIActionTag" : "deleteCz",
@@ -453,8 +637,8 @@
     "timeout" : 60000,
     "codeName" : "assignToCz",
     "caption" : "指派",
-    "actionTarget" : "SINGLEKEY",
     "reloadData" : true,
+    "actionTarget" : "SINGLEKEY",
     "dataAccessAction" : "ASSIGNTO",
     "uIActionTag" : "assignToCz",
     "uIActionType" : "DEUIACTION",
@@ -512,8 +696,8 @@
     "timeout" : 60000,
     "codeName" : "finish",
     "caption" : "完成",
-    "actionTarget" : "SINGLEKEY",
     "reloadData" : true,
+    "actionTarget" : "SINGLEKEY",
     "dataAccessAction" : "FINISH",
     "uIActionTag" : "finish",
     "uIActionType" : "DEUIACTION",
@@ -528,196 +712,13 @@
     "codeName" : "Ungroup",
     "name" : "（未分类）"
   } ],
-  "getAllPSDEMainStates" : [ {
-    "actionAllowMode" : true,
-    "oPPrivAllowMode" : true,
-    "enableViewActions" : false,
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "logicName" : "更新",
-        "name" : "UPDATE"
-      },
-      "name" : "UPDATE"
-    }, {
-      "getPSDEOPPriv" : {
-        "logicName" : "删除",
-        "name" : "DELETE"
-      },
-      "name" : "DELETE"
-    }, {
-      "getPSDEOPPriv" : {
-        "logicName" : "激活",
-        "name" : "ACTIVATE"
-      },
-      "name" : "ACTIVATE"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "closed",
-    "logicName" : "closed",
-    "default" : false,
-    "mSTag" : "closed",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "stateValue" : "closed",
-    "name" : "closed"
-  }, {
-    "actionAllowMode" : true,
-    "oPPrivAllowMode" : true,
-    "enableViewActions" : false,
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "logicName" : "完成",
-        "name" : "FINISH"
-      },
-      "name" : "FINISH"
-    }, {
-      "getPSDEOPPriv" : {
-        "logicName" : "指派",
-        "name" : "ASSIGNTO"
-      },
-      "name" : "ASSIGNTO"
-    }, {
-      "getPSDEOPPriv" : {
-        "logicName" : "删除",
-        "name" : "DELETE"
-      },
-      "name" : "DELETE"
-    }, {
-      "getPSDEOPPriv" : {
-        "logicName" : "转任务",
-        "name" : "TOTASK"
-      },
-      "name" : "TOTASK"
-    }, {
-      "getPSDEOPPriv" : {
-        "logicName" : "转BUG",
-        "name" : "TOBUG"
-      },
-      "name" : "TOBUG"
-    }, {
-      "getPSDEOPPriv" : {
-        "logicName" : "更新",
-        "name" : "UPDATE"
-      },
-      "name" : "UPDATE"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "doing",
-    "logicName" : "doing",
-    "default" : false,
-    "mSTag" : "doing",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "stateValue" : "doing",
-    "name" : "doing"
-  }, {
-    "actionAllowMode" : true,
-    "oPPrivAllowMode" : true,
-    "enableViewActions" : false,
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "logicName" : "删除",
-        "name" : "DELETE"
-      },
-      "name" : "DELETE"
-    }, {
-      "getPSDEOPPriv" : {
-        "logicName" : "关闭",
-        "name" : "CLOSE"
-      },
-      "name" : "CLOSE"
-    }, {
-      "getPSDEOPPriv" : {
-        "logicName" : "更新",
-        "name" : "UPDATE"
-      },
-      "name" : "UPDATE"
-    }, {
-      "getPSDEOPPriv" : {
-        "logicName" : "激活",
-        "name" : "ACTIVATE"
-      },
-      "name" : "ACTIVATE"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "done",
-    "logicName" : "done",
-    "default" : false,
-    "mSTag" : "done",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "stateValue" : "done",
-    "name" : "done"
-  }, {
-    "actionAllowMode" : true,
-    "oPPrivAllowMode" : true,
-    "enableViewActions" : false,
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "logicName" : "删除",
-        "name" : "DELETE"
-      },
-      "name" : "DELETE"
-    }, {
-      "getPSDEOPPriv" : {
-        "logicName" : "完成",
-        "name" : "FINISH"
-      },
-      "name" : "FINISH"
-    }, {
-      "getPSDEOPPriv" : {
-        "logicName" : "更新",
-        "name" : "UPDATE"
-      },
-      "name" : "UPDATE"
-    }, {
-      "getPSDEOPPriv" : {
-        "logicName" : "转BUG",
-        "name" : "TOBUG"
-      },
-      "name" : "TOBUG"
-    }, {
-      "getPSDEOPPriv" : {
-        "logicName" : "指派",
-        "name" : "ASSIGNTO"
-      },
-      "name" : "ASSIGNTO"
-    }, {
-      "getPSDEOPPriv" : {
-        "logicName" : "转任务",
-        "name" : "TOTASK"
-      },
-      "name" : "TOTASK"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "wait",
-    "logicName" : "wait",
-    "default" : false,
-    "mSTag" : "wait",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "stateValue" : "wait",
-    "name" : "wait"
-  } ],
-  "enableUIActions" : 15,
+  "major" : true,
   "getAllPSAppDEMethods" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Select"
     },
+    "builtinMethod" : false,
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -725,11 +726,11 @@
     },
     "codeName" : "Select"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TODO__DEACTION__CREATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -741,11 +742,11 @@
     },
     "codeName" : "Create"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TODO__DEACTION__UPDATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -757,11 +758,11 @@
     },
     "codeName" : "Update"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TODO__DEACTION__REMOVE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -773,11 +774,11 @@
     },
     "codeName" : "Remove"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TODO__DEACTION__GET"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -789,11 +790,11 @@
     },
     "codeName" : "Get"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -805,11 +806,11 @@
     },
     "codeName" : "GetDraft"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Activate"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -817,11 +818,11 @@
     },
     "codeName" : "Activate"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "AssignTo"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -829,11 +830,11 @@
     },
     "codeName" : "AssignTo"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -841,11 +842,11 @@
     },
     "codeName" : "CheckKey"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Close"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -853,11 +854,11 @@
     },
     "codeName" : "Close"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CreateCycle"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -869,11 +870,11 @@
     },
     "codeName" : "CreateCycle"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Finish"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -881,11 +882,11 @@
     },
     "codeName" : "Finish"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -893,11 +894,11 @@
     },
     "codeName" : "Save"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SendMessage"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -905,11 +906,11 @@
     },
     "codeName" : "SendMessage"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SendMsgPreProcess"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -917,11 +918,11 @@
     },
     "codeName" : "SendMsgPreProcess"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -933,11 +934,11 @@
     },
     "codeName" : "FetchDefault"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyTodo"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -949,11 +950,11 @@
     },
     "codeName" : "FetchMyTodo"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyTodoPc"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -965,11 +966,11 @@
     },
     "codeName" : "FetchMyTodoPc"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyUpcoming"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1222,6 +1223,22 @@
     "name" : "CONFIG"
   } ],
   "getAllPSAppDEACModes" : [ {
+    "enablePagingBar" : false,
+    "getPSDEACModeDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "value",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "name" : "text",
+      "dataType" : 25
+    } ],
     "getValuePSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
@@ -1230,22 +1247,6 @@
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "getPSDEACModeDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "dataType" : 25,
-      "name" : "value"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      },
-      "dataType" : 25,
-      "name" : "text"
-    } ],
-    "enablePagingBar" : false,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "defaultMode" : true,
@@ -1350,11 +1351,11 @@
     "name" : "数据导出"
   } ],
   "getAllPSAppDEActions" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TODO__DEACTION__CREATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1366,11 +1367,11 @@
     },
     "codeName" : "Create"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TODO__DEACTION__UPDATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1382,11 +1383,11 @@
     },
     "codeName" : "Update"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TODO__DEACTION__REMOVE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1398,11 +1399,11 @@
     },
     "codeName" : "Remove"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TODO__DEACTION__GET"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1414,11 +1415,11 @@
     },
     "codeName" : "Get"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1430,11 +1431,11 @@
     },
     "codeName" : "GetDraft"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Activate"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1442,11 +1443,11 @@
     },
     "codeName" : "Activate"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "AssignTo"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1454,11 +1455,11 @@
     },
     "codeName" : "AssignTo"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1466,11 +1467,11 @@
     },
     "codeName" : "CheckKey"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Close"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1478,11 +1479,11 @@
     },
     "codeName" : "Close"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CreateCycle"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1494,11 +1495,11 @@
     },
     "codeName" : "CreateCycle"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Finish"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1506,11 +1507,11 @@
     },
     "codeName" : "Finish"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1518,11 +1519,11 @@
     },
     "codeName" : "Save"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SendMessage"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1530,11 +1531,11 @@
     },
     "codeName" : "SendMessage"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SendMsgPreProcess"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1543,11 +1544,11 @@
     "codeName" : "SendMsgPreProcess"
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1559,11 +1560,11 @@
     },
     "codeName" : "FetchDefault"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyTodo"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1575,11 +1576,11 @@
     },
     "codeName" : "FetchMyTodo"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyTodoPc"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1591,11 +1592,11 @@
     },
     "codeName" : "FetchMyTodoPc"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyUpcoming"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1607,11 +1608,6 @@
     },
     "codeName" : "FetchMyUpcoming"
   } ],
-  "major" : true,
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDESERVICEAPIS/Todo.json"
-  },
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "激活",
     "name" : "ACTIVATE"
@@ -1643,6 +1639,10 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDESERVICEAPIS/Todo.json"
+  },
   "codeName" : "Todo",
   "logicName" : "待办事宜表",
   "dataAccCtrlMode" : 1,

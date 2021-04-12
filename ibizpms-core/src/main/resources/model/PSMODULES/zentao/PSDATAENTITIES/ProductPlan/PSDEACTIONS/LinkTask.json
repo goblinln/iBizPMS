@@ -10,10 +10,10 @@
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTCommon"
   },
+  "extendMode" : 0,
   "orderValue" : 99999,
   "codeName" : "LinkTask",
   "logicName" : "关联任务",
-  "extendMode" : 0,
   "actionMode" : "UNKNOWN",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",

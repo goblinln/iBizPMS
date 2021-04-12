@@ -11,6 +11,8 @@
     "name" : "需求"
   },
   "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
   "getUpdatePSControlAction" : {
     "modelref" : true,
     "id" : "update"
@@ -19,8 +21,6 @@
     "modelref" : true,
     "id" : "load"
   },
-  "infoFormMode" : false,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
@@ -30,18 +30,18 @@
   "formFuncMode" : "WIZARDFORM",
   "getPSDEFormPages" : [ {
     "getPSDEFormDetails" : [ {
-      "rawItemWidth" : -1.0,
       "rawItemHeight" : -1.0,
+      "rawItemWidth" : -1.0,
       "contentType" : "RAW",
       "rawContent" : "<p>路径：产品→[测试数据]在线培训→需求→创建需求</p>\n<p><img src=\"../../../assets/img/storyadd.png\" referrerpolicy=\"no-referrer\" alt=\"show1\"></p>",
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : true,
       "codeName" : "rawitem1",
       "detailType" : "RAWITEM",
       "detailStyle" : "DEFAULT",
-      "showCaption" : true,
       "name" : "rawitem1"
     } ],
     "getPSLayout" : {

@@ -1,8 +1,6 @@
 {
-  "treeGridMode" : 0,
-  "enableRootSelect" : false,
-  "outputIconDefault" : true,
   "enableSearchDefault" : false,
+  "treeGridMode" : 0,
   "getPSDETreeNodeRSs" : [ {
     "getParentPSDETreeNode" : {
       "modelref" : true,
@@ -16,24 +14,26 @@
     "searchMode" : 3,
     "name" : "默认根节点 - 用户完成任务汇总表"
   } ],
+  "enableRootSelect" : false,
+  "outputIconDefault" : true,
   "controlType" : "TREEVIEW",
   "getPSDETreeNodes" : [ {
     "nodeValue" : "root",
     "text" : "默认根节点",
     "enableQuickCreate" : false,
-    "rootNode" : true,
-    "hasPSDETreeNodeRSs" : true,
     "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : true,
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
-    "enableCheck" : false,
+    "rootNode" : true,
     "enableNewData" : false,
     "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "disableSelect" : false,
     "nodeType" : "ROOT",
+    "disableSelect" : false,
     "enableQuickSearch" : false,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
@@ -42,19 +42,19 @@
     "id" : "ROOT"
   }, {
     "text" : "用户完成任务汇总表",
-    "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskStatsUserFinishTaskSumGridView.json",
       "viewType" : "DEGRIDVIEW"
     },
-    "rootNode" : false,
-    "hasPSDETreeNodeRSs" : false,
+    "enableQuickCreate" : false,
     "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : false,
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
-    "enableCheck" : false,
+    "rootNode" : false,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
@@ -63,8 +63,8 @@
     "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "disableSelect" : false,
     "nodeType" : "UserFinashTaskSum",
+    "disableSelect" : false,
     "enableQuickSearch" : false,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",

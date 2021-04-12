@@ -30,8 +30,8 @@
     "codeName" : "Tested",
     "text" : "已测测试单"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "TestQuickpacket",
   "emptyText" : "未定义",
   "enableCache" : true,

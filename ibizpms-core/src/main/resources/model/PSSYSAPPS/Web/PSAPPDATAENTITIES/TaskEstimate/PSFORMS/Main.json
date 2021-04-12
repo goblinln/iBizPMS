@@ -1,5 +1,7 @@
 {
   "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -24,8 +26,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : false,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
@@ -57,16 +57,16 @@
           "name" : "DATE",
           "codeName" : "Date"
         },
-        "dataType" : 5,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : false,
+        "dataType" : 5,
         "caption" : "日期",
+        "allowEmpty" : false,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
         "itemWidth" : 230.0,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -88,15 +88,15 @@
           "name" : "CONSUMED",
           "codeName" : "Consumed"
         },
-        "dataType" : 7,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : false,
+        "dataType" : 7,
         "caption" : "工时",
+        "allowEmpty" : false,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -118,15 +118,15 @@
           "name" : "LEFT",
           "codeName" : "Left"
         },
-        "dataType" : 7,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : false,
+        "dataType" : 7,
         "caption" : "剩余",
+        "allowEmpty" : false,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -148,15 +148,15 @@
           "name" : "WORK",
           "codeName" : "Work"
         },
-        "dataType" : 21,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : true,
+        "dataType" : 21,
         "caption" : "备注",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -170,11 +170,11 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : false,
       "codeName" : "group1",
       "caption" : "taskestimate基本信息",
       "detailType" : "GROUPPANEL",
       "detailStyle" : "DEFAULT",
-      "showCaption" : false,
       "name" : "group1"
     } ],
     "getPSLayout" : {
@@ -266,8 +266,8 @@
     "getPSDEFormItemName" : "left",
     "valueRuleType" : "DEFVALUERULE",
     "getPSDEFValueRule" : {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : false,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -302,8 +302,8 @@
     "getPSDEFormItemName" : "consumed",
     "valueRuleType" : "DEFVALUERULE",
     "getPSDEFValueRule" : {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : false,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {

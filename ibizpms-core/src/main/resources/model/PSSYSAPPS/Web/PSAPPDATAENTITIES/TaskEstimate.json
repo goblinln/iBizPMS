@@ -1,4 +1,5 @@
 {
+  "enableUIActions" : 15,
   "enableUIRemove" : true,
   "getAllPSAppDEUIActions" : [ {
     "getPSAppDataEntity" : {
@@ -20,8 +21,8 @@
     "timeout" : 60000,
     "codeName" : "Edit",
     "caption" : "编辑",
-    "actionTarget" : "SINGLEKEY",
     "reloadData" : true,
+    "actionTarget" : "SINGLEKEY",
     "uIActionTag" : "Edit",
     "uIActionType" : "DEUIACTION",
     "uIActionMode" : "FRONT",
@@ -29,13 +30,13 @@
     "name" : "编辑",
     "id" : "Edit@TaskEstimate"
   } ],
-  "enableUIActions" : 15,
+  "major" : true,
   "getAllPSAppDEMethods" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Select"
     },
+    "builtinMethod" : false,
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -43,11 +44,11 @@
     },
     "codeName" : "Select"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TASKESTIMATE__DEACTION__CREATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -59,11 +60,11 @@
     },
     "codeName" : "Create"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TASKESTIMATE__DEACTION__UPDATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -75,11 +76,11 @@
     },
     "codeName" : "Update"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TASKESTIMATE__DEACTION__REMOVE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -91,11 +92,11 @@
     },
     "codeName" : "Remove"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TASKESTIMATE__DEACTION__GET"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -107,11 +108,11 @@
     },
     "codeName" : "Get"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -123,11 +124,11 @@
     },
     "codeName" : "GetDraft"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -135,11 +136,11 @@
     },
     "codeName" : "CheckKey"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PMEvaluation"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -147,11 +148,11 @@
     },
     "codeName" : "PMEvaluation"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -159,11 +160,11 @@
     },
     "codeName" : "Save"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchActionMonth"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -175,11 +176,11 @@
     },
     "codeName" : "FetchActionMonth"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchActionYear"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -191,11 +192,11 @@
     },
     "codeName" : "FetchActionYear"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -207,11 +208,11 @@
     },
     "codeName" : "FetchDefault"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefaults"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -223,11 +224,11 @@
     },
     "codeName" : "FetchDefaults"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectActionMonth"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -239,11 +240,11 @@
     },
     "codeName" : "FetchProjectActionMonth"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectActionYear"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -255,11 +256,11 @@
     },
     "codeName" : "FetchProjectActionYear"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectTaskEstimate"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -271,8 +272,8 @@
     },
     "codeName" : "FetchProjectTaskEstimate"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -285,8 +286,8 @@
     "codeName" : "CreateTemp",
     "name" : "CreateTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -299,8 +300,8 @@
     "codeName" : "CreateTempMajor",
     "name" : "CreateTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -313,8 +314,8 @@
     "codeName" : "UpdateTemp",
     "name" : "UpdateTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -327,8 +328,8 @@
     "codeName" : "UpdateTempMajor",
     "name" : "UpdateTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -341,8 +342,8 @@
     "codeName" : "RemoveTemp",
     "name" : "RemoveTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -355,8 +356,8 @@
     "codeName" : "RemoveTempMajor",
     "name" : "RemoveTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -369,8 +370,8 @@
     "codeName" : "GetTemp",
     "name" : "GetTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -383,8 +384,8 @@
     "codeName" : "GetTempMajor",
     "name" : "GetTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -397,8 +398,8 @@
     "codeName" : "GetDraftTemp",
     "name" : "GetDraftTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -411,8 +412,8 @@
     "codeName" : "GetDraftTempMajor",
     "name" : "GetDraftTempMajor"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -421,8 +422,8 @@
     "codeName" : "FetchTempActionMonth",
     "name" : "ActionMonth"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -431,8 +432,8 @@
     "codeName" : "FetchTempActionYear",
     "name" : "ActionYear"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -441,8 +442,8 @@
     "codeName" : "FetchTempDefault",
     "name" : "DEFAULT"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -451,8 +452,8 @@
     "codeName" : "FetchTempDefaults",
     "name" : "DEFAULT1"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -461,8 +462,8 @@
     "codeName" : "FetchTempProjectActionMonth",
     "name" : "ProjectActionMonth"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -471,8 +472,8 @@
     "codeName" : "FetchTempProjectActionYear",
     "name" : "ProjectActionYear"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -517,25 +518,25 @@
     "name" : "FILTERFETCH"
   } ],
   "getMinorPSAppDERSs" : [ {
-    "getParentPSAppDEField" : {
-      "name" : "TASK",
-      "codeName" : "Task"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+    "getParentPSAppDEField" : {
+      "name" : "TASK",
+      "codeName" : "Task"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "TaskEstimates",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
@@ -589,8 +590,8 @@
     "stdDataType" : 25,
     "name" : "FILES"
   }, {
-    "majorField" : true,
     "keyField" : true,
+    "majorField" : true,
     "codeName" : "Id",
     "logicName" : "编号",
     "stdDataType" : 1,
@@ -690,6 +691,22 @@
     "name" : "TASK"
   } ],
   "getAllPSAppDEACModes" : [ {
+    "enablePagingBar" : false,
+    "getPSDEACModeDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "value",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "text",
+      "dataType" : 25
+    } ],
     "getValuePSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
@@ -698,22 +715,6 @@
       "name" : "ID",
       "codeName" : "Id"
     },
-    "getPSDEACModeDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "dataType" : 25,
-      "name" : "value"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "dataType" : 25,
-      "name" : "text"
-    } ],
-    "enablePagingBar" : false,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "defaultMode" : true,
@@ -727,11 +728,11 @@
     "codeName" : "Id"
   } ],
   "getAllPSAppDEActions" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TASKESTIMATE__DEACTION__CREATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -743,11 +744,11 @@
     },
     "codeName" : "Create"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TASKESTIMATE__DEACTION__UPDATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -759,11 +760,11 @@
     },
     "codeName" : "Update"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TASKESTIMATE__DEACTION__REMOVE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -775,11 +776,11 @@
     },
     "codeName" : "Remove"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TASKESTIMATE__DEACTION__GET"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -791,11 +792,11 @@
     },
     "codeName" : "Get"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -807,11 +808,11 @@
     },
     "codeName" : "GetDraft"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -819,11 +820,11 @@
     },
     "codeName" : "CheckKey"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PMEvaluation"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -831,11 +832,11 @@
     },
     "codeName" : "PMEvaluation"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -843,8 +844,8 @@
     },
     "codeName" : "Save"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -857,8 +858,8 @@
     "codeName" : "CreateTemp",
     "name" : "CreateTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -871,8 +872,8 @@
     "codeName" : "CreateTempMajor",
     "name" : "CreateTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -885,8 +886,8 @@
     "codeName" : "UpdateTemp",
     "name" : "UpdateTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -899,8 +900,8 @@
     "codeName" : "UpdateTempMajor",
     "name" : "UpdateTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -913,8 +914,8 @@
     "codeName" : "RemoveTemp",
     "name" : "RemoveTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -927,8 +928,8 @@
     "codeName" : "RemoveTempMajor",
     "name" : "RemoveTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -941,8 +942,8 @@
     "codeName" : "GetTemp",
     "name" : "GetTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -955,8 +956,8 @@
     "codeName" : "GetTempMajor",
     "name" : "GetTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -969,8 +970,8 @@
     "codeName" : "GetDraftTemp",
     "name" : "GetDraftTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -984,11 +985,11 @@
     "name" : "GetDraftTempMajor"
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchActionMonth"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1000,11 +1001,11 @@
     },
     "codeName" : "FetchActionMonth"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchActionYear"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1016,11 +1017,11 @@
     },
     "codeName" : "FetchActionYear"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1032,11 +1033,11 @@
     },
     "codeName" : "FetchDefault"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefaults"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1048,11 +1049,11 @@
     },
     "codeName" : "FetchDefaults"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectActionMonth"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1064,11 +1065,11 @@
     },
     "codeName" : "FetchProjectActionMonth"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectActionYear"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1080,11 +1081,11 @@
     },
     "codeName" : "FetchProjectActionYear"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectTaskEstimate"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1096,11 +1097,6 @@
     },
     "codeName" : "FetchProjectTaskEstimate"
   } ],
-  "major" : true,
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDESERVICEAPIS/TaskEstimate.json"
-  },
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -1114,6 +1110,10 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDESERVICEAPIS/TaskEstimate.json"
+  },
   "codeName" : "TaskEstimate",
   "logicName" : "任务预计",
   "dataAccCtrlMode" : 1,

@@ -1,6 +1,6 @@
 {
-  "enableBackend" : true,
   "enableFront" : false,
+  "enableBackend" : true,
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"
@@ -21,8 +21,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "MYFAVORITEBUGS",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[MYFAVORITEBUGS]"
     }, {
       "paramAction" : "SQLPARAM",
@@ -30,8 +30,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "MYFAVORITEBUGS",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[MYFAVORITEBUGS]"
     }, {
       "paramAction" : "SQLPARAM",
@@ -39,8 +39,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "MYFAVORITETASKS",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[MYFAVORITETASKS]"
     }, {
       "paramAction" : "SQLPARAM",
@@ -48,8 +48,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "MYFAVORITETASKS",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[MYFAVORITETASKS]"
     }, {
       "paramAction" : "SQLPARAM",
@@ -57,8 +57,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "MYFAVORITESTORYS",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[MYFAVORITESTORYS]"
     }, {
       "paramAction" : "SQLPARAM",
@@ -66,8 +66,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "MYFAVORITESTORYS",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[MYFAVORITESTORYS]"
     } ],
     "logicHolder" : 1,
@@ -76,13 +76,13 @@
     "name" : "计算我的收藏数"
   }, {
     "parallelOutput" : true,
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "getDstPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
     },
     "getPSDELogicLinks" : [ {
       "modelref" : true,
@@ -90,11 +90,11 @@
     } ],
     "logicHolder" : 3,
     "codeName" : "Deaction2",
-    "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/MyTerritoryCount.json"
     },
+    "logicNodeType" : "DEACTION",
     "name" : "我的"
   }, {
     "parallelOutput" : true,
@@ -108,33 +108,33 @@
     } ],
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
-      "srcValueType" : "SESSION",
       "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION",
       "name" : "用户全局对象[srfloginname]"
     }, {
       "paramAction" : "SQLPARAM",
-      "srcValueType" : "SESSION",
       "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION",
       "name" : "用户全局对象[srfloginname]"
     }, {
       "paramAction" : "SQLPARAM",
-      "srcValueType" : "SESSION",
       "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION",
       "name" : "用户全局对象[srfloginname]"
     }, {
       "paramAction" : "SQLPARAM",
-      "srcValueType" : "SESSION",
       "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION",
       "name" : "用户全局对象[srfloginname]"
     }, {
       "paramAction" : "SQLPARAM",
-      "srcValueType" : "SESSION",
       "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION",
       "name" : "用户全局对象[srfloginname]"
     }, {
       "paramAction" : "SQLPARAM",
-      "srcValueType" : "SESSION",
       "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION",
       "name" : "用户全局对象[srfloginname]"
     } ],
     "logicHolder" : 1,
@@ -153,8 +153,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "MYBUGS",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[MYBUGS]"
     }, {
       "paramAction" : "SQLPARAM",
@@ -162,8 +162,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "MYBUGS",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[MYBUGS]"
     }, {
       "paramAction" : "SQLPARAM",
@@ -171,8 +171,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "MYTASKS",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[MYTASKS]"
     }, {
       "paramAction" : "SQLPARAM",
@@ -180,8 +180,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "MYTASKS",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[MYTASKS]"
     }, {
       "paramAction" : "SQLPARAM",
@@ -189,8 +189,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "MYSTORYS",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[MYSTORYS]"
     }, {
       "paramAction" : "SQLPARAM",
@@ -198,8 +198,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "MYSTORYS",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[MYSTORYS]"
     }, {
       "paramAction" : "SQLPARAM",
@@ -207,8 +207,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "MYTODOCNT",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[MYTODOCNT]"
     }, {
       "paramAction" : "SQLPARAM",
@@ -216,8 +216,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "MYTODOCNT",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[MYTODOCNT]"
     } ],
     "logicHolder" : 1,
@@ -246,28 +246,28 @@
     } ],
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
-      "srcValueType" : "SESSION",
       "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION",
       "name" : "用户全局对象[srfloginname]"
     }, {
       "paramAction" : "SQLPARAM",
-      "srcValueType" : "SESSION",
       "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION",
       "name" : "用户全局对象[srfloginname]"
     }, {
       "paramAction" : "SQLPARAM",
-      "srcValueType" : "SESSION",
       "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION",
       "name" : "用户全局对象[srfloginname]"
     }, {
       "paramAction" : "SQLPARAM",
-      "srcValueType" : "SESSION",
       "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION",
       "name" : "用户全局对象[srfloginname]"
     }, {
       "paramAction" : "SQLPARAM",
-      "srcValueType" : "SESSION",
       "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION",
       "name" : "用户全局对象[srfloginname]"
     } ],
     "logicHolder" : 1,
@@ -276,13 +276,13 @@
     "name" : "产品数"
   }, {
     "parallelOutput" : true,
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "getDstPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
     },
     "getPSDELogicLinks" : [ {
       "modelref" : true,
@@ -290,11 +290,11 @@
     } ],
     "logicHolder" : 3,
     "codeName" : "Deaction1",
-    "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/MyFavoriteCount.json"
     },
+    "logicNodeType" : "DEACTION",
     "name" : "收藏"
   } ],
   "getPSDELogicLinks" : [ {
@@ -365,9 +365,9 @@
     "name" : "连接8679"
   } ],
   "getPSDELogicParams" : [ {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

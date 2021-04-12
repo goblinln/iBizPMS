@@ -1,4 +1,617 @@
 {
+  "getAllPSDEMainStates" : [ {
+    "allowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "0",
+    "fieldAllowMode" : false,
+    "actionAllowMode" : true,
+    "getPSDEMainStateActions" : [ {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Activate.json"
+      },
+      "name" : "Activate"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Update.json"
+      },
+      "name" : "Update"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Save.json"
+      },
+      "name" : "Save"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Get.json"
+      },
+      "name" : "Get"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Remove.json"
+      },
+      "name" : "Remove"
+    } ],
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "logicName" : "置顶",
+        "name" : "TOP"
+      },
+      "name" : "TOP"
+    }, {
+      "getPSDEOPPriv" : {
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__PROJ_START_BUT"
+        },
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "PROJ_START_BUT",
+        "logicName" : "项目开始",
+        "name" : "SRFUR__PROJ_START_BUT"
+      },
+      "name" : "SRFUR__PROJ_START_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__PROJ_SUSPEND_BUT"
+        },
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "PROJ_SUSPEND_BUT",
+        "logicName" : "项目挂起",
+        "name" : "SRFUR__PROJ_SUSPEND_BUT"
+      },
+      "name" : "SRFUR__PROJ_SUSPEND_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__PROJ_CLOSED_BUT"
+        },
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "PROJ_CLOSED_BUT",
+        "logicName" : "项目关闭",
+        "name" : "SRFUR__PROJ_CLOSED_BUT"
+      },
+      "name" : "SRFUR__PROJ_CLOSED_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__PROJ_DELAY_BUT"
+        },
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "PROJ_DELAY_BUT",
+        "logicName" : "项目延期",
+        "name" : "SRFUR__PROJ_DELAY_BUT"
+      },
+      "name" : "SRFUR__PROJ_DELAY_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "closed_0",
+    "logicName" : "已关闭_未置顶",
+    "default" : false,
+    "mSTag" : "closed__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "closed",
+    "name" : "已关闭_未置顶"
+  }, {
+    "allowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "1",
+    "fieldAllowMode" : false,
+    "actionAllowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__PROJ_SUSPEND_BUT"
+        },
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "PROJ_SUSPEND_BUT",
+        "logicName" : "项目挂起",
+        "name" : "SRFUR__PROJ_SUSPEND_BUT"
+      },
+      "name" : "SRFUR__PROJ_SUSPEND_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__PROJ_START_BUT"
+        },
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "PROJ_START_BUT",
+        "logicName" : "项目开始",
+        "name" : "SRFUR__PROJ_START_BUT"
+      },
+      "name" : "SRFUR__PROJ_START_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__PROJ_CLOSED_BUT"
+        },
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "PROJ_CLOSED_BUT",
+        "logicName" : "项目关闭",
+        "name" : "SRFUR__PROJ_CLOSED_BUT"
+      },
+      "name" : "SRFUR__PROJ_CLOSED_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "未置顶",
+        "name" : "NOTOP"
+      },
+      "name" : "NOTOP"
+    }, {
+      "getPSDEOPPriv" : {
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__PROJ_DELAY_BUT"
+        },
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "PROJ_DELAY_BUT",
+        "logicName" : "项目延期",
+        "name" : "SRFUR__PROJ_DELAY_BUT"
+      },
+      "name" : "SRFUR__PROJ_DELAY_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "closed_1",
+    "logicName" : "已关闭_已置顶",
+    "default" : false,
+    "mSTag" : "closed__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "closed",
+    "name" : "已关闭_已置顶"
+  }, {
+    "allowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "0",
+    "fieldAllowMode" : false,
+    "actionAllowMode" : true,
+    "getPSDEMainStateActions" : [ {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Suspend.json"
+      },
+      "name" : "Suspend"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Putoff.json"
+      },
+      "name" : "Putoff"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Update.json"
+      },
+      "name" : "Update"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Save.json"
+      },
+      "name" : "Save"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Get.json"
+      },
+      "name" : "Get"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Close.json"
+      },
+      "name" : "Close"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Remove.json"
+      },
+      "name" : "Remove"
+    } ],
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "logicName" : "置顶",
+        "name" : "TOP"
+      },
+      "name" : "TOP"
+    }, {
+      "getPSDEOPPriv" : {
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__PROJ_START_BUT"
+        },
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "PROJ_START_BUT",
+        "logicName" : "项目开始",
+        "name" : "SRFUR__PROJ_START_BUT"
+      },
+      "name" : "SRFUR__PROJ_START_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__PROJ_ACTIVATION_BUT"
+        },
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "PROJ_ACTIVATION_BUT",
+        "logicName" : "项目激活",
+        "name" : "SRFUR__PROJ_ACTIVATION_BUT"
+      },
+      "name" : "SRFUR__PROJ_ACTIVATION_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "doing_0",
+    "logicName" : "进行中_未置顶",
+    "default" : false,
+    "mSTag" : "doing__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "doing",
+    "name" : "进行中_未置顶"
+  }, {
+    "allowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "1",
+    "fieldAllowMode" : false,
+    "actionAllowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__PROJ_ACTIVATION_BUT"
+        },
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "PROJ_ACTIVATION_BUT",
+        "logicName" : "项目激活",
+        "name" : "SRFUR__PROJ_ACTIVATION_BUT"
+      },
+      "name" : "SRFUR__PROJ_ACTIVATION_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "未置顶",
+        "name" : "NOTOP"
+      },
+      "name" : "NOTOP"
+    }, {
+      "getPSDEOPPriv" : {
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__PROJ_START_BUT"
+        },
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "PROJ_START_BUT",
+        "logicName" : "项目开始",
+        "name" : "SRFUR__PROJ_START_BUT"
+      },
+      "name" : "SRFUR__PROJ_START_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "doing_1",
+    "logicName" : "进行中_已置顶",
+    "default" : false,
+    "mSTag" : "doing__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "doing",
+    "name" : "进行中_已置顶"
+  }, {
+    "allowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "0",
+    "fieldAllowMode" : false,
+    "actionAllowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__PROJ_SUSPEND_BUT"
+        },
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "PROJ_SUSPEND_BUT",
+        "logicName" : "项目挂起",
+        "name" : "SRFUR__PROJ_SUSPEND_BUT"
+      },
+      "name" : "SRFUR__PROJ_SUSPEND_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__PROJ_START_BUT"
+        },
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "PROJ_START_BUT",
+        "logicName" : "项目开始",
+        "name" : "SRFUR__PROJ_START_BUT"
+      },
+      "name" : "SRFUR__PROJ_START_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "置顶",
+        "name" : "TOP"
+      },
+      "name" : "TOP"
+    }, {
+      "getPSDEOPPriv" : {
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__PROJ_DELAY_BUT"
+        },
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "PROJ_DELAY_BUT",
+        "logicName" : "项目延期",
+        "name" : "SRFUR__PROJ_DELAY_BUT"
+      },
+      "name" : "SRFUR__PROJ_DELAY_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "suspended_0",
+    "logicName" : "已挂起_未置顶",
+    "default" : false,
+    "mSTag" : "suspended__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "suspended",
+    "name" : "已挂起_未置顶"
+  }, {
+    "allowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "1",
+    "fieldAllowMode" : false,
+    "actionAllowMode" : true,
+    "getPSDEMainStateActions" : [ {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Activate.json"
+      },
+      "name" : "Activate"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Remove.json"
+      },
+      "name" : "Remove"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Save.json"
+      },
+      "name" : "Save"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Close.json"
+      },
+      "name" : "Close"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Get.json"
+      },
+      "name" : "Get"
+    } ],
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__PROJ_START_BUT"
+        },
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "PROJ_START_BUT",
+        "logicName" : "项目开始",
+        "name" : "SRFUR__PROJ_START_BUT"
+      },
+      "name" : "SRFUR__PROJ_START_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "logicName" : "未置顶",
+        "name" : "NOTOP"
+      },
+      "name" : "NOTOP"
+    }, {
+      "getPSDEOPPriv" : {
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__PROJ_SUSPEND_BUT"
+        },
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "PROJ_SUSPEND_BUT",
+        "logicName" : "项目挂起",
+        "name" : "SRFUR__PROJ_SUSPEND_BUT"
+      },
+      "name" : "SRFUR__PROJ_SUSPEND_BUT"
+    }, {
+      "getPSDEOPPriv" : {
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__PROJ_DELAY_BUT"
+        },
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "PROJ_DELAY_BUT",
+        "logicName" : "项目延期",
+        "name" : "SRFUR__PROJ_DELAY_BUT"
+      },
+      "name" : "SRFUR__PROJ_DELAY_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "suspended_1",
+    "logicName" : "已挂起_已置顶",
+    "default" : false,
+    "mSTag" : "suspended__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "suspended",
+    "name" : "已挂起_已置顶"
+  }, {
+    "allowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "0",
+    "fieldAllowMode" : false,
+    "actionAllowMode" : true,
+    "getPSDEMainStateActions" : [ {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Putoff.json"
+      },
+      "name" : "Putoff"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Get.json"
+      },
+      "name" : "Get"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Close.json"
+      },
+      "name" : "Close"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Start.json"
+      },
+      "name" : "Start"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Update.json"
+      },
+      "name" : "Update"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Suspend.json"
+      },
+      "name" : "Suspend"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Save.json"
+      },
+      "name" : "Save"
+    }, {
+      "allowMode" : true,
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Remove.json"
+      },
+      "name" : "Remove"
+    } ],
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "logicName" : "置顶",
+        "name" : "TOP"
+      },
+      "name" : "TOP"
+    }, {
+      "getPSDEOPPriv" : {
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__PROJ_ACTIVATION_BUT"
+        },
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "PROJ_ACTIVATION_BUT",
+        "logicName" : "项目激活",
+        "name" : "SRFUR__PROJ_ACTIVATION_BUT"
+      },
+      "name" : "SRFUR__PROJ_ACTIVATION_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "wait_0",
+    "logicName" : "未开始_未置顶",
+    "default" : false,
+    "mSTag" : "wait__0",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "wait",
+    "name" : "未开始_未置顶"
+  }, {
+    "allowMode" : true,
+    "oPPrivAllowMode" : false,
+    "enableViewActions" : false,
+    "state2Value" : "1",
+    "fieldAllowMode" : false,
+    "actionAllowMode" : true,
+    "getPSDEMainStateOPPrivs" : [ {
+      "getPSDEOPPriv" : {
+        "logicName" : "未置顶",
+        "name" : "NOTOP"
+      },
+      "name" : "NOTOP"
+    }, {
+      "getPSDEOPPriv" : {
+        "getMapPSSysUniRes" : {
+          "modelref" : true,
+          "id" : "ibiz__PROJ_ACTIVATION_BUT"
+        },
+        "mapSysUniRes" : true,
+        "mapSysUniResCode" : "PROJ_ACTIVATION_BUT",
+        "logicName" : "项目激活",
+        "name" : "SRFUR__PROJ_ACTIVATION_BUT"
+      },
+      "name" : "SRFUR__PROJ_ACTIVATION_BUT"
+    } ],
+    "orderValue" : 99999,
+    "codeName" : "wait_1",
+    "logicName" : "未开始_已置顶",
+    "default" : false,
+    "mSTag" : "wait__1",
+    "viewActions" : 0,
+    "enterStateMode" : "ANY",
+    "wFStateMode" : 0,
+    "stateValue" : "wait",
+    "name" : "未开始_已置顶"
+  } ],
+  "enableUIActions" : 15,
   "enableUIRemove" : true,
   "getAllPSAppDEUIActions" : [ {
     "getPSAppDataEntity" : {
@@ -20,8 +633,8 @@
     "timeout" : 60000,
     "codeName" : "Create",
     "caption" : "新建",
-    "actionTarget" : "NONE",
     "reloadData" : true,
+    "actionTarget" : "NONE",
     "dataAccessAction" : "SRFUR__PROJ_CREATE_BUT",
     "uIActionTag" : "Create",
     "uIActionType" : "DEUIACTION",
@@ -48,8 +661,8 @@
     "timeout" : 60000,
     "codeName" : "CancelProjectTop",
     "caption" : "取消置顶",
-    "actionTarget" : "SINGLEKEY",
     "reloadData" : true,
+    "actionTarget" : "SINGLEKEY",
     "dataAccessAction" : "TOP",
     "uIActionTag" : "CancelProjectTop",
     "uIActionType" : "DEUIACTION",
@@ -85,8 +698,8 @@
     "timeout" : 60000,
     "codeName" : "delete",
     "caption" : "删除",
-    "actionTarget" : "SINGLEKEY",
     "reloadData" : true,
+    "actionTarget" : "SINGLEKEY",
     "dataAccessAction" : "SRFUR__PROJ_DELETE_BUT",
     "closeEditView" : true,
     "uIActionTag" : "delete",
@@ -117,8 +730,8 @@
     "timeout" : 60000,
     "codeName" : "ProjectTop",
     "caption" : "置顶",
-    "actionTarget" : "SINGLEKEY",
     "reloadData" : true,
+    "actionTarget" : "SINGLEKEY",
     "dataAccessAction" : "NOTOP",
     "uIActionTag" : "ProjectTop",
     "uIActionType" : "DEUIACTION",
@@ -333,625 +946,13 @@
     "codeName" : "Ungroup",
     "name" : "（未分类）"
   } ],
-  "getAllPSDEMainStates" : [ {
-    "actionAllowMode" : true,
-    "oPPrivAllowMode" : false,
-    "enableViewActions" : false,
-    "state2Value" : "0",
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "getPSDEMainStateActions" : [ {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Activate.json"
-      },
-      "name" : "Activate"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Update.json"
-      },
-      "name" : "Update"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Save.json"
-      },
-      "name" : "Save"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Get.json"
-      },
-      "name" : "Get"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Remove.json"
-      },
-      "name" : "Remove"
-    } ],
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "logicName" : "置顶",
-        "name" : "TOP"
-      },
-      "name" : "TOP"
-    }, {
-      "getPSDEOPPriv" : {
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_START_BUT"
-        },
-        "mapSysUniRes" : true,
-        "mapSysUniResCode" : "PROJ_START_BUT",
-        "logicName" : "项目开始",
-        "name" : "SRFUR__PROJ_START_BUT"
-      },
-      "name" : "SRFUR__PROJ_START_BUT"
-    }, {
-      "getPSDEOPPriv" : {
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_SUSPEND_BUT"
-        },
-        "mapSysUniRes" : true,
-        "mapSysUniResCode" : "PROJ_SUSPEND_BUT",
-        "logicName" : "项目挂起",
-        "name" : "SRFUR__PROJ_SUSPEND_BUT"
-      },
-      "name" : "SRFUR__PROJ_SUSPEND_BUT"
-    }, {
-      "getPSDEOPPriv" : {
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_CLOSED_BUT"
-        },
-        "mapSysUniRes" : true,
-        "mapSysUniResCode" : "PROJ_CLOSED_BUT",
-        "logicName" : "项目关闭",
-        "name" : "SRFUR__PROJ_CLOSED_BUT"
-      },
-      "name" : "SRFUR__PROJ_CLOSED_BUT"
-    }, {
-      "getPSDEOPPriv" : {
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_DELAY_BUT"
-        },
-        "mapSysUniRes" : true,
-        "mapSysUniResCode" : "PROJ_DELAY_BUT",
-        "logicName" : "项目延期",
-        "name" : "SRFUR__PROJ_DELAY_BUT"
-      },
-      "name" : "SRFUR__PROJ_DELAY_BUT"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "closed_0",
-    "logicName" : "已关闭_未置顶",
-    "default" : false,
-    "mSTag" : "closed__0",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "stateValue" : "closed",
-    "name" : "已关闭_未置顶"
-  }, {
-    "actionAllowMode" : true,
-    "oPPrivAllowMode" : false,
-    "enableViewActions" : false,
-    "state2Value" : "1",
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_SUSPEND_BUT"
-        },
-        "mapSysUniRes" : true,
-        "mapSysUniResCode" : "PROJ_SUSPEND_BUT",
-        "logicName" : "项目挂起",
-        "name" : "SRFUR__PROJ_SUSPEND_BUT"
-      },
-      "name" : "SRFUR__PROJ_SUSPEND_BUT"
-    }, {
-      "getPSDEOPPriv" : {
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_START_BUT"
-        },
-        "mapSysUniRes" : true,
-        "mapSysUniResCode" : "PROJ_START_BUT",
-        "logicName" : "项目开始",
-        "name" : "SRFUR__PROJ_START_BUT"
-      },
-      "name" : "SRFUR__PROJ_START_BUT"
-    }, {
-      "getPSDEOPPriv" : {
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_CLOSED_BUT"
-        },
-        "mapSysUniRes" : true,
-        "mapSysUniResCode" : "PROJ_CLOSED_BUT",
-        "logicName" : "项目关闭",
-        "name" : "SRFUR__PROJ_CLOSED_BUT"
-      },
-      "name" : "SRFUR__PROJ_CLOSED_BUT"
-    }, {
-      "getPSDEOPPriv" : {
-        "logicName" : "未置顶",
-        "name" : "NOTOP"
-      },
-      "name" : "NOTOP"
-    }, {
-      "getPSDEOPPriv" : {
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_DELAY_BUT"
-        },
-        "mapSysUniRes" : true,
-        "mapSysUniResCode" : "PROJ_DELAY_BUT",
-        "logicName" : "项目延期",
-        "name" : "SRFUR__PROJ_DELAY_BUT"
-      },
-      "name" : "SRFUR__PROJ_DELAY_BUT"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "closed_1",
-    "logicName" : "已关闭_已置顶",
-    "default" : false,
-    "mSTag" : "closed__1",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "stateValue" : "closed",
-    "name" : "已关闭_已置顶"
-  }, {
-    "actionAllowMode" : true,
-    "oPPrivAllowMode" : false,
-    "enableViewActions" : false,
-    "state2Value" : "0",
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "getPSDEMainStateActions" : [ {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Suspend.json"
-      },
-      "name" : "Suspend"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Putoff.json"
-      },
-      "name" : "Putoff"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Update.json"
-      },
-      "name" : "Update"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Save.json"
-      },
-      "name" : "Save"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Get.json"
-      },
-      "name" : "Get"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Close.json"
-      },
-      "name" : "Close"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Remove.json"
-      },
-      "name" : "Remove"
-    } ],
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "logicName" : "置顶",
-        "name" : "TOP"
-      },
-      "name" : "TOP"
-    }, {
-      "getPSDEOPPriv" : {
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_START_BUT"
-        },
-        "mapSysUniRes" : true,
-        "mapSysUniResCode" : "PROJ_START_BUT",
-        "logicName" : "项目开始",
-        "name" : "SRFUR__PROJ_START_BUT"
-      },
-      "name" : "SRFUR__PROJ_START_BUT"
-    }, {
-      "getPSDEOPPriv" : {
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_ACTIVATION_BUT"
-        },
-        "mapSysUniRes" : true,
-        "mapSysUniResCode" : "PROJ_ACTIVATION_BUT",
-        "logicName" : "项目激活",
-        "name" : "SRFUR__PROJ_ACTIVATION_BUT"
-      },
-      "name" : "SRFUR__PROJ_ACTIVATION_BUT"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "doing_0",
-    "logicName" : "进行中_未置顶",
-    "default" : false,
-    "mSTag" : "doing__0",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "stateValue" : "doing",
-    "name" : "进行中_未置顶"
-  }, {
-    "actionAllowMode" : true,
-    "oPPrivAllowMode" : false,
-    "enableViewActions" : false,
-    "state2Value" : "1",
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_ACTIVATION_BUT"
-        },
-        "mapSysUniRes" : true,
-        "mapSysUniResCode" : "PROJ_ACTIVATION_BUT",
-        "logicName" : "项目激活",
-        "name" : "SRFUR__PROJ_ACTIVATION_BUT"
-      },
-      "name" : "SRFUR__PROJ_ACTIVATION_BUT"
-    }, {
-      "getPSDEOPPriv" : {
-        "logicName" : "未置顶",
-        "name" : "NOTOP"
-      },
-      "name" : "NOTOP"
-    }, {
-      "getPSDEOPPriv" : {
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_START_BUT"
-        },
-        "mapSysUniRes" : true,
-        "mapSysUniResCode" : "PROJ_START_BUT",
-        "logicName" : "项目开始",
-        "name" : "SRFUR__PROJ_START_BUT"
-      },
-      "name" : "SRFUR__PROJ_START_BUT"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "doing_1",
-    "logicName" : "进行中_已置顶",
-    "default" : false,
-    "mSTag" : "doing__1",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "stateValue" : "doing",
-    "name" : "进行中_已置顶"
-  }, {
-    "actionAllowMode" : true,
-    "oPPrivAllowMode" : false,
-    "enableViewActions" : false,
-    "state2Value" : "0",
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_SUSPEND_BUT"
-        },
-        "mapSysUniRes" : true,
-        "mapSysUniResCode" : "PROJ_SUSPEND_BUT",
-        "logicName" : "项目挂起",
-        "name" : "SRFUR__PROJ_SUSPEND_BUT"
-      },
-      "name" : "SRFUR__PROJ_SUSPEND_BUT"
-    }, {
-      "getPSDEOPPriv" : {
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_START_BUT"
-        },
-        "mapSysUniRes" : true,
-        "mapSysUniResCode" : "PROJ_START_BUT",
-        "logicName" : "项目开始",
-        "name" : "SRFUR__PROJ_START_BUT"
-      },
-      "name" : "SRFUR__PROJ_START_BUT"
-    }, {
-      "getPSDEOPPriv" : {
-        "logicName" : "置顶",
-        "name" : "TOP"
-      },
-      "name" : "TOP"
-    }, {
-      "getPSDEOPPriv" : {
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_DELAY_BUT"
-        },
-        "mapSysUniRes" : true,
-        "mapSysUniResCode" : "PROJ_DELAY_BUT",
-        "logicName" : "项目延期",
-        "name" : "SRFUR__PROJ_DELAY_BUT"
-      },
-      "name" : "SRFUR__PROJ_DELAY_BUT"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "suspended_0",
-    "logicName" : "已挂起_未置顶",
-    "default" : false,
-    "mSTag" : "suspended__0",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "stateValue" : "suspended",
-    "name" : "已挂起_未置顶"
-  }, {
-    "actionAllowMode" : true,
-    "oPPrivAllowMode" : false,
-    "enableViewActions" : false,
-    "state2Value" : "1",
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "getPSDEMainStateActions" : [ {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Activate.json"
-      },
-      "name" : "Activate"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Remove.json"
-      },
-      "name" : "Remove"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Save.json"
-      },
-      "name" : "Save"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Close.json"
-      },
-      "name" : "Close"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Get.json"
-      },
-      "name" : "Get"
-    } ],
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_START_BUT"
-        },
-        "mapSysUniRes" : true,
-        "mapSysUniResCode" : "PROJ_START_BUT",
-        "logicName" : "项目开始",
-        "name" : "SRFUR__PROJ_START_BUT"
-      },
-      "name" : "SRFUR__PROJ_START_BUT"
-    }, {
-      "getPSDEOPPriv" : {
-        "logicName" : "未置顶",
-        "name" : "NOTOP"
-      },
-      "name" : "NOTOP"
-    }, {
-      "getPSDEOPPriv" : {
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_SUSPEND_BUT"
-        },
-        "mapSysUniRes" : true,
-        "mapSysUniResCode" : "PROJ_SUSPEND_BUT",
-        "logicName" : "项目挂起",
-        "name" : "SRFUR__PROJ_SUSPEND_BUT"
-      },
-      "name" : "SRFUR__PROJ_SUSPEND_BUT"
-    }, {
-      "getPSDEOPPriv" : {
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_DELAY_BUT"
-        },
-        "mapSysUniRes" : true,
-        "mapSysUniResCode" : "PROJ_DELAY_BUT",
-        "logicName" : "项目延期",
-        "name" : "SRFUR__PROJ_DELAY_BUT"
-      },
-      "name" : "SRFUR__PROJ_DELAY_BUT"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "suspended_1",
-    "logicName" : "已挂起_已置顶",
-    "default" : false,
-    "mSTag" : "suspended__1",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "stateValue" : "suspended",
-    "name" : "已挂起_已置顶"
-  }, {
-    "actionAllowMode" : true,
-    "oPPrivAllowMode" : false,
-    "enableViewActions" : false,
-    "state2Value" : "0",
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "getPSDEMainStateActions" : [ {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Putoff.json"
-      },
-      "name" : "Putoff"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Get.json"
-      },
-      "name" : "Get"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Close.json"
-      },
-      "name" : "Close"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Start.json"
-      },
-      "name" : "Start"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Update.json"
-      },
-      "name" : "Update"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Suspend.json"
-      },
-      "name" : "Suspend"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Save.json"
-      },
-      "name" : "Save"
-    }, {
-      "allowMode" : true,
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Remove.json"
-      },
-      "name" : "Remove"
-    } ],
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "logicName" : "置顶",
-        "name" : "TOP"
-      },
-      "name" : "TOP"
-    }, {
-      "getPSDEOPPriv" : {
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_ACTIVATION_BUT"
-        },
-        "mapSysUniRes" : true,
-        "mapSysUniResCode" : "PROJ_ACTIVATION_BUT",
-        "logicName" : "项目激活",
-        "name" : "SRFUR__PROJ_ACTIVATION_BUT"
-      },
-      "name" : "SRFUR__PROJ_ACTIVATION_BUT"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "wait_0",
-    "logicName" : "未开始_未置顶",
-    "default" : false,
-    "mSTag" : "wait__0",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "stateValue" : "wait",
-    "name" : "未开始_未置顶"
-  }, {
-    "actionAllowMode" : true,
-    "oPPrivAllowMode" : false,
-    "enableViewActions" : false,
-    "state2Value" : "1",
-    "fieldAllowMode" : false,
-    "allowMode" : true,
-    "getPSDEMainStateOPPrivs" : [ {
-      "getPSDEOPPriv" : {
-        "logicName" : "未置顶",
-        "name" : "NOTOP"
-      },
-      "name" : "NOTOP"
-    }, {
-      "getPSDEOPPriv" : {
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_ACTIVATION_BUT"
-        },
-        "mapSysUniRes" : true,
-        "mapSysUniResCode" : "PROJ_ACTIVATION_BUT",
-        "logicName" : "项目激活",
-        "name" : "SRFUR__PROJ_ACTIVATION_BUT"
-      },
-      "name" : "SRFUR__PROJ_ACTIVATION_BUT"
-    } ],
-    "orderValue" : 99999,
-    "codeName" : "wait_1",
-    "logicName" : "未开始_已置顶",
-    "default" : false,
-    "mSTag" : "wait__1",
-    "viewActions" : 0,
-    "enterStateMode" : "ANY",
-    "wFStateMode" : 0,
-    "stateValue" : "wait",
-    "name" : "未开始_已置顶"
-  } ],
-  "enableUIActions" : 15,
+  "major" : true,
   "getAllPSAppDEMethods" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Select"
     },
+    "builtinMethod" : false,
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -959,11 +960,11 @@
     },
     "codeName" : "Select"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PROJECT__DEACTION__CREATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -975,11 +976,11 @@
     },
     "codeName" : "Create"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PROJECT__DEACTION__UPDATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -991,11 +992,11 @@
     },
     "codeName" : "Update"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PROJECT__DEACTION__REMOVE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1007,11 +1008,11 @@
     },
     "codeName" : "Remove"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PROJECT__DEACTION__GET"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1023,11 +1024,11 @@
     },
     "codeName" : "Get"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1039,11 +1040,11 @@
     },
     "codeName" : "GetDraft"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Activate"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1051,11 +1052,11 @@
     },
     "codeName" : "Activate"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BatchUnlinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1063,11 +1064,11 @@
     },
     "codeName" : "BatchUnlinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CancelProjectTop"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1075,11 +1076,11 @@
     },
     "codeName" : "CancelProjectTop"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1087,11 +1088,11 @@
     },
     "codeName" : "CheckKey"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Close"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1099,11 +1100,11 @@
     },
     "codeName" : "Close"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "LinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1111,11 +1112,11 @@
     },
     "codeName" : "LinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ManageMembers"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1123,11 +1124,11 @@
     },
     "codeName" : "ManageMembers"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "MobProjectCount"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1135,11 +1136,11 @@
     },
     "codeName" : "MobProjectCount"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PmsEeProjectAllTaskCount"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1147,11 +1148,11 @@
     },
     "codeName" : "PmsEeProjectAllTaskCount"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PmsEeProjectTodoTaskCount"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1159,11 +1160,11 @@
     },
     "codeName" : "PmsEeProjectTodoTaskCount"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ProjectTaskQCnt"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1171,11 +1172,11 @@
     },
     "codeName" : "ProjectTaskQCnt"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ProjectTop"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1183,11 +1184,11 @@
     },
     "codeName" : "ProjectTop"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Putoff"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1195,11 +1196,11 @@
     },
     "codeName" : "Putoff"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1207,11 +1208,11 @@
     },
     "codeName" : "Save"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Start"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1219,11 +1220,11 @@
     },
     "codeName" : "Start"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Suspend"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1231,11 +1232,11 @@
     },
     "codeName" : "Suspend"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "UnlinkMember"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1243,11 +1244,11 @@
     },
     "codeName" : "UnlinkMember"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "UnlinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1255,11 +1256,11 @@
     },
     "codeName" : "UnlinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "UpdateOrder"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1271,11 +1272,11 @@
     },
     "codeName" : "UpdateOrder"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBugProject"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1287,11 +1288,11 @@
     },
     "codeName" : "FetchBugProject"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCurPlanProject"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1303,11 +1304,11 @@
     },
     "codeName" : "FetchCurPlanProject"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCurProduct"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1319,11 +1320,11 @@
     },
     "codeName" : "FetchCurProduct"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCurUser"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1335,11 +1336,11 @@
     },
     "codeName" : "FetchCurUser"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCurUserSa"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1351,11 +1352,11 @@
     },
     "codeName" : "FetchCurUserSa"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1367,11 +1368,11 @@
     },
     "codeName" : "FetchDefault"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchESBulk"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1383,11 +1384,11 @@
     },
     "codeName" : "FetchESBulk"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchInvolvedProject"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1399,11 +1400,11 @@
     },
     "codeName" : "FetchInvolvedProject"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchInvolvedProject_StoryTaskBug"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1415,11 +1416,11 @@
     },
     "codeName" : "FetchInvolvedProject_StoryTaskBug"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyProject"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1431,11 +1432,11 @@
     },
     "codeName" : "FetchMyProject"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectTeam"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1447,11 +1448,11 @@
     },
     "codeName" : "FetchProjectTeam"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchStoryProject"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1463,11 +1464,11 @@
     },
     "codeName" : "FetchStoryProject"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchUnDoneProject"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1479,8 +1480,8 @@
     },
     "codeName" : "FetchUnDoneProject"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1493,8 +1494,8 @@
     "codeName" : "CreateTemp",
     "name" : "CreateTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1507,8 +1508,8 @@
     "codeName" : "CreateTempMajor",
     "name" : "CreateTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1521,8 +1522,8 @@
     "codeName" : "UpdateTemp",
     "name" : "UpdateTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1535,8 +1536,8 @@
     "codeName" : "UpdateTempMajor",
     "name" : "UpdateTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1549,8 +1550,8 @@
     "codeName" : "RemoveTemp",
     "name" : "RemoveTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1563,8 +1564,8 @@
     "codeName" : "RemoveTempMajor",
     "name" : "RemoveTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1577,8 +1578,8 @@
     "codeName" : "GetTemp",
     "name" : "GetTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1591,8 +1592,8 @@
     "codeName" : "GetTempMajor",
     "name" : "GetTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1605,8 +1606,8 @@
     "codeName" : "GetDraftTemp",
     "name" : "GetDraftTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -1654,8 +1655,8 @@
     "codeName" : "UpdateProjectCycle",
     "name" : "UpdateProjectCycle"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1664,8 +1665,8 @@
     "codeName" : "FetchTempBugProject",
     "name" : "BugProject"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1674,8 +1675,8 @@
     "codeName" : "FetchTempCurPlanProject",
     "name" : "CurPlanProject"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1684,8 +1685,8 @@
     "codeName" : "FetchTempCurProduct",
     "name" : "CurProduct"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1694,8 +1695,8 @@
     "codeName" : "FetchTempCurUser",
     "name" : "CurUser"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1704,8 +1705,8 @@
     "codeName" : "FetchTempCurUserSa",
     "name" : "CurUserSa"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1714,8 +1715,8 @@
     "codeName" : "FetchTempDefault",
     "name" : "DEFAULT"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1724,8 +1725,8 @@
     "codeName" : "FetchTempESBulk",
     "name" : "ESBulk"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1734,8 +1735,8 @@
     "codeName" : "FetchTempInvolvedProject",
     "name" : "InvolvedProject"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1744,8 +1745,8 @@
     "codeName" : "FetchTempInvolvedProject_StoryTaskBug",
     "name" : "InvolvedProject_StoryTaskBug"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1754,8 +1755,8 @@
     "codeName" : "FetchTempMyProject",
     "name" : "MyProject"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1764,8 +1765,8 @@
     "codeName" : "FetchTempProjectTeam",
     "name" : "ProjectTeam"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -1774,8 +1775,8 @@
     "codeName" : "FetchTempStoryProject",
     "name" : "StoryProject"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -2273,6 +2274,22 @@
     "name" : "PARENT"
   } ],
   "getAllPSAppDEACModes" : [ {
+    "enablePagingBar" : false,
+    "getPSDEACModeDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "value",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "name" : "text",
+      "dataType" : 25
+    } ],
     "getValuePSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
@@ -2281,22 +2298,6 @@
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "getPSDEACModeDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "dataType" : 25,
-      "name" : "value"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      },
-      "dataType" : 25,
-      "name" : "text"
-    } ],
-    "enablePagingBar" : false,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "defaultMode" : true,
@@ -2316,11 +2317,11 @@
     "codeName" : "Code"
   } ],
   "getAllPSAppDEActions" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PROJECT__DEACTION__CREATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2332,11 +2333,11 @@
     },
     "codeName" : "Create"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PROJECT__DEACTION__UPDATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2348,11 +2349,11 @@
     },
     "codeName" : "Update"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PROJECT__DEACTION__REMOVE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2364,11 +2365,11 @@
     },
     "codeName" : "Remove"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PROJECT__DEACTION__GET"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2380,11 +2381,11 @@
     },
     "codeName" : "Get"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2396,11 +2397,11 @@
     },
     "codeName" : "GetDraft"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Activate"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2408,11 +2409,11 @@
     },
     "codeName" : "Activate"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "BatchUnlinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2420,11 +2421,11 @@
     },
     "codeName" : "BatchUnlinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CancelProjectTop"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2432,11 +2433,11 @@
     },
     "codeName" : "CancelProjectTop"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2444,11 +2445,11 @@
     },
     "codeName" : "CheckKey"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Close"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2456,11 +2457,11 @@
     },
     "codeName" : "Close"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "LinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2468,11 +2469,11 @@
     },
     "codeName" : "LinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ManageMembers"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2480,11 +2481,11 @@
     },
     "codeName" : "ManageMembers"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "MobProjectCount"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2492,11 +2493,11 @@
     },
     "codeName" : "MobProjectCount"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PmsEeProjectAllTaskCount"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2504,11 +2505,11 @@
     },
     "codeName" : "PmsEeProjectAllTaskCount"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PmsEeProjectTodoTaskCount"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2516,11 +2517,11 @@
     },
     "codeName" : "PmsEeProjectTodoTaskCount"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ProjectTaskQCnt"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2528,11 +2529,11 @@
     },
     "codeName" : "ProjectTaskQCnt"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ProjectTop"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2540,11 +2541,11 @@
     },
     "codeName" : "ProjectTop"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Putoff"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2552,11 +2553,11 @@
     },
     "codeName" : "Putoff"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2564,11 +2565,11 @@
     },
     "codeName" : "Save"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Start"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2576,11 +2577,11 @@
     },
     "codeName" : "Start"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Suspend"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2588,11 +2589,11 @@
     },
     "codeName" : "Suspend"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "UnlinkMember"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2600,11 +2601,11 @@
     },
     "codeName" : "UnlinkMember"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "UnlinkStory"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2612,11 +2613,11 @@
     },
     "codeName" : "UnlinkStory"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "UpdateOrder"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2628,8 +2629,8 @@
     },
     "codeName" : "UpdateOrder"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2642,8 +2643,8 @@
     "codeName" : "CreateTemp",
     "name" : "CreateTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2656,8 +2657,8 @@
     "codeName" : "CreateTempMajor",
     "name" : "CreateTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2670,8 +2671,8 @@
     "codeName" : "UpdateTemp",
     "name" : "UpdateTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2684,8 +2685,8 @@
     "codeName" : "UpdateTempMajor",
     "name" : "UpdateTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2698,8 +2699,8 @@
     "codeName" : "RemoveTemp",
     "name" : "RemoveTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2712,8 +2713,8 @@
     "codeName" : "RemoveTempMajor",
     "name" : "RemoveTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2726,8 +2727,8 @@
     "codeName" : "GetTemp",
     "name" : "GetTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2740,8 +2741,8 @@
     "codeName" : "GetTempMajor",
     "name" : "GetTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2754,8 +2755,8 @@
     "codeName" : "GetDraftTemp",
     "name" : "GetDraftTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -2804,11 +2805,11 @@
     "name" : "UpdateProjectCycle"
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBugProject"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -2820,11 +2821,11 @@
     },
     "codeName" : "FetchBugProject"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCurPlanProject"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -2836,11 +2837,11 @@
     },
     "codeName" : "FetchCurPlanProject"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCurProduct"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -2852,11 +2853,11 @@
     },
     "codeName" : "FetchCurProduct"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCurUser"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -2868,11 +2869,11 @@
     },
     "codeName" : "FetchCurUser"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCurUserSa"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -2884,11 +2885,11 @@
     },
     "codeName" : "FetchCurUserSa"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -2900,11 +2901,11 @@
     },
     "codeName" : "FetchDefault"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchESBulk"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -2916,11 +2917,11 @@
     },
     "codeName" : "FetchESBulk"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchInvolvedProject"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -2932,11 +2933,11 @@
     },
     "codeName" : "FetchInvolvedProject"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchInvolvedProject_StoryTaskBug"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -2948,11 +2949,11 @@
     },
     "codeName" : "FetchInvolvedProject_StoryTaskBug"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyProject"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -2964,11 +2965,11 @@
     },
     "codeName" : "FetchMyProject"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectTeam"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -2980,11 +2981,11 @@
     },
     "codeName" : "FetchProjectTeam"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchStoryProject"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -2996,11 +2997,11 @@
     },
     "codeName" : "FetchStoryProject"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchUnDoneProject"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -3012,11 +3013,6 @@
     },
     "codeName" : "FetchUnDoneProject"
   } ],
-  "major" : true,
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDESERVICEAPIS/Project.json"
-  },
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -3030,6 +3026,10 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDESERVICEAPIS/Project.json"
+  },
   "codeName" : "Project",
   "logicName" : "项目",
   "dataAccCtrlMode" : 1,

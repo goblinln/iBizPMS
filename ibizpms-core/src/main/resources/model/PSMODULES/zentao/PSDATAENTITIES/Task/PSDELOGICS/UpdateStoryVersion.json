@@ -1,6 +1,6 @@
 {
-  "enableBackend" : true,
   "enableFront" : false,
+  "enableBackend" : true,
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"
@@ -30,8 +30,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "STORY",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[STORY]"
     } ],
     "logicHolder" : 1,
@@ -60,21 +60,21 @@
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
         "getPSDELogicLinkConds" : [ {
+          "condOP" : "EQ",
           "getDstLogicParam" : {
             "modelref" : true,
             "id" : "Default"
           },
-          "condOP" : "EQ",
           "paramValue" : "0",
           "dstFieldName" : "STORY",
           "logicType" : "SINGLE",
           "name" : "Default[STORY] 等于(=) (0)"
         }, {
+          "condOP" : "ISNULL",
           "getDstLogicParam" : {
             "modelref" : true,
             "id" : "Default"
           },
-          "condOP" : "ISNULL",
           "dstFieldName" : "STORY",
           "logicType" : "SINGLE",
           "name" : "Default[STORY] 值为空(Nil)"
@@ -102,20 +102,20 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "ISNOTNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "ISNOTNULL",
         "dstFieldName" : "STORY",
         "logicType" : "SINGLE",
         "name" : "Default[STORY] 值不为空(NotNil)"
       }, {
+        "condOP" : "NOTEQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "NOTEQ",
         "paramValue" : "0",
         "dstFieldName" : "STORY",
         "logicType" : "SINGLE",
@@ -138,9 +138,9 @@
     "name" : "连接6511"
   } ],
   "getPSDELogicParams" : [ {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

@@ -1,5 +1,7 @@
 {
   "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -24,8 +26,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : false,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
@@ -54,14 +54,14 @@
           "name" : "TITLE",
           "codeName" : "Title"
         },
-        "dataType" : 25,
+        "showCaption" : false,
         "hidden" : false,
+        "dataType" : 25,
         "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "NONE",
         "labelWidth" : 0,
-        "showCaption" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 12,
@@ -92,16 +92,16 @@
           "name" : "CURYEAR",
           "codeName" : "Curyear"
         },
-        "dataType" : 25,
+        "showCaption" : false,
         "hidden" : false,
+        "dataType" : 25,
         "needCodeListConfig" : true,
-        "allowEmpty" : true,
         "caption" : "年度",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "NONE",
         "labelWidth" : 0,
-        "showCaption" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 4,
@@ -116,11 +116,11 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : false,
       "codeName" : "group1",
       "caption" : "用户年度工作内容统计基本信息",
       "detailType" : "GROUPPANEL",
       "detailStyle" : "DEFAULT",
-      "showCaption" : false,
       "name" : "group1"
     } ],
     "getPSLayout" : {

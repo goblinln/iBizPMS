@@ -1,5 +1,7 @@
 {
   "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -24,8 +26,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : false,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
@@ -53,15 +53,15 @@
           "name" : "IBIZ_ID",
           "codeName" : "IBIZId"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : true,
+        "dataType" : 25,
         "caption" : "IBIZ标识",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -73,14 +73,13 @@
       }, {
         "emptyCaption" : false,
         "getPSEditor" : {
+          "enableLinkView" : false,
           "singleSelect" : true,
           "dropDownView" : false,
           "enablePickupView" : false,
-          "enableLinkView" : false,
           "enableAC" : true,
           "forceSelection" : true,
           "showTrigger" : true,
-          "handlerType" : "PickupText",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProduct.json"
@@ -93,6 +92,7 @@
             "modelref" : true,
             "id" : "Default"
           },
+          "handlerType" : "PickupText",
           "valueItemName" : "root",
           "editorType" : "PICKEREX_TRIGGER",
           "editorParams" : {
@@ -108,16 +108,16 @@
           "name" : "PRODUCTNAME",
           "codeName" : "ProductName"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : true,
+        "dataType" : 25,
         "caption" : "产品",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "valueItemName" : "root",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -138,15 +138,15 @@
           "name" : "ROOT",
           "codeName" : "Root"
         },
-        "dataType" : 1,
+        "showCaption" : true,
         "hidden" : true,
-        "allowEmpty" : true,
+        "dataType" : 1,
         "caption" : "编号",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -167,16 +167,16 @@
           "name" : "TYPE",
           "codeName" : "Type"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : true,
-        "allowEmpty" : true,
+        "dataType" : 25,
         "caption" : "类型",
+        "allowEmpty" : true,
         "createDV" : "story",
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -190,11 +190,11 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : true,
       "codeName" : "group1",
       "caption" : "需求模块基本信息",
       "detailType" : "GROUPPANEL",
       "detailStyle" : "DEFAULT",
-      "showCaption" : true,
       "name" : "group1"
     } ],
     "getPSLayout" : {

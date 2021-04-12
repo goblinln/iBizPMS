@@ -10,11 +10,11 @@
       "name" : "PLANNAME",
       "codeName" : "Planname"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   } ],
-  "controlType" : "LIST",
   "enableRowEdit" : false,
+  "controlType" : "LIST",
   "codeName" : "Plan",
   "enableGroup" : false,
   "pagingSize" : 1000,

@@ -1,13 +1,16 @@
 {
-  "serviceAPIMode" : 1,
   "getAllPSDEFields" : [ {
-    "dataType" : "TEXT",
     "length" : 200,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "e19024c86656e7be22c5dc6e7409264c",
+    "codeName" : "IbzReportRoleConfigName",
+    "logicName" : "汇报角色配置名称",
+    "stringLength" : 200,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -45,25 +48,25 @@
       "autoIncrement" : false,
       "name" : "IBZ_REPORT_ROLE_CONFIGNAME"
     } ],
-    "codeName" : "IbzReportRoleConfigName",
-    "logicName" : "汇报角色配置名称",
-    "stringLength" : 200,
-    "stdDataType" : 25,
     "majorDEField" : true,
     "enableQuickSearch" : true,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "IBZ_REPORT_ROLE_CONFIGNAME"
   }, {
-    "dataType" : "GUID",
     "length" : 100,
     "valueFormat" : "%1$s",
+    "dataType" : "GUID",
     "deployId" : "18ff62c40d43a0bb6848b47edad18cdc",
+    "codeName" : "IbzReportRoleConfigId",
+    "logicName" : "汇报角色配置标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
     "pasteReset" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -101,26 +104,26 @@
       "autoIncrement" : false,
       "name" : "IBZ_REPORT_ROLE_CONFIGID"
     } ],
-    "codeName" : "IbzReportRoleConfigId",
-    "logicName" : "汇报角色配置标识",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "keyDEField" : true,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "IBZ_REPORT_ROLE_CONFIGID"
   }, {
-    "dataType" : "SMCODELIST",
     "length" : 2000,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/uaa/PSCODELISTS/AllRole.json"
     },
+    "valueFormat" : "%1$s",
+    "dataType" : "SMCODELIST",
     "deployId" : "b175c243ab5753189e0135fd8e3c4851",
+    "codeName" : "Report_role",
+    "logicName" : "角色",
+    "stringLength" : 2000,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -158,25 +161,25 @@
       "autoIncrement" : false,
       "name" : "REPORT_ROLE"
     } ],
-    "codeName" : "Report_role",
-    "logicName" : "角色",
-    "stringLength" : 2000,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "REPORT_ROLE"
   }, {
-    "dataType" : "SSCODELIST",
     "length" : 60,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/report/PSCODELISTS/ReportType.json"
     },
+    "valueFormat" : "%1$s",
+    "dataType" : "SSCODELIST",
     "deployId" : "019bf704a279e729581dd326b00c98f8",
+    "codeName" : "Type",
+    "logicName" : "类型",
+    "stringLength" : 60,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -214,23 +217,22 @@
       "autoIncrement" : false,
       "name" : "TYPE"
     } ],
-    "codeName" : "Type",
-    "logicName" : "类型",
-    "stringLength" : 60,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "TYPE"
   }, {
-    "dataType" : "DATETIME",
     "length" : 8,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "dataType" : "DATETIME",
     "deployId" : "c204a49c8dad8fdfb44947f22ff01b54",
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "stdDataType" : 5,
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -256,23 +258,23 @@
       "autoIncrement" : false,
       "name" : "CREATEDATE"
     } ],
-    "codeName" : "CreateDate",
-    "logicName" : "建立时间",
-    "stdDataType" : 5,
     "predefinedType" : "CREATEDATE",
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "CREATEDATE"
   }, {
-    "dataType" : "DATETIME",
     "length" : 8,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "dataType" : "DATETIME",
     "deployId" : "6e07be915740fbd2f44ae5ab8dc7a285",
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "stdDataType" : 5,
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -298,27 +300,28 @@
       "autoIncrement" : false,
       "name" : "UPDATEDATE"
     } ],
-    "codeName" : "UpdateDate",
-    "logicName" : "更新时间",
-    "stdDataType" : 5,
     "predefinedType" : "UPDATEDATE",
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "UPDATEDATE"
   }, {
-    "dataType" : "TEXT",
     "length" : 60,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
+    "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "07282df7624227e9eb41aa093adcc588",
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "stringLength" : 60,
+    "stdDataType" : 25,
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -356,28 +359,28 @@
       "autoIncrement" : false,
       "name" : "CREATEMAN"
     } ],
-    "codeName" : "CreateMan",
-    "logicName" : "建立人",
-    "stringLength" : 60,
-    "stdDataType" : 25,
     "predefinedType" : "CREATEMAN",
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "CREATEMAN"
   }, {
-    "dataType" : "TEXT",
     "length" : 60,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
+    "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "eb861e12351f640b8d05d5c3b6ddff87",
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "stringLength" : 60,
+    "stdDataType" : 25,
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -415,19 +418,16 @@
       "autoIncrement" : false,
       "name" : "UPDATEMAN"
     } ],
-    "codeName" : "UpdateMan",
-    "logicName" : "更新人",
-    "stringLength" : 60,
-    "stdDataType" : 25,
     "predefinedType" : "UPDATEMAN",
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "UPDATEMAN"
   } ],
   "getAllPSDEDataSets" : [ {
-    "enableBackend" : true,
     "enableFront" : true,
+    "enableBackend" : true,
     "pubServiceDefault" : true,
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -435,9 +435,8 @@
     "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "数据集",
-    "extendMode" : 0,
-    "enableGroup" : false,
     "userDRAction" : "READ",
+    "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
@@ -471,10 +470,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "数据查询",
-    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -482,10 +481,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
@@ -496,8 +495,7 @@
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : false,
-  "orderValue" : 99999,
-  "dSLink" : "DEFAULT",
+  "serviceAPIMode" : 1,
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -511,17 +509,20 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "extendMode" : 0,
+  "saaSDCIdColumnName" : "SRFDCID",
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "dSLink" : "DEFAULT",
   "saaSMode" : 4,
   "deployId" : "fe9a5353ba6509f36a2eb37838d90a16",
-  "enableSQLStorage" : true,
-  "dynaInstMode" : 1,
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
-  "virtualMode" : 0,
   "codeName" : "IbzReportRoleConfig",
   "logicName" : "汇报角色配置",
   "tableName" : "T_IBZ_REPORT_ROLE_CONFIG",
+  "enableViewLevel" : 0,
+  "virtualMode" : 0,
+  "enableSQLStorage" : true,
+  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -530,14 +531,13 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
   "serviceCodeName" : "IbzReportRoleConfig",
   "enableActions" : 7,
   "enableCreate" : true,
   "enableModify" : true,
-  "extendMode" : 0,
   "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
+  "subSysDE" : false,
+  "virtual" : false,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

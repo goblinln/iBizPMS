@@ -124,8 +124,8 @@
     "codeName" : "Item_31",
     "text" : "31号"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 0,
+  "codeListType" : "STATIC",
   "codeName" : "CodeList47",
   "emptyText" : "未定义",
   "enableCache" : true,

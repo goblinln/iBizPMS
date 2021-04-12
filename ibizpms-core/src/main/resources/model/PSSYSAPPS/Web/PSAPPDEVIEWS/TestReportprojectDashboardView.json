@@ -1,16 +1,16 @@
 {
   "showDataInfoBar" : true,
   "loadDefault" : true,
+  "enableQuickGroup" : false,
   "enableSearch" : false,
   "expandSearchForm" : true,
-  "enableQuickGroup" : false,
   "enableQuickSearch" : false,
   "showCaptionBar" : true,
   "getPSDEViewCodeName" : "projectDashboardView",
+  "enableDP" : true,
   "caption" : "项目报告",
   "title" : "测试报告数据看板视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSAppViewNavParams" : [ {
     "rawValue" : false,
     "value" : "srfparentkey",
@@ -45,7 +45,6 @@
     "key" : "SRFPARENTKEY",
     "name" : "SRFPARENTKEY"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
@@ -88,8 +87,6 @@
           },
           "controlType" : "CHART",
           "getPSDEChartSerieses" : [ {
-            "catalogField" : "LASTRUNRESULT1",
-            "seriesType" : "pie",
             "eChartsType" : "pie",
             "getPSChartCoordinateSystem" : {
               "modelref" : true,
@@ -100,6 +97,7 @@
               "modelref" : true,
               "id" : "0"
             },
+            "catalogField" : "LASTRUNRESULT1",
             "getPSChartSeriesEncode" : {
               "category" : "LASTRUNRESULT1",
               "value" : "SRFCOUNT",
@@ -108,6 +106,7 @@
               "name" : "坐标系编码",
               "id" : "0"
             },
+            "seriesType" : "pie",
             "valueField" : "SRFCOUNT",
             "seriesLayoutBy" : "column",
             "index" : 0,
@@ -241,8 +240,8 @@
           "height" : 0,
           "layout" : "TABLE_24COL"
         },
-        "controlType" : "PORTLET",
         "showTitleBar" : true,
+        "controlType" : "PORTLET",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
@@ -267,8 +266,8 @@
         "colLGOffset" : 1,
         "layout" : "TABLE_24COL"
       },
-      "controlType" : "PORTLET",
       "showTitleBar" : true,
+      "controlType" : "PORTLET",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
@@ -314,8 +313,6 @@
           },
           "controlType" : "CHART",
           "getPSDEChartSerieses" : [ {
-            "catalogField" : "TYPE",
-            "seriesType" : "pie",
             "eChartsType" : "pie",
             "getPSChartCoordinateSystem" : {
               "modelref" : true,
@@ -326,6 +323,7 @@
               "modelref" : true,
               "id" : "0"
             },
+            "catalogField" : "TYPE",
             "getPSChartSeriesEncode" : {
               "category" : "TYPE",
               "value" : "SRFCOUNT",
@@ -334,6 +332,7 @@
               "name" : "坐标系编码",
               "id" : "0"
             },
+            "seriesType" : "pie",
             "valueField" : "SRFCOUNT",
             "seriesLayoutBy" : "column",
             "index" : 0,
@@ -470,8 +469,8 @@
           "height" : 0,
           "layout" : "TABLE_24COL"
         },
-        "controlType" : "PORTLET",
         "showTitleBar" : true,
+        "controlType" : "PORTLET",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
@@ -496,8 +495,8 @@
         "colLGOffset" : 1,
         "layout" : "TABLE_24COL"
       },
-      "controlType" : "PORTLET",
       "showTitleBar" : true,
+      "controlType" : "PORTLET",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
@@ -543,8 +542,6 @@
           },
           "controlType" : "CHART",
           "getPSDEChartSerieses" : [ {
-            "catalogField" : "MODULENAME",
-            "seriesType" : "pie",
             "eChartsType" : "pie",
             "getPSChartCoordinateSystem" : {
               "modelref" : true,
@@ -555,6 +552,7 @@
               "modelref" : true,
               "id" : "0"
             },
+            "catalogField" : "MODULENAME",
             "getPSChartSeriesEncode" : {
               "category" : "MODULENAME",
               "value" : "SRFCOUNT",
@@ -563,6 +561,7 @@
               "name" : "坐标系编码",
               "id" : "0"
             },
+            "seriesType" : "pie",
             "valueField" : "SRFCOUNT",
             "seriesLayoutBy" : "column",
             "index" : 0,
@@ -696,8 +695,8 @@
           "height" : 0,
           "layout" : "TABLE_24COL"
         },
-        "controlType" : "PORTLET",
         "showTitleBar" : true,
+        "controlType" : "PORTLET",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
@@ -722,8 +721,8 @@
         "colLGOffset" : 1,
         "layout" : "TABLE_24COL"
       },
-      "controlType" : "PORTLET",
       "showTitleBar" : true,
+      "controlType" : "PORTLET",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
@@ -769,8 +768,6 @@
           },
           "controlType" : "CHART",
           "getPSDEChartSerieses" : [ {
-            "catalogField" : "LASTRUNNER",
-            "seriesType" : "pie",
             "eChartsType" : "pie",
             "getPSChartCoordinateSystem" : {
               "modelref" : true,
@@ -781,6 +778,7 @@
               "modelref" : true,
               "id" : "0"
             },
+            "catalogField" : "LASTRUNNER",
             "getPSChartSeriesEncode" : {
               "category" : "LASTRUNNER",
               "value" : "SRFCOUNT",
@@ -789,6 +787,7 @@
               "name" : "坐标系编码",
               "id" : "0"
             },
+            "seriesType" : "pie",
             "valueField" : "SRFCOUNT",
             "seriesLayoutBy" : "column",
             "index" : 0,
@@ -925,8 +924,8 @@
           "height" : 0,
           "layout" : "TABLE_24COL"
         },
-        "controlType" : "PORTLET",
         "showTitleBar" : true,
+        "controlType" : "PORTLET",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
@@ -951,8 +950,8 @@
         "colLGOffset" : 1,
         "layout" : "TABLE_24COL"
       },
-      "controlType" : "PORTLET",
       "showTitleBar" : true,
+      "controlType" : "PORTLET",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
@@ -998,8 +997,6 @@
           },
           "controlType" : "CHART",
           "getPSDEChartSerieses" : [ {
-            "catalogField" : "SEVERITY",
-            "seriesType" : "pie",
             "getCatalogPSCodeList" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__severity.json"
@@ -1014,6 +1011,7 @@
               "modelref" : true,
               "id" : "0"
             },
+            "catalogField" : "SEVERITY",
             "getPSChartSeriesEncode" : {
               "category" : "SEVERITY",
               "value" : "SRFCOUNT",
@@ -1022,6 +1020,7 @@
               "name" : "坐标系编码",
               "id" : "0"
             },
+            "seriesType" : "pie",
             "valueField" : "SRFCOUNT",
             "seriesLayoutBy" : "column",
             "groupMode" : "CODELIST",
@@ -1161,8 +1160,8 @@
           "height" : 0,
           "layout" : "TABLE_24COL"
         },
-        "controlType" : "PORTLET",
         "showTitleBar" : true,
+        "controlType" : "PORTLET",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
@@ -1187,8 +1186,8 @@
         "colLGOffset" : 1,
         "layout" : "TABLE_24COL"
       },
-      "controlType" : "PORTLET",
       "showTitleBar" : true,
+      "controlType" : "PORTLET",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
@@ -1234,8 +1233,6 @@
           },
           "controlType" : "CHART",
           "getPSDEChartSerieses" : [ {
-            "catalogField" : "TYPE",
-            "seriesType" : "pie",
             "eChartsType" : "pie",
             "getPSChartCoordinateSystem" : {
               "modelref" : true,
@@ -1246,6 +1243,7 @@
               "modelref" : true,
               "id" : "0"
             },
+            "catalogField" : "TYPE",
             "getPSChartSeriesEncode" : {
               "category" : "TYPE",
               "value" : "SRFCOUNT",
@@ -1254,6 +1252,7 @@
               "name" : "坐标系编码",
               "id" : "0"
             },
+            "seriesType" : "pie",
             "valueField" : "SRFCOUNT",
             "seriesLayoutBy" : "column",
             "index" : 0,
@@ -1386,8 +1385,8 @@
           "height" : 0,
           "layout" : "TABLE_24COL"
         },
-        "controlType" : "PORTLET",
         "showTitleBar" : true,
+        "controlType" : "PORTLET",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
@@ -1411,8 +1410,8 @@
         "colLGOffset" : 1,
         "layout" : "TABLE_24COL"
       },
-      "controlType" : "PORTLET",
       "showTitleBar" : true,
+      "controlType" : "PORTLET",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
@@ -1458,8 +1457,6 @@
           },
           "controlType" : "CHART",
           "getPSDEChartSerieses" : [ {
-            "catalogField" : "Status",
-            "seriesType" : "pie",
             "getCatalogPSCodeList" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__status.json"
@@ -1474,6 +1471,7 @@
               "modelref" : true,
               "id" : "0"
             },
+            "catalogField" : "Status",
             "getPSChartSeriesEncode" : {
               "category" : "Status",
               "value" : "SRFCOUNT",
@@ -1482,6 +1480,7 @@
               "name" : "坐标系编码",
               "id" : "0"
             },
+            "seriesType" : "pie",
             "valueField" : "SRFCOUNT",
             "seriesLayoutBy" : "column",
             "groupMode" : "CODELIST",
@@ -1621,8 +1620,8 @@
           "height" : 0,
           "layout" : "TABLE_24COL"
         },
-        "controlType" : "PORTLET",
         "showTitleBar" : true,
+        "controlType" : "PORTLET",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
@@ -1646,8 +1645,8 @@
         "colLGOffset" : 1,
         "layout" : "TABLE_24COL"
       },
-      "controlType" : "PORTLET",
       "showTitleBar" : true,
+      "controlType" : "PORTLET",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
@@ -1693,8 +1692,6 @@
           },
           "controlType" : "CHART",
           "getPSDEChartSerieses" : [ {
-            "catalogField" : "RESOLUTION",
-            "seriesType" : "pie",
             "getCatalogPSCodeList" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__resolution.json"
@@ -1709,6 +1706,7 @@
               "modelref" : true,
               "id" : "0"
             },
+            "catalogField" : "RESOLUTION",
             "getPSChartSeriesEncode" : {
               "category" : "RESOLUTION",
               "value" : "SRFCOUNT",
@@ -1717,6 +1715,7 @@
               "name" : "坐标系编码",
               "id" : "0"
             },
+            "seriesType" : "pie",
             "valueField" : "SRFCOUNT",
             "seriesLayoutBy" : "column",
             "groupMode" : "CODELIST",
@@ -1856,8 +1855,8 @@
           "height" : 0,
           "layout" : "TABLE_24COL"
         },
-        "controlType" : "PORTLET",
         "showTitleBar" : true,
+        "controlType" : "PORTLET",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
@@ -1881,8 +1880,8 @@
         "colLGOffset" : 1,
         "layout" : "TABLE_24COL"
       },
-      "controlType" : "PORTLET",
       "showTitleBar" : true,
+      "controlType" : "PORTLET",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
@@ -1928,8 +1927,6 @@
           },
           "controlType" : "CHART",
           "getPSDEChartSerieses" : [ {
-            "catalogField" : "OPENEDBY",
-            "seriesType" : "pie",
             "eChartsType" : "pie",
             "getPSChartCoordinateSystem" : {
               "modelref" : true,
@@ -1940,6 +1937,7 @@
               "modelref" : true,
               "id" : "0"
             },
+            "catalogField" : "OPENEDBY",
             "getPSChartSeriesEncode" : {
               "category" : "OPENEDBY",
               "value" : "SRFCOUNT",
@@ -1948,6 +1946,7 @@
               "name" : "坐标系编码",
               "id" : "0"
             },
+            "seriesType" : "pie",
             "valueField" : "SRFCOUNT",
             "seriesLayoutBy" : "column",
             "index" : 0,
@@ -2080,8 +2079,8 @@
           "height" : 0,
           "layout" : "TABLE_24COL"
         },
-        "controlType" : "PORTLET",
         "showTitleBar" : true,
+        "controlType" : "PORTLET",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
@@ -2105,8 +2104,8 @@
         "colLGOffset" : 1,
         "layout" : "TABLE_24COL"
       },
-      "controlType" : "PORTLET",
       "showTitleBar" : true,
+      "controlType" : "PORTLET",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
@@ -2152,8 +2151,6 @@
           },
           "controlType" : "CHART",
           "getPSDEChartSerieses" : [ {
-            "catalogField" : "MODULENAME",
-            "seriesType" : "pie",
             "eChartsType" : "pie",
             "getPSChartCoordinateSystem" : {
               "modelref" : true,
@@ -2164,6 +2161,7 @@
               "modelref" : true,
               "id" : "0"
             },
+            "catalogField" : "MODULENAME",
             "getPSChartSeriesEncode" : {
               "category" : "MODULENAME",
               "value" : "SRFCOUNT",
@@ -2172,6 +2170,7 @@
               "name" : "坐标系编码",
               "id" : "0"
             },
+            "seriesType" : "pie",
             "valueField" : "SRFCOUNT",
             "seriesLayoutBy" : "column",
             "index" : 0,
@@ -2305,8 +2304,8 @@
           "height" : 0,
           "layout" : "TABLE_24COL"
         },
-        "controlType" : "PORTLET",
         "showTitleBar" : true,
+        "controlType" : "PORTLET",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
@@ -2330,8 +2329,8 @@
         "colLGOffset" : 1,
         "layout" : "TABLE_24COL"
       },
-      "controlType" : "PORTLET",
       "showTitleBar" : true,
+      "controlType" : "PORTLET",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
@@ -2377,8 +2376,6 @@
           },
           "controlType" : "CHART",
           "getPSDEChartSerieses" : [ {
-            "catalogField" : "RESOLVEDBY",
-            "seriesType" : "pie",
             "eChartsType" : "pie",
             "getPSChartCoordinateSystem" : {
               "modelref" : true,
@@ -2389,6 +2386,7 @@
               "modelref" : true,
               "id" : "0"
             },
+            "catalogField" : "RESOLVEDBY",
             "getPSChartSeriesEncode" : {
               "category" : "RESOLVEDBY",
               "value" : "SRFCOUNT",
@@ -2397,6 +2395,7 @@
               "name" : "坐标系编码",
               "id" : "0"
             },
+            "seriesType" : "pie",
             "valueField" : "SRFCOUNT",
             "seriesLayoutBy" : "column",
             "index" : 0,
@@ -2530,8 +2529,8 @@
           "height" : 0,
           "layout" : "TABLE_24COL"
         },
-        "controlType" : "PORTLET",
         "showTitleBar" : true,
+        "controlType" : "PORTLET",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
@@ -2555,8 +2554,8 @@
         "colLGOffset" : 1,
         "layout" : "TABLE_24COL"
       },
-      "controlType" : "PORTLET",
       "showTitleBar" : true,
+      "controlType" : "PORTLET",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
@@ -2592,6 +2591,7 @@
     "name" : "dashboard",
     "modelid" : "ae03acf710d901c5b781d7b9615c2dc4"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSSysImage" : {
     "glyph" : "xf0f6@FontAwesome",
     "cssClass" : "fa fa-file-text-o"
@@ -2601,50 +2601,50 @@
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportprojectDashboardView.json",
   "name" : "TestReportprojectDashboardView",
   "getPSAppDERSPaths" : [ [ {
-    "getParentPSAppDEField" : {
-      "name" : "PROJECT",
-      "codeName" : "Project"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+    "getParentPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "TestReports",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
     "rSMode" : 2,
     "name" : "项目报告"
   } ], [ {
-    "getParentPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "TestReports",
     "actionRSMode" : 1,
     "dataRSMode" : 0,

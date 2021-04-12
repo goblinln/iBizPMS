@@ -8,8 +8,8 @@
     "codeName" : "Item_0",
     "text" : "不允许"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "Company__guest",
   "emptyText" : "未定义",
   "enableCache" : true,

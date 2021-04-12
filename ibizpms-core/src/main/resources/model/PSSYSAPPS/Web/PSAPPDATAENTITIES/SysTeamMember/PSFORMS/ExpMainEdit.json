@@ -1,5 +1,7 @@
 {
   "enableAutoSave" : false,
+  "infoFormMode" : true,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -24,8 +26,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : true,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
@@ -45,15 +45,15 @@
         "name" : "POSTID",
         "codeName" : "PostId"
       },
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : true,
-      "allowEmpty" : true,
+      "dataType" : 25,
       "caption" : "岗位标识",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 70,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -74,15 +74,15 @@
         "name" : "TEAMID",
         "codeName" : "TeamId"
       },
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : true,
-      "allowEmpty" : true,
+      "dataType" : 25,
       "caption" : "组标识",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 70,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -103,15 +103,15 @@
         "name" : "USERID",
         "codeName" : "UserId"
       },
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : true,
-      "allowEmpty" : true,
+      "dataType" : 25,
       "caption" : "用户标识",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 70,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -134,15 +134,15 @@
         "name" : "PERSONNAME",
         "codeName" : "PersonName"
       },
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : false,
-      "allowEmpty" : true,
+      "dataType" : 25,
       "caption" : "姓名",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 70,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -165,15 +165,15 @@
         "name" : "USERNAME",
         "codeName" : "UserName"
       },
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : false,
-      "allowEmpty" : true,
+      "dataType" : 25,
       "caption" : "账号",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 70,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -185,15 +185,15 @@
     }, {
       "emptyCaption" : false,
       "getPSEditor" : {
-        "singleSelect" : true,
-        "dropDownView" : false,
-        "enablePickupView" : false,
         "enableLinkView" : true,
         "getLinkPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamMemberUsr2GridViewPostMembers.json",
           "viewType" : "DEGRIDVIEW"
         },
+        "singleSelect" : true,
+        "dropDownView" : false,
+        "enablePickupView" : false,
         "enableAC" : false,
         "forceSelection" : true,
         "showTrigger" : false,
@@ -227,16 +227,16 @@
         "name" : "POSTNAME",
         "codeName" : "PostName"
       },
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : false,
-      "allowEmpty" : true,
+      "dataType" : 25,
       "caption" : "岗位",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "valueItemName" : "postid",
       "labelWidth" : 70,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -257,15 +257,15 @@
         "name" : "TEAMMEMBERID",
         "codeName" : "TeamMemberId"
       },
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : true,
-      "allowEmpty" : true,
+      "dataType" : 25,
       "caption" : "组成员标识",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 70,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"

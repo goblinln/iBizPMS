@@ -13,12 +13,12 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
   },
   "orderValue" : 100,
+  "codeName" : "Zt_doc",
+  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/DocContent.json"
   },
-  "codeName" : "Zt_doc",
-  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/DocContent/PSDERS/DER1N_ZT_DOCCONTENT_ZT_DOC_DOC.json",
   "name" : "DER1N_ZT_DOCCONTENT_ZT_DOC_DOC"
 }

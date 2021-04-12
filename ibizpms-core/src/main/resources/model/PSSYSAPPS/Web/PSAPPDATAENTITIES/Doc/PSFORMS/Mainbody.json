@@ -1,5 +1,7 @@
 {
   "enableAutoSave" : false,
+  "infoFormMode" : true,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -24,8 +26,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : true,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
@@ -56,8 +56,9 @@
           "name" : "ID",
           "codeName" : "Id"
         },
-        "dataType" : 1,
+        "showCaption" : false,
         "hidden" : false,
+        "dataType" : 1,
         "allowEmpty" : true,
         "enableCond" : 0,
         "ignoreInput" : 0,
@@ -65,7 +66,6 @@
         "labelWidth" : 0,
         "itemWidth" : 40.0,
         "itemHeight" : 40.0,
-        "showCaption" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 1,
@@ -92,14 +92,14 @@
           "name" : "TITLE",
           "codeName" : "Title"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 25,
         "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 2,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 16,
@@ -110,11 +110,11 @@
         "detailStyle" : "DEFAULT",
         "name" : "title"
       }, {
+        "emptyCaption" : true,
         "getPSDEFormItemUpdate" : {
           "modelref" : true,
           "id" : "ByVersionUpdateContext"
         },
-        "emptyCaption" : true,
         "getPSEditor" : {
           "singleSelect" : true,
           "getPSAppCodeList" : {
@@ -130,15 +130,15 @@
           "name" : "VERSION",
           "codeName" : "Version"
         },
-        "dataType" : 9,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 9,
         "needCodeListConfig" : true,
         "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 3,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 3,
@@ -168,14 +168,14 @@
           "name" : "CONTENT",
           "codeName" : "Content"
         },
-        "dataType" : 21,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 21,
         "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 10,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -192,8 +192,8 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
-          "refreshItemsSetParamOnly" : false,
           "needSave" : false,
+          "refreshItemsSetParamOnly" : false,
           "getPSNavigateParams" : [ {
             "rawValue" : true,
             "value" : "doc",
@@ -210,10 +210,10 @@
             "xDataControlName" : "list",
             "showCaptionBar" : false,
             "getPSDEViewCodeName" : "ListView9",
+            "enableDP" : true,
             "caption" : "附件",
             "title" : "附件",
             "accUserMode" : 2,
-            "enableDP" : true,
             "getPSAppViewNavParams" : [ {
               "rawValue" : false,
               "value" : "OBJECTTYPE",
@@ -248,7 +248,6 @@
               } ],
               "name" : "engine"
             } ],
-            "viewStyle" : "STYLE2",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
@@ -265,25 +264,25 @@
                   "name" : "TITLE",
                   "codeName" : "Title"
                 },
-                "dataType" : 25,
-                "name" : "title"
+                "name" : "title",
+                "dataType" : 25
               }, {
                 "getPSAppDEField" : {
                   "name" : "ID",
                   "codeName" : "Id"
                 },
-                "dataType" : 25,
-                "name" : "srfkey"
+                "name" : "srfkey",
+                "dataType" : 25
               }, {
                 "getPSAppDEField" : {
                   "name" : "TITLE",
                   "codeName" : "Title"
                 },
-                "dataType" : 25,
-                "name" : "srfmajortext"
+                "name" : "srfmajortext",
+                "dataType" : 25
               } ],
-              "controlType" : "LIST",
               "enableRowEdit" : false,
+              "controlType" : "LIST",
               "codeName" : "List",
               "enableGroup" : false,
               "pagingSize" : 1000,
@@ -396,13 +395,14 @@
               "name" : "list",
               "modelid" : "835d0e318f958e732332eceda335286e"
             } ],
+            "viewStyle" : "STYLE2",
             "getPSAppViewLogics" : [ {
               "logicTrigger" : "CUSTOM",
               "getPSAppUILogic" : {
+                "enableWizardAdd" : false,
                 "actionAfterWizard" : "DEFAULT",
                 "enableBatchAdd" : false,
                 "batchAddOnly" : false,
-                "enableWizardAdd" : false,
                 "viewLogicType" : "APP_NEWDATA",
                 "logicType" : "PREDEFINED",
                 "name" : "新建数据"
@@ -428,32 +428,32 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : true,
           "codeName" : "druipart1",
           "detailType" : "DRUIPART",
           "detailStyle" : "DEFAULT",
-          "showCaption" : true,
           "name" : "druipart1"
         } ],
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : true,
         "codeName" : "grouppanel1",
         "caption" : "附件",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : true,
         "name" : "grouppanel1"
       } ],
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : false,
       "codeName" : "group1",
       "caption" : "文档基本信息",
       "detailType" : "GROUPPANEL",
       "detailStyle" : "DEFAULT",
-      "showCaption" : false,
       "name" : "group1"
     } ],
     "getPSLayout" : {

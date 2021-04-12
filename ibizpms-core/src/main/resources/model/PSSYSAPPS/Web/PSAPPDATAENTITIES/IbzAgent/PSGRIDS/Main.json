@@ -4,53 +4,53 @@
       "name" : "AGENTUSER",
       "codeName" : "Agentuser"
     },
-    "dataType" : 25,
-    "name" : "agentuser"
+    "name" : "agentuser",
+    "dataType" : 25
   }, {
-    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "AGENTEND",
       "codeName" : "Agentend"
     },
-    "dataType" : 5,
-    "name" : "agentend"
+    "format" : "YYYY-MM-DD",
+    "name" : "agentend",
+    "dataType" : 5
   }, {
     "getPSAppDEField" : {
       "name" : "IBZ_AGENTID",
       "codeName" : "IbzAgentId"
     },
-    "dataType" : 1,
-    "name" : "ibz_agentid"
+    "name" : "ibz_agentid",
+    "dataType" : 1
   }, {
-    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "AGENTBEGIN",
       "codeName" : "Agentbegin"
     },
-    "dataType" : 5,
-    "name" : "agentbegin"
+    "format" : "YYYY-MM-DD",
+    "name" : "agentbegin",
+    "dataType" : 5
   }, {
     "getPSAppDEField" : {
       "name" : "IBZ_AGENTNAME",
       "codeName" : "IbzAgentName"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "IBZ_AGENTID",
       "codeName" : "IbzAgentId"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "IBZ_AGENTID",
       "codeName" : "IbzAgentId"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   } ],
   "getRemovePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -66,8 +66,6 @@
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "singleSelect" : false,
-  "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -89,16 +87,18 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : false,
+  "enableColFilter" : false,
+  "singleSelect" : false,
   "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "代理标识",
-    "dataItemName" : "ibz_agentid",
     "getPSAppDEField" : {
       "name" : "IBZ_AGENTID",
       "codeName" : "IbzAgentId"
     },
+    "dataItemName" : "ibz_agentid",
+    "excelCaption" : "代理标识",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -110,16 +110,16 @@
     "widthUnit" : "PX",
     "name" : "ibz_agentid"
   }, {
-    "excelCaption" : "代理用户",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
     },
-    "dataItemName" : "agentuser",
     "getPSAppDEField" : {
       "name" : "AGENTUSER",
       "codeName" : "Agentuser"
     },
+    "dataItemName" : "agentuser",
+    "excelCaption" : "代理用户",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -131,12 +131,12 @@
     "widthUnit" : "STAR",
     "name" : "agentuser"
   }, {
-    "excelCaption" : "代理开始日期",
-    "dataItemName" : "agentbegin",
     "getPSAppDEField" : {
       "name" : "AGENTBEGIN",
       "codeName" : "Agentbegin"
     },
+    "dataItemName" : "agentbegin",
+    "excelCaption" : "代理开始日期",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -149,12 +149,12 @@
     "widthUnit" : "PX",
     "name" : "agentbegin"
   }, {
-    "excelCaption" : "代理结束日期",
-    "dataItemName" : "agentend",
     "getPSAppDEField" : {
       "name" : "AGENTEND",
       "codeName" : "Agentend"
     },
+    "dataItemName" : "agentend",
+    "excelCaption" : "代理结束日期",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -198,8 +198,8 @@
           "id" : "Edit@IbzAgent"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : false,
+        "detailType" : "DEUIACTION",
         "name" : "uef4000f"
       } ],
       "name" : "代理操作列行为组"

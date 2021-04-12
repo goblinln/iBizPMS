@@ -4,58 +4,58 @@
       "name" : "ORGID",
       "codeName" : "OrgId"
     },
-    "dataType" : 25,
-    "name" : "orgid"
+    "name" : "orgid",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ORGNAME",
       "codeName" : "OrgName"
     },
-    "dataType" : 25,
-    "name" : "orgname"
+    "name" : "orgname",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "PORGID",
       "codeName" : "ParentOrgId"
     },
-    "dataType" : 25,
-    "name" : "porgid"
+    "name" : "porgid",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ORGLEVEL",
       "codeName" : "OrgLevel"
     },
-    "dataType" : 9,
-    "name" : "orglevel"
+    "name" : "orglevel",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "SHORTNAME",
       "codeName" : "ShortName"
     },
-    "dataType" : 25,
-    "name" : "shortname"
+    "name" : "shortname",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ORGNAME",
       "codeName" : "OrgName"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ORGID",
       "codeName" : "OrgId"
     },
-    "dataType" : 25,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ORGID",
       "codeName" : "OrgId"
     },
-    "dataType" : 25,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 25
   } ],
   "getRemovePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -71,8 +71,6 @@
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "singleSelect" : false,
-  "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -94,16 +92,18 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : false,
+  "enableColFilter" : false,
+  "singleSelect" : false,
   "enablePagingBar" : false,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "名称",
-    "dataItemName" : "orgname",
     "getPSAppDEField" : {
       "name" : "ORGNAME",
       "codeName" : "OrgName"
     },
+    "dataItemName" : "orgname",
+    "excelCaption" : "名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -115,12 +115,12 @@
     "widthUnit" : "PX",
     "name" : "orgname"
   }, {
-    "excelCaption" : "单位简称",
-    "dataItemName" : "shortname",
     "getPSAppDEField" : {
       "name" : "SHORTNAME",
       "codeName" : "ShortName"
     },
+    "dataItemName" : "shortname",
+    "excelCaption" : "单位简称",
     "cLConvertMode" : "NONE",
     "getCapPSLanguageRes" : {
       "lanResTag" : "TBB.TEXT.*.CANCELWF",

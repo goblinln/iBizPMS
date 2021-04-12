@@ -1,6 +1,6 @@
 {
-  "enableBackend" : true,
   "enableFront" : false,
+  "enableBackend" : true,
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"
@@ -17,8 +17,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "PROJECT",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[PROJECT]"
     } ],
     "logicHolder" : 1,
@@ -49,9 +49,9 @@
     "name" : "连接3539"
   } ],
   "getPSDELogicParams" : [ {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

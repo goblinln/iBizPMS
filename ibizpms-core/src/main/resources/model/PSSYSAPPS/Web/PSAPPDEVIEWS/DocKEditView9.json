@@ -3,10 +3,10 @@
   "showCaptionBar" : false,
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "KEditView9",
+  "enableDP" : true,
   "caption" : "关键字",
   "title" : "文档编辑视图（关键字）",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -33,13 +33,14 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
   },
   "getPSControls" : [ {
     "enableAutoSave" : false,
+    "infoFormMode" : true,
+    "showFormNavBar" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -64,8 +65,6 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
-    "infoFormMode" : true,
-    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
@@ -95,14 +94,14 @@
             "name" : "KEYWORDS",
             "codeName" : "Keywords"
           },
-          "dataType" : 25,
+          "showCaption" : false,
           "hidden" : false,
+          "dataType" : 25,
           "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "NONE",
           "labelWidth" : 0,
-          "showCaption" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -116,11 +115,11 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : true,
         "codeName" : "grouppanel1",
         "caption" : "关键字",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : true,
         "name" : "grouppanel1"
       } ],
       "getPSLayout" : {
@@ -283,6 +282,7 @@
     "name" : "form",
     "modelid" : "802ee99f9712d854417ff17f00cc86e5"
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "DocKEditView9",
   "viewType" : "DEEDITVIEW9",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocKEditView9.json",

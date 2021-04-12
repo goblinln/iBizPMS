@@ -4,10 +4,10 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "CaseTreeExpView",
+  "enableDP" : true,
   "caption" : "用例",
   "title" : "用例",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -30,7 +30,6 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
@@ -40,11 +39,10 @@
     "xDataControlName" : "treeexpbar_tree",
     "enableSearch" : false,
     "enableCounter" : true,
+    "showTitleBar" : false,
     "getPSControls" : [ {
-      "treeGridMode" : 0,
-      "enableRootSelect" : false,
-      "outputIconDefault" : false,
       "enableSearchDefault" : false,
+      "treeGridMode" : 0,
       "getPSDETreeNodeRSs" : [ {
         "getParentPSDETreeNode" : {
           "modelref" : true,
@@ -94,50 +92,52 @@
         "searchMode" : 3,
         "name" : "默认根节点 - 所有模块"
       } ],
+      "enableRootSelect" : false,
+      "outputIconDefault" : false,
       "controlType" : "TREEVIEW",
       "getPSDETreeNodes" : [ {
         "getIdPSAppDEField" : {
           "name" : "ID",
           "codeName" : "Id"
         },
-        "appendCaption" : false,
         "getLeafFlagPSAppDEField" : {
           "name" : "ISLEAF",
           "codeName" : "IsLeaf"
         },
+        "appendCaption" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
-        },
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchRoot_NoBranch"
         },
         "getTextPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
         },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchRoot_NoBranch"
+        },
         "maxSize" : -1,
-        "enableQuickCreate" : false,
         "navFilter" : "n_parent_eq",
         "getNavPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzCaseGridView.json",
           "viewType" : "DEGRIDVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : true,
+        "enableQuickCreate" : false,
         "appendPNodeId" : false,
+        "enableCheck" : false,
+        "hasPSDETreeNodeRSs" : true,
         "selected" : false,
         "selectFirstOnly" : false,
         "expandFirstOnly" : false,
-        "enableCheck" : false,
+        "rootNode" : false,
         "enableNewData" : false,
         "enableEditData" : false,
         "enableRemoveData" : false,
         "enableViewData" : false,
-        "disableSelect" : false,
         "nodeType" : "LibRoot",
+        "disableSelect" : false,
         "enableQuickSearch" : false,
         "counterMode" : 0,
         "treeNodeType" : "DE",
@@ -148,19 +148,19 @@
         "nodeValue" : "root",
         "text" : "默认根节点",
         "enableQuickCreate" : false,
-        "rootNode" : true,
-        "hasPSDETreeNodeRSs" : true,
         "appendPNodeId" : false,
+        "enableCheck" : false,
+        "hasPSDETreeNodeRSs" : true,
         "selected" : false,
         "selectFirstOnly" : false,
         "expandFirstOnly" : false,
-        "enableCheck" : false,
+        "rootNode" : true,
         "enableNewData" : false,
         "enableEditData" : false,
         "enableRemoveData" : false,
         "enableViewData" : false,
-        "disableSelect" : false,
         "nodeType" : "ROOT",
+        "disableSelect" : false,
         "enableQuickSearch" : false,
         "counterMode" : 0,
         "treeNodeType" : "STATIC",
@@ -178,35 +178,35 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
         },
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchDefault"
-        },
         "getTextPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
         },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
         "maxSize" : -1,
-        "enableQuickCreate" : false,
         "navFilter" : "n_parent_eq",
         "getNavPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzCaseGridView.json",
           "viewType" : "DEGRIDVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : true,
+        "enableQuickCreate" : false,
         "appendPNodeId" : false,
+        "enableCheck" : false,
+        "hasPSDETreeNodeRSs" : true,
         "selected" : false,
         "selectFirstOnly" : false,
         "expandFirstOnly" : false,
-        "enableCheck" : false,
+        "rootNode" : false,
         "enableNewData" : false,
         "enableEditData" : false,
         "enableRemoveData" : false,
         "enableViewData" : false,
-        "disableSelect" : false,
         "nodeType" : "ChildModule",
+        "disableSelect" : false,
         "enableQuickSearch" : false,
         "counterMode" : 0,
         "treeNodeType" : "DE",
@@ -215,25 +215,19 @@
         "id" : "ChildModule"
       }, {
         "text" : "所有模板",
-        "enableQuickCreate" : false,
         "getNavPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzCaseGridView.json",
           "viewType" : "DEGRIDVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : true,
+        "enableQuickCreate" : false,
         "appendPNodeId" : false,
+        "enableCheck" : false,
+        "hasPSDETreeNodeRSs" : true,
         "selected" : false,
         "selectFirstOnly" : false,
         "expandFirstOnly" : false,
-        "getPSNavigateContexts" : [ {
-          "rawValue" : true,
-          "value" : "0",
-          "key" : "SRFPARENTKEY",
-          "name" : "SRFPARENTKEY"
-        } ],
-        "enableCheck" : false,
+        "rootNode" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
@@ -244,12 +238,18 @@
           "key" : "n_parent_eq",
           "name" : "n_parent_eq"
         } ],
+        "getPSNavigateContexts" : [ {
+          "rawValue" : true,
+          "value" : "0",
+          "key" : "SRFPARENTKEY",
+          "name" : "SRFPARENTKEY"
+        } ],
         "enableNewData" : false,
         "enableEditData" : false,
         "enableRemoveData" : false,
         "enableViewData" : false,
-        "disableSelect" : false,
         "nodeType" : "ALL",
+        "disableSelect" : false,
         "enableQuickSearch" : false,
         "counterMode" : 0,
         "treeNodeType" : "STATIC",
@@ -359,7 +359,6 @@
       "name" : "treeexpbar_tree",
       "modelid" : "55c684ec5385045a2e4d5f03c9dc1ef0"
     } ],
-    "showTitleBar" : false,
     "getPSAppViewRefs" : [ {
       "getRefPSAppView" : {
         "modelref" : true,
@@ -409,13 +408,14 @@
     "name" : "treeexpbar",
     "modelid" : "870bc0de83b0395b5977daca546eed1e_treeexpbar"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
+      "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "logicType" : "PREDEFINED",
       "name" : "新建数据"
@@ -437,25 +437,25 @@
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzLibModuleCaseTreeExpView.json",
   "name" : "IbzLibModuleCaseTreeExpView",
   "getPSAppDERSPaths" : [ [ {
-    "getParentPSAppDEField" : {
-      "name" : "ROOT",
-      "codeName" : "Root"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+    "getParentPSAppDEField" : {
+      "name" : "ROOT",
+      "codeName" : "Root"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "IbzLibModules",
     "actionRSMode" : 1,
     "dataRSMode" : 0,

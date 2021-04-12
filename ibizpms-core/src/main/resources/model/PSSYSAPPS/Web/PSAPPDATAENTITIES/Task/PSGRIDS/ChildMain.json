@@ -4,195 +4,195 @@
       "name" : "ASSIGNEDTOZJ",
       "codeName" : "AssignedToZj"
     },
-    "dataType" : 25,
-    "name" : "assignedtozj"
+    "name" : "assignedtozj",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "TASKTYPE",
       "codeName" : "Tasktype"
     },
-    "dataType" : 25,
-    "name" : "tasktype"
+    "name" : "tasktype",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "FROMBUG",
       "codeName" : "FromBug"
     },
-    "dataType" : 1,
-    "name" : "frombug"
+    "name" : "frombug",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "STATUS1",
       "codeName" : "Status1"
     },
-    "dataType" : 25,
-    "name" : "status1"
+    "name" : "status1",
+    "dataType" : 25
   }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
+    "name" : "srfmstag",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ESTIMATE",
       "codeName" : "Estimate"
     },
-    "dataType" : 7,
-    "name" : "estimate"
+    "name" : "estimate",
+    "dataType" : 7
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "id"
+    "name" : "id",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ASSIGNEDTO",
       "codeName" : "AssignedTo"
     },
-    "dataType" : 25,
-    "name" : "assignedto"
+    "name" : "assignedto",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "STORY",
       "codeName" : "Story"
     },
-    "dataType" : 1,
-    "name" : "story"
+    "name" : "story",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "CONSUMED",
       "codeName" : "Consumed"
     },
-    "dataType" : 7,
-    "name" : "consumed"
+    "name" : "consumed",
+    "dataType" : 7
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "name"
+    "name" : "name",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "LEFT",
       "codeName" : "Left"
     },
-    "dataType" : 7,
-    "name" : "left"
+    "name" : "left",
+    "dataType" : 7
   }, {
     "getPSAppDEField" : {
       "name" : "ISFAVORITES",
       "codeName" : "Isfavorites"
     },
-    "dataType" : 25,
-    "name" : "isfavorites"
+    "name" : "isfavorites",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "PROGRESSRATE",
       "codeName" : "Progressrate"
     },
-    "dataType" : 25,
-    "name" : "progressrate"
+    "name" : "progressrate",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "MODULE",
       "codeName" : "Module"
     },
-    "dataType" : 1,
-    "name" : "module"
+    "name" : "module",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "FINISHEDBY",
       "codeName" : "FinishedBy"
     },
-    "dataType" : 25,
-    "name" : "finishedby"
+    "name" : "finishedby",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "STATUS",
       "codeName" : "Status"
     },
-    "dataType" : 25,
-    "name" : "status"
+    "name" : "status",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "PARENT",
       "codeName" : "Parent"
     },
-    "dataType" : 1,
-    "name" : "parent"
+    "name" : "parent",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "MAILTO",
       "codeName" : "Mailto"
     },
-    "dataType" : 25,
-    "name" : "mailto"
+    "name" : "mailto",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "PROJECT",
       "codeName" : "Project"
     },
-    "dataType" : 1,
-    "name" : "project"
+    "name" : "project",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "PRI",
       "codeName" : "Pri"
     },
-    "dataType" : 9,
-    "name" : "pri"
+    "name" : "pri",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "PLAN",
       "codeName" : "Plan"
     },
-    "dataType" : 1,
-    "name" : "plan"
+    "name" : "plan",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "COLOR",
       "codeName" : "Color"
     },
-    "dataType" : 25,
-    "name" : "color"
+    "name" : "color",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "DELAY",
       "codeName" : "Delay"
     },
-    "dataType" : 25,
-    "name" : "delay"
+    "name" : "delay",
+    "dataType" : 25
   }, {
-    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "DEADLINE",
       "codeName" : "Deadline"
     },
-    "dataType" : 5,
-    "name" : "deadline"
+    "format" : "YYYY-MM-DD",
+    "name" : "deadline",
+    "dataType" : 5
   } ],
   "getRemovePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -208,8 +208,6 @@
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "singleSelect" : false,
-  "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -231,20 +229,22 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : false,
+  "enableColFilter" : false,
+  "singleSelect" : false,
+  "enablePagingBar" : true,
   "getMinorSortPSAppDEField" : {
     "name" : "STATUSORDER",
     "codeName" : "Statusorder"
   },
-  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "ID",
-    "dataItemName" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
+    "dataItemName" : "id",
+    "excelCaption" : "ID",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -256,16 +256,16 @@
     "widthUnit" : "PX",
     "name" : "id"
   }, {
-    "excelCaption" : "P",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__pri.json"
     },
-    "dataItemName" : "pri",
     "getPSAppDEField" : {
       "name" : "PRI",
       "codeName" : "Pri"
     },
+    "dataItemName" : "pri",
+    "excelCaption" : "P",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -284,12 +284,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "excelCaption" : "任务名称",
-    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "dataItemName" : "name",
+    "excelCaption" : "任务名称",
     "cLConvertMode" : "NONE",
     "getPSSysPFPlugin" : {
       "pluginType" : "GRID_COLRENDER",
@@ -305,16 +305,16 @@
     "widthUnit" : "STAR",
     "name" : "name"
   }, {
-    "excelCaption" : "任务状态",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/TaskStatusCK.json"
     },
-    "dataItemName" : "status1",
     "getPSAppDEField" : {
       "name" : "STATUS1",
       "codeName" : "Status1"
     },
+    "dataItemName" : "status1",
+    "excelCaption" : "任务状态",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -326,12 +326,12 @@
     "widthUnit" : "PX",
     "name" : "status1"
   }, {
-    "excelCaption" : "截止日期",
-    "dataItemName" : "deadline",
     "getPSAppDEField" : {
       "name" : "DEADLINE",
       "codeName" : "Deadline"
     },
+    "dataItemName" : "deadline",
+    "excelCaption" : "截止日期",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "getPSSysPFPlugin" : {
@@ -348,16 +348,16 @@
     "widthUnit" : "PX",
     "name" : "deadline"
   }, {
-    "excelCaption" : "指派给",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameW.json"
     },
-    "dataItemName" : "assignedto",
     "getPSAppDEField" : {
       "name" : "ASSIGNEDTO",
       "codeName" : "AssignedTo"
     },
+    "dataItemName" : "assignedto",
+    "excelCaption" : "指派给",
     "cLConvertMode" : "FRONT",
     "getPSSysPFPlugin" : {
       "pluginType" : "GRID_COLRENDER",
@@ -377,16 +377,16 @@
     "widthUnit" : "PX",
     "name" : "assignedto"
   }, {
-    "excelCaption" : "完成者",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
-    "dataItemName" : "finishedby",
     "getPSAppDEField" : {
       "name" : "FINISHEDBY",
       "codeName" : "FinishedBy"
     },
+    "dataItemName" : "finishedby",
+    "excelCaption" : "完成者",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -398,12 +398,12 @@
     "widthUnit" : "PX",
     "name" : "finishedby"
   }, {
-    "excelCaption" : "预计",
-    "dataItemName" : "estimate",
     "getPSAppDEField" : {
       "name" : "ESTIMATE",
       "codeName" : "Estimate"
     },
+    "dataItemName" : "estimate",
+    "excelCaption" : "预计",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -415,12 +415,12 @@
     "widthUnit" : "PX",
     "name" : "estimate"
   }, {
-    "excelCaption" : "消耗",
-    "dataItemName" : "consumed",
     "getPSAppDEField" : {
       "name" : "CONSUMED",
       "codeName" : "Consumed"
     },
+    "dataItemName" : "consumed",
+    "excelCaption" : "消耗",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -432,12 +432,12 @@
     "widthUnit" : "PX",
     "name" : "consumed"
   }, {
-    "excelCaption" : "剩余",
-    "dataItemName" : "left",
     "getPSAppDEField" : {
       "name" : "LEFT",
       "codeName" : "Left"
     },
+    "dataItemName" : "left",
+    "excelCaption" : "剩余",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -449,12 +449,12 @@
     "widthUnit" : "PX",
     "name" : "left"
   }, {
-    "excelCaption" : "%",
-    "dataItemName" : "progressrate",
     "getPSAppDEField" : {
       "name" : "PROGRESSRATE",
       "codeName" : "Progressrate"
     },
+    "dataItemName" : "progressrate",
+    "excelCaption" : "%",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -470,67 +470,6 @@
       "getPSUIActionGroupDetails" : [ {
         "showIcon" : true,
         "getPSUIAction" : {
-          "getPSNavigateContexts" : [ {
-            "rawValue" : false,
-            "value" : "mailto",
-            "key" : "MAILTO",
-            "name" : "MAILTO"
-          }, {
-            "rawValue" : false,
-            "value" : "assignedto",
-            "key" : "ASSIGNEDTO",
-            "name" : "ASSIGNEDTO"
-          }, {
-            "rawValue" : false,
-            "value" : "task",
-            "key" : "TASK",
-            "name" : "TASK"
-          }, {
-            "rawValue" : false,
-            "value" : "storyname",
-            "key" : "STORYNAME",
-            "name" : "STORYNAME"
-          }, {
-            "rawValue" : false,
-            "value" : "module",
-            "key" : "MODULE",
-            "name" : "MODULE"
-          }, {
-            "rawValue" : false,
-            "value" : "project",
-            "key" : "CURPROJECT",
-            "name" : "CURPROJECT"
-          }, {
-            "rawValue" : false,
-            "value" : "story",
-            "key" : "STORY",
-            "name" : "STORY"
-          }, {
-            "rawValue" : false,
-            "value" : "project",
-            "key" : "PROJECT",
-            "name" : "PROJECT"
-          }, {
-            "rawValue" : false,
-            "value" : "modulename",
-            "key" : "MODULENAME",
-            "name" : "MODULENAME"
-          }, {
-            "rawValue" : false,
-            "value" : "color",
-            "key" : "COLOR",
-            "name" : "COLOR"
-          }, {
-            "rawValue" : true,
-            "value" : "0",
-            "key" : "BRANCH",
-            "name" : "BRANCH"
-          }, {
-            "rawValue" : false,
-            "value" : "name",
-            "key" : "TITLE",
-            "name" : "TITLE"
-          } ],
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
@@ -602,6 +541,67 @@
             "name" : "storyname"
           } ],
           "frontProcessType" : "WIZARD",
+          "getPSNavigateContexts" : [ {
+            "rawValue" : false,
+            "value" : "mailto",
+            "key" : "MAILTO",
+            "name" : "MAILTO"
+          }, {
+            "rawValue" : false,
+            "value" : "assignedto",
+            "key" : "ASSIGNEDTO",
+            "name" : "ASSIGNEDTO"
+          }, {
+            "rawValue" : false,
+            "value" : "task",
+            "key" : "TASK",
+            "name" : "TASK"
+          }, {
+            "rawValue" : false,
+            "value" : "storyname",
+            "key" : "STORYNAME",
+            "name" : "STORYNAME"
+          }, {
+            "rawValue" : false,
+            "value" : "module",
+            "key" : "MODULE",
+            "name" : "MODULE"
+          }, {
+            "rawValue" : false,
+            "value" : "project",
+            "key" : "CURPROJECT",
+            "name" : "CURPROJECT"
+          }, {
+            "rawValue" : false,
+            "value" : "story",
+            "key" : "STORY",
+            "name" : "STORY"
+          }, {
+            "rawValue" : false,
+            "value" : "project",
+            "key" : "PROJECT",
+            "name" : "PROJECT"
+          }, {
+            "rawValue" : false,
+            "value" : "modulename",
+            "key" : "MODULENAME",
+            "name" : "MODULENAME"
+          }, {
+            "rawValue" : false,
+            "value" : "color",
+            "key" : "COLOR",
+            "name" : "COLOR"
+          }, {
+            "rawValue" : true,
+            "value" : "0",
+            "key" : "BRANCH",
+            "name" : "BRANCH"
+          }, {
+            "rawValue" : false,
+            "value" : "name",
+            "key" : "TITLE",
+            "name" : "TITLE"
+          } ],
           "getNoPrivDisplayMode" : 2,
           "getPSSysImage" : {
             "glyph" : "xf188@FontAwesome",
@@ -620,8 +620,8 @@
           "id" : "TaskToBug@Task"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : false,
+        "detailType" : "DEUIACTION",
         "name" : "ud5109c5"
       }, {
         "showIcon" : true,
@@ -644,8 +644,8 @@
           "timeout" : 60000,
           "codeName" : "confirmStoryChange",
           "caption" : "确认",
-          "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
+          "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "SRFUR__TASK_XQCHANGE_BUT",
           "uIActionTag" : "confirmStoryChange",
           "uIActionType" : "DEUIACTION",
@@ -655,8 +655,8 @@
           "id" : "confirmStoryChange@Task"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : false,
+        "detailType" : "DEUIACTION",
         "name" : "ucdca98c"
       }, {
         "showIcon" : true,
@@ -703,8 +703,8 @@
           "id" : "MStartTaskDash1@Task"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : false,
+        "detailType" : "DEUIACTION",
         "name" : "u8316814"
       }, {
         "showIcon" : true,
@@ -741,8 +741,8 @@
           "id" : "CloseTask@Task"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : false,
+        "detailType" : "DEUIACTION",
         "name" : "ubd2fb06"
       }, {
         "showIcon" : true,
@@ -789,8 +789,8 @@
           "id" : "done@Task"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : false,
+        "detailType" : "DEUIACTION",
         "name" : "ubf934a0"
       }, {
         "showIcon" : true,
@@ -823,23 +823,12 @@
           "id" : "MainEdit@Task"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : false,
+        "detailType" : "DEUIACTION",
         "name" : "ud0d0133"
       }, {
         "showIcon" : true,
         "getPSUIAction" : {
-          "getPSNavigateContexts" : [ {
-            "rawValue" : false,
-            "value" : "project",
-            "key" : "PROJECT",
-            "name" : "PROJECT"
-          }, {
-            "rawValue" : false,
-            "value" : "module",
-            "key" : "MODULE",
-            "name" : "MODULE"
-          } ],
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
@@ -861,6 +850,17 @@
             "name" : "module"
           } ],
           "frontProcessType" : "WIZARD",
+          "getPSNavigateContexts" : [ {
+            "rawValue" : false,
+            "value" : "project",
+            "key" : "PROJECT",
+            "name" : "PROJECT"
+          }, {
+            "rawValue" : false,
+            "value" : "module",
+            "key" : "MODULE",
+            "name" : "MODULE"
+          } ],
           "getNoPrivDisplayMode" : 1,
           "getPSSysImage" : {
             "cssClass" : "iconfont studio-icon-subnets"
@@ -878,8 +878,8 @@
           "id" : "NewSubTask@Task"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : false,
+        "detailType" : "DEUIACTION",
         "name" : "u7002282"
       }, {
         "showIcon" : true,
@@ -909,8 +909,8 @@
           "name" : "表格界面_拷贝操作"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : false,
+        "detailType" : "DEUIACTION",
         "name" : "ud67a065"
       }, {
         "showIcon" : true,
@@ -933,8 +933,8 @@
           "timeout" : 60000,
           "codeName" : "TaskFavorites",
           "caption" : "收藏",
-          "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
+          "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "SRFUR__TASK_NFAVOR_BUT",
           "uIActionTag" : "TaskFavorites",
           "uIActionType" : "DEUIACTION",
@@ -944,8 +944,8 @@
           "id" : "TaskFavorites@Task"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : false,
+        "detailType" : "DEUIACTION",
         "name" : "u3eb01df"
       }, {
         "showIcon" : true,
@@ -968,8 +968,8 @@
           "timeout" : 60000,
           "codeName" : "TaskNFavorites",
           "caption" : "取消收藏",
-          "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
+          "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "SRFUR__TASK_FAVOR_BUT",
           "uIActionTag" : "TaskNFavorites",
           "uIActionType" : "DEUIACTION",
@@ -979,8 +979,8 @@
           "id" : "TaskNFavorites@Task"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : false,
+        "detailType" : "DEUIACTION",
         "name" : "ud5bc55a"
       } ],
       "name" : "默认表格操作栏"

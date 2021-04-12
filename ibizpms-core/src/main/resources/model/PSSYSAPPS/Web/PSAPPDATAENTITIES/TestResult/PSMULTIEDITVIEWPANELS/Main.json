@@ -11,73 +11,73 @@
       "name" : "COMPILE",
       "codeName" : "Compile"
     },
-    "dataType" : 1,
-    "name" : "compile"
+    "name" : "compile",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "JOB",
       "codeName" : "Job"
     },
-    "dataType" : 1,
-    "name" : "job"
+    "name" : "job",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "CASERESULT",
       "codeName" : "CaseResult"
     },
-    "dataType" : 25,
-    "name" : "caseresult"
+    "name" : "caseresult",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "CASE",
       "codeName" : "IBizCase"
     },
-    "dataType" : 1,
-    "name" : "case"
+    "name" : "case",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "RUN",
       "codeName" : "Run"
     },
-    "dataType" : 1,
-    "name" : "run"
+    "name" : "run",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "LASTRUNNER",
       "codeName" : "LastRunner"
     },
-    "dataType" : 25,
-    "name" : "lastrunner"
+    "name" : "lastrunner",
+    "dataType" : 25
   }, {
-    "format" : "YYYY-MM-DD HH:mm:ss",
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
-    "dataType" : 5,
-    "name" : "date"
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "name" : "date",
+    "dataType" : 5
   }, {
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   } ],
   "getRemovePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -93,8 +93,6 @@
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "singleSelect" : false,
-  "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -116,23 +114,25 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enableRowEdit" : false,
+  "enableColFilter" : false,
+  "singleSelect" : false,
+  "enablePagingBar" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
-  "enablePagingBar" : false,
+  "enableRowEdit" : false,
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "测试结果",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testresult__result.json"
     },
-    "dataItemName" : "caseresult",
     "getPSAppDEField" : {
       "name" : "CASERESULT",
       "codeName" : "CaseResult"
     },
+    "dataItemName" : "caseresult",
+    "excelCaption" : "测试结果",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -144,12 +144,12 @@
     "widthUnit" : "PX",
     "name" : "caseresult"
   }, {
-    "excelCaption" : "测试时间",
-    "dataItemName" : "date",
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
+    "dataItemName" : "date",
+    "excelCaption" : "测试时间",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -162,16 +162,16 @@
     "widthUnit" : "PX",
     "name" : "date"
   }, {
-    "excelCaption" : "最后执行人",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
     },
-    "dataItemName" : "lastrunner",
     "getPSAppDEField" : {
       "name" : "LASTRUNNER",
       "codeName" : "LastRunner"
     },
+    "dataItemName" : "lastrunner",
+    "excelCaption" : "最后执行人",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -183,12 +183,12 @@
     "widthUnit" : "PX",
     "name" : "lastrunner"
   }, {
-    "excelCaption" : "测试执行",
-    "dataItemName" : "run",
     "getPSAppDEField" : {
       "name" : "RUN",
       "codeName" : "Run"
     },
+    "dataItemName" : "run",
+    "excelCaption" : "测试执行",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

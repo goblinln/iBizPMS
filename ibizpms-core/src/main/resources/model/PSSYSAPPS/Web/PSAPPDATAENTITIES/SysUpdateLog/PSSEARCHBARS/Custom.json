@@ -1,5 +1,5 @@
 {
-  "quickSearchMode" : 1,
+  "mobileSearchBar" : false,
   "getPSSearchBarFilters" : [ {
     "emptyCaption" : false,
     "getPSEditor" : {
@@ -11,9 +11,11 @@
       "editorType" : "DROPDOWNLIST",
       "name" : "latestupdateeq"
     },
-    "dataType" : 9,
+    "showCaption" : false,
     "hidden" : false,
+    "dataType" : 9,
     "needCodeListConfig" : true,
+    "caption" : "最新更新(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_LATESTUPDATE_EQ",
@@ -25,10 +27,8 @@
       "name" : "N_LATESTUPDATE_EQ"
     },
     "allowEmpty" : true,
-    "caption" : "最新更新(=)",
     "labelPos" : "NONE",
     "labelWidth" : 0,
-    "showCaption" : false,
     "getPSAppDEField" : {
       "name" : "LATESTUPDATE",
       "codeName" : "Latestupdate"
@@ -42,8 +42,10 @@
       "editorWidth" : 100.0,
       "name" : "lognamelike"
     },
-    "dataType" : 25,
+    "showCaption" : false,
     "hidden" : false,
+    "dataType" : 25,
+    "caption" : "更新名称(%)",
     "getPSDEFSearchMode" : {
       "valueOP" : "LIKE",
       "codeName" : "N_SYS_UPDATE_LOGNAME_LIKE",
@@ -55,11 +57,9 @@
       "name" : "N_SYS_UPDATE_LOGNAME_LIKE"
     },
     "allowEmpty" : true,
-    "caption" : "更新名称(%)",
     "labelPos" : "NONE",
     "labelWidth" : 0,
     "itemWidth" : 100.0,
-    "showCaption" : false,
     "getPSAppDEField" : {
       "name" : "SYS_UPDATE_LOGNAME",
       "codeName" : "SysUpdateLogName"
@@ -78,9 +78,11 @@
       "editorWidth" : 100.0,
       "name" : "updatebrancheq"
     },
-    "dataType" : 25,
+    "showCaption" : false,
     "hidden" : false,
+    "dataType" : 25,
     "needCodeListConfig" : true,
+    "caption" : "更新平台(=)",
     "getPSDEFSearchMode" : {
       "valueOP" : "EQ",
       "codeName" : "N_UPDATEBRANCH_EQ",
@@ -92,11 +94,9 @@
       "name" : "N_UPDATEBRANCH_EQ"
     },
     "allowEmpty" : true,
-    "caption" : "更新平台(=)",
     "labelPos" : "NONE",
     "labelWidth" : 0,
     "itemWidth" : 100.0,
-    "showCaption" : false,
     "getPSAppDEField" : {
       "name" : "UPDATEBRANCH",
       "codeName" : "Updatebranch"
@@ -104,9 +104,9 @@
     "itemType" : "FILTER",
     "name" : "updatebrancheq"
   } ],
-  "mobileSearchBar" : false,
-  "controlType" : "SEARCHBAR",
+  "quickSearchMode" : 1,
   "enableFilter" : true,
+  "controlType" : "SEARCHBAR",
   "codeName" : "Custom",
   "enableQuickSearch" : true,
   "enableGroup" : false,

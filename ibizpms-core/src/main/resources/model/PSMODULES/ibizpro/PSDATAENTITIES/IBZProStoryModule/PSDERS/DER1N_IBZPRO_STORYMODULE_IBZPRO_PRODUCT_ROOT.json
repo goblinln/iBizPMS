@@ -3,11 +3,11 @@
     "name" : "ROOT",
     "codeName" : "Root"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "PRODUCTNAME",
     "codeName" : "ProductName"
   },
+  "masterOrder" : -1,
   "removeActionType" : -1,
   "pickupDEFName" : "ROOT",
   "masterRS" : 0,
@@ -17,13 +17,13 @@
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProduct.json"
   },
   "orderValue" : 100,
+  "codeName" : "IbzProProduct",
+  "logicName" : "产品",
+  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule.json"
   },
-  "codeName" : "IbzProProduct",
-  "logicName" : "产品",
-  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule/PSDERS/DER1N_IBZPRO_STORYMODULE_IBZPRO_PRODUCT_ROOT.json",
   "name" : "DER1N_IBZPRO_STORYMODULE_IBZPRO_PRODUCT_ROOT"
 }

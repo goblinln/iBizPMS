@@ -5,10 +5,10 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "GridExpViewDept",
+  "enableDP" : true,
   "caption" : "人员",
   "title" : "人员表格导航视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSAppViewNavParams" : [ {
     "rawValue" : false,
     "value" : "srfparentkey",
@@ -37,7 +37,6 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
@@ -47,64 +46,65 @@
     "xDataControlName" : "gridexpbar_grid",
     "enableSearch" : false,
     "enableCounter" : true,
+    "showTitleBar" : false,
     "getPSControls" : [ {
       "getPSDEGridDataItems" : [ {
         "getPSAppDEField" : {
           "name" : "ORGID",
           "codeName" : "OrgId"
         },
-        "dataType" : 25,
-        "name" : "orgid"
+        "name" : "orgid",
+        "dataType" : 25
       }, {
         "getPSAppDEField" : {
           "name" : "NICKNAME",
           "codeName" : "NickName"
         },
-        "dataType" : 25,
-        "name" : "nickname"
+        "name" : "nickname",
+        "dataType" : 25
       }, {
         "getPSAppDEField" : {
           "name" : "MDEPTID",
           "codeName" : "MdeptId"
         },
-        "dataType" : 25,
-        "name" : "mdeptid"
+        "name" : "mdeptid",
+        "dataType" : 25
       }, {
         "getPSAppDEField" : {
           "name" : "USERID",
           "codeName" : "UserId"
         },
-        "dataType" : 25,
-        "name" : "userid"
+        "name" : "userid",
+        "dataType" : 25
       }, {
         "getPSAppDEField" : {
           "name" : "PERSONNAME",
           "codeName" : "PersonName"
         },
-        "dataType" : 25,
-        "name" : "personname"
+        "name" : "personname",
+        "dataType" : 25
       }, {
         "getPSAppDEField" : {
           "name" : "PERSONNAME",
           "codeName" : "PersonName"
         },
-        "dataType" : 25,
-        "name" : "srfmajortext"
+        "name" : "srfmajortext",
+        "dataType" : 25
       }, {
         "dataAccessAction" : true,
         "getPSAppDEField" : {
           "name" : "USERID",
           "codeName" : "UserId"
         },
-        "dataType" : 25,
-        "name" : "srfdataaccaction"
+        "name" : "srfdataaccaction",
+        "dataType" : 25
       }, {
         "getPSAppDEField" : {
           "name" : "USERID",
           "codeName" : "UserId"
         },
-        "dataType" : 25,
-        "name" : "srfkey"
+        "name" : "srfkey",
+        "dataType" : 25
       } ],
       "getRemovePSControlAction" : {
         "getPSAppDataEntity" : {
@@ -120,8 +120,6 @@
         "actionType" : "DEACTION",
         "name" : "remove"
       },
-      "singleSelect" : false,
-      "enableColFilter" : false,
       "enableRowNew" : false,
       "enableRowEditOrder" : false,
       "noSort" : false,
@@ -143,16 +141,18 @@
       } ],
       "hasWFDataItems" : false,
       "columnEnableLink" : 2,
-      "controlType" : "GRID",
-      "enableRowEdit" : false,
+      "enableColFilter" : false,
+      "singleSelect" : false,
       "enablePagingBar" : false,
+      "enableRowEdit" : false,
+      "controlType" : "GRID",
       "getPSDEGridColumns" : [ {
-        "excelCaption" : "用户标识",
-        "dataItemName" : "userid",
         "getPSAppDEField" : {
           "name" : "USERID",
           "codeName" : "UserId"
         },
+        "dataItemName" : "userid",
+        "excelCaption" : "用户标识",
         "cLConvertMode" : "NONE",
         "noPrivDisplayMode" : 1,
         "enableSort" : true,
@@ -164,12 +164,12 @@
         "widthUnit" : "PX",
         "name" : "userid"
       }, {
-        "excelCaption" : "姓名",
-        "dataItemName" : "personname",
         "getPSAppDEField" : {
           "name" : "PERSONNAME",
           "codeName" : "PersonName"
         },
+        "dataItemName" : "personname",
+        "excelCaption" : "姓名",
         "cLConvertMode" : "NONE",
         "noPrivDisplayMode" : 1,
         "enableSort" : true,
@@ -181,12 +181,12 @@
         "widthUnit" : "STAR",
         "name" : "personname"
       }, {
-        "excelCaption" : "昵称别名",
-        "dataItemName" : "nickname",
         "getPSAppDEField" : {
           "name" : "NICKNAME",
           "codeName" : "NickName"
         },
+        "dataItemName" : "nickname",
+        "excelCaption" : "昵称别名",
         "cLConvertMode" : "NONE",
         "noPrivDisplayMode" : 1,
         "enableSort" : true,
@@ -312,7 +312,6 @@
       "name" : "gridexpbar_grid",
       "modelid" : "a65d981149f9fd4aae4285f6c90e8494"
     } ],
-    "showTitleBar" : false,
     "getPSAppViewRefs" : [ {
       "getRefPSAppView" : {
         "modelref" : true,
@@ -342,13 +341,14 @@
     "name" : "gridexpbar",
     "modelid" : "f3aac9310b3f814a247eed4bc285ac07_gridexpbar"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
+      "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "logicType" : "PREDEFINED",
       "name" : "新建数据"

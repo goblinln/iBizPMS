@@ -4,62 +4,62 @@
       "name" : "DOCLIBCNT",
       "codeName" : "Doclibcnt"
     },
-    "dataType" : 9,
-    "name" : "doclibcnt"
+    "name" : "doclibcnt",
+    "dataType" : 9
   }, {
-    "format" : "YYYY-MM-DD HH:mm:ss",
     "getPSAppDEField" : {
       "name" : "OPENEDDATE",
       "codeName" : "OpenedDate"
     },
-    "dataType" : 5,
-    "name" : "openeddate"
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "name" : "openeddate",
+    "dataType" : 5
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "name"
+    "name" : "name",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "PARENT",
       "codeName" : "Parent"
     },
-    "dataType" : 1,
-    "name" : "parent"
+    "name" : "parent",
+    "dataType" : 1
   }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
+    "name" : "srfmstag",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "OPENEDBY",
       "codeName" : "OpenedBy"
     },
-    "dataType" : 25,
-    "name" : "openedby"
+    "name" : "openedby",
+    "dataType" : 25
   } ],
   "getRemovePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -75,8 +75,6 @@
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "singleSelect" : true,
-  "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -98,20 +96,22 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : false,
+  "enableColFilter" : false,
+  "singleSelect" : true,
+  "enablePagingBar" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "OPENEDDATE",
     "codeName" : "OpenedDate"
   },
-  "enablePagingBar" : false,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "项目名称",
-    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "dataItemName" : "name",
+    "excelCaption" : "项目名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -123,12 +123,12 @@
     "widthUnit" : "STAR",
     "name" : "name"
   }, {
-    "excelCaption" : "文档数量",
-    "dataItemName" : "doclibcnt",
     "getPSAppDEField" : {
       "name" : "DOCLIBCNT",
       "codeName" : "Doclibcnt"
     },
+    "dataItemName" : "doclibcnt",
+    "excelCaption" : "文档数量",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -140,16 +140,16 @@
     "widthUnit" : "PX",
     "name" : "doclibcnt"
   }, {
-    "excelCaption" : "由谁添加",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
-    "dataItemName" : "openedby",
     "getPSAppDEField" : {
       "name" : "OPENEDBY",
       "codeName" : "OpenedBy"
     },
+    "dataItemName" : "openedby",
+    "excelCaption" : "由谁添加",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -161,12 +161,12 @@
     "widthUnit" : "PX",
     "name" : "openedby"
   }, {
-    "excelCaption" : "添加时间",
-    "dataItemName" : "openeddate",
     "getPSAppDEField" : {
       "name" : "OPENEDDATE",
       "codeName" : "OpenedDate"
     },
+    "dataItemName" : "openeddate",
+    "excelCaption" : "添加时间",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,

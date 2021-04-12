@@ -1,13 +1,12 @@
 {
-  "enableUIRemove" : true,
   "getAllPSDEMainStates" : [ {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "10",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -128,13 +127,13 @@
     "stateValue" : "cancel",
     "name" : "已取消_未收藏_多人任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "20",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -303,13 +302,13 @@
     "stateValue" : "cancel",
     "name" : "已取消_未收藏_父任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "30",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateActions" : [ {
       "allowMode" : true,
       "getPSDEAction" : {
@@ -557,13 +556,13 @@
     "stateValue" : "cancel",
     "name" : "已取消_未收藏_常规任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "40",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -696,13 +695,13 @@
     "stateValue" : "cancel",
     "name" : "已取消_未收藏_子任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "10",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -823,13 +822,13 @@
     "stateValue" : "cancel",
     "name" : "已取消_已收藏_多人任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "20",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -998,13 +997,13 @@
     "stateValue" : "cancel",
     "name" : "已取消_已收藏_父任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "30",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -1125,13 +1124,13 @@
     "stateValue" : "cancel",
     "name" : "已取消_已收藏_常规任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "40",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -1264,13 +1263,13 @@
     "stateValue" : "cancel",
     "name" : "已取消_已收藏_子任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "10",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -1415,13 +1414,13 @@
     "stateValue" : "closed",
     "name" : "已关闭_未收藏_多人任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "20",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -1590,13 +1589,13 @@
     "stateValue" : "closed",
     "name" : "已关闭_未收藏_父任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "30",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateActions" : [ {
       "allowMode" : true,
       "getPSDEAction" : {
@@ -1849,13 +1848,13 @@
     "stateValue" : "closed",
     "name" : "已关闭_未收藏_常规任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "40",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -2000,13 +1999,13 @@
     "stateValue" : "closed",
     "name" : "已关闭_未收藏_子任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "10",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -2151,13 +2150,13 @@
     "stateValue" : "closed",
     "name" : "已关闭_已收藏_多人任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "20",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -2326,13 +2325,13 @@
     "stateValue" : "closed",
     "name" : "已关闭_已收藏_父任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "30",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -2465,13 +2464,13 @@
     "stateValue" : "closed",
     "name" : "已关闭_已收藏_常规任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "40",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -2616,13 +2615,13 @@
     "stateValue" : "closed",
     "name" : "已关闭_已收藏_子任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "10",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -2731,13 +2730,13 @@
     "stateValue" : "doing",
     "name" : "进行中_未收藏_多人任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "20",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -2906,13 +2905,13 @@
     "stateValue" : "doing",
     "name" : "进行中_未收藏_父任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "30",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateActions" : [ {
       "allowMode" : true,
       "getPSDEAction" : {
@@ -3143,13 +3142,13 @@
     "stateValue" : "doing",
     "name" : "进行中_未收藏_常规任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "40",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -3258,13 +3257,13 @@
     "stateValue" : "doing",
     "name" : "进行中_未收藏_子任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "10",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -3373,13 +3372,13 @@
     "stateValue" : "doing",
     "name" : "进行中_已收藏_多人任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "20",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -3548,13 +3547,13 @@
     "stateValue" : "doing",
     "name" : "进行中_已收藏_父任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "30",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -3651,13 +3650,13 @@
     "stateValue" : "doing",
     "name" : "进行中_已收藏_常规任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "40",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -3766,13 +3765,13 @@
     "stateValue" : "doing",
     "name" : "进行中_已收藏_子任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "10",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -3893,13 +3892,13 @@
     "stateValue" : "done",
     "name" : "已完成_未收藏_多人任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "20",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -4068,13 +4067,13 @@
     "stateValue" : "done",
     "name" : "已完成_未收藏_父任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "30",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateActions" : [ {
       "allowMode" : true,
       "getPSDEAction" : {
@@ -4310,13 +4309,13 @@
     "stateValue" : "done",
     "name" : "已完成_未收藏_常规任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "40",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -4437,13 +4436,13 @@
     "stateValue" : "done",
     "name" : "已完成_未收藏_子任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "10",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -4564,13 +4563,13 @@
     "stateValue" : "done",
     "name" : "已完成_已收藏_多人任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "20",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -4739,13 +4738,13 @@
     "stateValue" : "done",
     "name" : "已完成_已收藏_父任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "30",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -4854,13 +4853,13 @@
     "stateValue" : "done",
     "name" : "已完成_已收藏_常规任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "40",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -4981,13 +4980,13 @@
     "stateValue" : "done",
     "name" : "已完成_已收藏_子任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "10",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -5096,13 +5095,13 @@
     "stateValue" : "pause",
     "name" : "已暂停_未收藏_多人任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "20",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -5271,13 +5270,13 @@
     "stateValue" : "pause",
     "name" : "已暂停_未收藏_父任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "30",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateActions" : [ {
       "allowMode" : true,
       "getPSDEAction" : {
@@ -5508,13 +5507,13 @@
     "stateValue" : "pause",
     "name" : "已暂停_未收藏_常规任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "40",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -5623,13 +5622,13 @@
     "stateValue" : "pause",
     "name" : "已暂停_未收藏_子任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "10",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -5738,13 +5737,13 @@
     "stateValue" : "pause",
     "name" : "已暂停_已收藏_多人任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "20",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -5913,13 +5912,13 @@
     "stateValue" : "pause",
     "name" : "已暂停_已收藏_父任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "30",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -6016,13 +6015,13 @@
     "stateValue" : "pause",
     "name" : "已暂停_已收藏_常规任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "40",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -6131,13 +6130,13 @@
     "stateValue" : "pause",
     "name" : "已暂停_已收藏_子任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "10",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -6294,13 +6293,13 @@
     "stateValue" : "storychange",
     "name" : "需求变更_未收藏_多人任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "20",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -6481,13 +6480,13 @@
     "stateValue" : "storychange",
     "name" : "需求变更_未收藏_父任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "30",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -6644,13 +6643,13 @@
     "stateValue" : "storychange",
     "name" : "需求变更_未收藏_常规任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "40",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -6807,13 +6806,13 @@
     "stateValue" : "storychange",
     "name" : "需求变更_未收藏_子任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "10",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -6970,13 +6969,13 @@
     "stateValue" : "storychange",
     "name" : "需求变更_已收藏_多人任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "20",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -7157,13 +7156,13 @@
     "stateValue" : "storychange",
     "name" : "需求变更_已收藏_父任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "30",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -7320,13 +7319,13 @@
     "stateValue" : "storychange",
     "name" : "需求变更_已收藏_常规任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "40",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -7483,13 +7482,13 @@
     "stateValue" : "storychange",
     "name" : "需求变更_已收藏_子任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "10",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -7598,13 +7597,13 @@
     "stateValue" : "wait",
     "name" : "未进行_未收藏_多人任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "20",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -7773,13 +7772,13 @@
     "stateValue" : "wait",
     "name" : "未进行_未收藏_父任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "30",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateActions" : [ {
       "allowMode" : true,
       "getPSDEAction" : {
@@ -8017,13 +8016,13 @@
     "stateValue" : "wait",
     "name" : "未进行_未收藏_常规任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "0",
     "state3Value" : "40",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -8132,13 +8131,13 @@
     "stateValue" : "wait",
     "name" : "未进行_未收藏_子任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "10",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -8247,13 +8246,13 @@
     "stateValue" : "wait",
     "name" : "未进行_已收藏_多人任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "20",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -8422,13 +8421,13 @@
     "stateValue" : "wait",
     "name" : "未进行_已收藏_父任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "30",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -8525,13 +8524,13 @@
     "stateValue" : "wait",
     "name" : "未进行_已收藏_常规任务"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "1",
     "state3Value" : "40",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -8641,12 +8640,14 @@
     "name" : "未进行_已收藏_子任务"
   } ],
   "enableUIActions" : 15,
+  "enableUIRemove" : true,
+  "major" : true,
   "getAllPSAppDEMethods" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Select"
     },
+    "builtinMethod" : false,
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -8654,11 +8655,11 @@
     },
     "codeName" : "Select"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SUBTASK__DEACTION__CREATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8670,11 +8671,11 @@
     },
     "codeName" : "Create"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SUBTASK__DEACTION__UPDATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8686,11 +8687,11 @@
     },
     "codeName" : "Update"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SUBTASK__DEACTION__REMOVE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8702,11 +8703,11 @@
     },
     "codeName" : "Remove"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SUBTASK__DEACTION__GET"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8718,11 +8719,11 @@
     },
     "codeName" : "Get"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8734,11 +8735,11 @@
     },
     "codeName" : "GetDraft"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Activate"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8746,11 +8747,11 @@
     },
     "codeName" : "Activate"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "AssignTo"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8758,11 +8759,11 @@
     },
     "codeName" : "AssignTo"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Cancel"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8770,11 +8771,11 @@
     },
     "codeName" : "Cancel"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8782,11 +8783,11 @@
     },
     "codeName" : "CheckKey"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Close"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8794,11 +8795,11 @@
     },
     "codeName" : "Close"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ConfirmStoryChange"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8806,11 +8807,11 @@
     },
     "codeName" : "ConfirmStoryChange"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CreateCycleTasks"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8822,11 +8823,11 @@
     },
     "codeName" : "CreateCycleTasks"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "DeleteEstimate"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8834,11 +8835,11 @@
     },
     "codeName" : "DeleteEstimate"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "EditEstimate"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8846,11 +8847,11 @@
     },
     "codeName" : "EditEstimate"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Finish"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8858,11 +8859,11 @@
     },
     "codeName" : "Finish"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetNextTeamUser"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8874,11 +8875,11 @@
     },
     "codeName" : "GetNextTeamUser"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetTeamUserLeftActivity"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8890,11 +8891,11 @@
     },
     "codeName" : "GetTeamUserLeftActivity"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetTeamUserLeftStart"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8906,11 +8907,11 @@
     },
     "codeName" : "GetTeamUserLeftStart"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetUsernames"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8922,11 +8923,11 @@
     },
     "codeName" : "GetUsernames"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "LinkPlan"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8934,11 +8935,11 @@
     },
     "codeName" : "LinkPlan"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "OtherUpdate"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8946,11 +8947,11 @@
     },
     "codeName" : "OtherUpdate"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Pause"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8958,11 +8959,11 @@
     },
     "codeName" : "Pause"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "RecordEstimate"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8970,11 +8971,11 @@
     },
     "codeName" : "RecordEstimate"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Restart"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8982,11 +8983,11 @@
     },
     "codeName" : "Restart"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8994,11 +8995,11 @@
     },
     "codeName" : "Save"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SendMessage"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -9006,11 +9007,11 @@
     },
     "codeName" : "SendMessage"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SendMsgPreProcess"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -9018,11 +9019,11 @@
     },
     "codeName" : "SendMsgPreProcess"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Start"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -9030,11 +9031,11 @@
     },
     "codeName" : "Start"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TaskFavorites"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -9042,11 +9043,11 @@
     },
     "codeName" : "TaskFavorites"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TaskForward"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -9054,11 +9055,11 @@
     },
     "codeName" : "TaskForward"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TaskNFavorites"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -9066,11 +9067,11 @@
     },
     "codeName" : "TaskNFavorites"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "UpdateStoryVersion"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -9082,11 +9083,11 @@
     },
     "codeName" : "UpdateStoryVersion"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchAssignedToMyTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9098,11 +9099,11 @@
     },
     "codeName" : "FetchAssignedToMyTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchAssignedToMyTaskPc"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9114,11 +9115,11 @@
     },
     "codeName" : "FetchAssignedToMyTaskPc"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBugTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9130,11 +9131,11 @@
     },
     "codeName" : "FetchBugTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchByModule"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9146,11 +9147,11 @@
     },
     "codeName" : "FetchByModule"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchChildDefault"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9162,11 +9163,11 @@
     },
     "codeName" : "FetchChildDefault"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchChildTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9178,11 +9179,11 @@
     },
     "codeName" : "FetchChildTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchChildTaskTree"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9194,11 +9195,11 @@
     },
     "codeName" : "FetchChildTaskTree"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCurFinishTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9210,11 +9211,11 @@
     },
     "codeName" : "FetchCurFinishTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9226,11 +9227,11 @@
     },
     "codeName" : "FetchDefault"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefaultRow"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9242,11 +9243,11 @@
     },
     "codeName" : "FetchDefaultRow"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchESBulk"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9258,11 +9259,11 @@
     },
     "codeName" : "FetchESBulk"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyAgentTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9274,11 +9275,11 @@
     },
     "codeName" : "FetchMyAgentTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyAllTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9290,11 +9291,11 @@
     },
     "codeName" : "FetchMyAllTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyCompleteTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9306,11 +9307,11 @@
     },
     "codeName" : "FetchMyCompleteTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyCompleteTaskMobDaily"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9322,11 +9323,11 @@
     },
     "codeName" : "FetchMyCompleteTaskMobDaily"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyCompleteTaskMobMonthly"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9338,11 +9339,11 @@
     },
     "codeName" : "FetchMyCompleteTaskMobMonthly"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyCompleteTaskMonthlyZS"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9354,11 +9355,11 @@
     },
     "codeName" : "FetchMyCompleteTaskMonthlyZS"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyCompleteTaskZS"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9370,11 +9371,11 @@
     },
     "codeName" : "FetchMyCompleteTaskZS"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyFavorites"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9386,11 +9387,11 @@
     },
     "codeName" : "FetchMyFavorites"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyPlansTaskMobMonthly"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9402,11 +9403,11 @@
     },
     "codeName" : "FetchMyPlansTaskMobMonthly"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyTomorrowPlanTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9418,11 +9419,11 @@
     },
     "codeName" : "FetchMyTomorrowPlanTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyTomorrowPlanTaskMobDaily"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9434,11 +9435,11 @@
     },
     "codeName" : "FetchMyTomorrowPlanTaskMobDaily"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchNextWeekCompleteTaskMobZS"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9450,11 +9451,11 @@
     },
     "codeName" : "FetchNextWeekCompleteTaskMobZS"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchNextWeekCompleteTaskZS"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9466,11 +9467,11 @@
     },
     "codeName" : "FetchNextWeekCompleteTaskZS"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchNextWeekPlanCompleteTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9482,11 +9483,11 @@
     },
     "codeName" : "FetchNextWeekPlanCompleteTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchPlanTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9498,11 +9499,11 @@
     },
     "codeName" : "FetchPlanTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectAppTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9514,11 +9515,11 @@
     },
     "codeName" : "FetchProjectAppTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9530,11 +9531,11 @@
     },
     "codeName" : "FetchProjectTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRootTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9546,11 +9547,11 @@
     },
     "codeName" : "FetchRootTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchTaskLinkPlan"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9562,11 +9563,11 @@
     },
     "codeName" : "FetchTaskLinkPlan"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchThisMonthCompleteTaskChoice"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9578,11 +9579,11 @@
     },
     "codeName" : "FetchThisMonthCompleteTaskChoice"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchThisWeekCompleteTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9594,11 +9595,11 @@
     },
     "codeName" : "FetchThisWeekCompleteTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchThisWeekCompleteTaskChoice"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9610,11 +9611,11 @@
     },
     "codeName" : "FetchThisWeekCompleteTaskChoice"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchThisWeekCompleteTaskMobZS"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9626,11 +9627,11 @@
     },
     "codeName" : "FetchThisWeekCompleteTaskMobZS"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchThisWeekCompleteTaskZS"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9642,11 +9643,11 @@
     },
     "codeName" : "FetchThisWeekCompleteTaskZS"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchTodoListTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9658,11 +9659,11 @@
     },
     "codeName" : "FetchTodoListTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchTypeGroup"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9674,11 +9675,11 @@
     },
     "codeName" : "FetchTypeGroup"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchTypeGroupPlan"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9690,8 +9691,8 @@
     },
     "codeName" : "FetchTypeGroupPlan"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -9704,8 +9705,8 @@
     "codeName" : "CreateTemp",
     "name" : "CreateTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -9718,8 +9719,8 @@
     "codeName" : "CreateTempMajor",
     "name" : "CreateTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -9732,8 +9733,8 @@
     "codeName" : "UpdateTemp",
     "name" : "UpdateTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -9746,8 +9747,8 @@
     "codeName" : "UpdateTempMajor",
     "name" : "UpdateTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -9760,8 +9761,8 @@
     "codeName" : "RemoveTemp",
     "name" : "RemoveTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -9774,8 +9775,8 @@
     "codeName" : "RemoveTempMajor",
     "name" : "RemoveTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -9788,8 +9789,8 @@
     "codeName" : "GetTemp",
     "name" : "GetTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -9802,8 +9803,8 @@
     "codeName" : "GetTempMajor",
     "name" : "GetTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -9816,8 +9817,8 @@
     "codeName" : "GetDraftTemp",
     "name" : "GetDraftTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -9839,11 +9840,11 @@
     "codeName" : "CalcTime",
     "name" : "CalcTime"
   }, {
-    "builtinMethod" : false,
     "getPSAppDELogic" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubTask/PSAPPDELOGICS/GetUserConcat.json"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -9856,8 +9857,8 @@
     "codeName" : "GetUserConcat",
     "name" : "GetUserConcat"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9866,8 +9867,8 @@
     "codeName" : "FetchTempAssignedToMyTask",
     "name" : "AssignedToMyTask"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9876,8 +9877,8 @@
     "codeName" : "FetchTempAssignedToMyTaskPc",
     "name" : "AssignedToMyTaskPc"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9886,8 +9887,8 @@
     "codeName" : "FetchTempBugTask",
     "name" : "BugTask"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9896,8 +9897,8 @@
     "codeName" : "FetchTempByModule",
     "name" : "ByModule"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9906,8 +9907,8 @@
     "codeName" : "FetchTempChildDefault",
     "name" : "ChildDefault"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9916,8 +9917,8 @@
     "codeName" : "FetchTempChildTask",
     "name" : "ChildTask"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9926,8 +9927,8 @@
     "codeName" : "FetchTempChildTaskTree",
     "name" : "ChildTaskTree"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9936,8 +9937,8 @@
     "codeName" : "FetchTempCurFinishTask",
     "name" : "CurFinishTask"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9946,8 +9947,8 @@
     "codeName" : "FetchTempDefault",
     "name" : "DEFAULT"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9956,8 +9957,8 @@
     "codeName" : "FetchTempDefaultRow",
     "name" : "DefaultRow"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9966,8 +9967,8 @@
     "codeName" : "FetchTempESBulk",
     "name" : "ESBulk"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9976,8 +9977,8 @@
     "codeName" : "FetchTempMyAgentTask",
     "name" : "MyAgentTask"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9986,8 +9987,8 @@
     "codeName" : "FetchTempMyAllTask",
     "name" : "MyAllTask"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9996,8 +9997,8 @@
     "codeName" : "FetchTempMyCompleteTask",
     "name" : "MyCompleteTask"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -10006,8 +10007,8 @@
     "codeName" : "FetchTempMyCompleteTaskMobDaily",
     "name" : "MyCompleteTaskMobDaily"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -10016,8 +10017,8 @@
     "codeName" : "FetchTempMyCompleteTaskMobMonthly",
     "name" : "MyCompleteTaskMobMonthly"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -10026,8 +10027,8 @@
     "codeName" : "FetchTempMyCompleteTaskMonthlyZS",
     "name" : "MyCompleteTaskMonthlyZS"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -10036,8 +10037,8 @@
     "codeName" : "FetchTempMyCompleteTaskZS",
     "name" : "MyCompleteTaskZS"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -10046,8 +10047,8 @@
     "codeName" : "FetchTempMyFavorites",
     "name" : "MyFavorites"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -10056,8 +10057,8 @@
     "codeName" : "FetchTempMyPlansTaskMobMonthly",
     "name" : "MyPlansTaskMobMonthly"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -10066,8 +10067,8 @@
     "codeName" : "FetchTempMyTomorrowPlanTask",
     "name" : "MyTomorrowPlanTask"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -10076,8 +10077,8 @@
     "codeName" : "FetchTempMyTomorrowPlanTaskMobDaily",
     "name" : "MyTomorrowPlanTaskMobDaily"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -10086,8 +10087,8 @@
     "codeName" : "FetchTempNextWeekCompleteTaskMobZS",
     "name" : "NextWeekCompleteTaskMobZS"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -10096,8 +10097,8 @@
     "codeName" : "FetchTempNextWeekCompleteTaskZS",
     "name" : "NextWeekCompleteTaskZS"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -10106,8 +10107,8 @@
     "codeName" : "FetchTempNextWeekPlanCompleteTask",
     "name" : "NextWeekPlanCompleteTask"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -10116,8 +10117,8 @@
     "codeName" : "FetchTempPlanTask",
     "name" : "PlanTask"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -10126,8 +10127,8 @@
     "codeName" : "FetchTempProjectAppTask",
     "name" : "ProjectAppTask"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -10136,8 +10137,8 @@
     "codeName" : "FetchTempProjectTask",
     "name" : "ProjectTask"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -10146,8 +10147,8 @@
     "codeName" : "FetchTempRootTask",
     "name" : "RootTask"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -10156,8 +10157,8 @@
     "codeName" : "FetchTempTaskLinkPlan",
     "name" : "TaskLinkPlan"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -10166,8 +10167,8 @@
     "codeName" : "FetchTempThisMonthCompleteTaskChoice",
     "name" : "ThisMonthCompleteTaskChoice"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -10176,8 +10177,8 @@
     "codeName" : "FetchTempThisWeekCompleteTask",
     "name" : "ThisWeekCompleteTask"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -10186,8 +10187,8 @@
     "codeName" : "FetchTempThisWeekCompleteTaskChoice",
     "name" : "ThisWeekCompleteTaskChoice"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -10196,8 +10197,8 @@
     "codeName" : "FetchTempThisWeekCompleteTaskMobZS",
     "name" : "ThisWeekCompleteTaskMobZS"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -10206,8 +10207,8 @@
     "codeName" : "FetchTempThisWeekCompleteTaskZS",
     "name" : "ThisWeekCompleteTaskZS"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -10216,8 +10217,8 @@
     "codeName" : "FetchTempTodoListTask",
     "name" : "TodoListTask"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -10226,8 +10227,8 @@
     "codeName" : "FetchTempTypeGroup",
     "name" : "TypeGroup"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -10272,25 +10273,25 @@
     "name" : "FILTERFETCH"
   } ],
   "getMinorPSAppDERSs" : [ {
-    "getParentPSAppDEField" : {
-      "name" : "PARENT",
-      "codeName" : "Parent"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubTask.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+    "getParentPSAppDEField" : {
+      "name" : "PARENT",
+      "codeName" : "Parent"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "SubTask",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
@@ -10791,6 +10792,22 @@
     "name" : "FROMBUG"
   } ],
   "getAllPSAppDEACModes" : [ {
+    "enablePagingBar" : false,
+    "getPSDEACModeDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "value",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "name" : "text",
+      "dataType" : 25
+    } ],
     "getValuePSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
@@ -10799,22 +10816,6 @@
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "getPSDEACModeDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "dataType" : 25,
-      "name" : "value"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      },
-      "dataType" : 25,
-      "name" : "text"
-    } ],
-    "enablePagingBar" : false,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "defaultMode" : true,
@@ -10978,11 +10979,11 @@
     "name" : "数据导出"
   } ],
   "getAllPSAppDEActions" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SUBTASK__DEACTION__CREATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -10994,11 +10995,11 @@
     },
     "codeName" : "Create"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SUBTASK__DEACTION__UPDATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11010,11 +11011,11 @@
     },
     "codeName" : "Update"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SUBTASK__DEACTION__REMOVE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11026,11 +11027,11 @@
     },
     "codeName" : "Remove"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SUBTASK__DEACTION__GET"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11042,11 +11043,11 @@
     },
     "codeName" : "Get"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11058,11 +11059,11 @@
     },
     "codeName" : "GetDraft"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Activate"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11070,11 +11071,11 @@
     },
     "codeName" : "Activate"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "AssignTo"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11082,11 +11083,11 @@
     },
     "codeName" : "AssignTo"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Cancel"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11094,11 +11095,11 @@
     },
     "codeName" : "Cancel"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11106,11 +11107,11 @@
     },
     "codeName" : "CheckKey"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Close"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11118,11 +11119,11 @@
     },
     "codeName" : "Close"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ConfirmStoryChange"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11130,11 +11131,11 @@
     },
     "codeName" : "ConfirmStoryChange"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CreateCycleTasks"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11146,11 +11147,11 @@
     },
     "codeName" : "CreateCycleTasks"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "DeleteEstimate"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11158,11 +11159,11 @@
     },
     "codeName" : "DeleteEstimate"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "EditEstimate"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11170,11 +11171,11 @@
     },
     "codeName" : "EditEstimate"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Finish"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11182,11 +11183,11 @@
     },
     "codeName" : "Finish"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetNextTeamUser"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11198,11 +11199,11 @@
     },
     "codeName" : "GetNextTeamUser"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetTeamUserLeftActivity"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11214,11 +11215,11 @@
     },
     "codeName" : "GetTeamUserLeftActivity"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetTeamUserLeftStart"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11230,11 +11231,11 @@
     },
     "codeName" : "GetTeamUserLeftStart"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetUsernames"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11246,11 +11247,11 @@
     },
     "codeName" : "GetUsernames"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "LinkPlan"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11258,11 +11259,11 @@
     },
     "codeName" : "LinkPlan"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "OtherUpdate"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11270,11 +11271,11 @@
     },
     "codeName" : "OtherUpdate"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Pause"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11282,11 +11283,11 @@
     },
     "codeName" : "Pause"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "RecordEstimate"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11294,11 +11295,11 @@
     },
     "codeName" : "RecordEstimate"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Restart"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11306,11 +11307,11 @@
     },
     "codeName" : "Restart"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11318,11 +11319,11 @@
     },
     "codeName" : "Save"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SendMessage"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11330,11 +11331,11 @@
     },
     "codeName" : "SendMessage"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SendMsgPreProcess"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11342,11 +11343,11 @@
     },
     "codeName" : "SendMsgPreProcess"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Start"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11354,11 +11355,11 @@
     },
     "codeName" : "Start"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TaskFavorites"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11366,11 +11367,11 @@
     },
     "codeName" : "TaskFavorites"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TaskForward"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11378,11 +11379,11 @@
     },
     "codeName" : "TaskForward"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TaskNFavorites"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11390,11 +11391,11 @@
     },
     "codeName" : "TaskNFavorites"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "UpdateStoryVersion"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11406,8 +11407,8 @@
     },
     "codeName" : "UpdateStoryVersion"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11420,8 +11421,8 @@
     "codeName" : "CreateTemp",
     "name" : "CreateTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11434,8 +11435,8 @@
     "codeName" : "CreateTempMajor",
     "name" : "CreateTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11448,8 +11449,8 @@
     "codeName" : "UpdateTemp",
     "name" : "UpdateTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11462,8 +11463,8 @@
     "codeName" : "UpdateTempMajor",
     "name" : "UpdateTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11476,8 +11477,8 @@
     "codeName" : "RemoveTemp",
     "name" : "RemoveTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11490,8 +11491,8 @@
     "codeName" : "RemoveTempMajor",
     "name" : "RemoveTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11504,8 +11505,8 @@
     "codeName" : "GetTemp",
     "name" : "GetTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11518,8 +11519,8 @@
     "codeName" : "GetTempMajor",
     "name" : "GetTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11532,8 +11533,8 @@
     "codeName" : "GetDraftTemp",
     "name" : "GetDraftTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11555,11 +11556,11 @@
     "codeName" : "CalcTime",
     "name" : "CalcTime"
   }, {
-    "builtinMethod" : false,
     "getPSAppDELogic" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubTask/PSAPPDELOGICS/GetUserConcat.json"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -11573,11 +11574,11 @@
     "name" : "GetUserConcat"
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchAssignedToMyTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -11589,11 +11590,11 @@
     },
     "codeName" : "FetchAssignedToMyTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchAssignedToMyTaskPc"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -11605,11 +11606,11 @@
     },
     "codeName" : "FetchAssignedToMyTaskPc"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBugTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -11621,11 +11622,11 @@
     },
     "codeName" : "FetchBugTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchByModule"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -11637,11 +11638,11 @@
     },
     "codeName" : "FetchByModule"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchChildDefault"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -11653,11 +11654,11 @@
     },
     "codeName" : "FetchChildDefault"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchChildTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -11669,11 +11670,11 @@
     },
     "codeName" : "FetchChildTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchChildTaskTree"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -11685,11 +11686,11 @@
     },
     "codeName" : "FetchChildTaskTree"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCurFinishTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -11701,11 +11702,11 @@
     },
     "codeName" : "FetchCurFinishTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -11717,11 +11718,11 @@
     },
     "codeName" : "FetchDefault"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefaultRow"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -11733,11 +11734,11 @@
     },
     "codeName" : "FetchDefaultRow"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchESBulk"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -11749,11 +11750,11 @@
     },
     "codeName" : "FetchESBulk"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyAgentTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -11765,11 +11766,11 @@
     },
     "codeName" : "FetchMyAgentTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyAllTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -11781,11 +11782,11 @@
     },
     "codeName" : "FetchMyAllTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyCompleteTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -11797,11 +11798,11 @@
     },
     "codeName" : "FetchMyCompleteTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyCompleteTaskMobDaily"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -11813,11 +11814,11 @@
     },
     "codeName" : "FetchMyCompleteTaskMobDaily"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyCompleteTaskMobMonthly"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -11829,11 +11830,11 @@
     },
     "codeName" : "FetchMyCompleteTaskMobMonthly"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyCompleteTaskMonthlyZS"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -11845,11 +11846,11 @@
     },
     "codeName" : "FetchMyCompleteTaskMonthlyZS"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyCompleteTaskZS"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -11861,11 +11862,11 @@
     },
     "codeName" : "FetchMyCompleteTaskZS"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyFavorites"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -11877,11 +11878,11 @@
     },
     "codeName" : "FetchMyFavorites"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyPlansTaskMobMonthly"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -11893,11 +11894,11 @@
     },
     "codeName" : "FetchMyPlansTaskMobMonthly"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyTomorrowPlanTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -11909,11 +11910,11 @@
     },
     "codeName" : "FetchMyTomorrowPlanTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyTomorrowPlanTaskMobDaily"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -11925,11 +11926,11 @@
     },
     "codeName" : "FetchMyTomorrowPlanTaskMobDaily"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchNextWeekCompleteTaskMobZS"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -11941,11 +11942,11 @@
     },
     "codeName" : "FetchNextWeekCompleteTaskMobZS"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchNextWeekCompleteTaskZS"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -11957,11 +11958,11 @@
     },
     "codeName" : "FetchNextWeekCompleteTaskZS"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchNextWeekPlanCompleteTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -11973,11 +11974,11 @@
     },
     "codeName" : "FetchNextWeekPlanCompleteTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchPlanTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -11989,11 +11990,11 @@
     },
     "codeName" : "FetchPlanTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectAppTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -12005,11 +12006,11 @@
     },
     "codeName" : "FetchProjectAppTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -12021,11 +12022,11 @@
     },
     "codeName" : "FetchProjectTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRootTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -12037,11 +12038,11 @@
     },
     "codeName" : "FetchRootTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchTaskLinkPlan"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -12053,11 +12054,11 @@
     },
     "codeName" : "FetchTaskLinkPlan"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchThisMonthCompleteTaskChoice"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -12069,11 +12070,11 @@
     },
     "codeName" : "FetchThisMonthCompleteTaskChoice"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchThisWeekCompleteTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -12085,11 +12086,11 @@
     },
     "codeName" : "FetchThisWeekCompleteTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchThisWeekCompleteTaskChoice"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -12101,11 +12102,11 @@
     },
     "codeName" : "FetchThisWeekCompleteTaskChoice"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchThisWeekCompleteTaskMobZS"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -12117,11 +12118,11 @@
     },
     "codeName" : "FetchThisWeekCompleteTaskMobZS"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchThisWeekCompleteTaskZS"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -12133,11 +12134,11 @@
     },
     "codeName" : "FetchThisWeekCompleteTaskZS"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchTodoListTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -12149,11 +12150,11 @@
     },
     "codeName" : "FetchTodoListTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchTypeGroup"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -12165,11 +12166,11 @@
     },
     "codeName" : "FetchTypeGroup"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchTypeGroupPlan"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -12181,15 +12182,6 @@
     },
     "codeName" : "FetchTypeGroupPlan"
   } ],
-  "major" : true,
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDESERVICEAPIS/SubTask.json"
-  },
-  "getPSSysImage" : {
-    "glyph" : "xf0ae@FontAwesome",
-    "cssClass" : "fa fa-tasks"
-  },
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -12203,6 +12195,14 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDESERVICEAPIS/SubTask.json"
+  },
+  "getPSSysImage" : {
+    "glyph" : "xf0ae@FontAwesome",
+    "cssClass" : "fa fa-tasks"
+  },
   "codeName" : "SubTask",
   "logicName" : "子任务",
   "dataAccCtrlMode" : 1,

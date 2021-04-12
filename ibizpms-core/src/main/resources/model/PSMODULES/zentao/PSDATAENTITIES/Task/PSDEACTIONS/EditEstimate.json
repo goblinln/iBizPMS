@@ -10,10 +10,10 @@
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTCommon"
   },
+  "extendMode" : 0,
   "orderValue" : 99999,
   "codeName" : "EditEstimate",
   "logicName" : "编辑工时",
-  "extendMode" : 0,
   "actionMode" : "UNKNOWN",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",

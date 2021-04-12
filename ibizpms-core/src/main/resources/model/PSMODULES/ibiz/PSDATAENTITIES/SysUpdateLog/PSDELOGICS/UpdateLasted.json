@@ -1,6 +1,6 @@
 {
-  "enableBackend" : true,
   "enableFront" : false,
+  "enableBackend" : true,
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"
@@ -27,8 +27,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "UPDATEBRANCH",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[UPDATEBRANCH]"
     }, {
       "paramAction" : "SQLPARAM",
@@ -36,8 +36,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "SYS_UPDATE_LOGID",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[SYS_UPDATE_LOGID]"
     }, {
       "paramAction" : "SQLPARAM",
@@ -45,8 +45,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "LATESTUPDATE",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[LATESTUPDATE]"
     } ],
     "logicHolder" : 1,
@@ -67,9 +67,9 @@
     "name" : "连接8487"
   } ],
   "getPSDELogicParams" : [ {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

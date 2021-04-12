@@ -10,11 +10,11 @@
       "name" : "PRODUCTNAME",
       "codeName" : "ProductName"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   } ],
-  "controlType" : "LIST",
   "enableRowEdit" : false,
+  "controlType" : "LIST",
   "codeName" : "DEFAULT",
   "enableGroup" : false,
   "pagingSize" : 1000,

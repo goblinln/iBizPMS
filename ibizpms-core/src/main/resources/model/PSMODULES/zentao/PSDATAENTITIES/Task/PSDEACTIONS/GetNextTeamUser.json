@@ -10,6 +10,7 @@
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTCommon"
   },
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"
@@ -17,7 +18,6 @@
   "orderValue" : 99999,
   "codeName" : "GetNextTeamUser",
   "logicName" : "获取下一个团队成员(完成)",
-  "extendMode" : 0,
   "actionMode" : "READ",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",

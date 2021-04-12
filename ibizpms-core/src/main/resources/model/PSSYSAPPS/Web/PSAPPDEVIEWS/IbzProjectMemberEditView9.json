@@ -3,10 +3,10 @@
   "showCaptionBar" : false,
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "EditView9",
+  "enableDP" : true,
   "caption" : "相关成员",
   "title" : "项目相关成员编辑视图（相关成员）",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSAppViewNavParams" : [ {
     "rawValue" : false,
     "value" : "srfparentkey",
@@ -55,13 +55,14 @@
     "key" : "IBZPROJECTMEMBER",
     "name" : "IBZPROJECTMEMBER"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzProjectMember.json"
   },
   "getPSControls" : [ {
     "enableAutoSave" : false,
+    "infoFormMode" : true,
+    "showFormNavBar" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -86,8 +87,6 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
-    "infoFormMode" : true,
-    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
@@ -116,13 +115,14 @@
           },
           "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
-          "enableUnitName" : true,
           "getPSAppDEField" : {
             "name" : "PM",
             "codeName" : "PM"
           },
-          "dataType" : 25,
+          "enableUnitName" : true,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 25,
           "convertToCodeItemText" : true,
           "allowEmpty" : true,
           "enableCond" : 3,
@@ -130,7 +130,6 @@
           "labelPos" : "LEFT",
           "labelWidth" : 20,
           "unitName" : "（项目负责人）",
-          "showCaption" : true,
           "contentHeight" : 36.0,
           "getPSDEFDGroupLogics" : [ {
             "relatedDetailNames" : [ "pm" ],
@@ -171,13 +170,14 @@
           },
           "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
-          "enableUnitName" : true,
           "getPSAppDEField" : {
             "name" : "PO",
             "codeName" : "PO"
           },
-          "dataType" : 25,
+          "enableUnitName" : true,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 25,
           "convertToCodeItemText" : true,
           "allowEmpty" : true,
           "enableCond" : 3,
@@ -185,7 +185,6 @@
           "labelPos" : "LEFT",
           "labelWidth" : 20,
           "unitName" : "（产品负责人）",
-          "showCaption" : true,
           "contentHeight" : 36.0,
           "getPSDEFDGroupLogics" : [ {
             "relatedDetailNames" : [ "po" ],
@@ -226,13 +225,14 @@
           },
           "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
-          "enableUnitName" : true,
           "getPSAppDEField" : {
             "name" : "QD",
             "codeName" : "QD"
           },
-          "dataType" : 25,
+          "enableUnitName" : true,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 25,
           "convertToCodeItemText" : true,
           "allowEmpty" : true,
           "enableCond" : 3,
@@ -240,7 +240,6 @@
           "labelPos" : "LEFT",
           "labelWidth" : 20,
           "unitName" : "（测试负责人）",
-          "showCaption" : true,
           "contentHeight" : 36.0,
           "getPSDEFDGroupLogics" : [ {
             "relatedDetailNames" : [ "qd" ],
@@ -281,13 +280,14 @@
           },
           "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
-          "enableUnitName" : true,
           "getPSAppDEField" : {
             "name" : "RD",
             "codeName" : "RD"
           },
-          "dataType" : 25,
+          "enableUnitName" : true,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 25,
           "convertToCodeItemText" : true,
           "allowEmpty" : true,
           "enableCond" : 3,
@@ -295,7 +295,6 @@
           "labelPos" : "LEFT",
           "labelWidth" : 20,
           "unitName" : "（发布负责人）",
-          "showCaption" : true,
           "contentHeight" : 36.0,
           "getPSDEFDGroupLogics" : [ {
             "relatedDetailNames" : [ "rd" ],
@@ -340,15 +339,15 @@
             "name" : "FRISTMEMBER",
             "codeName" : "Fristmember"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 25,
           "convertToCodeItemText" : true,
           "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 3,
           "labelPos" : "LEFT",
           "labelWidth" : 20,
-          "showCaption" : true,
           "contentHeight" : 36.0,
           "getPSDEFDGroupLogics" : [ {
             "relatedDetailNames" : [ "fristmember" ],
@@ -393,15 +392,15 @@
             "name" : "SECONDMEMBER",
             "codeName" : "Secondmember"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 25,
           "convertToCodeItemText" : true,
           "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 3,
           "labelPos" : "LEFT",
           "labelWidth" : 20,
-          "showCaption" : true,
           "contentHeight" : 36.0,
           "getPSDEFDGroupLogics" : [ {
             "relatedDetailNames" : [ "secondmember" ],
@@ -446,15 +445,15 @@
             "name" : "THIRDMEMBER",
             "codeName" : "Thirdmember"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 25,
           "convertToCodeItemText" : true,
           "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 3,
           "labelPos" : "LEFT",
           "labelWidth" : 20,
-          "showCaption" : true,
           "contentHeight" : 36.0,
           "getPSDEFDGroupLogics" : [ {
             "relatedDetailNames" : [ "thirdmember" ],
@@ -499,15 +498,15 @@
             "name" : "FOURTHMEMBER",
             "codeName" : "Fourthmember"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 25,
           "convertToCodeItemText" : true,
           "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 3,
           "labelPos" : "LEFT",
           "labelWidth" : 20,
-          "showCaption" : true,
           "contentHeight" : 36.0,
           "getPSDEFDGroupLogics" : [ {
             "relatedDetailNames" : [ "fourthmember" ],
@@ -552,15 +551,15 @@
             "name" : "FIFTHMEMBER",
             "codeName" : "Fifthmember"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 25,
           "convertToCodeItemText" : true,
           "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 3,
           "labelPos" : "LEFT",
           "labelWidth" : 20,
-          "showCaption" : true,
           "contentHeight" : 36.0,
           "getPSDEFDGroupLogics" : [ {
             "relatedDetailNames" : [ "fifthmember" ],
@@ -605,15 +604,15 @@
             "name" : "SIXTHMEMBER",
             "codeName" : "Sixthmember"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 25,
           "convertToCodeItemText" : true,
           "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 3,
           "labelPos" : "LEFT",
           "labelWidth" : 20,
-          "showCaption" : true,
           "contentHeight" : 36.0,
           "getPSDEFDGroupLogics" : [ {
             "relatedDetailNames" : [ "sixthmember" ],
@@ -652,14 +651,14 @@
             "name" : "ID",
             "codeName" : "Id"
           },
-          "dataType" : 1,
+          "showCaption" : true,
           "hidden" : true,
+          "dataType" : 1,
           "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -693,8 +692,8 @@
             "timeout" : 60000,
             "codeName" : "TeamManagement",
             "caption" : "团队管理",
-            "actionTarget" : "SINGLEKEY",
             "reloadData" : true,
+            "actionTarget" : "SINGLEKEY",
             "dataAccessAction" : "SRFUR__PROJT_TM_BUT",
             "uIActionTag" : "TeamManagement",
             "uIActionType" : "DEUIACTION",
@@ -711,6 +710,7 @@
             "colLGOffset" : 1,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : true,
           "getPSSysImage" : {
             "glyph" : "xf067@FontAwesome",
             "cssClass" : "fa fa-plus"
@@ -719,18 +719,17 @@
           "caption" : "团队管理",
           "detailType" : "BUTTON",
           "detailStyle" : "DEFAULT",
-          "showCaption" : true,
           "name" : "button1"
         } ],
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : false,
         "codeName" : "group1",
         "caption" : "项目相关成员基本信息",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : false,
         "name" : "group1"
       } ],
       "getPSLayout" : {
@@ -978,6 +977,7 @@
     "name" : "form",
     "modelid" : "ab4e168d3bdaa7c1906513c1885cacd3"
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "IbzProjectMemberEditView9",
   "viewType" : "DEEDITVIEW9",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzProjectMemberEditView9.json",

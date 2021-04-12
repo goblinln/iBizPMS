@@ -1,14 +1,17 @@
 {
-  "serviceAPIMode" : 0,
   "getAllPSDEFields" : [ {
-    "dataType" : "TEXT",
     "length" : 100,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "7ccea085e0f28fbc4101901b1aa23fda",
+    "codeName" : "TeamMemberId",
+    "logicName" : "组成员标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
     "pasteReset" : true,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -46,33 +49,33 @@
       "autoIncrement" : false,
       "name" : "TEAMMEMBERID"
     } ],
-    "codeName" : "TeamMemberId",
-    "logicName" : "组成员标识",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "keyDEField" : true,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "TEAMMEMBERID"
   }, {
     "phisicalDEField" : false,
+    "valueFormat" : "%1$s",
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDERS/DER1N_SYS_TEAMMEMBER_SYS_TEAM_TEAMID.json"
     },
-    "valueFormat" : "%1$s",
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "TEAMNAME",
       "codeName" : "TeamName"
     },
-    "dataType" : "PICKUPTEXT",
     "length" : 100,
+    "dataType" : "PICKUPTEXT",
     "deployId" : "ec773aba257f604a0b4e6a907bc8c85b",
+    "codeName" : "TeamName",
+    "logicName" : "组名称",
+    "stringLength" : 100,
+    "stdDataType" : 25,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -110,31 +113,31 @@
       "autoIncrement" : false,
       "name" : "TEAMNAME"
     } ],
-    "codeName" : "TeamName",
-    "logicName" : "组名称",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 3,
     "name" : "TEAMNAME"
   }, {
     "phisicalDEField" : false,
+    "valueFormat" : "%1$s",
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDERS/DER1N_SYS_TEAMMEMBER_SYS_POST_POSTID.json"
     },
-    "valueFormat" : "%1$s",
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "POSTNAME",
       "codeName" : "PostName"
     },
-    "dataType" : "PICKUPTEXT",
     "length" : 100,
+    "dataType" : "PICKUPTEXT",
     "deployId" : "6b23bf6531f3392dfe7b00d69ff47ff7",
+    "codeName" : "PostName",
+    "logicName" : "岗位",
+    "stringLength" : 100,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -172,21 +175,21 @@
       "autoIncrement" : false,
       "name" : "POSTNAME"
     } ],
-    "codeName" : "PostName",
-    "logicName" : "岗位",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 3,
     "name" : "POSTNAME"
   }, {
-    "dataType" : "TEXT",
     "length" : 100,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "186fb2257639934e4aa7ed53d688d131",
+    "codeName" : "Domains",
+    "logicName" : "区属",
+    "stringLength" : 100,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -224,31 +227,31 @@
       "autoIncrement" : false,
       "name" : "DOMAINS"
     } ],
-    "codeName" : "Domains",
-    "logicName" : "区属",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "DOMAINS"
   }, {
     "phisicalDEField" : false,
+    "valueFormat" : "%1$s",
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDERS/DER1N_SYS_TEAMMEMBER_IBZEMP_USERID.json"
     },
-    "valueFormat" : "%1$s",
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "USERICON",
       "codeName" : "UserIcon"
     },
-    "dataType" : "PICKUPDATA",
     "length" : 255,
+    "dataType" : "PICKUPDATA",
     "deployId" : "dddfb71bc94f688e543be87f5cb150d7",
+    "codeName" : "UserIcon",
+    "logicName" : "头像",
+    "stringLength" : 255,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -286,31 +289,31 @@
       "autoIncrement" : false,
       "name" : "USERICON"
     } ],
-    "codeName" : "UserIcon",
-    "logicName" : "头像",
-    "stringLength" : 255,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 3,
     "name" : "USERICON"
   }, {
     "phisicalDEField" : false,
+    "valueFormat" : "%1$s",
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDERS/DER1N_SYS_TEAMMEMBER_IBZEMP_USERID.json"
     },
-    "valueFormat" : "%1$s",
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "PERSONNAME",
       "codeName" : "PersonName"
     },
-    "dataType" : "PICKUPTEXT",
     "length" : 100,
+    "dataType" : "PICKUPTEXT",
     "deployId" : "030bb07ba1e6e67456cef68afce1be3c",
+    "codeName" : "PersonName",
+    "logicName" : "姓名",
+    "stringLength" : 100,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -348,31 +351,31 @@
       "autoIncrement" : false,
       "name" : "PERSONNAME"
     } ],
-    "codeName" : "PersonName",
-    "logicName" : "姓名",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 3,
     "name" : "PERSONNAME"
   }, {
     "phisicalDEField" : false,
+    "valueFormat" : "%1$s",
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDERS/DER1N_SYS_TEAMMEMBER_IBZEMP_USERID.json"
     },
-    "valueFormat" : "%1$s",
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "USERNAME",
       "codeName" : "UserName"
     },
-    "dataType" : "PICKUPDATA",
     "length" : 100,
+    "dataType" : "PICKUPDATA",
     "deployId" : "3a3a361eae02e7d3d847b37c4e0b7d82",
+    "codeName" : "UserName",
+    "logicName" : "账号",
+    "stringLength" : 100,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -410,30 +413,30 @@
       "autoIncrement" : false,
       "name" : "USERNAME"
     } ],
-    "codeName" : "UserName",
-    "logicName" : "账号",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 3,
     "name" : "USERNAME"
   }, {
+    "valueFormat" : "%1$s",
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDERS/DER1N_SYS_TEAMMEMBER_SYS_POST_POSTID.json"
     },
-    "valueFormat" : "%1$s",
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "POSTID",
       "codeName" : "PostId"
     },
-    "dataType" : "PICKUP",
     "length" : 100,
+    "dataType" : "PICKUP",
     "deployId" : "a2f03077b42719d1faf47772bf24ae20",
+    "codeName" : "PostId",
+    "logicName" : "岗位标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -471,30 +474,30 @@
       "autoIncrement" : false,
       "name" : "POSTID"
     } ],
-    "codeName" : "PostId",
-    "logicName" : "岗位标识",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "POSTID"
   }, {
+    "valueFormat" : "%1$s",
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDERS/DER1N_SYS_TEAMMEMBER_SYS_TEAM_TEAMID.json"
     },
-    "valueFormat" : "%1$s",
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "TEAMID",
       "codeName" : "TeamId"
     },
-    "dataType" : "PICKUP",
     "length" : 100,
+    "dataType" : "PICKUP",
     "deployId" : "4deef6b5a851e1082705c04a180ae210",
+    "codeName" : "TeamId",
+    "logicName" : "组标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -532,30 +535,30 @@
       "autoIncrement" : false,
       "name" : "TEAMID"
     } ],
-    "codeName" : "TeamId",
-    "logicName" : "组标识",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "TEAMID"
   }, {
+    "valueFormat" : "%1$s",
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDERS/DER1N_SYS_TEAMMEMBER_IBZEMP_USERID.json"
     },
-    "valueFormat" : "%1$s",
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "USERID",
       "codeName" : "UserId"
     },
-    "dataType" : "PICKUP",
     "length" : 100,
+    "dataType" : "PICKUP",
     "deployId" : "74a0a2589ad56a06828d98027c52b18b",
+    "codeName" : "UserId",
+    "logicName" : "用户标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -593,18 +596,15 @@
       "autoIncrement" : false,
       "name" : "USERID"
     } ],
-    "codeName" : "UserId",
-    "logicName" : "用户标识",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "USERID"
   } ],
   "getAllPSDEDataSets" : [ {
-    "enableBackend" : true,
     "enableFront" : true,
+    "enableBackend" : true,
     "pubServiceDefault" : true,
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -612,9 +612,8 @@
     "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "数据集",
-    "extendMode" : 0,
-    "enableGroup" : false,
     "userDRAction" : "READ",
+    "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
@@ -648,10 +647,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "数据查询",
-    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -659,10 +658,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
@@ -673,8 +672,7 @@
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : true,
-  "orderValue" : 99999,
-  "dSLink" : "DEFAULT",
+  "serviceAPIMode" : 0,
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -688,17 +686,19 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "extendMode" : 0,
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "dSLink" : "DEFAULT",
   "saaSMode" : 0,
   "deployId" : "458fa31b3022d5dbe2ab9b8911c09223",
-  "enableSQLStorage" : false,
-  "dynaInstMode" : 1,
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
-  "virtualMode" : 0,
   "codeName" : "SysTeamMember",
   "logicName" : "组成员",
   "tableName" : "IBZTEAMMEMBER",
+  "enableViewLevel" : 0,
+  "virtualMode" : 0,
+  "enableSQLStorage" : false,
+  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -707,13 +707,13 @@
   "storageMode" : 4,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
   "serviceAPIClientId" : "9dab79080bf86d9ac588a8ab99d5d28c",
   "serviceCodeName" : "SysTeamMember",
   "enableActions" : 7,
   "enableCreate" : true,
   "enableModify" : true,
-  "extendMode" : 0,
+  "subSysDE" : false,
+  "virtual" : false,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

@@ -67,10 +67,10 @@
   "showCaptionBar" : true,
   "getPSDEViewCodeName" : "RedirectView",
   "funcViewMode" : "REDIRECTVIEW",
+  "enableDP" : true,
   "caption" : "索引检索",
   "title" : "索引检索数据重定向视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -84,11 +84,11 @@
     "controlStyle" : "APPDEREDIRECTVIEW_STYLE2",
     "name" : "layoutpanel"
   },
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
   },
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,

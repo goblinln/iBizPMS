@@ -7,8 +7,8 @@
     "modelref" : true,
     "id" : "FetchPlanCodeList"
   },
-  "codeListType" : "DYNAMIC",
   "dynaInstMode" : 1,
+  "codeListType" : "DYNAMIC",
   "codeName" : "PlanCodeList",
   "emptyText" : "未计划",
   "enableCache" : true,

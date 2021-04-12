@@ -25,8 +25,8 @@
     "codeName" : "Item_5",
     "text" : "5"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "Project__statge",
   "emptyText" : "未定义",
   "enableCache" : true,

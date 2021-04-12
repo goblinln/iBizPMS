@@ -20,8 +20,6 @@
   },
   "controlType" : "CHART",
   "getPSDEChartSerieses" : [ {
-    "catalogField" : "SEVERITY",
-    "seriesType" : "pie",
     "getCatalogPSCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__severity.json"
@@ -36,6 +34,7 @@
       "modelref" : true,
       "id" : "0"
     },
+    "catalogField" : "SEVERITY",
     "getPSChartSeriesEncode" : {
       "category" : "SEVERITY",
       "value" : "SRFCOUNT",
@@ -44,6 +43,7 @@
       "name" : "坐标系编码",
       "id" : "0"
     },
+    "seriesType" : "pie",
     "valueField" : "SRFCOUNT",
     "seriesLayoutBy" : "column",
     "groupMode" : "CODELIST",

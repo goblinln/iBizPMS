@@ -4,68 +4,68 @@
       "name" : "PRODUCT",
       "codeName" : "Product"
     },
-    "dataType" : 1,
-    "name" : "product"
+    "name" : "product",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "PROJECT",
       "codeName" : "Project"
     },
-    "dataType" : 1,
-    "name" : "project"
+    "name" : "project",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "DOCLIBTYPE",
       "codeName" : "Doclibtype"
     },
-    "dataType" : 25,
-    "name" : "doclibtype"
+    "name" : "doclibtype",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "name"
+    "name" : "name",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ISFAVOURITES",
       "codeName" : "Isfavourites"
     },
-    "dataType" : 25,
-    "name" : "isfavourites"
+    "name" : "isfavourites",
+    "dataType" : 25
   }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
+    "name" : "srfmstag",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "DOCCNT",
       "codeName" : "Doccnt"
     },
-    "dataType" : 9,
-    "name" : "doccnt"
+    "name" : "doccnt",
+    "dataType" : 9
   } ],
   "getRemovePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -81,8 +81,6 @@
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "singleSelect" : false,
-  "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -104,23 +102,19 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : false,
+  "enableColFilter" : false,
+  "singleSelect" : false,
   "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "文档库名称",
-    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "dataItemName" : "name",
+    "excelCaption" : "文档库名称",
     "getPSDEUIAction" : {
-      "getPSNavigateContexts" : [ {
-        "rawValue" : false,
-        "value" : "doclibtype",
-        "key" : "DOCLIBTYPE",
-        "name" : "DOCLIBTYPE"
-      } ],
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -137,6 +131,12 @@
         "name" : "project"
       } ],
       "frontProcessType" : "TOP",
+      "getPSNavigateContexts" : [ {
+        "rawValue" : false,
+        "value" : "doclibtype",
+        "key" : "DOCLIBTYPE",
+        "name" : "DOCLIBTYPE"
+      } ],
       "getNoPrivDisplayMode" : 2,
       "timeout" : 60000,
       "codeName" : "LookMainProjectDocLib",
@@ -160,12 +160,12 @@
     "widthUnit" : "STAR",
     "name" : "name"
   }, {
-    "excelCaption" : "文档数量",
-    "dataItemName" : "doccnt",
     "getPSAppDEField" : {
       "name" : "DOCCNT",
       "codeName" : "Doccnt"
     },
+    "dataItemName" : "doccnt",
+    "excelCaption" : "文档数量",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -215,28 +215,12 @@
           "id" : "EditProjectDoclib@DocLib"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : false,
+        "detailType" : "DEUIACTION",
         "name" : "uda5bc65"
       }, {
         "showIcon" : true,
         "getPSUIAction" : {
-          "getPSNavigateContexts" : [ {
-            "rawValue" : false,
-            "value" : "project",
-            "key" : "PROJECT",
-            "name" : "PROJECT"
-          }, {
-            "rawValue" : false,
-            "value" : "doclib",
-            "key" : "SRFROOT",
-            "name" : "SRFROOT"
-          }, {
-            "rawValue" : false,
-            "value" : "product",
-            "key" : "PRODUCT",
-            "name" : "PRODUCT"
-          } ],
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -263,6 +247,22 @@
             "name" : "srfroot"
           } ],
           "frontProcessType" : "WIZARD",
+          "getPSNavigateContexts" : [ {
+            "rawValue" : false,
+            "value" : "project",
+            "key" : "PROJECT",
+            "name" : "PROJECT"
+          }, {
+            "rawValue" : false,
+            "value" : "doclib",
+            "key" : "SRFROOT",
+            "name" : "SRFROOT"
+          }, {
+            "rawValue" : false,
+            "value" : "product",
+            "key" : "PRODUCT",
+            "name" : "PRODUCT"
+          } ],
           "getNoPrivDisplayMode" : 2,
           "getPSSysImage" : {
             "glyph" : "xf023@FontAwesome",
@@ -281,8 +281,8 @@
           "id" : "WeiHuFenLei@DocLib"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : false,
+        "detailType" : "DEUIACTION",
         "name" : "ua016f9e"
       }, {
         "showIcon" : true,
@@ -305,8 +305,8 @@
           "timeout" : 60000,
           "codeName" : "Collect",
           "caption" : "收藏",
-          "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
+          "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "SRFUR__DOCLIB_FAVOUR_BUT",
           "uIActionTag" : "Collect",
           "uIActionType" : "DEUIACTION",
@@ -316,8 +316,8 @@
           "id" : "Collect@DocLib"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : false,
+        "detailType" : "DEUIACTION",
         "name" : "u4e7400f"
       }, {
         "showIcon" : true,
@@ -340,8 +340,8 @@
           "timeout" : 60000,
           "codeName" : "UnCollect",
           "caption" : "取消收藏",
-          "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
+          "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "SRFUR__DOCLIB_NFAVOUR_BUT",
           "uIActionTag" : "UnCollect",
           "uIActionType" : "DEUIACTION",
@@ -351,8 +351,8 @@
           "id" : "UnCollect@DocLib"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : false,
+        "detailType" : "DEUIACTION",
         "name" : "u00bd873"
       } ],
       "name" : "项目查看"

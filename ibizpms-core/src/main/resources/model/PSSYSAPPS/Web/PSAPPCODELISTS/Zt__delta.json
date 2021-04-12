@@ -28,8 +28,8 @@
     "codeName" : "Item_365",
     "text" : "一年"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "Zt__delta",
   "emptyText" : "按时间段",
   "enableCache" : true,

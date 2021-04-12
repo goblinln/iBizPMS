@@ -10,8 +10,8 @@
     "text" : "我的项目",
     "default" : true
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "ProjectQuickpaketMy",
   "emptyText" : "未定义",
   "enableCache" : true,

@@ -2,10 +2,10 @@
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "PickupView",
   "funcViewMode" : "PICKUPVIEW",
+  "enableDP" : true,
   "caption" : "测试模块",
   "title" : "测试模块数据选择视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -28,7 +28,6 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
@@ -47,10 +46,10 @@
       "xDataControlName" : "grid",
       "showCaptionBar" : true,
       "getPSDEViewCodeName" : "PickupGridView",
+      "enableDP" : true,
       "caption" : "测试模块",
       "title" : "测试模块选择表格视图",
       "accUserMode" : 2,
-      "enableDP" : true,
       "getPSViewLayoutPanel" : {
         "useDefaultLayout" : true,
         "layoutPanel" : true,
@@ -76,7 +75,6 @@
         } ],
         "name" : "engine"
       } ],
-      "viewStyle" : "STYLE2",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
@@ -87,37 +85,37 @@
             "name" : "ROOT",
             "codeName" : "Root"
           },
-          "dataType" : 1,
-          "name" : "root"
+          "name" : "root",
+          "dataType" : 1
         }, {
           "getPSAppDEField" : {
             "name" : "PARENT",
             "codeName" : "Parent"
           },
-          "dataType" : 1,
-          "name" : "parent"
+          "name" : "parent",
+          "dataType" : 1
         }, {
           "getPSAppDEField" : {
             "name" : "NAME",
             "codeName" : "Name"
           },
-          "dataType" : 25,
-          "name" : "srfmajortext"
+          "name" : "srfmajortext",
+          "dataType" : 25
         }, {
           "dataAccessAction" : true,
           "getPSAppDEField" : {
             "name" : "ID",
             "codeName" : "Id"
           },
-          "dataType" : 1,
-          "name" : "srfdataaccaction"
+          "name" : "srfdataaccaction",
+          "dataType" : 1
         }, {
           "getPSAppDEField" : {
             "name" : "ID",
             "codeName" : "Id"
           },
-          "dataType" : 1,
-          "name" : "srfkey"
+          "name" : "srfkey",
+          "dataType" : 1
         } ],
         "getRemovePSControlAction" : {
           "getPSAppDataEntity" : {
@@ -133,8 +131,6 @@
           "actionType" : "DEACTION",
           "name" : "remove"
         },
-        "singleSelect" : false,
-        "enableColFilter" : false,
         "enableRowNew" : false,
         "enableRowEditOrder" : false,
         "noSort" : false,
@@ -156,9 +152,11 @@
         } ],
         "hasWFDataItems" : false,
         "columnEnableLink" : 2,
-        "controlType" : "GRID",
-        "enableRowEdit" : false,
+        "enableColFilter" : false,
+        "singleSelect" : false,
         "enablePagingBar" : true,
+        "enableRowEdit" : false,
+        "controlType" : "GRID",
         "codeName" : "Main",
         "enableGroup" : false,
         "hideHeader" : false,
@@ -268,10 +266,10 @@
         "name" : "grid",
         "modelid" : "a0e4cd0e098c9028cd9ef7c71cd9424b"
       }, {
+        "searchButtonStyle" : "DEFAULT",
         "enableAdvanceSearch" : false,
         "enableAutoSearch" : false,
         "enableFilterSave" : false,
-        "searchButtonStyle" : "DEFAULT",
         "controlType" : "SEARCHFORM",
         "getPSLayout" : {
           "layout" : "TABLE_24COL",
@@ -345,30 +343,31 @@
         "name" : "searchform",
         "modelid" : "33dc9a4ef63b00d50731326bb1c75658"
       } ],
+      "viewStyle" : "STYLE2",
       "codeName" : "TestModulePickupGridView",
       "viewType" : "DEPICKUPGRIDVIEW",
       "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestModulePickupGridView.json",
       "name" : "TestModulePickupGridView",
       "getPSAppDERSPaths" : [ [ {
-        "getParentPSAppDEField" : {
-          "name" : "ROOT",
-          "codeName" : "Root"
+        "enableDEAction" : true,
+        "enableSelect" : true,
+        "enableDEDataSet" : true,
+        "enableCreateDataRS" : false,
+        "enableUpdateDataRS" : false,
+        "enableGetDataRS" : false,
+        "enableSelectDataRS" : false,
+        "getMajorPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
         },
         "getMinorPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
         },
-        "getMajorPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+        "getParentPSAppDEField" : {
+          "name" : "ROOT",
+          "codeName" : "Root"
         },
-        "enableCreateDataRS" : false,
-        "enableUpdateDataRS" : false,
-        "enableGetDataRS" : false,
-        "enableSelectDataRS" : false,
-        "enableDEAction" : true,
-        "enableSelect" : true,
-        "enableDEDataSet" : true,
         "codeName" : "TestModules",
         "actionRSMode" : 1,
         "dataRSMode" : 0,
@@ -388,30 +387,31 @@
     "codeName" : "PickupViewpickupviewpanel",
     "name" : "pickupviewpanel"
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "TestModulePickupView",
   "viewType" : "DEPICKUPVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestModulePickupView.json",
   "name" : "TestModulePickupView",
   "getPSAppDERSPaths" : [ [ {
-    "getParentPSAppDEField" : {
-      "name" : "ROOT",
-      "codeName" : "Root"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    "getParentPSAppDEField" : {
+      "name" : "ROOT",
+      "codeName" : "Root"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "TestModules",
     "actionRSMode" : 1,
     "dataRSMode" : 0,

@@ -3,11 +3,11 @@
     "name" : "MDEPTID",
     "codeName" : "MdeptId"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "MDEPTNAME",
     "codeName" : "MDeptName"
   },
+  "masterOrder" : -1,
   "removeActionType" : 2,
   "pickupDEFName" : "MDEPTID",
   "masterRS" : 0,
@@ -17,12 +17,12 @@
     "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment.json"
   },
   "orderValue" : 100,
+  "codeName" : "MainDept",
+  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
   },
-  "codeName" : "MainDept",
-  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDERS/DER1N_IBZEMP_SYS_DEPT_MDEPTID.json",
   "name" : "DER1N_IBZEMP_SYS_DEPT_MDEPTID"
 }

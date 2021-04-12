@@ -6,25 +6,25 @@
   "showHeader" : true,
   "enableRowEditGroup" : false,
   "getPSDEListDataItems" : [ {
-    "dataType" : 25,
-    "name" : "realname"
+    "name" : "realname",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 25,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "REALNAME",
       "codeName" : "Realname"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   } ],
-  "controlType" : "LIST",
   "enableRowEdit" : false,
+  "controlType" : "LIST",
   "codeName" : "Welcome",
   "enableGroup" : false,
   "pagingSize" : 1000,

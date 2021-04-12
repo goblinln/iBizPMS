@@ -7,8 +7,8 @@
     "modelref" : true,
     "id" : "FetchAllList"
   },
-  "codeListType" : "DYNAMIC",
   "dynaInstMode" : 1,
+  "codeListType" : "DYNAMIC",
   "codeName" : "Product",
   "emptyText" : "未定义",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product.json",

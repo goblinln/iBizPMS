@@ -1,6 +1,6 @@
 {
-  "enableBackend" : false,
   "enableFront" : true,
+  "enableBackend" : false,
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"
@@ -27,9 +27,9 @@
         "modelref" : true,
         "id" : "Default"
       },
+      "srcFieldName" : "MAILTOPK",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "MAILTO",
-      "srcFieldName" : "MAILTOPK",
       "name" : "Default[MAILTOPK] ==> Default[MAILTO]"
     } ],
     "logicHolder" : 3,
@@ -50,9 +50,9 @@
     "name" : "连接7428"
   } ],
   "getPSDELogicParams" : [ {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

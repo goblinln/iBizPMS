@@ -3,11 +3,11 @@
     "name" : "PLAN",
     "codeName" : "Plan"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "PLANNAME",
     "codeName" : "Planname"
   },
+  "masterOrder" : -1,
   "removeActionType" : -1,
   "pickupDEFName" : "PLAN",
   "masterRS" : 0,
@@ -17,12 +17,12 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
   },
   "orderValue" : 100,
+  "codeName" : "ZTProductPlan",
+  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectProduct.json"
   },
-  "codeName" : "ZTProductPlan",
-  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProjectProduct/PSDERS/DER1N_ZT_PROJECTPRODUCT_ZT_PRODUCTPLAN_PLAN.json",
   "name" : "DER1N_ZT_PROJECTPRODUCT_ZT_PRODUCTPLAN_PLAN"
 }

@@ -1,6 +1,6 @@
 {
-  "enableBackend" : true,
   "enableFront" : false,
+  "enableBackend" : true,
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"
@@ -9,8 +9,8 @@
     "parallelOutput" : true,
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
-      "srcValueType" : "SESSION",
       "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION",
       "name" : "用户全局对象[srfloginname]"
     }, {
       "paramAction" : "SQLPARAM",
@@ -18,8 +18,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "ID",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[ID]"
     } ],
     "logicHolder" : 1,
@@ -50,16 +50,16 @@
     "name" : "连接141"
   } ],
   "getPSDELogicParams" : [ {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   }, {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "IbzFavorite",
     "default" : false,
     "name" : "取消收藏"

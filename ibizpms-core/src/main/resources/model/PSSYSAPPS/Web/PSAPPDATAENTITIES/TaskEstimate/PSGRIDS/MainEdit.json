@@ -4,66 +4,66 @@
       "name" : "WORK",
       "codeName" : "Work"
     },
-    "dataType" : 21,
-    "name" : "work"
+    "name" : "work",
+    "dataType" : 21
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "id"
+    "name" : "id",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "CONSUMED",
       "codeName" : "Consumed"
     },
-    "dataType" : 7,
-    "name" : "consumed"
+    "name" : "consumed",
+    "dataType" : 7
   }, {
-    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "DATES",
       "codeName" : "Dates"
     },
-    "dataType" : 5,
-    "name" : "dates"
+    "format" : "YYYY-MM-DD",
+    "name" : "dates",
+    "dataType" : 5
   }, {
     "getPSAppDEField" : {
       "name" : "TASK",
       "codeName" : "Task"
     },
-    "dataType" : 1,
-    "name" : "task"
+    "name" : "task",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "LEFT",
       "codeName" : "Left"
     },
-    "dataType" : 7,
-    "name" : "left"
+    "name" : "left",
+    "dataType" : 7
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 1
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   } ],
   "getRemovePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -79,8 +79,6 @@
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "singleSelect" : true,
-  "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : true,
@@ -119,17 +117,19 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : false,
+  "enableColFilter" : false,
+  "singleSelect" : true,
   "enablePagingBar" : false,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "ID",
-    "dataItemName" : "id",
-    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
+    "dataItemName" : "id",
+    "enableRowEdit" : true,
+    "excelCaption" : "ID",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -141,12 +141,12 @@
     "widthUnit" : "PX",
     "name" : "id"
   }, {
-    "excelCaption" : "日期",
-    "dataItemName" : "dates",
     "getPSAppDEField" : {
       "name" : "DATES",
       "codeName" : "Dates"
     },
+    "dataItemName" : "dates",
+    "excelCaption" : "日期",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -159,12 +159,12 @@
     "widthUnit" : "PX",
     "name" : "dates"
   }, {
-    "excelCaption" : "总计消耗",
-    "dataItemName" : "consumed",
     "getPSAppDEField" : {
       "name" : "CONSUMED",
       "codeName" : "Consumed"
     },
+    "dataItemName" : "consumed",
+    "excelCaption" : "总计消耗",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -176,12 +176,12 @@
     "widthUnit" : "PX",
     "name" : "consumed"
   }, {
-    "excelCaption" : "预计剩余",
-    "dataItemName" : "left",
     "getPSAppDEField" : {
       "name" : "LEFT",
       "codeName" : "Left"
     },
+    "dataItemName" : "left",
+    "excelCaption" : "预计剩余",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -193,12 +193,12 @@
     "widthUnit" : "PX",
     "name" : "left"
   }, {
-    "excelCaption" : "备注",
-    "dataItemName" : "work",
     "getPSAppDEField" : {
       "name" : "WORK",
       "codeName" : "Work"
     },
+    "dataItemName" : "work",
+    "excelCaption" : "备注",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -233,8 +233,8 @@
           "timeout" : 60000,
           "codeName" : "Edit",
           "caption" : "编辑",
-          "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
+          "actionTarget" : "SINGLEKEY",
           "uIActionTag" : "Edit",
           "uIActionType" : "DEUIACTION",
           "uIActionMode" : "FRONT",
@@ -243,8 +243,8 @@
           "id" : "Edit@TaskEstimate"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : false,
+        "detailType" : "DEUIACTION",
         "name" : "u68709de"
       }, {
         "showIcon" : true,
@@ -274,8 +274,8 @@
           "name" : "表格界面_删除操作"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : false,
+        "detailType" : "DEUIACTION",
         "name" : "u53c485b"
       } ],
       "name" : "操作列"

@@ -11,10 +11,10 @@
   "showCaptionBar" : true,
   "getPSDEViewCodeName" : "GridView",
   "funcViewMode" : "MDATAVIEW",
+  "enableDP" : true,
   "caption" : "组成员",
   "title" : "组成员表格视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -143,7 +143,6 @@
     },
     "name" : "toolbar_tbitem18"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
@@ -195,9 +194,9 @@
       "tooltip" : "新建",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "新建",
-      "showCaption" : true,
       "name" : "tbitem3"
     }, {
       "getPSAppViewUIAction" : {
@@ -244,9 +243,9 @@
       "tooltip" : "编辑",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "编辑",
-      "showCaption" : true,
       "name" : "tbitem4"
     }, {
       "getPSAppViewUIAction" : {
@@ -294,9 +293,9 @@
       "tooltip" : "拷贝",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "拷贝",
-      "showCaption" : true,
       "name" : "tbitem6"
     }, {
       "spanMode" : false,
@@ -348,9 +347,9 @@
       "tooltip" : "删除",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "删除",
-      "showCaption" : true,
       "name" : "tbitem8"
     }, {
       "spanMode" : false,
@@ -400,9 +399,9 @@
       "tooltip" : "导出",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "导出",
-      "showCaption" : true,
       "name" : "tbitem13"
     }, {
       "spanMode" : false,
@@ -445,9 +444,9 @@
         "tooltip" : "导出数据模型",
         "groupExtractMode" : "ITEM",
         "showIcon" : true,
+        "showCaption" : true,
         "itemType" : "DEUIACTION",
         "caption" : "导出数据模型",
-        "showCaption" : true,
         "name" : "tbitem21"
       }, {
         "getPSAppViewUIAction" : {
@@ -477,16 +476,16 @@
         "tooltip" : "数据导入",
         "groupExtractMode" : "ITEM",
         "showIcon" : true,
+        "showCaption" : true,
         "itemType" : "DEUIACTION",
         "caption" : "数据导入",
-        "showCaption" : true,
         "name" : "tbitem23"
       } ],
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "ITEMS",
       "caption" : "其它",
       "tooltip" : "其它",
-      "showCaption" : true,
       "name" : "tbitem16"
     }, {
       "spanMode" : false,
@@ -538,9 +537,9 @@
       "tooltip" : "过滤",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "过滤",
-      "showCaption" : true,
       "name" : "tbitem19"
     }, {
       "getPSAppViewUIAction" : {
@@ -586,9 +585,9 @@
       "tooltip" : "帮助",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "帮助",
-      "showCaption" : true,
       "name" : "tbitem18"
     } ],
     "getPSAppDataEntity" : {
@@ -609,58 +608,58 @@
         "name" : "POSTID",
         "codeName" : "PostId"
       },
-      "dataType" : 25,
-      "name" : "postid"
+      "name" : "postid",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "TEAMID",
         "codeName" : "TeamId"
       },
-      "dataType" : 25,
-      "name" : "teamid"
+      "name" : "teamid",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "TEAMNAME",
         "codeName" : "TeamName"
       },
-      "dataType" : 25,
-      "name" : "teamname"
+      "name" : "teamname",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "USERID",
         "codeName" : "UserId"
       },
-      "dataType" : 25,
-      "name" : "userid"
+      "name" : "userid",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "PERSONNAME",
         "codeName" : "PersonName"
       },
-      "dataType" : 25,
-      "name" : "personname"
+      "name" : "personname",
+      "dataType" : 25
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "TEAMMEMBERID",
         "codeName" : "TeamMemberId"
       },
-      "dataType" : 25,
-      "name" : "srfdataaccaction"
+      "name" : "srfdataaccaction",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "TEAMMEMBERID",
         "codeName" : "TeamMemberId"
       },
-      "dataType" : 25,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "TEAMMEMBERID",
         "codeName" : "TeamMemberId"
       },
-      "dataType" : 25,
-      "name" : "teammemberid"
+      "name" : "teammemberid",
+      "dataType" : 25
     } ],
     "getRemovePSControlAction" : {
       "getPSAppDataEntity" : {
@@ -676,8 +675,6 @@
       "actionType" : "DEACTION",
       "name" : "remove"
     },
-    "singleSelect" : false,
-    "enableColFilter" : false,
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : false,
@@ -699,16 +696,18 @@
     } ],
     "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "controlType" : "GRID",
-    "enableRowEdit" : false,
+    "enableColFilter" : false,
+    "singleSelect" : false,
     "enablePagingBar" : true,
+    "enableRowEdit" : false,
+    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
-      "excelCaption" : "组成员标识",
-      "dataItemName" : "teammemberid",
       "getPSAppDEField" : {
         "name" : "TEAMMEMBERID",
         "codeName" : "TeamMemberId"
       },
+      "dataItemName" : "teammemberid",
+      "excelCaption" : "组成员标识",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -720,12 +719,12 @@
       "widthUnit" : "PX",
       "name" : "teammemberid"
     }, {
-      "excelCaption" : "姓名",
-      "dataItemName" : "personname",
       "getPSAppDEField" : {
         "name" : "PERSONNAME",
         "codeName" : "PersonName"
       },
+      "dataItemName" : "personname",
+      "excelCaption" : "姓名",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -737,12 +736,12 @@
       "widthUnit" : "PX",
       "name" : "personname"
     }, {
-      "excelCaption" : "用户标识",
-      "dataItemName" : "userid",
       "getPSAppDEField" : {
         "name" : "USERID",
         "codeName" : "UserId"
       },
+      "dataItemName" : "userid",
+      "excelCaption" : "用户标识",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -761,12 +760,12 @@
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamMemberUsr2GridView.json",
         "viewType" : "DEGRIDVIEW"
       },
-      "excelCaption" : "组名称",
-      "dataItemName" : "teamname",
       "getPSAppDEField" : {
         "name" : "TEAMNAME",
         "codeName" : "TeamName"
       },
+      "dataItemName" : "teamname",
+      "excelCaption" : "组名称",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -778,12 +777,12 @@
       "widthUnit" : "PX",
       "name" : "teamname"
     }, {
-      "excelCaption" : "组标识",
-      "dataItemName" : "teamid",
       "getPSAppDEField" : {
         "name" : "TEAMID",
         "codeName" : "TeamId"
       },
+      "dataItemName" : "teamid",
+      "excelCaption" : "组标识",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -795,12 +794,12 @@
       "widthUnit" : "PX",
       "name" : "teamid"
     }, {
-      "excelCaption" : "岗位标识",
-      "dataItemName" : "postid",
       "getPSAppDEField" : {
         "name" : "POSTID",
         "codeName" : "PostId"
       },
+      "dataItemName" : "postid",
+      "excelCaption" : "岗位标识",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -921,10 +920,10 @@
     "name" : "grid",
     "modelid" : "6cc2420b1228bf3f08d6113a2cb29259"
   }, {
+    "searchButtonStyle" : "DEFAULT",
     "enableAdvanceSearch" : false,
     "enableAutoSearch" : false,
     "enableFilterSave" : false,
-    "searchButtonStyle" : "DEFAULT",
     "controlType" : "SEARCHFORM",
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
@@ -998,6 +997,7 @@
     "name" : "searchform",
     "modelid" : "daa31474fe92b3502712a2d1d418d99e"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -1161,7 +1161,6 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -1169,9 +1168,10 @@
           "viewType" : "DEEDITVIEW"
         }
       },
+      "enableWizardAdd" : false,
+      "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {

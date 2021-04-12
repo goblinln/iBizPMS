@@ -30,8 +30,8 @@
     "codeName" : "Closed",
     "text" : "由我取消"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "TASK_QuickacketMy",
   "emptyText" : "未定义",
   "enableCache" : true,

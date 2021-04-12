@@ -1,8 +1,6 @@
 {
-  "treeGridMode" : 0,
-  "enableRootSelect" : false,
-  "outputIconDefault" : false,
   "enableSearchDefault" : true,
+  "treeGridMode" : 0,
   "getPSDETreeNodeRSs" : [ {
     "getParentPSDETreeNode" : {
       "modelref" : true,
@@ -17,11 +15,11 @@
         "name" : "PARENT",
         "codeName" : "Parent"
       },
-      "masterOrder" : -1,
       "getPSPickupTextDEField" : {
         "name" : "PARENTNAME",
         "codeName" : "ParentName"
       },
+      "masterOrder" : -1,
       "removeActionType" : -1,
       "pickupDEFName" : "PARENT",
       "masterRS" : 0,
@@ -31,12 +29,12 @@
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
       },
       "orderValue" : 100,
+      "codeName" : "ParentModule",
+      "dERType" : "DER1N",
       "getMinorPSDataEntity" : {
         "modelref" : true,
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
       },
-      "codeName" : "ParentModule",
-      "dERType" : "DER1N",
       "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDERS/DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT.json",
       "name" : "DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT"
     },
@@ -61,11 +59,11 @@
         "name" : "PARENT",
         "codeName" : "Parent"
       },
-      "masterOrder" : -1,
       "getPSPickupTextDEField" : {
         "name" : "PARENTNAME",
         "codeName" : "ParentName"
       },
+      "masterOrder" : -1,
       "removeActionType" : -1,
       "pickupDEFName" : "PARENT",
       "masterRS" : 0,
@@ -75,12 +73,12 @@
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
       },
       "orderValue" : 100,
+      "codeName" : "ParentModule",
+      "dERType" : "DER1N",
       "getMinorPSDataEntity" : {
         "modelref" : true,
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
       },
-      "codeName" : "ParentModule",
-      "dERType" : "DER1N",
       "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDERS/DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT.json",
       "name" : "DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT"
     },
@@ -124,11 +122,11 @@
         "name" : "PARENT",
         "codeName" : "Parent"
       },
-      "masterOrder" : -1,
       "getPSPickupTextDEField" : {
         "name" : "PARENTNAME",
         "codeName" : "ParentName"
       },
+      "masterOrder" : -1,
       "removeActionType" : -1,
       "pickupDEFName" : "PARENT",
       "masterRS" : 0,
@@ -138,12 +136,12 @@
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
       },
       "orderValue" : 100,
+      "codeName" : "ParentModule",
+      "dERType" : "DER1N",
       "getMinorPSDataEntity" : {
         "modelref" : true,
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
       },
-      "codeName" : "ParentModule",
-      "dERType" : "DER1N",
       "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDERS/DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT.json",
       "name" : "DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT"
     },
@@ -168,11 +166,11 @@
         "name" : "PARENT",
         "codeName" : "Parent"
       },
-      "masterOrder" : -1,
       "getPSPickupTextDEField" : {
         "name" : "PARENTNAME",
         "codeName" : "ParentName"
       },
+      "masterOrder" : -1,
       "removeActionType" : -1,
       "pickupDEFName" : "PARENT",
       "masterRS" : 0,
@@ -182,12 +180,12 @@
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
       },
       "orderValue" : 100,
+      "codeName" : "ParentModule",
+      "dERType" : "DER1N",
       "getMinorPSDataEntity" : {
         "modelref" : true,
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
       },
-      "codeName" : "ParentModule",
-      "dERType" : "DER1N",
       "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDERS/DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT.json",
       "name" : "DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT"
     },
@@ -249,11 +247,11 @@
         "name" : "PARENT",
         "codeName" : "Parent"
       },
-      "masterOrder" : -1,
       "getPSPickupTextDEField" : {
         "name" : "PARENTNAME",
         "codeName" : "ParentName"
       },
+      "masterOrder" : -1,
       "removeActionType" : -1,
       "pickupDEFName" : "PARENT",
       "masterRS" : 0,
@@ -263,12 +261,12 @@
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
       },
       "orderValue" : 100,
+      "codeName" : "ParentModule",
+      "dERType" : "DER1N",
       "getMinorPSDataEntity" : {
         "modelref" : true,
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
       },
-      "codeName" : "ParentModule",
-      "dERType" : "DER1N",
       "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDERS/DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT.json",
       "name" : "DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT"
     },
@@ -293,11 +291,11 @@
         "name" : "PARENT",
         "codeName" : "Parent"
       },
-      "masterOrder" : -1,
       "getPSPickupTextDEField" : {
         "name" : "PARENTNAME",
         "codeName" : "ParentName"
       },
+      "masterOrder" : -1,
       "removeActionType" : -1,
       "pickupDEFName" : "PARENT",
       "masterRS" : 0,
@@ -307,12 +305,12 @@
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
       },
       "orderValue" : 100,
+      "codeName" : "ParentModule",
+      "dERType" : "DER1N",
       "getMinorPSDataEntity" : {
         "modelref" : true,
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
       },
-      "codeName" : "ParentModule",
-      "dERType" : "DER1N",
       "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDERS/DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT.json",
       "name" : "DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT"
     },
@@ -356,11 +354,11 @@
         "name" : "PARENT",
         "codeName" : "Parent"
       },
-      "masterOrder" : -1,
       "getPSPickupTextDEField" : {
         "name" : "PARENTNAME",
         "codeName" : "ParentName"
       },
+      "masterOrder" : -1,
       "removeActionType" : -1,
       "pickupDEFName" : "PARENT",
       "masterRS" : 0,
@@ -370,12 +368,12 @@
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
       },
       "orderValue" : 100,
+      "codeName" : "ParentModule",
+      "dERType" : "DER1N",
       "getMinorPSDataEntity" : {
         "modelref" : true,
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
       },
-      "codeName" : "ParentModule",
-      "dERType" : "DER1N",
       "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDERS/DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT.json",
       "name" : "DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT"
     },
@@ -417,28 +415,24 @@
     "searchMode" : 3,
     "name" : "项目产品（动态） - 产品根模块（动态）"
   } ],
+  "enableRootSelect" : false,
+  "outputIconDefault" : false,
   "controlType" : "TREEVIEW",
   "getPSDETreeNodes" : [ {
     "text" : "所有模块",
-    "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainGridView.json",
       "viewType" : "DEGRIDVIEW"
     },
-    "rootNode" : false,
-    "hasPSDETreeNodeRSs" : true,
+    "enableQuickCreate" : false,
     "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : true,
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
-    "getPSNavigateContexts" : [ {
-      "rawValue" : true,
-      "value" : "0",
-      "key" : "MODULE",
-      "name" : "MODULE"
-    } ],
-    "enableCheck" : false,
+    "rootNode" : false,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
@@ -448,6 +442,12 @@
       "value" : "0",
       "key" : "module",
       "name" : "module"
+    } ],
+    "getPSNavigateContexts" : [ {
+      "rawValue" : true,
+      "value" : "0",
+      "key" : "MODULE",
+      "name" : "MODULE"
     } ],
     "getPSDEContextMenu" : {
       "controlType" : "CONTEXTMENU",
@@ -479,9 +479,9 @@
         "tooltip" : "刷新",
         "groupExtractMode" : "ITEM",
         "showIcon" : true,
+        "showCaption" : true,
         "itemType" : "DEUIACTION",
         "caption" : "刷新",
-        "showCaption" : true,
         "name" : "deuiaction1"
       } ],
       "getPSAppDataEntity" : {
@@ -501,8 +501,8 @@
     "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "disableSelect" : false,
     "nodeType" : "ALL",
+    "disableSelect" : false,
     "enableQuickSearch" : true,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
@@ -519,23 +519,23 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
     },
-    "getPSAppDEDataSet" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
-    },
     "getTextPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
     "maxSize" : -1,
     "enableQuickCreate" : false,
-    "rootNode" : false,
-    "hasPSDETreeNodeRSs" : true,
     "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : true,
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : true,
-    "enableCheck" : false,
+    "rootNode" : false,
     "getPSDEContextMenu" : {
       "controlType" : "CONTEXTMENU",
       "getPSDEToolbarItems" : [ {
@@ -566,9 +566,9 @@
         "tooltip" : "刷新",
         "groupExtractMode" : "ITEM",
         "showIcon" : true,
+        "showCaption" : true,
         "itemType" : "DEUIACTION",
         "caption" : "刷新",
-        "showCaption" : true,
         "name" : "deuiaction1"
       } ],
       "getPSAppDataEntity" : {
@@ -588,8 +588,8 @@
     "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "disableSelect" : false,
     "nodeType" : "BRANCHS",
+    "disableSelect" : false,
     "enableQuickSearch" : true,
     "counterMode" : 0,
     "treeNodeType" : "DE",
@@ -601,50 +601,50 @@
       "name" : "PRODUCT",
       "codeName" : "Product"
     },
-    "appendCaption" : false,
     "getSortPSAppDEField" : {
       "name" : "PROJECT",
       "codeName" : "Project"
     },
+    "appendCaption" : false,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectProduct.json"
-    },
-    "getPSAppDEDataSet" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
     },
     "getTextPSAppDEField" : {
       "name" : "PRODUCTNAME",
       "codeName" : "ProductName"
     },
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
     "sortDir" : "ASC",
     "maxSize" : -1,
-    "enableQuickCreate" : false,
     "navFilter" : "n_product_eq",
     "getNavPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainGridView.json",
       "viewType" : "DEGRIDVIEW"
     },
-    "rootNode" : false,
-    "hasPSDETreeNodeRSs" : true,
+    "enableQuickCreate" : false,
     "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : true,
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : true,
-    "getPSNavigateContexts" : [ {
-      "rawValue" : true,
-      "value" : "0",
-      "key" : "MODULE",
-      "name" : "MODULE"
-    } ],
-    "enableCheck" : false,
+    "rootNode" : false,
     "getPSNavigateParams" : [ {
       "rawValue" : true,
       "value" : "0",
       "key" : "module",
       "name" : "module"
+    } ],
+    "getPSNavigateContexts" : [ {
+      "rawValue" : true,
+      "value" : "0",
+      "key" : "MODULE",
+      "name" : "MODULE"
     } ],
     "getPSDEContextMenu" : {
       "controlType" : "CONTEXTMENU",
@@ -676,9 +676,9 @@
         "tooltip" : "刷新",
         "groupExtractMode" : "ITEM",
         "showIcon" : true,
+        "showCaption" : true,
         "itemType" : "DEUIACTION",
         "caption" : "刷新",
-        "showCaption" : true,
         "name" : "deuiaction1"
       } ],
       "getPSAppDataEntity" : {
@@ -698,8 +698,8 @@
     "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "disableSelect" : false,
     "nodeType" : "ZT_PRODUCT",
+    "disableSelect" : false,
     "enableQuickSearch" : true,
     "counterMode" : 0,
     "treeNodeType" : "DE",
@@ -710,19 +710,19 @@
     "nodeValue" : "root",
     "text" : "默认根节点",
     "enableQuickCreate" : false,
-    "rootNode" : true,
-    "hasPSDETreeNodeRSs" : true,
     "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : true,
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
-    "enableCheck" : false,
+    "rootNode" : true,
     "enableNewData" : false,
     "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "disableSelect" : false,
     "nodeType" : "ROOT",
+    "disableSelect" : false,
     "enableQuickSearch" : true,
     "counterMode" : 0,
     "treeNodeType" : "STATIC",
@@ -734,36 +734,48 @@
       "name" : "ID",
       "codeName" : "Id"
     },
-    "appendCaption" : false,
     "getLeafFlagPSAppDEField" : {
       "name" : "ISLEAF",
       "codeName" : "IsLeaf"
     },
+    "appendCaption" : false,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
-    },
-    "getPSAppDEDataSet" : {
-      "modelref" : true,
-      "id" : "FetchRoot_Task"
     },
     "getTextPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchRoot_Task"
+    },
     "maxSize" : -1,
-    "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainGridView_ByModule.json",
       "viewType" : "DEGRIDVIEW"
     },
-    "rootNode" : false,
-    "hasPSDETreeNodeRSs" : true,
+    "enableQuickCreate" : false,
     "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : true,
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
+    "rootNode" : false,
+    "getPSNavigateParams" : [ {
+      "rawValue" : false,
+      "value" : "name",
+      "key" : "modulename",
+      "name" : "modulename"
+    }, {
+      "rawValue" : false,
+      "value" : "srfkey",
+      "key" : "module",
+      "name" : "module"
+    } ],
     "getPSNavigateContexts" : [ {
       "rawValue" : false,
       "value" : "srfkey",
@@ -779,18 +791,6 @@
       "value" : "name",
       "key" : "MODULENAME",
       "name" : "MODULENAME"
-    } ],
-    "enableCheck" : false,
-    "getPSNavigateParams" : [ {
-      "rawValue" : false,
-      "value" : "name",
-      "key" : "modulename",
-      "name" : "modulename"
-    }, {
-      "rawValue" : false,
-      "value" : "srfkey",
-      "key" : "module",
-      "name" : "module"
     } ],
     "getPSDEContextMenu" : {
       "controlType" : "CONTEXTMENU",
@@ -822,9 +822,9 @@
         "tooltip" : "刷新",
         "groupExtractMode" : "ITEM",
         "showIcon" : true,
+        "showCaption" : true,
         "itemType" : "DEUIACTION",
         "caption" : "刷新",
-        "showCaption" : true,
         "name" : "deuiaction1"
       } ],
       "getPSAppDataEntity" : {
@@ -844,8 +844,8 @@
     "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "disableSelect" : false,
     "nodeType" : "ProjectModule",
+    "disableSelect" : false,
     "enableQuickSearch" : true,
     "counterMode" : 0,
     "treeNodeType" : "DE",
@@ -857,36 +857,48 @@
       "name" : "ID",
       "codeName" : "Id"
     },
-    "appendCaption" : false,
     "getLeafFlagPSAppDEField" : {
       "name" : "ISLEAF",
       "codeName" : "IsLeaf"
     },
+    "appendCaption" : false,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
-    },
-    "getPSAppDEDataSet" : {
-      "modelref" : true,
-      "id" : "FetchRoot"
     },
     "getTextPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchRoot"
+    },
     "maxSize" : -1,
-    "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainGridView_ByModule.json",
       "viewType" : "DEGRIDVIEW"
     },
-    "rootNode" : false,
-    "hasPSDETreeNodeRSs" : true,
+    "enableQuickCreate" : false,
     "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : true,
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : true,
+    "rootNode" : false,
+    "getPSNavigateParams" : [ {
+      "rawValue" : false,
+      "value" : "name",
+      "key" : "modulename",
+      "name" : "modulename"
+    }, {
+      "rawValue" : false,
+      "value" : "srfkey",
+      "key" : "module",
+      "name" : "module"
+    } ],
     "getPSNavigateContexts" : [ {
       "rawValue" : false,
       "value" : "srfkey",
@@ -902,18 +914,6 @@
       "value" : "name",
       "key" : "MODULENAME",
       "name" : "MODULENAME"
-    } ],
-    "enableCheck" : false,
-    "getPSNavigateParams" : [ {
-      "rawValue" : false,
-      "value" : "name",
-      "key" : "modulename",
-      "name" : "modulename"
-    }, {
-      "rawValue" : false,
-      "value" : "srfkey",
-      "key" : "module",
-      "name" : "module"
     } ],
     "getPSDEContextMenu" : {
       "controlType" : "CONTEXTMENU",
@@ -945,9 +945,9 @@
         "tooltip" : "刷新",
         "groupExtractMode" : "ITEM",
         "showIcon" : true,
+        "showCaption" : true,
         "itemType" : "DEUIACTION",
         "caption" : "刷新",
-        "showCaption" : true,
         "name" : "deuiaction1"
       } ],
       "getPSAppDataEntity" : {
@@ -967,8 +967,8 @@
     "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "disableSelect" : false,
     "nodeType" : "ROOTMODULE",
+    "disableSelect" : false,
     "enableQuickSearch" : true,
     "counterMode" : 0,
     "treeNodeType" : "DE",
@@ -980,37 +980,37 @@
       "name" : "ID",
       "codeName" : "Id"
     },
-    "appendCaption" : false,
     "getLeafFlagPSAppDEField" : {
       "name" : "ISLEAF",
       "codeName" : "IsLeaf"
     },
+    "appendCaption" : false,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
-    },
-    "getPSAppDEDataSet" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
     },
     "getTextPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
     "maxSize" : -1,
-    "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainGridView_ByModule.json",
       "viewType" : "DEGRIDVIEW"
     },
-    "rootNode" : false,
-    "hasPSDETreeNodeRSs" : true,
+    "enableQuickCreate" : false,
     "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : true,
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
-    "enableCheck" : false,
+    "rootNode" : false,
     "getPSDEContextMenu" : {
       "controlType" : "CONTEXTMENU",
       "getPSDEToolbarItems" : [ {
@@ -1041,9 +1041,9 @@
         "tooltip" : "刷新",
         "groupExtractMode" : "ITEM",
         "showIcon" : true,
+        "showCaption" : true,
         "itemType" : "DEUIACTION",
         "caption" : "刷新",
-        "showCaption" : true,
         "name" : "deuiaction1"
       } ],
       "getPSAppDataEntity" : {
@@ -1063,8 +1063,8 @@
     "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "disableSelect" : false,
     "nodeType" : "productNotRoot",
+    "disableSelect" : false,
     "enableQuickSearch" : true,
     "counterMode" : 0,
     "treeNodeType" : "DE",
@@ -1076,36 +1076,48 @@
       "name" : "ID",
       "codeName" : "Id"
     },
-    "appendCaption" : false,
     "getLeafFlagPSAppDEField" : {
       "name" : "ISLEAF",
       "codeName" : "IsLeaf"
     },
+    "appendCaption" : false,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
-    },
-    "getPSAppDEDataSet" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
     },
     "getTextPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
     "maxSize" : -1,
-    "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainGridView_ByModule.json",
       "viewType" : "DEGRIDVIEW"
     },
-    "rootNode" : false,
-    "hasPSDETreeNodeRSs" : true,
+    "enableQuickCreate" : false,
     "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : true,
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : false,
+    "rootNode" : false,
+    "getPSNavigateParams" : [ {
+      "rawValue" : false,
+      "value" : "name",
+      "key" : "modulename",
+      "name" : "modulename"
+    }, {
+      "rawValue" : false,
+      "value" : "srfkey",
+      "key" : "module",
+      "name" : "module"
+    } ],
     "getPSNavigateContexts" : [ {
       "rawValue" : false,
       "value" : "srfkey",
@@ -1121,18 +1133,6 @@
       "value" : "name",
       "key" : "MODULENAME",
       "name" : "MODULENAME"
-    } ],
-    "enableCheck" : false,
-    "getPSNavigateParams" : [ {
-      "rawValue" : false,
-      "value" : "name",
-      "key" : "modulename",
-      "name" : "modulename"
-    }, {
-      "rawValue" : false,
-      "value" : "srfkey",
-      "key" : "module",
-      "name" : "module"
     } ],
     "getPSDEContextMenu" : {
       "controlType" : "CONTEXTMENU",
@@ -1164,9 +1164,9 @@
         "tooltip" : "刷新",
         "groupExtractMode" : "ITEM",
         "showIcon" : true,
+        "showCaption" : true,
         "itemType" : "DEUIACTION",
         "caption" : "刷新",
-        "showCaption" : true,
         "name" : "deuiaction1"
       } ],
       "getPSAppDataEntity" : {
@@ -1186,8 +1186,8 @@
     "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "disableSelect" : false,
     "nodeType" : "MODULE",
+    "disableSelect" : false,
     "enableQuickSearch" : true,
     "counterMode" : 0,
     "treeNodeType" : "DE",
@@ -1199,36 +1199,48 @@
       "name" : "ID",
       "codeName" : "Id"
     },
-    "appendCaption" : false,
     "getLeafFlagPSAppDEField" : {
       "name" : "ISLEAF",
       "codeName" : "IsLeaf"
     },
+    "appendCaption" : false,
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
-    },
-    "getPSAppDEDataSet" : {
-      "modelref" : true,
-      "id" : "FetchRoot_NoBranch"
     },
     "getTextPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchRoot_NoBranch"
+    },
     "maxSize" : -1,
-    "enableQuickCreate" : false,
     "getNavPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainGridView_ByModule.json",
       "viewType" : "DEGRIDVIEW"
     },
-    "rootNode" : false,
-    "hasPSDETreeNodeRSs" : true,
+    "enableQuickCreate" : false,
     "appendPNodeId" : false,
+    "enableCheck" : false,
+    "hasPSDETreeNodeRSs" : true,
     "selected" : false,
     "selectFirstOnly" : false,
     "expandFirstOnly" : true,
+    "rootNode" : false,
+    "getPSNavigateParams" : [ {
+      "rawValue" : false,
+      "value" : "name",
+      "key" : "modulename",
+      "name" : "modulename"
+    }, {
+      "rawValue" : false,
+      "value" : "srfkey",
+      "key" : "module",
+      "name" : "module"
+    } ],
     "getPSNavigateContexts" : [ {
       "rawValue" : false,
       "value" : "srfkey",
@@ -1244,18 +1256,6 @@
       "value" : "name",
       "key" : "MODULENAME",
       "name" : "MODULENAME"
-    } ],
-    "enableCheck" : false,
-    "getPSNavigateParams" : [ {
-      "rawValue" : false,
-      "value" : "name",
-      "key" : "modulename",
-      "name" : "modulename"
-    }, {
-      "rawValue" : false,
-      "value" : "srfkey",
-      "key" : "module",
-      "name" : "module"
     } ],
     "getPSDEContextMenu" : {
       "controlType" : "CONTEXTMENU",
@@ -1287,9 +1287,9 @@
         "tooltip" : "刷新",
         "groupExtractMode" : "ITEM",
         "showIcon" : true,
+        "showCaption" : true,
         "itemType" : "DEUIACTION",
         "caption" : "刷新",
-        "showCaption" : true,
         "name" : "deuiaction1"
       } ],
       "getPSAppDataEntity" : {
@@ -1309,8 +1309,8 @@
     "enableEditData" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "disableSelect" : false,
     "nodeType" : "Root_NoBranch",
+    "disableSelect" : false,
     "enableQuickSearch" : true,
     "counterMode" : 0,
     "treeNodeType" : "DE",
@@ -1427,9 +1427,9 @@
       "tooltip" : "刷新",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "刷新",
-      "showCaption" : true,
       "name" : "deuiaction1"
     } ],
     "getPSAppDataEntity" : {
@@ -1474,9 +1474,9 @@
       "tooltip" : "刷新",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "刷新",
-      "showCaption" : true,
       "name" : "deuiaction1"
     } ],
     "getPSAppDataEntity" : {
@@ -1521,9 +1521,9 @@
       "tooltip" : "刷新",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "刷新",
-      "showCaption" : true,
       "name" : "deuiaction1"
     } ],
     "getPSAppDataEntity" : {
@@ -1568,9 +1568,9 @@
       "tooltip" : "刷新",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "刷新",
-      "showCaption" : true,
       "name" : "deuiaction1"
     } ],
     "getPSAppDataEntity" : {
@@ -1615,9 +1615,9 @@
       "tooltip" : "刷新",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "刷新",
-      "showCaption" : true,
       "name" : "deuiaction1"
     } ],
     "getPSAppDataEntity" : {
@@ -1662,9 +1662,9 @@
       "tooltip" : "刷新",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "刷新",
-      "showCaption" : true,
       "name" : "deuiaction1"
     } ],
     "getPSAppDataEntity" : {
@@ -1709,9 +1709,9 @@
       "tooltip" : "刷新",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "刷新",
-      "showCaption" : true,
       "name" : "deuiaction1"
     } ],
     "getPSAppDataEntity" : {
@@ -1756,9 +1756,9 @@
       "tooltip" : "刷新",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "刷新",
-      "showCaption" : true,
       "name" : "deuiaction1"
     } ],
     "getPSAppDataEntity" : {

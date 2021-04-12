@@ -8,10 +8,10 @@
   "xDataControlName" : "grid",
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "GridView9",
+  "enableDP" : true,
   "caption" : "产品统计",
   "title" : "产品统计表格视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -40,7 +40,6 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
@@ -51,65 +50,65 @@
         "name" : "PRODUCTPLANCNT",
         "codeName" : "ProductPlanCnt"
       },
-      "dataType" : 9,
-      "name" : "productplancnt"
+      "name" : "productplancnt",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "ACTIVEBUGCNT",
         "codeName" : "ActiveBugCnt"
       },
-      "dataType" : 9,
-      "name" : "activebugcnt"
+      "name" : "activebugcnt",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "RELEASECNT",
         "codeName" : "ReleaseCnt"
       },
-      "dataType" : 9,
-      "name" : "releasecnt"
+      "name" : "releasecnt",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "ACTIVESTORYCNT",
         "codeName" : "ActiveStoryCnt"
       },
-      "dataType" : 9,
-      "name" : "activestorycnt"
+      "name" : "activestorycnt",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "CURRPROJECT",
         "codeName" : "Currproject"
       },
-      "dataType" : 25,
-      "name" : "currproject"
+      "name" : "currproject",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "dataType" : 25,
-      "name" : "name"
+      "name" : "name",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfdataaccaction"
+      "name" : "srfdataaccaction",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 1
     } ],
     "getRemovePSControlAction" : {
       "getPSAppDataEntity" : {
@@ -125,8 +124,6 @@
       "actionType" : "DEACTION",
       "name" : "remove"
     },
-    "singleSelect" : true,
-    "enableColFilter" : false,
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : false,
@@ -148,13 +145,15 @@
     } ],
     "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "controlType" : "GRID",
-    "enableRowEdit" : false,
+    "enableColFilter" : false,
+    "singleSelect" : true,
+    "enablePagingBar" : false,
     "getMinorSortPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "enablePagingBar" : false,
+    "enableRowEdit" : false,
+    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
       "linkValueItem" : "srfkey",
       "enableLinkView" : true,
@@ -163,12 +162,12 @@
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
         "viewType" : "DETABEXPVIEW"
       },
-      "excelCaption" : "产品名称",
-      "dataItemName" : "name",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
+      "dataItemName" : "name",
+      "excelCaption" : "产品名称",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -180,12 +179,12 @@
       "widthUnit" : "STAR",
       "name" : "name"
     }, {
-      "excelCaption" : "当前项目",
-      "dataItemName" : "currproject",
       "getPSAppDEField" : {
         "name" : "CURRPROJECT",
         "codeName" : "Currproject"
       },
+      "dataItemName" : "currproject",
+      "excelCaption" : "当前项目",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -197,12 +196,12 @@
       "widthUnit" : "PX",
       "name" : "currproject"
     }, {
-      "excelCaption" : "计划数",
-      "dataItemName" : "productplancnt",
       "getPSAppDEField" : {
         "name" : "PRODUCTPLANCNT",
         "codeName" : "ProductPlanCnt"
       },
+      "dataItemName" : "productplancnt",
+      "excelCaption" : "计划数",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -214,12 +213,12 @@
       "widthUnit" : "PX",
       "name" : "productplancnt"
     }, {
-      "excelCaption" : "发布数",
-      "dataItemName" : "releasecnt",
       "getPSAppDEField" : {
         "name" : "RELEASECNT",
         "codeName" : "ReleaseCnt"
       },
+      "dataItemName" : "releasecnt",
+      "excelCaption" : "发布数",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -231,12 +230,12 @@
       "widthUnit" : "PX",
       "name" : "releasecnt"
     }, {
-      "excelCaption" : "激活需求",
-      "dataItemName" : "activestorycnt",
       "getPSAppDEField" : {
         "name" : "ACTIVESTORYCNT",
         "codeName" : "ActiveStoryCnt"
       },
+      "dataItemName" : "activestorycnt",
+      "excelCaption" : "激活需求",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -248,12 +247,12 @@
       "widthUnit" : "PX",
       "name" : "activestorycnt"
     }, {
-      "excelCaption" : "未解决Bug",
-      "dataItemName" : "activebugcnt",
       "getPSAppDEField" : {
         "name" : "ACTIVEBUGCNT",
         "codeName" : "ActiveBugCnt"
       },
+      "dataItemName" : "activebugcnt",
+      "excelCaption" : "未解决Bug",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -375,6 +374,7 @@
     "name" : "grid",
     "modelid" : "9974287f03326c9cfd960a6eea571f2d"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -395,7 +395,6 @@
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -403,9 +402,10 @@
           "viewType" : "DEEDITVIEW"
         }
       },
+      "enableWizardAdd" : false,
+      "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {

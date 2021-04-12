@@ -4,86 +4,86 @@
       "name" : "SHORT",
       "codeName" : "IBizShort"
     },
-    "dataType" : 25,
-    "name" : "short"
+    "name" : "short",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ORDER",
       "codeName" : "Order"
     },
-    "dataType" : 9,
-    "name" : "order"
+    "name" : "order",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "ROOT",
       "codeName" : "Root"
     },
-    "dataType" : 1,
-    "name" : "root"
+    "name" : "root",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "BRANCH",
       "codeName" : "Branch"
     },
-    "dataType" : 9,
-    "name" : "branch_text"
+    "name" : "branch_text",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "name"
+    "name" : "name",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "OWNER",
       "codeName" : "Owner"
     },
-    "dataType" : 25,
-    "name" : "owner"
+    "name" : "owner",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "PARENT",
       "codeName" : "Parent"
     },
-    "dataType" : 1,
-    "name" : "parent"
+    "name" : "parent",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "BRANCH",
       "codeName" : "Branch"
     },
-    "dataType" : 9,
-    "name" : "branch"
+    "name" : "branch",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
     },
-    "dataType" : 25,
-    "name" : "type"
+    "name" : "type",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   } ],
   "getCreatePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -155,8 +155,6 @@
     "actionType" : "DEACTION",
     "name" : "loaddraft"
   },
-  "singleSelect" : true,
-  "enableColFilter" : false,
   "enableRowNew" : true,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -287,17 +285,19 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : true,
+  "enableColFilter" : false,
+  "singleSelect" : true,
   "enablePagingBar" : false,
+  "enableRowEdit" : true,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "名称",
-    "dataItemName" : "name",
-    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "dataItemName" : "name",
+    "enableRowEdit" : true,
+    "excelCaption" : "名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -309,17 +309,17 @@
     "widthUnit" : "PX",
     "name" : "name"
   }, {
-    "excelCaption" : "平台",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProductBranch_Cache.json"
     },
-    "dataItemName" : "branch_text",
-    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "BRANCH",
       "codeName" : "Branch"
     },
+    "dataItemName" : "branch_text",
+    "enableRowEdit" : true,
+    "excelCaption" : "平台",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -331,13 +331,13 @@
     "widthUnit" : "PX",
     "name" : "branch"
   }, {
-    "excelCaption" : "简称",
-    "dataItemName" : "short",
-    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "SHORT",
       "codeName" : "IBizShort"
     },
+    "dataItemName" : "short",
+    "enableRowEdit" : true,
+    "excelCaption" : "简称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -349,13 +349,13 @@
     "widthUnit" : "PX",
     "name" : "short"
   }, {
-    "excelCaption" : "排序值",
-    "dataItemName" : "order",
-    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "ORDER",
       "codeName" : "Order"
     },
+    "dataItemName" : "order",
+    "enableRowEdit" : true,
+    "excelCaption" : "排序值",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -396,8 +396,8 @@
           "name" : "表格界面_删除操作"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : false,
+        "detailType" : "DEUIACTION",
         "name" : "uf4ae6a1"
       } ],
       "name" : "行编辑默认操作列"

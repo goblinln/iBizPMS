@@ -60,8 +60,8 @@
     "codeName" : "More",
     "text" : "更多"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "Bug__quickpacket",
   "emptyText" : "未定义",
   "enableCache" : true,

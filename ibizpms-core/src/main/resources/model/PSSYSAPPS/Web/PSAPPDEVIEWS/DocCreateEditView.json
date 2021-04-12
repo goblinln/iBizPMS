@@ -3,11 +3,11 @@
   "showCaptionBar" : true,
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "CreateEditView",
+  "enableDP" : true,
   "caption" : "文档",
   "title" : "创建文档",
   "openMode" : "DRAWER_RIGHT",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -42,7 +42,6 @@
     },
     "name" : "toolbar_deuiaction1"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
@@ -92,9 +91,9 @@
       "tooltip" : "保存并关闭",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "保存并关闭",
-      "showCaption" : true,
       "name" : "deuiaction1"
     } ],
     "getPSAppDataEntity" : {
@@ -111,6 +110,8 @@
     "modelid" : "41ec2a0b8e2256c9eee112003a6acd60"
   }, {
     "enableAutoSave" : false,
+    "infoFormMode" : false,
+    "showFormNavBar" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -135,8 +136,6 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
-    "infoFormMode" : false,
-    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
@@ -156,15 +155,15 @@
           "name" : "LIB",
           "codeName" : "Lib"
         },
-        "dataType" : 1,
+        "showCaption" : true,
         "hidden" : true,
-        "allowEmpty" : true,
+        "dataType" : 1,
         "caption" : "所属文档库",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -176,14 +175,13 @@
       }, {
         "emptyCaption" : false,
         "getPSEditor" : {
+          "enableLinkView" : false,
           "singleSelect" : true,
           "dropDownView" : false,
           "enablePickupView" : false,
-          "enableLinkView" : false,
           "enableAC" : true,
           "forceSelection" : true,
           "showTrigger" : true,
-          "handlerType" : "PickupText",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
@@ -196,6 +194,7 @@
             "modelref" : true,
             "id" : "Default"
           },
+          "handlerType" : "PickupText",
           "valueItemName" : "lib",
           "editorType" : "PICKEREX_TRIGGER",
           "editorParams" : {
@@ -211,16 +210,16 @@
           "name" : "LIBNAME",
           "codeName" : "Libname"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : false,
+        "dataType" : 25,
         "caption" : "所属文档库",
+        "allowEmpty" : false,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "valueItemName" : "lib",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -241,15 +240,15 @@
           "name" : "MODULE",
           "codeName" : "Module"
         },
-        "dataType" : 1,
+        "showCaption" : true,
         "hidden" : true,
-        "allowEmpty" : true,
+        "dataType" : 1,
         "caption" : "所属分类",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -262,14 +261,13 @@
         "emptyCaption" : false,
         "resetItemNames" : [ "libname" ],
         "getPSEditor" : {
+          "enableLinkView" : false,
           "singleSelect" : true,
           "dropDownView" : false,
           "enablePickupView" : false,
-          "enableLinkView" : false,
           "enableAC" : true,
           "forceSelection" : true,
           "showTrigger" : true,
-          "handlerType" : "PickupText",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
@@ -282,18 +280,19 @@
             "modelref" : true,
             "id" : "Default"
           },
+          "handlerType" : "PickupText",
           "valueItemName" : "module",
-          "getPSNavigateContexts" : [ {
-            "rawValue" : false,
-            "value" : "lib",
-            "key" : "DOCLIB",
-            "name" : "DOCLIB"
-          } ],
           "getPSNavigateParams" : [ {
             "rawValue" : false,
             "value" : "lib",
             "key" : "doclib",
             "name" : "doclib"
+          } ],
+          "getPSNavigateContexts" : [ {
+            "rawValue" : false,
+            "value" : "lib",
+            "key" : "DOCLIB",
+            "name" : "DOCLIB"
           } ],
           "editorType" : "PICKEREX_TRIGGER",
           "editorParams" : {
@@ -311,17 +310,17 @@
           "name" : "MODULENAME",
           "codeName" : "Modulename"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : true,
+        "dataType" : 25,
         "caption" : "所属分类",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "resetItemName" : "libname",
         "valueItemName" : "module",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -343,15 +342,15 @@
           "name" : "TITLE",
           "codeName" : "Title"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : false,
+        "dataType" : 25,
         "caption" : "文档标题",
+        "allowEmpty" : false,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -373,15 +372,15 @@
           "name" : "KEYWORDS",
           "codeName" : "Keywords"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : true,
+        "dataType" : 25,
         "caption" : "关键字",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -406,17 +405,17 @@
           "name" : "TYPE",
           "codeName" : "Type"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 25,
         "needCodeListConfig" : true,
-        "allowEmpty" : true,
         "caption" : "文档类型",
+        "allowEmpty" : true,
         "createDV" : "text",
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -442,16 +441,16 @@
           "name" : "CONTENT",
           "codeName" : "Content"
         },
-        "dataType" : 21,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : true,
+        "dataType" : 21,
         "caption" : "文档正文",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "resetItemName" : "type",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSDEFDGroupLogics" : [ {
           "relatedDetailNames" : [ "type" ],
           "logicCat" : "PANELVISIBLE",
@@ -489,16 +488,16 @@
           "name" : "URL",
           "codeName" : "Url"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : true,
+        "dataType" : 25,
         "caption" : "文档链接",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "resetItemName" : "type",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSDEFDGroupLogics" : [ {
           "relatedDetailNames" : [ "type" ],
           "logicCat" : "PANELVISIBLE",
@@ -525,8 +524,8 @@
       }, {
         "emptyCaption" : false,
         "getPSEditor" : {
-          "minFileCount" : 0,
           "maxFileCount" : -1,
+          "minFileCount" : 0,
           "maxFileSize" : -1,
           "editorType" : "FILEUPLOADER",
           "editorParams" : {
@@ -545,15 +544,15 @@
           "name" : "FILES",
           "codeName" : "Files"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : true,
+        "dataType" : 25,
         "caption" : "附件",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -578,17 +577,17 @@
           "name" : "ACL",
           "codeName" : "Acl"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 25,
         "needCodeListConfig" : true,
-        "allowEmpty" : true,
         "caption" : "权限",
+        "allowEmpty" : true,
         "createDV" : "open",
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -832,6 +831,7 @@
     "name" : "form",
     "modelid" : "3f3a57b0398dc80870d8f72bb781d0d4"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",

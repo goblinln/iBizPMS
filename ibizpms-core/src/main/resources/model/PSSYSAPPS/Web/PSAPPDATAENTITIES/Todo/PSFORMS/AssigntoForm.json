@@ -1,5 +1,7 @@
 {
   "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -24,8 +26,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : false,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
@@ -57,16 +57,16 @@
           "name" : "ASSIGNEDTO",
           "codeName" : "AssignedTo"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 25,
         "needCodeListConfig" : true,
-        "allowEmpty" : false,
         "caption" : "指派给",
+        "allowEmpty" : false,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 24,
@@ -93,16 +93,16 @@
           "name" : "DATE",
           "codeName" : "Date"
         },
-        "dataType" : 5,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : true,
+        "dataType" : 5,
         "caption" : "日期",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
         "itemWidth" : 230.0,
-        "showCaption" : true,
         "getPSDEFDGroupLogics" : [ {
           "relatedDetailNames" : [ "future" ],
           "logicCat" : "ITEMENABLE",
@@ -139,8 +139,9 @@
         },
         "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
-        "dataType" : 25,
+        "showCaption" : false,
         "hidden" : false,
+        "dataType" : 25,
         "needCodeListConfig" : true,
         "allowEmpty" : true,
         "enableCond" : 3,
@@ -148,7 +149,6 @@
         "labelPos" : "NONE",
         "valueItemName" : "future",
         "labelWidth" : 0,
-        "showCaption" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 8,
@@ -175,16 +175,16 @@
           "name" : "BEGIN",
           "codeName" : "Begin"
         },
-        "dataType" : 9,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 9,
         "needCodeListConfig" : true,
-        "allowEmpty" : true,
         "caption" : "起止时间",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSDEFDGroupLogics" : [ {
           "relatedDetailNames" : [ "lbldisabledate" ],
           "logicCat" : "ITEMENABLE",
@@ -226,16 +226,16 @@
           "name" : "END",
           "codeName" : "End"
         },
-        "dataType" : 9,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 9,
         "needCodeListConfig" : true,
-        "allowEmpty" : true,
         "caption" : "~",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 10,
-        "showCaption" : true,
         "getPSDEFDGroupLogics" : [ {
           "relatedDetailNames" : [ "lbldisabledate" ],
           "logicCat" : "ITEMENABLE",
@@ -272,8 +272,9 @@
         },
         "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
-        "dataType" : 25,
+        "showCaption" : false,
         "hidden" : false,
+        "dataType" : 25,
         "needCodeListConfig" : true,
         "allowEmpty" : true,
         "enableCond" : 3,
@@ -281,7 +282,6 @@
         "labelPos" : "NONE",
         "valueItemName" : "lblDisableDate",
         "labelWidth" : 0,
-        "showCaption" : false,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 8,
@@ -296,11 +296,11 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : true,
       "codeName" : "group1",
       "caption" : "指派给",
       "detailType" : "GROUPPANEL",
       "detailStyle" : "DEFAULT",
-      "showCaption" : true,
       "name" : "group1"
     } ],
     "getPSLayout" : {

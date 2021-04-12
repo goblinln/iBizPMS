@@ -11,30 +11,30 @@
       "name" : "TASK",
       "codeName" : "Task"
     },
-    "dataType" : 1,
-    "name" : "task"
+    "name" : "task",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "CASE",
       "codeName" : "IBizCase"
     },
-    "dataType" : 1,
-    "name" : "case"
+    "name" : "case",
+    "dataType" : 1
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   } ],
   "getRemovePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -50,8 +50,6 @@
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "singleSelect" : false,
-  "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -73,8 +71,10 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "enableRowEdit" : false,
+  "enableColFilter" : false,
+  "singleSelect" : false,
   "enablePagingBar" : true,
+  "enableRowEdit" : false,
   "codeName" : "Main",
   "enableGroup" : false,
   "hideHeader" : false,

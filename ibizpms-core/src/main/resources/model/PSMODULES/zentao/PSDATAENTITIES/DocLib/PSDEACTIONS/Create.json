@@ -10,6 +10,7 @@
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTCreate"
   },
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "CREATE"
@@ -17,7 +18,6 @@
   "orderValue" : 1,
   "codeName" : "Create",
   "logicName" : "Create",
-  "extendMode" : 0,
   "actionMode" : "CREATE",
   "actionType" : "BUILTIN",
   "requestParamType" : "ENTITY",

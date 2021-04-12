@@ -10,6 +10,7 @@
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTCommon"
   },
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "CREATE"
@@ -17,7 +18,6 @@
   "orderValue" : 99999,
   "codeName" : "CreateEveryWeekReport",
   "logicName" : "定时生成每周周报",
-  "extendMode" : 0,
   "actionMode" : "CREATE",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",

@@ -1,905 +1,12 @@
 {
-  "enableUIRemove" : true,
-  "getAllPSAppDEUIActions" : [ {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-    },
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseBatchNewGridView.json",
-      "viewType" : "DEGRIDVIEW"
-    },
-    "frontProcessType" : "WIZARD",
-    "getNoPrivDisplayMode" : 2,
-    "getPSSysImage" : {
-      "glyph" : "xf067@FontAwesome",
-      "cssClass" : "fa fa-plus"
-    },
-    "timeout" : 60000,
-    "codeName" : "BatchNew",
-    "caption" : "批量新建用例",
-    "actionTarget" : "NONE",
-    "dataAccessAction" : "SRFUR__CASE_CREATE_BUT",
-    "uIActionTag" : "BatchNew",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "FRONT",
-    "fullCodeName" : "Case_BatchNew",
-    "name" : "批量新建用例",
-    "id" : "BatchNew@Case"
-  }, {
-    "getPSNavigateContexts" : [ {
-      "rawValue" : false,
-      "value" : "id",
-      "key" : "IDS",
-      "name" : "IDS"
-    }, {
-      "rawValue" : false,
-      "value" : "task",
-      "key" : "TASK",
-      "name" : "TASK"
-    }, {
-      "rawValue" : true,
-      "value" : "0",
-      "key" : "ID",
-      "name" : "ID"
-    }, {
-      "rawValue" : false,
-      "value" : "version",
-      "key" : "VERSIONS",
-      "name" : "VERSIONS"
-    } ],
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "LinkCase"
-    },
-    "getPSNavigateParams" : [ {
-      "rawValue" : true,
-      "value" : "0",
-      "key" : "id",
-      "name" : "id"
-    }, {
-      "rawValue" : false,
-      "value" : "version",
-      "key" : "versions",
-      "name" : "versions"
-    }, {
-      "rawValue" : false,
-      "value" : "id",
-      "key" : "ids",
-      "name" : "ids"
-    }, {
-      "rawValue" : false,
-      "value" : "task",
-      "key" : "task",
-      "name" : "task"
-    } ],
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getNoPrivDisplayMode" : 2,
-    "getPSSysImage" : {
-      "glyph" : "xf0c1@FontAwesome",
-      "cssClass" : "fa fa-link"
-    },
-    "timeout" : 60000,
-    "codeName" : "linkCase",
-    "caption" : "保存",
-    "actionTarget" : "MULTIKEY",
-    "reloadData" : true,
-    "dataAccessAction" : "SRFUR__CASE_UNLINK_BUT",
-    "closeEditView" : true,
-    "uIActionTag" : "linkCase",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "BACKEND",
-    "closePopupView" : true,
-    "fullCodeName" : "Case_linkCase",
-    "name" : "关联用例",
-    "id" : "linkCase@Case"
-  }, {
-    "getPSNavigateContexts" : [ {
-      "rawValue" : false,
-      "value" : "srfloginname",
-      "key" : "OPENEDBY",
-      "name" : "OPENEDBY"
-    }, {
-      "rawValue" : false,
-      "value" : "srfloginname",
-      "key" : "SRFLOGINNAME",
-      "name" : "SRFLOGINNAME"
-    } ],
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "CaseFavorite"
-    },
-    "getPSNavigateParams" : [ {
-      "rawValue" : false,
-      "value" : "srfloginname",
-      "key" : "srfloginname",
-      "name" : "srfloginname"
-    }, {
-      "rawValue" : false,
-      "value" : "srfloginname",
-      "key" : "openedby",
-      "name" : "openedby"
-    } ],
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getNoPrivDisplayMode" : 2,
-    "getPSSysImage" : {
-      "glyph" : "xf006@FontAwesome",
-      "cssClass" : "fa fa-star-o"
-    },
-    "timeout" : 60000,
-    "codeName" : "caseFavorite",
-    "caption" : "收藏",
-    "actionTarget" : "SINGLEKEY",
-    "reloadData" : true,
-    "dataAccessAction" : "SRFUR__CASE_NFAVOR_BUT",
-    "uIActionTag" : "caseFavorite",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "BACKEND",
-    "fullCodeName" : "Case_caseFavorite",
-    "name" : "收藏",
-    "id" : "caseFavorite@Case"
-  }, {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-    },
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseExcEditView.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "frontProcessType" : "WIZARD",
-    "getNoPrivDisplayMode" : 2,
-    "getPSSysImage" : {
-      "glyph" : "xf16c@FontAwesome",
-      "cssClass" : "fa fa-stack-overflow"
-    },
-    "timeout" : 60000,
-    "codeName" : "OpenTestRunResultViewCz",
-    "caption" : "结果",
-    "actionTarget" : "SINGLEKEY",
-    "dataAccessAction" : "SRFUR__CASE_RESULT_BUT",
-    "uIActionTag" : "OpenTestRunResultViewCz",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "FRONT",
-    "fullCodeName" : "Case_OpenTestRunResultViewCz",
-    "name" : "打开结果视图（操作栏）",
-    "id" : "OpenTestRunResultViewCz@Case"
-  }, {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-    },
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainEditView.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "frontProcessType" : "WIZARD",
-    "getNextPSUIAction" : {
-      "modelref" : true,
-      "id" : "Refresh"
-    },
-    "getNoPrivDisplayMode" : 2,
-    "timeout" : 60000,
-    "codeName" : "MainEditCz",
-    "caption" : "编辑",
-    "actionTarget" : "SINGLEKEY",
-    "dataAccessAction" : "SRFUR__CASE_EDIT_BUT",
-    "uIActionTag" : "MainEditCz",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "FRONT",
-    "fullCodeName" : "Case_MainEditCz",
-    "name" : "主信息编辑（操作栏）",
-    "id" : "MainEditCz@Case"
-  }, {
-    "getPSNavigateContexts" : [ {
-      "rawValue" : false,
-      "value" : "task",
-      "key" : "TASK",
-      "name" : "TASK"
-    } ],
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-    },
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseLinkCaseGridView.json",
-      "viewType" : "DEGRIDVIEW"
-    },
-    "getPSNavigateParams" : [ {
-      "rawValue" : false,
-      "value" : "task",
-      "key" : "task",
-      "name" : "task"
-    } ],
-    "frontProcessType" : "WIZARD",
-    "refreshMode" : 1,
-    "getNoPrivDisplayMode" : 2,
-    "getPSSysImage" : {
-      "glyph" : "xf0c1@FontAwesome",
-      "cssClass" : "fa fa-link"
-    },
-    "timeout" : 60000,
-    "codeName" : "LinkCaseC",
-    "caption" : "关联用例",
-    "actionTarget" : "NONE",
-    "reloadData" : true,
-    "dataAccessAction" : "SRFUR__CASE_UNLINK_BUT",
-    "uIActionTag" : "LinkCaseC",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "FRONT",
-    "fullCodeName" : "Case_LinkCaseC",
-    "name" : "关联用例（打开用例视图）",
-    "id" : "LinkCaseC@Case"
-  }, {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-    },
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseTestMainDashboardView.json",
-      "viewType" : "DEPORTALVIEW"
-    },
-    "frontProcessType" : "WIZARD",
-    "getNoPrivDisplayMode" : 2,
-    "timeout" : 60000,
-    "codeName" : "Edits",
-    "caption" : "概况",
-    "actionTarget" : "SINGLEKEY",
-    "uIActionTag" : "Edits",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "FRONT",
-    "fullCodeName" : "Case_Edits",
-    "name" : "概况",
-    "id" : "Edits@Case"
-  }, {
-    "getPSNavigateContexts" : [ {
-      "rawValue" : false,
-      "value" : "task",
-      "key" : "TASK",
-      "name" : "TASK"
-    } ],
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-    },
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseToBugTestEditView.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
-    "getPSNavigateParams" : [ {
-      "rawValue" : false,
-      "value" : "task",
-      "key" : "task",
-      "name" : "task"
-    } ],
-    "frontProcessType" : "WIZARD",
-    "getNoPrivDisplayMode" : 1,
-    "getPSSysImage" : {
-      "glyph" : "xf188@FontAwesome",
-      "cssClass" : "fa fa-bug"
-    },
-    "timeout" : 60000,
-    "codeName" : "NewBugByTestCaseResult",
-    "caption" : "转Bug",
-    "actionTarget" : "SINGLEKEY",
-    "dataAccessAction" : "SRFUR__CASE_TOBUG_BUT",
-    "closeEditView" : true,
-    "uIActionTag" : "NewBugByTestCaseResult",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "FRONT",
-    "closePopupView" : true,
-    "fullCodeName" : "Case_NewBugByTestCaseResult",
-    "name" : "转Bug（测试单）",
-    "id" : "NewBugByTestCaseResult@Case"
-  }, {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-    },
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseOptionView.json",
-      "viewType" : "DEOPTVIEW"
-    },
-    "frontProcessType" : "WIZARD",
-    "getNoPrivDisplayMode" : 2,
-    "getPSSysImage" : {
-      "glyph" : "xf01d@FontAwesome",
-      "cssClass" : "fa fa-play-circle-o"
-    },
-    "timeout" : 60000,
-    "codeName" : "ExecuteCz",
-    "caption" : "执行",
-    "actionTarget" : "SINGLEKEY",
-    "dataAccessAction" : "SRFUR__CASE_CASERUN_BUT",
-    "uIActionTag" : "ExecuteCz",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "FRONT",
-    "fullCodeName" : "Case_ExecuteCz",
-    "name" : "执行测试（操作栏）",
-    "id" : "ExecuteCz@Case"
-  }, {
-    "getPSNavigateContexts" : [ {
-      "rawValue" : false,
-      "value" : "id",
-      "key" : "IDS",
-      "name" : "IDS"
-    }, {
-      "rawValue" : true,
-      "value" : "0",
-      "key" : "ID",
-      "name" : "ID"
-    }, {
-      "rawValue" : false,
-      "value" : "suite",
-      "key" : "SUITE",
-      "name" : "SUITE"
-    }, {
-      "rawValue" : false,
-      "value" : "version",
-      "key" : "VERSIONS",
-      "name" : "VERSIONS"
-    } ],
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "TestsuitelinkCase"
-    },
-    "getPSNavigateParams" : [ {
-      "rawValue" : true,
-      "value" : "0",
-      "key" : "id",
-      "name" : "id"
-    }, {
-      "rawValue" : false,
-      "value" : "version",
-      "key" : "versions",
-      "name" : "versions"
-    }, {
-      "rawValue" : false,
-      "value" : "id",
-      "key" : "ids",
-      "name" : "ids"
-    }, {
-      "rawValue" : false,
-      "value" : "suite",
-      "key" : "suite",
-      "name" : "suite"
-    } ],
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getNoPrivDisplayMode" : 2,
-    "getPSSysImage" : {
-      "glyph" : "xf0c1@FontAwesome",
-      "cssClass" : "fa fa-link"
-    },
-    "timeout" : 60000,
-    "codeName" : "suitelinkCase",
-    "caption" : "保存",
-    "actionTarget" : "MULTIKEY",
-    "reloadData" : true,
-    "dataAccessAction" : "SRFUR__TESTSU_LINKCASE_BUT",
-    "closeEditView" : true,
-    "uIActionTag" : "suitelinkCase",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "BACKEND",
-    "closePopupView" : true,
-    "fullCodeName" : "Case_suitelinkCase",
-    "name" : "套件关联用例",
-    "id" : "suitelinkCase@Case"
-  }, {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "CaseNFavorite"
-    },
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getNoPrivDisplayMode" : 2,
-    "getPSSysImage" : {
-      "glyph" : "xf005@FontAwesome",
-      "cssClass" : "fa fa-star"
-    },
-    "timeout" : 60000,
-    "codeName" : "CaseNFavorite",
-    "caption" : "取消收藏",
-    "actionTarget" : "SINGLEKEY",
-    "reloadData" : true,
-    "dataAccessAction" : "SRFUR__CASE_FAVOR_BUT",
-    "uIActionTag" : "CaseNFavorite",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "BACKEND",
-    "fullCodeName" : "Case_CaseNFavorite",
-    "name" : "取消收藏",
-    "id" : "CaseNFavorite@Case"
-  }, {
-    "getPSNavigateContexts" : [ {
-      "rawValue" : false,
-      "value" : "task",
-      "key" : "TASK",
-      "name" : "TASK"
-    } ],
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-    },
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseTestTaskExcEditView.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "getPSNavigateParams" : [ {
-      "rawValue" : false,
-      "value" : "task",
-      "key" : "task",
-      "name" : "task"
-    } ],
-    "frontProcessType" : "WIZARD",
-    "getNoPrivDisplayMode" : 1,
-    "getPSSysImage" : {
-      "glyph" : "xf16c@FontAwesome",
-      "cssClass" : "fa fa-stack-overflow"
-    },
-    "timeout" : 60000,
-    "codeName" : "CASEOpenTestRunResultView",
-    "caption" : "结果",
-    "actionTarget" : "SINGLEKEY",
-    "dataAccessAction" : "SRFUR__CASE_CASERESULT_BUT",
-    "uIActionTag" : "CASEOpenTestRunResultView",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "FRONT",
-    "fullCodeName" : "Case_CASEOpenTestRunResultView",
-    "name" : "打开结果视图（测试单）",
-    "id" : "CASEOpenTestRunResultView@Case"
-  }, {
-    "getPSNavigateContexts" : [ {
-      "rawValue" : false,
-      "value" : "task",
-      "key" : "TASK",
-      "name" : "TASK"
-    } ],
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "UnlinkCases"
-    },
-    "getPSNavigateParams" : [ {
-      "rawValue" : false,
-      "value" : "task",
-      "key" : "task",
-      "name" : "task"
-    } ],
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getNoPrivDisplayMode" : 1,
-    "getPSSysImage" : {
-      "glyph" : "xf127@FontAwesome",
-      "cssClass" : "fa fa-unlink"
-    },
-    "timeout" : 60000,
-    "codeName" : "unlinkCase",
-    "caption" : "移除",
-    "actionTarget" : "SINGLEKEY",
-    "reloadData" : true,
-    "dataAccessAction" : "SRFUR__CASE_UNLINK_BUT",
-    "uIActionTag" : "unlinkCase",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "BACKEND",
-    "fullCodeName" : "Case_unlinkCase",
-    "name" : "移除",
-    "id" : "unlinkCase@Case"
-  }, {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-    },
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseExcEditView.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "frontProcessType" : "WIZARD",
-    "getNoPrivDisplayMode" : 1,
-    "getPSSysImage" : {
-      "glyph" : "xf16c@FontAwesome",
-      "cssClass" : "fa fa-stack-overflow"
-    },
-    "timeout" : 60000,
-    "codeName" : "OpenTestRunResultView",
-    "caption" : "结果",
-    "actionTarget" : "SINGLEKEY",
-    "dataAccessAction" : "SRFUR__CASE_RESULT_BUT",
-    "uIActionTag" : "OpenTestRunResultView",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "FRONT",
-    "fullCodeName" : "Case_OpenTestRunResultView",
-    "name" : "打开结果视图",
-    "id" : "OpenTestRunResultView@Case"
-  }, {
-    "getPSNavigateContexts" : [ {
-      "rawValue" : false,
-      "value" : "suite",
-      "key" : "SUITE",
-      "name" : "SUITE"
-    } ],
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "UnlinkSuiteCases"
-    },
-    "getPSNavigateParams" : [ {
-      "rawValue" : false,
-      "value" : "suite",
-      "key" : "suite",
-      "name" : "suite"
-    } ],
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getNoPrivDisplayMode" : 1,
-    "getPSSysImage" : {
-      "glyph" : "xf127@FontAwesome",
-      "cssClass" : "fa fa-unlink"
-    },
-    "timeout" : 60000,
-    "codeName" : "unlinkSuiteCase",
-    "caption" : "移除",
-    "actionTarget" : "SINGLEKEY",
-    "reloadData" : true,
-    "dataAccessAction" : "SRFUR__CASE_UNLINK_BUT",
-    "uIActionTag" : "unlinkSuiteCase",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "BACKEND",
-    "fullCodeName" : "Case_unlinkSuiteCase",
-    "name" : "移除套件用例",
-    "id" : "unlinkSuiteCase@Case"
-  }, {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Confirmstorychange"
-    },
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getNoPrivDisplayMode" : 1,
-    "getPSSysImage" : {
-      "glyph" : "xf046@FontAwesome",
-      "cssClass" : "fa fa-check-square-o"
-    },
-    "timeout" : 60000,
-    "codeName" : "confirmstorychange",
-    "caption" : "确认",
-    "actionTarget" : "SINGLEKEY",
-    "reloadData" : true,
-    "dataAccessAction" : "SRFUR__CASE_CONFIRM_BUT",
-    "uIActionTag" : "confirmstorychange",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "BACKEND",
-    "fullCodeName" : "Case_confirmstorychange",
-    "name" : "确认",
-    "id" : "confirmstorychange@Case"
-  }, {
-    "getPSNavigateContexts" : [ {
-      "rawValue" : false,
-      "value" : "task",
-      "key" : "TASK",
-      "name" : "TASK"
-    } ],
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "ConfirmChange"
-    },
-    "getPSNavigateParams" : [ {
-      "rawValue" : false,
-      "value" : "task",
-      "key" : "task",
-      "name" : "task"
-    } ],
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getNoPrivDisplayMode" : 1,
-    "getPSSysImage" : {
-      "glyph" : "xf046@FontAwesome",
-      "cssClass" : "fa fa-check-square-o"
-    },
-    "timeout" : 60000,
-    "codeName" : "confirmChange",
-    "caption" : "确认用例变动",
-    "actionTarget" : "SINGLEKEY",
-    "reloadData" : true,
-    "dataAccessAction" : "SRFUR__CASE_CASECOF_BUT",
-    "uIActionTag" : "confirmChange",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "BACKEND",
-    "fullCodeName" : "Case_confirmChange",
-    "name" : "确认用例变动",
-    "id" : "confirmChange@Case"
-  }, {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-    },
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainEditView.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "frontProcessType" : "WIZARD",
-    "getNextPSUIAction" : {
-      "modelref" : true,
-      "id" : "Refresh"
-    },
-    "getNoPrivDisplayMode" : 1,
-    "getPSSysImage" : {
-      "glyph" : "xf044@FontAwesome",
-      "cssClass" : "fa fa-edit"
-    },
-    "timeout" : 60000,
-    "codeName" : "MainEdit",
-    "caption" : "编辑",
-    "actionTarget" : "SINGLEKEY",
-    "dataAccessAction" : "SRFUR__CASE_EDIT_BUT",
-    "uIActionTag" : "MainEdit",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "FRONT",
-    "fullCodeName" : "Case_MainEdit",
-    "name" : "主信息编辑",
-    "id" : "MainEdit@Case"
-  }, {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-    },
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseToBugEditView.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
-    "frontProcessType" : "WIZARD",
-    "getNoPrivDisplayMode" : 2,
-    "getPSSysImage" : {
-      "glyph" : "xf188@FontAwesome",
-      "cssClass" : "fa fa-bug"
-    },
-    "timeout" : 60000,
-    "codeName" : "NewBugByCaseResultCz",
-    "caption" : "转Bug",
-    "actionTarget" : "SINGLEKEY",
-    "dataAccessAction" : "SRFUR__CASE_TOBUG_BUT",
-    "uIActionTag" : "NewBugByCaseResultCz",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "FRONT",
-    "fullCodeName" : "Case_NewBugByCaseResultCz",
-    "name" : "转Bug（操作栏）",
-    "id" : "NewBugByCaseResultCz@Case"
-  }, {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-    },
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainNewView.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "frontProcessType" : "WIZARD",
-    "refreshMode" : 1,
-    "getNoPrivDisplayMode" : 2,
-    "getPSSysImage" : {
-      "glyph" : "xf067@FontAwesome",
-      "cssClass" : "fa fa-plus"
-    },
-    "timeout" : 60000,
-    "codeName" : "Create",
-    "caption" : "新建",
-    "actionTarget" : "NONE",
-    "reloadData" : true,
-    "dataAccessAction" : "SRFUR__CASE_CREATE_BUT",
-    "uIActionTag" : "Create",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "FRONT",
-    "fullCodeName" : "Case_Create",
-    "name" : "新建",
-    "id" : "Create@Case"
-  }, {
-    "getPSNavigateContexts" : [ {
-      "rawValue" : false,
-      "value" : "task",
-      "key" : "TASK",
-      "name" : "TASK"
-    } ],
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-    },
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseTestOptionView.json",
-      "viewType" : "DEOPTVIEW"
-    },
-    "getPSNavigateParams" : [ {
-      "rawValue" : false,
-      "value" : "task",
-      "key" : "task",
-      "name" : "task"
-    } ],
-    "frontProcessType" : "WIZARD",
-    "getNoPrivDisplayMode" : 1,
-    "getPSSysImage" : {
-      "glyph" : "xf01d@FontAwesome",
-      "cssClass" : "fa fa-play-circle-o"
-    },
-    "timeout" : 60000,
-    "codeName" : "CaseExecute",
-    "caption" : "执行",
-    "actionTarget" : "SINGLEKEY",
-    "dataAccessAction" : "SRFUR__CASE_CASERUN_BUT",
-    "uIActionTag" : "CaseExecute",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "FRONT",
-    "fullCodeName" : "Case_CaseExecute",
-    "name" : "执行测试（测试单）",
-    "id" : "CaseExecute@Case"
-  }, {
-    "getPSNavigateContexts" : [ {
-      "rawValue" : false,
-      "value" : "task",
-      "key" : "TASK",
-      "name" : "TASK"
-    } ],
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-    },
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseToBugEditView.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
-    "getPSNavigateParams" : [ {
-      "rawValue" : false,
-      "value" : "task",
-      "key" : "task",
-      "name" : "task"
-    } ],
-    "frontProcessType" : "WIZARD",
-    "getNoPrivDisplayMode" : 1,
-    "getPSSysImage" : {
-      "glyph" : "xf188@FontAwesome",
-      "cssClass" : "fa fa-bug"
-    },
-    "timeout" : 60000,
-    "codeName" : "NewBugByCaseResult",
-    "caption" : "转Bug",
-    "actionTarget" : "SINGLEKEY",
-    "dataAccessAction" : "SRFUR__CASE_TOBUG_BUT",
-    "closeEditView" : true,
-    "uIActionTag" : "NewBugByCaseResult",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "FRONT",
-    "closePopupView" : true,
-    "fullCodeName" : "Case_NewBugByCaseResult",
-    "name" : "转Bug",
-    "id" : "NewBugByCaseResult@Case"
-  }, {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-    },
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseOptionView.json",
-      "viewType" : "DEOPTVIEW"
-    },
-    "frontProcessType" : "WIZARD",
-    "getNoPrivDisplayMode" : 1,
-    "getPSSysImage" : {
-      "glyph" : "xf01d@FontAwesome",
-      "cssClass" : "fa fa-play-circle-o"
-    },
-    "timeout" : 60000,
-    "codeName" : "Execute",
-    "caption" : "执行",
-    "actionTarget" : "SINGLEKEY",
-    "dataAccessAction" : "SRFUR__CASE_CASERUN_BUT",
-    "uIActionTag" : "Execute",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "FRONT",
-    "fullCodeName" : "Case_Execute",
-    "name" : "执行测试",
-    "id" : "Execute@Case"
-  }, {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getNoPrivDisplayMode" : 2,
-    "getPSSysImage" : {
-      "glyph" : "xf00d@FontAwesome",
-      "cssClass" : "fa fa-remove"
-    },
-    "timeout" : 60000,
-    "codeName" : "deleteCz",
-    "caption" : "删除",
-    "actionTarget" : "SINGLEKEY",
-    "reloadData" : true,
-    "dataAccessAction" : "SRFUR__CASE_DELETE_BUT",
-    "closeEditView" : true,
-    "uIActionTag" : "deleteCz",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "BACKEND",
-    "closePopupView" : true,
-    "successMsg" : "已删除",
-    "confirmMsg" : "确认要删除，删除操作将不可恢复？",
-    "fullCodeName" : "Case_deleteCz",
-    "name" : "删除（操作栏）",
-    "id" : "deleteCz@Case"
-  } ],
-  "getAllPSAppPortletCats" : [ {
-    "ungroup" : true,
-    "codeName" : "Ungroup",
-    "name" : "（未分类）"
-  } ],
   "getAllPSDEMainStates" : [ {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "blocked",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -960,13 +67,13 @@
     "stateValue" : "blocked",
     "name" : "被阻塞_阻塞_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "blocked",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -1027,13 +134,13 @@
     "stateValue" : "blocked",
     "name" : "被阻塞_阻塞_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "fail",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -1082,13 +189,13 @@
     "stateValue" : "blocked",
     "name" : "被阻塞_失败_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "fail",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -1137,13 +244,13 @@
     "stateValue" : "blocked",
     "name" : "被阻塞_失败_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "n/a",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -1204,13 +311,13 @@
     "stateValue" : "blocked",
     "name" : "被阻塞_忽略_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "n/a",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -1271,13 +378,13 @@
     "stateValue" : "blocked",
     "name" : "被阻塞_忽略_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "no",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -1338,13 +445,13 @@
     "stateValue" : "blocked",
     "name" : "被阻塞_未执行_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "no",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -1405,13 +512,13 @@
     "stateValue" : "blocked",
     "name" : "被阻塞_未执行_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "pass",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -1472,13 +579,13 @@
     "stateValue" : "blocked",
     "name" : "被阻塞_通过_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "pass",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -1539,13 +646,13 @@
     "stateValue" : "blocked",
     "name" : "被阻塞_通过_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "blocked",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -1690,13 +797,13 @@
     "stateValue" : "casechange",
     "name" : "原用例更新_阻塞_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "blocked",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -1841,13 +948,13 @@
     "stateValue" : "casechange",
     "name" : "原用例更新_阻塞_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "fail",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -1980,13 +1087,13 @@
     "stateValue" : "casechange",
     "name" : "原用例更新_失败_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "fail",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -2119,13 +1226,13 @@
     "stateValue" : "casechange",
     "name" : "原用例更新_失败_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "n/a",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -2258,13 +1365,13 @@
     "stateValue" : "casechange",
     "name" : "原用例更新_忽略_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "n/a",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -2397,13 +1504,13 @@
     "stateValue" : "casechange",
     "name" : "原用例更新_忽略_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "no",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -2548,13 +1655,13 @@
     "stateValue" : "casechange",
     "name" : "原用例更新_未执行_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "no",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -2699,13 +1806,13 @@
     "stateValue" : "casechange",
     "name" : "原用例更新_未执行_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "pass",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -2838,13 +1945,13 @@
     "stateValue" : "casechange",
     "name" : "原用例更新_通过_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "pass",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -2977,13 +2084,13 @@
     "stateValue" : "casechange",
     "name" : "原用例更新_通过_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "blocked",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -3044,13 +2151,13 @@
     "stateValue" : "done",
     "name" : "已完成_阻塞_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "blocked",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -3111,13 +2218,13 @@
     "stateValue" : "done",
     "name" : "已完成_阻塞_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "fail",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -3166,13 +2273,13 @@
     "stateValue" : "done",
     "name" : "已完成_失败_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "fail",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -3221,13 +2328,13 @@
     "stateValue" : "done",
     "name" : "已完成_失败_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "n/a",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -3288,13 +2395,13 @@
     "stateValue" : "done",
     "name" : "已完成_忽略_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "n/a",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -3355,13 +2462,13 @@
     "stateValue" : "done",
     "name" : "已完成_忽略_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "no",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -3422,13 +2529,13 @@
     "stateValue" : "done",
     "name" : "已完成_未执行_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "no",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -3489,13 +2596,13 @@
     "stateValue" : "done",
     "name" : "已完成_未执行_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "pass",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -3556,13 +2663,13 @@
     "stateValue" : "done",
     "name" : "已完成_通过_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "pass",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -3623,13 +2730,13 @@
     "stateValue" : "done",
     "name" : "已完成_通过_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : true,
     "enableViewActions" : false,
     "state2Value" : "blocked",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -3690,13 +2797,13 @@
     "stateValue" : "investigate",
     "name" : "研究中_阻塞_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : true,
     "enableViewActions" : false,
     "state2Value" : "blocked",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -3757,13 +2864,13 @@
     "stateValue" : "investigate",
     "name" : "研究中_阻塞_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "fail",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -3812,13 +2919,13 @@
     "stateValue" : "investigate",
     "name" : "研究中_失败_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "fail",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -3867,13 +2974,13 @@
     "stateValue" : "investigate",
     "name" : "研究中_失败_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "n/a",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -3934,13 +3041,13 @@
     "stateValue" : "investigate",
     "name" : "研究中_忽略_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "n/a",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -4001,13 +3108,13 @@
     "stateValue" : "investigate",
     "name" : "研究中_忽略_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "no",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -4068,13 +3175,13 @@
     "stateValue" : "investigate",
     "name" : "研究中_未执行_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "no",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -4135,13 +3242,13 @@
     "stateValue" : "investigate",
     "name" : "研究中_未执行_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "pass",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -4202,13 +3309,13 @@
     "stateValue" : "investigate",
     "name" : "研究中_通过_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "pass",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -4269,13 +3376,13 @@
     "stateValue" : "investigate",
     "name" : "研究中_通过_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "blocked",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -4336,13 +3443,13 @@
     "stateValue" : "normal",
     "name" : "正常_阻塞_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "blocked",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -4403,13 +3510,13 @@
     "stateValue" : "normal",
     "name" : "正常_阻塞_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "fail",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -4458,13 +3565,13 @@
     "stateValue" : "normal",
     "name" : "正常_失败_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "fail",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -4513,13 +3620,13 @@
     "stateValue" : "normal",
     "name" : "正常_失败_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "n/a",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -4580,13 +3687,13 @@
     "stateValue" : "normal",
     "name" : "正常_忽略_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "n/a",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -4647,13 +3754,13 @@
     "stateValue" : "normal",
     "name" : "正常_忽略_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "no",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -4714,13 +3821,13 @@
     "stateValue" : "normal",
     "name" : "正常_未执行_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "no",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -4781,13 +3888,13 @@
     "stateValue" : "normal",
     "name" : "正常_未执行_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "pass",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -4848,13 +3955,13 @@
     "stateValue" : "normal",
     "name" : "正常_通过_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "pass",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -4915,13 +4022,13 @@
     "stateValue" : "normal",
     "name" : "正常_通过_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "blocked",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -5054,13 +4161,13 @@
     "stateValue" : "storychange",
     "name" : "需求变更_阻塞_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "blocked",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -5193,13 +4300,13 @@
     "stateValue" : "storychange",
     "name" : "需求变更_阻塞_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "fail",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -5344,13 +4451,13 @@
     "stateValue" : "storychange",
     "name" : "需求变更_失败_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "fail",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -5483,13 +4590,13 @@
     "stateValue" : "storychange",
     "name" : "需求变更_失败_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "n/a",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -5622,13 +4729,13 @@
     "stateValue" : "storychange",
     "name" : "需求变更_忽略_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "n/a",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -5761,13 +4868,13 @@
     "stateValue" : "storychange",
     "name" : "需求变更_忽略_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "no",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -5900,13 +5007,13 @@
     "stateValue" : "storychange",
     "name" : "需求变更_未执行_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "no",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -6039,13 +5146,13 @@
     "stateValue" : "storychange",
     "name" : "需求变更_未执行_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "pass",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -6178,13 +5285,13 @@
     "stateValue" : "storychange",
     "name" : "需求变更_通过_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "pass",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -6317,13 +5424,13 @@
     "stateValue" : "storychange",
     "name" : "需求变更_通过_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "blocked",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -6384,13 +5491,13 @@
     "stateValue" : "wait",
     "name" : "未开始_阻塞_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "blocked",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -6451,13 +5558,13 @@
     "stateValue" : "wait",
     "name" : "未开始_阻塞_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "fail",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -6506,13 +5613,13 @@
     "stateValue" : "wait",
     "name" : "未开始_失败_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "fail",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -6561,13 +5668,13 @@
     "stateValue" : "wait",
     "name" : "未开始_失败_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "n/a",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -6628,13 +5735,13 @@
     "stateValue" : "wait",
     "name" : "未开始_忽略_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "n/a",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -6695,13 +5802,13 @@
     "stateValue" : "wait",
     "name" : "未开始_忽略_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "no",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -6762,13 +5869,13 @@
     "stateValue" : "wait",
     "name" : "未开始_未执行_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "no",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -6829,13 +5936,13 @@
     "stateValue" : "wait",
     "name" : "未开始_未执行_已收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "pass",
     "state3Value" : "0",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -6896,13 +6003,13 @@
     "stateValue" : "wait",
     "name" : "未开始_通过_未收藏"
   }, {
-    "actionAllowMode" : true,
+    "allowMode" : true,
     "oPPrivAllowMode" : false,
     "enableViewActions" : false,
     "state2Value" : "pass",
     "state3Value" : "1",
     "fieldAllowMode" : false,
-    "allowMode" : true,
+    "actionAllowMode" : true,
     "getPSDEMainStateOPPrivs" : [ {
       "getPSDEOPPriv" : {
         "getMapPSSysUniRes" : {
@@ -6964,12 +6071,906 @@
     "name" : "未开始_通过_已收藏"
   } ],
   "enableUIActions" : 15,
+  "enableUIRemove" : true,
+  "getAllPSAppDEUIActions" : [ {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseBatchNewGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "getNoPrivDisplayMode" : 2,
+    "getPSSysImage" : {
+      "glyph" : "xf067@FontAwesome",
+      "cssClass" : "fa fa-plus"
+    },
+    "timeout" : 60000,
+    "codeName" : "BatchNew",
+    "caption" : "批量新建用例",
+    "actionTarget" : "NONE",
+    "dataAccessAction" : "SRFUR__CASE_CREATE_BUT",
+    "uIActionTag" : "BatchNew",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "FRONT",
+    "fullCodeName" : "Case_BatchNew",
+    "name" : "批量新建用例",
+    "id" : "BatchNew@Case"
+  }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "LinkCase"
+    },
+    "getPSNavigateParams" : [ {
+      "rawValue" : true,
+      "value" : "0",
+      "key" : "id",
+      "name" : "id"
+    }, {
+      "rawValue" : false,
+      "value" : "version",
+      "key" : "versions",
+      "name" : "versions"
+    }, {
+      "rawValue" : false,
+      "value" : "id",
+      "key" : "ids",
+      "name" : "ids"
+    }, {
+      "rawValue" : false,
+      "value" : "task",
+      "key" : "task",
+      "name" : "task"
+    } ],
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getPSNavigateContexts" : [ {
+      "rawValue" : false,
+      "value" : "id",
+      "key" : "IDS",
+      "name" : "IDS"
+    }, {
+      "rawValue" : false,
+      "value" : "task",
+      "key" : "TASK",
+      "name" : "TASK"
+    }, {
+      "rawValue" : true,
+      "value" : "0",
+      "key" : "ID",
+      "name" : "ID"
+    }, {
+      "rawValue" : false,
+      "value" : "version",
+      "key" : "VERSIONS",
+      "name" : "VERSIONS"
+    } ],
+    "getNoPrivDisplayMode" : 2,
+    "getPSSysImage" : {
+      "glyph" : "xf0c1@FontAwesome",
+      "cssClass" : "fa fa-link"
+    },
+    "timeout" : 60000,
+    "codeName" : "linkCase",
+    "caption" : "保存",
+    "reloadData" : true,
+    "actionTarget" : "MULTIKEY",
+    "dataAccessAction" : "SRFUR__CASE_UNLINK_BUT",
+    "closeEditView" : true,
+    "uIActionTag" : "linkCase",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "BACKEND",
+    "closePopupView" : true,
+    "fullCodeName" : "Case_linkCase",
+    "name" : "关联用例",
+    "id" : "linkCase@Case"
+  }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "CaseFavorite"
+    },
+    "getPSNavigateParams" : [ {
+      "rawValue" : false,
+      "value" : "srfloginname",
+      "key" : "srfloginname",
+      "name" : "srfloginname"
+    }, {
+      "rawValue" : false,
+      "value" : "srfloginname",
+      "key" : "openedby",
+      "name" : "openedby"
+    } ],
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getPSNavigateContexts" : [ {
+      "rawValue" : false,
+      "value" : "srfloginname",
+      "key" : "OPENEDBY",
+      "name" : "OPENEDBY"
+    }, {
+      "rawValue" : false,
+      "value" : "srfloginname",
+      "key" : "SRFLOGINNAME",
+      "name" : "SRFLOGINNAME"
+    } ],
+    "getNoPrivDisplayMode" : 2,
+    "getPSSysImage" : {
+      "glyph" : "xf006@FontAwesome",
+      "cssClass" : "fa fa-star-o"
+    },
+    "timeout" : 60000,
+    "codeName" : "caseFavorite",
+    "caption" : "收藏",
+    "reloadData" : true,
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__CASE_NFAVOR_BUT",
+    "uIActionTag" : "caseFavorite",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "BACKEND",
+    "fullCodeName" : "Case_caseFavorite",
+    "name" : "收藏",
+    "id" : "caseFavorite@Case"
+  }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseExcEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "getNoPrivDisplayMode" : 2,
+    "getPSSysImage" : {
+      "glyph" : "xf16c@FontAwesome",
+      "cssClass" : "fa fa-stack-overflow"
+    },
+    "timeout" : 60000,
+    "codeName" : "OpenTestRunResultViewCz",
+    "caption" : "结果",
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__CASE_RESULT_BUT",
+    "uIActionTag" : "OpenTestRunResultViewCz",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "FRONT",
+    "fullCodeName" : "Case_OpenTestRunResultViewCz",
+    "name" : "打开结果视图（操作栏）",
+    "id" : "OpenTestRunResultViewCz@Case"
+  }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "getNextPSUIAction" : {
+      "modelref" : true,
+      "id" : "Refresh"
+    },
+    "getNoPrivDisplayMode" : 2,
+    "timeout" : 60000,
+    "codeName" : "MainEditCz",
+    "caption" : "编辑",
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__CASE_EDIT_BUT",
+    "uIActionTag" : "MainEditCz",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "FRONT",
+    "fullCodeName" : "Case_MainEditCz",
+    "name" : "主信息编辑（操作栏）",
+    "id" : "MainEditCz@Case"
+  }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseLinkCaseGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "getPSNavigateParams" : [ {
+      "rawValue" : false,
+      "value" : "task",
+      "key" : "task",
+      "name" : "task"
+    } ],
+    "frontProcessType" : "WIZARD",
+    "refreshMode" : 1,
+    "getPSNavigateContexts" : [ {
+      "rawValue" : false,
+      "value" : "task",
+      "key" : "TASK",
+      "name" : "TASK"
+    } ],
+    "getNoPrivDisplayMode" : 2,
+    "getPSSysImage" : {
+      "glyph" : "xf0c1@FontAwesome",
+      "cssClass" : "fa fa-link"
+    },
+    "timeout" : 60000,
+    "codeName" : "LinkCaseC",
+    "caption" : "关联用例",
+    "reloadData" : true,
+    "actionTarget" : "NONE",
+    "dataAccessAction" : "SRFUR__CASE_UNLINK_BUT",
+    "uIActionTag" : "LinkCaseC",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "FRONT",
+    "fullCodeName" : "Case_LinkCaseC",
+    "name" : "关联用例（打开用例视图）",
+    "id" : "LinkCaseC@Case"
+  }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseTestMainDashboardView.json",
+      "viewType" : "DEPORTALVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "getNoPrivDisplayMode" : 2,
+    "timeout" : 60000,
+    "codeName" : "Edits",
+    "caption" : "概况",
+    "actionTarget" : "SINGLEKEY",
+    "uIActionTag" : "Edits",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "FRONT",
+    "fullCodeName" : "Case_Edits",
+    "name" : "概况",
+    "id" : "Edits@Case"
+  }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseToBugTestEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "getPSNavigateParams" : [ {
+      "rawValue" : false,
+      "value" : "task",
+      "key" : "task",
+      "name" : "task"
+    } ],
+    "frontProcessType" : "WIZARD",
+    "getPSNavigateContexts" : [ {
+      "rawValue" : false,
+      "value" : "task",
+      "key" : "TASK",
+      "name" : "TASK"
+    } ],
+    "getNoPrivDisplayMode" : 1,
+    "getPSSysImage" : {
+      "glyph" : "xf188@FontAwesome",
+      "cssClass" : "fa fa-bug"
+    },
+    "timeout" : 60000,
+    "codeName" : "NewBugByTestCaseResult",
+    "caption" : "转Bug",
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__CASE_TOBUG_BUT",
+    "closeEditView" : true,
+    "uIActionTag" : "NewBugByTestCaseResult",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "FRONT",
+    "closePopupView" : true,
+    "fullCodeName" : "Case_NewBugByTestCaseResult",
+    "name" : "转Bug（测试单）",
+    "id" : "NewBugByTestCaseResult@Case"
+  }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseOptionView.json",
+      "viewType" : "DEOPTVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "getNoPrivDisplayMode" : 2,
+    "getPSSysImage" : {
+      "glyph" : "xf01d@FontAwesome",
+      "cssClass" : "fa fa-play-circle-o"
+    },
+    "timeout" : 60000,
+    "codeName" : "ExecuteCz",
+    "caption" : "执行",
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__CASE_CASERUN_BUT",
+    "uIActionTag" : "ExecuteCz",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "FRONT",
+    "fullCodeName" : "Case_ExecuteCz",
+    "name" : "执行测试（操作栏）",
+    "id" : "ExecuteCz@Case"
+  }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "TestsuitelinkCase"
+    },
+    "getPSNavigateParams" : [ {
+      "rawValue" : true,
+      "value" : "0",
+      "key" : "id",
+      "name" : "id"
+    }, {
+      "rawValue" : false,
+      "value" : "version",
+      "key" : "versions",
+      "name" : "versions"
+    }, {
+      "rawValue" : false,
+      "value" : "id",
+      "key" : "ids",
+      "name" : "ids"
+    }, {
+      "rawValue" : false,
+      "value" : "suite",
+      "key" : "suite",
+      "name" : "suite"
+    } ],
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getPSNavigateContexts" : [ {
+      "rawValue" : false,
+      "value" : "id",
+      "key" : "IDS",
+      "name" : "IDS"
+    }, {
+      "rawValue" : true,
+      "value" : "0",
+      "key" : "ID",
+      "name" : "ID"
+    }, {
+      "rawValue" : false,
+      "value" : "suite",
+      "key" : "SUITE",
+      "name" : "SUITE"
+    }, {
+      "rawValue" : false,
+      "value" : "version",
+      "key" : "VERSIONS",
+      "name" : "VERSIONS"
+    } ],
+    "getNoPrivDisplayMode" : 2,
+    "getPSSysImage" : {
+      "glyph" : "xf0c1@FontAwesome",
+      "cssClass" : "fa fa-link"
+    },
+    "timeout" : 60000,
+    "codeName" : "suitelinkCase",
+    "caption" : "保存",
+    "reloadData" : true,
+    "actionTarget" : "MULTIKEY",
+    "dataAccessAction" : "SRFUR__TESTSU_LINKCASE_BUT",
+    "closeEditView" : true,
+    "uIActionTag" : "suitelinkCase",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "BACKEND",
+    "closePopupView" : true,
+    "fullCodeName" : "Case_suitelinkCase",
+    "name" : "套件关联用例",
+    "id" : "suitelinkCase@Case"
+  }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "CaseNFavorite"
+    },
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getNoPrivDisplayMode" : 2,
+    "getPSSysImage" : {
+      "glyph" : "xf005@FontAwesome",
+      "cssClass" : "fa fa-star"
+    },
+    "timeout" : 60000,
+    "codeName" : "CaseNFavorite",
+    "caption" : "取消收藏",
+    "reloadData" : true,
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__CASE_FAVOR_BUT",
+    "uIActionTag" : "CaseNFavorite",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "BACKEND",
+    "fullCodeName" : "Case_CaseNFavorite",
+    "name" : "取消收藏",
+    "id" : "CaseNFavorite@Case"
+  }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseTestTaskExcEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "getPSNavigateParams" : [ {
+      "rawValue" : false,
+      "value" : "task",
+      "key" : "task",
+      "name" : "task"
+    } ],
+    "frontProcessType" : "WIZARD",
+    "getPSNavigateContexts" : [ {
+      "rawValue" : false,
+      "value" : "task",
+      "key" : "TASK",
+      "name" : "TASK"
+    } ],
+    "getNoPrivDisplayMode" : 1,
+    "getPSSysImage" : {
+      "glyph" : "xf16c@FontAwesome",
+      "cssClass" : "fa fa-stack-overflow"
+    },
+    "timeout" : 60000,
+    "codeName" : "CASEOpenTestRunResultView",
+    "caption" : "结果",
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__CASE_CASERESULT_BUT",
+    "uIActionTag" : "CASEOpenTestRunResultView",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "FRONT",
+    "fullCodeName" : "Case_CASEOpenTestRunResultView",
+    "name" : "打开结果视图（测试单）",
+    "id" : "CASEOpenTestRunResultView@Case"
+  }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "UnlinkCases"
+    },
+    "getPSNavigateParams" : [ {
+      "rawValue" : false,
+      "value" : "task",
+      "key" : "task",
+      "name" : "task"
+    } ],
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getPSNavigateContexts" : [ {
+      "rawValue" : false,
+      "value" : "task",
+      "key" : "TASK",
+      "name" : "TASK"
+    } ],
+    "getNoPrivDisplayMode" : 1,
+    "getPSSysImage" : {
+      "glyph" : "xf127@FontAwesome",
+      "cssClass" : "fa fa-unlink"
+    },
+    "timeout" : 60000,
+    "codeName" : "unlinkCase",
+    "caption" : "移除",
+    "reloadData" : true,
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__CASE_UNLINK_BUT",
+    "uIActionTag" : "unlinkCase",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "BACKEND",
+    "fullCodeName" : "Case_unlinkCase",
+    "name" : "移除",
+    "id" : "unlinkCase@Case"
+  }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseExcEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "getNoPrivDisplayMode" : 1,
+    "getPSSysImage" : {
+      "glyph" : "xf16c@FontAwesome",
+      "cssClass" : "fa fa-stack-overflow"
+    },
+    "timeout" : 60000,
+    "codeName" : "OpenTestRunResultView",
+    "caption" : "结果",
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__CASE_RESULT_BUT",
+    "uIActionTag" : "OpenTestRunResultView",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "FRONT",
+    "fullCodeName" : "Case_OpenTestRunResultView",
+    "name" : "打开结果视图",
+    "id" : "OpenTestRunResultView@Case"
+  }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "UnlinkSuiteCases"
+    },
+    "getPSNavigateParams" : [ {
+      "rawValue" : false,
+      "value" : "suite",
+      "key" : "suite",
+      "name" : "suite"
+    } ],
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getPSNavigateContexts" : [ {
+      "rawValue" : false,
+      "value" : "suite",
+      "key" : "SUITE",
+      "name" : "SUITE"
+    } ],
+    "getNoPrivDisplayMode" : 1,
+    "getPSSysImage" : {
+      "glyph" : "xf127@FontAwesome",
+      "cssClass" : "fa fa-unlink"
+    },
+    "timeout" : 60000,
+    "codeName" : "unlinkSuiteCase",
+    "caption" : "移除",
+    "reloadData" : true,
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__CASE_UNLINK_BUT",
+    "uIActionTag" : "unlinkSuiteCase",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "BACKEND",
+    "fullCodeName" : "Case_unlinkSuiteCase",
+    "name" : "移除套件用例",
+    "id" : "unlinkSuiteCase@Case"
+  }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Confirmstorychange"
+    },
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getNoPrivDisplayMode" : 1,
+    "getPSSysImage" : {
+      "glyph" : "xf046@FontAwesome",
+      "cssClass" : "fa fa-check-square-o"
+    },
+    "timeout" : 60000,
+    "codeName" : "confirmstorychange",
+    "caption" : "确认",
+    "reloadData" : true,
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__CASE_CONFIRM_BUT",
+    "uIActionTag" : "confirmstorychange",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "BACKEND",
+    "fullCodeName" : "Case_confirmstorychange",
+    "name" : "确认",
+    "id" : "confirmstorychange@Case"
+  }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "ConfirmChange"
+    },
+    "getPSNavigateParams" : [ {
+      "rawValue" : false,
+      "value" : "task",
+      "key" : "task",
+      "name" : "task"
+    } ],
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getPSNavigateContexts" : [ {
+      "rawValue" : false,
+      "value" : "task",
+      "key" : "TASK",
+      "name" : "TASK"
+    } ],
+    "getNoPrivDisplayMode" : 1,
+    "getPSSysImage" : {
+      "glyph" : "xf046@FontAwesome",
+      "cssClass" : "fa fa-check-square-o"
+    },
+    "timeout" : 60000,
+    "codeName" : "confirmChange",
+    "caption" : "确认用例变动",
+    "reloadData" : true,
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__CASE_CASECOF_BUT",
+    "uIActionTag" : "confirmChange",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "BACKEND",
+    "fullCodeName" : "Case_confirmChange",
+    "name" : "确认用例变动",
+    "id" : "confirmChange@Case"
+  }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "getNextPSUIAction" : {
+      "modelref" : true,
+      "id" : "Refresh"
+    },
+    "getNoPrivDisplayMode" : 1,
+    "getPSSysImage" : {
+      "glyph" : "xf044@FontAwesome",
+      "cssClass" : "fa fa-edit"
+    },
+    "timeout" : 60000,
+    "codeName" : "MainEdit",
+    "caption" : "编辑",
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__CASE_EDIT_BUT",
+    "uIActionTag" : "MainEdit",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "FRONT",
+    "fullCodeName" : "Case_MainEdit",
+    "name" : "主信息编辑",
+    "id" : "MainEdit@Case"
+  }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseToBugEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "frontProcessType" : "WIZARD",
+    "getNoPrivDisplayMode" : 2,
+    "getPSSysImage" : {
+      "glyph" : "xf188@FontAwesome",
+      "cssClass" : "fa fa-bug"
+    },
+    "timeout" : 60000,
+    "codeName" : "NewBugByCaseResultCz",
+    "caption" : "转Bug",
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__CASE_TOBUG_BUT",
+    "uIActionTag" : "NewBugByCaseResultCz",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "FRONT",
+    "fullCodeName" : "Case_NewBugByCaseResultCz",
+    "name" : "转Bug（操作栏）",
+    "id" : "NewBugByCaseResultCz@Case"
+  }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainNewView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "refreshMode" : 1,
+    "getNoPrivDisplayMode" : 2,
+    "getPSSysImage" : {
+      "glyph" : "xf067@FontAwesome",
+      "cssClass" : "fa fa-plus"
+    },
+    "timeout" : 60000,
+    "codeName" : "Create",
+    "caption" : "新建",
+    "reloadData" : true,
+    "actionTarget" : "NONE",
+    "dataAccessAction" : "SRFUR__CASE_CREATE_BUT",
+    "uIActionTag" : "Create",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "FRONT",
+    "fullCodeName" : "Case_Create",
+    "name" : "新建",
+    "id" : "Create@Case"
+  }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseTestOptionView.json",
+      "viewType" : "DEOPTVIEW"
+    },
+    "getPSNavigateParams" : [ {
+      "rawValue" : false,
+      "value" : "task",
+      "key" : "task",
+      "name" : "task"
+    } ],
+    "frontProcessType" : "WIZARD",
+    "getPSNavigateContexts" : [ {
+      "rawValue" : false,
+      "value" : "task",
+      "key" : "TASK",
+      "name" : "TASK"
+    } ],
+    "getNoPrivDisplayMode" : 1,
+    "getPSSysImage" : {
+      "glyph" : "xf01d@FontAwesome",
+      "cssClass" : "fa fa-play-circle-o"
+    },
+    "timeout" : 60000,
+    "codeName" : "CaseExecute",
+    "caption" : "执行",
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__CASE_CASERUN_BUT",
+    "uIActionTag" : "CaseExecute",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "FRONT",
+    "fullCodeName" : "Case_CaseExecute",
+    "name" : "执行测试（测试单）",
+    "id" : "CaseExecute@Case"
+  }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseToBugEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "getPSNavigateParams" : [ {
+      "rawValue" : false,
+      "value" : "task",
+      "key" : "task",
+      "name" : "task"
+    } ],
+    "frontProcessType" : "WIZARD",
+    "getPSNavigateContexts" : [ {
+      "rawValue" : false,
+      "value" : "task",
+      "key" : "TASK",
+      "name" : "TASK"
+    } ],
+    "getNoPrivDisplayMode" : 1,
+    "getPSSysImage" : {
+      "glyph" : "xf188@FontAwesome",
+      "cssClass" : "fa fa-bug"
+    },
+    "timeout" : 60000,
+    "codeName" : "NewBugByCaseResult",
+    "caption" : "转Bug",
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__CASE_TOBUG_BUT",
+    "closeEditView" : true,
+    "uIActionTag" : "NewBugByCaseResult",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "FRONT",
+    "closePopupView" : true,
+    "fullCodeName" : "Case_NewBugByCaseResult",
+    "name" : "转Bug",
+    "id" : "NewBugByCaseResult@Case"
+  }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseOptionView.json",
+      "viewType" : "DEOPTVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "getNoPrivDisplayMode" : 1,
+    "getPSSysImage" : {
+      "glyph" : "xf01d@FontAwesome",
+      "cssClass" : "fa fa-play-circle-o"
+    },
+    "timeout" : 60000,
+    "codeName" : "Execute",
+    "caption" : "执行",
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__CASE_CASERUN_BUT",
+    "uIActionTag" : "Execute",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "FRONT",
+    "fullCodeName" : "Case_Execute",
+    "name" : "执行测试",
+    "id" : "Execute@Case"
+  }, {
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "refreshMode" : 1,
+    "enableConfirm" : true,
+    "getNoPrivDisplayMode" : 2,
+    "getPSSysImage" : {
+      "glyph" : "xf00d@FontAwesome",
+      "cssClass" : "fa fa-remove"
+    },
+    "timeout" : 60000,
+    "codeName" : "deleteCz",
+    "caption" : "删除",
+    "reloadData" : true,
+    "actionTarget" : "SINGLEKEY",
+    "dataAccessAction" : "SRFUR__CASE_DELETE_BUT",
+    "closeEditView" : true,
+    "uIActionTag" : "deleteCz",
+    "uIActionType" : "DEUIACTION",
+    "uIActionMode" : "BACKEND",
+    "closePopupView" : true,
+    "successMsg" : "已删除",
+    "confirmMsg" : "确认要删除，删除操作将不可恢复？",
+    "fullCodeName" : "Case_deleteCz",
+    "name" : "删除（操作栏）",
+    "id" : "deleteCz@Case"
+  } ],
+  "getAllPSAppPortletCats" : [ {
+    "ungroup" : true,
+    "codeName" : "Ungroup",
+    "name" : "（未分类）"
+  } ],
+  "major" : true,
   "getAllPSAppDEMethods" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Select"
     },
+    "builtinMethod" : false,
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -6977,11 +6978,11 @@
     },
     "codeName" : "Select"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CASE__DEACTION__CREATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -6993,11 +6994,11 @@
     },
     "codeName" : "Create"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CASE__DEACTION__UPDATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7009,11 +7010,11 @@
     },
     "codeName" : "Update"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CASE__DEACTION__REMOVE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7025,11 +7026,11 @@
     },
     "codeName" : "Remove"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CASE__DEACTION__GET"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7041,11 +7042,11 @@
     },
     "codeName" : "Get"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7057,11 +7058,11 @@
     },
     "codeName" : "GetDraft"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CaseFavorite"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7069,11 +7070,11 @@
     },
     "codeName" : "CaseFavorite"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CaseNFavorite"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7081,11 +7082,11 @@
     },
     "codeName" : "CaseNFavorite"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7093,11 +7094,11 @@
     },
     "codeName" : "CheckKey"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ConfirmChange"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7105,11 +7106,11 @@
     },
     "codeName" : "ConfirmChange"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Confirmstorychange"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7117,11 +7118,11 @@
     },
     "codeName" : "Confirmstorychange"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetByTestTask"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7133,11 +7134,11 @@
     },
     "codeName" : "GetByTestTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetTestTaskCntRun"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7149,11 +7150,11 @@
     },
     "codeName" : "GetTestTaskCntRun"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "LinkCase"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7161,11 +7162,11 @@
     },
     "codeName" : "LinkCase"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "MobLinkCase"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7173,11 +7174,11 @@
     },
     "codeName" : "MobLinkCase"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "RunCase"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7185,11 +7186,11 @@
     },
     "codeName" : "RunCase"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "RunCases"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7197,11 +7198,11 @@
     },
     "codeName" : "RunCases"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7209,11 +7210,11 @@
     },
     "codeName" : "Save"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TestRunCase"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7221,11 +7222,11 @@
     },
     "codeName" : "TestRunCase"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TestRunCases"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7233,11 +7234,11 @@
     },
     "codeName" : "TestRunCases"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TestsuitelinkCase"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7245,11 +7246,11 @@
     },
     "codeName" : "TestsuitelinkCase"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "UnlinkCase"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7257,11 +7258,11 @@
     },
     "codeName" : "UnlinkCase"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "UnlinkCases"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7269,11 +7270,11 @@
     },
     "codeName" : "UnlinkCases"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "UnlinkSuiteCase"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7281,11 +7282,11 @@
     },
     "codeName" : "UnlinkSuiteCase"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "UnlinkSuiteCases"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7293,11 +7294,11 @@
     },
     "codeName" : "UnlinkSuiteCases"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBatchNew"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7309,11 +7310,11 @@
     },
     "codeName" : "FetchBatchNew"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCurOpenedCase"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7325,11 +7326,11 @@
     },
     "codeName" : "FetchCurOpenedCase"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCurSuite"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7341,11 +7342,11 @@
     },
     "codeName" : "FetchCurSuite"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCurTestTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7357,11 +7358,11 @@
     },
     "codeName" : "FetchCurTestTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7373,11 +7374,11 @@
     },
     "codeName" : "FetchDefault"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchESBulk"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7389,11 +7390,11 @@
     },
     "codeName" : "FetchESBulk"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchModuleRePortCase"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7405,11 +7406,11 @@
     },
     "codeName" : "FetchModuleRePortCase"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchModuleRePortCaseEntry"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7421,11 +7422,11 @@
     },
     "codeName" : "FetchModuleRePortCaseEntry"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchModuleRePortCase_Project"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7437,11 +7438,11 @@
     },
     "codeName" : "FetchModuleRePortCase_Project"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyFavorites"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7453,11 +7454,11 @@
     },
     "codeName" : "FetchMyFavorites"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchNotCurTestSuite"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7469,11 +7470,11 @@
     },
     "codeName" : "FetchNotCurTestSuite"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchNotCurTestTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7485,11 +7486,11 @@
     },
     "codeName" : "FetchNotCurTestTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchNotCurTestTaskProject"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7501,11 +7502,11 @@
     },
     "codeName" : "FetchNotCurTestTaskProject"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRePortCase"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7517,11 +7518,11 @@
     },
     "codeName" : "FetchRePortCase"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRePortCaseEntry"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7533,11 +7534,11 @@
     },
     "codeName" : "FetchRePortCaseEntry"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRePortCase_Project"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7549,11 +7550,11 @@
     },
     "codeName" : "FetchRePortCase_Project"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRunERRePortCase"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7565,11 +7566,11 @@
     },
     "codeName" : "FetchRunERRePortCase"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRunERRePortCaseEntry"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7581,11 +7582,11 @@
     },
     "codeName" : "FetchRunERRePortCaseEntry"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRunERRePortCase_Project"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7597,11 +7598,11 @@
     },
     "codeName" : "FetchRunERRePortCase_Project"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRunRePortCase"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7613,11 +7614,11 @@
     },
     "codeName" : "FetchRunRePortCase"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRunRePortCaseEntry"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7629,11 +7630,11 @@
     },
     "codeName" : "FetchRunRePortCaseEntry"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRunRePortCase_Project"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7645,8 +7646,8 @@
     },
     "codeName" : "FetchRunRePortCase_Project"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7659,8 +7660,8 @@
     "codeName" : "CreateTemp",
     "name" : "CreateTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7673,8 +7674,8 @@
     "codeName" : "CreateTempMajor",
     "name" : "CreateTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7687,8 +7688,8 @@
     "codeName" : "UpdateTemp",
     "name" : "UpdateTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7701,8 +7702,8 @@
     "codeName" : "UpdateTempMajor",
     "name" : "UpdateTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7715,8 +7716,8 @@
     "codeName" : "RemoveTemp",
     "name" : "RemoveTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7729,8 +7730,8 @@
     "codeName" : "RemoveTempMajor",
     "name" : "RemoveTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7743,8 +7744,8 @@
     "codeName" : "GetTemp",
     "name" : "GetTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7757,8 +7758,8 @@
     "codeName" : "GetTempMajor",
     "name" : "GetTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7771,8 +7772,8 @@
     "codeName" : "GetDraftTemp",
     "name" : "GetDraftTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -7794,8 +7795,8 @@
     "codeName" : "BugCreateCase",
     "name" : "bugCreateCase"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7804,8 +7805,8 @@
     "codeName" : "FetchTempBatchNew",
     "name" : "BatchNew"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7814,8 +7815,8 @@
     "codeName" : "FetchTempCurOpenedCase",
     "name" : "CurOpenedCase"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7824,8 +7825,8 @@
     "codeName" : "FetchTempCurSuite",
     "name" : "CurSuite"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7834,8 +7835,8 @@
     "codeName" : "FetchTempCurTestTask",
     "name" : "CurTestTask"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7844,8 +7845,8 @@
     "codeName" : "FetchTempDefault",
     "name" : "DEFAULT"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7854,8 +7855,8 @@
     "codeName" : "FetchTempESBulk",
     "name" : "ESBulk"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7864,8 +7865,8 @@
     "codeName" : "FetchTempModuleRePortCase",
     "name" : "ModuleRePortCase"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7874,8 +7875,8 @@
     "codeName" : "FetchTempModuleRePortCaseEntry",
     "name" : "ModuleRePortCaseEntry"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7884,8 +7885,8 @@
     "codeName" : "FetchTempModuleRePortCase_Project",
     "name" : "ModuleRePortCase_Project"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7894,8 +7895,8 @@
     "codeName" : "FetchTempMyFavorites",
     "name" : "MyFavorite"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7904,8 +7905,8 @@
     "codeName" : "FetchTempNotCurTestSuite",
     "name" : "NotCurTestSuite"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7914,8 +7915,8 @@
     "codeName" : "FetchTempNotCurTestTask",
     "name" : "NotCurTestTask"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7924,8 +7925,8 @@
     "codeName" : "FetchTempNotCurTestTaskProject",
     "name" : "NotCurTestTaskProject"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7934,8 +7935,8 @@
     "codeName" : "FetchTempRePortCase",
     "name" : "RePortCase"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7944,8 +7945,8 @@
     "codeName" : "FetchTempRePortCaseEntry",
     "name" : "RePortCaseEntry"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7954,8 +7955,8 @@
     "codeName" : "FetchTempRePortCase_Project",
     "name" : "RePortCase_Project"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7964,8 +7965,8 @@
     "codeName" : "FetchTempRunERRePortCase",
     "name" : "RunERRePortCase"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7974,8 +7975,8 @@
     "codeName" : "FetchTempRunERRePortCaseEntry",
     "name" : "RunERRePortCaseEntry"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7984,8 +7985,8 @@
     "codeName" : "FetchTempRunERRePortCase_Project",
     "name" : "RunERRePortCase_Project"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -7994,8 +7995,8 @@
     "codeName" : "FetchTempRunRePortCase",
     "name" : "RunRePortCase"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -8004,8 +8005,8 @@
     "codeName" : "FetchTempRunRePortCaseEntry",
     "name" : "RunRePortCaseEntry"
   }, {
-    "builtinMethod" : false,
     "tempDataMode" : 2,
+    "builtinMethod" : false,
     "methodType" : "FETCHTEMP",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -8050,50 +8051,50 @@
     "name" : "FILTERFETCH"
   } ],
   "getMinorPSAppDERSs" : [ {
-    "getParentPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "Cases",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
     "rSMode" : 2,
     "name" : "产品用例"
   }, {
-    "getParentPSAppDEField" : {
-      "name" : "STORY",
-      "codeName" : "Story"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    "getParentPSAppDEField" : {
+      "name" : "STORY",
+      "codeName" : "Story"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "Cases",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
@@ -8441,6 +8442,22 @@
     "name" : "MODULE"
   } ],
   "getAllPSAppDEACModes" : [ {
+    "enablePagingBar" : false,
+    "getPSDEACModeDataItems" : [ {
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "value",
+      "dataType" : 25
+    }, {
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      },
+      "name" : "text",
+      "dataType" : 25
+    } ],
     "getValuePSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
@@ -8449,22 +8466,6 @@
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "getPSDEACModeDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "dataType" : 25,
-      "name" : "value"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
-      },
-      "dataType" : 25,
-      "name" : "text"
-    } ],
-    "enablePagingBar" : false,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "defaultMode" : true,
@@ -8649,11 +8650,11 @@
     "name" : "数据导出"
   } ],
   "getAllPSAppDEActions" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CASE__DEACTION__CREATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8665,11 +8666,11 @@
     },
     "codeName" : "Create"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CASE__DEACTION__UPDATE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8681,11 +8682,11 @@
     },
     "codeName" : "Update"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CASE__DEACTION__REMOVE"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8697,11 +8698,11 @@
     },
     "codeName" : "Remove"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CASE__DEACTION__GET"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8713,11 +8714,11 @@
     },
     "codeName" : "Get"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8729,11 +8730,11 @@
     },
     "codeName" : "GetDraft"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CaseFavorite"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8741,11 +8742,11 @@
     },
     "codeName" : "CaseFavorite"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CaseNFavorite"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8753,11 +8754,11 @@
     },
     "codeName" : "CaseNFavorite"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8765,11 +8766,11 @@
     },
     "codeName" : "CheckKey"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ConfirmChange"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8777,11 +8778,11 @@
     },
     "codeName" : "ConfirmChange"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Confirmstorychange"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8789,11 +8790,11 @@
     },
     "codeName" : "Confirmstorychange"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetByTestTask"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8805,11 +8806,11 @@
     },
     "codeName" : "GetByTestTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetTestTaskCntRun"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8821,11 +8822,11 @@
     },
     "codeName" : "GetTestTaskCntRun"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "LinkCase"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8833,11 +8834,11 @@
     },
     "codeName" : "LinkCase"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "MobLinkCase"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8845,11 +8846,11 @@
     },
     "codeName" : "MobLinkCase"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "RunCase"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8857,11 +8858,11 @@
     },
     "codeName" : "RunCase"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "RunCases"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8869,11 +8870,11 @@
     },
     "codeName" : "RunCases"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8881,11 +8882,11 @@
     },
     "codeName" : "Save"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TestRunCase"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8893,11 +8894,11 @@
     },
     "codeName" : "TestRunCase"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TestRunCases"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8905,11 +8906,11 @@
     },
     "codeName" : "TestRunCases"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TestsuitelinkCase"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8917,11 +8918,11 @@
     },
     "codeName" : "TestsuitelinkCase"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "UnlinkCase"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8929,11 +8930,11 @@
     },
     "codeName" : "UnlinkCase"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "UnlinkCases"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8941,11 +8942,11 @@
     },
     "codeName" : "UnlinkCases"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "UnlinkSuiteCase"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8953,11 +8954,11 @@
     },
     "codeName" : "UnlinkSuiteCase"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "UnlinkSuiteCases"
     },
+    "builtinMethod" : false,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8965,8 +8966,8 @@
     },
     "codeName" : "UnlinkSuiteCases"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8979,8 +8980,8 @@
     "codeName" : "CreateTemp",
     "name" : "CreateTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -8993,8 +8994,8 @@
     "codeName" : "CreateTempMajor",
     "name" : "CreateTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -9007,8 +9008,8 @@
     "codeName" : "UpdateTemp",
     "name" : "UpdateTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -9021,8 +9022,8 @@
     "codeName" : "UpdateTempMajor",
     "name" : "UpdateTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -9035,8 +9036,8 @@
     "codeName" : "RemoveTemp",
     "name" : "RemoveTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -9049,8 +9050,8 @@
     "codeName" : "RemoveTempMajor",
     "name" : "RemoveTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -9063,8 +9064,8 @@
     "codeName" : "GetTemp",
     "name" : "GetTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -9077,8 +9078,8 @@
     "codeName" : "GetTempMajor",
     "name" : "GetTempMajor"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 2,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -9091,8 +9092,8 @@
     "codeName" : "GetDraftTemp",
     "name" : "GetDraftTemp"
   }, {
-    "builtinMethod" : true,
     "tempDataMode" : 1,
+    "builtinMethod" : true,
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -9115,11 +9116,11 @@
     "name" : "bugCreateCase"
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBatchNew"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9131,11 +9132,11 @@
     },
     "codeName" : "FetchBatchNew"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCurOpenedCase"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9147,11 +9148,11 @@
     },
     "codeName" : "FetchCurOpenedCase"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCurSuite"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9163,11 +9164,11 @@
     },
     "codeName" : "FetchCurSuite"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCurTestTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9179,11 +9180,11 @@
     },
     "codeName" : "FetchCurTestTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9195,11 +9196,11 @@
     },
     "codeName" : "FetchDefault"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchESBulk"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9211,11 +9212,11 @@
     },
     "codeName" : "FetchESBulk"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchModuleRePortCase"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9227,11 +9228,11 @@
     },
     "codeName" : "FetchModuleRePortCase"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchModuleRePortCaseEntry"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9243,11 +9244,11 @@
     },
     "codeName" : "FetchModuleRePortCaseEntry"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchModuleRePortCase_Project"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9259,11 +9260,11 @@
     },
     "codeName" : "FetchModuleRePortCase_Project"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyFavorites"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9275,11 +9276,11 @@
     },
     "codeName" : "FetchMyFavorites"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchNotCurTestSuite"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9291,11 +9292,11 @@
     },
     "codeName" : "FetchNotCurTestSuite"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchNotCurTestTask"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9307,11 +9308,11 @@
     },
     "codeName" : "FetchNotCurTestTask"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchNotCurTestTaskProject"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9323,11 +9324,11 @@
     },
     "codeName" : "FetchNotCurTestTaskProject"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRePortCase"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9339,11 +9340,11 @@
     },
     "codeName" : "FetchRePortCase"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRePortCaseEntry"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9355,11 +9356,11 @@
     },
     "codeName" : "FetchRePortCaseEntry"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRePortCase_Project"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9371,11 +9372,11 @@
     },
     "codeName" : "FetchRePortCase_Project"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRunERRePortCase"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9387,11 +9388,11 @@
     },
     "codeName" : "FetchRunERRePortCase"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRunERRePortCaseEntry"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9403,11 +9404,11 @@
     },
     "codeName" : "FetchRunERRePortCaseEntry"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRunERRePortCase_Project"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9419,11 +9420,11 @@
     },
     "codeName" : "FetchRunERRePortCase_Project"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRunRePortCase"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9435,11 +9436,11 @@
     },
     "codeName" : "FetchRunRePortCase"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRunRePortCaseEntry"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9451,11 +9452,11 @@
     },
     "codeName" : "FetchRunRePortCaseEntry"
   }, {
-    "builtinMethod" : false,
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRunRePortCase_Project"
     },
+    "builtinMethod" : false,
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -9467,15 +9468,6 @@
     },
     "codeName" : "FetchRunRePortCase_Project"
   } ],
-  "major" : true,
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDESERVICEAPIS/Case.json"
-  },
-  "getPSSysImage" : {
-    "glyph" : "xf006@FontAwesome",
-    "cssClass" : "fa fa-star-o"
-  },
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "用例确认",
     "name" : "CASECOF"
@@ -9519,6 +9511,14 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDESERVICEAPIS/Case.json"
+  },
+  "getPSSysImage" : {
+    "glyph" : "xf006@FontAwesome",
+    "cssClass" : "fa fa-star-o"
+  },
   "codeName" : "Case",
   "logicName" : "测试用例",
   "dataAccCtrlMode" : 1,

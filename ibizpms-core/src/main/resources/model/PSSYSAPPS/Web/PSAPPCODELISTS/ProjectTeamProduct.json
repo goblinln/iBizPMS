@@ -3,10 +3,6 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
   },
-  "getPSAppDEDataSet" : {
-    "modelref" : true,
-    "id" : "FetchProjectTeamMProduct"
-  },
   "getValuePSAppDEField" : {
     "name" : "USERNAME",
     "codeName" : "UserName"
@@ -15,8 +11,12 @@
     "name" : "PERSONNAME",
     "codeName" : "PersonName"
   },
-  "codeListType" : "DYNAMIC",
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchProjectTeamMProduct"
+  },
   "dynaInstMode" : 1,
+  "codeListType" : "DYNAMIC",
   "codeName" : "ProjectTeamProduct",
   "emptyText" : "未定义",
   "enableCache" : true,

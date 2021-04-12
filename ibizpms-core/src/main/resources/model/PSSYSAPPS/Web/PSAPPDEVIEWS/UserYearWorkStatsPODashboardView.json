@@ -1,17 +1,17 @@
 {
   "showDataInfoBar" : true,
   "loadDefault" : true,
+  "enableQuickGroup" : false,
   "enableSearch" : false,
   "expandSearchForm" : true,
-  "enableQuickGroup" : false,
   "enableQuickSearch" : false,
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "PODashboardView",
+  "enableDP" : true,
   "caption" : "用户年度工作内容统计",
   "title" : "用户年度工作内容统计数据看板视图",
   "openMode" : "DRAWER_TOP",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSAppViewNavParams" : [ {
     "rawValue" : false,
     "value" : "curyear",
@@ -46,7 +46,6 @@
     "key" : "CURYEAR",
     "name" : "CURYEAR"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
@@ -99,8 +98,6 @@
               },
               "controlType" : "CHART",
               "getPSDEChartSerieses" : [ {
-                "catalogField" : "PRI",
-                "seriesType" : "pie",
                 "getCatalogPSCodeList" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__pri.json"
@@ -115,6 +112,7 @@
                   "modelref" : true,
                   "id" : "0"
                 },
+                "catalogField" : "PRI",
                 "getPSChartSeriesEncode" : {
                   "category" : "PRI",
                   "value" : "SRFCOUNT",
@@ -123,6 +121,7 @@
                   "name" : "坐标系编码",
                   "id" : "0"
                 },
+                "seriesType" : "pie",
                 "valueField" : "SRFCOUNT",
                 "seriesLayoutBy" : "column",
                 "index" : 0,
@@ -265,8 +264,8 @@
               "height" : 350,
               "layout" : "TABLE_24COL"
             },
-            "controlType" : "PORTLET",
             "showTitleBar" : false,
+            "controlType" : "PORTLET",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -289,8 +288,8 @@
             "colLG" : 12,
             "layout" : "TABLE_24COL"
           },
-          "controlType" : "PORTLET",
           "showTitleBar" : false,
+          "controlType" : "PORTLET",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
@@ -336,8 +335,6 @@
               },
               "controlType" : "CHART",
               "getPSDEChartSerieses" : [ {
-                "catalogField" : "STAGE",
-                "seriesType" : "pie",
                 "getCatalogPSCodeList" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__stage.json"
@@ -352,6 +349,7 @@
                   "modelref" : true,
                   "id" : "0"
                 },
+                "catalogField" : "STAGE",
                 "getPSChartSeriesEncode" : {
                   "category" : "STAGE",
                   "value" : "SRFCOUNT",
@@ -360,6 +358,7 @@
                   "name" : "坐标系编码",
                   "id" : "0"
                 },
+                "seriesType" : "pie",
                 "valueField" : "SRFCOUNT",
                 "seriesLayoutBy" : "column",
                 "index" : 0,
@@ -502,8 +501,8 @@
               "height" : 350,
               "layout" : "TABLE_24COL"
             },
-            "controlType" : "PORTLET",
             "showTitleBar" : false,
+            "controlType" : "PORTLET",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -526,8 +525,8 @@
             "colLG" : 12,
             "layout" : "TABLE_24COL"
           },
-          "controlType" : "PORTLET",
           "showTitleBar" : false,
+          "controlType" : "PORTLET",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
@@ -549,8 +548,8 @@
           "colLG" : 14,
           "layout" : "TABLE_24COL"
         },
-        "controlType" : "PORTLET",
         "showTitleBar" : true,
+        "controlType" : "PORTLET",
         "title" : "所创建需求数和对应的优先级及状态",
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -615,8 +614,6 @@
             "controlType" : "CHART",
             "getPSDEChartSerieses" : [ {
               "stack" : false,
-              "catalogField" : "CURMONTH",
-              "seriesType" : "line",
               "eChartsType" : "line",
               "getPSChartCoordinateSystem" : {
                 "modelref" : true,
@@ -627,6 +624,7 @@
                 "modelref" : true,
                 "id" : "0"
               },
+              "catalogField" : "CURMONTH",
               "getPSChartSeriesEncode" : {
                 "getPSChartXAxis" : {
                   "modelref" : true,
@@ -643,6 +641,7 @@
                 "name" : "坐标系编码",
                 "id" : "0"
               },
+              "seriesType" : "line",
               "caption" : "月累计创建需求数",
               "valueField" : "YEARSTORYCNT",
               "seriesLayoutBy" : "column",
@@ -665,9 +664,9 @@
               "eChartsType" : "value",
               "eChartsPos" : "yAxis",
               "position" : "left",
-              "type" : "numeric",
               "maxValue" : 200.0,
               "minValue" : 0.0,
+              "type" : "numeric",
               "index" : 0,
               "name" : "数值",
               "id" : "0"
@@ -824,8 +823,8 @@
             "height" : 350,
             "layout" : "TABLE_24COL"
           },
-          "controlType" : "PORTLET",
           "showTitleBar" : false,
+          "controlType" : "PORTLET",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
@@ -848,8 +847,8 @@
           "colLG" : 10,
           "layout" : "TABLE_24COL"
         },
-        "controlType" : "PORTLET",
         "showTitleBar" : true,
+        "controlType" : "PORTLET",
         "title" : "月创建需求数",
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -874,8 +873,8 @@
         "colLGOffset" : 1,
         "layout" : "TABLE_24COL"
       },
-      "controlType" : "PORTLET",
       "showTitleBar" : true,
+      "controlType" : "PORTLET",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
@@ -911,6 +910,7 @@
     "name" : "dashboard",
     "modelid" : "6e0ad417e9fe2138d57f5e9e6a2e3b32"
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "UserYearWorkStatsPODashboardView",
   "viewType" : "DEPORTALVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserYearWorkStatsPODashboardView.json",

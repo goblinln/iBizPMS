@@ -10,10 +10,10 @@
     "pluginType" : "DEACTION",
     "pluginCode" : "SFPlugin"
   },
+  "extendMode" : 0,
   "orderValue" : 99999,
   "codeName" : "SendMessage",
   "logicName" : "行为",
-  "extendMode" : 0,
   "actionMode" : "UNKNOWN",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",

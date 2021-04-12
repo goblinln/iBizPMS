@@ -6,6 +6,7 @@
   "builtinAction" : true,
   "pubServiceDefault" : true,
   "timeOut" : -1,
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "CREATE"
@@ -13,7 +14,6 @@
   "orderValue" : 1,
   "codeName" : "Create",
   "logicName" : "Create",
-  "extendMode" : 0,
   "actionMode" : "CREATE",
   "actionType" : "BUILTIN",
   "requestParamType" : "ENTITY",

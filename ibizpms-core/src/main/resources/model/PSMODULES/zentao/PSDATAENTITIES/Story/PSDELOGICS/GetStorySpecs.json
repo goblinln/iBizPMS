@@ -1,6 +1,6 @@
 {
-  "enableBackend" : true,
   "enableFront" : false,
+  "enableBackend" : true,
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"
@@ -21,8 +21,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "ID",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[ID]"
     }, {
       "paramAction" : "SQLPARAM",
@@ -30,8 +30,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "VERSION",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[VERSION]"
     } ],
     "logicHolder" : 1,
@@ -40,21 +40,21 @@
     "name" : "获取数据"
   }, {
     "parallelOutput" : true,
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "getDstPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
     },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
     "logicHolder" : 3,
     "codeName" : "Deaction1",
-    "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/GetStorySpec.json"
     },
+    "logicNodeType" : "DEACTION",
     "name" : "处理"
   }, {
     "parallelOutput" : true,
@@ -72,9 +72,9 @@
         "modelref" : true,
         "id" : "story"
       },
+      "srcFieldName" : "TITLE",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "TITLE",
-      "srcFieldName" : "TITLE",
       "name" : "story[TITLE] ==> Default[TITLE]"
     }, {
       "paramAction" : "SETPARAMVALUE",
@@ -86,9 +86,9 @@
         "modelref" : true,
         "id" : "story"
       },
+      "srcFieldName" : "VERIFY",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "VERIFY",
-      "srcFieldName" : "VERIFY",
       "name" : "story[VERIFY] ==> Default[VERIFY]"
     }, {
       "paramAction" : "SETPARAMVALUE",
@@ -100,9 +100,9 @@
         "modelref" : true,
         "id" : "story"
       },
+      "srcFieldName" : "SPEC",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "SPEC",
-      "srcFieldName" : "SPEC",
       "name" : "story[SPEC] ==> Default[SPEC]"
     } ],
     "logicHolder" : 3,
@@ -155,16 +155,16 @@
     "name" : "连接8758"
   } ],
   "getPSDELogicParams" : [ {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "story",
     "default" : false,
     "name" : "story"
   }, {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

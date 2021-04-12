@@ -4,94 +4,94 @@
       "name" : "FILEPATH",
       "codeName" : "FilePath"
     },
-    "dataType" : 25,
-    "name" : "filepath"
+    "name" : "filepath",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "BUILDER",
       "codeName" : "Builder"
     },
-    "dataType" : 25,
-    "name" : "builder"
+    "name" : "builder",
+    "dataType" : 25
   }, {
-    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
-    "dataType" : 5,
-    "name" : "date"
+    "format" : "YYYY-MM-DD",
+    "name" : "date",
+    "dataType" : 5
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "id"
+    "name" : "id",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "PRODUCT",
       "codeName" : "Product"
     },
-    "dataType" : 1,
-    "name" : "product"
+    "name" : "product",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "PROJECT",
       "codeName" : "Project"
     },
-    "dataType" : 1,
-    "name" : "project"
+    "name" : "project",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "SCMPATH",
       "codeName" : "ScmPath"
     },
-    "dataType" : 25,
-    "name" : "scmpath"
+    "name" : "scmpath",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "name"
+    "name" : "name",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "BRANCH",
       "codeName" : "Branch"
     },
-    "dataType" : 1,
-    "name" : "branch"
+    "name" : "branch",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "PRODUCTNAME",
       "codeName" : "ProductName"
     },
-    "dataType" : 25,
-    "name" : "productname"
+    "name" : "productname",
+    "dataType" : 25
   } ],
   "getRemovePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -107,8 +107,6 @@
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "singleSelect" : true,
-  "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -130,20 +128,22 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : false,
+  "enableColFilter" : false,
+  "singleSelect" : true,
+  "enablePagingBar" : true,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
-  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "ID",
-    "dataItemName" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
+    "dataItemName" : "id",
+    "excelCaption" : "ID",
     "cLConvertMode" : "NONE",
     "hideDefault" : true,
     "noPrivDisplayMode" : 1,
@@ -163,12 +163,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
-    "excelCaption" : "产品名称",
-    "dataItemName" : "productname",
     "getPSAppDEField" : {
       "name" : "PRODUCTNAME",
       "codeName" : "ProductName"
     },
+    "dataItemName" : "productname",
+    "excelCaption" : "产品名称",
     "cLConvertMode" : "NONE",
     "hideDefault" : true,
     "noPrivDisplayMode" : 1,
@@ -188,12 +188,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BuildMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
-    "excelCaption" : "名称编号",
-    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "dataItemName" : "name",
+    "excelCaption" : "名称编号",
     "cLConvertMode" : "NONE",
     "getPSSysPFPlugin" : {
       "pluginType" : "GRID_COLRENDER",
@@ -209,12 +209,12 @@
     "widthUnit" : "STAR",
     "name" : "name"
   }, {
-    "excelCaption" : "源代码地址",
-    "dataItemName" : "scmpath",
     "getPSAppDEField" : {
       "name" : "SCMPATH",
       "codeName" : "ScmPath"
     },
+    "dataItemName" : "scmpath",
+    "excelCaption" : "源代码地址",
     "cLConvertMode" : "NONE",
     "hideDefault" : true,
     "noPrivDisplayMode" : 1,
@@ -227,12 +227,12 @@
     "widthUnit" : "PX",
     "name" : "scmpath"
   }, {
-    "excelCaption" : "下载地址",
-    "dataItemName" : "filepath",
     "getPSAppDEField" : {
       "name" : "FILEPATH",
       "codeName" : "FilePath"
     },
+    "dataItemName" : "filepath",
+    "excelCaption" : "下载地址",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -244,16 +244,16 @@
     "widthUnit" : "PX",
     "name" : "filepath"
   }, {
-    "excelCaption" : "构建者",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
-    "dataItemName" : "builder",
     "getPSAppDEField" : {
       "name" : "BUILDER",
       "codeName" : "Builder"
     },
+    "dataItemName" : "builder",
+    "excelCaption" : "构建者",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -265,12 +265,12 @@
     "widthUnit" : "PX",
     "name" : "builder"
   }, {
-    "excelCaption" : "打包日期",
-    "dataItemName" : "date",
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
+    "dataItemName" : "date",
+    "excelCaption" : "打包日期",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,

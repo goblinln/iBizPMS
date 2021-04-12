@@ -7,11 +7,12 @@
         "colLG" : 1,
         "layout" : "TABLE_12COL"
       },
+      "showCaption" : true,
       "itemType" : "RAWITEM",
       "itemStyle" : "DEFAULT",
-      "showCaption" : true,
       "name" : "rawitem1"
     }, {
+      "viewFieldName" : "account",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
@@ -22,10 +23,9 @@
         "editorType" : "SPAN",
         "name" : "account"
       },
-      "viewFieldName" : "account",
+      "showCaption" : false,
       "hidden" : false,
       "convertToCodeItemText" : true,
-      "showCaption" : false,
       "getPSLayoutPos" : {
         "colMD" : 6,
         "colLG" : 6,
@@ -35,15 +35,15 @@
       "itemStyle" : "DEFAULT",
       "name" : "account"
     }, {
+      "viewFieldName" : "role",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
         "editorType" : "SPAN",
         "name" : "role"
       },
-      "viewFieldName" : "role",
-      "hidden" : false,
       "showCaption" : false,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 4,
         "colLG" : 4,
@@ -63,12 +63,12 @@
       "colMD" : 12,
       "layout" : "TABLE_12COL"
     },
+    "showCaption" : true,
     "getPSSysCss" : {
       "cssName" : "mob_list_card"
     },
     "itemType" : "CONTAINER",
     "itemStyle" : "DEFAULT",
-    "showCaption" : true,
     "name" : "container1"
   } ],
   "getAllPSPanelFields" : [ {

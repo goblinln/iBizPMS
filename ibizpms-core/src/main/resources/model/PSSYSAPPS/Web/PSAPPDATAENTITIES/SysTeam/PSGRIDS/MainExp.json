@@ -4,37 +4,37 @@
       "name" : "TEAMID",
       "codeName" : "TeamId"
     },
-    "dataType" : 25,
-    "name" : "teamid"
+    "name" : "teamid",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "TEAMNAME",
       "codeName" : "TeamName"
     },
-    "dataType" : 25,
-    "name" : "teamname"
+    "name" : "teamname",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "TEAMNAME",
       "codeName" : "TeamName"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "TEAMID",
       "codeName" : "TeamId"
     },
-    "dataType" : 25,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "TEAMID",
       "codeName" : "TeamId"
     },
-    "dataType" : 25,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 25
   } ],
   "getRemovePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -50,8 +50,6 @@
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "singleSelect" : false,
-  "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -73,16 +71,18 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : false,
+  "enableColFilter" : false,
+  "singleSelect" : false,
   "enablePagingBar" : false,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "组标识",
-    "dataItemName" : "teamid",
     "getPSAppDEField" : {
       "name" : "TEAMID",
       "codeName" : "TeamId"
     },
+    "dataItemName" : "teamid",
+    "excelCaption" : "组标识",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -94,12 +94,12 @@
     "widthUnit" : "PX",
     "name" : "teamid"
   }, {
-    "excelCaption" : "组名称",
-    "dataItemName" : "teamname",
     "getPSAppDEField" : {
       "name" : "TEAMNAME",
       "codeName" : "TeamName"
     },
+    "dataItemName" : "teamname",
+    "excelCaption" : "组名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

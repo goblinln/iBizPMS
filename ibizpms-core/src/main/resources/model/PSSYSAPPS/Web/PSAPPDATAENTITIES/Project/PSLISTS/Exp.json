@@ -10,32 +10,32 @@
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 25,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "PARENT",
       "codeName" : "Parent"
     },
-    "dataType" : 25,
-    "name" : "parent"
+    "name" : "parent",
+    "dataType" : 25
   }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
+    "name" : "srfmstag",
+    "dataType" : 25
   } ],
-  "controlType" : "LIST",
-  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "enableRowEdit" : false,
+  "controlType" : "LIST",
   "codeName" : "Exp",
   "minorSortDir" : "DESC",
   "enableGroup" : false,
@@ -71,8 +71,8 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
   "controlStyle" : "LISTVIEW",
+  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project/PSLISTS/Exp.json",
   "logicName" : "Exp",
   "modelid" : "2117568b84525320ec8ad1b8481bc912"

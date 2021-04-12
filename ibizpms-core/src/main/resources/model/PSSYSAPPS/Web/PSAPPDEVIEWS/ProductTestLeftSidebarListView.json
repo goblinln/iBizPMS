@@ -5,10 +5,10 @@
   "xDataControlName" : "list",
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "TestLeftSidebarListView",
+  "enableDP" : true,
   "caption" : "测试",
   "title" : "所有测试",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -57,7 +57,6 @@
     },
     "name" : "toolbar_deuiaction2"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
@@ -104,9 +103,9 @@
       "tooltip" : "管理",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : false,
       "itemType" : "DEUIACTION",
       "caption" : "管理",
-      "showCaption" : false,
       "name" : "deuiaction3_testmanager"
     }, {
       "getPSAppViewUIAction" : {
@@ -136,9 +135,9 @@
       "tooltip" : "刷新",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : false,
       "itemType" : "DEUIACTION",
       "caption" : "刷新",
-      "showCaption" : false,
       "name" : "deuiaction2"
     } ],
     "getPSAppDataEntity" : {
@@ -161,71 +160,71 @@
     "showHeader" : true,
     "enableRowEditGroup" : false,
     "getPSDEListDataItems" : [ {
-      "dataType" : 1,
-      "name" : "id"
+      "name" : "id",
+      "dataType" : 1
     }, {
-      "dataType" : 9,
-      "name" : "istop"
+      "name" : "istop",
+      "dataType" : 9
     }, {
       "getFrontPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product__status.json"
       },
-      "dataType" : 25,
-      "name" : "status"
+      "name" : "status",
+      "dataType" : 25
     }, {
-      "dataType" : 9,
-      "name" : "activebugcnt"
+      "name" : "activebugcnt",
+      "dataType" : 9
     }, {
       "getFrontPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product__type.json"
       },
-      "dataType" : 25,
-      "name" : "type"
+      "name" : "type",
+      "dataType" : 25
     }, {
-      "dataType" : 9,
-      "name" : "unconfirmbugcnt"
+      "name" : "unconfirmbugcnt",
+      "dataType" : 9
     }, {
-      "dataType" : 25,
-      "name" : "name"
+      "name" : "name",
+      "dataType" : 25
     }, {
-      "dataType" : 9,
-      "name" : "notclosedbugcnt"
+      "name" : "notclosedbugcnt",
+      "dataType" : 9
     }, {
-      "dataType" : 25,
-      "name" : "code"
+      "name" : "code",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 25,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "LINE",
         "codeName" : "Line"
       },
-      "dataType" : 25,
-      "name" : "line"
+      "name" : "line",
+      "dataType" : 25
     }, {
-      "dataType" : 25,
-      "name" : "srfmstag"
+      "name" : "srfmstag",
+      "dataType" : 25
     } ],
-    "controlType" : "LIST",
-    "enableRowEdit" : false,
     "getMinorSortPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
+    "enableRowEdit" : false,
+    "controlType" : "LIST",
     "codeName" : "TestSidebar",
     "minorSortDir" : "DESC",
     "enableGroup" : false,
@@ -304,8 +303,8 @@
           "timeout" : 60000,
           "codeName" : "ProductTop",
           "caption" : "置顶",
-          "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
+          "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "NOTOP",
           "uIActionTag" : "ProductTop",
           "uIActionType" : "DEUIACTION",
@@ -322,9 +321,9 @@
         "tooltip" : "置顶",
         "groupExtractMode" : "ITEM",
         "showIcon" : true,
+        "showCaption" : false,
         "itemType" : "DEUIACTION",
         "caption" : "置顶",
-        "showCaption" : false,
         "name" : "deuiaction1"
       }, {
         "getPSAppViewUIAction" : {
@@ -351,8 +350,8 @@
           "timeout" : 60000,
           "codeName" : "CancelProductTop",
           "caption" : "取消置顶",
-          "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
+          "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "TOP",
           "uIActionTag" : "CancelProductTop",
           "uIActionType" : "DEUIACTION",
@@ -369,9 +368,9 @@
         "tooltip" : "取消置顶",
         "groupExtractMode" : "ITEM",
         "showIcon" : true,
+        "showCaption" : false,
         "itemType" : "DEUIACTION",
         "caption" : "取消置顶",
-        "showCaption" : false,
         "name" : "deuiaction2"
       } ],
       "getPSAppDataEntity" : {
@@ -419,6 +418,7 @@
       "showBusyIndicator" : true,
       "id" : "LIST"
     },
+    "controlStyle" : "LISTVIEW",
     "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "userDRAction" : "READ",
@@ -489,7 +489,6 @@
       "enableDEFieldPrivilege" : false,
       "id" : "列表控件处理器"
     },
-    "controlStyle" : "LISTVIEW",
     "getPSSysPFPlugin" : {
       "pluginType" : "CUSTOM",
       "pluginCode" : "TESTLEFTNAVLIST"
@@ -499,6 +498,7 @@
     "name" : "list",
     "modelid" : "e1f2ab35b976e118f0467bd295b8af10"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -542,7 +542,6 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -550,9 +549,10 @@
           "viewType" : "DEEDITVIEW"
         }
       },
+      "enableWizardAdd" : false,
+      "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {

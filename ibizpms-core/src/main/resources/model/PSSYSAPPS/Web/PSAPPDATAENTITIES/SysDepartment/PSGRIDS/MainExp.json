@@ -4,51 +4,51 @@
       "name" : "PDEPTID",
       "codeName" : "ParentDeptid"
     },
-    "dataType" : 25,
-    "name" : "pdeptid"
+    "name" : "pdeptid",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "DEPTID",
       "codeName" : "DeptId"
     },
-    "dataType" : 25,
-    "name" : "deptid"
+    "name" : "deptid",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ORGID",
       "codeName" : "OrgId"
     },
-    "dataType" : 25,
-    "name" : "orgid"
+    "name" : "orgid",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "DEPTNAME",
       "codeName" : "DeptName"
     },
-    "dataType" : 25,
-    "name" : "deptname"
+    "name" : "deptname",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "DEPTNAME",
       "codeName" : "DeptName"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "DEPTID",
       "codeName" : "DeptId"
     },
-    "dataType" : 25,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "DEPTID",
       "codeName" : "DeptId"
     },
-    "dataType" : 25,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 25
   } ],
   "getRemovePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -64,8 +64,6 @@
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "singleSelect" : false,
-  "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -87,16 +85,18 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : false,
+  "enableColFilter" : false,
+  "singleSelect" : false,
   "enablePagingBar" : false,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "部门标识",
-    "dataItemName" : "deptid",
     "getPSAppDEField" : {
       "name" : "DEPTID",
       "codeName" : "DeptId"
     },
+    "dataItemName" : "deptid",
+    "excelCaption" : "部门标识",
     "cLConvertMode" : "NONE",
     "getCapPSLanguageRes" : {
       "lanResTag" : "COMMON.DATATYPE.DECIMAL",
@@ -112,12 +112,12 @@
     "widthUnit" : "PX",
     "name" : "deptid"
   }, {
-    "excelCaption" : "部门名称",
-    "dataItemName" : "deptname",
     "getPSAppDEField" : {
       "name" : "DEPTNAME",
       "codeName" : "DeptName"
     },
+    "dataItemName" : "deptname",
+    "excelCaption" : "部门名称",
     "cLConvertMode" : "NONE",
     "getCapPSLanguageRes" : {
       "lanResTag" : "CONTROL.DATAGRIDROWCOUNTLIST.PAGEFMT",

@@ -7,10 +7,10 @@
   "showDataInfoBar" : true,
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "StatsTabExpView",
+  "enableDP" : true,
   "caption" : "统计",
   "title" : "我的地盘分页导航视图（统计）",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -29,12 +29,12 @@
     "engineCat" : "VIEW",
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
   },
   "getPSControls" : [ {
+    "tabLayout" : "TOP",
     "getPSTabExpPages" : [ {
       "name" : "tabviewpanel3"
     }, {
@@ -46,7 +46,6 @@
     }, {
       "name" : "tabviewpanel6"
     } ],
-    "tabLayout" : "TOP",
     "controlType" : "TABEXPPANEL",
     "getPSControls" : [ {
       "controlType" : "TABVIEWPANEL",
@@ -67,10 +66,10 @@
         "enableQuickSearch" : true,
         "showCaptionBar" : false,
         "getPSDEViewCodeName" : "ProductSumTreeExpView",
+        "enableDP" : true,
         "caption" : "产品汇总表",
         "title" : "我的地盘树导航视图（产品汇总表）",
         "accUserMode" : 2,
-        "enableDP" : true,
         "getPSViewLayoutPanel" : {
           "useDefaultLayout" : true,
           "layoutPanel" : true,
@@ -93,7 +92,6 @@
           } ],
           "name" : "engine"
         } ],
-        "viewStyle" : "STYLE2",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
@@ -103,11 +101,10 @@
           "xDataControlName" : "treeexpbar_tree",
           "enableSearch" : false,
           "enableCounter" : true,
+          "showTitleBar" : false,
           "getPSControls" : [ {
-            "treeGridMode" : 0,
-            "enableRootSelect" : false,
-            "outputIconDefault" : true,
             "enableSearchDefault" : false,
+            "treeGridMode" : 0,
             "getPSDETreeNodeRSs" : [ {
               "getParentPSDETreeNode" : {
                 "modelref" : true,
@@ -193,22 +190,24 @@
               "searchMode" : 3,
               "name" : "默认根节点 - 产品完成度统计表"
             } ],
+            "enableRootSelect" : false,
+            "outputIconDefault" : true,
             "controlType" : "TREEVIEW",
             "getPSDETreeNodes" : [ {
               "text" : "产品投入表",
-              "enableQuickCreate" : false,
               "getNavPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsGridViewProducntInputTable.json",
                 "viewType" : "DEGRIDVIEW"
               },
-              "rootNode" : false,
-              "hasPSDETreeNodeRSs" : false,
+              "enableQuickCreate" : false,
               "appendPNodeId" : false,
+              "enableCheck" : false,
+              "hasPSDETreeNodeRSs" : false,
               "selected" : false,
               "selectFirstOnly" : false,
               "expandFirstOnly" : false,
-              "enableCheck" : false,
+              "rootNode" : false,
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
@@ -217,8 +216,8 @@
               "enableEditData" : false,
               "enableRemoveData" : false,
               "enableViewData" : false,
-              "disableSelect" : false,
               "nodeType" : "productInputTable",
+              "disableSelect" : false,
               "enableQuickSearch" : false,
               "counterMode" : 0,
               "treeNodeType" : "STATIC",
@@ -227,19 +226,19 @@
               "id" : "productInputTable"
             }, {
               "text" : "需求汇总表",
-              "enableQuickCreate" : false,
               "getNavPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumStorySumGridView.json",
                 "viewType" : "DEGRIDVIEW"
               },
-              "rootNode" : false,
-              "hasPSDETreeNodeRSs" : false,
+              "enableQuickCreate" : false,
               "appendPNodeId" : false,
+              "enableCheck" : false,
+              "hasPSDETreeNodeRSs" : false,
               "selected" : false,
               "selectFirstOnly" : false,
               "expandFirstOnly" : false,
-              "enableCheck" : false,
+              "rootNode" : false,
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
@@ -248,8 +247,8 @@
               "enableEditData" : false,
               "enableRemoveData" : false,
               "enableViewData" : false,
-              "disableSelect" : false,
               "nodeType" : "ProductStorySum",
+              "disableSelect" : false,
               "enableQuickSearch" : false,
               "counterMode" : 0,
               "treeNodeType" : "STATIC",
@@ -258,19 +257,19 @@
               "id" : "ProductStorySum"
             }, {
               "text" : "需求工时汇总表",
-              "enableQuickCreate" : false,
               "getNavPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumStoryHoursSumGridView.json",
                 "viewType" : "DEGRIDVIEW"
               },
-              "rootNode" : false,
-              "hasPSDETreeNodeRSs" : false,
+              "enableQuickCreate" : false,
               "appendPNodeId" : false,
+              "enableCheck" : false,
+              "hasPSDETreeNodeRSs" : false,
               "selected" : false,
               "selectFirstOnly" : false,
               "expandFirstOnly" : false,
-              "enableCheck" : false,
+              "rootNode" : false,
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
@@ -279,8 +278,8 @@
               "enableEditData" : false,
               "enableRemoveData" : false,
               "enableViewData" : false,
-              "disableSelect" : false,
               "nodeType" : "StoryHoursSum",
+              "disableSelect" : false,
               "enableQuickSearch" : false,
               "counterMode" : 0,
               "treeNodeType" : "STATIC",
@@ -289,19 +288,19 @@
               "id" : "StoryHoursSum"
             }, {
               "text" : "产品汇总表",
-              "enableQuickCreate" : false,
               "getNavPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumGridView.json",
                 "viewType" : "DEGRIDVIEW"
               },
-              "rootNode" : false,
-              "hasPSDETreeNodeRSs" : false,
+              "enableQuickCreate" : false,
               "appendPNodeId" : false,
+              "enableCheck" : false,
+              "hasPSDETreeNodeRSs" : false,
               "selected" : false,
               "selectFirstOnly" : false,
               "expandFirstOnly" : false,
-              "enableCheck" : false,
+              "rootNode" : false,
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
@@ -310,8 +309,8 @@
               "enableEditData" : false,
               "enableRemoveData" : false,
               "enableViewData" : false,
-              "disableSelect" : false,
               "nodeType" : "ProductSum",
+              "disableSelect" : false,
               "enableQuickSearch" : false,
               "counterMode" : 0,
               "treeNodeType" : "STATIC",
@@ -320,19 +319,19 @@
               "id" : "ProductSum"
             }, {
               "text" : "产品质量表",
-              "enableQuickCreate" : false,
               "getNavPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsGridView.json",
                 "viewType" : "DEGRIDVIEW"
               },
-              "rootNode" : false,
-              "hasPSDETreeNodeRSs" : false,
+              "enableQuickCreate" : false,
               "appendPNodeId" : false,
+              "enableCheck" : false,
+              "hasPSDETreeNodeRSs" : false,
               "selected" : false,
               "selectFirstOnly" : false,
               "expandFirstOnly" : false,
-              "enableCheck" : false,
+              "rootNode" : false,
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
@@ -341,8 +340,8 @@
               "enableEditData" : false,
               "enableRemoveData" : false,
               "enableViewData" : false,
-              "disableSelect" : false,
               "nodeType" : "productquantity",
+              "disableSelect" : false,
               "enableQuickSearch" : false,
               "counterMode" : 0,
               "treeNodeType" : "STATIC",
@@ -351,19 +350,19 @@
               "id" : "productquantity"
             }, {
               "text" : "产品完成度统计表",
-              "enableQuickCreate" : false,
               "getNavPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsUsr2GridViewPRoductComplete.json",
                 "viewType" : "DEGRIDVIEW"
               },
-              "rootNode" : false,
-              "hasPSDETreeNodeRSs" : false,
+              "enableQuickCreate" : false,
               "appendPNodeId" : false,
+              "enableCheck" : false,
+              "hasPSDETreeNodeRSs" : false,
               "selected" : false,
               "selectFirstOnly" : false,
               "expandFirstOnly" : false,
-              "enableCheck" : false,
+              "rootNode" : false,
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
@@ -372,8 +371,8 @@
               "enableEditData" : false,
               "enableRemoveData" : false,
               "enableViewData" : false,
-              "disableSelect" : false,
               "nodeType" : "ProductCompleteTable",
+              "disableSelect" : false,
               "enableQuickSearch" : false,
               "counterMode" : 0,
               "treeNodeType" : "STATIC",
@@ -382,19 +381,19 @@
               "id" : "ProductCompleteTable"
             }, {
               "text" : "产品Bug类型统计表",
-              "enableQuickCreate" : false,
               "getNavPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumProductBugTypeSumUsr4GridView.json",
                 "viewType" : "DEGRIDVIEW"
               },
-              "rootNode" : false,
-              "hasPSDETreeNodeRSs" : false,
+              "enableQuickCreate" : false,
               "appendPNodeId" : false,
+              "enableCheck" : false,
+              "hasPSDETreeNodeRSs" : false,
               "selected" : false,
               "selectFirstOnly" : false,
               "expandFirstOnly" : false,
-              "enableCheck" : false,
+              "rootNode" : false,
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
@@ -403,8 +402,8 @@
               "enableEditData" : false,
               "enableRemoveData" : false,
               "enableViewData" : false,
-              "disableSelect" : false,
               "nodeType" : "ProductBugTypeSum",
+              "disableSelect" : false,
               "enableQuickSearch" : false,
               "counterMode" : 0,
               "treeNodeType" : "STATIC",
@@ -415,19 +414,19 @@
               "nodeValue" : "root",
               "text" : "默认根节点",
               "enableQuickCreate" : false,
-              "rootNode" : true,
-              "hasPSDETreeNodeRSs" : true,
               "appendPNodeId" : false,
+              "enableCheck" : false,
+              "hasPSDETreeNodeRSs" : true,
               "selected" : false,
               "selectFirstOnly" : false,
               "expandFirstOnly" : false,
-              "enableCheck" : false,
+              "rootNode" : true,
               "enableNewData" : false,
               "enableEditData" : false,
               "enableRemoveData" : false,
               "enableViewData" : false,
-              "disableSelect" : false,
               "nodeType" : "ROOT",
+              "disableSelect" : false,
               "enableQuickSearch" : false,
               "counterMode" : 0,
               "treeNodeType" : "STATIC",
@@ -537,7 +536,6 @@
             "name" : "treeexpbar_tree",
             "modelid" : "4769507c03b0cb4c3c566bd2af6f9eed"
           } ],
-          "showTitleBar" : false,
           "getPSAppViewRefs" : [ {
             "getRefPSAppView" : {
               "modelref" : true,
@@ -613,13 +611,14 @@
           "name" : "treeexpbar",
           "modelid" : "34f29e60d90fbc39195bdcb82bb0b87b_treeexpbar"
         } ],
+        "viewStyle" : "STYLE2",
         "getPSAppViewLogics" : [ {
           "logicTrigger" : "CUSTOM",
           "getPSAppUILogic" : {
+            "enableWizardAdd" : false,
             "actionAfterWizard" : "DEFAULT",
             "enableBatchAdd" : false,
             "batchAddOnly" : false,
-            "enableWizardAdd" : false,
             "viewLogicType" : "APP_NEWDATA",
             "logicType" : "PREDEFINED",
             "name" : "新建数据"
@@ -764,6 +763,7 @@
     "name" : "tabexppanel",
     "modelid" : "b4989339e1dc575a45c15699a325122a_tabexppanel"
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "IbzMyTerritoryStatsTabExpView",
   "viewType" : "DETABEXPVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryStatsTabExpView.json",

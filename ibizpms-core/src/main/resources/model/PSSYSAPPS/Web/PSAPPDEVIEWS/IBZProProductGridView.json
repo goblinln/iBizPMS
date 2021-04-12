@@ -11,10 +11,10 @@
   "showCaptionBar" : true,
   "getPSDEViewCodeName" : "GridView",
   "funcViewMode" : "MDATAVIEW",
+  "enableDP" : true,
   "caption" : "平台产品",
   "title" : "平台产品表格视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -143,7 +143,6 @@
     },
     "name" : "toolbar_tbitem18"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProduct.json"
@@ -195,9 +194,9 @@
       "tooltip" : "新建",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "新建",
-      "showCaption" : true,
       "name" : "tbitem3"
     }, {
       "getPSAppViewUIAction" : {
@@ -244,9 +243,9 @@
       "tooltip" : "编辑",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "编辑",
-      "showCaption" : true,
       "name" : "tbitem4"
     }, {
       "getPSAppViewUIAction" : {
@@ -294,9 +293,9 @@
       "tooltip" : "拷贝",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "拷贝",
-      "showCaption" : true,
       "name" : "tbitem6"
     }, {
       "spanMode" : false,
@@ -348,9 +347,9 @@
       "tooltip" : "删除",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "删除",
-      "showCaption" : true,
       "name" : "tbitem8"
     }, {
       "spanMode" : false,
@@ -400,9 +399,9 @@
       "tooltip" : "导出",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "导出",
-      "showCaption" : true,
       "name" : "tbitem13"
     }, {
       "spanMode" : false,
@@ -445,9 +444,9 @@
         "tooltip" : "导出数据模型",
         "groupExtractMode" : "ITEM",
         "showIcon" : true,
+        "showCaption" : true,
         "itemType" : "DEUIACTION",
         "caption" : "导出数据模型",
-        "showCaption" : true,
         "name" : "tbitem21"
       }, {
         "getPSAppViewUIAction" : {
@@ -477,16 +476,16 @@
         "tooltip" : "数据导入",
         "groupExtractMode" : "ITEM",
         "showIcon" : true,
+        "showCaption" : true,
         "itemType" : "DEUIACTION",
         "caption" : "数据导入",
-        "showCaption" : true,
         "name" : "tbitem23"
       } ],
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "ITEMS",
       "caption" : "其它",
       "tooltip" : "其它",
-      "showCaption" : true,
       "name" : "tbitem16"
     }, {
       "spanMode" : false,
@@ -538,9 +537,9 @@
       "tooltip" : "过滤",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "过滤",
-      "showCaption" : true,
       "name" : "tbitem19"
     }, {
       "getPSAppViewUIAction" : {
@@ -586,9 +585,9 @@
       "tooltip" : "帮助",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "帮助",
-      "showCaption" : true,
       "name" : "tbitem18"
     } ],
     "getPSAppDataEntity" : {
@@ -609,37 +608,37 @@
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "id"
+      "name" : "id",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "dataType" : 25,
-      "name" : "name"
+      "name" : "name",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfdataaccaction"
+      "name" : "srfdataaccaction",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 1
     } ],
     "getRemovePSControlAction" : {
       "getPSAppDataEntity" : {
@@ -655,8 +654,6 @@
       "actionType" : "DEACTION",
       "name" : "remove"
     },
-    "singleSelect" : false,
-    "enableColFilter" : false,
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : false,
@@ -678,16 +675,18 @@
     } ],
     "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "controlType" : "GRID",
-    "enableRowEdit" : false,
+    "enableColFilter" : false,
+    "singleSelect" : false,
     "enablePagingBar" : true,
+    "enableRowEdit" : false,
+    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
-      "excelCaption" : "编号",
-      "dataItemName" : "id",
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
+      "dataItemName" : "id",
+      "excelCaption" : "编号",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -699,12 +698,12 @@
       "widthUnit" : "PX",
       "name" : "id"
     }, {
-      "excelCaption" : "产品名称",
-      "dataItemName" : "name",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
+      "dataItemName" : "name",
+      "excelCaption" : "产品名称",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -825,10 +824,10 @@
     "name" : "grid",
     "modelid" : "403d9fad4c29737c34e28e44d5042073"
   }, {
+    "searchButtonStyle" : "DEFAULT",
     "enableAdvanceSearch" : false,
     "enableAutoSearch" : false,
     "enableFilterSave" : false,
-    "searchButtonStyle" : "DEFAULT",
     "controlType" : "SEARCHFORM",
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
@@ -902,6 +901,7 @@
     "name" : "searchform",
     "modelid" : "edd2168a49813c7a38bc3fb5621bc955"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -1065,7 +1065,6 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -1073,9 +1072,10 @@
           "viewType" : "DEEDITVIEW"
         }
       },
+      "enableWizardAdd" : false,
+      "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {

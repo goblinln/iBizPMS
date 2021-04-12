@@ -10,10 +10,10 @@
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTCommon"
   },
+  "extendMode" : 0,
   "orderValue" : 99999,
   "codeName" : "TestsuitelinkCase",
   "logicName" : "套件关联",
-  "extendMode" : 0,
   "actionMode" : "UNKNOWN",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",

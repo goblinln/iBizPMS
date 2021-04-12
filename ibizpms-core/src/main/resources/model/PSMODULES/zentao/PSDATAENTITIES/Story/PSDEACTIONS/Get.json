@@ -21,6 +21,7 @@
   } ],
   "pubServiceDefault" : true,
   "timeOut" : -1,
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"
@@ -28,7 +29,6 @@
   "orderValue" : 31,
   "codeName" : "Get",
   "logicName" : "Get",
-  "extendMode" : 0,
   "actionMode" : "READ",
   "actionType" : "BUILTIN",
   "requestField" : "ID",

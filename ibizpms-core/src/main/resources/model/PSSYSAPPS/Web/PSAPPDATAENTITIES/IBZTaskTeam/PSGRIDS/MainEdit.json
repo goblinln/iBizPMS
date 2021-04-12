@@ -4,72 +4,72 @@
       "name" : "CONSUMED",
       "codeName" : "Consumed"
     },
-    "dataType" : 7,
-    "name" : "consumed"
+    "name" : "consumed",
+    "dataType" : 7
   }, {
     "getPSAppDEField" : {
       "name" : "ROOT",
       "codeName" : "Root"
     },
-    "dataType" : 1,
-    "name" : "root"
+    "name" : "root",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
-    "dataType" : 25,
-    "name" : "account_text"
+    "name" : "account_text",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
-    "dataType" : 25,
-    "name" : "account"
+    "name" : "account",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "LEFT",
       "codeName" : "Left"
     },
-    "dataType" : 7,
-    "name" : "left"
+    "name" : "left",
+    "dataType" : 7
   }, {
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
     },
-    "dataType" : 25,
-    "name" : "type"
+    "name" : "type",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ESTIMATE",
       "codeName" : "Estimate"
     },
-    "dataType" : 7,
-    "name" : "estimate"
+    "name" : "estimate",
+    "dataType" : 7
   }, {
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   } ],
   "getCreatePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -141,8 +141,6 @@
     "actionType" : "DEACTION",
     "name" : "loaddraft"
   },
-  "singleSelect" : true,
-  "enableColFilter" : false,
   "enableRowNew" : true,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -183,17 +181,17 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameTask.json"
       },
-      "getPSNavigateContexts" : [ {
-        "rawValue" : false,
-        "value" : "root",
-        "key" : "PROJECT",
-        "name" : "PROJECT"
-      } ],
       "getPSNavigateParams" : [ {
         "rawValue" : false,
         "value" : "root",
         "key" : "project",
         "name" : "project"
+      } ],
+      "getPSNavigateContexts" : [ {
+        "rawValue" : false,
+        "value" : "root",
+        "key" : "PROJECT",
+        "name" : "PROJECT"
       } ],
       "editorType" : "DROPDOWNLIST",
       "getPSSysPFPlugin" : {
@@ -291,19 +289,21 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : true,
+  "enableColFilter" : false,
+  "singleSelect" : true,
+  "enablePagingBar" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
-  "enablePagingBar" : false,
+  "enableRowEdit" : true,
+  "controlType" : "GRID",
   "getPSDEGridEditItemVRs" : [ {
     "getPSDEGridEditItemName" : "consumed",
     "valueRuleType" : "DEFVALUERULE",
     "getPSDEFValueRule" : {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : false,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -338,8 +338,8 @@
     "getPSDEGridEditItemName" : "left",
     "valueRuleType" : "DEFVALUERULE",
     "getPSDEFValueRule" : {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : false,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -374,8 +374,8 @@
     "getPSDEGridEditItemName" : "estimate",
     "valueRuleType" : "DEFVALUERULE",
     "getPSDEFValueRule" : {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : false,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -405,17 +405,17 @@
     "name" : "编辑项值规则"
   } ],
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "用户",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameTask.json"
     },
-    "dataItemName" : "account_text",
-    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
+    "dataItemName" : "account_text",
+    "enableRowEdit" : true,
+    "excelCaption" : "用户",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -427,13 +427,13 @@
     "widthUnit" : "STAR",
     "name" : "account"
   }, {
-    "excelCaption" : "预计",
-    "dataItemName" : "estimate",
-    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "ESTIMATE",
       "codeName" : "Estimate"
     },
+    "dataItemName" : "estimate",
+    "enableRowEdit" : true,
+    "excelCaption" : "预计",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -445,13 +445,13 @@
     "widthUnit" : "PX",
     "name" : "estimate"
   }, {
-    "excelCaption" : "总计消耗",
-    "dataItemName" : "consumed",
-    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "CONSUMED",
       "codeName" : "Consumed"
     },
+    "dataItemName" : "consumed",
+    "enableRowEdit" : true,
+    "excelCaption" : "总计消耗",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -463,13 +463,13 @@
     "widthUnit" : "PX",
     "name" : "consumed"
   }, {
-    "excelCaption" : "预计剩余",
-    "dataItemName" : "left",
-    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "LEFT",
       "codeName" : "Left"
     },
+    "dataItemName" : "left",
+    "enableRowEdit" : true,
+    "excelCaption" : "预计剩余",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

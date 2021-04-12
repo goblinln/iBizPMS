@@ -1,6 +1,6 @@
 {
-  "enableBackend" : true,
   "enableFront" : false,
+  "enableBackend" : true,
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"
@@ -27,8 +27,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "BEGIN",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[BEGIN]"
     }, {
       "paramAction" : "SQLPARAM",
@@ -36,8 +36,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "BEGIN",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[BEGIN]"
     }, {
       "paramAction" : "SQLPARAM",
@@ -45,8 +45,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "END",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[END]"
     }, {
       "paramAction" : "SQLPARAM",
@@ -54,8 +54,8 @@
         "modelref" : true,
         "id" : "Default"
       },
-      "srcValueType" : "SRCDLPARAM",
       "srcFieldName" : "END",
+      "srcValueType" : "SRCDLPARAM",
       "name" : "Default[END]"
     } ],
     "logicHolder" : 1,
@@ -76,9 +76,9 @@
     "name" : "连接7637"
   } ],
   "getPSDELogicParams" : [ {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

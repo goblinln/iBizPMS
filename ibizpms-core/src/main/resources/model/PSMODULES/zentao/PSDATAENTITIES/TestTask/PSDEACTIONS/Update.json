@@ -10,6 +10,7 @@
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTUpdate"
   },
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "UPDATE"
@@ -17,7 +18,6 @@
   "orderValue" : 11,
   "codeName" : "Update",
   "logicName" : "Update",
-  "extendMode" : 0,
   "actionMode" : "UPDATE",
   "actionType" : "BUILTIN",
   "requestParamType" : "ENTITY",

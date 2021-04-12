@@ -22,10 +22,10 @@
   "showCaptionBar" : true,
   "getPSDEViewCodeName" : "RedirectView",
   "funcViewMode" : "REDIRECTVIEW",
+  "enableDP" : true,
   "caption" : "文档库分类",
   "title" : "文档库分类数据重定向视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -39,11 +39,11 @@
     "controlStyle" : "APPDEREDIRECTVIEW_STYLE2",
     "name" : "layoutpanel"
   },
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
   },
+  "viewStyle" : "STYLE2",
   "codeName" : "DocLibModuleRedirectView",
   "viewType" : "DEREDIRECTVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleRedirectView.json",

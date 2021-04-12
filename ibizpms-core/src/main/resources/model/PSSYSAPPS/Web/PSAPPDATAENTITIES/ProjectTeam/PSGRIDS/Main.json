@@ -4,80 +4,80 @@
       "name" : "TOTAL",
       "codeName" : "Total"
     },
-    "dataType" : 9,
-    "name" : "total"
+    "name" : "total",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "LIMITED",
       "codeName" : "Limited"
     },
-    "dataType" : 25,
-    "name" : "limited"
+    "name" : "limited",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "DAYS",
       "codeName" : "Days"
     },
-    "dataType" : 9,
-    "name" : "days"
+    "name" : "days",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "ROOT",
       "codeName" : "Root"
     },
-    "dataType" : 1,
-    "name" : "root"
+    "name" : "root",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "HOURS",
       "codeName" : "Hours"
     },
-    "dataType" : 7,
-    "name" : "hours"
+    "name" : "hours",
+    "dataType" : 7
   }, {
     "getPSAppDEField" : {
       "name" : "ROLE",
       "codeName" : "Role"
     },
-    "dataType" : 25,
-    "name" : "role"
+    "name" : "role",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
-    "dataType" : 25,
-    "name" : "account"
+    "name" : "account",
+    "dataType" : 25
   }, {
-    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "JOIN",
       "codeName" : "Join"
     },
-    "dataType" : 5,
-    "name" : "join"
+    "format" : "YYYY-MM-DD",
+    "name" : "join",
+    "dataType" : 5
   }, {
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   } ],
   "getRemovePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -93,8 +93,6 @@
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "singleSelect" : false,
-  "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -116,24 +114,26 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : false,
+  "enableColFilter" : false,
+  "singleSelect" : false,
+  "enablePagingBar" : true,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
-  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "用户",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
     },
-    "dataItemName" : "account",
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
+    "dataItemName" : "account",
+    "excelCaption" : "用户",
     "cLConvertMode" : "FRONT",
     "getPSSysPFPlugin" : {
       "pluginType" : "GRID_COLRENDER",
@@ -149,12 +149,12 @@
     "widthUnit" : "PX",
     "name" : "account"
   }, {
-    "excelCaption" : "角色",
-    "dataItemName" : "role",
     "getPSAppDEField" : {
       "name" : "ROLE",
       "codeName" : "Role"
     },
+    "dataItemName" : "role",
+    "excelCaption" : "角色",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -166,12 +166,12 @@
     "widthUnit" : "STAR",
     "name" : "role"
   }, {
-    "excelCaption" : "加盟日",
-    "dataItemName" : "join",
     "getPSAppDEField" : {
       "name" : "JOIN",
       "codeName" : "Join"
     },
+    "dataItemName" : "join",
+    "excelCaption" : "加盟日",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -184,12 +184,12 @@
     "widthUnit" : "PX",
     "name" : "join"
   }, {
-    "excelCaption" : "可用工日",
-    "dataItemName" : "days",
     "getPSAppDEField" : {
       "name" : "DAYS",
       "codeName" : "Days"
     },
+    "dataItemName" : "days",
+    "excelCaption" : "可用工日",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -201,12 +201,12 @@
     "widthUnit" : "PX",
     "name" : "days"
   }, {
-    "excelCaption" : "可用工时/天",
-    "dataItemName" : "hours",
     "getPSAppDEField" : {
       "name" : "HOURS",
       "codeName" : "Hours"
     },
+    "dataItemName" : "hours",
+    "excelCaption" : "可用工时/天",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -218,12 +218,12 @@
     "widthUnit" : "PX",
     "name" : "hours"
   }, {
-    "excelCaption" : "总计可用",
-    "dataItemName" : "total",
     "getPSAppDEField" : {
       "name" : "TOTAL",
       "codeName" : "Total"
     },
+    "dataItemName" : "total",
+    "excelCaption" : "总计可用",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -235,16 +235,16 @@
     "widthUnit" : "PX",
     "name" : "total"
   }, {
-    "excelCaption" : "受限用户",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo3.json"
     },
-    "dataItemName" : "limited",
     "getPSAppDEField" : {
       "name" : "LIMITED",
       "codeName" : "Limited"
     },
+    "dataItemName" : "limited",
+    "excelCaption" : "受限用户",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -278,8 +278,8 @@
           "timeout" : 60000,
           "codeName" : "RemoveMember",
           "caption" : "移除成员",
-          "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
+          "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "SRFUR__PROJT_TM_BUT",
           "uIActionTag" : "RemoveMember",
           "uIActionType" : "DEUIACTION",
@@ -291,8 +291,8 @@
           "id" : "RemoveMember@ProjectTeam"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : false,
+        "detailType" : "DEUIACTION",
         "name" : "uf5bde76"
       } ],
       "name" : "项目团队主数据表格操作栏"

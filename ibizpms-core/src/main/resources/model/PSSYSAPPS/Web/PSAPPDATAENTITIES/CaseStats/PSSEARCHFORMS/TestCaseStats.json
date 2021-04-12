@@ -1,8 +1,8 @@
 {
+  "searchButtonStyle" : "DEFAULT",
   "enableAdvanceSearch" : false,
   "enableAutoSearch" : false,
   "enableFilterSave" : false,
-  "searchButtonStyle" : "DEFAULT",
   "controlType" : "SEARCHFORM",
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
@@ -26,16 +26,16 @@
         "name" : "PRODUCT",
         "codeName" : "Product"
       },
-      "dataType" : 1,
+      "showCaption" : true,
       "hidden" : false,
+      "dataType" : 1,
       "needCodeListConfig" : true,
-      "allowEmpty" : true,
       "caption" : "产品",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 100,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "colLG" : 8,

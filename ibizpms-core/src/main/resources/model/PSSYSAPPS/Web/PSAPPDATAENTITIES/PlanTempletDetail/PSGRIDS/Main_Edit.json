@@ -4,65 +4,65 @@
       "name" : "EXPECT",
       "codeName" : "Expect"
     },
-    "dataType" : 21,
-    "name" : "expect"
+    "name" : "expect",
+    "dataType" : 21
   }, {
     "getPSAppDEField" : {
       "name" : "DESC",
       "codeName" : "Desc"
     },
-    "dataType" : 21,
-    "name" : "desc"
+    "name" : "desc",
+    "dataType" : 21
   }, {
     "getPSAppDEField" : {
       "name" : "ORDER",
       "codeName" : "Order"
     },
-    "dataType" : 9,
-    "name" : "order"
+    "name" : "order",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
     },
-    "dataType" : 25,
-    "name" : "type"
+    "name" : "type",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "IBZ_PLANTEMPLETDETAILNAME",
       "codeName" : "IbzPlanTempletDetailName"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "IBZ_PLANTEMPLETDETAILID",
       "codeName" : "IbzPlanTempletDetailId"
     },
-    "dataType" : 25,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "IBZ_PLANTEMPLETDETAILID",
       "codeName" : "IbzPlanTempletDetailId"
     },
-    "dataType" : 25,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "PLANCODE",
       "codeName" : "Plancode"
     },
-    "dataType" : 25,
-    "name" : "plancode"
+    "name" : "plancode",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "PLANTEMPLETID",
       "codeName" : "Plantempletid"
     },
-    "dataType" : 25,
-    "name" : "plantempletid"
+    "name" : "plantempletid",
+    "dataType" : 25
   } ],
   "getCreatePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -134,8 +134,6 @@
     "actionType" : "DEACTION",
     "name" : "loaddraft"
   },
-  "singleSelect" : true,
-  "enableColFilter" : false,
   "enableRowNew" : true,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -258,17 +256,19 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : true,
+  "enableColFilter" : false,
+  "singleSelect" : true,
   "enablePagingBar" : false,
+  "enableRowEdit" : true,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "计划名称",
-    "dataItemName" : "desc",
-    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "DESC",
       "codeName" : "Desc"
     },
+    "dataItemName" : "desc",
+    "enableRowEdit" : true,
+    "excelCaption" : "计划名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -280,17 +280,17 @@
     "widthUnit" : "PX",
     "name" : "desc"
   }, {
-    "excelCaption" : "类型",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/PlantempletType.json"
     },
-    "dataItemName" : "type",
-    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
     },
+    "dataItemName" : "type",
+    "enableRowEdit" : true,
+    "excelCaption" : "类型",
     "cLConvertMode" : "FRONT",
     "hideDefault" : true,
     "noPrivDisplayMode" : 1,
@@ -303,13 +303,13 @@
     "widthUnit" : "PX",
     "name" : "type"
   }, {
-    "excelCaption" : "描述",
-    "dataItemName" : "expect",
-    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "EXPECT",
       "codeName" : "Expect"
     },
+    "dataItemName" : "expect",
+    "enableRowEdit" : true,
+    "excelCaption" : "描述",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,

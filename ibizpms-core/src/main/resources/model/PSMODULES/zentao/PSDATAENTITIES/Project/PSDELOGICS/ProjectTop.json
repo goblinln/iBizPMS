@@ -1,6 +1,6 @@
 {
-  "enableBackend" : true,
   "enableFront" : false,
+  "enableBackend" : true,
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"
@@ -21,9 +21,9 @@
         "modelref" : true,
         "id" : "Default"
       },
+      "srcFieldName" : "ID",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "OBJECTID",
-      "srcFieldName" : "ID",
       "name" : "Default[ID] ==> IbzTop[OBJECTID]"
     }, {
       "paramAction" : "SETPARAMVALUE",
@@ -31,9 +31,9 @@
         "modelref" : true,
         "id" : "IbzTop"
       },
+      "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION",
       "dstFieldName" : "ACCOUNT",
-      "srcFieldName" : "srfloginname",
       "name" : "用户全局对象[srfloginname] ==> IbzTop[ACCOUNT]"
     }, {
       "paramAction" : "SETPARAMVALUE",
@@ -62,8 +62,8 @@
     } ],
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
-      "srcValueType" : "SESSION",
       "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION",
       "name" : "用户全局对象[srfloginname]"
     } ],
     "logicHolder" : 1,
@@ -72,21 +72,21 @@
     "name" : "获取置顶最大排序值"
   }, {
     "parallelOutput" : true,
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "IbzTop"
-    },
     "getDstPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzTop.json"
     },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "IbzTop"
+    },
     "logicHolder" : 3,
     "codeName" : "Deaction1",
-    "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzTop/PSDEACTIONS/Create.json"
     },
+    "logicNodeType" : "DEACTION",
     "name" : "Save"
   }, {
     "parallelOutput" : true,
@@ -134,16 +134,16 @@
     "name" : "连接2211"
   } ],
   "getPSDELogicParams" : [ {
+    "sessionParam" : true,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : true,
     "codeName" : "IbzTop",
     "default" : false,
     "name" : "置顶"
   }, {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

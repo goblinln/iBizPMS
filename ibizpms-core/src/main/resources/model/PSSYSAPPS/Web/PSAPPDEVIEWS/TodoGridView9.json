@@ -8,10 +8,10 @@
   "xDataControlName" : "grid",
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "GridView9",
+  "enableDP" : true,
   "caption" : "我的待办",
   "title" : "我的待办",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSAppViewNavParams" : [ {
     "rawValue" : true,
     "value" : "done",
@@ -61,7 +61,6 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
@@ -72,82 +71,82 @@
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "id"
+      "name" : "id",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "PRI",
         "codeName" : "Pri"
       },
-      "dataType" : 9,
-      "name" : "pri"
+      "name" : "pri",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "STATUS",
         "codeName" : "Status"
       },
-      "dataType" : 25,
-      "name" : "status"
+      "name" : "status",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "dataType" : 25,
-      "name" : "name"
+      "name" : "name",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "TYPE",
         "codeName" : "Type"
       },
-      "dataType" : 25,
-      "name" : "type"
+      "name" : "type",
+      "dataType" : 25
     }, {
-      "dataType" : 25,
-      "name" : "srfmstag"
+      "name" : "srfmstag",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfdataaccaction"
+      "name" : "srfdataaccaction",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "END",
         "codeName" : "End"
       },
-      "dataType" : 9,
-      "name" : "end"
+      "name" : "end",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "DATE1",
         "codeName" : "Date1"
       },
-      "dataType" : 25,
-      "name" : "date1"
+      "name" : "date1",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "BEGIN",
         "codeName" : "Begin"
       },
-      "dataType" : 9,
-      "name" : "begin"
+      "name" : "begin",
+      "dataType" : 9
     } ],
     "getRemovePSControlAction" : {
       "getPSAppDataEntity" : {
@@ -163,8 +162,6 @@
       "actionType" : "DEACTION",
       "name" : "remove"
     },
-    "singleSelect" : true,
-    "enableColFilter" : false,
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : true,
@@ -186,20 +183,22 @@
     } ],
     "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "controlType" : "GRID",
-    "enableRowEdit" : false,
+    "enableColFilter" : false,
+    "singleSelect" : true,
+    "enablePagingBar" : false,
     "getMinorSortPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "enablePagingBar" : false,
+    "enableRowEdit" : false,
+    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
-      "excelCaption" : "日期",
-      "dataItemName" : "date1",
       "getPSAppDEField" : {
         "name" : "DATE1",
         "codeName" : "Date1"
       },
+      "dataItemName" : "date1",
+      "excelCaption" : "日期",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -211,16 +210,16 @@
       "widthUnit" : "PX",
       "name" : "date1"
     }, {
-      "excelCaption" : "开始",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/BeginendDropList.json"
       },
-      "dataItemName" : "begin",
       "getPSAppDEField" : {
         "name" : "BEGIN",
         "codeName" : "Begin"
       },
+      "dataItemName" : "begin",
+      "excelCaption" : "开始",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -232,16 +231,16 @@
       "widthUnit" : "PX",
       "name" : "begin"
     }, {
-      "excelCaption" : "优先级",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Pri.json"
       },
-      "dataItemName" : "pri",
       "getPSAppDEField" : {
         "name" : "PRI",
         "codeName" : "Pri"
       },
+      "dataItemName" : "pri",
+      "excelCaption" : "优先级",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -260,12 +259,12 @@
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoDashboardView.json",
         "viewType" : "DEPORTALVIEW"
       },
-      "excelCaption" : "待办名称",
-      "dataItemName" : "name",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
+      "dataItemName" : "name",
+      "excelCaption" : "待办名称",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -388,6 +387,7 @@
     "name" : "grid",
     "modelid" : "6d54201fa41222ba83e02dc42a858377"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -410,7 +410,6 @@
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -418,9 +417,10 @@
           "viewType" : "DEEDITVIEW"
         }
       },
+      "enableWizardAdd" : false,
+      "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {

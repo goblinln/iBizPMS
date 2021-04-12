@@ -1,14 +1,17 @@
 {
-  "serviceAPIMode" : 1,
   "getAllPSDEFields" : [ {
-    "dataType" : "LONGTEXT",
     "length" : 16777215,
     "defaultValue" : "#EMPTY",
     "valueFormat" : "%1$s",
+    "dataType" : "LONGTEXT",
     "deployId" : "c49c6ea89fb3a693bae22eeb55216c52",
+    "codeName" : "Diff",
+    "logicName" : "不同",
+    "stringLength" : 16777215,
+    "stdDataType" : 21,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -46,24 +49,24 @@
       "autoIncrement" : false,
       "name" : "DIFF"
     } ],
-    "codeName" : "Diff",
-    "logicName" : "不同",
-    "stringLength" : 16777215,
-    "stdDataType" : 21,
     "majorDEField" : true,
     "enableQuickSearch" : true,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "DIFF"
   }, {
-    "dataType" : "TEXT",
     "length" : 30,
     "defaultValue" : "#EMPTY",
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "e4e6cc36001f89f9002efd9def9bbc96",
+    "codeName" : "Field",
+    "logicName" : "字段",
+    "stringLength" : 30,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -101,22 +104,22 @@
       "autoIncrement" : false,
       "name" : "FIELD"
     } ],
-    "codeName" : "Field",
-    "logicName" : "字段",
-    "stringLength" : 30,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "FIELD"
   }, {
-    "dataType" : "LONGTEXT",
     "length" : 65535,
     "defaultValue" : "#EMPTY",
     "valueFormat" : "%1$s",
+    "dataType" : "LONGTEXT",
     "deployId" : "66b954ebd54ff2fabc8854242fbedd01",
+    "codeName" : "IBizNew",
+    "logicName" : "新值",
+    "stringLength" : 65535,
+    "stdDataType" : 21,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -154,22 +157,22 @@
       "autoIncrement" : false,
       "name" : "NEW"
     } ],
-    "codeName" : "IBizNew",
-    "logicName" : "新值",
-    "stringLength" : 65535,
-    "stdDataType" : 21,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "NEW"
   }, {
-    "dataType" : "LONGTEXT",
     "length" : 65535,
     "defaultValue" : "#EMPTY",
     "valueFormat" : "%1$s",
+    "dataType" : "LONGTEXT",
     "deployId" : "6b696f097a65b49b3672c82c7916da25",
+    "codeName" : "Old",
+    "logicName" : "旧值",
+    "stringLength" : 65535,
+    "stdDataType" : 21,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -207,22 +210,21 @@
       "autoIncrement" : false,
       "name" : "OLD"
     } ],
-    "codeName" : "Old",
-    "logicName" : "旧值",
-    "stringLength" : 65535,
-    "stdDataType" : 21,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "OLD"
   }, {
-    "dataType" : "ACID",
     "valueFormat" : "%1$s",
+    "dataType" : "ACID",
     "deployId" : "9caff5720105cf605be6839489334f80",
+    "codeName" : "Id",
+    "logicName" : "id",
+    "stdDataType" : 1,
     "pasteReset" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -248,9 +250,6 @@
       "autoIncrement" : true,
       "name" : "ID"
     } ],
-    "codeName" : "Id",
-    "logicName" : "id",
-    "stdDataType" : 1,
     "enableUICreate" : false,
     "enableUIModify" : false,
     "keyDEField" : true,
@@ -259,23 +258,26 @@
     "dEFType" : 1,
     "name" : "ID"
   }, {
+    "valueFormat" : "%1$s",
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/History/PSDERS/DER1N_ZT_HISTORY_ZT_ACTION_ACTION.json"
     },
-    "valueFormat" : "%1$s",
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : "PICKUP",
     "length" : 8,
     "defaultValue" : "0",
+    "dataType" : "PICKUP",
     "deployId" : "fe5179931da717ca6db605f026e8aa7e",
+    "codeName" : "Action",
+    "logicName" : "关联日志",
+    "stdDataType" : 1,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -301,17 +303,15 @@
       "autoIncrement" : false,
       "name" : "ACTION"
     } ],
-    "codeName" : "Action",
-    "logicName" : "关联日志",
-    "stdDataType" : 1,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "ACTION"
   } ],
   "getAllPSDEDataSets" : [ {
-    "enableBackend" : true,
     "enableFront" : true,
+    "enableBackend" : true,
     "pubServiceDefault" : true,
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -319,9 +319,8 @@
     "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
-    "extendMode" : 0,
-    "enableGroup" : false,
     "userDRAction" : "READ",
+    "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
@@ -355,10 +354,10 @@
     "privQuery" : true,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
-    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -366,10 +365,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
@@ -380,8 +379,7 @@
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : false,
-  "orderValue" : 99999,
-  "dSLink" : "DEFAULT",
+  "serviceAPIMode" : 1,
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -395,17 +393,20 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "extendMode" : 0,
+  "saaSDCIdColumnName" : "SRFDCID",
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "dSLink" : "DEFAULT",
   "saaSMode" : 4,
   "deployId" : "08bcec81e9e8a0c0d06c9e9adf82d42b",
-  "enableSQLStorage" : true,
-  "dynaInstMode" : 1,
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
-  "virtualMode" : 0,
   "codeName" : "History",
   "logicName" : "操作历史",
   "tableName" : "zt_history",
+  "enableViewLevel" : 0,
+  "virtualMode" : 0,
+  "enableSQLStorage" : true,
+  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -414,14 +415,13 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
   "serviceCodeName" : "History",
   "enableActions" : 7,
   "enableCreate" : true,
   "enableModify" : true,
-  "extendMode" : 0,
   "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
+  "subSysDE" : false,
+  "virtual" : false,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

@@ -7,8 +7,8 @@
     "modelref" : true,
     "id" : "FetchBuild"
   },
-  "codeListType" : "DYNAMIC",
   "dynaInstMode" : 1,
+  "codeListType" : "DYNAMIC",
   "codeName" : "APPBuild",
   "emptyText" : "未定义",
   "enableCache" : true,

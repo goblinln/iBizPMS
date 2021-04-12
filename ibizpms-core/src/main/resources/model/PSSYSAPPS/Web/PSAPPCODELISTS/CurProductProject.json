@@ -3,10 +3,6 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
   },
-  "getPSAppDEDataSet" : {
-    "modelref" : true,
-    "id" : "FetchCurProduct"
-  },
   "getValuePSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
@@ -15,8 +11,12 @@
     "name" : "NAME",
     "codeName" : "Name"
   },
-  "codeListType" : "DYNAMIC",
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchCurProduct"
+  },
   "dynaInstMode" : 1,
+  "codeListType" : "DYNAMIC",
   "codeName" : "CurProductProject",
   "emptyText" : "未定义",
   "enableCache" : true,

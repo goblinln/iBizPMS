@@ -19,8 +19,6 @@
   },
   "controlType" : "CHART",
   "getPSDEChartSerieses" : [ {
-    "catalogField" : "type",
-    "seriesType" : "pie",
     "getCatalogPSCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__type.json"
@@ -35,6 +33,7 @@
       "modelref" : true,
       "id" : "0"
     },
+    "catalogField" : "type",
     "getPSChartSeriesEncode" : {
       "category" : "type",
       "value" : "SRFCOUNT",
@@ -43,6 +42,7 @@
       "name" : "坐标系编码",
       "id" : "0"
     },
+    "seriesType" : "pie",
     "valueField" : "SRFCOUNT",
     "seriesLayoutBy" : "column",
     "groupMode" : "CODELIST",

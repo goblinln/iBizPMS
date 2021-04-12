@@ -32,8 +32,8 @@
     "codeName" : "Bydesign",
     "text" : "设计如此"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "Story__closed_reason",
   "emptyText" : "未定义",
   "enableCache" : true,

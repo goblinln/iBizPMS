@@ -25,8 +25,8 @@
     "text" : "被阻塞",
     "color" : "rgba(221, 217, 10, 1)"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "Testtask__status",
   "emptyText" : "未定义",
   "enableCache" : true,

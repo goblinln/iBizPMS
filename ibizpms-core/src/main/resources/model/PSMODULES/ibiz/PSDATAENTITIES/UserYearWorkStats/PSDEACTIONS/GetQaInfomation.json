@@ -6,6 +6,7 @@
   "builtinAction" : false,
   "pubServiceDefault" : true,
   "timeOut" : -1,
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"
@@ -13,7 +14,6 @@
   "orderValue" : 99999,
   "codeName" : "GetQaInfomation",
   "logicName" : "获取测试人员相关数据",
-  "extendMode" : 0,
   "actionMode" : "READ",
   "actionType" : "DELOGIC",
   "requestField" : "ID",

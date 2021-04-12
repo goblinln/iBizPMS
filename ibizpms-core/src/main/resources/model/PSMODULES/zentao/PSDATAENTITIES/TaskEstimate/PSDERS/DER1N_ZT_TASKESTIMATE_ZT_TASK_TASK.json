@@ -3,12 +3,12 @@
     "name" : "TASK",
     "codeName" : "Task"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "TASKNAME",
     "codeName" : "TaskName"
   },
   "nestedRS" : true,
+  "masterOrder" : -1,
   "removeActionType" : -1,
   "pickupDEFName" : "TASK",
   "masterRS" : 8,
@@ -18,12 +18,12 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
   },
   "orderValue" : 100,
+  "codeName" : "ZTtask",
+  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate.json"
   },
-  "codeName" : "ZTtask",
-  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDERS/DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK.json",
   "name" : "DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK"
 }

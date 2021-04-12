@@ -6,30 +6,30 @@
   "showHeader" : true,
   "enableRowEditGroup" : false,
   "getPSDEListDataItems" : [ {
-    "dataType" : 25,
-    "name" : "field"
+    "name" : "field",
+    "dataType" : 25
   }, {
-    "dataType" : 25,
-    "name" : "ibiznew"
+    "name" : "ibiznew",
+    "dataType" : 25
   }, {
-    "dataType" : 1,
-    "name" : "id"
+    "name" : "id",
+    "dataType" : 1
   }, {
-    "dataType" : 21,
-    "name" : "old"
+    "name" : "old",
+    "dataType" : 21
   }, {
-    "dataType" : 21,
-    "name" : "diff"
+    "name" : "diff",
+    "dataType" : 21
   }, {
-    "dataType" : 1,
-    "name" : "action"
+    "name" : "action",
+    "dataType" : 1
   } ],
-  "controlType" : "LIST",
-  "enableRowEdit" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
+  "enableRowEdit" : false,
+  "controlType" : "LIST",
   "codeName" : "DEFAULT",
   "minorSortDir" : "DESC",
   "enableGroup" : false,

@@ -12,8 +12,8 @@
     "codeName" : "Item",
     "text" : "配置项"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "ConfigGroup",
   "emptyText" : "未定义",
   "enableCache" : true,

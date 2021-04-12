@@ -6,6 +6,7 @@
   "builtinAction" : false,
   "pubServiceDefault" : true,
   "timeOut" : -1,
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"
@@ -13,7 +14,6 @@
   "orderValue" : 99999,
   "codeName" : "GetLastUpdateInfo",
   "logicName" : "获取最新更新信息",
-  "extendMode" : 0,
   "actionMode" : "READ",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",

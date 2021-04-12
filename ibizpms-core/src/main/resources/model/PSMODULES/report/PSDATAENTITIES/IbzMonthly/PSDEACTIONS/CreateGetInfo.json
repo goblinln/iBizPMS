@@ -6,6 +6,7 @@
   "builtinAction" : false,
   "pubServiceDefault" : true,
   "timeOut" : -1,
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "CREATE"
@@ -13,7 +14,6 @@
   "orderValue" : 99999,
   "codeName" : "CreateGetInfo",
   "logicName" : "新建时获取信息",
-  "extendMode" : 0,
   "actionMode" : "CREATE",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",

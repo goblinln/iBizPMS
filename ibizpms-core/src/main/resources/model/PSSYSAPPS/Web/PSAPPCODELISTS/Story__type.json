@@ -13,8 +13,8 @@
     "text" : "软件需求",
     "default" : true
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "Story__type",
   "emptyText" : "未定义",
   "enableCache" : true,

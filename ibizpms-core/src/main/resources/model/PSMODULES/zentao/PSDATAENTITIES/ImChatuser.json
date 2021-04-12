@@ -1,14 +1,16 @@
 {
-  "serviceAPIMode" : 1,
   "getAllPSDEFields" : [ {
-    "dataType" : "ACID",
     "valueFormat" : "%1$s",
+    "dataType" : "ACID",
     "deployId" : "e4bc3effd45cd6bdcee8422a8351671a",
+    "codeName" : "Id",
+    "logicName" : "id",
+    "stdDataType" : 1,
     "pasteReset" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -34,9 +36,6 @@
       "autoIncrement" : true,
       "name" : "ID"
     } ],
-    "codeName" : "Id",
-    "logicName" : "id",
-    "stdDataType" : 1,
     "enableUICreate" : false,
     "enableUIModify" : false,
     "keyDEField" : true,
@@ -45,13 +44,16 @@
     "dEFType" : 1,
     "name" : "ID"
   }, {
-    "dataType" : "INT",
     "defaultValue" : "0",
     "valueFormat" : "%1$s",
+    "dataType" : "INT",
     "deployId" : "296b8696af2a74581385745b7088ae6c",
+    "codeName" : "Order",
+    "logicName" : "order",
+    "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -77,24 +79,25 @@
       "autoIncrement" : false,
       "name" : "ORDER"
     } ],
-    "codeName" : "Order",
-    "logicName" : "order",
-    "stdDataType" : 9,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "ORDER"
   }, {
-    "dataType" : "SSCODELIST",
     "length" : 1,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/Action__read.json"
     },
+    "valueFormat" : "%1$s",
+    "dataType" : "SSCODELIST",
     "deployId" : "2b9c5d19669f7182baddd84d45d7671c",
+    "codeName" : "Freeze",
+    "logicName" : "freeze",
+    "stringLength" : 1,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -132,25 +135,25 @@
       "autoIncrement" : false,
       "name" : "FREEZE"
     } ],
-    "codeName" : "Freeze",
-    "logicName" : "freeze",
-    "stringLength" : 1,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "FREEZE"
   }, {
-    "dataType" : "SSCODELIST",
     "length" : 1,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/Action__read.json"
     },
+    "valueFormat" : "%1$s",
+    "dataType" : "SSCODELIST",
     "deployId" : "12dd2a0c27c8b94823fae1d5c27b1ace",
+    "codeName" : "Star",
+    "logicName" : "star",
+    "stringLength" : 1,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -188,25 +191,25 @@
       "autoIncrement" : false,
       "name" : "STAR"
     } ],
-    "codeName" : "Star",
-    "logicName" : "star",
-    "stringLength" : 1,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "STAR"
   }, {
-    "dataType" : "SSCODELIST",
     "length" : 1,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/Action__read.json"
     },
+    "valueFormat" : "%1$s",
+    "dataType" : "SSCODELIST",
     "deployId" : "92c27b1f9a546630fb531279aee8337e",
+    "codeName" : "Hide",
+    "logicName" : "hide",
+    "stringLength" : 1,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -244,21 +247,20 @@
       "autoIncrement" : false,
       "name" : "HIDE"
     } ],
-    "codeName" : "Hide",
-    "logicName" : "hide",
-    "stringLength" : 1,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "HIDE"
   }, {
-    "dataType" : "DATETIME",
     "defaultValue" : "0000-00-00 00:00:00",
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "dataType" : "DATETIME",
     "deployId" : "ae00e734fff2cea0238b40ecda1628ec",
+    "codeName" : "Join",
+    "logicName" : "join",
+    "stdDataType" : 5,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -284,20 +286,20 @@
       "autoIncrement" : false,
       "name" : "JOIN"
     } ],
-    "codeName" : "Join",
-    "logicName" : "join",
-    "stdDataType" : 5,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "JOIN"
   }, {
-    "dataType" : "INT",
     "defaultValue" : "0",
     "valueFormat" : "%1$s",
+    "dataType" : "INT",
     "deployId" : "b33770e4b6676a7531a5799f056ca47d",
+    "codeName" : "User",
+    "logicName" : "user",
+    "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -323,24 +325,25 @@
       "autoIncrement" : false,
       "name" : "USER"
     } ],
-    "codeName" : "User",
-    "logicName" : "user",
-    "stdDataType" : 9,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "USER"
   }, {
-    "dataType" : "SSCODELIST",
     "length" : 1,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/Action__read.json"
     },
+    "valueFormat" : "%1$s",
+    "dataType" : "SSCODELIST",
     "deployId" : "5185852b1a8033233295377618bbbbef",
+    "codeName" : "Mute",
+    "logicName" : "mute",
+    "stringLength" : 1,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -378,21 +381,21 @@
       "autoIncrement" : false,
       "name" : "MUTE"
     } ],
-    "codeName" : "Mute",
-    "logicName" : "mute",
-    "stringLength" : 1,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "MUTE"
   }, {
-    "dataType" : "TEXT",
     "length" : 40,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "7a08d1480153ccb18361a32dda6d173d",
+    "codeName" : "Cgid",
+    "logicName" : "cgid",
+    "stringLength" : 40,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -430,21 +433,20 @@
       "autoIncrement" : false,
       "name" : "CGID"
     } ],
-    "codeName" : "Cgid",
-    "logicName" : "cgid",
-    "stringLength" : 40,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "CGID"
   }, {
-    "dataType" : "DATETIME",
     "defaultValue" : "0000-00-00 00:00:00",
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "dataType" : "DATETIME",
     "deployId" : "f3540942bb15da3c34214341d5edf70d",
+    "codeName" : "Quit",
+    "logicName" : "quit",
+    "stdDataType" : 5,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -470,20 +472,21 @@
       "autoIncrement" : false,
       "name" : "QUIT"
     } ],
-    "codeName" : "Quit",
-    "logicName" : "quit",
-    "stdDataType" : 5,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "QUIT"
   }, {
-    "dataType" : "TEXT",
     "length" : 40,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "898d247d54345c515f17a61f24b188cb",
+    "codeName" : "Category",
+    "logicName" : "category",
+    "stringLength" : 40,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -521,18 +524,15 @@
       "autoIncrement" : false,
       "name" : "CATEGORY"
     } ],
-    "codeName" : "Category",
-    "logicName" : "category",
-    "stringLength" : 40,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "CATEGORY"
   } ],
   "getAllPSDEDataSets" : [ {
-    "enableBackend" : true,
     "enableFront" : true,
+    "enableBackend" : true,
     "pubServiceDefault" : true,
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -540,9 +540,8 @@
     "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
-    "extendMode" : 0,
-    "enableGroup" : false,
     "userDRAction" : "READ",
+    "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
@@ -576,10 +575,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
-    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -587,10 +586,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
@@ -601,8 +600,7 @@
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : false,
-  "orderValue" : 99999,
-  "dSLink" : "DEFAULT",
+  "serviceAPIMode" : 1,
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -616,17 +614,20 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "extendMode" : 0,
+  "saaSDCIdColumnName" : "SRFDCID",
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "dSLink" : "DEFAULT",
   "saaSMode" : 4,
   "deployId" : "e78b89a69612bd1488fea977f0cb4cb6",
-  "enableSQLStorage" : true,
-  "dynaInstMode" : 1,
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
-  "virtualMode" : 0,
   "codeName" : "ImChatuser",
   "logicName" : "ImChatuser",
   "tableName" : "zt_im_chatuser",
+  "enableViewLevel" : 0,
+  "virtualMode" : 0,
+  "enableSQLStorage" : true,
+  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -635,14 +636,13 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
   "serviceCodeName" : "ImChatuser",
   "enableActions" : 7,
   "enableCreate" : true,
   "enableModify" : true,
-  "extendMode" : 0,
   "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
+  "subSysDE" : false,
+  "virtual" : false,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

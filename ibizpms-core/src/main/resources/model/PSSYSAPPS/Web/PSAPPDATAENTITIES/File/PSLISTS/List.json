@@ -10,25 +10,25 @@
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "dataType" : 25,
-    "name" : "title"
+    "name" : "title",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 25,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   } ],
-  "controlType" : "LIST",
   "enableRowEdit" : false,
+  "controlType" : "LIST",
   "codeName" : "List",
   "enableGroup" : false,
   "pagingSize" : 1000,

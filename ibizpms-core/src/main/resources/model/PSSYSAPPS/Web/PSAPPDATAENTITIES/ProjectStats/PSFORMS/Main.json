@@ -1,5 +1,7 @@
 {
   "enableAutoSave" : false,
+  "infoFormMode" : true,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -24,8 +26,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : true,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
@@ -48,6 +48,7 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
+          "compositeItem" : true,
           "getPSDEFormItems" : [ {
             "emptyCaption" : false,
             "getPSEditor" : {
@@ -60,15 +61,15 @@
               "name" : "TOTALWH",
               "codeName" : "Totalwh"
             },
-            "dataType" : 9,
+            "showCaption" : true,
             "hidden" : true,
-            "allowEmpty" : true,
+            "dataType" : 9,
             "caption" : "总工时",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 70,
-            "showCaption" : true,
             "codeName" : "custom7",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
@@ -85,21 +86,20 @@
               "name" : "TOTALCONSUMED",
               "codeName" : "TotalConsumed"
             },
-            "dataType" : 7,
+            "showCaption" : true,
             "hidden" : true,
-            "allowEmpty" : true,
+            "dataType" : 7,
             "caption" : "任务消耗总工时",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 70,
-            "showCaption" : true,
             "codeName" : "custom8",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "custom8"
           } ],
-          "compositeItem" : true,
           "detailType" : "FORMITEM",
           "emptyCaption" : false,
           "getPSEditor" : {
@@ -117,16 +117,16 @@
           },
           "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
-          "dataType" : 25,
+          "showCaption" : false,
           "hidden" : false,
-          "allowEmpty" : true,
+          "dataType" : 25,
           "caption" : "已完成",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "NONE",
           "labelWidth" : 0,
           "itemHeight" : 250.0,
-          "showCaption" : false,
           "contentHeight" : 250.0,
           "getPSLayoutPos" : {
             "colMD" : 24,
@@ -142,11 +142,11 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : false,
         "codeName" : "grouppanel6",
         "caption" : "分组面板",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : false,
         "name" : "grouppanel6"
       }, {
         "infoGroupMode" : true,
@@ -169,15 +169,15 @@
             "name" : "TOTALESTIMATE",
             "codeName" : "TotalEstimate"
           },
-          "dataType" : 7,
+          "showCaption" : true,
           "hidden" : false,
-          "allowEmpty" : true,
+          "dataType" : 7,
           "caption" : "预计",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "TOP",
           "labelWidth" : 70,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 8,
@@ -204,15 +204,15 @@
             "name" : "TOTALCONSUMED",
             "codeName" : "TotalConsumed"
           },
-          "dataType" : 7,
+          "showCaption" : true,
           "hidden" : false,
-          "allowEmpty" : true,
+          "dataType" : 7,
           "caption" : "消耗",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "TOP",
           "labelWidth" : 70,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 8,
@@ -239,15 +239,15 @@
             "name" : "TOTALLEFT",
             "codeName" : "TotalLeft"
           },
-          "dataType" : 7,
+          "showCaption" : true,
           "hidden" : false,
-          "allowEmpty" : true,
+          "dataType" : 7,
           "caption" : "剩余",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "TOP",
           "labelWidth" : 70,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 8,
@@ -265,11 +265,11 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : false,
         "codeName" : "grouppanel5",
         "caption" : "分组面板",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : false,
         "name" : "grouppanel5"
       } ],
       "getPSLayoutPos" : {
@@ -277,11 +277,11 @@
         "colLG" : 8,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : false,
       "codeName" : "grouppanel4",
       "caption" : "分组面板",
       "detailType" : "GROUPPANEL",
       "detailStyle" : "DEFAULT",
-      "showCaption" : false,
       "name" : "grouppanel4"
     }, {
       "infoGroupMode" : true,
@@ -298,8 +298,8 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
-          "rawItemWidth" : -1.0,
           "rawItemHeight" : -1.0,
+          "rawItemWidth" : -1.0,
           "contentType" : "RAW",
           "rawContent" : "<div style=\"margin-top: 6px;padding-left: 69px;\"><Icon type=\"md-checkmark-circle\" color=\"#49db44\"/>&nbsp;昨日完成任务数&nbsp;<b>{{data.yesterdayctaskcnt ? data.yesterdayctaskcnt : 0}}</b></div>",
           "getPSLayoutPos" : {
@@ -307,14 +307,14 @@
             "colLG" : 18,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : true,
           "codeName" : "rawitem1",
           "detailType" : "RAWITEM",
           "detailStyle" : "DEFAULT",
-          "showCaption" : true,
           "name" : "rawitem1"
         }, {
-          "rawItemWidth" : -1.0,
           "rawItemHeight" : -1.0,
+          "rawItemWidth" : -1.0,
           "contentType" : "RAW",
           "rawContent" : "<div style=\"margin-top: 6px;padding-left: 19px;\">&nbsp;总任务&nbsp;:&nbsp;{{data.taskcnt ? data.taskcnt : 0}}</div>",
           "getPSLayoutPos" : {
@@ -322,10 +322,10 @@
             "colLG" : 6,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : true,
           "codeName" : "rawitem6",
           "detailType" : "RAWITEM",
           "detailStyle" : "DEFAULT",
-          "showCaption" : true,
           "name" : "rawitem6"
         }, {
           "emptyCaption" : true,
@@ -339,14 +339,14 @@
             "name" : "YESTERDAYCTASKCNT",
             "codeName" : "Yesterdayctaskcnt"
           },
-          "dataType" : 9,
+          "showCaption" : true,
           "hidden" : true,
+          "dataType" : 9,
           "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 0,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "width" : 0,
@@ -368,15 +368,15 @@
             "name" : "TASKCNT",
             "codeName" : "TaskCnt"
           },
-          "dataType" : 9,
+          "showCaption" : true,
           "hidden" : true,
-          "allowEmpty" : true,
+          "dataType" : 9,
           "caption" : "总任务",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 70,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 4,
             "colLG" : 4,
@@ -388,6 +388,7 @@
           "detailStyle" : "DEFAULT",
           "name" : "taskcnt"
         }, {
+          "compositeItem" : true,
           "getPSDEFormItems" : [ {
             "emptyCaption" : false,
             "getPSEditor" : {
@@ -400,15 +401,15 @@
               "name" : "TASKCNT",
               "codeName" : "TaskCnt"
             },
-            "dataType" : 9,
+            "showCaption" : true,
             "hidden" : true,
-            "allowEmpty" : true,
+            "dataType" : 9,
             "caption" : "任务总数",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 70,
-            "showCaption" : true,
             "codeName" : "custom1",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
@@ -425,21 +426,20 @@
               "name" : "FINISHTASKCNT",
               "codeName" : "FinishTaskCnt"
             },
-            "dataType" : 9,
+            "showCaption" : true,
             "hidden" : true,
-            "allowEmpty" : true,
+            "dataType" : 9,
             "caption" : "已结束任务总数",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 70,
-            "showCaption" : true,
             "codeName" : "custom2",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "custom2"
           } ],
-          "compositeItem" : true,
           "detailType" : "FORMITEM",
           "emptyCaption" : false,
           "getPSEditor" : {
@@ -456,14 +456,14 @@
           },
           "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 25,
           "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 70,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 18,
@@ -473,8 +473,8 @@
           "detailStyle" : "DEFAULT",
           "name" : "formitemex1"
         }, {
-          "rawItemWidth" : -1.0,
           "rawItemHeight" : -1.0,
+          "rawItemWidth" : -1.0,
           "contentType" : "RAW",
           "rawContent" : "<div style=\"margin-top: 6px;padding-left: 19px;\">&nbsp;未完成&nbsp;:&nbsp;{{data.undonetaskcnt ? data.undonetaskcnt : 0}}</div>",
           "getPSLayoutPos" : {
@@ -482,10 +482,10 @@
             "colLG" : 6,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : true,
           "codeName" : "rawitem7",
           "detailType" : "RAWITEM",
           "detailStyle" : "DEFAULT",
-          "showCaption" : true,
           "name" : "rawitem7"
         }, {
           "emptyCaption" : false,
@@ -499,15 +499,15 @@
             "name" : "UNDONETASKCNT",
             "codeName" : "UnDoneTaskCnt"
           },
-          "dataType" : 9,
+          "showCaption" : true,
           "hidden" : true,
-          "allowEmpty" : true,
+          "dataType" : 9,
           "caption" : "未完成",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 70,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 4,
             "colLG" : 4,
@@ -522,6 +522,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : false,
         "getPSSysCss" : {
           "cssName" : "group-projectstats"
         },
@@ -529,7 +530,6 @@
         "caption" : "任务统计",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : false,
         "name" : "grouppanel1"
       }, {
         "infoGroupMode" : true,
@@ -539,8 +539,8 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
-          "rawItemWidth" : -1.0,
           "rawItemHeight" : -1.0,
+          "rawItemWidth" : -1.0,
           "contentType" : "RAW",
           "rawContent" : "<div style=\"margin-top: 6px;padding-left: 69px;\"><Icon type=\"md-checkmark-circle\" color=\"#49db44\"/>&nbsp;已发布需求数&nbsp;<b>{{data.releasedstorycnt ? data.releasedstorycnt : 0}}</b></div>",
           "getPSLayoutPos" : {
@@ -548,14 +548,14 @@
             "colLG" : 18,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : true,
           "codeName" : "rawitem2",
           "detailType" : "RAWITEM",
           "detailStyle" : "DEFAULT",
-          "showCaption" : true,
           "name" : "rawitem2"
         }, {
-          "rawItemWidth" : -1.0,
           "rawItemHeight" : -1.0,
+          "rawItemWidth" : -1.0,
           "contentType" : "RAW",
           "rawContent" : "<div style=\"margin-top: 6px;padding-left: 19px;\">&nbsp;总需求&nbsp;:&nbsp;{{data.storycnt ? data.storycnt : 0}}</div>",
           "getPSLayoutPos" : {
@@ -563,10 +563,10 @@
             "colLG" : 6,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : true,
           "codeName" : "rawitem5",
           "detailType" : "RAWITEM",
           "detailStyle" : "DEFAULT",
-          "showCaption" : true,
           "name" : "rawitem5"
         }, {
           "emptyCaption" : true,
@@ -580,14 +580,14 @@
             "name" : "RELEASEDSTORYCNT",
             "codeName" : "ReleasedStoryCnt"
           },
-          "dataType" : 9,
+          "showCaption" : true,
           "hidden" : true,
+          "dataType" : 9,
           "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 0,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "width" : 0,
@@ -609,15 +609,15 @@
             "name" : "STORYCNT",
             "codeName" : "StoryCnt"
           },
-          "dataType" : 9,
+          "showCaption" : true,
           "hidden" : true,
-          "allowEmpty" : true,
+          "dataType" : 9,
           "caption" : "总需求",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 70,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 4,
             "colLG" : 4,
@@ -629,6 +629,7 @@
           "detailStyle" : "DEFAULT",
           "name" : "storycnt"
         }, {
+          "compositeItem" : true,
           "getPSDEFormItems" : [ {
             "emptyCaption" : false,
             "getPSEditor" : {
@@ -641,15 +642,15 @@
               "name" : "STORYCNT",
               "codeName" : "StoryCnt"
             },
-            "dataType" : 9,
+            "showCaption" : true,
             "hidden" : true,
-            "allowEmpty" : true,
+            "dataType" : 9,
             "caption" : "需求总数",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 70,
-            "showCaption" : true,
             "codeName" : "custom3",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
@@ -666,21 +667,20 @@
               "name" : "CLOSEDSTORYCNT",
               "codeName" : "ClosedStoryCnt"
             },
-            "dataType" : 9,
+            "showCaption" : true,
             "hidden" : true,
-            "allowEmpty" : true,
+            "dataType" : 9,
             "caption" : "关闭需求总数",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 70,
-            "showCaption" : true,
             "codeName" : "custom4",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "custom4"
           } ],
-          "compositeItem" : true,
           "detailType" : "FORMITEM",
           "emptyCaption" : false,
           "getPSEditor" : {
@@ -697,14 +697,14 @@
           },
           "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 25,
           "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 70,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 18,
@@ -714,8 +714,8 @@
           "detailStyle" : "DEFAULT",
           "name" : "formitemex2"
         }, {
-          "rawItemWidth" : -1.0,
           "rawItemHeight" : -1.0,
+          "rawItemWidth" : -1.0,
           "contentType" : "RAW",
           "rawContent" : "<div style=\"margin-top: 6px;padding-left: 19px;\">&nbsp;未关闭&nbsp;:&nbsp;{{data.unclosedstorycnt ? data.unclosedstorycnt : 0}}</div>",
           "getPSLayoutPos" : {
@@ -723,10 +723,10 @@
             "colLG" : 6,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : true,
           "codeName" : "rawitem8",
           "detailType" : "RAWITEM",
           "detailStyle" : "DEFAULT",
-          "showCaption" : true,
           "name" : "rawitem8"
         }, {
           "emptyCaption" : false,
@@ -740,15 +740,15 @@
             "name" : "UNCLOSEDSTORYCNT",
             "codeName" : "UnClosedStoryCnt"
           },
-          "dataType" : 9,
+          "showCaption" : true,
           "hidden" : true,
-          "allowEmpty" : true,
+          "dataType" : 9,
           "caption" : "未关闭",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 70,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 4,
             "colLG" : 4,
@@ -763,6 +763,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : false,
         "getPSSysCss" : {
           "cssName" : "group-projectstats"
         },
@@ -770,7 +771,6 @@
         "caption" : "需求统计",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : false,
         "name" : "grouppanel2"
       }, {
         "infoGroupMode" : true,
@@ -780,8 +780,8 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
-          "rawItemWidth" : -1.0,
           "rawItemHeight" : -1.0,
+          "rawItemWidth" : -1.0,
           "contentType" : "RAW",
           "rawContent" : "<div style=\"margin-top: 6px;padding-left: 69px;\"><Icon type=\"md-checkmark-circle\" color=\"#49db44\"/>&nbsp;昨日解决Bug数&nbsp;<b>{{data.yesterdayrbugcnt ? data.yesterdayrbugcnt : 0}}</b></div>",
           "getPSLayoutPos" : {
@@ -789,10 +789,10 @@
             "colLG" : 18,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : true,
           "codeName" : "rawitem3",
           "detailType" : "RAWITEM",
           "detailStyle" : "DEFAULT",
-          "showCaption" : true,
           "name" : "rawitem3"
         }, {
           "emptyCaption" : true,
@@ -806,14 +806,14 @@
             "name" : "YESTERDAYRBUGCNT",
             "codeName" : "Yesterdayrbugcnt"
           },
-          "dataType" : 9,
+          "showCaption" : true,
           "hidden" : true,
+          "dataType" : 9,
           "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 0,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "width" : 0,
@@ -824,8 +824,8 @@
           "detailStyle" : "DEFAULT",
           "name" : "yesterdayrbugcnt"
         }, {
-          "rawItemWidth" : -1.0,
           "rawItemHeight" : -1.0,
+          "rawItemWidth" : -1.0,
           "contentType" : "RAW",
           "rawContent" : "<div style=\"margin-top: 6px;padding-left: 31px;\">&nbsp;所有&nbsp;:&nbsp;{{data.bugcnt ? data.bugcnt : 0}}</div>",
           "getPSLayoutPos" : {
@@ -833,10 +833,10 @@
             "colLG" : 6,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : true,
           "codeName" : "rawitem4",
           "detailType" : "RAWITEM",
           "detailStyle" : "DEFAULT",
-          "showCaption" : true,
           "name" : "rawitem4"
         }, {
           "emptyCaption" : false,
@@ -850,15 +850,15 @@
             "name" : "BUGCNT",
             "codeName" : "BugCnt"
           },
-          "dataType" : 9,
+          "showCaption" : true,
           "hidden" : true,
-          "allowEmpty" : true,
+          "dataType" : 9,
           "caption" : "所有",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 70,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 4,
             "colLG" : 4,
@@ -870,6 +870,7 @@
           "detailStyle" : "DEFAULT",
           "name" : "bugcnt"
         }, {
+          "compositeItem" : true,
           "getPSDEFormItems" : [ {
             "emptyCaption" : false,
             "getPSEditor" : {
@@ -882,15 +883,15 @@
               "name" : "BUGCNT",
               "codeName" : "BugCnt"
             },
-            "dataType" : 9,
+            "showCaption" : true,
             "hidden" : true,
-            "allowEmpty" : true,
+            "dataType" : 9,
             "caption" : "Bug总数",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 70,
-            "showCaption" : true,
             "codeName" : "custom5",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
@@ -907,21 +908,20 @@
               "name" : "FINISHBUGCNT",
               "codeName" : "FinishBugCnt"
             },
-            "dataType" : 9,
+            "showCaption" : true,
             "hidden" : true,
-            "allowEmpty" : true,
+            "dataType" : 9,
             "caption" : "已解决Bug总数",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 70,
-            "showCaption" : true,
             "codeName" : "custom6",
             "detailType" : "FORMITEM",
             "detailStyle" : "DEFAULT",
             "name" : "custom6"
           } ],
-          "compositeItem" : true,
           "detailType" : "FORMITEM",
           "emptyCaption" : false,
           "getPSEditor" : {
@@ -938,14 +938,14 @@
           },
           "inputTipClosable" : false,
           "noPrivDisplayMode" : 1,
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 25,
           "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 70,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 18,
@@ -955,8 +955,8 @@
           "detailStyle" : "DEFAULT",
           "name" : "formitemex3"
         }, {
-          "rawItemWidth" : -1.0,
           "rawItemHeight" : -1.0,
+          "rawItemWidth" : -1.0,
           "contentType" : "RAW",
           "rawContent" : "<div style=\"margin-top: 6px;padding-left: 19px;\">&nbsp;未解决&nbsp;:&nbsp;{{data.activebugcnt ? data.activebugcnt : 0}}</div>",
           "getPSLayoutPos" : {
@@ -964,10 +964,10 @@
             "colLG" : 6,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : true,
           "codeName" : "rawitem9",
           "detailType" : "RAWITEM",
           "detailStyle" : "DEFAULT",
-          "showCaption" : true,
           "name" : "rawitem9"
         }, {
           "emptyCaption" : false,
@@ -981,15 +981,15 @@
             "name" : "ACTIVEBUGCNT",
             "codeName" : "ActiveBugCnt"
           },
-          "dataType" : 9,
+          "showCaption" : true,
           "hidden" : true,
-          "allowEmpty" : true,
+          "dataType" : 9,
           "caption" : "未解决",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 70,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 4,
             "colLG" : 4,
@@ -1004,6 +1004,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : false,
         "getPSSysCss" : {
           "cssName" : "group-projectstats"
         },
@@ -1011,7 +1012,6 @@
         "caption" : "bug统计",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : false,
         "name" : "grouppanel3"
       } ],
       "getPSLayoutPos" : {
@@ -1019,11 +1019,11 @@
         "colLG" : 16,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : false,
       "codeName" : "group1",
       "caption" : "项目统计基本信息",
       "detailType" : "GROUPPANEL",
       "detailStyle" : "DEFAULT",
-      "showCaption" : false,
       "name" : "group1"
     } ],
     "getPSLayout" : {

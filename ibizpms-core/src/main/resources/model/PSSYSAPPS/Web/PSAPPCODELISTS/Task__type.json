@@ -40,8 +40,8 @@
     "codeName" : "Misc",
     "text" : "其他"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "Task__type",
   "emptyText" : "未定义",
   "enableCache" : true,

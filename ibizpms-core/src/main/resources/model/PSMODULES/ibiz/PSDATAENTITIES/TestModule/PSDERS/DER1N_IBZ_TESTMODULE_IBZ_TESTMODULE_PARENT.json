@@ -3,11 +3,11 @@
     "name" : "PARENT",
     "codeName" : "Parent"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "PARENTNAME",
     "codeName" : "ParentName"
   },
+  "masterOrder" : -1,
   "removeActionType" : -1,
   "pickupDEFName" : "PARENT",
   "masterRS" : 0,
@@ -17,12 +17,12 @@
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
   },
   "orderValue" : 100,
+  "codeName" : "ParentModule",
+  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
   },
-  "codeName" : "ParentModule",
-  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDERS/DER1N_IBZ_TESTMODULE_IBZ_TESTMODULE_PARENT.json",
   "name" : "DER1N_IBZ_TESTMODULE_IBZ_TESTMODULE_PARENT"
 }

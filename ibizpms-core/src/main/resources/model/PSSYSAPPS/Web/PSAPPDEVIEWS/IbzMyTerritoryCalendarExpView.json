@@ -5,10 +5,10 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "CalendarExpView",
+  "enableDP" : true,
   "caption" : "我的地盘",
   "title" : "我的地盘日历导航视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -31,7 +31,6 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
@@ -41,6 +40,7 @@
     "xDataControlName" : "calendarexpbar_calendar",
     "enableSearch" : false,
     "enableCounter" : true,
+    "showTitleBar" : false,
     "getPSControls" : [ {
       "getPSSysCalendarItems" : [ {
         "enableQuickCreate" : false,
@@ -71,6 +71,7 @@
         "getPSLayoutPanel" : {
           "getRootPSPanelItems" : [ {
             "getPSPanelItems" : [ {
+              "viewFieldName" : "pri",
               "getPSEditor" : {
                 "enableLinkView" : false,
                 "editable" : false,
@@ -81,10 +82,9 @@
                 "editorType" : "SPAN",
                 "name" : "pri"
               },
-              "viewFieldName" : "pri",
+              "showCaption" : false,
               "hidden" : false,
               "convertToCodeItemText" : true,
-              "showCaption" : false,
               "getPSLayoutPos" : {
                 "colMD" : 2,
                 "colLG" : 2,
@@ -94,15 +94,15 @@
               "itemStyle" : "DEFAULT",
               "name" : "pri"
             }, {
+              "viewFieldName" : "title",
               "getPSEditor" : {
                 "enableLinkView" : false,
                 "editable" : false,
                 "editorType" : "SPAN",
                 "name" : "title"
               },
-              "viewFieldName" : "title",
-              "hidden" : false,
               "showCaption" : false,
+              "hidden" : false,
               "getPSLayoutPos" : {
                 "colMD" : 10,
                 "colLG" : 10,
@@ -112,6 +112,7 @@
               "itemStyle" : "DEFAULT",
               "name" : "title"
             }, {
+              "viewFieldName" : "status",
               "getPSEditor" : {
                 "enableLinkView" : false,
                 "editable" : false,
@@ -122,10 +123,9 @@
                 "editorType" : "SPAN",
                 "name" : "status"
               },
-              "viewFieldName" : "status",
+              "showCaption" : false,
               "hidden" : false,
               "convertToCodeItemText" : true,
-              "showCaption" : false,
               "getPSLayoutPos" : {
                 "colMD" : 4,
                 "colLG" : 4,
@@ -135,6 +135,7 @@
               "itemStyle" : "DEFAULT",
               "name" : "status"
             }, {
+              "viewFieldName" : "resolution",
               "getPSEditor" : {
                 "enableLinkView" : false,
                 "editable" : false,
@@ -145,10 +146,9 @@
                 "editorType" : "SPAN",
                 "name" : "resolution"
               },
-              "viewFieldName" : "resolution",
+              "showCaption" : false,
               "hidden" : false,
               "convertToCodeItemText" : true,
-              "showCaption" : false,
               "getPSLayoutPos" : {
                 "colMD" : 3,
                 "colLG" : 3,
@@ -178,9 +178,9 @@
                 "logicType" : "GROUP",
                 "name" : "面板成员[rawitem2][面板显示]逻辑"
               } ],
+              "showCaption" : true,
               "itemType" : "RAWITEM",
               "itemStyle" : "DEFAULT",
-              "showCaption" : true,
               "name" : "rawitem2"
             }, {
               "getPSLayoutPos" : {
@@ -204,9 +204,9 @@
                 "logicType" : "GROUP",
                 "name" : "面板成员[rawitem3][面板显示]逻辑"
               } ],
+              "showCaption" : true,
               "itemType" : "RAWITEM",
               "itemStyle" : "DEFAULT",
-              "showCaption" : true,
               "name" : "rawitem3"
             }, {
               "htmlContent" : "<i class=\"fa fa-hand-o-right\"></i>",
@@ -236,11 +236,12 @@
                 "logicType" : "GROUP",
                 "name" : "面板成员[rawitem1][面板显示]逻辑"
               } ],
+              "showCaption" : true,
               "itemType" : "RAWITEM",
               "itemStyle" : "DEFAULT",
-              "showCaption" : true,
               "name" : "rawitem1"
             }, {
+              "viewFieldName" : "assignedto",
               "getPSEditor" : {
                 "enableLinkView" : false,
                 "editable" : false,
@@ -251,10 +252,9 @@
                 "editorType" : "SPAN",
                 "name" : "assignedto"
               },
-              "viewFieldName" : "assignedto",
+              "showCaption" : false,
               "hidden" : false,
               "convertToCodeItemText" : true,
-              "showCaption" : false,
               "getPSLayoutPos" : {
                 "colMD" : 3,
                 "colLG" : 3,
@@ -272,12 +272,12 @@
               "colMD" : 12,
               "layout" : "TABLE_12COL"
             },
+            "showCaption" : false,
             "getPSSysCss" : {
               "cssName" : "mob_list_card"
             },
             "itemType" : "CONTAINER",
             "itemStyle" : "DEFAULT",
-            "showCaption" : false,
             "name" : "container2"
           } ],
           "getAllPSPanelFields" : [ {
@@ -318,13 +318,13 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
         },
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchAssignedToMyBugPc"
-        },
         "getTextPSAppDEField" : {
           "name" : "TITLE",
           "codeName" : "Title"
+        },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchAssignedToMyBugPc"
         },
         "itemType" : "Bug",
         "color" : "rgba(17, 34, 132, 1)",
@@ -366,6 +366,7 @@
         "getPSLayoutPanel" : {
           "getRootPSPanelItems" : [ {
             "getPSPanelItems" : [ {
+              "viewFieldName" : "pri",
               "getPSEditor" : {
                 "enableLinkView" : false,
                 "editable" : false,
@@ -376,10 +377,9 @@
                 "editorType" : "SPAN",
                 "name" : "pri"
               },
-              "viewFieldName" : "pri",
+              "showCaption" : false,
               "hidden" : false,
               "convertToCodeItemText" : true,
-              "showCaption" : false,
               "getPSLayoutPos" : {
                 "colMD" : 1,
                 "colLG" : 1,
@@ -389,15 +389,15 @@
               "itemStyle" : "DEFAULT",
               "name" : "pri"
             }, {
+              "viewFieldName" : "name",
               "getPSEditor" : {
                 "enableLinkView" : false,
                 "editable" : false,
                 "editorType" : "SPAN",
                 "name" : "name"
               },
-              "viewFieldName" : "name",
-              "hidden" : false,
               "showCaption" : false,
+              "hidden" : false,
               "getPSLayoutPos" : {
                 "colMD" : 11,
                 "colLG" : 11,
@@ -407,6 +407,7 @@
               "itemStyle" : "DEFAULT",
               "name" : "name"
             }, {
+              "viewFieldName" : "status",
               "getPSEditor" : {
                 "enableLinkView" : false,
                 "editable" : false,
@@ -417,10 +418,9 @@
                 "editorType" : "SPAN",
                 "name" : "status"
               },
-              "viewFieldName" : "status",
+              "showCaption" : false,
               "hidden" : false,
               "convertToCodeItemText" : true,
-              "showCaption" : false,
               "getPSLayoutPos" : {
                 "colMD" : 3,
                 "colLG" : 3,
@@ -455,9 +455,9 @@
                 "logicType" : "GROUP",
                 "name" : "面板成员[rawitem1][面板显示]逻辑"
               } ],
+              "showCaption" : true,
               "itemType" : "RAWITEM",
               "itemStyle" : "DEFAULT",
-              "showCaption" : true,
               "name" : "rawitem1"
             }, {
               "getPSLayoutPos" : {
@@ -479,9 +479,9 @@
                 "logicType" : "GROUP",
                 "name" : "面板成员[rawitem3][面板显示]逻辑"
               } ],
+              "showCaption" : true,
               "itemType" : "RAWITEM",
               "itemStyle" : "DEFAULT",
-              "showCaption" : true,
               "name" : "rawitem3"
             }, {
               "getPSLayoutPos" : {
@@ -502,11 +502,12 @@
                 "logicType" : "GROUP",
                 "name" : "面板成员[rawitem2][面板显示]逻辑"
               } ],
+              "showCaption" : true,
               "itemType" : "RAWITEM",
               "itemStyle" : "DEFAULT",
-              "showCaption" : true,
               "name" : "rawitem2"
             }, {
+              "viewFieldName" : "assignedto",
               "getPSEditor" : {
                 "enableLinkView" : false,
                 "editable" : false,
@@ -517,10 +518,9 @@
                 "editorType" : "SPAN",
                 "name" : "assignedto"
               },
-              "viewFieldName" : "assignedto",
+              "showCaption" : false,
               "hidden" : false,
               "convertToCodeItemText" : true,
-              "showCaption" : false,
               "getPSLayoutPos" : {
                 "colMD" : 4,
                 "colLG" : 4,
@@ -530,15 +530,15 @@
               "itemStyle" : "DEFAULT",
               "name" : "assignedto"
             }, {
+              "viewFieldName" : " left",
               "getPSEditor" : {
                 "enableLinkView" : false,
                 "editable" : false,
                 "editorType" : "SPAN",
                 "name" : "left"
               },
-              "viewFieldName" : " left",
-              "hidden" : false,
               "showCaption" : false,
+              "hidden" : false,
               "getPSLayoutPos" : {
                 "colMD" : 2,
                 "colLG" : 2,
@@ -558,12 +558,12 @@
               "colMD" : 12,
               "layout" : "TABLE_12COL"
             },
+            "showCaption" : true,
             "getPSSysCss" : {
               "cssName" : "mob_list_card"
             },
             "itemType" : "CONTAINER",
             "itemStyle" : "DEFAULT",
-            "showCaption" : true,
             "name" : "container1"
           } ],
           "getAllPSPanelFields" : [ {
@@ -604,13 +604,13 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         },
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchAssignedToMyTaskPc"
-        },
         "getTextPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
+        },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchAssignedToMyTaskPc"
         },
         "itemType" : "task",
         "color" : "rgba(247, 219, 15, 1)",
@@ -649,6 +649,7 @@
         "getPSLayoutPanel" : {
           "getRootPSPanelItems" : [ {
             "getPSPanelItems" : [ {
+              "viewFieldName" : "pri",
               "getPSEditor" : {
                 "enableLinkView" : false,
                 "editable" : false,
@@ -659,10 +660,9 @@
                 "editorType" : "SPAN",
                 "name" : "pri"
               },
-              "viewFieldName" : "pri",
+              "showCaption" : false,
               "hidden" : false,
               "convertToCodeItemText" : true,
-              "showCaption" : false,
               "getPSLayoutPos" : {
                 "colMD" : 2,
                 "colLG" : 2,
@@ -672,15 +672,15 @@
               "itemStyle" : "DEFAULT",
               "name" : "pri"
             }, {
+              "viewFieldName" : "name",
               "getPSEditor" : {
                 "enableLinkView" : false,
                 "editable" : false,
                 "editorType" : "SPAN",
                 "name" : "name"
               },
-              "viewFieldName" : "name",
-              "hidden" : false,
               "showCaption" : false,
+              "hidden" : false,
               "getPSLayoutPos" : {
                 "colMD" : 10,
                 "colLG" : 10,
@@ -690,15 +690,15 @@
               "itemStyle" : "DEFAULT",
               "name" : "name"
             }, {
+              "viewFieldName" : "date1",
               "getPSEditor" : {
                 "enableLinkView" : false,
                 "editable" : false,
                 "editorType" : "SPAN",
                 "name" : "date1"
               },
-              "viewFieldName" : "date1",
-              "hidden" : false,
               "showCaption" : false,
+              "hidden" : false,
               "getPSLayoutPos" : {
                 "colMD" : 3,
                 "colLG" : 3,
@@ -708,6 +708,7 @@
               "itemStyle" : "DEFAULT",
               "name" : "date1"
             }, {
+              "viewFieldName" : "begin",
               "getPSEditor" : {
                 "enableLinkView" : false,
                 "editable" : false,
@@ -718,10 +719,9 @@
                 "editorType" : "SPAN",
                 "name" : "begin"
               },
-              "viewFieldName" : "begin",
+              "showCaption" : false,
               "hidden" : false,
               "convertToCodeItemText" : true,
-              "showCaption" : false,
               "getPSLayoutPos" : {
                 "colMD" : 3,
                 "colLG" : 3,
@@ -731,6 +731,7 @@
               "itemStyle" : "DEFAULT",
               "name" : "begin"
             }, {
+              "viewFieldName" : "status",
               "getPSEditor" : {
                 "enableLinkView" : false,
                 "editable" : false,
@@ -741,10 +742,9 @@
                 "editorType" : "SPAN",
                 "name" : "status"
               },
-              "viewFieldName" : "status",
+              "showCaption" : false,
               "hidden" : false,
               "convertToCodeItemText" : true,
-              "showCaption" : false,
               "getPSLayoutPos" : {
                 "colMD" : 3,
                 "colLG" : 3,
@@ -764,12 +764,12 @@
               "colMD" : 12,
               "layout" : "TABLE_12COL"
             },
+            "showCaption" : true,
             "getPSSysCss" : {
               "cssName" : "mob_list_card"
             },
             "itemType" : "CONTAINER",
             "itemStyle" : "DEFAULT",
-            "showCaption" : true,
             "name" : "container1"
           } ],
           "getAllPSPanelFields" : [ {
@@ -810,13 +810,13 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
         },
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchMyTodoPc"
-        },
         "getTextPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
+        },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchMyTodoPc"
         },
         "itemType" : "todo",
         "itemStyle" : "DEFAULT",
@@ -855,13 +855,13 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
         },
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchMyAllDaily"
-        },
         "getTextPSAppDEField" : {
           "name" : "IBZ_DAILYNAME",
           "codeName" : "IbzDailyName"
+        },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchMyAllDaily"
         },
         "itemType" : "daily",
         "color" : "rgba(0, 0, 0, 1)",
@@ -901,13 +901,13 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json"
         },
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchMyAllReportly"
-        },
         "getTextPSAppDEField" : {
           "name" : "IBZ_REPORTLYNAME",
           "codeName" : "IbzReportlyName"
+        },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchMyAllReportly"
         },
         "itemType" : "reportly",
         "itemStyle" : "DEFAULT",
@@ -951,11 +951,12 @@
                 "colLG" : 1,
                 "layout" : "TABLE_12COL"
               },
+              "showCaption" : true,
               "itemType" : "RAWITEM",
               "itemStyle" : "DEFAULT",
-              "showCaption" : true,
               "name" : "rawitem1"
             }, {
+              "viewFieldName" : "account",
               "getPSEditor" : {
                 "enableLinkView" : false,
                 "editable" : false,
@@ -966,10 +967,9 @@
                 "editorType" : "SPAN",
                 "name" : "account"
               },
-              "viewFieldName" : "account",
+              "showCaption" : false,
               "hidden" : false,
               "convertToCodeItemText" : true,
-              "showCaption" : false,
               "getPSLayoutPos" : {
                 "colMD" : 6,
                 "colLG" : 6,
@@ -979,15 +979,15 @@
               "itemStyle" : "DEFAULT",
               "name" : "account"
             }, {
+              "viewFieldName" : "role",
               "getPSEditor" : {
                 "enableLinkView" : false,
                 "editable" : false,
                 "editorType" : "SPAN",
                 "name" : "role"
               },
-              "viewFieldName" : "role",
-              "hidden" : false,
               "showCaption" : false,
+              "hidden" : false,
               "getPSLayoutPos" : {
                 "colMD" : 4,
                 "colLG" : 4,
@@ -1007,12 +1007,12 @@
               "colMD" : 12,
               "layout" : "TABLE_12COL"
             },
+            "showCaption" : true,
             "getPSSysCss" : {
               "cssName" : "mob_list_card"
             },
             "itemType" : "CONTAINER",
             "itemStyle" : "DEFAULT",
-            "showCaption" : true,
             "name" : "container1"
           } ],
           "getAllPSPanelFields" : [ {
@@ -1044,13 +1044,13 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
         },
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchMyTestTaskPc"
-        },
         "getTextPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
+        },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchMyTestTaskPc"
         },
         "itemType" : "testtask",
         "itemStyle" : "DEFAULT",
@@ -1093,13 +1093,13 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
         },
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchAssignedToMyStoryCalendar"
-        },
         "getTextPSAppDEField" : {
           "name" : "TITLE",
           "codeName" : "Title"
+        },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchAssignedToMyStoryCalendar"
         },
         "itemType" : "Story",
         "itemStyle" : "DEFAULT",
@@ -1135,7 +1135,6 @@
       "name" : "calendarexpbar_calendar",
       "modelid" : "1c72d13c2b12a4d55b0bfc83756fb2c7"
     } ],
-    "showTitleBar" : false,
     "getPSAppViewRefs" : [ {
       "getRefPSAppView" : {
         "modelref" : true,
@@ -1213,13 +1212,14 @@
     "name" : "calendarexpbar",
     "modelid" : "de099c7c4f5c1f66e518aab73595f15f_calendarexpbar"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
+      "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "logicType" : "PREDEFINED",
       "name" : "新建数据"

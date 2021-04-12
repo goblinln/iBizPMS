@@ -2,8 +2,8 @@
   "blankMode" : false,
   "enableAppSwitch" : false,
   "defaultPage" : true,
-  "appSwitchMode" : 0,
   "enableDP" : true,
+  "appSwitchMode" : 0,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -13,7 +13,6 @@
     "controlStyle" : "APPINDEXVIEW_STYLE2",
     "name" : "layoutpanel"
   },
-  "viewStyle" : "STYLE2",
   "getPSControls" : [ {
     "enableCustomize" : false,
     "controlType" : "APPMENU",
@@ -597,6 +596,7 @@
     "name" : "appmenu",
     "modelid" : "0a4e485b6222864606f7d7e77325ee2d"
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "iBizPMS",
   "caption" : "iBiz软件生产管理",
   "title" : "iBiz软件生产管理",

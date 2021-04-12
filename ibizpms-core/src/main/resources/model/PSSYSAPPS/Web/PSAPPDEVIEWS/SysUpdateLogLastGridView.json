@@ -8,10 +8,10 @@
   "xDataControlName" : "grid",
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "LastGridView",
+  "enableDP" : true,
   "caption" : "更新日志",
   "title" : "系统更新日志表格视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSAppViewNavParams" : [ {
     "rawValue" : true,
     "value" : "PC",
@@ -51,49 +51,48 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysUpdateLog.json"
   },
   "getPSControls" : [ {
     "getPSDEGridDataItems" : [ {
-      "format" : "YYYY-MM-DD",
       "getPSAppDEField" : {
         "name" : "UPDATE",
         "codeName" : "Update"
       },
-      "dataType" : 5,
-      "name" : "update"
+      "format" : "YYYY-MM-DD",
+      "name" : "update",
+      "dataType" : 5
     }, {
       "getPSAppDEField" : {
         "name" : "SYS_UPDATE_LOGNAME",
         "codeName" : "SysUpdateLogName"
       },
-      "dataType" : 25,
-      "name" : "sys_update_logname"
+      "name" : "sys_update_logname",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "SYS_UPDATE_LOGNAME",
         "codeName" : "SysUpdateLogName"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "SYS_UPDATE_LOGID",
         "codeName" : "SysUpdateLogId"
       },
-      "dataType" : 25,
-      "name" : "srfdataaccaction"
+      "name" : "srfdataaccaction",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "SYS_UPDATE_LOGID",
         "codeName" : "SysUpdateLogId"
       },
-      "dataType" : 25,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 25
     } ],
     "getRemovePSControlAction" : {
       "getPSAppDataEntity" : {
@@ -109,8 +108,6 @@
       "actionType" : "DEACTION",
       "name" : "remove"
     },
-    "singleSelect" : true,
-    "enableColFilter" : false,
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : true,
@@ -132,20 +129,22 @@
     } ],
     "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "controlType" : "GRID",
-    "enableRowEdit" : false,
+    "enableColFilter" : false,
+    "singleSelect" : true,
+    "enablePagingBar" : false,
     "getMinorSortPSAppDEField" : {
       "name" : "UPDATE",
       "codeName" : "Update"
     },
-    "enablePagingBar" : false,
+    "enableRowEdit" : false,
+    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
-      "excelCaption" : "更新名称",
-      "dataItemName" : "sys_update_logname",
       "getPSAppDEField" : {
         "name" : "SYS_UPDATE_LOGNAME",
         "codeName" : "SysUpdateLogName"
       },
+      "dataItemName" : "sys_update_logname",
+      "excelCaption" : "更新名称",
       "getPSDEUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -180,12 +179,12 @@
       "widthUnit" : "STAR",
       "name" : "sys_update_logname"
     }, {
-      "excelCaption" : "更新日期",
-      "dataItemName" : "update",
       "getPSAppDEField" : {
         "name" : "UPDATE",
         "codeName" : "Update"
       },
+      "dataItemName" : "update",
+      "excelCaption" : "更新日期",
       "valueFormat" : "YYYY-MM-DD",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
@@ -330,6 +329,7 @@
     "name" : "grid",
     "modelid" : "62aab793c79909b5b5da5f7aee5048f6"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -351,7 +351,6 @@
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -359,9 +358,10 @@
           "viewType" : "DEEDITVIEW"
         }
       },
+      "enableWizardAdd" : false,
+      "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {

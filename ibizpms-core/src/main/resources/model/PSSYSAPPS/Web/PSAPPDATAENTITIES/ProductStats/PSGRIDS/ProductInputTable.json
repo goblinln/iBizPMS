@@ -4,44 +4,44 @@
       "name" : "RESPROJECTCNT",
       "codeName" : "ResProjectCnt"
     },
-    "dataType" : 9,
-    "name" : "resprojectcnt"
+    "name" : "resprojectcnt",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "name"
+    "name" : "name",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "HAVECONSUMED",
       "codeName" : "Haveconsumed"
     },
-    "dataType" : 7,
-    "name" : "haveconsumed"
+    "name" : "haveconsumed",
+    "dataType" : 7
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   } ],
   "getRemovePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -57,8 +57,6 @@
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "singleSelect" : true,
-  "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -80,9 +78,11 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : false,
+  "enableColFilter" : false,
+  "singleSelect" : true,
   "enablePagingBar" : false,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
     "linkValueItem" : "srfkey",
     "enableLinkView" : true,
@@ -91,12 +91,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
-    "excelCaption" : "产品名称",
-    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "dataItemName" : "name",
+    "excelCaption" : "产品名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -108,12 +108,12 @@
     "widthUnit" : "PX",
     "name" : "name"
   }, {
-    "excelCaption" : "关联项目数",
-    "dataItemName" : "resprojectcnt",
     "getPSAppDEField" : {
       "name" : "RESPROJECTCNT",
       "codeName" : "ResProjectCnt"
     },
+    "dataItemName" : "resprojectcnt",
+    "excelCaption" : "关联项目数",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -126,12 +126,12 @@
     "aggMode" : "SUM",
     "name" : "resprojectcnt"
   }, {
-    "excelCaption" : "已消耗工时",
-    "dataItemName" : "haveconsumed",
     "getPSAppDEField" : {
       "name" : "HAVECONSUMED",
       "codeName" : "Haveconsumed"
     },
+    "dataItemName" : "haveconsumed",
+    "excelCaption" : "已消耗工时",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,

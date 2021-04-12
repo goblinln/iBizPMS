@@ -1,5 +1,7 @@
 {
   "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -24,8 +26,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : false,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
@@ -50,14 +50,14 @@
         "name" : "REPORT",
         "codeName" : "Report"
       },
-      "dataType" : 21,
+      "showCaption" : true,
       "hidden" : false,
+      "dataType" : 21,
       "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 10,
-      "showCaption" : true,
       "getPSDEFDGroupLogics" : [ {
         "relatedDetailNames" : [ "report" ],
         "logicCat" : "PANELVISIBLE",
@@ -81,8 +81,8 @@
       "detailStyle" : "DEFAULT",
       "name" : "report"
     }, {
-      "rawItemWidth" : -1.0,
       "rawItemHeight" : -1.0,
+      "rawItemWidth" : -1.0,
       "contentType" : "RAW",
       "rawContent" : "无",
       "getPSDEFDGroupLogics" : [ {
@@ -103,10 +103,10 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : true,
       "codeName" : "rawitem1",
       "detailType" : "RAWITEM",
       "detailStyle" : "DEFAULT",
-      "showCaption" : true,
       "name" : "rawitem1"
     } ],
     "getPSLayout" : {

@@ -3,13 +3,13 @@
   "showCaptionBar" : false,
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "WHEditView",
+  "enableDP" : true,
   "height" : 600,
   "width" : 800,
   "caption" : "工时",
   "title" : "工时",
   "openMode" : "POPUPMODAL",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -44,7 +44,6 @@
     },
     "name" : "toolbar_deuiaction1"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
@@ -94,9 +93,9 @@
       "tooltip" : "保存并关闭",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "保存并关闭",
-      "showCaption" : true,
       "name" : "deuiaction1"
     } ],
     "getPSAppDataEntity" : {
@@ -113,6 +112,8 @@
     "modelid" : "41ec2a0b8e2256c9eee112003a6acd60"
   }, {
     "enableAutoSave" : false,
+    "infoFormMode" : false,
+    "showFormNavBar" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -137,8 +138,6 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
-    "infoFormMode" : false,
-    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
@@ -162,8 +161,9 @@
           "name" : "ID",
           "codeName" : "Id"
         },
-        "dataType" : 1,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 1,
         "allowEmpty" : true,
         "enableCond" : 0,
         "ignoreInput" : 0,
@@ -171,7 +171,6 @@
         "labelWidth" : 2,
         "itemWidth" : 42.0,
         "itemHeight" : 32.0,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 2,
@@ -198,14 +197,14 @@
           "name" : "NAME",
           "codeName" : "Name"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 25,
         "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 2,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 21,
@@ -230,15 +229,15 @@
           "name" : "PROJECT",
           "codeName" : "Project"
         },
-        "dataType" : 1,
+        "showCaption" : true,
         "hidden" : true,
-        "allowEmpty" : true,
+        "dataType" : 1,
         "caption" : "所属项目",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -248,8 +247,8 @@
         "detailStyle" : "DEFAULT",
         "name" : "project"
       }, {
-        "refreshItemsSetParamOnly" : false,
         "needSave" : false,
+        "refreshItemsSetParamOnly" : false,
         "parentDataJO" : {
           "srfparentdefname" : "TASK",
           "srfparentdename" : "ZT_TASK",
@@ -267,10 +266,10 @@
           "xDataControlName" : "grid",
           "showCaptionBar" : false,
           "getPSDEViewCodeName" : "LookGridView9",
+          "enableDP" : true,
           "caption" : "工时",
           "title" : "任务预计表格视图",
           "accUserMode" : 2,
-          "enableDP" : true,
           "getPSViewLayoutPanel" : {
             "useDefaultLayout" : true,
             "layoutPanel" : true,
@@ -310,7 +309,6 @@
             "key" : "SRFPARENTKEY",
             "name" : "SRFPARENTKEY"
           } ],
-          "viewStyle" : "STYLE2",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
@@ -321,66 +319,66 @@
                 "name" : "WORK",
                 "codeName" : "Work"
               },
-              "dataType" : 21,
-              "name" : "work"
+              "name" : "work",
+              "dataType" : 21
             }, {
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
               },
-              "dataType" : 1,
-              "name" : "id"
+              "name" : "id",
+              "dataType" : 1
             }, {
               "getPSAppDEField" : {
                 "name" : "CONSUMED",
                 "codeName" : "Consumed"
               },
-              "dataType" : 7,
-              "name" : "consumed"
+              "name" : "consumed",
+              "dataType" : 7
             }, {
-              "format" : "YYYY-MM-DD",
               "getPSAppDEField" : {
                 "name" : "DATES",
                 "codeName" : "Dates"
               },
-              "dataType" : 5,
-              "name" : "dates"
+              "format" : "YYYY-MM-DD",
+              "name" : "dates",
+              "dataType" : 5
             }, {
               "getPSAppDEField" : {
                 "name" : "TASK",
                 "codeName" : "Task"
               },
-              "dataType" : 1,
-              "name" : "task"
+              "name" : "task",
+              "dataType" : 1
             }, {
               "getPSAppDEField" : {
                 "name" : "LEFT",
                 "codeName" : "Left"
               },
-              "dataType" : 7,
-              "name" : "left"
+              "name" : "left",
+              "dataType" : 7
             }, {
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
               },
-              "dataType" : 1,
-              "name" : "srfmajortext"
+              "name" : "srfmajortext",
+              "dataType" : 1
             }, {
               "dataAccessAction" : true,
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
               },
-              "dataType" : 1,
-              "name" : "srfdataaccaction"
+              "name" : "srfdataaccaction",
+              "dataType" : 1
             }, {
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
               },
-              "dataType" : 1,
-              "name" : "srfkey"
+              "name" : "srfkey",
+              "dataType" : 1
             } ],
             "getRemovePSControlAction" : {
               "getPSAppDataEntity" : {
@@ -396,8 +394,6 @@
               "actionType" : "DEACTION",
               "name" : "remove"
             },
-            "singleSelect" : true,
-            "enableColFilter" : false,
             "enableRowNew" : false,
             "enableRowEditOrder" : false,
             "noSort" : true,
@@ -436,17 +432,19 @@
             } ],
             "hasWFDataItems" : false,
             "columnEnableLink" : 2,
-            "controlType" : "GRID",
-            "enableRowEdit" : false,
+            "enableColFilter" : false,
+            "singleSelect" : true,
             "enablePagingBar" : false,
+            "enableRowEdit" : false,
+            "controlType" : "GRID",
             "getPSDEGridColumns" : [ {
-              "excelCaption" : "ID",
-              "dataItemName" : "id",
-              "enableRowEdit" : true,
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
               },
+              "dataItemName" : "id",
+              "enableRowEdit" : true,
+              "excelCaption" : "ID",
               "cLConvertMode" : "NONE",
               "noPrivDisplayMode" : 1,
               "enableSort" : false,
@@ -458,12 +456,12 @@
               "widthUnit" : "PX",
               "name" : "id"
             }, {
-              "excelCaption" : "日期",
-              "dataItemName" : "dates",
               "getPSAppDEField" : {
                 "name" : "DATES",
                 "codeName" : "Dates"
               },
+              "dataItemName" : "dates",
+              "excelCaption" : "日期",
               "valueFormat" : "YYYY-MM-DD",
               "cLConvertMode" : "NONE",
               "noPrivDisplayMode" : 1,
@@ -476,12 +474,12 @@
               "widthUnit" : "PX",
               "name" : "dates"
             }, {
-              "excelCaption" : "总计消耗",
-              "dataItemName" : "consumed",
               "getPSAppDEField" : {
                 "name" : "CONSUMED",
                 "codeName" : "Consumed"
               },
+              "dataItemName" : "consumed",
+              "excelCaption" : "总计消耗",
               "cLConvertMode" : "NONE",
               "noPrivDisplayMode" : 1,
               "enableSort" : false,
@@ -493,12 +491,12 @@
               "widthUnit" : "PX",
               "name" : "consumed"
             }, {
-              "excelCaption" : "预计剩余",
-              "dataItemName" : "left",
               "getPSAppDEField" : {
                 "name" : "LEFT",
                 "codeName" : "Left"
               },
+              "dataItemName" : "left",
+              "excelCaption" : "预计剩余",
               "cLConvertMode" : "NONE",
               "noPrivDisplayMode" : 1,
               "enableSort" : false,
@@ -510,12 +508,12 @@
               "widthUnit" : "PX",
               "name" : "left"
             }, {
-              "excelCaption" : "备注",
-              "dataItemName" : "work",
               "getPSAppDEField" : {
                 "name" : "WORK",
                 "codeName" : "Work"
               },
+              "dataItemName" : "work",
+              "excelCaption" : "备注",
               "cLConvertMode" : "NONE",
               "noPrivDisplayMode" : 1,
               "enableSort" : false,
@@ -636,6 +634,7 @@
             "name" : "grid",
             "modelid" : "99c4014f02ef7bf945e87807e9a3c895"
           } ],
+          "viewStyle" : "STYLE2",
           "getPSAppViewRefs" : [ {
             "name" : "NEWDATA"
           }, {
@@ -644,10 +643,10 @@
           "getPSAppViewLogics" : [ {
             "logicTrigger" : "CUSTOM",
             "getPSAppUILogic" : {
+              "enableWizardAdd" : false,
               "actionAfterWizard" : "DEFAULT",
               "enableBatchAdd" : false,
               "batchAddOnly" : false,
-              "enableWizardAdd" : false,
               "viewLogicType" : "APP_NEWDATA",
               "logicType" : "PREDEFINED",
               "name" : "新建数据"
@@ -669,450 +668,450 @@
           "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskEstimateLookGridView9.json",
           "name" : "TaskEstimateLookGridView9",
           "getPSAppDERSPaths" : [ [ {
-            "getParentPSAppDEField" : {
-              "name" : "ROOT",
-              "codeName" : "Root"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+            "getParentPSAppDEField" : {
+              "name" : "ROOT",
+              "codeName" : "Root"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "ProjectModules",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "项目任务模块"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "MODULE",
-              "codeName" : "Module"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
+            "getParentPSAppDEField" : {
+              "name" : "MODULE",
+              "codeName" : "Module"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "Tasks",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "任务模块"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "TASK",
-              "codeName" : "Task"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            "getParentPSAppDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "TaskEstimates",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "任务预计工时"
           } ], [ {
-            "getParentPSAppDEField" : {
-              "name" : "PRODUCT",
-              "codeName" : "Product"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+            "getParentPSAppDEField" : {
+              "name" : "PRODUCT",
+              "codeName" : "Product"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "Stories",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "产品需求"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "STORY",
-              "codeName" : "Story"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+            "getParentPSAppDEField" : {
+              "name" : "STORY",
+              "codeName" : "Story"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "Tasks",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "需求任务"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "TASK",
-              "codeName" : "Task"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            "getParentPSAppDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "TaskEstimates",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "任务预计工时"
           } ], [ {
-            "getParentPSAppDEField" : {
-              "name" : "PRODUCT",
-              "codeName" : "Product"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+            "getParentPSAppDEField" : {
+              "name" : "PRODUCT",
+              "codeName" : "Product"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "ProductPlans",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "产品计划"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "PLAN",
-              "codeName" : "Plan"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+            "getParentPSAppDEField" : {
+              "name" : "PLAN",
+              "codeName" : "Plan"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "Tasks",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "计划任务"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "TASK",
-              "codeName" : "Task"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            "getParentPSAppDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "TaskEstimates",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "任务预计工时"
           } ], [ {
-            "getParentPSAppDEField" : {
-              "name" : "PROJECT",
-              "codeName" : "Project"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+            "getParentPSAppDEField" : {
+              "name" : "PROJECT",
+              "codeName" : "Project"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "Tasks",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "项目任务"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "TASK",
-              "codeName" : "Task"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            "getParentPSAppDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "TaskEstimates",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "任务预计工时"
           } ], [ {
-            "getParentPSAppDEField" : {
-              "name" : "STORY",
-              "codeName" : "Story"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+            "getParentPSAppDEField" : {
+              "name" : "STORY",
+              "codeName" : "Story"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "Tasks",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "需求任务"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "TASK",
-              "codeName" : "Task"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            "getParentPSAppDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "TaskEstimates",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "任务预计工时"
           } ], [ {
-            "getParentPSAppDEField" : {
-              "name" : "PLAN",
-              "codeName" : "Plan"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+            "getParentPSAppDEField" : {
+              "name" : "PLAN",
+              "codeName" : "Plan"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "Tasks",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "计划任务"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "TASK",
-              "codeName" : "Task"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            "getParentPSAppDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "TaskEstimates",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "任务预计工时"
           } ], [ {
-            "getParentPSAppDEField" : {
-              "name" : "MODULE",
-              "codeName" : "Module"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
+            "getParentPSAppDEField" : {
+              "name" : "MODULE",
+              "codeName" : "Module"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "Tasks",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "任务模块"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "TASK",
-              "codeName" : "Task"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            "getParentPSAppDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "TaskEstimates",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "任务预计工时"
           } ], [ {
-            "getParentPSAppDEField" : {
-              "name" : "TASK",
-              "codeName" : "Task"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            "getParentPSAppDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "TaskEstimates",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
@@ -1159,15 +1158,15 @@
           "height" : 200,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : true,
         "height" : 200.0,
         "codeName" : "druipart3",
         "detailType" : "DRUIPART",
         "detailStyle" : "DEFAULT",
-        "showCaption" : true,
         "name" : "druipart3"
       }, {
-        "refreshItemsSetParamOnly" : false,
         "needSave" : false,
+        "refreshItemsSetParamOnly" : false,
         "parentDataJO" : {
           "srfparentdefname" : "TASK",
           "srfparentdename" : "ZT_TASK",
@@ -1185,10 +1184,10 @@
           "xDataControlName" : "grid",
           "showCaptionBar" : false,
           "getPSDEViewCodeName" : "EditGridView9",
+          "enableDP" : true,
           "caption" : "工时",
           "title" : "任务预计表格视图",
           "accUserMode" : 2,
-          "enableDP" : true,
           "getPSViewLayoutPanel" : {
             "useDefaultLayout" : true,
             "layoutPanel" : true,
@@ -1217,7 +1216,6 @@
             } ],
             "name" : "engine"
           } ],
-          "viewStyle" : "STYLE2",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
@@ -1228,66 +1226,66 @@
                 "name" : "WORK",
                 "codeName" : "Work"
               },
-              "dataType" : 21,
-              "name" : "work"
+              "name" : "work",
+              "dataType" : 21
             }, {
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
               },
-              "dataType" : 1,
-              "name" : "id"
+              "name" : "id",
+              "dataType" : 1
             }, {
               "getPSAppDEField" : {
                 "name" : "CONSUMED",
                 "codeName" : "Consumed"
               },
-              "dataType" : 7,
-              "name" : "consumed"
+              "name" : "consumed",
+              "dataType" : 7
             }, {
-              "format" : "YYYY-MM-DD",
               "getPSAppDEField" : {
                 "name" : "DATES",
                 "codeName" : "Dates"
               },
-              "dataType" : 5,
-              "name" : "dates"
+              "format" : "YYYY-MM-DD",
+              "name" : "dates",
+              "dataType" : 5
             }, {
               "getPSAppDEField" : {
                 "name" : "TASK",
                 "codeName" : "Task"
               },
-              "dataType" : 1,
-              "name" : "task"
+              "name" : "task",
+              "dataType" : 1
             }, {
               "getPSAppDEField" : {
                 "name" : "LEFT",
                 "codeName" : "Left"
               },
-              "dataType" : 7,
-              "name" : "left"
+              "name" : "left",
+              "dataType" : 7
             }, {
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
               },
-              "dataType" : 1,
-              "name" : "srfmajortext"
+              "name" : "srfmajortext",
+              "dataType" : 1
             }, {
               "dataAccessAction" : true,
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
               },
-              "dataType" : 1,
-              "name" : "srfdataaccaction"
+              "name" : "srfdataaccaction",
+              "dataType" : 1
             }, {
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
               },
-              "dataType" : 1,
-              "name" : "srfkey"
+              "name" : "srfkey",
+              "dataType" : 1
             } ],
             "getRemovePSControlAction" : {
               "getPSAppDataEntity" : {
@@ -1303,8 +1301,6 @@
               "actionType" : "DEACTION",
               "name" : "remove"
             },
-            "singleSelect" : true,
-            "enableColFilter" : false,
             "enableRowNew" : false,
             "enableRowEditOrder" : false,
             "noSort" : true,
@@ -1343,17 +1339,19 @@
             } ],
             "hasWFDataItems" : false,
             "columnEnableLink" : 2,
-            "controlType" : "GRID",
-            "enableRowEdit" : false,
+            "enableColFilter" : false,
+            "singleSelect" : true,
             "enablePagingBar" : false,
+            "enableRowEdit" : false,
+            "controlType" : "GRID",
             "getPSDEGridColumns" : [ {
-              "excelCaption" : "ID",
-              "dataItemName" : "id",
-              "enableRowEdit" : true,
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
               },
+              "dataItemName" : "id",
+              "enableRowEdit" : true,
+              "excelCaption" : "ID",
               "cLConvertMode" : "NONE",
               "noPrivDisplayMode" : 1,
               "enableSort" : false,
@@ -1365,12 +1363,12 @@
               "widthUnit" : "PX",
               "name" : "id"
             }, {
-              "excelCaption" : "日期",
-              "dataItemName" : "dates",
               "getPSAppDEField" : {
                 "name" : "DATES",
                 "codeName" : "Dates"
               },
+              "dataItemName" : "dates",
+              "excelCaption" : "日期",
               "valueFormat" : "YYYY-MM-DD",
               "cLConvertMode" : "NONE",
               "noPrivDisplayMode" : 1,
@@ -1383,12 +1381,12 @@
               "widthUnit" : "PX",
               "name" : "dates"
             }, {
-              "excelCaption" : "总计消耗",
-              "dataItemName" : "consumed",
               "getPSAppDEField" : {
                 "name" : "CONSUMED",
                 "codeName" : "Consumed"
               },
+              "dataItemName" : "consumed",
+              "excelCaption" : "总计消耗",
               "cLConvertMode" : "NONE",
               "noPrivDisplayMode" : 1,
               "enableSort" : false,
@@ -1400,12 +1398,12 @@
               "widthUnit" : "PX",
               "name" : "consumed"
             }, {
-              "excelCaption" : "预计剩余",
-              "dataItemName" : "left",
               "getPSAppDEField" : {
                 "name" : "LEFT",
                 "codeName" : "Left"
               },
+              "dataItemName" : "left",
+              "excelCaption" : "预计剩余",
               "cLConvertMode" : "NONE",
               "noPrivDisplayMode" : 1,
               "enableSort" : false,
@@ -1417,12 +1415,12 @@
               "widthUnit" : "PX",
               "name" : "left"
             }, {
-              "excelCaption" : "备注",
-              "dataItemName" : "work",
               "getPSAppDEField" : {
                 "name" : "WORK",
                 "codeName" : "Work"
               },
+              "dataItemName" : "work",
+              "excelCaption" : "备注",
               "cLConvertMode" : "NONE",
               "noPrivDisplayMode" : 1,
               "enableSort" : false,
@@ -1457,8 +1455,8 @@
                     "timeout" : 60000,
                     "codeName" : "Edit",
                     "caption" : "编辑",
-                    "actionTarget" : "SINGLEKEY",
                     "reloadData" : true,
+                    "actionTarget" : "SINGLEKEY",
                     "uIActionTag" : "Edit",
                     "uIActionType" : "DEUIACTION",
                     "uIActionMode" : "FRONT",
@@ -1467,8 +1465,8 @@
                     "id" : "Edit@TaskEstimate"
                   },
                   "addSeparator" : false,
-                  "detailType" : "DEUIACTION",
                   "showCaption" : false,
+                  "detailType" : "DEUIACTION",
                   "name" : "u68709de"
                 }, {
                   "showIcon" : true,
@@ -1498,8 +1496,8 @@
                     "name" : "表格界面_删除操作"
                   },
                   "addSeparator" : false,
-                  "detailType" : "DEUIACTION",
                   "showCaption" : false,
+                  "detailType" : "DEUIACTION",
                   "name" : "u53c485b"
                 } ],
                 "name" : "操作列"
@@ -1661,6 +1659,7 @@
             "name" : "grid",
             "modelid" : "77eb03b77b8ab3d9188fb872349e2fa6"
           } ],
+          "viewStyle" : "STYLE2",
           "getPSAppViewRefs" : [ {
             "name" : "NEWDATA"
           }, {
@@ -1669,10 +1668,10 @@
           "getPSAppViewLogics" : [ {
             "logicTrigger" : "CUSTOM",
             "getPSAppUILogic" : {
+              "enableWizardAdd" : false,
               "actionAfterWizard" : "DEFAULT",
               "enableBatchAdd" : false,
               "batchAddOnly" : false,
-              "enableWizardAdd" : false,
               "viewLogicType" : "APP_NEWDATA",
               "logicType" : "PREDEFINED",
               "name" : "新建数据"
@@ -1694,450 +1693,450 @@
           "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskEstimateEditGridView9.json",
           "name" : "TaskEstimateEditGridView9",
           "getPSAppDERSPaths" : [ [ {
-            "getParentPSAppDEField" : {
-              "name" : "ROOT",
-              "codeName" : "Root"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+            "getParentPSAppDEField" : {
+              "name" : "ROOT",
+              "codeName" : "Root"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "ProjectModules",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "项目任务模块"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "MODULE",
-              "codeName" : "Module"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
+            "getParentPSAppDEField" : {
+              "name" : "MODULE",
+              "codeName" : "Module"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "Tasks",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "任务模块"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "TASK",
-              "codeName" : "Task"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            "getParentPSAppDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "TaskEstimates",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "任务预计工时"
           } ], [ {
-            "getParentPSAppDEField" : {
-              "name" : "PRODUCT",
-              "codeName" : "Product"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+            "getParentPSAppDEField" : {
+              "name" : "PRODUCT",
+              "codeName" : "Product"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "Stories",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "产品需求"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "STORY",
-              "codeName" : "Story"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+            "getParentPSAppDEField" : {
+              "name" : "STORY",
+              "codeName" : "Story"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "Tasks",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "需求任务"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "TASK",
-              "codeName" : "Task"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            "getParentPSAppDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "TaskEstimates",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "任务预计工时"
           } ], [ {
-            "getParentPSAppDEField" : {
-              "name" : "PRODUCT",
-              "codeName" : "Product"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+            "getParentPSAppDEField" : {
+              "name" : "PRODUCT",
+              "codeName" : "Product"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "ProductPlans",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "产品计划"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "PLAN",
-              "codeName" : "Plan"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+            "getParentPSAppDEField" : {
+              "name" : "PLAN",
+              "codeName" : "Plan"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "Tasks",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "计划任务"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "TASK",
-              "codeName" : "Task"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            "getParentPSAppDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "TaskEstimates",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "任务预计工时"
           } ], [ {
-            "getParentPSAppDEField" : {
-              "name" : "PROJECT",
-              "codeName" : "Project"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+            "getParentPSAppDEField" : {
+              "name" : "PROJECT",
+              "codeName" : "Project"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "Tasks",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "项目任务"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "TASK",
-              "codeName" : "Task"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            "getParentPSAppDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "TaskEstimates",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "任务预计工时"
           } ], [ {
-            "getParentPSAppDEField" : {
-              "name" : "STORY",
-              "codeName" : "Story"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+            "getParentPSAppDEField" : {
+              "name" : "STORY",
+              "codeName" : "Story"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "Tasks",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "需求任务"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "TASK",
-              "codeName" : "Task"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            "getParentPSAppDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "TaskEstimates",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "任务预计工时"
           } ], [ {
-            "getParentPSAppDEField" : {
-              "name" : "PLAN",
-              "codeName" : "Plan"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+            "getParentPSAppDEField" : {
+              "name" : "PLAN",
+              "codeName" : "Plan"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "Tasks",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "计划任务"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "TASK",
-              "codeName" : "Task"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            "getParentPSAppDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "TaskEstimates",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "任务预计工时"
           } ], [ {
-            "getParentPSAppDEField" : {
-              "name" : "MODULE",
-              "codeName" : "Module"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
+            "getParentPSAppDEField" : {
+              "name" : "MODULE",
+              "codeName" : "Module"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "Tasks",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "任务模块"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "TASK",
-              "codeName" : "Task"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            "getParentPSAppDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "TaskEstimates",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "任务预计工时"
           } ], [ {
-            "getParentPSAppDEField" : {
-              "name" : "TASK",
-              "codeName" : "Task"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            "getParentPSAppDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "TaskEstimates",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
@@ -2184,15 +2183,15 @@
           "height" : 200,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : true,
         "height" : 200.0,
         "codeName" : "druipart2",
         "detailType" : "DRUIPART",
         "detailStyle" : "DEFAULT",
-        "showCaption" : true,
         "name" : "druipart2"
       }, {
-        "refreshItemsSetParamOnly" : false,
         "needSave" : false,
+        "refreshItemsSetParamOnly" : false,
         "parentDataJO" : {
           "srfparentdefname" : "TASK",
           "srfparentdename" : "ZT_TASK",
@@ -2210,10 +2209,10 @@
           "xDataControlName" : "grid",
           "showCaptionBar" : false,
           "getPSDEViewCodeName" : "GridView9",
+          "enableDP" : true,
           "caption" : "工时",
           "title" : "任务预计表格视图",
           "accUserMode" : 2,
-          "enableDP" : true,
           "getPSViewLayoutPanel" : {
             "useDefaultLayout" : true,
             "layoutPanel" : true,
@@ -2242,7 +2241,6 @@
             } ],
             "name" : "engine"
           } ],
-          "viewStyle" : "STYLE2",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskEstimate.json"
@@ -2253,66 +2251,66 @@
                 "name" : "ID",
                 "codeName" : "Id"
               },
-              "dataType" : 1,
-              "name" : "id"
+              "name" : "id",
+              "dataType" : 1
             }, {
               "getPSAppDEField" : {
                 "name" : "WORK",
                 "codeName" : "Work"
               },
-              "dataType" : 21,
-              "name" : "work"
+              "name" : "work",
+              "dataType" : 21
             }, {
               "getPSAppDEField" : {
                 "name" : "CONSUMED",
                 "codeName" : "Consumed"
               },
-              "dataType" : 7,
-              "name" : "consumed"
+              "name" : "consumed",
+              "dataType" : 7
             }, {
-              "format" : "YYYY-MM-DD",
               "getPSAppDEField" : {
                 "name" : "DATES",
                 "codeName" : "Dates"
               },
-              "dataType" : 5,
-              "name" : "dates"
+              "format" : "YYYY-MM-DD",
+              "name" : "dates",
+              "dataType" : 5
             }, {
               "getPSAppDEField" : {
                 "name" : "TASK",
                 "codeName" : "Task"
               },
-              "dataType" : 1,
-              "name" : "task"
+              "name" : "task",
+              "dataType" : 1
             }, {
               "getPSAppDEField" : {
                 "name" : "LEFT",
                 "codeName" : "Left"
               },
-              "dataType" : 7,
-              "name" : "left"
+              "name" : "left",
+              "dataType" : 7
             }, {
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
               },
-              "dataType" : 1,
-              "name" : "srfmajortext"
+              "name" : "srfmajortext",
+              "dataType" : 1
             }, {
               "dataAccessAction" : true,
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
               },
-              "dataType" : 1,
-              "name" : "srfdataaccaction"
+              "name" : "srfdataaccaction",
+              "dataType" : 1
             }, {
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
               },
-              "dataType" : 1,
-              "name" : "srfkey"
+              "name" : "srfkey",
+              "dataType" : 1
             } ],
             "getCreatePSControlAction" : {
               "getPSAppDataEntity" : {
@@ -2384,8 +2382,6 @@
               "actionType" : "DEACTION",
               "name" : "loaddraft"
             },
-            "singleSelect" : true,
-            "enableColFilter" : false,
             "enableRowNew" : true,
             "enableRowEditOrder" : false,
             "noSort" : false,
@@ -2492,15 +2488,17 @@
             } ],
             "hasWFDataItems" : false,
             "columnEnableLink" : 2,
-            "controlType" : "GRID",
-            "enableRowEdit" : true,
+            "enableColFilter" : false,
+            "singleSelect" : true,
             "enablePagingBar" : true,
+            "enableRowEdit" : true,
+            "controlType" : "GRID",
             "getPSDEGridEditItemVRs" : [ {
               "getPSDEGridEditItemName" : "consumed",
               "valueRuleType" : "DEFVALUERULE",
               "getPSDEFValueRule" : {
-                "enableBackend" : true,
                 "enableFront" : true,
+                "enableBackend" : true,
                 "checkDefault" : false,
                 "getPSDEFVRGroupCondition" : {
                   "getPSDEFVRConditions" : [ {
@@ -2535,8 +2533,8 @@
               "getPSDEGridEditItemName" : "left",
               "valueRuleType" : "DEFVALUERULE",
               "getPSDEFValueRule" : {
-                "enableBackend" : true,
                 "enableFront" : true,
+                "enableBackend" : true,
                 "checkDefault" : false,
                 "getPSDEFVRGroupCondition" : {
                   "getPSDEFVRConditions" : [ {
@@ -2569,13 +2567,13 @@
               "name" : "编辑项值规则"
             } ],
             "getPSDEGridColumns" : [ {
-              "excelCaption" : "日期",
-              "dataItemName" : "dates",
-              "enableRowEdit" : true,
               "getPSAppDEField" : {
                 "name" : "DATES",
                 "codeName" : "Dates"
               },
+              "dataItemName" : "dates",
+              "enableRowEdit" : true,
+              "excelCaption" : "日期",
               "valueFormat" : "YYYY-MM-DD",
               "cLConvertMode" : "NONE",
               "noPrivDisplayMode" : 1,
@@ -2588,13 +2586,13 @@
               "widthUnit" : "PX",
               "name" : "dates"
             }, {
-              "excelCaption" : "总计消耗",
-              "dataItemName" : "consumed",
-              "enableRowEdit" : true,
               "getPSAppDEField" : {
                 "name" : "CONSUMED",
                 "codeName" : "Consumed"
               },
+              "dataItemName" : "consumed",
+              "enableRowEdit" : true,
+              "excelCaption" : "总计消耗",
               "cLConvertMode" : "NONE",
               "noPrivDisplayMode" : 1,
               "enableSort" : true,
@@ -2606,13 +2604,13 @@
               "widthUnit" : "PX",
               "name" : "consumed"
             }, {
-              "excelCaption" : "预计剩余",
-              "dataItemName" : "left",
-              "enableRowEdit" : true,
               "getPSAppDEField" : {
                 "name" : "LEFT",
                 "codeName" : "Left"
               },
+              "dataItemName" : "left",
+              "enableRowEdit" : true,
+              "excelCaption" : "预计剩余",
               "cLConvertMode" : "NONE",
               "noPrivDisplayMode" : 1,
               "enableSort" : true,
@@ -2624,13 +2622,13 @@
               "widthUnit" : "PX",
               "name" : "left"
             }, {
-              "excelCaption" : "备注",
-              "dataItemName" : "work",
-              "enableRowEdit" : true,
               "getPSAppDEField" : {
                 "name" : "WORK",
                 "codeName" : "Work"
               },
+              "dataItemName" : "work",
+              "enableRowEdit" : true,
+              "excelCaption" : "备注",
               "cLConvertMode" : "NONE",
               "noPrivDisplayMode" : 1,
               "enableSort" : false,
@@ -2755,6 +2753,7 @@
             "name" : "grid",
             "modelid" : "6796831e2f83bf0954848155004b3698"
           } ],
+          "viewStyle" : "STYLE2",
           "getPSAppViewRefs" : [ {
             "name" : "NEWDATA"
           }, {
@@ -2763,10 +2762,10 @@
           "getPSAppViewLogics" : [ {
             "logicTrigger" : "CUSTOM",
             "getPSAppUILogic" : {
+              "enableWizardAdd" : false,
               "actionAfterWizard" : "DEFAULT",
               "enableBatchAdd" : false,
               "batchAddOnly" : false,
-              "enableWizardAdd" : false,
               "viewLogicType" : "APP_NEWDATA",
               "logicType" : "PREDEFINED",
               "name" : "新建数据"
@@ -2788,450 +2787,450 @@
           "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskEstimateGridView9.json",
           "name" : "TaskEstimateGridView9",
           "getPSAppDERSPaths" : [ [ {
-            "getParentPSAppDEField" : {
-              "name" : "ROOT",
-              "codeName" : "Root"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+            "getParentPSAppDEField" : {
+              "name" : "ROOT",
+              "codeName" : "Root"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "ProjectModules",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "项目任务模块"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "MODULE",
-              "codeName" : "Module"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
+            "getParentPSAppDEField" : {
+              "name" : "MODULE",
+              "codeName" : "Module"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "Tasks",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "任务模块"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "TASK",
-              "codeName" : "Task"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskEstimate.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            "getParentPSAppDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "IBZTaskEstimates",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "任务工时（嵌套）"
           } ], [ {
-            "getParentPSAppDEField" : {
-              "name" : "PRODUCT",
-              "codeName" : "Product"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+            "getParentPSAppDEField" : {
+              "name" : "PRODUCT",
+              "codeName" : "Product"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "Stories",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "产品需求"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "STORY",
-              "codeName" : "Story"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+            "getParentPSAppDEField" : {
+              "name" : "STORY",
+              "codeName" : "Story"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "Tasks",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "需求任务"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "TASK",
-              "codeName" : "Task"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskEstimate.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            "getParentPSAppDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "IBZTaskEstimates",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "任务工时（嵌套）"
           } ], [ {
-            "getParentPSAppDEField" : {
-              "name" : "PRODUCT",
-              "codeName" : "Product"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+            "getParentPSAppDEField" : {
+              "name" : "PRODUCT",
+              "codeName" : "Product"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "ProductPlans",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "产品计划"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "PLAN",
-              "codeName" : "Plan"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+            "getParentPSAppDEField" : {
+              "name" : "PLAN",
+              "codeName" : "Plan"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "Tasks",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "计划任务"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "TASK",
-              "codeName" : "Task"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskEstimate.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            "getParentPSAppDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "IBZTaskEstimates",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "任务工时（嵌套）"
           } ], [ {
-            "getParentPSAppDEField" : {
-              "name" : "PROJECT",
-              "codeName" : "Project"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+            "getParentPSAppDEField" : {
+              "name" : "PROJECT",
+              "codeName" : "Project"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "Tasks",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "项目任务"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "TASK",
-              "codeName" : "Task"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskEstimate.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            "getParentPSAppDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "IBZTaskEstimates",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "任务工时（嵌套）"
           } ], [ {
-            "getParentPSAppDEField" : {
-              "name" : "STORY",
-              "codeName" : "Story"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+            "getParentPSAppDEField" : {
+              "name" : "STORY",
+              "codeName" : "Story"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "Tasks",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "需求任务"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "TASK",
-              "codeName" : "Task"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskEstimate.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            "getParentPSAppDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "IBZTaskEstimates",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "任务工时（嵌套）"
           } ], [ {
-            "getParentPSAppDEField" : {
-              "name" : "PLAN",
-              "codeName" : "Plan"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+            "getParentPSAppDEField" : {
+              "name" : "PLAN",
+              "codeName" : "Plan"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "Tasks",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "计划任务"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "TASK",
-              "codeName" : "Task"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskEstimate.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            "getParentPSAppDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "IBZTaskEstimates",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "任务工时（嵌套）"
           } ], [ {
-            "getParentPSAppDEField" : {
-              "name" : "MODULE",
-              "codeName" : "Module"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
+            "getParentPSAppDEField" : {
+              "name" : "MODULE",
+              "codeName" : "Module"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "Tasks",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "任务模块"
           }, {
-            "getParentPSAppDEField" : {
-              "name" : "TASK",
-              "codeName" : "Task"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskEstimate.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            "getParentPSAppDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "IBZTaskEstimates",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
             "rSMode" : 2,
             "name" : "任务工时（嵌套）"
           } ], [ {
-            "getParentPSAppDEField" : {
-              "name" : "TASK",
-              "codeName" : "Task"
+            "enableDEAction" : true,
+            "enableSelect" : true,
+            "enableDEDataSet" : true,
+            "enableCreateDataRS" : false,
+            "enableUpdateDataRS" : false,
+            "enableGetDataRS" : false,
+            "enableSelectDataRS" : false,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskEstimate.json"
             },
-            "getMajorPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            "getParentPSAppDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
             },
-            "enableCreateDataRS" : false,
-            "enableUpdateDataRS" : false,
-            "enableGetDataRS" : false,
-            "enableSelectDataRS" : false,
-            "enableDEAction" : true,
-            "enableSelect" : true,
-            "enableDEDataSet" : true,
             "codeName" : "IBZTaskEstimates",
             "actionRSMode" : 1,
             "dataRSMode" : 0,
@@ -3276,10 +3275,10 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : true,
         "codeName" : "druipart1",
         "detailType" : "DRUIPART",
         "detailStyle" : "DEFAULT",
-        "showCaption" : true,
         "name" : "druipart1"
       }, {
         "emptyCaption" : false,
@@ -3293,15 +3292,15 @@
           "name" : "STATUS",
           "codeName" : "Status"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : true,
-        "allowEmpty" : true,
+        "dataType" : 25,
         "caption" : "任务状态",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -3494,6 +3493,7 @@
     "name" : "form",
     "modelid" : "0dfcafb78a552b9fa07ea02219771d6f"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",
@@ -3515,250 +3515,250 @@
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskWHEditView.json",
   "name" : "TaskWHEditView",
   "getPSAppDERSPaths" : [ [ {
-    "getParentPSAppDEField" : {
-      "name" : "ROOT",
-      "codeName" : "Root"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+    "getParentPSAppDEField" : {
+      "name" : "ROOT",
+      "codeName" : "Root"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "ProjectModules",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
     "rSMode" : 2,
     "name" : "项目任务模块"
   }, {
-    "getParentPSAppDEField" : {
-      "name" : "MODULE",
-      "codeName" : "Module"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
+    "getParentPSAppDEField" : {
+      "name" : "MODULE",
+      "codeName" : "Module"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "Tasks",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
     "rSMode" : 2,
     "name" : "任务模块"
   } ], [ {
-    "getParentPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "Stories",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
     "rSMode" : 2,
     "name" : "产品需求"
   }, {
-    "getParentPSAppDEField" : {
-      "name" : "STORY",
-      "codeName" : "Story"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    "getParentPSAppDEField" : {
+      "name" : "STORY",
+      "codeName" : "Story"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "Tasks",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
     "rSMode" : 2,
     "name" : "需求任务"
   } ], [ {
-    "getParentPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "ProductPlans",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
     "rSMode" : 2,
     "name" : "产品计划"
   }, {
-    "getParentPSAppDEField" : {
-      "name" : "PLAN",
-      "codeName" : "Plan"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+    "getParentPSAppDEField" : {
+      "name" : "PLAN",
+      "codeName" : "Plan"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "Tasks",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
     "rSMode" : 2,
     "name" : "计划任务"
   } ], [ {
-    "getParentPSAppDEField" : {
-      "name" : "PROJECT",
-      "codeName" : "Project"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+    "getParentPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "Tasks",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
     "rSMode" : 2,
     "name" : "项目任务"
   } ], [ {
-    "getParentPSAppDEField" : {
-      "name" : "STORY",
-      "codeName" : "Story"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    "getParentPSAppDEField" : {
+      "name" : "STORY",
+      "codeName" : "Story"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "Tasks",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
     "rSMode" : 2,
     "name" : "需求任务"
   } ], [ {
-    "getParentPSAppDEField" : {
-      "name" : "PLAN",
-      "codeName" : "Plan"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+    "getParentPSAppDEField" : {
+      "name" : "PLAN",
+      "codeName" : "Plan"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "Tasks",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
     "rSMode" : 2,
     "name" : "计划任务"
   } ], [ {
-    "getParentPSAppDEField" : {
-      "name" : "MODULE",
-      "codeName" : "Module"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
+    "getParentPSAppDEField" : {
+      "name" : "MODULE",
+      "codeName" : "Module"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "Tasks",
     "actionRSMode" : 1,
     "dataRSMode" : 0,

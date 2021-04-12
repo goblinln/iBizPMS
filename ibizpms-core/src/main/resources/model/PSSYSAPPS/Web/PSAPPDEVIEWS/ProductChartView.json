@@ -1,15 +1,15 @@
 {
   "loadDefault" : true,
+  "enableQuickGroup" : false,
   "enableSearch" : false,
   "expandSearchForm" : false,
-  "enableQuickGroup" : false,
   "enableQuickSearch" : false,
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "ChartView",
+  "enableDP" : true,
   "caption" : "产品",
   "title" : "产品图表视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSAppViewNavParams" : [ {
     "rawValue" : true,
     "key" : "n_status_isnotnull",
@@ -37,7 +37,6 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
@@ -64,8 +63,6 @@
     },
     "controlType" : "CHART",
     "getPSDEChartSerieses" : [ {
-      "catalogField" : "STATUS",
-      "seriesType" : "pie",
       "getCatalogPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product__status.json"
@@ -80,6 +77,7 @@
         "modelref" : true,
         "id" : "0"
       },
+      "catalogField" : "STATUS",
       "getPSChartSeriesEncode" : {
         "category" : "STATUS",
         "value" : "SRFCOUNT",
@@ -88,6 +86,7 @@
         "name" : "坐标系编码",
         "id" : "0"
       },
+      "seriesType" : "pie",
       "valueField" : "SRFCOUNT",
       "seriesLayoutBy" : "column",
       "groupMode" : "CODELIST",
@@ -220,6 +219,7 @@
       "EC.color" : "[\"#f69f54\",\"#42B3FF\",\"#aa00ff\",\"#884bff\",'#00ffa9','#85B3FF','#A1FFFF']"
     }
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "ProductChartView",
   "viewType" : "DECHARTVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductChartView.json",

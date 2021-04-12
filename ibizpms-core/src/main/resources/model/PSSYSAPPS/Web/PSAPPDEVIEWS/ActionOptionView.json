@@ -3,13 +3,13 @@
   "showCaptionBar" : true,
   "xDataControlName" : "form",
   "getPSDEViewCodeName" : "OptionView",
+  "enableDP" : true,
   "height" : 500,
   "width" : 800,
   "caption" : "添加备注",
   "title" : "添加备注",
   "openMode" : "POPUPMODAL",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSAppViewNavParams" : [ {
     "rawValue" : false,
     "value" : "OBJECTTYPE",
@@ -53,13 +53,14 @@
     "key" : "OBJECTID",
     "name" : "OBJECTID"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
   },
   "getPSControls" : [ {
     "enableAutoSave" : false,
+    "infoFormMode" : false,
+    "showFormNavBar" : false,
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
@@ -84,8 +85,6 @@
       "modelref" : true,
       "id" : "loaddraftfrom"
     },
-    "infoFormMode" : false,
-    "showFormNavBar" : false,
     "controlType" : "FORM",
     "readOnly" : false,
     "getPSLayout" : {
@@ -112,17 +111,17 @@
             "name" : "OBJECTTYPE",
             "codeName" : "ObjectType"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : true,
-          "allowEmpty" : true,
+          "dataType" : 25,
           "caption" : "对象类型",
+          "allowEmpty" : true,
           "createDV" : "objecttype",
           "createDVT" : "CONTEXT",
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -143,17 +142,17 @@
             "name" : "OBJECTID",
             "codeName" : "ObjectID"
           },
-          "dataType" : 1,
+          "showCaption" : true,
           "hidden" : true,
-          "allowEmpty" : true,
+          "dataType" : 1,
           "caption" : "对象ID",
+          "allowEmpty" : true,
           "createDV" : "objectid",
           "createDVT" : "CONTEXT",
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -178,15 +177,15 @@
             "name" : "COMMENT",
             "codeName" : "Comment"
           },
-          "dataType" : 21,
+          "showCaption" : false,
           "hidden" : false,
-          "allowEmpty" : true,
+          "dataType" : 21,
           "caption" : "备注",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "NONE",
           "labelWidth" : 0,
-          "showCaption" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -198,8 +197,8 @@
         }, {
           "emptyCaption" : false,
           "getPSEditor" : {
-            "minFileCount" : 0,
             "maxFileCount" : -1,
+            "minFileCount" : 0,
             "maxFileSize" : -1,
             "editorType" : "FILEUPLOADER",
             "editorParams" : {
@@ -218,15 +217,15 @@
             "name" : "FILES",
             "codeName" : "Files"
           },
-          "dataType" : 21,
+          "showCaption" : false,
           "hidden" : false,
-          "allowEmpty" : true,
+          "dataType" : 21,
           "caption" : "文件",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "NONE",
           "labelWidth" : 0,
-          "showCaption" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -247,15 +246,15 @@
             "name" : "NOTICEUSERS",
             "codeName" : "Noticeusers"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : true,
-          "allowEmpty" : true,
+          "dataType" : 25,
           "caption" : "消息通知用户",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -276,17 +275,17 @@
             "name" : "EXTRA",
             "codeName" : "Extra"
           },
-          "dataType" : 21,
+          "showCaption" : true,
           "hidden" : true,
-          "allowEmpty" : true,
+          "dataType" : 21,
           "caption" : "附加值",
+          "allowEmpty" : true,
           "createDV" : "version",
           "createDVT" : "CONTEXT",
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -300,6 +299,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : false,
         "getPSSysCss" : {
           "cssName" : "form-padding"
         },
@@ -307,7 +307,6 @@
         "caption" : "分组面板",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : false,
         "name" : "grouppanel2"
       } ],
       "getPSLayout" : {
@@ -518,6 +517,7 @@
     "name" : "form",
     "modelid" : "248c5f0a09754acb52fc8431f956de0d"
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "ActionOptionView",
   "viewType" : "DEOPTVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionOptionView.json",

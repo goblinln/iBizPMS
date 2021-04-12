@@ -11,10 +11,10 @@
   "showCaptionBar" : true,
   "getPSDEViewCodeName" : "GridView",
   "funcViewMode" : "MDATAVIEW",
+  "enableDP" : true,
   "caption" : "项目周报",
   "title" : "项目周报表格视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSAppViewNavParams" : [ {
     "rawValue" : false,
     "value" : "srfloginname",
@@ -86,7 +86,6 @@
     },
     "name" : "toolbar_deuiaction4"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectWeekly.json"
@@ -126,9 +125,9 @@
       "tooltip" : "生成项目周报",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "生成项目周报",
-      "showCaption" : true,
       "name" : "deuiaction3_createprojectweekly"
     }, {
       "getPSAppViewUIAction" : {
@@ -158,9 +157,9 @@
       "tooltip" : "刷新",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "刷新",
-      "showCaption" : true,
       "name" : "deuiaction2"
     }, {
       "getPSAppViewUIAction" : {
@@ -206,9 +205,9 @@
       "tooltip" : "导出",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "导出",
-      "showCaption" : true,
       "name" : "deuiaction1"
     }, {
       "getPSAppViewUIAction" : {
@@ -256,9 +255,9 @@
       "tooltip" : "过滤",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "过滤",
-      "showCaption" : true,
       "name" : "deuiaction4"
     } ],
     "getPSAppDataEntity" : {
@@ -279,69 +278,69 @@
         "name" : "PROJECT",
         "codeName" : "Project"
       },
-      "dataType" : 1,
-      "name" : "project"
+      "name" : "project",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "TOTALESTIMATES",
         "codeName" : "Totalestimates"
       },
-      "dataType" : 7,
-      "name" : "totalestimates"
+      "name" : "totalestimates",
+      "dataType" : 7
     }, {
       "getPSAppDEField" : {
         "name" : "PM",
         "codeName" : "PM"
       },
-      "dataType" : 25,
-      "name" : "pm"
+      "name" : "pm",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "PROJECTNAME",
         "codeName" : "ProjectName"
       },
-      "dataType" : 25,
-      "name" : "projectname"
+      "name" : "projectname",
+      "dataType" : 25
     }, {
-      "format" : "YYYY-MM-DD",
       "getPSAppDEField" : {
         "name" : "DATE",
         "codeName" : "Date"
       },
-      "dataType" : 5,
-      "name" : "date"
+      "format" : "YYYY-MM-DD",
+      "name" : "date",
+      "dataType" : 5
     }, {
-      "dataType" : 25,
-      "name" : "srfmstag"
+      "name" : "srfmstag",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "IBZPRO_PROJECTWEEKLYNAME",
         "codeName" : "PROJECTWEEKLYName"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "IBZPRO_PROJECTWEEKLYID",
         "codeName" : "PROJECTWEEKLYId"
       },
-      "dataType" : 25,
-      "name" : "srfdataaccaction"
+      "name" : "srfdataaccaction",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "IBZPRO_PROJECTWEEKLYID",
         "codeName" : "PROJECTWEEKLYId"
       },
-      "dataType" : 25,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "IBZPRO_PROJECTWEEKLYNAME",
         "codeName" : "PROJECTWEEKLYName"
       },
-      "dataType" : 25,
-      "name" : "ibzpro_projectweeklyname"
+      "name" : "ibzpro_projectweeklyname",
+      "dataType" : 25
     } ],
     "getRemovePSControlAction" : {
       "getPSAppDataEntity" : {
@@ -357,8 +356,6 @@
       "actionType" : "DEACTION",
       "name" : "remove"
     },
-    "singleSelect" : false,
-    "enableColFilter" : false,
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : false,
@@ -380,9 +377,11 @@
     } ],
     "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "controlType" : "GRID",
-    "enableRowEdit" : false,
+    "enableColFilter" : false,
+    "singleSelect" : false,
     "enablePagingBar" : true,
+    "enableRowEdit" : false,
+    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
       "linkValueItem" : "srfkey",
       "enableLinkView" : true,
@@ -391,12 +390,12 @@
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproProjectWeeklyEditView.json",
         "viewType" : "DEEDITVIEW"
       },
-      "excelCaption" : "项目周报名称",
-      "dataItemName" : "ibzpro_projectweeklyname",
       "getPSAppDEField" : {
         "name" : "IBZPRO_PROJECTWEEKLYNAME",
         "codeName" : "PROJECTWEEKLYName"
       },
+      "dataItemName" : "ibzpro_projectweeklyname",
+      "excelCaption" : "项目周报名称",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -408,12 +407,12 @@
       "widthUnit" : "STAR",
       "name" : "ibzpro_projectweeklyname"
     }, {
-      "excelCaption" : "项目名称",
-      "dataItemName" : "projectname",
       "getPSAppDEField" : {
         "name" : "PROJECTNAME",
         "codeName" : "ProjectName"
       },
+      "dataItemName" : "projectname",
+      "excelCaption" : "项目名称",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -425,16 +424,16 @@
       "widthUnit" : "PX",
       "name" : "projectname"
     }, {
-      "excelCaption" : "项目负责人",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
       },
-      "dataItemName" : "pm",
       "getPSAppDEField" : {
         "name" : "PM",
         "codeName" : "PM"
       },
+      "dataItemName" : "pm",
+      "excelCaption" : "项目负责人",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -446,12 +445,12 @@
       "widthUnit" : "PX",
       "name" : "pm"
     }, {
-      "excelCaption" : "日期",
-      "dataItemName" : "date",
       "getPSAppDEField" : {
         "name" : "DATE",
         "codeName" : "Date"
       },
+      "dataItemName" : "date",
+      "excelCaption" : "日期",
       "valueFormat" : "YYYY-MM-DD",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
@@ -464,12 +463,12 @@
       "widthUnit" : "PX",
       "name" : "date"
     }, {
-      "excelCaption" : "总工时",
-      "dataItemName" : "totalestimates",
       "getPSAppDEField" : {
         "name" : "TOTALESTIMATES",
         "codeName" : "Totalestimates"
       },
+      "dataItemName" : "totalestimates",
+      "excelCaption" : "总工时",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -590,10 +589,10 @@
     "name" : "grid",
     "modelid" : "408426da56d4bbb2a56850df5520e018"
   }, {
+    "searchButtonStyle" : "DEFAULT",
     "enableAdvanceSearch" : false,
     "enableAutoSearch" : false,
     "enableFilterSave" : false,
-    "searchButtonStyle" : "DEFAULT",
     "controlType" : "SEARCHFORM",
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
@@ -667,6 +666,7 @@
     "name" : "searchform",
     "modelid" : "3c3e50cbf8f8e01f12bd51029c788154"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -733,7 +733,6 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -741,9 +740,10 @@
           "viewType" : "DEEDITVIEW"
         }
       },
+      "enableWizardAdd" : false,
+      "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {

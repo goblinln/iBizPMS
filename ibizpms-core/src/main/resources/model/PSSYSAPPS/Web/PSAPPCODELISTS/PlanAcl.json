@@ -12,8 +12,8 @@
     "codeName" : "Private",
     "text" : "私有"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "PlanAcl",
   "emptyText" : "未定义",
   "enableCache" : true,

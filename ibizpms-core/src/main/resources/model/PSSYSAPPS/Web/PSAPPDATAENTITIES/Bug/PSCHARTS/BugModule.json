@@ -20,8 +20,6 @@
   },
   "controlType" : "CHART",
   "getPSDEChartSerieses" : [ {
-    "catalogField" : "modulename",
-    "seriesType" : "pie",
     "eChartsType" : "pie",
     "getPSChartCoordinateSystem" : {
       "modelref" : true,
@@ -32,6 +30,7 @@
       "modelref" : true,
       "id" : "0"
     },
+    "catalogField" : "modulename",
     "getPSChartSeriesEncode" : {
       "category" : "modulename",
       "value" : "SRFCOUNT",
@@ -40,6 +39,7 @@
       "name" : "坐标系编码",
       "id" : "0"
     },
+    "seriesType" : "pie",
     "valueField" : "SRFCOUNT",
     "seriesLayoutBy" : "column",
     "index" : 0,

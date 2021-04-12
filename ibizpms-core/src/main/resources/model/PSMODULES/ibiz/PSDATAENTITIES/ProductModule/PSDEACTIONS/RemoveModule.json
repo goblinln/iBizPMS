@@ -6,6 +6,7 @@
   "builtinAction" : false,
   "pubServiceDefault" : true,
   "timeOut" : -1,
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "DELETE"
@@ -13,7 +14,6 @@
   "orderValue" : 99999,
   "codeName" : "RemoveModule",
   "logicName" : "删除模块",
-  "extendMode" : 0,
   "actionMode" : "DELETE",
   "actionType" : "DELOGIC",
   "requestParamType" : "ENTITY",

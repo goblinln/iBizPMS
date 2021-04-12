@@ -2,10 +2,10 @@
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "PickupView",
   "funcViewMode" : "PICKUPVIEW",
+  "enableDP" : true,
   "caption" : "产品",
   "title" : "产品数据选择视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -28,7 +28,6 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
@@ -47,10 +46,10 @@
       "xDataControlName" : "grid",
       "showCaptionBar" : true,
       "getPSDEViewCodeName" : "PickupGridView",
+      "enableDP" : true,
       "caption" : "产品",
       "title" : "产品选择表格视图",
       "accUserMode" : 2,
-      "enableDP" : true,
       "getPSViewLayoutPanel" : {
         "useDefaultLayout" : true,
         "layoutPanel" : true,
@@ -76,7 +75,6 @@
         } ],
         "name" : "engine"
       } ],
-      "viewStyle" : "STYLE2",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
@@ -87,68 +85,68 @@
             "name" : "LINENAME",
             "codeName" : "LineName"
           },
-          "dataType" : 25,
-          "name" : "linename"
+          "name" : "linename",
+          "dataType" : 25
         }, {
           "getPSAppDEField" : {
             "name" : "STATUS",
             "codeName" : "Status"
           },
-          "dataType" : 25,
-          "name" : "status"
+          "name" : "status",
+          "dataType" : 25
         }, {
           "getPSAppDEField" : {
             "name" : "NAME",
             "codeName" : "Name"
           },
-          "dataType" : 25,
-          "name" : "name"
+          "name" : "name",
+          "dataType" : 25
         }, {
           "getPSAppDEField" : {
             "name" : "LINE",
             "codeName" : "Line"
           },
-          "dataType" : 1,
-          "name" : "line"
+          "name" : "line",
+          "dataType" : 1
         }, {
           "getPSAppDEField" : {
             "name" : "CODE",
             "codeName" : "Code"
           },
-          "dataType" : 25,
-          "name" : "code"
+          "name" : "code",
+          "dataType" : 25
         }, {
           "getPSAppDEField" : {
             "name" : "TYPE",
             "codeName" : "Type"
           },
-          "dataType" : 25,
-          "name" : "type"
+          "name" : "type",
+          "dataType" : 25
         }, {
-          "dataType" : 25,
-          "name" : "srfmstag"
+          "name" : "srfmstag",
+          "dataType" : 25
         }, {
           "getPSAppDEField" : {
             "name" : "NAME",
             "codeName" : "Name"
           },
-          "dataType" : 25,
-          "name" : "srfmajortext"
+          "name" : "srfmajortext",
+          "dataType" : 25
         }, {
           "dataAccessAction" : true,
           "getPSAppDEField" : {
             "name" : "ID",
             "codeName" : "Id"
           },
-          "dataType" : 1,
-          "name" : "srfdataaccaction"
+          "name" : "srfdataaccaction",
+          "dataType" : 1
         }, {
           "getPSAppDEField" : {
             "name" : "ID",
             "codeName" : "Id"
           },
-          "dataType" : 1,
-          "name" : "srfkey"
+          "name" : "srfkey",
+          "dataType" : 1
         } ],
         "getRemovePSControlAction" : {
           "getPSAppDataEntity" : {
@@ -164,8 +162,6 @@
           "actionType" : "DEACTION",
           "name" : "remove"
         },
-        "singleSelect" : false,
-        "enableColFilter" : false,
         "enableRowNew" : false,
         "enableRowEditOrder" : false,
         "noSort" : false,
@@ -187,13 +183,15 @@
         } ],
         "hasWFDataItems" : false,
         "columnEnableLink" : 2,
-        "controlType" : "GRID",
-        "enableRowEdit" : false,
+        "enableColFilter" : false,
+        "singleSelect" : false,
+        "enablePagingBar" : true,
         "getMinorSortPSAppDEField" : {
           "name" : "ID",
           "codeName" : "Id"
         },
-        "enablePagingBar" : true,
+        "enableRowEdit" : false,
+        "controlType" : "GRID",
         "getPSDEGridColumns" : [ {
           "linkValueItem" : "srfkey",
           "enableLinkView" : true,
@@ -202,12 +200,12 @@
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
             "viewType" : "DETABEXPVIEW"
           },
-          "excelCaption" : "产品名称",
-          "dataItemName" : "name",
           "getPSAppDEField" : {
             "name" : "NAME",
             "codeName" : "Name"
           },
+          "dataItemName" : "name",
+          "excelCaption" : "产品名称",
           "cLConvertMode" : "NONE",
           "noPrivDisplayMode" : 1,
           "enableSort" : true,
@@ -219,12 +217,12 @@
           "widthUnit" : "PX",
           "name" : "name"
         }, {
-          "excelCaption" : "产品代号",
-          "dataItemName" : "code",
           "getPSAppDEField" : {
             "name" : "CODE",
             "codeName" : "Code"
           },
+          "dataItemName" : "code",
+          "excelCaption" : "产品代号",
           "cLConvertMode" : "NONE",
           "noPrivDisplayMode" : 1,
           "enableSort" : true,
@@ -236,16 +234,16 @@
           "widthUnit" : "PX",
           "name" : "code"
         }, {
-          "excelCaption" : "状态",
           "getPSAppCodeList" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product__status.json"
           },
-          "dataItemName" : "status",
           "getPSAppDEField" : {
             "name" : "STATUS",
             "codeName" : "Status"
           },
+          "dataItemName" : "status",
+          "excelCaption" : "状态",
           "cLConvertMode" : "FRONT",
           "noPrivDisplayMode" : 1,
           "enableSort" : true,
@@ -257,16 +255,16 @@
           "widthUnit" : "PX",
           "name" : "status"
         }, {
-          "excelCaption" : "产品类型",
           "getPSAppCodeList" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product__type.json"
           },
-          "dataItemName" : "type",
           "getPSAppDEField" : {
             "name" : "TYPE",
             "codeName" : "Type"
           },
+          "dataItemName" : "type",
+          "excelCaption" : "产品类型",
           "cLConvertMode" : "FRONT",
           "noPrivDisplayMode" : 1,
           "enableSort" : true,
@@ -278,12 +276,12 @@
           "widthUnit" : "PX",
           "name" : "type"
         }, {
-          "excelCaption" : "产品线",
-          "dataItemName" : "linename",
           "getPSAppDEField" : {
             "name" : "LINENAME",
             "codeName" : "LineName"
           },
+          "dataItemName" : "linename",
+          "excelCaption" : "产品线",
           "cLConvertMode" : "NONE",
           "noPrivDisplayMode" : 1,
           "enableSort" : true,
@@ -405,10 +403,10 @@
         "name" : "grid",
         "modelid" : "b4669b4b95f71fd2d4809c9531ab030a"
       }, {
+        "searchButtonStyle" : "DEFAULT",
         "enableAdvanceSearch" : false,
         "enableAutoSearch" : false,
         "enableFilterSave" : false,
-        "searchButtonStyle" : "DEFAULT",
         "controlType" : "SEARCHFORM",
         "getPSLayout" : {
           "layout" : "TABLE_24COL",
@@ -427,16 +425,16 @@
               "name" : "ACL",
               "codeName" : "Acl"
             },
-            "dataType" : 25,
+            "showCaption" : true,
             "hidden" : false,
+            "dataType" : 25,
             "convertToCodeItemText" : true,
-            "allowEmpty" : true,
             "caption" : "访问控制(等于(=))",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 3,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 8,
@@ -458,15 +456,15 @@
               "name" : "LINE",
               "codeName" : "Line"
             },
-            "dataType" : 1,
+            "showCaption" : true,
             "hidden" : false,
-            "allowEmpty" : true,
+            "dataType" : 1,
             "caption" : "产品线(等于(=))",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 8,
@@ -489,15 +487,15 @@
               "name" : "LINENAME",
               "codeName" : "LineName"
             },
-            "dataType" : 25,
+            "showCaption" : true,
             "hidden" : false,
-            "allowEmpty" : true,
+            "dataType" : 25,
             "caption" : "产品线(文本包含(%))",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 8,
@@ -519,15 +517,15 @@
               "name" : "LINENAME",
               "codeName" : "LineName"
             },
-            "dataType" : 25,
+            "showCaption" : true,
             "hidden" : false,
-            "allowEmpty" : true,
+            "dataType" : 25,
             "caption" : "产品线(等于(=))",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 8,
@@ -550,15 +548,15 @@
               "name" : "NAME",
               "codeName" : "Name"
             },
-            "dataType" : 25,
+            "showCaption" : true,
             "hidden" : false,
-            "allowEmpty" : true,
+            "dataType" : 25,
             "caption" : "产品名称(文本包含(%))",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 8,
@@ -672,6 +670,7 @@
         "name" : "searchform",
         "modelid" : "59a8dd13749c9b51a145aaa5a43def45"
       } ],
+      "viewStyle" : "STYLE2",
       "codeName" : "ProductPickupGridView",
       "viewType" : "DEPICKUPGRIDVIEW",
       "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPickupGridView.json",
@@ -689,6 +688,7 @@
     "codeName" : "PickupViewpickupviewpanel",
     "name" : "pickupviewpanel"
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "ProductPickupView",
   "viewType" : "DEPICKUPVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPickupView.json",

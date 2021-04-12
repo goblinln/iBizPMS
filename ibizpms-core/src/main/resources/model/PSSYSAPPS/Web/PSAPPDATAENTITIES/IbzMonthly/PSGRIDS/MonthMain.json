@@ -4,69 +4,69 @@
       "name" : "ISSUBMIT",
       "codeName" : "Issubmit"
     },
-    "dataType" : 25,
-    "name" : "issubmit"
+    "name" : "issubmit",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
-    "dataType" : 25,
-    "name" : "account"
+    "name" : "account",
+    "dataType" : 25
   }, {
-    "format" : "YYYY-MM-DD",
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
-    "dataType" : 5,
-    "name" : "date"
+    "format" : "YYYY-MM-DD",
+    "name" : "date",
+    "dataType" : 5
   }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
+    "name" : "srfmstag",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "IBZ_MONTHLYID",
       "codeName" : "IbzMonthlyId"
     },
-    "dataType" : 1,
-    "name" : "ibz_monthlyid"
+    "name" : "ibz_monthlyid",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "IBZ_MONTHLYNAME",
       "codeName" : "IbzMonthlyName"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "IBZ_MONTHLYID",
       "codeName" : "IbzMonthlyId"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "IBZ_MONTHLYID",
       "codeName" : "IbzMonthlyId"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "REPORTTO",
       "codeName" : "Reportto"
     },
-    "dataType" : 25,
-    "name" : "reportto"
+    "name" : "reportto",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "IBZ_MONTHLYNAME",
       "codeName" : "IbzMonthlyName"
     },
-    "dataType" : 25,
-    "name" : "ibz_monthlyname"
+    "name" : "ibz_monthlyname",
+    "dataType" : 25
   } ],
   "getRemovePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -82,8 +82,6 @@
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "singleSelect" : true,
-  "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -105,20 +103,22 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : false,
+  "enableColFilter" : false,
+  "singleSelect" : true,
+  "enablePagingBar" : true,
   "getMinorSortPSAppDEField" : {
     "name" : "DATE",
     "codeName" : "Date"
   },
-  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "月报名称",
-    "dataItemName" : "ibz_monthlyname",
     "getPSAppDEField" : {
       "name" : "IBZ_MONTHLYNAME",
       "codeName" : "IbzMonthlyName"
     },
+    "dataItemName" : "ibz_monthlyname",
+    "excelCaption" : "月报名称",
     "getPSDEUIAction" : {
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -153,16 +153,16 @@
     "widthUnit" : "STAR",
     "name" : "ibz_monthlyname"
   }, {
-    "excelCaption" : "用户",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
-    "dataItemName" : "account",
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
       "codeName" : "Account"
     },
+    "dataItemName" : "account",
+    "excelCaption" : "用户",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -174,12 +174,12 @@
     "widthUnit" : "PX",
     "name" : "account"
   }, {
-    "excelCaption" : "日期",
-    "dataItemName" : "date",
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
+    "dataItemName" : "date",
+    "excelCaption" : "日期",
     "valueFormat" : "YYYY-MM-DD",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -192,16 +192,16 @@
     "widthUnit" : "PX",
     "name" : "date"
   }, {
-    "excelCaption" : "汇报给",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
-    "dataItemName" : "reportto",
     "getPSAppDEField" : {
       "name" : "REPORTTO",
       "codeName" : "Reportto"
     },
+    "dataItemName" : "reportto",
+    "excelCaption" : "汇报给",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

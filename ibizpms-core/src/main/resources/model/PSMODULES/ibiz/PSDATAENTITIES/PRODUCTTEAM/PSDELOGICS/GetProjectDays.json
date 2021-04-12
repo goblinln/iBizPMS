@@ -1,19 +1,19 @@
 {
-  "enableBackend" : true,
   "enableFront" : false,
+  "enableBackend" : true,
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"
   },
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "product"
-    },
     "getDstPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "product"
     },
     "getPSDELogicLinks" : [ {
       "modelref" : true,
@@ -21,11 +21,11 @@
     } ],
     "logicHolder" : 3,
     "codeName" : "Deaction1",
-    "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Get.json"
     },
+    "logicNodeType" : "DEACTION",
     "name" : "获取产品详情"
   }, {
     "parallelOutput" : true,
@@ -43,9 +43,9 @@
         "modelref" : true,
         "id" : "Default"
       },
+      "srcFieldName" : "ROOT",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "ID",
-      "srcFieldName" : "ROOT",
       "name" : "Default[ROOT] ==> product[ID]"
     } ],
     "logicHolder" : 3,
@@ -64,9 +64,9 @@
         "modelref" : true,
         "id" : "product"
       },
+      "srcFieldName" : "ID",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "DAYS",
-      "srcFieldName" : "ID",
       "name" : "product[ID] ==> Default[DAYS]"
     } ],
     "logicHolder" : 3,
@@ -119,16 +119,16 @@
     "name" : "连接4176"
   } ],
   "getPSDELogicParams" : [ {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "product",
     "default" : false,
     "name" : "产品"
   }, {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

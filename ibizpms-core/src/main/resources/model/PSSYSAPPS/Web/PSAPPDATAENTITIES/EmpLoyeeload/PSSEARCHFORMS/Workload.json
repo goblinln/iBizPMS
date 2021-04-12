@@ -1,8 +1,8 @@
 {
+  "searchButtonStyle" : "DEFAULT",
   "enableAdvanceSearch" : false,
   "enableAutoSearch" : false,
   "enableFilterSave" : false,
-  "searchButtonStyle" : "DEFAULT",
   "controlType" : "SEARCHFORM",
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
@@ -17,17 +17,17 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/RealDept.json"
         },
-        "getPSNavigateContexts" : [ {
-          "rawValue" : false,
-          "value" : "srforgid",
-          "key" : "N_ORGID_EQ",
-          "name" : "N_ORGID_EQ"
-        } ],
         "getPSNavigateParams" : [ {
           "rawValue" : false,
           "value" : "srforgid",
           "key" : "n_orgid_eq",
           "name" : "n_orgid_eq"
+        } ],
+        "getPSNavigateContexts" : [ {
+          "rawValue" : false,
+          "value" : "srforgid",
+          "key" : "N_ORGID_EQ",
+          "name" : "N_ORGID_EQ"
         } ],
         "editorType" : "DROPDOWNLIST",
         "editorParams" : {
@@ -38,16 +38,16 @@
       },
       "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : false,
+      "dataType" : 25,
       "needCodeListConfig" : true,
-      "allowEmpty" : true,
       "caption" : "部门",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 45,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 3,
         "colLG" : 3,
@@ -58,11 +58,11 @@
       "detailStyle" : "DEFAULT",
       "name" : "dept"
     }, {
+      "emptyCaption" : false,
       "getPSDEFormItemUpdate" : {
         "modelref" : true,
         "id" : "UpdateTime"
       },
-      "emptyCaption" : false,
       "getPSEditor" : {
         "dateTimeFormat" : "YYYY-MM-DD",
         "editorType" : "DATEPICKEREX_NOTIME",
@@ -78,16 +78,16 @@
         "name" : "BEGIN",
         "codeName" : "Begin"
       },
-      "dataType" : 5,
+      "showCaption" : true,
       "hidden" : false,
-      "allowEmpty" : true,
+      "dataType" : 5,
       "caption" : "起止时间",
+      "allowEmpty" : true,
       "createDVT" : "CURTIME",
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 80,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 4,
         "colLG" : 4,
@@ -98,11 +98,11 @@
       "detailStyle" : "DEFAULT",
       "name" : "begin"
     }, {
+      "emptyCaption" : false,
       "getPSDEFormItemUpdate" : {
         "modelref" : true,
         "id" : "UpdateTime"
       },
-      "emptyCaption" : false,
       "getPSEditor" : {
         "dateTimeFormat" : "YYYY-MM-DD",
         "editorType" : "DATEPICKEREX_NOTIME",
@@ -118,15 +118,15 @@
         "name" : "END",
         "codeName" : "End"
       },
-      "dataType" : 5,
+      "showCaption" : true,
       "hidden" : false,
-      "allowEmpty" : true,
+      "dataType" : 5,
       "caption" : "至",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 30,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 3,
         "colLG" : 3,
@@ -150,16 +150,16 @@
         "name" : "WORKDAY",
         "codeName" : "Workday"
       },
-      "dataType" : 9,
+      "showCaption" : true,
       "hidden" : false,
-      "allowEmpty" : true,
+      "dataType" : 9,
       "caption" : "工作天数",
+      "allowEmpty" : true,
       "createDV" : "6",
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 60,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 3,
         "colLG" : 4,
@@ -178,16 +178,16 @@
       },
       "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : false,
-      "allowEmpty" : true,
+      "dataType" : 25,
       "caption" : "每天工时",
+      "allowEmpty" : true,
       "createDV" : "7",
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 60,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 3,
         "colLG" : 4,
@@ -218,15 +218,15 @@
         "name" : "ASSIGN",
         "codeName" : "Assign"
       },
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : false,
+      "dataType" : 25,
       "needCodeListConfig" : true,
       "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 5,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 3,
         "colLG" : 3,

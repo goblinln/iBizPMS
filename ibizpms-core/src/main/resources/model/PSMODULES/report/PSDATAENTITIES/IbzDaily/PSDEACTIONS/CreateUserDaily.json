@@ -10,6 +10,7 @@
     "pluginType" : "DEACTION",
     "pluginCode" : "ZTCommon"
   },
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "CREATE"
@@ -17,7 +18,6 @@
   "orderValue" : 99999,
   "codeName" : "CreateUserDaily",
   "logicName" : "定时生成用户日报",
-  "extendMode" : 0,
   "actionMode" : "CREATE",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",

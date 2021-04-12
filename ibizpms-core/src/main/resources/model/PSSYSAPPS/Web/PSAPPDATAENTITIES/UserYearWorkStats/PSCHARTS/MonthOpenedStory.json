@@ -38,8 +38,6 @@
   "controlType" : "CHART",
   "getPSDEChartSerieses" : [ {
     "stack" : false,
-    "catalogField" : "CURMONTH",
-    "seriesType" : "line",
     "eChartsType" : "line",
     "getPSChartCoordinateSystem" : {
       "modelref" : true,
@@ -50,6 +48,7 @@
       "modelref" : true,
       "id" : "0"
     },
+    "catalogField" : "CURMONTH",
     "getPSChartSeriesEncode" : {
       "getPSChartXAxis" : {
         "modelref" : true,
@@ -66,6 +65,7 @@
       "name" : "坐标系编码",
       "id" : "0"
     },
+    "seriesType" : "line",
     "caption" : "月累计创建需求数",
     "valueField" : "YEARSTORYCNT",
     "seriesLayoutBy" : "column",
@@ -88,9 +88,9 @@
     "eChartsType" : "value",
     "eChartsPos" : "yAxis",
     "position" : "left",
-    "type" : "numeric",
     "maxValue" : 200.0,
     "minValue" : 0.0,
+    "type" : "numeric",
     "index" : 0,
     "name" : "数值",
     "id" : "0"

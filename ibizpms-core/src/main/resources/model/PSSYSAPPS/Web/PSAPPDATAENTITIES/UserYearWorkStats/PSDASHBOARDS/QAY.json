@@ -46,8 +46,6 @@
             },
             "controlType" : "CHART",
             "getPSDEChartSerieses" : [ {
-              "catalogField" : "PRI",
-              "seriesType" : "pie",
               "getCatalogPSCodeList" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__pri.json"
@@ -62,6 +60,7 @@
                 "modelref" : true,
                 "id" : "0"
               },
+              "catalogField" : "PRI",
               "getPSChartSeriesEncode" : {
                 "category" : "PRI",
                 "value" : "SRFCOUNT",
@@ -70,6 +69,7 @@
                 "name" : "坐标系编码",
                 "id" : "0"
               },
+              "seriesType" : "pie",
               "valueField" : "SRFCOUNT",
               "seriesLayoutBy" : "column",
               "index" : 0,
@@ -214,8 +214,8 @@
             "height" : 350,
             "layout" : "TABLE_24COL"
           },
-          "controlType" : "PORTLET",
           "showTitleBar" : false,
+          "controlType" : "PORTLET",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
@@ -238,8 +238,8 @@
           "colLG" : 12,
           "layout" : "TABLE_24COL"
         },
-        "controlType" : "PORTLET",
         "showTitleBar" : true,
+        "controlType" : "PORTLET",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
@@ -284,8 +284,6 @@
             },
             "controlType" : "CHART",
             "getPSDEChartSerieses" : [ {
-              "catalogField" : "PRI",
-              "seriesType" : "pie",
               "getCatalogPSCodeList" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__pri.json"
@@ -300,6 +298,7 @@
                 "modelref" : true,
                 "id" : "0"
               },
+              "catalogField" : "PRI",
               "getPSChartSeriesEncode" : {
                 "category" : "PRI",
                 "value" : "SRFCOUNT",
@@ -308,6 +307,7 @@
                 "name" : "坐标系编码",
                 "id" : "0"
               },
+              "seriesType" : "pie",
               "valueField" : "SRFCOUNT",
               "seriesLayoutBy" : "column",
               "index" : 0,
@@ -451,8 +451,8 @@
             "height" : 350,
             "layout" : "TABLE_24COL"
           },
-          "controlType" : "PORTLET",
           "showTitleBar" : false,
+          "controlType" : "PORTLET",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
@@ -475,8 +475,8 @@
           "colLG" : 12,
           "layout" : "TABLE_24COL"
         },
-        "controlType" : "PORTLET",
         "showTitleBar" : true,
+        "controlType" : "PORTLET",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
@@ -498,8 +498,8 @@
         "colLG" : 14,
         "layout" : "TABLE_24COL"
       },
-      "controlType" : "PORTLET",
       "showTitleBar" : true,
+      "controlType" : "PORTLET",
       "title" : "累计创建Bug数和创建用例数",
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -564,8 +564,6 @@
           "controlType" : "CHART",
           "getPSDEChartSerieses" : [ {
             "stack" : false,
-            "catalogField" : "CURMONTH",
-            "seriesType" : "line",
             "eChartsType" : "line",
             "getPSChartCoordinateSystem" : {
               "modelref" : true,
@@ -576,6 +574,7 @@
               "modelref" : true,
               "id" : "0"
             },
+            "catalogField" : "CURMONTH",
             "getPSChartSeriesEncode" : {
               "getPSChartXAxis" : {
                 "modelref" : true,
@@ -592,6 +591,7 @@
               "name" : "坐标系编码",
               "id" : "0"
             },
+            "seriesType" : "line",
             "caption" : "创建Bug",
             "valueField" : "MONTRESOLVEDBUG",
             "seriesLayoutBy" : "column",
@@ -600,8 +600,6 @@
             "name" : "MONTRESOLVEDBUG"
           }, {
             "stack" : false,
-            "catalogField" : "CURMONTH",
-            "seriesType" : "line",
             "eChartsType" : "line",
             "getPSChartCoordinateSystem" : {
               "modelref" : true,
@@ -612,6 +610,7 @@
               "modelref" : true,
               "id" : "1"
             },
+            "catalogField" : "CURMONTH",
             "getPSChartSeriesEncode" : {
               "getPSChartXAxis" : {
                 "modelref" : true,
@@ -628,6 +627,7 @@
               "name" : "坐标系编码",
               "id" : "0"
             },
+            "seriesType" : "line",
             "caption" : "创建用例",
             "valueField" : "YEARCASECNT",
             "seriesLayoutBy" : "column",
@@ -650,9 +650,9 @@
             "eChartsType" : "value",
             "eChartsPos" : "yAxis",
             "position" : "left",
-            "type" : "numeric",
             "maxValue" : 200.0,
             "minValue" : 0.0,
+            "type" : "numeric",
             "caption" : "数量",
             "index" : 0,
             "name" : "数量",
@@ -826,8 +826,8 @@
           "height" : 350,
           "layout" : "TABLE_24COL"
         },
-        "controlType" : "PORTLET",
         "showTitleBar" : false,
+        "controlType" : "PORTLET",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
@@ -850,8 +850,8 @@
         "colLG" : 10,
         "layout" : "TABLE_24COL"
       },
-      "controlType" : "PORTLET",
       "showTitleBar" : true,
+      "controlType" : "PORTLET",
       "title" : "月创建Bug数和创建用例数",
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -876,8 +876,8 @@
       "colLGOffset" : 1,
       "layout" : "TABLE_24COL"
     },
-    "controlType" : "PORTLET",
     "showTitleBar" : true,
+    "controlType" : "PORTLET",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"

@@ -4,82 +4,82 @@
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "id"
+    "name" : "id",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "PRI",
       "codeName" : "Pri"
     },
-    "dataType" : 9,
-    "name" : "pri"
+    "name" : "pri",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "STATUS",
       "codeName" : "Status"
     },
-    "dataType" : 25,
-    "name" : "status"
+    "name" : "status",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "name"
+    "name" : "name",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
     },
-    "dataType" : 25,
-    "name" : "type"
+    "name" : "type",
+    "dataType" : 25
   }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
+    "name" : "srfmstag",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "END",
       "codeName" : "End"
     },
-    "dataType" : 9,
-    "name" : "end"
+    "name" : "end",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "DATE1",
       "codeName" : "Date1"
     },
-    "dataType" : 25,
-    "name" : "date1"
+    "name" : "date1",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "BEGIN",
       "codeName" : "Begin"
     },
-    "dataType" : 9,
-    "name" : "begin"
+    "name" : "begin",
+    "dataType" : 9
   } ],
   "getRemovePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -95,8 +95,6 @@
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "singleSelect" : false,
-  "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -118,20 +116,22 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : false,
+  "enableColFilter" : false,
+  "singleSelect" : false,
+  "enablePagingBar" : true,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
-  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "编号",
-    "dataItemName" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
+    "dataItemName" : "id",
+    "excelCaption" : "编号",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -143,12 +143,12 @@
     "widthUnit" : "PX",
     "name" : "id"
   }, {
-    "excelCaption" : "日期",
-    "dataItemName" : "date1",
     "getPSAppDEField" : {
       "name" : "DATE1",
       "codeName" : "Date1"
     },
+    "dataItemName" : "date1",
+    "excelCaption" : "日期",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -160,16 +160,16 @@
     "widthUnit" : "PX",
     "name" : "date1"
   }, {
-    "excelCaption" : "类型",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/TypeAll.json"
     },
-    "dataItemName" : "type",
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
     },
+    "dataItemName" : "type",
+    "excelCaption" : "类型",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -181,16 +181,16 @@
     "widthUnit" : "PX",
     "name" : "type"
   }, {
-    "excelCaption" : "优先级",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Pri.json"
     },
-    "dataItemName" : "pri",
     "getPSAppDEField" : {
       "name" : "PRI",
       "codeName" : "Pri"
     },
+    "dataItemName" : "pri",
+    "excelCaption" : "优先级",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -209,12 +209,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "excelCaption" : "待办名称",
-    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "dataItemName" : "name",
+    "excelCaption" : "待办名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -226,16 +226,16 @@
     "widthUnit" : "STAR",
     "name" : "name"
   }, {
-    "excelCaption" : "开始",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/BeginendDropList.json"
     },
-    "dataItemName" : "begin",
     "getPSAppDEField" : {
       "name" : "BEGIN",
       "codeName" : "Begin"
     },
+    "dataItemName" : "begin",
+    "excelCaption" : "开始",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -247,16 +247,16 @@
     "widthUnit" : "PX",
     "name" : "begin"
   }, {
-    "excelCaption" : "结束",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/BeginendDropList.json"
     },
-    "dataItemName" : "end",
     "getPSAppDEField" : {
       "name" : "END",
       "codeName" : "End"
     },
+    "dataItemName" : "end",
+    "excelCaption" : "结束",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -268,16 +268,16 @@
     "widthUnit" : "PX",
     "name" : "end"
   }, {
-    "excelCaption" : "状态",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Todo__status.json"
     },
-    "dataItemName" : "status",
     "getPSAppDEField" : {
       "name" : "STATUS",
       "codeName" : "Status"
     },
+    "dataItemName" : "status",
+    "excelCaption" : "状态",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -312,8 +312,8 @@
           "timeout" : 60000,
           "codeName" : "assignTo",
           "caption" : "指派",
-          "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
+          "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "ASSIGNTO",
           "uIActionTag" : "assignTo",
           "uIActionType" : "DEUIACTION",
@@ -323,8 +323,8 @@
           "id" : "assignTo@Todo"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : false,
+        "detailType" : "DEUIACTION",
         "name" : "ucbe5848"
       }, {
         "showIcon" : true,
@@ -347,8 +347,8 @@
           "timeout" : 60000,
           "codeName" : "finish",
           "caption" : "完成",
-          "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
+          "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "FINISH",
           "uIActionTag" : "finish",
           "uIActionType" : "DEUIACTION",
@@ -359,8 +359,8 @@
           "id" : "finish@Todo"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : false,
+        "detailType" : "DEUIACTION",
         "name" : "u73f3925"
       }, {
         "showIcon" : true,
@@ -383,8 +383,8 @@
           "timeout" : 60000,
           "codeName" : "activate",
           "caption" : "激活",
-          "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
+          "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "ACTIVATE",
           "uIActionTag" : "activate",
           "uIActionType" : "DEUIACTION",
@@ -395,8 +395,8 @@
           "id" : "activate@Todo"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : false,
+        "detailType" : "DEUIACTION",
         "name" : "u028b830"
       }, {
         "showIcon" : true,
@@ -419,8 +419,8 @@
           "timeout" : 60000,
           "codeName" : "close",
           "caption" : "关闭",
-          "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
+          "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "CLOSE",
           "uIActionTag" : "close",
           "uIActionType" : "DEUIACTION",
@@ -431,8 +431,8 @@
           "id" : "close@Todo"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : false,
+        "detailType" : "DEUIACTION",
         "name" : "u24b965b"
       }, {
         "showIcon" : true,
@@ -469,8 +469,8 @@
           "id" : "edit1@Todo"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : false,
+        "detailType" : "DEUIACTION",
         "name" : "uc8e81f7"
       }, {
         "showIcon" : true,
@@ -493,8 +493,8 @@
           "timeout" : 60000,
           "codeName" : "delete",
           "caption" : "删除",
-          "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
+          "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "DELETE",
           "uIActionTag" : "delete",
           "uIActionType" : "DEUIACTION",
@@ -505,8 +505,8 @@
           "id" : "delete@Todo"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : false,
+        "detailType" : "DEUIACTION",
         "name" : "u51ddac6"
       } ],
       "name" : "todo行为组"

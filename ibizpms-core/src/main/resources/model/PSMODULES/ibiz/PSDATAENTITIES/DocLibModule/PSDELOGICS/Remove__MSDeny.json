@@ -1,6 +1,6 @@
 {
-  "enableBackend" : true,
   "enableFront" : false,
+  "enableBackend" : true,
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"
@@ -21,9 +21,9 @@
         "modelref" : true,
         "id" : "Default"
       },
+      "srcFieldName" : "ID",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "ID",
-      "srcFieldName" : "ID",
       "name" : "复制主键"
     } ],
     "logicHolder" : 3,
@@ -58,13 +58,13 @@
     "name" : "状态[模块_已收藏]拒绝[Remove]操作"
   }, {
     "parallelOutput" : true,
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Temp"
-    },
     "getDstPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Temp"
     },
     "getPSDELogicLinks" : [ {
       "modelref" : true,
@@ -75,11 +75,11 @@
     } ],
     "logicHolder" : 3,
     "codeName" : "Get",
-    "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Get.json"
     },
+    "logicNodeType" : "DEACTION",
     "name" : "获取数据"
   } ],
   "getPSDELogicLinks" : [ {
@@ -107,21 +107,21 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "module",
         "dstFieldName" : "DOCQTYPE",
         "logicType" : "SINGLE",
         "name" : "属性[DOCQTYPE]等于[module]"
       }, {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "0",
         "dstFieldName" : "ISFAVOURITES",
         "logicType" : "SINGLE",
@@ -145,21 +145,21 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "module",
         "dstFieldName" : "DOCQTYPE",
         "logicType" : "SINGLE",
         "name" : "属性[DOCQTYPE]等于[module]"
       }, {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "1",
         "dstFieldName" : "ISFAVOURITES",
         "logicType" : "SINGLE",
@@ -182,16 +182,16 @@
     "name" : "状态[模块_已收藏]拒绝[Remove]操作"
   } ],
   "getPSDELogicParams" : [ {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "默认变量"
   }, {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Temp",
     "default" : false,
     "name" : "临时变量"

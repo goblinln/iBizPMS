@@ -38,8 +38,6 @@
   "controlType" : "CHART",
   "getPSDEChartSerieses" : [ {
     "stack" : false,
-    "catalogField" : "CURMONTH",
-    "seriesType" : "line",
     "eChartsType" : "line",
     "getPSChartCoordinateSystem" : {
       "modelref" : true,
@@ -50,6 +48,7 @@
       "modelref" : true,
       "id" : "0"
     },
+    "catalogField" : "CURMONTH",
     "getPSChartSeriesEncode" : {
       "getPSChartXAxis" : {
         "modelref" : true,
@@ -66,6 +65,7 @@
       "name" : "坐标系编码",
       "id" : "0"
     },
+    "seriesType" : "line",
     "caption" : "解决Bug",
     "valueField" : "MONTRESOLVEDBUG",
     "seriesLayoutBy" : "column",
@@ -74,8 +74,6 @@
     "name" : "MONTRESOLVEDBUG"
   }, {
     "stack" : false,
-    "catalogField" : "CURMONTH",
-    "seriesType" : "line",
     "eChartsType" : "line",
     "getPSChartCoordinateSystem" : {
       "modelref" : true,
@@ -86,6 +84,7 @@
       "modelref" : true,
       "id" : "1"
     },
+    "catalogField" : "CURMONTH",
     "getPSChartSeriesEncode" : {
       "getPSChartXAxis" : {
         "modelref" : true,
@@ -102,6 +101,7 @@
       "name" : "坐标系编码",
       "id" : "0"
     },
+    "seriesType" : "line",
     "caption" : "完成的任务",
     "valueField" : "MONTHFINISHTASK",
     "seriesLayoutBy" : "column",
@@ -110,8 +110,6 @@
     "name" : "FinishTask"
   }, {
     "stack" : false,
-    "catalogField" : "CURMONTH",
-    "seriesType" : "line",
     "eChartsType" : "line",
     "getPSChartCoordinateSystem" : {
       "modelref" : true,
@@ -122,6 +120,7 @@
       "modelref" : true,
       "id" : "2"
     },
+    "catalogField" : "CURMONTH",
     "getPSChartSeriesEncode" : {
       "getPSChartXAxis" : {
         "modelref" : true,
@@ -138,6 +137,7 @@
       "name" : "坐标系编码",
       "id" : "0"
     },
+    "seriesType" : "line",
     "caption" : "累计工时",
     "valueField" : "MONTESTIMATE",
     "seriesLayoutBy" : "column",
@@ -160,9 +160,9 @@
     "eChartsType" : "value",
     "eChartsPos" : "yAxis",
     "position" : "left",
-    "type" : "numeric",
     "maxValue" : 100.0,
     "minValue" : 0.0,
+    "type" : "numeric",
     "caption" : "数量",
     "index" : 0,
     "name" : "数量",

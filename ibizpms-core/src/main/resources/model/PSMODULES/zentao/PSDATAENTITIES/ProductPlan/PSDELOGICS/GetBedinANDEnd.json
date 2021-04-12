@@ -1,6 +1,6 @@
 {
-  "enableBackend" : true,
   "enableFront" : false,
+  "enableBackend" : true,
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"
@@ -44,11 +44,11 @@
   "getPSDELogicLinks" : [ {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "EQ",
         "paramValue" : "待定",
         "dstFieldName" : "BEGINSTR",
         "logicType" : "SINGLE",
@@ -71,9 +71,9 @@
     "name" : "连接6861"
   } ],
   "getPSDELogicParams" : [ {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

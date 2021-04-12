@@ -22,8 +22,8 @@
     "codeName" : "Reject",
     "text" : "拒绝"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "Story__review_result",
   "emptyText" : "未定义",
   "enableCache" : true,

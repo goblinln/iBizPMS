@@ -1,6 +1,6 @@
 {
-  "enableBackend" : true,
   "enableFront" : false,
+  "enableBackend" : true,
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"
@@ -31,9 +31,9 @@
         "modelref" : true,
         "id" : "Default"
       },
+      "srcFieldName" : "ID",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "case",
-      "srcFieldName" : "ID",
       "name" : "Default[ID] ==> Default[case]"
     }, {
       "paramAction" : "SETPARAMVALUE",
@@ -45,9 +45,9 @@
         "modelref" : true,
         "id" : "Default"
       },
+      "srcFieldName" : "suite",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "ID",
-      "srcFieldName" : "suite",
       "name" : "Default[suite] ==> Default[ID]"
     } ],
     "logicHolder" : 3,
@@ -56,21 +56,21 @@
     "name" : "准备参数"
   }, {
     "parallelOutput" : true,
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "getDstPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
     },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
     "logicHolder" : 3,
     "codeName" : "Deaction1",
-    "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UnlinkSuiteCase.json"
     },
+    "logicNodeType" : "DEACTION",
     "name" : "移除用例"
   } ],
   "getPSDELogicLinks" : [ {
@@ -97,9 +97,9 @@
     "name" : "连接3011"
   } ],
   "getPSDELogicParams" : [ {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

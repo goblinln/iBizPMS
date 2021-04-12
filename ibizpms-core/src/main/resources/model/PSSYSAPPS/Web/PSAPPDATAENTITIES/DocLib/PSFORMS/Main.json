@@ -1,5 +1,7 @@
 {
   "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -24,8 +26,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : false,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
@@ -56,17 +56,17 @@
           "name" : "TYPE",
           "codeName" : "Type"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 25,
         "needCodeListConfig" : true,
-        "allowEmpty" : true,
         "caption" : "文档类型",
+        "allowEmpty" : true,
         "createDV" : "custom",
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 100,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -78,17 +78,21 @@
       }, {
         "emptyCaption" : false,
         "getPSEditor" : {
+          "enableLinkView" : false,
           "singleSelect" : true,
           "dropDownView" : false,
           "enablePickupView" : true,
-          "enableLinkView" : false,
           "enableAC" : true,
           "forceSelection" : true,
           "showTrigger" : true,
-          "handlerType" : "PickupText",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+          },
+          "getPickupPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectPickupView.json",
+            "viewType" : "DEPICKUPVIEW"
           },
           "getPSAppDEDataSet" : {
             "modelref" : true,
@@ -98,11 +102,7 @@
             "modelref" : true,
             "id" : "Default"
           },
-          "getPickupPSAppView" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectPickupView.json",
-            "viewType" : "DEPICKUPVIEW"
-          },
+          "handlerType" : "PickupText",
           "valueItemName" : "project",
           "editorType" : "PICKER",
           "editorParams" : {
@@ -117,16 +117,16 @@
           "name" : "PROJECTNAME",
           "codeName" : "ProjectName"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : false,
+        "dataType" : 25,
         "caption" : "所属项目",
+        "allowEmpty" : false,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "valueItemName" : "project",
         "labelWidth" : 100,
-        "showCaption" : true,
         "getPSDEFDGroupLogics" : [ {
           "relatedDetailNames" : [ "type" ],
           "logicCat" : "ITEMBLANK",
@@ -167,17 +167,21 @@
       }, {
         "emptyCaption" : false,
         "getPSEditor" : {
+          "enableLinkView" : false,
           "singleSelect" : true,
           "dropDownView" : false,
           "enablePickupView" : true,
-          "enableLinkView" : false,
           "enableAC" : true,
           "forceSelection" : true,
           "showTrigger" : true,
-          "handlerType" : "PickupText",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+          },
+          "getPickupPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPickupView.json",
+            "viewType" : "DEPICKUPVIEW"
           },
           "getPSAppDEDataSet" : {
             "modelref" : true,
@@ -187,11 +191,7 @@
             "modelref" : true,
             "id" : "Default"
           },
-          "getPickupPSAppView" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPickupView.json",
-            "viewType" : "DEPICKUPVIEW"
-          },
+          "handlerType" : "PickupText",
           "valueItemName" : "product",
           "editorType" : "PICKER",
           "editorParams" : {
@@ -206,16 +206,16 @@
           "name" : "PRODUCTNAME",
           "codeName" : "ProductName"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : false,
+        "dataType" : 25,
         "caption" : "所属产品",
+        "allowEmpty" : false,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "valueItemName" : "product",
         "labelWidth" : 100,
-        "showCaption" : true,
         "getPSDEFDGroupLogics" : [ {
           "relatedDetailNames" : [ "type" ],
           "logicCat" : "ITEMBLANK",
@@ -266,15 +266,15 @@
           "name" : "NAME",
           "codeName" : "Name"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : false,
+        "dataType" : 25,
         "caption" : "文档库名称",
+        "allowEmpty" : false,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 100,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -299,17 +299,17 @@
           "name" : "ACL",
           "codeName" : "Acl"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 25,
         "needCodeListConfig" : true,
-        "allowEmpty" : true,
         "caption" : "访问控制",
+        "allowEmpty" : true,
         "createDV" : "default",
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 100,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -323,11 +323,11 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : false,
       "codeName" : "group1",
       "caption" : "doclib基本信息",
       "detailType" : "GROUPPANEL",
       "detailStyle" : "DEFAULT",
-      "showCaption" : false,
       "name" : "group1"
     }, {
       "emptyCaption" : false,
@@ -341,15 +341,15 @@
         "name" : "COLLECTOR",
         "codeName" : "Collector"
       },
-      "dataType" : 21,
+      "showCaption" : true,
       "hidden" : true,
-      "allowEmpty" : true,
+      "dataType" : 21,
       "caption" : "收藏者",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 100,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -370,15 +370,15 @@
         "name" : "PROJECT",
         "codeName" : "Project"
       },
-      "dataType" : 1,
+      "showCaption" : true,
       "hidden" : true,
-      "allowEmpty" : true,
+      "dataType" : 1,
       "caption" : "项目库",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 100,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -399,15 +399,15 @@
         "name" : "PRODUCT",
         "codeName" : "Product"
       },
-      "dataType" : 1,
+      "showCaption" : true,
       "hidden" : true,
-      "allowEmpty" : true,
+      "dataType" : 1,
       "caption" : "产品库",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 100,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"

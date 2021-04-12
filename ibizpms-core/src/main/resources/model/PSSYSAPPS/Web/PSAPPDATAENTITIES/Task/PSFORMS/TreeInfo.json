@@ -1,5 +1,7 @@
 {
   "enableAutoSave" : false,
+  "infoFormMode" : true,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -24,8 +26,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : true,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
@@ -52,15 +52,15 @@
           "name" : "PARENT",
           "codeName" : "Parent"
         },
-        "dataType" : 1,
+        "showCaption" : true,
         "hidden" : true,
-        "allowEmpty" : true,
+        "dataType" : 1,
         "caption" : "父任务",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 100,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -81,15 +81,15 @@
           "name" : "ISFAVORITES",
           "codeName" : "Isfavorites"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : true,
-        "allowEmpty" : true,
+        "dataType" : 25,
         "caption" : "是否收藏",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 100,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -110,15 +110,15 @@
           "name" : "TASKTYPE",
           "codeName" : "Tasktype"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : true,
-        "allowEmpty" : true,
+        "dataType" : 25,
         "caption" : "任务类型",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 100,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -139,15 +139,15 @@
           "name" : "STATUS1",
           "codeName" : "Status1"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : true,
-        "allowEmpty" : true,
+        "dataType" : 25,
         "caption" : "任务状态",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 100,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -168,15 +168,15 @@
           "name" : "STORY",
           "codeName" : "Story"
         },
-        "dataType" : 1,
+        "showCaption" : true,
         "hidden" : true,
-        "allowEmpty" : true,
+        "dataType" : 1,
         "caption" : "相关需求",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 100,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -201,8 +201,9 @@
           "name" : "ID",
           "codeName" : "Id"
         },
-        "dataType" : 1,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 1,
         "allowEmpty" : true,
         "enableCond" : 0,
         "ignoreInput" : 0,
@@ -210,7 +211,6 @@
         "labelWidth" : 2,
         "itemWidth" : 82.0,
         "itemHeight" : 32.0,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 2,
@@ -241,15 +241,15 @@
           "name" : "STATUS",
           "codeName" : "Status"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 25,
         "convertToCodeItemText" : true,
         "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 3,
         "labelPos" : "LEFT",
         "labelWidth" : 5,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 2,
           "colLG" : 2,
@@ -276,14 +276,14 @@
           "name" : "NAME",
           "codeName" : "Name"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 25,
         "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 1,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 20,
           "colLG" : 20,
@@ -306,21 +306,21 @@
         },
         "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
-        "enableUnitName" : true,
         "getPSAppDEField" : {
           "name" : "ESTIMATE",
           "codeName" : "Estimate"
         },
-        "dataType" : 7,
+        "enableUnitName" : true,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : true,
+        "dataType" : 7,
         "caption" : "最初预计",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 80,
         "unitName" : "小时",
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 6,
@@ -340,21 +340,21 @@
         },
         "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
-        "enableUnitName" : true,
         "getPSAppDEField" : {
           "name" : "CONSUMED",
           "codeName" : "Consumed"
         },
-        "dataType" : 7,
+        "enableUnitName" : true,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : true,
+        "dataType" : 7,
         "caption" : "消耗",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 50,
         "unitName" : "小时",
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 6,
@@ -374,21 +374,21 @@
         },
         "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
-        "enableUnitName" : true,
         "getPSAppDEField" : {
           "name" : "LEFT",
           "codeName" : "Left"
         },
-        "dataType" : 7,
+        "enableUnitName" : true,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : true,
+        "dataType" : 7,
         "caption" : "剩余",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 50,
         "unitName" : "小时",
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 6,
@@ -412,15 +412,15 @@
           "name" : "PROGRESSRATE",
           "codeName" : "Progressrate"
         },
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : true,
+        "dataType" : 25,
         "caption" : "进度",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 50,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 6,
@@ -477,11 +477,11 @@
             "colLG" : 1,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : false,
           "codeName" : "button7",
           "caption" : "指派",
           "detailType" : "BUTTON",
           "detailStyle" : "DEFAULT",
-          "showCaption" : false,
           "name" : "button7"
         }, {
           "getPSAppViewUIAction" : {
@@ -537,11 +537,11 @@
             "colLG" : 1,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : false,
           "codeName" : "button8",
           "caption" : "转交",
           "detailType" : "BUTTON",
           "detailStyle" : "DEFAULT",
-          "showCaption" : false,
           "name" : "button8"
         }, {
           "getPSAppViewUIAction" : {
@@ -597,11 +597,11 @@
             "colLG" : 1,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : false,
           "codeName" : "button1",
           "caption" : "开始",
           "detailType" : "BUTTON",
           "detailStyle" : "DEFAULT",
-          "showCaption" : false,
           "name" : "button1"
         }, {
           "getPSAppViewUIAction" : {
@@ -658,11 +658,11 @@
             "colLG" : 1,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : false,
           "codeName" : "button2",
           "caption" : "完成",
           "detailType" : "BUTTON",
           "detailStyle" : "DEFAULT",
-          "showCaption" : false,
           "name" : "button2"
         }, {
           "getPSAppViewUIAction" : {
@@ -704,11 +704,11 @@
             "colLG" : 1,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : false,
           "codeName" : "button3",
           "caption" : "激活",
           "detailType" : "BUTTON",
           "detailStyle" : "DEFAULT",
-          "showCaption" : false,
           "name" : "button3"
         }, {
           "getPSAppViewUIAction" : {
@@ -764,11 +764,11 @@
             "colLG" : 1,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : false,
           "codeName" : "button4",
           "caption" : "暂停",
           "detailType" : "BUTTON",
           "detailStyle" : "DEFAULT",
-          "showCaption" : false,
           "name" : "button4"
         }, {
           "getPSAppViewUIAction" : {
@@ -810,11 +810,11 @@
             "colLG" : 1,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : false,
           "codeName" : "button5",
           "caption" : "取消",
           "detailType" : "BUTTON",
           "detailStyle" : "DEFAULT",
-          "showCaption" : false,
           "name" : "button5"
         }, {
           "getPSAppViewUIAction" : {
@@ -860,11 +860,11 @@
             "colLG" : 1,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : false,
           "codeName" : "button6",
           "caption" : "关闭",
           "detailType" : "BUTTON",
           "detailStyle" : "DEFAULT",
-          "showCaption" : false,
           "name" : "button6"
         }, {
           "getPSAppViewUIAction" : {
@@ -872,17 +872,6 @@
             "id" : "form_button9"
           },
           "getPSUIAction" : {
-            "getPSNavigateContexts" : [ {
-              "rawValue" : false,
-              "value" : "project",
-              "key" : "PROJECT",
-              "name" : "PROJECT"
-            }, {
-              "rawValue" : false,
-              "value" : "module",
-              "key" : "MODULE",
-              "name" : "MODULE"
-            } ],
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
@@ -904,6 +893,17 @@
               "name" : "module"
             } ],
             "frontProcessType" : "WIZARD",
+            "getPSNavigateContexts" : [ {
+              "rawValue" : false,
+              "value" : "project",
+              "key" : "PROJECT",
+              "name" : "PROJECT"
+            }, {
+              "rawValue" : false,
+              "value" : "module",
+              "key" : "MODULE",
+              "name" : "MODULE"
+            } ],
             "getNoPrivDisplayMode" : 2,
             "getPSSysImage" : {
               "cssClass" : "iconfont studio-icon-subnets"
@@ -927,22 +927,22 @@
             "colLG" : 1,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : false,
           "codeName" : "button9",
           "caption" : "子任务",
           "detailType" : "BUTTON",
           "detailStyle" : "DEFAULT",
-          "showCaption" : false,
           "name" : "button9"
         } ],
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : false,
         "codeName" : "grouppanel4",
         "caption" : "操作",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : false,
         "name" : "grouppanel4"
       }, {
         "infoGroupMode" : true,
@@ -968,15 +968,15 @@
             "name" : "DESC",
             "codeName" : "Desc"
           },
-          "dataType" : 21,
+          "showCaption" : false,
           "hidden" : false,
-          "allowEmpty" : true,
+          "dataType" : 21,
           "caption" : "任务描述",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "NONE",
           "labelWidth" : 0,
-          "showCaption" : false,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -990,11 +990,11 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : true,
         "codeName" : "grouppanel3",
         "caption" : "任务描述",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : true,
         "name" : "grouppanel3"
       }, {
         "infoGroupMode" : true,
@@ -1004,19 +1004,8 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
-          "refreshItemsSetParamOnly" : false,
           "needSave" : false,
-          "getPSNavigateContexts" : [ {
-            "rawValue" : false,
-            "value" : "story",
-            "key" : "STORY",
-            "name" : "STORY"
-          }, {
-            "rawValue" : false,
-            "value" : "story",
-            "key" : "ID",
-            "name" : "ID"
-          } ],
+          "refreshItemsSetParamOnly" : false,
           "getPSNavigateParams" : [ {
             "rawValue" : false,
             "value" : "story",
@@ -1028,6 +1017,17 @@
             "key" : "story",
             "name" : "story"
           } ],
+          "getPSNavigateContexts" : [ {
+            "rawValue" : false,
+            "value" : "story",
+            "key" : "STORY",
+            "name" : "STORY"
+          }, {
+            "rawValue" : false,
+            "value" : "story",
+            "key" : "ID",
+            "name" : "ID"
+          } ],
           "parentDataJO" : {
             "srfparentdename" : "ZT_TASK",
             "SRFPARENTTYPE" : "CUSTOM"
@@ -1037,10 +1037,10 @@
             "showCaptionBar" : false,
             "xDataControlName" : "form",
             "getPSDEViewCodeName" : "EditView9",
+            "enableDP" : true,
             "caption" : "关联需求",
             "title" : "关联需求",
             "accUserMode" : 2,
-            "enableDP" : true,
             "getPSAppViewNavParams" : [ {
               "rawValue" : true,
               "value" : "story",
@@ -1079,7 +1079,6 @@
               "key" : "OBJECTTYPE",
               "name" : "OBJECTTYPE"
             } ],
-            "viewStyle" : "STYLE2",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -1098,6 +1097,8 @@
               "modelid" : "8c3bd17ea668e9cf5802751378c3a378_toolbar"
             }, {
               "enableAutoSave" : false,
+              "infoFormMode" : true,
+              "showFormNavBar" : false,
               "getCreatePSControlAction" : {
                 "modelref" : true,
                 "id" : "create"
@@ -1122,8 +1123,6 @@
                 "modelref" : true,
                 "id" : "loaddraftfrom"
               },
-              "infoFormMode" : true,
-              "showFormNavBar" : false,
               "controlType" : "FORM",
               "readOnly" : false,
               "getPSLayout" : {
@@ -1173,15 +1172,15 @@
                           "name" : "SPEC",
                           "codeName" : "Spec"
                         },
-                        "dataType" : 21,
+                        "showCaption" : false,
                         "hidden" : false,
-                        "allowEmpty" : true,
+                        "dataType" : 21,
                         "caption" : "需求描述",
+                        "allowEmpty" : true,
                         "enableCond" : 3,
                         "ignoreInput" : 0,
                         "labelPos" : "NONE",
                         "labelWidth" : 0,
-                        "showCaption" : false,
                         "getPSLayoutPos" : {
                           "colMD" : 24,
                           "layout" : "TABLE_24COL"
@@ -1198,8 +1197,8 @@
                           "columnCount" : 24
                         },
                         "getPSDEFormDetails" : [ {
-                          "refreshItemsSetParamOnly" : false,
                           "needSave" : false,
+                          "refreshItemsSetParamOnly" : false,
                           "getPSNavigateParams" : [ {
                             "rawValue" : false,
                             "value" : "version",
@@ -1221,10 +1220,10 @@
                             "xDataControlName" : "list",
                             "showCaptionBar" : false,
                             "getPSDEViewCodeName" : "ListView9",
+                            "enableDP" : true,
                             "caption" : "附件",
                             "title" : "附件",
                             "accUserMode" : 2,
-                            "enableDP" : true,
                             "getPSAppViewNavParams" : [ {
                               "rawValue" : false,
                               "value" : "OBJECTTYPE",
@@ -1259,7 +1258,6 @@
                               } ],
                               "name" : "engine"
                             } ],
-                            "viewStyle" : "STYLE2",
                             "getPSAppDataEntity" : {
                               "modelref" : true,
                               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
@@ -1276,25 +1274,25 @@
                                   "name" : "TITLE",
                                   "codeName" : "Title"
                                 },
-                                "dataType" : 25,
-                                "name" : "title"
+                                "name" : "title",
+                                "dataType" : 25
                               }, {
                                 "getPSAppDEField" : {
                                   "name" : "ID",
                                   "codeName" : "Id"
                                 },
-                                "dataType" : 25,
-                                "name" : "srfkey"
+                                "name" : "srfkey",
+                                "dataType" : 25
                               }, {
                                 "getPSAppDEField" : {
                                   "name" : "TITLE",
                                   "codeName" : "Title"
                                 },
-                                "dataType" : 25,
-                                "name" : "srfmajortext"
+                                "name" : "srfmajortext",
+                                "dataType" : 25
                               } ],
-                              "controlType" : "LIST",
                               "enableRowEdit" : false,
+                              "controlType" : "LIST",
                               "codeName" : "List",
                               "enableGroup" : false,
                               "pagingSize" : 1000,
@@ -1407,13 +1405,14 @@
                               "name" : "list",
                               "modelid" : "835d0e318f958e732332eceda335286e"
                             } ],
+                            "viewStyle" : "STYLE2",
                             "getPSAppViewLogics" : [ {
                               "logicTrigger" : "CUSTOM",
                               "getPSAppUILogic" : {
+                                "enableWizardAdd" : false,
                                 "actionAfterWizard" : "DEFAULT",
                                 "enableBatchAdd" : false,
                                 "batchAddOnly" : false,
-                                "enableWizardAdd" : false,
                                 "viewLogicType" : "APP_NEWDATA",
                                 "logicType" : "PREDEFINED",
                                 "name" : "新建数据"
@@ -1439,16 +1438,17 @@
                             "colMD" : 24,
                             "layout" : "TABLE_24COL"
                           },
+                          "showCaption" : true,
                           "codeName" : "_druipart2",
                           "detailType" : "DRUIPART",
                           "detailStyle" : "DEFAULT",
-                          "showCaption" : true,
                           "name" : "_druipart2"
                         } ],
                         "getPSLayoutPos" : {
                           "colMD" : 24,
                           "layout" : "TABLE_24COL"
                         },
+                        "showCaption" : false,
                         "getPSSysImage" : {
                           "glyph" : "xf0c6@FontAwesome",
                           "cssClass" : "fa fa-paperclip"
@@ -1457,18 +1457,17 @@
                         "caption" : "附件",
                         "detailType" : "GROUPPANEL",
                         "detailStyle" : "DEFAULT",
-                        "showCaption" : false,
                         "name" : "_grouppanel1"
                       } ],
                       "getPSLayoutPos" : {
                         "colMD" : 24,
                         "layout" : "TABLE_24COL"
                       },
+                      "showCaption" : true,
                       "codeName" : "grouppanel11",
                       "caption" : "需求描述",
                       "detailType" : "GROUPPANEL",
                       "detailStyle" : "DEFAULT",
-                      "showCaption" : true,
                       "name" : "grouppanel11"
                     }, {
                       "infoGroupMode" : true,
@@ -1498,15 +1497,15 @@
                           "name" : "VERIFY",
                           "codeName" : "Verify"
                         },
-                        "dataType" : 21,
+                        "showCaption" : false,
                         "hidden" : false,
-                        "allowEmpty" : true,
+                        "dataType" : 21,
                         "caption" : "验收标准",
+                        "allowEmpty" : true,
                         "enableCond" : 3,
                         "ignoreInput" : 0,
                         "labelPos" : "NONE",
                         "labelWidth" : 0,
-                        "showCaption" : false,
                         "getPSLayoutPos" : {
                           "colMD" : 24,
                           "layout" : "TABLE_24COL"
@@ -1523,8 +1522,8 @@
                           "columnCount" : 24
                         },
                         "getPSDEFormDetails" : [ {
-                          "refreshItemsSetParamOnly" : false,
                           "needSave" : false,
+                          "refreshItemsSetParamOnly" : false,
                           "parentDataJO" : {
                             "srfparentdefname" : "STORY",
                             "srfparentdename" : "ZT_STORY",
@@ -1542,10 +1541,10 @@
                             "xDataControlName" : "grid",
                             "showCaptionBar" : true,
                             "getPSDEViewCodeName" : "GridView9_StoryRelated",
+                            "enableDP" : true,
                             "caption" : "相关用例",
                             "title" : "相关用例",
                             "accUserMode" : 2,
-                            "enableDP" : true,
                             "getPSViewLayoutPanel" : {
                               "useDefaultLayout" : true,
                               "layoutPanel" : true,
@@ -1574,7 +1573,6 @@
                               } ],
                               "name" : "engine"
                             } ],
-                            "viewStyle" : "STYLE2",
                             "getPSAppDataEntity" : {
                               "modelref" : true,
                               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
@@ -1585,89 +1583,89 @@
                                   "name" : "PRODUCT",
                                   "codeName" : "Product"
                                 },
-                                "dataType" : 1,
-                                "name" : "product"
+                                "name" : "product",
+                                "dataType" : 1
                               }, {
                                 "getPSAppDEField" : {
                                   "name" : "STORY",
                                   "codeName" : "Story"
                                 },
-                                "dataType" : 1,
-                                "name" : "story"
+                                "name" : "story",
+                                "dataType" : 1
                               }, {
                                 "getPSAppDEField" : {
                                   "name" : "MODULE",
                                   "codeName" : "Module"
                                 },
-                                "dataType" : 1,
-                                "name" : "module"
+                                "name" : "module",
+                                "dataType" : 1
                               }, {
                                 "getPSAppDEField" : {
                                   "name" : "TITLE",
                                   "codeName" : "Title"
                                 },
-                                "dataType" : 25,
-                                "name" : "title"
+                                "name" : "title",
+                                "dataType" : 25
                               }, {
                                 "getPSAppDEField" : {
                                   "name" : "PRI",
                                   "codeName" : "Pri"
                                 },
-                                "dataType" : 9,
-                                "name" : "pri"
+                                "name" : "pri",
+                                "dataType" : 9
                               }, {
                                 "getPSAppDEField" : {
                                   "name" : "LIB",
                                   "codeName" : "Lib"
                                 },
-                                "dataType" : 1,
-                                "name" : "lib"
+                                "name" : "lib",
+                                "dataType" : 1
                               }, {
                                 "getPSAppDEField" : {
                                   "name" : "FROMBUG",
                                   "codeName" : "FromBug"
                                 },
-                                "dataType" : 1,
-                                "name" : "frombug"
+                                "name" : "frombug",
+                                "dataType" : 1
                               }, {
                                 "getPSAppDEField" : {
                                   "name" : "BRANCH",
                                   "codeName" : "Branch"
                                 },
-                                "dataType" : 1,
-                                "name" : "branch"
+                                "name" : "branch",
+                                "dataType" : 1
                               }, {
                                 "getPSAppDEField" : {
                                   "name" : "FROMCASEID",
                                   "codeName" : "FromCaseId"
                                 },
-                                "dataType" : 1,
-                                "name" : "fromcaseid"
+                                "name" : "fromcaseid",
+                                "dataType" : 1
                               }, {
-                                "dataType" : 25,
-                                "name" : "srfmstag"
+                                "name" : "srfmstag",
+                                "dataType" : 25
                               }, {
                                 "getPSAppDEField" : {
                                   "name" : "TITLE",
                                   "codeName" : "Title"
                                 },
-                                "dataType" : 25,
-                                "name" : "srfmajortext"
+                                "name" : "srfmajortext",
+                                "dataType" : 25
                               }, {
                                 "dataAccessAction" : true,
                                 "getPSAppDEField" : {
                                   "name" : "ID",
                                   "codeName" : "Id"
                                 },
-                                "dataType" : 1,
-                                "name" : "srfdataaccaction"
+                                "name" : "srfdataaccaction",
+                                "dataType" : 1
                               }, {
                                 "getPSAppDEField" : {
                                   "name" : "ID",
                                   "codeName" : "Id"
                                 },
-                                "dataType" : 1,
-                                "name" : "srfkey"
+                                "name" : "srfkey",
+                                "dataType" : 1
                               } ],
                               "getRemovePSControlAction" : {
                                 "getPSAppDataEntity" : {
@@ -1683,8 +1681,6 @@
                                 "actionType" : "DEACTION",
                                 "name" : "remove"
                               },
-                              "singleSelect" : true,
-                              "enableColFilter" : false,
                               "enableRowNew" : false,
                               "enableRowEditOrder" : false,
                               "noSort" : true,
@@ -1706,24 +1702,26 @@
                               } ],
                               "hasWFDataItems" : false,
                               "columnEnableLink" : 2,
-                              "controlType" : "GRID",
-                              "enableRowEdit" : false,
+                              "enableColFilter" : false,
+                              "singleSelect" : true,
+                              "enablePagingBar" : true,
                               "getMinorSortPSAppDEField" : {
                                 "name" : "ID",
                                 "codeName" : "Id"
                               },
-                              "enablePagingBar" : true,
+                              "enableRowEdit" : false,
+                              "controlType" : "GRID",
                               "getPSDEGridColumns" : [ {
-                                "excelCaption" : "P",
                                 "getPSAppCodeList" : {
                                   "modelref" : true,
                                   "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__pri.json"
                                 },
-                                "dataItemName" : "pri",
                                 "getPSAppDEField" : {
                                   "name" : "PRI",
                                   "codeName" : "Pri"
                                 },
+                                "dataItemName" : "pri",
+                                "excelCaption" : "P",
                                 "cLConvertMode" : "FRONT",
                                 "noPrivDisplayMode" : 1,
                                 "enableSort" : false,
@@ -1742,12 +1740,12 @@
                                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
                                   "viewType" : "DEPORTALVIEW"
                                 },
-                                "excelCaption" : "用例标题",
-                                "dataItemName" : "title",
                                 "getPSAppDEField" : {
                                   "name" : "TITLE",
                                   "codeName" : "Title"
                                 },
+                                "dataItemName" : "title",
+                                "excelCaption" : "用例标题",
                                 "cLConvertMode" : "NONE",
                                 "noPrivDisplayMode" : 1,
                                 "enableSort" : false,
@@ -1869,6 +1867,7 @@
                               "name" : "grid",
                               "modelid" : "614575afef20c289cb0161f96021e8b0"
                             } ],
+                            "viewStyle" : "STYLE2",
                             "getPSAppViewRefs" : [ {
                               "getRefPSAppView" : {
                                 "modelref" : true,
@@ -1890,7 +1889,6 @@
                             "getPSAppViewLogics" : [ {
                               "logicTrigger" : "CUSTOM",
                               "getPSAppUILogic" : {
-                                "actionAfterWizard" : "DEFAULT",
                                 "getNewDataPSAppView" : {
                                   "getRefPSAppView" : {
                                     "modelref" : true,
@@ -1898,9 +1896,10 @@
                                     "viewType" : "DEEDITVIEW"
                                   }
                                 },
+                                "enableWizardAdd" : false,
+                                "actionAfterWizard" : "DEFAULT",
                                 "enableBatchAdd" : false,
                                 "batchAddOnly" : false,
-                                "enableWizardAdd" : false,
                                 "viewLogicType" : "APP_NEWDATA",
                                 "getPSAppUILogicRefViews" : [ {
                                   "getRefPSAppView" : {
@@ -1947,100 +1946,100 @@
                             "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseGridView9_StoryRelated.json",
                             "name" : "CaseGridView9_StoryRelated",
                             "getPSAppDERSPaths" : [ [ {
-                              "getParentPSAppDEField" : {
-                                "name" : "PRODUCT",
-                                "codeName" : "Product"
+                              "enableDEAction" : true,
+                              "enableSelect" : true,
+                              "enableDEDataSet" : true,
+                              "enableCreateDataRS" : false,
+                              "enableUpdateDataRS" : false,
+                              "enableGetDataRS" : false,
+                              "enableSelectDataRS" : false,
+                              "getMajorPSAppDataEntity" : {
+                                "modelref" : true,
+                                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
                               },
                               "getMinorPSAppDataEntity" : {
                                 "modelref" : true,
                                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
                               },
-                              "getMajorPSAppDataEntity" : {
-                                "modelref" : true,
-                                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+                              "getParentPSAppDEField" : {
+                                "name" : "PRODUCT",
+                                "codeName" : "Product"
                               },
-                              "enableCreateDataRS" : false,
-                              "enableUpdateDataRS" : false,
-                              "enableGetDataRS" : false,
-                              "enableSelectDataRS" : false,
-                              "enableDEAction" : true,
-                              "enableSelect" : true,
-                              "enableDEDataSet" : true,
                               "codeName" : "Stories",
                               "actionRSMode" : 1,
                               "dataRSMode" : 0,
                               "rSMode" : 2,
                               "name" : "产品需求"
                             }, {
-                              "getParentPSAppDEField" : {
-                                "name" : "STORY",
-                                "codeName" : "Story"
+                              "enableDEAction" : true,
+                              "enableSelect" : true,
+                              "enableDEDataSet" : true,
+                              "enableCreateDataRS" : false,
+                              "enableUpdateDataRS" : false,
+                              "enableGetDataRS" : false,
+                              "enableSelectDataRS" : false,
+                              "getMajorPSAppDataEntity" : {
+                                "modelref" : true,
+                                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
                               },
                               "getMinorPSAppDataEntity" : {
                                 "modelref" : true,
                                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
                               },
-                              "getMajorPSAppDataEntity" : {
-                                "modelref" : true,
-                                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                              "getParentPSAppDEField" : {
+                                "name" : "STORY",
+                                "codeName" : "Story"
                               },
-                              "enableCreateDataRS" : false,
-                              "enableUpdateDataRS" : false,
-                              "enableGetDataRS" : false,
-                              "enableSelectDataRS" : false,
-                              "enableDEAction" : true,
-                              "enableSelect" : true,
-                              "enableDEDataSet" : true,
                               "codeName" : "Cases",
                               "actionRSMode" : 1,
                               "dataRSMode" : 0,
                               "rSMode" : 2,
                               "name" : "需求用例"
                             } ], [ {
-                              "getParentPSAppDEField" : {
-                                "name" : "STORY",
-                                "codeName" : "Story"
+                              "enableDEAction" : true,
+                              "enableSelect" : true,
+                              "enableDEDataSet" : true,
+                              "enableCreateDataRS" : false,
+                              "enableUpdateDataRS" : false,
+                              "enableGetDataRS" : false,
+                              "enableSelectDataRS" : false,
+                              "getMajorPSAppDataEntity" : {
+                                "modelref" : true,
+                                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
                               },
                               "getMinorPSAppDataEntity" : {
                                 "modelref" : true,
                                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
                               },
-                              "getMajorPSAppDataEntity" : {
-                                "modelref" : true,
-                                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                              "getParentPSAppDEField" : {
+                                "name" : "STORY",
+                                "codeName" : "Story"
                               },
-                              "enableCreateDataRS" : false,
-                              "enableUpdateDataRS" : false,
-                              "enableGetDataRS" : false,
-                              "enableSelectDataRS" : false,
-                              "enableDEAction" : true,
-                              "enableSelect" : true,
-                              "enableDEDataSet" : true,
                               "codeName" : "Cases",
                               "actionRSMode" : 1,
                               "dataRSMode" : 0,
                               "rSMode" : 2,
                               "name" : "需求用例"
                             } ], [ {
-                              "getParentPSAppDEField" : {
-                                "name" : "PRODUCT",
-                                "codeName" : "Product"
-                              },
-                              "getMinorPSAppDataEntity" : {
-                                "modelref" : true,
-                                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-                              },
+                              "enableDEAction" : true,
+                              "enableSelect" : true,
+                              "enableDEDataSet" : true,
+                              "enableCreateDataRS" : false,
+                              "enableUpdateDataRS" : false,
+                              "enableGetDataRS" : false,
+                              "enableSelectDataRS" : false,
                               "getMajorPSAppDataEntity" : {
                                 "modelref" : true,
                                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
                               },
-                              "enableCreateDataRS" : false,
-                              "enableUpdateDataRS" : false,
-                              "enableGetDataRS" : false,
-                              "enableSelectDataRS" : false,
-                              "enableDEAction" : true,
-                              "enableSelect" : true,
-                              "enableDEDataSet" : true,
+                              "getMinorPSAppDataEntity" : {
+                                "modelref" : true,
+                                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+                              },
+                              "getParentPSAppDEField" : {
+                                "name" : "PRODUCT",
+                                "codeName" : "Product"
+                              },
                               "codeName" : "Cases",
                               "actionRSMode" : 1,
                               "dataRSMode" : 0,
@@ -2052,54 +2051,54 @@
                             "colMD" : 24,
                             "layout" : "TABLE_24COL"
                           },
+                          "showCaption" : true,
                           "codeName" : "druipart1",
                           "detailType" : "DRUIPART",
                           "detailStyle" : "DEFAULT",
-                          "showCaption" : true,
                           "name" : "druipart1"
                         } ],
                         "getPSLayoutPos" : {
                           "colMD" : 24,
                           "layout" : "TABLE_24COL"
                         },
+                        "showCaption" : false,
                         "codeName" : "grouppanel1",
                         "caption" : "相关用例",
                         "detailType" : "GROUPPANEL",
                         "detailStyle" : "DEFAULT",
-                        "showCaption" : false,
                         "name" : "grouppanel1"
                       } ],
                       "getPSLayoutPos" : {
                         "colMD" : 24,
                         "layout" : "TABLE_24COL"
                       },
+                      "showCaption" : true,
                       "codeName" : "grouppanel21",
                       "caption" : "验收标准",
                       "detailType" : "GROUPPANEL",
                       "detailStyle" : "DEFAULT",
-                      "showCaption" : true,
                       "name" : "grouppanel21"
                     } ],
                     "getPSLayoutPos" : {
                       "colMD" : 24,
                       "layout" : "TABLE_24COL"
                     },
+                    "showCaption" : false,
                     "codeName" : "group11",
                     "caption" : "需求描述信息",
                     "detailType" : "GROUPPANEL",
                     "detailStyle" : "DEFAULT",
-                    "showCaption" : false,
                     "name" : "group11"
                   } ],
                   "getPSLayoutPos" : {
                     "colMD" : 24,
                     "layout" : "TABLE_24COL"
                   },
+                  "showCaption" : false,
                   "codeName" : "grouppanel31",
                   "caption" : "需求描述",
                   "detailType" : "GROUPPANEL",
                   "detailStyle" : "DEFAULT",
-                  "showCaption" : false,
                   "name" : "grouppanel31"
                 } ],
                 "getPSLayout" : {
@@ -2277,6 +2276,7 @@
               "name" : "form",
               "modelid" : "a270af0e6eddd67d22f882d5505661c1"
             } ],
+            "viewStyle" : "STYLE2",
             "getPSSysImage" : {
               "glyph" : "xf006@FontAwesome",
               "cssClass" : "fa fa-star-o"
@@ -2286,25 +2286,25 @@
             "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView9.json",
             "name" : "StoryEditView9",
             "getPSAppDERSPaths" : [ [ {
-              "getParentPSAppDEField" : {
-                "name" : "PRODUCT",
-                "codeName" : "Product"
+              "enableDEAction" : true,
+              "enableSelect" : true,
+              "enableDEDataSet" : true,
+              "enableCreateDataRS" : false,
+              "enableUpdateDataRS" : false,
+              "enableGetDataRS" : false,
+              "enableSelectDataRS" : false,
+              "getMajorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
               },
-              "getMajorPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+              "getParentPSAppDEField" : {
+                "name" : "PRODUCT",
+                "codeName" : "Product"
               },
-              "enableCreateDataRS" : false,
-              "enableUpdateDataRS" : false,
-              "enableGetDataRS" : false,
-              "enableSelectDataRS" : false,
-              "enableDEAction" : true,
-              "enableSelect" : true,
-              "enableDEDataSet" : true,
               "codeName" : "Stories",
               "actionRSMode" : 1,
               "dataRSMode" : 0,
@@ -2316,10 +2316,10 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : true,
           "codeName" : "druipart3",
           "detailType" : "DRUIPART",
           "detailStyle" : "DEFAULT",
-          "showCaption" : true,
           "name" : "druipart3"
         } ],
         "getPSDEFDGroupLogics" : [ {
@@ -2341,11 +2341,11 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : false,
         "codeName" : "grouppanel2",
         "caption" : "需求",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : false,
         "name" : "grouppanel2"
       }, {
         "infoGroupMode" : true,
@@ -2355,8 +2355,8 @@
           "columnCount" : 24
         },
         "getPSDEFormDetails" : [ {
-          "refreshItemsSetParamOnly" : false,
           "needSave" : false,
+          "refreshItemsSetParamOnly" : false,
           "parentDataJO" : {
             "srfparentdename" : "ZT_TASK",
             "SRFPARENTTYPE" : "CUSTOM"
@@ -2367,10 +2367,10 @@
             "xDataControlName" : "list",
             "showCaptionBar" : false,
             "getPSDEViewCodeName" : "HistoryListView",
+            "enableDP" : true,
             "caption" : "系统日志",
             "title" : "历史记录",
             "accUserMode" : 2,
-            "enableDP" : true,
             "getPSAppViewNavParams" : [ {
               "rawValue" : false,
               "value" : "OBJECTTYPE",
@@ -2416,7 +2416,6 @@
               "key" : "OBJECTID",
               "name" : "OBJECTID"
             } ],
-            "viewStyle" : "STYLE2",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
@@ -2429,30 +2428,30 @@
               "showHeader" : true,
               "enableRowEditGroup" : false,
               "getPSDEListDataItems" : [ {
-                "dataType" : 25,
-                "name" : "field"
+                "name" : "field",
+                "dataType" : 25
               }, {
-                "dataType" : 25,
-                "name" : "ibiznew"
+                "name" : "ibiznew",
+                "dataType" : 25
               }, {
-                "dataType" : 1,
-                "name" : "id"
+                "name" : "id",
+                "dataType" : 1
               }, {
-                "dataType" : 21,
-                "name" : "old"
+                "name" : "old",
+                "dataType" : 21
               }, {
-                "dataType" : 21,
-                "name" : "diff"
+                "name" : "diff",
+                "dataType" : 21
               }, {
-                "dataType" : 1,
-                "name" : "action"
+                "name" : "action",
+                "dataType" : 1
               } ],
-              "controlType" : "LIST",
-              "enableRowEdit" : false,
               "getMinorSortPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
               },
+              "enableRowEdit" : false,
+              "controlType" : "LIST",
               "codeName" : "DEFAULT",
               "minorSortDir" : "DESC",
               "enableGroup" : false,
@@ -2568,75 +2567,75 @@
               "showHeader" : true,
               "enableRowEditGroup" : false,
               "getPSDEListDataItems" : [ {
-                "dataType" : 25,
-                "name" : "product"
+                "name" : "product",
+                "dataType" : 25
               }, {
-                "dataType" : 5,
                 "format" : "YYYY-MM-DD HH:mm:ss",
-                "name" : "date"
+                "name" : "date",
+                "dataType" : 5
               }, {
-                "dataType" : 21,
-                "name" : "comment"
+                "name" : "comment",
+                "dataType" : 21
               }, {
                 "getPSAppDEField" : {
                   "name" : "ACTION",
                   "codeName" : "Action"
                 },
-                "dataType" : 25,
-                "name" : "actiontype"
+                "name" : "actiontype",
+                "dataType" : 25
               }, {
-                "dataType" : 1,
-                "name" : "id"
+                "name" : "id",
+                "dataType" : 1
               }, {
-                "dataType" : 25,
-                "name" : "objecttype"
+                "name" : "objecttype",
+                "dataType" : 25
               }, {
-                "dataType" : 21,
-                "name" : "extra"
+                "name" : "extra",
+                "dataType" : 21
               }, {
                 "getFrontPSCodeList" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ActionManner.json"
                 },
-                "dataType" : 25,
-                "name" : "actionmanner"
+                "name" : "actionmanner",
+                "dataType" : 25
               }, {
-                "dataType" : 1,
-                "name" : "objectid"
+                "name" : "objectid",
+                "dataType" : 1
               }, {
-                "dataType" : 1,
-                "name" : "isactorss"
+                "name" : "isactorss",
+                "dataType" : 1
               }, {
                 "getFrontPSCodeList" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
                 },
-                "dataType" : 25,
-                "name" : "actor"
+                "name" : "actor",
+                "dataType" : 25
               }, {
-                "dataType" : 1,
-                "name" : "project"
+                "name" : "project",
+                "dataType" : 1
               }, {
                 "getPSAppDEField" : {
                   "name" : "ID",
                   "codeName" : "Id"
                 },
-                "dataType" : 25,
-                "name" : "srfkey"
+                "name" : "srfkey",
+                "dataType" : 25
               }, {
                 "getPSAppDEField" : {
                   "name" : "COMMENT",
                   "codeName" : "Comment"
                 },
-                "dataType" : 25,
-                "name" : "srfmajortext"
+                "name" : "srfmajortext",
+                "dataType" : 25
               } ],
-              "controlType" : "LIST",
-              "enableRowEdit" : false,
               "getMinorSortPSAppDEField" : {
                 "name" : "DATE",
                 "codeName" : "Date"
               },
+              "enableRowEdit" : false,
+              "controlType" : "LIST",
               "codeName" : "ClassifyByType",
               "minorSortDir" : "ASC",
               "enableGroup" : false,
@@ -2750,6 +2749,7 @@
               "name" : "list",
               "modelid" : "3b94c5ec8c0db8db6a5f36fa82c3ed3b"
             } ],
+            "viewStyle" : "STYLE2",
             "getPSAppViewRefs" : [ {
               "getRefPSAppView" : {
                 "modelref" : true,
@@ -2772,7 +2772,6 @@
             "getPSAppViewLogics" : [ {
               "logicTrigger" : "CUSTOM",
               "getPSAppUILogic" : {
-                "actionAfterWizard" : "DEFAULT",
                 "getNewDataPSAppView" : {
                   "getRefPSAppView" : {
                     "modelref" : true,
@@ -2780,9 +2779,10 @@
                     "viewType" : "DEEDITVIEW"
                   }
                 },
+                "enableWizardAdd" : false,
+                "actionAfterWizard" : "DEFAULT",
                 "enableBatchAdd" : false,
                 "batchAddOnly" : false,
-                "enableWizardAdd" : false,
                 "viewLogicType" : "APP_NEWDATA",
                 "getPSAppUILogicRefViews" : [ {
                   "getRefPSAppView" : {
@@ -2829,32 +2829,32 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : true,
           "codeName" : "druipart1",
           "detailType" : "DRUIPART",
           "detailStyle" : "DEFAULT",
-          "showCaption" : true,
           "name" : "druipart1"
         } ],
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : false,
         "codeName" : "grouppanel1",
         "caption" : "历史记录",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : false,
         "name" : "grouppanel1"
       } ],
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : false,
       "codeName" : "group1",
       "caption" : "任务描述",
       "detailType" : "GROUPPANEL",
       "detailStyle" : "DEFAULT",
-      "showCaption" : false,
       "name" : "group1"
     } ],
     "getPSLayout" : {
@@ -3014,8 +3014,8 @@
     "getPSDEFormItemName" : "name",
     "valueRuleType" : "DEFVALUERULE",
     "getPSDEFValueRule" : {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : false,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {

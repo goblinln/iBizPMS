@@ -1,6 +1,6 @@
 {
-  "enableBackend" : true,
   "enableFront" : false,
+  "enableBackend" : true,
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"
@@ -31,9 +31,9 @@
         "modelref" : true,
         "id" : "Default"
       },
+      "srcFieldName" : "ROOT",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "ID",
-      "srcFieldName" : "ROOT",
       "name" : "Default[ROOT] ==> project[ID]"
     } ],
     "logicHolder" : 3,
@@ -42,13 +42,13 @@
     "name" : "设置项目参数"
   }, {
     "parallelOutput" : true,
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "project"
-    },
     "getDstPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "project"
     },
     "getPSDELogicLinks" : [ {
       "modelref" : true,
@@ -56,11 +56,11 @@
     } ],
     "logicHolder" : 3,
     "codeName" : "Deaction1",
-    "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Get.json"
     },
+    "logicNodeType" : "DEACTION",
     "name" : "获取项目详情"
   }, {
     "parallelOutput" : true,
@@ -74,9 +74,9 @@
         "modelref" : true,
         "id" : "project"
       },
+      "srcFieldName" : "DAYS",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "DAYS",
-      "srcFieldName" : "DAYS",
       "name" : "project[DAYS] ==> Default[DAYS]"
     } ],
     "logicHolder" : 3,
@@ -119,16 +119,16 @@
     "name" : "连接4776"
   } ],
   "getPSDELogicParams" : [ {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   }, {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "project",
     "default" : false,
     "name" : "项目"

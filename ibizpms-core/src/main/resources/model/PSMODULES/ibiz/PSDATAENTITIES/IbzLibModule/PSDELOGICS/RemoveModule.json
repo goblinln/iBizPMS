@@ -1,27 +1,27 @@
 {
-  "enableBackend" : true,
   "enableFront" : false,
+  "enableBackend" : true,
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"
   },
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "module"
-    },
     "getDstPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
     },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "module"
+    },
     "logicHolder" : 3,
     "codeName" : "Deaction1",
-    "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDEACTIONS/Remove.json"
     },
+    "logicNodeType" : "DEACTION",
     "name" : "模块删除"
   }, {
     "parallelOutput" : true,
@@ -49,9 +49,9 @@
         "modelref" : true,
         "id" : "Default"
       },
+      "srcFieldName" : "ID",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "ID",
-      "srcFieldName" : "ID",
       "name" : "Default[ID] ==> module[ID]"
     } ],
     "logicHolder" : 3,
@@ -83,16 +83,16 @@
     "name" : "连接1737"
   } ],
   "getPSDELogicParams" : [ {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   }, {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "module",
     "default" : false,
     "name" : "模块"

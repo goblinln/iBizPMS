@@ -3,11 +3,11 @@
     "name" : "PSSUBSYSSADEID",
     "codeName" : "PSSubSysSADEId"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "PSSUBSYSSADENAME",
     "codeName" : "PSSubSysSADEName"
   },
+  "masterOrder" : -1,
   "removeActionType" : 3,
   "pickupDEFName" : "PSSUBSYSSADEID",
   "masterRS" : 0,
@@ -17,12 +17,12 @@
     "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysSADE.json"
   },
   "orderValue" : 100,
+  "codeName" : "PSSubSysSADE",
+  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDataEntity.json"
   },
-  "codeName" : "PSSubSysSADE",
-  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDataEntity/PSDERS/DER1N_PSDATAENTITY_PSSUBSYSSADE_PSSUBSYSSADEID.json",
   "name" : "DER1N_PSDATAENTITY_PSSUBSYSSADE_PSSUBSYSSADEID"
 }

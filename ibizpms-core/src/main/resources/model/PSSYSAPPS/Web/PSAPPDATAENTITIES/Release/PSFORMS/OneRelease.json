@@ -1,5 +1,7 @@
 {
   "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -24,8 +26,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : false,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
@@ -50,16 +50,16 @@
         "name" : "RELEASETYPE",
         "codeName" : "Releasetype"
       },
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : false,
+      "dataType" : 25,
       "needCodeListConfig" : true,
-      "allowEmpty" : false,
       "caption" : "运行模式",
+      "allowEmpty" : false,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 130,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 12,
         "colLG" : 12,
@@ -77,17 +77,17 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Backendservicesystem.json"
         },
-        "getPSNavigateContexts" : [ {
-          "rawValue" : false,
-          "value" : "product",
-          "key" : "PRODUCT",
-          "name" : "PRODUCT"
-        } ],
         "getPSNavigateParams" : [ {
           "rawValue" : false,
           "value" : "product",
           "key" : "product",
           "name" : "product"
+        } ],
+        "getPSNavigateContexts" : [ {
+          "rawValue" : false,
+          "value" : "product",
+          "key" : "PRODUCT",
+          "name" : "PRODUCT"
         } ],
         "editorType" : "DROPDOWNLIST",
         "editorParams" : {
@@ -102,16 +102,16 @@
         "name" : "BACKGROUNDID",
         "codeName" : "Backgroundid"
       },
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : false,
+      "dataType" : 25,
       "needCodeListConfig" : true,
-      "allowEmpty" : false,
       "caption" : "后台体系",
+      "allowEmpty" : false,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 130,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 12,
         "colLG" : 12,
@@ -129,17 +129,17 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/SystemAPP.json"
         },
-        "getPSNavigateContexts" : [ {
-          "rawValue" : false,
-          "value" : "product",
-          "key" : "PRODUCT",
-          "name" : "PRODUCT"
-        } ],
         "getPSNavigateParams" : [ {
           "rawValue" : false,
           "value" : "product",
           "key" : "product",
           "name" : "product"
+        } ],
+        "getPSNavigateContexts" : [ {
+          "rawValue" : false,
+          "value" : "product",
+          "key" : "PRODUCT",
+          "name" : "PRODUCT"
         } ],
         "editorType" : "DROPDOWNLIST",
         "editorParams" : {
@@ -154,16 +154,16 @@
         "name" : "FRONTAPPLICATION",
         "codeName" : "Frontapplication"
       },
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : false,
+      "dataType" : 25,
       "needCodeListConfig" : true,
-      "allowEmpty" : true,
       "caption" : "系统应用",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 130,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 12,
         "colLG" : 12,
@@ -181,17 +181,17 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/RunSQL.json"
         },
-        "getPSNavigateContexts" : [ {
-          "rawValue" : false,
-          "value" : "product",
-          "key" : "PRODUCT",
-          "name" : "PRODUCT"
-        } ],
         "getPSNavigateParams" : [ {
           "rawValue" : false,
           "value" : "product",
           "key" : "product",
           "name" : "product"
+        } ],
+        "getPSNavigateContexts" : [ {
+          "rawValue" : false,
+          "value" : "product",
+          "key" : "PRODUCT",
+          "name" : "PRODUCT"
         } ],
         "editorType" : "DROPDOWNLIST",
         "editorParams" : {
@@ -206,16 +206,16 @@
         "name" : "SQLID",
         "codeName" : "Sqlid"
       },
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : false,
+      "dataType" : 25,
       "needCodeListConfig" : true,
-      "allowEmpty" : true,
       "caption" : "运行数据库",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 130,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 12,
         "colLG" : 12,
@@ -242,16 +242,16 @@
         "name" : "REBUILD",
         "codeName" : "Rebuild"
       },
-      "dataType" : 9,
+      "showCaption" : true,
       "hidden" : false,
+      "dataType" : 9,
       "needCodeListConfig" : true,
-      "allowEmpty" : true,
       "caption" : "重新构建",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 130,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 12,
         "colLG" : 12,
@@ -273,15 +273,15 @@
         "name" : "PRODUCT",
         "codeName" : "Product"
       },
-      "dataType" : 1,
+      "showCaption" : true,
       "hidden" : true,
-      "allowEmpty" : true,
+      "dataType" : 1,
       "caption" : "产品",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 130,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"

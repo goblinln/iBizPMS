@@ -10,10 +10,10 @@
   "xDataControlName" : "grid",
   "showCaptionBar" : true,
   "getPSDEViewCodeName" : "TestCaseStatsGridView",
+  "enableDP" : true,
   "caption" : "用例统计表",
   "title" : "测试用例统计表格视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -53,7 +53,6 @@
     },
     "name" : "toolbar_deuiaction7"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStats.json"
@@ -104,9 +103,9 @@
       "tooltip" : "导出",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "导出",
-      "showCaption" : true,
       "name" : "deuiaction7"
     } ],
     "getPSAppDataEntity" : {
@@ -127,86 +126,86 @@
         "name" : "PRODUCT",
         "codeName" : "Product"
       },
-      "dataType" : 1,
-      "name" : "product"
+      "name" : "product",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "MODULENAME",
         "codeName" : "Modulename"
       },
-      "dataType" : 25,
-      "name" : "modulename"
+      "name" : "modulename",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "MODULE",
         "codeName" : "Module"
       },
-      "dataType" : 1,
-      "name" : "module"
+      "name" : "module",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "FAILCASE",
         "codeName" : "Failcase"
       },
-      "dataType" : 9,
-      "name" : "failcase"
+      "name" : "failcase",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "BLOCKEDCASE",
         "codeName" : "Blockedcase"
       },
-      "dataType" : 9,
-      "name" : "blockedcase"
+      "name" : "blockedcase",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "TOTALCASE",
         "codeName" : "Totalcase"
       },
-      "dataType" : 9,
-      "name" : "totalcase"
+      "name" : "totalcase",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "TOTALRUNCASE",
         "codeName" : "Totalruncase"
       },
-      "dataType" : 9,
-      "name" : "totalruncase"
+      "name" : "totalruncase",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "PASSRATE",
         "codeName" : "Passrate"
       },
-      "dataType" : 25,
-      "name" : "passrate"
+      "name" : "passrate",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "TITLE",
         "codeName" : "Title"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfdataaccaction"
+      "name" : "srfdataaccaction",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "PASSCASE",
         "codeName" : "Passcase"
       },
-      "dataType" : 9,
-      "name" : "passcase"
+      "name" : "passcase",
+      "dataType" : 9
     } ],
     "getRemovePSControlAction" : {
       "getPSAppDataEntity" : {
@@ -222,8 +221,6 @@
       "actionType" : "DEACTION",
       "name" : "remove"
     },
-    "singleSelect" : true,
-    "enableColFilter" : false,
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : false,
@@ -245,16 +242,18 @@
     } ],
     "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "controlType" : "GRID",
-    "enableRowEdit" : false,
+    "enableColFilter" : false,
+    "singleSelect" : true,
     "enablePagingBar" : false,
+    "enableRowEdit" : false,
+    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
-      "excelCaption" : "模块名称",
-      "dataItemName" : "modulename",
       "getPSAppDEField" : {
         "name" : "MODULENAME",
         "codeName" : "Modulename"
       },
+      "dataItemName" : "modulename",
+      "excelCaption" : "模块名称",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -266,12 +265,12 @@
       "widthUnit" : "STAR",
       "name" : "modulename"
     }, {
-      "excelCaption" : "总用例数",
-      "dataItemName" : "totalcase",
       "getPSAppDEField" : {
         "name" : "TOTALCASE",
         "codeName" : "Totalcase"
       },
+      "dataItemName" : "totalcase",
+      "excelCaption" : "总用例数",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -284,12 +283,12 @@
       "aggMode" : "SUM",
       "name" : "totalcase"
     }, {
-      "excelCaption" : "通过",
-      "dataItemName" : "passcase",
       "getPSAppDEField" : {
         "name" : "PASSCASE",
         "codeName" : "Passcase"
       },
+      "dataItemName" : "passcase",
+      "excelCaption" : "通过",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -302,12 +301,12 @@
       "aggMode" : "SUM",
       "name" : "passcase"
     }, {
-      "excelCaption" : "失败",
-      "dataItemName" : "failcase",
       "getPSAppDEField" : {
         "name" : "FAILCASE",
         "codeName" : "Failcase"
       },
+      "dataItemName" : "failcase",
+      "excelCaption" : "失败",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -320,12 +319,12 @@
       "aggMode" : "SUM",
       "name" : "failcase"
     }, {
-      "excelCaption" : "阻塞",
-      "dataItemName" : "blockedcase",
       "getPSAppDEField" : {
         "name" : "BLOCKEDCASE",
         "codeName" : "Blockedcase"
       },
+      "dataItemName" : "blockedcase",
+      "excelCaption" : "阻塞",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -338,12 +337,12 @@
       "aggMode" : "SUM",
       "name" : "blockedcase"
     }, {
-      "excelCaption" : "总执行数",
-      "dataItemName" : "totalruncase",
       "getPSAppDEField" : {
         "name" : "TOTALRUNCASE",
         "codeName" : "Totalruncase"
       },
+      "dataItemName" : "totalruncase",
+      "excelCaption" : "总执行数",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -356,12 +355,12 @@
       "aggMode" : "SUM",
       "name" : "totalruncase"
     }, {
-      "excelCaption" : "用例通过率",
-      "dataItemName" : "passrate",
       "getPSAppDEField" : {
         "name" : "PASSRATE",
         "codeName" : "Passrate"
       },
+      "dataItemName" : "passrate",
+      "excelCaption" : "用例通过率",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -482,10 +481,10 @@
     "name" : "grid",
     "modelid" : "a856b2b57e47d4d2896ab1e2902eb136"
   }, {
+    "searchButtonStyle" : "DEFAULT",
     "enableAdvanceSearch" : false,
     "enableAutoSearch" : false,
     "enableFilterSave" : false,
-    "searchButtonStyle" : "DEFAULT",
     "controlType" : "SEARCHFORM",
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
@@ -509,16 +508,16 @@
           "name" : "PRODUCT",
           "codeName" : "Product"
         },
-        "dataType" : 1,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 1,
         "needCodeListConfig" : true,
-        "allowEmpty" : true,
         "caption" : "产品",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 100,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 8,
@@ -604,6 +603,7 @@
     "name" : "searchform",
     "modelid" : "a856b2b57e47d4d2896ab1e2902eb136"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA"
   }, {
@@ -623,10 +623,10 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
+      "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "logicType" : "PREDEFINED",
       "name" : "新建数据"

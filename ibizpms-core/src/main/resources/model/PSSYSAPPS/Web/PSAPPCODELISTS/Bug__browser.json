@@ -88,8 +88,8 @@
     "codeName" : "Others",
     "text" : "其他"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "Bug__browser",
   "emptyText" : "未定义",
   "enableCache" : true,

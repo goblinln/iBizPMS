@@ -1,6 +1,6 @@
 {
-  "enableBackend" : true,
   "enableFront" : false,
+  "enableBackend" : true,
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"
@@ -23,8 +23,8 @@
     },
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
-      "srcValueType" : "SESSION",
       "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION",
       "name" : "用户全局对象[srfloginname]"
     } ],
     "logicHolder" : 1,
@@ -43,8 +43,8 @@
     } ],
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
-      "srcValueType" : "SESSION",
       "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION",
       "name" : "用户全局对象[srfloginname]"
     } ],
     "logicHolder" : 1,
@@ -63,8 +63,8 @@
     } ],
     "getPSDELogicNodeParams" : [ {
       "paramAction" : "SQLPARAM",
-      "srcValueType" : "SESSION",
       "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION",
       "name" : "用户全局对象[srfloginname]"
     } ],
     "logicHolder" : 1,
@@ -107,9 +107,9 @@
     "name" : "连接9195"
   } ],
   "getPSDELogicParams" : [ {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

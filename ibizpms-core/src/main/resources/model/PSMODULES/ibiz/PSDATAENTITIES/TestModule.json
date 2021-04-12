@@ -1,14 +1,17 @@
 {
-  "serviceAPIMode" : 1,
   "getAllPSDEFields" : [ {
-    "dataType" : "TEXT",
     "length" : 30,
     "defaultValue" : "story",
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "f6aaed5f933e9f5c532994f156024bd5",
+    "codeName" : "Type",
+    "logicName" : "类型（story）",
+    "stringLength" : 30,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -46,22 +49,22 @@
       "autoIncrement" : false,
       "name" : "TYPE"
     } ],
-    "codeName" : "Type",
-    "logicName" : "类型（story）",
-    "stringLength" : 30,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "TYPE"
   }, {
-    "dataType" : "TEXT",
     "length" : 255,
     "defaultValue" : ",",
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "6a9e0ac7765633d28b193b12e9479453",
+    "codeName" : "Path",
+    "logicName" : "path",
+    "stringLength" : 255,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -99,22 +102,22 @@
       "autoIncrement" : false,
       "name" : "PATH"
     } ],
-    "codeName" : "Path",
-    "logicName" : "path",
-    "stringLength" : 255,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "PATH"
   }, {
-    "dataType" : "TEXT",
     "length" : 30,
     "defaultValue" : "/",
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "414bf4d37fd4d6d55e9abc27ab398a1c",
+    "codeName" : "Owner",
+    "logicName" : "owner",
+    "stringLength" : 30,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -152,21 +155,20 @@
       "autoIncrement" : false,
       "name" : "OWNER"
     } ],
-    "codeName" : "Owner",
-    "logicName" : "owner",
-    "stringLength" : 30,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "OWNER"
   }, {
-    "dataType" : "INT",
     "defaultValue" : "0",
     "valueFormat" : "%1$s",
+    "dataType" : "INT",
     "deployId" : "f9661370cb84df8243e2c08b1bebaf69",
+    "codeName" : "Order",
+    "logicName" : "排序值",
+    "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -192,21 +194,22 @@
       "autoIncrement" : false,
       "name" : "ORDER"
     } ],
-    "codeName" : "Order",
-    "logicName" : "排序值",
-    "stdDataType" : 9,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "ORDER"
   }, {
-    "dataType" : "TEXT",
     "length" : 1,
     "defaultValue" : "0",
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "fac83c321659535589beec278fcf74d7",
+    "codeName" : "Deleted",
+    "logicName" : "逻辑删除标志",
+    "stringLength" : 1,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -244,10 +247,6 @@
       "autoIncrement" : false,
       "name" : "DELETED"
     } ],
-    "codeName" : "Deleted",
-    "logicName" : "逻辑删除标志",
-    "stringLength" : 1,
-    "stdDataType" : 25,
     "predefinedType" : "LOGICVALID",
     "enableUICreate" : false,
     "enableUIModify" : false,
@@ -255,17 +254,20 @@
     "dEFType" : 1,
     "name" : "DELETED"
   }, {
-    "dataType" : "INT",
     "defaultValue" : "0",
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/ProductBranch_Cache.json"
     },
+    "valueFormat" : "%1$s",
+    "dataType" : "INT",
     "deployId" : "38786565189d6a8d03201f883e2806f3",
+    "codeName" : "Branch",
+    "logicName" : "branch",
+    "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -291,22 +293,23 @@
       "autoIncrement" : false,
       "name" : "BRANCH"
     } ],
-    "codeName" : "Branch",
-    "logicName" : "branch",
-    "stdDataType" : 9,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "BRANCH"
   }, {
-    "dataType" : "LONGTEXT",
     "length" : 65535,
     "defaultValue" : "/",
     "valueFormat" : "%1$s",
+    "dataType" : "LONGTEXT",
     "deployId" : "face0b25466f8b9860cc25a08be005ab",
+    "codeName" : "Collector",
+    "logicName" : "collector",
+    "stringLength" : 65535,
+    "stdDataType" : 21,
     "queryColumn" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -344,23 +347,22 @@
       "autoIncrement" : false,
       "name" : "COLLECTOR"
     } ],
-    "codeName" : "Collector",
-    "logicName" : "collector",
-    "stringLength" : 65535,
-    "stdDataType" : 21,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "COLLECTOR"
   }, {
-    "dataType" : "ACID",
     "length" : 20,
     "valueFormat" : "%1$s",
+    "dataType" : "ACID",
     "deployId" : "530c00cececc88b3519199b262670f19",
+    "codeName" : "Id",
+    "logicName" : "id",
+    "stdDataType" : 1,
     "pasteReset" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -386,9 +388,6 @@
       "autoIncrement" : true,
       "name" : "ID"
     } ],
-    "codeName" : "Id",
-    "logicName" : "id",
-    "stdDataType" : 1,
     "enableUICreate" : false,
     "enableUIModify" : false,
     "keyDEField" : true,
@@ -397,15 +396,19 @@
     "dEFType" : 1,
     "name" : "ID"
   }, {
-    "formulaDEField" : true,
     "phisicalDEField" : false,
-    "dataType" : "TEXT",
+    "formulaDEField" : true,
     "length" : 200,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "22d691584de654b32878272c2fe6a6e4",
+    "codeName" : "IsLeaf",
+    "logicName" : "叶子模块",
+    "stringLength" : 200,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -443,22 +446,22 @@
       "autoIncrement" : false,
       "name" : "ISLEAF"
     } ],
-    "codeName" : "IsLeaf",
-    "logicName" : "叶子模块",
-    "stringLength" : 200,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "ISLEAF"
   }, {
-    "dataType" : "TEXT",
     "length" : 60,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "192f880d236215e889c448d5e172fe3c",
+    "codeName" : "Name",
+    "logicName" : "名称",
+    "stringLength" : 60,
+    "stdDataType" : 25,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -496,24 +499,24 @@
       "autoIncrement" : false,
       "name" : "NAME"
     } ],
-    "codeName" : "Name",
-    "logicName" : "名称",
-    "stringLength" : 60,
-    "stdDataType" : 25,
     "majorDEField" : true,
     "enableQuickSearch" : true,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "NAME"
   }, {
-    "dataType" : "TEXT",
     "length" : 30,
     "defaultValue" : "/",
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "49e51447a16435dbb44b4e40c62befa6",
+    "codeName" : "IBizShort",
+    "logicName" : "简称",
+    "stringLength" : 30,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -551,21 +554,20 @@
       "autoIncrement" : false,
       "name" : "SHORT"
     } ],
-    "codeName" : "IBizShort",
-    "logicName" : "简称",
-    "stringLength" : 30,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "SHORT"
   }, {
-    "dataType" : "INT",
     "defaultValue" : "0",
     "valueFormat" : "%1$s",
+    "dataType" : "INT",
     "deployId" : "1a3b5a228bc3636b63532e94629ba5b6",
+    "codeName" : "Grade",
+    "logicName" : "grade",
+    "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -591,30 +593,31 @@
       "autoIncrement" : false,
       "name" : "GRADE"
     } ],
-    "codeName" : "Grade",
-    "logicName" : "grade",
-    "stdDataType" : 9,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "GRADE"
   }, {
     "phisicalDEField" : false,
+    "valueFormat" : "%1$s",
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDERS/DER1N_IBZ_TESTMODULE_IBZ_TESTMODULE_PARENT.json"
     },
-    "valueFormat" : "%1$s",
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : "PICKUPTEXT",
     "length" : 60,
+    "dataType" : "PICKUPTEXT",
     "deployId" : "ab202388de4ceff53ab1d50d29cd7658",
+    "codeName" : "ParentName",
+    "logicName" : "上级模块",
+    "stringLength" : 60,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -652,31 +655,31 @@
       "autoIncrement" : false,
       "name" : "PARENTNAME"
     } ],
-    "codeName" : "ParentName",
-    "logicName" : "上级模块",
-    "stringLength" : 60,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 3,
     "name" : "PARENTNAME"
   }, {
     "phisicalDEField" : false,
+    "valueFormat" : "%1$s",
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDERS/DER1N_IBZ_TESTMODULE_ZT_PRODUCT_ROOT.json"
     },
-    "valueFormat" : "%1$s",
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : "PICKUPTEXT",
     "length" : 90,
+    "dataType" : "PICKUPTEXT",
     "deployId" : "a66a4e912e50abc61a4222a7b7fda637",
+    "codeName" : "RootName",
+    "logicName" : "测试",
+    "stringLength" : 90,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -714,31 +717,30 @@
       "autoIncrement" : false,
       "name" : "ROOTNAME"
     } ],
-    "codeName" : "RootName",
-    "logicName" : "测试",
-    "stringLength" : 90,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 3,
     "name" : "ROOTNAME"
   }, {
+    "valueFormat" : "%1$s",
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDERS/DER1N_IBZ_TESTMODULE_ZT_PRODUCT_ROOT.json"
     },
-    "valueFormat" : "%1$s",
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : "PICKUP",
     "length" : 8,
     "defaultValue" : "0",
+    "dataType" : "PICKUP",
     "deployId" : "8a59af389621119c4dfea8e2197a6199",
+    "codeName" : "Root",
+    "logicName" : "编号",
+    "stdDataType" : 1,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -764,30 +766,30 @@
       "autoIncrement" : false,
       "name" : "ROOT"
     } ],
-    "codeName" : "Root",
-    "logicName" : "编号",
-    "stdDataType" : 1,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "ROOT"
   }, {
+    "valueFormat" : "%1$s",
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDERS/DER1N_IBZ_TESTMODULE_IBZ_TESTMODULE_PARENT.json"
     },
-    "valueFormat" : "%1$s",
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : "PICKUP",
     "length" : 20,
     "defaultValue" : "0",
+    "dataType" : "PICKUP",
     "deployId" : "c0be9da8b0ab46fe5ba5b30032d1f418",
+    "codeName" : "Parent",
+    "logicName" : "id",
+    "stdDataType" : 1,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -813,19 +815,15 @@
       "autoIncrement" : false,
       "name" : "PARENT"
     } ],
-    "codeName" : "Parent",
-    "logicName" : "id",
-    "stdDataType" : 1,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "PARENT"
   } ],
-  "validLogicValue" : "0",
-  "invalidLogicValue" : "1",
   "getAllPSDEDataSets" : [ {
-    "enableBackend" : true,
     "enableFront" : true,
+    "enableBackend" : true,
     "pubServiceDefault" : true,
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -833,18 +831,18 @@
     "orderValue" : 99999,
     "codeName" : "ByPath",
     "logicName" : "BYPATH",
-    "extendMode" : 0,
-    "enableGroup" : false,
     "userDRAction" : "READ",
+    "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
     "pageSize" : -1,
     "name" : "BYPATH"
   }, {
-    "enableBackend" : true,
     "enableFront" : true,
+    "enableBackend" : true,
     "pubServiceDefault" : true,
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -852,18 +850,18 @@
     "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
-    "extendMode" : 0,
-    "enableGroup" : false,
     "userDRAction" : "READ",
+    "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
     "pageSize" : -1,
     "name" : "DEFAULT"
   }, {
-    "enableBackend" : true,
     "enableFront" : true,
+    "enableBackend" : true,
     "pubServiceDefault" : true,
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -871,18 +869,18 @@
     "orderValue" : 99999,
     "codeName" : "ParentModule",
     "logicName" : "父模块",
-    "extendMode" : 0,
-    "enableGroup" : false,
     "userDRAction" : "READ",
+    "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
     "pageSize" : -1,
     "name" : "ParentModule"
   }, {
-    "enableBackend" : true,
     "enableFront" : true,
+    "enableBackend" : true,
     "pubServiceDefault" : true,
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -890,18 +888,18 @@
     "orderValue" : 99999,
     "codeName" : "Root",
     "logicName" : "根模块",
-    "extendMode" : 0,
-    "enableGroup" : false,
     "userDRAction" : "READ",
+    "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
     "pageSize" : -1,
     "name" : "ROOT"
   }, {
-    "enableBackend" : true,
     "enableFront" : true,
+    "enableBackend" : true,
     "pubServiceDefault" : true,
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -909,18 +907,18 @@
     "orderValue" : 99999,
     "codeName" : "Root_NoBranch",
     "logicName" : "根模块_无分支",
-    "extendMode" : 0,
-    "enableGroup" : false,
     "userDRAction" : "READ",
+    "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
     "pageSize" : -1,
     "name" : "Root_NoBranch"
   }, {
-    "enableBackend" : true,
     "enableFront" : true,
+    "enableBackend" : true,
     "pubServiceDefault" : true,
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -928,9 +926,8 @@
     "orderValue" : 99999,
     "codeName" : "TestModule",
     "logicName" : "TestModule",
-    "extendMode" : 0,
-    "enableGroup" : false,
     "userDRAction" : "READ",
+    "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
@@ -970,10 +967,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "ByPath",
     "logicName" : "BYPATH",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "BYPATH"
   }, {
@@ -981,10 +978,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
-    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -992,10 +989,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "ParentModule",
     "logicName" : "父模块",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "ParentModule"
   }, {
@@ -1003,10 +1000,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "Root",
     "logicName" : "根模块",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "ROOT"
   }, {
@@ -1014,10 +1011,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "Root_NoBranch",
     "logicName" : "根模块_无分支",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "Root_NoBranch"
   }, {
@@ -1025,10 +1022,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "TestModule",
     "logicName" : "TestModule",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "TestModule"
   }, {
@@ -1036,10 +1033,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
@@ -1057,8 +1054,9 @@
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : false,
-  "orderValue" : 99999,
-  "dSLink" : "DEFAULT",
+  "validLogicValue" : "0",
+  "invalidLogicValue" : "1",
+  "serviceAPIMode" : 1,
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -1072,17 +1070,20 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "extendMode" : 0,
+  "saaSDCIdColumnName" : "SRFDCID",
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "dSLink" : "DEFAULT",
   "saaSMode" : 4,
   "deployId" : "a7b21ca782bbba41d85c46dfb1516211",
-  "enableSQLStorage" : true,
-  "dynaInstMode" : 1,
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
-  "virtualMode" : 0,
   "codeName" : "TestModule",
   "logicName" : "测试模块",
   "tableName" : "zt_module",
+  "enableViewLevel" : 0,
+  "virtualMode" : 0,
+  "enableSQLStorage" : true,
+  "enableRemove" : true,
   "logicValid" : true,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -1091,14 +1092,13 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
   "serviceCodeName" : "TestModule",
   "enableActions" : 7,
   "enableCreate" : true,
   "enableModify" : true,
-  "extendMode" : 0,
   "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
+  "subSysDE" : false,
+  "virtual" : false,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

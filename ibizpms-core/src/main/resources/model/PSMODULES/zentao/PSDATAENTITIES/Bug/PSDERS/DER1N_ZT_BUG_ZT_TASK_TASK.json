@@ -3,7 +3,6 @@
     "name" : "TASK",
     "codeName" : "Task"
   },
-  "masterOrder" : -1,
   "enableExtRestrict" : true,
   "getPSPickupTextDEField" : {
     "name" : "TASKNAME",
@@ -26,6 +25,7 @@
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PROJECT_PROJECT.json"
   },
+  "masterOrder" : -1,
   "removeActionType" : -1,
   "pickupDEFName" : "TASK",
   "masterRS" : 0,
@@ -35,12 +35,12 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
   },
   "orderValue" : 100,
+  "codeName" : "ZTTask",
+  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
   },
-  "codeName" : "ZTTask",
-  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_TASK_TASK.json",
   "name" : "DER1N_ZT_BUG_ZT_TASK_TASK"
 }

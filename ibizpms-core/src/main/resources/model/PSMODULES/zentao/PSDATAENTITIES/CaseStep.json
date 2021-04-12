@@ -1,14 +1,16 @@
 {
-  "serviceAPIMode" : 1,
   "getAllPSDEFields" : [ {
-    "formulaDEField" : true,
     "phisicalDEField" : false,
-    "dataType" : "BIGINT",
+    "formulaDEField" : true,
     "valueFormat" : "%1$s",
+    "dataType" : "BIGINT",
     "deployId" : "e1951c32bd5843fab289197f6ffb8d73",
+    "codeName" : "Casestepid",
+    "logicName" : "用例步骤编号",
+    "stdDataType" : 1,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -33,20 +35,22 @@
       "autoIncrement" : false,
       "name" : "CASESTEPID"
     } ],
-    "codeName" : "Casestepid",
-    "logicName" : "用例步骤编号",
-    "stdDataType" : 1,
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "CASESTEPID"
   }, {
-    "dataType" : "TEXT",
     "length" : 100,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "0f704c44b42b7929a4d5b877b72125cd",
+    "codeName" : "Reals",
+    "logicName" : "实际情况",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -76,27 +80,27 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Reals",
-    "logicName" : "实际情况",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "REALS"
   }, {
-    "dataType" : "SSCODELIST",
     "length" : 200,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/Testresult__result.json"
     },
+    "valueFormat" : "%1$s",
+    "dataType" : "SSCODELIST",
     "deployId" : "1bf80290d3730a5220acb5f5235ac7a0",
+    "codeName" : "Steps",
+    "logicName" : "测试结果",
+    "stringLength" : 200,
+    "stdDataType" : 25,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -126,28 +130,27 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Steps",
-    "logicName" : "测试结果",
-    "stringLength" : 200,
-    "stdDataType" : 25,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "STEPS"
   }, {
-    "dataType" : "SSCODELIST",
     "length" : 10,
     "defaultValue" : "step",
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/Casestep__type.json"
     },
+    "valueFormat" : "%1$s",
+    "dataType" : "SSCODELIST",
     "deployId" : "29b5a1272c6c2f50d1f61efcb45c27ec",
+    "codeName" : "Type",
+    "logicName" : "用例步骤类型",
+    "stringLength" : 10,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -185,23 +188,22 @@
       "autoIncrement" : false,
       "name" : "TYPE"
     } ],
-    "codeName" : "Type",
-    "logicName" : "用例步骤类型",
-    "stringLength" : 10,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "TYPE"
   }, {
-    "dataType" : "ACID",
     "length" : 8,
     "valueFormat" : "%1$s",
+    "dataType" : "ACID",
     "deployId" : "e32f581a27fc81920ef5453ba2be5a62",
+    "codeName" : "Id",
+    "logicName" : "编号",
+    "stdDataType" : 1,
     "pasteReset" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -227,9 +229,6 @@
       "autoIncrement" : true,
       "name" : "ID"
     } ],
-    "codeName" : "Id",
-    "logicName" : "编号",
-    "stdDataType" : 1,
     "enableUICreate" : false,
     "enableUIModify" : false,
     "keyDEField" : true,
@@ -238,14 +237,18 @@
     "dEFType" : 1,
     "name" : "ID"
   }, {
-    "dataType" : "LONGTEXT",
     "length" : 65535,
     "defaultValue" : "#EMPTY",
     "valueFormat" : "%1$s",
+    "dataType" : "LONGTEXT",
     "deployId" : "6581147667ce3dc8333df1bc9ccb0ac0",
+    "codeName" : "Desc",
+    "logicName" : "步骤",
+    "stringLength" : 65535,
+    "stdDataType" : 21,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -283,22 +286,22 @@
       "autoIncrement" : false,
       "name" : "DESC"
     } ],
-    "codeName" : "Desc",
-    "logicName" : "步骤",
-    "stringLength" : 65535,
-    "stdDataType" : 21,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "DESC"
   }, {
-    "dataType" : "LONGTEXT",
     "length" : 65535,
     "defaultValue" : "#EMPTY",
     "valueFormat" : "%1$s",
+    "dataType" : "LONGTEXT",
     "deployId" : "8ee151456bc290a99ce251c42916203d",
+    "codeName" : "Expect",
+    "logicName" : "预期",
+    "stringLength" : 65535,
+    "stdDataType" : 21,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -336,23 +339,24 @@
       "autoIncrement" : false,
       "name" : "EXPECT"
     } ],
-    "codeName" : "Expect",
-    "logicName" : "预期",
-    "stringLength" : 65535,
-    "stdDataType" : 21,
     "majorDEField" : true,
     "enableQuickSearch" : true,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "EXPECT"
   }, {
-    "dataType" : "TEXT",
     "length" : 100,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "b29c14c59095aa4cfe59eb098d0b567e",
+    "codeName" : "Files",
+    "logicName" : "附件",
+    "stringLength" : 100,
+    "stdDataType" : 25,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -382,22 +386,21 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Files",
-    "logicName" : "附件",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "FILES"
   }, {
-    "dataType" : "INT",
     "valueFormat" : "%1$s",
+    "dataType" : "INT",
     "deployId" : "da780a895448f5a8cda5d9592500eaa6",
+    "codeName" : "Runid",
+    "logicName" : "执行编号",
+    "stdDataType" : 9,
+    "phisicalDEField" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -415,36 +418,35 @@
       },
       "name" : "默认规则"
     } ],
-    "codeName" : "Runid",
-    "logicName" : "执行编号",
-    "stdDataType" : 9,
-    "phisicalDEField" : false,
     "importOrder" : 1000,
     "dEFType" : 5,
     "uIAssistDEField" : true,
     "name" : "RUNID"
   }, {
+    "valueFormat" : "%1$s",
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDERS/DER1N_ZT_CASESTEP_ZT_CASE_CASE.json"
     },
-    "valueFormat" : "%1$s",
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "VERSION",
       "codeName" : "Version"
     },
-    "dataType" : "PICKUPDATA",
     "length" : 3,
     "defaultValue" : "0",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/CurCaseVersion.json"
     },
+    "dataType" : "PICKUPDATA",
     "deployId" : "acc09982dc113edf7063f7476915d3c0",
+    "codeName" : "Version",
+    "logicName" : "用例版本",
+    "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -470,30 +472,30 @@
       "autoIncrement" : false,
       "name" : "VERSION"
     } ],
-    "codeName" : "Version",
-    "logicName" : "用例版本",
-    "stdDataType" : 9,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "VERSION"
   }, {
+    "valueFormat" : "%1$s",
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDERS/DER1N_ZT_CASESTEP_ZT_CASE_CASE.json"
     },
-    "valueFormat" : "%1$s",
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : "PICKUP",
     "length" : 8,
     "defaultValue" : "0",
+    "dataType" : "PICKUP",
     "deployId" : "46df8bfcd76a9919861b2a31b97b2bc2",
+    "codeName" : "IBizCase",
+    "logicName" : "用例",
+    "stdDataType" : 1,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -519,30 +521,30 @@
       "autoIncrement" : false,
       "name" : "CASE"
     } ],
-    "codeName" : "IBizCase",
-    "logicName" : "用例",
-    "stdDataType" : 1,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "CASE"
   }, {
+    "valueFormat" : "%1$s",
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDERS/DER1N__ZT_CASESTEP__ZT_CASESTEP__PARENT.json"
     },
-    "valueFormat" : "%1$s",
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : "PICKUP",
     "length" : 8,
     "defaultValue" : "0",
+    "dataType" : "PICKUP",
     "deployId" : "de9be4242001a0565bf72bf65ed65971",
+    "codeName" : "Parent",
+    "logicName" : "分组用例步骤的组编号",
+    "stdDataType" : 1,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -568,17 +570,15 @@
       "autoIncrement" : false,
       "name" : "PARENT"
     } ],
-    "codeName" : "Parent",
-    "logicName" : "分组用例步骤的组编号",
-    "stdDataType" : 1,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "PARENT"
   } ],
   "getAllPSDEDataSets" : [ {
-    "enableBackend" : true,
     "enableFront" : true,
+    "enableBackend" : true,
     "pubServiceDefault" : true,
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -586,20 +586,20 @@
     "orderValue" : 99999,
     "codeName" : "CurTest",
     "logicName" : "当前测试步骤",
-    "extendMode" : 0,
     "enableTempData" : true,
     "majorSortDir" : "ASC",
-    "enableGroup" : false,
     "userDRAction" : "READ",
+    "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
     "pageSize" : -1,
     "name" : "CurTest"
   }, {
-    "enableBackend" : true,
     "enableFront" : true,
+    "enableBackend" : true,
     "pubServiceDefault" : true,
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -607,19 +607,19 @@
     "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
-    "extendMode" : 0,
     "enableTempData" : true,
-    "enableGroup" : false,
     "userDRAction" : "READ",
+    "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
     "pageSize" : -1,
     "name" : "DEFAULT"
   }, {
-    "enableBackend" : true,
     "enableFront" : true,
+    "enableBackend" : true,
     "pubServiceDefault" : true,
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -627,19 +627,19 @@
     "orderValue" : 99999,
     "codeName" : "Default1",
     "logicName" : "DEFAULT1",
-    "extendMode" : 0,
     "enableTempData" : true,
-    "enableGroup" : false,
     "userDRAction" : "READ",
+    "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
     "pageSize" : -1,
     "name" : "DEFAULT1"
   }, {
-    "enableBackend" : true,
     "enableFront" : true,
+    "enableBackend" : true,
     "pubServiceDefault" : true,
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -647,19 +647,19 @@
     "orderValue" : 99999,
     "codeName" : "Mob",
     "logicName" : "Mob",
-    "extendMode" : 0,
     "enableTempData" : true,
-    "enableGroup" : false,
     "userDRAction" : "READ",
+    "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
     "pageSize" : -1,
     "name" : "Mob"
   }, {
-    "enableBackend" : true,
     "enableFront" : true,
+    "enableBackend" : true,
     "pubServiceDefault" : true,
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -667,19 +667,19 @@
     "orderValue" : 99999,
     "codeName" : "Version",
     "logicName" : "版本",
-    "extendMode" : 0,
     "enableTempData" : true,
-    "enableGroup" : false,
     "userDRAction" : "READ",
+    "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
     "pageSize" : -1,
     "name" : "Version"
   }, {
-    "enableBackend" : true,
     "enableFront" : true,
+    "enableBackend" : true,
     "pubServiceDefault" : true,
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -687,10 +687,9 @@
     "orderValue" : 99999,
     "codeName" : "Versions",
     "logicName" : "版本1",
-    "extendMode" : 0,
     "enableTempData" : true,
-    "enableGroup" : false,
     "userDRAction" : "READ",
+    "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : false,
@@ -754,10 +753,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "CurTest",
     "logicName" : "当前测试步骤",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "CurTest"
   }, {
@@ -765,10 +764,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
-    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -776,10 +775,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "Default1",
     "logicName" : "DEFAULT1",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "DEFAULT1"
   }, {
@@ -787,10 +786,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "Mob",
     "logicName" : "Mob",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "Mob"
   }, {
@@ -798,10 +797,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "Version",
     "logicName" : "版本",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "Version"
   }, {
@@ -809,10 +808,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "Versions",
     "logicName" : "版本1",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "Versions"
   }, {
@@ -820,10 +819,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
@@ -836,8 +835,7 @@
   "enableAPIStorage" : false,
   "tempDataHolder" : 2,
   "enableTempDataFront" : true,
-  "orderValue" : 99999,
-  "dSLink" : "DEFAULT",
+  "serviceAPIMode" : 1,
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -851,17 +849,20 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "extendMode" : 0,
+  "saaSDCIdColumnName" : "SRFDCID",
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "dSLink" : "DEFAULT",
   "saaSMode" : 4,
   "deployId" : "2c90222419999a8178fec1080b537058",
-  "enableSQLStorage" : true,
-  "dynaInstMode" : 1,
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
-  "virtualMode" : 0,
   "codeName" : "CaseStep",
   "logicName" : "用例步骤",
   "tableName" : "zt_casestep",
+  "enableViewLevel" : 0,
+  "virtualMode" : 0,
+  "enableSQLStorage" : true,
+  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -870,15 +871,14 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
   "serviceCodeName" : "CaseStep",
   "enableActions" : 7,
   "enableCreate" : true,
   "enableModify" : true,
-  "extendMode" : 0,
   "enableTempData" : true,
   "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
+  "subSysDE" : false,
+  "virtual" : false,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

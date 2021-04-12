@@ -3,10 +3,6 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
   },
-  "getPSAppDEDataSet" : {
-    "modelref" : true,
-    "id" : "FetchDefault"
-  },
   "getValuePSAppDEField" : {
     "name" : "ROLE",
     "codeName" : "Role"
@@ -15,8 +11,12 @@
     "name" : "NAME",
     "codeName" : "Name"
   },
-  "codeListType" : "DYNAMIC",
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchDefault"
+  },
   "dynaInstMode" : 1,
+  "codeListType" : "DYNAMIC",
   "codeName" : "Role",
   "emptyText" : "未定义",
   "enableCache" : true,

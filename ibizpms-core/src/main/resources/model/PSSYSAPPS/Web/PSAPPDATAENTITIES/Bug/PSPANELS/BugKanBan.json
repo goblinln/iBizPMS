@@ -1,15 +1,15 @@
 {
   "getRootPSPanelItems" : [ {
     "getPSPanelItems" : [ {
+      "viewFieldName" : "TITLE",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
         "editorType" : "SPAN",
         "name" : "name"
       },
-      "viewFieldName" : "TITLE",
-      "hidden" : false,
       "showCaption" : false,
+      "hidden" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -25,11 +25,12 @@
         "colLG" : 3,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : true,
       "itemType" : "RAWITEM",
       "itemStyle" : "DEFAULT",
-      "showCaption" : true,
       "name" : "rawitem4"
     }, {
+      "viewFieldName" : "severity",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
@@ -40,10 +41,9 @@
         "editorType" : "SPAN",
         "name" : "severity"
       },
-      "viewFieldName" : "severity",
+      "showCaption" : false,
       "hidden" : false,
       "convertToCodeItemText" : true,
-      "showCaption" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "colLG" : 8,
@@ -60,11 +60,12 @@
         "colLG" : 3,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : true,
       "itemType" : "RAWITEM",
       "itemStyle" : "DEFAULT",
-      "showCaption" : true,
       "name" : "rawitem3"
     }, {
+      "viewFieldName" : "PRI",
       "getPSEditor" : {
         "enableLinkView" : false,
         "editable" : false,
@@ -75,10 +76,9 @@
         "editorType" : "SPAN",
         "name" : "pri"
       },
-      "viewFieldName" : "PRI",
+      "showCaption" : false,
       "hidden" : false,
       "convertToCodeItemText" : true,
-      "showCaption" : false,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "colLG" : 8,
@@ -93,9 +93,9 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : true,
       "itemType" : "RAWITEM",
       "itemStyle" : "DEFAULT",
-      "showCaption" : true,
       "name" : "rawitem1"
     }, {
       "getPSPanelItems" : [ {
@@ -107,20 +107,20 @@
             "colLG" : 4,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : true,
           "itemType" : "RAWITEM",
           "itemStyle" : "DEFAULT",
-          "showCaption" : true,
           "name" : "rawitem5"
         }, {
+          "viewFieldName" : "DEADLINE",
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
             "editorType" : "SPAN",
             "name" : "deadline"
           },
-          "viewFieldName" : "DEADLINE",
-          "hidden" : false,
           "showCaption" : false,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 5,
             "colLG" : 5,
@@ -130,15 +130,15 @@
           "itemStyle" : "DEFAULT",
           "name" : "deadline"
         }, {
+          "viewFieldName" : "DELAY",
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
             "editorType" : "SPAN",
             "name" : "delay"
           },
-          "viewFieldName" : "DELAY",
-          "hidden" : false,
           "showCaption" : false,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 6,
             "colLG" : 6,
@@ -186,10 +186,10 @@
           "logicType" : "GROUP",
           "name" : "面板成员[container4][面板显示]逻辑"
         } ],
+        "showCaption" : true,
         "itemType" : "CONTAINER",
         "caption" : "激活状态",
         "itemStyle" : "DEFAULT",
-        "showCaption" : true,
         "name" : "container4"
       }, {
         "getPSPanelItems" : [ {
@@ -201,20 +201,20 @@
               "colLG" : 6,
               "layout" : "TABLE_24COL"
             },
+            "showCaption" : true,
             "itemType" : "RAWITEM",
             "itemStyle" : "DEFAULT",
-            "showCaption" : true,
             "name" : "rawitem6"
           }, {
+            "viewFieldName" : "RESOLVEDDATE",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "resolveddate"
             },
-            "viewFieldName" : "RESOLVEDDATE",
-            "hidden" : false,
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 12,
               "colLG" : 12,
@@ -224,15 +224,15 @@
             "itemStyle" : "DEFAULT",
             "name" : "resolveddate"
           }, {
+            "viewFieldName" : "DELAYRESOLVE",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
               "editorType" : "SPAN",
               "name" : "delayresolve"
             },
-            "viewFieldName" : "DELAYRESOLVE",
-            "hidden" : false,
             "showCaption" : false,
+            "hidden" : false,
             "getPSLayoutPos" : {
               "colMD" : 6,
               "colLG" : 6,
@@ -267,9 +267,9 @@
             "colLG" : 16,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : true,
           "itemType" : "CONTAINER",
           "itemStyle" : "DEFAULT",
-          "showCaption" : true,
           "name" : "container8"
         }, {
           "contentType" : "RAW",
@@ -279,11 +279,12 @@
             "colLG" : 4,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : true,
           "itemType" : "RAWITEM",
           "itemStyle" : "DEFAULT",
-          "showCaption" : true,
           "name" : "rawitem7"
         }, {
+          "viewFieldName" : "RESOLVEDBY",
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -294,10 +295,9 @@
             "editorType" : "SPAN",
             "name" : "resolvedby"
           },
-          "viewFieldName" : "RESOLVEDBY",
+          "showCaption" : false,
           "hidden" : false,
           "convertToCodeItemText" : true,
-          "showCaption" : false,
           "getPSLayoutPos" : {
             "colMD" : 4,
             "colLG" : 4,
@@ -329,10 +329,10 @@
           "logicType" : "GROUP",
           "name" : "面板成员[container6][面板显示]逻辑"
         } ],
+        "showCaption" : true,
         "itemType" : "CONTAINER",
         "caption" : "已解决状态",
         "itemStyle" : "DEFAULT",
-        "showCaption" : true,
         "name" : "container6"
       }, {
         "getPSPanelItems" : [ {
@@ -343,20 +343,20 @@
             "colLG" : 4,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : true,
           "itemType" : "RAWITEM",
           "itemStyle" : "DEFAULT",
-          "showCaption" : true,
           "name" : "rawitem8"
         }, {
+          "viewFieldName" : "CLOSEDDATE",
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
             "editorType" : "SPAN",
             "name" : "closeddate"
           },
-          "viewFieldName" : "CLOSEDDATE",
-          "hidden" : false,
           "showCaption" : false,
+          "hidden" : false,
           "getPSLayoutPos" : {
             "colMD" : 10,
             "colLG" : 10,
@@ -375,11 +375,12 @@
             "colLGOffset" : 2,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : true,
           "itemType" : "RAWITEM",
           "itemStyle" : "DEFAULT",
-          "showCaption" : true,
           "name" : "rawitem9"
         }, {
+          "viewFieldName" : "CLOSEDBY",
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -390,10 +391,9 @@
             "editorType" : "SPAN",
             "name" : "closedby"
           },
-          "viewFieldName" : "CLOSEDBY",
+          "showCaption" : false,
           "hidden" : false,
           "convertToCodeItemText" : true,
-          "showCaption" : false,
           "getPSLayoutPos" : {
             "colMD" : 4,
             "colLG" : 4,
@@ -425,10 +425,10 @@
           "logicType" : "GROUP",
           "name" : "面板成员[container7][面板显示]逻辑"
         } ],
+        "showCaption" : true,
         "itemType" : "CONTAINER",
         "caption" : "已关闭状态",
         "itemStyle" : "DEFAULT",
-        "showCaption" : true,
         "name" : "container7"
       }, {
         "getPSPanelItems" : [ {
@@ -439,11 +439,12 @@
             "colLG" : 4,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : true,
           "itemType" : "RAWITEM",
           "itemStyle" : "DEFAULT",
-          "showCaption" : true,
           "name" : "rawitem10"
         }, {
+          "viewFieldName" : "RESOLUTION",
           "getPSEditor" : {
             "enableLinkView" : false,
             "editable" : false,
@@ -454,10 +455,9 @@
             "editorType" : "SPAN",
             "name" : "resolution"
           },
-          "viewFieldName" : "RESOLUTION",
+          "showCaption" : false,
           "hidden" : false,
           "convertToCodeItemText" : true,
-          "showCaption" : false,
           "getPSLayoutPos" : {
             "colMD" : 6,
             "colLG" : 6,
@@ -489,10 +489,10 @@
           "logicType" : "GROUP",
           "name" : "面板成员[container9][面板显示]逻辑"
         } ],
+        "showCaption" : true,
         "itemType" : "CONTAINER",
         "caption" : "解决方案",
         "itemStyle" : "DEFAULT",
-        "showCaption" : true,
         "name" : "container9"
       }, {
         "contentType" : "HTML",
@@ -514,9 +514,9 @@
           "logicType" : "GROUP",
           "name" : "面板成员[rawitem2][面板显示]逻辑"
         } ],
+        "showCaption" : true,
         "itemType" : "RAWITEM",
         "itemStyle" : "DEFAULT",
-        "showCaption" : true,
         "name" : "rawitem2"
       } ],
       "getPSLayout" : {
@@ -527,10 +527,10 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : true,
       "itemType" : "CONTAINER",
       "caption" : "动态内容",
       "itemStyle" : "DEFAULT",
-      "showCaption" : true,
       "name" : "container3"
     }, {
       "getPSPanelItems" : [ {
@@ -575,6 +575,7 @@
           "height" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : false,
         "getPSSysImage" : {
           "glyph" : "xf0a4@FontAwesome",
           "cssClass" : "fa fa-hand-o-right"
@@ -583,9 +584,9 @@
         "itemType" : "BUTTON",
         "caption" : "指派",
         "itemStyle" : "DEFAULT",
-        "showCaption" : false,
         "name" : "button1"
       }, {
+        "viewFieldName" : "ASSIGNEDTO",
         "getPSEditor" : {
           "enableLinkView" : false,
           "editable" : false,
@@ -596,10 +597,9 @@
           "editorType" : "SPAN",
           "name" : "assignedto"
         },
-        "viewFieldName" : "ASSIGNEDTO",
+        "showCaption" : false,
         "hidden" : false,
         "convertToCodeItemText" : true,
-        "showCaption" : false,
         "getPSLayoutPos" : {
           "colMD" : 14,
           "colLG" : 14,
@@ -620,19 +620,19 @@
         "colLG" : 12,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : true,
       "itemType" : "CONTAINER",
       "itemStyle" : "DEFAULT",
-      "showCaption" : true,
       "name" : "container2"
     }, {
       "getPSPanelItems" : [ {
+        "viewFieldName" : "PRODUCT",
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "product"
         },
-        "viewFieldName" : "PRODUCT",
-        "hidden" : true,
         "showCaption" : false,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -641,13 +641,13 @@
         "itemStyle" : "DEFAULT",
         "name" : "product"
       }, {
+        "viewFieldName" : "PROJECT",
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "project"
         },
-        "viewFieldName" : "PROJECT",
-        "hidden" : true,
         "showCaption" : false,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -656,13 +656,13 @@
         "itemStyle" : "DEFAULT",
         "name" : "project"
       }, {
+        "viewFieldName" : "CONFIRMED",
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "confirmed"
         },
-        "viewFieldName" : "CONFIRMED",
-        "hidden" : true,
         "showCaption" : false,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -671,13 +671,13 @@
         "itemStyle" : "DEFAULT",
         "name" : "confirmed"
       }, {
+        "viewFieldName" : "ISFAVORITES",
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "isfavorites"
         },
-        "viewFieldName" : "ISFAVORITES",
-        "hidden" : true,
         "showCaption" : false,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -686,13 +686,13 @@
         "itemStyle" : "DEFAULT",
         "name" : "isfavorites"
       }, {
+        "viewFieldName" : "MODULE",
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "module"
         },
-        "viewFieldName" : "MODULE",
-        "hidden" : true,
         "showCaption" : false,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -701,13 +701,13 @@
         "itemStyle" : "DEFAULT",
         "name" : "module"
       }, {
+        "viewFieldName" : "id",
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "srfkey"
         },
-        "viewFieldName" : "id",
-        "hidden" : true,
         "showCaption" : false,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -716,13 +716,13 @@
         "itemStyle" : "DEFAULT",
         "name" : "srfkey"
       }, {
+        "viewFieldName" : "STORY",
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "story"
         },
-        "viewFieldName" : "STORY",
-        "hidden" : true,
         "showCaption" : false,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -731,13 +731,13 @@
         "itemStyle" : "DEFAULT",
         "name" : "story"
       }, {
+        "viewFieldName" : "STATUS",
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "status"
         },
-        "viewFieldName" : "STATUS",
-        "hidden" : true,
         "showCaption" : false,
+        "hidden" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -754,10 +754,10 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : false,
       "itemType" : "CONTAINER",
       "caption" : "隐藏项",
       "itemStyle" : "DEFAULT",
-      "showCaption" : false,
       "name" : "container5"
     } ],
     "getPSLayout" : {
@@ -768,9 +768,9 @@
       "colMD" : 24,
       "layout" : "TABLE_24COL"
     },
+    "showCaption" : true,
     "itemType" : "CONTAINER",
     "itemStyle" : "DEFAULT",
-    "showCaption" : true,
     "name" : "container1"
   } ],
   "getAllPSPanelFields" : [ {

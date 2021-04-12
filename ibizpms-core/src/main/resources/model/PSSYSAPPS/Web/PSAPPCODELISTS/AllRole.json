@@ -3,10 +3,6 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysRole.json"
   },
-  "getPSAppDEDataSet" : {
-    "modelref" : true,
-    "id" : "FetchDefault"
-  },
   "getValuePSAppDEField" : {
     "name" : "SYS_ROLEID",
     "codeName" : "RoleId"
@@ -15,8 +11,12 @@
     "name" : "SYS_ROLENAME",
     "codeName" : "RoleName"
   },
-  "codeListType" : "DYNAMIC",
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchDefault"
+  },
   "dynaInstMode" : 1,
+  "codeListType" : "DYNAMIC",
   "codeName" : "AllRole",
   "emptyText" : "未定义",
   "enableCache" : true,

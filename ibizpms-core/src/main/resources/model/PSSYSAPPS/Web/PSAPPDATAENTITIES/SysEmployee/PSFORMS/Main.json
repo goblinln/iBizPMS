@@ -1,5 +1,7 @@
 {
   "enableAutoSave" : false,
+  "infoFormMode" : true,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -24,8 +26,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : true,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
@@ -36,15 +36,15 @@
     "getPSDEFormDetails" : [ {
       "emptyCaption" : false,
       "getPSEditor" : {
-        "singleSelect" : true,
-        "dropDownView" : false,
-        "enablePickupView" : false,
         "enableLinkView" : true,
         "getLinkPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeUsr2GridView.json",
           "viewType" : "DEGRIDVIEW"
         },
+        "singleSelect" : true,
+        "dropDownView" : false,
+        "enablePickupView" : false,
         "enableAC" : false,
         "forceSelection" : true,
         "showTrigger" : false,
@@ -78,16 +78,16 @@
         "name" : "ORGNAME",
         "codeName" : "OrgName"
       },
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : false,
-      "allowEmpty" : true,
+      "dataType" : 25,
       "caption" : "单位",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "valueItemName" : "orgid",
       "labelWidth" : 70,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -110,15 +110,15 @@
         "name" : "MDEPTNAME",
         "codeName" : "MDeptName"
       },
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : false,
-      "allowEmpty" : true,
+      "dataType" : 25,
       "caption" : "部门",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 70,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -141,15 +141,15 @@
         "name" : "PERSONNAME",
         "codeName" : "PersonName"
       },
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : false,
-      "allowEmpty" : true,
+      "dataType" : 25,
       "caption" : "姓名",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 70,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -172,15 +172,15 @@
         "name" : "NICKNAME",
         "codeName" : "NickName"
       },
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : false,
-      "allowEmpty" : true,
+      "dataType" : 25,
       "caption" : "别名",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 70,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -203,15 +203,15 @@
         "name" : "SEX",
         "codeName" : "Sex"
       },
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : false,
-      "allowEmpty" : true,
+      "dataType" : 25,
       "caption" : "性别",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 70,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -234,15 +234,15 @@
         "name" : "PHONE",
         "codeName" : "Phone"
       },
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : false,
-      "allowEmpty" : true,
+      "dataType" : 25,
       "caption" : "电话",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 70,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"

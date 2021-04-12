@@ -3,11 +3,11 @@
     "name" : "PSSYSSERVICEAPIID",
     "codeName" : "PSSysServiceAPIId"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "PSSYSSERVICEAPINAME",
     "codeName" : "PSSysServiceAPIName"
   },
+  "masterOrder" : -1,
   "removeActionType" : 3,
   "pickupDEFName" : "PSSYSSERVICEAPIID",
   "masterRS" : 0,
@@ -17,12 +17,12 @@
     "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysServiceAPI.json"
   },
   "orderValue" : 100,
+  "codeName" : "PSSysServiceAPI",
+  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysApp.json"
   },
-  "codeName" : "PSSysServiceAPI",
-  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysApp/PSDERS/DER1N_PSSYSAPP_PSSYSSERVICEAPI_PSSYSSERVICEAPIID.json",
   "name" : "DER1N_PSSYSAPP_PSSYSSERVICEAPI_PSSYSSERVICEAPIID"
 }

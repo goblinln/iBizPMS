@@ -1,9 +1,9 @@
 {
+  "codeItemValueNumber" : true,
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
   },
-  "codeItemValueNumber" : true,
   "getPSCodeItems" : [ {
     "value" : "600",
     "codeName" : "Item_600",
@@ -437,8 +437,8 @@
     "codeName" : "Item_2350",
     "text" : "23:50"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "BeginendDropList",
   "emptyText" : "未定义",
   "enableCache" : true,

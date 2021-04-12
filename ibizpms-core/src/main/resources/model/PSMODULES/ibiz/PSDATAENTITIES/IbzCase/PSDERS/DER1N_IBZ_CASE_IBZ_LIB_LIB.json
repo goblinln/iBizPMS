@@ -3,11 +3,11 @@
     "name" : "LIB",
     "codeName" : "Lib"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "LIBNAME",
     "codeName" : "Libname"
   },
+  "masterOrder" : -1,
   "removeActionType" : -1,
   "pickupDEFName" : "LIB",
   "masterRS" : 0,
@@ -17,13 +17,13 @@
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLib.json"
   },
   "orderValue" : 100,
+  "codeName" : "CaseLib",
+  "logicName" : "用例库",
+  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzCase.json"
   },
-  "codeName" : "CaseLib",
-  "logicName" : "用例库",
-  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzCase/PSDERS/DER1N_IBZ_CASE_IBZ_LIB_LIB.json",
   "name" : "DER1N_IBZ_CASE_IBZ_LIB_LIB"
 }

@@ -10,10 +10,10 @@
     "pluginType" : "DEACTION",
     "pluginCode" : "SFPlugin"
   },
+  "extendMode" : 0,
   "orderValue" : 99999,
   "codeName" : "SendMsgPreProcess",
   "logicName" : "发送消息前置处理",
-  "extendMode" : 0,
   "actionMode" : "UNKNOWN",
   "actionType" : "USERCUSTOM",
   "requestParamType" : "ENTITY",

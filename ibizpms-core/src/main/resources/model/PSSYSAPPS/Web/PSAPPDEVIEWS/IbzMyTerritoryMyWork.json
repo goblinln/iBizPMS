@@ -4,10 +4,10 @@
   "xDataControlName" : "list",
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "MyWork",
+  "enableDP" : true,
   "caption" : "我的工作",
   "title" : "我的工作",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSAppViewNavParams" : [ {
     "rawValue" : false,
     "value" : "srfloginname",
@@ -42,7 +42,6 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
@@ -57,6 +56,7 @@
       "getRootPSPanelItems" : [ {
         "getPSPanelItems" : [ {
           "getPSPanelItems" : [ {
+            "viewFieldName" : "account",
             "getPSEditor" : {
               "enableLinkView" : false,
               "editable" : false,
@@ -67,10 +67,9 @@
               "editorType" : "SPAN",
               "name" : "account"
             },
-            "viewFieldName" : "account",
+            "showCaption" : false,
             "hidden" : false,
             "convertToCodeItemText" : true,
-            "showCaption" : false,
             "getPSLayoutPos" : {
               "grow" : -1,
               "layout" : "FLEX"
@@ -92,14 +91,14 @@
             "width" : 230,
             "layout" : "FLEX"
           },
+          "showCaption" : true,
+          "contentWidth" : 230.0,
           "getPSSysCss" : {
             "cssName" : "container-lefttop-margin"
           },
           "width" : 230.0,
           "itemType" : "CONTAINER",
           "itemStyle" : "DEFAULT",
-          "showCaption" : true,
-          "contentWidth" : 230.0,
           "name" : "container2"
         }, {
           "getPSPanelItems" : [ {
@@ -113,10 +112,10 @@
                 "height" : 40,
                 "layout" : "FLEX"
               },
+              "showCaption" : true,
               "height" : 40.0,
               "itemType" : "RAWITEM",
               "itemStyle" : "DEFAULT",
-              "showCaption" : true,
               "name" : "rawitem1"
             } ],
             "getPSLayout" : {
@@ -127,12 +126,12 @@
               "grow" : -1,
               "layout" : "FLEX"
             },
+            "showCaption" : true,
             "getPSSysCss" : {
               "cssName" : "container-updown-margin"
             },
             "itemType" : "CONTAINER",
             "itemStyle" : "DEFAULT",
-            "showCaption" : true,
             "name" : "container9"
           }, {
             "getPSPanelItems" : [ {
@@ -146,21 +145,21 @@
                   "height" : 30,
                   "layout" : "FLEX"
                 },
+                "showCaption" : true,
                 "height" : 30.0,
                 "itemType" : "RAWITEM",
                 "itemStyle" : "DEFAULT",
-                "showCaption" : true,
                 "name" : "rawitem2"
               }, {
+                "viewFieldName" : "MYTASKS",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "mytasks"
                 },
-                "viewFieldName" : "MYTASKS",
-                "hidden" : false,
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -172,15 +171,15 @@
                 "itemStyle" : "DEFAULT",
                 "name" : "mytasks"
               }, {
+                "viewFieldName" : "myetasks",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "myetasks"
                 },
-                "viewFieldName" : "myetasks",
-                "hidden" : false,
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -202,9 +201,9 @@
                 "grow" : -1,
                 "layout" : "FLEX"
               },
+              "showCaption" : true,
               "itemType" : "CONTAINER",
               "itemStyle" : "DEFAULT",
-              "showCaption" : true,
               "name" : "container4"
             }, {
               "getPSPanelItems" : [ {
@@ -217,21 +216,21 @@
                   "height" : 30,
                   "layout" : "FLEX"
                 },
+                "showCaption" : true,
                 "height" : 30.0,
                 "itemType" : "RAWITEM",
                 "itemStyle" : "DEFAULT",
-                "showCaption" : true,
                 "name" : "rawitem3"
               }, {
+                "viewFieldName" : "MYBUGS",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "mybugs"
                 },
-                "viewFieldName" : "MYBUGS",
-                "hidden" : false,
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -243,15 +242,15 @@
                 "itemStyle" : "DEFAULT",
                 "name" : "mybugs"
               }, {
+                "viewFieldName" : "MYEBUGS",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "myebugs"
                 },
-                "viewFieldName" : "MYEBUGS",
-                "hidden" : false,
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -273,9 +272,9 @@
                 "grow" : -1,
                 "layout" : "FLEX"
               },
+              "showCaption" : true,
               "itemType" : "CONTAINER",
               "itemStyle" : "DEFAULT",
-              "showCaption" : true,
               "name" : "container5"
             }, {
               "getPSPanelItems" : [ {
@@ -288,21 +287,21 @@
                   "height" : 30,
                   "layout" : "FLEX"
                 },
+                "showCaption" : true,
                 "height" : 30.0,
                 "itemType" : "RAWITEM",
                 "itemStyle" : "DEFAULT",
-                "showCaption" : true,
                 "name" : "rawitem4"
               }, {
+                "viewFieldName" : "MYSTORYS",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "mystorys"
                 },
-                "viewFieldName" : "MYSTORYS",
-                "hidden" : false,
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -320,12 +319,12 @@
                   "grow" : -1,
                   "layout" : "FLEX"
                 },
+                "showCaption" : true,
                 "getPSSysCss" : {
                   "cssName" : "text-center-red"
                 },
                 "itemType" : "RAWITEM",
                 "itemStyle" : "DEFAULT",
-                "showCaption" : true,
                 "name" : "rawitem7"
               } ],
               "getPSLayout" : {
@@ -338,9 +337,9 @@
                 "grow" : -1,
                 "layout" : "FLEX"
               },
+              "showCaption" : true,
               "itemType" : "CONTAINER",
               "itemStyle" : "DEFAULT",
-              "showCaption" : true,
               "name" : "container6"
             }, {
               "getPSPanelItems" : [ {
@@ -353,21 +352,21 @@
                   "height" : 30,
                   "layout" : "FLEX"
                 },
+                "showCaption" : true,
                 "height" : 30.0,
                 "itemType" : "RAWITEM",
                 "itemStyle" : "DEFAULT",
-                "showCaption" : true,
                 "name" : "rawitem5"
               }, {
+                "viewFieldName" : "PROJECTS",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "projects"
                 },
-                "viewFieldName" : "PROJECTS",
-                "hidden" : false,
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -379,15 +378,15 @@
                 "itemStyle" : "DEFAULT",
                 "name" : "projects"
               }, {
+                "viewFieldName" : "EPROJECTS",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "eprojects"
                 },
-                "viewFieldName" : "EPROJECTS",
-                "hidden" : false,
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -409,9 +408,9 @@
                 "grow" : -1,
                 "layout" : "FLEX"
               },
+              "showCaption" : true,
               "itemType" : "CONTAINER",
               "itemStyle" : "DEFAULT",
-              "showCaption" : true,
               "name" : "container7"
             }, {
               "getPSPanelItems" : [ {
@@ -424,21 +423,21 @@
                   "height" : 30,
                   "layout" : "FLEX"
                 },
+                "showCaption" : true,
                 "height" : 30.0,
                 "itemType" : "RAWITEM",
                 "itemStyle" : "DEFAULT",
-                "showCaption" : true,
                 "name" : "rawitem6"
               }, {
+                "viewFieldName" : "PRODUCTS",
                 "getPSEditor" : {
                   "enableLinkView" : false,
                   "editable" : false,
                   "editorType" : "SPAN",
                   "name" : "products"
                 },
-                "viewFieldName" : "PRODUCTS",
-                "hidden" : false,
                 "showCaption" : false,
+                "hidden" : false,
                 "getPSLayoutPos" : {
                   "grow" : -1,
                   "layout" : "FLEX"
@@ -456,12 +455,12 @@
                   "grow" : -1,
                   "layout" : "FLEX"
                 },
+                "showCaption" : true,
                 "getPSSysCss" : {
                   "cssName" : "text-center-red"
                 },
                 "itemType" : "RAWITEM",
                 "itemStyle" : "DEFAULT",
-                "showCaption" : true,
                 "name" : "rawitem8"
               } ],
               "getPSLayout" : {
@@ -474,9 +473,9 @@
                 "grow" : -1,
                 "layout" : "FLEX"
               },
+              "showCaption" : true,
               "itemType" : "CONTAINER",
               "itemStyle" : "DEFAULT",
-              "showCaption" : true,
               "name" : "container8"
             } ],
             "getPSLayout" : {
@@ -488,12 +487,12 @@
               "grow" : 1,
               "layout" : "FLEX"
             },
+            "showCaption" : true,
             "getPSSysCss" : {
               "cssName" : "container-left-border"
             },
             "itemType" : "CONTAINER",
             "itemStyle" : "DEFAULT",
-            "showCaption" : true,
             "name" : "container10"
           } ],
           "getPSLayout" : {
@@ -504,9 +503,9 @@
             "grow" : 1,
             "layout" : "FLEX"
           },
+          "showCaption" : true,
           "itemType" : "CONTAINER",
           "itemStyle" : "DEFAULT",
-          "showCaption" : true,
           "name" : "container3"
         } ],
         "getPSLayout" : {
@@ -516,12 +515,12 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : true,
         "getPSSysCss" : {
           "cssName" : "container-margin-top-7px"
         },
         "itemType" : "CONTAINER",
         "itemStyle" : "DEFAULT",
-        "showCaption" : true,
         "name" : "container1"
       } ],
       "getAllPSPanelFields" : [ {
@@ -571,52 +570,52 @@
     },
     "enableRowEditGroup" : false,
     "getPSDEListDataItems" : [ {
-      "dataType" : 9,
-      "name" : "projects"
+      "name" : "projects",
+      "dataType" : 9
     }, {
-      "dataType" : 25,
-      "name" : "myebugs"
+      "name" : "myebugs",
+      "dataType" : 25
     }, {
-      "dataType" : 25,
-      "name" : "account"
+      "name" : "account",
+      "dataType" : 25
     }, {
-      "dataType" : 25,
-      "name" : "myetasks"
+      "name" : "myetasks",
+      "dataType" : 25
     }, {
-      "dataType" : 9,
-      "name" : "mybugs"
+      "name" : "mybugs",
+      "dataType" : 9
     }, {
-      "dataType" : 9,
-      "name" : "products"
+      "name" : "products",
+      "dataType" : 9
     }, {
-      "dataType" : 9,
-      "name" : "mystorys"
+      "name" : "mystorys",
+      "dataType" : 9
     }, {
-      "dataType" : 9,
-      "name" : "mytasks"
+      "name" : "mytasks",
+      "dataType" : 9
     }, {
-      "dataType" : 25,
-      "name" : "eprojects"
+      "name" : "eprojects",
+      "dataType" : 25
     }, {
-      "dataType" : 25,
-      "name" : "realname"
+      "name" : "realname",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 25,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "REALNAME",
         "codeName" : "Realname"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     } ],
-    "controlType" : "LIST",
     "enableRowEdit" : false,
+    "controlType" : "LIST",
     "codeName" : "MyWork",
     "enableGroup" : false,
     "pagingSize" : 1000,
@@ -725,6 +724,7 @@
     "name" : "list",
     "modelid" : "58dafe87c750d665463bd6357f644c98"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -745,7 +745,6 @@
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -753,9 +752,10 @@
           "viewType" : "DEEDITVIEW"
         }
       },
+      "enableWizardAdd" : false,
+      "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {

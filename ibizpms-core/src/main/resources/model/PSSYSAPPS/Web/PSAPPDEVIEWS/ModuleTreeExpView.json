@@ -4,10 +4,10 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "TreeExpView",
+  "enableDP" : true,
   "caption" : "所有产品",
   "title" : "所有产品",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -30,7 +30,6 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
@@ -40,11 +39,10 @@
     "xDataControlName" : "treeexpbar_tree",
     "enableSearch" : false,
     "enableCounter" : true,
+    "showTitleBar" : false,
     "getPSControls" : [ {
-      "treeGridMode" : 0,
-      "enableRootSelect" : false,
-      "outputIconDefault" : false,
       "enableSearchDefault" : true,
+      "treeGridMode" : 0,
       "getPSDETreeNodeRSs" : [ {
         "getParentPSDETreeNode" : {
           "modelref" : true,
@@ -70,6 +68,8 @@
         "searchMode" : 3,
         "name" : "默认根节点 - 所有产品"
       } ],
+      "enableRootSelect" : false,
+      "outputIconDefault" : false,
       "controlType" : "TREEVIEW",
       "getPSDETreeNodes" : [ {
         "getIdPSAppDEField" : {
@@ -82,35 +82,35 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
         },
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchLine"
-        },
         "getTextPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
         },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchLine"
+        },
         "maxSize" : -1,
-        "enableQuickCreate" : false,
         "navFilter" : "n_line_eq",
         "getNavPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductGridView.json",
           "viewType" : "DEGRIDVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : false,
+        "enableQuickCreate" : false,
         "appendPNodeId" : false,
+        "enableCheck" : false,
+        "hasPSDETreeNodeRSs" : false,
         "selected" : false,
         "selectFirstOnly" : false,
         "expandFirstOnly" : false,
-        "enableCheck" : false,
+        "rootNode" : false,
         "enableNewData" : false,
         "enableEditData" : false,
         "enableRemoveData" : false,
         "enableViewData" : false,
-        "disableSelect" : false,
         "nodeType" : "Line",
+        "disableSelect" : false,
         "enableQuickSearch" : true,
         "counterMode" : 0,
         "treeNodeType" : "DE",
@@ -119,19 +119,19 @@
         "id" : "Line"
       }, {
         "text" : "所有产品",
-        "enableQuickCreate" : false,
         "getNavPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductGridView.json",
           "viewType" : "DEGRIDVIEW"
         },
-        "rootNode" : false,
-        "hasPSDETreeNodeRSs" : true,
+        "enableQuickCreate" : false,
         "appendPNodeId" : false,
+        "enableCheck" : false,
+        "hasPSDETreeNodeRSs" : true,
         "selected" : false,
         "selectFirstOnly" : false,
         "expandFirstOnly" : false,
-        "enableCheck" : false,
+        "rootNode" : false,
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
@@ -170,9 +170,9 @@
             "tooltip" : "维护产品线",
             "groupExtractMode" : "ITEM",
             "showIcon" : true,
+            "showCaption" : true,
             "itemType" : "DEUIACTION",
             "caption" : "维护产品线",
-            "showCaption" : true,
             "name" : "deuiaction1"
           }, {
             "getPSAppViewUIAction" : {
@@ -202,9 +202,9 @@
             "tooltip" : "刷新",
             "groupExtractMode" : "ITEM",
             "showIcon" : true,
+            "showCaption" : true,
             "itemType" : "DEUIACTION",
             "caption" : "刷新",
-            "showCaption" : true,
             "name" : "deuiaction2"
           } ],
           "getPSAppDataEntity" : {
@@ -224,8 +224,8 @@
         "enableEditData" : false,
         "enableRemoveData" : false,
         "enableViewData" : false,
-        "disableSelect" : false,
         "nodeType" : "All",
+        "disableSelect" : false,
         "enableQuickSearch" : true,
         "counterMode" : 0,
         "treeNodeType" : "STATIC",
@@ -236,19 +236,19 @@
         "nodeValue" : "root",
         "text" : "默认根节点",
         "enableQuickCreate" : false,
-        "rootNode" : true,
-        "hasPSDETreeNodeRSs" : true,
         "appendPNodeId" : false,
+        "enableCheck" : false,
+        "hasPSDETreeNodeRSs" : true,
         "selected" : false,
         "selectFirstOnly" : false,
         "expandFirstOnly" : false,
-        "enableCheck" : false,
+        "rootNode" : true,
         "enableNewData" : false,
         "enableEditData" : false,
         "enableRemoveData" : false,
         "enableViewData" : false,
-        "disableSelect" : false,
         "nodeType" : "ROOT",
+        "disableSelect" : false,
         "enableQuickSearch" : true,
         "counterMode" : 0,
         "treeNodeType" : "STATIC",
@@ -332,9 +332,9 @@
           "tooltip" : "维护产品线",
           "groupExtractMode" : "ITEM",
           "showIcon" : true,
+          "showCaption" : true,
           "itemType" : "DEUIACTION",
           "caption" : "维护产品线",
-          "showCaption" : true,
           "name" : "deuiaction1"
         }, {
           "getPSAppViewUIAction" : {
@@ -364,9 +364,9 @@
           "tooltip" : "刷新",
           "groupExtractMode" : "ITEM",
           "showIcon" : true,
+          "showCaption" : true,
           "itemType" : "DEUIACTION",
           "caption" : "刷新",
-          "showCaption" : true,
           "name" : "deuiaction2"
         } ],
         "getPSAppDataEntity" : {
@@ -485,7 +485,6 @@
       "name" : "treeexpbar_tree",
       "modelid" : "58a6bc35a54c08ece53da63c10681191"
     } ],
-    "showTitleBar" : false,
     "getPSAppViewRefs" : [ {
       "getRefPSAppView" : {
         "modelref" : true,
@@ -524,13 +523,14 @@
     "name" : "treeexpbar",
     "modelid" : "7bc0775a369022d32b5cc9ffc603c54e_treeexpbar"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
+      "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "logicType" : "PREDEFINED",
       "name" : "新建数据"

@@ -1,7 +1,7 @@
 {
+  "subSysAsCloud" : false,
   "defaultModule" : false,
   "subSysModule" : false,
-  "subSysAsCloud" : false,
   "getAllPSDataEntities" : [ {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats.json"

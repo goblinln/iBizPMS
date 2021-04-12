@@ -1,13 +1,16 @@
 {
-  "serviceAPIMode" : 0,
   "getAllPSDEFields" : [ {
-    "dataType" : "TEXT",
     "length" : 100,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "3419b0316944b37fdfbccfe4b0bce7e1",
+    "codeName" : "RunParam4",
+    "logicName" : "运行参数4",
+    "stringLength" : 100,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -45,21 +48,21 @@
       "autoIncrement" : false,
       "name" : "RUNPARAM4"
     } ],
-    "codeName" : "RunParam4",
-    "logicName" : "运行参数4",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "RUNPARAM4"
   }, {
-    "dataType" : "TEXT",
     "length" : 200,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "1a15d99d0981834919e668b8d68badb3",
+    "codeName" : "PSSysRunSessionName",
+    "logicName" : "系统运行会话名称",
+    "stringLength" : 200,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -97,25 +100,24 @@
       "autoIncrement" : false,
       "name" : "PSSYSRUNSESSIONNAME"
     } ],
-    "codeName" : "PSSysRunSessionName",
-    "logicName" : "系统运行会话名称",
-    "stringLength" : 200,
-    "stdDataType" : 25,
     "majorDEField" : true,
     "enableQuickSearch" : true,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "PSSYSRUNSESSIONNAME"
   }, {
-    "dataType" : "DATETIME",
     "length" : 8,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "dataType" : "DATETIME",
     "deployId" : "0f8fc26e2ab1675e9c3200d9ca529025",
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "stdDataType" : 5,
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -141,23 +143,23 @@
       "autoIncrement" : false,
       "name" : "CREATEDATE"
     } ],
-    "codeName" : "CreateDate",
-    "logicName" : "建立时间",
-    "stdDataType" : 5,
     "predefinedType" : "CREATEDATE",
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "CREATEDATE"
   }, {
-    "dataType" : "DATETIME",
     "length" : 8,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "dataType" : "DATETIME",
     "deployId" : "62fba5548bebcd79c3a1fe67f41c6ce3",
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "stdDataType" : 5,
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -183,23 +185,24 @@
       "autoIncrement" : false,
       "name" : "UPDATEDATE"
     } ],
-    "codeName" : "UpdateDate",
-    "logicName" : "更新时间",
-    "stdDataType" : 5,
     "predefinedType" : "UPDATEDATE",
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "UPDATEDATE"
   }, {
-    "dataType" : "GUID",
     "length" : 100,
     "valueFormat" : "%1$s",
+    "dataType" : "GUID",
     "deployId" : "5565b65ac87be706d24f2d9b826deb51",
+    "codeName" : "PSSysRunSessionId",
+    "logicName" : "系统运行会话标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
     "pasteReset" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -237,22 +240,22 @@
       "autoIncrement" : false,
       "name" : "PSSYSRUNSESSIONID"
     } ],
-    "codeName" : "PSSysRunSessionId",
-    "logicName" : "系统运行会话标识",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "keyDEField" : true,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "PSSYSRUNSESSIONID"
   }, {
-    "dataType" : "TEXT",
     "length" : 100,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "81b5f04c8e3a52c450cfbd71e481a25d",
+    "codeName" : "PSSysSFPubId",
+    "logicName" : "服务体系",
+    "stringLength" : 100,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -290,21 +293,21 @@
       "autoIncrement" : false,
       "name" : "PSSYSSFPUBID"
     } ],
-    "codeName" : "PSSysSFPubId",
-    "logicName" : "服务体系",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "PSSYSSFPUBID"
   }, {
-    "dataType" : "SSCODELIST",
     "length" : 20,
     "valueFormat" : "%1$s",
+    "dataType" : "SSCODELIST",
     "deployId" : "3f685a75a874a04435df606191ac2a97",
+    "codeName" : "PackMode",
+    "logicName" : "打包模式",
+    "stringLength" : 20,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -342,21 +345,21 @@
       "autoIncrement" : false,
       "name" : "PACKMODE"
     } ],
-    "codeName" : "PackMode",
-    "logicName" : "打包模式",
-    "stringLength" : 20,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "PACKMODE"
   }, {
-    "dataType" : "TEXT",
     "length" : 100,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "0689d818b654be76f7b584feffb45dc4",
+    "codeName" : "PSSystemDBCfgName",
+    "logicName" : "运行数据库",
+    "stringLength" : 100,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -394,21 +397,21 @@
       "autoIncrement" : false,
       "name" : "PSSYSTEMDBCFGNAME"
     } ],
-    "codeName" : "PSSystemDBCfgName",
-    "logicName" : "运行数据库",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "PSSYSTEMDBCFGNAME"
   }, {
-    "dataType" : "TEXT",
     "length" : 100,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "1426ba84dadf5f594c2cebb15a336c06",
+    "codeName" : "PSSystemId",
+    "logicName" : "系统",
+    "stringLength" : 100,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -446,20 +449,19 @@
       "autoIncrement" : false,
       "name" : "PSSYSTEMID"
     } ],
-    "codeName" : "PSSystemId",
-    "logicName" : "系统",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "PSSYSTEMID"
   }, {
-    "dataType" : "INT",
     "valueFormat" : "%1$s",
+    "dataType" : "INT",
     "deployId" : "348a741ee1089c0fcf4619f64498110d",
+    "codeName" : "RunParam5",
+    "logicName" : "运行参数5",
+    "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -485,19 +487,19 @@
       "autoIncrement" : false,
       "name" : "RUNPARAM5"
     } ],
-    "codeName" : "RunParam5",
-    "logicName" : "运行参数5",
-    "stdDataType" : 9,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "RUNPARAM5"
   }, {
-    "dataType" : "DATETIME",
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "dataType" : "DATETIME",
     "deployId" : "4e64e15662aa04de594e9d9f58126589",
+    "codeName" : "StartTime",
+    "logicName" : "开始时间",
+    "stdDataType" : 5,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -523,20 +525,21 @@
       "autoIncrement" : false,
       "name" : "STARTTIME"
     } ],
-    "codeName" : "StartTime",
-    "logicName" : "开始时间",
-    "stdDataType" : 5,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "STARTTIME"
   }, {
-    "dataType" : "TEXT",
     "length" : 100,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "4cda27a07a66153cac4b108b61a70980",
+    "codeName" : "PSSystemDBCfgId",
+    "logicName" : "运行数据库",
+    "stringLength" : 100,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -574,21 +577,21 @@
       "autoIncrement" : false,
       "name" : "PSSYSTEMDBCFGID"
     } ],
-    "codeName" : "PSSystemDBCfgId",
-    "logicName" : "运行数据库",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "PSSYSTEMDBCFGID"
   }, {
-    "dataType" : "SSCODELIST",
     "length" : 100,
     "valueFormat" : "%1$s",
+    "dataType" : "SSCODELIST",
     "deployId" : "b01e4e670c7d9a72f4373343b073aec4",
+    "codeName" : "RunMode",
+    "logicName" : "运行模式",
+    "stringLength" : 100,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -626,24 +629,23 @@
       "autoIncrement" : false,
       "name" : "RUNMODE"
     } ],
-    "codeName" : "RunMode",
-    "logicName" : "运行模式",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "RUNMODE"
   }, {
-    "dataType" : "YESNO",
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/YesNo3.json"
     },
+    "valueFormat" : "%1$s",
+    "dataType" : "YESNO",
     "deployId" : "acb12df98db82090ff554688e3f1e77c",
+    "codeName" : "StopWhenTemplError",
+    "logicName" : "模板出错时终止",
+    "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -669,20 +671,21 @@
       "autoIncrement" : false,
       "name" : "STOPWHENTEMPLERROR"
     } ],
-    "codeName" : "StopWhenTemplError",
-    "logicName" : "模板出错时终止",
-    "stdDataType" : 9,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "STOPWHENTEMPLERROR"
   }, {
-    "dataType" : "TEXT",
     "length" : 100,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "e38e1ecc8fea460eb058835671d9c9f8",
+    "codeName" : "RunParam",
+    "logicName" : "运行参数",
+    "stringLength" : 100,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -720,22 +723,21 @@
       "autoIncrement" : false,
       "name" : "RUNPARAM"
     } ],
-    "codeName" : "RunParam",
-    "logicName" : "运行参数",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "RUNPARAM"
   }, {
-    "dataType" : "NSCODELIST",
     "defaultValue" : "10",
     "valueFormat" : "%1$s",
+    "dataType" : "NSCODELIST",
     "deployId" : "06951f88ff4b747cef7d5ce4e5085449",
+    "codeName" : "RunState",
+    "logicName" : "运行状态",
+    "stdDataType" : 9,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -761,24 +763,24 @@
       "autoIncrement" : false,
       "name" : "RUNSTATE"
     } ],
-    "codeName" : "RunState",
-    "logicName" : "运行状态",
-    "stdDataType" : 9,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "RUNSTATE"
   }, {
-    "dataType" : "YESNO",
     "defaultValue" : "0",
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/YesNo3.json"
     },
+    "valueFormat" : "%1$s",
+    "dataType" : "YESNO",
     "deployId" : "1ecbf513c781c64a106a6a46b5d05a89",
+    "codeName" : "DebugMode",
+    "logicName" : "输出调试信息",
+    "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -804,19 +806,19 @@
       "autoIncrement" : false,
       "name" : "DEBUGMODE"
     } ],
-    "codeName" : "DebugMode",
-    "logicName" : "输出调试信息",
-    "stdDataType" : 9,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "DEBUGMODE"
   }, {
-    "dataType" : "DATETIME",
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "dataType" : "DATETIME",
     "deployId" : "2de587b4f79fda88cebece3f9a746112",
+    "codeName" : "EndTime",
+    "logicName" : "结束时间",
+    "stdDataType" : 5,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -842,19 +844,19 @@
       "autoIncrement" : false,
       "name" : "ENDTIME"
     } ],
-    "codeName" : "EndTime",
-    "logicName" : "结束时间",
-    "stdDataType" : 5,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "ENDTIME"
   }, {
-    "dataType" : "INT",
     "valueFormat" : "%1$s",
+    "dataType" : "INT",
     "deployId" : "1686ad23ffffad2b96e94a1fb904052c",
+    "codeName" : "RunParam6",
+    "logicName" : "运行参数6",
+    "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -880,20 +882,21 @@
       "autoIncrement" : false,
       "name" : "RUNPARAM6"
     } ],
-    "codeName" : "RunParam6",
-    "logicName" : "运行参数6",
-    "stdDataType" : 9,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "RUNPARAM6"
   }, {
-    "dataType" : "TEXT",
     "length" : 100,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "ebc2ab0b6bb16101e3978598bcab7d6a",
+    "codeName" : "PSSysSFPubName",
+    "logicName" : "服务体系",
+    "stringLength" : 100,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -931,21 +934,21 @@
       "autoIncrement" : false,
       "name" : "PSSYSSFPUBNAME"
     } ],
-    "codeName" : "PSSysSFPubName",
-    "logicName" : "服务体系",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "PSSYSSFPUBNAME"
   }, {
-    "dataType" : "LONGTEXT_1000",
     "length" : 2000,
     "valueFormat" : "%1$s",
+    "dataType" : "LONGTEXT_1000",
     "deployId" : "3e4d2c34b93945377959c33832220df9",
+    "codeName" : "Memo",
+    "logicName" : "备注",
+    "stringLength" : 2000,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -983,27 +986,27 @@
       "autoIncrement" : false,
       "name" : "MEMO"
     } ],
-    "codeName" : "Memo",
-    "logicName" : "备注",
-    "stringLength" : 2000,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "MEMO"
   }, {
-    "dataType" : "TEXT",
     "length" : 60,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
+    "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "3a496fd306ce82ffdbbe002635a1fedc",
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "stringLength" : 60,
+    "stdDataType" : 25,
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -1041,25 +1044,24 @@
       "autoIncrement" : false,
       "name" : "UPDATEMAN"
     } ],
-    "codeName" : "UpdateMan",
-    "logicName" : "更新人",
-    "stringLength" : 60,
-    "stdDataType" : 25,
     "predefinedType" : "UPDATEMAN",
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "UPDATEMAN"
   }, {
-    "dataType" : "YESNO",
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/YesNo3.json"
     },
+    "valueFormat" : "%1$s",
+    "dataType" : "YESNO",
     "deployId" : "1f9b6c18c538eb2b5ba62d375af170da",
+    "codeName" : "FixDBModel",
+    "logicName" : "修复数据结构",
+    "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1085,19 +1087,19 @@
       "autoIncrement" : false,
       "name" : "FIXDBMODEL"
     } ],
-    "codeName" : "FixDBModel",
-    "logicName" : "修复数据结构",
-    "stdDataType" : 9,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "FIXDBMODEL"
   }, {
-    "dataType" : "NSCODELIST",
     "valueFormat" : "%1$s",
+    "dataType" : "NSCODELIST",
     "deployId" : "aa98a14d071b885b2bfdde7651313dcc",
+    "codeName" : "RebuildMode",
+    "logicName" : "重新构建",
+    "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1123,20 +1125,21 @@
       "autoIncrement" : false,
       "name" : "REBUILDMODE"
     } ],
-    "codeName" : "RebuildMode",
-    "logicName" : "重新构建",
-    "stdDataType" : 9,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "REBUILDMODE"
   }, {
-    "dataType" : "TEXT",
     "length" : 100,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "7c1a60dbe72bb33ad2c0ee05cad4c3b2",
+    "codeName" : "PSSystemName",
+    "logicName" : "系统",
+    "stringLength" : 100,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -1174,21 +1177,21 @@
       "autoIncrement" : false,
       "name" : "PSSYSTEMNAME"
     } ],
-    "codeName" : "PSSystemName",
-    "logicName" : "系统",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "PSSYSTEMNAME"
   }, {
-    "dataType" : "TEXT",
     "length" : 100,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "324e87b6e51f40fb57e2c8f38c3d54f3",
+    "codeName" : "RunParam3",
+    "logicName" : "运行参数3",
+    "stringLength" : 100,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -1226,27 +1229,27 @@
       "autoIncrement" : false,
       "name" : "RUNPARAM3"
     } ],
-    "codeName" : "RunParam3",
-    "logicName" : "运行参数3",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "RUNPARAM3"
   }, {
-    "dataType" : "TEXT",
     "length" : 60,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSCODELISTS/SysOperator.json"
     },
+    "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "76383e88ac81c6778ab96a42eba38e1b",
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "stringLength" : 60,
+    "stdDataType" : 25,
     "systemReserver" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -1284,22 +1287,22 @@
       "autoIncrement" : false,
       "name" : "CREATEMAN"
     } ],
-    "codeName" : "CreateMan",
-    "logicName" : "建立人",
-    "stringLength" : 60,
-    "stdDataType" : 25,
     "predefinedType" : "CREATEMAN",
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "CREATEMAN"
   }, {
-    "dataType" : "TEXT",
     "length" : 100,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "d6345ba37fc04ba3f702e493841b8361",
+    "codeName" : "PSDSConsoleId",
+    "logicName" : "控制台标识",
+    "stringLength" : 100,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -1337,24 +1340,23 @@
       "autoIncrement" : false,
       "name" : "PSDSCONSOLEID"
     } ],
-    "codeName" : "PSDSConsoleId",
-    "logicName" : "控制台标识",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "PSDSCONSOLEID"
   }, {
-    "dataType" : "YESNO",
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/YesNo3.json"
     },
+    "valueFormat" : "%1$s",
+    "dataType" : "YESNO",
     "deployId" : "ca50fd6b3257c8850541b35b5ba847b3",
+    "codeName" : "EnableVC",
+    "logicName" : "签入版本库",
+    "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -1380,20 +1382,21 @@
       "autoIncrement" : false,
       "name" : "ENABLEVC"
     } ],
-    "codeName" : "EnableVC",
-    "logicName" : "签入版本库",
-    "stdDataType" : 9,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "ENABLEVC"
   }, {
-    "dataType" : "TEXT",
     "length" : 100,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "2137d4800211c69a71afcfab9f8dcb65",
+    "codeName" : "RunParam2",
+    "logicName" : "运行参数2",
+    "stringLength" : 100,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -1431,30 +1434,30 @@
       "autoIncrement" : false,
       "name" : "RUNPARAM2"
     } ],
-    "codeName" : "RunParam2",
-    "logicName" : "运行参数2",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "RUNPARAM2"
   }, {
+    "valueFormat" : "%1$s",
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession/PSDERS/DER1N_PSSYSRUNSESSION_PSSYSAPP_PSSYSAPPID2.json"
     },
-    "valueFormat" : "%1$s",
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "PSSYSAPPNAME",
       "codeName" : "PSSysAppName"
     },
-    "dataType" : "PICKUPTEXT",
     "length" : 200,
+    "dataType" : "PICKUPTEXT",
     "deployId" : "9a788ed39ac98b5cd4f71f4eedc7a199",
+    "codeName" : "PSSysAppName2",
+    "logicName" : "系统应用2",
+    "stringLength" : 200,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -1492,30 +1495,30 @@
       "autoIncrement" : false,
       "name" : "PSSYSAPPNAME2"
     } ],
-    "codeName" : "PSSysAppName2",
-    "logicName" : "系统应用2",
-    "stringLength" : 200,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "PSSYSAPPNAME2"
   }, {
+    "valueFormat" : "%1$s",
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession/PSDERS/DER1N_PSSYSRUNSESSION_PSSYSSERVICEAPI_PSSYSSERVICEAPIID.json"
     },
-    "valueFormat" : "%1$s",
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "PSSYSSERVICEAPINAME",
       "codeName" : "PSSysServiceAPIName"
     },
-    "dataType" : "PICKUPTEXT",
     "length" : 200,
+    "dataType" : "PICKUPTEXT",
     "deployId" : "ccf39473904f6795f5a0d948fdf0940a",
+    "codeName" : "PSSysServiceAPIName",
+    "logicName" : "系统服务接口",
+    "stringLength" : 200,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -1553,30 +1556,30 @@
       "autoIncrement" : false,
       "name" : "PSSYSSERVICEAPINAME"
     } ],
-    "codeName" : "PSSysServiceAPIName",
-    "logicName" : "系统服务接口",
-    "stringLength" : 200,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "PSSYSSERVICEAPINAME"
   }, {
+    "valueFormat" : "%1$s",
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession/PSDERS/DER1N_PSSYSRUNSESSION_PSSYSAPP_PSSYSAPPID.json"
     },
-    "valueFormat" : "%1$s",
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "PSSYSAPPNAME",
       "codeName" : "PSSysAppName"
     },
-    "dataType" : "PICKUPTEXT",
     "length" : 200,
+    "dataType" : "PICKUPTEXT",
     "deployId" : "e360edd55ab7802330a200077bcd2c41",
+    "codeName" : "PSSysAppName",
+    "logicName" : "系统应用",
+    "stringLength" : 200,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -1614,30 +1617,30 @@
       "autoIncrement" : false,
       "name" : "PSSYSAPPNAME"
     } ],
-    "codeName" : "PSSysAppName",
-    "logicName" : "系统应用",
-    "stringLength" : 200,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "PSSYSAPPNAME"
   }, {
+    "valueFormat" : "%1$s",
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession/PSDERS/DER1N_PSSYSRUNSESSION_PSSYSAPP_PSSYSAPPID2.json"
     },
-    "valueFormat" : "%1$s",
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "PSSYSAPPID",
       "codeName" : "PSSysAppId"
     },
-    "dataType" : "PICKUP",
     "length" : 100,
+    "dataType" : "PICKUP",
     "deployId" : "54d0d49ce315e95a3024a2bac4dfba95",
+    "codeName" : "PSSysAppId2",
+    "logicName" : "系统应用2",
+    "stringLength" : 100,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -1675,30 +1678,30 @@
       "autoIncrement" : false,
       "name" : "PSSYSAPPID2"
     } ],
-    "codeName" : "PSSysAppId2",
-    "logicName" : "系统应用2",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "PSSYSAPPID2"
   }, {
+    "valueFormat" : "%1$s",
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession/PSDERS/DER1N_PSSYSRUNSESSION_PSSYSSERVICEAPI_PSSYSSERVICEAPIID.json"
     },
-    "valueFormat" : "%1$s",
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "PSSYSSERVICEAPIID",
       "codeName" : "PSSysServiceAPIId"
     },
-    "dataType" : "PICKUP",
     "length" : 100,
+    "dataType" : "PICKUP",
     "deployId" : "49fcb15dea7e9c1526b293074ad5919f",
+    "codeName" : "PSSysServiceAPIId",
+    "logicName" : "系统服务接口",
+    "stringLength" : 100,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -1736,30 +1739,30 @@
       "autoIncrement" : false,
       "name" : "PSSYSSERVICEAPIID"
     } ],
-    "codeName" : "PSSysServiceAPIId",
-    "logicName" : "系统服务接口",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "PSSYSSERVICEAPIID"
   }, {
+    "valueFormat" : "%1$s",
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession/PSDERS/DER1N_PSSYSRUNSESSION_PSSYSAPP_PSSYSAPPID.json"
     },
-    "valueFormat" : "%1$s",
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "PSSYSAPPID",
       "codeName" : "PSSysAppId"
     },
-    "dataType" : "PICKUP",
     "length" : 100,
+    "dataType" : "PICKUP",
     "deployId" : "6147aee7217d4c0873aebc93cecbbabf",
+    "codeName" : "PSSysAppId",
+    "logicName" : "系统应用",
+    "stringLength" : 100,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -1797,18 +1800,15 @@
       "autoIncrement" : false,
       "name" : "PSSYSAPPID"
     } ],
-    "codeName" : "PSSysAppId",
-    "logicName" : "系统应用",
-    "stringLength" : 100,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "PSSYSAPPID"
   } ],
   "getAllPSDEDataSets" : [ {
-    "enableBackend" : true,
     "enableFront" : true,
+    "enableBackend" : true,
     "pubServiceDefault" : true,
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -1816,9 +1816,8 @@
     "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "数据集",
-    "extendMode" : 0,
-    "enableGroup" : false,
     "userDRAction" : "READ",
+    "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
@@ -1852,10 +1851,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "数据查询",
-    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -1863,10 +1862,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
@@ -1877,8 +1876,7 @@
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableAPIStorage" : true,
-  "orderValue" : 99999,
-  "dSLink" : "DEFAULT",
+  "serviceAPIMode" : 0,
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -1892,17 +1890,19 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "extendMode" : 0,
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "dSLink" : "DEFAULT",
   "saaSMode" : 0,
   "deployId" : "c256f43cb7e7ec153952c1b2ac51b524",
-  "enableSQLStorage" : false,
-  "dynaInstMode" : 1,
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
-  "virtualMode" : 0,
   "codeName" : "PSSysRunSession",
   "logicName" : "系统运行会话",
   "tableName" : "T_PSSYSRUNSESSION",
+  "enableViewLevel" : 0,
+  "virtualMode" : 0,
+  "enableSQLStorage" : false,
+  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -1911,13 +1911,13 @@
   "storageMode" : 4,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
   "serviceAPIClientId" : "45ab5098498d2294128bca01585b9993",
   "serviceCodeName" : "PSSysRunSession",
   "enableActions" : 7,
   "enableCreate" : true,
   "enableModify" : true,
-  "extendMode" : 0,
+  "subSysDE" : false,
+  "virtual" : false,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

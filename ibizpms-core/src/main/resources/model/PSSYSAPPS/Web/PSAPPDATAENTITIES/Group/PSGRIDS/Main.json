@@ -4,44 +4,44 @@
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "id"
+    "name" : "id",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "DESC",
       "codeName" : "Desc"
     },
-    "dataType" : 25,
-    "name" : "desc"
+    "name" : "desc",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "name"
+    "name" : "name",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   } ],
   "getRemovePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -57,8 +57,6 @@
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "singleSelect" : false,
-  "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -80,16 +78,18 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : false,
+  "enableColFilter" : false,
+  "singleSelect" : false,
   "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "ID",
-    "dataItemName" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
+    "dataItemName" : "id",
+    "excelCaption" : "ID",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -101,12 +101,12 @@
     "widthUnit" : "PX",
     "name" : "id"
   }, {
-    "excelCaption" : "分组名称",
-    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "dataItemName" : "name",
+    "excelCaption" : "分组名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -118,12 +118,12 @@
     "widthUnit" : "PX",
     "name" : "name"
   }, {
-    "excelCaption" : "分组描述",
-    "dataItemName" : "desc",
     "getPSAppDEField" : {
       "name" : "DESC",
       "codeName" : "Desc"
     },
+    "dataItemName" : "desc",
+    "excelCaption" : "分组描述",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -163,8 +163,8 @@
           "name" : "表格界面_编辑操作"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : true,
+        "detailType" : "DEUIACTION",
         "name" : "ud6e0c52"
       }, {
         "showIcon" : true,
@@ -194,8 +194,8 @@
           "name" : "表格界面_删除操作"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : true,
+        "detailType" : "DEUIACTION",
         "name" : "uf4eeb77"
       } ],
       "name" : "群组表格操作列"

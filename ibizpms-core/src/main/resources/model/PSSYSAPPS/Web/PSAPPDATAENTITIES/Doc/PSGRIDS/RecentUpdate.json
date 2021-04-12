@@ -4,76 +4,76 @@
       "name" : "PRODUCT",
       "codeName" : "Product"
     },
-    "dataType" : 1,
-    "name" : "product"
+    "name" : "product",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "PROJECT",
       "codeName" : "Project"
     },
-    "dataType" : 1,
-    "name" : "project"
+    "name" : "project",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "MODULE",
       "codeName" : "Module"
     },
-    "dataType" : 1,
-    "name" : "module"
+    "name" : "module",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "dataType" : 25,
-    "name" : "title"
+    "name" : "title",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "LIB",
       "codeName" : "Lib"
     },
-    "dataType" : 1,
-    "name" : "lib"
+    "name" : "lib",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ADDEDBY",
       "codeName" : "AddedBy"
     },
-    "dataType" : 25,
-    "name" : "addedby"
+    "name" : "addedby",
+    "dataType" : 25
   }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
+    "name" : "srfmstag",
+    "dataType" : 25
   }, {
-    "format" : "YYYY-MM-DD HH:mm:ss",
     "getPSAppDEField" : {
       "name" : "EDITEDDATE",
       "codeName" : "EditedDate"
     },
-    "dataType" : 5,
-    "name" : "editeddate"
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "name" : "editeddate",
+    "dataType" : 5
   }, {
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   } ],
   "getRemovePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -89,8 +89,6 @@
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "singleSelect" : true,
-  "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -112,13 +110,15 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : false,
+  "enableColFilter" : false,
+  "singleSelect" : true,
+  "enablePagingBar" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "EDITEDDATE",
     "codeName" : "EditedDate"
   },
-  "enablePagingBar" : false,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
     "linkValueItem" : "srfkey",
     "enableLinkView" : true,
@@ -127,12 +127,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocDashboardView.json",
       "viewType" : "DEPORTALVIEW"
     },
-    "excelCaption" : "文档标题",
-    "dataItemName" : "title",
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
+    "dataItemName" : "title",
+    "excelCaption" : "文档标题",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -144,16 +144,16 @@
     "widthUnit" : "STAR",
     "name" : "title"
   }, {
-    "excelCaption" : "由谁添加",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
-    "dataItemName" : "addedby",
     "getPSAppDEField" : {
       "name" : "ADDEDBY",
       "codeName" : "AddedBy"
     },
+    "dataItemName" : "addedby",
+    "excelCaption" : "由谁添加",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -165,12 +165,12 @@
     "widthUnit" : "PX",
     "name" : "addedby"
   }, {
-    "excelCaption" : "更新时间",
-    "dataItemName" : "editeddate",
     "getPSAppDEField" : {
       "name" : "EDITEDDATE",
       "codeName" : "EditedDate"
     },
+    "dataItemName" : "editeddate",
+    "excelCaption" : "更新时间",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,

@@ -38,8 +38,6 @@
   "controlType" : "CHART",
   "getPSDEChartSerieses" : [ {
     "stack" : false,
-    "catalogField" : "DATE",
-    "seriesType" : "area",
     "eChartsType" : "line",
     "getPSChartCoordinateSystem" : {
       "modelref" : true,
@@ -50,6 +48,7 @@
       "modelref" : true,
       "id" : "0"
     },
+    "catalogField" : "DATE",
     "getPSChartSeriesEncode" : {
       "getPSChartXAxis" : {
         "modelref" : true,
@@ -66,6 +65,7 @@
       "name" : "坐标系编码",
       "id" : "0"
     },
+    "seriesType" : "area",
     "caption" : "实际消耗",
     "valueField" : "LEFT",
     "seriesLayoutBy" : "column",
@@ -77,8 +77,6 @@
     }
   }, {
     "stack" : false,
-    "catalogField" : "date",
-    "seriesType" : "line",
     "eChartsType" : "line",
     "getPSChartCoordinateSystem" : {
       "modelref" : true,
@@ -89,6 +87,7 @@
       "modelref" : true,
       "id" : "1"
     },
+    "catalogField" : "date",
     "getPSChartSeriesEncode" : {
       "getPSChartXAxis" : {
         "modelref" : true,
@@ -105,6 +104,7 @@
       "name" : "坐标系编码",
       "id" : "0"
     },
+    "seriesType" : "line",
     "caption" : "预计消耗",
     "valueField" : "estimate",
     "seriesLayoutBy" : "column",

@@ -1,5 +1,7 @@
 {
   "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -24,8 +26,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : false,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
@@ -59,15 +59,15 @@
             "name" : "PRODUCT",
             "codeName" : "Product"
           },
-          "dataType" : 1,
+          "showCaption" : true,
           "hidden" : true,
-          "allowEmpty" : true,
+          "dataType" : 1,
           "caption" : "产品",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 100,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
@@ -84,17 +84,17 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProductBranch.json"
             },
-            "getPSNavigateContexts" : [ {
-              "rawValue" : false,
-              "value" : "product",
-              "key" : "PRODUCT",
-              "name" : "PRODUCT"
-            } ],
             "getPSNavigateParams" : [ {
               "rawValue" : false,
               "value" : "product",
               "key" : "product",
               "name" : "product"
+            } ],
+            "getPSNavigateContexts" : [ {
+              "rawValue" : false,
+              "value" : "product",
+              "key" : "PRODUCT",
+              "name" : "PRODUCT"
             } ],
             "editorType" : "DROPDOWNLIST",
             "editorParams" : {
@@ -110,16 +110,16 @@
             "name" : "BRANCH",
             "codeName" : "Branch"
           },
-          "dataType" : 1,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 1,
           "needCodeListConfig" : true,
-          "allowEmpty" : true,
           "caption" : "平台/分支",
+          "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 100,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 16,
@@ -142,15 +142,15 @@
             "name" : "TITLE",
             "codeName" : "Title"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
-          "allowEmpty" : false,
+          "dataType" : 25,
           "caption" : "名称",
+          "allowEmpty" : false,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 100,
-          "showCaption" : true,
           "getPSLayoutPos" : {
             "colMD" : 24,
             "colLG" : 16,
@@ -174,14 +174,14 @@
             "name" : "OLDTITLE",
             "codeName" : "Oldtitle"
           },
-          "dataType" : 25,
+          "showCaption" : true,
           "hidden" : false,
+          "dataType" : 25,
           "allowEmpty" : true,
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 10,
-          "showCaption" : true,
           "getPSDEFDGroupLogics" : [ {
             "relatedDetailNames" : [ "oldtitle" ],
             "logicCat" : "PANELVISIBLE",
@@ -213,11 +213,11 @@
             "columnCount" : 24
           },
           "getPSDEFormDetails" : [ {
+            "emptyCaption" : false,
             "getPSDEFormItemUpdate" : {
               "modelref" : true,
               "id" : "GetPlanEnd"
             },
-            "emptyCaption" : false,
             "resetItemNames" : [ "future" ],
             "getPSEditor" : {
               "dateTimeFormat" : "YYYY-MM-DD",
@@ -234,17 +234,17 @@
               "name" : "BEGIN",
               "codeName" : "Begin"
             },
-            "dataType" : 5,
+            "showCaption" : true,
             "hidden" : false,
-            "allowEmpty" : true,
+            "dataType" : 5,
             "caption" : "开始日期",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "resetItemName" : "future",
             "labelWidth" : 100,
             "itemWidth" : 200.0,
-            "showCaption" : true,
             "getPSDEFDGroupLogics" : [ {
               "relatedDetailNames" : [ "future" ],
               "logicCat" : "ITEMENABLE",
@@ -284,15 +284,15 @@
               "name" : "FUTURE",
               "codeName" : "Future"
             },
-            "dataType" : 25,
+            "showCaption" : true,
             "hidden" : false,
+            "dataType" : 25,
             "needCodeListConfig" : true,
             "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 16,
-            "showCaption" : true,
             "getPSLayoutPos" : {
               "colMD" : 24,
               "colLG" : 16,
@@ -320,17 +320,17 @@
               "name" : "END",
               "codeName" : "End"
             },
-            "dataType" : 5,
+            "showCaption" : true,
             "hidden" : false,
-            "allowEmpty" : true,
+            "dataType" : 5,
             "caption" : "结束日期",
+            "allowEmpty" : true,
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "resetItemName" : "future",
             "labelWidth" : 100,
             "itemWidth" : 200.0,
-            "showCaption" : true,
             "getPSDEFDGroupLogics" : [ {
               "relatedDetailNames" : [ "future" ],
               "logicCat" : "PANELVISIBLE",
@@ -355,11 +355,11 @@
             "detailStyle" : "DEFAULT",
             "name" : "end"
           }, {
+            "emptyCaption" : true,
             "getPSDEFormItemUpdate" : {
               "modelref" : true,
               "id" : "GetPlanEnd"
             },
-            "emptyCaption" : true,
             "resetItemNames" : [ "future" ],
             "getPSEditor" : {
               "getPSAppCodeList" : {
@@ -375,8 +375,9 @@
               "name" : "DELTA",
               "codeName" : "Delta"
             },
-            "dataType" : 25,
+            "showCaption" : true,
             "hidden" : false,
+            "dataType" : 25,
             "needCodeListConfig" : true,
             "allowEmpty" : true,
             "enableCond" : 3,
@@ -384,7 +385,6 @@
             "labelPos" : "LEFT",
             "resetItemName" : "future",
             "labelWidth" : 16,
-            "showCaption" : true,
             "getPSDEFDGroupLogics" : [ {
               "relatedDetailNames" : [ "future" ],
               "logicCat" : "PANELVISIBLE",
@@ -413,11 +413,11 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "showCaption" : false,
           "codeName" : "grouppanel2",
           "caption" : "分组面板",
           "detailType" : "GROUPPANEL",
           "detailStyle" : "DEFAULT",
-          "showCaption" : false,
           "name" : "grouppanel2"
         } ],
         "getPSLayoutPos" : {
@@ -425,11 +425,11 @@
           "colLG" : 24,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : false,
         "codeName" : "grouppanel1",
         "caption" : "分组面板",
         "detailType" : "GROUPPANEL",
         "detailStyle" : "DEFAULT",
-        "showCaption" : false,
         "name" : "grouppanel1"
       }, {
         "emptyCaption" : false,
@@ -447,15 +447,15 @@
           "name" : "DESC",
           "codeName" : "Desc"
         },
-        "dataType" : 21,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : true,
+        "dataType" : 21,
         "caption" : "描述",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 100,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
@@ -469,11 +469,11 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "showCaption" : false,
       "codeName" : "group1",
       "caption" : "productplan基本信息",
       "detailType" : "GROUPPANEL",
       "detailStyle" : "DEFAULT",
-      "showCaption" : false,
       "name" : "group1"
     } ],
     "getPSLayout" : {

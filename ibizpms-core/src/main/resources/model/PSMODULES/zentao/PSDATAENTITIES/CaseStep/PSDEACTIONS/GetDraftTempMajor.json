@@ -7,6 +7,7 @@
   "tempDataMode" : 1,
   "pubServiceDefault" : true,
   "timeOut" : -1,
+  "extendMode" : 0,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "CREATE"
@@ -14,7 +15,6 @@
   "orderValue" : 45,
   "codeName" : "GetDraftTempMajor",
   "logicName" : "GetDraftTempMajor",
-  "extendMode" : 0,
   "enableTempData" : true,
   "actionMode" : "GETDRAFT",
   "actionType" : "BUILTIN",

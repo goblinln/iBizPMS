@@ -1,6 +1,6 @@
 {
-  "codeListType" : "DYNAMIC",
   "dynaInstMode" : 1,
+  "codeListType" : "DYNAMIC",
   "codeName" : "AllEntry",
   "emptyText" : "未定义",
   "cacheTimeout" : 600,

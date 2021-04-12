@@ -4,58 +4,58 @@
       "name" : "EXPECT",
       "codeName" : "Expect"
     },
-    "dataType" : 21,
-    "name" : "expect"
+    "name" : "expect",
+    "dataType" : 21
   }, {
     "getPSAppDEField" : {
       "name" : "DESC",
       "codeName" : "Desc"
     },
-    "dataType" : 21,
-    "name" : "desc"
+    "name" : "desc",
+    "dataType" : 21
   }, {
     "getPSAppDEField" : {
       "name" : "PARENT",
       "codeName" : "Parent"
     },
-    "dataType" : 1,
-    "name" : "parent"
+    "name" : "parent",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "CASE",
       "codeName" : "IBizCase"
     },
-    "dataType" : 1,
-    "name" : "case"
+    "name" : "case",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
     },
-    "dataType" : 25,
-    "name" : "type"
+    "name" : "type",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "EXPECT",
       "codeName" : "Expect"
     },
-    "dataType" : 21,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 21
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   } ],
   "getRemovePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -71,8 +71,6 @@
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "singleSelect" : true,
-  "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -94,16 +92,18 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : false,
+  "enableColFilter" : false,
+  "singleSelect" : true,
   "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "用例编号",
-    "dataItemName" : "case",
     "getPSAppDEField" : {
       "name" : "CASE",
       "codeName" : "IBizCase"
     },
+    "dataItemName" : "case",
+    "excelCaption" : "用例编号",
     "cLConvertMode" : "NONE",
     "hideDefault" : true,
     "noPrivDisplayMode" : 1,
@@ -116,12 +116,12 @@
     "widthUnit" : "PX",
     "name" : "case"
   }, {
-    "excelCaption" : "步骤",
-    "dataItemName" : "desc",
     "getPSAppDEField" : {
       "name" : "DESC",
       "codeName" : "Desc"
     },
+    "dataItemName" : "desc",
+    "excelCaption" : "步骤",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -133,12 +133,12 @@
     "widthUnit" : "PX",
     "name" : "desc"
   }, {
-    "excelCaption" : "预期",
-    "dataItemName" : "expect",
     "getPSAppDEField" : {
       "name" : "EXPECT",
       "codeName" : "Expect"
     },
+    "dataItemName" : "expect",
+    "excelCaption" : "预期",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -150,16 +150,16 @@
     "widthUnit" : "PX",
     "name" : "expect"
   }, {
-    "excelCaption" : "类型",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Casestep__type.json"
     },
-    "dataItemName" : "type",
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
     },
+    "dataItemName" : "type",
+    "excelCaption" : "类型",
     "cLConvertMode" : "FRONT",
     "hideDefault" : true,
     "noPrivDisplayMode" : 1,

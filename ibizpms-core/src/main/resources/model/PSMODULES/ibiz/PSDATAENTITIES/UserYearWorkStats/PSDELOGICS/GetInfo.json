@@ -1,6 +1,6 @@
 {
-  "enableBackend" : true,
   "enableFront" : false,
+  "enableBackend" : true,
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"
@@ -17,49 +17,49 @@
     "name" : "开始"
   }, {
     "parallelOutput" : true,
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "getDstPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
     },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
     "logicHolder" : 3,
     "codeName" : "Deaction4",
-    "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetPoInfomation.json"
     },
+    "logicNodeType" : "DEACTION",
     "name" : "获取产品经理信息"
   }, {
     "parallelOutput" : true,
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "getDstPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
     },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
     "logicHolder" : 3,
     "codeName" : "Deaction2",
-    "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetDevInfomation.json"
     },
+    "logicNodeType" : "DEACTION",
     "name" : "获取研发用户信息"
   }, {
     "parallelOutput" : true,
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "getDstPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
     },
     "getPSDELogicLinks" : [ {
       "modelref" : true,
@@ -73,29 +73,29 @@
     } ],
     "logicHolder" : 3,
     "codeName" : "Deaction1",
-    "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/Get.json"
     },
+    "logicNodeType" : "DEACTION",
     "name" : "获取用户信息"
   }, {
     "parallelOutput" : true,
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "getDstPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
     },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
     "logicHolder" : 3,
     "codeName" : "Deaction3",
-    "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetQaInfomation.json"
     },
+    "logicNodeType" : "DEACTION",
     "name" : "获取测试用户信息"
   } ],
   "getPSDELogicLinks" : [ {
@@ -112,11 +112,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "EQ",
         "paramValue" : "qa",
         "dstFieldName" : "JUDGEROLE",
         "logicType" : "SINGLE",
@@ -140,11 +140,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "EQ",
         "paramValue" : "dev",
         "dstFieldName" : "JUDGEROLE",
         "logicType" : "SINGLE",
@@ -168,11 +168,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "EQ",
         "paramValue" : "po",
         "dstFieldName" : "JUDGEROLE",
         "logicType" : "SINGLE",
@@ -195,9 +195,9 @@
     "name" : "连接3532"
   } ],
   "getPSDELogicParams" : [ {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

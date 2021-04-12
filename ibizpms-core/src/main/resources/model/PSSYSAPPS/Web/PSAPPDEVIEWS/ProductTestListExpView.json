@@ -5,10 +5,10 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "TestListExpView",
+  "enableDP" : true,
   "caption" : "产品",
   "title" : "测试统计",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -31,7 +31,6 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
@@ -41,6 +40,7 @@
     "xDataControlName" : "listexpbar_list",
     "enableSearch" : true,
     "enableCounter" : true,
+    "showTitleBar" : false,
     "getPSControls" : [ {
       "enableRowNew" : false,
       "enableRowEditOrder" : false,
@@ -53,32 +53,32 @@
           "name" : "NAME",
           "codeName" : "Name"
         },
-        "dataType" : 25,
-        "name" : "srfmajortext"
+        "name" : "srfmajortext",
+        "dataType" : 25
       }, {
         "getPSAppDEField" : {
           "name" : "ID",
           "codeName" : "Id"
         },
-        "dataType" : 25,
-        "name" : "srfkey"
+        "name" : "srfkey",
+        "dataType" : 25
       }, {
         "getPSAppDEField" : {
           "name" : "LINE",
           "codeName" : "Line"
         },
-        "dataType" : 25,
-        "name" : "line"
+        "name" : "line",
+        "dataType" : 25
       }, {
-        "dataType" : 25,
-        "name" : "srfmstag"
+        "name" : "srfmstag",
+        "dataType" : 25
       } ],
-      "controlType" : "LIST",
-      "enableRowEdit" : false,
       "getMinorSortPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
+      "enableRowEdit" : false,
+      "controlType" : "LIST",
       "codeName" : "TestExp",
       "minorSortDir" : "DESC",
       "enableGroup" : false,
@@ -165,9 +165,9 @@
           "tooltip" : "新建",
           "groupExtractMode" : "ITEM",
           "showIcon" : true,
+          "showCaption" : true,
           "itemType" : "DEUIACTION",
           "caption" : "新建",
-          "showCaption" : true,
           "name" : "deuiaction1"
         } ],
         "getPSAppDataEntity" : {
@@ -204,6 +204,7 @@
         "showBusyIndicator" : true,
         "id" : "listexpbar_list"
       },
+      "controlStyle" : "LISTVIEW",
       "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "getPSControlHandler" : {
         "userDRAction" : "READ",
@@ -274,13 +275,11 @@
         "enableDEFieldPrivilege" : false,
         "id" : "列表控件处理器"
       },
-      "controlStyle" : "LISTVIEW",
       "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product/PSLISTS/TestExp.json",
       "logicName" : "TestExp",
       "name" : "listexpbar_list",
       "modelid" : "39eccc280ce56a6592d72d227bbcc15d"
     } ],
-    "showTitleBar" : false,
     "getPSAppViewRefs" : [ {
       "getRefPSAppView" : {
         "modelref" : true,
@@ -310,13 +309,14 @@
     "name" : "listexpbar",
     "modelid" : "6b595fd11428565335f1d1bbd66911bb_listexpbar"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
+      "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "logicType" : "PREDEFINED",
       "name" : "新建数据"

@@ -112,8 +112,8 @@
     "codeName" : "Reportly",
     "text" : "汇报"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "File__object_type",
   "emptyText" : "未定义",
   "enableCache" : true,

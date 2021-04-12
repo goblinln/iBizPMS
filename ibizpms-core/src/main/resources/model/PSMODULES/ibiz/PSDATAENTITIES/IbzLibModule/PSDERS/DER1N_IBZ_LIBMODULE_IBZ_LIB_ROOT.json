@@ -13,12 +13,12 @@
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLib.json"
   },
   "orderValue" : 100,
+  "codeName" : "Lib",
+  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule.json"
   },
-  "codeName" : "Lib",
-  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule/PSDERS/DER1N_IBZ_LIBMODULE_IBZ_LIB_ROOT.json",
   "name" : "DER1N_IBZ_LIBMODULE_IBZ_LIB_ROOT"
 }

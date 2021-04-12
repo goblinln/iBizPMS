@@ -1,6 +1,6 @@
 {
-  "enableBackend" : true,
   "enableFront" : false,
+  "enableBackend" : true,
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"
@@ -13,9 +13,9 @@
         "modelref" : true,
         "id" : "Default"
       },
+      "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION",
       "dstFieldName" : "ACTOR",
-      "srcFieldName" : "srfloginname",
       "name" : "用户全局对象[srfloginname] ==> Default[ACTOR]"
     }, {
       "paramAction" : "SETPARAMVALUE",
@@ -95,9 +95,9 @@
     "name" : "连接6740"
   } ],
   "getPSDELogicParams" : [ {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

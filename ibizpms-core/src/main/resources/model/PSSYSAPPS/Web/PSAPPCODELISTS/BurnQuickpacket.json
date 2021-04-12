@@ -15,8 +15,8 @@
     "codeName" : "Week",
     "text" : "显示周末"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "BurnQuickpacket",
   "emptyText" : "未定义",
   "enableCache" : true,

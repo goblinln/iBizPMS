@@ -3,12 +3,12 @@
     "name" : "ORGID",
     "codeName" : "OrgId"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "ORGNAME",
     "codeName" : "OrgName"
   },
   "nestedRS" : true,
+  "masterOrder" : -1,
   "removeActionType" : 3,
   "pickupDEFName" : "ORGID",
   "masterRS" : 8,
@@ -18,13 +18,13 @@
     "path" : "PSMODULES/ou/PSDATAENTITIES/SysOrganization.json"
   },
   "orderValue" : 100,
+  "codeName" : "Org",
+  "logicName" : "单位",
+  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment.json"
   },
-  "codeName" : "Org",
-  "logicName" : "单位",
-  "dERType" : "DER1N",
   "minorCodeName" : "Depts",
   "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment/PSDERS/DER1N_SYS_DEPT_SYS_ORG_ORGID.json",
   "name" : "DER1N_SYS_DEPT_SYS_ORG_ORGID"

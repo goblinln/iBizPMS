@@ -4,93 +4,93 @@
       "name" : "TASKCNT",
       "codeName" : "TaskCnt"
     },
-    "dataType" : 9,
-    "name" : "taskcnt"
+    "name" : "taskcnt",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "PROGRESS",
       "codeName" : "Progress"
     },
-    "dataType" : 25,
-    "name" : "progress"
+    "name" : "progress",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "TOTALLEFT",
       "codeName" : "TotalLeft"
     },
-    "dataType" : 7,
-    "name" : "totalleft"
+    "name" : "totalleft",
+    "dataType" : 7
   }, {
     "getPSAppDEField" : {
       "name" : "STATUS",
       "codeName" : "Status"
     },
-    "dataType" : 25,
-    "name" : "status"
+    "name" : "status",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "STORYCNT",
       "codeName" : "StoryCnt"
     },
-    "dataType" : 9,
-    "name" : "storycnt"
+    "name" : "storycnt",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "LEFTSTORYCNT",
       "codeName" : "Leftstorycnt"
     },
-    "dataType" : 9,
-    "name" : "leftstorycnt"
+    "name" : "leftstorycnt",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "id"
+    "name" : "id",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "TOTALCONSUMED",
       "codeName" : "TotalConsumed"
     },
-    "dataType" : 7,
-    "name" : "totalconsumed"
+    "name" : "totalconsumed",
+    "dataType" : 7
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "name"
+    "name" : "name",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "UNDONETASKCNT",
       "codeName" : "UnDoneTaskCnt"
     },
-    "dataType" : 9,
-    "name" : "undonetaskcnt"
+    "name" : "undonetaskcnt",
+    "dataType" : 9
   } ],
   "getRemovePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -106,8 +106,6 @@
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "singleSelect" : true,
-  "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -129,9 +127,11 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : false,
+  "enableColFilter" : false,
+  "singleSelect" : true,
   "enablePagingBar" : false,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
     "linkValueItem" : "srfkey",
     "enableLinkView" : true,
@@ -140,12 +140,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
-    "excelCaption" : "项目名称",
-    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "dataItemName" : "name",
+    "excelCaption" : "项目名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -157,12 +157,12 @@
     "widthUnit" : "STAR",
     "name" : "name"
   }, {
-    "excelCaption" : "需求数",
-    "dataItemName" : "storycnt",
     "getPSAppDEField" : {
       "name" : "STORYCNT",
       "codeName" : "StoryCnt"
     },
+    "dataItemName" : "storycnt",
+    "excelCaption" : "需求数",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -175,12 +175,12 @@
     "aggMode" : "SUM",
     "name" : "storycnt"
   }, {
-    "excelCaption" : "剩余需求数",
-    "dataItemName" : "leftstorycnt",
     "getPSAppDEField" : {
       "name" : "LEFTSTORYCNT",
       "codeName" : "Leftstorycnt"
     },
+    "dataItemName" : "leftstorycnt",
+    "excelCaption" : "剩余需求数",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -193,12 +193,12 @@
     "aggMode" : "SUM",
     "name" : "leftstorycnt"
   }, {
-    "excelCaption" : "任务数",
-    "dataItemName" : "taskcnt",
     "getPSAppDEField" : {
       "name" : "TASKCNT",
       "codeName" : "TaskCnt"
     },
+    "dataItemName" : "taskcnt",
+    "excelCaption" : "任务数",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -211,12 +211,12 @@
     "aggMode" : "SUM",
     "name" : "taskcnt"
   }, {
-    "excelCaption" : "剩余任务数",
-    "dataItemName" : "undonetaskcnt",
     "getPSAppDEField" : {
       "name" : "UNDONETASKCNT",
       "codeName" : "UnDoneTaskCnt"
     },
+    "dataItemName" : "undonetaskcnt",
+    "excelCaption" : "剩余任务数",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -229,12 +229,12 @@
     "aggMode" : "SUM",
     "name" : "undonetaskcnt"
   }, {
-    "excelCaption" : "剩余工时",
-    "dataItemName" : "totalleft",
     "getPSAppDEField" : {
       "name" : "TOTALLEFT",
       "codeName" : "TotalLeft"
     },
+    "dataItemName" : "totalleft",
+    "excelCaption" : "剩余工时",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -247,12 +247,12 @@
     "aggMode" : "SUM",
     "name" : "totalleft"
   }, {
-    "excelCaption" : "已消耗工时",
-    "dataItemName" : "totalconsumed",
     "getPSAppDEField" : {
       "name" : "TOTALCONSUMED",
       "codeName" : "TotalConsumed"
     },
+    "dataItemName" : "totalconsumed",
+    "excelCaption" : "已消耗工时",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -265,12 +265,12 @@
     "aggMode" : "SUM",
     "name" : "totalconsumed"
   }, {
-    "excelCaption" : "进度",
-    "dataItemName" : "progress",
     "getPSAppDEField" : {
       "name" : "PROGRESS",
       "codeName" : "Progress"
     },
+    "dataItemName" : "progress",
+    "excelCaption" : "进度",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,

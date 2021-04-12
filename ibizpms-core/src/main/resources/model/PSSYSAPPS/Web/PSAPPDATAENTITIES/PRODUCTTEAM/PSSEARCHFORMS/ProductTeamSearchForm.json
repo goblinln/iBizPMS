@@ -1,8 +1,8 @@
 {
+  "searchButtonStyle" : "DEFAULT",
   "enableAdvanceSearch" : false,
   "enableAutoSearch" : false,
   "enableFilterSave" : false,
-  "searchButtonStyle" : "DEFAULT",
   "controlType" : "SEARCHFORM",
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
@@ -23,17 +23,17 @@
       },
       "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : false,
+      "dataType" : 25,
       "needCodeListConfig" : true,
-      "allowEmpty" : true,
       "caption" : "选择部门",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "resetItemName" : "teams",
       "labelWidth" : 80,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 6,
         "colLG" : 6,
@@ -51,17 +51,17 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProductTeam.json"
         },
-        "getPSNavigateContexts" : [ {
-          "rawValue" : false,
-          "value" : "product",
-          "key" : "N_ID_NOTEQ",
-          "name" : "N_ID_NOTEQ"
-        } ],
         "getPSNavigateParams" : [ {
           "rawValue" : false,
           "value" : "product",
           "key" : "n_id_noteq",
           "name" : "n_id_noteq"
+        } ],
+        "getPSNavigateContexts" : [ {
+          "rawValue" : false,
+          "value" : "product",
+          "key" : "N_ID_NOTEQ",
+          "name" : "N_ID_NOTEQ"
         } ],
         "editorType" : "DROPDOWNLIST",
         "editorParams" : {
@@ -72,16 +72,16 @@
       },
       "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : false,
+      "dataType" : 25,
       "needCodeListConfig" : true,
-      "allowEmpty" : true,
       "caption" : "复制团队",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 80,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 6,
         "colLG" : 6,

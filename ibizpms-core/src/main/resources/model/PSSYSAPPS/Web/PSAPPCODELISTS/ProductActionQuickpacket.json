@@ -40,8 +40,8 @@
     "codeName" : "Lastmonth",
     "text" : "上月"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "ProductActionQuickpacket",
   "emptyText" : "未定义",
   "enableCache" : true,

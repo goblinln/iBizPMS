@@ -13,12 +13,12 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
   },
   "orderValue" : 100,
+  "codeName" : "ZTFromBug",
+  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
   },
-  "codeName" : "ZTFromBug",
-  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_BUG_FROMBUG.json",
   "name" : "DER1N_ZT_CASE_ZT_BUG_FROMBUG"
 }

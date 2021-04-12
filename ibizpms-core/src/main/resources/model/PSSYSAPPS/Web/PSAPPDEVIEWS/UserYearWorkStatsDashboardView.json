@@ -1,17 +1,17 @@
 {
   "showDataInfoBar" : true,
   "loadDefault" : true,
+  "enableQuickGroup" : false,
   "enableSearch" : false,
   "expandSearchForm" : true,
-  "enableQuickGroup" : false,
   "enableQuickSearch" : false,
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "DashboardView",
+  "enableDP" : true,
   "caption" : "用户年度工作内容统计",
   "title" : "用户年度工作内容统计数据看板视图",
   "openMode" : "DRAWER_TOP",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSAppViewNavParams" : [ {
     "rawValue" : false,
     "value" : "curyear",
@@ -46,7 +46,6 @@
     "key" : "CURYEAR",
     "name" : "CURYEAR"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
@@ -94,8 +93,6 @@
             },
             "controlType" : "CHART",
             "getPSDEChartSerieses" : [ {
-              "catalogField" : "PRI",
-              "seriesType" : "pie",
               "eChartsType" : "pie",
               "getPSChartCoordinateSystem" : {
                 "modelref" : true,
@@ -106,6 +103,7 @@
                 "modelref" : true,
                 "id" : "0"
               },
+              "catalogField" : "PRI",
               "getPSChartSeriesEncode" : {
                 "category" : "PRI",
                 "value" : "SRFCOUNT",
@@ -114,6 +112,7 @@
                 "name" : "坐标系编码",
                 "id" : "0"
               },
+              "seriesType" : "pie",
               "valueField" : "SRFCOUNT",
               "seriesLayoutBy" : "column",
               "index" : 0,
@@ -254,8 +253,8 @@
             "height" : 350,
             "layout" : "TABLE_24COL"
           },
-          "controlType" : "PORTLET",
           "showTitleBar" : false,
+          "controlType" : "PORTLET",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
@@ -297,8 +296,6 @@
             },
             "controlType" : "CHART",
             "getPSDEChartSerieses" : [ {
-              "catalogField" : "pri",
-              "seriesType" : "pie",
               "eChartsType" : "pie",
               "getPSChartCoordinateSystem" : {
                 "modelref" : true,
@@ -309,6 +306,7 @@
                 "modelref" : true,
                 "id" : "0"
               },
+              "catalogField" : "pri",
               "getPSChartSeriesEncode" : {
                 "category" : "pri",
                 "value" : "SRFCOUNT",
@@ -317,6 +315,7 @@
                 "name" : "坐标系编码",
                 "id" : "0"
               },
+              "seriesType" : "pie",
               "valueField" : "SRFCOUNT",
               "seriesLayoutBy" : "column",
               "index" : 0,
@@ -458,8 +457,8 @@
             "height" : 350,
             "layout" : "TABLE_24COL"
           },
-          "controlType" : "PORTLET",
           "showTitleBar" : false,
+          "controlType" : "PORTLET",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
@@ -482,8 +481,8 @@
           "colLG" : 14,
           "layout" : "TABLE_24COL"
         },
-        "controlType" : "PORTLET",
         "showTitleBar" : true,
+        "controlType" : "PORTLET",
         "title" : "完成任务数和解决Bug数",
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -548,8 +547,6 @@
             "controlType" : "CHART",
             "getPSDEChartSerieses" : [ {
               "stack" : false,
-              "catalogField" : "CURMONTH",
-              "seriesType" : "line",
               "eChartsType" : "line",
               "getPSChartCoordinateSystem" : {
                 "modelref" : true,
@@ -560,6 +557,7 @@
                 "modelref" : true,
                 "id" : "0"
               },
+              "catalogField" : "CURMONTH",
               "getPSChartSeriesEncode" : {
                 "getPSChartXAxis" : {
                   "modelref" : true,
@@ -576,6 +574,7 @@
                 "name" : "坐标系编码",
                 "id" : "0"
               },
+              "seriesType" : "line",
               "caption" : "解决Bug",
               "valueField" : "MONTRESOLVEDBUG",
               "seriesLayoutBy" : "column",
@@ -584,8 +583,6 @@
               "name" : "MONTRESOLVEDBUG"
             }, {
               "stack" : false,
-              "catalogField" : "CURMONTH",
-              "seriesType" : "line",
               "eChartsType" : "line",
               "getPSChartCoordinateSystem" : {
                 "modelref" : true,
@@ -596,6 +593,7 @@
                 "modelref" : true,
                 "id" : "1"
               },
+              "catalogField" : "CURMONTH",
               "getPSChartSeriesEncode" : {
                 "getPSChartXAxis" : {
                   "modelref" : true,
@@ -612,6 +610,7 @@
                 "name" : "坐标系编码",
                 "id" : "0"
               },
+              "seriesType" : "line",
               "caption" : "完成的任务",
               "valueField" : "MONTHFINISHTASK",
               "seriesLayoutBy" : "column",
@@ -620,8 +619,6 @@
               "name" : "FinishTask"
             }, {
               "stack" : false,
-              "catalogField" : "CURMONTH",
-              "seriesType" : "line",
               "eChartsType" : "line",
               "getPSChartCoordinateSystem" : {
                 "modelref" : true,
@@ -632,6 +629,7 @@
                 "modelref" : true,
                 "id" : "2"
               },
+              "catalogField" : "CURMONTH",
               "getPSChartSeriesEncode" : {
                 "getPSChartXAxis" : {
                   "modelref" : true,
@@ -648,6 +646,7 @@
                 "name" : "坐标系编码",
                 "id" : "0"
               },
+              "seriesType" : "line",
               "caption" : "累计工时",
               "valueField" : "MONTESTIMATE",
               "seriesLayoutBy" : "column",
@@ -670,9 +669,9 @@
               "eChartsType" : "value",
               "eChartsPos" : "yAxis",
               "position" : "left",
-              "type" : "numeric",
               "maxValue" : 100.0,
               "minValue" : 0.0,
+              "type" : "numeric",
               "caption" : "数量",
               "index" : 0,
               "name" : "数量",
@@ -862,8 +861,8 @@
             "height" : 350,
             "layout" : "TABLE_24COL"
           },
-          "controlType" : "PORTLET",
           "showTitleBar" : false,
+          "controlType" : "PORTLET",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
@@ -886,8 +885,8 @@
           "colLG" : 10,
           "layout" : "TABLE_24COL"
         },
-        "controlType" : "PORTLET",
         "showTitleBar" : true,
+        "controlType" : "PORTLET",
         "title" : "月完成任务数及累计工时和解决Bug数",
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -912,8 +911,8 @@
         "colLGOffset" : 1,
         "layout" : "TABLE_24COL"
       },
-      "controlType" : "PORTLET",
       "showTitleBar" : true,
+      "controlType" : "PORTLET",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
@@ -949,6 +948,7 @@
     "name" : "dashboard",
     "modelid" : "35452fdae20ad8f9a786c708744662b4"
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "UserYearWorkStatsDashboardView",
   "viewType" : "DEPORTALVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserYearWorkStatsDashboardView.json",

@@ -1,6 +1,6 @@
 {
-  "enableBackend" : true,
   "enableFront" : false,
+  "enableBackend" : true,
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"
@@ -21,9 +21,9 @@
         "modelref" : true,
         "id" : "Default"
       },
+      "srcFieldName" : "IBZ_WEEKLYID",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "IBZ_WEEKLYID",
-      "srcFieldName" : "IBZ_WEEKLYID",
       "name" : "复制主键"
     } ],
     "logicHolder" : 3,
@@ -32,13 +32,13 @@
     "name" : "准备临时参数"
   }, {
     "parallelOutput" : true,
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Temp"
-    },
     "getDstPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Temp"
     },
     "getPSDELogicLinks" : [ {
       "modelref" : true,
@@ -49,11 +49,11 @@
     } ],
     "logicHolder" : 3,
     "codeName" : "Get",
-    "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Get.json"
     },
+    "logicNodeType" : "DEACTION",
     "name" : "获取数据"
   }, {
     "errorCode" : 0,
@@ -107,11 +107,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "0",
         "dstFieldName" : "ISSUBMIT",
         "logicType" : "SINGLE",
@@ -135,11 +135,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Temp"
         },
-        "condOP" : "EQ",
         "paramValue" : "1",
         "dstFieldName" : "ISSUBMIT",
         "logicType" : "SINGLE",
@@ -162,16 +162,16 @@
     "name" : "状态[已提交]拒绝[Remove]操作"
   } ],
   "getPSDELogicParams" : [ {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "默认变量"
   }, {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Temp",
     "default" : false,
     "name" : "临时变量"

@@ -4,80 +4,80 @@
       "name" : "PRODUCT",
       "codeName" : "Product"
     },
-    "dataType" : 1,
-    "name" : "product"
+    "name" : "product",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "id"
+    "name" : "id",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "PROJECT",
       "codeName" : "Project"
     },
-    "dataType" : 1,
-    "name" : "project"
+    "name" : "project",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "dataType" : 25,
-    "name" : "title"
+    "name" : "title",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "PROJECTNAME",
       "codeName" : "ProjectName"
     },
-    "dataType" : 25,
-    "name" : "projectname"
+    "name" : "projectname",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "TASKS",
       "codeName" : "Tasks"
     },
-    "dataType" : 25,
-    "name" : "tasks"
+    "name" : "tasks",
+    "dataType" : 25
   }, {
-    "format" : "YYYY-MM-DD HH:mm:ss",
     "getPSAppDEField" : {
       "name" : "CREATEDDATE",
       "codeName" : "CreatedDate"
     },
-    "dataType" : 5,
-    "name" : "createddate"
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "name" : "createddate",
+    "dataType" : 5
   }, {
     "getPSAppDEField" : {
       "name" : "CREATEDBY",
       "codeName" : "CreatedBy"
     },
-    "dataType" : 25,
-    "name" : "createdby"
+    "name" : "createdby",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   } ],
   "getRemovePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -93,8 +93,6 @@
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "singleSelect" : false,
-  "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -116,20 +114,22 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : false,
+  "enableColFilter" : false,
+  "singleSelect" : false,
+  "enablePagingBar" : true,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
-  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "ID",
-    "dataItemName" : "id",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
+    "dataItemName" : "id",
+    "excelCaption" : "ID",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -141,12 +141,12 @@
     "widthUnit" : "PX",
     "name" : "id"
   }, {
-    "excelCaption" : "标题",
-    "dataItemName" : "title",
     "getPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
     },
+    "dataItemName" : "title",
+    "excelCaption" : "标题",
     "getPSDEUIAction" : {
       "getCapPSLanguageRes" : {
         "lanResTag" : "TBB.TEXT.*.EDIT",
@@ -182,16 +182,16 @@
     "widthUnit" : "STAR",
     "name" : "title"
   }, {
-    "excelCaption" : "创建",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
     },
-    "dataItemName" : "createdby",
     "getPSAppDEField" : {
       "name" : "CREATEDBY",
       "codeName" : "CreatedBy"
     },
+    "dataItemName" : "createdby",
+    "excelCaption" : "创建",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -203,12 +203,12 @@
     "widthUnit" : "PX",
     "name" : "createdby"
   }, {
-    "excelCaption" : "创建时间",
-    "dataItemName" : "createddate",
     "getPSAppDEField" : {
       "name" : "CREATEDDATE",
       "codeName" : "CreatedDate"
     },
+    "dataItemName" : "createddate",
+    "excelCaption" : "创建时间",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
@@ -228,12 +228,12 @@
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
-    "excelCaption" : "所属项目",
-    "dataItemName" : "projectname",
     "getPSAppDEField" : {
       "name" : "PROJECTNAME",
       "codeName" : "ProjectName"
     },
+    "dataItemName" : "projectname",
+    "excelCaption" : "所属项目",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -245,16 +245,16 @@
     "widthUnit" : "STAR",
     "name" : "projectname"
   }, {
-    "excelCaption" : "测试版本",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/TestTask.json"
     },
-    "dataItemName" : "tasks",
     "getPSAppDEField" : {
       "name" : "TASKS",
       "codeName" : "Tasks"
     },
+    "dataItemName" : "tasks",
+    "excelCaption" : "测试版本",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -289,8 +289,8 @@
           "timeout" : 60000,
           "codeName" : "Edits",
           "caption" : "编辑",
-          "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
+          "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "SRFUR__REPORT_EDIT_BUT",
           "uIActionTag" : "Edits",
           "uIActionType" : "DEUIACTION",
@@ -300,8 +300,8 @@
           "id" : "Edits@TestReport"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : false,
+        "detailType" : "DEUIACTION",
         "name" : "uacd5424"
       }, {
         "showIcon" : true,
@@ -324,8 +324,8 @@
           "timeout" : 60000,
           "codeName" : "Delete",
           "caption" : "删除",
-          "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
+          "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "SRFUR__REPORT_DELETE_BUT",
           "uIActionTag" : "Delete",
           "uIActionType" : "DEUIACTION",
@@ -337,8 +337,8 @@
           "id" : "Delete@TestReport"
         },
         "addSeparator" : false,
-        "detailType" : "DEUIACTION",
         "showCaption" : false,
+        "detailType" : "DEUIACTION",
         "name" : "uc890d3d"
       } ],
       "name" : "表格操作列"

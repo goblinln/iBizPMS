@@ -3,8 +3,8 @@
     "name" : "ROOT",
     "codeName" : "Root"
   },
-  "masterOrder" : -1,
   "nestedRS" : true,
+  "masterOrder" : -1,
   "removeActionType" : -1,
   "pickupDEFName" : "ROOT",
   "masterRS" : 8,
@@ -14,12 +14,12 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
   },
   "orderValue" : 100,
+  "codeName" : "Productteam",
+  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM.json"
   },
-  "codeName" : "Productteam",
-  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDERS/DER1N_IBZ_PRODUCTTEAM_ZT_PRODUCT_ROOT.json",
   "name" : "DER1N_IBZ_PRODUCTTEAM_ZT_PRODUCT_ROOT"
 }

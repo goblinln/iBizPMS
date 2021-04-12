@@ -1,5 +1,7 @@
 {
   "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "showFormNavBar" : false,
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
@@ -24,8 +26,6 @@
     "modelref" : true,
     "id" : "loaddraftfrom"
   },
-  "infoFormMode" : false,
-  "showFormNavBar" : false,
   "controlType" : "FORM",
   "readOnly" : false,
   "getPSLayout" : {
@@ -45,15 +45,15 @@
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
+      "showCaption" : true,
       "hidden" : true,
-      "allowEmpty" : true,
+      "dataType" : 1,
       "caption" : "id",
+      "allowEmpty" : true,
       "enableCond" : 0,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 130,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -75,15 +75,15 @@
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : false,
-      "allowEmpty" : false,
+      "dataType" : 25,
       "caption" : "名称",
+      "allowEmpty" : false,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 130,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -95,17 +95,21 @@
     }, {
       "emptyCaption" : false,
       "getPSEditor" : {
+        "enableLinkView" : false,
         "singleSelect" : true,
         "dropDownView" : false,
         "enablePickupView" : true,
-        "enableLinkView" : false,
         "enableAC" : true,
         "forceSelection" : true,
         "showTrigger" : true,
-        "handlerType" : "PickupText",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+        },
+        "getPickupPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibPickupView.json",
+          "viewType" : "DEPICKUPVIEW"
         },
         "getPSAppDEDataSet" : {
           "modelref" : true,
@@ -115,11 +119,7 @@
           "modelref" : true,
           "id" : "Default"
         },
-        "getPickupPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibPickupView.json",
-          "viewType" : "DEPICKUPVIEW"
-        },
+        "handlerType" : "PickupText",
         "valueItemName" : "root",
         "editorType" : "PICKER",
         "editorParams" : {
@@ -134,16 +134,16 @@
         "name" : "DOCLIBNAME",
         "codeName" : "Doclibname"
       },
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : false,
-      "allowEmpty" : true,
+      "dataType" : 25,
       "caption" : "所属文档库",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "valueItemName" : "root",
       "labelWidth" : 130,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -164,15 +164,15 @@
         "name" : "DOCQTYPE",
         "codeName" : "Docqtype"
       },
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : true,
-      "allowEmpty" : true,
+      "dataType" : 25,
       "caption" : "查询类型",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 130,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
@@ -193,15 +193,15 @@
         "name" : "ISFAVOURITES",
         "codeName" : "Isfavourites"
       },
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : true,
-      "allowEmpty" : true,
+      "dataType" : 25,
       "caption" : "是否已收藏",
+      "allowEmpty" : true,
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 130,
-      "showCaption" : true,
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"

@@ -11,10 +11,10 @@
   "showCaptionBar" : true,
   "getPSDEViewCodeName" : "GridView",
   "funcViewMode" : "MDATAVIEW",
+  "enableDP" : true,
   "caption" : "产品汇总表",
   "title" : "产品汇总表表格视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -54,7 +54,6 @@
     },
     "name" : "toolbar_deuiaction2"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
@@ -105,9 +104,9 @@
       "tooltip" : "导出",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "导出",
-      "showCaption" : true,
       "name" : "deuiaction2"
     } ],
     "getPSAppDataEntity" : {
@@ -128,93 +127,93 @@
         "name" : "ACTIVESTORYCNT",
         "codeName" : "ActiveStoryCnt"
       },
-      "dataType" : 9,
-      "name" : "activestorycnt"
+      "name" : "activestorycnt",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "CLOSEDSTORYCNT",
         "codeName" : "ClosedStoryCnt"
       },
-      "dataType" : 9,
-      "name" : "closedstorycnt"
+      "name" : "closedstorycnt",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "CHANGEDSTORYCNT",
         "codeName" : "Changedstorycnt"
       },
-      "dataType" : 9,
-      "name" : "changedstorycnt"
+      "name" : "changedstorycnt",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "STORYCNT",
         "codeName" : "StoryCnt"
       },
-      "dataType" : 9,
-      "name" : "storycnt"
+      "name" : "storycnt",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 1
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfdataaccaction"
+      "name" : "srfdataaccaction",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "BEGIN",
         "codeName" : "Begin"
       },
-      "dataType" : 25,
-      "name" : "begin"
+      "name" : "begin",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "PLAN",
         "codeName" : "Plan"
       },
-      "dataType" : 1,
-      "name" : "plan"
+      "name" : "plan",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "WAITSTORYCNT",
         "codeName" : "WaitStoryCnt"
       },
-      "dataType" : 9,
-      "name" : "waitstorycnt"
+      "name" : "waitstorycnt",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "dataType" : 25,
-      "name" : "name"
+      "name" : "name",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "PO",
         "codeName" : "PO"
       },
-      "dataType" : 25,
-      "name" : "po"
+      "name" : "po",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "END",
         "codeName" : "End"
       },
-      "dataType" : 25,
-      "name" : "end"
+      "name" : "end",
+      "dataType" : 25
     } ],
     "getRemovePSControlAction" : {
       "getPSAppDataEntity" : {
@@ -230,8 +229,6 @@
       "actionType" : "DEACTION",
       "name" : "remove"
     },
-    "singleSelect" : true,
-    "enableColFilter" : false,
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : true,
@@ -253,16 +250,18 @@
     } ],
     "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "controlType" : "GRID",
-    "enableRowEdit" : false,
+    "enableColFilter" : false,
+    "singleSelect" : true,
     "enablePagingBar" : false,
+    "enableRowEdit" : false,
+    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
-      "excelCaption" : "产品名称",
-      "dataItemName" : "name",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
+      "dataItemName" : "name",
+      "excelCaption" : "产品名称",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -274,16 +273,16 @@
       "widthUnit" : "STAR",
       "name" : "name"
     }, {
-      "excelCaption" : "产品负责人",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
       },
-      "dataItemName" : "po",
       "getPSAppDEField" : {
         "name" : "PO",
         "codeName" : "PO"
       },
+      "dataItemName" : "po",
+      "excelCaption" : "产品负责人",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -295,16 +294,16 @@
       "widthUnit" : "PX",
       "name" : "po"
     }, {
-      "excelCaption" : "计划",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/PlanCodeList.json"
       },
-      "dataItemName" : "plan",
       "getPSAppDEField" : {
         "name" : "PLAN",
         "codeName" : "Plan"
       },
+      "dataItemName" : "plan",
+      "excelCaption" : "计划",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -316,12 +315,12 @@
       "widthUnit" : "PX",
       "name" : "plan"
     }, {
-      "excelCaption" : "开始日期",
-      "dataItemName" : "begin",
       "getPSAppDEField" : {
         "name" : "BEGIN",
         "codeName" : "Begin"
       },
+      "dataItemName" : "begin",
+      "excelCaption" : "开始日期",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -333,12 +332,12 @@
       "widthUnit" : "PX",
       "name" : "begin"
     }, {
-      "excelCaption" : "结束日期",
-      "dataItemName" : "end",
       "getPSAppDEField" : {
         "name" : "END",
         "codeName" : "End"
       },
+      "dataItemName" : "end",
+      "excelCaption" : "结束日期",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -350,12 +349,12 @@
       "widthUnit" : "PX",
       "name" : "end"
     }, {
-      "excelCaption" : "草稿",
-      "dataItemName" : "waitstorycnt",
       "getPSAppDEField" : {
         "name" : "WAITSTORYCNT",
         "codeName" : "WaitStoryCnt"
       },
+      "dataItemName" : "waitstorycnt",
+      "excelCaption" : "草稿",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -367,12 +366,12 @@
       "widthUnit" : "PX",
       "name" : "waitstorycnt"
     }, {
-      "excelCaption" : "激活",
-      "dataItemName" : "activestorycnt",
       "getPSAppDEField" : {
         "name" : "ACTIVESTORYCNT",
         "codeName" : "ActiveStoryCnt"
       },
+      "dataItemName" : "activestorycnt",
+      "excelCaption" : "激活",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -384,12 +383,12 @@
       "widthUnit" : "PX",
       "name" : "activestorycnt"
     }, {
-      "excelCaption" : "已变更",
-      "dataItemName" : "changedstorycnt",
       "getPSAppDEField" : {
         "name" : "CHANGEDSTORYCNT",
         "codeName" : "Changedstorycnt"
       },
+      "dataItemName" : "changedstorycnt",
+      "excelCaption" : "已变更",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -401,12 +400,12 @@
       "widthUnit" : "PX",
       "name" : "changedstorycnt"
     }, {
-      "excelCaption" : "已关闭",
-      "dataItemName" : "closedstorycnt",
       "getPSAppDEField" : {
         "name" : "CLOSEDSTORYCNT",
         "codeName" : "ClosedStoryCnt"
       },
+      "dataItemName" : "closedstorycnt",
+      "excelCaption" : "已关闭",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -418,12 +417,12 @@
       "widthUnit" : "PX",
       "name" : "closedstorycnt"
     }, {
-      "excelCaption" : "总计",
-      "dataItemName" : "storycnt",
       "getPSAppDEField" : {
         "name" : "STORYCNT",
         "codeName" : "StoryCnt"
       },
+      "dataItemName" : "storycnt",
+      "excelCaption" : "总计",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : false,
@@ -544,10 +543,10 @@
     "name" : "grid",
     "modelid" : "bd99d9b9f4c78df348f70179d5a8bb59"
   }, {
+    "searchButtonStyle" : "DEFAULT",
     "enableAdvanceSearch" : false,
     "enableAutoSearch" : false,
     "enableFilterSave" : false,
-    "searchButtonStyle" : "DEFAULT",
     "controlType" : "SEARCHFORM",
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
@@ -555,8 +554,8 @@
     },
     "getPSDEFormPages" : [ {
       "getPSDEFormDetails" : [ {
-        "rawItemWidth" : -1.0,
         "rawItemHeight" : -1.0,
+        "rawItemWidth" : -1.0,
         "contentType" : "RAW",
         "rawContent" : "<div style=\" padding-top: 6px;  padding-left: 20px;\"> 筛选条件： </div>",
         "getPSLayoutPos" : {
@@ -565,10 +564,10 @@
           "colLGOffset" : 2,
           "layout" : "TABLE_24COL"
         },
+        "showCaption" : true,
         "codeName" : "rawitem1",
         "detailType" : "RAWITEM",
         "detailStyle" : "DEFAULT",
-        "showCaption" : true,
         "name" : "rawitem1"
       }, {
         "emptyCaption" : false,
@@ -578,15 +577,15 @@
         },
         "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : true,
+        "dataType" : 25,
         "caption" : "关闭产品",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "RIGHT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 2,
           "colLG" : 3,
@@ -604,15 +603,15 @@
         },
         "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
-        "allowEmpty" : true,
+        "dataType" : 25,
         "caption" : "过期计划",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "RIGHT",
         "labelWidth" : 130,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 2,
           "colLG" : 3,
@@ -639,16 +638,16 @@
           "name" : "ID",
           "codeName" : "Id"
         },
-        "dataType" : 1,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 1,
         "needCodeListConfig" : true,
-        "allowEmpty" : true,
         "caption" : "产品",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 50,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 6,
           "colLG" : 6,
@@ -666,17 +665,17 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/PlanCodeList.json"
           },
-          "getPSNavigateContexts" : [ {
-            "rawValue" : false,
-            "value" : "n_id_eq",
-            "key" : "N_PRODUCT_EQ",
-            "name" : "N_PRODUCT_EQ"
-          } ],
           "getPSNavigateParams" : [ {
             "rawValue" : false,
             "value" : "n_id_eq",
             "key" : "n_product_eq",
             "name" : "n_product_eq"
+          } ],
+          "getPSNavigateContexts" : [ {
+            "rawValue" : false,
+            "value" : "n_id_eq",
+            "key" : "N_PRODUCT_EQ",
+            "name" : "N_PRODUCT_EQ"
           } ],
           "editorType" : "DROPDOWNLIST",
           "editorParams" : {
@@ -691,16 +690,16 @@
           "name" : "PLAN",
           "codeName" : "Plan"
         },
-        "dataType" : 1,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 1,
         "needCodeListConfig" : true,
-        "allowEmpty" : true,
         "caption" : "计划",
+        "allowEmpty" : true,
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 50,
-        "showCaption" : true,
         "getPSLayoutPos" : {
           "colMD" : 24,
           "colLG" : 6,
@@ -799,6 +798,7 @@
     "name" : "searchform",
     "modelid" : "2b71fa6c133aaa4b5001a7efb2706399"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -830,7 +830,6 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -838,9 +837,10 @@
           "viewType" : "DEEDITVIEW"
         }
       },
+      "enableWizardAdd" : false,
+      "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {

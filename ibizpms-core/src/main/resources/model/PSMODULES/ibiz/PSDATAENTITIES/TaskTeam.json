@@ -1,13 +1,15 @@
 {
-  "serviceAPIMode" : 1,
   "getAllPSDEFields" : [ {
-    "dataType" : "FLOAT",
     "defaultValue" : "0.00",
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "05b5255b0d0c077f2661b43b1e716cf5",
+    "codeName" : "Estimate",
+    "logicName" : "最初预计",
+    "stdDataType" : 7,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : false,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -33,8 +35,8 @@
       },
       "name" : "预计消耗大于等于0"
     }, {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -60,22 +62,23 @@
       "autoIncrement" : false,
       "name" : "ESTIMATE"
     } ],
-    "codeName" : "Estimate",
-    "logicName" : "最初预计",
-    "stdDataType" : 7,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "ESTIMATE"
   }, {
-    "formulaDEField" : true,
     "phisicalDEField" : false,
-    "dataType" : "TEXT",
+    "formulaDEField" : true,
     "length" : 200,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "0b4e5018b4b720aab69065499d65b4ec",
+    "codeName" : "Username",
+    "logicName" : "用户",
+    "stringLength" : 200,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -113,21 +116,20 @@
       "autoIncrement" : false,
       "name" : "USERNAME"
     } ],
-    "codeName" : "Username",
-    "logicName" : "用户",
-    "stringLength" : 200,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "USERNAME"
   }, {
-    "dataType" : "DATE",
     "defaultValue" : "0000-00-00",
     "valueFormat" : "%1$tY-%1$tm-%1$td",
+    "dataType" : "DATE",
     "deployId" : "8cce84fd270c04e3ac46de1612610536",
+    "codeName" : "Join",
+    "logicName" : "加盟日",
+    "stdDataType" : 5,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -153,20 +155,20 @@
       "autoIncrement" : false,
       "name" : "JOIN"
     } ],
-    "codeName" : "Join",
-    "logicName" : "加盟日",
-    "stdDataType" : 5,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "JOIN"
   }, {
-    "dataType" : "FLOAT",
     "defaultValue" : "0.0",
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "2b694999138418331b8f4894a7a5d52d",
+    "codeName" : "Hours",
+    "logicName" : "可用工时/天",
+    "stdDataType" : 7,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -192,24 +194,25 @@
       "autoIncrement" : false,
       "name" : "HOURS"
     } ],
-    "codeName" : "Hours",
-    "logicName" : "可用工时/天",
-    "stdDataType" : 7,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "HOURS"
   }, {
-    "dataType" : "TEXT",
     "length" : 30,
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/UserRealNameProject.json"
     },
+    "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "707803419a4971271b13ff9d672ed41e",
+    "codeName" : "Account",
+    "logicName" : "用户",
+    "stringLength" : 30,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -247,24 +250,23 @@
       "autoIncrement" : false,
       "name" : "ACCOUNT"
     } ],
-    "codeName" : "Account",
-    "logicName" : "用户",
-    "stringLength" : 30,
-    "stdDataType" : 25,
     "majorDEField" : true,
     "enableQuickSearch" : true,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "ACCOUNT"
   }, {
-    "dataType" : "INT",
     "length" : 3,
     "defaultValue" : "0",
     "valueFormat" : "%1$s",
+    "dataType" : "INT",
     "deployId" : "3bd4a07d4eca2deb8c3727e67d41aa3f",
+    "codeName" : "Order",
+    "logicName" : "排序",
+    "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -290,20 +292,20 @@
       "autoIncrement" : false,
       "name" : "ORDER"
     } ],
-    "codeName" : "Order",
-    "logicName" : "排序",
-    "stdDataType" : 9,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "ORDER"
   }, {
-    "dataType" : "FLOAT",
     "defaultValue" : "0.00",
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "0d6355743e26bd8a4c32ee1ba1a86317",
+    "codeName" : "Left",
+    "logicName" : "预计剩余",
+    "stdDataType" : 7,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : false,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -332,8 +334,8 @@
       },
       "name" : "预计剩余大于等于0"
     }, {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -359,20 +361,20 @@
       "autoIncrement" : false,
       "name" : "LEFT"
     } ],
-    "codeName" : "Left",
-    "logicName" : "预计剩余",
-    "stdDataType" : 7,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "LEFT"
   }, {
-    "dataType" : "FLOAT",
     "defaultValue" : "0.00",
     "valueFormat" : "%1$s",
+    "dataType" : "FLOAT",
     "deployId" : "61486ef523c329222b609f90b95711fd",
+    "codeName" : "Consumed",
+    "logicName" : "总计消耗",
+    "stdDataType" : 7,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : false,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -401,8 +403,8 @@
       },
       "name" : "总计消耗大于等于0"
     }, {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -428,25 +430,26 @@
       "autoIncrement" : false,
       "name" : "CONSUMED"
     } ],
-    "codeName" : "Consumed",
-    "logicName" : "总计消耗",
-    "stdDataType" : 7,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "CONSUMED"
   }, {
-    "dataType" : "SSCODELIST",
     "length" : 8,
     "defaultValue" : "no",
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/YesNo3.json"
     },
+    "valueFormat" : "%1$s",
+    "dataType" : "SSCODELIST",
     "deployId" : "b11b2e925df916483e8288e775620548",
+    "codeName" : "Limited",
+    "logicName" : "受限用户",
+    "stringLength" : 8,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -484,21 +487,21 @@
       "autoIncrement" : false,
       "name" : "LIMITED"
     } ],
-    "codeName" : "Limited",
-    "logicName" : "受限用户",
-    "stringLength" : 8,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "LIMITED"
   }, {
-    "dataType" : "TEXT",
     "length" : 30,
     "valueFormat" : "%1$s",
+    "dataType" : "TEXT",
     "deployId" : "b633274ebcf5a33c9b3f1fed0d3f1a0d",
+    "codeName" : "Role",
+    "logicName" : "角色",
+    "stringLength" : 30,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -536,23 +539,22 @@
       "autoIncrement" : false,
       "name" : "ROLE"
     } ],
-    "codeName" : "Role",
-    "logicName" : "角色",
-    "stringLength" : 30,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "ROLE"
   }, {
-    "dataType" : "ACID",
     "length" : 8,
     "valueFormat" : "%1$s",
+    "dataType" : "ACID",
     "deployId" : "025fc05238c0062e2b7779117e64f2d7",
+    "codeName" : "Id",
+    "logicName" : "编号",
+    "stdDataType" : 1,
     "pasteReset" : true,
     "allowEmpty" : false,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -578,9 +580,6 @@
       "autoIncrement" : true,
       "name" : "ID"
     } ],
-    "codeName" : "Id",
-    "logicName" : "编号",
-    "stdDataType" : 1,
     "enableUICreate" : false,
     "enableUIModify" : false,
     "keyDEField" : true,
@@ -589,14 +588,17 @@
     "dEFType" : 1,
     "name" : "ID"
   }, {
-    "dataType" : "INT",
     "length" : 5,
     "defaultValue" : "45",
     "valueFormat" : "%1$s",
+    "dataType" : "INT",
     "deployId" : "3a212ee9272774427dbe9f5bd33407c0",
+    "codeName" : "Days",
+    "logicName" : "可用工日",
+    "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -622,21 +624,21 @@
       "autoIncrement" : false,
       "name" : "DAYS"
     } ],
-    "codeName" : "Days",
-    "logicName" : "可用工日",
-    "stdDataType" : 9,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "DAYS"
   }, {
-    "formulaDEField" : true,
     "phisicalDEField" : false,
-    "dataType" : "INT",
+    "formulaDEField" : true,
     "valueFormat" : "%1$s",
+    "dataType" : "INT",
     "deployId" : "9f76f4cd090097eacb088732dc371bf6",
+    "codeName" : "Total",
+    "logicName" : "总计可用",
+    "stdDataType" : 9,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -662,25 +664,26 @@
       "autoIncrement" : false,
       "name" : "TOTAL"
     } ],
-    "codeName" : "Total",
-    "logicName" : "总计可用",
-    "stdDataType" : 9,
     "importOrder" : 1000,
     "dEFType" : 2,
     "name" : "TOTAL"
   }, {
-    "dataType" : "SSCODELIST",
     "length" : 7,
     "defaultValue" : "project",
-    "valueFormat" : "%1$s",
     "getPSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/Team__type.json"
     },
+    "valueFormat" : "%1$s",
+    "dataType" : "SSCODELIST",
     "deployId" : "93449a96a973550fb71e7e1110463788",
+    "codeName" : "Type",
+    "logicName" : "团队类型",
+    "stringLength" : 7,
+    "stdDataType" : 25,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "getPSDEFVRConditions" : [ {
@@ -718,30 +721,29 @@
       "autoIncrement" : false,
       "name" : "TYPE"
     } ],
-    "codeName" : "Type",
-    "logicName" : "团队类型",
-    "stringLength" : 7,
-    "stdDataType" : 25,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "TYPE"
   }, {
+    "valueFormat" : "%1$s",
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam/PSDERS/DER1N_IBZ_TASKTEAM_ZT_TASK_ROOT.json"
     },
-    "valueFormat" : "%1$s",
     "linkDEField" : true,
     "getRelatedPSDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : "PICKUP",
     "length" : 8,
+    "dataType" : "PICKUP",
     "deployId" : "d56396de1c68df396834203b950d81cf",
+    "codeName" : "Root",
+    "logicName" : "编号",
+    "stdDataType" : 1,
     "getAllPSDEFValueRules" : [ {
-      "enableBackend" : true,
       "enableFront" : true,
+      "enableBackend" : true,
       "checkDefault" : true,
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -767,17 +769,15 @@
       "autoIncrement" : false,
       "name" : "ROOT"
     } ],
-    "codeName" : "Root",
-    "logicName" : "编号",
-    "stdDataType" : 1,
     "importOrder" : 1000,
     "dEFType" : 1,
     "name" : "ROOT"
   } ],
   "getAllPSDEDataSets" : [ {
-    "enableBackend" : true,
     "enableFront" : true,
+    "enableBackend" : true,
     "pubServiceDefault" : true,
+    "extendMode" : 0,
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
@@ -785,10 +785,9 @@
     "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
-    "extendMode" : 0,
     "enableTempData" : true,
-    "enableGroup" : false,
     "userDRAction" : "READ",
+    "enableGroup" : false,
     "cacheTimeout" : -1,
     "enableCache" : false,
     "defaultMode" : true,
@@ -852,10 +851,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "Default",
     "logicName" : "DEFAULT",
-    "extendMode" : 0,
     "defaultMode" : true,
     "name" : "DEFAULT"
   }, {
@@ -863,10 +862,10 @@
     "privQuery" : false,
     "pubServiceDefault" : false,
     "queryFromView" : false,
+    "extendMode" : 0,
     "orderValue" : 99999,
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "extendMode" : 0,
     "defaultMode" : false,
     "name" : "VIEW"
   } ],
@@ -879,8 +878,7 @@
   "enableAPIStorage" : false,
   "tempDataHolder" : 2,
   "enableTempDataFront" : true,
-  "orderValue" : 99999,
-  "dSLink" : "DEFAULT",
+  "serviceAPIMode" : 1,
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -894,17 +892,20 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "extendMode" : 0,
+  "saaSDCIdColumnName" : "SRFDCID",
+  "dynaInstMode" : 1,
+  "orderValue" : 99999,
+  "dSLink" : "DEFAULT",
   "saaSMode" : 4,
   "deployId" : "2f6c2b35b38114163b457898a1b5dde3",
-  "enableSQLStorage" : true,
-  "dynaInstMode" : 1,
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableViewLevel" : 0,
-  "virtualMode" : 0,
   "codeName" : "TaskTeam",
   "logicName" : "任务团队",
   "tableName" : "zt_team",
+  "enableViewLevel" : 0,
+  "virtualMode" : 0,
+  "enableSQLStorage" : true,
+  "enableRemove" : true,
   "logicValid" : false,
   "enableMultiDS" : false,
   "dataAccCtrlMode" : 1,
@@ -913,15 +914,14 @@
   "storageMode" : 1,
   "dataImpExpMode" : 3,
   "dataAccCtrlArch" : 1,
-  "enableRemove" : true,
   "serviceCodeName" : "TaskTeam",
   "enableActions" : 7,
   "enableCreate" : true,
   "enableModify" : true,
-  "extendMode" : 0,
   "enableTempData" : true,
   "saaSDataIdColumnName" : "SRFID",
-  "saaSDCIdColumnName" : "SRFDCID",
+  "subSysDE" : false,
+  "virtual" : false,
   "enableMultiForm" : false,
   "enableEntityCache" : false,
   "dEType" : 1,

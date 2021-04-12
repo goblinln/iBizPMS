@@ -4,61 +4,61 @@
       "name" : "PRODUCT",
       "codeName" : "Product"
     },
-    "dataType" : 1,
-    "name" : "product"
+    "name" : "product",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "PROJECT",
       "codeName" : "Project"
     },
-    "dataType" : 1,
-    "name" : "project"
+    "name" : "project",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "DOCLIBTYPE",
       "codeName" : "Doclibtype"
     },
-    "dataType" : 25,
-    "name" : "doclibtype"
+    "name" : "doclibtype",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "name"
+    "name" : "name",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ISFAVOURITES",
       "codeName" : "Isfavourites"
     },
-    "dataType" : 25,
-    "name" : "isfavourites"
+    "name" : "isfavourites",
+    "dataType" : 25
   }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
+    "name" : "srfmstag",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   } ],
   "getRemovePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -74,8 +74,6 @@
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "singleSelect" : false,
-  "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -97,16 +95,18 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : false,
+  "enableColFilter" : false,
+  "singleSelect" : false,
   "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "文档库名称",
-    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "dataItemName" : "name",
+    "excelCaption" : "文档库名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -132,6 +132,17 @@
     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocGridViewLookDoc.json",
     "viewType" : "DEGRIDVIEW"
   },
+  "getPSNavigateParams" : [ {
+    "rawValue" : false,
+    "value" : "product",
+    "key" : "product",
+    "name" : "product"
+  }, {
+    "rawValue" : true,
+    "value" : "0",
+    "key" : "parent",
+    "name" : "parent"
+  } ],
   "getPSNavigateContexts" : [ {
     "rawValue" : false,
     "value" : "doclibtype",
@@ -148,27 +159,16 @@
     "key" : "PRODUCT",
     "name" : "PRODUCT"
   } ],
-  "getPSNavigateParams" : [ {
-    "rawValue" : false,
-    "value" : "product",
-    "key" : "product",
-    "name" : "product"
-  }, {
-    "rawValue" : true,
-    "value" : "0",
-    "key" : "parent",
-    "name" : "parent"
-  } ],
   "getNavPSDER" : {
     "getPSPickupDEField" : {
       "name" : "LIB",
       "codeName" : "Lib"
     },
-    "masterOrder" : -1,
     "getPSPickupTextDEField" : {
       "name" : "LIBNAME",
       "codeName" : "Libname"
     },
+    "masterOrder" : -1,
     "removeActionType" : -1,
     "pickupDEFName" : "LIB",
     "masterRS" : 0,
@@ -178,12 +178,12 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
     },
     "orderValue" : 100,
+    "codeName" : "Zt_doclib",
+    "dERType" : "DER1N",
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
     },
-    "codeName" : "Zt_doclib",
-    "dERType" : "DER1N",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json",
     "name" : "DER1N_ZT_DOC_ZT_DOCLIB_LIB"
   },

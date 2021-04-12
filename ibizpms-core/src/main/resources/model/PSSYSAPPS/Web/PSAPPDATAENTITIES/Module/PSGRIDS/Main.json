@@ -4,72 +4,72 @@
       "name" : "ORDER",
       "codeName" : "Order"
     },
-    "dataType" : 9,
-    "name" : "order"
+    "name" : "order",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "name"
+    "name" : "name",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "OWNER",
       "codeName" : "Owner"
     },
-    "dataType" : 25,
-    "name" : "owner"
+    "name" : "owner",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "PARENT",
       "codeName" : "Parent"
     },
-    "dataType" : 1,
-    "name" : "parent"
+    "name" : "parent",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "BRANCH",
       "codeName" : "Branch"
     },
-    "dataType" : 1,
-    "name" : "branch"
+    "name" : "branch",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "GRADE",
       "codeName" : "Grade"
     },
-    "dataType" : 9,
-    "name" : "grade"
+    "name" : "grade",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "PARENTNAME",
       "codeName" : "ParentName"
     },
-    "dataType" : 25,
-    "name" : "parentname"
+    "name" : "parentname",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataType" : 25,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 25
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   } ],
   "getRemovePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -85,8 +85,6 @@
     "actionType" : "DEACTION",
     "name" : "remove"
   },
-  "singleSelect" : false,
-  "enableColFilter" : false,
   "enableRowNew" : false,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -108,20 +106,22 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : false,
+  "enableColFilter" : false,
+  "singleSelect" : false,
+  "enablePagingBar" : true,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
-  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "模块名称",
-    "dataItemName" : "name",
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
+    "dataItemName" : "name",
+    "excelCaption" : "模块名称",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -133,12 +133,12 @@
     "widthUnit" : "PX",
     "name" : "name"
   }, {
-    "excelCaption" : "上级模块",
-    "dataItemName" : "parentname",
     "getPSAppDEField" : {
       "name" : "PARENTNAME",
       "codeName" : "ParentName"
     },
+    "dataItemName" : "parentname",
+    "excelCaption" : "上级模块",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -150,12 +150,12 @@
     "widthUnit" : "PX",
     "name" : "parentname"
   }, {
-    "excelCaption" : "级别",
-    "dataItemName" : "grade",
     "getPSAppDEField" : {
       "name" : "GRADE",
       "codeName" : "Grade"
     },
+    "dataItemName" : "grade",
+    "excelCaption" : "级别",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -167,12 +167,12 @@
     "widthUnit" : "PX",
     "name" : "grade"
   }, {
-    "excelCaption" : "排序",
-    "dataItemName" : "order",
     "getPSAppDEField" : {
       "name" : "ORDER",
       "codeName" : "Order"
     },
+    "dataItemName" : "order",
+    "excelCaption" : "排序",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -184,12 +184,12 @@
     "widthUnit" : "PX",
     "name" : "order"
   }, {
-    "excelCaption" : "负责人",
-    "dataItemName" : "owner",
     "getPSAppDEField" : {
       "name" : "OWNER",
       "codeName" : "Owner"
     },
+    "dataItemName" : "owner",
+    "excelCaption" : "负责人",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

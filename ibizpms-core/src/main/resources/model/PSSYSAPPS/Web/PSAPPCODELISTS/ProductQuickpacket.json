@@ -20,8 +20,8 @@
     "codeName" : "Closed",
     "text" : "已关闭"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "ProductQuickpacket",
   "emptyText" : "未定义",
   "enableCache" : true,

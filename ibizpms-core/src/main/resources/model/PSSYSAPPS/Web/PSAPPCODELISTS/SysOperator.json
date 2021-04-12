@@ -1,6 +1,6 @@
 {
-  "codeListType" : "DYNAMIC",
   "dynaInstMode" : 0,
+  "codeListType" : "DYNAMIC",
   "codeName" : "SysOperator",
   "emptyText" : "未定义",
   "predefinedType" : "OPERATOR",

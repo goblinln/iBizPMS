@@ -1,6 +1,6 @@
 {
-  "enableBackend" : true,
   "enableFront" : false,
+  "enableBackend" : true,
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"
@@ -17,21 +17,21 @@
     "name" : "开始"
   }, {
     "parallelOutput" : true,
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "IbzFavorites"
-    },
     "getDstPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzFavorites.json"
     },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "IbzFavorites"
+    },
     "logicHolder" : 3,
     "codeName" : "Deaction1",
-    "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzFavorites/PSDEACTIONS/Create.json"
     },
+    "logicNodeType" : "DEACTION",
     "name" : "创建收藏信息"
   }, {
     "parallelOutput" : true,
@@ -49,9 +49,9 @@
         "modelref" : true,
         "id" : "Default"
       },
+      "srcFieldName" : "ID",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "OBJECTID",
-      "srcFieldName" : "ID",
       "name" : "Default[ID] ==> IbzFavorites[OBJECTID]"
     }, {
       "paramAction" : "SETPARAMVALUE",
@@ -59,9 +59,9 @@
         "modelref" : true,
         "id" : "IbzFavorites"
       },
+      "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION",
       "dstFieldName" : "ACCOUNT",
-      "srcFieldName" : "srfloginname",
       "name" : "用户全局对象[srfloginname] ==> IbzFavorites[ACCOUNT]"
     }, {
       "paramAction" : "SETPARAMVALUE",
@@ -103,16 +103,16 @@
     "name" : "连接7343"
   } ],
   "getPSDELogicParams" : [ {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"
   }, {
+    "sessionParam" : true,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : true,
     "codeName" : "IbzFavorites",
     "default" : false,
     "name" : "收藏"

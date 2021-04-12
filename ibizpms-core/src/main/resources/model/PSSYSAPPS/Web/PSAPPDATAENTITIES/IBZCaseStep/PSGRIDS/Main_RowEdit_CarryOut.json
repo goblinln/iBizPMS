@@ -4,100 +4,100 @@
       "name" : "FILES",
       "codeName" : "Files"
     },
-    "dataType" : 25,
-    "name" : "files"
+    "name" : "files",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "DESC",
       "codeName" : "Desc"
     },
-    "dataType" : 21,
-    "name" : "desc"
+    "name" : "desc",
+    "dataType" : 21
   }, {
     "getPSAppDEField" : {
       "name" : "PARENT",
       "codeName" : "Parent"
     },
-    "dataType" : 1,
-    "name" : "parent"
+    "name" : "parent",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "STEPS",
       "codeName" : "Steps"
     },
-    "dataType" : 25,
-    "name" : "steps"
+    "name" : "steps",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
     },
-    "dataType" : 25,
-    "name" : "type"
+    "name" : "type",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "EXPECT",
       "codeName" : "Expect"
     },
-    "dataType" : 21,
-    "name" : "srfmajortext"
+    "name" : "srfmajortext",
+    "dataType" : 21
   }, {
     "getPSAppDEField" : {
       "name" : "REALS",
       "codeName" : "Reals"
     },
-    "dataType" : 25,
-    "name" : "reals"
+    "name" : "reals",
+    "dataType" : 25
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfkey"
+    "name" : "srfkey",
+    "dataType" : 1
   }, {
     "dataAccessAction" : true,
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "srfdataaccaction"
+    "name" : "srfdataaccaction",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "RUNID",
       "codeName" : "Runid"
     },
-    "dataType" : 9,
-    "name" : "runid"
+    "name" : "runid",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "VERSION",
       "codeName" : "Version"
     },
-    "dataType" : 9,
-    "name" : "version"
+    "name" : "version",
+    "dataType" : 9
   }, {
     "getPSAppDEField" : {
       "name" : "EXPECT",
       "codeName" : "Expect"
     },
-    "dataType" : 21,
-    "name" : "expect"
+    "name" : "expect",
+    "dataType" : 21
   }, {
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "dataType" : 1,
-    "name" : "id"
+    "name" : "id",
+    "dataType" : 1
   }, {
     "getPSAppDEField" : {
       "name" : "CASE",
       "codeName" : "IBizCase"
     },
-    "dataType" : 1,
-    "name" : "case"
+    "name" : "case",
+    "dataType" : 1
   } ],
   "getCreatePSControlAction" : {
     "getPSAppDataEntity" : {
@@ -169,8 +169,6 @@
     "actionType" : "DEACTION",
     "name" : "loaddraft"
   },
-  "singleSelect" : true,
-  "enableColFilter" : false,
   "enableRowNew" : true,
   "enableRowEditOrder" : false,
   "noSort" : false,
@@ -326,20 +324,22 @@
   } ],
   "hasWFDataItems" : false,
   "columnEnableLink" : 2,
-  "controlType" : "GRID",
-  "enableRowEdit" : true,
+  "enableColFilter" : false,
+  "singleSelect" : true,
+  "enablePagingBar" : false,
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
-  "enablePagingBar" : false,
+  "enableRowEdit" : true,
+  "controlType" : "GRID",
   "getPSDEGridColumns" : [ {
-    "excelCaption" : "步骤",
-    "dataItemName" : "desc",
     "getPSAppDEField" : {
       "name" : "DESC",
       "codeName" : "Desc"
     },
+    "dataItemName" : "desc",
+    "excelCaption" : "步骤",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -351,12 +351,12 @@
     "widthUnit" : "PX",
     "name" : "desc"
   }, {
-    "excelCaption" : "预期",
-    "dataItemName" : "expect",
     "getPSAppDEField" : {
       "name" : "EXPECT",
       "codeName" : "Expect"
     },
+    "dataItemName" : "expect",
+    "excelCaption" : "预期",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : false,
@@ -368,17 +368,17 @@
     "widthUnit" : "STAR",
     "name" : "expect"
   }, {
-    "excelCaption" : "测试结果",
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testresult__result.json"
     },
-    "dataItemName" : "steps",
-    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "STEPS",
       "codeName" : "Steps"
     },
+    "dataItemName" : "steps",
+    "enableRowEdit" : true,
+    "excelCaption" : "测试结果",
     "cLConvertMode" : "FRONT",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,
@@ -390,13 +390,13 @@
     "widthUnit" : "PX",
     "name" : "steps"
   }, {
-    "excelCaption" : "实际情况",
-    "dataItemName" : "reals",
-    "enableRowEdit" : true,
     "getPSAppDEField" : {
       "name" : "REALS",
       "codeName" : "Reals"
     },
+    "dataItemName" : "reals",
+    "enableRowEdit" : true,
+    "excelCaption" : "实际情况",
     "cLConvertMode" : "NONE",
     "noPrivDisplayMode" : 1,
     "enableSort" : true,

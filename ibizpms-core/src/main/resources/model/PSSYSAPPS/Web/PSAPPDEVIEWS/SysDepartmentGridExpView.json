@@ -5,10 +5,10 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "GridExpView",
+  "enableDP" : true,
   "caption" : "部门",
   "title" : "部门表格导航视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -31,7 +31,6 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysDepartment.json"
@@ -41,57 +40,58 @@
     "xDataControlName" : "gridexpbar_grid",
     "enableSearch" : false,
     "enableCounter" : true,
+    "showTitleBar" : false,
     "getPSControls" : [ {
       "getPSDEGridDataItems" : [ {
         "getPSAppDEField" : {
           "name" : "PDEPTID",
           "codeName" : "ParentDeptid"
         },
-        "dataType" : 25,
-        "name" : "pdeptid"
+        "name" : "pdeptid",
+        "dataType" : 25
       }, {
         "getPSAppDEField" : {
           "name" : "DEPTID",
           "codeName" : "DeptId"
         },
-        "dataType" : 25,
-        "name" : "deptid"
+        "name" : "deptid",
+        "dataType" : 25
       }, {
         "getPSAppDEField" : {
           "name" : "ORGID",
           "codeName" : "OrgId"
         },
-        "dataType" : 25,
-        "name" : "orgid"
+        "name" : "orgid",
+        "dataType" : 25
       }, {
         "getPSAppDEField" : {
           "name" : "DEPTNAME",
           "codeName" : "DeptName"
         },
-        "dataType" : 25,
-        "name" : "deptname"
+        "name" : "deptname",
+        "dataType" : 25
       }, {
         "getPSAppDEField" : {
           "name" : "DEPTNAME",
           "codeName" : "DeptName"
         },
-        "dataType" : 25,
-        "name" : "srfmajortext"
+        "name" : "srfmajortext",
+        "dataType" : 25
       }, {
         "dataAccessAction" : true,
         "getPSAppDEField" : {
           "name" : "DEPTID",
           "codeName" : "DeptId"
         },
-        "dataType" : 25,
-        "name" : "srfdataaccaction"
+        "name" : "srfdataaccaction",
+        "dataType" : 25
       }, {
         "getPSAppDEField" : {
           "name" : "DEPTID",
           "codeName" : "DeptId"
         },
-        "dataType" : 25,
-        "name" : "srfkey"
+        "name" : "srfkey",
+        "dataType" : 25
       } ],
       "getRemovePSControlAction" : {
         "getPSAppDataEntity" : {
@@ -107,8 +107,6 @@
         "actionType" : "DEACTION",
         "name" : "remove"
       },
-      "singleSelect" : false,
-      "enableColFilter" : false,
       "enableRowNew" : false,
       "enableRowEditOrder" : false,
       "noSort" : false,
@@ -130,16 +128,18 @@
       } ],
       "hasWFDataItems" : false,
       "columnEnableLink" : 2,
-      "controlType" : "GRID",
-      "enableRowEdit" : false,
+      "enableColFilter" : false,
+      "singleSelect" : false,
       "enablePagingBar" : false,
+      "enableRowEdit" : false,
+      "controlType" : "GRID",
       "getPSDEGridColumns" : [ {
-        "excelCaption" : "部门标识",
-        "dataItemName" : "deptid",
         "getPSAppDEField" : {
           "name" : "DEPTID",
           "codeName" : "DeptId"
         },
+        "dataItemName" : "deptid",
+        "excelCaption" : "部门标识",
         "cLConvertMode" : "NONE",
         "getCapPSLanguageRes" : {
           "lanResTag" : "COMMON.DATATYPE.DECIMAL",
@@ -155,12 +155,12 @@
         "widthUnit" : "PX",
         "name" : "deptid"
       }, {
-        "excelCaption" : "部门名称",
-        "dataItemName" : "deptname",
         "getPSAppDEField" : {
           "name" : "DEPTNAME",
           "codeName" : "DeptName"
         },
+        "dataItemName" : "deptname",
+        "excelCaption" : "部门名称",
         "cLConvertMode" : "NONE",
         "getCapPSLanguageRes" : {
           "lanResTag" : "CONTROL.DATAGRIDROWCOUNTLIST.PAGEFMT",
@@ -290,7 +290,6 @@
       "name" : "gridexpbar_grid",
       "modelid" : "9828069a5060222d3d25e519532666e4"
     } ],
-    "showTitleBar" : false,
     "getPSAppViewRefs" : [ {
       "getRefPSAppView" : {
         "modelref" : true,
@@ -320,13 +319,14 @@
     "name" : "gridexpbar",
     "modelid" : "92ea2f270b6525a85636e8631640718d_gridexpbar"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
+      "enableWizardAdd" : false,
       "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "logicType" : "PREDEFINED",
       "name" : "新建数据"

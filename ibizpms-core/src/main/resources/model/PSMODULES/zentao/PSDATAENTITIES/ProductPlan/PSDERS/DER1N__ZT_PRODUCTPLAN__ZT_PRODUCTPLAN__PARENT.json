@@ -3,11 +3,11 @@
     "name" : "PARENT",
     "codeName" : "Parent"
   },
-  "masterOrder" : -1,
   "getPSPickupTextDEField" : {
     "name" : "PARENTNAME",
     "codeName" : "ParentName"
   },
+  "masterOrder" : -1,
   "removeActionType" : -1,
   "pickupDEFName" : "PARENT",
   "masterRS" : 0,
@@ -17,12 +17,12 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
   },
   "orderValue" : 100,
+  "codeName" : "IBizParent",
+  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
   },
-  "codeName" : "IBizParent",
-  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDERS/DER1N__ZT_PRODUCTPLAN__ZT_PRODUCTPLAN__PARENT.json",
   "name" : "DER1N__ZT_PRODUCTPLAN__ZT_PRODUCTPLAN__PARENT"
 }

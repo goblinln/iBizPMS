@@ -2,10 +2,10 @@
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "PickupView",
   "funcViewMode" : "PICKUPVIEW",
+  "enableDP" : true,
   "caption" : "组",
   "title" : "组数据选择视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -28,7 +28,6 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeam.json"
@@ -47,10 +46,10 @@
       "xDataControlName" : "grid",
       "showCaptionBar" : true,
       "getPSDEViewCodeName" : "PickupGridView",
+      "enableDP" : true,
       "caption" : "组",
       "title" : "组选择表格视图",
       "accUserMode" : 2,
-      "enableDP" : true,
       "getPSViewLayoutPanel" : {
         "useDefaultLayout" : true,
         "layoutPanel" : true,
@@ -76,7 +75,6 @@
         } ],
         "name" : "engine"
       } ],
-      "viewStyle" : "STYLE2",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeam.json"
@@ -87,51 +85,51 @@
             "name" : "TEAMID",
             "codeName" : "TeamId"
           },
-          "dataType" : 25,
-          "name" : "teamid"
+          "name" : "teamid",
+          "dataType" : 25
         }, {
           "getPSAppDEField" : {
             "name" : "MEMO",
             "codeName" : "Memo"
           },
-          "dataType" : 25,
-          "name" : "memo"
+          "name" : "memo",
+          "dataType" : 25
         }, {
           "getPSAppDEField" : {
             "name" : "TEAMNAME",
             "codeName" : "TeamName"
           },
-          "dataType" : 25,
-          "name" : "teamname"
+          "name" : "teamname",
+          "dataType" : 25
         }, {
           "getPSAppDEField" : {
             "name" : "DOMAINS",
             "codeName" : "Domains"
           },
-          "dataType" : 25,
-          "name" : "domains"
+          "name" : "domains",
+          "dataType" : 25
         }, {
           "getPSAppDEField" : {
             "name" : "TEAMNAME",
             "codeName" : "TeamName"
           },
-          "dataType" : 25,
-          "name" : "srfmajortext"
+          "name" : "srfmajortext",
+          "dataType" : 25
         }, {
           "dataAccessAction" : true,
           "getPSAppDEField" : {
             "name" : "TEAMID",
             "codeName" : "TeamId"
           },
-          "dataType" : 25,
-          "name" : "srfdataaccaction"
+          "name" : "srfdataaccaction",
+          "dataType" : 25
         }, {
           "getPSAppDEField" : {
             "name" : "TEAMID",
             "codeName" : "TeamId"
           },
-          "dataType" : 25,
-          "name" : "srfkey"
+          "name" : "srfkey",
+          "dataType" : 25
         } ],
         "getRemovePSControlAction" : {
           "getPSAppDataEntity" : {
@@ -147,8 +145,6 @@
           "actionType" : "DEACTION",
           "name" : "remove"
         },
-        "singleSelect" : false,
-        "enableColFilter" : false,
         "enableRowNew" : false,
         "enableRowEditOrder" : false,
         "noSort" : false,
@@ -170,16 +166,18 @@
         } ],
         "hasWFDataItems" : false,
         "columnEnableLink" : 2,
-        "controlType" : "GRID",
-        "enableRowEdit" : false,
+        "enableColFilter" : false,
+        "singleSelect" : false,
         "enablePagingBar" : true,
+        "enableRowEdit" : false,
+        "controlType" : "GRID",
         "getPSDEGridColumns" : [ {
-          "excelCaption" : "组标识",
-          "dataItemName" : "teamid",
           "getPSAppDEField" : {
             "name" : "TEAMID",
             "codeName" : "TeamId"
           },
+          "dataItemName" : "teamid",
+          "excelCaption" : "组标识",
           "cLConvertMode" : "NONE",
           "noPrivDisplayMode" : 1,
           "enableSort" : true,
@@ -198,12 +196,12 @@
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamMemberUsr2GridView.json",
             "viewType" : "DEGRIDVIEW"
           },
-          "excelCaption" : "组名称",
-          "dataItemName" : "teamname",
           "getPSAppDEField" : {
             "name" : "TEAMNAME",
             "codeName" : "TeamName"
           },
+          "dataItemName" : "teamname",
+          "excelCaption" : "组名称",
           "cLConvertMode" : "NONE",
           "noPrivDisplayMode" : 1,
           "enableSort" : true,
@@ -215,12 +213,12 @@
           "widthUnit" : "PX",
           "name" : "teamname"
         }, {
-          "excelCaption" : "区属",
-          "dataItemName" : "domains",
           "getPSAppDEField" : {
             "name" : "DOMAINS",
             "codeName" : "Domains"
           },
+          "dataItemName" : "domains",
+          "excelCaption" : "区属",
           "cLConvertMode" : "NONE",
           "noPrivDisplayMode" : 1,
           "enableSort" : true,
@@ -232,12 +230,12 @@
           "widthUnit" : "PX",
           "name" : "domains"
         }, {
-          "excelCaption" : "备注",
-          "dataItemName" : "memo",
           "getPSAppDEField" : {
             "name" : "MEMO",
             "codeName" : "Memo"
           },
+          "dataItemName" : "memo",
+          "excelCaption" : "备注",
           "cLConvertMode" : "NONE",
           "noPrivDisplayMode" : 1,
           "enableSort" : true,
@@ -358,10 +356,10 @@
         "name" : "grid",
         "modelid" : "88375a2da07af07bc3caa04003b11b39"
       }, {
+        "searchButtonStyle" : "DEFAULT",
         "enableAdvanceSearch" : false,
         "enableAutoSearch" : false,
         "enableFilterSave" : false,
-        "searchButtonStyle" : "DEFAULT",
         "controlType" : "SEARCHFORM",
         "getPSLayout" : {
           "layout" : "TABLE_24COL",
@@ -435,6 +433,7 @@
         "name" : "searchform",
         "modelid" : "aee6f369feb1c159525cf85e8439d49d"
       } ],
+      "viewStyle" : "STYLE2",
       "codeName" : "SysTeamPickupGridView",
       "viewType" : "DEPICKUPGRIDVIEW",
       "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamPickupGridView.json",
@@ -452,6 +451,7 @@
     "codeName" : "PickupViewpickupviewpanel",
     "name" : "pickupviewpanel"
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "SysTeamPickupView",
   "viewType" : "DEPICKUPVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamPickupView.json",

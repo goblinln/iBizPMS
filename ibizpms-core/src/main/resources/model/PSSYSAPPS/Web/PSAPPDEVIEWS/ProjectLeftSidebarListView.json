@@ -5,10 +5,10 @@
   "xDataControlName" : "list",
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "LeftSidebarListView",
+  "enableDP" : true,
   "caption" : "项目",
   "title" : "所有项目",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -69,7 +69,6 @@
     },
     "name" : "toolbar_deuiaction2"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
@@ -117,9 +116,9 @@
       "tooltip" : "管理",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : false,
       "itemType" : "DEUIACTION",
       "caption" : "管理",
-      "showCaption" : false,
       "name" : "deuiaction3_manager"
     }, {
       "getPSAppViewUIAction" : {
@@ -147,8 +146,8 @@
         "timeout" : 60000,
         "codeName" : "Create",
         "caption" : "新建",
-        "actionTarget" : "NONE",
         "reloadData" : true,
+        "actionTarget" : "NONE",
         "dataAccessAction" : "SRFUR__PROJ_CREATE_BUT",
         "uIActionTag" : "Create",
         "uIActionType" : "DEUIACTION",
@@ -164,9 +163,9 @@
       "tooltip" : "新建",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : false,
       "itemType" : "DEUIACTION",
       "caption" : "新建",
-      "showCaption" : false,
       "name" : "deuiaction3_create"
     }, {
       "getPSAppViewUIAction" : {
@@ -196,9 +195,9 @@
       "tooltip" : "刷新",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : false,
       "itemType" : "DEUIACTION",
       "caption" : "刷新",
-      "showCaption" : false,
       "name" : "deuiaction2"
     } ],
     "getPSAppDataEntity" : {
@@ -221,71 +220,71 @@
     "showHeader" : true,
     "enableRowEditGroup" : false,
     "getPSDEListDataItems" : [ {
-      "dataType" : 25,
-      "name" : "name"
+      "name" : "name",
+      "dataType" : 25
     }, {
       "getFrontPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Project__status.json"
       },
-      "dataType" : 25,
-      "name" : "status"
+      "name" : "status",
+      "dataType" : 25
     }, {
-      "dataType" : 9,
-      "name" : "bugcnt"
+      "name" : "bugcnt",
+      "dataType" : 9
     }, {
-      "dataType" : 1,
-      "name" : "id"
+      "name" : "id",
+      "dataType" : 1
     }, {
-      "dataType" : 25,
-      "name" : "code"
+      "name" : "code",
+      "dataType" : 25
     }, {
-      "dataType" : 9,
-      "name" : "istop"
+      "name" : "istop",
+      "dataType" : 9
     }, {
-      "dataType" : 9,
-      "name" : "storycnt"
+      "name" : "storycnt",
+      "dataType" : 9
     }, {
-      "dataType" : 9,
-      "name" : "taskcnt"
+      "name" : "taskcnt",
+      "dataType" : 9
     }, {
       "getFrontPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Project__type.json"
       },
-      "dataType" : 25,
-      "name" : "type"
+      "name" : "type",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 25,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "PARENT",
         "codeName" : "Parent"
       },
-      "dataType" : 25,
-      "name" : "parent"
+      "name" : "parent",
+      "dataType" : 25
     }, {
-      "dataType" : 25,
-      "name" : "srfmstag"
+      "name" : "srfmstag",
+      "dataType" : 25
     } ],
-    "controlType" : "LIST",
-    "enableRowEdit" : false,
     "getMinorSortPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
+    "enableRowEdit" : false,
+    "controlType" : "LIST",
     "codeName" : "Sidebar",
     "minorSortDir" : "DESC",
     "enableGroup" : false,
@@ -364,8 +363,8 @@
           "timeout" : 60000,
           "codeName" : "ProjectTop",
           "caption" : "置顶",
-          "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
+          "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "NOTOP",
           "uIActionTag" : "ProjectTop",
           "uIActionType" : "DEUIACTION",
@@ -382,9 +381,9 @@
         "tooltip" : "置顶",
         "groupExtractMode" : "ITEM",
         "showIcon" : true,
+        "showCaption" : false,
         "itemType" : "DEUIACTION",
         "caption" : "置顶",
-        "showCaption" : false,
         "name" : "deuiaction1"
       }, {
         "getPSAppViewUIAction" : {
@@ -411,8 +410,8 @@
           "timeout" : 60000,
           "codeName" : "CancelProjectTop",
           "caption" : "取消置顶",
-          "actionTarget" : "SINGLEKEY",
           "reloadData" : true,
+          "actionTarget" : "SINGLEKEY",
           "dataAccessAction" : "TOP",
           "uIActionTag" : "CancelProjectTop",
           "uIActionType" : "DEUIACTION",
@@ -429,9 +428,9 @@
         "tooltip" : "取消置顶",
         "groupExtractMode" : "ITEM",
         "showIcon" : true,
+        "showCaption" : false,
         "itemType" : "DEUIACTION",
         "caption" : "取消置顶",
-        "showCaption" : false,
         "name" : "deuiaction2"
       } ],
       "getPSAppDataEntity" : {
@@ -479,6 +478,7 @@
       "showBusyIndicator" : true,
       "id" : "LIST"
     },
+    "controlStyle" : "LISTVIEW",
     "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "getPSControlHandler" : {
       "userDRAction" : "READ",
@@ -549,7 +549,6 @@
       "enableDEFieldPrivilege" : false,
       "id" : "列表控件处理器"
     },
-    "controlStyle" : "LISTVIEW",
     "getPSSysPFPlugin" : {
       "pluginType" : "AC_ITEM",
       "pluginCode" : "PROJECTLEFTNavLIST"
@@ -559,6 +558,7 @@
     "name" : "list",
     "modelid" : "547fa4cbd79cffd2b831b89850a79e25"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -613,7 +613,6 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -621,9 +620,10 @@
           "viewType" : "DEEDITVIEW"
         }
       },
+      "enableWizardAdd" : false,
+      "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {

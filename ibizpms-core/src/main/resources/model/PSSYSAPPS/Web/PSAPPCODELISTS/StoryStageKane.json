@@ -39,8 +39,8 @@
     "text" : "已发布",
     "color" : "rgba(11, 11, 11, 1)"
   } ],
-  "codeListType" : "STATIC",
   "dynaInstMode" : 1,
+  "codeListType" : "STATIC",
   "codeName" : "StoryStageKane",
   "emptyText" : "未定义",
   "enableCache" : true,

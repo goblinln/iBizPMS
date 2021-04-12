@@ -4,22 +4,22 @@
   "enableImport" : true,
   "enableRowEdit" : false,
   "gridRowActiveMode" : 2,
-  "enableSearch" : true,
   "enableQuickGroup" : true,
   "getQuickGroupPSCodeList" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/TodoQuickpacketMy.json"
   },
+  "enableSearch" : true,
   "enableFilter" : true,
   "enableQuickSearch" : true,
   "xDataControlName" : "grid",
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "GridView",
   "funcViewMode" : "MDATAVIEW",
+  "enableDP" : true,
   "caption" : "待办",
   "title" : "待办事宜表格视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -82,7 +82,6 @@
     },
     "name" : "toolbar_deuiaction4"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
@@ -115,8 +114,8 @@
         "timeout" : 60000,
         "codeName" : "TodoCreate",
         "caption" : "新建",
-        "actionTarget" : "NONE",
         "reloadData" : true,
+        "actionTarget" : "NONE",
         "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
         "uIActionTag" : "TodoCreate",
         "uIActionType" : "DEUIACTION",
@@ -132,9 +131,9 @@
       "tooltip" : "新建",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "新建",
-      "showCaption" : true,
       "name" : "deuiaction3_todocreate"
     }, {
       "getPSAppViewUIAction" : {
@@ -164,9 +163,9 @@
       "tooltip" : "刷新",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "刷新",
-      "showCaption" : true,
       "name" : "deuiaction2"
     }, {
       "getPSAppViewUIAction" : {
@@ -212,9 +211,9 @@
       "tooltip" : "导出",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "导出",
-      "showCaption" : true,
       "name" : "deuiaction1"
     }, {
       "getPSAppViewUIAction" : {
@@ -262,9 +261,9 @@
       "tooltip" : "过滤",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : true,
       "itemType" : "DEUIACTION",
       "caption" : "过滤",
-      "showCaption" : true,
       "name" : "deuiaction4"
     } ],
     "getPSAppDataEntity" : {
@@ -285,82 +284,82 @@
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "id"
+      "name" : "id",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "PRI",
         "codeName" : "Pri"
       },
-      "dataType" : 9,
-      "name" : "pri"
+      "name" : "pri",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "STATUS",
         "codeName" : "Status"
       },
-      "dataType" : 25,
-      "name" : "status"
+      "name" : "status",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "dataType" : 25,
-      "name" : "name"
+      "name" : "name",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "TYPE",
         "codeName" : "Type"
       },
-      "dataType" : 25,
-      "name" : "type"
+      "name" : "type",
+      "dataType" : 25
     }, {
-      "dataType" : 25,
-      "name" : "srfmstag"
+      "name" : "srfmstag",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfdataaccaction"
+      "name" : "srfdataaccaction",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "dataType" : 1,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 1
     }, {
       "getPSAppDEField" : {
         "name" : "END",
         "codeName" : "End"
       },
-      "dataType" : 9,
-      "name" : "end"
+      "name" : "end",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "DATE1",
         "codeName" : "Date1"
       },
-      "dataType" : 25,
-      "name" : "date1"
+      "name" : "date1",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "BEGIN",
         "codeName" : "Begin"
       },
-      "dataType" : 9,
-      "name" : "begin"
+      "name" : "begin",
+      "dataType" : 9
     } ],
     "getRemovePSControlAction" : {
       "getPSAppDataEntity" : {
@@ -376,8 +375,6 @@
       "actionType" : "DEACTION",
       "name" : "remove"
     },
-    "singleSelect" : false,
-    "enableColFilter" : false,
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : false,
@@ -399,20 +396,22 @@
     } ],
     "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "controlType" : "GRID",
-    "enableRowEdit" : false,
+    "enableColFilter" : false,
+    "singleSelect" : false,
+    "enablePagingBar" : true,
     "getMinorSortPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
-    "enablePagingBar" : true,
+    "enableRowEdit" : false,
+    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
-      "excelCaption" : "编号",
-      "dataItemName" : "id",
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
+      "dataItemName" : "id",
+      "excelCaption" : "编号",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -424,12 +423,12 @@
       "widthUnit" : "PX",
       "name" : "id"
     }, {
-      "excelCaption" : "日期",
-      "dataItemName" : "date1",
       "getPSAppDEField" : {
         "name" : "DATE1",
         "codeName" : "Date1"
       },
+      "dataItemName" : "date1",
+      "excelCaption" : "日期",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -441,16 +440,16 @@
       "widthUnit" : "PX",
       "name" : "date1"
     }, {
-      "excelCaption" : "类型",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/TypeAll.json"
       },
-      "dataItemName" : "type",
       "getPSAppDEField" : {
         "name" : "TYPE",
         "codeName" : "Type"
       },
+      "dataItemName" : "type",
+      "excelCaption" : "类型",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -462,16 +461,16 @@
       "widthUnit" : "PX",
       "name" : "type"
     }, {
-      "excelCaption" : "优先级",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Pri.json"
       },
-      "dataItemName" : "pri",
       "getPSAppDEField" : {
         "name" : "PRI",
         "codeName" : "Pri"
       },
+      "dataItemName" : "pri",
+      "excelCaption" : "优先级",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -490,12 +489,12 @@
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoDashboardView.json",
         "viewType" : "DEPORTALVIEW"
       },
-      "excelCaption" : "待办名称",
-      "dataItemName" : "name",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
+      "dataItemName" : "name",
+      "excelCaption" : "待办名称",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -507,16 +506,16 @@
       "widthUnit" : "STAR",
       "name" : "name"
     }, {
-      "excelCaption" : "开始",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/BeginendDropList.json"
       },
-      "dataItemName" : "begin",
       "getPSAppDEField" : {
         "name" : "BEGIN",
         "codeName" : "Begin"
       },
+      "dataItemName" : "begin",
+      "excelCaption" : "开始",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -528,16 +527,16 @@
       "widthUnit" : "PX",
       "name" : "begin"
     }, {
-      "excelCaption" : "结束",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/BeginendDropList.json"
       },
-      "dataItemName" : "end",
       "getPSAppDEField" : {
         "name" : "END",
         "codeName" : "End"
       },
+      "dataItemName" : "end",
+      "excelCaption" : "结束",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -549,16 +548,16 @@
       "widthUnit" : "PX",
       "name" : "end"
     }, {
-      "excelCaption" : "状态",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Todo__status.json"
       },
-      "dataItemName" : "status",
       "getPSAppDEField" : {
         "name" : "STATUS",
         "codeName" : "Status"
       },
+      "dataItemName" : "status",
+      "excelCaption" : "状态",
       "cLConvertMode" : "FRONT",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -593,8 +592,8 @@
             "timeout" : 60000,
             "codeName" : "assignTo",
             "caption" : "指派",
-            "actionTarget" : "SINGLEKEY",
             "reloadData" : true,
+            "actionTarget" : "SINGLEKEY",
             "dataAccessAction" : "ASSIGNTO",
             "uIActionTag" : "assignTo",
             "uIActionType" : "DEUIACTION",
@@ -604,8 +603,8 @@
             "id" : "assignTo@Todo"
           },
           "addSeparator" : false,
-          "detailType" : "DEUIACTION",
           "showCaption" : false,
+          "detailType" : "DEUIACTION",
           "name" : "ucbe5848"
         }, {
           "showIcon" : true,
@@ -628,8 +627,8 @@
             "timeout" : 60000,
             "codeName" : "finish",
             "caption" : "完成",
-            "actionTarget" : "SINGLEKEY",
             "reloadData" : true,
+            "actionTarget" : "SINGLEKEY",
             "dataAccessAction" : "FINISH",
             "uIActionTag" : "finish",
             "uIActionType" : "DEUIACTION",
@@ -640,8 +639,8 @@
             "id" : "finish@Todo"
           },
           "addSeparator" : false,
-          "detailType" : "DEUIACTION",
           "showCaption" : false,
+          "detailType" : "DEUIACTION",
           "name" : "u73f3925"
         }, {
           "showIcon" : true,
@@ -664,8 +663,8 @@
             "timeout" : 60000,
             "codeName" : "activate",
             "caption" : "激活",
-            "actionTarget" : "SINGLEKEY",
             "reloadData" : true,
+            "actionTarget" : "SINGLEKEY",
             "dataAccessAction" : "ACTIVATE",
             "uIActionTag" : "activate",
             "uIActionType" : "DEUIACTION",
@@ -676,8 +675,8 @@
             "id" : "activate@Todo"
           },
           "addSeparator" : false,
-          "detailType" : "DEUIACTION",
           "showCaption" : false,
+          "detailType" : "DEUIACTION",
           "name" : "u028b830"
         }, {
           "showIcon" : true,
@@ -700,8 +699,8 @@
             "timeout" : 60000,
             "codeName" : "close",
             "caption" : "关闭",
-            "actionTarget" : "SINGLEKEY",
             "reloadData" : true,
+            "actionTarget" : "SINGLEKEY",
             "dataAccessAction" : "CLOSE",
             "uIActionTag" : "close",
             "uIActionType" : "DEUIACTION",
@@ -712,8 +711,8 @@
             "id" : "close@Todo"
           },
           "addSeparator" : false,
-          "detailType" : "DEUIACTION",
           "showCaption" : false,
+          "detailType" : "DEUIACTION",
           "name" : "u24b965b"
         }, {
           "showIcon" : true,
@@ -750,8 +749,8 @@
             "id" : "edit1@Todo"
           },
           "addSeparator" : false,
-          "detailType" : "DEUIACTION",
           "showCaption" : false,
+          "detailType" : "DEUIACTION",
           "name" : "uc8e81f7"
         }, {
           "showIcon" : true,
@@ -774,8 +773,8 @@
             "timeout" : 60000,
             "codeName" : "delete",
             "caption" : "删除",
-            "actionTarget" : "SINGLEKEY",
             "reloadData" : true,
+            "actionTarget" : "SINGLEKEY",
             "dataAccessAction" : "DELETE",
             "uIActionTag" : "delete",
             "uIActionType" : "DEUIACTION",
@@ -786,8 +785,8 @@
             "id" : "delete@Todo"
           },
           "addSeparator" : false,
-          "detailType" : "DEUIACTION",
           "showCaption" : false,
+          "detailType" : "DEUIACTION",
           "name" : "u51ddac6"
         } ],
         "name" : "todo行为组"
@@ -1038,7 +1037,7 @@
     "name" : "grid",
     "modelid" : "a90961e0afa20e8a9ed19eb28a306fef"
   }, {
-    "quickSearchMode" : 1,
+    "mobileSearchBar" : false,
     "getPSSearchBarFilters" : [ {
       "emptyCaption" : false,
       "getPSEditor" : {
@@ -1046,8 +1045,10 @@
         "editorWidth" : 100.0,
         "name" : "namelike"
       },
-      "dataType" : 25,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 25,
+      "caption" : "待办名称(%)",
       "getPSDEFSearchMode" : {
         "valueOP" : "LIKE",
         "codeName" : "N_NAME_LIKE",
@@ -1059,11 +1060,9 @@
         "name" : "N_NAME_LIKE"
       },
       "allowEmpty" : true,
-      "caption" : "待办名称(%)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
       "itemWidth" : 100.0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
@@ -1081,9 +1080,11 @@
         "editorType" : "DROPDOWNLIST",
         "name" : "typeeq"
       },
-      "dataType" : 25,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 25,
       "needCodeListConfig" : true,
+      "caption" : "类型(=)",
       "getPSDEFSearchMode" : {
         "valueOP" : "EQ",
         "codeName" : "N_TYPE_EQ",
@@ -1095,10 +1096,8 @@
         "name" : "N_TYPE_EQ"
       },
       "allowEmpty" : true,
-      "caption" : "类型(=)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "TYPE",
         "codeName" : "Type"
@@ -1116,9 +1115,11 @@
         "editorType" : "DROPDOWNLIST",
         "name" : "typenoteq"
       },
-      "dataType" : 25,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 25,
       "needCodeListConfig" : true,
+      "caption" : "类型(<>)",
       "getPSDEFSearchMode" : {
         "valueOP" : "NOTEQ",
         "codeName" : "N_TYPE_NOTEQ",
@@ -1130,10 +1131,8 @@
         "name" : "N_TYPE_NOTEQ"
       },
       "allowEmpty" : true,
-      "caption" : "类型(<>)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "TYPE",
         "codeName" : "Type"
@@ -1152,9 +1151,11 @@
         "editorWidth" : 100.0,
         "name" : "statuseq"
       },
-      "dataType" : 25,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 25,
       "needCodeListConfig" : true,
+      "caption" : "状态(=)",
       "getPSDEFSearchMode" : {
         "valueOP" : "EQ",
         "codeName" : "N_STATUS_EQ",
@@ -1166,11 +1167,9 @@
         "name" : "N_STATUS_EQ"
       },
       "allowEmpty" : true,
-      "caption" : "状态(=)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
       "itemWidth" : 100.0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "STATUS",
         "codeName" : "Status"
@@ -1189,9 +1188,11 @@
         "editorWidth" : 100.0,
         "name" : "statusnoteq"
       },
-      "dataType" : 25,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 25,
       "needCodeListConfig" : true,
+      "caption" : "状态(<>)",
       "getPSDEFSearchMode" : {
         "valueOP" : "NOTEQ",
         "codeName" : "N_STATUS_NOTEQ",
@@ -1203,11 +1204,9 @@
         "name" : "N_STATUS_NOTEQ"
       },
       "allowEmpty" : true,
-      "caption" : "状态(<>)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
       "itemWidth" : 100.0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "STATUS",
         "codeName" : "Status"
@@ -1225,9 +1224,11 @@
         "editorType" : "DROPDOWNLIST",
         "name" : "accounteq"
       },
-      "dataType" : 25,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 25,
       "needCodeListConfig" : true,
+      "caption" : "所有者(=)",
       "getPSDEFSearchMode" : {
         "valueOP" : "EQ",
         "codeName" : "N_ACCOUNT_EQ",
@@ -1239,10 +1240,8 @@
         "name" : "N_ACCOUNT_EQ"
       },
       "allowEmpty" : true,
-      "caption" : "所有者(=)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "ACCOUNT",
         "codeName" : "Account"
@@ -1261,9 +1260,11 @@
         "editorWidth" : 100.0,
         "name" : "begineq"
       },
-      "dataType" : 9,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 9,
       "needCodeListConfig" : true,
+      "caption" : "开始(=)",
       "getPSDEFSearchMode" : {
         "valueOP" : "EQ",
         "codeName" : "N_BEGIN_EQ",
@@ -1275,11 +1276,9 @@
         "name" : "N_BEGIN_EQ"
       },
       "allowEmpty" : true,
-      "caption" : "开始(=)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
       "itemWidth" : 100.0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "BEGIN",
         "codeName" : "Begin"
@@ -1298,9 +1297,11 @@
         "editorWidth" : 100.0,
         "name" : "config_typeeq"
       },
-      "dataType" : 25,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 25,
       "needCodeListConfig" : true,
+      "caption" : "周期类型(=)",
       "getPSDEFSearchMode" : {
         "valueOP" : "EQ",
         "codeName" : "N_CONFIG_TYPE_EQ",
@@ -1312,11 +1313,9 @@
         "name" : "N_CONFIG_TYPE_EQ"
       },
       "allowEmpty" : true,
-      "caption" : "周期类型(=)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
       "itemWidth" : 100.0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "CONFIG_TYPE",
         "codeName" : "Config_type"
@@ -1329,8 +1328,10 @@
         "editorType" : "NUMBER",
         "name" : "cycleeq"
       },
-      "dataType" : 9,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 9,
+      "caption" : "周期(=)",
       "getPSDEFSearchMode" : {
         "valueOP" : "EQ",
         "codeName" : "N_CYCLE_EQ",
@@ -1342,10 +1343,8 @@
         "name" : "N_CYCLE_EQ"
       },
       "allowEmpty" : true,
-      "caption" : "周期(=)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "CYCLE",
         "codeName" : "Cycle"
@@ -1363,8 +1362,10 @@
         },
         "name" : "dateeq"
       },
-      "dataType" : 5,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 5,
+      "caption" : "日期(=)",
       "getPSDEFSearchMode" : {
         "valueOP" : "EQ",
         "codeName" : "N_DATE_EQ",
@@ -1376,11 +1377,9 @@
         "name" : "N_DATE_EQ"
       },
       "allowEmpty" : true,
-      "caption" : "日期(=)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
       "itemWidth" : 100.0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "DATE",
         "codeName" : "Date"
@@ -1398,8 +1397,10 @@
         },
         "name" : "dategteq"
       },
-      "dataType" : 5,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 5,
+      "caption" : "日期(>=)",
       "getPSDEFSearchMode" : {
         "valueOP" : "GTANDEQ",
         "codeName" : "N_DATE_GTANDEQ",
@@ -1411,11 +1412,9 @@
         "name" : "N_DATE_GTANDEQ"
       },
       "allowEmpty" : true,
-      "caption" : "日期(>=)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
       "itemWidth" : 100.0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "DATE",
         "codeName" : "Date"
@@ -1433,8 +1432,10 @@
         },
         "name" : "datelteq"
       },
-      "dataType" : 5,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 5,
+      "caption" : "日期(<=)",
       "getPSDEFSearchMode" : {
         "valueOP" : "LTANDEQ",
         "codeName" : "N_DATE_LTANDEQ",
@@ -1446,11 +1447,9 @@
         "name" : "N_DATE_LTANDEQ"
       },
       "allowEmpty" : true,
-      "caption" : "日期(<=)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
       "itemWidth" : 100.0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "DATE",
         "codeName" : "Date"
@@ -1468,8 +1467,10 @@
         },
         "name" : "datenoteq"
       },
-      "dataType" : 5,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 5,
+      "caption" : "日期(<>)",
       "getPSDEFSearchMode" : {
         "valueOP" : "NOTEQ",
         "codeName" : "N_DATE_NOTEQ",
@@ -1481,11 +1482,9 @@
         "name" : "N_DATE_NOTEQ"
       },
       "allowEmpty" : true,
-      "caption" : "日期(<>)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
       "itemWidth" : 100.0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "DATE",
         "codeName" : "Date"
@@ -1504,9 +1503,11 @@
         "editorWidth" : 100.0,
         "name" : "endeq"
       },
-      "dataType" : 9,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 9,
       "needCodeListConfig" : true,
+      "caption" : "结束(=)",
       "getPSDEFSearchMode" : {
         "valueOP" : "EQ",
         "codeName" : "N_END_EQ",
@@ -1518,11 +1519,9 @@
         "name" : "N_END_EQ"
       },
       "allowEmpty" : true,
-      "caption" : "结束(=)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
       "itemWidth" : 100.0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "END",
         "codeName" : "End"
@@ -1540,9 +1539,11 @@
         "editorWidth" : 100.0,
         "name" : "privateeq"
       },
-      "dataType" : 25,
+      "showCaption" : false,
       "hidden" : false,
+      "dataType" : 25,
       "needCodeListConfig" : true,
+      "caption" : "私人事务(=)",
       "getPSDEFSearchMode" : {
         "valueOP" : "EQ",
         "codeName" : "N_PRIVATE_EQ",
@@ -1554,11 +1555,9 @@
         "name" : "N_PRIVATE_EQ"
       },
       "allowEmpty" : true,
-      "caption" : "私人事务(=)",
       "labelPos" : "NONE",
       "labelWidth" : 0,
       "itemWidth" : 100.0,
-      "showCaption" : false,
       "getPSAppDEField" : {
         "name" : "PRIVATE",
         "codeName" : "IBizPrivate"
@@ -1566,9 +1565,9 @@
       "itemType" : "FILTER",
       "name" : "privateeq"
     } ],
-    "mobileSearchBar" : false,
-    "controlType" : "SEARCHBAR",
+    "quickSearchMode" : 1,
     "enableFilter" : true,
+    "controlType" : "SEARCHBAR",
     "codeName" : "Custom",
     "enableQuickSearch" : true,
     "enableGroup" : false,
@@ -1585,6 +1584,7 @@
     "name" : "searchbar",
     "modelid" : "de54a707c447e1e3d12c1a7a69ee1db1"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -1651,7 +1651,6 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -1659,9 +1658,10 @@
           "viewType" : "DEEDITVIEW"
         }
       },
+      "enableWizardAdd" : false,
+      "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {

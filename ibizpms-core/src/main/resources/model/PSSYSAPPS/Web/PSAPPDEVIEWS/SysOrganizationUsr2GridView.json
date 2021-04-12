@@ -10,10 +10,10 @@
   "xDataControlName" : "grid",
   "showCaptionBar" : true,
   "getPSDEViewCodeName" : "Usr2GridView",
+  "enableDP" : true,
   "caption" : "单位",
   "title" : "单位单位实体表格视图(通讯录所有组织)",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -45,7 +45,6 @@
     } ],
     "name" : "engine"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysOrganization.json"
@@ -68,65 +67,65 @@
         "name" : "ORGID",
         "codeName" : "OrgId"
       },
-      "dataType" : 25,
-      "name" : "orgid"
+      "name" : "orgid",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "ORGNAME",
         "codeName" : "OrgName"
       },
-      "dataType" : 25,
-      "name" : "orgname"
+      "name" : "orgname",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "PORGID",
         "codeName" : "ParentOrgId"
       },
-      "dataType" : 25,
-      "name" : "porgid"
+      "name" : "porgid",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "ORGLEVEL",
         "codeName" : "OrgLevel"
       },
-      "dataType" : 9,
-      "name" : "orglevel"
+      "name" : "orglevel",
+      "dataType" : 9
     }, {
       "getPSAppDEField" : {
         "name" : "DOMAINS",
         "codeName" : "Domains"
       },
-      "dataType" : 25,
-      "name" : "domains"
+      "name" : "domains",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "SHORTNAME",
         "codeName" : "ShortName"
       },
-      "dataType" : 25,
-      "name" : "shortname"
+      "name" : "shortname",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "ORGNAME",
         "codeName" : "OrgName"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     }, {
       "dataAccessAction" : true,
       "getPSAppDEField" : {
         "name" : "ORGID",
         "codeName" : "OrgId"
       },
-      "dataType" : 25,
-      "name" : "srfdataaccaction"
+      "name" : "srfdataaccaction",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "ORGID",
         "codeName" : "OrgId"
       },
-      "dataType" : 25,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 25
     } ],
     "getRemovePSControlAction" : {
       "getPSAppDataEntity" : {
@@ -142,8 +141,6 @@
       "actionType" : "DEACTION",
       "name" : "remove"
     },
-    "singleSelect" : false,
-    "enableColFilter" : false,
     "enableRowNew" : false,
     "enableRowEditOrder" : false,
     "noSort" : false,
@@ -165,16 +162,18 @@
     } ],
     "hasWFDataItems" : false,
     "columnEnableLink" : 2,
-    "controlType" : "GRID",
-    "enableRowEdit" : false,
+    "enableColFilter" : false,
+    "singleSelect" : false,
     "enablePagingBar" : true,
+    "enableRowEdit" : false,
+    "controlType" : "GRID",
     "getPSDEGridColumns" : [ {
-      "excelCaption" : "单位标识",
-      "dataItemName" : "orgid",
       "getPSAppDEField" : {
         "name" : "ORGID",
         "codeName" : "OrgId"
       },
+      "dataItemName" : "orgid",
+      "excelCaption" : "单位标识",
       "cLConvertMode" : "NONE",
       "getCapPSLanguageRes" : {
         "lanResTag" : "CTRL.WFSERVICE.ERR000012",
@@ -190,12 +189,12 @@
       "widthUnit" : "PX",
       "name" : "orgid"
     }, {
-      "excelCaption" : "单位简称",
-      "dataItemName" : "shortname",
       "getPSAppDEField" : {
         "name" : "SHORTNAME",
         "codeName" : "ShortName"
       },
+      "dataItemName" : "shortname",
+      "excelCaption" : "单位简称",
       "cLConvertMode" : "NONE",
       "getCapPSLanguageRes" : {
         "lanResTag" : "TBB.TEXT.*.CANCELWF",
@@ -211,12 +210,12 @@
       "widthUnit" : "PX",
       "name" : "shortname"
     }, {
-      "excelCaption" : "区属",
-      "dataItemName" : "domains",
       "getPSAppDEField" : {
         "name" : "DOMAINS",
         "codeName" : "Domains"
       },
+      "dataItemName" : "domains",
+      "excelCaption" : "区属",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -235,12 +234,12 @@
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeUsr2GridView.json",
         "viewType" : "DEGRIDVIEW"
       },
-      "excelCaption" : "名称",
-      "dataItemName" : "orgname",
       "getPSAppDEField" : {
         "name" : "ORGNAME",
         "codeName" : "OrgName"
       },
+      "dataItemName" : "orgname",
+      "excelCaption" : "名称",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -252,12 +251,12 @@
       "widthUnit" : "PX",
       "name" : "orgname"
     }, {
-      "excelCaption" : "单位级别",
-      "dataItemName" : "orglevel",
       "getPSAppDEField" : {
         "name" : "ORGLEVEL",
         "codeName" : "OrgLevel"
       },
+      "dataItemName" : "orglevel",
+      "excelCaption" : "单位级别",
       "cLConvertMode" : "NONE",
       "noPrivDisplayMode" : 1,
       "enableSort" : true,
@@ -378,10 +377,10 @@
     "name" : "grid",
     "modelid" : "c5c8428ad8704c0567b5c34707a80fed"
   }, {
+    "searchButtonStyle" : "DEFAULT",
     "enableAdvanceSearch" : false,
     "enableAutoSearch" : false,
     "enableFilterSave" : false,
-    "searchButtonStyle" : "DEFAULT",
     "controlType" : "SEARCHFORM",
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
@@ -455,6 +454,7 @@
     "name" : "searchform",
     "modelid" : "8848ddcafc005f7e8ec694e658f8d0d2"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewRefs" : [ {
     "getRefPSAppView" : {
       "modelref" : true,
@@ -475,7 +475,6 @@
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "getPSAppUILogic" : {
-      "actionAfterWizard" : "DEFAULT",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -483,9 +482,10 @@
           "viewType" : "DEEDITVIEW"
         }
       },
+      "enableWizardAdd" : false,
+      "actionAfterWizard" : "DEFAULT",
       "enableBatchAdd" : false,
       "batchAddOnly" : false,
-      "enableWizardAdd" : false,
       "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {

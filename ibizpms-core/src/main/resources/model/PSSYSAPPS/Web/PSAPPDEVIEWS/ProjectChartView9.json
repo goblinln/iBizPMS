@@ -1,15 +1,15 @@
 {
   "loadDefault" : true,
+  "enableQuickGroup" : false,
   "enableSearch" : false,
   "expandSearchForm" : false,
-  "enableQuickGroup" : false,
   "enableQuickSearch" : false,
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "ChartView9",
+  "enableDP" : true,
   "caption" : "项目",
   "title" : "项目图表视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSAppViewNavParams" : [ {
     "rawValue" : false,
     "value" : "curyear",
@@ -44,7 +44,6 @@
     "key" : "CURYEAR",
     "name" : "CURYEAR"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
@@ -71,8 +70,6 @@
     },
     "controlType" : "CHART",
     "getPSDEChartSerieses" : [ {
-      "catalogField" : "STATUS",
-      "seriesType" : "pie",
       "getCatalogPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Project_staus.json"
@@ -87,6 +84,7 @@
         "modelref" : true,
         "id" : "0"
       },
+      "catalogField" : "STATUS",
       "getPSChartSeriesEncode" : {
         "category" : "STATUS",
         "value" : "SRFCOUNT",
@@ -95,6 +93,7 @@
         "name" : "坐标系编码",
         "id" : "0"
       },
+      "seriesType" : "pie",
       "valueField" : "SRFCOUNT",
       "seriesLayoutBy" : "column",
       "groupMode" : "CODELIST",
@@ -230,6 +229,7 @@
       "EC.color" : "[\"#0068B7\",\"#1aa1e6\",\"#81cef2\",\"#FF5D5D\",'#FDC137','#00DA88','#7ECFF','#8666B8','#BD7B46']"
     }
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "ProjectChartView9",
   "viewType" : "DECHARTVIEW9",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectChartView9.json",

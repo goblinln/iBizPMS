@@ -6,10 +6,10 @@
   "xDataControlName" : "dataview",
   "showCaptionBar" : true,
   "getPSDEViewCodeName" : "IndexPickupDataView",
+  "enableDP" : true,
   "caption" : "索引检索",
   "title" : "索引检索索引关系选择数据视图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -23,37 +23,36 @@
     "controlStyle" : "APPDEINDEXPICKUPDATAVIEW_STYLE2",
     "name" : "layoutpanel"
   },
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
   },
   "getPSControls" : [ {
-    "singleSelect" : false,
     "noSort" : false,
     "hasWFDataItems" : false,
+    "singleSelect" : false,
     "appendDEItems" : false,
     "getPSDEDataViewDataItems" : [ {
       "getPSAppDEField" : {
         "name" : "INDEXNAME",
         "codeName" : "Indexname"
       },
-      "dataType" : 25,
-      "name" : "srfmajortext"
+      "name" : "srfmajortext",
+      "dataType" : 25
     }, {
       "getPSAppDEField" : {
         "name" : "INDEXID",
         "codeName" : "Indexid"
       },
-      "dataType" : 25,
-      "name" : "srfkey"
+      "name" : "srfkey",
+      "dataType" : 25
     } ],
     "enableCardEdit" : false,
     "enableCardEditOrder" : false,
     "enableCardEditGroup" : false,
     "enableCardNew" : false,
-    "controlType" : "DATAVIEW",
     "enablePagingBar" : false,
+    "controlType" : "DATAVIEW",
     "codeName" : "IndexType",
     "enableGroup" : false,
     "pagingSize" : 1000,
@@ -161,6 +160,7 @@
     "name" : "dataview",
     "modelid" : "b7809a0eed51ac1fa8687a2372b44e57"
   } ],
+  "viewStyle" : "STYLE2",
   "codeName" : "IbizproIndexIndexPickupDataView",
   "viewType" : "DEINDEXPICKUPDATAVIEW",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexIndexPickupDataView.json",

@@ -1,8 +1,8 @@
 {
+  "searchButtonStyle" : "DEFAULT",
   "enableAdvanceSearch" : false,
   "enableAutoSearch" : false,
   "enableFilterSave" : false,
-  "searchButtonStyle" : "DEFAULT",
   "controlType" : "SEARCHFORM",
   "getPSLayout" : {
     "layout" : "TABLE_24COL",
@@ -23,23 +23,23 @@
       },
       "inputTipClosable" : false,
       "noPrivDisplayMode" : 1,
-      "dataType" : 25,
+      "showCaption" : true,
       "hidden" : false,
+      "dataType" : 25,
       "needCodeListConfig" : true,
-      "allowEmpty" : true,
       "caption" : "间隔",
+      "allowEmpty" : true,
       "createDV" : "5",
       "enableCond" : 3,
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 50,
       "itemHeight" : 29.0,
-      "showCaption" : true,
       "getPSLayoutPos" : {
-        "colMD" : 24,
-        "colLG" : 24,
         "colSM" : 24,
         "colXS" : 24,
+        "colMD" : 24,
+        "colLG" : 24,
         "layout" : "TABLE_24COL"
       },
       "getPSSysCss" : {

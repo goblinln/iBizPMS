@@ -1,19 +1,19 @@
 {
-  "enableBackend" : true,
   "enableFront" : false,
+  "enableBackend" : true,
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"
   },
   "getPSDELogicNodes" : [ {
     "parallelOutput" : true,
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Module"
-    },
     "getDstPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Module"
     },
     "getPSDELogicLinks" : [ {
       "modelref" : true,
@@ -21,11 +21,11 @@
     } ],
     "logicHolder" : 3,
     "codeName" : "Deaction1",
-    "logicNodeType" : "DEACTION",
     "getDstPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDEACTIONS/Get.json"
     },
+    "logicNodeType" : "DEACTION",
     "name" : "获取模块详情"
   }, {
     "parallelOutput" : true,
@@ -43,9 +43,9 @@
         "modelref" : true,
         "id" : "Default"
       },
+      "srcFieldName" : "MODULE",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "ID",
-      "srcFieldName" : "MODULE",
       "name" : "Default[MODULE] ==> Module[ID]"
     } ],
     "logicHolder" : 3,
@@ -74,9 +74,9 @@
         "modelref" : true,
         "id" : "Module"
       },
+      "srcFieldName" : "BRANCH",
       "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "BRANCH",
-      "srcFieldName" : "BRANCH",
       "name" : "Module[BRANCH] ==> Default[BRANCH]"
     } ],
     "logicHolder" : 3,
@@ -98,11 +98,11 @@
   }, {
     "getPSDELogicLinkGroupCond" : {
       "getPSDELogicLinkConds" : [ {
+        "condOP" : "ISNOTNULL",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "condOP" : "ISNOTNULL",
         "dstFieldName" : "MODULE",
         "logicType" : "SINGLE",
         "name" : "Default[MODULE] 值不为空(NotNil)"
@@ -135,16 +135,16 @@
     "name" : "连接9306"
   } ],
   "getPSDELogicParams" : [ {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Module",
     "default" : false,
     "name" : "模块"
   }, {
+    "sessionParam" : false,
     "lastParam" : false,
     "envParam" : false,
-    "sessionParam" : false,
     "codeName" : "Default",
     "default" : true,
     "name" : "传入变量"

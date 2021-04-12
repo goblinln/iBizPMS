@@ -13,12 +13,12 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/RepoFiles.json"
   },
   "orderValue" : 100,
+  "codeName" : "IBizParent",
+  "dERType" : "DER1N",
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/RepoFiles.json"
   },
-  "codeName" : "IBizParent",
-  "dERType" : "DER1N",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/RepoFiles/PSDERS/DER1N__ZT_REPOFILES__ZT_REPOFILES__PARENT.json",
   "name" : "DER1N__ZT_REPOFILES__ZT_REPOFILES__PARENT"
 }

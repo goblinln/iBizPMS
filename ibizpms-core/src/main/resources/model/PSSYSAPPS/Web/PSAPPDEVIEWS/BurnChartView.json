@@ -1,19 +1,19 @@
 {
   "loadDefault" : true,
-  "enableSearch" : false,
-  "expandSearchForm" : false,
   "enableQuickGroup" : true,
   "getQuickGroupPSCodeList" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/BurnQuickpacket.json"
   },
+  "enableSearch" : false,
+  "expandSearchForm" : false,
   "enableQuickSearch" : false,
   "showCaptionBar" : false,
   "getPSDEViewCodeName" : "ChartView",
+  "enableDP" : true,
   "caption" : "燃尽图",
   "title" : "燃尽图",
   "accUserMode" : 2,
-  "enableDP" : true,
   "getPSViewLayoutPanel" : {
     "useDefaultLayout" : true,
     "layoutPanel" : true,
@@ -48,16 +48,15 @@
     "uIActionTarget" : "SINGLEKEY",
     "name" : "toolbar_deuiaction1_computeburn"
   } ],
-  "viewStyle" : "STYLE2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
   },
   "getPSControls" : [ {
+    "searchButtonStyle" : "DEFAULT",
     "enableAdvanceSearch" : false,
     "enableAutoSearch" : false,
     "enableFilterSave" : false,
-    "searchButtonStyle" : "DEFAULT",
     "controlType" : "SEARCHFORM",
     "getPSLayout" : {
       "layout" : "TABLE_24COL",
@@ -78,23 +77,23 @@
         },
         "inputTipClosable" : false,
         "noPrivDisplayMode" : 1,
-        "dataType" : 25,
+        "showCaption" : true,
         "hidden" : false,
+        "dataType" : 25,
         "needCodeListConfig" : true,
-        "allowEmpty" : true,
         "caption" : "间隔",
+        "allowEmpty" : true,
         "createDV" : "5",
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 50,
         "itemHeight" : 29.0,
-        "showCaption" : true,
         "getPSLayoutPos" : {
-          "colMD" : 24,
-          "colLG" : 24,
           "colSM" : 24,
           "colXS" : 24,
+          "colMD" : 24,
+          "colLG" : 24,
           "layout" : "TABLE_24COL"
         },
         "getPSSysCss" : {
@@ -185,12 +184,6 @@
       },
       "noPrivDisplayMode" : 2,
       "getPSUIAction" : {
-        "getPSNavigateContexts" : [ {
-          "rawValue" : true,
-          "value" : "0",
-          "key" : "BURN",
-          "name" : "BURN"
-        } ],
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
@@ -207,12 +200,18 @@
         } ],
         "refreshMode" : 1,
         "enableConfirm" : true,
+        "getPSNavigateContexts" : [ {
+          "rawValue" : true,
+          "value" : "0",
+          "key" : "BURN",
+          "name" : "BURN"
+        } ],
         "getNoPrivDisplayMode" : 2,
         "timeout" : 60000,
         "codeName" : "ComputeBurn",
         "caption" : "更新燃尽图",
-        "actionTarget" : "SINGLEKEY",
         "reloadData" : true,
+        "actionTarget" : "SINGLEKEY",
         "uIActionTag" : "ComputeBurn",
         "uIActionType" : "DEUIACTION",
         "uIActionMode" : "BACKEND",
@@ -225,9 +224,9 @@
       "tooltip" : "更新燃尽图",
       "groupExtractMode" : "ITEM",
       "showIcon" : true,
+      "showCaption" : false,
       "itemType" : "DEUIACTION",
       "caption" : "更新燃尽图",
-      "showCaption" : false,
       "name" : "deuiaction1_computeburn"
     } ],
     "getPSAppDataEntity" : {
@@ -282,8 +281,6 @@
     "controlType" : "CHART",
     "getPSDEChartSerieses" : [ {
       "stack" : false,
-      "catalogField" : "DATE",
-      "seriesType" : "area",
       "eChartsType" : "line",
       "getPSChartCoordinateSystem" : {
         "modelref" : true,
@@ -294,6 +291,7 @@
         "modelref" : true,
         "id" : "0"
       },
+      "catalogField" : "DATE",
       "getPSChartSeriesEncode" : {
         "getPSChartXAxis" : {
           "modelref" : true,
@@ -310,6 +308,7 @@
         "name" : "坐标系编码",
         "id" : "0"
       },
+      "seriesType" : "area",
       "caption" : "实际消耗",
       "valueField" : "LEFT",
       "seriesLayoutBy" : "column",
@@ -321,8 +320,6 @@
       }
     }, {
       "stack" : false,
-      "catalogField" : "date",
-      "seriesType" : "line",
       "eChartsType" : "line",
       "getPSChartCoordinateSystem" : {
         "modelref" : true,
@@ -333,6 +330,7 @@
         "modelref" : true,
         "id" : "1"
       },
+      "catalogField" : "date",
       "getPSChartSeriesEncode" : {
         "getPSChartXAxis" : {
           "modelref" : true,
@@ -349,6 +347,7 @@
         "name" : "坐标系编码",
         "id" : "0"
       },
+      "seriesType" : "line",
       "caption" : "预计消耗",
       "valueField" : "estimate",
       "seriesLayoutBy" : "column",
@@ -534,6 +533,7 @@
     "name" : "chart",
     "modelid" : "dde39a9842220d96c7f2a9bc8e0559ad"
   } ],
+  "viewStyle" : "STYLE2",
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CTRLEVENT",
     "getPSViewCtrlName" : "toolbar",
@@ -551,25 +551,25 @@
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BurnChartView.json",
   "name" : "BurnChartView",
   "getPSAppDERSPaths" : [ [ {
-    "getParentPSAppDEField" : {
-      "name" : "PROJECT",
-      "codeName" : "Project"
+    "enableDEAction" : true,
+    "enableSelect" : true,
+    "enableDEDataSet" : true,
+    "enableCreateDataRS" : false,
+    "enableUpdateDataRS" : false,
+    "enableGetDataRS" : false,
+    "enableSelectDataRS" : false,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
     },
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+    "getParentPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
     },
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "codeName" : "Burns",
     "actionRSMode" : 1,
     "dataRSMode" : 0,
