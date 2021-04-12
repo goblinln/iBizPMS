@@ -64,7 +64,7 @@ export const Environment = {
     // 是否预览模式
     isPreviewMode: false,
     // SaaS模式
-    SaaSMode: true,
+    SaaSMode: false,
     // 钉钉内部集成应用标识，用于钉钉应用内免登
     dingTalkAppId: "",
     // 钉钉登录应用标识，用于网页扫码登录
