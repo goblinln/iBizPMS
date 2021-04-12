@@ -83,6 +83,20 @@ export class TaskSubTaskNewViewBase extends GridViewBase {
         }
     };
 
+	/**
+	 * 自定义视图导航参数集合
+	 *
+     * @protected
+	 * @type {*}
+	 * @memberof TaskSubTaskNewViewBase
+	 */
+    protected customViewParams: any = {
+        'name': {
+            isRawValue: true,
+            value: 'null',
+        }
+    };
+
     /**
      * 视图模型数据
      *
