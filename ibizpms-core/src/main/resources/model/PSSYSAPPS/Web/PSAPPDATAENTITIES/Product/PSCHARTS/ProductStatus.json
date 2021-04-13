@@ -1,78 +1,22 @@
 {
-  "getPSDEChartTitle" : {
-    "showTitle" : false,
-    "title" : "产品总览",
-    "index" : 0,
-    "id" : "0"
+  "codeName" : "ProductStatus",
+  "controlType" : "CHART",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product/PSCHARTS/ProductStatus.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "height" : 300.0,
+  "logicName" : "ProductStatusPie",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
   },
   "getPSChartCoordinateSystems" : [ {
     "eChartsType" : "none",
-    "type" : "NONE",
     "index" : 0,
     "name" : "[ProductStatus]无坐标系[0]",
-    "id" : "0"
-  } ],
-  "getPSDEChartLegend" : {
-    "showLegend" : true,
-    "legendPos" : "RIGHT",
-    "index" : 0,
-    "id" : "0"
-  },
-  "controlType" : "CHART",
-  "getPSDEChartSerieses" : [ {
-    "getCatalogPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product__status.json"
-    },
-    "eChartsType" : "pie",
-    "getPSChartCoordinateSystem" : {
-      "modelref" : true,
-      "id" : "0"
-    },
-    "enableChartDataSet" : true,
-    "getPSChartDataSet" : {
-      "modelref" : true,
-      "id" : "0"
-    },
-    "catalogField" : "STATUS",
-    "getPSChartSeriesEncode" : {
-      "category" : "STATUS",
-      "value" : "SRFCOUNT",
-      "type" : "NONE",
-      "index" : 0,
-      "name" : "坐标系编码",
-      "id" : "0"
-    },
-    "seriesType" : "pie",
-    "valueField" : "SRFCOUNT",
-    "seriesLayoutBy" : "column",
-    "groupMode" : "CODELIST",
-    "index" : 0,
-    "name" : "ProductStatus",
-    "getUserParam" : {
-      "EC.radius" : "['60%', '70%']"
-    }
-  } ],
-  "codeName" : "ProductStatus",
-  "getPSChartDataSets" : [ {
-    "getPSChartDataSetFields" : [ {
-      "groupField" : true,
-      "getPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product__status.json"
-      },
-      "groupMode" : "CODELIST",
-      "index" : 0,
-      "name" : "STATUS",
-      "id" : "0"
-    }, {
-      "groupField" : false,
-      "index" : 1,
-      "name" : "SRFCOUNT",
-      "id" : "1"
-    } ],
-    "index" : 0,
-    "name" : "ProductStatus-DEFAULT",
+    "type" : "NONE",
     "id" : "0"
   } ],
   "getPSChartDataSetGroups" : [ {
@@ -80,22 +24,78 @@
     "name" : "DEFAULT",
     "id" : "0"
   } ],
-  "getFetchPSControlAction" : {
-    "modelref" : true,
-    "id" : "fetch"
+  "getPSChartDataSets" : [ {
+    "index" : 0,
+    "name" : "ProductStatus-DEFAULT",
+    "getPSChartDataSetFields" : [ {
+      "groupMode" : "CODELIST",
+      "index" : 0,
+      "name" : "STATUS",
+      "getPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product__status.json"
+      },
+      "groupField" : true,
+      "id" : "0"
+    }, {
+      "index" : 1,
+      "name" : "SRFCOUNT",
+      "groupField" : false,
+      "id" : "1"
+    } ],
+    "id" : "0"
+  } ],
+  "getPSDEChartLegend" : {
+    "index" : 0,
+    "legendPos" : "RIGHT",
+    "showLegend" : true,
+    "id" : "0"
   },
-  "readOnly" : true,
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+  "getPSDEChartSerieses" : [ {
+    "catalogField" : "STATUS",
+    "getCatalogPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product__status.json"
+    },
+    "eChartsType" : "pie",
+    "groupMode" : "CODELIST",
+    "index" : 0,
+    "name" : "ProductStatus",
+    "getPSChartCoordinateSystem" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartDataSet" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartSeriesEncode" : {
+      "category" : "STATUS",
+      "index" : 0,
+      "name" : "坐标系编码",
+      "type" : "NONE",
+      "value" : "SRFCOUNT",
+      "id" : "0"
+    },
+    "seriesLayoutBy" : "column",
+    "seriesType" : "pie",
+    "valueField" : "SRFCOUNT",
+    "enableChartDataSet" : true,
+    "getUserParam" : {
+      "EC.radius" : "['60%', '70%']"
+    }
+  } ],
+  "getPSDEChartTitle" : {
+    "index" : 0,
+    "title" : "产品总览",
+    "showTitle" : false,
+    "id" : "0"
   },
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "NEW"
   },
-  "height" : 300.0,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product/PSCHARTS/ProductStatus.json",
-  "logicName" : "ProductStatusPie",
+  "readOnly" : true,
   "modelid" : "2b1d9d534cc4b8bc73b4e4721d39882a",
   "getUserParam" : {
     "EC.color" : "[\"#f69f54\",\"#42B3FF\",\"#aa00ff\",\"#884bff\",'#00ffa9','#85B3FF','#A1FFFF']"

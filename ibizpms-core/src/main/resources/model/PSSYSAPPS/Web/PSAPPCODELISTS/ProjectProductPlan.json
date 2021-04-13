@@ -1,16 +1,16 @@
 {
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
-  },
+  "codeListType" : "DYNAMIC",
+  "codeName" : "ProjectProductPlan",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProjectProductPlan.json",
+  "emptyText" : "未定义",
+  "name" : "项目产品计划（动态）",
   "getPSAppDEDataSet" : {
     "modelref" : true,
     "id" : "FetchProjectPlan"
   },
-  "dynaInstMode" : 1,
-  "codeListType" : "DYNAMIC",
-  "codeName" : "ProjectProductPlan",
-  "emptyText" : "未定义",
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProjectProductPlan.json",
-  "name" : "项目产品计划（动态）"
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+  }
 }

@@ -1,65 +1,13 @@
 {
-  "searchButtonStyle" : "DEFAULT",
-  "enableAdvanceSearch" : false,
-  "enableAutoSearch" : false,
-  "enableFilterSave" : false,
+  "codeName" : "ProjectStoryStats",
   "controlType" : "SEARCHFORM",
-  "getPSLayout" : {
-    "layout" : "TABLE_24COL",
-    "columnCount" : 24
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats/PSSEARCHFORMS/ProjectStoryStats.json",
+  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+  "logicName" : "项目需求统计多用",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
   },
-  "getPSDEFormPages" : [ {
-    "getPSDEFormDetails" : [ {
-      "emptyCaption" : false,
-      "getPSEditor" : {
-        "singleSelect" : true,
-        "getPSAppCodeList" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Project__status.json"
-        },
-        "editorType" : "DROPDOWNLIST",
-        "name" : "n_status_eq"
-      },
-      "inputTipClosable" : false,
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "STATUS",
-        "codeName" : "Status"
-      },
-      "showCaption" : true,
-      "hidden" : false,
-      "dataType" : 25,
-      "needCodeListConfig" : true,
-      "caption" : "项目状态",
-      "allowEmpty" : true,
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "labelPos" : "LEFT",
-      "labelWidth" : 80,
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "colLG" : 8,
-        "width" : 320,
-        "layout" : "TABLE_24COL"
-      },
-      "contentWidth" : 320.0,
-      "width" : 320.0,
-      "codeName" : "n_status_eq",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "n_status_eq"
-    } ],
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
-    "infoGroupMode" : false,
-    "codeName" : "formpage1",
-    "caption" : "表单分页",
-    "detailType" : "FORMPAGE",
-    "detailStyle" : "DEFAULT",
-    "name" : "formpage1"
-  } ],
   "getPSDEFormItems" : [ {
     "id" : "n_status_eq",
     "dataType" : 25,
@@ -68,15 +16,67 @@
       "codeName" : "Status"
     }
   } ],
-  "noTabHeader" : true,
-  "codeName" : "ProjectStoryStats",
-  "tabHeaderPos" : "TOP",
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+  "getPSDEFormPages" : [ {
+    "caption" : "表单分页",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "caption" : "项目状态",
+      "codeName" : "n_status_eq",
+      "contentWidth" : 320.0,
+      "dataType" : 25,
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMITEM",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 80,
+      "name" : "n_status_eq",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "STATUS",
+        "codeName" : "Status"
+      },
+      "getPSEditor" : {
+        "editorType" : "DROPDOWNLIST",
+        "name" : "n_status_eq",
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Project__status.json"
+        },
+        "singleSelect" : true
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 8,
+        "colMD" : 24,
+        "layout" : "TABLE_24COL",
+        "width" : 320
+      },
+      "width" : 320.0,
+      "allowEmpty" : true,
+      "emptyCaption" : false,
+      "hidden" : false,
+      "inputTipClosable" : false,
+      "needCodeListConfig" : true,
+      "showCaption" : true
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
   },
-  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats/PSSEARCHFORMS/ProjectStoryStats.json",
-  "logicName" : "项目需求统计多用",
+  "searchButtonStyle" : "DEFAULT",
+  "tabHeaderPos" : "TOP",
+  "enableAdvanceSearch" : false,
+  "enableAutoSearch" : false,
+  "enableFilterSave" : false,
+  "noTabHeader" : true,
   "modelid" : "a68ca214bdd67b0f293221ea411522ef"
 }

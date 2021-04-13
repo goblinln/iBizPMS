@@ -1,9 +1,9 @@
 {
-  "serviceOrder" : 0,
-  "serviceHandler" : "ReportService",
   "codeName" : "ReportService",
-  "serviceContainer" : "SC01",
-  "startMode" : "MANUAL",
   "dynaModelFilePath" : "PSMODULES/zentao/PSSYSBACKSERVICES/ReportService.json",
-  "name" : "每日任务提醒定时服务"
+  "name" : "每日任务提醒定时服务",
+  "serviceContainer" : "SC01",
+  "serviceHandler" : "ReportService",
+  "serviceOrder" : 0,
+  "startMode" : "MANUAL"
 }

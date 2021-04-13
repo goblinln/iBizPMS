@@ -1,138 +1,136 @@
 {
-  "showDataInfoBar" : false,
-  "showCaptionBar" : false,
-  "xDataControlName" : "form",
-  "getPSDEViewCodeName" : "KEditView9",
-  "enableDP" : true,
-  "caption" : "关键字",
-  "title" : "文档编辑视图（关键字）",
   "accUserMode" : 2,
-  "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
-    "layoutPanel" : true,
-    "controlType" : "VIEWLAYOUTPANEL",
-    "codeName" : "Layoutpanel",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
-    },
-    "getPSControlParam" : { },
-    "controlStyle" : "APPDEEDITVIEW9_STYLE2",
-    "name" : "layoutpanel"
+  "caption" : "关键字",
+  "codeName" : "DocKEditView9",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocKEditView9.json",
+  "name" : "DocKEditView9",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
   },
   "getPSAppViewEngines" : [ {
-    "engineType" : "EditView9",
     "engineCat" : "VIEW",
+    "engineType" : "EditView9",
+    "name" : "engine",
     "getPSUIEngineParams" : [ {
       "name" : "FORM",
       "paramType" : "CTRL"
     }, {
       "name" : "P2K",
-      "value" : 0,
-      "paramType" : "VALUE"
-    } ],
-    "name" : "engine"
+      "paramType" : "VALUE",
+      "value" : 0
+    } ]
   } ],
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
-  },
   "getPSControls" : [ {
-    "enableAutoSave" : false,
-    "infoFormMode" : true,
-    "showFormNavBar" : false,
+    "codeName" : "Keywords",
+    "controlType" : "FORM",
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
     },
-    "getUpdatePSControlAction" : {
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc/PSFORMS/Keywords.json",
+    "getGetDraftFromPSControlAction" : {
       "modelref" : true,
-      "id" : "update"
-    },
-    "getRemovePSControlAction" : {
-      "modelref" : true,
-      "id" : "remove"
-    },
-    "getGetPSControlAction" : {
-      "modelref" : true,
-      "id" : "load"
+      "id" : "loaddraftfrom"
     },
     "getGetDraftPSControlAction" : {
       "modelref" : true,
       "id" : "loaddraft"
     },
-    "getGetDraftFromPSControlAction" : {
+    "getGetPSControlAction" : {
       "modelref" : true,
-      "id" : "loaddraftfrom"
+      "id" : "load"
     },
-    "controlType" : "FORM",
-    "readOnly" : false,
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
+    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+    "logicName" : "关键字",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
     },
-    "getPSDEFormPages" : [ {
-      "getPSDEFormDetails" : [ {
-        "infoGroupMode" : true,
-        "actionGroupExtractMode" : "ITEM",
-        "titleBarCloseMode" : 1,
-        "getPSLayout" : {
-          "layout" : "TABLE_24COL",
-          "columnCount" : 24
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
         },
-        "getPSDEFormDetails" : [ {
-          "emptyCaption" : true,
-          "getPSEditor" : {
-            "enableLinkView" : false,
-            "editable" : false,
-            "editorType" : "SPAN",
-            "name" : "keywords"
-          },
-          "inputTipClosable" : false,
-          "noPrivDisplayMode" : 1,
-          "getPSAppDEField" : {
-            "name" : "KEYWORDS",
-            "codeName" : "Keywords"
-          },
-          "showCaption" : false,
-          "hidden" : false,
-          "dataType" : 25,
-          "allowEmpty" : true,
-          "enableCond" : 3,
-          "ignoreInput" : 0,
-          "labelPos" : "NONE",
-          "labelWidth" : 0,
-          "getPSLayoutPos" : {
-            "colMD" : 24,
-            "layout" : "TABLE_24COL"
-          },
-          "codeName" : "keywords",
-          "detailType" : "FORMITEM",
-          "detailStyle" : "DEFAULT",
-          "name" : "keywords"
-        } ],
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
+        }
+      }, {
+        "actionName" : "GETDRAFTFROM",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraftfrom",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
         },
-        "showCaption" : true,
-        "codeName" : "grouppanel1",
-        "caption" : "关键字",
-        "detailType" : "GROUPPANEL",
-        "detailStyle" : "DEFAULT",
-        "name" : "grouppanel1"
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
+        }
+      }, {
+        "actionName" : "GetDraft",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
+        }
       } ],
-      "getPSLayout" : {
-        "layout" : "TABLE_24COL",
-        "columnCount" : 24
-      },
-      "infoGroupMode" : true,
-      "codeName" : "formpage1",
-      "caption" : "基本信息",
-      "detailType" : "FORMPAGE",
-      "detailStyle" : "DEFAULT",
-      "name" : "formpage1"
-    } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "编辑表单处理器"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "FORM"
+    },
     "getPSDEFormItems" : [ {
       "id" : "srforikey",
       "hidden" : true,
@@ -185,106 +183,108 @@
         "codeName" : "Id"
       }
     } ],
-    "noTabHeader" : true,
-    "codeName" : "Keywords",
+    "getPSDEFormPages" : [ {
+      "caption" : "基本信息",
+      "codeName" : "formpage1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMPAGE",
+      "name" : "formpage1",
+      "getPSDEFormDetails" : [ {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "关键字",
+        "codeName" : "grouppanel1",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel1",
+        "getPSDEFormDetails" : [ {
+          "codeName" : "keywords",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "NONE",
+          "labelWidth" : 0,
+          "name" : "keywords",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "KEYWORDS",
+            "codeName" : "Keywords"
+          },
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "keywords",
+            "editable" : false,
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "emptyCaption" : true,
+          "hidden" : false,
+          "inputTipClosable" : false,
+          "showCaption" : false
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "titleBarCloseMode" : 1,
+        "infoGroupMode" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : true
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getRemovePSControlAction" : {
+      "modelref" : true,
+      "id" : "remove"
+    },
     "tabHeaderPos" : "TOP",
+    "getUpdatePSControlAction" : {
+      "modelref" : true,
+      "id" : "update"
+    },
+    "enableAutoSave" : false,
+    "infoFormMode" : true,
+    "noTabHeader" : true,
+    "readOnly" : false,
+    "showFormNavBar" : false,
+    "name" : "form",
+    "modelid" : "802ee99f9712d854417ff17f00cc86e5"
+  } ],
+  "getPSDEViewCodeName" : "KEditView9",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEEDITVIEW9_STYLE2",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "FORM"
-    },
-    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
-    "getPSControlHandler" : {
-      "getPSHandlerActions" : [ {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Update"
-        },
-        "dataAccessAction" : "UPDATE",
-        "actionName" : "Update",
-        "actionType" : "DEACTION",
-        "name" : "update"
-      }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
-        },
-        "dataAccessAction" : "CREATE",
-        "actionName" : "GETDRAFTFROM",
-        "actionType" : "DEACTION",
-        "name" : "loaddraftfrom"
-      }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
-        "dataAccessAction" : "DELETE",
-        "actionName" : "Remove",
-        "actionType" : "DEACTION",
-        "name" : "remove"
-      }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "GetDraft"
-        },
-        "dataAccessAction" : "CREATE",
-        "actionName" : "GetDraft",
-        "actionType" : "DEACTION",
-        "name" : "loaddraft"
-      }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Get"
-        },
-        "dataAccessAction" : "READ",
-        "actionName" : "Get",
-        "actionType" : "DEACTION",
-        "name" : "load"
-      }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Create"
-        },
-        "dataAccessAction" : "CREATE",
-        "actionName" : "Create",
-        "actionType" : "DEACTION",
-        "name" : "create"
-      } ],
-      "enableDEFieldPrivilege" : false,
-      "id" : "编辑表单处理器"
-    },
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc/PSFORMS/Keywords.json",
-    "logicName" : "关键字",
-    "name" : "form",
-    "modelid" : "802ee99f9712d854417ff17f00cc86e5"
-  } ],
+    "getPSControlParam" : { },
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "文档编辑视图（关键字）",
   "viewStyle" : "STYLE2",
-  "codeName" : "DocKEditView9",
   "viewType" : "DEEDITVIEW9",
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocKEditView9.json",
-  "name" : "DocKEditView9"
+  "xDataControlName" : "form",
+  "enableDP" : true,
+  "showCaptionBar" : false,
+  "showDataInfoBar" : false
 }

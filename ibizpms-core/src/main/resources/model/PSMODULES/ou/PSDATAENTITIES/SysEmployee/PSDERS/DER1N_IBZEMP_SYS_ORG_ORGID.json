@@ -1,4 +1,19 @@
 {
+  "codeName" : "Org",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDERS/DER1N_IBZEMP_SYS_ORG_ORGID.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysOrganization.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 0,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
+  },
+  "name" : "DER1N_IBZEMP_SYS_ORG_ORGID",
+  "orderValue" : 100,
   "getPSPickupDEField" : {
     "name" : "ORGID",
     "codeName" : "OrgId"
@@ -7,22 +22,7 @@
     "name" : "ORGNAME",
     "codeName" : "OrgName"
   },
-  "masterOrder" : -1,
-  "removeActionType" : 2,
   "pickupDEFName" : "ORGID",
-  "masterRS" : 0,
-  "removeOrder" : 0,
-  "getMajorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysOrganization.json"
-  },
-  "orderValue" : 100,
-  "codeName" : "Org",
-  "dERType" : "DER1N",
-  "getMinorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
-  },
-  "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDERS/DER1N_IBZEMP_SYS_ORG_ORGID.json",
-  "name" : "DER1N_IBZEMP_SYS_ORG_ORGID"
+  "removeActionType" : 2,
+  "removeOrder" : 0
 }

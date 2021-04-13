@@ -1,120 +1,47 @@
 {
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "FINISHEDBY",
-      "codeName" : "FinishedBy"
-    },
-    "name" : "finishedby",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TOTALCONSUMED",
-      "codeName" : "TotalConsumed"
-    },
-    "name" : "totalconsumed",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TOTALESTIMATE",
-      "codeName" : "TotalEstimate"
-    },
-    "name" : "totalestimate",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TASKEFFICIENT",
-      "codeName" : "Taskefficient"
-    },
-    "name" : "taskefficient",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "PROJECTNAME",
-      "codeName" : "ProjectName"
-    },
-    "name" : "projectname",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
-    "name" : "srfmajortext",
-    "dataType" : 25
-  }, {
-    "dataAccessAction" : true,
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfkey",
-    "dataType" : 1
-  } ],
-  "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskStats.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
-  "enableRowNew" : false,
-  "enableRowEditOrder" : false,
-  "noSort" : true,
-  "getPSDEGridEditItems" : [ {
-    "getPSEditor" : {
-      "editorType" : "HIDDEN",
-      "name" : "srfkey"
-    },
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "allowEmpty" : true,
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "codeName" : "srfkey",
-    "caption" : "编号",
-    "name" : "srfkey"
-  } ],
-  "hasWFDataItems" : false,
+  "aggMode" : "NONE",
+  "codeName" : "UserFinishTaskSum",
   "columnEnableLink" : 2,
-  "enableColFilter" : false,
-  "singleSelect" : true,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskStats/PSGRIDS/UserFinishTaskSum.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "用户完成任务汇总表格",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskStats.json"
+  },
   "getPSDEGridColumns" : [ {
-    "getPSAppDEField" : {
-      "name" : "PROJECTNAME",
-      "codeName" : "ProjectName"
-    },
+    "align" : "CENTER",
+    "cLConvertMode" : "NONE",
+    "caption" : "项目名称",
+    "codeName" : "projectname",
+    "columnType" : "DEFGRIDCOLUMN",
     "dataItemName" : "projectname",
     "excelCaption" : "项目名称",
-    "cLConvertMode" : "NONE",
+    "name" : "projectname",
     "noPrivDisplayMode" : 1,
-    "enableSort" : false,
+    "getPSAppDEField" : {
+      "name" : "PROJECTNAME",
+      "codeName" : "ProjectName"
+    },
     "width" : 230,
-    "codeName" : "projectname",
-    "caption" : "项目名称",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "CENTER",
     "widthUnit" : "STAR",
-    "name" : "projectname"
+    "enableSort" : false
   }, {
+    "align" : "CENTER",
+    "cLConvertMode" : "FRONT",
+    "caption" : "完成者",
+    "codeName" : "finishedby",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "finishedby",
+    "excelCaption" : "完成者",
+    "name" : "finishedby",
+    "noPrivDisplayMode" : 1,
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
@@ -123,88 +50,161 @@
       "name" : "FINISHEDBY",
       "codeName" : "FinishedBy"
     },
-    "dataItemName" : "finishedby",
-    "excelCaption" : "完成者",
-    "cLConvertMode" : "FRONT",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : false,
     "width" : 230,
-    "codeName" : "finishedby",
-    "caption" : "完成者",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "CENTER",
     "widthUnit" : "PX",
-    "name" : "finishedby"
+    "enableSort" : false
   }, {
+    "align" : "CENTER",
+    "cLConvertMode" : "NONE",
+    "caption" : "预计总工时",
+    "codeName" : "totalestimate",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "totalestimate",
+    "excelCaption" : "预计总工时",
+    "name" : "totalestimate",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "TOTALESTIMATE",
       "codeName" : "TotalEstimate"
     },
-    "dataItemName" : "totalestimate",
-    "excelCaption" : "预计总工时",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : false,
     "width" : 230,
-    "codeName" : "totalestimate",
-    "caption" : "预计总工时",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "CENTER",
     "widthUnit" : "PX",
-    "name" : "totalestimate"
+    "enableSort" : false
   }, {
+    "align" : "CENTER",
+    "cLConvertMode" : "NONE",
+    "caption" : "消耗总工时",
+    "codeName" : "totalconsumed",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "totalconsumed",
+    "excelCaption" : "消耗总工时",
+    "name" : "totalconsumed",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "TOTALCONSUMED",
       "codeName" : "TotalConsumed"
     },
-    "dataItemName" : "totalconsumed",
-    "excelCaption" : "消耗总工时",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : false,
     "width" : 230,
-    "codeName" : "totalconsumed",
-    "caption" : "消耗总工时",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "CENTER",
     "widthUnit" : "PX",
-    "name" : "totalconsumed"
+    "enableSort" : false
   }, {
+    "align" : "CENTER",
+    "cLConvertMode" : "NONE",
+    "caption" : "效率",
+    "codeName" : "taskefficient",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "taskefficient",
+    "excelCaption" : "效率",
+    "name" : "taskefficient",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "TASKEFFICIENT",
       "codeName" : "Taskefficient"
     },
-    "dataItemName" : "taskefficient",
-    "excelCaption" : "效率",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : false,
     "width" : 230,
-    "codeName" : "taskefficient",
-    "caption" : "效率",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "CENTER",
     "widthUnit" : "PX",
-    "name" : "taskefficient"
+    "enableSort" : false
   } ],
-  "codeName" : "UserFinishTaskSum",
-  "enableGroup" : false,
-  "hideHeader" : false,
-  "forceFit" : false,
+  "getPSDEGridDataItems" : [ {
+    "dataType" : 25,
+    "name" : "finishedby",
+    "getPSAppDEField" : {
+      "name" : "FINISHEDBY",
+      "codeName" : "FinishedBy"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "totalconsumed",
+    "getPSAppDEField" : {
+      "name" : "TOTALCONSUMED",
+      "codeName" : "TotalConsumed"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "totalestimate",
+    "getPSAppDEField" : {
+      "name" : "TOTALESTIMATE",
+      "codeName" : "TotalEstimate"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "taskefficient",
+    "getPSAppDEField" : {
+      "name" : "TASKEFFICIENT",
+      "codeName" : "Taskefficient"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "projectname",
+    "getPSAppDEField" : {
+      "name" : "PROJECTNAME",
+      "codeName" : "ProjectName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "编号",
+    "codeName" : "srfkey",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
   "pagingSize" : 100,
-  "aggMode" : "NONE",
-  "groupMode" : "NONE",
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskStats.json"
+    }
+  },
   "sortMode" : "REMOTE",
-  "getFetchPSControlAction" : {
-    "modelref" : true,
-    "id" : "fetch"
-  },
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskStats.json"
-  },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskStats/PSGRIDS/UserFinishTaskSum.json",
-  "logicName" : "用户完成任务汇总表格",
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableGroup" : false,
+  "enablePagingBar" : false,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : true,
+  "singleSelect" : true,
   "modelid" : "bfbf7ed10147c563862d93a5cea9edcf"
 }

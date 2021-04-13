@@ -1,25 +1,225 @@
 {
-  "enableUIActions" : 15,
-  "enableUIRemove" : true,
-  "major" : true,
-  "getAllPSAppDEMethods" : [ {
+  "getAllPSAppDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      }
+    } ],
+    "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    },
+    "getValuePSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "defaultMode" : true,
+    "enablePagingBar" : false
+  } ],
+  "getAllPSAppDEActions" : [ {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Select"
+      "id" : "STORYSPEC__DEACTION__CREATE"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "STORYSPEC__DEACTION__UPDATE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "STORYSPEC__DEACTION__REMOVE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "STORYSPEC__DEACTION__GET"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/Save.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchVersion",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Version"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchVersion"
+    },
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "codeName" : "Spec",
+    "logicName" : "需求描述\t",
+    "name" : "SPEC",
+    "stdDataType" : 21,
+    "stringLength" : 65535
+  }, {
+    "codeName" : "Verify",
+    "logicName" : "验收标准",
+    "name" : "VERIFY",
+    "stdDataType" : 21,
+    "stringLength" : 65535
+  }, {
+    "codeName" : "Id",
+    "logicName" : "虚拟主键",
+    "name" : "ID",
+    "stdDataType" : 25,
+    "stringLength" : 200,
+    "keyField" : true
+  }, {
+    "codeName" : "Title",
+    "logicName" : "需求名称",
+    "name" : "TITLE",
+    "stdDataType" : 25,
+    "stringLength" : 255,
+    "enableQuickSearch" : true,
+    "majorField" : true
+  }, {
+    "codeName" : "Version",
+    "logicName" : "版本号",
+    "name" : "VERSION",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Story",
+    "logicName" : "需求",
+    "name" : "STORY",
+    "stdDataType" : 1
+  } ],
+  "getAllPSAppDEMethods" : [ {
+    "codeName" : "Select",
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "Select"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "STORYSPEC__DEACTION__CREATE"
+      "id" : "Select"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Create",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -29,13 +229,13 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "codeName" : "Create"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "STORYSPEC__DEACTION__UPDATE"
+      "id" : "STORYSPEC__DEACTION__CREATE"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Update",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -45,13 +245,13 @@
       "modelref" : true,
       "id" : "UPDATE"
     },
-    "codeName" : "Update"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "STORYSPEC__DEACTION__REMOVE"
+      "id" : "STORYSPEC__DEACTION__UPDATE"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Remove",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -61,13 +261,13 @@
       "modelref" : true,
       "id" : "DELETE"
     },
-    "codeName" : "Remove"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "STORYSPEC__DEACTION__GET"
+      "id" : "STORYSPEC__DEACTION__REMOVE"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -77,13 +277,13 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "Get"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "GetDraft"
+      "id" : "STORYSPEC__DEACTION__GET"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -93,37 +293,37 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "codeName" : "GetDraft"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "CheckKey"
+      "id" : "GetDraft"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/CheckKey.json"
     },
-    "codeName" : "CheckKey"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Save"
+      "id" : "CheckKey"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Save",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/Save.json"
     },
-    "codeName" : "Save"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchDefault"
+      "id" : "Save"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -133,13 +333,13 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "FetchDefault"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchVersion"
+      "id" : "FetchDefault"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchVersion",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -149,281 +349,46 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "FetchVersion"
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchVersion"
+    },
+    "builtinMethod" : false
   }, {
-    "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterUpdate",
-    "name" : "FILTERUPDATE"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterSearch",
-    "name" : "FILTERSEARCH"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERSEARCH",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterGet",
-    "name" : "FILTERGET"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERGET",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterCreate",
-    "name" : "FILTERCREATE"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERCREATE",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterGetDraft",
-    "name" : "FILTERGETDRAFT"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERGETDRAFT",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterRemove",
-    "name" : "FILTERREMOVE"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERREMOVE",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterFetch",
-    "name" : "FILTERFETCH"
-  } ],
-  "getMinorPSAppDERSs" : [ {
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/StorySpec.json"
-    },
-    "getParentPSAppDEField" : {
-      "name" : "STORY",
-      "codeName" : "Story"
-    },
-    "codeName" : "StorySpecs",
-    "actionRSMode" : 1,
-    "dataRSMode" : 0,
-    "rSMode" : 2,
-    "name" : "需求描述"
-  } ],
-  "getAllPSAppDEFields" : [ {
-    "codeName" : "Spec",
-    "logicName" : "需求描述\t",
-    "stringLength" : 65535,
-    "stdDataType" : 21,
-    "name" : "SPEC"
-  }, {
-    "codeName" : "Verify",
-    "logicName" : "验收标准",
-    "stringLength" : 65535,
-    "stdDataType" : 21,
-    "name" : "VERIFY"
-  }, {
-    "keyField" : true,
-    "codeName" : "Id",
-    "logicName" : "虚拟主键",
-    "stringLength" : 200,
-    "stdDataType" : 25,
-    "name" : "ID"
-  }, {
-    "majorField" : true,
-    "codeName" : "Title",
-    "logicName" : "需求名称",
-    "stringLength" : 255,
-    "stdDataType" : 25,
-    "enableQuickSearch" : true,
-    "name" : "TITLE"
-  }, {
-    "codeName" : "Version",
-    "logicName" : "版本号",
-    "stdDataType" : 9,
-    "name" : "VERSION"
-  }, {
-    "codeName" : "Story",
-    "logicName" : "需求",
-    "stdDataType" : 1,
-    "name" : "STORY"
-  } ],
-  "getAllPSAppDEACModes" : [ {
-    "enablePagingBar" : false,
-    "getPSDEACModeDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "name" : "value",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
-      },
-      "name" : "text",
-      "dataType" : 25
-    } ],
-    "getValuePSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "getTextPSAppDEField" : {
-      "name" : "TITLE",
-      "codeName" : "Title"
-    },
-    "codeName" : "Default",
-    "logicName" : "DEFAULT",
-    "defaultMode" : true,
-    "pagingSize" : 50,
-    "name" : "DEFAULT"
-  } ],
-  "enableFilterActions" : true,
-  "enableWFActions" : false,
-  "getQuickSearchPSAppDEFields" : [ {
-    "name" : "TITLE",
-    "codeName" : "Title"
-  } ],
-  "getAllPSAppDEActions" : [ {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "STORYSPEC__DEACTION__CREATE"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "codeName" : "Create"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "STORYSPEC__DEACTION__UPDATE"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "codeName" : "Update"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "STORYSPEC__DEACTION__REMOVE"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "codeName" : "Remove"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "STORYSPEC__DEACTION__GET"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "codeName" : "Get"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "codeName" : "GetDraft"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CheckKey"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/CheckKey.json"
-    },
-    "codeName" : "CheckKey"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Save"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/Save.json"
-    },
-    "codeName" : "Save"
-  } ],
-  "getAllPSAppDEDataSets" : [ {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
-    },
-    "builtinMethod" : false,
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "codeName" : "FetchDefault"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchVersion"
-    },
-    "builtinMethod" : false,
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Version"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "codeName" : "FetchVersion"
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERFETCH",
+    "builtinMethod" : true
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
@@ -438,18 +403,53 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "codeName" : "StorySpec",
+  "dataAccCtrlArch" : 1,
+  "dataAccCtrlMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/StorySpec.json",
+  "enableUIActions" : 15,
+  "logicName" : "需求描述",
+  "getMinorPSAppDERSs" : [ {
+    "actionRSMode" : 1,
+    "codeName" : "StorySpecs",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/StorySpec.json"
+    },
+    "name" : "需求描述",
+    "getParentPSAppDEField" : {
+      "name" : "STORY",
+      "codeName" : "Story"
+    },
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ],
+  "name" : "ZT_STORYSPEC",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDESERVICEAPIS/StorySpec.json"
   },
-  "codeName" : "StorySpec",
-  "logicName" : "需求描述",
-  "dataAccCtrlMode" : 1,
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "TITLE",
+    "codeName" : "Title"
+  } ],
   "storageMode" : 0,
-  "dataAccCtrlArch" : 1,
+  "defaultMode" : true,
+  "enableFilterActions" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,
-  "defaultMode" : true,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/StorySpec.json",
-  "name" : "ZT_STORYSPEC"
+  "enableUIRemove" : true,
+  "enableWFActions" : false,
+  "major" : true
 }

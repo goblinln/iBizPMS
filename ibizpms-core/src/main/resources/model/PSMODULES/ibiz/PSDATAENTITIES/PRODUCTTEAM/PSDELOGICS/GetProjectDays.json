@@ -1,143 +1,143 @@
 {
-  "enableFront" : false,
-  "enableBackend" : true,
-  "getStartPSDELogicNode" : {
-    "modelref" : true,
-    "id" : "Begin"
-  },
+  "codeName" : "GetProjectDays",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDELOGICS/GetProjectDays.json",
+  "logicHolder" : 1,
+  "logicName" : "获取项目的可用工日",
+  "logicSubType" : "NONE",
+  "name" : "获取项目的可用工日",
+  "getPSDELogicLinks" : [ {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam2"
+    },
+    "name" : "连接3942",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Deaction1"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Deaction1"
+    },
+    "name" : "连接4776",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam1"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam1"
+    },
+    "name" : "连接4176",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "defaultLink" : false
+  } ],
   "getPSDELogicNodes" : [ {
-    "parallelOutput" : true,
-    "getDstPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
-    },
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "product"
-    },
-    "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接3942"
-    } ],
-    "logicHolder" : 3,
     "codeName" : "Deaction1",
     "getDstPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Get.json"
     },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "product"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    },
+    "logicHolder" : 3,
     "logicNodeType" : "DEACTION",
-    "name" : "获取产品详情"
+    "name" : "获取产品详情",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接3942"
+    } ],
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
+    "codeName" : "Prepareparam1",
+    "logicHolder" : 3,
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "设置产品参数",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接4776"
     } ],
     "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SETPARAMVALUE",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "product"
-      },
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "ROOT",
-      "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "ID",
-      "name" : "Default[ROOT] ==> product[ID]"
-    } ],
-    "logicHolder" : 3,
-    "codeName" : "Prepareparam1",
-    "logicNodeType" : "PREPAREPARAM",
-    "name" : "设置产品参数"
-  }, {
-    "parallelOutput" : true,
-    "getPSDELogicNodeParams" : [ {
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "product"
+      },
+      "name" : "Default[ROOT] ==> product[ID]",
       "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "ROOT",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Prepareparam2",
+    "logicHolder" : 3,
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "回填",
+    "getPSDELogicNodeParams" : [ {
+      "dstFieldName" : "DAYS",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "name" : "product[ID] ==> Default[DAYS]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "ID",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "product"
       },
-      "srcFieldName" : "ID",
-      "srcValueType" : "SRCDLPARAM",
-      "dstFieldName" : "DAYS",
-      "name" : "product[ID] ==> Default[DAYS]"
+      "srcValueType" : "SRCDLPARAM"
     } ],
-    "logicHolder" : 3,
-    "codeName" : "Prepareparam2",
-    "logicNodeType" : "PREPAREPARAM",
-    "name" : "回填"
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
+    "codeName" : "Begin",
+    "logicHolder" : 3,
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接4176"
     } ],
-    "logicHolder" : 3,
-    "codeName" : "Begin",
-    "logicNodeType" : "BEGIN",
-    "name" : "开始"
-  } ],
-  "getPSDELogicLinks" : [ {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Prepareparam2"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Deaction1"
-    },
-    "name" : "连接3942"
-  }, {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Deaction1"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Prepareparam1"
-    },
-    "name" : "连接4776"
-  }, {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Prepareparam1"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Begin"
-    },
-    "name" : "连接4176"
+    "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
-    "lastParam" : false,
-    "envParam" : false,
     "codeName" : "product",
+    "name" : "产品",
     "default" : false,
-    "name" : "产品"
-  }, {
-    "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
+  }, {
     "codeName" : "Default",
+    "name" : "传入变量",
     "default" : true,
-    "name" : "传入变量"
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
   } ],
-  "logicHolder" : 1,
-  "codeName" : "GetProjectDays",
-  "logicName" : "获取项目的可用工日",
-  "defaultParamName" : "Default",
-  "logicSubType" : "NONE",
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDELOGICS/GetProjectDays.json",
-  "name" : "获取项目的可用工日"
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : true,
+  "enableFront" : false
 }

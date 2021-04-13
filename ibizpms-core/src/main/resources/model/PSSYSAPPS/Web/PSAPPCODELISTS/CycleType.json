@@ -1,26 +1,26 @@
 {
+  "codeListType" : "STATIC",
+  "codeName" : "CycleType",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/CycleType.json",
+  "emptyText" : "未定义",
+  "name" : "周期类型",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
   },
   "getPSCodeItems" : [ {
-    "value" : "day",
     "codeName" : "Day",
-    "text" : "天"
+    "text" : "天",
+    "value" : "day"
   }, {
-    "value" : "week",
     "codeName" : "Week",
-    "text" : "周"
+    "text" : "周",
+    "value" : "week"
   }, {
-    "value" : "month",
     "codeName" : "Month",
-    "text" : "月度"
+    "text" : "月度",
+    "value" : "month"
   } ],
-  "dynaInstMode" : 1,
-  "codeListType" : "STATIC",
-  "codeName" : "CycleType",
-  "emptyText" : "未定义",
-  "enableCache" : true,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/CycleType.json",
-  "name" : "周期类型"
+  "enableCache" : true
 }

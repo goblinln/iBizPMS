@@ -1,227 +1,29 @@
 {
-  "enableAutoSave" : false,
-  "infoFormMode" : false,
-  "showFormNavBar" : false,
+  "codeName" : "MainEdit",
+  "controlType" : "FORM",
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
   },
-  "getUpdatePSControlAction" : {
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule/PSFORMS/MainEdit.json",
+  "getGetDraftFromPSControlAction" : {
     "modelref" : true,
-    "id" : "update"
-  },
-  "getRemovePSControlAction" : {
-    "modelref" : true,
-    "id" : "remove"
-  },
-  "getGetPSControlAction" : {
-    "modelref" : true,
-    "id" : "load"
+    "id" : "loaddraftfrom"
   },
   "getGetDraftPSControlAction" : {
     "modelref" : true,
     "id" : "loaddraft"
   },
-  "getGetDraftFromPSControlAction" : {
+  "getGetPSControlAction" : {
     "modelref" : true,
-    "id" : "loaddraftfrom"
+    "id" : "load"
   },
-  "controlType" : "FORM",
-  "readOnly" : false,
-  "getPSLayout" : {
-    "layout" : "TABLE_24COL",
-    "columnCount" : 24
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "logicName" : "编辑表单",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
   },
-  "getPSDEFormPages" : [ {
-    "getPSDEFormDetails" : [ {
-      "emptyCaption" : false,
-      "getPSEditor" : {
-        "editorType" : "HIDDEN",
-        "name" : "id"
-      },
-      "inputTipClosable" : false,
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "showCaption" : true,
-      "hidden" : true,
-      "dataType" : 1,
-      "caption" : "id",
-      "allowEmpty" : true,
-      "enableCond" : 0,
-      "ignoreInput" : 0,
-      "labelPos" : "LEFT",
-      "labelWidth" : 130,
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "id",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "id"
-    }, {
-      "emptyCaption" : false,
-      "getPSEditor" : {
-        "maxLength" : 60,
-        "editorType" : "TEXTBOX",
-        "name" : "name"
-      },
-      "inputTipClosable" : false,
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      },
-      "showCaption" : true,
-      "hidden" : false,
-      "dataType" : 25,
-      "caption" : "名称",
-      "allowEmpty" : false,
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "labelPos" : "LEFT",
-      "labelWidth" : 130,
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "name",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "name"
-    }, {
-      "emptyCaption" : false,
-      "getPSEditor" : {
-        "enableLinkView" : false,
-        "singleSelect" : true,
-        "dropDownView" : false,
-        "enablePickupView" : true,
-        "enableAC" : true,
-        "forceSelection" : true,
-        "showTrigger" : true,
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
-        },
-        "getPickupPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibPickupView.json",
-          "viewType" : "DEPICKUPVIEW"
-        },
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchDefault"
-        },
-        "getPSAppDEACMode" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "handlerType" : "PickupText",
-        "valueItemName" : "root",
-        "editorType" : "PICKER",
-        "editorParams" : {
-          "AC" : "TRUE",
-          "PICKUPVIEW" : "TRUE"
-        },
-        "name" : "doclibname"
-      },
-      "inputTipClosable" : false,
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "DOCLIBNAME",
-        "codeName" : "Doclibname"
-      },
-      "showCaption" : true,
-      "hidden" : false,
-      "dataType" : 25,
-      "caption" : "所属文档库",
-      "allowEmpty" : true,
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "labelPos" : "LEFT",
-      "valueItemName" : "root",
-      "labelWidth" : 130,
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "doclibname",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "doclibname"
-    }, {
-      "emptyCaption" : false,
-      "getPSEditor" : {
-        "editorType" : "HIDDEN",
-        "name" : "docqtype"
-      },
-      "inputTipClosable" : false,
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "DOCQTYPE",
-        "codeName" : "Docqtype"
-      },
-      "showCaption" : true,
-      "hidden" : true,
-      "dataType" : 25,
-      "caption" : "查询类型",
-      "allowEmpty" : true,
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "labelPos" : "LEFT",
-      "labelWidth" : 130,
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "docqtype",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "docqtype"
-    }, {
-      "emptyCaption" : false,
-      "getPSEditor" : {
-        "editorType" : "HIDDEN",
-        "name" : "isfavourites"
-      },
-      "inputTipClosable" : false,
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "ISFAVOURITES",
-        "codeName" : "Isfavourites"
-      },
-      "showCaption" : true,
-      "hidden" : true,
-      "dataType" : 25,
-      "caption" : "是否已收藏",
-      "allowEmpty" : true,
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "labelPos" : "LEFT",
-      "labelWidth" : 130,
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "isfavourites",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "isfavourites"
-    } ],
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
-    "infoGroupMode" : false,
-    "codeName" : "formpage1",
-    "caption" : "基本信息",
-    "detailType" : "FORMPAGE",
-    "detailStyle" : "DEFAULT",
-    "name" : "formpage1"
-  } ],
   "getPSDEFormItems" : [ {
     "id" : "srforikey",
     "hidden" : true,
@@ -305,15 +107,213 @@
       "codeName" : "Root"
     }
   } ],
-  "noTabHeader" : true,
-  "codeName" : "MainEdit",
-  "tabHeaderPos" : "TOP",
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
+  "getPSDEFormPages" : [ {
+    "caption" : "基本信息",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "caption" : "id",
+      "codeName" : "id",
+      "dataType" : 1,
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMITEM",
+      "enableCond" : 0,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 130,
+      "name" : "id",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "getPSEditor" : {
+        "editorType" : "HIDDEN",
+        "name" : "id"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "allowEmpty" : true,
+      "emptyCaption" : false,
+      "hidden" : true,
+      "inputTipClosable" : false,
+      "showCaption" : true
+    }, {
+      "caption" : "名称",
+      "codeName" : "name",
+      "dataType" : 25,
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMITEM",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 130,
+      "name" : "name",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "getPSEditor" : {
+        "editorType" : "TEXTBOX",
+        "maxLength" : 60,
+        "name" : "name"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "allowEmpty" : false,
+      "emptyCaption" : false,
+      "hidden" : false,
+      "inputTipClosable" : false,
+      "showCaption" : true
+    }, {
+      "caption" : "所属文档库",
+      "codeName" : "doclibname",
+      "dataType" : 25,
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMITEM",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 130,
+      "name" : "doclibname",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "DOCLIBNAME",
+        "codeName" : "Doclibname"
+      },
+      "getPSEditor" : {
+        "editorParams" : {
+          "AC" : "TRUE",
+          "PICKUPVIEW" : "TRUE"
+        },
+        "editorType" : "PICKER",
+        "handlerType" : "PickupText",
+        "name" : "doclibname",
+        "getPSAppDEACMode" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+        },
+        "getPickupPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibPickupView.json",
+          "viewType" : "DEPICKUPVIEW"
+        },
+        "valueItemName" : "root",
+        "dropDownView" : false,
+        "enableAC" : true,
+        "enableLinkView" : false,
+        "enablePickupView" : true,
+        "forceSelection" : true,
+        "showTrigger" : true,
+        "singleSelect" : true
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "valueItemName" : "root",
+      "allowEmpty" : true,
+      "emptyCaption" : false,
+      "hidden" : false,
+      "inputTipClosable" : false,
+      "showCaption" : true
+    }, {
+      "caption" : "查询类型",
+      "codeName" : "docqtype",
+      "dataType" : 25,
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMITEM",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 130,
+      "name" : "docqtype",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "DOCQTYPE",
+        "codeName" : "Docqtype"
+      },
+      "getPSEditor" : {
+        "editorType" : "HIDDEN",
+        "name" : "docqtype"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "allowEmpty" : true,
+      "emptyCaption" : false,
+      "hidden" : true,
+      "inputTipClosable" : false,
+      "showCaption" : true
+    }, {
+      "caption" : "是否已收藏",
+      "codeName" : "isfavourites",
+      "dataType" : 25,
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMITEM",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 130,
+      "name" : "isfavourites",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "ISFAVOURITES",
+        "codeName" : "Isfavourites"
+      },
+      "getPSEditor" : {
+        "editorType" : "HIDDEN",
+        "name" : "isfavourites"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "allowEmpty" : true,
+      "emptyCaption" : false,
+      "hidden" : true,
+      "inputTipClosable" : false,
+      "showCaption" : true
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
   },
-  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule/PSFORMS/MainEdit.json",
-  "logicName" : "编辑表单",
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "tabHeaderPos" : "TOP",
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "noTabHeader" : true,
+  "readOnly" : false,
+  "showFormNavBar" : false,
   "modelid" : "0088a00084cc01f2b88679ec3288ba8a"
 }

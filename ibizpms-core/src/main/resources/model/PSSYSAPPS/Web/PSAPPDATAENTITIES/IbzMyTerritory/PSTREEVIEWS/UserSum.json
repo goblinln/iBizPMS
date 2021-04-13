@@ -1,105 +1,105 @@
 {
-  "enableSearchDefault" : false,
-  "treeGridMode" : 0,
-  "getPSDETreeNodeRSs" : [ {
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ROOT"
-    },
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "UserFinashTaskSum"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3,
-    "name" : "默认根节点 - 用户完成任务汇总表"
-  } ],
-  "enableRootSelect" : false,
-  "outputIconDefault" : true,
-  "controlType" : "TREEVIEW",
-  "getPSDETreeNodes" : [ {
-    "nodeValue" : "root",
-    "text" : "默认根节点",
-    "enableQuickCreate" : false,
-    "appendPNodeId" : false,
-    "enableCheck" : false,
-    "hasPSDETreeNodeRSs" : true,
-    "selected" : false,
-    "selectFirstOnly" : false,
-    "expandFirstOnly" : false,
-    "rootNode" : true,
-    "enableNewData" : false,
-    "enableEditData" : false,
-    "enableRemoveData" : false,
-    "enableViewData" : false,
-    "nodeType" : "ROOT",
-    "disableSelect" : false,
-    "enableQuickSearch" : false,
-    "counterMode" : 0,
-    "treeNodeType" : "STATIC",
-    "expanded" : false,
-    "name" : "默认根节点",
-    "id" : "ROOT"
-  }, {
-    "text" : "用户完成任务汇总表",
-    "getNavPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskStatsUserFinishTaskSumGridView.json",
-      "viewType" : "DEGRIDVIEW"
-    },
-    "enableQuickCreate" : false,
-    "appendPNodeId" : false,
-    "enableCheck" : false,
-    "hasPSDETreeNodeRSs" : false,
-    "selected" : false,
-    "selectFirstOnly" : false,
-    "expandFirstOnly" : false,
-    "rootNode" : false,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
-    },
-    "enableNewData" : false,
-    "enableEditData" : false,
-    "enableRemoveData" : false,
-    "enableViewData" : false,
-    "nodeType" : "UserFinashTaskSum",
-    "disableSelect" : false,
-    "enableQuickSearch" : false,
-    "counterMode" : 0,
-    "treeNodeType" : "STATIC",
-    "expanded" : false,
-    "name" : "用户完成任务汇总表",
-    "id" : "UserFinashTaskSum"
-  } ],
   "codeName" : "UserSum",
-  "rootVisible" : false,
+  "controlType" : "TREEVIEW",
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
   },
-  "getUpdatePSControlAction" : {
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory/PSTREEVIEWS/UserSum.json",
+  "getFetchPSControlAction" : {
     "modelref" : true,
-    "id" : "update"
-  },
-  "getRemovePSControlAction" : {
-    "modelref" : true,
-    "id" : "remove"
+    "id" : "fetch"
   },
   "getGetPSControlAction" : {
     "modelref" : true,
     "id" : "load"
   },
-  "getFetchPSControlAction" : {
-    "modelref" : true,
-    "id" : "fetch"
-  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+  "logicName" : "用户汇总表",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory/PSTREEVIEWS/UserSum.json",
-  "logicName" : "用户汇总表",
+  "getPSDETreeNodeRSs" : [ {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "UserFinashTaskSum"
+    },
+    "name" : "默认根节点 - 用户完成任务汇总表",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  } ],
+  "getPSDETreeNodes" : [ {
+    "counterMode" : 0,
+    "name" : "默认根节点",
+    "nodeType" : "ROOT",
+    "nodeValue" : "root",
+    "text" : "默认根节点",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : true,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : true,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "ROOT"
+  }, {
+    "counterMode" : 0,
+    "name" : "用户完成任务汇总表",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskStatsUserFinishTaskSumGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "nodeType" : "UserFinashTaskSum",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+    },
+    "text" : "用户完成任务汇总表",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "UserFinashTaskSum"
+  } ],
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "treeGridMode" : 0,
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "enableRootSelect" : false,
+  "enableSearchDefault" : false,
+  "outputIconDefault" : true,
+  "rootVisible" : false,
   "modelid" : "2e7e13fadaca838cbaa8abee29c361d6"
 }

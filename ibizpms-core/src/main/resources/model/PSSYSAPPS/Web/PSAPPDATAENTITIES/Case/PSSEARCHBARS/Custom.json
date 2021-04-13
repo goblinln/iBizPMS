@@ -1,944 +1,944 @@
 {
-  "mobileSearchBar" : false,
+  "codeName" : "Custom",
+  "controlType" : "SEARCHBAR",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSSEARCHBARS/Custom.json",
+  "logicName" : "测试用例自定义搜索栏",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+  },
   "getPSSearchBarFilters" : [ {
-    "emptyCaption" : false,
+    "caption" : "用例标题(%)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
+    "itemWidth" : 100.0,
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "name" : "titlelike",
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    },
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_TITLE_LIKE",
+      "name" : "N_TITLE_LIKE",
+      "getPSDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      },
+      "valueOP" : "LIKE",
+      "default" : false
+    },
     "getPSEditor" : {
       "editorType" : "TEXTBOX",
       "editorWidth" : 100.0,
       "name" : "titlelike"
     },
-    "showCaption" : false,
-    "hidden" : false,
-    "dataType" : 25,
-    "caption" : "用例标题(%)",
-    "getPSDEFSearchMode" : {
-      "valueOP" : "LIKE",
-      "codeName" : "N_TITLE_LIKE",
-      "default" : false,
-      "getPSDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
-      },
-      "name" : "N_TITLE_LIKE"
-    },
     "allowEmpty" : true,
-    "labelPos" : "NONE",
-    "labelWidth" : 0,
-    "itemWidth" : 100.0,
-    "getPSAppDEField" : {
-      "name" : "TITLE",
-      "codeName" : "Title"
-    },
-    "itemType" : "FILTER",
-    "name" : "titlelike"
-  }, {
     "emptyCaption" : false,
-    "getPSEditor" : {
-      "singleSelect" : true,
-      "getPSAppCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__type.json"
-      },
-      "editorType" : "DROPDOWNLIST",
-      "editorWidth" : 100.0,
-      "name" : "typeeq"
-    },
-    "showCaption" : false,
     "hidden" : false,
-    "dataType" : 25,
-    "needCodeListConfig" : true,
+    "showCaption" : false
+  }, {
     "caption" : "用例类型(=)",
-    "getPSDEFSearchMode" : {
-      "valueOP" : "EQ",
-      "codeName" : "N_TYPE_EQ",
-      "default" : false,
-      "getPSDEField" : {
-        "name" : "TYPE",
-        "codeName" : "Type"
-      },
-      "name" : "N_TYPE_EQ"
-    },
-    "allowEmpty" : true,
+    "dataType" : 25,
+    "itemType" : "FILTER",
+    "itemWidth" : 100.0,
     "labelPos" : "NONE",
     "labelWidth" : 0,
-    "itemWidth" : 100.0,
+    "name" : "typeeq",
     "getPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
     },
-    "itemType" : "FILTER",
-    "name" : "typeeq"
-  }, {
-    "emptyCaption" : false,
-    "getPSEditor" : {
-      "singleSelect" : true,
-      "getPSAppCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__pri.json"
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_TYPE_EQ",
+      "name" : "N_TYPE_EQ",
+      "getPSDEField" : {
+        "name" : "TYPE",
+        "codeName" : "Type"
       },
+      "valueOP" : "EQ",
+      "default" : false
+    },
+    "getPSEditor" : {
       "editorType" : "DROPDOWNLIST",
       "editorWidth" : 100.0,
-      "name" : "prieq"
-    },
-    "showCaption" : false,
-    "hidden" : false,
-    "dataType" : 9,
-    "needCodeListConfig" : true,
-    "caption" : "优先级(=)",
-    "getPSDEFSearchMode" : {
-      "valueOP" : "EQ",
-      "codeName" : "N_PRI_EQ",
-      "default" : false,
-      "getPSDEField" : {
-        "name" : "PRI",
-        "codeName" : "Pri"
+      "name" : "typeeq",
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__type.json"
       },
-      "name" : "N_PRI_EQ"
+      "singleSelect" : true
     },
     "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "needCodeListConfig" : true,
+    "showCaption" : false
+  }, {
+    "caption" : "优先级(=)",
+    "dataType" : 9,
+    "itemType" : "FILTER",
+    "itemWidth" : 100.0,
     "labelPos" : "NONE",
     "labelWidth" : 0,
-    "itemWidth" : 100.0,
+    "name" : "prieq",
     "getPSAppDEField" : {
       "name" : "PRI",
       "codeName" : "Pri"
     },
-    "itemType" : "FILTER",
-    "name" : "prieq"
-  }, {
-    "emptyCaption" : false,
-    "getPSEditor" : {
-      "singleSelect" : true,
-      "getPSAppCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__status.json"
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_PRI_EQ",
+      "name" : "N_PRI_EQ",
+      "getPSDEField" : {
+        "name" : "PRI",
+        "codeName" : "Pri"
       },
+      "valueOP" : "EQ",
+      "default" : false
+    },
+    "getPSEditor" : {
       "editorType" : "DROPDOWNLIST",
       "editorWidth" : 100.0,
-      "name" : "statuseq"
-    },
-    "showCaption" : false,
-    "hidden" : false,
-    "dataType" : 25,
-    "needCodeListConfig" : true,
-    "caption" : "用例状态(=)",
-    "getPSDEFSearchMode" : {
-      "valueOP" : "EQ",
-      "codeName" : "N_STATUS_EQ",
-      "default" : false,
-      "getPSDEField" : {
-        "name" : "STATUS",
-        "codeName" : "Status"
+      "name" : "prieq",
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__pri.json"
       },
-      "name" : "N_STATUS_EQ"
+      "singleSelect" : true
     },
     "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "needCodeListConfig" : true,
+    "showCaption" : false
+  }, {
+    "caption" : "用例状态(=)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
+    "itemWidth" : 100.0,
     "labelPos" : "NONE",
     "labelWidth" : 0,
-    "itemWidth" : 100.0,
+    "name" : "statuseq",
     "getPSAppDEField" : {
       "name" : "STATUS",
       "codeName" : "Status"
     },
-    "itemType" : "FILTER",
-    "name" : "statuseq"
-  }, {
-    "emptyCaption" : false,
-    "getPSEditor" : {
-      "singleSelect" : true,
-      "getPSAppCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_STATUS_EQ",
+      "name" : "N_STATUS_EQ",
+      "getPSDEField" : {
+        "name" : "STATUS",
+        "codeName" : "Status"
       },
+      "valueOP" : "EQ",
+      "default" : false
+    },
+    "getPSEditor" : {
       "editorType" : "DROPDOWNLIST",
       "editorWidth" : 100.0,
-      "name" : "assignedtoeq"
-    },
-    "showCaption" : false,
-    "hidden" : false,
-    "dataType" : 25,
-    "needCodeListConfig" : true,
-    "caption" : "指派给(=)",
-    "getPSDEFSearchMode" : {
-      "valueOP" : "EQ",
-      "codeName" : "N_ASSIGNEDTO_EQ",
-      "default" : false,
-      "getPSDEField" : {
-        "name" : "ASSIGNEDTO",
-        "codeName" : "AssignedTo"
+      "name" : "statuseq",
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__status.json"
       },
-      "name" : "N_ASSIGNEDTO_EQ"
+      "singleSelect" : true
     },
     "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "needCodeListConfig" : true,
+    "showCaption" : false
+  }, {
+    "caption" : "指派给(=)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
+    "itemWidth" : 100.0,
     "labelPos" : "NONE",
     "labelWidth" : 0,
-    "itemWidth" : 100.0,
+    "name" : "assignedtoeq",
     "getPSAppDEField" : {
       "name" : "ASSIGNEDTO",
       "codeName" : "AssignedTo"
     },
-    "itemType" : "FILTER",
-    "name" : "assignedtoeq"
-  }, {
-    "emptyCaption" : false,
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_ASSIGNEDTO_EQ",
+      "name" : "N_ASSIGNEDTO_EQ",
+      "getPSDEField" : {
+        "name" : "ASSIGNEDTO",
+        "codeName" : "AssignedTo"
+      },
+      "valueOP" : "EQ",
+      "default" : false
+    },
     "getPSEditor" : {
-      "singleSelect" : true,
+      "editorType" : "DROPDOWNLIST",
+      "editorWidth" : 100.0,
+      "name" : "assignedtoeq",
       "getPSAppCodeList" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProductBranch.json"
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
       },
-      "editorType" : "DROPDOWNLIST",
-      "name" : "brancheq"
-    },
-    "showCaption" : false,
-    "hidden" : false,
-    "dataType" : 1,
-    "needCodeListConfig" : true,
-    "caption" : "平台/分支(=)",
-    "getPSDEFSearchMode" : {
-      "valueOP" : "EQ",
-      "codeName" : "N_BRANCH_EQ",
-      "default" : false,
-      "getPSDEField" : {
-        "name" : "BRANCH",
-        "codeName" : "Branch"
-      },
-      "name" : "N_BRANCH_EQ"
+      "singleSelect" : true
     },
     "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "needCodeListConfig" : true,
+    "showCaption" : false
+  }, {
+    "caption" : "平台/分支(=)",
+    "dataType" : 1,
+    "itemType" : "FILTER",
     "labelPos" : "NONE",
     "labelWidth" : 0,
+    "name" : "brancheq",
     "getPSAppDEField" : {
       "name" : "BRANCH",
       "codeName" : "Branch"
     },
-    "itemType" : "FILTER",
-    "name" : "brancheq"
-  }, {
-    "emptyCaption" : false,
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_BRANCH_EQ",
+      "name" : "N_BRANCH_EQ",
+      "getPSDEField" : {
+        "name" : "BRANCH",
+        "codeName" : "Branch"
+      },
+      "valueOP" : "EQ",
+      "default" : false
+    },
     "getPSEditor" : {
-      "singleSelect" : true,
+      "editorType" : "DROPDOWNLIST",
+      "name" : "brancheq",
       "getPSAppCodeList" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__color.json"
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProductBranch.json"
       },
-      "editorType" : "DROPDOWNLIST",
-      "editorWidth" : 100.0,
-      "name" : "coloreq"
-    },
-    "showCaption" : false,
-    "hidden" : false,
-    "dataType" : 25,
-    "needCodeListConfig" : true,
-    "caption" : "标题颜色(=)",
-    "getPSDEFSearchMode" : {
-      "valueOP" : "EQ",
-      "codeName" : "N_COLOR_EQ",
-      "default" : false,
-      "getPSDEField" : {
-        "name" : "COLOR",
-        "codeName" : "Color"
-      },
-      "name" : "N_COLOR_EQ"
+      "singleSelect" : true
     },
     "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "needCodeListConfig" : true,
+    "showCaption" : false
+  }, {
+    "caption" : "标题颜色(=)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
+    "itemWidth" : 100.0,
     "labelPos" : "NONE",
     "labelWidth" : 0,
-    "itemWidth" : 100.0,
+    "name" : "coloreq",
     "getPSAppDEField" : {
       "name" : "COLOR",
       "codeName" : "Color"
     },
-    "itemType" : "FILTER",
-    "name" : "coloreq"
-  }, {
-    "emptyCaption" : false,
-    "getPSEditor" : {
-      "singleSelect" : true,
-      "getPSAppCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__frame.json"
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_COLOR_EQ",
+      "name" : "N_COLOR_EQ",
+      "getPSDEField" : {
+        "name" : "COLOR",
+        "codeName" : "Color"
       },
+      "valueOP" : "EQ",
+      "default" : false
+    },
+    "getPSEditor" : {
       "editorType" : "DROPDOWNLIST",
       "editorWidth" : 100.0,
-      "name" : "frameeq"
-    },
-    "showCaption" : false,
-    "hidden" : false,
-    "dataType" : 25,
-    "needCodeListConfig" : true,
-    "caption" : "工具/框架(=)",
-    "getPSDEFSearchMode" : {
-      "valueOP" : "EQ",
-      "codeName" : "N_FRAME_EQ",
-      "default" : false,
-      "getPSDEField" : {
-        "name" : "FRAME",
-        "codeName" : "Frame"
+      "name" : "coloreq",
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__color.json"
       },
-      "name" : "N_FRAME_EQ"
+      "singleSelect" : true
     },
     "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "needCodeListConfig" : true,
+    "showCaption" : false
+  }, {
+    "caption" : "工具/框架(=)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
+    "itemWidth" : 100.0,
     "labelPos" : "NONE",
     "labelWidth" : 0,
-    "itemWidth" : 100.0,
+    "name" : "frameeq",
     "getPSAppDEField" : {
       "name" : "FRAME",
       "codeName" : "Frame"
     },
-    "itemType" : "FILTER",
-    "name" : "frameeq"
-  }, {
-    "emptyCaption" : false,
-    "getPSEditor" : {
-      "singleSelect" : true,
-      "getPSAppCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Case__frequency.json"
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_FRAME_EQ",
+      "name" : "N_FRAME_EQ",
+      "getPSDEField" : {
+        "name" : "FRAME",
+        "codeName" : "Frame"
       },
+      "valueOP" : "EQ",
+      "default" : false
+    },
+    "getPSEditor" : {
       "editorType" : "DROPDOWNLIST",
       "editorWidth" : 100.0,
-      "name" : "frequencyeq"
-    },
-    "showCaption" : false,
-    "hidden" : false,
-    "dataType" : 25,
-    "needCodeListConfig" : true,
-    "caption" : "frequency(=)",
-    "getPSDEFSearchMode" : {
-      "valueOP" : "EQ",
-      "codeName" : "N_FREQUENCY_EQ",
-      "default" : false,
-      "getPSDEField" : {
-        "name" : "FREQUENCY",
-        "codeName" : "Frequency"
+      "name" : "frameeq",
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__frame.json"
       },
-      "name" : "N_FREQUENCY_EQ"
+      "singleSelect" : true
     },
     "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "needCodeListConfig" : true,
+    "showCaption" : false
+  }, {
+    "caption" : "frequency(=)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
+    "itemWidth" : 100.0,
     "labelPos" : "NONE",
     "labelWidth" : 0,
-    "itemWidth" : 100.0,
+    "name" : "frequencyeq",
     "getPSAppDEField" : {
       "name" : "FREQUENCY",
       "codeName" : "Frequency"
     },
-    "itemType" : "FILTER",
-    "name" : "frequencyeq"
-  }, {
-    "emptyCaption" : false,
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_FREQUENCY_EQ",
+      "name" : "N_FREQUENCY_EQ",
+      "getPSDEField" : {
+        "name" : "FREQUENCY",
+        "codeName" : "Frequency"
+      },
+      "valueOP" : "EQ",
+      "default" : false
+    },
     "getPSEditor" : {
-      "singleSelect" : true,
+      "editorType" : "DROPDOWNLIST",
+      "editorWidth" : 100.0,
+      "name" : "frequencyeq",
       "getPSAppCodeList" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/AllBug.json"
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Case__frequency.json"
       },
-      "editorType" : "DROPDOWNLIST",
-      "name" : "frombugeq"
-    },
-    "showCaption" : false,
-    "hidden" : false,
-    "dataType" : 1,
-    "needCodeListConfig" : true,
-    "caption" : "来源Bug(=)",
-    "getPSDEFSearchMode" : {
-      "valueOP" : "EQ",
-      "codeName" : "N_FROMBUG_EQ",
-      "default" : false,
-      "getPSDEField" : {
-        "name" : "FROMBUG",
-        "codeName" : "FromBug"
-      },
-      "name" : "N_FROMBUG_EQ"
+      "singleSelect" : true
     },
     "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "needCodeListConfig" : true,
+    "showCaption" : false
+  }, {
+    "caption" : "来源Bug(=)",
+    "dataType" : 1,
+    "itemType" : "FILTER",
     "labelPos" : "NONE",
     "labelWidth" : 0,
+    "name" : "frombugeq",
     "getPSAppDEField" : {
       "name" : "FROMBUG",
       "codeName" : "FromBug"
     },
-    "itemType" : "FILTER",
-    "name" : "frombugeq"
-  }, {
-    "emptyCaption" : false,
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_FROMBUG_EQ",
+      "name" : "N_FROMBUG_EQ",
+      "getPSDEField" : {
+        "name" : "FROMBUG",
+        "codeName" : "FromBug"
+      },
+      "valueOP" : "EQ",
+      "default" : false
+    },
     "getPSEditor" : {
-      "singleSelect" : true,
+      "editorType" : "DROPDOWNLIST",
+      "name" : "frombugeq",
       "getPSAppCodeList" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/AllCase.json"
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/AllBug.json"
       },
-      "editorType" : "DROPDOWNLIST",
-      "name" : "fromcaseideq"
-    },
-    "showCaption" : false,
-    "hidden" : false,
-    "dataType" : 1,
-    "needCodeListConfig" : true,
-    "caption" : "来源用例(=)",
-    "getPSDEFSearchMode" : {
-      "valueOP" : "EQ",
-      "codeName" : "N_FROMCASEID_EQ",
-      "default" : false,
-      "getPSDEField" : {
-        "name" : "FROMCASEID",
-        "codeName" : "FromCaseId"
-      },
-      "name" : "N_FROMCASEID_EQ"
+      "singleSelect" : true
     },
     "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "needCodeListConfig" : true,
+    "showCaption" : false
+  }, {
+    "caption" : "来源用例(=)",
+    "dataType" : 1,
+    "itemType" : "FILTER",
     "labelPos" : "NONE",
     "labelWidth" : 0,
+    "name" : "fromcaseideq",
     "getPSAppDEField" : {
       "name" : "FROMCASEID",
       "codeName" : "FromCaseId"
     },
-    "itemType" : "FILTER",
-    "name" : "fromcaseideq"
-  }, {
-    "emptyCaption" : false,
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_FROMCASEID_EQ",
+      "name" : "N_FROMCASEID_EQ",
+      "getPSDEField" : {
+        "name" : "FROMCASEID",
+        "codeName" : "FromCaseId"
+      },
+      "valueOP" : "EQ",
+      "default" : false
+    },
     "getPSEditor" : {
-      "singleSelect" : true,
+      "editorType" : "DROPDOWNLIST",
+      "name" : "fromcaseideq",
       "getPSAppCodeList" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/AllCase.json"
       },
-      "editorType" : "DROPDOWNLIST",
-      "name" : "lastrunnereq"
-    },
-    "showCaption" : false,
-    "hidden" : false,
-    "dataType" : 25,
-    "needCodeListConfig" : true,
-    "caption" : "执行人(=)",
-    "getPSDEFSearchMode" : {
-      "valueOP" : "EQ",
-      "codeName" : "N_LASTRUNNER_EQ",
-      "default" : false,
-      "getPSDEField" : {
-        "name" : "LASTRUNNER",
-        "codeName" : "LastRunner"
-      },
-      "name" : "N_LASTRUNNER_EQ"
+      "singleSelect" : true
     },
     "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "needCodeListConfig" : true,
+    "showCaption" : false
+  }, {
+    "caption" : "执行人(=)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
     "labelPos" : "NONE",
     "labelWidth" : 0,
+    "name" : "lastrunnereq",
     "getPSAppDEField" : {
       "name" : "LASTRUNNER",
       "codeName" : "LastRunner"
     },
-    "itemType" : "FILTER",
-    "name" : "lastrunnereq"
-  }, {
-    "emptyCaption" : false,
-    "getPSEditor" : {
-      "singleSelect" : true,
-      "getPSAppCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__result.json"
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_LASTRUNNER_EQ",
+      "name" : "N_LASTRUNNER_EQ",
+      "getPSDEField" : {
+        "name" : "LASTRUNNER",
+        "codeName" : "LastRunner"
       },
+      "valueOP" : "EQ",
+      "default" : false
+    },
+    "getPSEditor" : {
       "editorType" : "DROPDOWNLIST",
-      "editorWidth" : 100.0,
-      "name" : "lastrunresulteq"
-    },
-    "showCaption" : false,
-    "hidden" : false,
-    "dataType" : 25,
-    "needCodeListConfig" : true,
-    "caption" : "结果(=)",
-    "getPSDEFSearchMode" : {
-      "valueOP" : "EQ",
-      "codeName" : "N_LASTRUNRESULT_EQ",
-      "default" : false,
-      "getPSDEField" : {
-        "name" : "LASTRUNRESULT",
-        "codeName" : "LastRunResult"
-      },
-      "name" : "N_LASTRUNRESULT_EQ"
-    },
-    "allowEmpty" : true,
-    "labelPos" : "NONE",
-    "labelWidth" : 0,
-    "itemWidth" : 100.0,
-    "getPSAppDEField" : {
-      "name" : "LASTRUNRESULT",
-      "codeName" : "LastRunResult"
-    },
-    "itemType" : "FILTER",
-    "name" : "lastrunresulteq"
-  }, {
-    "emptyCaption" : false,
-    "getPSEditor" : {
-      "enableLinkView" : false,
-      "singleSelect" : true,
-      "dropDownView" : false,
-      "enablePickupView" : false,
-      "enableAC" : true,
-      "forceSelection" : true,
-      "showTrigger" : true,
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestSuite.json"
-      },
-      "getPSAppDEDataSet" : {
-        "modelref" : true,
-        "id" : "FetchDefault"
-      },
-      "getPSAppDEACMode" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "editorType" : "PICKEREX_TRIGGER",
-      "editorParams" : {
-        "AC" : "TRUE",
-        "TRIGGER" : "TRUE",
-        "PICKUPVIEW" : "FALSE"
-      },
-      "name" : "libnameeq"
-    },
-    "showCaption" : false,
-    "hidden" : false,
-    "dataType" : 25,
-    "caption" : "用例库(=)",
-    "getPSDEFSearchMode" : {
-      "valueOP" : "EQ",
-      "codeName" : "N_LIBNAME_EQ",
-      "default" : false,
-      "getPSDEField" : {
-        "name" : "LIBNAME",
-        "codeName" : "Libname"
-      },
-      "name" : "N_LIBNAME_EQ"
-    },
-    "allowEmpty" : true,
-    "labelPos" : "NONE",
-    "labelWidth" : 0,
-    "getPSAppDEField" : {
-      "name" : "LIBNAME",
-      "codeName" : "Libname"
-    },
-    "itemType" : "FILTER",
-    "name" : "libnameeq"
-  }, {
-    "emptyCaption" : false,
-    "getPSEditor" : {
-      "enableLinkView" : false,
-      "singleSelect" : true,
-      "dropDownView" : false,
-      "enablePickupView" : false,
-      "enableAC" : true,
-      "forceSelection" : true,
-      "showTrigger" : true,
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestSuite.json"
-      },
-      "getPSAppDEDataSet" : {
-        "modelref" : true,
-        "id" : "FetchDefault"
-      },
-      "getPSAppDEACMode" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "editorType" : "PICKEREX_TRIGGER",
-      "editorParams" : {
-        "AC" : "TRUE",
-        "TRIGGER" : "TRUE",
-        "PICKUPVIEW" : "FALSE"
-      },
-      "name" : "libnamelike"
-    },
-    "showCaption" : false,
-    "hidden" : false,
-    "dataType" : 25,
-    "caption" : "用例库(%)",
-    "getPSDEFSearchMode" : {
-      "valueOP" : "LIKE",
-      "codeName" : "N_LIBNAME_LIKE",
-      "default" : false,
-      "getPSDEField" : {
-        "name" : "LIBNAME",
-        "codeName" : "Libname"
-      },
-      "name" : "N_LIBNAME_LIKE"
-    },
-    "allowEmpty" : true,
-    "labelPos" : "NONE",
-    "labelWidth" : 0,
-    "getPSAppDEField" : {
-      "name" : "LIBNAME",
-      "codeName" : "Libname"
-    },
-    "itemType" : "FILTER",
-    "name" : "libnamelike"
-  }, {
-    "emptyCaption" : false,
-    "getPSEditor" : {
-      "enableLinkView" : false,
-      "singleSelect" : true,
-      "dropDownView" : false,
-      "enablePickupView" : false,
-      "enableAC" : true,
-      "forceSelection" : true,
-      "showTrigger" : true,
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
-      },
-      "getPSAppDEDataSet" : {
-        "modelref" : true,
-        "id" : "FetchBugModule"
-      },
-      "getPSAppDEACMode" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "editorType" : "PICKEREX_TRIGGER",
-      "editorParams" : {
-        "AC" : "TRUE",
-        "TRIGGER" : "TRUE",
-        "PICKUPVIEW" : "FALSE"
-      },
-      "name" : "modulenameeq"
-    },
-    "showCaption" : false,
-    "hidden" : false,
-    "dataType" : 25,
-    "caption" : "模块名称(=)",
-    "getPSDEFSearchMode" : {
-      "valueOP" : "EQ",
-      "codeName" : "N_MODULENAME_EQ",
-      "default" : false,
-      "getPSDEField" : {
-        "name" : "MODULENAME",
-        "codeName" : "Modulename"
-      },
-      "name" : "N_MODULENAME_EQ"
-    },
-    "allowEmpty" : true,
-    "labelPos" : "NONE",
-    "labelWidth" : 0,
-    "getPSAppDEField" : {
-      "name" : "MODULENAME",
-      "codeName" : "Modulename"
-    },
-    "itemType" : "FILTER",
-    "name" : "modulenameeq"
-  }, {
-    "emptyCaption" : false,
-    "getPSEditor" : {
-      "enableLinkView" : false,
-      "singleSelect" : true,
-      "dropDownView" : false,
-      "enablePickupView" : false,
-      "enableAC" : true,
-      "forceSelection" : true,
-      "showTrigger" : true,
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
-      },
-      "getPSAppDEDataSet" : {
-        "modelref" : true,
-        "id" : "FetchBugModule"
-      },
-      "getPSAppDEACMode" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "editorType" : "PICKEREX_TRIGGER",
-      "editorParams" : {
-        "AC" : "TRUE",
-        "TRIGGER" : "TRUE",
-        "PICKUPVIEW" : "FALSE"
-      },
-      "name" : "modulenamelike"
-    },
-    "showCaption" : false,
-    "hidden" : false,
-    "dataType" : 25,
-    "caption" : "模块名称(%)",
-    "getPSDEFSearchMode" : {
-      "valueOP" : "LIKE",
-      "codeName" : "N_MODULENAME_LIKE",
-      "default" : false,
-      "getPSDEField" : {
-        "name" : "MODULENAME",
-        "codeName" : "Modulename"
-      },
-      "name" : "N_MODULENAME_LIKE"
-    },
-    "allowEmpty" : true,
-    "labelPos" : "NONE",
-    "labelWidth" : 0,
-    "getPSAppDEField" : {
-      "name" : "MODULENAME",
-      "codeName" : "Modulename"
-    },
-    "itemType" : "FILTER",
-    "name" : "modulenamelike"
-  }, {
-    "emptyCaption" : false,
-    "getPSEditor" : {
-      "singleSelect" : true,
+      "name" : "lastrunnereq",
       "getPSAppCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
       },
-      "editorType" : "DROPDOWNLIST",
-      "name" : "openedbyeq"
-    },
-    "showCaption" : false,
-    "hidden" : false,
-    "dataType" : 25,
-    "needCodeListConfig" : true,
-    "caption" : "由谁创建(=)",
-    "getPSDEFSearchMode" : {
-      "valueOP" : "EQ",
-      "codeName" : "N_OPENEDBY_EQ",
-      "default" : false,
-      "getPSDEField" : {
-        "name" : "OPENEDBY",
-        "codeName" : "OpenedBy"
-      },
-      "name" : "N_OPENEDBY_EQ"
+      "singleSelect" : true
     },
     "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "needCodeListConfig" : true,
+    "showCaption" : false
+  }, {
+    "caption" : "结果(=)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
+    "itemWidth" : 100.0,
     "labelPos" : "NONE",
     "labelWidth" : 0,
+    "name" : "lastrunresulteq",
+    "getPSAppDEField" : {
+      "name" : "LASTRUNRESULT",
+      "codeName" : "LastRunResult"
+    },
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_LASTRUNRESULT_EQ",
+      "name" : "N_LASTRUNRESULT_EQ",
+      "getPSDEField" : {
+        "name" : "LASTRUNRESULT",
+        "codeName" : "LastRunResult"
+      },
+      "valueOP" : "EQ",
+      "default" : false
+    },
+    "getPSEditor" : {
+      "editorType" : "DROPDOWNLIST",
+      "editorWidth" : 100.0,
+      "name" : "lastrunresulteq",
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__result.json"
+      },
+      "singleSelect" : true
+    },
+    "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "needCodeListConfig" : true,
+    "showCaption" : false
+  }, {
+    "caption" : "用例库(=)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "name" : "libnameeq",
+    "getPSAppDEField" : {
+      "name" : "LIBNAME",
+      "codeName" : "Libname"
+    },
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_LIBNAME_EQ",
+      "name" : "N_LIBNAME_EQ",
+      "getPSDEField" : {
+        "name" : "LIBNAME",
+        "codeName" : "Libname"
+      },
+      "valueOP" : "EQ",
+      "default" : false
+    },
+    "getPSEditor" : {
+      "editorParams" : {
+        "AC" : "TRUE",
+        "TRIGGER" : "TRUE",
+        "PICKUPVIEW" : "FALSE"
+      },
+      "editorType" : "PICKEREX_TRIGGER",
+      "name" : "libnameeq",
+      "getPSAppDEACMode" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestSuite.json"
+      },
+      "dropDownView" : false,
+      "enableAC" : true,
+      "enableLinkView" : false,
+      "enablePickupView" : false,
+      "forceSelection" : true,
+      "showTrigger" : true,
+      "singleSelect" : true
+    },
+    "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "showCaption" : false
+  }, {
+    "caption" : "用例库(%)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "name" : "libnamelike",
+    "getPSAppDEField" : {
+      "name" : "LIBNAME",
+      "codeName" : "Libname"
+    },
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_LIBNAME_LIKE",
+      "name" : "N_LIBNAME_LIKE",
+      "getPSDEField" : {
+        "name" : "LIBNAME",
+        "codeName" : "Libname"
+      },
+      "valueOP" : "LIKE",
+      "default" : false
+    },
+    "getPSEditor" : {
+      "editorParams" : {
+        "AC" : "TRUE",
+        "TRIGGER" : "TRUE",
+        "PICKUPVIEW" : "FALSE"
+      },
+      "editorType" : "PICKEREX_TRIGGER",
+      "name" : "libnamelike",
+      "getPSAppDEACMode" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestSuite.json"
+      },
+      "dropDownView" : false,
+      "enableAC" : true,
+      "enableLinkView" : false,
+      "enablePickupView" : false,
+      "forceSelection" : true,
+      "showTrigger" : true,
+      "singleSelect" : true
+    },
+    "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "showCaption" : false
+  }, {
+    "caption" : "模块名称(=)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "name" : "modulenameeq",
+    "getPSAppDEField" : {
+      "name" : "MODULENAME",
+      "codeName" : "Modulename"
+    },
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_MODULENAME_EQ",
+      "name" : "N_MODULENAME_EQ",
+      "getPSDEField" : {
+        "name" : "MODULENAME",
+        "codeName" : "Modulename"
+      },
+      "valueOP" : "EQ",
+      "default" : false
+    },
+    "getPSEditor" : {
+      "editorParams" : {
+        "AC" : "TRUE",
+        "TRIGGER" : "TRUE",
+        "PICKUPVIEW" : "FALSE"
+      },
+      "editorType" : "PICKEREX_TRIGGER",
+      "name" : "modulenameeq",
+      "getPSAppDEACMode" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchBugModule"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
+      },
+      "dropDownView" : false,
+      "enableAC" : true,
+      "enableLinkView" : false,
+      "enablePickupView" : false,
+      "forceSelection" : true,
+      "showTrigger" : true,
+      "singleSelect" : true
+    },
+    "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "showCaption" : false
+  }, {
+    "caption" : "模块名称(%)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "name" : "modulenamelike",
+    "getPSAppDEField" : {
+      "name" : "MODULENAME",
+      "codeName" : "Modulename"
+    },
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_MODULENAME_LIKE",
+      "name" : "N_MODULENAME_LIKE",
+      "getPSDEField" : {
+        "name" : "MODULENAME",
+        "codeName" : "Modulename"
+      },
+      "valueOP" : "LIKE",
+      "default" : false
+    },
+    "getPSEditor" : {
+      "editorParams" : {
+        "AC" : "TRUE",
+        "TRIGGER" : "TRUE",
+        "PICKUPVIEW" : "FALSE"
+      },
+      "editorType" : "PICKEREX_TRIGGER",
+      "name" : "modulenamelike",
+      "getPSAppDEACMode" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchBugModule"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
+      },
+      "dropDownView" : false,
+      "enableAC" : true,
+      "enableLinkView" : false,
+      "enablePickupView" : false,
+      "forceSelection" : true,
+      "showTrigger" : true,
+      "singleSelect" : true
+    },
+    "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "showCaption" : false
+  }, {
+    "caption" : "由谁创建(=)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "name" : "openedbyeq",
     "getPSAppDEField" : {
       "name" : "OPENEDBY",
       "codeName" : "OpenedBy"
     },
-    "itemType" : "FILTER",
-    "name" : "openedbyeq"
-  }, {
-    "emptyCaption" : false,
-    "getPSEditor" : {
-      "enableLinkView" : false,
-      "singleSelect" : true,
-      "dropDownView" : false,
-      "enablePickupView" : false,
-      "enableAC" : true,
-      "forceSelection" : true,
-      "showTrigger" : true,
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_OPENEDBY_EQ",
+      "name" : "N_OPENEDBY_EQ",
+      "getPSDEField" : {
+        "name" : "OPENEDBY",
+        "codeName" : "OpenedBy"
       },
-      "getPSAppDEDataSet" : {
-        "modelref" : true,
-        "id" : "FetchCurUer"
-      },
-      "getPSAppDEACMode" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "editorType" : "PICKEREX_TRIGGER",
-      "editorParams" : {
-        "AC" : "TRUE",
-        "TRIGGER" : "TRUE",
-        "PICKUPVIEW" : "FALSE"
-      },
-      "name" : "productnameeq"
+      "valueOP" : "EQ",
+      "default" : false
     },
-    "showCaption" : false,
+    "getPSEditor" : {
+      "editorType" : "DROPDOWNLIST",
+      "name" : "openedbyeq",
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
+      },
+      "singleSelect" : true
+    },
+    "allowEmpty" : true,
+    "emptyCaption" : false,
     "hidden" : false,
-    "dataType" : 25,
+    "needCodeListConfig" : true,
+    "showCaption" : false
+  }, {
     "caption" : "产品名称(=)",
-    "getPSDEFSearchMode" : {
-      "valueOP" : "EQ",
-      "codeName" : "N_PRODUCTNAME_EQ",
-      "default" : false,
-      "getPSDEField" : {
-        "name" : "PRODUCTNAME",
-        "codeName" : "ProductName"
-      },
-      "name" : "N_PRODUCTNAME_EQ"
-    },
-    "allowEmpty" : true,
+    "dataType" : 25,
+    "itemType" : "FILTER",
     "labelPos" : "NONE",
     "labelWidth" : 0,
+    "name" : "productnameeq",
     "getPSAppDEField" : {
       "name" : "PRODUCTNAME",
       "codeName" : "ProductName"
     },
-    "itemType" : "FILTER",
-    "name" : "productnameeq"
-  }, {
-    "emptyCaption" : false,
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_PRODUCTNAME_EQ",
+      "name" : "N_PRODUCTNAME_EQ",
+      "getPSDEField" : {
+        "name" : "PRODUCTNAME",
+        "codeName" : "ProductName"
+      },
+      "valueOP" : "EQ",
+      "default" : false
+    },
     "getPSEditor" : {
-      "enableLinkView" : false,
-      "singleSelect" : true,
-      "dropDownView" : false,
-      "enablePickupView" : false,
-      "enableAC" : true,
-      "forceSelection" : true,
-      "showTrigger" : true,
-      "getPSAppDataEntity" : {
+      "editorParams" : {
+        "AC" : "TRUE",
+        "TRIGGER" : "TRUE",
+        "PICKUPVIEW" : "FALSE"
+      },
+      "editorType" : "PICKEREX_TRIGGER",
+      "name" : "productnameeq",
+      "getPSAppDEACMode" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+        "id" : "Default"
       },
       "getPSAppDEDataSet" : {
         "modelref" : true,
         "id" : "FetchCurUer"
       },
-      "getPSAppDEACMode" : {
+      "getPSAppDataEntity" : {
         "modelref" : true,
-        "id" : "Default"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
       },
-      "editorType" : "PICKEREX_TRIGGER",
-      "editorParams" : {
-        "AC" : "TRUE",
-        "TRIGGER" : "TRUE",
-        "PICKUPVIEW" : "FALSE"
-      },
-      "name" : "productnamelike"
-    },
-    "showCaption" : false,
-    "hidden" : false,
-    "dataType" : 25,
-    "caption" : "产品名称(%)",
-    "getPSDEFSearchMode" : {
-      "valueOP" : "LIKE",
-      "codeName" : "N_PRODUCTNAME_LIKE",
-      "default" : false,
-      "getPSDEField" : {
-        "name" : "PRODUCTNAME",
-        "codeName" : "ProductName"
-      },
-      "name" : "N_PRODUCTNAME_LIKE"
+      "dropDownView" : false,
+      "enableAC" : true,
+      "enableLinkView" : false,
+      "enablePickupView" : false,
+      "forceSelection" : true,
+      "showTrigger" : true,
+      "singleSelect" : true
     },
     "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "showCaption" : false
+  }, {
+    "caption" : "产品名称(%)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
     "labelPos" : "NONE",
     "labelWidth" : 0,
+    "name" : "productnamelike",
     "getPSAppDEField" : {
       "name" : "PRODUCTNAME",
       "codeName" : "ProductName"
     },
-    "itemType" : "FILTER",
-    "name" : "productnamelike"
-  }, {
-    "emptyCaption" : false,
-    "getPSEditor" : {
-      "enableLinkView" : false,
-      "singleSelect" : true,
-      "dropDownView" : false,
-      "enablePickupView" : false,
-      "enableAC" : true,
-      "forceSelection" : true,
-      "showTrigger" : true,
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-      },
-      "getPSAppDEDataSet" : {
-        "modelref" : true,
-        "id" : "FetchCaseStory"
-      },
-      "getPSAppDEACMode" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "editorType" : "PICKEREX_TRIGGER",
-      "editorParams" : {
-        "AC" : "TRUE",
-        "TRIGGER" : "TRUE",
-        "PICKUPVIEW" : "FALSE"
-      },
-      "name" : "storynameeq"
-    },
-    "showCaption" : false,
-    "hidden" : false,
-    "dataType" : 25,
-    "caption" : "需求名称(=)",
     "getPSDEFSearchMode" : {
-      "valueOP" : "EQ",
-      "codeName" : "N_STORYNAME_EQ",
-      "default" : false,
+      "codeName" : "N_PRODUCTNAME_LIKE",
+      "name" : "N_PRODUCTNAME_LIKE",
       "getPSDEField" : {
-        "name" : "STORYNAME",
-        "codeName" : "Storyname"
+        "name" : "PRODUCTNAME",
+        "codeName" : "ProductName"
       },
-      "name" : "N_STORYNAME_EQ"
-    },
-    "allowEmpty" : true,
-    "labelPos" : "NONE",
-    "labelWidth" : 0,
-    "getPSAppDEField" : {
-      "name" : "STORYNAME",
-      "codeName" : "Storyname"
-    },
-    "itemType" : "FILTER",
-    "name" : "storynameeq"
-  }, {
-    "emptyCaption" : false,
-    "getPSEditor" : {
-      "enableLinkView" : false,
-      "singleSelect" : true,
-      "dropDownView" : false,
-      "enablePickupView" : false,
-      "enableAC" : true,
-      "forceSelection" : true,
-      "showTrigger" : true,
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-      },
-      "getPSAppDEDataSet" : {
-        "modelref" : true,
-        "id" : "FetchCaseStory"
-      },
-      "getPSAppDEACMode" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "editorType" : "PICKEREX_TRIGGER",
-      "editorParams" : {
-        "AC" : "TRUE",
-        "TRIGGER" : "TRUE",
-        "PICKUPVIEW" : "FALSE"
-      },
-      "name" : "storynamelike"
-    },
-    "showCaption" : false,
-    "hidden" : false,
-    "dataType" : 25,
-    "caption" : "需求名称(%)",
-    "getPSDEFSearchMode" : {
       "valueOP" : "LIKE",
-      "codeName" : "N_STORYNAME_LIKE",
-      "default" : false,
-      "getPSDEField" : {
-        "name" : "STORYNAME",
-        "codeName" : "Storyname"
+      "default" : false
+    },
+    "getPSEditor" : {
+      "editorParams" : {
+        "AC" : "TRUE",
+        "TRIGGER" : "TRUE",
+        "PICKUPVIEW" : "FALSE"
       },
-      "name" : "N_STORYNAME_LIKE"
+      "editorType" : "PICKEREX_TRIGGER",
+      "name" : "productnamelike",
+      "getPSAppDEACMode" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchCurUer"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+      },
+      "dropDownView" : false,
+      "enableAC" : true,
+      "enableLinkView" : false,
+      "enablePickupView" : false,
+      "forceSelection" : true,
+      "showTrigger" : true,
+      "singleSelect" : true
     },
     "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "showCaption" : false
+  }, {
+    "caption" : "需求名称(=)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
     "labelPos" : "NONE",
     "labelWidth" : 0,
+    "name" : "storynameeq",
     "getPSAppDEField" : {
       "name" : "STORYNAME",
       "codeName" : "Storyname"
     },
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_STORYNAME_EQ",
+      "name" : "N_STORYNAME_EQ",
+      "getPSDEField" : {
+        "name" : "STORYNAME",
+        "codeName" : "Storyname"
+      },
+      "valueOP" : "EQ",
+      "default" : false
+    },
+    "getPSEditor" : {
+      "editorParams" : {
+        "AC" : "TRUE",
+        "TRIGGER" : "TRUE",
+        "PICKUPVIEW" : "FALSE"
+      },
+      "editorType" : "PICKEREX_TRIGGER",
+      "name" : "storynameeq",
+      "getPSAppDEACMode" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchCaseStory"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+      },
+      "dropDownView" : false,
+      "enableAC" : true,
+      "enableLinkView" : false,
+      "enablePickupView" : false,
+      "forceSelection" : true,
+      "showTrigger" : true,
+      "singleSelect" : true
+    },
+    "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "showCaption" : false
+  }, {
+    "caption" : "需求名称(%)",
+    "dataType" : 25,
     "itemType" : "FILTER",
-    "name" : "storynamelike"
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "name" : "storynamelike",
+    "getPSAppDEField" : {
+      "name" : "STORYNAME",
+      "codeName" : "Storyname"
+    },
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_STORYNAME_LIKE",
+      "name" : "N_STORYNAME_LIKE",
+      "getPSDEField" : {
+        "name" : "STORYNAME",
+        "codeName" : "Storyname"
+      },
+      "valueOP" : "LIKE",
+      "default" : false
+    },
+    "getPSEditor" : {
+      "editorParams" : {
+        "AC" : "TRUE",
+        "TRIGGER" : "TRUE",
+        "PICKUPVIEW" : "FALSE"
+      },
+      "editorType" : "PICKEREX_TRIGGER",
+      "name" : "storynamelike",
+      "getPSAppDEACMode" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchCaseStory"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+      },
+      "dropDownView" : false,
+      "enableAC" : true,
+      "enableLinkView" : false,
+      "enablePickupView" : false,
+      "forceSelection" : true,
+      "showTrigger" : true,
+      "singleSelect" : true
+    },
+    "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "showCaption" : false
   } ],
   "quickSearchMode" : 1,
-  "enableFilter" : true,
-  "controlType" : "SEARCHBAR",
-  "codeName" : "Custom",
-  "enableQuickSearch" : true,
-  "enableGroup" : false,
   "quickSearchWidth" : 0,
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
-  },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSSEARCHBARS/Custom.json",
-  "logicName" : "测试用例自定义搜索栏",
+  "enableFilter" : true,
+  "enableGroup" : false,
+  "enableQuickSearch" : true,
+  "mobileSearchBar" : false,
   "modelid" : "479b5c0d8f5952ae7ade4e1e0b0223d6"
 }

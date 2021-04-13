@@ -1,63 +1,63 @@
 {
-  "enableFront" : false,
-  "enableBackend" : true,
-  "getStartPSDELogicNode" : {
-    "modelref" : true,
-    "id" : "Begin"
-  },
-  "getPSDELogicNodes" : [ {
-    "parallelOutput" : true,
-    "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接2830"
-    } ],
-    "logicHolder" : 3,
-    "codeName" : "Begin",
-    "logicNodeType" : "BEGIN",
-    "name" : "开始"
-  }, {
-    "parallelOutput" : true,
-    "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SETPARAMVALUE",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcValueType" : "SRCVALUE",
-      "srcValue" : "null",
-      "dstFieldName" : "taskestimate",
-      "name" : "直接值[null] ==> Default[taskestimate]"
-    } ],
-    "logicHolder" : 3,
-    "codeName" : "Prepareparam1",
-    "logicNodeType" : "PREPAREPARAM",
-    "name" : "重置工时统计"
-  } ],
+  "codeName" : "ResetTaskestimate",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/ResetTaskestimate.json",
+  "logicHolder" : 1,
+  "logicName" : "重置工时统计值",
+  "logicSubType" : "NONE",
+  "name" : "重置工时统计值",
   "getPSDELogicLinks" : [ {
-    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "Prepareparam1"
     },
+    "name" : "连接2830",
     "getSrcPSDELogicNode" : {
       "modelref" : true,
       "id" : "Begin"
     },
-    "name" : "连接2830"
+    "defaultLink" : false
+  } ],
+  "getPSDELogicNodes" : [ {
+    "codeName" : "Begin",
+    "logicHolder" : 3,
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接2830"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Prepareparam1",
+    "logicHolder" : 3,
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "重置工时统计",
+    "getPSDELogicNodeParams" : [ {
+      "dstFieldName" : "taskestimate",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "name" : "直接值[null] ==> Default[taskestimate]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcValue" : "null",
+      "srcValueType" : "SRCVALUE"
+    } ],
+    "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
-    "lastParam" : false,
-    "envParam" : false,
     "codeName" : "Default",
+    "name" : "传入变量",
     "default" : true,
-    "name" : "传入变量"
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
   } ],
-  "logicHolder" : 1,
-  "codeName" : "ResetTaskestimate",
-  "logicName" : "重置工时统计值",
-  "defaultParamName" : "Default",
-  "logicSubType" : "NONE",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/ResetTaskestimate.json",
-  "name" : "重置工时统计值"
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : true,
+  "enableFront" : false
 }

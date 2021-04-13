@@ -1,233 +1,233 @@
 {
-  "enableFront" : false,
-  "enableBackend" : true,
-  "getStartPSDELogicNode" : {
-    "modelref" : true,
-    "id" : "Begin"
-  },
+  "codeName" : "FixPath",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDELOGICS/FixPath.json",
+  "logicHolder" : 1,
+  "logicName" : "重建模块路径",
+  "logicSubType" : "NONE",
+  "name" : "重建模块路径",
+  "getPSDELogicLinks" : [ {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Deaction1"
+    },
+    "name" : "连接8362",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam1"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam1"
+    },
+    "name" : "连接7866",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "defaultLink" : false
+  } ],
   "getPSDELogicNodes" : [ {
-    "parallelOutput" : true,
-    "getDstPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
-    },
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "ZT_Module"
-    },
-    "logicHolder" : 3,
     "codeName" : "Deaction1",
     "getDstPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDEACTIONS/Update.json"
     },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "ZT_Module"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+    },
+    "logicHolder" : 3,
     "logicNodeType" : "DEACTION",
-    "name" : "执行重建模块路径行为"
+    "name" : "执行重建模块路径行为",
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
+    "codeName" : "Begin",
+    "logicHolder" : 3,
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接7866"
     } ],
-    "logicHolder" : 3,
-    "codeName" : "Begin",
-    "logicNodeType" : "BEGIN",
-    "name" : "开始"
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
+    "codeName" : "Prepareparam1",
+    "logicHolder" : 3,
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "准备参数",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接8362"
     } ],
     "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SETPARAMVALUE",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "ZT_Module"
-      },
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "BRANCH",
-      "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "BRANCH",
-      "name" : "Default[BRANCH] ==> ZT_Module[BRANCH]"
-    }, {
-      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "ZT_Module"
       },
+      "name" : "Default[BRANCH] ==> ZT_Module[BRANCH]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "BRANCH",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "srcFieldName" : "COLLECTOR",
-      "srcValueType" : "SRCDLPARAM",
+      "srcValueType" : "SRCDLPARAM"
+    }, {
       "dstFieldName" : "COLLECTOR",
-      "name" : "Default[COLLECTOR] ==> ZT_Module[COLLECTOR]"
-    }, {
-      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "ZT_Module"
       },
+      "name" : "Default[COLLECTOR] ==> ZT_Module[COLLECTOR]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "COLLECTOR",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "srcFieldName" : "GRADE",
-      "srcValueType" : "SRCDLPARAM",
+      "srcValueType" : "SRCDLPARAM"
+    }, {
       "dstFieldName" : "GRADE",
-      "name" : "Default[GRADE] ==> ZT_Module[GRADE]"
-    }, {
-      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "ZT_Module"
       },
+      "name" : "Default[GRADE] ==> ZT_Module[GRADE]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "GRADE",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "srcFieldName" : "ID",
-      "srcValueType" : "SRCDLPARAM",
+      "srcValueType" : "SRCDLPARAM"
+    }, {
       "dstFieldName" : "ID",
-      "name" : "Default[ID] ==> ZT_Module[ID]"
-    }, {
-      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "ZT_Module"
       },
+      "name" : "Default[ID] ==> ZT_Module[ID]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "ID",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "srcFieldName" : "NAME",
-      "srcValueType" : "SRCDLPARAM",
+      "srcValueType" : "SRCDLPARAM"
+    }, {
       "dstFieldName" : "NAME",
-      "name" : "Default[NAME] ==> ZT_Module[NAME]"
-    }, {
-      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "ZT_Module"
       },
+      "name" : "Default[NAME] ==> ZT_Module[NAME]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "NAME",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "srcFieldName" : "ORDER",
-      "srcValueType" : "SRCDLPARAM",
+      "srcValueType" : "SRCDLPARAM"
+    }, {
       "dstFieldName" : "ORDER",
-      "name" : "Default[ORDER] ==> ZT_Module[ORDER]"
-    }, {
-      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "ZT_Module"
       },
+      "name" : "Default[ORDER] ==> ZT_Module[ORDER]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "ORDER",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "srcFieldName" : "PARENT",
-      "srcValueType" : "SRCDLPARAM",
+      "srcValueType" : "SRCDLPARAM"
+    }, {
       "dstFieldName" : "PARENT",
-      "name" : "Default[PARENT] ==> ZT_Module[PARENT]"
-    }, {
-      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "ZT_Module"
       },
+      "name" : "Default[PARENT] ==> ZT_Module[PARENT]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "PARENT",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "srcFieldName" : "ROOT",
-      "srcValueType" : "SRCDLPARAM",
+      "srcValueType" : "SRCDLPARAM"
+    }, {
       "dstFieldName" : "ROOT",
-      "name" : "Default[ROOT] ==> ZT_Module[ROOT]"
-    }, {
-      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "ZT_Module"
       },
+      "name" : "Default[ROOT] ==> ZT_Module[ROOT]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "ROOT",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "srcFieldName" : "SHORT",
-      "srcValueType" : "SRCDLPARAM",
+      "srcValueType" : "SRCDLPARAM"
+    }, {
       "dstFieldName" : "SHORT",
-      "name" : "Default[SHORT] ==> ZT_Module[SHORT]"
-    }, {
-      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "ZT_Module"
       },
+      "name" : "Default[SHORT] ==> ZT_Module[SHORT]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "SHORT",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "srcFieldName" : "TYPE",
-      "srcValueType" : "SRCDLPARAM",
+      "srcValueType" : "SRCDLPARAM"
+    }, {
       "dstFieldName" : "TYPE",
-      "name" : "Default[TYPE] ==> ZT_Module[TYPE]"
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "ZT_Module"
+      },
+      "name" : "Default[TYPE] ==> ZT_Module[TYPE]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "TYPE",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
     } ],
-    "logicHolder" : 3,
-    "codeName" : "Prepareparam1",
-    "logicNodeType" : "PREPAREPARAM",
-    "name" : "准备参数"
-  } ],
-  "getPSDELogicLinks" : [ {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Deaction1"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Prepareparam1"
-    },
-    "name" : "连接8362"
-  }, {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Prepareparam1"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Begin"
-    },
-    "name" : "连接7866"
+    "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
-    "lastParam" : false,
-    "envParam" : false,
     "codeName" : "Default",
+    "name" : "传入变量",
     "default" : true,
-    "name" : "传入变量"
-  }, {
-    "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
+  }, {
     "codeName" : "ZT_Module",
+    "name" : "模块实体",
     "default" : false,
-    "name" : "模块实体"
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
   } ],
-  "logicHolder" : 1,
-  "codeName" : "FixPath",
-  "logicName" : "重建模块路径",
-  "defaultParamName" : "Default",
-  "logicSubType" : "NONE",
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDELOGICS/FixPath.json",
-  "name" : "重建模块路径"
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : true,
+  "enableFront" : false
 }

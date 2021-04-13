@@ -1,123 +1,123 @@
 {
-  "codeItemValueNumber" : false,
-  "subSysCodeList" : false,
-  "subSysAsCloud" : false,
-  "systemTag" : "iBizPMS",
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Action__object_type.json",
   "codeName" : "Action__object_type",
-  "userScope" : false,
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Action__object_type.json",
   "emptyText" : "未定义",
-  "enableCache" : true,
-  "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "product",
     "codeName" : "Product",
-    "text" : "产品"
+    "text" : "产品",
+    "value" : "product"
   }, {
-    "value" : "story",
     "codeName" : "Story",
-    "text" : "需求"
+    "text" : "需求",
+    "value" : "story"
   }, {
-    "value" : "productplan",
     "codeName" : "Productplan",
-    "text" : "计划"
+    "text" : "计划",
+    "value" : "productplan"
   }, {
-    "value" : "release",
     "codeName" : "Release",
-    "text" : "发布"
+    "text" : "发布",
+    "value" : "release"
   }, {
-    "value" : "project",
     "codeName" : "Project",
-    "text" : "项目"
+    "text" : "项目",
+    "value" : "project"
   }, {
-    "value" : "task",
     "codeName" : "Task",
-    "text" : "任务"
+    "text" : "任务",
+    "value" : "task"
   }, {
-    "value" : "build",
     "codeName" : "Build",
-    "text" : "版本"
+    "text" : "版本",
+    "value" : "build"
   }, {
-    "value" : "bug",
     "codeName" : "Bug",
-    "text" : "Bug"
+    "text" : "Bug",
+    "value" : "bug"
   }, {
-    "value" : "case",
     "codeName" : "Case",
-    "text" : "用例"
+    "text" : "用例",
+    "value" : "case"
   }, {
-    "value" : "caseresult",
     "codeName" : "Caseresult",
-    "text" : "用例结果"
+    "text" : "用例结果",
+    "value" : "caseresult"
   }, {
-    "value" : "stepresult",
     "codeName" : "Stepresult",
-    "text" : "用例步骤"
+    "text" : "用例步骤",
+    "value" : "stepresult"
   }, {
-    "value" : "testtask",
     "codeName" : "Testtask",
-    "text" : "测试单"
+    "text" : "测试单",
+    "value" : "testtask"
   }, {
-    "value" : "user",
     "codeName" : "User",
-    "text" : "用户"
+    "text" : "用户",
+    "value" : "user"
   }, {
-    "value" : "doc",
     "codeName" : "Doc",
-    "text" : "文档"
+    "text" : "文档",
+    "value" : "doc"
   }, {
-    "value" : "doclib",
     "codeName" : "Doclib",
-    "text" : "文档库"
+    "text" : "文档库",
+    "value" : "doclib"
   }, {
-    "value" : "todo",
     "codeName" : "Todo",
-    "text" : "待办"
+    "text" : "待办",
+    "value" : "todo"
   }, {
-    "value" : "branch",
     "codeName" : "Branch",
-    "text" : "分支"
+    "text" : "分支",
+    "value" : "branch"
   }, {
-    "value" : "module",
     "codeName" : "Module",
-    "text" : "模块"
+    "text" : "模块",
+    "value" : "module"
   }, {
-    "value" : "testsuite",
     "codeName" : "Testsuite",
-    "text" : "套件"
+    "text" : "套件",
+    "value" : "testsuite"
   }, {
-    "value" : "caselib",
     "codeName" : "Caselib",
-    "text" : "用例库"
+    "text" : "用例库",
+    "value" : "caselib"
   }, {
-    "value" : "testreport",
     "codeName" : "Testreport",
-    "text" : "报告"
+    "text" : "报告",
+    "value" : "testreport"
   }, {
-    "value" : "entry",
     "codeName" : "Entry",
-    "text" : "应用"
+    "text" : "应用",
+    "value" : "entry"
   }, {
-    "value" : "webhook",
     "codeName" : "Webhook",
-    "text" : "Webhook"
+    "text" : "Webhook",
+    "value" : "webhook"
   }, {
-    "value" : "daily",
     "codeName" : "Daily",
-    "text" : "日报"
+    "text" : "日报",
+    "value" : "daily"
   }, {
-    "value" : "weekly",
     "codeName" : "Weekly",
-    "text" : "周报"
+    "text" : "周报",
+    "value" : "weekly"
   }, {
-    "value" : "monthly",
     "codeName" : "Monthly",
-    "text" : "月报"
+    "text" : "月报",
+    "value" : "monthly"
   }, {
-    "value" : "reportly",
     "codeName" : "Reportly",
-    "text" : "汇报"
-  } ]
+    "text" : "汇报",
+    "value" : "reportly"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
 }

@@ -1,78 +1,234 @@
 {
-  "enableUIActions" : 15,
-  "enableUIRemove" : true,
-  "getAllPSAppDEUIActions" : [ {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json"
+  "getAllPSAppDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value",
+      "getPSAppDEField" : {
+        "name" : "IBZ_AGENTID",
+        "codeName" : "IbzAgentId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "IBZ_AGENTNAME",
+        "codeName" : "IbzAgentName"
+      }
+    } ],
+    "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "IBZ_AGENTNAME",
+      "codeName" : "IbzAgentName"
     },
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzAgentCreateEditView.json",
-      "viewType" : "DEEDITVIEW"
+    "getValuePSAppDEField" : {
+      "name" : "IBZ_AGENTID",
+      "codeName" : "IbzAgentId"
     },
-    "frontProcessType" : "WIZARD",
-    "getNoPrivDisplayMode" : 2,
-    "getPSSysImage" : {
-      "glyph" : "xf044@FontAwesome",
-      "cssClass" : "fa fa-edit"
-    },
-    "timeout" : 60000,
-    "codeName" : "Edit",
-    "caption" : "编辑",
-    "actionTarget" : "SINGLEKEY",
-    "uIActionTag" : "Edit",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "FRONT",
-    "fullCodeName" : "IbzAgent_Edit",
-    "name" : "编辑",
-    "id" : "Edit@IbzAgent"
-  }, {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json"
-    },
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzAgentCreateEditView.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "frontProcessType" : "WIZARD",
-    "getNoPrivDisplayMode" : 2,
-    "getPSSysImage" : {
-      "glyph" : "xf067@FontAwesome",
-      "cssClass" : "fa fa-plus"
-    },
-    "timeout" : 60000,
-    "codeName" : "Create",
-    "caption" : "新建",
-    "actionTarget" : "NONE",
-    "uIActionTag" : "Create",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "FRONT",
-    "fullCodeName" : "IbzAgent_Create",
-    "name" : "新建",
-    "id" : "Create@IbzAgent"
+    "defaultMode" : true,
+    "enablePagingBar" : false
   } ],
-  "major" : true,
-  "getAllPSAppDEMethods" : [ {
+  "getAllPSAppDEActions" : [ {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzAgent/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Select"
+      "id" : "IBZAGENT__DEACTION__CREATE"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzAgent/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "IBZAGENT__DEACTION__UPDATE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzAgent/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "IBZAGENT__DEACTION__REMOVE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzAgent/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "IBZAGENT__DEACTION__GET"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzAgent/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzAgent/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzAgent/PSDEACTIONS/Save.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "CreateManName",
+    "logicName" : "创建人姓名",
+    "name" : "CREATEMANNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Agentend",
+    "logicName" : "代理结束日期",
+    "name" : "AGENTEND",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD"
+  }, {
+    "codeName" : "IbzAgentId",
+    "logicName" : "代理标识",
+    "name" : "IBZ_AGENTID",
+    "stdDataType" : 1,
+    "keyField" : true
+  }, {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "Agentuser",
+    "logicName" : "代理用户",
+    "name" : "AGENTUSER",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "name" : "CREATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "Agentbegin",
+    "logicName" : "代理开始日期",
+    "name" : "AGENTBEGIN",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD"
+  }, {
+    "codeName" : "IbzAgentName",
+    "logicName" : "代理名称",
+    "name" : "IBZ_AGENTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 200,
+    "enableQuickSearch" : true,
+    "majorField" : true
+  } ],
+  "getAllPSAppDEMethods" : [ {
+    "codeName" : "Select",
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "Select"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "IBZAGENT__DEACTION__CREATE"
+      "id" : "Select"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Create",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -82,13 +238,13 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "codeName" : "Create"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "IBZAGENT__DEACTION__UPDATE"
+      "id" : "IBZAGENT__DEACTION__CREATE"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Update",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -98,13 +254,13 @@
       "modelref" : true,
       "id" : "UPDATE"
     },
-    "codeName" : "Update"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "IBZAGENT__DEACTION__REMOVE"
+      "id" : "IBZAGENT__DEACTION__UPDATE"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Remove",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -114,13 +270,13 @@
       "modelref" : true,
       "id" : "DELETE"
     },
-    "codeName" : "Remove"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "IBZAGENT__DEACTION__GET"
+      "id" : "IBZAGENT__DEACTION__REMOVE"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -130,13 +286,13 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "Get"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "GetDraft"
+      "id" : "IBZAGENT__DEACTION__GET"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -146,37 +302,37 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "codeName" : "GetDraft"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "CheckKey"
+      "id" : "GetDraft"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzAgent/PSDEACTIONS/CheckKey.json"
     },
-    "codeName" : "CheckKey"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Save"
+      "id" : "CheckKey"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Save",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzAgent/PSDEACTIONS/Save.json"
     },
-    "codeName" : "Save"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchDefault"
+      "id" : "Save"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -186,264 +342,99 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "FetchDefault"
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false
   }, {
-    "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterUpdate",
-    "name" : "FILTERUPDATE"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterSearch",
-    "name" : "FILTERSEARCH"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERSEARCH",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterGet",
-    "name" : "FILTERGET"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERGET",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterCreate",
-    "name" : "FILTERCREATE"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERCREATE",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterGetDraft",
-    "name" : "FILTERGETDRAFT"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERGETDRAFT",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterRemove",
-    "name" : "FILTERREMOVE"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERREMOVE",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterFetch",
-    "name" : "FILTERFETCH"
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERFETCH",
+    "builtinMethod" : true
   } ],
-  "getAllPSAppDEFields" : [ {
-    "codeName" : "UpdateMan",
-    "logicName" : "更新人",
-    "stringLength" : 60,
-    "stdDataType" : 25,
-    "name" : "UPDATEMAN"
+  "getAllPSAppDEUIActions" : [ {
+    "actionTarget" : "SINGLEKEY",
+    "getNoPrivDisplayMode" : 2,
+    "caption" : "编辑",
+    "codeName" : "Edit",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzAgentCreateEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "IbzAgent_Edit",
+    "name" : "编辑",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json"
+    },
+    "getPSSysImage" : {
+      "glyph" : "xf044@FontAwesome",
+      "cssClass" : "fa fa-edit"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "Edit",
+    "uIActionType" : "DEUIACTION",
+    "id" : "Edit@IbzAgent"
   }, {
-    "codeName" : "CreateManName",
-    "logicName" : "创建人姓名",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "name" : "CREATEMANNAME"
-  }, {
-    "valueFormat" : "YYYY-MM-DD",
-    "codeName" : "Agentend",
-    "logicName" : "代理结束日期",
-    "stdDataType" : 5,
-    "name" : "AGENTEND"
-  }, {
-    "keyField" : true,
-    "codeName" : "IbzAgentId",
-    "logicName" : "代理标识",
-    "stdDataType" : 1,
-    "name" : "IBZ_AGENTID"
-  }, {
-    "codeName" : "CreateMan",
-    "logicName" : "建立人",
-    "stringLength" : 60,
-    "stdDataType" : 25,
-    "name" : "CREATEMAN"
-  }, {
-    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
-    "codeName" : "UpdateDate",
-    "logicName" : "更新时间",
-    "stdDataType" : 5,
-    "name" : "UPDATEDATE"
-  }, {
-    "codeName" : "Agentuser",
-    "logicName" : "代理用户",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "name" : "AGENTUSER"
-  }, {
-    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
-    "codeName" : "CreateDate",
-    "logicName" : "建立时间",
-    "stdDataType" : 5,
-    "name" : "CREATEDATE"
-  }, {
-    "valueFormat" : "YYYY-MM-DD",
-    "codeName" : "Agentbegin",
-    "logicName" : "代理开始日期",
-    "stdDataType" : 5,
-    "name" : "AGENTBEGIN"
-  }, {
-    "majorField" : true,
-    "codeName" : "IbzAgentName",
-    "logicName" : "代理名称",
-    "stringLength" : 200,
-    "stdDataType" : 25,
-    "enableQuickSearch" : true,
-    "name" : "IBZ_AGENTNAME"
-  } ],
-  "getAllPSAppDEACModes" : [ {
-    "enablePagingBar" : false,
-    "getPSDEACModeDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "IBZ_AGENTID",
-        "codeName" : "IbzAgentId"
-      },
-      "name" : "value",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "IBZ_AGENTNAME",
-        "codeName" : "IbzAgentName"
-      },
-      "name" : "text",
-      "dataType" : 25
-    } ],
-    "getValuePSAppDEField" : {
-      "name" : "IBZ_AGENTID",
-      "codeName" : "IbzAgentId"
-    },
-    "getTextPSAppDEField" : {
-      "name" : "IBZ_AGENTNAME",
-      "codeName" : "IbzAgentName"
-    },
-    "codeName" : "Default",
-    "logicName" : "DEFAULT",
-    "defaultMode" : true,
-    "pagingSize" : 50,
-    "name" : "DEFAULT"
-  } ],
-  "enableFilterActions" : true,
-  "enableWFActions" : false,
-  "getQuickSearchPSAppDEFields" : [ {
-    "name" : "IBZ_AGENTNAME",
-    "codeName" : "IbzAgentName"
-  } ],
-  "getAllPSAppDEActions" : [ {
-    "getPSDEServiceAPIMethod" : {
+    "actionTarget" : "NONE",
+    "getNoPrivDisplayMode" : 2,
+    "caption" : "新建",
+    "codeName" : "Create",
+    "getFrontPSAppView" : {
       "modelref" : true,
-      "id" : "IBZAGENT__DEACTION__CREATE"
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzAgentCreateEditView.json",
+      "viewType" : "DEEDITVIEW"
     },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "IbzAgent_Create",
+    "name" : "新建",
+    "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzAgent/PSDEACTIONS/Create.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json"
     },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
+    "getPSSysImage" : {
+      "glyph" : "xf067@FontAwesome",
+      "cssClass" : "fa fa-plus"
     },
-    "codeName" : "Create"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "IBZAGENT__DEACTION__UPDATE"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzAgent/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "codeName" : "Update"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "IBZAGENT__DEACTION__REMOVE"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzAgent/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "codeName" : "Remove"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "IBZAGENT__DEACTION__GET"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzAgent/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "codeName" : "Get"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzAgent/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "codeName" : "GetDraft"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CheckKey"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzAgent/PSDEACTIONS/CheckKey.json"
-    },
-    "codeName" : "CheckKey"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Save"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzAgent/PSDEACTIONS/Save.json"
-    },
-    "codeName" : "Save"
-  } ],
-  "getAllPSAppDEDataSets" : [ {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
-    },
-    "builtinMethod" : false,
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "codeName" : "FetchDefault"
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "Create",
+    "uIActionType" : "DEUIACTION",
+    "id" : "Create@IbzAgent"
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
@@ -458,18 +449,27 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "codeName" : "IbzAgent",
+  "dataAccCtrlArch" : 1,
+  "dataAccCtrlMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json",
+  "enableUIActions" : 15,
+  "logicName" : "代理",
+  "name" : "IBZ_AGENT",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzAgent/PSDESERVICEAPIS/IbzAgent.json"
   },
-  "codeName" : "IbzAgent",
-  "logicName" : "代理",
-  "dataAccCtrlMode" : 1,
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "IBZ_AGENTNAME",
+    "codeName" : "IbzAgentName"
+  } ],
   "storageMode" : 0,
-  "dataAccCtrlArch" : 1,
+  "defaultMode" : true,
+  "enableFilterActions" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,
-  "defaultMode" : true,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json",
-  "name" : "IBZ_AGENT"
+  "enableUIRemove" : true,
+  "enableWFActions" : false,
+  "major" : true
 }

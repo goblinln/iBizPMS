@@ -1,34 +1,18 @@
 {
-  "rowEditDefault" : false,
-  "enableExport" : true,
-  "enableImport" : true,
-  "enableRowEdit" : false,
-  "gridRowActiveMode" : 2,
-  "enableFilter" : false,
-  "enableQuickSearch" : true,
-  "xDataControlName" : "grid",
-  "showCaptionBar" : true,
-  "getPSDEViewCodeName" : "GridView",
-  "enableDP" : true,
-  "caption" : "产品统计",
-  "title" : "产品统计表格视图",
   "accUserMode" : 2,
-  "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
-    "layoutPanel" : true,
-    "controlType" : "VIEWLAYOUTPANEL",
-    "codeName" : "Layoutpanel",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
-    },
-    "getPSControlParam" : { },
-    "controlStyle" : "APPDEGRIDVIEW_STYLE2",
-    "name" : "layoutpanel"
+  "caption" : "产品统计",
+  "codeName" : "ProductStatsGridView",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsGridView.json",
+  "gridRowActiveMode" : 2,
+  "name" : "ProductStatsGridView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
   },
   "getPSAppViewEngines" : [ {
-    "engineType" : "GridView",
     "engineCat" : "VIEW",
+    "engineType" : "GridView",
+    "name" : "engine",
     "getPSUIEngineParams" : [ {
       "name" : "OPENDATA",
       "paramType" : "LOGIC"
@@ -38,489 +22,27 @@
     }, {
       "name" : "GRID",
       "paramType" : "CTRL"
-    } ],
-    "name" : "engine"
-  } ],
-  "getPSAppViewUIActions" : [ {
-    "xDataControlName" : "grid",
-    "getPSUIAction" : {
-      "modelref" : true,
-      "id" : "ExportExcel"
-    },
-    "name" : "toolbar_deuiaction1"
-  } ],
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
-  },
-  "getPSControls" : [ {
-    "controlType" : "TOOLBAR",
-    "getPSDEToolbarItems" : [ {
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1"
-      },
-      "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.EXPORT",
-        "id" : "工具栏按钮文本[*.EXPORT]"
-      },
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
-        "id" : "工具栏按钮提示[*.EXPORT]"
-      },
-      "noPrivDisplayMode" : 2,
-      "getPSUIAction" : {
-        "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.EXPORT",
-          "id" : "工具栏按钮文本[*.EXPORT]"
-        },
-        "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
-          "id" : "工具栏按钮提示[*.EXPORT]"
-        },
-        "getNoPrivDisplayMode" : 2,
-        "getPSSysImage" : {
-          "glyph" : "xf1c3@FontAwesome",
-          "cssClass" : "fa fa-file-excel-o"
-        },
-        "timeout" : 60000,
-        "codeName" : "ExportExcel",
-        "caption" : "导出",
-        "uIActionTag" : "ExportExcel",
-        "uIActionType" : "DEUIACTION",
-        "uIActionMode" : "SYS",
-        "fullCodeName" : "ExportExcel",
-        "name" : "表格界面_导出操作（Excel）"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf1c3@FontAwesome",
-        "cssClass" : "fa fa-file-excel-o"
-      },
-      "tooltip" : "导出",
-      "groupExtractMode" : "ITEM",
-      "showIcon" : true,
-      "showCaption" : true,
-      "itemType" : "DEUIACTION",
-      "caption" : "导出",
-      "name" : "deuiaction1"
-    } ],
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
-    },
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "hookEventNames" : [ "CLICK" ],
-    "codeName" : "GridViewtoolbar",
-    "logicName" : "产品质量数据导出",
-    "name" : "toolbar",
-    "modelid" : "94e5bf409f32eba3aa786a52fab083aa"
-  }, {
-    "getPSDEGridDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "IMPORTANTBUGCNT",
-        "codeName" : "IMPORtantBUGCNT"
-      },
-      "name" : "importantbugcnt",
-      "dataType" : 9
-    }, {
-      "getPSAppDEField" : {
-        "name" : "BUGSTORY",
-        "codeName" : "BugStory"
-      },
-      "name" : "bugstory",
-      "dataType" : 9
-    }, {
-      "getPSAppDEField" : {
-        "name" : "BUGCNT",
-        "codeName" : "BugCnt"
-      },
-      "name" : "bugcnt",
-      "dataType" : 9
-    }, {
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      },
-      "name" : "name",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "FINISHEDSTORYCNT",
-        "codeName" : "FinishedStoryCNT"
-      },
-      "name" : "finishedstorycnt",
-      "dataType" : 9
-    }, {
-      "getPSAppDEField" : {
-        "name" : "RESOLVEDBUGCNT",
-        "codeName" : "RESOLVEDBUGCNT"
-      },
-      "name" : "resolvedbugcnt",
-      "dataType" : 9
-    }, {
-      "getPSAppDEField" : {
-        "name" : "STORYCNT",
-        "codeName" : "StoryCnt"
-      },
-      "name" : "storycnt",
-      "dataType" : 9
-    }, {
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      },
-      "name" : "srfmajortext",
-      "dataType" : 25
-    }, {
-      "dataAccessAction" : true,
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "name" : "srfdataaccaction",
-      "dataType" : 1
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "name" : "srfkey",
-      "dataType" : 1
-    }, {
-      "getPSAppDEField" : {
-        "name" : "IMPORTANTBUGPERCENT",
-        "codeName" : "Importantbugpercent"
-      },
-      "name" : "importantbugpercent",
-      "dataType" : 25
-    } ],
-    "getRemovePSControlAction" : {
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
-      },
-      "getPSAppDEMethod" : {
-        "modelref" : true,
-        "id" : "Remove"
-      },
-      "dataAccessAction" : "DELETE",
-      "actionName" : "Remove",
-      "actionType" : "DEACTION",
-      "name" : "remove"
-    },
-    "enableRowNew" : false,
-    "enableRowEditOrder" : false,
-    "noSort" : false,
-    "getPSDEGridEditItems" : [ {
-      "getPSEditor" : {
-        "editorType" : "HIDDEN",
-        "name" : "srfkey"
-      },
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "allowEmpty" : true,
-      "enableCond" : 0,
-      "ignoreInput" : 0,
-      "codeName" : "srfkey",
-      "caption" : "产品编号",
-      "name" : "srfkey"
-    } ],
-    "hasWFDataItems" : false,
-    "columnEnableLink" : 2,
-    "enableColFilter" : false,
-    "singleSelect" : true,
-    "enablePagingBar" : false,
-    "enableRowEdit" : false,
-    "controlType" : "GRID",
-    "getPSDEGridColumns" : [ {
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      },
-      "dataItemName" : "name",
-      "excelCaption" : "产品名称",
-      "cLConvertMode" : "NONE",
-      "noPrivDisplayMode" : 1,
-      "enableSort" : false,
-      "width" : 200,
-      "codeName" : "name",
-      "caption" : "产品名称",
-      "columnType" : "DEFGRIDCOLUMN",
-      "align" : "LEFT",
-      "widthUnit" : "PX",
-      "name" : "name"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "STORYCNT",
-        "codeName" : "StoryCnt"
-      },
-      "dataItemName" : "storycnt",
-      "excelCaption" : "需求总数",
-      "cLConvertMode" : "NONE",
-      "noPrivDisplayMode" : 1,
-      "enableSort" : false,
-      "width" : 150,
-      "codeName" : "storycnt",
-      "caption" : "需求总数",
-      "columnType" : "DEFGRIDCOLUMN",
-      "align" : "LEFT",
-      "widthUnit" : "PX",
-      "aggMode" : "SUM",
-      "name" : "storycnt"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "FINISHEDSTORYCNT",
-        "codeName" : "FinishedStoryCNT"
-      },
-      "dataItemName" : "finishedstorycnt",
-      "excelCaption" : "已完成的需求数",
-      "cLConvertMode" : "NONE",
-      "noPrivDisplayMode" : 1,
-      "enableSort" : false,
-      "width" : 150,
-      "codeName" : "finishedstorycnt",
-      "caption" : "已完成的需求数",
-      "columnType" : "DEFGRIDCOLUMN",
-      "align" : "LEFT",
-      "widthUnit" : "PX",
-      "aggMode" : "SUM",
-      "name" : "finishedstorycnt"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "BUGCNT",
-        "codeName" : "BugCnt"
-      },
-      "dataItemName" : "bugcnt",
-      "excelCaption" : "所有Bug数",
-      "cLConvertMode" : "NONE",
-      "noPrivDisplayMode" : 1,
-      "enableSort" : false,
-      "width" : 150,
-      "codeName" : "bugcnt",
-      "caption" : "所有Bug数",
-      "columnType" : "DEFGRIDCOLUMN",
-      "align" : "LEFT",
-      "widthUnit" : "PX",
-      "aggMode" : "SUM",
-      "name" : "bugcnt"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "RESOLVEDBUGCNT",
-        "codeName" : "RESOLVEDBUGCNT"
-      },
-      "dataItemName" : "resolvedbugcnt",
-      "excelCaption" : "解决Bug数",
-      "cLConvertMode" : "NONE",
-      "noPrivDisplayMode" : 1,
-      "enableSort" : false,
-      "width" : 150,
-      "codeName" : "resolvedbugcnt",
-      "caption" : "解决Bug数",
-      "columnType" : "DEFGRIDCOLUMN",
-      "align" : "LEFT",
-      "widthUnit" : "PX",
-      "aggMode" : "SUM",
-      "name" : "resolvedbugcnt"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "BUGSTORY",
-        "codeName" : "BugStory"
-      },
-      "dataItemName" : "bugstory",
-      "excelCaption" : "需求所提bug数",
-      "cLConvertMode" : "NONE",
-      "noPrivDisplayMode" : 1,
-      "enableSort" : false,
-      "width" : 150,
-      "codeName" : "bugstory",
-      "caption" : "需求所提bug数",
-      "columnType" : "DEFGRIDCOLUMN",
-      "align" : "LEFT",
-      "widthUnit" : "PX",
-      "aggMode" : "SUM",
-      "name" : "bugstory"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "IMPORTANTBUGCNT",
-        "codeName" : "IMPORtantBUGCNT"
-      },
-      "dataItemName" : "importantbugcnt",
-      "excelCaption" : "重要的Bug数",
-      "cLConvertMode" : "NONE",
-      "noPrivDisplayMode" : 1,
-      "enableSort" : false,
-      "width" : 150,
-      "codeName" : "importantbugcnt",
-      "caption" : "重要的Bug数",
-      "columnType" : "DEFGRIDCOLUMN",
-      "align" : "LEFT",
-      "widthUnit" : "PX",
-      "aggMode" : "SUM",
-      "name" : "importantbugcnt"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "IMPORTANTBUGPERCENT",
-        "codeName" : "Importantbugpercent"
-      },
-      "dataItemName" : "importantbugpercent",
-      "excelCaption" : "严重bug比",
-      "cLConvertMode" : "NONE",
-      "noPrivDisplayMode" : 1,
-      "enableSort" : false,
-      "width" : 150,
-      "codeName" : "importantbugpercent",
-      "caption" : "严重bug比",
-      "columnType" : "DEFGRIDCOLUMN",
-      "align" : "LEFT",
-      "widthUnit" : "PX",
-      "aggMode" : "SUM",
-      "name" : "importantbugpercent"
-    } ],
-    "codeName" : "ProductQuantityGird",
-    "enableGroup" : false,
-    "hideHeader" : false,
-    "forceFit" : false,
-    "pagingSize" : 500,
-    "aggMode" : "PAGE",
-    "groupMode" : "NONE",
-    "sortMode" : "REMOTE",
-    "getFetchPSControlAction" : {
-      "modelref" : true,
-      "id" : "fetch"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
-    },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "GRID"
-    },
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
-    "getPSControlHandler" : {
-      "userDRAction" : "READ",
-      "getPSHandlerActions" : [ {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Update"
-        },
-        "dataAccessAction" : "UPDATE",
-        "actionName" : "Update",
-        "actionType" : "DEACTION",
-        "name" : "update"
-      }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "FetchProdctQuantiGird"
-        },
-        "actionType" : "DEDATASET",
-        "name" : "fetch"
-      }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
-        "dataAccessAction" : "DELETE",
-        "actionName" : "Remove",
-        "actionType" : "DEACTION",
-        "name" : "remove"
-      }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Get"
-        },
-        "dataAccessAction" : "READ",
-        "actionName" : "Get",
-        "actionType" : "DEACTION",
-        "name" : "load"
-      }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "GetDraft"
-        },
-        "dataAccessAction" : "CREATE",
-        "actionName" : "GetDraft",
-        "actionType" : "DEACTION",
-        "name" : "loaddraft"
-      }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Create"
-        },
-        "dataAccessAction" : "CREATE",
-        "actionName" : "Create",
-        "actionType" : "DEACTION",
-        "name" : "create"
-      } ],
-      "enableDEFieldPrivilege" : false,
-      "id" : "数据表格处理器"
-    },
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats/PSGRIDS/ProductQuantityGird.json",
-    "logicName" : "产品质量表主表格",
-    "name" : "grid",
-    "modelid" : "0c41bff6aa9e6544196d87a53def7d04"
-  } ],
-  "viewStyle" : "STYLE2",
-  "getPSAppViewRefs" : [ {
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsEditView.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "realTitle" : "产品统计编辑视图",
-    "name" : "NEWDATA"
-  }, {
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsEditView.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "realTitle" : "产品统计编辑视图",
-    "name" : "EDITDATA"
+    } ]
   } ],
   "getPSAppViewLogics" : [ {
+    "eventArg" : "deuiaction1",
+    "eventNames" : "CLICK",
     "logicTrigger" : "CTRLEVENT",
-    "getPSViewCtrlName" : "toolbar",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction1_click",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "toolbar_deuiaction1"
     },
-    "eventArg" : "deuiaction1",
-    "eventNames" : "CLICK",
-    "logicType" : "APPVIEWUIACTION",
-    "name" : "toolbar_deuiaction1_click"
+    "getPSViewCtrlName" : "toolbar"
   }, {
     "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata",
     "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据",
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -528,11 +50,6 @@
           "viewType" : "DEEDITVIEW"
         }
       },
-      "enableWizardAdd" : false,
-      "actionAfterWizard" : "DEFAULT",
-      "enableBatchAdd" : false,
-      "batchAddOnly" : false,
-      "viewLogicType" : "APP_NEWDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -540,14 +57,18 @@
           "viewType" : "DEEDITVIEW"
         }
       } ],
-      "logicType" : "PREDEFINED",
-      "name" : "新建数据"
-    },
-    "logicType" : "SYSUILOGIC",
-    "name" : "newdata"
+      "viewLogicType" : "APP_NEWDATA",
+      "batchAddOnly" : false,
+      "enableBatchAdd" : false,
+      "enableWizardAdd" : false
+    }
   }, {
     "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata",
     "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
       "getOpenDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -555,7 +76,6 @@
           "viewType" : "DEEDITVIEW"
         }
       },
-      "viewLogicType" : "APP_OPENDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -563,14 +83,494 @@
           "viewType" : "DEEDITVIEW"
         }
       } ],
-      "logicType" : "PREDEFINED",
-      "name" : "打开数据"
-    },
-    "logicType" : "SYSUILOGIC",
-    "name" : "opendata"
+      "viewLogicType" : "APP_OPENDATA"
+    }
   } ],
-  "codeName" : "ProductStatsGridView",
+  "getPSAppViewRefs" : [ {
+    "name" : "NEWDATA",
+    "realTitle" : "产品统计编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  }, {
+    "name" : "EDITDATA",
+    "realTitle" : "产品统计编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "name" : "toolbar_deuiaction1",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "ExportExcel"
+    },
+    "xDataControlName" : "grid"
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "GridViewtoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "产品质量数据导出",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+    },
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.EXPORT",
+        "id" : "工具栏按钮文本[*.EXPORT]"
+      },
+      "caption" : "导出",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction1",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf1c3@FontAwesome",
+        "cssClass" : "fa fa-file-excel-o"
+      },
+      "getPSUIAction" : {
+        "getNoPrivDisplayMode" : 2,
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.EXPORT",
+          "id" : "工具栏按钮文本[*.EXPORT]"
+        },
+        "caption" : "导出",
+        "codeName" : "ExportExcel",
+        "fullCodeName" : "ExportExcel",
+        "name" : "表格界面_导出操作（Excel）",
+        "getPSSysImage" : {
+          "glyph" : "xf1c3@FontAwesome",
+          "cssClass" : "fa fa-file-excel-o"
+        },
+        "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
+          "id" : "工具栏按钮提示[*.EXPORT]"
+        },
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "ExportExcel",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "导出",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
+        "id" : "工具栏按钮提示[*.EXPORT]"
+      },
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "94e5bf409f32eba3aa786a52fab083aa"
+  }, {
+    "aggMode" : "PAGE",
+    "codeName" : "ProductQuantityGird",
+    "columnEnableLink" : 2,
+    "controlType" : "GRID",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats/PSGRIDS/ProductQuantityGird.json",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "groupMode" : "NONE",
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "logicName" : "产品质量表主表格",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchProdctQuantiGird"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+        }
+      }, {
+        "actionName" : "GetDraft",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+        }
+      } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "数据表格处理器"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "GRID"
+    },
+    "getPSDEGridColumns" : [ {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "产品名称",
+      "codeName" : "name",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "name",
+      "excelCaption" : "产品名称",
+      "name" : "name",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "width" : 200,
+      "widthUnit" : "PX",
+      "enableSort" : false
+    }, {
+      "aggMode" : "SUM",
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "需求总数",
+      "codeName" : "storycnt",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "storycnt",
+      "excelCaption" : "需求总数",
+      "name" : "storycnt",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "STORYCNT",
+        "codeName" : "StoryCnt"
+      },
+      "width" : 150,
+      "widthUnit" : "PX",
+      "enableSort" : false
+    }, {
+      "aggMode" : "SUM",
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "已完成的需求数",
+      "codeName" : "finishedstorycnt",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "finishedstorycnt",
+      "excelCaption" : "已完成的需求数",
+      "name" : "finishedstorycnt",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "FINISHEDSTORYCNT",
+        "codeName" : "FinishedStoryCNT"
+      },
+      "width" : 150,
+      "widthUnit" : "PX",
+      "enableSort" : false
+    }, {
+      "aggMode" : "SUM",
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "所有Bug数",
+      "codeName" : "bugcnt",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "bugcnt",
+      "excelCaption" : "所有Bug数",
+      "name" : "bugcnt",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "BUGCNT",
+        "codeName" : "BugCnt"
+      },
+      "width" : 150,
+      "widthUnit" : "PX",
+      "enableSort" : false
+    }, {
+      "aggMode" : "SUM",
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "解决Bug数",
+      "codeName" : "resolvedbugcnt",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "resolvedbugcnt",
+      "excelCaption" : "解决Bug数",
+      "name" : "resolvedbugcnt",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "RESOLVEDBUGCNT",
+        "codeName" : "RESOLVEDBUGCNT"
+      },
+      "width" : 150,
+      "widthUnit" : "PX",
+      "enableSort" : false
+    }, {
+      "aggMode" : "SUM",
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "需求所提bug数",
+      "codeName" : "bugstory",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "bugstory",
+      "excelCaption" : "需求所提bug数",
+      "name" : "bugstory",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "BUGSTORY",
+        "codeName" : "BugStory"
+      },
+      "width" : 150,
+      "widthUnit" : "PX",
+      "enableSort" : false
+    }, {
+      "aggMode" : "SUM",
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "重要的Bug数",
+      "codeName" : "importantbugcnt",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "importantbugcnt",
+      "excelCaption" : "重要的Bug数",
+      "name" : "importantbugcnt",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "IMPORTANTBUGCNT",
+        "codeName" : "IMPORtantBUGCNT"
+      },
+      "width" : 150,
+      "widthUnit" : "PX",
+      "enableSort" : false
+    }, {
+      "aggMode" : "SUM",
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "严重bug比",
+      "codeName" : "importantbugpercent",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "importantbugpercent",
+      "excelCaption" : "严重bug比",
+      "name" : "importantbugpercent",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "IMPORTANTBUGPERCENT",
+        "codeName" : "Importantbugpercent"
+      },
+      "width" : 150,
+      "widthUnit" : "PX",
+      "enableSort" : false
+    } ],
+    "getPSDEGridDataItems" : [ {
+      "dataType" : 9,
+      "name" : "importantbugcnt",
+      "getPSAppDEField" : {
+        "name" : "IMPORTANTBUGCNT",
+        "codeName" : "IMPORtantBUGCNT"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "bugstory",
+      "getPSAppDEField" : {
+        "name" : "BUGSTORY",
+        "codeName" : "BugStory"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "bugcnt",
+      "getPSAppDEField" : {
+        "name" : "BUGCNT",
+        "codeName" : "BugCnt"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "name",
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "finishedstorycnt",
+      "getPSAppDEField" : {
+        "name" : "FINISHEDSTORYCNT",
+        "codeName" : "FinishedStoryCNT"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "resolvedbugcnt",
+      "getPSAppDEField" : {
+        "name" : "RESOLVEDBUGCNT",
+        "codeName" : "RESOLVEDBUGCNT"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "storycnt",
+      "getPSAppDEField" : {
+        "name" : "STORYCNT",
+        "codeName" : "StoryCnt"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "srfdataaccaction",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "dataAccessAction" : true
+    }, {
+      "dataType" : 1,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "importantbugpercent",
+      "getPSAppDEField" : {
+        "name" : "IMPORTANTBUGPERCENT",
+        "codeName" : "Importantbugpercent"
+      }
+    } ],
+    "getPSDEGridEditItems" : [ {
+      "caption" : "产品编号",
+      "codeName" : "srfkey",
+      "enableCond" : 0,
+      "ignoreInput" : 0,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "getPSEditor" : {
+        "editorType" : "HIDDEN",
+        "name" : "srfkey"
+      },
+      "allowEmpty" : true
+    } ],
+    "pagingSize" : 500,
+    "getRemovePSControlAction" : {
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "dataAccessAction" : "DELETE",
+      "name" : "remove",
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+      }
+    },
+    "sortMode" : "REMOTE",
+    "hasWFDataItems" : false,
+    "enableColFilter" : false,
+    "enableGroup" : false,
+    "enablePagingBar" : false,
+    "enableRowEdit" : false,
+    "enableRowEditOrder" : false,
+    "enableRowNew" : false,
+    "forceFit" : false,
+    "hideHeader" : false,
+    "noSort" : false,
+    "singleSelect" : true,
+    "name" : "grid",
+    "modelid" : "0c41bff6aa9e6544196d87a53def7d04"
+  } ],
+  "getPSDEViewCodeName" : "GridView",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEGRIDVIEW_STYLE2",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
+    },
+    "getPSControlParam" : { },
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "产品统计表格视图",
+  "viewStyle" : "STYLE2",
   "viewType" : "DEGRIDVIEW",
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsGridView.json",
-  "name" : "ProductStatsGridView"
+  "xDataControlName" : "grid",
+  "enableDP" : true,
+  "enableExport" : true,
+  "enableFilter" : false,
+  "enableImport" : true,
+  "enableQuickSearch" : true,
+  "enableRowEdit" : false,
+  "rowEditDefault" : false,
+  "showCaptionBar" : true
 }

@@ -1,24 +1,24 @@
 {
-  "getPSPickupDEField" : {
-    "name" : "TOTASK",
-    "codeName" : "ToTask"
-  },
-  "masterOrder" : -1,
-  "removeActionType" : -1,
-  "pickupDEFName" : "TOTASK",
-  "masterRS" : 0,
-  "removeOrder" : 0,
+  "codeName" : "ZTTotask",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_TASK_TOTASK.json",
   "getMajorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
   },
-  "orderValue" : 100,
-  "codeName" : "ZTTotask",
-  "dERType" : "DER1N",
+  "masterOrder" : -1,
+  "masterRS" : 0,
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
   },
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_TASK_TOTASK.json",
-  "name" : "DER1N_ZT_BUG_ZT_TASK_TOTASK"
+  "name" : "DER1N_ZT_BUG_ZT_TASK_TOTASK",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "TOTASK",
+    "codeName" : "ToTask"
+  },
+  "pickupDEFName" : "TOTASK",
+  "removeActionType" : -1,
+  "removeOrder" : 0
 }

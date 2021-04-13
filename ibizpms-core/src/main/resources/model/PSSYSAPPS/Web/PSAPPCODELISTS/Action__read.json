@@ -1,18 +1,18 @@
 {
-  "getPSCodeItems" : [ {
-    "value" : "0",
-    "codeName" : "Item_0",
-    "text" : "0"
-  }, {
-    "value" : "1",
-    "codeName" : "Item_1",
-    "text" : "1"
-  } ],
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "codeName" : "Action__read",
-  "emptyText" : "未定义",
-  "enableCache" : true,
+  "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Action__read.json",
-  "name" : "ZT_ACTION__READ"
+  "emptyText" : "未定义",
+  "name" : "ZT_ACTION__READ",
+  "getPSCodeItems" : [ {
+    "codeName" : "Item_0",
+    "text" : "0",
+    "value" : "0"
+  }, {
+    "codeName" : "Item_1",
+    "text" : "1",
+    "value" : "1"
+  } ],
+  "enableCache" : true
 }

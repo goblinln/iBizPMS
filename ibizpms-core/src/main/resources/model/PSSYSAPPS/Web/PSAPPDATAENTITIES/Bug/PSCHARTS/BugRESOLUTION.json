@@ -1,77 +1,23 @@
 {
-  "getPSDEChartTitle" : {
-    "showTitle" : false,
-    "title" : "Bug解决方案分布",
-    "titlePos" : "BOTTOM",
-    "index" : 0,
-    "id" : "0"
+  "codeName" : "BugRESOLUTION",
+  "controlType" : "CHART",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugRESOLUTION.json",
+  "emptyText" : "无",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "height" : 300.0,
+  "logicName" : "BugRESOLUTION",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
   },
   "getPSChartCoordinateSystems" : [ {
     "eChartsType" : "none",
-    "type" : "NONE",
     "index" : 0,
     "name" : "[severity]无坐标系[0]",
-    "id" : "0"
-  } ],
-  "getPSDEChartLegend" : {
-    "showLegend" : true,
-    "legendPos" : "LEFT",
-    "index" : 0,
-    "id" : "0"
-  },
-  "controlType" : "CHART",
-  "getPSDEChartSerieses" : [ {
-    "getCatalogPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__resolution.json"
-    },
-    "eChartsType" : "pie",
-    "getPSChartCoordinateSystem" : {
-      "modelref" : true,
-      "id" : "0"
-    },
-    "enableChartDataSet" : true,
-    "getPSChartDataSet" : {
-      "modelref" : true,
-      "id" : "0"
-    },
-    "catalogField" : "resolution",
-    "getPSChartSeriesEncode" : {
-      "category" : "resolution",
-      "value" : "SRFCOUNT",
-      "type" : "NONE",
-      "index" : 0,
-      "name" : "坐标系编码",
-      "id" : "0"
-    },
-    "seriesType" : "pie",
-    "valueField" : "SRFCOUNT",
-    "seriesLayoutBy" : "column",
-    "groupMode" : "CODELIST",
-    "index" : 0,
-    "name" : "severity"
-  } ],
-  "codeName" : "BugRESOLUTION",
-  "emptyText" : "无",
-  "getPSChartDataSets" : [ {
-    "getPSChartDataSetFields" : [ {
-      "groupField" : true,
-      "getPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__resolution.json"
-      },
-      "groupMode" : "CODELIST",
-      "index" : 0,
-      "name" : "resolution",
-      "id" : "0"
-    }, {
-      "groupField" : false,
-      "index" : 1,
-      "name" : "SRFCOUNT",
-      "id" : "1"
-    } ],
-    "index" : 0,
-    "name" : "severity-BuildProduceBugRES",
+    "type" : "NONE",
     "id" : "0"
   } ],
   "getPSChartDataSetGroups" : [ {
@@ -79,22 +25,76 @@
     "name" : "BuildProduceBugRES",
     "id" : "0"
   } ],
-  "getFetchPSControlAction" : {
-    "modelref" : true,
-    "id" : "fetch"
+  "getPSChartDataSets" : [ {
+    "index" : 0,
+    "name" : "severity-BuildProduceBugRES",
+    "getPSChartDataSetFields" : [ {
+      "groupMode" : "CODELIST",
+      "index" : 0,
+      "name" : "resolution",
+      "getPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__resolution.json"
+      },
+      "groupField" : true,
+      "id" : "0"
+    }, {
+      "index" : 1,
+      "name" : "SRFCOUNT",
+      "groupField" : false,
+      "id" : "1"
+    } ],
+    "id" : "0"
+  } ],
+  "getPSDEChartLegend" : {
+    "index" : 0,
+    "legendPos" : "LEFT",
+    "showLegend" : true,
+    "id" : "0"
   },
-  "readOnly" : true,
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+  "getPSDEChartSerieses" : [ {
+    "catalogField" : "resolution",
+    "getCatalogPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__resolution.json"
+    },
+    "eChartsType" : "pie",
+    "groupMode" : "CODELIST",
+    "index" : 0,
+    "name" : "severity",
+    "getPSChartCoordinateSystem" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartDataSet" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartSeriesEncode" : {
+      "category" : "resolution",
+      "index" : 0,
+      "name" : "坐标系编码",
+      "type" : "NONE",
+      "value" : "SRFCOUNT",
+      "id" : "0"
+    },
+    "seriesLayoutBy" : "column",
+    "seriesType" : "pie",
+    "valueField" : "SRFCOUNT",
+    "enableChartDataSet" : true
+  } ],
+  "getPSDEChartTitle" : {
+    "index" : 0,
+    "title" : "Bug解决方案分布",
+    "titlePos" : "BOTTOM",
+    "showTitle" : false,
+    "id" : "0"
   },
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "tablechart"
   },
-  "height" : 300.0,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSCHARTS/BugRESOLUTION.json",
-  "logicName" : "BugRESOLUTION",
+  "readOnly" : true,
   "modelid" : "39a1a6b989921e2ae159d5d36d6778a4",
   "getUserParam" : {
     "EC.color" : "[\"#00E5FF\",\"#00B0FF\",\"#2979FF\",\"#3D5AFE\",'#651FFF','#D500F9','#F50057','#FF1744','#BD7B46']"

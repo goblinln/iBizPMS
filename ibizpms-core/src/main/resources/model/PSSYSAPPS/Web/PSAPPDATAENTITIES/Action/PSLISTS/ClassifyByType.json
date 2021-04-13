@@ -1,115 +1,115 @@
 {
-  "enableRowNew" : false,
-  "enableRowEditOrder" : false,
-  "noSort" : false,
-  "hasWFDataItems" : false,
-  "showHeader" : true,
-  "enableRowEditGroup" : false,
-  "getPSDEListDataItems" : [ {
-    "name" : "product",
-    "dataType" : 25
-  }, {
-    "format" : "YYYY-MM-DD HH:mm:ss",
-    "name" : "date",
-    "dataType" : 5
-  }, {
-    "name" : "comment",
-    "dataType" : 21
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ACTION",
-      "codeName" : "Action"
-    },
-    "name" : "actiontype",
-    "dataType" : 25
-  }, {
-    "name" : "id",
-    "dataType" : 1
-  }, {
-    "name" : "objecttype",
-    "dataType" : 25
-  }, {
-    "name" : "extra",
-    "dataType" : 21
-  }, {
-    "getFrontPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ActionManner.json"
-    },
-    "name" : "actionmanner",
-    "dataType" : 25
-  }, {
-    "name" : "objectid",
-    "dataType" : 1
-  }, {
-    "name" : "isactorss",
-    "dataType" : 1
-  }, {
-    "getFrontPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
-    },
-    "name" : "actor",
-    "dataType" : 25
-  }, {
-    "name" : "project",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfkey",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "COMMENT",
-      "codeName" : "Comment"
-    },
-    "name" : "srfmajortext",
-    "dataType" : 25
-  } ],
-  "getMinorSortPSAppDEField" : {
-    "name" : "DATE",
-    "codeName" : "Date"
-  },
-  "enableRowEdit" : false,
-  "controlType" : "LIST",
   "codeName" : "ClassifyByType",
-  "minorSortDir" : "ASC",
-  "enableGroup" : false,
-  "pagingSize" : 1000,
-  "groupMode" : "NONE",
+  "controlType" : "LIST",
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
   },
-  "getUpdatePSControlAction" : {
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action/PSLISTS/ClassifyByType.json",
+  "getFetchPSControlAction" : {
     "modelref" : true,
-    "id" : "update"
-  },
-  "getRemovePSControlAction" : {
-    "modelref" : true,
-    "id" : "remove"
+    "id" : "fetch"
   },
   "getGetPSControlAction" : {
     "modelref" : true,
     "id" : "load"
   },
-  "getFetchPSControlAction" : {
-    "modelref" : true,
-    "id" : "fetch"
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "ClassifyByType",
+  "minorSortDir" : "ASC",
+  "getMinorSortPSAppDEField" : {
+    "name" : "DATE",
+    "codeName" : "Date"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "getPSDEListDataItems" : [ {
+    "dataType" : 25,
+    "name" : "product"
+  }, {
+    "dataType" : 5,
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "name" : "date"
+  }, {
+    "dataType" : 21,
+    "name" : "comment"
+  }, {
+    "dataType" : 25,
+    "name" : "actiontype",
+    "getPSAppDEField" : {
+      "name" : "ACTION",
+      "codeName" : "Action"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "id"
+  }, {
+    "dataType" : 25,
+    "name" : "objecttype"
+  }, {
+    "dataType" : 21,
+    "name" : "extra"
+  }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ActionManner.json"
+    },
+    "name" : "actionmanner"
+  }, {
+    "dataType" : 1,
+    "name" : "objectid"
+  }, {
+    "dataType" : 1,
+    "name" : "isactorss"
+  }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+    },
+    "name" : "actor"
+  }, {
+    "dataType" : 1,
+    "name" : "project"
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "COMMENT",
+      "codeName" : "Comment"
+    }
+  } ],
   "getPSSysPFPlugin" : {
     "pluginType" : "CUSTOM",
     "pluginCode" : "ActionHistory"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action/PSLISTS/ClassifyByType.json",
-  "logicName" : "ClassifyByType",
+  "pagingSize" : 1000,
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "hasWFDataItems" : false,
+  "enableGroup" : false,
+  "enableRowEdit" : false,
+  "enableRowEditGroup" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "noSort" : false,
+  "showHeader" : true,
   "modelid" : "3b94c5ec8c0db8db6a5f36fa82c3ed3b"
 }

@@ -1,7 +1,32 @@
 {
-  "subSysAsCloud" : false,
-  "defaultModule" : false,
-  "subSysModule" : false,
+  "getAllPSCodeLists" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSCODELISTS/ConfigManagementstatus.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSCODELISTS/Ibzpro__pssystype.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSCODELISTS/Ibz__systpl__type.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSCODELISTS/Ibizpro_storymodule__type.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSCODELISTS/PlanTemplet.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSCODELISTS/IndexType.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSCODELISTS/ConfigScope.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSCODELISTS/Ibizpro_story__sourceobject.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSCODELISTS/ConfigGroup.json"
+  } ],
   "getAllPSDataEntities" : [ {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/AccountTaskestimate.json"
@@ -60,36 +85,11 @@
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate.json"
   } ],
-  "getAllPSCodeLists" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSCODELISTS/ConfigManagementstatus.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSCODELISTS/Ibzpro__pssystype.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSCODELISTS/Ibz__systpl__type.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSCODELISTS/Ibizpro_storymodule__type.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSCODELISTS/PlanTemplet.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSCODELISTS/IndexType.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSCODELISTS/ConfigScope.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSCODELISTS/Ibizpro_story__sourceobject.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSCODELISTS/ConfigGroup.json"
-  } ],
-  "deployId" : "042dff0de87eb7d0b88b90000b922590",
   "codeName" : "ibizpro",
+  "deployId" : "042dff0de87eb7d0b88b90000b922590",
   "dynaModelFilePath" : "PSMODULES/ibizpro.json",
-  "name" : "iBizPro模块"
+  "name" : "iBizPro模块",
+  "defaultModule" : false,
+  "subSysAsCloud" : false,
+  "subSysModule" : false
 }

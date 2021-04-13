@@ -1,122 +1,35 @@
 {
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "COMPILE",
-      "codeName" : "Compile"
-    },
-    "name" : "compile",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "JOB",
-      "codeName" : "Job"
-    },
-    "name" : "job",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "CASERESULT",
-      "codeName" : "CaseResult"
-    },
-    "name" : "caseresult",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "CASE",
-      "codeName" : "IBizCase"
-    },
-    "name" : "case",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "RUN",
-      "codeName" : "Run"
-    },
-    "name" : "run",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "LASTRUNNER",
-      "codeName" : "LastRunner"
-    },
-    "name" : "lastrunner",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DATE",
-      "codeName" : "Date"
-    },
-    "format" : "YYYY-MM-DD HH:mm:ss",
-    "name" : "date",
-    "dataType" : 5
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TITLE",
-      "codeName" : "Title"
-    },
-    "name" : "srfmajortext",
-    "dataType" : 25
-  }, {
-    "dataAccessAction" : true,
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfkey",
-    "dataType" : 1
-  } ],
-  "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestResult.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
-  "enableRowNew" : false,
-  "enableRowEditOrder" : false,
-  "noSort" : false,
-  "getPSDEGridEditItems" : [ {
-    "getPSEditor" : {
-      "editorType" : "HIDDEN",
-      "name" : "srfkey"
-    },
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "allowEmpty" : true,
-    "enableCond" : 0,
-    "ignoreInput" : 0,
-    "codeName" : "srfkey",
-    "caption" : "编号",
-    "name" : "srfkey"
-  } ],
-  "hasWFDataItems" : false,
+  "aggMode" : "NONE",
+  "codeName" : "Main",
   "columnEnableLink" : 2,
-  "enableColFilter" : false,
-  "singleSelect" : true,
-  "enablePagingBar" : false,
+  "controlType" : "GRID",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestResult/PSGRIDS/Main.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "主表格",
+  "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
     "name" : "ID",
     "codeName" : "Id"
   },
-  "enableRowEdit" : false,
-  "controlType" : "GRID",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestResult.json"
+  },
   "getPSDEGridColumns" : [ {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "测试结果",
+    "codeName" : "caseresult",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "caseresult",
+    "excelCaption" : "测试结果",
+    "name" : "caseresult",
+    "noPrivDisplayMode" : 1,
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testresult__result.json"
@@ -125,37 +38,37 @@
       "name" : "CASERESULT",
       "codeName" : "CaseResult"
     },
-    "dataItemName" : "caseresult",
-    "excelCaption" : "测试结果",
-    "cLConvertMode" : "FRONT",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : true,
     "width" : 100,
-    "codeName" : "caseresult",
-    "caption" : "测试结果",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "PX",
-    "name" : "caseresult"
+    "enableSort" : true
   }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "测试时间",
+    "codeName" : "date",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "date",
+    "excelCaption" : "测试时间",
+    "name" : "date",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
-    "dataItemName" : "date",
-    "excelCaption" : "测试时间",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : true,
     "width" : 100,
-    "codeName" : "date",
-    "caption" : "测试时间",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "PX",
-    "name" : "date"
+    "enableSort" : true
   }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "最后执行人",
+    "codeName" : "lastrunner",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "lastrunner",
+    "excelCaption" : "最后执行人",
+    "name" : "lastrunner",
+    "noPrivDisplayMode" : 1,
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
@@ -164,55 +77,142 @@
       "name" : "LASTRUNNER",
       "codeName" : "LastRunner"
     },
-    "dataItemName" : "lastrunner",
-    "excelCaption" : "最后执行人",
-    "cLConvertMode" : "FRONT",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : true,
     "width" : 100,
-    "codeName" : "lastrunner",
-    "caption" : "最后执行人",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "PX",
-    "name" : "lastrunner"
+    "enableSort" : true
   }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "测试执行",
+    "codeName" : "run",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "run",
+    "excelCaption" : "测试执行",
+    "name" : "run",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "RUN",
       "codeName" : "Run"
     },
-    "dataItemName" : "run",
-    "excelCaption" : "测试执行",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : true,
     "width" : 100,
-    "codeName" : "run",
-    "caption" : "测试执行",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "PX",
-    "name" : "run"
+    "enableSort" : true
   } ],
-  "codeName" : "Main",
-  "minorSortDir" : "DESC",
-  "enableGroup" : false,
-  "hideHeader" : false,
-  "forceFit" : false,
+  "getPSDEGridDataItems" : [ {
+    "dataType" : 1,
+    "name" : "compile",
+    "getPSAppDEField" : {
+      "name" : "COMPILE",
+      "codeName" : "Compile"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "job",
+    "getPSAppDEField" : {
+      "name" : "JOB",
+      "codeName" : "Job"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "caseresult",
+    "getPSAppDEField" : {
+      "name" : "CASERESULT",
+      "codeName" : "CaseResult"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "case",
+    "getPSAppDEField" : {
+      "name" : "CASE",
+      "codeName" : "IBizCase"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "run",
+    "getPSAppDEField" : {
+      "name" : "RUN",
+      "codeName" : "Run"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "lastrunner",
+    "getPSAppDEField" : {
+      "name" : "LASTRUNNER",
+      "codeName" : "LastRunner"
+    }
+  }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "date",
+    "getPSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "编号",
+    "codeName" : "srfkey",
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
   "pagingSize" : 500,
-  "aggMode" : "NONE",
-  "groupMode" : "NONE",
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestResult.json"
+    }
+  },
   "sortMode" : "REMOTE",
-  "getFetchPSControlAction" : {
-    "modelref" : true,
-    "id" : "fetch"
-  },
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestResult.json"
-  },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestResult/PSGRIDS/Main.json",
-  "logicName" : "主表格",
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableGroup" : false,
+  "enablePagingBar" : false,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : false,
+  "singleSelect" : true,
   "modelid" : "2eff032f1e0b2ed1312c5f5c126ded6e"
 }

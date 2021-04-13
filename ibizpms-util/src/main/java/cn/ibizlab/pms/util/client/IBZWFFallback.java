@@ -46,4 +46,9 @@ public class IBZWFFallback implements IBZWFFeignClient {
     public Map<String, Map<String, Object>> getFinishTaskByUserId(String system, String userId, String entity, String instTag, String instTag2) {
         return null;
     }
+
+    @Override
+    public Map<String, Map<String, Object>> getAllTaskByUserId(String system, String userId, String entity, String instTag, String instTag2) {
+        return null;
+    }
 }

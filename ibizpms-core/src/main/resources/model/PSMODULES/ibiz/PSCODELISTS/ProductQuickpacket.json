@@ -1,31 +1,31 @@
 {
-  "codeItemValueNumber" : false,
-  "subSysCodeList" : false,
-  "subSysAsCloud" : false,
-  "systemTag" : "iBizPMS",
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/ProductQuickpacket.json",
   "codeName" : "ProductQuickpacket",
-  "userScope" : false,
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/ProductQuickpacket.json",
   "emptyText" : "未定义",
-  "enableCache" : true,
-  "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "All",
-    "data" : "{}",
     "codeName" : "All",
+    "data" : "{}",
     "text" : "所有",
+    "value" : "All",
     "default" : true
   }, {
-    "value" : "normal",
-    "data" : "{\"n_status_eq\":\"normal\"}",
     "codeName" : "Normal",
-    "text" : "未关闭"
+    "data" : "{\"n_status_eq\":\"normal\"}",
+    "text" : "未关闭",
+    "value" : "normal"
   }, {
-    "value" : "closed",
-    "data" : "{\"n_status_eq\":\"closed\"}",
     "codeName" : "Closed",
-    "text" : "已关闭"
-  } ]
+    "data" : "{\"n_status_eq\":\"closed\"}",
+    "text" : "已关闭",
+    "value" : "closed"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
 }

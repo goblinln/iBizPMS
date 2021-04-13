@@ -1,281 +1,4 @@
 {
-  "getAllPSDEFields" : [ {
-    "phisicalDEField" : false,
-    "formulaDEField" : true,
-    "length" : 200,
-    "valueFormat" : "%1$s",
-    "dataType" : "TEXT",
-    "deployId" : "755bb385a7cbd993a389e359683e663e",
-    "codeName" : "Id",
-    "logicName" : "虚拟主键",
-    "stringLength" : 200,
-    "stdDataType" : 25,
-    "pasteReset" : true,
-    "allowEmpty" : false,
-    "getAllPSDEFValueRules" : [ {
-      "enableFront" : true,
-      "enableBackend" : true,
-      "checkDefault" : true,
-      "getPSDEFVRGroupCondition" : {
-        "getPSDEFVRConditions" : [ {
-          "includeMinValue" : false,
-          "includeMaxValue" : true,
-          "maxValue" : 200,
-          "dEFName" : "ID",
-          "tryMode" : false,
-          "keyCond" : true,
-          "condType" : "STRINGLENGTH",
-          "ruleInfo" : "内容长度必须小于等于[200]",
-          "name" : "默认字符串长度"
-        } ],
-        "condOp" : "AND",
-        "tryMode" : false,
-        "condType" : "GROUP",
-        "ruleInfo" : "内容长度必须小于等于[200]",
-        "name" : "默认组"
-      },
-      "codeName" : "Default",
-      "ruleInfo" : "内容长度必须小于等于[200]",
-      "defaultMode" : true,
-      "ruleHolder" : 3,
-      "getPSDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "name" : "默认规则"
-    } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "concat(t1.`SUITE`,'__',t1.`CASE`)",
-      "columnName" : "ID",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "ID"
-    } ],
-    "keyDEField" : true,
-    "importOrder" : 1000,
-    "dEFType" : 2,
-    "name" : "ID"
-  }, {
-    "valueFormat" : "%1$s",
-    "getPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDERS/DER1N_ZT_SUITECASE_ZT_CASE_CASE.json"
-    },
-    "linkDEField" : true,
-    "getRelatedPSDEField" : {
-      "name" : "VERSION",
-      "codeName" : "Version"
-    },
-    "length" : 5,
-    "getPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/CurCaseVersion.json"
-    },
-    "dataType" : "PICKUPDATA",
-    "deployId" : "45b947aa6003bf9cebcf78986fddbac1",
-    "codeName" : "Version",
-    "logicName" : "用例版本",
-    "stdDataType" : 9,
-    "getAllPSDEFValueRules" : [ {
-      "enableFront" : true,
-      "enableBackend" : true,
-      "checkDefault" : true,
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "tryMode" : false,
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "codeName" : "Default",
-      "ruleInfo" : "默认规则",
-      "defaultMode" : true,
-      "ruleHolder" : 3,
-      "getPSDEField" : {
-        "name" : "VERSION",
-        "codeName" : "Version"
-      },
-      "name" : "默认规则"
-    } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : false,
-      "queryCodeExp" : "t1.`VERSION`",
-      "columnName" : "VERSION",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "VERSION"
-    } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
-    "name" : "VERSION"
-  }, {
-    "valueFormat" : "%1$s",
-    "getPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDERS/DER1N_ZT_SUITECASE_ZT_TESTSUITE_SUITE.json"
-    },
-    "linkDEField" : true,
-    "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "length" : 8,
-    "defaultValue" : "0",
-    "dataType" : "PICKUP",
-    "deployId" : "2662137cc03cf57a8f91f32a99c99f74",
-    "codeName" : "Suite",
-    "logicName" : "测试套件",
-    "stdDataType" : 1,
-    "getAllPSDEFValueRules" : [ {
-      "enableFront" : true,
-      "enableBackend" : true,
-      "checkDefault" : true,
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "tryMode" : false,
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "codeName" : "Default",
-      "ruleInfo" : "默认规则",
-      "defaultMode" : true,
-      "ruleHolder" : 3,
-      "getPSDEField" : {
-        "name" : "SUITE",
-        "codeName" : "Suite"
-      },
-      "name" : "默认规则"
-    } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : true,
-      "queryCodeExp" : "t1.`SUITE`",
-      "columnName" : "SUITE",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "SUITE"
-    } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
-    "name" : "SUITE"
-  }, {
-    "valueFormat" : "%1$s",
-    "getPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDERS/DER1N_ZT_SUITECASE_ZT_CASE_CASE.json"
-    },
-    "linkDEField" : true,
-    "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "length" : 8,
-    "defaultValue" : "0",
-    "dataType" : "PICKUP",
-    "deployId" : "b5cb93af3e6d7918e709aed53e2d58b3",
-    "codeName" : "IBizCase",
-    "logicName" : "用例",
-    "stdDataType" : 1,
-    "getAllPSDEFValueRules" : [ {
-      "enableFront" : true,
-      "enableBackend" : true,
-      "checkDefault" : true,
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "tryMode" : false,
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "codeName" : "Default",
-      "ruleInfo" : "默认规则",
-      "defaultMode" : true,
-      "ruleHolder" : 3,
-      "getPSDEField" : {
-        "name" : "CASE",
-        "codeName" : "IBizCase"
-      },
-      "name" : "默认规则"
-    } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : true,
-      "queryCodeExp" : "t1.`CASE`",
-      "columnName" : "CASE",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "CASE"
-    } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
-    "name" : "CASE"
-  }, {
-    "valueFormat" : "%1$s",
-    "getPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDERS/DER1N_ZT_SUITECASE_ZT_PRODUCT_PRODUCT.json"
-    },
-    "linkDEField" : true,
-    "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "length" : 8,
-    "defaultValue" : "0",
-    "dataType" : "PICKUP",
-    "deployId" : "c41165e691cb02d0f378c2a386bea4ea",
-    "codeName" : "Product",
-    "logicName" : "所属产品",
-    "stdDataType" : 1,
-    "getAllPSDEFValueRules" : [ {
-      "enableFront" : true,
-      "enableBackend" : true,
-      "checkDefault" : true,
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "tryMode" : false,
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "codeName" : "Default",
-      "ruleInfo" : "默认规则",
-      "defaultMode" : true,
-      "ruleHolder" : 3,
-      "getPSDEField" : {
-        "name" : "PRODUCT",
-        "codeName" : "Product"
-      },
-      "name" : "默认规则"
-    } ],
-    "getAllPSDEFDTColumns" : [ {
-      "valueAutoGen" : true,
-      "queryCodeExp" : "t1.`PRODUCT`",
-      "columnName" : "PRODUCT",
-      "dBType" : "MYSQL5",
-      "autoIncrement" : false,
-      "name" : "PRODUCT"
-    } ],
-    "importOrder" : 1000,
-    "dEFType" : 1,
-    "name" : "PRODUCT"
-  } ],
-  "getAllPSDEDataSets" : [ {
-    "enableFront" : true,
-    "enableBackend" : true,
-    "pubServiceDefault" : true,
-    "extendMode" : 0,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "orderValue" : 99999,
-    "codeName" : "Default",
-    "logicName" : "DEFAULT",
-    "userDRAction" : "READ",
-    "enableGroup" : false,
-    "cacheTimeout" : -1,
-    "enableCache" : false,
-    "defaultMode" : true,
-    "pageSize" : -1,
-    "name" : "DEFAULT"
-  } ],
   "getAllPSDEActions" : [ {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDEACTIONS/Create.json"
@@ -299,36 +22,305 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDEACTIONS/Save.json"
   } ],
   "getAllPSDEDataQueries" : [ {
-    "customCode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "extendMode" : 0,
-    "orderValue" : 99999,
     "codeName" : "Default",
+    "extendMode" : 0,
     "logicName" : "DEFAULT",
-    "defaultMode" : true,
-    "name" : "DEFAULT"
-  }, {
+    "name" : "DEFAULT",
+    "orderValue" : 99999,
     "customCode" : false,
+    "defaultMode" : true,
     "privQuery" : false,
     "pubServiceDefault" : false,
-    "queryFromView" : false,
-    "extendMode" : 0,
-    "orderValue" : 99999,
+    "queryFromView" : false
+  }, {
     "codeName" : "View",
+    "extendMode" : 0,
     "logicName" : "默认（全部数据）",
+    "name" : "VIEW",
+    "orderValue" : 99999,
+    "customCode" : false,
     "defaultMode" : false,
-    "name" : "VIEW"
+    "privQuery" : false,
+    "pubServiceDefault" : false,
+    "queryFromView" : false
   } ],
-  "subSysAsCloud" : false,
-  "enableUIActions" : 15,
-  "systemTag" : "iBizPMS",
-  "enableDataVer" : false,
-  "enableMultiStorage" : false,
-  "enableNoSQLStorage" : false,
-  "enableAPIStorage" : false,
-  "serviceAPIMode" : 1,
+  "getAllPSDEDataSets" : [ {
+    "cacheTimeout" : -1,
+    "codeName" : "Default",
+    "extendMode" : 0,
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "orderValue" : 99999,
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "pageSize" : -1,
+    "userDRAction" : "READ",
+    "defaultMode" : true,
+    "enableBackend" : true,
+    "enableCache" : false,
+    "enableFront" : true,
+    "enableGroup" : false,
+    "pubServiceDefault" : true
+  } ],
+  "getAllPSDEFields" : [ {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "ID",
+      "dBType" : "MYSQL5",
+      "name" : "ID",
+      "queryCodeExp" : "concat(t1.`SUITE`,'__',t1.`CASE`)",
+      "autoIncrement" : false,
+      "valueAutoGen" : false
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "ID",
+          "maxValue" : 200,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true,
+          "tryMode" : false
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[200]",
+        "tryMode" : false
+      },
+      "getPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "ruleHolder" : 3,
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Id",
+    "dEFType" : 2,
+    "dataType" : "TEXT",
+    "deployId" : "755bb385a7cbd993a389e359683e663e",
+    "importOrder" : 1000,
+    "length" : 200,
+    "logicName" : "虚拟主键",
+    "name" : "ID",
+    "stdDataType" : 25,
+    "stringLength" : 200,
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false,
+    "formulaDEField" : true,
+    "keyDEField" : true,
+    "pasteReset" : true,
+    "phisicalDEField" : false
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "VERSION",
+      "dBType" : "MYSQL5",
+      "name" : "VERSION",
+      "queryCodeExp" : "t1.`VERSION`",
+      "autoIncrement" : false,
+      "valueAutoGen" : false
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "tryMode" : false
+      },
+      "getPSDEField" : {
+        "name" : "VERSION",
+        "codeName" : "Version"
+      },
+      "ruleHolder" : 3,
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Version",
+    "dEFType" : 1,
+    "dataType" : "PICKUPDATA",
+    "deployId" : "45b947aa6003bf9cebcf78986fddbac1",
+    "importOrder" : 1000,
+    "length" : 5,
+    "logicName" : "用例版本",
+    "name" : "VERSION",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/CurCaseVersion.json"
+    },
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDERS/DER1N_ZT_SUITECASE_ZT_CASE_CASE.json"
+    },
+    "getRelatedPSDEField" : {
+      "name" : "VERSION",
+      "codeName" : "Version"
+    },
+    "stdDataType" : 9,
+    "valueFormat" : "%1$s",
+    "linkDEField" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "SUITE",
+      "dBType" : "MYSQL5",
+      "name" : "SUITE",
+      "queryCodeExp" : "t1.`SUITE`",
+      "autoIncrement" : false,
+      "valueAutoGen" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "tryMode" : false
+      },
+      "getPSDEField" : {
+        "name" : "SUITE",
+        "codeName" : "Suite"
+      },
+      "ruleHolder" : 3,
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Suite",
+    "dEFType" : 1,
+    "dataType" : "PICKUP",
+    "defaultValue" : "0",
+    "deployId" : "2662137cc03cf57a8f91f32a99c99f74",
+    "importOrder" : 1000,
+    "length" : 8,
+    "logicName" : "测试套件",
+    "name" : "SUITE",
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDERS/DER1N_ZT_SUITECASE_ZT_TESTSUITE_SUITE.json"
+    },
+    "getRelatedPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s",
+    "linkDEField" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CASE",
+      "dBType" : "MYSQL5",
+      "name" : "CASE",
+      "queryCodeExp" : "t1.`CASE`",
+      "autoIncrement" : false,
+      "valueAutoGen" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "tryMode" : false
+      },
+      "getPSDEField" : {
+        "name" : "CASE",
+        "codeName" : "IBizCase"
+      },
+      "ruleHolder" : 3,
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "IBizCase",
+    "dEFType" : 1,
+    "dataType" : "PICKUP",
+    "defaultValue" : "0",
+    "deployId" : "b5cb93af3e6d7918e709aed53e2d58b3",
+    "importOrder" : 1000,
+    "length" : 8,
+    "logicName" : "用例",
+    "name" : "CASE",
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDERS/DER1N_ZT_SUITECASE_ZT_CASE_CASE.json"
+    },
+    "getRelatedPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s",
+    "linkDEField" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "PRODUCT",
+      "dBType" : "MYSQL5",
+      "name" : "PRODUCT",
+      "queryCodeExp" : "t1.`PRODUCT`",
+      "autoIncrement" : false,
+      "valueAutoGen" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "tryMode" : false
+      },
+      "getPSDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      },
+      "ruleHolder" : 3,
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Product",
+    "dEFType" : 1,
+    "dataType" : "PICKUP",
+    "defaultValue" : "0",
+    "deployId" : "c41165e691cb02d0f378c2a386bea4ea",
+    "importOrder" : 1000,
+    "length" : 8,
+    "logicName" : "所属产品",
+    "name" : "PRODUCT",
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDERS/DER1N_ZT_SUITECASE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "getRelatedPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s",
+    "linkDEField" : true
+  } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
@@ -342,38 +334,26 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
-  "extendMode" : 0,
-  "saaSDCIdColumnName" : "SRFDCID",
-  "dynaInstMode" : 1,
-  "orderValue" : 99999,
-  "dSLink" : "DEFAULT",
-  "saaSMode" : 4,
-  "deployId" : "0265c17c5c7cd53c91793f91b18293f1",
-  "codeName" : "SuiteCase",
-  "logicName" : "套件用例",
-  "tableName" : "zt_suitecase",
-  "enableViewLevel" : 0,
-  "virtualMode" : 0,
-  "enableSQLStorage" : true,
-  "enableRemove" : true,
-  "logicValid" : false,
-  "enableMultiDS" : false,
-  "dataAccCtrlMode" : 1,
   "auditMode" : 0,
-  "dataChangeLogMode" : 0,
-  "storageMode" : 1,
-  "dataImpExpMode" : 3,
-  "dataAccCtrlArch" : 1,
-  "serviceCodeName" : "SuiteCase",
-  "enableActions" : 7,
-  "enableCreate" : true,
-  "enableModify" : true,
-  "saaSDataIdColumnName" : "SRFID",
-  "subSysDE" : false,
-  "virtual" : false,
-  "enableMultiForm" : false,
-  "enableEntityCache" : false,
+  "codeName" : "SuiteCase",
   "dEType" : 1,
+  "dSLink" : "DEFAULT",
+  "dataAccCtrlArch" : 1,
+  "dataAccCtrlMode" : 1,
+  "dataChangeLogMode" : 0,
+  "dataImpExpMode" : 3,
+  "getDefaultPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "Default"
+  },
+  "deployId" : "0265c17c5c7cd53c91793f91b18293f1",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase.json",
+  "enableActions" : 7,
+  "enableUIActions" : 15,
+  "enableViewLevel" : 0,
+  "extendMode" : 0,
+  "logicName" : "套件用例",
   "getMinorPSDERs" : [ {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDERS/DER1N_ZT_SUITECASE_ZT_CASE_CASE.json"
@@ -384,10 +364,30 @@
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDERS/DER1N_ZT_SUITECASE_ZT_TESTSUITE_SUITE.json"
   } ],
-  "getDefaultPSDEDataSet" : {
-    "modelref" : true,
-    "id" : "Default"
-  },
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase.json",
-  "name" : "ZT_SUITECASE"
+  "name" : "ZT_SUITECASE",
+  "orderValue" : 99999,
+  "saaSDCIdColumnName" : "SRFDCID",
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSMode" : 4,
+  "serviceAPIMode" : 1,
+  "serviceCodeName" : "SuiteCase",
+  "storageMode" : 1,
+  "systemTag" : "iBizPMS",
+  "tableName" : "zt_suitecase",
+  "virtualMode" : 0,
+  "enableAPIStorage" : false,
+  "enableCreate" : true,
+  "enableDataVer" : false,
+  "enableEntityCache" : false,
+  "enableModify" : true,
+  "enableMultiDS" : false,
+  "enableMultiForm" : false,
+  "enableMultiStorage" : false,
+  "enableNoSQLStorage" : false,
+  "enableRemove" : true,
+  "enableSQLStorage" : true,
+  "logicValid" : false,
+  "subSysAsCloud" : false,
+  "subSysDE" : false,
+  "virtual" : false
 }

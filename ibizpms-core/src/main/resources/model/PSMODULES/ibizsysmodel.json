@@ -1,7 +1,23 @@
 {
-  "subSysAsCloud" : false,
-  "defaultModule" : false,
-  "subSysModule" : false,
+  "getAllPSCodeLists" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/BackendBuild.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/SQLBuild.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/Backendservicesystem.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/SystemAPP.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/RunSQL.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/APPBuild.json"
+  } ],
   "getAllPSDataEntities" : [ {
     "modelref" : true,
     "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDEField.json"
@@ -39,27 +55,11 @@
     "modelref" : true,
     "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSystemDBCfg.json"
   } ],
-  "getAllPSCodeLists" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/BackendBuild.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/SQLBuild.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/Backendservicesystem.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/SystemAPP.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/RunSQL.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/APPBuild.json"
-  } ],
-  "deployId" : "ed284836fd79cad06dda6fe074a0048e",
   "codeName" : "ibizsysmodel",
+  "deployId" : "ed284836fd79cad06dda6fe074a0048e",
   "dynaModelFilePath" : "PSMODULES/ibizsysmodel.json",
-  "name" : "iBiz系统模型"
+  "name" : "iBiz系统模型",
+  "defaultModule" : false,
+  "subSysAsCloud" : false,
+  "subSysModule" : false
 }

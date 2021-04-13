@@ -1,26 +1,26 @@
 {
+  "codeListType" : "STATIC",
+  "codeName" : "Testsuite__type",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testsuite__type.json",
+  "emptyText" : "未定义",
+  "name" : "测试套件&用例库类型",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestSuite.json"
   },
   "getPSCodeItems" : [ {
-    "value" : "library",
     "codeName" : "Library",
-    "text" : "用例库"
+    "text" : "用例库",
+    "value" : "library"
   }, {
-    "value" : "private",
     "codeName" : "Private",
-    "text" : "私有"
+    "text" : "私有",
+    "value" : "private"
   }, {
-    "value" : "public",
     "codeName" : "Public",
-    "text" : "公开"
+    "text" : "公开",
+    "value" : "public"
   } ],
-  "dynaInstMode" : 1,
-  "codeListType" : "STATIC",
-  "codeName" : "Testsuite__type",
-  "emptyText" : "未定义",
-  "enableCache" : true,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testsuite__type.json",
-  "name" : "测试套件&用例库类型"
+  "enableCache" : true
 }

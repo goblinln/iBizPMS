@@ -1,105 +1,564 @@
 {
-  "enableUIActions" : 15,
-  "enableUIRemove" : true,
-  "getAllPSAppDEUIActions" : [ {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
+  "getAllPSAppDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "ACCOUNT",
+        "codeName" : "Account"
+      }
+    } ],
+    "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
     },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
+    "getValuePSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
     },
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getNoPrivDisplayMode" : 1,
-    "getPSSysImage" : {
-      "glyph" : "xf127@FontAwesome",
-      "cssClass" : "fa fa-unlink"
-    },
-    "timeout" : 60000,
-    "codeName" : "RemoveMember",
-    "caption" : "移除成员",
-    "reloadData" : true,
-    "actionTarget" : "SINGLEKEY",
-    "dataAccessAction" : "SRFUR__PROJT_TM_BUT",
-    "uIActionTag" : "RemoveMember",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "BACKEND",
-    "successMsg" : "移除成功",
-    "confirmMsg" : "您确定从该项目中移除该用户吗？",
-    "fullCodeName" : "ProjectTeam_RemoveMember",
-    "name" : "移除成员",
-    "id" : "RemoveMember@ProjectTeam"
-  }, {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
-    },
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectTeamMainGridView_EditRow.json",
-      "viewType" : "DEGRIDVIEW"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
-    "frontProcessType" : "WIZARD",
-    "refreshMode" : 1,
-    "enableConfirm" : true,
-    "getNoPrivDisplayMode" : 2,
-    "getPSSysImage" : {
-      "glyph" : "xf0c0@FontAwesome",
-      "cssClass" : "fa fa-users"
-    },
-    "timeout" : 60000,
-    "codeName" : "ManagerMember",
-    "caption" : "团队管理",
-    "reloadData" : true,
-    "actionTarget" : "NONE",
-    "dataAccessAction" : "SRFUR__PROJT_TM_BUT",
-    "uIActionTag" : "ManagerMember",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "FRONT",
-    "successMsg" : "移除成功",
-    "confirmMsg" : "您确定从该项目中移除该用户吗？",
-    "fullCodeName" : "ProjectTeam_ManagerMember",
-    "name" : "团队管理",
-    "id" : "ManagerMember@ProjectTeam"
+    "defaultMode" : true,
+    "enablePagingBar" : false
   } ],
-  "major" : true,
-  "getAllPSAppDEMethods" : [ {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "getuserrole"
-    },
-    "builtinMethod" : false,
+  "getAllPSAppDEActions" : [ {
+    "codeName" : "getuserrole",
     "methodType" : "DEACTION",
+    "name" : "GetUserRole",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/GetUserRole.json"
     },
-    "codeName" : "getuserrole",
-    "name" : "GetUserRole"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Select"
+      "id" : "getuserrole"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PROJECTTEAM__DEACTION__CREATE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PROJECTTEAM__DEACTION__UPDATE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PROJECTTEAM__DEACTION__REMOVE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PROJECTTEAM__DEACTION__GET"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/Save.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CreateTemp",
+    "methodType" : "DEACTION",
+    "name" : "CreateTemp",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/CreateTemp.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "CreateTempMajor",
+    "methodType" : "DEACTION",
+    "name" : "CreateTempMajor",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/CreateTempMajor.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "tempDataMode" : 1,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "UpdateTemp",
+    "methodType" : "DEACTION",
+    "name" : "UpdateTemp",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/UpdateTemp.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "UpdateTempMajor",
+    "methodType" : "DEACTION",
+    "name" : "UpdateTempMajor",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/UpdateTempMajor.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "tempDataMode" : 1,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "RemoveTemp",
+    "methodType" : "DEACTION",
+    "name" : "RemoveTemp",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/RemoveTemp.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "RemoveTempMajor",
+    "methodType" : "DEACTION",
+    "name" : "RemoveTempMajor",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/RemoveTempMajor.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "tempDataMode" : 1,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "GetTemp",
+    "methodType" : "DEACTION",
+    "name" : "GetTemp",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/GetTemp.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "GetTempMajor",
+    "methodType" : "DEACTION",
+    "name" : "GetTempMajor",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/GetTempMajor.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "tempDataMode" : 1,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "GetDraftTemp",
+    "methodType" : "DEACTION",
+    "name" : "GetDraftTemp",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/GetDraftTemp.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "GetDraftTempMajor",
+    "methodType" : "DEACTION",
+    "name" : "GetDraftTempMajor",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/GetDraftTempMajor.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "tempDataMode" : 1,
+    "builtinMethod" : true
+  } ],
+  "getAllPSAppDEDataExports" : [ {
+    "codeName" : "DataExport",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam/PSAPPDEDATAEXPS/DataExport.json",
+    "maxRowCount" : 1000,
+    "name" : "数据导出",
+    "getPSDEDataExportItems" : [ {
+      "caption" : "用户",
+      "format" : "%1$s",
+      "name" : "account",
+      "getPSAppDEField" : {
+        "name" : "ACCOUNT",
+        "codeName" : "Account"
+      },
+      "getPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+      }
+    }, {
+      "caption" : "角色",
+      "format" : "%1$s",
+      "name" : "role",
+      "getPSAppDEField" : {
+        "name" : "ROLE",
+        "codeName" : "Role"
+      }
+    }, {
+      "caption" : "加盟日",
+      "format" : "%1$s",
+      "name" : "join",
+      "getPSAppDEField" : {
+        "name" : "JOIN",
+        "codeName" : "Join"
+      }
+    }, {
+      "caption" : "可用工日",
+      "format" : "%1$s",
+      "name" : "days",
+      "getPSAppDEField" : {
+        "name" : "DAYS",
+        "codeName" : "Days"
+      }
+    }, {
+      "caption" : "可用工时/天",
+      "format" : "%1$s",
+      "name" : "hours",
+      "getPSAppDEField" : {
+        "name" : "HOURS",
+        "codeName" : "Hours"
+      }
+    }, {
+      "caption" : "总计可用",
+      "format" : "%1$s",
+      "name" : "total",
+      "getPSAppDEField" : {
+        "name" : "TOTAL",
+        "codeName" : "Total"
+      }
+    }, {
+      "caption" : "受限用户",
+      "format" : "%1$s",
+      "name" : "limited",
+      "getPSAppDEField" : {
+        "name" : "LIMITED",
+        "codeName" : "Limited"
+      },
+      "getPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo3.json"
+      }
+    } ]
+  } ],
+  "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectTeamPm",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectTeamPm"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectTeamPm"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchRowEditDefault",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "RowEditDefault"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchRowEditDefault"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTaskCntEstimateConsumedLeft",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "TaskCntEstimateConsumedLeft"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchTaskCntEstimateConsumedLeft"
+    },
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "codeName" : "Role",
+    "logicName" : "角色",
+    "name" : "ROLE",
+    "stdDataType" : 25,
+    "stringLength" : 30
+  }, {
+    "codeName" : "Limited",
+    "logicName" : "受限用户",
+    "name" : "LIMITED",
+    "stdDataType" : 25,
+    "stringLength" : 8
+  }, {
+    "codeName" : "Total",
+    "logicName" : "总计可用",
+    "name" : "TOTAL",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Username",
+    "logicName" : "用户",
+    "name" : "USERNAME",
+    "stdDataType" : 25,
+    "stringLength" : 200
+  }, {
+    "codeName" : "Days",
+    "logicName" : "可用工日",
+    "name" : "DAYS",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Exitdate",
+    "logicName" : "退场时间",
+    "name" : "EXITDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD"
+  }, {
+    "codeName" : "Type",
+    "logicName" : "团队类型",
+    "name" : "TYPE",
+    "stdDataType" : 25,
+    "stringLength" : 7
+  }, {
+    "codeName" : "Order",
+    "logicName" : "排序",
+    "name" : "ORDER",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Id",
+    "logicName" : "编号",
+    "name" : "ID",
+    "stdDataType" : 1,
+    "keyField" : true
+  }, {
+    "codeName" : "Consumed",
+    "logicName" : "总计消耗",
+    "name" : "CONSUMED",
+    "stdDataType" : 7
+  }, {
+    "codeName" : "Account",
+    "logicName" : "用户",
+    "name" : "ACCOUNT",
+    "stdDataType" : 25,
+    "stringLength" : 30,
+    "enableQuickSearch" : true,
+    "majorField" : true
+  }, {
+    "codeName" : "Estimate",
+    "logicName" : "最初预计",
+    "name" : "ESTIMATE",
+    "stdDataType" : 7
+  }, {
+    "codeName" : "Join",
+    "logicName" : "加盟日",
+    "name" : "JOIN",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD"
+  }, {
+    "codeName" : "Hours",
+    "logicName" : "可用工时/天",
+    "name" : "HOURS",
+    "stdDataType" : 7
+  }, {
+    "codeName" : "TaskCnt",
+    "logicName" : "任务数",
+    "name" : "TASKCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Left",
+    "logicName" : "预计剩余",
+    "name" : "LEFT",
+    "stdDataType" : 7
+  }, {
+    "codeName" : "PM",
+    "logicName" : "项目经理",
+    "name" : "PM",
+    "stdDataType" : 25,
+    "stringLength" : 30
+  }, {
+    "codeName" : "ProjectName",
+    "logicName" : "所属项目",
+    "name" : "PROJECTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 90
+  }, {
+    "codeName" : "Root",
+    "logicName" : "项目编号",
+    "name" : "ROOT",
+    "stdDataType" : 1
+  } ],
+  "getAllPSAppDEMethods" : [ {
+    "codeName" : "getuserrole",
+    "methodType" : "DEACTION",
+    "name" : "GetUserRole",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/GetUserRole.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "getuserrole"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Select",
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "Select"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "PROJECTTEAM__DEACTION__CREATE"
+      "id" : "Select"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Create",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -109,13 +568,13 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "codeName" : "Create"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "PROJECTTEAM__DEACTION__UPDATE"
+      "id" : "PROJECTTEAM__DEACTION__CREATE"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Update",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -125,13 +584,13 @@
       "modelref" : true,
       "id" : "UPDATE"
     },
-    "codeName" : "Update"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "PROJECTTEAM__DEACTION__REMOVE"
+      "id" : "PROJECTTEAM__DEACTION__UPDATE"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Remove",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -141,13 +600,13 @@
       "modelref" : true,
       "id" : "DELETE"
     },
-    "codeName" : "Remove"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "PROJECTTEAM__DEACTION__GET"
+      "id" : "PROJECTTEAM__DEACTION__REMOVE"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -157,13 +616,13 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "Get"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "GetDraft"
+      "id" : "PROJECTTEAM__DEACTION__GET"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -173,37 +632,37 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "codeName" : "GetDraft"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "CheckKey"
+      "id" : "GetDraft"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/CheckKey.json"
     },
-    "codeName" : "CheckKey"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Save"
+      "id" : "CheckKey"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Save",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/Save.json"
     },
-    "codeName" : "Save"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchDefault"
+      "id" : "Save"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -213,13 +672,13 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "FetchDefault"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchProjectTeamPm"
+      "id" : "FetchDefault"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectTeamPm",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -229,13 +688,13 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "FetchProjectTeamPm"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchRowEditDefault"
+      "id" : "FetchProjectTeamPm"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchRowEditDefault",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -245,13 +704,13 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "FetchRowEditDefault"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchTaskCntEstimateConsumedLeft"
+      "id" : "FetchRowEditDefault"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTaskCntEstimateConsumedLeft",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -261,11 +720,15 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "FetchTaskCntEstimateConsumedLeft"
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchTaskCntEstimateConsumedLeft"
+    },
+    "builtinMethod" : false
   }, {
-    "tempDataMode" : 2,
-    "builtinMethod" : true,
+    "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
+    "name" : "CreateTemp",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/CreateTemp.json"
@@ -274,12 +737,12 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "codeName" : "CreateTemp",
-    "name" : "CreateTemp"
+    "tempDataMode" : 2,
+    "builtinMethod" : true
   }, {
-    "tempDataMode" : 1,
-    "builtinMethod" : true,
+    "codeName" : "CreateTempMajor",
     "methodType" : "DEACTION",
+    "name" : "CreateTempMajor",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/CreateTempMajor.json"
@@ -288,12 +751,12 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "codeName" : "CreateTempMajor",
-    "name" : "CreateTempMajor"
+    "tempDataMode" : 1,
+    "builtinMethod" : true
   }, {
-    "tempDataMode" : 2,
-    "builtinMethod" : true,
+    "codeName" : "UpdateTemp",
     "methodType" : "DEACTION",
+    "name" : "UpdateTemp",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/UpdateTemp.json"
@@ -302,12 +765,12 @@
       "modelref" : true,
       "id" : "UPDATE"
     },
-    "codeName" : "UpdateTemp",
-    "name" : "UpdateTemp"
+    "tempDataMode" : 2,
+    "builtinMethod" : true
   }, {
-    "tempDataMode" : 1,
-    "builtinMethod" : true,
+    "codeName" : "UpdateTempMajor",
     "methodType" : "DEACTION",
+    "name" : "UpdateTempMajor",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/UpdateTempMajor.json"
@@ -316,12 +779,12 @@
       "modelref" : true,
       "id" : "UPDATE"
     },
-    "codeName" : "UpdateTempMajor",
-    "name" : "UpdateTempMajor"
+    "tempDataMode" : 1,
+    "builtinMethod" : true
   }, {
-    "tempDataMode" : 2,
-    "builtinMethod" : true,
+    "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
+    "name" : "RemoveTemp",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/RemoveTemp.json"
@@ -330,12 +793,12 @@
       "modelref" : true,
       "id" : "DELETE"
     },
-    "codeName" : "RemoveTemp",
-    "name" : "RemoveTemp"
+    "tempDataMode" : 2,
+    "builtinMethod" : true
   }, {
-    "tempDataMode" : 1,
-    "builtinMethod" : true,
+    "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
+    "name" : "RemoveTempMajor",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/RemoveTempMajor.json"
@@ -344,12 +807,12 @@
       "modelref" : true,
       "id" : "DELETE"
     },
-    "codeName" : "RemoveTempMajor",
-    "name" : "RemoveTempMajor"
+    "tempDataMode" : 1,
+    "builtinMethod" : true
   }, {
-    "tempDataMode" : 2,
-    "builtinMethod" : true,
+    "codeName" : "GetTemp",
     "methodType" : "DEACTION",
+    "name" : "GetTemp",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/GetTemp.json"
@@ -358,12 +821,12 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "GetTemp",
-    "name" : "GetTemp"
+    "tempDataMode" : 2,
+    "builtinMethod" : true
   }, {
-    "tempDataMode" : 1,
-    "builtinMethod" : true,
+    "codeName" : "GetTempMajor",
     "methodType" : "DEACTION",
+    "name" : "GetTempMajor",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/GetTempMajor.json"
@@ -372,12 +835,12 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "GetTempMajor",
-    "name" : "GetTempMajor"
+    "tempDataMode" : 1,
+    "builtinMethod" : true
   }, {
-    "tempDataMode" : 2,
-    "builtinMethod" : true,
+    "codeName" : "GetDraftTemp",
     "methodType" : "DEACTION",
+    "name" : "GetDraftTemp",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/GetDraftTemp.json"
@@ -386,12 +849,12 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "codeName" : "GetDraftTemp",
-    "name" : "GetDraftTemp"
+    "tempDataMode" : 2,
+    "builtinMethod" : true
   }, {
-    "tempDataMode" : 1,
-    "builtinMethod" : true,
+    "codeName" : "GetDraftTempMajor",
     "methodType" : "DEACTION",
+    "name" : "GetDraftTempMajor",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/GetDraftTempMajor.json"
@@ -400,648 +863,150 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "codeName" : "GetDraftTempMajor",
-    "name" : "GetDraftTempMajor"
+    "tempDataMode" : 1,
+    "builtinMethod" : true
   }, {
-    "tempDataMode" : 2,
-    "builtinMethod" : false,
+    "codeName" : "FetchTempDefault",
     "methodType" : "FETCHTEMP",
+    "name" : "DEFAULT",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Default"
     },
-    "codeName" : "FetchTempDefault",
-    "name" : "DEFAULT"
-  }, {
     "tempDataMode" : 2,
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempProjectTeamPm",
     "methodType" : "FETCHTEMP",
+    "name" : "ProjectTeamPm",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ProjectTeamPm"
     },
-    "codeName" : "FetchTempProjectTeamPm",
-    "name" : "ProjectTeamPm"
-  }, {
     "tempDataMode" : 2,
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempRowEditDefault",
     "methodType" : "FETCHTEMP",
+    "name" : "RowEditDefault",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "RowEditDefault"
     },
-    "codeName" : "FetchTempRowEditDefault",
-    "name" : "RowEditDefault"
-  }, {
     "tempDataMode" : 2,
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempTaskCntEstimateConsumedLeft",
     "methodType" : "FETCHTEMP",
+    "name" : "TaskCntEstimateConsumedLeft",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "TaskCntEstimateConsumedLeft"
     },
-    "codeName" : "FetchTempTaskCntEstimateConsumedLeft",
-    "name" : "TaskCntEstimateConsumedLeft"
+    "tempDataMode" : 2,
+    "builtinMethod" : false
   }, {
-    "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterUpdate",
-    "name" : "FILTERUPDATE"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterSearch",
-    "name" : "FILTERSEARCH"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERSEARCH",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterGet",
-    "name" : "FILTERGET"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERGET",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterCreate",
-    "name" : "FILTERCREATE"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERCREATE",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterGetDraft",
-    "name" : "FILTERGETDRAFT"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERGETDRAFT",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterRemove",
-    "name" : "FILTERREMOVE"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERREMOVE",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterFetch",
-    "name" : "FILTERFETCH"
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERFETCH",
+    "builtinMethod" : true
   } ],
-  "getMinorPSAppDERSs" : [ {
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
-    "getMajorPSAppDataEntity" : {
+  "getAllPSAppDEUIActions" : [ {
+    "actionTarget" : "SINGLEKEY",
+    "getNoPrivDisplayMode" : 1,
+    "caption" : "移除成员",
+    "codeName" : "RemoveMember",
+    "confirmMsg" : "您确定从该项目中移除该用户吗？",
+    "dataAccessAction" : "SRFUR__PROJT_TM_BUT",
+    "fullCodeName" : "ProjectTeam_RemoveMember",
+    "name" : "移除成员",
+    "getPSAppDEMethod" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+      "id" : "Remove"
     },
-    "getMinorPSAppDataEntity" : {
+    "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
     },
-    "getParentPSAppDEField" : {
-      "name" : "ROOT",
-      "codeName" : "Root"
+    "getPSSysImage" : {
+      "glyph" : "xf127@FontAwesome",
+      "cssClass" : "fa fa-unlink"
     },
-    "codeName" : "ProjectTeams",
-    "actionRSMode" : 1,
-    "dataRSMode" : 0,
-    "rSMode" : 2,
-    "name" : "项目团队"
-  } ],
-  "getAllPSAppDEFields" : [ {
-    "codeName" : "Role",
-    "logicName" : "角色",
-    "stringLength" : 30,
-    "stdDataType" : 25,
-    "name" : "ROLE"
+    "refreshMode" : 1,
+    "successMsg" : "移除成功",
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "RemoveMember",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "reloadData" : true,
+    "id" : "RemoveMember@ProjectTeam"
   }, {
-    "codeName" : "Limited",
-    "logicName" : "受限用户",
-    "stringLength" : 8,
-    "stdDataType" : 25,
-    "name" : "LIMITED"
-  }, {
-    "codeName" : "Total",
-    "logicName" : "总计可用",
-    "stdDataType" : 9,
-    "name" : "TOTAL"
-  }, {
-    "codeName" : "Username",
-    "logicName" : "用户",
-    "stringLength" : 200,
-    "stdDataType" : 25,
-    "name" : "USERNAME"
-  }, {
-    "codeName" : "Days",
-    "logicName" : "可用工日",
-    "stdDataType" : 9,
-    "name" : "DAYS"
-  }, {
-    "valueFormat" : "YYYY-MM-DD",
-    "codeName" : "Exitdate",
-    "logicName" : "退场时间",
-    "stdDataType" : 5,
-    "name" : "EXITDATE"
-  }, {
-    "codeName" : "Type",
-    "logicName" : "团队类型",
-    "stringLength" : 7,
-    "stdDataType" : 25,
-    "name" : "TYPE"
-  }, {
-    "codeName" : "Order",
-    "logicName" : "排序",
-    "stdDataType" : 9,
-    "name" : "ORDER"
-  }, {
-    "keyField" : true,
-    "codeName" : "Id",
-    "logicName" : "编号",
-    "stdDataType" : 1,
-    "name" : "ID"
-  }, {
-    "codeName" : "Consumed",
-    "logicName" : "总计消耗",
-    "stdDataType" : 7,
-    "name" : "CONSUMED"
-  }, {
-    "majorField" : true,
-    "codeName" : "Account",
-    "logicName" : "用户",
-    "stringLength" : 30,
-    "stdDataType" : 25,
-    "enableQuickSearch" : true,
-    "name" : "ACCOUNT"
-  }, {
-    "codeName" : "Estimate",
-    "logicName" : "最初预计",
-    "stdDataType" : 7,
-    "name" : "ESTIMATE"
-  }, {
-    "valueFormat" : "YYYY-MM-DD",
-    "codeName" : "Join",
-    "logicName" : "加盟日",
-    "stdDataType" : 5,
-    "name" : "JOIN"
-  }, {
-    "codeName" : "Hours",
-    "logicName" : "可用工时/天",
-    "stdDataType" : 7,
-    "name" : "HOURS"
-  }, {
-    "codeName" : "TaskCnt",
-    "logicName" : "任务数",
-    "stdDataType" : 9,
-    "name" : "TASKCNT"
-  }, {
-    "codeName" : "Left",
-    "logicName" : "预计剩余",
-    "stdDataType" : 7,
-    "name" : "LEFT"
-  }, {
-    "codeName" : "PM",
-    "logicName" : "项目经理",
-    "stringLength" : 30,
-    "stdDataType" : 25,
-    "name" : "PM"
-  }, {
-    "codeName" : "ProjectName",
-    "logicName" : "所属项目",
-    "stringLength" : 90,
-    "stdDataType" : 25,
-    "name" : "PROJECTNAME"
-  }, {
-    "codeName" : "Root",
-    "logicName" : "项目编号",
-    "stdDataType" : 1,
-    "name" : "ROOT"
-  } ],
-  "getAllPSAppDEACModes" : [ {
-    "enablePagingBar" : false,
-    "getPSDEACModeDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "name" : "value",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ACCOUNT",
-        "codeName" : "Account"
-      },
-      "name" : "text",
-      "dataType" : 25
-    } ],
-    "getValuePSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "getTextPSAppDEField" : {
-      "name" : "ACCOUNT",
-      "codeName" : "Account"
-    },
-    "codeName" : "Default",
-    "logicName" : "DEFAULT",
-    "defaultMode" : true,
-    "pagingSize" : 50,
-    "name" : "DEFAULT"
-  } ],
-  "enableFilterActions" : true,
-  "enableWFActions" : false,
-  "getQuickSearchPSAppDEFields" : [ {
-    "name" : "ACCOUNT",
-    "codeName" : "Account"
-  } ],
-  "getAllPSAppDEDataExports" : [ {
-    "getPSDEDataExportItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "ACCOUNT",
-        "codeName" : "Account"
-      },
-      "format" : "%1$s",
-      "getPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
-      },
-      "caption" : "用户",
-      "name" : "account"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ROLE",
-        "codeName" : "Role"
-      },
-      "format" : "%1$s",
-      "caption" : "角色",
-      "name" : "role"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "JOIN",
-        "codeName" : "Join"
-      },
-      "format" : "%1$s",
-      "caption" : "加盟日",
-      "name" : "join"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "DAYS",
-        "codeName" : "Days"
-      },
-      "format" : "%1$s",
-      "caption" : "可用工日",
-      "name" : "days"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "HOURS",
-        "codeName" : "Hours"
-      },
-      "format" : "%1$s",
-      "caption" : "可用工时/天",
-      "name" : "hours"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "TOTAL",
-        "codeName" : "Total"
-      },
-      "format" : "%1$s",
-      "caption" : "总计可用",
-      "name" : "total"
-    }, {
-      "getPSAppDEField" : {
-        "name" : "LIMITED",
-        "codeName" : "Limited"
-      },
-      "format" : "%1$s",
-      "getPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo3.json"
-      },
-      "caption" : "受限用户",
-      "name" : "limited"
-    } ],
-    "maxRowCount" : 1000,
-    "codeName" : "DataExport",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam/PSAPPDEDATAEXPS/DataExport.json",
-    "name" : "数据导出"
-  } ],
-  "getAllPSAppDEActions" : [ {
-    "getPSDEServiceAPIMethod" : {
+    "actionTarget" : "NONE",
+    "getNoPrivDisplayMode" : 2,
+    "caption" : "团队管理",
+    "codeName" : "ManagerMember",
+    "confirmMsg" : "您确定从该项目中移除该用户吗？",
+    "dataAccessAction" : "SRFUR__PROJT_TM_BUT",
+    "getFrontPSAppView" : {
       "modelref" : true,
-      "id" : "getuserrole"
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectTeamMainGridView_EditRow.json",
+      "viewType" : "DEGRIDVIEW"
     },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "ProjectTeam_ManagerMember",
+    "name" : "团队管理",
+    "getPSAppDEMethod" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/GetUserRole.json"
+      "id" : "Get"
     },
-    "codeName" : "getuserrole",
-    "name" : "GetUserRole"
-  }, {
-    "getPSDEServiceAPIMethod" : {
+    "getPSAppDataEntity" : {
       "modelref" : true,
-      "id" : "PROJECTTEAM__DEACTION__CREATE"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
     },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/Create.json"
+    "getPSSysImage" : {
+      "glyph" : "xf0c0@FontAwesome",
+      "cssClass" : "fa fa-users"
     },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "codeName" : "Create"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "PROJECTTEAM__DEACTION__UPDATE"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "codeName" : "Update"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "PROJECTTEAM__DEACTION__REMOVE"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "codeName" : "Remove"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "PROJECTTEAM__DEACTION__GET"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "codeName" : "Get"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "codeName" : "GetDraft"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CheckKey"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/CheckKey.json"
-    },
-    "codeName" : "CheckKey"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Save"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/Save.json"
-    },
-    "codeName" : "Save"
-  }, {
-    "tempDataMode" : 2,
-    "builtinMethod" : true,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/CreateTemp.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "codeName" : "CreateTemp",
-    "name" : "CreateTemp"
-  }, {
-    "tempDataMode" : 1,
-    "builtinMethod" : true,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/CreateTempMajor.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "codeName" : "CreateTempMajor",
-    "name" : "CreateTempMajor"
-  }, {
-    "tempDataMode" : 2,
-    "builtinMethod" : true,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/UpdateTemp.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "codeName" : "UpdateTemp",
-    "name" : "UpdateTemp"
-  }, {
-    "tempDataMode" : 1,
-    "builtinMethod" : true,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/UpdateTempMajor.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "codeName" : "UpdateTempMajor",
-    "name" : "UpdateTempMajor"
-  }, {
-    "tempDataMode" : 2,
-    "builtinMethod" : true,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/RemoveTemp.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "codeName" : "RemoveTemp",
-    "name" : "RemoveTemp"
-  }, {
-    "tempDataMode" : 1,
-    "builtinMethod" : true,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/RemoveTempMajor.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "codeName" : "RemoveTempMajor",
-    "name" : "RemoveTempMajor"
-  }, {
-    "tempDataMode" : 2,
-    "builtinMethod" : true,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/GetTemp.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "codeName" : "GetTemp",
-    "name" : "GetTemp"
-  }, {
-    "tempDataMode" : 1,
-    "builtinMethod" : true,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/GetTempMajor.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "codeName" : "GetTempMajor",
-    "name" : "GetTempMajor"
-  }, {
-    "tempDataMode" : 2,
-    "builtinMethod" : true,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/GetDraftTemp.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "codeName" : "GetDraftTemp",
-    "name" : "GetDraftTemp"
-  }, {
-    "tempDataMode" : 1,
-    "builtinMethod" : true,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/GetDraftTempMajor.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "codeName" : "GetDraftTempMajor",
-    "name" : "GetDraftTempMajor"
-  } ],
-  "getAllPSAppDEDataSets" : [ {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
-    },
-    "builtinMethod" : false,
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "codeName" : "FetchDefault"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchProjectTeamPm"
-    },
-    "builtinMethod" : false,
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectTeamPm"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "codeName" : "FetchProjectTeamPm"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchRowEditDefault"
-    },
-    "builtinMethod" : false,
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "RowEditDefault"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "codeName" : "FetchRowEditDefault"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchTaskCntEstimateConsumedLeft"
-    },
-    "builtinMethod" : false,
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "TaskCntEstimateConsumedLeft"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "codeName" : "FetchTaskCntEstimateConsumedLeft"
+    "refreshMode" : 1,
+    "successMsg" : "移除成功",
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "ManagerMember",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "reloadData" : true,
+    "id" : "ManagerMember@ProjectTeam"
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
@@ -1056,6 +1021,39 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "codeName" : "ProjectTeam",
+  "dataAccCtrlArch" : 1,
+  "dataAccCtrlMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json",
+  "enableUIActions" : 15,
+  "logicName" : "项目团队",
+  "getMinorPSAppDERSs" : [ {
+    "actionRSMode" : 1,
+    "codeName" : "ProjectTeams",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
+    },
+    "name" : "项目团队",
+    "getParentPSAppDEField" : {
+      "name" : "ROOT",
+      "codeName" : "Root"
+    },
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ],
+  "name" : "IBZ_PROJECTTEAM",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDESERVICEAPIS/ProjectTeam.json"
@@ -1064,15 +1062,17 @@
     "glyph" : "xf0c0@FontAwesome",
     "cssClass" : "fa fa-users"
   },
-  "codeName" : "ProjectTeam",
-  "logicName" : "项目团队",
-  "dataAccCtrlMode" : 1,
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "ACCOUNT",
+    "codeName" : "Account"
+  } ],
   "storageMode" : 0,
-  "dataAccCtrlArch" : 1,
+  "defaultMode" : true,
+  "enableFilterActions" : true,
+  "enableTempData" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,
-  "enableTempData" : true,
-  "defaultMode" : true,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json",
-  "name" : "IBZ_PROJECTTEAM"
+  "enableUIRemove" : true,
+  "enableWFActions" : false,
+  "major" : true
 }

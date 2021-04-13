@@ -1,25 +1,589 @@
 {
-  "enableUIActions" : 15,
-  "enableUIRemove" : true,
-  "major" : true,
-  "getAllPSAppDEMethods" : [ {
+  "getAllPSAppDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "REALNAME",
+        "codeName" : "Realname"
+      }
+    } ],
+    "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "REALNAME",
+      "codeName" : "Realname"
+    },
+    "getValuePSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "defaultMode" : true,
+    "enablePagingBar" : false
+  } ],
+  "getAllPSAppDEActions" : [ {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Select"
+      "id" : "IBZMYTERRITORY__DEACTION__CREATE"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "IBZMYTERRITORY__DEACTION__UPDATE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "IBZMYTERRITORY__DEACTION__REMOVE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "IBZMYTERRITORY__DEACTION__GET"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "MobMenuCount",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/MobMenuCount.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "MobMenuCount"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "MyFavoriteCount",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/MyFavoriteCount.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "MyFavoriteCount"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "MyTerritoryCount",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/MyTerritoryCount.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "MyTerritoryCount"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/Save.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyWork",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyWork"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchMyWork"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyWorkMob",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyWorkMob"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchMyWorkMob"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyWorkPm",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyWorkPm"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchMyWorkPm"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchPersonInfo",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "PersonInfo"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchPersonInfo"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchWelcome",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Welcome"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchWelcome"
+    },
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "codeName" : "Myebugs",
+    "logicName" : "我的过期bug数",
+    "name" : "MYEBUGS",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Nickname",
+    "logicName" : "nickname",
+    "name" : "NICKNAME",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "Fails",
+    "logicName" : "fails",
+    "name" : "FAILS",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Visits",
+    "logicName" : "访问次数",
+    "name" : "VISITS",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Phone",
+    "logicName" : "电话",
+    "name" : "PHONE",
+    "stdDataType" : 25,
+    "stringLength" : 20
+  }, {
+    "codeName" : "Mytodocnt",
+    "logicName" : "我的待办数",
+    "name" : "MYTODOCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Myterritorycnt",
+    "logicName" : "我的地盘",
+    "name" : "MYTERRITORYCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Mybugs",
+    "logicName" : "我的bugs",
+    "name" : "MYBUGS",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Role",
+    "logicName" : "职位",
+    "name" : "ROLE",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Realname",
+    "logicName" : "真实姓名",
+    "name" : "REALNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "enableQuickSearch" : true,
+    "majorField" : true
+  }, {
+    "codeName" : "ClientStatus",
+    "logicName" : "clientStatus",
+    "name" : "CLIENTSTATUS",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "Last",
+    "logicName" : "最后登录",
+    "name" : "LAST",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Zipcode",
+    "logicName" : "zipcode",
+    "name" : "ZIPCODE",
+    "stdDataType" : 25,
+    "stringLength" : 10
+  }, {
+    "codeName" : "Skype",
+    "logicName" : "skype",
+    "name" : "SKYPE",
+    "stdDataType" : 25,
+    "stringLength" : 90
+  }, {
+    "codeName" : "Myfavoritebugs",
+    "logicName" : "我收藏的bugs",
+    "name" : "MYFAVORITEBUGS",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Join",
+    "logicName" : "入职日期",
+    "name" : "JOIN",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD"
+  }, {
+    "codeName" : "Score",
+    "logicName" : "score",
+    "name" : "SCORE",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Dept",
+    "logicName" : "所属部门",
+    "name" : "DEPT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Account",
+    "logicName" : "账户",
+    "name" : "ACCOUNT",
+    "stdDataType" : 25,
+    "stringLength" : 30
+  }, {
+    "codeName" : "Myfavorites",
+    "logicName" : "我的收藏",
+    "name" : "MYFAVORITES",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Mystorys",
+    "logicName" : "我的需求数",
+    "name" : "MYSTORYS",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Commiter",
+    "logicName" : "源代码账户",
+    "name" : "COMMITER",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Mobile",
+    "logicName" : "手机",
+    "name" : "MOBILE",
+    "stdDataType" : 25,
+    "stringLength" : 11
+  }, {
+    "codeName" : "Locked",
+    "logicName" : "locked",
+    "name" : "LOCKED",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "Projectteamcnt",
+    "logicName" : "项目成员",
+    "name" : "PROJECTTEAMCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Address",
+    "logicName" : "通讯地址",
+    "name" : "ADDRESS",
+    "stdDataType" : 25,
+    "stringLength" : 120
+  }, {
+    "codeName" : "Mytasks",
+    "logicName" : "我的任务",
+    "name" : "MYTASKS",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "ScoreLevel",
+    "logicName" : "scoreLevel",
+    "name" : "SCORELEVEL",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Password",
+    "logicName" : "密码",
+    "name" : "PASSWORD",
+    "stdDataType" : 25,
+    "stringLength" : 32
+  }, {
+    "codeName" : "Leftlcbjzcnt",
+    "logicName" : "剩余里程碑（今日到期）",
+    "name" : "LEFTLCBJZCNT",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Ranzhi",
+    "logicName" : "ranzhi",
+    "name" : "RANZHI",
+    "stdDataType" : 25,
+    "stringLength" : 30
+  }, {
+    "codeName" : "Mytodocntjz",
+    "logicName" : "今日截止待办",
+    "name" : "MYTODOCNTJZ",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Projects",
+    "logicName" : "未关闭项目数",
+    "name" : "PROJECTS",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Slack",
+    "logicName" : "slack",
+    "name" : "SLACK",
+    "stdDataType" : 25,
+    "stringLength" : 90
+  }, {
+    "codeName" : "Products",
+    "logicName" : "未关闭产品数",
+    "name" : "PRODUCTS",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Weixin",
+    "logicName" : "微信",
+    "name" : "WEIXIN",
+    "stdDataType" : 25,
+    "stringLength" : 90
+  }, {
+    "codeName" : "Myetasks",
+    "logicName" : "我的过期任务数",
+    "name" : "MYETASKS",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Eprojects",
+    "logicName" : "过期项目数",
+    "name" : "EPROJECTS",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Whatsapp",
+    "logicName" : "whatsapp",
+    "name" : "WHATSAPP",
+    "stdDataType" : 25,
+    "stringLength" : 90
+  }, {
+    "codeName" : "Qq",
+    "logicName" : "QQ",
+    "name" : "QQ",
+    "stdDataType" : 25,
+    "stringLength" : 20
+  }, {
+    "codeName" : "Gender",
+    "logicName" : "男女",
+    "name" : "GENDER",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "ClientLang",
+    "logicName" : "clientLang",
+    "name" : "CLIENTLANG",
+    "stdDataType" : 25,
+    "stringLength" : 10
+  }, {
+    "codeName" : "Deleted",
+    "logicName" : "逻辑删除标志",
+    "name" : "DELETED",
+    "stdDataType" : 25,
+    "stringLength" : 1
+  }, {
+    "codeName" : "Myfavoritetasks",
+    "logicName" : "我收藏的任务",
+    "name" : "MYFAVORITETASKS",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Birthday",
+    "logicName" : "birthday",
+    "name" : "BIRTHDAY",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD"
+  }, {
+    "codeName" : "Ip",
+    "logicName" : "ip",
+    "name" : "IP",
+    "stdDataType" : 25,
+    "stringLength" : 15
+  }, {
+    "codeName" : "Myfavoritestorys",
+    "logicName" : "我收藏的需求数",
+    "name" : "MYFAVORITESTORYS",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Email",
+    "logicName" : "邮箱",
+    "name" : "EMAIL",
+    "stdDataType" : 25,
+    "stringLength" : 90
+  }, {
+    "codeName" : "Dingding",
+    "logicName" : "钉钉",
+    "name" : "DINGDING",
+    "stdDataType" : 25,
+    "stringLength" : 90
+  }, {
+    "codeName" : "Avatar",
+    "logicName" : "avatar",
+    "name" : "AVATAR",
+    "stdDataType" : 25,
+    "stringLength" : 30
+  }, {
+    "codeName" : "Id",
+    "logicName" : "ID",
+    "name" : "ID",
+    "stdDataType" : 1,
+    "keyField" : true
+  }, {
+    "codeName" : "Leftlcbcnt",
+    "logicName" : "剩余里程碑",
+    "name" : "LEFTLCBCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Projectteamjzcnt",
+    "logicName" : "项目成员（今日截止）",
+    "name" : "PROJECTTEAMJZCNT",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  } ],
+  "getAllPSAppDEMethods" : [ {
+    "codeName" : "Select",
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "Select"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "IBZMYTERRITORY__DEACTION__CREATE"
+      "id" : "Select"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Create",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -29,13 +593,13 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "codeName" : "Create"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "IBZMYTERRITORY__DEACTION__UPDATE"
+      "id" : "IBZMYTERRITORY__DEACTION__CREATE"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Update",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -45,13 +609,13 @@
       "modelref" : true,
       "id" : "UPDATE"
     },
-    "codeName" : "Update"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "IBZMYTERRITORY__DEACTION__REMOVE"
+      "id" : "IBZMYTERRITORY__DEACTION__UPDATE"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Remove",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -61,13 +625,13 @@
       "modelref" : true,
       "id" : "DELETE"
     },
-    "codeName" : "Remove"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "IBZMYTERRITORY__DEACTION__GET"
+      "id" : "IBZMYTERRITORY__DEACTION__REMOVE"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -77,13 +641,13 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "Get"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "GetDraft"
+      "id" : "IBZMYTERRITORY__DEACTION__GET"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -93,73 +657,73 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "codeName" : "GetDraft"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "CheckKey"
+      "id" : "GetDraft"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/CheckKey.json"
     },
-    "codeName" : "CheckKey"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "MobMenuCount"
+      "id" : "CheckKey"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "MobMenuCount",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/MobMenuCount.json"
     },
-    "codeName" : "MobMenuCount"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "MyFavoriteCount"
+      "id" : "MobMenuCount"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "MyFavoriteCount",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/MyFavoriteCount.json"
     },
-    "codeName" : "MyFavoriteCount"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "MyTerritoryCount"
+      "id" : "MyFavoriteCount"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "MyTerritoryCount",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/MyTerritoryCount.json"
     },
-    "codeName" : "MyTerritoryCount"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Save"
+      "id" : "MyTerritoryCount"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Save",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/Save.json"
     },
-    "codeName" : "Save"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchDefault"
+      "id" : "Save"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -169,13 +733,13 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "FetchDefault"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchMyWork"
+      "id" : "FetchDefault"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyWork",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -185,13 +749,13 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "FetchMyWork"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchMyWorkMob"
+      "id" : "FetchMyWork"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyWorkMob",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -201,13 +765,13 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "FetchMyWorkMob"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchMyWorkPm"
+      "id" : "FetchMyWorkMob"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyWorkPm",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -217,13 +781,13 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "FetchMyWorkPm"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchPersonInfo"
+      "id" : "FetchMyWorkPm"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchPersonInfo",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -233,13 +797,13 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "FetchPersonInfo"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchWelcome"
+      "id" : "FetchPersonInfo"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchWelcome",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -249,619 +813,46 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "FetchWelcome"
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchWelcome"
+    },
+    "builtinMethod" : false
   }, {
-    "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterUpdate",
-    "name" : "FILTERUPDATE"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterSearch",
-    "name" : "FILTERSEARCH"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERSEARCH",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterGet",
-    "name" : "FILTERGET"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERGET",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterCreate",
-    "name" : "FILTERCREATE"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERCREATE",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterGetDraft",
-    "name" : "FILTERGETDRAFT"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERGETDRAFT",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterRemove",
-    "name" : "FILTERREMOVE"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERREMOVE",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterFetch",
-    "name" : "FILTERFETCH"
-  } ],
-  "getAllPSAppDEFields" : [ {
-    "codeName" : "Myebugs",
-    "logicName" : "我的过期bug数",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "name" : "MYEBUGS"
-  }, {
-    "codeName" : "Nickname",
-    "logicName" : "nickname",
-    "stringLength" : 60,
-    "stdDataType" : 25,
-    "name" : "NICKNAME"
-  }, {
-    "codeName" : "Fails",
-    "logicName" : "fails",
-    "stdDataType" : 9,
-    "name" : "FAILS"
-  }, {
-    "codeName" : "Visits",
-    "logicName" : "访问次数",
-    "stdDataType" : 9,
-    "name" : "VISITS"
-  }, {
-    "codeName" : "Phone",
-    "logicName" : "电话",
-    "stringLength" : 20,
-    "stdDataType" : 25,
-    "name" : "PHONE"
-  }, {
-    "codeName" : "Mytodocnt",
-    "logicName" : "我的待办数",
-    "stdDataType" : 9,
-    "name" : "MYTODOCNT"
-  }, {
-    "codeName" : "Myterritorycnt",
-    "logicName" : "我的地盘",
-    "stdDataType" : 9,
-    "name" : "MYTERRITORYCNT"
-  }, {
-    "codeName" : "Mybugs",
-    "logicName" : "我的bugs",
-    "stdDataType" : 9,
-    "name" : "MYBUGS"
-  }, {
-    "codeName" : "Role",
-    "logicName" : "职位",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "name" : "ROLE"
-  }, {
-    "majorField" : true,
-    "codeName" : "Realname",
-    "logicName" : "真实姓名",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "enableQuickSearch" : true,
-    "name" : "REALNAME"
-  }, {
-    "codeName" : "ClientStatus",
-    "logicName" : "clientStatus",
-    "stringLength" : 60,
-    "stdDataType" : 25,
-    "name" : "CLIENTSTATUS"
-  }, {
-    "codeName" : "Last",
-    "logicName" : "最后登录",
-    "stdDataType" : 9,
-    "name" : "LAST"
-  }, {
-    "codeName" : "Zipcode",
-    "logicName" : "zipcode",
-    "stringLength" : 10,
-    "stdDataType" : 25,
-    "name" : "ZIPCODE"
-  }, {
-    "codeName" : "Skype",
-    "logicName" : "skype",
-    "stringLength" : 90,
-    "stdDataType" : 25,
-    "name" : "SKYPE"
-  }, {
-    "codeName" : "Myfavoritebugs",
-    "logicName" : "我收藏的bugs",
-    "stdDataType" : 9,
-    "name" : "MYFAVORITEBUGS"
-  }, {
-    "valueFormat" : "YYYY-MM-DD",
-    "codeName" : "Join",
-    "logicName" : "入职日期",
-    "stdDataType" : 5,
-    "name" : "JOIN"
-  }, {
-    "codeName" : "Score",
-    "logicName" : "score",
-    "stdDataType" : 9,
-    "name" : "SCORE"
-  }, {
-    "codeName" : "Dept",
-    "logicName" : "所属部门",
-    "stdDataType" : 9,
-    "name" : "DEPT"
-  }, {
-    "codeName" : "Account",
-    "logicName" : "账户",
-    "stringLength" : 30,
-    "stdDataType" : 25,
-    "name" : "ACCOUNT"
-  }, {
-    "codeName" : "Myfavorites",
-    "logicName" : "我的收藏",
-    "stdDataType" : 9,
-    "name" : "MYFAVORITES"
-  }, {
-    "codeName" : "Mystorys",
-    "logicName" : "我的需求数",
-    "stdDataType" : 9,
-    "name" : "MYSTORYS"
-  }, {
-    "codeName" : "Commiter",
-    "logicName" : "源代码账户",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "name" : "COMMITER"
-  }, {
-    "codeName" : "Mobile",
-    "logicName" : "手机",
-    "stringLength" : 11,
-    "stdDataType" : 25,
-    "name" : "MOBILE"
-  }, {
-    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
-    "codeName" : "Locked",
-    "logicName" : "locked",
-    "stdDataType" : 5,
-    "name" : "LOCKED"
-  }, {
-    "codeName" : "Projectteamcnt",
-    "logicName" : "项目成员",
-    "stdDataType" : 9,
-    "name" : "PROJECTTEAMCNT"
-  }, {
-    "codeName" : "Address",
-    "logicName" : "通讯地址",
-    "stringLength" : 120,
-    "stdDataType" : 25,
-    "name" : "ADDRESS"
-  }, {
-    "codeName" : "Mytasks",
-    "logicName" : "我的任务",
-    "stdDataType" : 9,
-    "name" : "MYTASKS"
-  }, {
-    "codeName" : "ScoreLevel",
-    "logicName" : "scoreLevel",
-    "stdDataType" : 9,
-    "name" : "SCORELEVEL"
-  }, {
-    "codeName" : "Password",
-    "logicName" : "密码",
-    "stringLength" : 32,
-    "stdDataType" : 25,
-    "name" : "PASSWORD"
-  }, {
-    "codeName" : "Leftlcbjzcnt",
-    "logicName" : "剩余里程碑（今日到期）",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "name" : "LEFTLCBJZCNT"
-  }, {
-    "codeName" : "Ranzhi",
-    "logicName" : "ranzhi",
-    "stringLength" : 30,
-    "stdDataType" : 25,
-    "name" : "RANZHI"
-  }, {
-    "codeName" : "Mytodocntjz",
-    "logicName" : "今日截止待办",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "name" : "MYTODOCNTJZ"
-  }, {
-    "codeName" : "Projects",
-    "logicName" : "未关闭项目数",
-    "stdDataType" : 9,
-    "name" : "PROJECTS"
-  }, {
-    "codeName" : "Slack",
-    "logicName" : "slack",
-    "stringLength" : 90,
-    "stdDataType" : 25,
-    "name" : "SLACK"
-  }, {
-    "codeName" : "Products",
-    "logicName" : "未关闭产品数",
-    "stdDataType" : 9,
-    "name" : "PRODUCTS"
-  }, {
-    "codeName" : "Weixin",
-    "logicName" : "微信",
-    "stringLength" : 90,
-    "stdDataType" : 25,
-    "name" : "WEIXIN"
-  }, {
-    "codeName" : "Myetasks",
-    "logicName" : "我的过期任务数",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "name" : "MYETASKS"
-  }, {
-    "codeName" : "Eprojects",
-    "logicName" : "过期项目数",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "name" : "EPROJECTS"
-  }, {
-    "codeName" : "Whatsapp",
-    "logicName" : "whatsapp",
-    "stringLength" : 90,
-    "stdDataType" : 25,
-    "name" : "WHATSAPP"
-  }, {
-    "codeName" : "Qq",
-    "logicName" : "QQ",
-    "stringLength" : 20,
-    "stdDataType" : 25,
-    "name" : "QQ"
-  }, {
-    "codeName" : "Gender",
-    "logicName" : "男女",
-    "stringLength" : 60,
-    "stdDataType" : 25,
-    "name" : "GENDER"
-  }, {
-    "codeName" : "ClientLang",
-    "logicName" : "clientLang",
-    "stringLength" : 10,
-    "stdDataType" : 25,
-    "name" : "CLIENTLANG"
-  }, {
-    "codeName" : "Deleted",
-    "logicName" : "逻辑删除标志",
-    "stringLength" : 1,
-    "stdDataType" : 25,
-    "name" : "DELETED"
-  }, {
-    "codeName" : "Myfavoritetasks",
-    "logicName" : "我收藏的任务",
-    "stdDataType" : 9,
-    "name" : "MYFAVORITETASKS"
-  }, {
-    "valueFormat" : "YYYY-MM-DD",
-    "codeName" : "Birthday",
-    "logicName" : "birthday",
-    "stdDataType" : 5,
-    "name" : "BIRTHDAY"
-  }, {
-    "codeName" : "Ip",
-    "logicName" : "ip",
-    "stringLength" : 15,
-    "stdDataType" : 25,
-    "name" : "IP"
-  }, {
-    "codeName" : "Myfavoritestorys",
-    "logicName" : "我收藏的需求数",
-    "stdDataType" : 9,
-    "name" : "MYFAVORITESTORYS"
-  }, {
-    "codeName" : "Email",
-    "logicName" : "邮箱",
-    "stringLength" : 90,
-    "stdDataType" : 25,
-    "name" : "EMAIL"
-  }, {
-    "codeName" : "Dingding",
-    "logicName" : "钉钉",
-    "stringLength" : 90,
-    "stdDataType" : 25,
-    "name" : "DINGDING"
-  }, {
-    "codeName" : "Avatar",
-    "logicName" : "avatar",
-    "stringLength" : 30,
-    "stdDataType" : 25,
-    "name" : "AVATAR"
-  }, {
-    "keyField" : true,
-    "codeName" : "Id",
-    "logicName" : "ID",
-    "stdDataType" : 1,
-    "name" : "ID"
-  }, {
-    "codeName" : "Leftlcbcnt",
-    "logicName" : "剩余里程碑",
-    "stdDataType" : 9,
-    "name" : "LEFTLCBCNT"
-  }, {
-    "codeName" : "Projectteamjzcnt",
-    "logicName" : "项目成员（今日截止）",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "name" : "PROJECTTEAMJZCNT"
-  } ],
-  "getAllPSAppDEACModes" : [ {
-    "enablePagingBar" : false,
-    "getPSDEACModeDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "name" : "value",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "REALNAME",
-        "codeName" : "Realname"
-      },
-      "name" : "text",
-      "dataType" : 25
-    } ],
-    "getValuePSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "getTextPSAppDEField" : {
-      "name" : "REALNAME",
-      "codeName" : "Realname"
-    },
-    "codeName" : "Default",
-    "logicName" : "DEFAULT",
-    "defaultMode" : true,
-    "pagingSize" : 50,
-    "name" : "DEFAULT"
-  } ],
-  "enableFilterActions" : true,
-  "enableWFActions" : false,
-  "getQuickSearchPSAppDEFields" : [ {
-    "name" : "REALNAME",
-    "codeName" : "Realname"
-  } ],
-  "getAllPSAppDEActions" : [ {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "IBZMYTERRITORY__DEACTION__CREATE"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "codeName" : "Create"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "IBZMYTERRITORY__DEACTION__UPDATE"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "codeName" : "Update"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "IBZMYTERRITORY__DEACTION__REMOVE"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "codeName" : "Remove"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "IBZMYTERRITORY__DEACTION__GET"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "codeName" : "Get"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "codeName" : "GetDraft"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CheckKey"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/CheckKey.json"
-    },
-    "codeName" : "CheckKey"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "MobMenuCount"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/MobMenuCount.json"
-    },
-    "codeName" : "MobMenuCount"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "MyFavoriteCount"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/MyFavoriteCount.json"
-    },
-    "codeName" : "MyFavoriteCount"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "MyTerritoryCount"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/MyTerritoryCount.json"
-    },
-    "codeName" : "MyTerritoryCount"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Save"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/Save.json"
-    },
-    "codeName" : "Save"
-  } ],
-  "getAllPSAppDEDataSets" : [ {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
-    },
-    "builtinMethod" : false,
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "codeName" : "FetchDefault"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyWork"
-    },
-    "builtinMethod" : false,
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyWork"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "codeName" : "FetchMyWork"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyWorkMob"
-    },
-    "builtinMethod" : false,
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyWorkMob"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "codeName" : "FetchMyWorkMob"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyWorkPm"
-    },
-    "builtinMethod" : false,
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyWorkPm"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "codeName" : "FetchMyWorkPm"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchPersonInfo"
-    },
-    "builtinMethod" : false,
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "PersonInfo"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "codeName" : "FetchPersonInfo"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchWelcome"
-    },
-    "builtinMethod" : false,
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Welcome"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "codeName" : "FetchWelcome"
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERFETCH",
+    "builtinMethod" : true
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
@@ -876,18 +867,27 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "codeName" : "IbzMyTerritory",
+  "dataAccCtrlArch" : 1,
+  "dataAccCtrlMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json",
+  "enableUIActions" : 15,
+  "logicName" : "我的地盘",
+  "name" : "IBZ_MYTERRITORY",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDESERVICEAPIS/IbzMyTerritory.json"
   },
-  "codeName" : "IbzMyTerritory",
-  "logicName" : "我的地盘",
-  "dataAccCtrlMode" : 1,
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "REALNAME",
+    "codeName" : "Realname"
+  } ],
   "storageMode" : 0,
-  "dataAccCtrlArch" : 1,
+  "defaultMode" : true,
+  "enableFilterActions" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,
-  "defaultMode" : true,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json",
-  "name" : "IBZ_MYTERRITORY"
+  "enableUIRemove" : true,
+  "enableWFActions" : false,
+  "major" : true
 }

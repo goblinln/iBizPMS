@@ -1,28 +1,28 @@
 {
-  "transactionMode" : "DEFAULT",
-  "paramMode" : 1,
-  "generateTestUnit" : true,
-  "customParam" : false,
-  "builtinAction" : true,
+  "actionMode" : "DELETE",
+  "actionType" : "BUILTIN",
   "getCheckPSDEActionLogics" : [ {
     "name" : "行为[Remove]主状态拒绝逻辑",
     "id" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/Remove__MSDeny.json"
   } ],
-  "pubServiceDefault" : true,
-  "timeOut" : -1,
+  "codeName" : "Remove",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Remove.json",
   "extendMode" : 0,
+  "logicName" : "Remove",
+  "name" : "Remove",
+  "orderValue" : 21,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "DELETE"
   },
-  "orderValue" : 21,
-  "codeName" : "Remove",
-  "logicName" : "Remove",
-  "actionMode" : "DELETE",
-  "actionType" : "BUILTIN",
+  "paramMode" : 1,
   "requestField" : "ID",
   "requestParamType" : "FIELD",
   "testActionMode" : 0,
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Remove.json",
-  "name" : "Remove"
+  "timeOut" : -1,
+  "transactionMode" : "DEFAULT",
+  "builtinAction" : true,
+  "customParam" : false,
+  "generateTestUnit" : true,
+  "pubServiceDefault" : true
 }

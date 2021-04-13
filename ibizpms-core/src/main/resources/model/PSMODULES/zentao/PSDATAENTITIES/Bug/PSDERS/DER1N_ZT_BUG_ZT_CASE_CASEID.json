@@ -1,4 +1,19 @@
 {
+  "codeName" : "ZTCase",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_CASE_CASEID.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 0,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+  },
+  "name" : "DER1N_ZT_BUG_ZT_CASE_CASEID",
+  "orderValue" : 100,
   "getPSPickupDEField" : {
     "name" : "CASE",
     "codeName" : "IBizCase"
@@ -7,22 +22,7 @@
     "name" : "CASENAME",
     "codeName" : "Casename"
   },
-  "masterOrder" : -1,
-  "removeActionType" : -1,
   "pickupDEFName" : "CASEID",
-  "masterRS" : 0,
-  "removeOrder" : 0,
-  "getMajorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
-  },
-  "orderValue" : 100,
-  "codeName" : "ZTCase",
-  "dERType" : "DER1N",
-  "getMinorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
-  },
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_CASE_CASEID.json",
-  "name" : "DER1N_ZT_BUG_ZT_CASE_CASEID"
+  "removeActionType" : -1,
+  "removeOrder" : 0
 }

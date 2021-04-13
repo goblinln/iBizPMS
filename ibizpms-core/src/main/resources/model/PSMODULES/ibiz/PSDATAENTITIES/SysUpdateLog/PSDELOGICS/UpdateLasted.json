@@ -1,84 +1,84 @@
 {
-  "enableFront" : false,
-  "enableBackend" : true,
-  "getStartPSDELogicNode" : {
-    "modelref" : true,
-    "id" : "Begin"
-  },
-  "getPSDELogicNodes" : [ {
-    "parallelOutput" : true,
-    "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接8487"
-    } ],
-    "logicHolder" : 3,
-    "codeName" : "Begin",
-    "logicNodeType" : "BEGIN",
-    "name" : "开始"
-  }, {
-    "parallelOutput" : true,
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "UPDATEBRANCH",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[UPDATEBRANCH]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "SYS_UPDATE_LOGID",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[SYS_UPDATE_LOGID]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "LATESTUPDATE",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[LATESTUPDATE]"
-    } ],
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall1",
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "更新最新更新标识"
-  } ],
+  "codeName" : "UpdateLasted",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDELOGICS/UpdateLasted.json",
+  "logicHolder" : 1,
+  "logicName" : "更新最新更新标识",
+  "logicSubType" : "NONE",
+  "name" : "更新最新更新标识",
   "getPSDELogicLinks" : [ {
-    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "Rawsqlcall1"
     },
+    "name" : "连接8487",
     "getSrcPSDELogicNode" : {
       "modelref" : true,
       "id" : "Begin"
     },
-    "name" : "连接8487"
+    "defaultLink" : false
+  } ],
+  "getPSDELogicNodes" : [ {
+    "codeName" : "Begin",
+    "logicHolder" : 3,
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接8487"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall1",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicHolder" : 1,
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "更新最新更新标识",
+    "getPSDELogicNodeParams" : [ {
+      "name" : "Default[UPDATEBRANCH]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "UPDATEBRANCH",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[SYS_UPDATE_LOGID]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "SYS_UPDATE_LOGID",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[LATESTUPDATE]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "LATESTUPDATE",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
-    "lastParam" : false,
-    "envParam" : false,
     "codeName" : "Default",
+    "name" : "传入变量",
     "default" : true,
-    "name" : "传入变量"
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
   } ],
-  "logicHolder" : 1,
-  "codeName" : "UpdateLasted",
-  "logicName" : "更新最新更新标识",
-  "defaultParamName" : "Default",
-  "logicSubType" : "NONE",
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDELOGICS/UpdateLasted.json",
-  "name" : "更新最新更新标识"
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : true,
+  "enableFront" : false
 }

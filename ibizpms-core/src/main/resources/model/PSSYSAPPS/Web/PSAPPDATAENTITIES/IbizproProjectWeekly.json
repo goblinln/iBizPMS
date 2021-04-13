@@ -1,49 +1,288 @@
 {
-  "enableUIActions" : 15,
-  "enableUIRemove" : true,
-  "getAllPSAppDEUIActions" : [ {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectWeekly.json"
+  "getAllPSAppDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value",
+      "getPSAppDEField" : {
+        "name" : "IBZPRO_PROJECTWEEKLYID",
+        "codeName" : "PROJECTWEEKLYId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "IBZPRO_PROJECTWEEKLYNAME",
+        "codeName" : "PROJECTWEEKLYName"
+      }
+    } ],
+    "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "IBZPRO_PROJECTWEEKLYNAME",
+      "codeName" : "PROJECTWEEKLYName"
     },
-    "getPSAppDEMethod" : {
+    "getValuePSAppDEField" : {
+      "name" : "IBZPRO_PROJECTWEEKLYID",
+      "codeName" : "PROJECTWEEKLYId"
+    },
+    "defaultMode" : true,
+    "enablePagingBar" : false
+  } ],
+  "getAllPSAppDEActions" : [ {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "IBIZPROPROJECTWEEKLY__DEACTION__CREATE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "IBIZPROPROJECTWEEKLY__DEACTION__UPDATE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "IBIZPROPROJECTWEEKLY__DEACTION__REMOVE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "IBIZPROPROJECTWEEKLY__DEACTION__GET"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "PushSumProjectWeekly",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly/PSDEACTIONS/PushSumProjectWeekly.json"
+    },
+    "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "PushSumProjectWeekly"
     },
-    "frontProcessType" : "WIZARD",
-    "enableConfirm" : true,
-    "getNoPrivDisplayMode" : 2,
-    "timeout" : 60000,
-    "codeName" : "createProjectWeekly",
-    "caption" : "生成项目周报",
-    "actionTarget" : "NONE",
-    "dataAccessAction" : "SRFUR__PROJECT_MANAGER",
-    "uIActionTag" : "createProjectWeekly",
-    "uIActionType" : "DEUIACTION",
-    "uIActionMode" : "BACKEND",
-    "fullCodeName" : "IbizproProjectWeekly_createProjectWeekly",
-    "name" : "生成项目周报",
-    "id" : "createProjectWeekly@IbizproProjectWeekly"
-  } ],
-  "major" : true,
-  "getAllPSAppDEMethods" : [ {
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly/PSDEACTIONS/Save.json"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Select"
+      "id" : "Save"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "name" : "CREATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "Year",
+    "logicName" : "年",
+    "name" : "YEAR",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Enddatestats",
+    "logicName" : "结束统计",
+    "name" : "ENDDATESTATS",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "Tasks",
+    "logicName" : "任务",
+    "name" : "TASKS",
+    "stdDataType" : 25,
+    "stringLength" : 2000
+  }, {
+    "codeName" : "PROJECTWEEKLYName",
+    "logicName" : "项目周报名称",
+    "name" : "IBZPRO_PROJECTWEEKLYNAME",
+    "stdDataType" : 25,
+    "stringLength" : 200,
+    "enableQuickSearch" : true,
+    "majorField" : true
+  }, {
+    "codeName" : "Week",
+    "logicName" : "周",
+    "name" : "WEEK",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "PROJECTWEEKLYId",
+    "logicName" : "项目周报标识",
+    "name" : "IBZPRO_PROJECTWEEKLYID",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "keyField" : true
+  }, {
+    "codeName" : "PM",
+    "logicName" : "项目负责人",
+    "name" : "PM",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Date",
+    "logicName" : "日期",
+    "name" : "DATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD"
+  }, {
+    "codeName" : "Totalestimates",
+    "logicName" : "总工时",
+    "name" : "TOTALESTIMATES",
+    "precision" : 2,
+    "stdDataType" : 7
+  }, {
+    "codeName" : "Begindatestats",
+    "logicName" : "开始统计",
+    "name" : "BEGINDATESTATS",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "Month",
+    "logicName" : "月",
+    "name" : "MONTH",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "ProjectName",
+    "logicName" : "项目名称",
+    "name" : "PROJECTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 90
+  }, {
+    "codeName" : "Project",
+    "logicName" : "项目编号",
+    "name" : "PROJECT",
+    "stdDataType" : 1
+  } ],
+  "getAllPSAppDEMethods" : [ {
+    "codeName" : "Select",
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "Select"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "IBIZPROPROJECTWEEKLY__DEACTION__CREATE"
+      "id" : "Select"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Create",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -53,13 +292,13 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "codeName" : "Create"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "IBIZPROPROJECTWEEKLY__DEACTION__UPDATE"
+      "id" : "IBIZPROPROJECTWEEKLY__DEACTION__CREATE"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Update",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -69,13 +308,13 @@
       "modelref" : true,
       "id" : "UPDATE"
     },
-    "codeName" : "Update"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "IBIZPROPROJECTWEEKLY__DEACTION__REMOVE"
+      "id" : "IBIZPROPROJECTWEEKLY__DEACTION__UPDATE"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Remove",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -85,13 +324,13 @@
       "modelref" : true,
       "id" : "DELETE"
     },
-    "codeName" : "Remove"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "IBIZPROPROJECTWEEKLY__DEACTION__GET"
+      "id" : "IBIZPROPROJECTWEEKLY__DEACTION__REMOVE"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -101,13 +340,13 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "Get"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "GetDraft"
+      "id" : "IBIZPROPROJECTWEEKLY__DEACTION__GET"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
@@ -117,49 +356,49 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "codeName" : "GetDraft"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "CheckKey"
+      "id" : "GetDraft"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly/PSDEACTIONS/CheckKey.json"
     },
-    "codeName" : "CheckKey"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "PushSumProjectWeekly"
+      "id" : "CheckKey"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "PushSumProjectWeekly",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly/PSDEACTIONS/PushSumProjectWeekly.json"
     },
-    "codeName" : "PushSumProjectWeekly"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Save"
+      "id" : "PushSumProjectWeekly"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Save",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly/PSDEACTIONS/Save.json"
     },
-    "codeName" : "Save"
-  }, {
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchDefault"
+      "id" : "Save"
     },
-    "builtinMethod" : false,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -169,318 +408,70 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "codeName" : "FetchDefault"
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false
   }, {
-    "builtinMethod" : true,
-    "methodType" : "FILTERACTION",
     "codeName" : "FilterUpdate",
-    "name" : "FILTERUPDATE"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterSearch",
-    "name" : "FILTERSEARCH"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERSEARCH",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterGet",
-    "name" : "FILTERGET"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERGET",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterCreate",
-    "name" : "FILTERCREATE"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERCREATE",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterGetDraft",
-    "name" : "FILTERGETDRAFT"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERGETDRAFT",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterRemove",
-    "name" : "FILTERREMOVE"
-  }, {
-    "builtinMethod" : true,
     "methodType" : "FILTERACTION",
+    "name" : "FILTERREMOVE",
+    "builtinMethod" : true
+  }, {
     "codeName" : "FilterFetch",
-    "name" : "FILTERFETCH"
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERFETCH",
+    "builtinMethod" : true
   } ],
-  "getAllPSAppDEFields" : [ {
-    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
-    "codeName" : "CreateDate",
-    "logicName" : "建立时间",
-    "stdDataType" : 5,
-    "name" : "CREATEDATE"
-  }, {
-    "codeName" : "UpdateMan",
-    "logicName" : "更新人",
-    "stringLength" : 60,
-    "stdDataType" : 25,
-    "name" : "UPDATEMAN"
-  }, {
-    "codeName" : "Year",
-    "logicName" : "年",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "name" : "YEAR"
-  }, {
-    "codeName" : "Enddatestats",
-    "logicName" : "结束统计",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "name" : "ENDDATESTATS"
-  }, {
-    "codeName" : "CreateMan",
-    "logicName" : "建立人",
-    "stringLength" : 60,
-    "stdDataType" : 25,
-    "name" : "CREATEMAN"
-  }, {
-    "codeName" : "Tasks",
-    "logicName" : "任务",
-    "stringLength" : 2000,
-    "stdDataType" : 25,
-    "name" : "TASKS"
-  }, {
-    "majorField" : true,
-    "codeName" : "PROJECTWEEKLYName",
-    "logicName" : "项目周报名称",
-    "stringLength" : 200,
-    "stdDataType" : 25,
-    "enableQuickSearch" : true,
-    "name" : "IBZPRO_PROJECTWEEKLYNAME"
-  }, {
-    "codeName" : "Week",
-    "logicName" : "周",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "name" : "WEEK"
-  }, {
-    "keyField" : true,
-    "codeName" : "PROJECTWEEKLYId",
-    "logicName" : "项目周报标识",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "name" : "IBZPRO_PROJECTWEEKLYID"
-  }, {
-    "codeName" : "PM",
-    "logicName" : "项目负责人",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "name" : "PM"
-  }, {
-    "valueFormat" : "YYYY-MM-DD",
-    "codeName" : "Date",
-    "logicName" : "日期",
-    "stdDataType" : 5,
-    "name" : "DATE"
-  }, {
-    "precision" : 2,
-    "codeName" : "Totalestimates",
-    "logicName" : "总工时",
-    "stdDataType" : 7,
-    "name" : "TOTALESTIMATES"
-  }, {
-    "codeName" : "Begindatestats",
-    "logicName" : "开始统计",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "name" : "BEGINDATESTATS"
-  }, {
-    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
-    "codeName" : "UpdateDate",
-    "logicName" : "更新时间",
-    "stdDataType" : 5,
-    "name" : "UPDATEDATE"
-  }, {
-    "codeName" : "Month",
-    "logicName" : "月",
-    "stringLength" : 100,
-    "stdDataType" : 25,
-    "name" : "MONTH"
-  }, {
-    "codeName" : "ProjectName",
-    "logicName" : "项目名称",
-    "stringLength" : 90,
-    "stdDataType" : 25,
-    "name" : "PROJECTNAME"
-  }, {
-    "codeName" : "Project",
-    "logicName" : "项目编号",
-    "stdDataType" : 1,
-    "name" : "PROJECT"
-  } ],
-  "getAllPSAppDEACModes" : [ {
-    "enablePagingBar" : false,
-    "getPSDEACModeDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "IBZPRO_PROJECTWEEKLYID",
-        "codeName" : "PROJECTWEEKLYId"
-      },
-      "name" : "value",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "IBZPRO_PROJECTWEEKLYNAME",
-        "codeName" : "PROJECTWEEKLYName"
-      },
-      "name" : "text",
-      "dataType" : 25
-    } ],
-    "getValuePSAppDEField" : {
-      "name" : "IBZPRO_PROJECTWEEKLYID",
-      "codeName" : "PROJECTWEEKLYId"
-    },
-    "getTextPSAppDEField" : {
-      "name" : "IBZPRO_PROJECTWEEKLYNAME",
-      "codeName" : "PROJECTWEEKLYName"
-    },
-    "codeName" : "Default",
-    "logicName" : "DEFAULT",
-    "defaultMode" : true,
-    "pagingSize" : 50,
-    "name" : "DEFAULT"
-  } ],
-  "enableFilterActions" : true,
-  "enableWFActions" : false,
-  "getQuickSearchPSAppDEFields" : [ {
-    "name" : "IBZPRO_PROJECTWEEKLYNAME",
-    "codeName" : "PROJECTWEEKLYName"
-  } ],
-  "getAllPSAppDEActions" : [ {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "IBIZPROPROJECTWEEKLY__DEACTION__CREATE"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "codeName" : "Create"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "IBIZPROPROJECTWEEKLY__DEACTION__UPDATE"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "codeName" : "Update"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "IBIZPROPROJECTWEEKLY__DEACTION__REMOVE"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "codeName" : "Remove"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "IBIZPROPROJECTWEEKLY__DEACTION__GET"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "codeName" : "Get"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "codeName" : "GetDraft"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CheckKey"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly/PSDEACTIONS/CheckKey.json"
-    },
-    "codeName" : "CheckKey"
-  }, {
-    "getPSDEServiceAPIMethod" : {
+  "getAllPSAppDEUIActions" : [ {
+    "actionTarget" : "NONE",
+    "getNoPrivDisplayMode" : 2,
+    "caption" : "生成项目周报",
+    "codeName" : "createProjectWeekly",
+    "dataAccessAction" : "SRFUR__PROJECT_MANAGER",
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "IbizproProjectWeekly_createProjectWeekly",
+    "name" : "生成项目周报",
+    "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "PushSumProjectWeekly"
     },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
+    "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly/PSDEACTIONS/PushSumProjectWeekly.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectWeekly.json"
     },
-    "codeName" : "PushSumProjectWeekly"
-  }, {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Save"
-    },
-    "builtinMethod" : false,
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly/PSDEACTIONS/Save.json"
-    },
-    "codeName" : "Save"
-  } ],
-  "getAllPSAppDEDataSets" : [ {
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
-    },
-    "builtinMethod" : false,
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "codeName" : "FetchDefault"
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "createProjectWeekly",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "id" : "createProjectWeekly@IbizproProjectWeekly"
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
@@ -495,18 +486,27 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "codeName" : "IbizproProjectWeekly",
+  "dataAccCtrlArch" : 1,
+  "dataAccCtrlMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectWeekly.json",
+  "enableUIActions" : 15,
+  "logicName" : "项目周报",
+  "name" : "IBZPRO_PROJECTWEEKLY",
   "getPSDEServiceAPI" : {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly/PSDESERVICEAPIS/IbizproProjectWeekly.json"
   },
-  "codeName" : "IbizproProjectWeekly",
-  "logicName" : "项目周报",
-  "dataAccCtrlMode" : 1,
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "IBZPRO_PROJECTWEEKLYNAME",
+    "codeName" : "PROJECTWEEKLYName"
+  } ],
   "storageMode" : 0,
-  "dataAccCtrlArch" : 1,
+  "defaultMode" : true,
+  "enableFilterActions" : true,
   "enableUICreate" : true,
   "enableUIModify" : true,
-  "defaultMode" : true,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectWeekly.json",
-  "name" : "IBZPRO_PROJECTWEEKLY"
+  "enableUIRemove" : true,
+  "enableWFActions" : false,
+  "major" : true
 }

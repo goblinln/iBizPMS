@@ -1,23 +1,23 @@
 {
-  "transactionMode" : "DEFAULT",
-  "paramMode" : 1,
-  "generateTestUnit" : false,
-  "customParam" : false,
-  "builtinAction" : true,
-  "pubServiceDefault" : true,
-  "timeOut" : -1,
+  "actionMode" : "GETDRAFT",
+  "actionType" : "BUILTIN",
+  "codeName" : "GetDraft",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/GetDraft.json",
   "extendMode" : 0,
+  "logicName" : "GetDraft",
+  "name" : "GetDraft",
+  "orderValue" : 41,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "CREATE"
   },
-  "orderValue" : 41,
-  "codeName" : "GetDraft",
-  "logicName" : "GetDraft",
-  "actionMode" : "GETDRAFT",
-  "actionType" : "BUILTIN",
+  "paramMode" : 1,
   "requestParamType" : "NONE",
   "testActionMode" : 0,
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/GetDraft.json",
-  "name" : "GetDraft"
+  "timeOut" : -1,
+  "transactionMode" : "DEFAULT",
+  "builtinAction" : true,
+  "customParam" : false,
+  "generateTestUnit" : false,
+  "pubServiceDefault" : true
 }

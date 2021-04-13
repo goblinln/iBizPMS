@@ -1,99 +1,99 @@
 {
-  "codeItemValueNumber" : false,
-  "subSysCodeList" : false,
-  "subSysAsCloud" : false,
-  "systemTag" : "iBizPMS",
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/ActionManner.json",
   "codeName" : "ActionManner",
-  "userScope" : false,
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/ActionManner.json",
   "emptyText" : "未定义",
-  "enableCache" : true,
-  "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "story_closed_willnotdo",
     "codeName" : "Story_closed_willnotdo",
-    "text" : "不做"
+    "text" : "不做",
+    "value" : "story_closed_willnotdo"
   }, {
-    "value" : "story_closed_cancel",
     "codeName" : "Story_closed_cancel",
-    "text" : "已取消"
+    "text" : "已取消",
+    "value" : "story_closed_cancel"
   }, {
-    "value" : "story_closed_done",
     "codeName" : "Story_closed_done",
-    "text" : "已完成"
+    "text" : "已完成",
+    "value" : "story_closed_done"
   }, {
-    "value" : "story_closed_subdivided",
     "codeName" : "Story_closed_subdivided",
-    "text" : "已细分"
+    "text" : "已细分",
+    "value" : "story_closed_subdivided"
   }, {
-    "value" : "story_closed_postponed",
     "codeName" : "Story_closed_postponed",
-    "text" : "延期"
+    "text" : "延期",
+    "value" : "story_closed_postponed"
   }, {
-    "value" : "story_closed_bydesign",
     "codeName" : "Story_closed_bydesign",
-    "text" : "设计如此"
+    "text" : "设计如此",
+    "value" : "story_closed_bydesign"
   }, {
-    "value" : "story_closed_duplicate",
     "codeName" : "Story_closed_duplicate",
-    "text" : "重复"
+    "text" : "重复",
+    "value" : "story_closed_duplicate"
   }, {
-    "value" : "bug_resolved_willnotfix",
     "codeName" : "Bug_resolved_willnotfix",
-    "text" : "不予解决"
+    "text" : "不予解决",
+    "value" : "bug_resolved_willnotfix"
   }, {
-    "value" : "bug_resolved_external",
     "codeName" : "Bug_resolved_external",
-    "text" : "外部原因"
+    "text" : "外部原因",
+    "value" : "bug_resolved_external"
   }, {
-    "value" : "bug_resolved_fixed",
     "codeName" : "Bug_resolved_fixed",
-    "text" : "已解决"
+    "text" : "已解决",
+    "value" : "bug_resolved_fixed"
   }, {
-    "value" : "bug_resolved_postponed",
     "codeName" : "Bug_resolved_postponed",
-    "text" : "延期处理"
+    "text" : "延期处理",
+    "value" : "bug_resolved_postponed"
   }, {
-    "value" : "bug_resolved_notrepro",
     "codeName" : "Bug_resolved_notrepro",
-    "text" : "无法重现"
+    "text" : "无法重现",
+    "value" : "bug_resolved_notrepro"
   }, {
-    "value" : "bug_resolved_bydesign",
     "codeName" : "Bug_resolved_bydesign",
-    "text" : "设计如此"
+    "text" : "设计如此",
+    "value" : "bug_resolved_bydesign"
   }, {
-    "value" : "bug_resolved_tostory",
     "codeName" : "Bug_resolved_tostory",
-    "text" : "转为需求"
+    "text" : "转为需求",
+    "value" : "bug_resolved_tostory"
   }, {
-    "value" : "bug_resolved_duplicate",
     "codeName" : "Bug_resolved_duplicate",
-    "text" : "重复Bug"
+    "text" : "重复Bug",
+    "value" : "bug_resolved_duplicate"
   }, {
-    "value" : "story_reviewed_reject",
     "codeName" : "Story_reviewed_reject",
-    "text" : "拒绝"
+    "text" : "拒绝",
+    "value" : "story_reviewed_reject"
   }, {
-    "value" : "story_reviewed_revert",
     "codeName" : "Story_reviewed_revert",
-    "text" : "撤销变更"
+    "text" : "撤销变更",
+    "value" : "story_reviewed_revert"
   }, {
-    "value" : "story_reviewed_clarify",
     "codeName" : "Story_reviewed_clarify",
-    "text" : "有待明确"
+    "text" : "有待明确",
+    "value" : "story_reviewed_clarify"
   }, {
-    "value" : "story_reviewed_pass",
     "codeName" : "Story_reviewed_pass",
-    "text" : "确认通过"
+    "text" : "确认通过",
+    "value" : "story_reviewed_pass"
   }, {
-    "value" : " release_changestatus_terminate",
     "codeName" : "_release_changestatus_terminate",
-    "text" : "停止维护"
+    "text" : "停止维护",
+    "value" : " release_changestatus_terminate"
   }, {
-    "value" : " release_changestatus_normal",
     "codeName" : "_release_changestatus_normal",
-    "text" : "正常"
-  } ]
+    "text" : "正常",
+    "value" : " release_changestatus_normal"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
 }

@@ -1,267 +1,267 @@
 {
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "id",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DESC",
-      "codeName" : "Desc"
-    },
-    "name" : "desc",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
-    "name" : "name",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
-    "name" : "srfmajortext",
-    "dataType" : 25
-  }, {
-    "dataAccessAction" : true,
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfkey",
-    "dataType" : 1
-  } ],
-  "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
-  "enableRowNew" : false,
-  "enableRowEditOrder" : false,
-  "noSort" : false,
-  "getPSDEGridEditItems" : [ {
-    "getPSEditor" : {
-      "editorType" : "HIDDEN",
-      "name" : "srfkey"
-    },
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "allowEmpty" : true,
-    "enableCond" : 0,
-    "ignoreInput" : 0,
-    "codeName" : "srfkey",
-    "caption" : "ID",
-    "name" : "srfkey"
-  } ],
-  "hasWFDataItems" : false,
-  "columnEnableLink" : 2,
-  "enableColFilter" : false,
-  "singleSelect" : false,
-  "enablePagingBar" : true,
-  "enableRowEdit" : false,
-  "controlType" : "GRID",
-  "getPSDEGridColumns" : [ {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "dataItemName" : "id",
-    "excelCaption" : "ID",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : true,
-    "width" : 70,
-    "codeName" : "id",
-    "caption" : "ID",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
-    "widthUnit" : "PX",
-    "name" : "id"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
-    "dataItemName" : "name",
-    "excelCaption" : "分组名称",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : true,
-    "width" : 150,
-    "codeName" : "name",
-    "caption" : "分组名称",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
-    "widthUnit" : "PX",
-    "name" : "name"
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DESC",
-      "codeName" : "Desc"
-    },
-    "dataItemName" : "desc",
-    "excelCaption" : "分组描述",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : true,
-    "width" : 1,
-    "codeName" : "desc",
-    "caption" : "分组描述",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
-    "widthUnit" : "STAR",
-    "name" : "desc"
-  }, {
-    "getPSDEUIActionGroup" : {
-      "getPSUIActionGroupDetails" : [ {
-        "showIcon" : true,
-        "getPSUIAction" : {
-          "getCapPSLanguageRes" : {
-            "lanResTag" : "TBB.TEXT.*.EDIT",
-            "id" : "工具栏按钮文本[*.EDIT]"
-          },
-          "getTooltipPSLanguageRes" : {
-            "lanResTag" : "TBB.TOOLTIP.*.EDIT",
-            "id" : "工具栏按钮提示[*.EDIT]"
-          },
-          "getNoPrivDisplayMode" : 2,
-          "getPSSysImage" : {
-            "glyph" : "xf044@FontAwesome",
-            "cssClass" : "fa fa-edit"
-          },
-          "timeout" : 60000,
-          "codeName" : "Edit",
-          "caption" : "编辑",
-          "actionTarget" : "SINGLEKEY",
-          "uIActionTag" : "Edit",
-          "uIActionType" : "DEUIACTION",
-          "uIActionMode" : "SYS",
-          "fullCodeName" : "Edit",
-          "name" : "表格界面_编辑操作"
-        },
-        "addSeparator" : false,
-        "showCaption" : true,
-        "detailType" : "DEUIACTION",
-        "name" : "ud6e0c52"
-      }, {
-        "showIcon" : true,
-        "getPSUIAction" : {
-          "getCapPSLanguageRes" : {
-            "lanResTag" : "TBB.TEXT.*.REMOVE",
-            "id" : "工具栏按钮文本[*.REMOVE]"
-          },
-          "getTooltipPSLanguageRes" : {
-            "lanResTag" : "TBB.TOOLTIP.*.REMOVE",
-            "id" : "工具栏按钮提示[*.REMOVE]"
-          },
-          "getNoPrivDisplayMode" : 2,
-          "getPSSysImage" : {
-            "glyph" : "xf00d@FontAwesome",
-            "cssClass" : "fa fa-remove"
-          },
-          "timeout" : 60000,
-          "codeName" : "Remove",
-          "caption" : "删除",
-          "actionTarget" : "MULTIKEY",
-          "dataAccessAction" : "SRFUR__UNIVERSALDELETE",
-          "uIActionTag" : "Remove",
-          "uIActionType" : "DEUIACTION",
-          "uIActionMode" : "SYS",
-          "fullCodeName" : "Remove",
-          "name" : "表格界面_删除操作"
-        },
-        "addSeparator" : false,
-        "showCaption" : true,
-        "detailType" : "DEUIACTION",
-        "name" : "uf4eeb77"
-      } ],
-      "name" : "群组表格操作列"
-    },
-    "noPrivDisplayMode" : 1,
-    "enableSort" : false,
-    "width" : 300,
-    "codeName" : "uagridcolumn1",
-    "caption" : "操作",
-    "columnType" : "UAGRIDCOLUMN",
-    "align" : "CENTER",
-    "widthUnit" : "PX",
-    "name" : "uagridcolumn1"
-  } ],
-  "codeName" : "Main",
-  "enableGroup" : false,
-  "hideHeader" : false,
-  "forceFit" : false,
-  "pagingSize" : 20,
   "aggMode" : "NONE",
-  "groupMode" : "NONE",
-  "sortMode" : "REMOTE",
+  "codeName" : "Main",
+  "columnEnableLink" : 2,
+  "controlType" : "GRID",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group/PSGRIDS/Main.json",
   "getFetchPSControlAction" : {
     "modelref" : true,
     "id" : "fetch"
   },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "主表格",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
+  },
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "grid_uagridcolumn1_ud6e0c52_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "表格界面_编辑操作"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "grid_uagridcolumn1_uf4eeb77_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "表格界面_删除操作"
+    }
+  } ],
   "getPSAppViewUIActions" : [ {
-    "xDataControlName" : "grid",
+    "name" : "表格界面_编辑操作",
     "getPSUIAction" : {
       "modelref" : true,
       "id" : "Edit"
     },
     "uIActionTarget" : "SINGLEKEY",
-    "name" : "表格界面_编辑操作"
+    "xDataControlName" : "grid"
   }, {
-    "xDataControlName" : "grid",
+    "name" : "表格界面_删除操作",
     "getPSUIAction" : {
       "modelref" : true,
       "id" : "Remove"
     },
     "uIActionTarget" : "MULTIKEY",
-    "name" : "表格界面_删除操作"
+    "xDataControlName" : "grid"
   } ],
-  "getPSAppViewLogics" : [ {
-    "logicTrigger" : "CUSTOM",
-    "getPSAppViewUIAction" : {
-      "modelref" : true,
-      "id" : "表格界面_编辑操作"
+  "getPSDEGridColumns" : [ {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "ID",
+    "codeName" : "id",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "id",
+    "excelCaption" : "ID",
+    "name" : "id",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
     },
-    "logicType" : "APPVIEWUIACTION",
-    "name" : "grid_uagridcolumn1_ud6e0c52_click"
+    "width" : 70,
+    "widthUnit" : "PX",
+    "enableSort" : true
   }, {
-    "logicTrigger" : "CUSTOM",
-    "getPSAppViewUIAction" : {
-      "modelref" : true,
-      "id" : "表格界面_删除操作"
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "分组名称",
+    "codeName" : "name",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "name",
+    "excelCaption" : "分组名称",
+    "name" : "name",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
     },
-    "logicType" : "APPVIEWUIACTION",
-    "name" : "grid_uagridcolumn1_uf4eeb77_click"
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "分组描述",
+    "codeName" : "desc",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "desc",
+    "excelCaption" : "分组描述",
+    "name" : "desc",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "DESC",
+      "codeName" : "Desc"
+    },
+    "width" : 1,
+    "widthUnit" : "STAR",
+    "enableSort" : true
+  }, {
+    "align" : "CENTER",
+    "caption" : "操作",
+    "codeName" : "uagridcolumn1",
+    "columnType" : "UAGRIDCOLUMN",
+    "name" : "uagridcolumn1",
+    "noPrivDisplayMode" : 1,
+    "getPSDEUIActionGroup" : {
+      "name" : "群组表格操作列",
+      "getPSUIActionGroupDetails" : [ {
+        "detailType" : "DEUIACTION",
+        "name" : "ud6e0c52",
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "getNoPrivDisplayMode" : 2,
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.EDIT",
+            "id" : "工具栏按钮文本[*.EDIT]"
+          },
+          "caption" : "编辑",
+          "codeName" : "Edit",
+          "fullCodeName" : "Edit",
+          "name" : "表格界面_编辑操作",
+          "getPSSysImage" : {
+            "glyph" : "xf044@FontAwesome",
+            "cssClass" : "fa fa-edit"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.EDIT",
+            "id" : "工具栏按钮提示[*.EDIT]"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "Edit",
+          "uIActionType" : "DEUIACTION"
+        },
+        "addSeparator" : false,
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "detailType" : "DEUIACTION",
+        "name" : "uf4eeb77",
+        "getPSUIAction" : {
+          "actionTarget" : "MULTIKEY",
+          "getNoPrivDisplayMode" : 2,
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.REMOVE",
+            "id" : "工具栏按钮文本[*.REMOVE]"
+          },
+          "caption" : "删除",
+          "codeName" : "Remove",
+          "dataAccessAction" : "SRFUR__UNIVERSALDELETE",
+          "fullCodeName" : "Remove",
+          "name" : "表格界面_删除操作",
+          "getPSSysImage" : {
+            "glyph" : "xf00d@FontAwesome",
+            "cssClass" : "fa fa-remove"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.REMOVE",
+            "id" : "工具栏按钮提示[*.REMOVE]"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "Remove",
+          "uIActionType" : "DEUIACTION"
+        },
+        "addSeparator" : false,
+        "showCaption" : true,
+        "showIcon" : true
+      } ]
+    },
+    "width" : 300,
+    "widthUnit" : "PX",
+    "enableSort" : false
   } ],
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
+  "getPSDEGridDataItems" : [ {
+    "dataType" : 1,
+    "name" : "id",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "desc",
+    "getPSAppDEField" : {
+      "name" : "DESC",
+      "codeName" : "Desc"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "name",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "ID",
+    "codeName" : "srfkey",
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
+  "pagingSize" : 20,
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json"
+    }
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Group/PSGRIDS/Main.json",
-  "logicName" : "主表格",
+  "sortMode" : "REMOTE",
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableGroup" : false,
+  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : false,
+  "singleSelect" : false,
   "modelid" : "a813b0da34be74b92d86c1364b7ac61a"
 }

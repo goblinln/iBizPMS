@@ -1,31 +1,31 @@
 {
-  "codeItemValueNumber" : true,
-  "subSysCodeList" : false,
-  "subSysAsCloud" : false,
-  "systemTag" : "iBizPMS",
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/RELEASE_rebuild.json",
   "codeName" : "RELEASE_rebuild",
-  "userScope" : false,
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/RELEASE_rebuild.json",
   "emptyText" : "未定义",
-  "enableCache" : true,
-  "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "0",
     "codeName" : "None",
-    "text" : "无操作"
+    "text" : "无操作",
+    "value" : "0"
   }, {
-    "value" : "1",
     "codeName" : "Quick",
-    "text" : "快速（删除本地项目与代码仓库多余文件）"
+    "text" : "快速（删除本地项目与代码仓库多余文件）",
+    "value" : "1"
   }, {
-    "value" : "4",
     "codeName" : "FixModel",
-    "text" : "修复模型"
+    "text" : "修复模型",
+    "value" : "4"
   }, {
-    "value" : "2",
     "codeName" : "Full",
-    "text" : "完整（完全重建本地项目及代码仓库）"
-  } ]
+    "text" : "完整（完全重建本地项目及代码仓库）",
+    "value" : "2"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : true,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
 }

@@ -1,989 +1,989 @@
 {
-  "enableFront" : false,
-  "enableBackend" : true,
-  "getStartPSDELogicNode" : {
-    "modelref" : true,
-    "id" : "Begin"
-  },
+  "codeName" : "GetInfoTestTaskOvProject",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDELOGICS/GetInfoTestTaskOvProject.json",
+  "logicHolder" : 1,
+  "logicName" : "根据测试报告概况信息（项目报告）",
+  "logicSubType" : "NONE",
+  "name" : "根据测试报告概况信息（项目报告）",
+  "getPSDELogicLinks" : [ {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "name" : "连接2885",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall14"
+    },
+    "name" : "连接6952",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall13"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall2"
+    },
+    "name" : "连接9019",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall13"
+    },
+    "name" : "连接7154",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall12"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall9"
+    },
+    "name" : "连接8691",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall8"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall10"
+    },
+    "name" : "连接8440",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall14"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall4"
+    },
+    "name" : "连接715",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall3"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall7"
+    },
+    "name" : "连接6472",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall6"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall12"
+    },
+    "name" : "连接1775",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall4"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall11"
+    },
+    "name" : "连接4549",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall10"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall3"
+    },
+    "name" : "连接4999",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall2"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall5"
+    },
+    "name" : "连接3617",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall11"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall8"
+    },
+    "name" : "连接1248",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall7"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall6"
+    },
+    "name" : "连接7149",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall5"
+    },
+    "defaultLink" : false
+  } ],
   "getPSDELogicNodes" : [ {
-    "parallelOutput" : true,
+    "codeName" : "Rawsqlcall2",
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取用例数",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接4999"
     } ],
     "getPSDELogicNodeParams" : [ {
+      "name" : "Default[CASES]",
       "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
       "srcFieldName" : "CASES",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[CASES]"
-    }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
       "srcFieldName" : "TASKS",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[TASKS]"
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
     } ],
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall2",
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "获取用例数"
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
+    "codeName" : "Begin",
+    "logicHolder" : 3,
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接2885"
     } ],
-    "logicHolder" : 3,
-    "codeName" : "Begin",
-    "logicNodeType" : "BEGIN",
-    "name" : "开始"
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
+    "codeName" : "Rawsqlcall12",
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "测试版本",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接7154"
     } ],
     "getPSDELogicNodeParams" : [ {
+      "name" : "Default[BUILDS]",
       "paramAction" : "SQLPARAM",
+      "srcFieldName" : "BUILDS",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "srcFieldName" : "BUILDS",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[BUILDS]"
+      "srcValueType" : "SRCDLPARAM"
     } ],
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall12",
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "测试版本"
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
+    "codeName" : "Rawsqlcall3",
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "执行的用例数",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接715"
     } ],
     "getPSDELogicNodeParams" : [ {
+      "name" : "Default[CASES]",
       "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
       "srcFieldName" : "CASES",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[CASES]"
-    }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
       "srcFieldName" : "TASKS",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[TASKS]"
-    }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[BEGIN]",
+      "paramAction" : "SQLPARAM",
       "srcFieldName" : "BEGIN",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[BEGIN]"
-    }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[END]",
+      "paramAction" : "SQLPARAM",
       "srcFieldName" : "END",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[END]"
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
     } ],
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall3",
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "执行的用例数"
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
+    "codeName" : "Rawsqlcall5",
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "执行结果",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接7149"
     } ],
     "getPSDELogicNodeParams" : [ {
+      "name" : "Default[TASKS]",
       "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
       "srcFieldName" : "TASKS",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[TASKS]"
-    }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[CASES]",
+      "paramAction" : "SQLPARAM",
       "srcFieldName" : "CASES",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[CASES]"
-    }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[BEGIN]",
+      "paramAction" : "SQLPARAM",
       "srcFieldName" : "BEGIN",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[BEGIN]"
-    }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[END]",
+      "paramAction" : "SQLPARAM",
       "srcFieldName" : "END",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[END]"
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
     } ],
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall5",
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "执行结果"
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
+    "codeName" : "Rawsqlcall7",
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "解决的Bug",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接1248"
     } ],
     "getPSDELogicNodeParams" : [ {
+      "name" : "Default[TASKS]",
       "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
       "srcFieldName" : "TASKS",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[TASKS]"
-    }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[BEGIN]",
+      "paramAction" : "SQLPARAM",
       "srcFieldName" : "BEGIN",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[BEGIN]"
-    }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[END]",
+      "paramAction" : "SQLPARAM",
       "srcFieldName" : "END",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[END]"
-    }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
       "srcFieldName" : "TASKS",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[TASKS]"
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
     } ],
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall7",
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "解决的Bug"
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
+    "codeName" : "Rawsqlcall6",
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "有效Bug数",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接6472"
     } ],
     "getPSDELogicNodeParams" : [ {
+      "name" : "Default[TASKS]",
       "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
       "srcFieldName" : "TASKS",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[TASKS]"
-    }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[BEGIN]",
+      "paramAction" : "SQLPARAM",
       "srcFieldName" : "BEGIN",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[BEGIN]"
-    }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[END]",
+      "paramAction" : "SQLPARAM",
       "srcFieldName" : "END",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[END]"
-    }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
       "srcFieldName" : "TASKS",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[TASKS]"
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
     } ],
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall6",
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "有效Bug数"
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
+    "codeName" : "Rawsqlcall14",
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "需求覆盖用例数",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接8440"
     } ],
     "getPSDELogicNodeParams" : [ {
+      "name" : "Default[STORIES]",
       "paramAction" : "SQLPARAM",
+      "srcFieldName" : "STORIES",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "srcFieldName" : "STORIES",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[STORIES]"
+      "srcValueType" : "SRCDLPARAM"
     } ],
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall14",
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "需求覆盖用例数"
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
+    "codeName" : "Rawsqlcall8",
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "产生的Bug",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接8691"
     } ],
     "getPSDELogicNodeParams" : [ {
+      "name" : "Default[TASKS]",
       "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
       "srcFieldName" : "TASKS",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[TASKS]"
-    }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[BEGIN]",
+      "paramAction" : "SQLPARAM",
       "srcFieldName" : "BEGIN",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[BEGIN]"
-    }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[END]",
+      "paramAction" : "SQLPARAM",
       "srcFieldName" : "END",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[END]"
-    }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
       "srcFieldName" : "TASKS",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[TASKS]"
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
     } ],
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall8",
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "产生的Bug"
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "storycnt",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[storycnt]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "storyestimate",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[storyestimate]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "storyestimate",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[storyestimate]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "casecnts",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[casecnts]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "storycnts",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[storycnts]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "storycnts",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[storycnts]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "storycnts",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[storycnts]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "buildcnt",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[buildcnt]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "casecnt",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[casecnt]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "rencase",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[rencase]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "testresultcnt",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[testresultcnt]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "failcase",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[failcase]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "bugcnt",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[bugcnt]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "ylbugcnt",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[ylbugcnt]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "casebugcnt",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[casebugcnt]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "resolvedcnt",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[resolvedcnt]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "resolvedcnt",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[resolvedcnt]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "effective",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[effective]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "resolvedcnt",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[resolvedcnt]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "resolvedcnt",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[resolvedcnt]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "resolvedcnt",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[resolvedcnt]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "bugcnt",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[bugcnt]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "bugcnt",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[bugcnt]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "casebugcnt",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[casebugcnt]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "bugcnt",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[bugcnt]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "bugcnt",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[bugcnt]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "bugcnt",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[bugcnt]"
-    } ],
-    "logicHolder" : 1,
     "codeName" : "Rawsqlcall9",
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "设置概况"
-  }, {
-    "parallelOutput" : true,
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "设置概况",
+    "getPSDELogicNodeParams" : [ {
+      "name" : "Default[storycnt]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "storycnt",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[storyestimate]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "storyestimate",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[storyestimate]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "storyestimate",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[casecnts]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "casecnts",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[storycnts]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "storycnts",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[storycnts]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "storycnts",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[storycnts]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "storycnts",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[buildcnt]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "buildcnt",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[casecnt]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "casecnt",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[rencase]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "rencase",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[testresultcnt]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "testresultcnt",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[failcase]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "failcase",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[bugcnt]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "bugcnt",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[ylbugcnt]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "ylbugcnt",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[casebugcnt]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "casebugcnt",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[resolvedcnt]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "resolvedcnt",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[resolvedcnt]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "resolvedcnt",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[effective]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "effective",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[resolvedcnt]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "resolvedcnt",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[resolvedcnt]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "resolvedcnt",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[resolvedcnt]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "resolvedcnt",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[bugcnt]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "bugcnt",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[bugcnt]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "bugcnt",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[casebugcnt]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "casebugcnt",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[bugcnt]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "bugcnt",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[bugcnt]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "bugcnt",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[bugcnt]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "bugcnt",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall11",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicHolder" : 1,
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "用例产生的Bug",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接3617"
     } ],
     "getPSDELogicNodeParams" : [ {
+      "name" : "Default[TASKS]",
       "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
       "srcFieldName" : "TASKS",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[TASKS]"
-    }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[BEGIN]",
+      "paramAction" : "SQLPARAM",
       "srcFieldName" : "BEGIN",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[BEGIN]"
-    }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[END]",
+      "paramAction" : "SQLPARAM",
       "srcFieldName" : "END",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[END]"
-    }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
       "srcFieldName" : "TASKS",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[TASKS]"
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
     } ],
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall11",
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "用例产生的Bug"
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
+    "codeName" : "Rawsqlcall4",
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "失败的用例数",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接1775"
     } ],
     "getPSDELogicNodeParams" : [ {
+      "name" : "Default[CASES]",
       "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
       "srcFieldName" : "CASES",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[CASES]"
-    }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
       "srcFieldName" : "TASKS",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[TASKS]"
-    }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[BEGIN]",
+      "paramAction" : "SQLPARAM",
       "srcFieldName" : "BEGIN",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[BEGIN]"
-    }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[END]",
+      "paramAction" : "SQLPARAM",
       "srcFieldName" : "END",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[END]"
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
     } ],
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall4",
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "失败的用例数"
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
+    "codeName" : "Rawsqlcall10",
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "遗留Bug",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接4549"
     } ],
     "getPSDELogicNodeParams" : [ {
+      "name" : "Default[TASKS]",
       "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
       "srcFieldName" : "TASKS",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[TASKS]"
-    }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[BEGIN]",
+      "paramAction" : "SQLPARAM",
       "srcFieldName" : "BEGIN",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[BEGIN]"
-    }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[END]",
+      "paramAction" : "SQLPARAM",
       "srcFieldName" : "END",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[END]"
-    }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[TASKS]",
+      "paramAction" : "SQLPARAM",
       "srcFieldName" : "TASKS",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[TASKS]"
-    }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[END]",
+      "paramAction" : "SQLPARAM",
       "srcFieldName" : "END",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[END]"
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
     } ],
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall10",
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "遗留Bug"
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
+    "codeName" : "Rawsqlcall13",
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "有效需求数",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接6952"
     } ],
     "getPSDELogicNodeParams" : [ {
+      "name" : "Default[STORIES]",
       "paramAction" : "SQLPARAM",
+      "srcFieldName" : "STORIES",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "srcFieldName" : "STORIES",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[STORIES]"
+      "srcValueType" : "SRCDLPARAM"
     } ],
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall13",
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "有效需求数"
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
+    "codeName" : "Rawsqlcall1",
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取需求数",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接9019"
     } ],
     "getPSDELogicNodeParams" : [ {
+      "name" : "Default[STORIES]",
       "paramAction" : "SQLPARAM",
+      "srcFieldName" : "STORIES",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "srcFieldName" : "STORIES",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[STORIES]"
+      "srcValueType" : "SRCDLPARAM"
     } ],
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall1",
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "获取需求数"
-  } ],
-  "getPSDELogicLinks" : [ {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall1"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Begin"
-    },
-    "name" : "连接2885"
-  }, {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall14"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall13"
-    },
-    "name" : "连接6952"
-  }, {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall2"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall1"
-    },
-    "name" : "连接9019"
-  }, {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall13"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall12"
-    },
-    "name" : "连接7154"
-  }, {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall9"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall8"
-    },
-    "name" : "连接8691"
-  }, {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall10"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall14"
-    },
-    "name" : "连接8440"
-  }, {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall4"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall3"
-    },
-    "name" : "连接715"
-  }, {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall7"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall6"
-    },
-    "name" : "连接6472"
-  }, {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall12"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall4"
-    },
-    "name" : "连接1775"
-  }, {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall11"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall10"
-    },
-    "name" : "连接4549"
-  }, {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall3"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall2"
-    },
-    "name" : "连接4999"
-  }, {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall5"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall11"
-    },
-    "name" : "连接3617"
-  }, {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall8"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall7"
-    },
-    "name" : "连接1248"
-  }, {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall6"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall5"
-    },
-    "name" : "连接7149"
+    "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
-    "lastParam" : false,
-    "envParam" : false,
     "codeName" : "Default",
+    "name" : "传入变量",
     "default" : true,
-    "name" : "传入变量"
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
   } ],
-  "logicHolder" : 1,
-  "codeName" : "GetInfoTestTaskOvProject",
-  "logicName" : "根据测试报告概况信息（项目报告）",
-  "defaultParamName" : "Default",
-  "logicSubType" : "NONE",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDELOGICS/GetInfoTestTaskOvProject.json",
-  "name" : "根据测试报告概况信息（项目报告）"
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : true,
+  "enableFront" : false
 }

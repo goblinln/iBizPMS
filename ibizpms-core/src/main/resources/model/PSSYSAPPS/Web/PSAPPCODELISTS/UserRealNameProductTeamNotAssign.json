@@ -1,29 +1,29 @@
 {
+  "cacheTimeout" : 6000,
+  "codeListType" : "DYNAMIC",
+  "codeName" : "UserRealNameProductTeamNotAssign",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProductTeamNotAssign.json",
+  "emptyText" : "未指派",
+  "name" : "用户真实名称（动态-产品团队选择-未指派）",
+  "orMode" : "STR",
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchStoryProductTeamPK"
+  },
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
-  },
-  "getValuePSAppDEField" : {
-    "name" : "USERNAME",
-    "codeName" : "UserName"
   },
   "getTextPSAppDEField" : {
     "name" : "PERSONNAME",
     "codeName" : "PersonName"
   },
-  "getPSAppDEDataSet" : {
-    "modelref" : true,
-    "id" : "FetchStoryProductTeamPK"
-  },
-  "dynaInstMode" : 1,
-  "codeListType" : "DYNAMIC",
-  "orMode" : "STR",
   "textSeparator" : ",",
-  "codeName" : "UserRealNameProductTeamNotAssign",
-  "emptyText" : "未指派",
+  "getValuePSAppDEField" : {
+    "name" : "USERNAME",
+    "codeName" : "UserName"
+  },
   "valueSeparator" : ",",
-  "cacheTimeout" : 6000,
-  "enableCache" : true,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProductTeamNotAssign.json",
-  "name" : "用户真实名称（动态-产品团队选择-未指派）"
+  "enableCache" : true
 }

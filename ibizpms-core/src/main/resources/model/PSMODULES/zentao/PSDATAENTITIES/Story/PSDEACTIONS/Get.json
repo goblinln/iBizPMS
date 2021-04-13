@@ -1,39 +1,39 @@
 {
-  "transactionMode" : "DEFAULT",
-  "paramMode" : 1,
-  "generateTestUnit" : true,
-  "customParam" : false,
-  "builtinAction" : true,
+  "actionMode" : "READ",
+  "actionType" : "BUILTIN",
   "getAfterPSDEActionLogics" : [ {
-    "internalLogic" : false,
-    "ignoreException" : false,
-    "cloneParam" : true,
+    "attachMode" : "AFTER",
     "getDstPSDE" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
     },
-    "attachMode" : "AFTER",
     "getDstPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/GetStorySpec.json"
     },
-    "name" : "附加逻辑"
+    "name" : "附加逻辑",
+    "cloneParam" : true,
+    "ignoreException" : false,
+    "internalLogic" : false
   } ],
-  "pubServiceDefault" : true,
-  "timeOut" : -1,
+  "codeName" : "Get",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Get.json",
   "extendMode" : 0,
+  "logicName" : "Get",
+  "name" : "Get",
+  "orderValue" : 31,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"
   },
-  "orderValue" : 31,
-  "codeName" : "Get",
-  "logicName" : "Get",
-  "actionMode" : "READ",
-  "actionType" : "BUILTIN",
+  "paramMode" : 1,
   "requestField" : "ID",
   "requestParamType" : "FIELD",
   "testActionMode" : 0,
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Get.json",
-  "name" : "Get"
+  "timeOut" : -1,
+  "transactionMode" : "DEFAULT",
+  "builtinAction" : true,
+  "customParam" : false,
+  "generateTestUnit" : true,
+  "pubServiceDefault" : true
 }

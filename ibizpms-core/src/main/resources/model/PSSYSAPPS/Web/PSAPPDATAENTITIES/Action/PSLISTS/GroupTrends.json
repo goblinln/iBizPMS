@@ -1,98 +1,98 @@
 {
-  "enableRowNew" : false,
-  "enableRowEditOrder" : false,
-  "noSort" : false,
-  "hasWFDataItems" : false,
-  "showHeader" : true,
-  "enableRowEditGroup" : false,
-  "getPSDEListDataItems" : [ {
-    "name" : "objecttype",
-    "dataType" : 25
-  }, {
-    "format" : "YYYY-MM-DD HH:mm:ss",
-    "name" : "date",
-    "dataType" : 5
-  }, {
-    "name" : "project",
-    "dataType" : 1
-  }, {
-    "name" : "action",
-    "dataType" : 25
-  }, {
-    "name" : "srfkey",
-    "dataType" : 1
-  }, {
-    "name" : "product",
-    "dataType" : 25
-  }, {
-    "name" : "objectid",
-    "dataType" : 1
-  }, {
-    "getFrontPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ActionManner.json"
-    },
-    "name" : "actionmanner",
-    "dataType" : 25
-  }, {
-    "getFrontPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
-    },
-    "name" : "actor",
-    "dataType" : 25
-  }, {
-    "name" : "id",
-    "dataType" : 1
-  }, {
-    "getFrontPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Action__read.json"
-    },
-    "name" : "read",
-    "dataType" : 25
-  } ],
-  "getMinorSortPSAppDEField" : {
-    "name" : "DATE",
-    "codeName" : "Date"
-  },
-  "enableRowEdit" : false,
-  "controlType" : "LIST",
   "codeName" : "GroupTrends",
-  "minorSortDir" : "DESC",
-  "enableGroup" : false,
-  "pagingSize" : 300,
-  "groupMode" : "NONE",
+  "controlType" : "LIST",
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
   },
-  "getUpdatePSControlAction" : {
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action/PSLISTS/GroupTrends.json",
+  "getFetchPSControlAction" : {
     "modelref" : true,
-    "id" : "update"
-  },
-  "getRemovePSControlAction" : {
-    "modelref" : true,
-    "id" : "remove"
+    "id" : "fetch"
   },
   "getGetPSControlAction" : {
     "modelref" : true,
     "id" : "load"
   },
-  "getFetchPSControlAction" : {
-    "modelref" : true,
-    "id" : "fetch"
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "GroupTrends",
+  "minorSortDir" : "DESC",
+  "getMinorSortPSAppDEField" : {
+    "name" : "DATE",
+    "codeName" : "Date"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "getPSDEListDataItems" : [ {
+    "dataType" : 25,
+    "name" : "objecttype"
+  }, {
+    "dataType" : 5,
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "name" : "date"
+  }, {
+    "dataType" : 1,
+    "name" : "project"
+  }, {
+    "dataType" : 25,
+    "name" : "action"
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey"
+  }, {
+    "dataType" : 25,
+    "name" : "product"
+  }, {
+    "dataType" : 1,
+    "name" : "objectid"
+  }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ActionManner.json"
+    },
+    "name" : "actionmanner"
+  }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+    },
+    "name" : "actor"
+  }, {
+    "dataType" : 1,
+    "name" : "id"
+  }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Action__read.json"
+    },
+    "name" : "read"
+  } ],
   "getPSSysPFPlugin" : {
     "pluginType" : "CUSTOM",
     "pluginCode" : "newDynamicTimeLine"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action/PSLISTS/GroupTrends.json",
-  "logicName" : "GroupTrends",
+  "pagingSize" : 300,
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "hasWFDataItems" : false,
+  "enableGroup" : false,
+  "enableRowEdit" : false,
+  "enableRowEditGroup" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "noSort" : false,
+  "showHeader" : true,
   "modelid" : "ff3ad7c07969e763b5df209fc71ba18e"
 }

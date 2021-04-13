@@ -1,24 +1,24 @@
 {
-  "getPSPickupDEField" : {
-    "name" : "SUITE",
-    "codeName" : "Suite"
-  },
-  "masterOrder" : -1,
-  "removeActionType" : -1,
-  "pickupDEFName" : "SUITE",
-  "masterRS" : 0,
-  "removeOrder" : 0,
+  "codeName" : "ZTTestSuite",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDERS/DER1N_ZT_SUITECASE_ZT_TESTSUITE_SUITE.json",
   "getMajorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite.json"
   },
-  "orderValue" : 100,
-  "codeName" : "ZTTestSuite",
-  "dERType" : "DER1N",
+  "masterOrder" : -1,
+  "masterRS" : 0,
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase.json"
   },
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDERS/DER1N_ZT_SUITECASE_ZT_TESTSUITE_SUITE.json",
-  "name" : "DER1N_ZT_SUITECASE_ZT_TESTSUITE_SUITE"
+  "name" : "DER1N_ZT_SUITECASE_ZT_TESTSUITE_SUITE",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "SUITE",
+    "codeName" : "Suite"
+  },
+  "pickupDEFName" : "SUITE",
+  "removeActionType" : -1,
+  "removeOrder" : 0
 }

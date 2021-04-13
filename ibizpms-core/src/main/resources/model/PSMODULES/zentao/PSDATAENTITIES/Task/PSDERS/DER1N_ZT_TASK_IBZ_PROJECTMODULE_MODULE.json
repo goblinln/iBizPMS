@@ -1,4 +1,19 @@
 {
+  "codeName" : "ProjectModule",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_IBZ_PROJECTMODULE_MODULE.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 0,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+  },
+  "name" : "DER1N_ZT_TASK_IBZ_PROJECTMODULE_MODULE",
+  "orderValue" : 100,
   "getPSPickupDEField" : {
     "name" : "MODULE",
     "codeName" : "Module"
@@ -7,22 +22,7 @@
     "name" : "MODULENAME",
     "codeName" : "Modulename"
   },
-  "masterOrder" : -1,
-  "removeActionType" : -1,
   "pickupDEFName" : "MODULE",
-  "masterRS" : 0,
-  "removeOrder" : 0,
-  "getMajorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
-  },
-  "orderValue" : 100,
-  "codeName" : "ProjectModule",
-  "dERType" : "DER1N",
-  "getMinorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
-  },
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_IBZ_PROJECTMODULE_MODULE.json",
-  "name" : "DER1N_ZT_TASK_IBZ_PROJECTMODULE_MODULE"
+  "removeActionType" : -1,
+  "removeOrder" : 0
 }

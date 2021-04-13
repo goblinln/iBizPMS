@@ -1,67 +1,67 @@
 {
-  "enableFront" : false,
-  "enableBackend" : true,
-  "getStartPSDELogicNode" : {
-    "modelref" : true,
-    "id" : "Begin"
-  },
-  "getPSDELogicNodes" : [ {
-    "parallelOutput" : true,
-    "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SQLPARAM",
-      "srcFieldName" : "srfloginname",
-      "srcValueType" : "SESSION",
-      "name" : "用户全局对象[srfloginname]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "ID",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[ID]"
-    } ],
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall1",
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "取消收藏"
-  }, {
-    "parallelOutput" : true,
-    "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接9728"
-    } ],
-    "logicHolder" : 3,
-    "codeName" : "Begin",
-    "logicNodeType" : "BEGIN",
-    "name" : "开始"
-  } ],
+  "codeName" : "BugNFavorites",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/BugNFavorites.json",
+  "logicHolder" : 1,
+  "logicName" : "Bug取消收藏",
+  "logicSubType" : "NONE",
+  "name" : "Bug取消收藏",
   "getPSDELogicLinks" : [ {
-    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "Rawsqlcall1"
     },
+    "name" : "连接9728",
     "getSrcPSDELogicNode" : {
       "modelref" : true,
       "id" : "Begin"
     },
-    "name" : "连接9728"
+    "defaultLink" : false
+  } ],
+  "getPSDELogicNodes" : [ {
+    "codeName" : "Rawsqlcall1",
+    "logicHolder" : 1,
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "取消收藏",
+    "getPSDELogicNodeParams" : [ {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    }, {
+      "name" : "Default[ID]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "ID",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Begin",
+    "logicHolder" : 3,
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接9728"
+    } ],
+    "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
-    "lastParam" : false,
-    "envParam" : false,
     "codeName" : "Default",
+    "name" : "传入变量",
     "default" : true,
-    "name" : "传入变量"
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
   } ],
-  "logicHolder" : 1,
-  "codeName" : "BugNFavorites",
-  "logicName" : "Bug取消收藏",
-  "defaultParamName" : "Default",
-  "logicSubType" : "NONE",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/BugNFavorites.json",
-  "name" : "Bug取消收藏"
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : true,
+  "enableFront" : false
 }

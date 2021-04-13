@@ -1,159 +1,159 @@
 {
-  "enableFront" : false,
-  "enableBackend" : true,
-  "getStartPSDELogicNode" : {
-    "modelref" : true,
-    "id" : "Begin"
-  },
-  "getPSDELogicNodes" : [ {
-    "parallelOutput" : true,
-    "getDstPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
-    },
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Module"
-    },
-    "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接9306"
-    } ],
-    "logicHolder" : 3,
-    "codeName" : "Deaction1",
-    "getDstPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDEACTIONS/Get.json"
-    },
-    "logicNodeType" : "DEACTION",
-    "name" : "获取模块详情"
-  }, {
-    "parallelOutput" : true,
-    "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接6882"
-    } ],
-    "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SETPARAMVALUE",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Module"
-      },
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "MODULE",
-      "srcValueType" : "SRCDLPARAM",
-      "dstFieldName" : "ID",
-      "name" : "Default[MODULE] ==> Module[ID]"
-    } ],
-    "logicHolder" : 3,
-    "codeName" : "Prepareparam1",
-    "logicNodeType" : "PREPAREPARAM",
-    "name" : "设置模块参数"
-  }, {
-    "parallelOutput" : true,
-    "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接1496"
-    } ],
-    "logicHolder" : 3,
-    "codeName" : "Begin",
-    "logicNodeType" : "BEGIN",
-    "name" : "开始"
-  }, {
-    "parallelOutput" : true,
-    "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SETPARAMVALUE",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Module"
-      },
-      "srcFieldName" : "BRANCH",
-      "srcValueType" : "SRCDLPARAM",
-      "dstFieldName" : "BRANCH",
-      "name" : "Module[BRANCH] ==> Default[BRANCH]"
-    } ],
-    "logicHolder" : 3,
-    "codeName" : "Prepareparam2",
-    "logicNodeType" : "PREPAREPARAM",
-    "name" : "设置bug平台值"
-  } ],
+  "codeName" : "GetModuleBranch",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/GetModuleBranch.json",
+  "logicHolder" : 1,
+  "logicName" : "获取模块的平台",
+  "logicSubType" : "NONE",
+  "name" : "获取模块的平台",
   "getPSDELogicLinks" : [ {
-    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "Deaction1"
     },
+    "name" : "连接6882",
     "getSrcPSDELogicNode" : {
       "modelref" : true,
       "id" : "Prepareparam1"
     },
-    "name" : "连接6882"
+    "defaultLink" : false
   }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam1"
+    },
+    "name" : "连接1496",
     "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
       "getPSDELogicLinkConds" : [ {
         "condOP" : "ISNOTNULL",
+        "dstFieldName" : "MODULE",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "dstFieldName" : "MODULE",
         "logicType" : "SINGLE",
         "name" : "Default[MODULE] 值不为空(NotNil)"
       } ],
       "notMode" : false,
-      "groupOP" : "AND",
-      "logicType" : "GROUP",
       "id" : "661944c18fe1176b86910c3779c3328e"
-    },
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Prepareparam1"
     },
     "getSrcPSDELogicNode" : {
       "modelref" : true,
       "id" : "Begin"
     },
-    "name" : "连接1496"
+    "defaultLink" : false
   }, {
-    "defaultLink" : false,
     "getDstPSDELogicNode" : {
       "modelref" : true,
       "id" : "Prepareparam2"
     },
+    "name" : "连接9306",
     "getSrcPSDELogicNode" : {
       "modelref" : true,
       "id" : "Deaction1"
     },
-    "name" : "连接9306"
+    "defaultLink" : false
+  } ],
+  "getPSDELogicNodes" : [ {
+    "codeName" : "Deaction1",
+    "getDstPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDEACTIONS/Get.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Module"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+    },
+    "logicHolder" : 3,
+    "logicNodeType" : "DEACTION",
+    "name" : "获取模块详情",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接9306"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Prepareparam1",
+    "logicHolder" : 3,
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "设置模块参数",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接6882"
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "dstFieldName" : "ID",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Module"
+      },
+      "name" : "Default[MODULE] ==> Module[ID]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "MODULE",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Begin",
+    "logicHolder" : 3,
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接1496"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Prepareparam2",
+    "logicHolder" : 3,
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "设置bug平台值",
+    "getPSDELogicNodeParams" : [ {
+      "dstFieldName" : "BRANCH",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "name" : "Module[BRANCH] ==> Default[BRANCH]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "BRANCH",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Module"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
-    "lastParam" : false,
-    "envParam" : false,
     "codeName" : "Module",
+    "name" : "模块",
     "default" : false,
-    "name" : "模块"
-  }, {
-    "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
+  }, {
     "codeName" : "Default",
+    "name" : "传入变量",
     "default" : true,
-    "name" : "传入变量"
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
   } ],
-  "logicHolder" : 1,
-  "codeName" : "GetModuleBranch",
-  "logicName" : "获取模块的平台",
-  "defaultParamName" : "Default",
-  "logicSubType" : "NONE",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/GetModuleBranch.json",
-  "name" : "获取模块的平台"
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : true,
+  "enableFront" : false
 }

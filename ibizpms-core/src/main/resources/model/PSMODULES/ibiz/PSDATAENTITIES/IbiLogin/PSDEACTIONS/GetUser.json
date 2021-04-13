@@ -1,24 +1,24 @@
 {
-  "transactionMode" : "NONE",
-  "paramMode" : 1,
-  "generateTestUnit" : false,
-  "customParam" : true,
-  "builtinAction" : false,
-  "pubServiceDefault" : true,
-  "timeOut" : -1,
+  "actionMode" : "READ",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "GetUser",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbiLogin/PSDEACTIONS/GetUser.json",
   "extendMode" : 0,
+  "logicName" : "获取ZT账户登录信息\u001C",
+  "name" : "getUser",
+  "orderValue" : 99999,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"
   },
-  "orderValue" : 99999,
-  "codeName" : "GetUser",
-  "logicName" : "获取ZT账户登录信息\u001C",
-  "actionMode" : "READ",
-  "actionType" : "USERCUSTOM",
+  "paramMode" : 1,
   "requestField" : "ID",
   "requestParamType" : "FIELD",
   "testActionMode" : 0,
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbiLogin/PSDEACTIONS/GetUser.json",
-  "name" : "getUser"
+  "timeOut" : -1,
+  "transactionMode" : "NONE",
+  "builtinAction" : false,
+  "customParam" : true,
+  "generateTestUnit" : false,
+  "pubServiceDefault" : true
 }

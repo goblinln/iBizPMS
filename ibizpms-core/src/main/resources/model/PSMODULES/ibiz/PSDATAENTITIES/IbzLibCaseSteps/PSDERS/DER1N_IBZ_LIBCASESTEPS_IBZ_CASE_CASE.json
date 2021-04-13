@@ -1,26 +1,26 @@
 {
-  "getPSPickupDEField" : {
-    "name" : "CASE",
-    "codeName" : "IBizCase"
-  },
-  "nestedRS" : true,
-  "masterOrder" : -1,
-  "removeActionType" : -1,
-  "pickupDEFName" : "CASE",
-  "masterRS" : 8,
-  "removeOrder" : 0,
+  "codeName" : "IbzCase",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDERS/DER1N_IBZ_LIBCASESTEPS_IBZ_CASE_CASE.json",
+  "logicName" : "用例",
   "getMajorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzCase.json"
   },
-  "orderValue" : 100,
-  "codeName" : "IbzCase",
-  "logicName" : "用例",
-  "dERType" : "DER1N",
+  "masterOrder" : -1,
+  "masterRS" : 8,
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps.json"
   },
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDERS/DER1N_IBZ_LIBCASESTEPS_IBZ_CASE_CASE.json",
-  "name" : "DER1N_IBZ_LIBCASESTEPS_IBZ_CASE_CASE"
+  "name" : "DER1N_IBZ_LIBCASESTEPS_IBZ_CASE_CASE",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "CASE",
+    "codeName" : "IBizCase"
+  },
+  "pickupDEFName" : "CASE",
+  "removeActionType" : -1,
+  "removeOrder" : 0,
+  "nestedRS" : true
 }

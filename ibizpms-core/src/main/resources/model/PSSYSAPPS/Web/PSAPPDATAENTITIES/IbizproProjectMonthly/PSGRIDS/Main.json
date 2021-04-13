@@ -1,201 +1,111 @@
 {
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "PROJECT",
-      "codeName" : "Project"
-    },
-    "name" : "project",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TOTALESTIMATES",
-      "codeName" : "Totalestimates"
-    },
-    "name" : "totalestimates",
-    "dataType" : 7
-  }, {
-    "getPSAppDEField" : {
-      "name" : "YEAR_MONTH",
-      "codeName" : "YearMonth"
-    },
-    "name" : "year_month",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBIZPRO_PROJECTMONTHLYNAME",
-      "codeName" : "IbizproProjectMonthlyName"
-    },
-    "name" : "ibizpro_projectmonthlyname",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "PM",
-      "codeName" : "PM"
-    },
-    "name" : "pm",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "PROJECTNAME",
-      "codeName" : "ProjectName"
-    },
-    "name" : "projectname",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DATE",
-      "codeName" : "Date"
-    },
-    "format" : "YYYY-MM-DD",
-    "name" : "date",
-    "dataType" : 5
-  }, {
-    "name" : "srfmstag",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBIZPRO_PROJECTMONTHLYNAME",
-      "codeName" : "IbizproProjectMonthlyName"
-    },
-    "name" : "srfmajortext",
-    "dataType" : 25
-  }, {
-    "dataAccessAction" : true,
-    "getPSAppDEField" : {
-      "name" : "IBIZPRO_PROJECTMONTHLYID",
-      "codeName" : "IbizproProjectMonthlyId"
-    },
-    "name" : "srfdataaccaction",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBIZPRO_PROJECTMONTHLYID",
-      "codeName" : "IbizproProjectMonthlyId"
-    },
-    "name" : "srfkey",
-    "dataType" : 25
-  } ],
-  "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectMonthly.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
-  "enableRowNew" : false,
-  "enableRowEditOrder" : false,
-  "noSort" : false,
-  "getPSDEGridEditItems" : [ {
-    "getPSEditor" : {
-      "editorType" : "HIDDEN",
-      "name" : "srfkey"
-    },
-    "getPSAppDEField" : {
-      "name" : "IBIZPRO_PROJECTMONTHLYID",
-      "codeName" : "IbizproProjectMonthlyId"
-    },
-    "allowEmpty" : true,
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "codeName" : "srfkey",
-    "caption" : "项目月报标识",
-    "name" : "srfkey"
-  } ],
-  "hasWFDataItems" : false,
+  "aggMode" : "NONE",
+  "codeName" : "Main",
   "columnEnableLink" : 2,
-  "enableColFilter" : false,
-  "singleSelect" : false,
-  "enablePagingBar" : true,
+  "controlType" : "GRID",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectMonthly/PSGRIDS/Main.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "主表格",
+  "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
     "name" : "DATE",
     "codeName" : "Date"
   },
-  "enableRowEdit" : false,
-  "controlType" : "GRID",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectMonthly.json"
+  },
   "getPSDEGridColumns" : [ {
-    "linkValueItem" : "srfkey",
-    "enableLinkView" : true,
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "项目月报名称",
+    "codeName" : "ibizpro_projectmonthlyname",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "ibizpro_projectmonthlyname",
+    "excelCaption" : "项目月报名称",
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproProjectMonthlyEditView.json",
       "viewType" : "DEEDITVIEW"
     },
+    "linkValueItem" : "srfkey",
+    "name" : "ibizpro_projectmonthlyname",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "IBIZPRO_PROJECTMONTHLYNAME",
       "codeName" : "IbizproProjectMonthlyName"
     },
-    "dataItemName" : "ibizpro_projectmonthlyname",
-    "excelCaption" : "项目月报名称",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : true,
     "width" : 150,
-    "codeName" : "ibizpro_projectmonthlyname",
-    "caption" : "项目月报名称",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "STAR",
-    "name" : "ibizpro_projectmonthlyname"
+    "enableLinkView" : true,
+    "enableSort" : true
   }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "项目名称",
+    "codeName" : "projectname",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "projectname",
+    "excelCaption" : "项目名称",
+    "name" : "projectname",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "PROJECTNAME",
       "codeName" : "ProjectName"
     },
-    "dataItemName" : "projectname",
-    "excelCaption" : "项目名称",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : true,
     "width" : 100,
-    "codeName" : "projectname",
-    "caption" : "项目名称",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "PX",
-    "name" : "projectname"
+    "enableSort" : true
   }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "年月",
+    "codeName" : "year_month",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "year_month",
+    "excelCaption" : "年月",
+    "name" : "year_month",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "YEAR_MONTH",
       "codeName" : "YearMonth"
     },
-    "dataItemName" : "year_month",
-    "excelCaption" : "年月",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : true,
     "width" : 100,
-    "codeName" : "year_month",
-    "caption" : "年月",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "PX",
-    "name" : "year_month"
+    "enableSort" : true
   }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "日期",
+    "codeName" : "date",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "date",
+    "excelCaption" : "日期",
+    "name" : "date",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
-    "dataItemName" : "date",
-    "excelCaption" : "日期",
     "valueFormat" : "YYYY-MM-DD",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : true,
     "width" : 100,
-    "codeName" : "date",
-    "caption" : "日期",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "PX",
-    "name" : "date"
+    "enableSort" : true
   }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "项目负责人",
+    "codeName" : "pm",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "pm",
+    "excelCaption" : "项目负责人",
+    "name" : "pm",
+    "noPrivDisplayMode" : 1,
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
@@ -204,55 +114,145 @@
       "name" : "PM",
       "codeName" : "PM"
     },
-    "dataItemName" : "pm",
-    "excelCaption" : "项目负责人",
-    "cLConvertMode" : "FRONT",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : true,
     "width" : 130,
-    "codeName" : "pm",
-    "caption" : "项目负责人",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "PX",
-    "name" : "pm"
+    "enableSort" : true
   }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "总工时",
+    "codeName" : "totalestimates",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "totalestimates",
+    "excelCaption" : "总工时",
+    "name" : "totalestimates",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "TOTALESTIMATES",
       "codeName" : "Totalestimates"
     },
-    "dataItemName" : "totalestimates",
-    "excelCaption" : "总工时",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : true,
     "width" : 100,
-    "codeName" : "totalestimates",
-    "caption" : "总工时",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "PX",
-    "name" : "totalestimates"
+    "enableSort" : true
   } ],
-  "codeName" : "Main",
-  "minorSortDir" : "DESC",
-  "enableGroup" : false,
-  "hideHeader" : false,
-  "forceFit" : false,
+  "getPSDEGridDataItems" : [ {
+    "dataType" : 1,
+    "name" : "project",
+    "getPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    }
+  }, {
+    "dataType" : 7,
+    "name" : "totalestimates",
+    "getPSAppDEField" : {
+      "name" : "TOTALESTIMATES",
+      "codeName" : "Totalestimates"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "year_month",
+    "getPSAppDEField" : {
+      "name" : "YEAR_MONTH",
+      "codeName" : "YearMonth"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "ibizpro_projectmonthlyname",
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PROJECTMONTHLYNAME",
+      "codeName" : "IbizproProjectMonthlyName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "pm",
+    "getPSAppDEField" : {
+      "name" : "PM",
+      "codeName" : "PM"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "projectname",
+    "getPSAppDEField" : {
+      "name" : "PROJECTNAME",
+      "codeName" : "ProjectName"
+    }
+  }, {
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "date",
+    "getPSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PROJECTMONTHLYNAME",
+      "codeName" : "IbizproProjectMonthlyName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PROJECTMONTHLYID",
+      "codeName" : "IbizproProjectMonthlyId"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PROJECTMONTHLYID",
+      "codeName" : "IbizproProjectMonthlyId"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "项目月报标识",
+    "codeName" : "srfkey",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PROJECTMONTHLYID",
+      "codeName" : "IbizproProjectMonthlyId"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
   "pagingSize" : 20,
-  "aggMode" : "NONE",
-  "groupMode" : "NONE",
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectMonthly.json"
+    }
+  },
   "sortMode" : "REMOTE",
-  "getFetchPSControlAction" : {
-    "modelref" : true,
-    "id" : "fetch"
-  },
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectMonthly.json"
-  },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectMonthly/PSGRIDS/Main.json",
-  "logicName" : "主表格",
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableGroup" : false,
+  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : false,
+  "singleSelect" : false,
   "modelid" : "dcb3c81c9ae3bc8207125d0648915ff4"
 }

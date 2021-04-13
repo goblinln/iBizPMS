@@ -1,4 +1,20 @@
 {
+  "codeName" : "ParentModule",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule/PSDERS/DER1N_IBZ_LIBMODULE_IBZ_LIBMODULE_PARENT.json",
+  "logicName" : "父节点",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 0,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule.json"
+  },
+  "name" : "DER1N_IBZ_LIBMODULE_IBZ_LIBMODULE_PARENT",
+  "orderValue" : 100,
   "getPSPickupDEField" : {
     "name" : "PARENT",
     "codeName" : "Parent"
@@ -7,23 +23,7 @@
     "name" : "PARENTNAME",
     "codeName" : "ParentName"
   },
-  "masterOrder" : -1,
-  "removeActionType" : -1,
   "pickupDEFName" : "PARENT",
-  "masterRS" : 0,
-  "removeOrder" : 0,
-  "getMajorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule.json"
-  },
-  "orderValue" : 100,
-  "codeName" : "ParentModule",
-  "logicName" : "父节点",
-  "dERType" : "DER1N",
-  "getMinorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule.json"
-  },
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule/PSDERS/DER1N_IBZ_LIBMODULE_IBZ_LIBMODULE_PARENT.json",
-  "name" : "DER1N_IBZ_LIBMODULE_IBZ_LIBMODULE_PARENT"
+  "removeActionType" : -1,
+  "removeOrder" : 0
 }

@@ -1,23 +1,140 @@
 {
-  "endDataItemName" : "end",
-  "sNDataItemName" : "sn",
-  "finishDataItemName" : "finish",
-  "prevDataItemName" : "prev",
-  "totalDataItemName" : "total",
   "beginDataItemName" : "begin",
+  "codeName" : "TypeGantt",
   "controlType" : "GANTT",
-  "enableSearchDefault" : false,
-  "treeGridMode" : 2,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task/PSGANTTS/TypeGantt.json",
+  "endDataItemName" : "end",
+  "finishDataItemName" : "finish",
+  "logicName" : "任务类型分类甘特图",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+  },
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "childtasks_opendata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+          "viewType" : "DEPORTALVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+          "viewType" : "DEPORTALVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "tasks_opendata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+          "viewType" : "DEPORTALVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+          "viewType" : "DEPORTALVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA"
+    }
+  } ],
+  "getPSDETreeColumns" : [ {
+    "caption" : "任务类型分类",
+    "codeName" : "text",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "text",
+    "name" : "text",
+    "width" : 160,
+    "widthUnit" : "px",
+    "enableExpand" : true,
+    "enableSort" : false
+  }, {
+    "caption" : "指派给",
+    "codeName" : "assignedto",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "assignedto",
+    "name" : "assignedto",
+    "width" : 100,
+    "widthUnit" : "px",
+    "enableExpand" : false,
+    "enableSort" : false
+  }, {
+    "caption" : "开始时间",
+    "codeName" : "begin",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "begin",
+    "name" : "begin",
+    "width" : 100,
+    "widthUnit" : "px",
+    "enableExpand" : false,
+    "enableSort" : false
+  }, {
+    "caption" : "结束时间",
+    "codeName" : "end",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "end",
+    "name" : "end",
+    "width" : 100,
+    "widthUnit" : "px",
+    "enableExpand" : false,
+    "enableSort" : false
+  }, {
+    "caption" : "持续时间",
+    "codeName" : "taskduration",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "taskduration",
+    "name" : "taskduration",
+    "width" : 100,
+    "widthUnit" : "px",
+    "enableExpand" : false,
+    "enableSort" : false
+  } ],
   "getPSDETreeNodeRSs" : [ {
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "Tasks"
-    },
     "getChildPSDETreeNode" : {
       "modelref" : true,
       "id" : "ChildTasks"
     },
+    "name" : "任务 - 子任务",
+    "getParentPSAppDEField" : {
+      "name" : "PARENT",
+      "codeName" : "Parent"
+    },
     "getParentPSDER1N" : {
+      "codeName" : "ZTParent",
+      "dERType" : "DER1N",
+      "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N__ZT_TASK__ZT_TASK__PARENT.json",
+      "getMajorPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "masterOrder" : -1,
+      "masterRS" : 0,
+      "minorCodeName" : "SubTask",
+      "getMinorPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "name" : "DER1N__ZT_TASK__ZT_TASK__PARENT",
+      "orderValue" : 100,
       "getPSPickupDEField" : {
         "name" : "PARENT",
         "codeName" : "Parent"
@@ -26,175 +143,157 @@
         "name" : "PARENTNAME",
         "codeName" : "ParentName"
       },
-      "masterOrder" : -1,
-      "removeActionType" : -1,
       "pickupDEFName" : "PARENT",
-      "masterRS" : 0,
-      "removeOrder" : 0,
-      "getMajorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
-      },
-      "orderValue" : 100,
-      "codeName" : "ZTParent",
-      "dERType" : "DER1N",
-      "getMinorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
-      },
-      "minorCodeName" : "SubTask",
-      "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N__ZT_TASK__ZT_TASK__PARENT.json",
-      "name" : "DER1N__ZT_TASK__ZT_TASK__PARENT"
+      "removeActionType" : -1,
+      "removeOrder" : 0
     },
-    "parentValueLevel" : 1,
-    "getParentPSAppDEField" : {
-      "name" : "PARENT",
-      "codeName" : "Parent"
-    },
-    "searchMode" : 3,
-    "name" : "任务 - 子任务"
-  }, {
     "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ROOT"
-    },
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "TaskTypes"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3,
-    "name" : "默认根节点 - 任务类型"
-  }, {
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "TaskTypes"
-    },
-    "getChildPSDETreeNode" : {
       "modelref" : true,
       "id" : "Tasks"
     },
     "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "TaskTypes"
+    },
+    "name" : "默认根节点 - 任务类型",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "Tasks"
+    },
+    "name" : "任务类型 - 任务",
     "parentFilter" : "type",
-    "searchMode" : 3,
-    "name" : "任务类型 - 任务"
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "TaskTypes"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
   } ],
-  "enableRootSelect" : false,
-  "outputIconDefault" : false,
   "getPSDETreeNodes" : [ {
+    "counterMode" : 0,
     "getIdPSAppDEField" : {
       "name" : "TYPE",
       "codeName" : "Type"
     },
-    "textFormat" : "任务类型",
-    "appendCaption" : false,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-    },
-    "getTextPSAppDEField" : {
-      "name" : "TYPE",
-      "codeName" : "Type"
-    },
+    "maxSize" : -1,
+    "name" : "任务类型",
+    "nodeType" : "TaskTypes",
     "getPSAppDEDataSet" : {
       "modelref" : true,
       "id" : "FetchTypeGroup"
     },
-    "maxSize" : -1,
-    "enableQuickCreate" : false,
-    "appendPNodeId" : false,
-    "enableCheck" : false,
-    "hasPSDETreeNodeRSs" : true,
-    "selected" : false,
-    "selectFirstOnly" : false,
-    "expandFirstOnly" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+    },
     "getPSDETreeNodeDataItems" : [ {
-      "dataAccessAction" : false,
+      "cLConvertMode" : "NONE",
+      "dataType" : 25,
+      "name" : "end",
       "getPSAppDEField" : {
         "name" : "DEADLINE",
         "codeName" : "Deadline"
       },
-      "cLConvertMode" : "NONE",
-      "name" : "end",
-      "dataType" : 25
+      "dataAccessAction" : false
     }, {
-      "dataAccessAction" : false,
+      "cLConvertMode" : "NONE",
+      "dataType" : 25,
+      "name" : "assignedto",
       "getPSAppDEField" : {
         "name" : "ASSIGNEDTO",
         "codeName" : "AssignedTo"
       },
-      "cLConvertMode" : "NONE",
-      "name" : "assignedto",
-      "dataType" : 25
+      "dataAccessAction" : false
     }, {
-      "dataAccessAction" : false,
+      "cLConvertMode" : "NONE",
+      "dataType" : 25,
+      "name" : "begin",
       "getPSAppDEField" : {
         "name" : "ESTSTARTED",
         "codeName" : "EstStarted"
       },
-      "cLConvertMode" : "NONE",
-      "name" : "begin",
-      "dataType" : 25
+      "dataAccessAction" : false
     }, {
-      "dataAccessAction" : false,
+      "cLConvertMode" : "FRONT",
+      "dataType" : 25,
       "getFrontPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__type.json"
       },
+      "name" : "text",
       "getPSAppDEField" : {
         "name" : "TYPE",
         "codeName" : "Type"
       },
-      "cLConvertMode" : "FRONT",
-      "name" : "text",
-      "dataType" : 25
+      "dataAccessAction" : false
     }, {
-      "dataAccessAction" : false,
+      "cLConvertMode" : "NONE",
+      "dataType" : 25,
+      "name" : "taskduration",
       "getPSAppDEField" : {
         "name" : "DURATION",
         "codeName" : "Duration"
       },
-      "cLConvertMode" : "NONE",
-      "name" : "taskduration",
-      "dataType" : 25
+      "dataAccessAction" : false
     } ],
-    "rootNode" : false,
-    "enableNewData" : false,
+    "textFormat" : "任务类型",
+    "getTextPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    },
+    "treeNodeType" : "DE",
+    "hasPSDETreeNodeRSs" : true,
+    "appendCaption" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
     "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "nodeType" : "TaskTypes",
-    "disableSelect" : false,
-    "enableQuickSearch" : false,
-    "counterMode" : 0,
-    "treeNodeType" : "DE",
+    "expandFirstOnly" : false,
     "expanded" : false,
-    "name" : "任务类型",
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
     "id" : "TaskTypes"
   }, {
+    "counterMode" : 0,
+    "name" : "默认根节点",
+    "nodeType" : "ROOT",
     "nodeValue" : "root",
     "text" : "默认根节点",
-    "enableQuickCreate" : false,
-    "appendPNodeId" : false,
-    "enableCheck" : false,
+    "treeNodeType" : "STATIC",
     "hasPSDETreeNodeRSs" : true,
-    "selected" : false,
-    "selectFirstOnly" : false,
-    "expandFirstOnly" : false,
-    "rootNode" : true,
-    "enableNewData" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
     "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "nodeType" : "ROOT",
-    "disableSelect" : false,
-    "enableQuickSearch" : false,
-    "counterMode" : 0,
-    "treeNodeType" : "STATIC",
+    "expandFirstOnly" : false,
     "expanded" : false,
-    "name" : "默认根节点",
+    "rootNode" : true,
+    "selectFirstOnly" : false,
+    "selected" : false,
     "id" : "ROOT"
   }, {
+    "counterMode" : 0,
     "getIdPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
@@ -203,87 +302,87 @@
       "name" : "ISLEAF",
       "codeName" : "IsLeaf"
     },
-    "appendCaption" : false,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-    },
-    "getTextPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
+    "maxSize" : -1,
+    "name" : "子任务",
+    "nodeType" : "ChildTasks",
     "getPSAppDEDataSet" : {
       "modelref" : true,
       "id" : "FetchDefault"
     },
-    "maxSize" : -1,
-    "enableQuickCreate" : false,
-    "appendPNodeId" : false,
-    "enableCheck" : false,
-    "hasPSDETreeNodeRSs" : false,
-    "selected" : false,
-    "selectFirstOnly" : false,
-    "expandFirstOnly" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+    },
     "getPSDETreeNodeDataItems" : [ {
-      "dataAccessAction" : false,
+      "cLConvertMode" : "NONE",
+      "dataType" : 25,
+      "name" : "taskduration",
       "getPSAppDEField" : {
         "name" : "DURATION",
         "codeName" : "Duration"
       },
-      "cLConvertMode" : "NONE",
-      "name" : "taskduration",
-      "dataType" : 25
+      "dataAccessAction" : false
     }, {
-      "dataAccessAction" : false,
+      "cLConvertMode" : "NONE",
+      "dataType" : 25,
+      "name" : "text",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "cLConvertMode" : "NONE",
-      "name" : "text",
-      "dataType" : 25
+      "dataAccessAction" : false
     }, {
-      "dataAccessAction" : false,
+      "cLConvertMode" : "NONE",
+      "dataType" : 25,
+      "name" : "end",
       "getPSAppDEField" : {
         "name" : "DEADLINE",
         "codeName" : "Deadline"
       },
-      "cLConvertMode" : "NONE",
-      "name" : "end",
-      "dataType" : 25
+      "dataAccessAction" : false
     }, {
-      "dataAccessAction" : false,
+      "cLConvertMode" : "NONE",
+      "dataType" : 25,
+      "name" : "assignedto",
       "getPSAppDEField" : {
         "name" : "ASSIGNEDTO",
         "codeName" : "AssignedTo"
       },
-      "cLConvertMode" : "NONE",
-      "name" : "assignedto",
-      "dataType" : 25
+      "dataAccessAction" : false
     }, {
-      "dataAccessAction" : false,
+      "cLConvertMode" : "NONE",
+      "dataType" : 25,
+      "name" : "begin",
       "getPSAppDEField" : {
         "name" : "ESTSTARTED",
         "codeName" : "EstStarted"
       },
-      "cLConvertMode" : "NONE",
-      "name" : "begin",
-      "dataType" : 25
+      "dataAccessAction" : false
     } ],
-    "rootNode" : false,
-    "enableNewData" : false,
+    "getTextPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "treeNodeType" : "DE",
+    "hasPSDETreeNodeRSs" : false,
+    "appendCaption" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
     "enableEditData" : true,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
     "enableRemoveData" : false,
     "enableViewData" : true,
-    "nodeType" : "ChildTasks",
-    "disableSelect" : false,
-    "enableQuickSearch" : false,
-    "counterMode" : 0,
-    "treeNodeType" : "DE",
+    "expandFirstOnly" : false,
     "expanded" : false,
-    "name" : "子任务",
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
     "id" : "ChildTasks"
   }, {
+    "counterMode" : 0,
     "getIdPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
@@ -292,192 +391,93 @@
       "name" : "ISLEAF",
       "codeName" : "IsLeaf"
     },
-    "appendCaption" : false,
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-    },
-    "getTextPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
+    "maxSize" : -1,
+    "name" : "根任务",
+    "nodeType" : "Tasks",
     "getPSAppDEDataSet" : {
       "modelref" : true,
       "id" : "FetchRootTask"
     },
-    "maxSize" : -1,
-    "enableQuickCreate" : false,
-    "appendPNodeId" : false,
-    "enableCheck" : false,
-    "hasPSDETreeNodeRSs" : true,
-    "selected" : false,
-    "selectFirstOnly" : false,
-    "expandFirstOnly" : false,
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+    },
     "getPSDETreeNodeDataItems" : [ {
-      "dataAccessAction" : false,
+      "cLConvertMode" : "NONE",
+      "dataType" : 25,
+      "name" : "assignedto",
       "getPSAppDEField" : {
         "name" : "ASSIGNEDTO",
         "codeName" : "AssignedTo"
       },
-      "cLConvertMode" : "NONE",
-      "name" : "assignedto",
-      "dataType" : 25
+      "dataAccessAction" : false
     }, {
-      "dataAccessAction" : false,
+      "cLConvertMode" : "NONE",
+      "dataType" : 25,
+      "name" : "begin",
       "getPSAppDEField" : {
         "name" : "ESTSTARTED",
         "codeName" : "EstStarted"
       },
-      "cLConvertMode" : "NONE",
-      "name" : "begin",
-      "dataType" : 25
+      "dataAccessAction" : false
     }, {
-      "dataAccessAction" : false,
+      "cLConvertMode" : "NONE",
+      "dataType" : 25,
+      "name" : "taskduration",
       "getPSAppDEField" : {
         "name" : "DURATION",
         "codeName" : "Duration"
       },
-      "cLConvertMode" : "NONE",
-      "name" : "taskduration",
-      "dataType" : 25
+      "dataAccessAction" : false
     }, {
-      "dataAccessAction" : false,
+      "cLConvertMode" : "NONE",
+      "dataType" : 25,
+      "name" : "text",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "cLConvertMode" : "NONE",
-      "name" : "text",
-      "dataType" : 25
+      "dataAccessAction" : false
     }, {
-      "dataAccessAction" : false,
+      "cLConvertMode" : "NONE",
+      "dataType" : 25,
+      "name" : "end",
       "getPSAppDEField" : {
         "name" : "DEADLINE",
         "codeName" : "Deadline"
       },
-      "cLConvertMode" : "NONE",
-      "name" : "end",
-      "dataType" : 25
+      "dataAccessAction" : false
     } ],
-    "rootNode" : false,
-    "enableNewData" : false,
+    "getTextPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "treeNodeType" : "DE",
+    "hasPSDETreeNodeRSs" : true,
+    "appendCaption" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
     "enableEditData" : true,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
     "enableRemoveData" : false,
     "enableViewData" : false,
-    "nodeType" : "Tasks",
-    "disableSelect" : false,
-    "enableQuickSearch" : false,
-    "counterMode" : 0,
-    "treeNodeType" : "DE",
+    "expandFirstOnly" : false,
     "expanded" : false,
-    "name" : "根任务",
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
     "id" : "Tasks"
   } ],
-  "getPSDETreeColumns" : [ {
-    "dataItemName" : "text",
-    "enableExpand" : true,
-    "enableSort" : false,
-    "width" : 160,
-    "codeName" : "text",
-    "caption" : "任务类型分类",
-    "columnType" : "DEFGRIDCOLUMN",
-    "widthUnit" : "px",
-    "name" : "text"
-  }, {
-    "dataItemName" : "assignedto",
-    "enableExpand" : false,
-    "enableSort" : false,
-    "width" : 100,
-    "codeName" : "assignedto",
-    "caption" : "指派给",
-    "columnType" : "DEFGRIDCOLUMN",
-    "widthUnit" : "px",
-    "name" : "assignedto"
-  }, {
-    "dataItemName" : "begin",
-    "enableExpand" : false,
-    "enableSort" : false,
-    "width" : 100,
-    "codeName" : "begin",
-    "caption" : "开始时间",
-    "columnType" : "DEFGRIDCOLUMN",
-    "widthUnit" : "px",
-    "name" : "begin"
-  }, {
-    "dataItemName" : "end",
-    "enableExpand" : false,
-    "enableSort" : false,
-    "width" : 100,
-    "codeName" : "end",
-    "caption" : "结束时间",
-    "columnType" : "DEFGRIDCOLUMN",
-    "widthUnit" : "px",
-    "name" : "end"
-  }, {
-    "dataItemName" : "taskduration",
-    "enableExpand" : false,
-    "enableSort" : false,
-    "width" : 100,
-    "codeName" : "taskduration",
-    "caption" : "持续时间",
-    "columnType" : "DEFGRIDCOLUMN",
-    "widthUnit" : "px",
-    "name" : "taskduration"
-  } ],
-  "codeName" : "TypeGantt",
+  "prevDataItemName" : "prev",
+  "sNDataItemName" : "sn",
+  "totalDataItemName" : "total",
+  "treeGridMode" : 2,
+  "enableRootSelect" : false,
+  "enableSearchDefault" : false,
+  "outputIconDefault" : false,
   "rootVisible" : false,
-  "getPSAppViewLogics" : [ {
-    "logicTrigger" : "CUSTOM",
-    "getPSAppUILogic" : {
-      "getOpenDataPSAppView" : {
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
-          "viewType" : "DEPORTALVIEW"
-        }
-      },
-      "viewLogicType" : "APP_OPENDATA",
-      "getPSAppUILogicRefViews" : [ {
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
-          "viewType" : "DEPORTALVIEW"
-        }
-      } ],
-      "logicType" : "PREDEFINED",
-      "name" : "打开数据"
-    },
-    "logicType" : "SYSUILOGIC",
-    "name" : "childtasks_opendata"
-  }, {
-    "logicTrigger" : "CUSTOM",
-    "getPSAppUILogic" : {
-      "getOpenDataPSAppView" : {
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
-          "viewType" : "DEPORTALVIEW"
-        }
-      },
-      "viewLogicType" : "APP_OPENDATA",
-      "getPSAppUILogicRefViews" : [ {
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
-          "viewType" : "DEPORTALVIEW"
-        }
-      } ],
-      "logicType" : "PREDEFINED",
-      "name" : "打开数据"
-    },
-    "logicType" : "SYSUILOGIC",
-    "name" : "tasks_opendata"
-  } ],
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-  },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task/PSGANTTS/TypeGantt.json",
-  "logicName" : "任务类型分类甘特图",
   "modelid" : "9a6cae3896699f86c265d4a4a65b2aa5"
 }

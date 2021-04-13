@@ -1,72 +1,72 @@
 {
-  "showDataInfoBar" : true,
-  "loadDefault" : true,
-  "enableQuickGroup" : false,
-  "enableSearch" : false,
-  "expandSearchForm" : true,
-  "enableQuickSearch" : false,
-  "showCaptionBar" : true,
-  "getPSDEViewCodeName" : "TestDashboardView",
-  "enableDP" : true,
-  "caption" : "产品",
-  "title" : "产品测试数据看板视图",
   "accUserMode" : 2,
-  "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
-    "layoutPanel" : true,
-    "controlType" : "VIEWLAYOUTPANEL",
-    "codeName" : "Layoutpanel",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-    },
-    "getPSControlParam" : { },
-    "controlStyle" : "APPDEPORTALVIEW_STYLE2",
-    "name" : "layoutpanel"
-  },
-  "getPSAppViewEngines" : [ {
-    "engineType" : "PortalView",
-    "engineCat" : "VIEW",
-    "getPSUIEngineParams" : [ {
-      "name" : "DASHBOARD",
-      "paramType" : "CTRL"
-    } ],
-    "name" : "engine"
-  } ],
+  "caption" : "产品",
+  "codeName" : "ProductTestDashboardView",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductTestDashboardView.json",
+  "name" : "ProductTestDashboardView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
   },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "PortalView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "name" : "DASHBOARD",
+      "paramType" : "CTRL"
+    } ]
+  } ],
   "getPSControls" : [ {
     "codeName" : "Test",
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
-    "enableCustomized" : false,
     "controlType" : "DASHBOARD",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product/PSDASHBOARDS/Test.json",
+    "hookEventNames" : [ "LOAD" ],
+    "logicName" : "产品主数据看板（测试）",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    },
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "dashboard"
     },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
       "id" : "DASHBOARD"
     },
-    "hookEventNames" : [ "LOAD" ],
-    "getPSControlHandler" : {
-      "enableDEFieldPrivilege" : false,
-      "id" : "dashboard"
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product/PSDASHBOARDS/Test.json",
-    "logicName" : "产品主数据看板（测试）",
+    "enableCustomized" : false,
     "name" : "dashboard",
     "modelid" : "1884d01229cee824d7577705da288043"
   } ],
+  "getPSDEViewCodeName" : "TestDashboardView",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEPORTALVIEW_STYLE2",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    },
+    "getPSControlParam" : { },
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "产品测试数据看板视图",
   "viewStyle" : "STYLE2",
-  "codeName" : "ProductTestDashboardView",
   "viewType" : "DEPORTALVIEW",
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductTestDashboardView.json",
-  "name" : "ProductTestDashboardView"
+  "enableDP" : true,
+  "enableQuickGroup" : false,
+  "enableQuickSearch" : false,
+  "enableSearch" : false,
+  "expandSearchForm" : true,
+  "loadDefault" : true,
+  "showCaptionBar" : true,
+  "showDataInfoBar" : true
 }

@@ -1,46 +1,46 @@
 {
-  "codeItemValueNumber" : false,
-  "subSysCodeList" : false,
-  "subSysAsCloud" : false,
-  "systemTag" : "iBizPMS",
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/ProjectQuickpacket.json",
   "codeName" : "ProjectQuickpacket",
-  "userScope" : false,
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/ProjectQuickpacket.json",
   "emptyText" : "未定义",
-  "enableCache" : true,
-  "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "All",
-    "data" : "{}",
     "codeName" : "All",
+    "data" : "{}",
     "text" : "所有",
+    "value" : "All",
     "default" : true
   }, {
-    "value" : "nowait",
-    "data" : "{\"n_status_noteq\":\"closed\"}",
     "codeName" : "Nowait",
-    "text" : "未完成"
+    "data" : "{\"n_status_noteq\":\"closed\"}",
+    "text" : "未完成",
+    "value" : "nowait"
   }, {
-    "value" : "wait",
-    "data" : "{\"n_status_eq\":\"wait\"}",
     "codeName" : "Wait",
-    "text" : "未开始"
+    "data" : "{\"n_status_eq\":\"wait\"}",
+    "text" : "未开始",
+    "value" : "wait"
   }, {
-    "value" : "doing",
-    "data" : "{\"n_status_eq\":\"doing\"}",
     "codeName" : "Doing",
-    "text" : "进行中"
+    "data" : "{\"n_status_eq\":\"doing\"}",
+    "text" : "进行中",
+    "value" : "doing"
   }, {
-    "value" : "suspended",
-    "data" : "{\"n_status_eq\":\"suspended\"}",
     "codeName" : "Suspended",
-    "text" : "已挂起"
+    "data" : "{\"n_status_eq\":\"suspended\"}",
+    "text" : "已挂起",
+    "value" : "suspended"
   }, {
-    "value" : "closed",
-    "data" : "{\"n_status_eq\":\"closed\"}",
     "codeName" : "Closed",
-    "text" : "已关闭"
-  } ]
+    "data" : "{\"n_status_eq\":\"closed\"}",
+    "text" : "已关闭",
+    "value" : "closed"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
 }

@@ -1,7 +1,8 @@
 {
-  "subSysAsCloud" : false,
-  "defaultModule" : false,
-  "subSysModule" : false,
+  "getAllPSCodeLists" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizplugin/PSCODELISTS/Message__type.json"
+  } ],
   "getAllPSDataEntities" : [ {
     "modelref" : true,
     "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProKeyword.json"
@@ -15,12 +16,11 @@
     "modelref" : true,
     "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProTag.json"
   } ],
-  "getAllPSCodeLists" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizplugin/PSCODELISTS/Message__type.json"
-  } ],
-  "deployId" : "4aafbc9ce8cc3aeed8b72f329f995eb1",
   "codeName" : "ibizplugin",
+  "deployId" : "4aafbc9ce8cc3aeed8b72f329f995eb1",
   "dynaModelFilePath" : "PSMODULES/ibizplugin.json",
-  "name" : "iBiz插件模块"
+  "name" : "iBiz插件模块",
+  "defaultModule" : false,
+  "subSysAsCloud" : false,
+  "subSysModule" : false
 }

@@ -1,38 +1,38 @@
 {
-  "transactionMode" : "DEFAULT",
-  "paramMode" : 1,
-  "generateTestUnit" : true,
-  "customParam" : false,
-  "builtinAction" : true,
-  "getCheckPSDEActionLogics" : [ {
-    "name" : "行为[Update]主状态拒绝逻辑",
-    "id" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/Update__MSDeny.json"
-  } ],
+  "actionMode" : "UPDATE",
+  "actionType" : "BUILTIN",
   "getAfterPSDEActionLogics" : [ {
-    "internalLogic" : true,
+    "attachMode" : "AFTER",
+    "name" : "附加逻辑",
     "getPSDELogic" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/FixPath.json"
     },
-    "ignoreException" : false,
     "cloneParam" : false,
-    "attachMode" : "AFTER",
-    "name" : "附加逻辑"
+    "ignoreException" : false,
+    "internalLogic" : true
   } ],
-  "pubServiceDefault" : true,
-  "timeOut" : -1,
+  "getCheckPSDEActionLogics" : [ {
+    "name" : "行为[Update]主状态拒绝逻辑",
+    "id" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/Update__MSDeny.json"
+  } ],
+  "codeName" : "Update",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Update.json",
   "extendMode" : 0,
+  "logicName" : "Update",
+  "name" : "Update",
+  "orderValue" : 11,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "UPDATE"
   },
-  "orderValue" : 11,
-  "codeName" : "Update",
-  "logicName" : "Update",
-  "actionMode" : "UPDATE",
-  "actionType" : "BUILTIN",
+  "paramMode" : 1,
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Update.json",
-  "name" : "Update"
+  "timeOut" : -1,
+  "transactionMode" : "DEFAULT",
+  "builtinAction" : true,
+  "customParam" : false,
+  "generateTestUnit" : true,
+  "pubServiceDefault" : true
 }

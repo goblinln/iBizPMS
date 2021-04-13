@@ -1,175 +1,208 @@
 {
-  "showDataInfoBar" : true,
-  "sideBarLayout" : "LEFT",
-  "enableFilter" : false,
-  "enableQuickSearch" : true,
-  "showCaptionBar" : false,
-  "getPSDEViewCodeName" : "ListExpView",
-  "enableDP" : true,
-  "caption" : "产品统计",
-  "title" : "产品列表导航视图",
   "accUserMode" : 2,
-  "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
-    "layoutPanel" : true,
-    "controlType" : "VIEWLAYOUTPANEL",
-    "codeName" : "Layoutpanel",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-    },
-    "getPSControlParam" : { },
-    "controlStyle" : "APPDELISTEXPVIEW_STYLE2",
-    "name" : "layoutpanel"
-  },
-  "getPSAppViewEngines" : [ {
-    "engineType" : "ListExpView",
-    "engineCat" : "VIEW",
-    "getPSUIEngineParams" : [ {
-      "name" : "LISTEXPBAR",
-      "paramType" : "CTRL"
-    } ],
-    "name" : "engine"
-  } ],
+  "caption" : "产品统计",
+  "codeName" : "ProductListExpView",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductListExpView.json",
+  "name" : "ProductListExpView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
   },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "ListExpView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "name" : "LISTEXPBAR",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata",
+    "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据",
+      "viewLogicType" : "APP_NEWDATA",
+      "batchAddOnly" : false,
+      "enableBatchAdd" : false,
+      "enableWizardAdd" : false
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
+      "viewLogicType" : "APP_OPENDATA"
+    }
+  } ],
   "getPSControls" : [ {
+    "codeName" : "ListExpViewlistexpbar",
     "controlType" : "LISTEXPBAR",
-    "xDataControlName" : "listexpbar_list",
-    "enableSearch" : true,
-    "enableCounter" : true,
-    "showTitleBar" : false,
+    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "name" : "listexpbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    },
+    "getPSAppViewRefs" : [ {
+      "name" : "EXPITEM:DEFAULT",
+      "realTitle" : "产品统计编辑视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsEditView9.json",
+        "viewType" : "DEEDITVIEW9"
+      }
+    } ],
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "listexpbar"
+    },
+    "getPSControlParam" : {
+      "width" : 200.0,
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "LISTEXPBAR"
+    },
     "getPSControls" : [ {
-      "enableRowNew" : false,
-      "enableRowEditOrder" : false,
-      "noSort" : false,
-      "hasWFDataItems" : false,
-      "showHeader" : true,
-      "enableRowEditGroup" : false,
-      "getPSDEListDataItems" : [ {
-        "getPSAppDEField" : {
-          "name" : "NAME",
-          "codeName" : "Name"
-        },
-        "name" : "srfmajortext",
-        "dataType" : 25
-      }, {
-        "getPSAppDEField" : {
-          "name" : "ID",
-          "codeName" : "Id"
-        },
-        "name" : "srfkey",
-        "dataType" : 25
-      }, {
-        "getPSAppDEField" : {
-          "name" : "LINE",
-          "codeName" : "Line"
-        },
-        "name" : "line",
-        "dataType" : 25
-      }, {
-        "name" : "srfmstag",
-        "dataType" : 25
-      } ],
+      "codeName" : "Exp",
+      "controlStyle" : "LISTVIEW",
+      "controlType" : "LIST",
+      "getCreatePSControlAction" : {
+        "modelref" : true,
+        "id" : "create"
+      },
+      "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product/PSLISTS/Exp.json",
+      "getFetchPSControlAction" : {
+        "modelref" : true,
+        "id" : "fetch"
+      },
+      "getGetPSControlAction" : {
+        "modelref" : true,
+        "id" : "load"
+      },
+      "groupMode" : "NONE",
+      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+      "logicName" : "Exp",
+      "minorSortDir" : "DESC",
       "getMinorSortPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "enableRowEdit" : false,
-      "controlType" : "LIST",
-      "codeName" : "Exp",
-      "minorSortDir" : "DESC",
-      "enableGroup" : false,
-      "pagingSize" : 20,
-      "groupMode" : "NONE",
       "mobListStyle" : "LISTVIEW",
       "getNavPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsEditView9.json",
         "viewType" : "DEEDITVIEW9"
       },
-      "getCreatePSControlAction" : {
+      "getPSAppDataEntity" : {
         "modelref" : true,
-        "id" : "create"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
       },
-      "getUpdatePSControlAction" : {
-        "modelref" : true,
-        "id" : "update"
-      },
-      "getRemovePSControlAction" : {
-        "modelref" : true,
-        "id" : "remove"
-      },
-      "getGetPSControlAction" : {
-        "modelref" : true,
-        "id" : "load"
-      },
-      "getFetchPSControlAction" : {
-        "modelref" : true,
-        "id" : "fetch"
-      },
+      "getPSAppViewLogics" : [ {
+        "eventArg" : "deuiaction1",
+        "eventNames" : "CLICK",
+        "logicTrigger" : "CTRLEVENT",
+        "logicType" : "APPVIEWUIACTION",
+        "name" : "listexpbar_list_quicktoolbar_deuiaction1_click",
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "listexpbar_list_quicktoolbar_deuiaction1"
+        },
+        "getPSViewCtrlName" : "listexpbar_list_quicktoolbar"
+      } ],
       "getPSAppViewUIActions" : [ {
-        "xDataControlName" : "listexpbar_list",
+        "name" : "listexpbar_list_quicktoolbar_deuiaction1",
         "getPSUIAction" : {
           "modelref" : true,
           "id" : "New"
         },
-        "name" : "listexpbar_list_quicktoolbar_deuiaction1"
+        "xDataControlName" : "listexpbar_list"
       } ],
-      "getPSControls" : [ {
-        "controlType" : "TOOLBAR",
-        "getPSDEToolbarItems" : [ {
-          "getPSAppViewUIAction" : {
+      "getPSControlHandler" : {
+        "getPSHandlerActions" : [ {
+          "actionName" : "Update",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "UPDATE",
+          "name" : "update",
+          "getPSAppDEMethod" : {
             "modelref" : true,
-            "id" : "listexpbar_list_quicktoolbar_deuiaction1"
+            "id" : "Update"
           },
-          "getCapPSLanguageRes" : {
-            "lanResTag" : "TBB.TEXT.*.NEW",
-            "id" : "工具栏按钮文本[*.NEW]"
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+          }
+        }, {
+          "actionType" : "DEDATASET",
+          "name" : "fetch",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "FetchCurUer"
           },
-          "getTooltipPSLanguageRes" : {
-            "lanResTag" : "TBB.TOOLTIP.*.NEW",
-            "id" : "工具栏按钮提示[*.NEW]"
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+          }
+        }, {
+          "actionName" : "Remove",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "DELETE",
+          "name" : "remove",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
           },
-          "noPrivDisplayMode" : 2,
-          "getPSUIAction" : {
-            "getCapPSLanguageRes" : {
-              "lanResTag" : "TBB.TEXT.*.NEW",
-              "id" : "工具栏按钮文本[*.NEW]"
-            },
-            "getTooltipPSLanguageRes" : {
-              "lanResTag" : "TBB.TOOLTIP.*.NEW",
-              "id" : "工具栏按钮提示[*.NEW]"
-            },
-            "getNoPrivDisplayMode" : 2,
-            "getPSSysImage" : {
-              "glyph" : "xf0f6@FontAwesome",
-              "cssClass" : "fa fa-file-text-o"
-            },
-            "timeout" : 60000,
-            "codeName" : "New",
-            "caption" : "新建",
-            "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
-            "uIActionTag" : "New",
-            "uIActionType" : "DEUIACTION",
-            "uIActionMode" : "SYS",
-            "fullCodeName" : "New",
-            "name" : "表格界面_新建操作"
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+          }
+        }, {
+          "actionName" : "Get",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "READ",
+          "name" : "load",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Get"
           },
-          "getPSSysImage" : {
-            "glyph" : "xf067@FontAwesome",
-            "cssClass" : "fa fa-plus"
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+          }
+        }, {
+          "actionName" : "Create",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "CREATE",
+          "name" : "create",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Create"
           },
-          "tooltip" : "新建",
-          "groupExtractMode" : "ITEM",
-          "showIcon" : true,
-          "showCaption" : true,
-          "itemType" : "DEUIACTION",
-          "caption" : "新建",
-          "name" : "deuiaction1"
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+          }
         } ],
+        "userDRAction" : "READ",
+        "enableDEFieldPrivilege" : false,
+        "id" : "列表控件处理器"
+      },
+      "getPSControlParam" : {
+        "autoLoad" : true,
+        "showBusyIndicator" : true,
+        "id" : "listexpbar_list"
+      },
+      "getPSControls" : [ {
+        "codeName" : "ListExpViewlistexpbar_list_quicktoolbar",
+        "controlType" : "TOOLBAR",
+        "hookEventNames" : [ "CLICK" ],
+        "logicName" : "表格界面（只新建）",
+        "name" : "listexpbar_list_quicktoolbar",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
@@ -177,164 +210,131 @@
         "getPSControlParam" : {
           "id" : "listexpbar_list_quicktoolbar"
         },
-        "hookEventNames" : [ "CLICK" ],
-        "codeName" : "ListExpViewlistexpbar_list_quicktoolbar",
-        "logicName" : "表格界面（只新建）",
-        "name" : "listexpbar_list_quicktoolbar",
+        "getPSDEToolbarItems" : [ {
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.NEW",
+            "id" : "工具栏按钮文本[*.NEW]"
+          },
+          "caption" : "新建",
+          "groupExtractMode" : "ITEM",
+          "itemType" : "DEUIACTION",
+          "name" : "deuiaction1",
+          "noPrivDisplayMode" : 2,
+          "getPSAppViewUIAction" : {
+            "modelref" : true,
+            "id" : "listexpbar_list_quicktoolbar_deuiaction1"
+          },
+          "getPSSysImage" : {
+            "glyph" : "xf067@FontAwesome",
+            "cssClass" : "fa fa-plus"
+          },
+          "getPSUIAction" : {
+            "getNoPrivDisplayMode" : 2,
+            "getCapPSLanguageRes" : {
+              "lanResTag" : "TBB.TEXT.*.NEW",
+              "id" : "工具栏按钮文本[*.NEW]"
+            },
+            "caption" : "新建",
+            "codeName" : "New",
+            "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
+            "fullCodeName" : "New",
+            "name" : "表格界面_新建操作",
+            "getPSSysImage" : {
+              "glyph" : "xf0f6@FontAwesome",
+              "cssClass" : "fa fa-file-text-o"
+            },
+            "timeout" : 60000,
+            "getTooltipPSLanguageRes" : {
+              "lanResTag" : "TBB.TOOLTIP.*.NEW",
+              "id" : "工具栏按钮提示[*.NEW]"
+            },
+            "uIActionMode" : "SYS",
+            "uIActionTag" : "New",
+            "uIActionType" : "DEUIACTION"
+          },
+          "tooltip" : "新建",
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.NEW",
+            "id" : "工具栏按钮提示[*.NEW]"
+          },
+          "showCaption" : true,
+          "showIcon" : true
+        } ],
         "modelid" : "b5f265a97376e60ddeef17447557883a"
       } ],
-      "getPSAppViewLogics" : [ {
-        "logicTrigger" : "CTRLEVENT",
-        "getPSViewCtrlName" : "listexpbar_list_quicktoolbar",
-        "getPSAppViewUIAction" : {
-          "modelref" : true,
-          "id" : "listexpbar_list_quicktoolbar_deuiaction1"
-        },
-        "eventArg" : "deuiaction1",
-        "eventNames" : "CLICK",
-        "logicType" : "APPVIEWUIACTION",
-        "name" : "listexpbar_list_quicktoolbar_deuiaction1_click"
+      "getPSDEListDataItems" : [ {
+        "dataType" : 25,
+        "name" : "srfmajortext",
+        "getPSAppDEField" : {
+          "name" : "NAME",
+          "codeName" : "Name"
+        }
+      }, {
+        "dataType" : 25,
+        "name" : "srfkey",
+        "getPSAppDEField" : {
+          "name" : "ID",
+          "codeName" : "Id"
+        }
+      }, {
+        "dataType" : 25,
+        "name" : "line",
+        "getPSAppDEField" : {
+          "name" : "LINE",
+          "codeName" : "Line"
+        }
+      }, {
+        "dataType" : 25,
+        "name" : "srfmstag"
       } ],
-      "getPSAppDataEntity" : {
+      "pagingSize" : 20,
+      "getRemovePSControlAction" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+        "id" : "remove"
       },
-      "getPSControlParam" : {
-        "autoLoad" : true,
-        "showBusyIndicator" : true,
-        "id" : "listexpbar_list"
+      "getUpdatePSControlAction" : {
+        "modelref" : true,
+        "id" : "update"
       },
-      "controlStyle" : "LISTVIEW",
-      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
-      "getPSControlHandler" : {
-        "userDRAction" : "READ",
-        "getPSHandlerActions" : [ {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-          },
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Update"
-          },
-          "dataAccessAction" : "UPDATE",
-          "actionName" : "Update",
-          "actionType" : "DEACTION",
-          "name" : "update"
-        }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-          },
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "FetchCurUer"
-          },
-          "actionType" : "DEDATASET",
-          "name" : "fetch"
-        }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-          },
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Remove"
-          },
-          "dataAccessAction" : "DELETE",
-          "actionName" : "Remove",
-          "actionType" : "DEACTION",
-          "name" : "remove"
-        }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-          },
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Get"
-          },
-          "dataAccessAction" : "READ",
-          "actionName" : "Get",
-          "actionType" : "DEACTION",
-          "name" : "load"
-        }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-          },
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Create"
-          },
-          "dataAccessAction" : "CREATE",
-          "actionName" : "Create",
-          "actionType" : "DEACTION",
-          "name" : "create"
-        } ],
-        "enableDEFieldPrivilege" : false,
-        "id" : "列表控件处理器"
-      },
-      "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product/PSLISTS/Exp.json",
-      "logicName" : "Exp",
+      "hasWFDataItems" : false,
+      "enableGroup" : false,
+      "enableRowEdit" : false,
+      "enableRowEditGroup" : false,
+      "enableRowEditOrder" : false,
+      "enableRowNew" : false,
+      "noSort" : false,
+      "showHeader" : true,
       "name" : "listexpbar_list",
       "modelid" : "33faef68532bd41ec8c3b0e9bd5cfd48"
     } ],
-    "getPSAppViewRefs" : [ {
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsEditView9.json",
-        "viewType" : "DEEDITVIEW9"
-      },
-      "realTitle" : "产品统计编辑视图",
-      "name" : "EXPITEM:DEFAULT"
-    } ],
+    "width" : 200.0,
+    "xDataControlName" : "listexpbar_list",
+    "enableCounter" : true,
+    "enableSearch" : true,
+    "showTitleBar" : false,
+    "modelid" : "a84a543c155b01389bc12eb1c27624b5_listexpbar"
+  } ],
+  "getPSDEViewCodeName" : "ListExpView",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDELISTEXPVIEW_STYLE2",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "width" : 200.0,
-      "id" : "LISTEXPBAR"
-    },
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
-    "getPSControlHandler" : {
-      "enableDEFieldPrivilege" : false,
-      "id" : "listexpbar"
-    },
-    "width" : 200.0,
-    "codeName" : "ListExpViewlistexpbar",
-    "name" : "listexpbar",
-    "modelid" : "a84a543c155b01389bc12eb1c27624b5_listexpbar"
-  } ],
+    "getPSControlParam" : { },
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "sideBarLayout" : "LEFT",
+  "title" : "产品列表导航视图",
   "viewStyle" : "STYLE2",
-  "getPSAppViewLogics" : [ {
-    "logicTrigger" : "CUSTOM",
-    "getPSAppUILogic" : {
-      "enableWizardAdd" : false,
-      "actionAfterWizard" : "DEFAULT",
-      "enableBatchAdd" : false,
-      "batchAddOnly" : false,
-      "viewLogicType" : "APP_NEWDATA",
-      "logicType" : "PREDEFINED",
-      "name" : "新建数据"
-    },
-    "logicType" : "SYSUILOGIC",
-    "name" : "newdata"
-  }, {
-    "logicTrigger" : "CUSTOM",
-    "getPSAppUILogic" : {
-      "viewLogicType" : "APP_OPENDATA",
-      "logicType" : "PREDEFINED",
-      "name" : "打开数据"
-    },
-    "logicType" : "SYSUILOGIC",
-    "name" : "opendata"
-  } ],
-  "codeName" : "ProductListExpView",
   "viewType" : "DELISTEXPVIEW",
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductListExpView.json",
-  "name" : "ProductListExpView"
+  "enableDP" : true,
+  "enableFilter" : false,
+  "enableQuickSearch" : true,
+  "showCaptionBar" : false,
+  "showDataInfoBar" : true
 }

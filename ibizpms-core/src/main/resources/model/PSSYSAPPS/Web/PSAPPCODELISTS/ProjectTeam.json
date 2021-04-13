@@ -1,16 +1,16 @@
 {
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-  },
+  "codeListType" : "DYNAMIC",
+  "codeName" : "ProjectTeam",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProjectTeam.json",
+  "emptyText" : "未定义",
+  "name" : "项目团队",
   "getPSAppDEDataSet" : {
     "modelref" : true,
     "id" : "FetchProjectTeam"
   },
-  "dynaInstMode" : 1,
-  "codeListType" : "DYNAMIC",
-  "codeName" : "ProjectTeam",
-  "emptyText" : "未定义",
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProjectTeam.json",
-  "name" : "项目团队"
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+  }
 }

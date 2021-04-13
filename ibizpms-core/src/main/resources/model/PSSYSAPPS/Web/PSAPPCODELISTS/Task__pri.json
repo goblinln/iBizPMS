@@ -1,48 +1,48 @@
 {
-  "codeItemValueNumber" : true,
+  "codeListType" : "STATIC",
+  "codeName" : "Task__pri",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__pri.json",
+  "emptyText" : "未定义",
+  "name" : "任务优先级",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
   },
   "getPSCodeItems" : [ {
-    "value" : "1",
+    "codeName" : "Item_1",
     "getPSSysCss" : {
       "cssName" : "text-red-border-color"
     },
+    "text" : "1",
     "textCls" : "text-red-border-color",
-    "codeName" : "Item_1",
-    "text" : "1"
+    "value" : "1"
   }, {
-    "value" : "2",
+    "codeName" : "Item_2",
     "getPSSysCss" : {
       "cssName" : "text-pink-border-color"
     },
+    "text" : "2",
     "textCls" : "text-pink-border-color",
-    "codeName" : "Item_2",
-    "text" : "2"
+    "value" : "2"
   }, {
-    "value" : "3",
+    "codeName" : "Item_3",
     "getPSSysCss" : {
       "cssName" : "text-blue-border-color"
     },
-    "textCls" : "text-blue-border-color",
-    "codeName" : "Item_3",
     "text" : "3",
+    "textCls" : "text-blue-border-color",
+    "value" : "3",
     "default" : true
   }, {
-    "value" : "4",
+    "codeName" : "Item_4",
     "getPSSysCss" : {
       "cssName" : "text-green-border-color"
     },
+    "text" : "4",
     "textCls" : "text-green-border-color",
-    "codeName" : "Item_4",
-    "text" : "4"
+    "value" : "4"
   } ],
-  "dynaInstMode" : 1,
-  "codeListType" : "STATIC",
-  "codeName" : "Task__pri",
-  "emptyText" : "未定义",
-  "enableCache" : true,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__pri.json",
-  "name" : "任务优先级"
+  "codeItemValueNumber" : true,
+  "enableCache" : true
 }

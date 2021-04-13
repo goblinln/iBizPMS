@@ -1,24 +1,24 @@
 {
-  "getPSPickupDEField" : {
-    "name" : "JOB",
-    "codeName" : "Job"
-  },
-  "masterOrder" : -1,
-  "removeActionType" : -1,
-  "pickupDEFName" : "JOB",
-  "masterRS" : 0,
-  "removeOrder" : 0,
+  "codeName" : "ZTJob",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestResult/PSDERS/DER1N_ZT_TESTRESULT_ZT_JOB_JOB.json",
   "getMajorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Job.json"
   },
-  "orderValue" : 100,
-  "codeName" : "ZTJob",
-  "dERType" : "DER1N",
+  "masterOrder" : -1,
+  "masterRS" : 0,
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/TestResult.json"
   },
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestResult/PSDERS/DER1N_ZT_TESTRESULT_ZT_JOB_JOB.json",
-  "name" : "DER1N_ZT_TESTRESULT_ZT_JOB_JOB"
+  "name" : "DER1N_ZT_TESTRESULT_ZT_JOB_JOB",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "JOB",
+    "codeName" : "Job"
+  },
+  "pickupDEFName" : "JOB",
+  "removeActionType" : -1,
+  "removeOrder" : 0
 }

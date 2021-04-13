@@ -1,96 +1,96 @@
 {
-  "enableFront" : false,
-  "enableBackend" : true,
-  "getStartPSDELogicNode" : {
-    "modelref" : true,
-    "id" : "Begin"
-  },
+  "codeName" : "CurUserIsF",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/CurUserIsF.json",
+  "logicHolder" : 1,
+  "logicName" : "当前是否收藏文档库分类",
+  "logicSubType" : "NONE",
+  "name" : "当前是否收藏文档库分类",
+  "getPSDELogicLinks" : [ {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "name" : "连接1933",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall2"
+    },
+    "name" : "连接613",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "defaultLink" : false
+  } ],
   "getPSDELogicNodes" : [ {
-    "parallelOutput" : true,
+    "codeName" : "Rawsqlcall2",
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
     },
     "logicHolder" : 1,
-    "codeName" : "Rawsqlcall2",
     "logicNodeType" : "RAWSQLCALL",
-    "name" : "设置查询类型"
+    "name" : "设置查询类型",
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
+    "codeName" : "Rawsqlcall1",
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "查询是否收藏",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接613"
     } ],
     "getPSDELogicNodeParams" : [ {
+      "name" : "用户全局对象[srfloginname]",
       "paramAction" : "SQLPARAM",
       "srcFieldName" : "srfloginname",
-      "srcValueType" : "SESSION",
-      "name" : "用户全局对象[srfloginname]"
+      "srcValueType" : "SESSION"
     }, {
+      "name" : "Default[COLLECTOR]",
       "paramAction" : "SQLPARAM",
+      "srcFieldName" : "COLLECTOR",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "srcFieldName" : "COLLECTOR",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[COLLECTOR]"
+      "srcValueType" : "SRCDLPARAM"
     } ],
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall1",
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "查询是否收藏"
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
+    "codeName" : "Begin",
+    "logicHolder" : 3,
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接1933"
     } ],
-    "logicHolder" : 3,
-    "codeName" : "Begin",
-    "logicNodeType" : "BEGIN",
-    "name" : "开始"
-  } ],
-  "getPSDELogicLinks" : [ {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall1"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Begin"
-    },
-    "name" : "连接1933"
-  }, {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall2"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall1"
-    },
-    "name" : "连接613"
+    "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
-    "lastParam" : false,
-    "envParam" : false,
     "codeName" : "Default",
+    "name" : "传入变量",
     "default" : true,
-    "name" : "传入变量"
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
   } ],
-  "logicHolder" : 1,
-  "codeName" : "CurUserIsF",
-  "logicName" : "当前是否收藏文档库分类",
-  "defaultParamName" : "Default",
-  "logicSubType" : "NONE",
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/CurUserIsF.json",
-  "name" : "当前是否收藏文档库分类"
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : true,
+  "enableFront" : false
 }

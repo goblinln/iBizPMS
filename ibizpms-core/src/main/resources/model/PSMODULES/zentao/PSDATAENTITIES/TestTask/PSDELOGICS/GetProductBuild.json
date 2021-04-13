@@ -1,142 +1,142 @@
 {
-  "enableFront" : false,
-  "enableBackend" : true,
-  "getStartPSDELogicNode" : {
-    "modelref" : true,
-    "id" : "Begin"
-  },
-  "getPSDELogicNodes" : [ {
-    "parallelOutput" : true,
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "PROJECT",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[PROJECT]"
-    }, {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "PRODUCT",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[PRODUCT]"
-    } ],
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall2",
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "获取版本"
-  }, {
-    "parallelOutput" : true,
-    "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接3016"
-    } ],
-    "logicHolder" : 3,
-    "codeName" : "Begin",
-    "logicNodeType" : "BEGIN",
-    "name" : "开始"
-  }, {
-    "parallelOutput" : true,
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接1794"
-    } ],
-    "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "PROJECT",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[PROJECT]"
-    } ],
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall1",
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "获取产品"
-  } ],
+  "codeName" : "GetProductBuild",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDELOGICS/GetProductBuild.json",
+  "logicHolder" : 1,
+  "logicName" : "获取产品及版本",
+  "logicSubType" : "NONE",
+  "name" : "获取产品及版本",
   "getPSDELogicLinks" : [ {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall2"
+    },
+    "name" : "连接1794",
     "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
       "getPSDELogicLinkConds" : [ {
         "condOP" : "ISNOTNULL",
+        "dstFieldName" : "PRODUCT",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "dstFieldName" : "PRODUCT",
         "logicType" : "SINGLE",
         "name" : "Default[PRODUCT] 值不为空(NotNil)"
       } ],
       "notMode" : false,
-      "groupOP" : "AND",
-      "logicType" : "GROUP",
       "id" : "f08f3584fce11dd05b3852b549246602"
-    },
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall2"
     },
     "getSrcPSDELogicNode" : {
       "modelref" : true,
       "id" : "Rawsqlcall1"
     },
-    "name" : "连接1794"
+    "defaultLink" : false
   }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "name" : "连接3016",
     "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
       "getPSDELogicLinkConds" : [ {
         "condOP" : "ISNOTNULL",
+        "dstFieldName" : "PROJECT",
         "getDstLogicParam" : {
           "modelref" : true,
           "id" : "Default"
         },
-        "dstFieldName" : "PROJECT",
         "logicType" : "SINGLE",
         "name" : "Default[PROJECT] 值不为空(NotNil)"
       } ],
       "notMode" : false,
-      "groupOP" : "AND",
-      "logicType" : "GROUP",
       "id" : "7a8aedfbaad4ce8b4ac3b52921f3b924"
-    },
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall1"
     },
     "getSrcPSDELogicNode" : {
       "modelref" : true,
       "id" : "Begin"
     },
-    "name" : "连接3016"
+    "defaultLink" : false
+  } ],
+  "getPSDELogicNodes" : [ {
+    "codeName" : "Rawsqlcall2",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicHolder" : 1,
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取版本",
+    "getPSDELogicNodeParams" : [ {
+      "name" : "Default[PROJECT]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "PROJECT",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[PRODUCT]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "PRODUCT",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Begin",
+    "logicHolder" : 3,
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接3016"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall1",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicHolder" : 1,
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取产品",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接1794"
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "Default[PROJECT]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "PROJECT",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
-    "lastParam" : false,
-    "envParam" : false,
     "codeName" : "Default",
+    "name" : "传入变量",
     "default" : true,
-    "name" : "传入变量"
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
   } ],
-  "logicHolder" : 1,
-  "codeName" : "GetProductBuild",
-  "logicName" : "获取产品及版本",
-  "defaultParamName" : "Default",
-  "logicSubType" : "NONE",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDELOGICS/GetProductBuild.json",
-  "name" : "获取产品及版本"
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : true,
+  "enableFront" : false
 }

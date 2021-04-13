@@ -1,24 +1,24 @@
 {
-  "transactionMode" : "DEFAULT",
-  "paramMode" : 1,
-  "generateTestUnit" : true,
-  "customParam" : false,
-  "builtinAction" : true,
-  "pubServiceDefault" : true,
-  "timeOut" : -1,
+  "actionMode" : "READ",
+  "actionType" : "BUILTIN",
+  "codeName" : "Get",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Compile/PSDEACTIONS/Get.json",
   "extendMode" : 0,
+  "logicName" : "Get",
+  "name" : "Get",
+  "orderValue" : 31,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"
   },
-  "orderValue" : 31,
-  "codeName" : "Get",
-  "logicName" : "Get",
-  "actionMode" : "READ",
-  "actionType" : "BUILTIN",
+  "paramMode" : 1,
   "requestField" : "ID",
   "requestParamType" : "FIELD",
   "testActionMode" : 0,
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Compile/PSDEACTIONS/Get.json",
-  "name" : "Get"
+  "timeOut" : -1,
+  "transactionMode" : "DEFAULT",
+  "builtinAction" : true,
+  "customParam" : false,
+  "generateTestUnit" : true,
+  "pubServiceDefault" : true
 }

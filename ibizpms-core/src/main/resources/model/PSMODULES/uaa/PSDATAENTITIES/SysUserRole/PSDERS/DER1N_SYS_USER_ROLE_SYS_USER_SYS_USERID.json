@@ -1,4 +1,20 @@
 {
+  "codeName" : "User",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole/PSDERS/DER1N_SYS_USER_ROLE_SYS_USER_SYS_USERID.json",
+  "logicName" : "用户",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUser.json"
+  },
+  "masterOrder" : 100,
+  "masterRS" : 3,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole.json"
+  },
+  "name" : "DER1N_SYS_USER_ROLE_SYS_USER_SYS_USERID",
+  "orderValue" : 100,
   "getPSPickupDEField" : {
     "name" : "SYS_USERID",
     "codeName" : "UserId"
@@ -7,23 +23,7 @@
     "name" : "SYS_USERNAME",
     "codeName" : "PersonName"
   },
-  "masterOrder" : 100,
-  "removeActionType" : -1,
   "pickupDEFName" : "SYS_USERID",
-  "masterRS" : 3,
-  "removeOrder" : 0,
-  "getMajorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUser.json"
-  },
-  "orderValue" : 100,
-  "codeName" : "User",
-  "logicName" : "用户",
-  "dERType" : "DER1N",
-  "getMinorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole.json"
-  },
-  "dynaModelFilePath" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole/PSDERS/DER1N_SYS_USER_ROLE_SYS_USER_SYS_USERID.json",
-  "name" : "DER1N_SYS_USER_ROLE_SYS_USER_SYS_USERID"
+  "removeActionType" : -1,
+  "removeOrder" : 0
 }

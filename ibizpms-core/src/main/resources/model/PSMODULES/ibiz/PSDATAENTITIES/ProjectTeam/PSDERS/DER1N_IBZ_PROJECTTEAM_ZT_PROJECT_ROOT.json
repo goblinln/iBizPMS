@@ -1,4 +1,19 @@
 {
+  "codeName" : "ProjectTeam",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDERS/DER1N_IBZ_PROJECTTEAM_ZT_PROJECT_ROOT.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 8,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam.json"
+  },
+  "name" : "DER1N_IBZ_PROJECTTEAM_ZT_PROJECT_ROOT",
+  "orderValue" : 100,
   "getPSPickupDEField" : {
     "name" : "ROOT",
     "codeName" : "Root"
@@ -7,23 +22,8 @@
     "name" : "PROJECTNAME",
     "codeName" : "ProjectName"
   },
-  "nestedRS" : true,
-  "masterOrder" : -1,
-  "removeActionType" : -1,
   "pickupDEFName" : "ROOT",
-  "masterRS" : 8,
+  "removeActionType" : -1,
   "removeOrder" : 0,
-  "getMajorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
-  },
-  "orderValue" : 100,
-  "codeName" : "ProjectTeam",
-  "dERType" : "DER1N",
-  "getMinorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam.json"
-  },
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDERS/DER1N_IBZ_PROJECTTEAM_ZT_PROJECT_ROOT.json",
-  "name" : "DER1N_IBZ_PROJECTTEAM_ZT_PROJECT_ROOT"
+  "nestedRS" : true
 }

@@ -1,59 +1,59 @@
 {
-  "codeItemValueNumber" : false,
-  "subSysCodeList" : false,
-  "subSysAsCloud" : false,
-  "systemTag" : "iBizPMS",
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/Burninterval.json",
   "codeName" : "Burninterval",
-  "userScope" : false,
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/Burninterval.json",
   "emptyText" : "未定义",
-  "enableCache" : true,
-  "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "1",
     "codeName" : "Item_1",
-    "text" : "间隔1天"
+    "text" : "间隔1天",
+    "value" : "1"
   }, {
-    "value" : "2",
     "codeName" : "Item_2",
-    "text" : "间隔2天"
+    "text" : "间隔2天",
+    "value" : "2"
   }, {
-    "value" : "3",
     "codeName" : "Item_3",
-    "text" : "间隔3天"
+    "text" : "间隔3天",
+    "value" : "3"
   }, {
-    "value" : "4",
     "codeName" : "Item_4",
-    "text" : "间隔4天"
+    "text" : "间隔4天",
+    "value" : "4"
   }, {
-    "value" : "5",
     "codeName" : "Item_5",
-    "text" : "间隔5天"
+    "text" : "间隔5天",
+    "value" : "5"
   }, {
-    "value" : "6",
     "codeName" : "Item_6",
-    "text" : "间隔6天"
+    "text" : "间隔6天",
+    "value" : "6"
   }, {
-    "value" : "7",
     "codeName" : "Item_7",
-    "text" : "间隔7天"
+    "text" : "间隔7天",
+    "value" : "7"
   }, {
-    "value" : "8",
     "codeName" : "Item_8",
-    "text" : "间隔8天"
+    "text" : "间隔8天",
+    "value" : "8"
   }, {
-    "value" : "9",
     "codeName" : "Item_9",
-    "text" : "间隔9天"
+    "text" : "间隔9天",
+    "value" : "9"
   }, {
-    "value" : "10",
     "codeName" : "Item_10",
-    "text" : "间隔10天"
+    "text" : "间隔10天",
+    "value" : "10"
   }, {
-    "value" : "11",
     "codeName" : "Item_11",
-    "text" : "间隔11天"
-  } ]
+    "text" : "间隔11天",
+    "value" : "11"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
 }

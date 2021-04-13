@@ -1,4 +1,19 @@
 {
+  "codeName" : "PSSysApp",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession/PSDERS/DER1N_PSSYSRUNSESSION_PSSYSAPP_PSSYSAPPID.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysApp.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 0,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession.json"
+  },
+  "name" : "DER1N_PSSYSRUNSESSION_PSSYSAPP_PSSYSAPPID",
+  "orderValue" : 100,
   "getPSPickupDEField" : {
     "name" : "PSSYSAPPID",
     "codeName" : "PSSysAppId"
@@ -7,22 +22,7 @@
     "name" : "PSSYSAPPNAME",
     "codeName" : "PSSysAppName"
   },
-  "masterOrder" : -1,
-  "removeActionType" : 0,
   "pickupDEFName" : "PSSYSAPPID",
-  "masterRS" : 0,
-  "removeOrder" : 0,
-  "getMajorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysApp.json"
-  },
-  "orderValue" : 100,
-  "codeName" : "PSSysApp",
-  "dERType" : "DER1N",
-  "getMinorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession.json"
-  },
-  "dynaModelFilePath" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession/PSDERS/DER1N_PSSYSRUNSESSION_PSSYSAPP_PSSYSAPPID.json",
-  "name" : "DER1N_PSSYSRUNSESSION_PSSYSAPP_PSSYSAPPID"
+  "removeActionType" : 0,
+  "removeOrder" : 0
 }

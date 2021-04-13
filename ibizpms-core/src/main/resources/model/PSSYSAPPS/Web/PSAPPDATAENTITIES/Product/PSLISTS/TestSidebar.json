@@ -1,104 +1,58 @@
 {
-  "enableRowNew" : false,
-  "enableRowEditOrder" : false,
-  "noSort" : false,
-  "hasWFDataItems" : false,
-  "showHeader" : true,
-  "enableRowEditGroup" : false,
-  "getPSDEListDataItems" : [ {
-    "name" : "id",
-    "dataType" : 1
-  }, {
-    "name" : "istop",
-    "dataType" : 9
-  }, {
-    "getFrontPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product__status.json"
-    },
-    "name" : "status",
-    "dataType" : 25
-  }, {
-    "name" : "activebugcnt",
-    "dataType" : 9
-  }, {
-    "getFrontPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product__type.json"
-    },
-    "name" : "type",
-    "dataType" : 25
-  }, {
-    "name" : "unconfirmbugcnt",
-    "dataType" : 9
-  }, {
-    "name" : "name",
-    "dataType" : 25
-  }, {
-    "name" : "notclosedbugcnt",
-    "dataType" : 9
-  }, {
-    "name" : "code",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfkey",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
-    "name" : "srfmajortext",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "LINE",
-      "codeName" : "Line"
-    },
-    "name" : "line",
-    "dataType" : 25
-  }, {
-    "name" : "srfmstag",
-    "dataType" : 25
-  } ],
-  "getMinorSortPSAppDEField" : {
-    "name" : "ID",
-    "codeName" : "Id"
-  },
-  "enableRowEdit" : false,
-  "controlType" : "LIST",
   "codeName" : "TestSidebar",
-  "minorSortDir" : "DESC",
-  "enableGroup" : false,
-  "pagingSize" : 1000,
-  "groupMode" : "NONE",
-  "mobListStyle" : "LISTVIEW",
+  "controlStyle" : "LISTVIEW",
+  "controlType" : "LIST",
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
   },
-  "getUpdatePSControlAction" : {
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product/PSLISTS/TestSidebar.json",
+  "getFetchPSControlAction" : {
     "modelref" : true,
-    "id" : "update"
-  },
-  "getRemovePSControlAction" : {
-    "modelref" : true,
-    "id" : "remove"
+    "id" : "fetch"
   },
   "getGetPSControlAction" : {
     "modelref" : true,
     "id" : "load"
   },
-  "getFetchPSControlAction" : {
-    "modelref" : true,
-    "id" : "fetch"
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "TestSidebar",
+  "minorSortDir" : "DESC",
+  "getMinorSortPSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
   },
+  "mobListStyle" : "LISTVIEW",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+  },
+  "getPSAppViewLogics" : [ {
+    "eventArg" : "deuiaction1",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "list_quicktoolbar_deuiaction1_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "list_quicktoolbar_deuiaction1"
+    },
+    "getPSViewCtrlName" : "list_quicktoolbar"
+  }, {
+    "eventArg" : "deuiaction2",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "list_quicktoolbar_deuiaction2_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "list_quicktoolbar_deuiaction2"
+    },
+    "getPSViewCtrlName" : "list_quicktoolbar"
+  } ],
   "getPSAppViewUIActions" : [ {
-    "xDataControlName" : "list",
+    "name" : "list_quicktoolbar_deuiaction1",
     "getPSUIAction" : {
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -108,9 +62,9 @@
       "id" : "ProductTop@Product"
     },
     "uIActionTarget" : "SINGLEKEY",
-    "name" : "list_quicktoolbar_deuiaction1"
+    "xDataControlName" : "list"
   }, {
-    "xDataControlName" : "list",
+    "name" : "list_quicktoolbar_deuiaction2",
     "getPSUIAction" : {
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -120,105 +74,14 @@
       "id" : "CancelProductTop@Product"
     },
     "uIActionTarget" : "SINGLEKEY",
-    "name" : "list_quicktoolbar_deuiaction2"
+    "xDataControlName" : "list"
   } ],
   "getPSControls" : [ {
+    "codeName" : "TestLeftSidebarListViewlist_quicktoolbar",
     "controlType" : "TOOLBAR",
-    "getPSDEToolbarItems" : [ {
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "list_quicktoolbar_deuiaction1"
-      },
-      "noPrivDisplayMode" : 2,
-      "getPSUIAction" : {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "ProductTop"
-        },
-        "refreshMode" : 1,
-        "enableConfirm" : true,
-        "getNoPrivDisplayMode" : 2,
-        "getPSSysImage" : {
-          "glyph" : "xf0a6@FontAwesome",
-          "cssClass" : "fa fa-hand-o-up"
-        },
-        "timeout" : 60000,
-        "codeName" : "ProductTop",
-        "caption" : "置顶",
-        "reloadData" : true,
-        "actionTarget" : "SINGLEKEY",
-        "dataAccessAction" : "NOTOP",
-        "uIActionTag" : "ProductTop",
-        "uIActionType" : "DEUIACTION",
-        "uIActionMode" : "BACKEND",
-        "globalUIAction" : true,
-        "fullCodeName" : "Product_ProductTop",
-        "name" : "置顶",
-        "id" : "ProductTop@Product"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf0a6@FontAwesome",
-        "cssClass" : "fa fa-hand-o-up"
-      },
-      "tooltip" : "置顶",
-      "groupExtractMode" : "ITEM",
-      "showIcon" : true,
-      "showCaption" : false,
-      "itemType" : "DEUIACTION",
-      "caption" : "置顶",
-      "name" : "deuiaction1"
-    }, {
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "list_quicktoolbar_deuiaction2"
-      },
-      "noPrivDisplayMode" : 2,
-      "getPSUIAction" : {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "CancelProductTop"
-        },
-        "refreshMode" : 1,
-        "enableConfirm" : true,
-        "getNoPrivDisplayMode" : 2,
-        "getPSSysImage" : {
-          "glyph" : "xf0a7@FontAwesome",
-          "cssClass" : "fa fa-hand-o-down"
-        },
-        "timeout" : 60000,
-        "codeName" : "CancelProductTop",
-        "caption" : "取消置顶",
-        "reloadData" : true,
-        "actionTarget" : "SINGLEKEY",
-        "dataAccessAction" : "TOP",
-        "uIActionTag" : "CancelProductTop",
-        "uIActionType" : "DEUIACTION",
-        "uIActionMode" : "BACKEND",
-        "globalUIAction" : true,
-        "fullCodeName" : "Product_CancelProductTop",
-        "name" : "取消置顶",
-        "id" : "CancelProductTop@Product"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf0a7@FontAwesome",
-        "cssClass" : "fa fa-hand-o-down"
-      },
-      "tooltip" : "取消置顶",
-      "groupExtractMode" : "ITEM",
-      "showIcon" : true,
-      "showCaption" : false,
-      "itemType" : "DEUIACTION",
-      "caption" : "取消置顶",
-      "name" : "deuiaction2"
-    } ],
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "产品快速置顶工具栏",
+    "name" : "list_quicktoolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
@@ -226,46 +89,183 @@
     "getPSControlParam" : {
       "id" : "list_quicktoolbar"
     },
-    "hookEventNames" : [ "CLICK" ],
-    "codeName" : "TestLeftSidebarListViewlist_quicktoolbar",
-    "logicName" : "产品快速置顶工具栏",
-    "name" : "list_quicktoolbar",
+    "getPSDEToolbarItems" : [ {
+      "caption" : "置顶",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction1",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "list_quicktoolbar_deuiaction1"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf0a6@FontAwesome",
+        "cssClass" : "fa fa-hand-o-up"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEKEY",
+        "getNoPrivDisplayMode" : 2,
+        "caption" : "置顶",
+        "codeName" : "ProductTop",
+        "dataAccessAction" : "NOTOP",
+        "fullCodeName" : "Product_ProductTop",
+        "name" : "置顶",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "ProductTop"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf0a6@FontAwesome",
+          "cssClass" : "fa fa-hand-o-up"
+        },
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "BACKEND",
+        "uIActionTag" : "ProductTop",
+        "uIActionType" : "DEUIACTION",
+        "enableConfirm" : true,
+        "globalUIAction" : true,
+        "reloadData" : true,
+        "id" : "ProductTop@Product"
+      },
+      "tooltip" : "置顶",
+      "showCaption" : false,
+      "showIcon" : true
+    }, {
+      "caption" : "取消置顶",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction2",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "list_quicktoolbar_deuiaction2"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf0a7@FontAwesome",
+        "cssClass" : "fa fa-hand-o-down"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEKEY",
+        "getNoPrivDisplayMode" : 2,
+        "caption" : "取消置顶",
+        "codeName" : "CancelProductTop",
+        "dataAccessAction" : "TOP",
+        "fullCodeName" : "Product_CancelProductTop",
+        "name" : "取消置顶",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "CancelProductTop"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf0a7@FontAwesome",
+          "cssClass" : "fa fa-hand-o-down"
+        },
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "BACKEND",
+        "uIActionTag" : "CancelProductTop",
+        "uIActionType" : "DEUIACTION",
+        "enableConfirm" : true,
+        "globalUIAction" : true,
+        "reloadData" : true,
+        "id" : "CancelProductTop@Product"
+      },
+      "tooltip" : "取消置顶",
+      "showCaption" : false,
+      "showIcon" : true
+    } ],
     "modelid" : "2bbbfd2a1ef498c53008a8d4cad76fc4"
   } ],
-  "getPSAppViewLogics" : [ {
-    "logicTrigger" : "CTRLEVENT",
-    "getPSViewCtrlName" : "list_quicktoolbar",
-    "getPSAppViewUIAction" : {
-      "modelref" : true,
-      "id" : "list_quicktoolbar_deuiaction1"
-    },
-    "eventArg" : "deuiaction1",
-    "eventNames" : "CLICK",
-    "logicType" : "APPVIEWUIACTION",
-    "name" : "list_quicktoolbar_deuiaction1_click"
+  "getPSDEListDataItems" : [ {
+    "dataType" : 1,
+    "name" : "id"
   }, {
-    "logicTrigger" : "CTRLEVENT",
-    "getPSViewCtrlName" : "list_quicktoolbar",
-    "getPSAppViewUIAction" : {
+    "dataType" : 9,
+    "name" : "istop"
+  }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
       "modelref" : true,
-      "id" : "list_quicktoolbar_deuiaction2"
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product__status.json"
     },
-    "eventArg" : "deuiaction2",
-    "eventNames" : "CLICK",
-    "logicType" : "APPVIEWUIACTION",
-    "name" : "list_quicktoolbar_deuiaction2_click"
+    "name" : "status"
+  }, {
+    "dataType" : 9,
+    "name" : "activebugcnt"
+  }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product__type.json"
+    },
+    "name" : "type"
+  }, {
+    "dataType" : 9,
+    "name" : "unconfirmbugcnt"
+  }, {
+    "dataType" : 25,
+    "name" : "name"
+  }, {
+    "dataType" : 9,
+    "name" : "notclosedbugcnt"
+  }, {
+    "dataType" : 25,
+    "name" : "code"
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "line",
+    "getPSAppDEField" : {
+      "name" : "LINE",
+      "codeName" : "Line"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
   } ],
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-  },
-  "controlStyle" : "LISTVIEW",
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "getPSSysPFPlugin" : {
     "pluginType" : "CUSTOM",
     "pluginCode" : "TESTLEFTNAVLIST"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product/PSLISTS/TestSidebar.json",
-  "logicName" : "TestSidebar",
+  "pagingSize" : 1000,
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "hasWFDataItems" : false,
+  "enableGroup" : false,
+  "enableRowEdit" : false,
+  "enableRowEditGroup" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "noSort" : false,
+  "showHeader" : true,
   "modelid" : "e1f2ab35b976e118f0467bd295b8af10"
 }

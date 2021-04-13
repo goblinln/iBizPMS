@@ -1,24 +1,24 @@
 {
-  "getPSPickupDEField" : {
-    "name" : "DUPLICATESTORY",
-    "codeName" : "DuplicateStory"
-  },
-  "masterOrder" : -1,
-  "removeActionType" : -1,
-  "pickupDEFName" : "DUPLICATESTORY",
-  "masterRS" : 0,
-  "removeOrder" : 0,
+  "codeName" : "ZTStoryDuplicateStory",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_STORY_DUPLICATESTORY.json",
   "getMajorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
   },
-  "orderValue" : 100,
-  "codeName" : "ZTStoryDuplicateStory",
-  "dERType" : "DER1N",
+  "masterOrder" : -1,
+  "masterRS" : 0,
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
   },
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_STORY_DUPLICATESTORY.json",
-  "name" : "DER1N_ZT_STORY_ZT_STORY_DUPLICATESTORY"
+  "name" : "DER1N_ZT_STORY_ZT_STORY_DUPLICATESTORY",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "DUPLICATESTORY",
+    "codeName" : "DuplicateStory"
+  },
+  "pickupDEFName" : "DUPLICATESTORY",
+  "removeActionType" : -1,
+  "removeOrder" : 0
 }

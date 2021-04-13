@@ -1,40 +1,40 @@
 {
+  "codeListType" : "STATIC",
+  "codeName" : "TestQuickpacket",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/TestQuickpacket.json",
+  "emptyText" : "未定义",
+  "name" : "测试单快速分组",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
   },
   "getPSCodeItems" : [ {
-    "value" : "ALL",
-    "data" : "{}",
     "codeName" : "All",
+    "data" : "{}",
     "text" : "全部",
+    "value" : "ALL",
     "default" : true
   }, {
-    "value" : "ICREATE",
-    "data" : "{\"n_status_eq\":\"wait\"}",
     "codeName" : "Icreate",
-    "text" : "待测测试单"
+    "data" : "{\"n_status_eq\":\"wait\"}",
+    "text" : "待测测试单",
+    "value" : "ICREATE"
   }, {
-    "value" : "IREVIEW",
-    "data" : "{\"n_status_eq\":\"doing\"}",
     "codeName" : "Ireview",
-    "text" : "测试中测试单"
+    "data" : "{\"n_status_eq\":\"doing\"}",
+    "text" : "测试中测试单",
+    "value" : "IREVIEW"
   }, {
-    "value" : "ICLOSE",
-    "data" : "{\"n_status_eq\":\"blocked\"}",
     "codeName" : "Iclose",
-    "text" : "被阻塞测试单"
+    "data" : "{\"n_status_eq\":\"blocked\"}",
+    "text" : "被阻塞测试单",
+    "value" : "ICLOSE"
   }, {
-    "value" : "Tested",
-    "data" : "{\"n_status_eq\":\"done\"}",
     "codeName" : "Tested",
-    "text" : "已测测试单"
+    "data" : "{\"n_status_eq\":\"done\"}",
+    "text" : "已测测试单",
+    "value" : "Tested"
   } ],
-  "dynaInstMode" : 1,
-  "codeListType" : "STATIC",
-  "codeName" : "TestQuickpacket",
-  "emptyText" : "未定义",
-  "enableCache" : true,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/TestQuickpacket.json",
-  "name" : "测试单快速分组"
+  "enableCache" : true
 }

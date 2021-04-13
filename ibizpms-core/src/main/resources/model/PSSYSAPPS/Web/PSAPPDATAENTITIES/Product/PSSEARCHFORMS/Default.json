@@ -1,179 +1,13 @@
 {
-  "searchButtonStyle" : "DEFAULT",
-  "enableAdvanceSearch" : false,
-  "enableAutoSearch" : false,
-  "enableFilterSave" : false,
+  "codeName" : "Default",
   "controlType" : "SEARCHFORM",
-  "getPSLayout" : {
-    "layout" : "TABLE_24COL",
-    "columnCount" : 24
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product/PSSEARCHFORMS/Default.json",
+  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+  "logicName" : "默认搜索表单",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
   },
-  "getPSDEFormPages" : [ {
-    "getPSDEFormDetails" : [ {
-      "emptyCaption" : false,
-      "getPSEditor" : {
-        "editorType" : "TEXTBOX",
-        "name" : "n_acl_eq"
-      },
-      "inputTipClosable" : false,
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "ACL",
-        "codeName" : "Acl"
-      },
-      "showCaption" : true,
-      "hidden" : false,
-      "dataType" : 25,
-      "convertToCodeItemText" : true,
-      "caption" : "访问控制(等于(=))",
-      "allowEmpty" : true,
-      "enableCond" : 3,
-      "ignoreInput" : 3,
-      "labelPos" : "LEFT",
-      "labelWidth" : 130,
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "colLG" : 8,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "n_acl_eq",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "n_acl_eq"
-    }, {
-      "emptyCaption" : false,
-      "getPSEditor" : {
-        "editorType" : "TEXTBOX",
-        "name" : "n_line_eq"
-      },
-      "inputTipClosable" : false,
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "LINE",
-        "codeName" : "Line"
-      },
-      "showCaption" : true,
-      "hidden" : false,
-      "dataType" : 1,
-      "caption" : "产品线(等于(=))",
-      "allowEmpty" : true,
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "labelPos" : "LEFT",
-      "labelWidth" : 130,
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "colLG" : 8,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "n_line_eq",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "n_line_eq"
-    }, {
-      "emptyCaption" : false,
-      "getPSEditor" : {
-        "editorType" : "TEXTBOX",
-        "editorWidth" : 100.0,
-        "name" : "n_linename_like"
-      },
-      "inputTipClosable" : false,
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "LINENAME",
-        "codeName" : "LineName"
-      },
-      "showCaption" : true,
-      "hidden" : false,
-      "dataType" : 25,
-      "caption" : "产品线(文本包含(%))",
-      "allowEmpty" : true,
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "labelPos" : "LEFT",
-      "labelWidth" : 130,
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "colLG" : 8,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "n_linename_like",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "n_linename_like"
-    }, {
-      "emptyCaption" : false,
-      "getPSEditor" : {
-        "editorType" : "TEXTBOX",
-        "name" : "n_linename_eq"
-      },
-      "inputTipClosable" : false,
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "LINENAME",
-        "codeName" : "LineName"
-      },
-      "showCaption" : true,
-      "hidden" : false,
-      "dataType" : 25,
-      "caption" : "产品线(等于(=))",
-      "allowEmpty" : true,
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "labelPos" : "LEFT",
-      "labelWidth" : 130,
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "colLG" : 8,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "n_linename_eq",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "n_linename_eq"
-    }, {
-      "emptyCaption" : false,
-      "getPSEditor" : {
-        "editorType" : "TEXTBOX",
-        "editorWidth" : 100.0,
-        "name" : "n_name_like"
-      },
-      "inputTipClosable" : false,
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      },
-      "showCaption" : true,
-      "hidden" : false,
-      "dataType" : 25,
-      "caption" : "产品名称(文本包含(%))",
-      "allowEmpty" : true,
-      "enableCond" : 3,
-      "ignoreInput" : 0,
-      "labelPos" : "LEFT",
-      "labelWidth" : 130,
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "colLG" : 8,
-        "layout" : "TABLE_24COL"
-      },
-      "codeName" : "n_name_like",
-      "detailType" : "FORMITEM",
-      "detailStyle" : "DEFAULT",
-      "name" : "n_name_like"
-    } ],
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
-    "infoGroupMode" : false,
-    "codeName" : "formpage1",
-    "caption" : "常规条件",
-    "detailType" : "FORMPAGE",
-    "detailStyle" : "DEFAULT",
-    "name" : "formpage1"
-  } ],
   "getPSDEFormItems" : [ {
     "id" : "n_acl_eq",
     "dataType" : 25,
@@ -210,15 +44,181 @@
       "codeName" : "Name"
     }
   } ],
-  "noTabHeader" : true,
-  "codeName" : "Default",
-  "tabHeaderPos" : "TOP",
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+  "getPSDEFormPages" : [ {
+    "caption" : "常规条件",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "caption" : "访问控制(等于(=))",
+      "codeName" : "n_acl_eq",
+      "dataType" : 25,
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMITEM",
+      "enableCond" : 3,
+      "ignoreInput" : 3,
+      "labelPos" : "LEFT",
+      "labelWidth" : 130,
+      "name" : "n_acl_eq",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "ACL",
+        "codeName" : "Acl"
+      },
+      "getPSEditor" : {
+        "editorType" : "TEXTBOX",
+        "name" : "n_acl_eq"
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 8,
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "allowEmpty" : true,
+      "convertToCodeItemText" : true,
+      "emptyCaption" : false,
+      "hidden" : false,
+      "inputTipClosable" : false,
+      "showCaption" : true
+    }, {
+      "caption" : "产品线(等于(=))",
+      "codeName" : "n_line_eq",
+      "dataType" : 1,
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMITEM",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 130,
+      "name" : "n_line_eq",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "LINE",
+        "codeName" : "Line"
+      },
+      "getPSEditor" : {
+        "editorType" : "TEXTBOX",
+        "name" : "n_line_eq"
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 8,
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "allowEmpty" : true,
+      "emptyCaption" : false,
+      "hidden" : false,
+      "inputTipClosable" : false,
+      "showCaption" : true
+    }, {
+      "caption" : "产品线(文本包含(%))",
+      "codeName" : "n_linename_like",
+      "dataType" : 25,
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMITEM",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 130,
+      "name" : "n_linename_like",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "LINENAME",
+        "codeName" : "LineName"
+      },
+      "getPSEditor" : {
+        "editorType" : "TEXTBOX",
+        "editorWidth" : 100.0,
+        "name" : "n_linename_like"
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 8,
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "allowEmpty" : true,
+      "emptyCaption" : false,
+      "hidden" : false,
+      "inputTipClosable" : false,
+      "showCaption" : true
+    }, {
+      "caption" : "产品线(等于(=))",
+      "codeName" : "n_linename_eq",
+      "dataType" : 25,
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMITEM",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 130,
+      "name" : "n_linename_eq",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "LINENAME",
+        "codeName" : "LineName"
+      },
+      "getPSEditor" : {
+        "editorType" : "TEXTBOX",
+        "name" : "n_linename_eq"
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 8,
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "allowEmpty" : true,
+      "emptyCaption" : false,
+      "hidden" : false,
+      "inputTipClosable" : false,
+      "showCaption" : true
+    }, {
+      "caption" : "产品名称(文本包含(%))",
+      "codeName" : "n_name_like",
+      "dataType" : 25,
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMITEM",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 130,
+      "name" : "n_name_like",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "getPSEditor" : {
+        "editorType" : "TEXTBOX",
+        "editorWidth" : 100.0,
+        "name" : "n_name_like"
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 8,
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "allowEmpty" : true,
+      "emptyCaption" : false,
+      "hidden" : false,
+      "inputTipClosable" : false,
+      "showCaption" : true
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
   },
-  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product/PSSEARCHFORMS/Default.json",
-  "logicName" : "默认搜索表单",
+  "searchButtonStyle" : "DEFAULT",
+  "tabHeaderPos" : "TOP",
+  "enableAdvanceSearch" : false,
+  "enableAutoSearch" : false,
+  "enableFilterSave" : false,
+  "noTabHeader" : true,
   "modelid" : "59a8dd13749c9b51a145aaa5a43def45"
 }

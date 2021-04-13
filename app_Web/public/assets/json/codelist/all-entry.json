@@ -1,1 +1,1 @@
-{"dynaInstMode":1,"codeListType":"DYNAMIC","codeName":"AllEntry","emptyText":"未定义","cacheTimeout":600,"enableCache":true,"dynaModelFilePath":"PSSYSAPPS/Web/PSAPPCODELISTS/AllEntry.json","name":"所有应用"}
+{"cacheTimeout":600,"codeListType":"DYNAMIC","codeName":"AllEntry","dynaInstMode":1,"dynaModelFilePath":"PSSYSAPPS/Web/PSAPPCODELISTS/AllEntry.json","emptyText":"未定义","name":"所有应用","enableCache":true}

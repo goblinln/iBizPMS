@@ -1,23 +1,23 @@
 {
-  "getPSCodeItems" : [ {
-    "value" : "project",
-    "codeName" : "Project",
-    "text" : "项目团队",
-    "default" : true
-  }, {
-    "value" : "task",
-    "codeName" : "Task",
-    "text" : "任务团队"
-  }, {
-    "value" : "product",
-    "codeName" : "Product",
-    "text" : "产品团队"
-  } ],
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "codeName" : "Team__type",
-  "emptyText" : "未定义",
-  "enableCache" : true,
+  "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Team__type.json",
-  "name" : "团队类型"
+  "emptyText" : "未定义",
+  "name" : "团队类型",
+  "getPSCodeItems" : [ {
+    "codeName" : "Project",
+    "text" : "项目团队",
+    "value" : "project",
+    "default" : true
+  }, {
+    "codeName" : "Task",
+    "text" : "任务团队",
+    "value" : "task"
+  }, {
+    "codeName" : "Product",
+    "text" : "产品团队",
+    "value" : "product"
+  } ],
+  "enableCache" : true
 }

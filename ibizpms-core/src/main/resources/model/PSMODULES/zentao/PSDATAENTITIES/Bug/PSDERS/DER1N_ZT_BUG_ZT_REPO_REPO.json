@@ -1,24 +1,24 @@
 {
-  "getPSPickupDEField" : {
-    "name" : "REPO",
-    "codeName" : "Repo"
-  },
-  "masterOrder" : -1,
-  "removeActionType" : -1,
-  "pickupDEFName" : "REPO",
-  "masterRS" : 0,
-  "removeOrder" : 0,
+  "codeName" : "ZTRepo",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_REPO_REPO.json",
   "getMajorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Repo.json"
   },
-  "orderValue" : 100,
-  "codeName" : "ZTRepo",
-  "dERType" : "DER1N",
+  "masterOrder" : -1,
+  "masterRS" : 0,
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
   },
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_REPO_REPO.json",
-  "name" : "DER1N_ZT_BUG_ZT_REPO_REPO"
+  "name" : "DER1N_ZT_BUG_ZT_REPO_REPO",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "REPO",
+    "codeName" : "Repo"
+  },
+  "pickupDEFName" : "REPO",
+  "removeActionType" : -1,
+  "removeOrder" : 0
 }

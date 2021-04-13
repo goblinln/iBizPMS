@@ -1,24 +1,24 @@
 {
-  "transactionMode" : "DEFAULT",
-  "paramMode" : 1,
-  "generateTestUnit" : false,
-  "customParam" : false,
-  "builtinAction" : false,
-  "pubServiceDefault" : true,
-  "timeOut" : -1,
+  "actionMode" : "READ",
+  "actionType" : "DELOGIC",
+  "codeName" : "GetDevInfomation",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetDevInfomation.json",
   "extendMode" : 0,
+  "logicName" : "获取研发人员相关数据",
+  "name" : "GetDevInfomation",
+  "orderValue" : 99999,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"
   },
-  "orderValue" : 99999,
-  "codeName" : "GetDevInfomation",
-  "logicName" : "获取研发人员相关数据",
-  "actionMode" : "READ",
-  "actionType" : "DELOGIC",
+  "paramMode" : 1,
   "requestField" : "ID",
   "requestParamType" : "FIELD",
   "testActionMode" : 0,
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetDevInfomation.json",
-  "name" : "GetDevInfomation"
+  "timeOut" : -1,
+  "transactionMode" : "DEFAULT",
+  "builtinAction" : false,
+  "customParam" : false,
+  "generateTestUnit" : false,
+  "pubServiceDefault" : true
 }

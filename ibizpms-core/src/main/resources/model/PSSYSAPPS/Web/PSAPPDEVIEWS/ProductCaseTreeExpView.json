@@ -1,542 +1,542 @@
 {
-  "showDataInfoBar" : true,
-  "enableFilter" : false,
-  "enableQuickSearch" : true,
-  "showCaptionBar" : false,
-  "getPSDEViewCodeName" : "CaseTreeExpView",
-  "enableDP" : true,
-  "caption" : "产品",
-  "title" : "产品需求导航视图",
   "accUserMode" : 2,
-  "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
-    "layoutPanel" : true,
-    "controlType" : "VIEWLAYOUTPANEL",
-    "codeName" : "Layoutpanel",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-    },
-    "getPSControlParam" : { },
-    "controlStyle" : "APPDETREEEXPVIEW_STYLE2",
-    "name" : "layoutpanel"
-  },
-  "getPSAppViewEngines" : [ {
-    "engineType" : "TreeExpView",
-    "engineCat" : "VIEW",
-    "getPSUIEngineParams" : [ {
-      "name" : "TREEEXPBAR",
-      "paramType" : "CTRL"
-    } ],
-    "name" : "engine"
-  } ],
+  "caption" : "产品",
+  "codeName" : "ProductCaseTreeExpView",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductCaseTreeExpView.json",
+  "name" : "ProductCaseTreeExpView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
   },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "TreeExpView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "name" : "TREEEXPBAR",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata",
+    "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据",
+      "viewLogicType" : "APP_NEWDATA",
+      "batchAddOnly" : false,
+      "enableBatchAdd" : false,
+      "enableWizardAdd" : false
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
+      "viewLogicType" : "APP_OPENDATA"
+    }
+  } ],
   "getPSControls" : [ {
+    "codeName" : "CaseTreeExpViewtreeexpbar",
     "controlType" : "TREEEXPBAR",
-    "xDataControlName" : "treeexpbar_tree",
-    "enableSearch" : true,
-    "enableCounter" : true,
-    "showTitleBar" : false,
-    "getPSControls" : [ {
-      "enableSearchDefault" : true,
-      "treeGridMode" : 0,
-      "getPSDETreeNodeRSs" : [ {
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "ROOT"
-        },
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "ALL"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3,
-        "name" : "默认根节点 - 全部"
-      }, {
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "MODULE"
-        },
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "MODULE"
-        },
-        "getParentPSDER1N" : {
-          "getPSPickupDEField" : {
-            "name" : "PARENT",
-            "codeName" : "Parent"
-          },
-          "getPSPickupTextDEField" : {
-            "name" : "PARENTNAME",
-            "codeName" : "ParentName"
-          },
-          "masterOrder" : -1,
-          "removeActionType" : -1,
-          "pickupDEFName" : "PARENT",
-          "masterRS" : 0,
-          "removeOrder" : 0,
-          "getMajorPSDataEntity" : {
-            "modelref" : true,
-            "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
-          },
-          "orderValue" : 100,
-          "codeName" : "ParentModule",
-          "dERType" : "DER1N",
-          "getMinorPSDataEntity" : {
-            "modelref" : true,
-            "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
-          },
-          "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDERS/DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT.json",
-          "name" : "DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT"
-        },
-        "parentValueLevel" : 1,
-        "getParentPSAppDEField" : {
-          "name" : "PARENT",
-          "codeName" : "Parent"
-        },
-        "searchMode" : 3,
-        "name" : "非根模块（动态） - 非根模块（动态）"
-      }, {
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "ALL"
-        },
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "ROOTMODULE"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3,
-        "name" : "全部 - 根模块（动态）"
-      }, {
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "ROOTMODULE"
-        },
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "MODULE"
-        },
-        "getParentPSDER1N" : {
-          "getPSPickupDEField" : {
-            "name" : "PARENT",
-            "codeName" : "Parent"
-          },
-          "getPSPickupTextDEField" : {
-            "name" : "PARENTNAME",
-            "codeName" : "ParentName"
-          },
-          "masterOrder" : -1,
-          "removeActionType" : -1,
-          "pickupDEFName" : "PARENT",
-          "masterRS" : 0,
-          "removeOrder" : 0,
-          "getMajorPSDataEntity" : {
-            "modelref" : true,
-            "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
-          },
-          "orderValue" : 100,
-          "codeName" : "ParentModule",
-          "dERType" : "DER1N",
-          "getMinorPSDataEntity" : {
-            "modelref" : true,
-            "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
-          },
-          "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDERS/DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT.json",
-          "name" : "DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT"
-        },
-        "parentValueLevel" : 1,
-        "getParentPSAppDEField" : {
-          "name" : "PARENT",
-          "codeName" : "Parent"
-        },
-        "searchMode" : 3,
-        "name" : "根模块（动态） - 非根模块（动态）"
-      } ],
-      "enableRootSelect" : false,
-      "outputIconDefault" : false,
-      "controlType" : "TREEVIEW",
-      "getPSDETreeNodes" : [ {
-        "text" : "全部",
-        "getNavPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainGridView.json",
-          "viewType" : "DEGRIDVIEW"
-        },
-        "enableQuickCreate" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : false,
-        "rootNode" : false,
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
-        },
-        "getPSNavigateParams" : [ {
-          "rawValue" : true,
-          "value" : "0",
-          "key" : "branch",
-          "name" : "branch"
-        } ],
-        "getPSNavigateContexts" : [ {
-          "rawValue" : true,
-          "value" : "0",
-          "key" : "BRANCH",
-          "name" : "BRANCH"
-        } ],
-        "enableNewData" : false,
-        "enableEditData" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
-        "nodeType" : "ALL",
-        "disableSelect" : false,
-        "enableQuickSearch" : true,
-        "counterMode" : 0,
-        "treeNodeType" : "STATIC",
-        "expanded" : true,
-        "name" : "全部",
-        "id" : "ALL"
-      }, {
-        "nodeValue" : "root",
-        "text" : "默认根节点",
-        "enableQuickCreate" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : false,
-        "rootNode" : true,
-        "enableNewData" : false,
-        "enableEditData" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
-        "nodeType" : "ROOT",
-        "disableSelect" : false,
-        "enableQuickSearch" : true,
-        "counterMode" : 0,
-        "treeNodeType" : "STATIC",
-        "expanded" : false,
-        "name" : "默认根节点",
-        "id" : "ROOT"
-      }, {
-        "getIdPSAppDEField" : {
-          "name" : "ID",
-          "codeName" : "Id"
-        },
-        "appendCaption" : false,
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
-        },
-        "getTextPSAppDEField" : {
-          "name" : "NAME",
-          "codeName" : "Name"
-        },
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchDefault"
-        },
-        "maxSize" : -1,
-        "navFilter" : "n_module_eq",
-        "getNavPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainGridView.json",
-          "viewType" : "DEGRIDVIEW"
-        },
-        "enableQuickCreate" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : false,
-        "rootNode" : false,
-        "getPSNavigateParams" : [ {
-          "rawValue" : false,
-          "value" : "name",
-          "key" : "modulename",
-          "name" : "modulename"
-        }, {
-          "rawValue" : false,
-          "value" : "branch",
-          "key" : "branch",
-          "name" : "branch"
-        } ],
-        "getPSNavigateContexts" : [ {
-          "rawValue" : false,
-          "value" : "name",
-          "key" : "MODULENAME",
-          "name" : "MODULENAME"
-        }, {
-          "rawValue" : false,
-          "value" : "branch",
-          "key" : "BRANCH",
-          "name" : "BRANCH"
-        } ],
-        "enableNewData" : false,
-        "enableEditData" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
-        "nodeType" : "MODULE",
-        "disableSelect" : false,
-        "enableQuickSearch" : true,
-        "counterMode" : 0,
-        "treeNodeType" : "DE",
-        "expanded" : false,
-        "name" : "非根模块（动态）",
-        "id" : "MODULE"
-      }, {
-        "getIdPSAppDEField" : {
-          "name" : "ID",
-          "codeName" : "Id"
-        },
-        "appendCaption" : false,
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
-        },
-        "getTextPSAppDEField" : {
-          "name" : "NAME",
-          "codeName" : "Name"
-        },
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchRoot"
-        },
-        "maxSize" : -1,
-        "navFilter" : "n_module_eq",
-        "getNavPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainGridView.json",
-          "viewType" : "DEGRIDVIEW"
-        },
-        "enableQuickCreate" : false,
-        "appendPNodeId" : false,
-        "enableCheck" : false,
-        "hasPSDETreeNodeRSs" : true,
-        "selected" : false,
-        "selectFirstOnly" : false,
-        "expandFirstOnly" : true,
-        "rootNode" : false,
-        "getPSNavigateParams" : [ {
-          "rawValue" : false,
-          "value" : "name",
-          "key" : "modulename",
-          "name" : "modulename"
-        }, {
-          "rawValue" : false,
-          "value" : "branch",
-          "key" : "branch",
-          "name" : "branch"
-        } ],
-        "getPSNavigateContexts" : [ {
-          "rawValue" : false,
-          "value" : "name",
-          "key" : "MODULENAME",
-          "name" : "MODULENAME"
-        }, {
-          "rawValue" : false,
-          "value" : "branch",
-          "key" : "BRANCH",
-          "name" : "BRANCH"
-        } ],
-        "enableNewData" : false,
-        "enableEditData" : false,
-        "enableRemoveData" : false,
-        "enableViewData" : false,
-        "nodeType" : "ROOTMODULE",
-        "disableSelect" : false,
-        "enableQuickSearch" : true,
-        "counterMode" : 0,
-        "treeNodeType" : "DE",
-        "expanded" : true,
-        "name" : "根模块（动态）",
-        "id" : "ROOTMODULE"
-      } ],
-      "codeName" : "CaseExp",
-      "rootVisible" : false,
-      "getCreatePSControlAction" : {
-        "modelref" : true,
-        "id" : "create"
-      },
-      "getUpdatePSControlAction" : {
-        "modelref" : true,
-        "id" : "update"
-      },
-      "getRemovePSControlAction" : {
-        "modelref" : true,
-        "id" : "remove"
-      },
-      "getGetPSControlAction" : {
-        "modelref" : true,
-        "id" : "load"
-      },
-      "getFetchPSControlAction" : {
-        "modelref" : true,
-        "id" : "fetch"
-      },
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
-      },
-      "getPSControlParam" : {
-        "autoLoad" : true,
-        "showBusyIndicator" : true,
-        "id" : "treeexpbar_tree"
-      },
-      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
-      "getPSControlHandler" : {
-        "userDRAction" : "READ",
-        "getPSHandlerActions" : [ {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
-          },
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Update"
-          },
-          "dataAccessAction" : "UPDATE",
-          "actionName" : "Update",
-          "actionType" : "DEACTION",
-          "name" : "update"
-        }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
-          },
-          "actionType" : "DEDATASET",
-          "name" : "fetch"
-        }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
-          },
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Remove"
-          },
-          "dataAccessAction" : "DELETE",
-          "actionName" : "Remove",
-          "actionType" : "DEACTION",
-          "name" : "remove"
-        }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
-          },
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Get"
-          },
-          "dataAccessAction" : "READ",
-          "actionName" : "Get",
-          "actionType" : "DEACTION",
-          "name" : "load"
-        }, {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
-          },
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Create"
-          },
-          "dataAccessAction" : "CREATE",
-          "actionName" : "Create",
-          "actionType" : "DEACTION",
-          "name" : "create"
-        } ],
-        "enableDEFieldPrivilege" : false,
-        "id" : "树视图处理器"
-      },
-      "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule/PSTREEVIEWS/CaseExp.json",
-      "logicName" : "功能测试导航视图树",
-      "name" : "treeexpbar_tree",
-      "modelid" : "3e6fb078fcd5a7637b3c20d7f0d2e264"
-    } ],
-    "getPSAppViewRefs" : [ {
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainGridView.json",
-        "viewType" : "DEGRIDVIEW"
-      },
-      "realTitle" : "功能测试",
-      "parentDataJO" : {
-        "srfparentdefname" : "n_module_eq"
-      },
-      "name" : "EXPITEM:MODULE"
-    }, {
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainGridView.json",
-        "viewType" : "DEGRIDVIEW"
-      },
-      "realTitle" : "功能测试",
-      "parentDataJO" : {
-        "srfparentdefname" : "n_module_eq"
-      },
-      "name" : "EXPITEM:ROOTMODULE"
-    }, {
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainGridView.json",
-        "viewType" : "DEGRIDVIEW"
-      },
-      "realTitle" : "功能测试",
-      "name" : "EXPITEM:ALL"
-    } ],
+    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "name" : "treeexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    },
+    "getPSAppViewRefs" : [ {
+      "name" : "EXPITEM:MODULE",
+      "parentDataJO" : {
+        "srfparentdefname" : "n_module_eq"
+      },
+      "realTitle" : "功能测试",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainGridView.json",
+        "viewType" : "DEGRIDVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:ROOTMODULE",
+      "parentDataJO" : {
+        "srfparentdefname" : "n_module_eq"
+      },
+      "realTitle" : "功能测试",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainGridView.json",
+        "viewType" : "DEGRIDVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:ALL",
+      "realTitle" : "功能测试",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainGridView.json",
+        "viewType" : "DEGRIDVIEW"
+      }
+    } ],
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "treeexpbar"
     },
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
       "id" : "TREEEXPBAR"
     },
-    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
-    "getPSControlHandler" : {
-      "enableDEFieldPrivilege" : false,
-      "id" : "treeexpbar"
-    },
-    "codeName" : "CaseTreeExpViewtreeexpbar",
-    "name" : "treeexpbar",
+    "getPSControls" : [ {
+      "codeName" : "CaseExp",
+      "controlType" : "TREEVIEW",
+      "getCreatePSControlAction" : {
+        "modelref" : true,
+        "id" : "create"
+      },
+      "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule/PSTREEVIEWS/CaseExp.json",
+      "getFetchPSControlAction" : {
+        "modelref" : true,
+        "id" : "fetch"
+      },
+      "getGetPSControlAction" : {
+        "modelref" : true,
+        "id" : "load"
+      },
+      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+      "logicName" : "功能测试导航视图树",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+      },
+      "getPSControlHandler" : {
+        "getPSHandlerActions" : [ {
+          "actionName" : "Update",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "UPDATE",
+          "name" : "update",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Update"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+          }
+        }, {
+          "actionType" : "DEDATASET",
+          "name" : "fetch",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+          }
+        }, {
+          "actionName" : "Remove",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "DELETE",
+          "name" : "remove",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+          }
+        }, {
+          "actionName" : "Get",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "READ",
+          "name" : "load",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Get"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+          }
+        }, {
+          "actionName" : "Create",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "CREATE",
+          "name" : "create",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Create"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+          }
+        } ],
+        "userDRAction" : "READ",
+        "enableDEFieldPrivilege" : false,
+        "id" : "树视图处理器"
+      },
+      "getPSControlParam" : {
+        "autoLoad" : true,
+        "showBusyIndicator" : true,
+        "id" : "treeexpbar_tree"
+      },
+      "getPSDETreeNodeRSs" : [ {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ALL"
+        },
+        "name" : "默认根节点 - 全部",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ROOT"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "MODULE"
+        },
+        "name" : "非根模块（动态） - 非根模块（动态）",
+        "getParentPSAppDEField" : {
+          "name" : "PARENT",
+          "codeName" : "Parent"
+        },
+        "getParentPSDER1N" : {
+          "codeName" : "ParentModule",
+          "dERType" : "DER1N",
+          "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDERS/DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT.json",
+          "getMajorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+          },
+          "masterOrder" : -1,
+          "masterRS" : 0,
+          "getMinorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+          },
+          "name" : "DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT",
+          "orderValue" : 100,
+          "getPSPickupDEField" : {
+            "name" : "PARENT",
+            "codeName" : "Parent"
+          },
+          "getPSPickupTextDEField" : {
+            "name" : "PARENTNAME",
+            "codeName" : "ParentName"
+          },
+          "pickupDEFName" : "PARENT",
+          "removeActionType" : -1,
+          "removeOrder" : 0
+        },
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "MODULE"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ROOTMODULE"
+        },
+        "name" : "全部 - 根模块（动态）",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ALL"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "MODULE"
+        },
+        "name" : "根模块（动态） - 非根模块（动态）",
+        "getParentPSAppDEField" : {
+          "name" : "PARENT",
+          "codeName" : "Parent"
+        },
+        "getParentPSDER1N" : {
+          "codeName" : "ParentModule",
+          "dERType" : "DER1N",
+          "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDERS/DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT.json",
+          "getMajorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+          },
+          "masterOrder" : -1,
+          "masterRS" : 0,
+          "getMinorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+          },
+          "name" : "DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT",
+          "orderValue" : 100,
+          "getPSPickupDEField" : {
+            "name" : "PARENT",
+            "codeName" : "Parent"
+          },
+          "getPSPickupTextDEField" : {
+            "name" : "PARENTNAME",
+            "codeName" : "ParentName"
+          },
+          "pickupDEFName" : "PARENT",
+          "removeActionType" : -1,
+          "removeOrder" : 0
+        },
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ROOTMODULE"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      } ],
+      "getPSDETreeNodes" : [ {
+        "counterMode" : 0,
+        "name" : "全部",
+        "getNavPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainGridView.json",
+          "viewType" : "DEGRIDVIEW"
+        },
+        "nodeType" : "ALL",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+        },
+        "getPSNavigateContexts" : [ {
+          "key" : "BRANCH",
+          "name" : "BRANCH",
+          "value" : "0",
+          "rawValue" : true
+        } ],
+        "getPSNavigateParams" : [ {
+          "key" : "branch",
+          "name" : "branch",
+          "value" : "0",
+          "rawValue" : true
+        } ],
+        "text" : "全部",
+        "treeNodeType" : "STATIC",
+        "hasPSDETreeNodeRSs" : true,
+        "appendPNodeId" : false,
+        "disableSelect" : false,
+        "enableCheck" : false,
+        "enableEditData" : false,
+        "enableNewData" : false,
+        "enableQuickCreate" : false,
+        "enableQuickSearch" : true,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "expandFirstOnly" : false,
+        "expanded" : true,
+        "rootNode" : false,
+        "selectFirstOnly" : false,
+        "selected" : false,
+        "id" : "ALL"
+      }, {
+        "counterMode" : 0,
+        "name" : "默认根节点",
+        "nodeType" : "ROOT",
+        "nodeValue" : "root",
+        "text" : "默认根节点",
+        "treeNodeType" : "STATIC",
+        "hasPSDETreeNodeRSs" : true,
+        "appendPNodeId" : false,
+        "disableSelect" : false,
+        "enableCheck" : false,
+        "enableEditData" : false,
+        "enableNewData" : false,
+        "enableQuickCreate" : false,
+        "enableQuickSearch" : true,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "expandFirstOnly" : false,
+        "expanded" : false,
+        "rootNode" : true,
+        "selectFirstOnly" : false,
+        "selected" : false,
+        "id" : "ROOT"
+      }, {
+        "counterMode" : 0,
+        "getIdPSAppDEField" : {
+          "name" : "ID",
+          "codeName" : "Id"
+        },
+        "maxSize" : -1,
+        "name" : "非根模块（动态）",
+        "navFilter" : "n_module_eq",
+        "getNavPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainGridView.json",
+          "viewType" : "DEGRIDVIEW"
+        },
+        "nodeType" : "MODULE",
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+        },
+        "getPSNavigateContexts" : [ {
+          "key" : "MODULENAME",
+          "name" : "MODULENAME",
+          "value" : "name",
+          "rawValue" : false
+        }, {
+          "key" : "BRANCH",
+          "name" : "BRANCH",
+          "value" : "branch",
+          "rawValue" : false
+        } ],
+        "getPSNavigateParams" : [ {
+          "key" : "modulename",
+          "name" : "modulename",
+          "value" : "name",
+          "rawValue" : false
+        }, {
+          "key" : "branch",
+          "name" : "branch",
+          "value" : "branch",
+          "rawValue" : false
+        } ],
+        "getTextPSAppDEField" : {
+          "name" : "NAME",
+          "codeName" : "Name"
+        },
+        "treeNodeType" : "DE",
+        "hasPSDETreeNodeRSs" : true,
+        "appendCaption" : false,
+        "appendPNodeId" : false,
+        "disableSelect" : false,
+        "enableCheck" : false,
+        "enableEditData" : false,
+        "enableNewData" : false,
+        "enableQuickCreate" : false,
+        "enableQuickSearch" : true,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "expandFirstOnly" : false,
+        "expanded" : false,
+        "rootNode" : false,
+        "selectFirstOnly" : false,
+        "selected" : false,
+        "id" : "MODULE"
+      }, {
+        "counterMode" : 0,
+        "getIdPSAppDEField" : {
+          "name" : "ID",
+          "codeName" : "Id"
+        },
+        "maxSize" : -1,
+        "name" : "根模块（动态）",
+        "navFilter" : "n_module_eq",
+        "getNavPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainGridView.json",
+          "viewType" : "DEGRIDVIEW"
+        },
+        "nodeType" : "ROOTMODULE",
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchRoot"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+        },
+        "getPSNavigateContexts" : [ {
+          "key" : "MODULENAME",
+          "name" : "MODULENAME",
+          "value" : "name",
+          "rawValue" : false
+        }, {
+          "key" : "BRANCH",
+          "name" : "BRANCH",
+          "value" : "branch",
+          "rawValue" : false
+        } ],
+        "getPSNavigateParams" : [ {
+          "key" : "modulename",
+          "name" : "modulename",
+          "value" : "name",
+          "rawValue" : false
+        }, {
+          "key" : "branch",
+          "name" : "branch",
+          "value" : "branch",
+          "rawValue" : false
+        } ],
+        "getTextPSAppDEField" : {
+          "name" : "NAME",
+          "codeName" : "Name"
+        },
+        "treeNodeType" : "DE",
+        "hasPSDETreeNodeRSs" : true,
+        "appendCaption" : false,
+        "appendPNodeId" : false,
+        "disableSelect" : false,
+        "enableCheck" : false,
+        "enableEditData" : false,
+        "enableNewData" : false,
+        "enableQuickCreate" : false,
+        "enableQuickSearch" : true,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "expandFirstOnly" : true,
+        "expanded" : true,
+        "rootNode" : false,
+        "selectFirstOnly" : false,
+        "selected" : false,
+        "id" : "ROOTMODULE"
+      } ],
+      "getRemovePSControlAction" : {
+        "modelref" : true,
+        "id" : "remove"
+      },
+      "treeGridMode" : 0,
+      "getUpdatePSControlAction" : {
+        "modelref" : true,
+        "id" : "update"
+      },
+      "enableRootSelect" : false,
+      "enableSearchDefault" : true,
+      "outputIconDefault" : false,
+      "rootVisible" : false,
+      "name" : "treeexpbar_tree",
+      "modelid" : "3e6fb078fcd5a7637b3c20d7f0d2e264"
+    } ],
+    "xDataControlName" : "treeexpbar_tree",
+    "enableCounter" : true,
+    "enableSearch" : true,
+    "showTitleBar" : false,
     "modelid" : "efbe7c07b6176b6a48581178d27d39e5_treeexpbar"
   } ],
+  "getPSDEViewCodeName" : "CaseTreeExpView",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDETREEEXPVIEW_STYLE2",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    },
+    "getPSControlParam" : { },
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "产品需求导航视图",
   "viewStyle" : "STYLE2",
-  "getPSAppViewLogics" : [ {
-    "logicTrigger" : "CUSTOM",
-    "getPSAppUILogic" : {
-      "enableWizardAdd" : false,
-      "actionAfterWizard" : "DEFAULT",
-      "enableBatchAdd" : false,
-      "batchAddOnly" : false,
-      "viewLogicType" : "APP_NEWDATA",
-      "logicType" : "PREDEFINED",
-      "name" : "新建数据"
-    },
-    "logicType" : "SYSUILOGIC",
-    "name" : "newdata"
-  }, {
-    "logicTrigger" : "CUSTOM",
-    "getPSAppUILogic" : {
-      "viewLogicType" : "APP_OPENDATA",
-      "logicType" : "PREDEFINED",
-      "name" : "打开数据"
-    },
-    "logicType" : "SYSUILOGIC",
-    "name" : "opendata"
-  } ],
-  "codeName" : "ProductCaseTreeExpView",
   "viewType" : "DETREEEXPVIEW",
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductCaseTreeExpView.json",
-  "name" : "ProductCaseTreeExpView"
+  "enableDP" : true,
+  "enableFilter" : false,
+  "enableQuickSearch" : true,
+  "showCaptionBar" : false,
+  "showDataInfoBar" : true
 }

@@ -1,23 +1,23 @@
 {
-  "transactionMode" : "DEFAULT",
-  "paramMode" : 1,
-  "generateTestUnit" : true,
-  "customParam" : false,
-  "builtinAction" : true,
-  "pubServiceDefault" : true,
-  "timeOut" : -1,
+  "actionMode" : "UPDATE",
+  "actionType" : "BUILTIN",
+  "codeName" : "Update",
+  "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDEACTIONS/Update.json",
   "extendMode" : 0,
+  "logicName" : "Update",
+  "name" : "Update",
+  "orderValue" : 11,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "UPDATE"
   },
-  "orderValue" : 11,
-  "codeName" : "Update",
-  "logicName" : "Update",
-  "actionMode" : "UPDATE",
-  "actionType" : "BUILTIN",
+  "paramMode" : 1,
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,
-  "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDEACTIONS/Update.json",
-  "name" : "Update"
+  "timeOut" : -1,
+  "transactionMode" : "DEFAULT",
+  "builtinAction" : true,
+  "customParam" : false,
+  "generateTestUnit" : true,
+  "pubServiceDefault" : true
 }

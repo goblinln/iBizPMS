@@ -1,23 +1,23 @@
 {
-  "transactionMode" : "DEFAULT",
-  "paramMode" : 1,
-  "generateTestUnit" : false,
-  "customParam" : false,
-  "builtinAction" : false,
-  "pubServiceDefault" : true,
-  "timeOut" : -1,
+  "actionMode" : "CREATE",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "CreateGetLastWeekPlanAndWork",
+  "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CreateGetLastWeekPlanAndWork.json",
   "extendMode" : 0,
+  "logicName" : "获取上周周报的下周计划",
+  "name" : "CreateGetLastWeekPlanAndWork",
+  "orderValue" : 99999,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "CREATE"
   },
-  "orderValue" : 99999,
-  "codeName" : "CreateGetLastWeekPlanAndWork",
-  "logicName" : "获取上周周报的下周计划",
-  "actionMode" : "CREATE",
-  "actionType" : "USERCUSTOM",
+  "paramMode" : 1,
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,
-  "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CreateGetLastWeekPlanAndWork.json",
-  "name" : "CreateGetLastWeekPlanAndWork"
+  "timeOut" : -1,
+  "transactionMode" : "DEFAULT",
+  "builtinAction" : false,
+  "customParam" : false,
+  "generateTestUnit" : false,
+  "pubServiceDefault" : true
 }

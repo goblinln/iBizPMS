@@ -1,24 +1,24 @@
 {
-  "getPSPickupDEField" : {
-    "name" : "ENTRY",
-    "codeName" : "Entry"
-  },
-  "masterOrder" : -1,
-  "removeActionType" : -1,
-  "pickupDEFName" : "ENTRYID",
-  "masterRS" : 0,
-  "removeOrder" : 0,
+  "codeName" : "ZTEntry",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_ENTRY_ENTRYID.json",
   "getMajorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Entry.json"
   },
-  "orderValue" : 100,
-  "codeName" : "ZTEntry",
-  "dERType" : "DER1N",
+  "masterOrder" : -1,
+  "masterRS" : 0,
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
   },
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_ENTRY_ENTRYID.json",
-  "name" : "DER1N_ZT_BUG_ZT_ENTRY_ENTRYID"
+  "name" : "DER1N_ZT_BUG_ZT_ENTRY_ENTRYID",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "ENTRY",
+    "codeName" : "Entry"
+  },
+  "pickupDEFName" : "ENTRYID",
+  "removeActionType" : -1,
+  "removeOrder" : 0
 }

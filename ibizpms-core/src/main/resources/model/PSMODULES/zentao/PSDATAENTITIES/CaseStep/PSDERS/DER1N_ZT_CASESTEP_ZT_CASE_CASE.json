@@ -1,25 +1,25 @@
 {
-  "getPSPickupDEField" : {
-    "name" : "CASE",
-    "codeName" : "IBizCase"
-  },
-  "nestedRS" : true,
-  "masterOrder" : -1,
-  "removeActionType" : -1,
-  "pickupDEFName" : "CASE",
-  "masterRS" : 8,
-  "removeOrder" : 0,
+  "codeName" : "ZTCase",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDERS/DER1N_ZT_CASESTEP_ZT_CASE_CASE.json",
   "getMajorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
   },
-  "orderValue" : 100,
-  "codeName" : "ZTCase",
-  "dERType" : "DER1N",
+  "masterOrder" : -1,
+  "masterRS" : 8,
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
   },
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDERS/DER1N_ZT_CASESTEP_ZT_CASE_CASE.json",
-  "name" : "DER1N_ZT_CASESTEP_ZT_CASE_CASE"
+  "name" : "DER1N_ZT_CASESTEP_ZT_CASE_CASE",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "CASE",
+    "codeName" : "IBizCase"
+  },
+  "pickupDEFName" : "CASE",
+  "removeActionType" : -1,
+  "removeOrder" : 0,
+  "nestedRS" : true
 }

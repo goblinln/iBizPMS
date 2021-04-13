@@ -1,23 +1,23 @@
 {
-  "transactionMode" : "DEFAULT",
-  "paramMode" : 1,
-  "generateTestUnit" : false,
-  "customParam" : false,
-  "builtinAction" : false,
-  "pubServiceDefault" : true,
-  "timeOut" : -1,
+  "actionMode" : "UPDATE",
+  "actionType" : "DELOGIC",
+  "codeName" : "UpdateStoryVersion",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/UpdateStoryVersion.json",
   "extendMode" : 0,
+  "logicName" : "更新需求版本",
+  "name" : "UpdateStoryVersion",
+  "orderValue" : 99999,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "UPDATE"
   },
-  "orderValue" : 99999,
-  "codeName" : "UpdateStoryVersion",
-  "logicName" : "更新需求版本",
-  "actionMode" : "UPDATE",
-  "actionType" : "DELOGIC",
+  "paramMode" : 1,
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/UpdateStoryVersion.json",
-  "name" : "UpdateStoryVersion"
+  "timeOut" : -1,
+  "transactionMode" : "DEFAULT",
+  "builtinAction" : false,
+  "customParam" : false,
+  "generateTestUnit" : false,
+  "pubServiceDefault" : true
 }

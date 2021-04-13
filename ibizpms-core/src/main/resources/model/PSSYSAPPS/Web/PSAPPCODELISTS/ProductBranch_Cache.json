@@ -1,16 +1,16 @@
 {
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
-  },
+  "codeListType" : "DYNAMIC",
+  "codeName" : "ProductBranch_Cache",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProductBranch_Cache.json",
+  "emptyText" : "未定义",
+  "name" : "产品平台（动态）_缓存",
   "getPSAppDEDataSet" : {
     "modelref" : true,
     "id" : "FetchCurProduct"
   },
-  "dynaInstMode" : 1,
-  "codeListType" : "DYNAMIC",
-  "codeName" : "ProductBranch_Cache",
-  "emptyText" : "未定义",
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProductBranch_Cache.json",
-  "name" : "产品平台（动态）_缓存"
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+  }
 }

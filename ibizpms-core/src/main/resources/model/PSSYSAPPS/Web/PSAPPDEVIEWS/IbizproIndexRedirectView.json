@@ -1,158 +1,158 @@
 {
-  "redirectView" : true,
-  "getRedirectPSAppViewRefs" : [ {
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
-      "viewType" : "DETABEXPVIEW"
-    },
-    "realTitle" : "产品",
-    "name" : "EDITVIEW:PRODUCT"
-  }, {
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
-      "viewType" : "DEPORTALVIEW"
-    },
-    "realTitle" : "需求数据看板视图",
+  "accUserMode" : 2,
+  "caption" : "索引检索",
+  "codeName" : "IbizproIndexRedirectView",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexRedirectView.json",
+  "funcViewMode" : "REDIRECTVIEW",
+  "name" : "IbizproIndexRedirectView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+  },
+  "getPSAppViewRefs" : [ {
+    "name" : "RDITEM:EDITVIEW:DOC",
     "realOpenMode" : "DRAWER_TOP",
-    "name" : "EDITVIEW:STORY"
-  }, {
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
-      "viewType" : "DEPORTALVIEW"
-    },
-    "realTitle" : "功能测试",
-    "realOpenMode" : "DRAWER_TOP",
-    "name" : "EDITVIEW:CASE"
-  }, {
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
-      "viewType" : "DEPORTALVIEW"
-    },
-    "realTitle" : "Bug数据看板视图",
-    "realOpenMode" : "DRAWER_TOP",
-    "name" : "EDITVIEW:BUG"
-  }, {
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
-      "viewType" : "DEPORTALVIEW"
-    },
-    "realTitle" : "任务主数据看板视图",
-    "realOpenMode" : "DRAWER_TOP",
-    "name" : "EDITVIEW:TASK"
-  }, {
+    "realTitle" : "文档数据看板视图",
     "getRefPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocDashboardView.json",
       "viewType" : "DEPORTALVIEW"
-    },
-    "realTitle" : "文档数据看板视图",
-    "realOpenMode" : "DRAWER_TOP",
-    "name" : "EDITVIEW:DOC"
+    }
   }, {
+    "name" : "RDITEM:EDITVIEW:TASK",
+    "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "任务主数据看板视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+      "viewType" : "DEPORTALVIEW"
+    }
+  }, {
+    "name" : "RDITEM:EDITVIEW:PRODUCT",
+    "realTitle" : "产品",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
+      "viewType" : "DETABEXPVIEW"
+    }
+  }, {
+    "name" : "RDITEM:EDITVIEW:PROJECT",
+    "realTitle" : "项目",
     "getRefPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
-    },
-    "realTitle" : "项目",
-    "name" : "EDITVIEW:PROJECT"
+    }
+  }, {
+    "name" : "RDITEM:EDITVIEW:CASE",
+    "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "功能测试",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
+      "viewType" : "DEPORTALVIEW"
+    }
+  }, {
+    "name" : "RDITEM:EDITVIEW:STORY",
+    "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "需求数据看板视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
+      "viewType" : "DEPORTALVIEW"
+    }
+  }, {
+    "name" : "RDITEM:EDITVIEW:BUG",
+    "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "Bug数据看板视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+      "viewType" : "DEPORTALVIEW"
+    }
   } ],
-  "enableCustomGetDataAction" : false,
-  "enableWorkflow" : true,
-  "showCaptionBar" : true,
   "getPSDEViewCodeName" : "RedirectView",
-  "funcViewMode" : "REDIRECTVIEW",
-  "enableDP" : true,
-  "caption" : "索引检索",
-  "title" : "索引检索数据重定向视图",
-  "accUserMode" : 2,
   "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
-    "layoutPanel" : true,
-    "controlType" : "VIEWLAYOUTPANEL",
     "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEREDIRECTVIEW_STYLE2",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
     },
     "getPSControlParam" : { },
-    "controlStyle" : "APPDEREDIRECTVIEW_STYLE2",
-    "name" : "layoutpanel"
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
   },
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
-  },
-  "viewStyle" : "STYLE2",
-  "getPSAppViewRefs" : [ {
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocDashboardView.json",
-      "viewType" : "DEPORTALVIEW"
-    },
-    "realTitle" : "文档数据看板视图",
-    "realOpenMode" : "DRAWER_TOP",
-    "name" : "RDITEM:EDITVIEW:DOC"
-  }, {
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
-      "viewType" : "DEPORTALVIEW"
-    },
-    "realTitle" : "任务主数据看板视图",
-    "realOpenMode" : "DRAWER_TOP",
-    "name" : "RDITEM:EDITVIEW:TASK"
-  }, {
+  "getRedirectPSAppViewRefs" : [ {
+    "name" : "EDITVIEW:PRODUCT",
+    "realTitle" : "产品",
     "getRefPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
-    },
-    "realTitle" : "产品",
-    "name" : "RDITEM:EDITVIEW:PRODUCT"
+    }
   }, {
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
-      "viewType" : "DETABEXPVIEW"
-    },
-    "realTitle" : "项目",
-    "name" : "RDITEM:EDITVIEW:PROJECT"
-  }, {
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
-      "viewType" : "DEPORTALVIEW"
-    },
-    "realTitle" : "功能测试",
+    "name" : "EDITVIEW:STORY",
     "realOpenMode" : "DRAWER_TOP",
-    "name" : "RDITEM:EDITVIEW:CASE"
-  }, {
+    "realTitle" : "需求数据看板视图",
     "getRefPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
       "viewType" : "DEPORTALVIEW"
-    },
-    "realTitle" : "需求数据看板视图",
-    "realOpenMode" : "DRAWER_TOP",
-    "name" : "RDITEM:EDITVIEW:STORY"
+    }
   }, {
+    "name" : "EDITVIEW:CASE",
+    "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "功能测试",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
+      "viewType" : "DEPORTALVIEW"
+    }
+  }, {
+    "name" : "EDITVIEW:BUG",
+    "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "Bug数据看板视图",
     "getRefPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
       "viewType" : "DEPORTALVIEW"
-    },
-    "realTitle" : "Bug数据看板视图",
+    }
+  }, {
+    "name" : "EDITVIEW:TASK",
     "realOpenMode" : "DRAWER_TOP",
-    "name" : "RDITEM:EDITVIEW:BUG"
+    "realTitle" : "任务主数据看板视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+      "viewType" : "DEPORTALVIEW"
+    }
+  }, {
+    "name" : "EDITVIEW:DOC",
+    "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "文档数据看板视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocDashboardView.json",
+      "viewType" : "DEPORTALVIEW"
+    }
+  }, {
+    "name" : "EDITVIEW:PROJECT",
+    "realTitle" : "项目",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
+      "viewType" : "DETABEXPVIEW"
+    }
   } ],
-  "codeName" : "IbizproIndexRedirectView",
+  "title" : "索引检索数据重定向视图",
+  "viewStyle" : "STYLE2",
   "viewType" : "DEREDIRECTVIEW",
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexRedirectView.json",
-  "name" : "IbizproIndexRedirectView"
+  "enableCustomGetDataAction" : false,
+  "enableDP" : true,
+  "enableWorkflow" : true,
+  "redirectView" : true,
+  "showCaptionBar" : true
 }

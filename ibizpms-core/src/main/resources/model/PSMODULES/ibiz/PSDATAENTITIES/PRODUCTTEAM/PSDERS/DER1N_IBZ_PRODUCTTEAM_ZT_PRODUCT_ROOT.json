@@ -1,25 +1,25 @@
 {
-  "getPSPickupDEField" : {
-    "name" : "ROOT",
-    "codeName" : "Root"
-  },
-  "nestedRS" : true,
-  "masterOrder" : -1,
-  "removeActionType" : -1,
-  "pickupDEFName" : "ROOT",
-  "masterRS" : 8,
-  "removeOrder" : 0,
+  "codeName" : "Productteam",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDERS/DER1N_IBZ_PRODUCTTEAM_ZT_PRODUCT_ROOT.json",
   "getMajorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
   },
-  "orderValue" : 100,
-  "codeName" : "Productteam",
-  "dERType" : "DER1N",
+  "masterOrder" : -1,
+  "masterRS" : 8,
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM.json"
   },
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDERS/DER1N_IBZ_PRODUCTTEAM_ZT_PRODUCT_ROOT.json",
-  "name" : "DER1N_IBZ_PRODUCTTEAM_ZT_PRODUCT_ROOT"
+  "name" : "DER1N_IBZ_PRODUCTTEAM_ZT_PRODUCT_ROOT",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "ROOT",
+    "codeName" : "Root"
+  },
+  "pickupDEFName" : "ROOT",
+  "removeActionType" : -1,
+  "removeOrder" : 0,
+  "nestedRS" : true
 }

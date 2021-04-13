@@ -1,24 +1,24 @@
 {
-  "getPSPickupDEField" : {
-    "name" : "PARENT",
-    "codeName" : "Parent"
-  },
-  "masterOrder" : -1,
-  "removeActionType" : -1,
-  "pickupDEFName" : "PARENT",
-  "masterRS" : 0,
-  "removeOrder" : 0,
+  "codeName" : "IBizParent",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/RepoFiles/PSDERS/DER1N__ZT_REPOFILES__ZT_REPOFILES__PARENT.json",
   "getMajorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/RepoFiles.json"
   },
-  "orderValue" : 100,
-  "codeName" : "IBizParent",
-  "dERType" : "DER1N",
+  "masterOrder" : -1,
+  "masterRS" : 0,
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/RepoFiles.json"
   },
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/RepoFiles/PSDERS/DER1N__ZT_REPOFILES__ZT_REPOFILES__PARENT.json",
-  "name" : "DER1N__ZT_REPOFILES__ZT_REPOFILES__PARENT"
+  "name" : "DER1N__ZT_REPOFILES__ZT_REPOFILES__PARENT",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "PARENT",
+    "codeName" : "Parent"
+  },
+  "pickupDEFName" : "PARENT",
+  "removeActionType" : -1,
+  "removeOrder" : 0
 }

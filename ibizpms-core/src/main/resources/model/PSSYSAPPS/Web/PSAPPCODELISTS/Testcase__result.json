@@ -1,34 +1,34 @@
 {
+  "codeListType" : "STATIC",
+  "codeName" : "Testcase__result",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__result.json",
+  "emptyText" : "未执行",
+  "name" : "测试用例结果",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
   },
   "getPSCodeItems" : [ {
-    "value" : "n/a",
     "codeName" : "N_a",
+    "color" : "rgba(190, 184, 184, 1)",
     "text" : "忽略",
-    "color" : "rgba(190, 184, 184, 1)"
+    "value" : "n/a"
   }, {
-    "value" : "pass",
     "codeName" : "Pass",
+    "color" : "rgba(93, 238, 9, 1)",
     "text" : "通过",
-    "color" : "rgba(93, 238, 9, 1)"
+    "value" : "pass"
   }, {
-    "value" : "fail",
     "codeName" : "Fail",
+    "color" : "rgba(251, 12, 12, 1)",
     "text" : "失败",
-    "color" : "rgba(251, 12, 12, 1)"
+    "value" : "fail"
   }, {
-    "value" : "blocked",
     "codeName" : "Blocked",
+    "color" : "rgba(228, 15, 15, 1)",
     "text" : "阻塞",
-    "color" : "rgba(228, 15, 15, 1)"
+    "value" : "blocked"
   } ],
-  "dynaInstMode" : 1,
-  "codeListType" : "STATIC",
-  "codeName" : "Testcase__result",
-  "emptyText" : "未执行",
-  "enableCache" : true,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__result.json",
-  "name" : "测试用例结果"
+  "enableCache" : true
 }

@@ -1,9 +1,9 @@
 {
-  "serviceOrder" : 0,
-  "serviceHandler" : "CreateReportUserMonthlyService",
   "codeName" : "CreateReportUserMonthlyService",
-  "serviceContainer" : "SC01",
-  "startMode" : "MANUAL",
   "dynaModelFilePath" : "PSMODULES/report/PSSYSBACKSERVICES/CreateReportUserMonthlyService.json",
-  "name" : "每月定时生成用户月报"
+  "name" : "每月定时生成用户月报",
+  "serviceContainer" : "SC01",
+  "serviceHandler" : "CreateReportUserMonthlyService",
+  "serviceOrder" : 0,
+  "startMode" : "MANUAL"
 }

@@ -1,24 +1,24 @@
 {
-  "getPSPickupDEField" : {
-    "name" : "BRANCH",
-    "codeName" : "Branch"
-  },
-  "masterOrder" : -1,
-  "removeActionType" : -1,
-  "pickupDEFName" : "BRANCH",
-  "masterRS" : 0,
-  "removeOrder" : 0,
+  "codeName" : "ZTBranch",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProjectProduct/PSDERS/DER1N_ZT_PROJECTPRODUCT_ZT_BRANCH_BRANCH.json",
   "getMajorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Branch.json"
   },
-  "orderValue" : 100,
-  "codeName" : "ZTBranch",
-  "dERType" : "DER1N",
+  "masterOrder" : -1,
+  "masterRS" : 0,
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectProduct.json"
   },
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProjectProduct/PSDERS/DER1N_ZT_PROJECTPRODUCT_ZT_BRANCH_BRANCH.json",
-  "name" : "DER1N_ZT_PROJECTPRODUCT_ZT_BRANCH_BRANCH"
+  "name" : "DER1N_ZT_PROJECTPRODUCT_ZT_BRANCH_BRANCH",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "BRANCH",
+    "codeName" : "Branch"
+  },
+  "pickupDEFName" : "BRANCH",
+  "removeActionType" : -1,
+  "removeOrder" : 0
 }

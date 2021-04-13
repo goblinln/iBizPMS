@@ -1,12 +1,107 @@
 {
-  "enableFront" : false,
-  "enableBackend" : true,
-  "getStartPSDELogicNode" : {
-    "modelref" : true,
-    "id" : "Begin"
-  },
+  "codeName" : "getProjectByPlan",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/getProjectByPlan.json",
+  "logicHolder" : 1,
+  "logicName" : "根据计划或需求获取相关项目",
+  "logicSubType" : "NONE",
+  "name" : "根据计划或需求获取相关项目",
+  "getPSDELogicLinks" : [ {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam1"
+    },
+    "name" : "连接3730",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "ISNULL",
+        "dstFieldName" : "PLAN",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "logicType" : "SINGLE",
+        "name" : "Default[PLAN] 值为空(Nil)"
+      }, {
+        "condOP" : "ISNULL",
+        "dstFieldName" : "STORY",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "logicType" : "SINGLE",
+        "name" : "Default[STORY] 值为空(Nil)"
+      } ],
+      "notMode" : false,
+      "id" : "cf3b1337760fa0fbd2b2fd77a5d6191d"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "name" : "连接1706",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "ISNOTNULL",
+        "dstFieldName" : "STORY",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "logicType" : "SINGLE",
+        "name" : "Default[STORY] 值不为空(NotNil)"
+      } ],
+      "notMode" : false,
+      "id" : "ff0b80616c7f7786dce992f0813c422a"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall2"
+    },
+    "name" : "连接5784",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "ISNOTNULL",
+        "dstFieldName" : "PLAN",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "logicType" : "SINGLE",
+        "name" : "Default[PLAN] 值不为空(NotNil)"
+      } ],
+      "notMode" : false,
+      "id" : "7f243d709621de498a2e72ff9fb15ca2"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "defaultLink" : false
+  } ],
   "getPSDELogicNodes" : [ {
-    "parallelOutput" : true,
+    "codeName" : "Begin",
+    "logicHolder" : 3,
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接3730"
@@ -17,161 +112,66 @@
       "modelref" : true,
       "id" : "连接5784"
     } ],
-    "logicHolder" : 3,
-    "codeName" : "Begin",
-    "logicNodeType" : "BEGIN",
-    "name" : "开始"
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "srcFieldName" : "STORY",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[STORY]"
-    } ],
-    "logicHolder" : 1,
     "codeName" : "Rawsqlcall1",
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "根据需求获取项目"
-  }, {
-    "parallelOutput" : true,
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "Default"
     },
+    "logicHolder" : 1,
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "根据需求获取项目",
     "getPSDELogicNodeParams" : [ {
+      "name" : "Default[STORY]",
       "paramAction" : "SQLPARAM",
+      "srcFieldName" : "STORY",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "srcFieldName" : "PLAN",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[PLAN]"
+      "srcValueType" : "SRCDLPARAM"
     } ],
-    "logicHolder" : 1,
+    "parallelOutput" : true
+  }, {
     "codeName" : "Rawsqlcall2",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
-    "name" : "获取项目"
+    "name" : "获取项目",
+    "getPSDELogicNodeParams" : [ {
+      "name" : "Default[PLAN]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "PLAN",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
-    "logicHolder" : 3,
     "codeName" : "Prepareparam1",
+    "logicHolder" : 3,
     "logicNodeType" : "PREPAREPARAM",
-    "name" : "设置常规参数"
-  } ],
-  "getPSDELogicLinks" : [ {
-    "getPSDELogicLinkGroupCond" : {
-      "getPSDELogicLinkConds" : [ {
-        "condOP" : "ISNULL",
-        "getDstLogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "dstFieldName" : "PLAN",
-        "logicType" : "SINGLE",
-        "name" : "Default[PLAN] 值为空(Nil)"
-      }, {
-        "condOP" : "ISNULL",
-        "getDstLogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "dstFieldName" : "STORY",
-        "logicType" : "SINGLE",
-        "name" : "Default[STORY] 值为空(Nil)"
-      } ],
-      "notMode" : false,
-      "groupOP" : "AND",
-      "logicType" : "GROUP",
-      "id" : "cf3b1337760fa0fbd2b2fd77a5d6191d"
-    },
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Prepareparam1"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Begin"
-    },
-    "name" : "连接3730"
-  }, {
-    "getPSDELogicLinkGroupCond" : {
-      "getPSDELogicLinkConds" : [ {
-        "condOP" : "ISNOTNULL",
-        "getDstLogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "dstFieldName" : "STORY",
-        "logicType" : "SINGLE",
-        "name" : "Default[STORY] 值不为空(NotNil)"
-      } ],
-      "notMode" : false,
-      "groupOP" : "AND",
-      "logicType" : "GROUP",
-      "id" : "ff0b80616c7f7786dce992f0813c422a"
-    },
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall1"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Begin"
-    },
-    "name" : "连接1706"
-  }, {
-    "getPSDELogicLinkGroupCond" : {
-      "getPSDELogicLinkConds" : [ {
-        "condOP" : "ISNOTNULL",
-        "getDstLogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "dstFieldName" : "PLAN",
-        "logicType" : "SINGLE",
-        "name" : "Default[PLAN] 值不为空(NotNil)"
-      } ],
-      "notMode" : false,
-      "groupOP" : "AND",
-      "logicType" : "GROUP",
-      "id" : "7f243d709621de498a2e72ff9fb15ca2"
-    },
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall2"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Begin"
-    },
-    "name" : "连接5784"
+    "name" : "设置常规参数",
+    "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
-    "lastParam" : false,
-    "envParam" : false,
     "codeName" : "Default",
+    "name" : "传入变量",
     "default" : true,
-    "name" : "传入变量"
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
   } ],
-  "logicHolder" : 1,
-  "codeName" : "getProjectByPlan",
-  "logicName" : "根据计划或需求获取相关项目",
-  "defaultParamName" : "Default",
-  "logicSubType" : "NONE",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/getProjectByPlan.json",
-  "name" : "根据计划或需求获取相关项目"
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : true,
+  "enableFront" : false
 }

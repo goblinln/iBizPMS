@@ -1,76 +1,76 @@
 {
-  "codeItemValueNumber" : false,
-  "subSysCodeList" : false,
-  "subSysAsCloud" : false,
-  "systemTag" : "iBizPMS",
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Task_quickpacket.json",
   "codeName" : "Task_quickpacket",
-  "userScope" : false,
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Task_quickpacket.json",
   "emptyText" : "未定义",
-  "enableCache" : true,
-  "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "All",
-    "data" : "{}",
     "codeName" : "ALLTASKCNT",
-    "text" : "所有"
+    "data" : "{}",
+    "text" : "所有",
+    "value" : "All"
   }, {
-    "value" : "UNCLOSED",
-    "data" : "{\"n_status_noteq\":\"closed\"}",
     "codeName" : "UNCLOSETASKCNT",
+    "data" : "{\"n_status_noteq\":\"closed\"}",
     "text" : "未关闭",
+    "value" : "UNCLOSED",
     "default" : true
   }, {
-    "value" : "TOME",
-    "data" : "{\"n_assignedto_eq\":\"%srfloginname%\"}",
     "codeName" : "ASSTOMYTASKCNT",
-    "text" : "指派给我"
+    "data" : "{\"n_assignedto_eq\":\"%srfloginname%\"}",
+    "text" : "指派给我",
+    "value" : "TOME"
   }, {
-    "value" : "storychange",
-    "data" : "{\"n_status1_eq\":\"storychange\"}",
     "codeName" : "STORYCHANGECNT",
-    "text" : "需求变更"
+    "data" : "{\"n_status1_eq\":\"storychange\"}",
+    "text" : "需求变更",
+    "value" : "storychange"
   }, {
-    "value" : "MORE",
-    "getPSCodeItems" : [ {
-      "value" : "NOTSTARTED",
-      "data" : "{\"n_status_eq\":\"wait\"}",
-      "codeName" : "UNSTARTTASKCNT",
-      "text" : "未开始"
-    }, {
-      "value" : "INPROGRESS",
-      "data" : "{\"n_status_eq\":\"doing\"}",
-      "codeName" : "YSTARTASKCNT",
-      "text" : "进行中"
-    }, {
-      "value" : "UNACCOMPLISHED",
-      "data" : "{\"n_status_in\":\"wait;cancel;doing\"}",
-      "codeName" : "UNCOMPLETETASKCNT",
-      "text" : "未完成"
-    }, {
-      "value" : "IFINISHED",
-      "data" : "{\"n_finishedby_eq\":\"%srfloginname%\"}",
-      "codeName" : "MYCOMPLETETASKCNT",
-      "text" : "我完成"
-    }, {
-      "value" : "COMPLETED",
-      "data" : "{\"n_status_eq\":\"done\"}",
-      "codeName" : "YCOMPLETETASKCNT",
-      "text" : "已完成"
-    }, {
-      "value" : "CLOSED",
-      "data" : "{\"n_status_eq\":\"closed\"}",
-      "codeName" : "CLOSETASKCNT",
-      "text" : "已关闭"
-    }, {
-      "value" : "CANCELLED",
-      "data" : "{\"n_status_eq\":\"cancel\"}",
-      "codeName" : "CANCELTASKCNT",
-      "text" : "已取消"
-    } ],
     "codeName" : "MORETASKCNT",
-    "text" : "更多"
-  } ]
+    "getPSCodeItems" : [ {
+      "codeName" : "UNSTARTTASKCNT",
+      "data" : "{\"n_status_eq\":\"wait\"}",
+      "text" : "未开始",
+      "value" : "NOTSTARTED"
+    }, {
+      "codeName" : "YSTARTASKCNT",
+      "data" : "{\"n_status_eq\":\"doing\"}",
+      "text" : "进行中",
+      "value" : "INPROGRESS"
+    }, {
+      "codeName" : "UNCOMPLETETASKCNT",
+      "data" : "{\"n_status_in\":\"wait;cancel;doing\"}",
+      "text" : "未完成",
+      "value" : "UNACCOMPLISHED"
+    }, {
+      "codeName" : "MYCOMPLETETASKCNT",
+      "data" : "{\"n_finishedby_eq\":\"%srfloginname%\"}",
+      "text" : "我完成",
+      "value" : "IFINISHED"
+    }, {
+      "codeName" : "YCOMPLETETASKCNT",
+      "data" : "{\"n_status_eq\":\"done\"}",
+      "text" : "已完成",
+      "value" : "COMPLETED"
+    }, {
+      "codeName" : "CLOSETASKCNT",
+      "data" : "{\"n_status_eq\":\"closed\"}",
+      "text" : "已关闭",
+      "value" : "CLOSED"
+    }, {
+      "codeName" : "CANCELTASKCNT",
+      "data" : "{\"n_status_eq\":\"cancel\"}",
+      "text" : "已取消",
+      "value" : "CANCELLED"
+    } ],
+    "text" : "更多",
+    "value" : "MORE"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
 }

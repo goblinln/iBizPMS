@@ -1,12 +1,28 @@
 {
-  "getPSDEChartTitle" : {
-    "showTitle" : false,
-    "title" : "燃尽图",
-    "index" : 0,
-    "id" : "0"
+  "codeName" : "BurnDown",
+  "controlType" : "CHART",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn/PSCHARTS/BurnDown.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "height" : 300.0,
+  "logicName" : "BurnDown",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
   },
   "getPSChartCoordinateSystems" : [ {
+    "eChartsType" : "cartesian2d",
+    "index" : 0,
+    "name" : "[real]直角坐标系[0]",
     "getPSChartGrid" : {
+      "index" : 0,
+      "name" : "[real]直角坐标系[0]",
+      "getPSChartCoordinateSystem" : {
+        "modelref" : true,
+        "id" : "0"
+      },
       "getPSChartGridXAxis0" : {
         "modelref" : true,
         "id" : "0"
@@ -15,127 +31,62 @@
         "modelref" : true,
         "id" : "0"
       },
-      "getPSChartCoordinateSystem" : {
-        "modelref" : true,
-        "id" : "0"
-      },
       "type" : "grid",
-      "index" : 0,
-      "name" : "[real]直角坐标系[0]",
       "id" : "0"
     },
-    "eChartsType" : "cartesian2d",
     "type" : "XY",
-    "index" : 0,
-    "name" : "[real]直角坐标系[0]",
     "id" : "0"
   } ],
-  "getPSDEChartLegend" : {
-    "showLegend" : true,
+  "getPSChartDataSetGroups" : [ {
     "index" : 0,
+    "name" : "ESTIMATEANDLEFT",
     "id" : "0"
-  },
-  "controlType" : "CHART",
-  "getPSDEChartSerieses" : [ {
-    "stack" : false,
-    "eChartsType" : "line",
-    "getPSChartCoordinateSystem" : {
-      "modelref" : true,
-      "id" : "0"
-    },
-    "enableChartDataSet" : true,
-    "getPSChartDataSet" : {
-      "modelref" : true,
-      "id" : "0"
-    },
-    "catalogField" : "DATE",
-    "getPSChartSeriesEncode" : {
-      "getPSChartXAxis" : {
-        "modelref" : true,
-        "id" : "0"
-      },
-      "getPSChartYAxis" : {
-        "modelref" : true,
-        "id" : "0"
-      },
-      "x" : [ "DATE" ],
-      "y" : [ "LEFT" ],
-      "type" : "XY",
-      "index" : 0,
-      "name" : "坐标系编码",
-      "id" : "0"
-    },
-    "seriesType" : "area",
-    "caption" : "实际消耗",
-    "valueField" : "LEFT",
-    "seriesLayoutBy" : "column",
+  } ],
+  "getPSChartDataSets" : [ {
     "index" : 0,
-    "name" : "real",
-    "getUserParam" : {
-      "ECX.label" : "{show: false,position: 'inside'}",
-      "EC.areaStyle" : "{}"
-    }
-  }, {
-    "stack" : false,
-    "eChartsType" : "line",
-    "getPSChartCoordinateSystem" : {
-      "modelref" : true,
+    "name" : "real-ESTIMATEANDLEFT",
+    "getPSChartDataSetFields" : [ {
+      "index" : 0,
+      "name" : "DATE",
+      "groupField" : true,
       "id" : "0"
-    },
-    "enableChartDataSet" : true,
-    "getPSChartDataSet" : {
-      "modelref" : true,
+    }, {
+      "index" : 1,
+      "name" : "LEFT",
+      "groupField" : false,
       "id" : "1"
-    },
-    "catalogField" : "date",
-    "getPSChartSeriesEncode" : {
-      "getPSChartXAxis" : {
-        "modelref" : true,
-        "id" : "0"
-      },
-      "getPSChartYAxis" : {
-        "modelref" : true,
-        "id" : "0"
-      },
-      "x" : [ "date" ],
-      "y" : [ "estimate" ],
-      "type" : "XY",
-      "index" : 0,
-      "name" : "坐标系编码",
-      "id" : "0"
-    },
-    "seriesType" : "line",
-    "caption" : "预计消耗",
-    "valueField" : "estimate",
-    "seriesLayoutBy" : "column",
+    } ],
+    "id" : "0"
+  }, {
     "index" : 1,
-    "name" : "est",
-    "getUserParam" : {
-      "ECX.label" : "{show: false,position: 'inside'}"
-    }
-  } ],
-  "codeName" : "BurnDown",
-  "getPSChartXAxises" : [ {
-    "eChartsType" : "category",
-    "eChartsPos" : "xAxis",
-    "position" : "bottom",
-    "type" : "category",
-    "caption" : "日期",
-    "index" : 0,
-    "name" : "X",
-    "id" : "0"
-  } ],
-  "getPSChartYAxises" : [ {
-    "eChartsType" : "value",
-    "eChartsPos" : "yAxis",
-    "position" : "left",
-    "type" : "numeric",
-    "caption" : "消耗工时",
-    "index" : 0,
-    "name" : "Y",
-    "id" : "0"
+    "name" : "est-ESTIMATEANDLEFT",
+    "getPSChartDataSetFields" : [ {
+      "index" : 0,
+      "name" : "date",
+      "groupField" : true,
+      "id" : "0"
+    }, {
+      "index" : 1,
+      "name" : "estimate",
+      "groupField" : false,
+      "id" : "1"
+    } ],
+    "id" : "1"
   } ],
   "getPSChartGrids" : [ {
+    "index" : 0,
+    "name" : "[real]直角坐标系[0]",
+    "getPSChartCoordinateSystem" : {
+      "eChartsType" : "cartesian2d",
+      "index" : 0,
+      "name" : "[real]直角坐标系[0]",
+      "getPSChartGrid" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "type" : "XY",
+      "id" : "0"
+    },
     "getPSChartGridXAxis0" : {
       "modelref" : true,
       "id" : "0"
@@ -144,73 +95,122 @@
       "modelref" : true,
       "id" : "0"
     },
+    "type" : "grid",
+    "id" : "0"
+  } ],
+  "getPSChartXAxises" : [ {
+    "caption" : "日期",
+    "eChartsPos" : "xAxis",
+    "eChartsType" : "category",
+    "index" : 0,
+    "name" : "X",
+    "position" : "bottom",
+    "type" : "category",
+    "id" : "0"
+  } ],
+  "getPSChartYAxises" : [ {
+    "caption" : "消耗工时",
+    "eChartsPos" : "yAxis",
+    "eChartsType" : "value",
+    "index" : 0,
+    "name" : "Y",
+    "position" : "left",
+    "type" : "numeric",
+    "id" : "0"
+  } ],
+  "getPSDEChartLegend" : {
+    "index" : 0,
+    "showLegend" : true,
+    "id" : "0"
+  },
+  "getPSDEChartSerieses" : [ {
+    "caption" : "实际消耗",
+    "catalogField" : "DATE",
+    "eChartsType" : "line",
+    "index" : 0,
+    "name" : "real",
     "getPSChartCoordinateSystem" : {
-      "getPSChartGrid" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartDataSet" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartSeriesEncode" : {
+      "index" : 0,
+      "name" : "坐标系编码",
+      "getPSChartXAxis" : {
         "modelref" : true,
         "id" : "0"
       },
-      "eChartsType" : "cartesian2d",
+      "getPSChartYAxis" : {
+        "modelref" : true,
+        "id" : "0"
+      },
       "type" : "XY",
-      "index" : 0,
-      "name" : "[real]直角坐标系[0]",
+      "x" : [ "DATE" ],
+      "y" : [ "LEFT" ],
       "id" : "0"
     },
-    "type" : "grid",
-    "index" : 0,
-    "name" : "[real]直角坐标系[0]",
-    "id" : "0"
-  } ],
-  "getPSChartDataSets" : [ {
-    "getPSChartDataSetFields" : [ {
-      "groupField" : true,
-      "index" : 0,
-      "name" : "DATE",
-      "id" : "0"
-    }, {
-      "groupField" : false,
-      "index" : 1,
-      "name" : "LEFT",
-      "id" : "1"
-    } ],
-    "index" : 0,
-    "name" : "real-ESTIMATEANDLEFT",
-    "id" : "0"
+    "seriesLayoutBy" : "column",
+    "seriesType" : "area",
+    "valueField" : "LEFT",
+    "enableChartDataSet" : true,
+    "stack" : false,
+    "getUserParam" : {
+      "ECX.label" : "{show: false,position: 'inside'}",
+      "EC.areaStyle" : "{}"
+    }
   }, {
-    "getPSChartDataSetFields" : [ {
-      "groupField" : true,
-      "index" : 0,
-      "name" : "date",
-      "id" : "0"
-    }, {
-      "groupField" : false,
-      "index" : 1,
-      "name" : "estimate",
-      "id" : "1"
-    } ],
+    "caption" : "预计消耗",
+    "catalogField" : "date",
+    "eChartsType" : "line",
     "index" : 1,
-    "name" : "est-ESTIMATEANDLEFT",
-    "id" : "1"
+    "name" : "est",
+    "getPSChartCoordinateSystem" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartDataSet" : {
+      "modelref" : true,
+      "id" : "1"
+    },
+    "getPSChartSeriesEncode" : {
+      "index" : 0,
+      "name" : "坐标系编码",
+      "getPSChartXAxis" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "getPSChartYAxis" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "type" : "XY",
+      "x" : [ "date" ],
+      "y" : [ "estimate" ],
+      "id" : "0"
+    },
+    "seriesLayoutBy" : "column",
+    "seriesType" : "line",
+    "valueField" : "estimate",
+    "enableChartDataSet" : true,
+    "stack" : false,
+    "getUserParam" : {
+      "ECX.label" : "{show: false,position: 'inside'}"
+    }
   } ],
-  "getPSChartDataSetGroups" : [ {
+  "getPSDEChartTitle" : {
     "index" : 0,
-    "name" : "ESTIMATEANDLEFT",
+    "title" : "燃尽图",
+    "showTitle" : false,
     "id" : "0"
-  } ],
-  "getFetchPSControlAction" : {
-    "modelref" : true,
-    "id" : "fetch"
-  },
-  "readOnly" : true,
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn.json"
   },
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "NEW"
   },
-  "height" : 300.0,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Burn/PSCHARTS/BurnDown.json",
-  "logicName" : "BurnDown",
+  "readOnly" : true,
   "modelid" : "d66223de54fcf5e7b4a0aeb6acc93a87"
 }

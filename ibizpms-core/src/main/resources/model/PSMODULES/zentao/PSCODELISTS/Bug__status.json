@@ -1,31 +1,31 @@
 {
-  "codeItemValueNumber" : false,
-  "subSysCodeList" : false,
-  "subSysAsCloud" : false,
-  "systemTag" : "iBizPMS",
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Bug__status.json",
   "codeName" : "Bug__status",
-  "userScope" : false,
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Bug__status.json",
   "emptyText" : "未定义",
-  "enableCache" : true,
-  "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "active",
     "codeName" : "Active",
-    "text" : "激活",
     "color" : "rgba(0, 157, 255, 1)",
+    "text" : "激活",
+    "value" : "active",
     "default" : true
   }, {
-    "value" : "resolved",
     "codeName" : "Resolved",
+    "color" : "rgba(1, 217, 19, 1)",
     "text" : "已解决",
-    "color" : "rgba(1, 217, 19, 1)"
+    "value" : "resolved"
   }, {
-    "value" : "closed",
     "codeName" : "Closed",
+    "color" : "rgba(151, 152, 141, 1)",
     "text" : "已关闭",
-    "color" : "rgba(151, 152, 141, 1)"
-  } ]
+    "value" : "closed"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
 }

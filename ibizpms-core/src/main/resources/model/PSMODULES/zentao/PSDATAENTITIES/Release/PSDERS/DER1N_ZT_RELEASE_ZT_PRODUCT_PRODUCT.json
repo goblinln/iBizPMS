@@ -1,4 +1,19 @@
 {
+  "codeName" : "ZTProduct",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDERS/DER1N_ZT_RELEASE_ZT_PRODUCT_PRODUCT.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 0,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
+  },
+  "name" : "DER1N_ZT_RELEASE_ZT_PRODUCT_PRODUCT",
+  "orderValue" : 100,
   "getPSPickupDEField" : {
     "name" : "PRODUCT",
     "codeName" : "Product"
@@ -7,22 +22,7 @@
     "name" : "PRODUCTNAME",
     "codeName" : "ProductName"
   },
-  "masterOrder" : -1,
-  "removeActionType" : -1,
   "pickupDEFName" : "PRODUCT",
-  "masterRS" : 0,
-  "removeOrder" : 0,
-  "getMajorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
-  },
-  "orderValue" : 100,
-  "codeName" : "ZTProduct",
-  "dERType" : "DER1N",
-  "getMinorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
-  },
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDERS/DER1N_ZT_RELEASE_ZT_PRODUCT_PRODUCT.json",
-  "name" : "DER1N_ZT_RELEASE_ZT_PRODUCT_PRODUCT"
+  "removeActionType" : -1,
+  "removeOrder" : 0
 }

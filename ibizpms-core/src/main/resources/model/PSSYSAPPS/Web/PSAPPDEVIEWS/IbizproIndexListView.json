@@ -1,31 +1,18 @@
 {
-  "mDCtrlActiveMode" : 1,
-  "enableSearch" : true,
-  "enableFilter" : true,
-  "enableQuickSearch" : true,
-  "xDataControlName" : "list",
-  "showCaptionBar" : true,
-  "getPSDEViewCodeName" : "ListView",
-  "enableDP" : true,
-  "caption" : "索引检索",
-  "title" : "索引检索列表视图",
   "accUserMode" : 2,
-  "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
-    "layoutPanel" : true,
-    "controlType" : "VIEWLAYOUTPANEL",
-    "codeName" : "Layoutpanel",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
-    },
-    "getPSControlParam" : { },
-    "controlStyle" : "APPDELISTVIEW_STYLE2",
-    "name" : "layoutpanel"
+  "caption" : "索引检索",
+  "codeName" : "IbizproIndexListView",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexListView.json",
+  "mDCtrlActiveMode" : 1,
+  "name" : "IbizproIndexListView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
   },
   "getPSAppViewEngines" : [ {
-    "engineType" : "ListView",
     "engineCat" : "VIEW",
+    "engineType" : "ListView",
+    "name" : "engine",
     "getPSUIEngineParams" : [ {
       "name" : "LIST",
       "paramType" : "CTRL"
@@ -38,435 +25,52 @@
     }, {
       "name" : "SEARCHFORM",
       "paramType" : "CTRL"
-    } ],
-    "name" : "engine"
-  } ],
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
-  },
-  "getPSControls" : [ {
-    "enableRowNew" : false,
-    "enableRowEditOrder" : false,
-    "noSort" : false,
-    "hasWFDataItems" : false,
-    "showHeader" : true,
-    "enableRowEditGroup" : false,
-    "getPSDEListDataItems" : [ {
-      "getPSAppDEField" : {
-        "name" : "INDEX_TYPE",
-        "codeName" : "IndexType"
-      },
-      "getFrontPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/IndexType.json"
-      },
-      "name" : "indextype",
-      "dataType" : 25
-    }, {
-      "name" : "indexname",
-      "dataType" : 25
-    }, {
-      "name" : "orgid",
-      "dataType" : 25
-    }, {
-      "name" : "indexid",
-      "dataType" : 1
-    }, {
-      "name" : "indexdesc",
-      "dataType" : 25
-    }, {
-      "name" : "color",
-      "dataType" : 25
-    }, {
-      "name" : "mdeptid",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "INDEXID",
-        "codeName" : "Indexid"
-      },
-      "name" : "srfkey",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "INDEXNAME",
-        "codeName" : "Indexname"
-      },
-      "name" : "srfmajortext",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "INDEX_TYPE",
-        "codeName" : "IndexType"
-      },
-      "getFrontPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/IndexType.json"
-      },
-      "name" : "srfdatatype",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "INDEX_TYPE",
-        "codeName" : "IndexType"
-      },
-      "getFrontPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/IndexType.json"
-      },
-      "name" : "index_type",
-      "dataType" : 25
-    } ],
-    "enableRowEdit" : false,
-    "controlType" : "LIST",
-    "codeName" : "IndexMob",
-    "enableGroup" : false,
-    "pagingSize" : 20,
-    "groupMode" : "NONE",
-    "getCreatePSControlAction" : {
-      "modelref" : true,
-      "id" : "create"
-    },
-    "getUpdatePSControlAction" : {
-      "modelref" : true,
-      "id" : "update"
-    },
-    "getRemovePSControlAction" : {
-      "modelref" : true,
-      "id" : "remove"
-    },
-    "getGetPSControlAction" : {
-      "modelref" : true,
-      "id" : "load"
-    },
-    "getFetchPSControlAction" : {
-      "modelref" : true,
-      "id" : "fetch"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
-    },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "LIST"
-    },
-    "controlStyle" : "FullTextSearch",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
-    "getPSControlHandler" : {
-      "userDRAction" : "READ",
-      "getPSHandlerActions" : [ {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Update"
-        },
-        "dataAccessAction" : "UPDATE",
-        "actionName" : "Update",
-        "actionType" : "DEACTION",
-        "name" : "update"
-      }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "FetchESquery"
-        },
-        "actionType" : "DEDATASET",
-        "name" : "fetch"
-      }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
-        "dataAccessAction" : "DELETE",
-        "actionName" : "Remove",
-        "actionType" : "DEACTION",
-        "name" : "remove"
-      }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Get"
-        },
-        "dataAccessAction" : "READ",
-        "actionName" : "Get",
-        "actionType" : "DEACTION",
-        "name" : "load"
-      }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Create"
-        },
-        "dataAccessAction" : "CREATE",
-        "actionName" : "Create",
-        "actionType" : "DEACTION",
-        "name" : "create"
-      } ],
-      "enableDEFieldPrivilege" : false,
-      "id" : "列表控件处理器"
-    },
-    "getPSSysPFPlugin" : {
-      "pluginType" : "LIST_RENDER",
-      "pluginCode" : "FullTextSearch"
-    },
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex/PSLISTS/IndexMob.json",
-    "logicName" : "IndexMob",
-    "name" : "list",
-    "modelid" : "3d749efd9d96f3330022d35dfcdaaf60"
-  }, {
-    "searchButtonStyle" : "DEFAULT",
-    "enableAdvanceSearch" : false,
-    "enableAutoSearch" : false,
-    "enableFilterSave" : false,
-    "controlType" : "SEARCHFORM",
-    "getPSLayout" : {
-      "layout" : "TABLE_24COL",
-      "columnCount" : 24
-    },
-    "getPSDEFormPages" : [ {
-      "getPSLayout" : {
-        "layout" : "TABLE_24COL",
-        "columnCount" : 24
-      },
-      "infoGroupMode" : false,
-      "codeName" : "formpage1",
-      "caption" : "常规条件",
-      "detailType" : "FORMPAGE",
-      "detailStyle" : "DEFAULT",
-      "name" : "formpage1"
-    } ],
-    "noTabHeader" : true,
-    "codeName" : "Default",
-    "tabHeaderPos" : "TOP",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
-    },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "SEARCHFORM"
-    },
-    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
-    "getPSControlHandler" : {
-      "getPSHandlerActions" : [ {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "FilterSearch"
-        },
-        "actionType" : "FILTERACTION",
-        "name" : "search"
-      }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "FilterGet"
-        },
-        "actionType" : "FILTERACTION",
-        "name" : "load"
-      }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "FilterGetDraft"
-        },
-        "actionType" : "FILTERACTION",
-        "name" : "loaddraft"
-      } ],
-      "enableDEFieldPrivilege" : false,
-      "id" : "搜索表单处理器"
-    },
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex/PSSEARCHFORMS/Default.json",
-    "logicName" : "默认搜索表单",
-    "name" : "searchform",
-    "modelid" : "edab1390abda9ac712f0a21d02c0b0e4"
-  } ],
-  "viewStyle" : "STYLE2",
-  "getPSAppViewRefs" : [ {
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "realTitle" : "需求",
-    "realOpenMode" : "DRAWER_RIGHT",
-    "name" : "NEWDATA:story"
-  }, {
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "realTitle" : "产品编辑视图",
-    "realOpenMode" : "DRAWER_LEFT",
-    "name" : "NEWDATA:product"
-  }, {
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "realTitle" : "产品编辑视图",
-    "realOpenMode" : "DRAWER_LEFT",
-    "name" : "EDITDATA:product"
-  }, {
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "realTitle" : "功能测试编辑视图",
-    "name" : "EDITDATA:case"
-  }, {
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "realTitle" : "项目",
-    "realOpenMode" : "DRAWER_LEFT",
-    "name" : "NEWDATA:project"
-  }, {
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "realTitle" : "Bug",
-    "realOpenMode" : "DRAWER_RIGHT",
-    "name" : "NEWDATA:bug"
-  }, {
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "realTitle" : "项目",
-    "realOpenMode" : "DRAWER_LEFT",
-    "name" : "EDITDATA:project"
-  }, {
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "realTitle" : "需求",
-    "realOpenMode" : "DRAWER_RIGHT",
-    "name" : "EDITDATA:story"
-  }, {
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "realTitle" : "功能测试编辑视图",
-    "name" : "NEWDATA:case"
-  }, {
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexIndexPickupView.json",
-      "viewType" : "DEPICKUPVIEW"
-    },
-    "realTitle" : "索引检索数据选择视图",
-    "name" : "NEWDATAWIZARD"
-  }, {
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "realTitle" : "Bug",
-    "realOpenMode" : "DRAWER_RIGHT",
-    "name" : "EDITDATA:bug"
-  }, {
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexRedirectView.json",
-      "viewType" : "DEREDIRECTVIEW"
-    },
-    "realTitle" : "索引检索数据重定向视图",
-    "name" : "EDITDATA"
+    } ]
   } ],
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata",
     "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据",
       "getNewDataPSAppViews" : [ {
+        "refMode" : "story",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "refMode" : "story"
+        }
       }, {
+        "refMode" : "product",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "refMode" : "product"
+        }
       }, {
+        "refMode" : "project",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "refMode" : "project"
+        }
       }, {
+        "refMode" : "bug",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "refMode" : "bug"
+        }
       }, {
+        "refMode" : "case",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "refMode" : "case"
-      } ],
-      "enableWizardAdd" : true,
-      "actionAfterWizard" : "DEFAULT",
-      "getWizardPSAppView" : {
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexIndexPickupView.json",
-          "viewType" : "DEPICKUPVIEW"
         }
-      },
-      "enableBatchAdd" : false,
-      "batchAddOnly" : false,
-      "viewLogicType" : "APP_NEWDATA",
+      } ],
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -474,49 +78,60 @@
           "viewType" : "DEPICKUPVIEW"
         }
       }, {
+        "refMode" : "story",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "refMode" : "story"
+        }
       }, {
+        "refMode" : "product",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "refMode" : "product"
+        }
       }, {
+        "refMode" : "project",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "refMode" : "project"
+        }
       }, {
+        "refMode" : "bug",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "refMode" : "bug"
+        }
       }, {
+        "refMode" : "case",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "refMode" : "case"
+        }
       } ],
-      "logicType" : "PREDEFINED",
-      "name" : "新建数据"
-    },
-    "logicType" : "SYSUILOGIC",
-    "name" : "newdata"
+      "viewLogicType" : "APP_NEWDATA",
+      "getWizardPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexIndexPickupView.json",
+          "viewType" : "DEPICKUPVIEW"
+        }
+      },
+      "batchAddOnly" : false,
+      "enableBatchAdd" : false,
+      "enableWizardAdd" : true
+    }
   }, {
     "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata",
     "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
       "getOpenDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -525,42 +140,41 @@
         }
       },
       "getOpenDataPSAppViews" : [ {
+        "refMode" : "product",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "refMode" : "product"
+        }
       }, {
+        "refMode" : "case",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "refMode" : "case"
+        }
       }, {
+        "refMode" : "project",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "refMode" : "project"
+        }
       }, {
+        "refMode" : "story",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "refMode" : "story"
+        }
       }, {
+        "refMode" : "bug",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "refMode" : "bug"
+        }
       } ],
-      "viewLogicType" : "APP_OPENDATA",
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {
           "modelref" : true,
@@ -568,49 +182,435 @@
           "viewType" : "DEREDIRECTVIEW"
         }
       }, {
+        "refMode" : "product",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "refMode" : "product"
+        }
       }, {
+        "refMode" : "case",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "refMode" : "case"
+        }
       }, {
+        "refMode" : "project",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "refMode" : "project"
+        }
       }, {
+        "refMode" : "story",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "refMode" : "story"
+        }
       }, {
+        "refMode" : "bug",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
           "viewType" : "DEEDITVIEW"
-        },
-        "refMode" : "bug"
+        }
       } ],
-      "logicType" : "PREDEFINED",
-      "name" : "打开数据"
-    },
-    "logicType" : "SYSUILOGIC",
-    "name" : "opendata"
+      "viewLogicType" : "APP_OPENDATA"
+    }
   } ],
-  "codeName" : "IbizproIndexListView",
+  "getPSAppViewRefs" : [ {
+    "name" : "NEWDATA:story",
+    "realOpenMode" : "DRAWER_RIGHT",
+    "realTitle" : "需求",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  }, {
+    "name" : "NEWDATA:product",
+    "realOpenMode" : "DRAWER_LEFT",
+    "realTitle" : "产品编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  }, {
+    "name" : "EDITDATA:product",
+    "realOpenMode" : "DRAWER_LEFT",
+    "realTitle" : "产品编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  }, {
+    "name" : "EDITDATA:case",
+    "realTitle" : "功能测试编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  }, {
+    "name" : "NEWDATA:project",
+    "realOpenMode" : "DRAWER_LEFT",
+    "realTitle" : "项目",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  }, {
+    "name" : "NEWDATA:bug",
+    "realOpenMode" : "DRAWER_RIGHT",
+    "realTitle" : "Bug",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  }, {
+    "name" : "EDITDATA:project",
+    "realOpenMode" : "DRAWER_LEFT",
+    "realTitle" : "项目",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  }, {
+    "name" : "EDITDATA:story",
+    "realOpenMode" : "DRAWER_RIGHT",
+    "realTitle" : "需求",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  }, {
+    "name" : "NEWDATA:case",
+    "realTitle" : "功能测试编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  }, {
+    "name" : "NEWDATAWIZARD",
+    "realTitle" : "索引检索数据选择视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexIndexPickupView.json",
+      "viewType" : "DEPICKUPVIEW"
+    }
+  }, {
+    "name" : "EDITDATA:bug",
+    "realOpenMode" : "DRAWER_RIGHT",
+    "realTitle" : "Bug",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  }, {
+    "name" : "EDITDATA",
+    "realTitle" : "索引检索数据重定向视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexRedirectView.json",
+      "viewType" : "DEREDIRECTVIEW"
+    }
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "IndexMob",
+    "controlStyle" : "FullTextSearch",
+    "controlType" : "LIST",
+    "getCreatePSControlAction" : {
+      "modelref" : true,
+      "id" : "create"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex/PSLISTS/IndexMob.json",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "getGetPSControlAction" : {
+      "modelref" : true,
+      "id" : "load"
+    },
+    "groupMode" : "NONE",
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "logicName" : "IndexMob",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchESquery"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+        }
+      } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "列表控件处理器"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "LIST"
+    },
+    "getPSDEListDataItems" : [ {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/IndexType.json"
+      },
+      "name" : "indextype",
+      "getPSAppDEField" : {
+        "name" : "INDEX_TYPE",
+        "codeName" : "IndexType"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "indexname"
+    }, {
+      "dataType" : 25,
+      "name" : "orgid"
+    }, {
+      "dataType" : 1,
+      "name" : "indexid"
+    }, {
+      "dataType" : 25,
+      "name" : "indexdesc"
+    }, {
+      "dataType" : 25,
+      "name" : "color"
+    }, {
+      "dataType" : 25,
+      "name" : "mdeptid"
+    }, {
+      "dataType" : 25,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "INDEXID",
+        "codeName" : "Indexid"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "INDEXNAME",
+        "codeName" : "Indexname"
+      }
+    }, {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/IndexType.json"
+      },
+      "name" : "srfdatatype",
+      "getPSAppDEField" : {
+        "name" : "INDEX_TYPE",
+        "codeName" : "IndexType"
+      }
+    }, {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/IndexType.json"
+      },
+      "name" : "index_type",
+      "getPSAppDEField" : {
+        "name" : "INDEX_TYPE",
+        "codeName" : "IndexType"
+      }
+    } ],
+    "getPSSysPFPlugin" : {
+      "pluginType" : "LIST_RENDER",
+      "pluginCode" : "FullTextSearch"
+    },
+    "pagingSize" : 20,
+    "getRemovePSControlAction" : {
+      "modelref" : true,
+      "id" : "remove"
+    },
+    "getUpdatePSControlAction" : {
+      "modelref" : true,
+      "id" : "update"
+    },
+    "hasWFDataItems" : false,
+    "enableGroup" : false,
+    "enableRowEdit" : false,
+    "enableRowEditGroup" : false,
+    "enableRowEditOrder" : false,
+    "enableRowNew" : false,
+    "noSort" : false,
+    "showHeader" : true,
+    "name" : "list",
+    "modelid" : "3d749efd9d96f3330022d35dfcdaaf60"
+  }, {
+    "codeName" : "Default",
+    "controlType" : "SEARCHFORM",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex/PSSEARCHFORMS/Default.json",
+    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "logicName" : "默认搜索表单",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionType" : "FILTERACTION",
+        "name" : "search",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterSearch"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+        }
+      }, {
+        "actionType" : "FILTERACTION",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGet"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+        }
+      }, {
+        "actionType" : "FILTERACTION",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+        }
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "搜索表单处理器"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "SEARCHFORM"
+    },
+    "getPSDEFormPages" : [ {
+      "caption" : "常规条件",
+      "codeName" : "formpage1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMPAGE",
+      "name" : "formpage1",
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "searchButtonStyle" : "DEFAULT",
+    "tabHeaderPos" : "TOP",
+    "enableAdvanceSearch" : false,
+    "enableAutoSearch" : false,
+    "enableFilterSave" : false,
+    "noTabHeader" : true,
+    "name" : "searchform",
+    "modelid" : "edab1390abda9ac712f0a21d02c0b0e4"
+  } ],
+  "getPSDEViewCodeName" : "ListView",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDELISTVIEW_STYLE2",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
+    },
+    "getPSControlParam" : { },
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "索引检索列表视图",
+  "viewStyle" : "STYLE2",
   "viewType" : "DELISTVIEW",
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexListView.json",
-  "name" : "IbizproIndexListView"
+  "xDataControlName" : "list",
+  "enableDP" : true,
+  "enableFilter" : true,
+  "enableQuickSearch" : true,
+  "enableSearch" : true,
+  "showCaptionBar" : true
 }

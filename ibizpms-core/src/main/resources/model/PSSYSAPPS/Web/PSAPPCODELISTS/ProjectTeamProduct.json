@@ -1,25 +1,25 @@
 {
+  "codeListType" : "DYNAMIC",
+  "codeName" : "ProjectTeamProduct",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProjectTeamProduct.json",
+  "emptyText" : "未定义",
+  "name" : "真实用户项目团队（优先关联产品）",
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchProjectTeamMProduct"
+  },
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
-  },
-  "getValuePSAppDEField" : {
-    "name" : "USERNAME",
-    "codeName" : "UserName"
   },
   "getTextPSAppDEField" : {
     "name" : "PERSONNAME",
     "codeName" : "PersonName"
   },
-  "getPSAppDEDataSet" : {
-    "modelref" : true,
-    "id" : "FetchProjectTeamMProduct"
+  "getValuePSAppDEField" : {
+    "name" : "USERNAME",
+    "codeName" : "UserName"
   },
-  "dynaInstMode" : 1,
-  "codeListType" : "DYNAMIC",
-  "codeName" : "ProjectTeamProduct",
-  "emptyText" : "未定义",
-  "enableCache" : true,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProjectTeamProduct.json",
-  "name" : "真实用户项目团队（优先关联产品）"
+  "enableCache" : true
 }

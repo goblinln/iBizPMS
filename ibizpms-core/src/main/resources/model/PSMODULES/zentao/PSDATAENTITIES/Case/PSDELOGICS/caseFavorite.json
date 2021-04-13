@@ -1,127 +1,127 @@
 {
-  "enableFront" : false,
-  "enableBackend" : true,
-  "getStartPSDELogicNode" : {
-    "modelref" : true,
-    "id" : "Begin"
-  },
+  "codeName" : "caseFavorite",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDELOGICS/caseFavorite.json",
+  "logicHolder" : 1,
+  "logicName" : "用例收藏",
+  "logicSubType" : "NONE",
+  "name" : "用例收藏",
+  "getPSDELogicLinks" : [ {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "name" : "连接2978",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam1"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam1"
+    },
+    "name" : "连接1309",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "defaultLink" : false
+  } ],
   "getPSDELogicNodes" : [ {
-    "parallelOutput" : true,
-    "getDstPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzFavorites.json"
-    },
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "IbzFavorite"
-    },
-    "logicHolder" : 3,
     "codeName" : "Create",
     "getDstPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzFavorites/PSDEACTIONS/Create.json"
     },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "IbzFavorite"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzFavorites.json"
+    },
+    "logicHolder" : 3,
     "logicNodeType" : "DEACTION",
-    "name" : "Create"
+    "name" : "Create",
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
+    "codeName" : "Begin",
+    "logicHolder" : 3,
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接1309"
     } ],
-    "logicHolder" : 3,
-    "codeName" : "Begin",
-    "logicNodeType" : "BEGIN",
-    "name" : "开始"
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
+    "codeName" : "Prepareparam1",
+    "logicHolder" : 3,
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "准备参数",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接2978"
     } ],
     "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SETPARAMVALUE",
+      "dstFieldName" : "OBJECTID",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "IbzFavorite"
       },
+      "name" : "Default[ID] ==> IbzFavorite[OBJECTID]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "ID",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "srcFieldName" : "ID",
-      "srcValueType" : "SRCDLPARAM",
-      "dstFieldName" : "OBJECTID",
-      "name" : "Default[ID] ==> IbzFavorite[OBJECTID]"
+      "srcValueType" : "SRCDLPARAM"
     }, {
-      "paramAction" : "SETPARAMVALUE",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "IbzFavorite"
-      },
-      "srcFieldName" : "srfloginname",
-      "srcValueType" : "SESSION",
       "dstFieldName" : "ACCOUNT",
-      "name" : "用户全局对象[srfloginname] ==> IbzFavorite[ACCOUNT]"
-    }, {
-      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "IbzFavorite"
       },
-      "srcValueType" : "SRCVALUE",
-      "srcValue" : "case",
+      "name" : "用户全局对象[srfloginname] ==> IbzFavorite[ACCOUNT]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    }, {
       "dstFieldName" : "TYPE",
-      "name" : "直接值[case] ==> IbzFavorite[TYPE]"
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "IbzFavorite"
+      },
+      "name" : "直接值[case] ==> IbzFavorite[TYPE]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcValue" : "case",
+      "srcValueType" : "SRCVALUE"
     } ],
-    "logicHolder" : 3,
-    "codeName" : "Prepareparam1",
-    "logicNodeType" : "PREPAREPARAM",
-    "name" : "准备参数"
-  } ],
-  "getPSDELogicLinks" : [ {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Create"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Prepareparam1"
-    },
-    "name" : "连接2978"
-  }, {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Prepareparam1"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Begin"
-    },
-    "name" : "连接1309"
+    "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
-    "lastParam" : false,
-    "envParam" : false,
     "codeName" : "Default",
+    "name" : "传入变量",
     "default" : true,
-    "name" : "传入变量"
-  }, {
-    "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
+  }, {
     "codeName" : "IbzFavorite",
+    "name" : "IbzFavorite",
     "default" : false,
-    "name" : "IbzFavorite"
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
   } ],
-  "logicHolder" : 1,
-  "codeName" : "caseFavorite",
-  "logicName" : "用例收藏",
-  "defaultParamName" : "Default",
-  "logicSubType" : "NONE",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDELOGICS/caseFavorite.json",
-  "name" : "用例收藏"
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : true,
+  "enableFront" : false
 }

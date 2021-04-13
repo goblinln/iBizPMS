@@ -1,179 +1,179 @@
 {
-  "enableFront" : false,
-  "enableBackend" : true,
-  "getStartPSDELogicNode" : {
-    "modelref" : true,
-    "id" : "Begin"
-  },
+  "codeName" : "GetStorySpecs",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/GetStorySpecs.json",
+  "logicHolder" : 1,
+  "logicName" : "GetStorySpecs",
+  "logicSubType" : "NONE",
+  "name" : "GetStorySpecs",
+  "getPSDELogicLinks" : [ {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "name" : "连接987",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam1"
+    },
+    "name" : "连接6939",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Deaction1"
+    },
+    "name" : "连接8758",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam1"
+    },
+    "defaultLink" : false
+  } ],
   "getPSDELogicNodes" : [ {
-    "parallelOutput" : true,
+    "codeName" : "Rawsqlcall1",
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "story"
     },
+    "logicHolder" : 1,
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取数据",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接6939"
     } ],
     "getPSDELogicNodeParams" : [ {
+      "name" : "Default[ID]",
       "paramAction" : "SQLPARAM",
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
       "srcFieldName" : "ID",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[ID]"
-    }, {
-      "paramAction" : "SQLPARAM",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[VERSION]",
+      "paramAction" : "SQLPARAM",
       "srcFieldName" : "VERSION",
-      "srcValueType" : "SRCDLPARAM",
-      "name" : "Default[VERSION]"
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
     } ],
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall1",
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "获取数据"
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
-    "getDstPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
-    },
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "logicHolder" : 3,
     "codeName" : "Deaction1",
     "getDstPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/GetStorySpec.json"
     },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+    },
+    "logicHolder" : 3,
     "logicNodeType" : "DEACTION",
-    "name" : "处理"
+    "name" : "处理",
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
+    "codeName" : "Prepareparam1",
+    "logicHolder" : 3,
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "参数",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接8758"
     } ],
     "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SETPARAMVALUE",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "Default"
-      },
-      "getSrcPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "story"
-      },
-      "srcFieldName" : "TITLE",
-      "srcValueType" : "SRCDLPARAM",
       "dstFieldName" : "TITLE",
-      "name" : "story[TITLE] ==> Default[TITLE]"
-    }, {
-      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "name" : "story[TITLE] ==> Default[TITLE]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "TITLE",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "story"
       },
-      "srcFieldName" : "VERIFY",
-      "srcValueType" : "SRCDLPARAM",
+      "srcValueType" : "SRCDLPARAM"
+    }, {
       "dstFieldName" : "VERIFY",
-      "name" : "story[VERIFY] ==> Default[VERIFY]"
-    }, {
-      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
+      "name" : "story[VERIFY] ==> Default[VERIFY]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "VERIFY",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "story"
       },
-      "srcFieldName" : "SPEC",
-      "srcValueType" : "SRCDLPARAM",
+      "srcValueType" : "SRCDLPARAM"
+    }, {
       "dstFieldName" : "SPEC",
-      "name" : "story[SPEC] ==> Default[SPEC]"
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "name" : "story[SPEC] ==> Default[SPEC]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "SPEC",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "story"
+      },
+      "srcValueType" : "SRCDLPARAM"
     } ],
-    "logicHolder" : 3,
-    "codeName" : "Prepareparam1",
-    "logicNodeType" : "PREPAREPARAM",
-    "name" : "参数"
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
+    "codeName" : "Begin",
+    "logicHolder" : 3,
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接987"
     } ],
-    "logicHolder" : 3,
-    "codeName" : "Begin",
-    "logicNodeType" : "BEGIN",
-    "name" : "开始"
-  } ],
-  "getPSDELogicLinks" : [ {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall1"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Begin"
-    },
-    "name" : "连接987"
-  }, {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Prepareparam1"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall1"
-    },
-    "name" : "连接6939"
-  }, {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Deaction1"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Prepareparam1"
-    },
-    "name" : "连接8758"
+    "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : false,
-    "lastParam" : false,
-    "envParam" : false,
     "codeName" : "story",
+    "name" : "story",
     "default" : false,
-    "name" : "story"
-  }, {
-    "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
+  }, {
     "codeName" : "Default",
+    "name" : "传入变量",
     "default" : true,
-    "name" : "传入变量"
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
   } ],
-  "logicHolder" : 1,
-  "codeName" : "GetStorySpecs",
-  "logicName" : "GetStorySpecs",
-  "defaultParamName" : "Default",
-  "logicSubType" : "NONE",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/GetStorySpecs.json",
-  "name" : "GetStorySpecs"
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : true,
+  "enableFront" : false
 }

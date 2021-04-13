@@ -1,30 +1,18 @@
 {
-  "mDCtrlActiveMode" : 2,
-  "enableFilter" : false,
-  "enableQuickSearch" : true,
-  "xDataControlName" : "list",
-  "showCaptionBar" : false,
-  "getPSDEViewCodeName" : "LeftSidebarListView",
-  "enableDP" : true,
-  "caption" : "项目",
-  "title" : "所有项目",
   "accUserMode" : 2,
-  "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
-    "layoutPanel" : true,
-    "controlType" : "VIEWLAYOUTPANEL",
-    "codeName" : "Layoutpanel",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-    },
-    "getPSControlParam" : { },
-    "controlStyle" : "APPDELISTVIEW_STYLE2",
-    "name" : "layoutpanel"
+  "caption" : "项目",
+  "codeName" : "ProjectLeftSidebarListView",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectLeftSidebarListView.json",
+  "mDCtrlActiveMode" : 2,
+  "name" : "ProjectLeftSidebarListView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
   },
   "getPSAppViewEngines" : [ {
-    "engineType" : "ListView",
     "engineCat" : "VIEW",
+    "engineType" : "ListView",
+    "name" : "engine",
     "getPSUIEngineParams" : [ {
       "name" : "LIST",
       "paramType" : "CTRL"
@@ -34,11 +22,112 @@
     }, {
       "name" : "NEWDATA",
       "paramType" : "LOGIC"
-    } ],
-    "name" : "engine"
+    } ]
+  } ],
+  "getPSAppViewLogics" : [ {
+    "eventArg" : "deuiaction3_manager",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction3_manager_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction3_manager"
+    },
+    "getPSViewCtrlName" : "toolbar"
+  }, {
+    "eventArg" : "deuiaction3_create",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction3_create_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction3_create"
+    },
+    "getPSViewCtrlName" : "toolbar"
+  }, {
+    "eventArg" : "deuiaction2",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction2_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction2"
+    },
+    "getPSViewCtrlName" : "toolbar"
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata",
+    "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据",
+      "getNewDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_NEWDATA",
+      "batchAddOnly" : false,
+      "enableBatchAdd" : false,
+      "enableWizardAdd" : false
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
+          "viewType" : "DETABEXPVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
+          "viewType" : "DETABEXPVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA"
+    }
+  } ],
+  "getPSAppViewRefs" : [ {
+    "name" : "NEWDATA",
+    "realOpenMode" : "DRAWER_LEFT",
+    "realTitle" : "项目",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  }, {
+    "name" : "EDITDATA",
+    "realTitle" : "项目",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
+      "viewType" : "DETABEXPVIEW"
+    }
   } ],
   "getPSAppViewUIActions" : [ {
-    "xDataControlName" : "list",
+    "name" : "toolbar_deuiaction3_manager",
     "getPSUIAction" : {
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -48,9 +137,9 @@
       "id" : "Manager@Project"
     },
     "uIActionTarget" : "NONE",
-    "name" : "toolbar_deuiaction3_manager"
+    "xDataControlName" : "list"
   }, {
-    "xDataControlName" : "list",
+    "name" : "toolbar_deuiaction3_create",
     "getPSUIAction" : {
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -60,146 +149,21 @@
       "id" : "Create@Project"
     },
     "uIActionTarget" : "NONE",
-    "name" : "toolbar_deuiaction3_create"
+    "xDataControlName" : "list"
   }, {
-    "xDataControlName" : "list",
+    "name" : "toolbar_deuiaction2",
     "getPSUIAction" : {
       "modelref" : true,
       "id" : "Refresh"
     },
-    "name" : "toolbar_deuiaction2"
+    "xDataControlName" : "list"
   } ],
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-  },
   "getPSControls" : [ {
+    "codeName" : "LeftSidebarListViewtoolbar",
     "controlType" : "TOOLBAR",
-    "getPSDEToolbarItems" : [ {
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction3_manager"
-      },
-      "noPrivDisplayMode" : 2,
-      "getPSUIAction" : {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-        },
-        "getFrontPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectGridView.json",
-          "viewType" : "DEGRIDVIEW"
-        },
-        "frontProcessType" : "WIZARD",
-        "getNoPrivDisplayMode" : 2,
-        "getPSSysImage" : {
-          "glyph" : "xf03a@FontAwesome",
-          "cssClass" : "fa fa-list"
-        },
-        "timeout" : 60000,
-        "codeName" : "Manager",
-        "caption" : "管理",
-        "actionTarget" : "NONE",
-        "dataAccessAction" : "SRFUR__PROJ_MANAGE_BUT",
-        "uIActionTag" : "Manager",
-        "uIActionType" : "DEUIACTION",
-        "uIActionMode" : "FRONT",
-        "fullCodeName" : "Project_Manager",
-        "name" : "项目管理",
-        "id" : "Manager@Project"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf03a@FontAwesome",
-        "cssClass" : "fa fa-list"
-      },
-      "tooltip" : "管理",
-      "groupExtractMode" : "ITEM",
-      "showIcon" : true,
-      "showCaption" : false,
-      "itemType" : "DEUIACTION",
-      "caption" : "管理",
-      "name" : "deuiaction3_manager"
-    }, {
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction3_create"
-      },
-      "noPrivDisplayMode" : 2,
-      "getPSUIAction" : {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-        },
-        "getFrontPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
-          "viewType" : "DEEDITVIEW"
-        },
-        "frontProcessType" : "WIZARD",
-        "refreshMode" : 1,
-        "getNoPrivDisplayMode" : 2,
-        "getPSSysImage" : {
-          "glyph" : "xf067@FontAwesome",
-          "cssClass" : "fa fa-plus"
-        },
-        "timeout" : 60000,
-        "codeName" : "Create",
-        "caption" : "新建",
-        "reloadData" : true,
-        "actionTarget" : "NONE",
-        "dataAccessAction" : "SRFUR__PROJ_CREATE_BUT",
-        "uIActionTag" : "Create",
-        "uIActionType" : "DEUIACTION",
-        "uIActionMode" : "FRONT",
-        "fullCodeName" : "Project_Create",
-        "name" : "新建",
-        "id" : "Create@Project"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf067@FontAwesome",
-        "cssClass" : "fa fa-plus"
-      },
-      "tooltip" : "新建",
-      "groupExtractMode" : "ITEM",
-      "showIcon" : true,
-      "showCaption" : false,
-      "itemType" : "DEUIACTION",
-      "caption" : "新建",
-      "name" : "deuiaction3_create"
-    }, {
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction2"
-      },
-      "noPrivDisplayMode" : 2,
-      "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
-        "getPSSysImage" : {
-          "glyph" : "xf021@FontAwesome",
-          "cssClass" : "fa fa-refresh"
-        },
-        "timeout" : 60000,
-        "codeName" : "Refresh",
-        "caption" : "刷新",
-        "uIActionTag" : "Refresh",
-        "uIActionType" : "DEUIACTION",
-        "uIActionMode" : "SYS",
-        "fullCodeName" : "Refresh",
-        "name" : "表格界面_刷新操作"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf021@FontAwesome",
-        "cssClass" : "fa fa-refresh"
-      },
-      "tooltip" : "刷新",
-      "groupExtractMode" : "ITEM",
-      "showIcon" : true,
-      "showCaption" : false,
-      "itemType" : "DEUIACTION",
-      "caption" : "刷新",
-      "name" : "deuiaction2"
-    } ],
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "表格界面（管理、刷新）",
+    "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
@@ -207,112 +171,187 @@
     "getPSControlParam" : {
       "id" : "TOOLBAR"
     },
-    "hookEventNames" : [ "CLICK" ],
-    "codeName" : "LeftSidebarListViewtoolbar",
-    "logicName" : "表格界面（管理、刷新）",
-    "name" : "toolbar",
+    "getPSDEToolbarItems" : [ {
+      "caption" : "管理",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction3_manager",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction3_manager"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf03a@FontAwesome",
+        "cssClass" : "fa fa-list"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "NONE",
+        "getNoPrivDisplayMode" : 2,
+        "caption" : "管理",
+        "codeName" : "Manager",
+        "dataAccessAction" : "SRFUR__PROJ_MANAGE_BUT",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectGridView.json",
+          "viewType" : "DEGRIDVIEW"
+        },
+        "frontProcessType" : "WIZARD",
+        "fullCodeName" : "Project_Manager",
+        "name" : "项目管理",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf03a@FontAwesome",
+          "cssClass" : "fa fa-list"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "Manager",
+        "uIActionType" : "DEUIACTION",
+        "id" : "Manager@Project"
+      },
+      "tooltip" : "管理",
+      "showCaption" : false,
+      "showIcon" : true
+    }, {
+      "caption" : "新建",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction3_create",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction3_create"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf067@FontAwesome",
+        "cssClass" : "fa fa-plus"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "NONE",
+        "getNoPrivDisplayMode" : 2,
+        "caption" : "新建",
+        "codeName" : "Create",
+        "dataAccessAction" : "SRFUR__PROJ_CREATE_BUT",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
+          "viewType" : "DEEDITVIEW"
+        },
+        "frontProcessType" : "WIZARD",
+        "fullCodeName" : "Project_Create",
+        "name" : "新建",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf067@FontAwesome",
+          "cssClass" : "fa fa-plus"
+        },
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "Create",
+        "uIActionType" : "DEUIACTION",
+        "reloadData" : true,
+        "id" : "Create@Project"
+      },
+      "tooltip" : "新建",
+      "showCaption" : false,
+      "showIcon" : true
+    }, {
+      "caption" : "刷新",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction2",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf021@FontAwesome",
+        "cssClass" : "fa fa-refresh"
+      },
+      "getPSUIAction" : {
+        "getNoPrivDisplayMode" : 2,
+        "caption" : "刷新",
+        "codeName" : "Refresh",
+        "fullCodeName" : "Refresh",
+        "name" : "表格界面_刷新操作",
+        "getPSSysImage" : {
+          "glyph" : "xf021@FontAwesome",
+          "cssClass" : "fa fa-refresh"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "Refresh",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "刷新",
+      "showCaption" : false,
+      "showIcon" : true
+    } ],
     "modelid" : "934956410a597b0f98bb40f19fe41bfc"
   }, {
-    "enableRowNew" : false,
-    "enableRowEditOrder" : false,
-    "noSort" : false,
-    "hasWFDataItems" : false,
-    "showHeader" : true,
-    "enableRowEditGroup" : false,
-    "getPSDEListDataItems" : [ {
-      "name" : "name",
-      "dataType" : 25
-    }, {
-      "getFrontPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Project__status.json"
-      },
-      "name" : "status",
-      "dataType" : 25
-    }, {
-      "name" : "bugcnt",
-      "dataType" : 9
-    }, {
-      "name" : "id",
-      "dataType" : 1
-    }, {
-      "name" : "code",
-      "dataType" : 25
-    }, {
-      "name" : "istop",
-      "dataType" : 9
-    }, {
-      "name" : "storycnt",
-      "dataType" : 9
-    }, {
-      "name" : "taskcnt",
-      "dataType" : 9
-    }, {
-      "getFrontPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Project__type.json"
-      },
-      "name" : "type",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "name" : "srfkey",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      },
-      "name" : "srfmajortext",
-      "dataType" : 25
-    }, {
-      "getPSAppDEField" : {
-        "name" : "PARENT",
-        "codeName" : "Parent"
-      },
-      "name" : "parent",
-      "dataType" : 25
-    }, {
-      "name" : "srfmstag",
-      "dataType" : 25
-    } ],
-    "getMinorSortPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "enableRowEdit" : false,
-    "controlType" : "LIST",
     "codeName" : "Sidebar",
-    "minorSortDir" : "DESC",
-    "enableGroup" : false,
-    "pagingSize" : 1000,
-    "groupMode" : "NONE",
-    "mobListStyle" : "LISTVIEW",
+    "controlStyle" : "LISTVIEW",
+    "controlType" : "LIST",
     "getCreatePSControlAction" : {
       "modelref" : true,
       "id" : "create"
     },
-    "getUpdatePSControlAction" : {
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project/PSLISTS/Sidebar.json",
+    "getFetchPSControlAction" : {
       "modelref" : true,
-      "id" : "update"
-    },
-    "getRemovePSControlAction" : {
-      "modelref" : true,
-      "id" : "remove"
+      "id" : "fetch"
     },
     "getGetPSControlAction" : {
       "modelref" : true,
       "id" : "load"
     },
-    "getFetchPSControlAction" : {
-      "modelref" : true,
-      "id" : "fetch"
+    "groupMode" : "NONE",
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "logicName" : "Sidebar",
+    "minorSortDir" : "DESC",
+    "getMinorSortPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
     },
+    "mobListStyle" : "LISTVIEW",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+    },
+    "getPSAppViewLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "list_quicktoolbar_deuiaction1_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "list_quicktoolbar_deuiaction1"
+      },
+      "getPSViewCtrlName" : "list_quicktoolbar"
+    }, {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "list_quicktoolbar_deuiaction2_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "list_quicktoolbar_deuiaction2"
+      },
+      "getPSViewCtrlName" : "list_quicktoolbar"
+    } ],
     "getPSAppViewUIActions" : [ {
-      "xDataControlName" : "list",
+      "name" : "list_quicktoolbar_deuiaction1",
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -322,9 +361,9 @@
         "id" : "ProjectTop@Project"
       },
       "uIActionTarget" : "SINGLEKEY",
-      "name" : "list_quicktoolbar_deuiaction1"
+      "xDataControlName" : "list"
     }, {
-      "xDataControlName" : "list",
+      "name" : "list_quicktoolbar_deuiaction2",
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -334,105 +373,88 @@
         "id" : "CancelProjectTop@Project"
       },
       "uIActionTarget" : "SINGLEKEY",
-      "name" : "list_quicktoolbar_deuiaction2"
+      "xDataControlName" : "list"
     } ],
-    "getPSControls" : [ {
-      "controlType" : "TOOLBAR",
-      "getPSDEToolbarItems" : [ {
-        "getPSAppViewUIAction" : {
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "list_quicktoolbar_deuiaction1"
+          "id" : "Update"
         },
-        "noPrivDisplayMode" : 2,
-        "getPSUIAction" : {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-          },
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "ProjectTop"
-          },
-          "refreshMode" : 1,
-          "enableConfirm" : true,
-          "getNoPrivDisplayMode" : 2,
-          "getPSSysImage" : {
-            "glyph" : "xf0a6@FontAwesome",
-            "cssClass" : "fa fa-hand-o-up"
-          },
-          "timeout" : 60000,
-          "codeName" : "ProjectTop",
-          "caption" : "置顶",
-          "reloadData" : true,
-          "actionTarget" : "SINGLEKEY",
-          "dataAccessAction" : "NOTOP",
-          "uIActionTag" : "ProjectTop",
-          "uIActionType" : "DEUIACTION",
-          "uIActionMode" : "BACKEND",
-          "globalUIAction" : true,
-          "fullCodeName" : "Project_ProjectTop",
-          "name" : "置顶",
-          "id" : "ProjectTop@Project"
-        },
-        "getPSSysImage" : {
-          "glyph" : "xf0a6@FontAwesome",
-          "cssClass" : "fa fa-hand-o-up"
-        },
-        "tooltip" : "置顶",
-        "groupExtractMode" : "ITEM",
-        "showIcon" : true,
-        "showCaption" : false,
-        "itemType" : "DEUIACTION",
-        "caption" : "置顶",
-        "name" : "deuiaction1"
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+        }
       }, {
-        "getPSAppViewUIAction" : {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "list_quicktoolbar_deuiaction2"
+          "id" : "FetchCurUser"
         },
-        "noPrivDisplayMode" : 2,
-        "getPSUIAction" : {
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-          },
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "CancelProjectTop"
-          },
-          "refreshMode" : 1,
-          "enableConfirm" : true,
-          "getNoPrivDisplayMode" : 2,
-          "getPSSysImage" : {
-            "glyph" : "xf0a7@FontAwesome",
-            "cssClass" : "fa fa-hand-o-down"
-          },
-          "timeout" : 60000,
-          "codeName" : "CancelProjectTop",
-          "caption" : "取消置顶",
-          "reloadData" : true,
-          "actionTarget" : "SINGLEKEY",
-          "dataAccessAction" : "TOP",
-          "uIActionTag" : "CancelProjectTop",
-          "uIActionType" : "DEUIACTION",
-          "uIActionMode" : "BACKEND",
-          "globalUIAction" : true,
-          "fullCodeName" : "Project_CancelProjectTop",
-          "name" : "取消置顶",
-          "id" : "CancelProjectTop@Project"
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
         },
-        "getPSSysImage" : {
-          "glyph" : "xf0a7@FontAwesome",
-          "cssClass" : "fa fa-hand-o-down"
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
         },
-        "tooltip" : "取消置顶",
-        "groupExtractMode" : "ITEM",
-        "showIcon" : true,
-        "showCaption" : false,
-        "itemType" : "DEUIACTION",
-        "caption" : "取消置顶",
-        "name" : "deuiaction2"
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+        }
       } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "列表控件处理器"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "LIST"
+    },
+    "getPSControls" : [ {
+      "codeName" : "LeftSidebarListViewlist_quicktoolbar",
+      "controlType" : "TOOLBAR",
+      "hookEventNames" : [ "CLICK" ],
+      "logicName" : "项目快速置顶工具栏",
+      "name" : "list_quicktoolbar",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
@@ -440,229 +462,207 @@
       "getPSControlParam" : {
         "id" : "list_quicktoolbar"
       },
-      "hookEventNames" : [ "CLICK" ],
-      "codeName" : "LeftSidebarListViewlist_quicktoolbar",
-      "logicName" : "项目快速置顶工具栏",
-      "name" : "list_quicktoolbar",
+      "getPSDEToolbarItems" : [ {
+        "caption" : "置顶",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction1",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "list_quicktoolbar_deuiaction1"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf0a6@FontAwesome",
+          "cssClass" : "fa fa-hand-o-up"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "getNoPrivDisplayMode" : 2,
+          "caption" : "置顶",
+          "codeName" : "ProjectTop",
+          "dataAccessAction" : "NOTOP",
+          "fullCodeName" : "Project_ProjectTop",
+          "name" : "置顶",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "ProjectTop"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+          },
+          "getPSSysImage" : {
+            "glyph" : "xf0a6@FontAwesome",
+            "cssClass" : "fa fa-hand-o-up"
+          },
+          "refreshMode" : 1,
+          "timeout" : 60000,
+          "uIActionMode" : "BACKEND",
+          "uIActionTag" : "ProjectTop",
+          "uIActionType" : "DEUIACTION",
+          "enableConfirm" : true,
+          "globalUIAction" : true,
+          "reloadData" : true,
+          "id" : "ProjectTop@Project"
+        },
+        "tooltip" : "置顶",
+        "showCaption" : false,
+        "showIcon" : true
+      }, {
+        "caption" : "取消置顶",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction2",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "list_quicktoolbar_deuiaction2"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf0a7@FontAwesome",
+          "cssClass" : "fa fa-hand-o-down"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "getNoPrivDisplayMode" : 2,
+          "caption" : "取消置顶",
+          "codeName" : "CancelProjectTop",
+          "dataAccessAction" : "TOP",
+          "fullCodeName" : "Project_CancelProjectTop",
+          "name" : "取消置顶",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "CancelProjectTop"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+          },
+          "getPSSysImage" : {
+            "glyph" : "xf0a7@FontAwesome",
+            "cssClass" : "fa fa-hand-o-down"
+          },
+          "refreshMode" : 1,
+          "timeout" : 60000,
+          "uIActionMode" : "BACKEND",
+          "uIActionTag" : "CancelProjectTop",
+          "uIActionType" : "DEUIACTION",
+          "enableConfirm" : true,
+          "globalUIAction" : true,
+          "reloadData" : true,
+          "id" : "CancelProjectTop@Project"
+        },
+        "tooltip" : "取消置顶",
+        "showCaption" : false,
+        "showIcon" : true
+      } ],
       "modelid" : "ec4939f802261dd9603febd37dcce6ae"
     } ],
-    "getPSAppViewLogics" : [ {
-      "logicTrigger" : "CTRLEVENT",
-      "getPSViewCtrlName" : "list_quicktoolbar",
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "list_quicktoolbar_deuiaction1"
-      },
-      "eventArg" : "deuiaction1",
-      "eventNames" : "CLICK",
-      "logicType" : "APPVIEWUIACTION",
-      "name" : "list_quicktoolbar_deuiaction1_click"
+    "getPSDEListDataItems" : [ {
+      "dataType" : 25,
+      "name" : "name"
     }, {
-      "logicTrigger" : "CTRLEVENT",
-      "getPSViewCtrlName" : "list_quicktoolbar",
-      "getPSAppViewUIAction" : {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
         "modelref" : true,
-        "id" : "list_quicktoolbar_deuiaction2"
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Project__status.json"
       },
-      "eventArg" : "deuiaction2",
-      "eventNames" : "CLICK",
-      "logicType" : "APPVIEWUIACTION",
-      "name" : "list_quicktoolbar_deuiaction2_click"
+      "name" : "status"
+    }, {
+      "dataType" : 9,
+      "name" : "bugcnt"
+    }, {
+      "dataType" : 1,
+      "name" : "id"
+    }, {
+      "dataType" : 25,
+      "name" : "code"
+    }, {
+      "dataType" : 9,
+      "name" : "istop"
+    }, {
+      "dataType" : 9,
+      "name" : "storycnt"
+    }, {
+      "dataType" : 9,
+      "name" : "taskcnt"
+    }, {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Project__type.json"
+      },
+      "name" : "type"
+    }, {
+      "dataType" : 25,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "parent",
+      "getPSAppDEField" : {
+        "name" : "PARENT",
+        "codeName" : "Parent"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmstag"
     } ],
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-    },
-    "getPSControlParam" : {
-      "autoLoad" : true,
-      "showBusyIndicator" : true,
-      "id" : "LIST"
-    },
-    "controlStyle" : "LISTVIEW",
-    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
-    "getPSControlHandler" : {
-      "userDRAction" : "READ",
-      "getPSHandlerActions" : [ {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Update"
-        },
-        "dataAccessAction" : "UPDATE",
-        "actionName" : "Update",
-        "actionType" : "DEACTION",
-        "name" : "update"
-      }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "FetchCurUser"
-        },
-        "actionType" : "DEDATASET",
-        "name" : "fetch"
-      }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Remove"
-        },
-        "dataAccessAction" : "DELETE",
-        "actionName" : "Remove",
-        "actionType" : "DEACTION",
-        "name" : "remove"
-      }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Get"
-        },
-        "dataAccessAction" : "READ",
-        "actionName" : "Get",
-        "actionType" : "DEACTION",
-        "name" : "load"
-      }, {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-        },
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Create"
-        },
-        "dataAccessAction" : "CREATE",
-        "actionName" : "Create",
-        "actionType" : "DEACTION",
-        "name" : "create"
-      } ],
-      "enableDEFieldPrivilege" : false,
-      "id" : "列表控件处理器"
-    },
     "getPSSysPFPlugin" : {
       "pluginType" : "AC_ITEM",
       "pluginCode" : "PROJECTLEFTNavLIST"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project/PSLISTS/Sidebar.json",
-    "logicName" : "Sidebar",
+    "pagingSize" : 1000,
+    "getRemovePSControlAction" : {
+      "modelref" : true,
+      "id" : "remove"
+    },
+    "getUpdatePSControlAction" : {
+      "modelref" : true,
+      "id" : "update"
+    },
+    "hasWFDataItems" : false,
+    "enableGroup" : false,
+    "enableRowEdit" : false,
+    "enableRowEditGroup" : false,
+    "enableRowEditOrder" : false,
+    "enableRowNew" : false,
+    "noSort" : false,
+    "showHeader" : true,
     "name" : "list",
     "modelid" : "547fa4cbd79cffd2b831b89850a79e25"
   } ],
+  "getPSDEViewCodeName" : "LeftSidebarListView",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDELISTVIEW_STYLE2",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+    },
+    "getPSControlParam" : { },
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "所有项目",
   "viewStyle" : "STYLE2",
-  "getPSAppViewRefs" : [ {
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "realTitle" : "项目",
-    "realOpenMode" : "DRAWER_LEFT",
-    "name" : "NEWDATA"
-  }, {
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
-      "viewType" : "DETABEXPVIEW"
-    },
-    "realTitle" : "项目",
-    "name" : "EDITDATA"
-  } ],
-  "getPSAppViewLogics" : [ {
-    "logicTrigger" : "CTRLEVENT",
-    "getPSViewCtrlName" : "toolbar",
-    "getPSAppViewUIAction" : {
-      "modelref" : true,
-      "id" : "toolbar_deuiaction3_manager"
-    },
-    "eventArg" : "deuiaction3_manager",
-    "eventNames" : "CLICK",
-    "logicType" : "APPVIEWUIACTION",
-    "name" : "toolbar_deuiaction3_manager_click"
-  }, {
-    "logicTrigger" : "CTRLEVENT",
-    "getPSViewCtrlName" : "toolbar",
-    "getPSAppViewUIAction" : {
-      "modelref" : true,
-      "id" : "toolbar_deuiaction3_create"
-    },
-    "eventArg" : "deuiaction3_create",
-    "eventNames" : "CLICK",
-    "logicType" : "APPVIEWUIACTION",
-    "name" : "toolbar_deuiaction3_create_click"
-  }, {
-    "logicTrigger" : "CTRLEVENT",
-    "getPSViewCtrlName" : "toolbar",
-    "getPSAppViewUIAction" : {
-      "modelref" : true,
-      "id" : "toolbar_deuiaction2"
-    },
-    "eventArg" : "deuiaction2",
-    "eventNames" : "CLICK",
-    "logicType" : "APPVIEWUIACTION",
-    "name" : "toolbar_deuiaction2_click"
-  }, {
-    "logicTrigger" : "CUSTOM",
-    "getPSAppUILogic" : {
-      "getNewDataPSAppView" : {
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
-          "viewType" : "DEEDITVIEW"
-        }
-      },
-      "enableWizardAdd" : false,
-      "actionAfterWizard" : "DEFAULT",
-      "enableBatchAdd" : false,
-      "batchAddOnly" : false,
-      "viewLogicType" : "APP_NEWDATA",
-      "getPSAppUILogicRefViews" : [ {
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
-          "viewType" : "DEEDITVIEW"
-        }
-      } ],
-      "logicType" : "PREDEFINED",
-      "name" : "新建数据"
-    },
-    "logicType" : "SYSUILOGIC",
-    "name" : "newdata"
-  }, {
-    "logicTrigger" : "CUSTOM",
-    "getPSAppUILogic" : {
-      "getOpenDataPSAppView" : {
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
-          "viewType" : "DETABEXPVIEW"
-        }
-      },
-      "viewLogicType" : "APP_OPENDATA",
-      "getPSAppUILogicRefViews" : [ {
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
-          "viewType" : "DETABEXPVIEW"
-        }
-      } ],
-      "logicType" : "PREDEFINED",
-      "name" : "打开数据"
-    },
-    "logicType" : "SYSUILOGIC",
-    "name" : "opendata"
-  } ],
-  "codeName" : "ProjectLeftSidebarListView",
   "viewType" : "DELISTVIEW",
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectLeftSidebarListView.json",
-  "name" : "ProjectLeftSidebarListView"
+  "xDataControlName" : "list",
+  "enableDP" : true,
+  "enableFilter" : false,
+  "enableQuickSearch" : true,
+  "showCaptionBar" : false
 }

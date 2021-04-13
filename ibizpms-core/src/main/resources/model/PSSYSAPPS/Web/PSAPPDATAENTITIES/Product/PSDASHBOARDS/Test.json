@@ -1,17 +1,17 @@
 {
   "codeName" : "Test",
-  "getPSLayout" : {
-    "layout" : "TABLE_24COL",
-    "columnCount" : 24
-  },
-  "enableCustomized" : false,
   "controlType" : "DASHBOARD",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product/PSDASHBOARDS/Test.json",
+  "hookEventNames" : [ "LOAD" ],
+  "logicName" : "产品主数据看板（测试）",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
   },
-  "hookEventNames" : [ "LOAD" ],
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product/PSDASHBOARDS/Test.json",
-  "logicName" : "产品主数据看板（测试）",
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "enableCustomized" : false,
   "modelid" : "1884d01229cee824d7577705da288043"
 }

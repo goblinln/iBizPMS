@@ -1,158 +1,158 @@
 {
-  "enableFront" : false,
-  "enableBackend" : true,
-  "getStartPSDELogicNode" : {
-    "modelref" : true,
-    "id" : "Begin"
-  },
+  "codeName" : "ProjectTop",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDELOGICS/ProjectTop.json",
+  "logicHolder" : 1,
+  "logicName" : "置顶",
+  "logicSubType" : "NONE",
+  "name" : "置顶",
+  "getPSDELogicLinks" : [ {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Deaction1"
+    },
+    "name" : "连接1953",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam1"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam1"
+    },
+    "name" : "连接5143",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "name" : "连接2211",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "defaultLink" : false
+  } ],
   "getPSDELogicNodes" : [ {
-    "parallelOutput" : true,
+    "codeName" : "Prepareparam1",
+    "logicHolder" : 3,
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "设置参数",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接1953"
     } ],
     "getPSDELogicNodeParams" : [ {
-      "paramAction" : "SETPARAMVALUE",
+      "dstFieldName" : "OBJECTID",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "IbzTop"
       },
+      "name" : "Default[ID] ==> IbzTop[OBJECTID]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "ID",
       "getSrcPSDELogicParam" : {
         "modelref" : true,
         "id" : "Default"
       },
-      "srcFieldName" : "ID",
-      "srcValueType" : "SRCDLPARAM",
-      "dstFieldName" : "OBJECTID",
-      "name" : "Default[ID] ==> IbzTop[OBJECTID]"
+      "srcValueType" : "SRCDLPARAM"
     }, {
-      "paramAction" : "SETPARAMVALUE",
-      "getDstPSDELogicParam" : {
-        "modelref" : true,
-        "id" : "IbzTop"
-      },
-      "srcFieldName" : "srfloginname",
-      "srcValueType" : "SESSION",
       "dstFieldName" : "ACCOUNT",
-      "name" : "用户全局对象[srfloginname] ==> IbzTop[ACCOUNT]"
-    }, {
-      "paramAction" : "SETPARAMVALUE",
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "IbzTop"
       },
-      "srcValueType" : "SRCVALUE",
-      "srcValue" : "project",
+      "name" : "用户全局对象[srfloginname] ==> IbzTop[ACCOUNT]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    }, {
       "dstFieldName" : "TYPE",
-      "name" : "直接值[project] ==> IbzTop[TYPE]"
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "IbzTop"
+      },
+      "name" : "直接值[project] ==> IbzTop[TYPE]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcValue" : "project",
+      "srcValueType" : "SRCVALUE"
     } ],
-    "logicHolder" : 3,
-    "codeName" : "Prepareparam1",
-    "logicNodeType" : "PREPAREPARAM",
-    "name" : "设置参数"
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
+    "codeName" : "Rawsqlcall1",
     "getDstPSDELogicParam" : {
       "modelref" : true,
       "id" : "IbzTop"
     },
+    "logicHolder" : 1,
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取置顶最大排序值",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接5143"
     } ],
     "getPSDELogicNodeParams" : [ {
+      "name" : "用户全局对象[srfloginname]",
       "paramAction" : "SQLPARAM",
       "srcFieldName" : "srfloginname",
-      "srcValueType" : "SESSION",
-      "name" : "用户全局对象[srfloginname]"
+      "srcValueType" : "SESSION"
     } ],
-    "logicHolder" : 1,
-    "codeName" : "Rawsqlcall1",
-    "logicNodeType" : "RAWSQLCALL",
-    "name" : "获取置顶最大排序值"
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
-    "getDstPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzTop.json"
-    },
-    "getDstPSDELogicParam" : {
-      "modelref" : true,
-      "id" : "IbzTop"
-    },
-    "logicHolder" : 3,
     "codeName" : "Deaction1",
     "getDstPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzTop/PSDEACTIONS/Create.json"
     },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "IbzTop"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzTop.json"
+    },
+    "logicHolder" : 3,
     "logicNodeType" : "DEACTION",
-    "name" : "Save"
+    "name" : "Save",
+    "parallelOutput" : true
   }, {
-    "parallelOutput" : true,
+    "codeName" : "Begin",
+    "logicHolder" : 3,
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
       "id" : "连接2211"
     } ],
-    "logicHolder" : 3,
-    "codeName" : "Begin",
-    "logicNodeType" : "BEGIN",
-    "name" : "开始"
-  } ],
-  "getPSDELogicLinks" : [ {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Deaction1"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Prepareparam1"
-    },
-    "name" : "连接1953"
-  }, {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Prepareparam1"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall1"
-    },
-    "name" : "连接5143"
-  }, {
-    "defaultLink" : false,
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall1"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Begin"
-    },
-    "name" : "连接2211"
+    "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
-    "sessionParam" : true,
-    "lastParam" : false,
-    "envParam" : false,
     "codeName" : "IbzTop",
+    "name" : "置顶",
     "default" : false,
-    "name" : "置顶"
-  }, {
-    "sessionParam" : false,
-    "lastParam" : false,
     "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : true
+  }, {
     "codeName" : "Default",
+    "name" : "传入变量",
     "default" : true,
-    "name" : "传入变量"
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
   } ],
-  "logicHolder" : 1,
-  "codeName" : "ProjectTop",
-  "logicName" : "置顶",
-  "defaultParamName" : "Default",
-  "logicSubType" : "NONE",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDELOGICS/ProjectTop.json",
-  "name" : "置顶"
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : true,
+  "enableFront" : false
 }

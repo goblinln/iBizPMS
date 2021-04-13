@@ -1,8 +1,8 @@
 {
-  "enableCustomize" : false,
-  "controlType" : "APPMENU",
   "codeName" : "Main",
+  "controlType" : "APPMENU",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPMENUS/Main.json",
+  "enableCustomize" : false,
   "name" : "main",
   "modelid" : "e9961522de7c3fb96c9e53f76b3eba6e"
 }

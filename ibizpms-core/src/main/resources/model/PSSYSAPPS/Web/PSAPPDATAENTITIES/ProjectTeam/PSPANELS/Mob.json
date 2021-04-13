@@ -1,76 +1,4 @@
 {
-  "getRootPSPanelItems" : [ {
-    "getPSPanelItems" : [ {
-      "htmlContent" : "<ion-icon name=\"person-add-sharp\" style=\"font-size: 18px;\"></ion-icon>",
-      "getPSLayoutPos" : {
-        "colMD" : 1,
-        "colLG" : 1,
-        "layout" : "TABLE_12COL"
-      },
-      "showCaption" : true,
-      "itemType" : "RAWITEM",
-      "itemStyle" : "DEFAULT",
-      "name" : "rawitem1"
-    }, {
-      "viewFieldName" : "account",
-      "getPSEditor" : {
-        "enableLinkView" : false,
-        "editable" : false,
-        "getPSAppCodeList" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
-        },
-        "editorType" : "SPAN",
-        "name" : "account"
-      },
-      "showCaption" : false,
-      "hidden" : false,
-      "convertToCodeItemText" : true,
-      "getPSLayoutPos" : {
-        "colMD" : 6,
-        "colLG" : 6,
-        "layout" : "TABLE_12COL"
-      },
-      "itemType" : "FIELD",
-      "itemStyle" : "DEFAULT",
-      "name" : "account"
-    }, {
-      "viewFieldName" : "role",
-      "getPSEditor" : {
-        "enableLinkView" : false,
-        "editable" : false,
-        "editorType" : "SPAN",
-        "name" : "role"
-      },
-      "showCaption" : false,
-      "hidden" : false,
-      "getPSLayoutPos" : {
-        "colMD" : 4,
-        "colLG" : 4,
-        "colMDOffset" : 1,
-        "colLGOffset" : 1,
-        "layout" : "TABLE_12COL"
-      },
-      "itemType" : "FIELD",
-      "itemStyle" : "DEFAULT",
-      "name" : "role"
-    } ],
-    "getPSLayout" : {
-      "layout" : "TABLE_12COL",
-      "columnCount" : 12
-    },
-    "getPSLayoutPos" : {
-      "colMD" : 12,
-      "layout" : "TABLE_12COL"
-    },
-    "showCaption" : true,
-    "getPSSysCss" : {
-      "cssName" : "mob_list_card"
-    },
-    "itemType" : "CONTAINER",
-    "itemStyle" : "DEFAULT",
-    "name" : "container1"
-  } ],
   "getAllPSPanelFields" : [ {
     "modelref" : true,
     "id" : "account"
@@ -78,19 +6,91 @@
     "modelref" : true,
     "id" : "role"
   } ],
-  "mobilePanel" : true,
-  "getPSLayout" : {
-    "layout" : "TABLE_12COL",
-    "columnCount" : 12
-  },
-  "controlType" : "PANEL",
   "codeName" : "Mob",
+  "controlType" : "PANEL",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam/PSPANELS/Mob.json",
   "layoutMode" : "TABLE_12COL",
+  "logicName" : "移动端列表项布局面板",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam/PSPANELS/Mob.json",
-  "logicName" : "移动端列表项布局面板",
+  "getPSLayout" : {
+    "columnCount" : 12,
+    "layout" : "TABLE_12COL"
+  },
+  "getRootPSPanelItems" : [ {
+    "itemStyle" : "DEFAULT",
+    "itemType" : "CONTAINER",
+    "name" : "container1",
+    "getPSLayout" : {
+      "columnCount" : 12,
+      "layout" : "TABLE_12COL"
+    },
+    "getPSLayoutPos" : {
+      "colMD" : 12,
+      "layout" : "TABLE_12COL"
+    },
+    "getPSPanelItems" : [ {
+      "htmlContent" : "<ion-icon name=\"person-add-sharp\" style=\"font-size: 18px;\"></ion-icon>",
+      "itemStyle" : "DEFAULT",
+      "itemType" : "RAWITEM",
+      "name" : "rawitem1",
+      "getPSLayoutPos" : {
+        "colLG" : 1,
+        "colMD" : 1,
+        "layout" : "TABLE_12COL"
+      },
+      "showCaption" : true
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "account",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "account",
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+        },
+        "editable" : false,
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 6,
+        "colMD" : 6,
+        "layout" : "TABLE_12COL"
+      },
+      "viewFieldName" : "account",
+      "convertToCodeItemText" : true,
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "role",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "role",
+        "editable" : false,
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 4,
+        "colLGOffset" : 1,
+        "colMD" : 4,
+        "colMDOffset" : 1,
+        "layout" : "TABLE_12COL"
+      },
+      "viewFieldName" : "role",
+      "hidden" : false,
+      "showCaption" : false
+    } ],
+    "getPSSysCss" : {
+      "cssName" : "mob_list_card"
+    },
+    "showCaption" : true
+  } ],
+  "mobilePanel" : true,
   "modelid" : "7f1e8cfe65f600cd812168d377dfae3e"
 }

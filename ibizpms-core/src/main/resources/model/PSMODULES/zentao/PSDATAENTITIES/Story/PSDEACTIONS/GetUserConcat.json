@@ -1,23 +1,23 @@
 {
-  "transactionMode" : "DEFAULT",
-  "paramMode" : 1,
-  "generateTestUnit" : false,
-  "customParam" : false,
-  "builtinAction" : false,
-  "pubServiceDefault" : true,
-  "timeOut" : -1,
+  "actionMode" : "READ",
+  "actionType" : "DELOGIC",
+  "codeName" : "GetUserConcat",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/GetUserConcat.json",
   "extendMode" : 0,
+  "logicName" : "获取联系人",
+  "name" : "GetUserConcat",
+  "orderValue" : 99999,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"
   },
-  "orderValue" : 99999,
-  "codeName" : "GetUserConcat",
-  "logicName" : "获取联系人",
-  "actionMode" : "READ",
-  "actionType" : "DELOGIC",
+  "paramMode" : 1,
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/GetUserConcat.json",
-  "name" : "GetUserConcat"
+  "timeOut" : -1,
+  "transactionMode" : "DEFAULT",
+  "builtinAction" : false,
+  "customParam" : false,
+  "generateTestUnit" : false,
+  "pubServiceDefault" : true
 }

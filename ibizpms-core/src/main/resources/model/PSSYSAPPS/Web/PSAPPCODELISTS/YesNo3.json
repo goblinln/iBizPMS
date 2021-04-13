@@ -1,18 +1,18 @@
 {
-  "getPSCodeItems" : [ {
-    "value" : "yes",
-    "codeName" : "Yes",
-    "text" : "是"
-  }, {
-    "value" : "no",
-    "codeName" : "No",
-    "text" : "否"
-  } ],
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
   "codeName" : "YesNo3",
-  "emptyText" : "未定义",
-  "enableCache" : true,
+  "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo3.json",
-  "name" : "是否（YESNO）"
+  "emptyText" : "未定义",
+  "name" : "是否（YESNO）",
+  "getPSCodeItems" : [ {
+    "codeName" : "Yes",
+    "text" : "是",
+    "value" : "yes"
+  }, {
+    "codeName" : "No",
+    "text" : "否",
+    "value" : "no"
+  } ],
+  "enableCache" : true
 }

@@ -1,374 +1,374 @@
 {
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "INSTALL",
-      "codeName" : "Install"
-    },
-    "name" : "install",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DESIGNDEFECT",
-      "codeName" : "Designdefect"
-    },
-    "name" : "designdefect",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "OTHERS",
-      "codeName" : "Others"
-    },
-    "name" : "others",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "STANDARD",
-      "codeName" : "Standard"
-    },
-    "name" : "standard",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "AUTOMATION",
-      "codeName" : "Automation"
-    },
-    "name" : "automation",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "SECURITY",
-      "codeName" : "Security"
-    },
-    "name" : "security",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
-    "name" : "srfmajortext",
-    "dataType" : 25
-  }, {
-    "dataAccessAction" : true,
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "srfkey",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "CODEERROR",
-      "codeName" : "Codeerror"
-    },
-    "name" : "codeerror",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "name" : "id",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "BUGCNT",
-      "codeName" : "BugCnt"
-    },
-    "name" : "bugcnt",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "PERFORMANCE",
-      "codeName" : "Performance"
-    },
-    "name" : "performance",
-    "dataType" : 9
-  }, {
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
-    "name" : "name",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "CONFIG",
-      "codeName" : "Config"
-    },
-    "name" : "config",
-    "dataType" : 9
-  } ],
-  "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
-  "enableRowNew" : false,
-  "enableRowEditOrder" : false,
-  "noSort" : false,
-  "getPSDEGridEditItems" : [ {
-    "getPSEditor" : {
-      "editorType" : "HIDDEN",
-      "name" : "srfkey"
-    },
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "allowEmpty" : true,
-    "enableCond" : 0,
-    "ignoreInput" : 0,
-    "codeName" : "srfkey",
-    "caption" : "项目编号",
-    "name" : "srfkey"
-  } ],
-  "hasWFDataItems" : false,
+  "aggMode" : "PAGE",
+  "codeName" : "ProjectBugTypeSum",
   "columnEnableLink" : 2,
-  "enableColFilter" : false,
-  "singleSelect" : true,
-  "enablePagingBar" : false,
-  "enableRowEdit" : false,
   "controlType" : "GRID",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats/PSGRIDS/ProjectBugTypeSum.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "项目bug类型统计",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+  },
   "getPSDEGridColumns" : [ {
-    "linkValueItem" : "srfkey",
-    "enableLinkView" : true,
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "项目名称",
+    "codeName" : "name",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "name",
+    "excelCaption" : "项目名称",
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
+    "linkValueItem" : "srfkey",
+    "name" : "name",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
     },
-    "dataItemName" : "name",
-    "excelCaption" : "项目名称",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : false,
     "width" : 100,
-    "codeName" : "name",
-    "caption" : "项目名称",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "STAR",
-    "name" : "name"
+    "enableLinkView" : true,
+    "enableSort" : false
   }, {
+    "aggMode" : "SUM",
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "代码错误",
+    "codeName" : "codeerror",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "codeerror",
+    "excelCaption" : "代码错误",
+    "name" : "codeerror",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "CODEERROR",
       "codeName" : "Codeerror"
     },
-    "dataItemName" : "codeerror",
-    "excelCaption" : "代码错误",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : false,
     "width" : 100,
-    "codeName" : "codeerror",
-    "caption" : "代码错误",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "PX",
-    "aggMode" : "SUM",
-    "name" : "codeerror"
+    "enableSort" : false
   }, {
+    "aggMode" : "SUM",
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "配置相关",
+    "codeName" : "config",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "config",
+    "excelCaption" : "配置相关",
+    "name" : "config",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "CONFIG",
       "codeName" : "Config"
     },
-    "dataItemName" : "config",
-    "excelCaption" : "配置相关",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : false,
     "width" : 100,
-    "codeName" : "config",
-    "caption" : "配置相关",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "PX",
-    "aggMode" : "SUM",
-    "name" : "config"
+    "enableSort" : false
   }, {
+    "aggMode" : "SUM",
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "设计缺陷",
+    "codeName" : "designdefect",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "designdefect",
+    "excelCaption" : "设计缺陷",
+    "name" : "designdefect",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "DESIGNDEFECT",
       "codeName" : "Designdefect"
     },
-    "dataItemName" : "designdefect",
-    "excelCaption" : "设计缺陷",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : false,
     "width" : 100,
-    "codeName" : "designdefect",
-    "caption" : "设计缺陷",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "PX",
-    "aggMode" : "SUM",
-    "name" : "designdefect"
+    "enableSort" : false
   }, {
+    "aggMode" : "SUM",
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "安装部署",
+    "codeName" : "install",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "install",
+    "excelCaption" : "安装部署",
+    "name" : "install",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "INSTALL",
       "codeName" : "Install"
     },
-    "dataItemName" : "install",
-    "excelCaption" : "安装部署",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : false,
     "width" : 100,
-    "codeName" : "install",
-    "caption" : "安装部署",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "PX",
-    "aggMode" : "SUM",
-    "name" : "install"
+    "enableSort" : false
   }, {
+    "aggMode" : "SUM",
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "性能问题",
+    "codeName" : "performance",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "performance",
+    "excelCaption" : "性能问题",
+    "name" : "performance",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "PERFORMANCE",
       "codeName" : "Performance"
     },
-    "dataItemName" : "performance",
-    "excelCaption" : "性能问题",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : false,
     "width" : 100,
-    "codeName" : "performance",
-    "caption" : "性能问题",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "PX",
-    "aggMode" : "SUM",
-    "name" : "performance"
+    "enableSort" : false
   }, {
+    "aggMode" : "SUM",
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "安全相关",
+    "codeName" : "security",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "security",
+    "excelCaption" : "安全相关",
+    "name" : "security",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "SECURITY",
       "codeName" : "Security"
     },
-    "dataItemName" : "security",
-    "excelCaption" : "安全相关",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : false,
     "width" : 100,
-    "codeName" : "security",
-    "caption" : "安全相关",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "PX",
-    "aggMode" : "SUM",
-    "name" : "security"
+    "enableSort" : false
   }, {
+    "aggMode" : "SUM",
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "标准规范",
+    "codeName" : "standard",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "standard",
+    "excelCaption" : "标准规范",
+    "name" : "standard",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "STANDARD",
       "codeName" : "Standard"
     },
-    "dataItemName" : "standard",
-    "excelCaption" : "标准规范",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : false,
     "width" : 100,
-    "codeName" : "standard",
-    "caption" : "标准规范",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "PX",
-    "aggMode" : "SUM",
-    "name" : "standard"
+    "enableSort" : false
   }, {
+    "aggMode" : "SUM",
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "测试脚本",
+    "codeName" : "automation",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "automation",
+    "excelCaption" : "测试脚本",
+    "name" : "automation",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "AUTOMATION",
       "codeName" : "Automation"
     },
-    "dataItemName" : "automation",
-    "excelCaption" : "测试脚本",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : false,
     "width" : 100,
-    "codeName" : "automation",
-    "caption" : "测试脚本",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "PX",
-    "aggMode" : "SUM",
-    "name" : "automation"
+    "enableSort" : false
   }, {
+    "aggMode" : "SUM",
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "其他",
+    "codeName" : "others",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "others",
+    "excelCaption" : "其他",
+    "name" : "others",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "OTHERS",
       "codeName" : "Others"
     },
-    "dataItemName" : "others",
-    "excelCaption" : "其他",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : false,
     "width" : 100,
-    "codeName" : "others",
-    "caption" : "其他",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "PX",
-    "aggMode" : "SUM",
-    "name" : "others"
+    "enableSort" : false
   }, {
+    "aggMode" : "SUM",
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "Bug总数",
+    "codeName" : "bugcnt",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "bugcnt",
+    "excelCaption" : "Bug总数",
+    "name" : "bugcnt",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "BUGCNT",
       "codeName" : "BugCnt"
     },
-    "dataItemName" : "bugcnt",
-    "excelCaption" : "Bug总数",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : false,
     "width" : 100,
-    "codeName" : "bugcnt",
-    "caption" : "Bug总数",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "PX",
-    "aggMode" : "SUM",
-    "name" : "bugcnt"
+    "enableSort" : false
   } ],
-  "codeName" : "ProjectBugTypeSum",
-  "enableGroup" : false,
-  "hideHeader" : false,
-  "forceFit" : false,
+  "getPSDEGridDataItems" : [ {
+    "dataType" : 9,
+    "name" : "install",
+    "getPSAppDEField" : {
+      "name" : "INSTALL",
+      "codeName" : "Install"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "designdefect",
+    "getPSAppDEField" : {
+      "name" : "DESIGNDEFECT",
+      "codeName" : "Designdefect"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "others",
+    "getPSAppDEField" : {
+      "name" : "OTHERS",
+      "codeName" : "Others"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "standard",
+    "getPSAppDEField" : {
+      "name" : "STANDARD",
+      "codeName" : "Standard"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "automation",
+    "getPSAppDEField" : {
+      "name" : "AUTOMATION",
+      "codeName" : "Automation"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "security",
+    "getPSAppDEField" : {
+      "name" : "SECURITY",
+      "codeName" : "Security"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "codeerror",
+    "getPSAppDEField" : {
+      "name" : "CODEERROR",
+      "codeName" : "Codeerror"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "id",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "bugcnt",
+    "getPSAppDEField" : {
+      "name" : "BUGCNT",
+      "codeName" : "BugCnt"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "performance",
+    "getPSAppDEField" : {
+      "name" : "PERFORMANCE",
+      "codeName" : "Performance"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "name",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "config",
+    "getPSAppDEField" : {
+      "name" : "CONFIG",
+      "codeName" : "Config"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "项目编号",
+    "codeName" : "srfkey",
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
   "pagingSize" : 1000,
-  "aggMode" : "PAGE",
-  "groupMode" : "NONE",
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+    }
+  },
   "sortMode" : "REMOTE",
-  "getFetchPSControlAction" : {
-    "modelref" : true,
-    "id" : "fetch"
-  },
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
-  },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats/PSGRIDS/ProjectBugTypeSum.json",
-  "logicName" : "项目bug类型统计",
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableGroup" : false,
+  "enablePagingBar" : false,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : false,
+  "singleSelect" : true,
   "modelid" : "1226cd87815a2a0b461bf3a561e6b0c3"
 }

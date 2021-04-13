@@ -1,99 +1,99 @@
 {
-  "codeItemValueNumber" : false,
-  "subSysCodeList" : false,
-  "subSysAsCloud" : false,
-  "systemTag" : "iBizPMS",
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Bug__browser.json",
   "codeName" : "Bug__browser",
-  "userScope" : false,
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Bug__browser.json",
   "emptyText" : "未定义",
-  "enableCache" : true,
-  "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "all",
     "codeName" : "All",
-    "text" : "全部"
+    "text" : "全部",
+    "value" : "all"
   }, {
-    "value" : "ie",
     "codeName" : "Ie",
-    "text" : "IE系列"
+    "text" : "IE系列",
+    "value" : "ie"
   }, {
-    "value" : "ie11",
     "codeName" : "Ie11",
-    "text" : "IE11"
+    "text" : "IE11",
+    "value" : "ie11"
   }, {
-    "value" : "ie10",
     "codeName" : "Ie10",
-    "text" : "IE10"
+    "text" : "IE10",
+    "value" : "ie10"
   }, {
-    "value" : "ie9",
     "codeName" : "Ie9",
-    "text" : "IE9"
+    "text" : "IE9",
+    "value" : "ie9"
   }, {
-    "value" : "ie8",
     "codeName" : "Ie8",
-    "text" : "IE8"
+    "text" : "IE8",
+    "value" : "ie8"
   }, {
-    "value" : "ie7",
     "codeName" : "Ie7",
-    "text" : "IE7"
+    "text" : "IE7",
+    "value" : "ie7"
   }, {
-    "value" : "ie6",
     "codeName" : "Ie6",
-    "text" : "IE6"
+    "text" : "IE6",
+    "value" : "ie6"
   }, {
-    "value" : "chrome",
     "codeName" : "Chrome",
-    "text" : "chrome"
+    "text" : "chrome",
+    "value" : "chrome"
   }, {
-    "value" : "firefox",
     "codeName" : "Firefox",
-    "text" : "firefox系列"
+    "text" : "firefox系列",
+    "value" : "firefox"
   }, {
-    "value" : "firefox4",
     "codeName" : "Firefox4",
-    "text" : "firefox4"
+    "text" : "firefox4",
+    "value" : "firefox4"
   }, {
-    "value" : "firefox3",
     "codeName" : "Firefox3",
-    "text" : "firefox3"
+    "text" : "firefox3",
+    "value" : "firefox3"
   }, {
-    "value" : "firefox2",
     "codeName" : "Firefox2",
-    "text" : "firefox2"
+    "text" : "firefox2",
+    "value" : "firefox2"
   }, {
-    "value" : "opera",
     "codeName" : "Opera",
-    "text" : "opera系列"
+    "text" : "opera系列",
+    "value" : "opera"
   }, {
-    "value" : "opera11",
     "codeName" : "Opera11",
-    "text" : "opera11"
+    "text" : "opera11",
+    "value" : "opera11"
   }, {
-    "value" : "oprea10",
     "codeName" : "Oprea10",
-    "text" : "oprea10"
+    "text" : "oprea10",
+    "value" : "oprea10"
   }, {
-    "value" : "opera9",
     "codeName" : "Opera9",
-    "text" : "opera9"
+    "text" : "opera9",
+    "value" : "opera9"
   }, {
-    "value" : "safari",
     "codeName" : "Safari",
-    "text" : "safari"
+    "text" : "safari",
+    "value" : "safari"
   }, {
-    "value" : "maxthon",
     "codeName" : "Maxthon",
-    "text" : "傲游"
+    "text" : "傲游",
+    "value" : "maxthon"
   }, {
-    "value" : "uc",
     "codeName" : "Uc",
-    "text" : "UC"
+    "text" : "UC",
+    "value" : "uc"
   }, {
-    "value" : "others",
     "codeName" : "Others",
-    "text" : "其他"
-  } ]
+    "text" : "其他",
+    "value" : "others"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
 }

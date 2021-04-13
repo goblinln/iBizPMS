@@ -1,33 +1,33 @@
 {
+  "cacheTimeout" : 600,
+  "codeListType" : "DYNAMIC",
+  "codeName" : "UserRealNameW",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameW.json",
+  "emptyText" : "未指派",
+  "getIconPathPSAppDEField" : {
+    "name" : "USERICON",
+    "codeName" : "UserIcon"
+  },
+  "name" : "用户真实名称（动态）（未指派）",
+  "orMode" : "STR",
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchDefault"
+  },
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
-  },
-  "getValuePSAppDEField" : {
-    "name" : "USERNAME",
-    "codeName" : "UserName"
   },
   "getTextPSAppDEField" : {
     "name" : "PERSONNAME",
     "codeName" : "PersonName"
   },
-  "getPSAppDEDataSet" : {
-    "modelref" : true,
-    "id" : "FetchDefault"
-  },
-  "getIconPathPSAppDEField" : {
-    "name" : "USERICON",
-    "codeName" : "UserIcon"
-  },
-  "dynaInstMode" : 1,
-  "codeListType" : "DYNAMIC",
-  "orMode" : "STR",
   "textSeparator" : ",",
-  "codeName" : "UserRealNameW",
-  "emptyText" : "未指派",
+  "getValuePSAppDEField" : {
+    "name" : "USERNAME",
+    "codeName" : "UserName"
+  },
   "valueSeparator" : ",",
-  "cacheTimeout" : 600,
-  "enableCache" : true,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameW.json",
-  "name" : "用户真实名称（动态）（未指派）"
+  "enableCache" : true
 }

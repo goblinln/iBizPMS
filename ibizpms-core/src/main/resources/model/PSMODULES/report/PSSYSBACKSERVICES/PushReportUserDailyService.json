@@ -1,9 +1,9 @@
 {
-  "serviceOrder" : 0,
-  "serviceHandler" : "PushReportUserDailyService",
   "codeName" : "PushReportUserDailyService",
-  "serviceContainer" : "SC01",
-  "startMode" : "MANUAL",
   "dynaModelFilePath" : "PSMODULES/report/PSSYSBACKSERVICES/PushReportUserDailyService.json",
-  "name" : "定时推送待阅提醒用户日报"
+  "name" : "定时推送待阅提醒用户日报",
+  "serviceContainer" : "SC01",
+  "serviceHandler" : "PushReportUserDailyService",
+  "serviceOrder" : 0,
+  "startMode" : "MANUAL"
 }

@@ -1,4 +1,19 @@
 {
+  "codeName" : "MainDept",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDERS/DER1N_IBZEMP_SYS_DEPT_MDEPTID.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 0,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
+  },
+  "name" : "DER1N_IBZEMP_SYS_DEPT_MDEPTID",
+  "orderValue" : 100,
   "getPSPickupDEField" : {
     "name" : "MDEPTID",
     "codeName" : "MdeptId"
@@ -7,22 +22,7 @@
     "name" : "MDEPTNAME",
     "codeName" : "MDeptName"
   },
-  "masterOrder" : -1,
-  "removeActionType" : 2,
   "pickupDEFName" : "MDEPTID",
-  "masterRS" : 0,
-  "removeOrder" : 0,
-  "getMajorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment.json"
-  },
-  "orderValue" : 100,
-  "codeName" : "MainDept",
-  "dERType" : "DER1N",
-  "getMinorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
-  },
-  "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDERS/DER1N_IBZEMP_SYS_DEPT_MDEPTID.json",
-  "name" : "DER1N_IBZEMP_SYS_DEPT_MDEPTID"
+  "removeActionType" : 2,
+  "removeOrder" : 0
 }

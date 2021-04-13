@@ -1,180 +1,83 @@
 {
-  "getPSDEGridDataItems" : [ {
-    "getPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
-    },
-    "name" : "product",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "TOTALESTIMATES",
-      "codeName" : "Totalestimates"
-    },
-    "name" : "totalestimates",
-    "dataType" : 7
-  }, {
-    "getPSAppDEField" : {
-      "name" : "BEGINDATESTATS",
-      "codeName" : "Begindatestats"
-    },
-    "name" : "begindatestats",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "PO",
-      "codeName" : "PO"
-    },
-    "name" : "po",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "DATE",
-      "codeName" : "Date"
-    },
-    "format" : "YYYY-MM-DD",
-    "name" : "date",
-    "dataType" : 5
-  }, {
-    "name" : "srfmstag",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "ENDDATESTATS",
-      "codeName" : "Enddatestats"
-    },
-    "name" : "enddatestats",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBIZPRO_PRODUCTDAILYNAME",
-      "codeName" : "IbizproProductWEEKLYName"
-    },
-    "name" : "srfmajortext",
-    "dataType" : 25
-  }, {
-    "dataAccessAction" : true,
-    "getPSAppDEField" : {
-      "name" : "IBIZPRO_PRODUCTWEEKLYID",
-      "codeName" : "Ibizpro_productweeklyid"
-    },
-    "name" : "srfdataaccaction",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBIZPRO_PRODUCTWEEKLYID",
-      "codeName" : "Ibizpro_productweeklyid"
-    },
-    "name" : "srfkey",
-    "dataType" : 1
-  }, {
-    "getPSAppDEField" : {
-      "name" : "PRODUCTNAME",
-      "codeName" : "ProductName"
-    },
-    "name" : "productname",
-    "dataType" : 25
-  }, {
-    "getPSAppDEField" : {
-      "name" : "IBIZPRO_PRODUCTDAILYNAME",
-      "codeName" : "IbizproProductWEEKLYName"
-    },
-    "name" : "ibizpro_productdailyname",
-    "dataType" : 25
-  } ],
-  "getRemovePSControlAction" : {
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly.json"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "dataAccessAction" : "DELETE",
-    "actionName" : "Remove",
-    "actionType" : "DEACTION",
-    "name" : "remove"
-  },
-  "enableRowNew" : false,
-  "enableRowEditOrder" : false,
-  "noSort" : false,
-  "getPSDEGridEditItems" : [ {
-    "getPSEditor" : {
-      "editorType" : "HIDDEN",
-      "name" : "srfkey"
-    },
-    "getPSAppDEField" : {
-      "name" : "IBIZPRO_PRODUCTWEEKLYID",
-      "codeName" : "Ibizpro_productweeklyid"
-    },
-    "allowEmpty" : true,
-    "enableCond" : 3,
-    "ignoreInput" : 0,
-    "codeName" : "srfkey",
-    "caption" : "产品周报标识",
-    "name" : "srfkey"
-  } ],
-  "hasWFDataItems" : false,
+  "aggMode" : "NONE",
+  "codeName" : "Main",
   "columnEnableLink" : 2,
-  "enableColFilter" : false,
-  "singleSelect" : false,
-  "enablePagingBar" : true,
+  "controlType" : "GRID",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly/PSGRIDS/Main.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "主表格",
+  "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
     "name" : "DATE",
     "codeName" : "Date"
   },
-  "enableRowEdit" : false,
-  "controlType" : "GRID",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly.json"
+  },
   "getPSDEGridColumns" : [ {
-    "linkValueItem" : "srfkey",
-    "enableLinkView" : true,
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "产品周报名称",
+    "codeName" : "ibizpro_productdailyname",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "ibizpro_productdailyname",
+    "excelCaption" : "产品周报名称",
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproProductWeeklyEditView.json",
       "viewType" : "DEEDITVIEW"
     },
+    "linkValueItem" : "srfkey",
+    "name" : "ibizpro_productdailyname",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "IBIZPRO_PRODUCTDAILYNAME",
       "codeName" : "IbizproProductWEEKLYName"
     },
-    "dataItemName" : "ibizpro_productdailyname",
-    "excelCaption" : "产品周报名称",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : true,
     "width" : 100,
-    "codeName" : "ibizpro_productdailyname",
-    "caption" : "产品周报名称",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "STAR",
-    "name" : "ibizpro_productdailyname"
-  }, {
-    "linkValueItem" : "product",
     "enableLinkView" : true,
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "产品名称",
+    "codeName" : "productname",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "productname",
+    "excelCaption" : "产品名称",
     "getLinkPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
       "viewType" : "DETABEXPVIEW"
     },
+    "linkValueItem" : "product",
+    "name" : "productname",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "PRODUCTNAME",
       "codeName" : "ProductName"
     },
-    "dataItemName" : "productname",
-    "excelCaption" : "产品名称",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : true,
     "width" : 100,
-    "codeName" : "productname",
-    "caption" : "产品名称",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "PX",
-    "name" : "productname"
+    "enableLinkView" : true,
+    "enableSort" : true
   }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "产品负责人",
+    "codeName" : "po",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "po",
+    "excelCaption" : "产品负责人",
+    "name" : "po",
+    "noPrivDisplayMode" : 1,
     "getPSAppCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
@@ -183,107 +86,204 @@
       "name" : "PO",
       "codeName" : "PO"
     },
-    "dataItemName" : "po",
-    "excelCaption" : "产品负责人",
-    "cLConvertMode" : "FRONT",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : true,
     "width" : 130,
-    "codeName" : "po",
-    "caption" : "产品负责人",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "PX",
-    "name" : "po"
+    "enableSort" : true
   }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "开始统计",
+    "codeName" : "begindatestats",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "begindatestats",
+    "excelCaption" : "开始统计",
+    "name" : "begindatestats",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "BEGINDATESTATS",
       "codeName" : "Begindatestats"
     },
-    "dataItemName" : "begindatestats",
-    "excelCaption" : "开始统计",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : true,
     "width" : 100,
-    "codeName" : "begindatestats",
-    "caption" : "开始统计",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "PX",
-    "name" : "begindatestats"
+    "enableSort" : true
   }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "结束统计",
+    "codeName" : "enddatestats",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "enddatestats",
+    "excelCaption" : "结束统计",
+    "name" : "enddatestats",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "ENDDATESTATS",
       "codeName" : "Enddatestats"
     },
-    "dataItemName" : "enddatestats",
-    "excelCaption" : "结束统计",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : true,
     "width" : 100,
-    "codeName" : "enddatestats",
-    "caption" : "结束统计",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "PX",
-    "name" : "enddatestats"
+    "enableSort" : true
   }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "日期",
+    "codeName" : "date",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "date",
+    "excelCaption" : "日期",
+    "name" : "date",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
     },
-    "dataItemName" : "date",
-    "excelCaption" : "日期",
     "valueFormat" : "YYYY-MM-DD",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : true,
     "width" : 100,
-    "codeName" : "date",
-    "caption" : "日期",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "PX",
-    "name" : "date"
+    "enableSort" : true
   }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "总工时",
+    "codeName" : "totalestimates",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "totalestimates",
+    "excelCaption" : "总工时",
+    "name" : "totalestimates",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "TOTALESTIMATES",
       "codeName" : "Totalestimates"
     },
-    "dataItemName" : "totalestimates",
-    "excelCaption" : "总工时",
-    "cLConvertMode" : "NONE",
-    "noPrivDisplayMode" : 1,
-    "enableSort" : true,
     "width" : 100,
-    "codeName" : "totalestimates",
-    "caption" : "总工时",
-    "columnType" : "DEFGRIDCOLUMN",
-    "align" : "LEFT",
     "widthUnit" : "PX",
-    "name" : "totalestimates"
+    "enableSort" : true
   } ],
-  "codeName" : "Main",
-  "minorSortDir" : "DESC",
-  "enableGroup" : false,
-  "hideHeader" : false,
-  "forceFit" : false,
+  "getPSDEGridDataItems" : [ {
+    "dataType" : 1,
+    "name" : "product",
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    }
+  }, {
+    "dataType" : 7,
+    "name" : "totalestimates",
+    "getPSAppDEField" : {
+      "name" : "TOTALESTIMATES",
+      "codeName" : "Totalestimates"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "begindatestats",
+    "getPSAppDEField" : {
+      "name" : "BEGINDATESTATS",
+      "codeName" : "Begindatestats"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "po",
+    "getPSAppDEField" : {
+      "name" : "PO",
+      "codeName" : "PO"
+    }
+  }, {
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "date",
+    "getPSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
+  }, {
+    "dataType" : 25,
+    "name" : "enddatestats",
+    "getPSAppDEField" : {
+      "name" : "ENDDATESTATS",
+      "codeName" : "Enddatestats"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PRODUCTDAILYNAME",
+      "codeName" : "IbizproProductWEEKLYName"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PRODUCTWEEKLYID",
+      "codeName" : "Ibizpro_productweeklyid"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PRODUCTWEEKLYID",
+      "codeName" : "Ibizpro_productweeklyid"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "productname",
+    "getPSAppDEField" : {
+      "name" : "PRODUCTNAME",
+      "codeName" : "ProductName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "ibizpro_productdailyname",
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PRODUCTDAILYNAME",
+      "codeName" : "IbizproProductWEEKLYName"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "产品周报标识",
+    "codeName" : "srfkey",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PRODUCTWEEKLYID",
+      "codeName" : "Ibizpro_productweeklyid"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
   "pagingSize" : 20,
-  "aggMode" : "NONE",
-  "groupMode" : "NONE",
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly.json"
+    }
+  },
   "sortMode" : "REMOTE",
-  "getFetchPSControlAction" : {
-    "modelref" : true,
-    "id" : "fetch"
-  },
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly.json"
-  },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly/PSGRIDS/Main.json",
-  "logicName" : "主表格",
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableGroup" : false,
+  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : false,
+  "singleSelect" : false,
   "modelid" : "4e374525354b5dcc933e801365fedace"
 }

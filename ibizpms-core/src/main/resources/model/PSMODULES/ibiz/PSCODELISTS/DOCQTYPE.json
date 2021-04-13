@@ -1,27 +1,27 @@
 {
-  "codeItemValueNumber" : false,
-  "subSysCodeList" : false,
-  "subSysAsCloud" : false,
-  "systemTag" : "iBizPMS",
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/DOCQTYPE.json",
   "codeName" : "DOCQTYPE",
-  "userScope" : false,
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/DOCQTYPE.json",
   "emptyText" : "未定义",
-  "enableCache" : true,
-  "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "doc",
     "codeName" : "Doc",
-    "text" : "文档"
+    "text" : "文档",
+    "value" : "doc"
   }, {
-    "value" : "doclib",
     "codeName" : "Doclib",
-    "text" : "文档库"
+    "text" : "文档库",
+    "value" : "doclib"
   }, {
-    "value" : "module",
     "codeName" : "Module",
-    "text" : "文档库分类"
-  } ]
+    "text" : "文档库分类",
+    "value" : "module"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
 }

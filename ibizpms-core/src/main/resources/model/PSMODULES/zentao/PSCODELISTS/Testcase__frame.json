@@ -1,47 +1,47 @@
 {
-  "codeItemValueNumber" : false,
-  "subSysCodeList" : false,
-  "subSysAsCloud" : false,
-  "systemTag" : "iBizPMS",
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Testcase__frame.json",
   "codeName" : "Testcase__frame",
-  "userScope" : false,
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Testcase__frame.json",
   "emptyText" : "未定义",
-  "enableCache" : true,
-  "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "junit",
     "codeName" : "Junit",
-    "text" : "JUnit"
+    "text" : "JUnit",
+    "value" : "junit"
   }, {
-    "value" : "testng",
     "codeName" : "Testng",
-    "text" : "TestNG"
+    "text" : "TestNG",
+    "value" : "testng"
   }, {
-    "value" : "phpunit",
     "codeName" : "Phpunit",
-    "text" : "PHPUnit"
+    "text" : "PHPUnit",
+    "value" : "phpunit"
   }, {
-    "value" : "pytest",
     "codeName" : "Pytest",
-    "text" : "Pytest"
+    "text" : "Pytest",
+    "value" : "pytest"
   }, {
-    "value" : "jtest",
     "codeName" : "Jtest",
-    "text" : "JTest"
+    "text" : "JTest",
+    "value" : "jtest"
   }, {
-    "value" : "cppunit",
     "codeName" : "Cppunit",
-    "text" : "CppUnit"
+    "text" : "CppUnit",
+    "value" : "cppunit"
   }, {
-    "value" : "gtest",
     "codeName" : "Gtest",
-    "text" : "GTest"
+    "text" : "GTest",
+    "value" : "gtest"
   }, {
-    "value" : "qtest",
     "codeName" : "Qtest",
-    "text" : "QTest"
-  } ]
+    "text" : "QTest",
+    "value" : "qtest"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
 }

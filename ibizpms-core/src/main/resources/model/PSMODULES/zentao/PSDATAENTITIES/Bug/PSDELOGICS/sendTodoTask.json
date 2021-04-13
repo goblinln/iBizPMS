@@ -1,30 +1,30 @@
 {
-  "enableFront" : false,
-  "enableBackend" : true,
+  "codeName" : "sendTodoTask",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/sendTodoTask.json",
+  "logicHolder" : 1,
+  "logicName" : "发送待办任务",
+  "logicSubType" : "NONE",
+  "name" : "发送待办任务",
+  "getPSDELogicNodes" : [ {
+    "codeName" : "Begin",
+    "logicHolder" : 3,
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "parallelOutput" : true
+  } ],
+  "getPSDELogicParams" : [ {
+    "codeName" : "Default",
+    "name" : "传入变量",
+    "default" : true,
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
+  } ],
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"
   },
-  "getPSDELogicNodes" : [ {
-    "parallelOutput" : true,
-    "logicHolder" : 3,
-    "codeName" : "Begin",
-    "logicNodeType" : "BEGIN",
-    "name" : "开始"
-  } ],
-  "getPSDELogicParams" : [ {
-    "sessionParam" : false,
-    "lastParam" : false,
-    "envParam" : false,
-    "codeName" : "Default",
-    "default" : true,
-    "name" : "传入变量"
-  } ],
-  "logicHolder" : 1,
-  "codeName" : "sendTodoTask",
-  "logicName" : "发送待办任务",
-  "defaultParamName" : "Default",
-  "logicSubType" : "NONE",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/sendTodoTask.json",
-  "name" : "发送待办任务"
+  "enableBackend" : true,
+  "enableFront" : false
 }

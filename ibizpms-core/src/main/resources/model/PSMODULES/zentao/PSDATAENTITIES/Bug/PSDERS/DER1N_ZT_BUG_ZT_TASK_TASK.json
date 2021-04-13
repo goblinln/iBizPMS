@@ -1,13 +1,7 @@
 {
-  "getPSPickupDEField" : {
-    "name" : "TASK",
-    "codeName" : "Task"
-  },
-  "enableExtRestrict" : true,
-  "getPSPickupTextDEField" : {
-    "name" : "TASKNAME",
-    "codeName" : "TaskName"
-  },
+  "codeName" : "ZTTask",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_TASK_TASK.json",
   "getERMajorPSDEF" : {
     "name" : "PROJECT",
     "codeName" : "Project"
@@ -16,31 +10,37 @@
     "name" : "PROJECT",
     "codeName" : "Project"
   },
-  "enablePDEREQ" : true,
   "getMajorPPSDER1N" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
   },
-  "getMinorPPSDER1N" : {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PROJECT_PROJECT.json"
-  },
-  "masterOrder" : -1,
-  "removeActionType" : -1,
-  "pickupDEFName" : "TASK",
-  "masterRS" : 0,
-  "removeOrder" : 0,
   "getMajorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
   },
-  "orderValue" : 100,
-  "codeName" : "ZTTask",
-  "dERType" : "DER1N",
+  "masterOrder" : -1,
+  "masterRS" : 0,
+  "getMinorPPSDER1N" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PROJECT_PROJECT.json"
+  },
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
   },
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_TASK_TASK.json",
-  "name" : "DER1N_ZT_BUG_ZT_TASK_TASK"
+  "name" : "DER1N_ZT_BUG_ZT_TASK_TASK",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "TASK",
+    "codeName" : "Task"
+  },
+  "getPSPickupTextDEField" : {
+    "name" : "TASKNAME",
+    "codeName" : "TaskName"
+  },
+  "pickupDEFName" : "TASK",
+  "removeActionType" : -1,
+  "removeOrder" : 0,
+  "enableExtRestrict" : true,
+  "enablePDEREQ" : true
 }

@@ -1,4 +1,19 @@
 {
+  "codeName" : "ZTModule",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_MODULE_MODULE.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 0,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+  },
+  "name" : "DER1N_ZT_CASE_ZT_MODULE_MODULE",
+  "orderValue" : 100,
   "getPSPickupDEField" : {
     "name" : "MODULE",
     "codeName" : "Module"
@@ -7,22 +22,7 @@
     "name" : "MODULENAME",
     "codeName" : "Modulename"
   },
-  "masterOrder" : -1,
-  "removeActionType" : -1,
   "pickupDEFName" : "MODULE",
-  "masterRS" : 0,
-  "removeOrder" : 0,
-  "getMajorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
-  },
-  "orderValue" : 100,
-  "codeName" : "ZTModule",
-  "dERType" : "DER1N",
-  "getMinorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
-  },
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_MODULE_MODULE.json",
-  "name" : "DER1N_ZT_CASE_ZT_MODULE_MODULE"
+  "removeActionType" : -1,
+  "removeOrder" : 0
 }

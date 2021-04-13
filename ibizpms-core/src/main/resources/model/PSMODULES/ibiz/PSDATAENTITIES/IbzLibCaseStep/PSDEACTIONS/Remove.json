@@ -1,24 +1,24 @@
 {
-  "transactionMode" : "DEFAULT",
-  "paramMode" : 1,
-  "generateTestUnit" : true,
-  "customParam" : false,
-  "builtinAction" : true,
-  "pubServiceDefault" : true,
-  "timeOut" : -1,
+  "actionMode" : "DELETE",
+  "actionType" : "BUILTIN",
+  "codeName" : "Remove",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/Remove.json",
   "extendMode" : 0,
+  "logicName" : "Remove",
+  "name" : "Remove",
+  "orderValue" : 21,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "DELETE"
   },
-  "orderValue" : 21,
-  "codeName" : "Remove",
-  "logicName" : "Remove",
-  "actionMode" : "DELETE",
-  "actionType" : "BUILTIN",
+  "paramMode" : 1,
   "requestField" : "ID",
   "requestParamType" : "FIELD",
   "testActionMode" : 0,
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/Remove.json",
-  "name" : "Remove"
+  "timeOut" : -1,
+  "transactionMode" : "DEFAULT",
+  "builtinAction" : true,
+  "customParam" : false,
+  "generateTestUnit" : true,
+  "pubServiceDefault" : true
 }

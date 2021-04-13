@@ -1,49 +1,49 @@
 {
-  "loadDefault" : true,
-  "enableSearch" : false,
-  "expandSearchForm" : false,
-  "tabLayout" : "TOP",
-  "enableQuickSearch" : false,
-  "showDataInfoBar" : true,
-  "showCaptionBar" : false,
-  "getPSDEViewCodeName" : "MoreTabExpView",
-  "enableDP" : true,
-  "caption" : "更多",
-  "title" : "任务分页导航视图（更多）",
   "accUserMode" : 2,
-  "getPSViewLayoutPanel" : {
-    "useDefaultLayout" : true,
-    "layoutPanel" : true,
-    "controlType" : "VIEWLAYOUTPANEL",
-    "codeName" : "Layoutpanel",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-    },
-    "getPSControlParam" : { },
-    "controlStyle" : "APPDETABEXPVIEW_STYLE2",
-    "name" : "layoutpanel"
-  },
-  "getPSAppViewEngines" : [ {
-    "engineType" : "TabExpView",
-    "engineCat" : "VIEW",
-    "name" : "engine"
-  } ],
+  "caption" : "更多",
+  "codeName" : "TaskMoreTabExpView",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMoreTabExpView.json",
+  "name" : "TaskMoreTabExpView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
   },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "TabExpView",
+    "name" : "engine"
+  } ],
   "getPSControls" : [ {
-    "tabLayout" : "TOP",
-    "getPSTabExpPages" : [ {
-      "name" : "tabviewpanel"
-    }, {
-      "name" : "tabviewpanel2"
-    } ],
+    "codeName" : "MoreTabExpViewtabexppanel",
     "controlType" : "TABEXPPANEL",
+    "name" : "tabexppanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+    },
+    "getPSAppViewRefs" : [ {
+      "name" : "EXPITEM:tabviewpanel",
+      "realTitle" : "任务树导航视图（分组树）",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskGroupTreeExpView.json",
+        "viewType" : "DETREEEXPVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:tabviewpanel2",
+      "realTitle" : "任务树导航视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTreeExpView.json",
+        "viewType" : "DETREEEXPVIEW"
+      }
+    } ],
+    "getPSControlParam" : { },
     "getPSControls" : [ {
-      "controlType" : "TABVIEWPANEL",
       "caption" : "分组视图",
+      "codeName" : "MoreTabExpViewtabviewpanel",
+      "controlType" : "TABVIEWPANEL",
+      "name" : "tabviewpanel",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
@@ -51,498 +51,492 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL"
       },
-      "codeName" : "MoreTabExpViewtabviewpanel",
-      "name" : "tabviewpanel",
       "modelid" : "c85d9b5e8fda56f19059573f794d31c6_tabviewpanel",
       "getEmbeddedPSAppDEView" : {
-        "showDataInfoBar" : true,
-        "enableFilter" : false,
-        "enableQuickSearch" : true,
-        "showCaptionBar" : false,
-        "getPSDEViewCodeName" : "GroupTreeExpView",
-        "enableDP" : true,
-        "caption" : "分组视图",
-        "title" : "任务树导航视图（分组树）",
         "accUserMode" : 2,
-        "getPSViewLayoutPanel" : {
-          "useDefaultLayout" : true,
-          "layoutPanel" : true,
-          "controlType" : "VIEWLAYOUTPANEL",
-          "codeName" : "Layoutpanel",
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-          },
-          "getPSControlParam" : { },
-          "controlStyle" : "APPDETREEEXPVIEW_STYLE2",
-          "name" : "layoutpanel"
-        },
-        "getPSAppViewEngines" : [ {
-          "engineType" : "TreeExpView",
-          "engineCat" : "VIEW",
-          "getPSUIEngineParams" : [ {
-            "name" : "TREEEXPBAR",
-            "paramType" : "CTRL"
-          } ],
-          "name" : "engine"
-        } ],
+        "caption" : "分组视图",
+        "codeName" : "TaskGroupTreeExpView",
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskGroupTreeExpView.json",
+        "name" : "TaskGroupTreeExpView",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         },
+        "getPSAppViewEngines" : [ {
+          "engineCat" : "VIEW",
+          "engineType" : "TreeExpView",
+          "name" : "engine",
+          "getPSUIEngineParams" : [ {
+            "name" : "TREEEXPBAR",
+            "paramType" : "CTRL"
+          } ]
+        } ],
+        "getPSAppViewLogics" : [ {
+          "logicTrigger" : "CUSTOM",
+          "logicType" : "SYSUILOGIC",
+          "name" : "newdata",
+          "getPSAppUILogic" : {
+            "actionAfterWizard" : "DEFAULT",
+            "logicType" : "PREDEFINED",
+            "name" : "新建数据",
+            "viewLogicType" : "APP_NEWDATA",
+            "batchAddOnly" : false,
+            "enableBatchAdd" : false,
+            "enableWizardAdd" : false
+          }
+        }, {
+          "logicTrigger" : "CUSTOM",
+          "logicType" : "SYSUILOGIC",
+          "name" : "opendata",
+          "getPSAppUILogic" : {
+            "logicType" : "PREDEFINED",
+            "name" : "打开数据",
+            "viewLogicType" : "APP_OPENDATA"
+          }
+        } ],
         "getPSControls" : [ {
+          "codeName" : "GroupTreeExpViewtreeexpbar",
           "controlType" : "TREEEXPBAR",
-          "xDataControlName" : "treeexpbar_tree",
-          "enableSearch" : false,
-          "enableCounter" : true,
-          "showTitleBar" : false,
-          "getPSControls" : [ {
-            "enableSearchDefault" : false,
-            "treeGridMode" : 0,
-            "getPSDETreeNodeRSs" : [ {
-              "getParentPSDETreeNode" : {
-                "modelref" : true,
-                "id" : "ROOT"
-              },
-              "getChildPSDETreeNode" : {
-                "modelref" : true,
-                "id" : "PriGroup"
-              },
-              "parentValueLevel" : 1,
-              "searchMode" : 3,
-              "name" : "默认根节点 - 优先级分组"
-            }, {
-              "getParentPSDETreeNode" : {
-                "modelref" : true,
-                "id" : "ROOT"
-              },
-              "getChildPSDETreeNode" : {
-                "modelref" : true,
-                "id" : "StatusGroup"
-              },
-              "parentValueLevel" : 1,
-              "searchMode" : 3,
-              "name" : "默认根节点 - 状态分组"
-            }, {
-              "getParentPSDETreeNode" : {
-                "modelref" : true,
-                "id" : "ROOT"
-              },
-              "getChildPSDETreeNode" : {
-                "modelref" : true,
-                "id" : "AssignedtoGroup"
-              },
-              "parentValueLevel" : 1,
-              "searchMode" : 3,
-              "name" : "默认根节点 - 指派分组"
-            }, {
-              "getParentPSDETreeNode" : {
-                "modelref" : true,
-                "id" : "ROOT"
-              },
-              "getChildPSDETreeNode" : {
-                "modelref" : true,
-                "id" : "TypeGroup"
-              },
-              "parentValueLevel" : 1,
-              "searchMode" : 3,
-              "name" : "默认根节点 - 类型分组"
-            }, {
-              "getParentPSDETreeNode" : {
-                "modelref" : true,
-                "id" : "ROOT"
-              },
-              "getChildPSDETreeNode" : {
-                "modelref" : true,
-                "id" : "StoryGroup"
-              },
-              "parentValueLevel" : 1,
-              "searchMode" : 3,
-              "name" : "默认根节点 - 需求分组"
-            } ],
-            "enableRootSelect" : false,
-            "outputIconDefault" : true,
-            "controlType" : "TREEVIEW",
-            "getPSDETreeNodes" : [ {
-              "text" : "优先级分组",
-              "getNavPSAppView" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskPriTaskGroupGridView.json",
-                "viewType" : "DEGRIDVIEW"
-              },
-              "enableQuickCreate" : false,
-              "appendPNodeId" : false,
-              "enableCheck" : false,
-              "hasPSDETreeNodeRSs" : false,
-              "selected" : false,
-              "selectFirstOnly" : false,
-              "expandFirstOnly" : false,
-              "rootNode" : false,
-              "getPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-              },
-              "enableNewData" : false,
-              "enableEditData" : false,
-              "enableRemoveData" : false,
-              "enableViewData" : false,
-              "nodeType" : "PriGroup",
-              "disableSelect" : false,
-              "enableQuickSearch" : false,
-              "counterMode" : 0,
-              "treeNodeType" : "STATIC",
-              "expanded" : false,
-              "name" : "优先级分组",
-              "id" : "PriGroup"
-            }, {
-              "text" : "指派分组",
-              "getNavPSAppView" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskAssignedtoTaskGroupGridView.json",
-                "viewType" : "DEGRIDVIEW"
-              },
-              "enableQuickCreate" : false,
-              "appendPNodeId" : false,
-              "enableCheck" : false,
-              "hasPSDETreeNodeRSs" : false,
-              "selected" : false,
-              "selectFirstOnly" : false,
-              "expandFirstOnly" : false,
-              "rootNode" : false,
-              "getPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-              },
-              "enableNewData" : false,
-              "enableEditData" : false,
-              "enableRemoveData" : false,
-              "enableViewData" : false,
-              "nodeType" : "AssignedtoGroup",
-              "disableSelect" : false,
-              "enableQuickSearch" : false,
-              "counterMode" : 0,
-              "treeNodeType" : "STATIC",
-              "expanded" : false,
-              "name" : "指派分组",
-              "id" : "AssignedtoGroup"
-            }, {
-              "text" : "类型分组",
-              "getNavPSAppView" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTypeTaskGroupGridView.json",
-                "viewType" : "DEGRIDVIEW"
-              },
-              "enableQuickCreate" : false,
-              "appendPNodeId" : false,
-              "enableCheck" : false,
-              "hasPSDETreeNodeRSs" : false,
-              "selected" : false,
-              "selectFirstOnly" : false,
-              "expandFirstOnly" : false,
-              "rootNode" : false,
-              "getPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-              },
-              "enableNewData" : false,
-              "enableEditData" : false,
-              "enableRemoveData" : false,
-              "enableViewData" : false,
-              "nodeType" : "TypeGroup",
-              "disableSelect" : false,
-              "enableQuickSearch" : false,
-              "counterMode" : 0,
-              "treeNodeType" : "STATIC",
-              "expanded" : false,
-              "name" : "类型分组",
-              "id" : "TypeGroup"
-            }, {
-              "text" : "状态分组",
-              "getNavPSAppView" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTaskGroupGridView.json",
-                "viewType" : "DEGRIDVIEW"
-              },
-              "enableQuickCreate" : false,
-              "appendPNodeId" : false,
-              "enableCheck" : false,
-              "hasPSDETreeNodeRSs" : false,
-              "selected" : false,
-              "selectFirstOnly" : false,
-              "expandFirstOnly" : false,
-              "rootNode" : false,
-              "getPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-              },
-              "enableNewData" : false,
-              "enableEditData" : false,
-              "enableRemoveData" : false,
-              "enableViewData" : false,
-              "nodeType" : "StatusGroup",
-              "disableSelect" : false,
-              "enableQuickSearch" : false,
-              "counterMode" : 0,
-              "treeNodeType" : "STATIC",
-              "expanded" : false,
-              "name" : "状态分组",
-              "id" : "StatusGroup"
-            }, {
-              "nodeValue" : "root",
-              "text" : "默认根节点",
-              "enableQuickCreate" : false,
-              "appendPNodeId" : false,
-              "enableCheck" : false,
-              "hasPSDETreeNodeRSs" : true,
-              "selected" : false,
-              "selectFirstOnly" : false,
-              "expandFirstOnly" : false,
-              "rootNode" : true,
-              "enableNewData" : false,
-              "enableEditData" : false,
-              "enableRemoveData" : false,
-              "enableViewData" : false,
-              "nodeType" : "ROOT",
-              "disableSelect" : false,
-              "enableQuickSearch" : false,
-              "counterMode" : 0,
-              "treeNodeType" : "STATIC",
-              "expanded" : false,
-              "name" : "默认根节点",
-              "id" : "ROOT"
-            }, {
-              "text" : "需求分组",
-              "getNavPSAppView" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskStoryTaskGroupGridView.json",
-                "viewType" : "DEGRIDVIEW"
-              },
-              "enableQuickCreate" : false,
-              "appendPNodeId" : false,
-              "enableCheck" : false,
-              "hasPSDETreeNodeRSs" : false,
-              "selected" : false,
-              "selectFirstOnly" : false,
-              "expandFirstOnly" : false,
-              "rootNode" : false,
-              "getPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-              },
-              "enableNewData" : false,
-              "enableEditData" : false,
-              "enableRemoveData" : false,
-              "enableViewData" : false,
-              "nodeType" : "StoryGroup",
-              "disableSelect" : false,
-              "enableQuickSearch" : false,
-              "counterMode" : 0,
-              "treeNodeType" : "STATIC",
-              "expanded" : false,
-              "name" : "需求分组",
-              "id" : "StoryGroup"
-            } ],
-            "codeName" : "TaskGroupTree",
-            "rootVisible" : false,
-            "getCreatePSControlAction" : {
-              "modelref" : true,
-              "id" : "create"
-            },
-            "getUpdatePSControlAction" : {
-              "modelref" : true,
-              "id" : "update"
-            },
-            "getRemovePSControlAction" : {
-              "modelref" : true,
-              "id" : "remove"
-            },
-            "getGetPSControlAction" : {
-              "modelref" : true,
-              "id" : "load"
-            },
-            "getFetchPSControlAction" : {
-              "modelref" : true,
-              "id" : "fetch"
-            },
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-            },
-            "getPSControlParam" : {
-              "autoLoad" : true,
-              "showBusyIndicator" : true,
-              "id" : "treeexpbar_tree"
-            },
-            "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
-            "getPSControlHandler" : {
-              "userDRAction" : "READ",
-              "getPSHandlerActions" : [ {
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-                },
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "Update"
-                },
-                "dataAccessAction" : "UPDATE",
-                "actionName" : "Update",
-                "actionType" : "DEACTION",
-                "name" : "update"
-              }, {
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-                },
-                "actionType" : "DEDATASET",
-                "name" : "fetch"
-              }, {
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-                },
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "Remove"
-                },
-                "dataAccessAction" : "DELETE",
-                "actionName" : "Remove",
-                "actionType" : "DEACTION",
-                "name" : "remove"
-              }, {
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-                },
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "Get"
-                },
-                "dataAccessAction" : "READ",
-                "actionName" : "Get",
-                "actionType" : "DEACTION",
-                "name" : "load"
-              }, {
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-                },
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "Create"
-                },
-                "dataAccessAction" : "CREATE",
-                "actionName" : "Create",
-                "actionType" : "DEACTION",
-                "name" : "create"
-              } ],
-              "enableDEFieldPrivilege" : false,
-              "id" : "树视图处理器"
-            },
-            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task/PSTREEVIEWS/TaskGroupTree.json",
-            "logicName" : "分组任务树",
-            "name" : "treeexpbar_tree",
-            "modelid" : "427c5ea805ab5c9b76a8c53bc5afd5ea"
-          } ],
+          "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+          "name" : "treeexpbar",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          },
           "getPSAppViewRefs" : [ {
+            "name" : "EXPITEM:AssignedtoGroup",
+            "realTitle" : "任务表格视图（指派分组）",
             "getRefPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskAssignedtoTaskGroupGridView.json",
               "viewType" : "DEGRIDVIEW"
-            },
-            "realTitle" : "任务表格视图（指派分组）",
-            "name" : "EXPITEM:AssignedtoGroup"
+            }
           }, {
+            "name" : "EXPITEM:TypeGroup",
+            "realTitle" : "任务表格视图（类型分组）",
             "getRefPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTypeTaskGroupGridView.json",
               "viewType" : "DEGRIDVIEW"
-            },
-            "realTitle" : "任务表格视图（类型分组）",
-            "name" : "EXPITEM:TypeGroup"
+            }
           }, {
+            "name" : "EXPITEM:PriGroup",
+            "realTitle" : "任务表格视图（优先级分组）",
             "getRefPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskPriTaskGroupGridView.json",
               "viewType" : "DEGRIDVIEW"
-            },
-            "realTitle" : "任务表格视图（优先级分组）",
-            "name" : "EXPITEM:PriGroup"
+            }
           }, {
+            "name" : "EXPITEM:StoryGroup",
+            "realTitle" : "任务表格视图（需求分组）",
             "getRefPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskStoryTaskGroupGridView.json",
               "viewType" : "DEGRIDVIEW"
-            },
-            "realTitle" : "任务表格视图（需求分组）",
-            "name" : "EXPITEM:StoryGroup"
+            }
           }, {
+            "name" : "EXPITEM:StatusGroup",
+            "realTitle" : "任务表格视图（任务分组）",
             "getRefPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTaskGroupGridView.json",
               "viewType" : "DEGRIDVIEW"
-            },
-            "realTitle" : "任务表格视图（任务分组）",
-            "name" : "EXPITEM:StatusGroup"
+            }
           } ],
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          "getPSControlHandler" : {
+            "enableDEFieldPrivilege" : false,
+            "id" : "treeexpbar"
           },
           "getPSControlParam" : {
             "autoLoad" : true,
             "showBusyIndicator" : true,
             "id" : "TREEEXPBAR"
           },
-          "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
-          "getPSControlHandler" : {
-            "enableDEFieldPrivilege" : false,
-            "id" : "treeexpbar"
-          },
-          "codeName" : "GroupTreeExpViewtreeexpbar",
-          "name" : "treeexpbar",
+          "getPSControls" : [ {
+            "codeName" : "TaskGroupTree",
+            "controlType" : "TREEVIEW",
+            "getCreatePSControlAction" : {
+              "modelref" : true,
+              "id" : "create"
+            },
+            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task/PSTREEVIEWS/TaskGroupTree.json",
+            "getFetchPSControlAction" : {
+              "modelref" : true,
+              "id" : "fetch"
+            },
+            "getGetPSControlAction" : {
+              "modelref" : true,
+              "id" : "load"
+            },
+            "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+            "logicName" : "分组任务树",
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            },
+            "getPSControlHandler" : {
+              "getPSHandlerActions" : [ {
+                "actionName" : "Update",
+                "actionType" : "DEACTION",
+                "dataAccessAction" : "UPDATE",
+                "name" : "update",
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "Update"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+                }
+              }, {
+                "actionType" : "DEDATASET",
+                "name" : "fetch",
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+                }
+              }, {
+                "actionName" : "Remove",
+                "actionType" : "DEACTION",
+                "dataAccessAction" : "DELETE",
+                "name" : "remove",
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "Remove"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+                }
+              }, {
+                "actionName" : "Get",
+                "actionType" : "DEACTION",
+                "dataAccessAction" : "READ",
+                "name" : "load",
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "Get"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+                }
+              }, {
+                "actionName" : "Create",
+                "actionType" : "DEACTION",
+                "dataAccessAction" : "CREATE",
+                "name" : "create",
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "Create"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+                }
+              } ],
+              "userDRAction" : "READ",
+              "enableDEFieldPrivilege" : false,
+              "id" : "树视图处理器"
+            },
+            "getPSControlParam" : {
+              "autoLoad" : true,
+              "showBusyIndicator" : true,
+              "id" : "treeexpbar_tree"
+            },
+            "getPSDETreeNodeRSs" : [ {
+              "getChildPSDETreeNode" : {
+                "modelref" : true,
+                "id" : "PriGroup"
+              },
+              "name" : "默认根节点 - 优先级分组",
+              "getParentPSDETreeNode" : {
+                "modelref" : true,
+                "id" : "ROOT"
+              },
+              "parentValueLevel" : 1,
+              "searchMode" : 3
+            }, {
+              "getChildPSDETreeNode" : {
+                "modelref" : true,
+                "id" : "StatusGroup"
+              },
+              "name" : "默认根节点 - 状态分组",
+              "getParentPSDETreeNode" : {
+                "modelref" : true,
+                "id" : "ROOT"
+              },
+              "parentValueLevel" : 1,
+              "searchMode" : 3
+            }, {
+              "getChildPSDETreeNode" : {
+                "modelref" : true,
+                "id" : "AssignedtoGroup"
+              },
+              "name" : "默认根节点 - 指派分组",
+              "getParentPSDETreeNode" : {
+                "modelref" : true,
+                "id" : "ROOT"
+              },
+              "parentValueLevel" : 1,
+              "searchMode" : 3
+            }, {
+              "getChildPSDETreeNode" : {
+                "modelref" : true,
+                "id" : "TypeGroup"
+              },
+              "name" : "默认根节点 - 类型分组",
+              "getParentPSDETreeNode" : {
+                "modelref" : true,
+                "id" : "ROOT"
+              },
+              "parentValueLevel" : 1,
+              "searchMode" : 3
+            }, {
+              "getChildPSDETreeNode" : {
+                "modelref" : true,
+                "id" : "StoryGroup"
+              },
+              "name" : "默认根节点 - 需求分组",
+              "getParentPSDETreeNode" : {
+                "modelref" : true,
+                "id" : "ROOT"
+              },
+              "parentValueLevel" : 1,
+              "searchMode" : 3
+            } ],
+            "getPSDETreeNodes" : [ {
+              "counterMode" : 0,
+              "name" : "优先级分组",
+              "getNavPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskPriTaskGroupGridView.json",
+                "viewType" : "DEGRIDVIEW"
+              },
+              "nodeType" : "PriGroup",
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+              },
+              "text" : "优先级分组",
+              "treeNodeType" : "STATIC",
+              "hasPSDETreeNodeRSs" : false,
+              "appendPNodeId" : false,
+              "disableSelect" : false,
+              "enableCheck" : false,
+              "enableEditData" : false,
+              "enableNewData" : false,
+              "enableQuickCreate" : false,
+              "enableQuickSearch" : false,
+              "enableRemoveData" : false,
+              "enableViewData" : false,
+              "expandFirstOnly" : false,
+              "expanded" : false,
+              "rootNode" : false,
+              "selectFirstOnly" : false,
+              "selected" : false,
+              "id" : "PriGroup"
+            }, {
+              "counterMode" : 0,
+              "name" : "指派分组",
+              "getNavPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskAssignedtoTaskGroupGridView.json",
+                "viewType" : "DEGRIDVIEW"
+              },
+              "nodeType" : "AssignedtoGroup",
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+              },
+              "text" : "指派分组",
+              "treeNodeType" : "STATIC",
+              "hasPSDETreeNodeRSs" : false,
+              "appendPNodeId" : false,
+              "disableSelect" : false,
+              "enableCheck" : false,
+              "enableEditData" : false,
+              "enableNewData" : false,
+              "enableQuickCreate" : false,
+              "enableQuickSearch" : false,
+              "enableRemoveData" : false,
+              "enableViewData" : false,
+              "expandFirstOnly" : false,
+              "expanded" : false,
+              "rootNode" : false,
+              "selectFirstOnly" : false,
+              "selected" : false,
+              "id" : "AssignedtoGroup"
+            }, {
+              "counterMode" : 0,
+              "name" : "类型分组",
+              "getNavPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTypeTaskGroupGridView.json",
+                "viewType" : "DEGRIDVIEW"
+              },
+              "nodeType" : "TypeGroup",
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+              },
+              "text" : "类型分组",
+              "treeNodeType" : "STATIC",
+              "hasPSDETreeNodeRSs" : false,
+              "appendPNodeId" : false,
+              "disableSelect" : false,
+              "enableCheck" : false,
+              "enableEditData" : false,
+              "enableNewData" : false,
+              "enableQuickCreate" : false,
+              "enableQuickSearch" : false,
+              "enableRemoveData" : false,
+              "enableViewData" : false,
+              "expandFirstOnly" : false,
+              "expanded" : false,
+              "rootNode" : false,
+              "selectFirstOnly" : false,
+              "selected" : false,
+              "id" : "TypeGroup"
+            }, {
+              "counterMode" : 0,
+              "name" : "状态分组",
+              "getNavPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTaskGroupGridView.json",
+                "viewType" : "DEGRIDVIEW"
+              },
+              "nodeType" : "StatusGroup",
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+              },
+              "text" : "状态分组",
+              "treeNodeType" : "STATIC",
+              "hasPSDETreeNodeRSs" : false,
+              "appendPNodeId" : false,
+              "disableSelect" : false,
+              "enableCheck" : false,
+              "enableEditData" : false,
+              "enableNewData" : false,
+              "enableQuickCreate" : false,
+              "enableQuickSearch" : false,
+              "enableRemoveData" : false,
+              "enableViewData" : false,
+              "expandFirstOnly" : false,
+              "expanded" : false,
+              "rootNode" : false,
+              "selectFirstOnly" : false,
+              "selected" : false,
+              "id" : "StatusGroup"
+            }, {
+              "counterMode" : 0,
+              "name" : "默认根节点",
+              "nodeType" : "ROOT",
+              "nodeValue" : "root",
+              "text" : "默认根节点",
+              "treeNodeType" : "STATIC",
+              "hasPSDETreeNodeRSs" : true,
+              "appendPNodeId" : false,
+              "disableSelect" : false,
+              "enableCheck" : false,
+              "enableEditData" : false,
+              "enableNewData" : false,
+              "enableQuickCreate" : false,
+              "enableQuickSearch" : false,
+              "enableRemoveData" : false,
+              "enableViewData" : false,
+              "expandFirstOnly" : false,
+              "expanded" : false,
+              "rootNode" : true,
+              "selectFirstOnly" : false,
+              "selected" : false,
+              "id" : "ROOT"
+            }, {
+              "counterMode" : 0,
+              "name" : "需求分组",
+              "getNavPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskStoryTaskGroupGridView.json",
+                "viewType" : "DEGRIDVIEW"
+              },
+              "nodeType" : "StoryGroup",
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+              },
+              "text" : "需求分组",
+              "treeNodeType" : "STATIC",
+              "hasPSDETreeNodeRSs" : false,
+              "appendPNodeId" : false,
+              "disableSelect" : false,
+              "enableCheck" : false,
+              "enableEditData" : false,
+              "enableNewData" : false,
+              "enableQuickCreate" : false,
+              "enableQuickSearch" : false,
+              "enableRemoveData" : false,
+              "enableViewData" : false,
+              "expandFirstOnly" : false,
+              "expanded" : false,
+              "rootNode" : false,
+              "selectFirstOnly" : false,
+              "selected" : false,
+              "id" : "StoryGroup"
+            } ],
+            "getRemovePSControlAction" : {
+              "modelref" : true,
+              "id" : "remove"
+            },
+            "treeGridMode" : 0,
+            "getUpdatePSControlAction" : {
+              "modelref" : true,
+              "id" : "update"
+            },
+            "enableRootSelect" : false,
+            "enableSearchDefault" : false,
+            "outputIconDefault" : true,
+            "rootVisible" : false,
+            "name" : "treeexpbar_tree",
+            "modelid" : "427c5ea805ab5c9b76a8c53bc5afd5ea"
+          } ],
+          "xDataControlName" : "treeexpbar_tree",
+          "enableCounter" : true,
+          "enableSearch" : false,
+          "showTitleBar" : false,
           "modelid" : "25ad13bec39a81629f26d442db44d424_treeexpbar"
         } ],
-        "viewStyle" : "STYLE2",
-        "getPSAppViewLogics" : [ {
-          "logicTrigger" : "CUSTOM",
-          "getPSAppUILogic" : {
-            "enableWizardAdd" : false,
-            "actionAfterWizard" : "DEFAULT",
-            "enableBatchAdd" : false,
-            "batchAddOnly" : false,
-            "viewLogicType" : "APP_NEWDATA",
-            "logicType" : "PREDEFINED",
-            "name" : "新建数据"
-          },
-          "logicType" : "SYSUILOGIC",
-          "name" : "newdata"
-        }, {
-          "logicTrigger" : "CUSTOM",
-          "getPSAppUILogic" : {
-            "viewLogicType" : "APP_OPENDATA",
-            "logicType" : "PREDEFINED",
-            "name" : "打开数据"
-          },
-          "logicType" : "SYSUILOGIC",
-          "name" : "opendata"
-        } ],
+        "getPSDEViewCodeName" : "GroupTreeExpView",
         "getPSSysImage" : {
           "glyph" : "xf0ae@FontAwesome",
           "cssClass" : "fa fa-tasks"
         },
-        "codeName" : "TaskGroupTreeExpView",
+        "getPSViewLayoutPanel" : {
+          "codeName" : "Layoutpanel",
+          "controlStyle" : "APPDETREEEXPVIEW_STYLE2",
+          "controlType" : "VIEWLAYOUTPANEL",
+          "name" : "layoutpanel",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          },
+          "getPSControlParam" : { },
+          "layoutPanel" : true,
+          "useDefaultLayout" : true
+        },
+        "title" : "任务树导航视图（分组树）",
+        "viewStyle" : "STYLE2",
         "viewType" : "DETREEEXPVIEW",
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskGroupTreeExpView.json",
-        "name" : "TaskGroupTreeExpView",
+        "enableDP" : true,
+        "enableFilter" : false,
+        "enableQuickSearch" : true,
+        "showCaptionBar" : false,
+        "showDataInfoBar" : true,
         "getPSAppDERSPaths" : [ [ {
-          "enableDEAction" : true,
-          "enableSelect" : true,
-          "enableDEDataSet" : true,
-          "enableCreateDataRS" : false,
-          "enableUpdateDataRS" : false,
-          "enableGetDataRS" : false,
-          "enableSelectDataRS" : false,
+          "actionRSMode" : 1,
+          "codeName" : "ProjectModules",
+          "dataRSMode" : 0,
           "getMajorPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
@@ -551,23 +545,23 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
           },
+          "name" : "项目任务模块",
           "getParentPSAppDEField" : {
             "name" : "ROOT",
             "codeName" : "Root"
           },
-          "codeName" : "ProjectModules",
-          "actionRSMode" : 1,
-          "dataRSMode" : 0,
           "rSMode" : 2,
-          "name" : "项目任务模块"
-        }, {
-          "enableDEAction" : true,
-          "enableSelect" : true,
-          "enableDEDataSet" : true,
           "enableCreateDataRS" : false,
-          "enableUpdateDataRS" : false,
+          "enableDEAction" : true,
+          "enableDEDataSet" : true,
           "enableGetDataRS" : false,
+          "enableSelect" : true,
           "enableSelectDataRS" : false,
+          "enableUpdateDataRS" : false
+        }, {
+          "actionRSMode" : 1,
+          "codeName" : "Tasks",
+          "dataRSMode" : 0,
           "getMajorPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
@@ -576,23 +570,23 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
           },
+          "name" : "任务模块",
           "getParentPSAppDEField" : {
             "name" : "MODULE",
             "codeName" : "Module"
           },
-          "codeName" : "Tasks",
-          "actionRSMode" : 1,
-          "dataRSMode" : 0,
           "rSMode" : 2,
-          "name" : "任务模块"
-        } ], [ {
-          "enableDEAction" : true,
-          "enableSelect" : true,
-          "enableDEDataSet" : true,
           "enableCreateDataRS" : false,
-          "enableUpdateDataRS" : false,
+          "enableDEAction" : true,
+          "enableDEDataSet" : true,
           "enableGetDataRS" : false,
+          "enableSelect" : true,
           "enableSelectDataRS" : false,
+          "enableUpdateDataRS" : false
+        } ], [ {
+          "actionRSMode" : 1,
+          "codeName" : "Stories",
+          "dataRSMode" : 0,
           "getMajorPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
@@ -601,23 +595,23 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
           },
+          "name" : "产品需求",
           "getParentPSAppDEField" : {
             "name" : "PRODUCT",
             "codeName" : "Product"
           },
-          "codeName" : "Stories",
-          "actionRSMode" : 1,
-          "dataRSMode" : 0,
           "rSMode" : 2,
-          "name" : "产品需求"
-        }, {
-          "enableDEAction" : true,
-          "enableSelect" : true,
-          "enableDEDataSet" : true,
           "enableCreateDataRS" : false,
-          "enableUpdateDataRS" : false,
+          "enableDEAction" : true,
+          "enableDEDataSet" : true,
           "enableGetDataRS" : false,
+          "enableSelect" : true,
           "enableSelectDataRS" : false,
+          "enableUpdateDataRS" : false
+        }, {
+          "actionRSMode" : 1,
+          "codeName" : "Tasks",
+          "dataRSMode" : 0,
           "getMajorPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -626,23 +620,23 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
           },
+          "name" : "需求任务",
           "getParentPSAppDEField" : {
             "name" : "STORY",
             "codeName" : "Story"
           },
-          "codeName" : "Tasks",
-          "actionRSMode" : 1,
-          "dataRSMode" : 0,
           "rSMode" : 2,
-          "name" : "需求任务"
-        } ], [ {
-          "enableDEAction" : true,
-          "enableSelect" : true,
-          "enableDEDataSet" : true,
           "enableCreateDataRS" : false,
-          "enableUpdateDataRS" : false,
+          "enableDEAction" : true,
+          "enableDEDataSet" : true,
           "enableGetDataRS" : false,
+          "enableSelect" : true,
           "enableSelectDataRS" : false,
+          "enableUpdateDataRS" : false
+        } ], [ {
+          "actionRSMode" : 1,
+          "codeName" : "ProductPlans",
+          "dataRSMode" : 0,
           "getMajorPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
@@ -651,23 +645,23 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
           },
+          "name" : "产品计划",
           "getParentPSAppDEField" : {
             "name" : "PRODUCT",
             "codeName" : "Product"
           },
-          "codeName" : "ProductPlans",
-          "actionRSMode" : 1,
-          "dataRSMode" : 0,
           "rSMode" : 2,
-          "name" : "产品计划"
-        }, {
-          "enableDEAction" : true,
-          "enableSelect" : true,
-          "enableDEDataSet" : true,
           "enableCreateDataRS" : false,
-          "enableUpdateDataRS" : false,
+          "enableDEAction" : true,
+          "enableDEDataSet" : true,
           "enableGetDataRS" : false,
+          "enableSelect" : true,
           "enableSelectDataRS" : false,
+          "enableUpdateDataRS" : false
+        }, {
+          "actionRSMode" : 1,
+          "codeName" : "Tasks",
+          "dataRSMode" : 0,
           "getMajorPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
@@ -676,23 +670,23 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
           },
+          "name" : "计划任务",
           "getParentPSAppDEField" : {
             "name" : "PLAN",
             "codeName" : "Plan"
           },
-          "codeName" : "Tasks",
-          "actionRSMode" : 1,
-          "dataRSMode" : 0,
           "rSMode" : 2,
-          "name" : "计划任务"
-        } ], [ {
-          "enableDEAction" : true,
-          "enableSelect" : true,
-          "enableDEDataSet" : true,
           "enableCreateDataRS" : false,
-          "enableUpdateDataRS" : false,
+          "enableDEAction" : true,
+          "enableDEDataSet" : true,
           "enableGetDataRS" : false,
+          "enableSelect" : true,
           "enableSelectDataRS" : false,
+          "enableUpdateDataRS" : false
+        } ], [ {
+          "actionRSMode" : 1,
+          "codeName" : "Tasks",
+          "dataRSMode" : 0,
           "getMajorPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
@@ -701,23 +695,23 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
           },
+          "name" : "项目任务",
           "getParentPSAppDEField" : {
             "name" : "PROJECT",
             "codeName" : "Project"
           },
-          "codeName" : "Tasks",
-          "actionRSMode" : 1,
-          "dataRSMode" : 0,
           "rSMode" : 2,
-          "name" : "项目任务"
-        } ], [ {
-          "enableDEAction" : true,
-          "enableSelect" : true,
-          "enableDEDataSet" : true,
           "enableCreateDataRS" : false,
-          "enableUpdateDataRS" : false,
+          "enableDEAction" : true,
+          "enableDEDataSet" : true,
           "enableGetDataRS" : false,
+          "enableSelect" : true,
           "enableSelectDataRS" : false,
+          "enableUpdateDataRS" : false
+        } ], [ {
+          "actionRSMode" : 1,
+          "codeName" : "Tasks",
+          "dataRSMode" : 0,
           "getMajorPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -726,23 +720,23 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
           },
+          "name" : "需求任务",
           "getParentPSAppDEField" : {
             "name" : "STORY",
             "codeName" : "Story"
           },
-          "codeName" : "Tasks",
-          "actionRSMode" : 1,
-          "dataRSMode" : 0,
           "rSMode" : 2,
-          "name" : "需求任务"
-        } ], [ {
-          "enableDEAction" : true,
-          "enableSelect" : true,
-          "enableDEDataSet" : true,
           "enableCreateDataRS" : false,
-          "enableUpdateDataRS" : false,
+          "enableDEAction" : true,
+          "enableDEDataSet" : true,
           "enableGetDataRS" : false,
+          "enableSelect" : true,
           "enableSelectDataRS" : false,
+          "enableUpdateDataRS" : false
+        } ], [ {
+          "actionRSMode" : 1,
+          "codeName" : "Tasks",
+          "dataRSMode" : 0,
           "getMajorPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
@@ -751,23 +745,23 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
           },
+          "name" : "计划任务",
           "getParentPSAppDEField" : {
             "name" : "PLAN",
             "codeName" : "Plan"
           },
-          "codeName" : "Tasks",
-          "actionRSMode" : 1,
-          "dataRSMode" : 0,
           "rSMode" : 2,
-          "name" : "计划任务"
-        } ], [ {
-          "enableDEAction" : true,
-          "enableSelect" : true,
-          "enableDEDataSet" : true,
           "enableCreateDataRS" : false,
-          "enableUpdateDataRS" : false,
+          "enableDEAction" : true,
+          "enableDEDataSet" : true,
           "enableGetDataRS" : false,
+          "enableSelect" : true,
           "enableSelectDataRS" : false,
+          "enableUpdateDataRS" : false
+        } ], [ {
+          "actionRSMode" : 1,
+          "codeName" : "Tasks",
+          "dataRSMode" : 0,
           "getMajorPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
@@ -776,25 +770,31 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
           },
+          "name" : "任务模块",
           "getParentPSAppDEField" : {
             "name" : "MODULE",
             "codeName" : "Module"
           },
-          "codeName" : "Tasks",
-          "actionRSMode" : 1,
-          "dataRSMode" : 0,
           "rSMode" : 2,
-          "name" : "任务模块"
+          "enableCreateDataRS" : false,
+          "enableDEAction" : true,
+          "enableDEDataSet" : true,
+          "enableGetDataRS" : false,
+          "enableSelect" : true,
+          "enableSelectDataRS" : false,
+          "enableUpdateDataRS" : false
         } ] ]
       }
     }, {
+      "caption" : "树状图",
+      "codeName" : "MoreTabExpViewtabviewpanel2",
       "controlType" : "TABVIEWPANEL",
       "getEmbeddedPSAppDEView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTreeExpView.json",
         "viewType" : "DETREEEXPVIEW"
       },
-      "caption" : "树状图",
+      "name" : "tabviewpanel2",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
@@ -802,53 +802,49 @@
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL2"
       },
-      "codeName" : "MoreTabExpViewtabviewpanel2",
-      "name" : "tabviewpanel2",
       "modelid" : "c85d9b5e8fda56f19059573f794d31c6_tabviewpanel2"
     } ],
-    "getPSAppViewRefs" : [ {
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskGroupTreeExpView.json",
-        "viewType" : "DETREEEXPVIEW"
-      },
-      "realTitle" : "任务树导航视图（分组树）",
-      "name" : "EXPITEM:tabviewpanel"
+    "getPSTabExpPages" : [ {
+      "name" : "tabviewpanel"
     }, {
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTreeExpView.json",
-        "viewType" : "DETREEEXPVIEW"
-      },
-      "realTitle" : "任务树导航视图",
-      "name" : "EXPITEM:tabviewpanel2"
+      "name" : "tabviewpanel2"
     } ],
+    "tabLayout" : "TOP",
+    "modelid" : "c85d9b5e8fda56f19059573f794d31c6_tabexppanel"
+  } ],
+  "getPSDEViewCodeName" : "MoreTabExpView",
+  "getPSSysImage" : {
+    "glyph" : "xf0ae@FontAwesome",
+    "cssClass" : "fa fa-tasks"
+  },
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDETABEXPVIEW_STYLE2",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
     "getPSControlParam" : { },
-    "codeName" : "MoreTabExpViewtabexppanel",
-    "name" : "tabexppanel",
-    "modelid" : "c85d9b5e8fda56f19059573f794d31c6_tabexppanel"
-  } ],
-  "viewStyle" : "STYLE2",
-  "getPSSysImage" : {
-    "glyph" : "xf0ae@FontAwesome",
-    "cssClass" : "fa fa-tasks"
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
   },
-  "codeName" : "TaskMoreTabExpView",
+  "tabLayout" : "TOP",
+  "title" : "任务分页导航视图（更多）",
+  "viewStyle" : "STYLE2",
   "viewType" : "DETABEXPVIEW",
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMoreTabExpView.json",
-  "name" : "TaskMoreTabExpView",
+  "enableDP" : true,
+  "enableQuickSearch" : false,
+  "enableSearch" : false,
+  "expandSearchForm" : false,
+  "loadDefault" : true,
+  "showCaptionBar" : false,
+  "showDataInfoBar" : true,
   "getPSAppDERSPaths" : [ [ {
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
-    "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
-    "enableGetDataRS" : false,
-    "enableSelectDataRS" : false,
+    "actionRSMode" : 1,
+    "codeName" : "ProjectModules",
+    "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
@@ -857,23 +853,23 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
     },
+    "name" : "项目任务模块",
     "getParentPSAppDEField" : {
       "name" : "ROOT",
       "codeName" : "Root"
     },
-    "codeName" : "ProjectModules",
-    "actionRSMode" : 1,
-    "dataRSMode" : 0,
     "rSMode" : 2,
-    "name" : "项目任务模块"
-  }, {
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
     "enableGetDataRS" : false,
+    "enableSelect" : true,
     "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  }, {
+    "actionRSMode" : 1,
+    "codeName" : "Tasks",
+    "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
@@ -882,23 +878,23 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
+    "name" : "任务模块",
     "getParentPSAppDEField" : {
       "name" : "MODULE",
       "codeName" : "Module"
     },
-    "codeName" : "Tasks",
-    "actionRSMode" : 1,
-    "dataRSMode" : 0,
     "rSMode" : 2,
-    "name" : "任务模块"
-  } ], [ {
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
     "enableGetDataRS" : false,
+    "enableSelect" : true,
     "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ], [ {
+    "actionRSMode" : 1,
+    "codeName" : "Stories",
+    "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
@@ -907,23 +903,23 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
+    "name" : "产品需求",
     "getParentPSAppDEField" : {
       "name" : "PRODUCT",
       "codeName" : "Product"
     },
-    "codeName" : "Stories",
-    "actionRSMode" : 1,
-    "dataRSMode" : 0,
     "rSMode" : 2,
-    "name" : "产品需求"
-  }, {
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
     "enableGetDataRS" : false,
+    "enableSelect" : true,
     "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  }, {
+    "actionRSMode" : 1,
+    "codeName" : "Tasks",
+    "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -932,23 +928,23 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
+    "name" : "需求任务",
     "getParentPSAppDEField" : {
       "name" : "STORY",
       "codeName" : "Story"
     },
-    "codeName" : "Tasks",
-    "actionRSMode" : 1,
-    "dataRSMode" : 0,
     "rSMode" : 2,
-    "name" : "需求任务"
-  } ], [ {
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
     "enableGetDataRS" : false,
+    "enableSelect" : true,
     "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ], [ {
+    "actionRSMode" : 1,
+    "codeName" : "ProductPlans",
+    "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
@@ -957,23 +953,23 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
     },
+    "name" : "产品计划",
     "getParentPSAppDEField" : {
       "name" : "PRODUCT",
       "codeName" : "Product"
     },
-    "codeName" : "ProductPlans",
-    "actionRSMode" : 1,
-    "dataRSMode" : 0,
     "rSMode" : 2,
-    "name" : "产品计划"
-  }, {
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
     "enableGetDataRS" : false,
+    "enableSelect" : true,
     "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  }, {
+    "actionRSMode" : 1,
+    "codeName" : "Tasks",
+    "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
@@ -982,23 +978,23 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
+    "name" : "计划任务",
     "getParentPSAppDEField" : {
       "name" : "PLAN",
       "codeName" : "Plan"
     },
-    "codeName" : "Tasks",
-    "actionRSMode" : 1,
-    "dataRSMode" : 0,
     "rSMode" : 2,
-    "name" : "计划任务"
-  } ], [ {
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
     "enableGetDataRS" : false,
+    "enableSelect" : true,
     "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ], [ {
+    "actionRSMode" : 1,
+    "codeName" : "Tasks",
+    "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
@@ -1007,23 +1003,23 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
+    "name" : "项目任务",
     "getParentPSAppDEField" : {
       "name" : "PROJECT",
       "codeName" : "Project"
     },
-    "codeName" : "Tasks",
-    "actionRSMode" : 1,
-    "dataRSMode" : 0,
     "rSMode" : 2,
-    "name" : "项目任务"
-  } ], [ {
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
     "enableGetDataRS" : false,
+    "enableSelect" : true,
     "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ], [ {
+    "actionRSMode" : 1,
+    "codeName" : "Tasks",
+    "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
@@ -1032,23 +1028,23 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
+    "name" : "需求任务",
     "getParentPSAppDEField" : {
       "name" : "STORY",
       "codeName" : "Story"
     },
-    "codeName" : "Tasks",
-    "actionRSMode" : 1,
-    "dataRSMode" : 0,
     "rSMode" : 2,
-    "name" : "需求任务"
-  } ], [ {
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
     "enableGetDataRS" : false,
+    "enableSelect" : true,
     "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ], [ {
+    "actionRSMode" : 1,
+    "codeName" : "Tasks",
+    "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
@@ -1057,23 +1053,23 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
+    "name" : "计划任务",
     "getParentPSAppDEField" : {
       "name" : "PLAN",
       "codeName" : "Plan"
     },
-    "codeName" : "Tasks",
-    "actionRSMode" : 1,
-    "dataRSMode" : 0,
     "rSMode" : 2,
-    "name" : "计划任务"
-  } ], [ {
-    "enableDEAction" : true,
-    "enableSelect" : true,
-    "enableDEDataSet" : true,
     "enableCreateDataRS" : false,
-    "enableUpdateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
     "enableGetDataRS" : false,
+    "enableSelect" : true,
     "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ], [ {
+    "actionRSMode" : 1,
+    "codeName" : "Tasks",
+    "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
@@ -1082,14 +1078,18 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
+    "name" : "任务模块",
     "getParentPSAppDEField" : {
       "name" : "MODULE",
       "codeName" : "Module"
     },
-    "codeName" : "Tasks",
-    "actionRSMode" : 1,
-    "dataRSMode" : 0,
     "rSMode" : 2,
-    "name" : "任务模块"
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
   } ] ]
 }

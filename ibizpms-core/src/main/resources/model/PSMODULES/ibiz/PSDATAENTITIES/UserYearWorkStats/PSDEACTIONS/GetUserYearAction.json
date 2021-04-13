@@ -1,34 +1,34 @@
 {
-  "transactionMode" : "DEFAULT",
-  "paramMode" : 1,
-  "generateTestUnit" : false,
-  "customParam" : false,
-  "builtinAction" : false,
+  "actionMode" : "READ",
+  "actionType" : "USERCUSTOM",
   "getAfterPSDEActionLogics" : [ {
-    "internalLogic" : true,
+    "attachMode" : "AFTER",
+    "name" : "附加逻辑",
     "getPSDELogic" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/GetInfo.json"
     },
-    "ignoreException" : false,
     "cloneParam" : false,
-    "attachMode" : "AFTER",
-    "name" : "附加逻辑"
+    "ignoreException" : false,
+    "internalLogic" : true
   } ],
-  "pubServiceDefault" : true,
-  "timeOut" : -1,
+  "codeName" : "GetUserYearAction",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetUserYearAction.json",
   "extendMode" : 0,
+  "logicName" : "获取用户所选年度的动作",
+  "name" : "GetUserYearAction",
+  "orderValue" : 99999,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"
   },
-  "orderValue" : 99999,
-  "codeName" : "GetUserYearAction",
-  "logicName" : "获取用户所选年度的动作",
-  "actionMode" : "READ",
-  "actionType" : "USERCUSTOM",
+  "paramMode" : 1,
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetUserYearAction.json",
-  "name" : "GetUserYearAction"
+  "timeOut" : -1,
+  "transactionMode" : "DEFAULT",
+  "builtinAction" : false,
+  "customParam" : false,
+  "generateTestUnit" : false,
+  "pubServiceDefault" : true
 }

@@ -1,88 +1,88 @@
 {
-  "enableRowNew" : false,
-  "enableRowEditOrder" : false,
-  "noSort" : false,
-  "hasWFDataItems" : false,
-  "showHeader" : true,
-  "enableRowEditGroup" : false,
-  "getPSDEListDataItems" : [ {
-    "name" : "type",
-    "dataType" : 25
-  }, {
-    "name" : "productlifeid",
-    "dataType" : 25
-  }, {
-    "name" : "parent",
-    "dataType" : 25
-  }, {
-    "format" : "YYYY-MM-DD",
-    "name" : "end",
-    "dataType" : 5
-  }, {
-    "name" : "productlifename",
-    "dataType" : 25
-  }, {
-    "format" : "YYYY-MM-DD",
-    "name" : "begin",
-    "dataType" : 5
-  }, {
-    "name" : "branch",
-    "dataType" : 25
-  }, {
-    "name" : "product",
-    "dataType" : 9
-  }, {
-    "name" : "year",
-    "dataType" : 25
-  }, {
-    "getFrontPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo3.json"
-    },
-    "name" : "marker",
-    "dataType" : 9
-  } ],
-  "getMinorSortPSAppDEField" : {
-    "name" : "YEAR",
-    "codeName" : "Year"
-  },
-  "enableRowEdit" : false,
-  "controlType" : "LIST",
   "codeName" : "GetRoadmapYearS",
-  "minorSortDir" : "DESC",
-  "enableGroup" : false,
-  "pagingSize" : 1000,
-  "groupMode" : "NONE",
+  "controlType" : "LIST",
   "getCreatePSControlAction" : {
     "modelref" : true,
     "id" : "create"
   },
-  "getUpdatePSControlAction" : {
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife/PSLISTS/GetRoadmapYearS.json",
+  "getFetchPSControlAction" : {
     "modelref" : true,
-    "id" : "update"
-  },
-  "getRemovePSControlAction" : {
-    "modelref" : true,
-    "id" : "remove"
+    "id" : "fetch"
   },
   "getGetPSControlAction" : {
     "modelref" : true,
     "id" : "load"
   },
-  "getFetchPSControlAction" : {
-    "modelref" : true,
-    "id" : "fetch"
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "GetRoadmapYearS",
+  "minorSortDir" : "DESC",
+  "getMinorSortPSAppDEField" : {
+    "name" : "YEAR",
+    "codeName" : "Year"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json"
   },
-  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "getPSDEListDataItems" : [ {
+    "dataType" : 25,
+    "name" : "type"
+  }, {
+    "dataType" : 25,
+    "name" : "productlifeid"
+  }, {
+    "dataType" : 25,
+    "name" : "parent"
+  }, {
+    "dataType" : 5,
+    "format" : "YYYY-MM-DD",
+    "name" : "end"
+  }, {
+    "dataType" : 25,
+    "name" : "productlifename"
+  }, {
+    "dataType" : 5,
+    "format" : "YYYY-MM-DD",
+    "name" : "begin"
+  }, {
+    "dataType" : 25,
+    "name" : "branch"
+  }, {
+    "dataType" : 9,
+    "name" : "product"
+  }, {
+    "dataType" : 25,
+    "name" : "year"
+  }, {
+    "dataType" : 9,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo3.json"
+    },
+    "name" : "marker"
+  } ],
   "getPSSysPFPlugin" : {
     "pluginType" : "CUSTOM",
     "pluginCode" : "RoadMap"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife/PSLISTS/GetRoadmapYearS.json",
-  "logicName" : "GetRoadmapYearS",
+  "pagingSize" : 1000,
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "hasWFDataItems" : false,
+  "enableGroup" : false,
+  "enableRowEdit" : false,
+  "enableRowEditGroup" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "noSort" : false,
+  "showHeader" : true,
   "modelid" : "1f23a4ba710a8b45f1cf253adbfd3762"
 }

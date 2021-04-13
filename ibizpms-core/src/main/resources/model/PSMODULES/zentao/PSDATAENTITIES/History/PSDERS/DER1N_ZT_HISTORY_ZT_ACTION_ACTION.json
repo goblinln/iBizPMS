@@ -1,25 +1,25 @@
 {
-  "getPSPickupDEField" : {
-    "name" : "ACTION",
-    "codeName" : "Action"
-  },
-  "masterOrder" : -1,
-  "removeActionType" : -1,
-  "pickupDEFName" : "ACTION",
-  "masterRS" : 0,
-  "removeOrder" : 0,
+  "codeName" : "Zt_action",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/History/PSDERS/DER1N_ZT_HISTORY_ZT_ACTION_ACTION.json",
+  "logicName" : "关联日志",
   "getMajorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
   },
-  "orderValue" : 100,
-  "codeName" : "Zt_action",
-  "logicName" : "关联日志",
-  "dERType" : "DER1N",
+  "masterOrder" : -1,
+  "masterRS" : 0,
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/History.json"
   },
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/History/PSDERS/DER1N_ZT_HISTORY_ZT_ACTION_ACTION.json",
-  "name" : "DER1N_ZT_HISTORY_ZT_ACTION_ACTION"
+  "name" : "DER1N_ZT_HISTORY_ZT_ACTION_ACTION",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "ACTION",
+    "codeName" : "Action"
+  },
+  "pickupDEFName" : "ACTION",
+  "removeActionType" : -1,
+  "removeOrder" : 0
 }

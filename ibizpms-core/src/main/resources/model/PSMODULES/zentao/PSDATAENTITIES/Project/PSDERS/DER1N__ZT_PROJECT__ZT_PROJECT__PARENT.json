@@ -1,4 +1,19 @@
 {
+  "codeName" : "IBizParent",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDERS/DER1N__ZT_PROJECT__ZT_PROJECT__PARENT.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 0,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+  },
+  "name" : "DER1N__ZT_PROJECT__ZT_PROJECT__PARENT",
+  "orderValue" : 100,
   "getPSPickupDEField" : {
     "name" : "PARENT",
     "codeName" : "Parent"
@@ -7,22 +22,7 @@
     "name" : "PARENTNAME",
     "codeName" : "ParentName"
   },
-  "masterOrder" : -1,
-  "removeActionType" : -1,
   "pickupDEFName" : "PARENT",
-  "masterRS" : 0,
-  "removeOrder" : 0,
-  "getMajorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
-  },
-  "orderValue" : 100,
-  "codeName" : "IBizParent",
-  "dERType" : "DER1N",
-  "getMinorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
-  },
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDERS/DER1N__ZT_PROJECT__ZT_PROJECT__PARENT.json",
-  "name" : "DER1N__ZT_PROJECT__ZT_PROJECT__PARENT"
+  "removeActionType" : -1,
+  "removeOrder" : 0
 }

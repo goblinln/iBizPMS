@@ -1,4 +1,19 @@
 {
+  "codeName" : "ZTProductPlan",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProjectProduct/PSDERS/DER1N_ZT_PROJECTPRODUCT_ZT_PRODUCTPLAN_PLAN.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 0,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectProduct.json"
+  },
+  "name" : "DER1N_ZT_PROJECTPRODUCT_ZT_PRODUCTPLAN_PLAN",
+  "orderValue" : 100,
   "getPSPickupDEField" : {
     "name" : "PLAN",
     "codeName" : "Plan"
@@ -7,22 +22,7 @@
     "name" : "PLANNAME",
     "codeName" : "Planname"
   },
-  "masterOrder" : -1,
-  "removeActionType" : -1,
   "pickupDEFName" : "PLAN",
-  "masterRS" : 0,
-  "removeOrder" : 0,
-  "getMajorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
-  },
-  "orderValue" : 100,
-  "codeName" : "ZTProductPlan",
-  "dERType" : "DER1N",
-  "getMinorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectProduct.json"
-  },
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProjectProduct/PSDERS/DER1N_ZT_PROJECTPRODUCT_ZT_PRODUCTPLAN_PLAN.json",
-  "name" : "DER1N_ZT_PROJECTPRODUCT_ZT_PRODUCTPLAN_PLAN"
+  "removeActionType" : -1,
+  "removeOrder" : 0
 }

@@ -1,31 +1,31 @@
 {
+  "codeListType" : "STATIC",
+  "codeName" : "Realease_sort",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Realease_sort.json",
+  "emptyText" : "未定义",
+  "name" : "发布快速分组",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Release.json"
   },
   "getPSCodeItems" : [ {
-    "value" : "all",
-    "data" : "{}",
     "codeName" : "All",
-    "text" : "所有"
+    "data" : "{}",
+    "text" : "所有",
+    "value" : "all"
   }, {
-    "value" : "normal",
-    "data" : "{\"n_status_eq\":\"normal\"}",
     "codeName" : "Normal",
-    "text" : "正常",
     "color" : "rgba(13, 255, 0, 1)",
+    "data" : "{\"n_status_eq\":\"normal\"}",
+    "text" : "正常",
+    "value" : "normal",
     "default" : true
   }, {
-    "value" : "terminate",
-    "data" : "{\"n_status_eq\":\"terminate\"}",
     "codeName" : "Terminate",
-    "text" : "停止维护"
+    "data" : "{\"n_status_eq\":\"terminate\"}",
+    "text" : "停止维护",
+    "value" : "terminate"
   } ],
-  "dynaInstMode" : 1,
-  "codeListType" : "STATIC",
-  "codeName" : "Realease_sort",
-  "emptyText" : "未定义",
-  "enableCache" : true,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Realease_sort.json",
-  "name" : "发布快速分组"
+  "enableCache" : true
 }

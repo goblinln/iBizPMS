@@ -1,46 +1,46 @@
 {
-  "codeItemValueNumber" : false,
-  "subSysCodeList" : false,
-  "subSysAsCloud" : false,
-  "systemTag" : "iBizPMS",
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/MobTestQuickpacket.json",
   "codeName" : "MobTestQuickpacket",
-  "userScope" : false,
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/MobTestQuickpacket.json",
   "emptyText" : "未定义",
-  "enableCache" : true,
-  "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "ALL",
-    "data" : "{}",
     "codeName" : "All",
+    "data" : "{}",
     "text" : "全部",
+    "value" : "ALL",
     "default" : true
   }, {
-    "value" : "ICREATE",
-    "data" : "{\"n_status_eq\":\"wait\"}",
     "codeName" : "Icreate",
-    "text" : "待测测试单"
+    "data" : "{\"n_status_eq\":\"wait\"}",
+    "text" : "待测测试单",
+    "value" : "ICREATE"
   }, {
-    "value" : "IREVIEW",
-    "data" : "{\"n_status_eq\":\"doing\"}",
     "codeName" : "Ireview",
-    "text" : "测试中测试单"
+    "data" : "{\"n_status_eq\":\"doing\"}",
+    "text" : "测试中测试单",
+    "value" : "IREVIEW"
   }, {
-    "value" : "MORE",
-    "getPSCodeItems" : [ {
-      "value" : "ICLOSE",
-      "data" : "{\"n_status_eq\":\"blocked\"}",
-      "codeName" : "Iclose",
-      "text" : "被阻塞测试单"
-    }, {
-      "value" : "Tested",
-      "data" : "{\"n_status_eq\":\"done\"}",
-      "codeName" : "Tested",
-      "text" : "已测测试单"
-    } ],
     "codeName" : "More",
-    "text" : "更多"
-  } ]
+    "getPSCodeItems" : [ {
+      "codeName" : "Iclose",
+      "data" : "{\"n_status_eq\":\"blocked\"}",
+      "text" : "被阻塞测试单",
+      "value" : "ICLOSE"
+    }, {
+      "codeName" : "Tested",
+      "data" : "{\"n_status_eq\":\"done\"}",
+      "text" : "已测测试单",
+      "value" : "Tested"
+    } ],
+    "text" : "更多",
+    "value" : "MORE"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
 }

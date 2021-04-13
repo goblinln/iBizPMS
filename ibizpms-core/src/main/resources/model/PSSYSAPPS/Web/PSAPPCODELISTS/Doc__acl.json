@@ -1,26 +1,26 @@
 {
+  "codeListType" : "STATIC",
+  "codeName" : "Doc__acl",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Doc__acl.json",
+  "emptyText" : "未定义",
+  "name" : "文档权限",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
   },
   "getPSCodeItems" : [ {
-    "value" : "open",
     "codeName" : "Open",
-    "text" : "公开"
+    "text" : "公开",
+    "value" : "open"
   }, {
-    "value" : "private",
     "codeName" : "Private",
-    "text" : "私有"
+    "text" : "私有",
+    "value" : "private"
   }, {
-    "value" : "custom",
     "codeName" : "Custom",
-    "text" : "自定义"
+    "text" : "自定义",
+    "value" : "custom"
   } ],
-  "dynaInstMode" : 1,
-  "codeListType" : "STATIC",
-  "codeName" : "Doc__acl",
-  "emptyText" : "未定义",
-  "enableCache" : true,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Doc__acl.json",
-  "name" : "文档权限"
+  "enableCache" : true
 }

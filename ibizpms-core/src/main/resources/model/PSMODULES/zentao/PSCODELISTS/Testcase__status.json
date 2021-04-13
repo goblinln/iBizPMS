@@ -1,39 +1,39 @@
 {
-  "codeItemValueNumber" : false,
-  "subSysCodeList" : false,
-  "subSysAsCloud" : false,
-  "systemTag" : "iBizPMS",
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Testcase__status.json",
   "codeName" : "Testcase__status",
-  "userScope" : false,
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Testcase__status.json",
   "emptyText" : "未定义",
-  "enableCache" : true,
-  "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "wait",
     "codeName" : "Wait",
     "text" : "待评审",
+    "value" : "wait",
     "default" : true
   }, {
-    "value" : "normal",
     "codeName" : "Normal",
+    "color" : "rgba(84, 238, 19, 1)",
     "text" : "正常",
-    "color" : "rgba(84, 238, 19, 1)"
+    "value" : "normal"
   }, {
-    "value" : "blocked",
+    "codeName" : "Blocked",
+    "color" : "rgba(242, 238, 7, 1)",
     "getPSSysCss" : {
       "cssName" : "codeitemback"
     },
-    "textCls" : "codeitemback",
-    "codeName" : "Blocked",
     "text" : "被阻塞",
-    "color" : "rgba(242, 238, 7, 1)"
+    "textCls" : "codeitemback",
+    "value" : "blocked"
   }, {
-    "value" : "investigate",
     "codeName" : "Investigate",
+    "color" : "rgba(245, 12, 12, 1)",
     "text" : "研究中",
-    "color" : "rgba(245, 12, 12, 1)"
-  } ]
+    "value" : "investigate"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
 }

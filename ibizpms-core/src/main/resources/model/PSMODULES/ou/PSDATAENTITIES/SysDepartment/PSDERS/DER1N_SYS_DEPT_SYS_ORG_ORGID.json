@@ -1,4 +1,21 @@
 {
+  "codeName" : "Org",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment/PSDERS/DER1N_SYS_DEPT_SYS_ORG_ORGID.json",
+  "logicName" : "单位",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysOrganization.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 8,
+  "minorCodeName" : "Depts",
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment.json"
+  },
+  "name" : "DER1N_SYS_DEPT_SYS_ORG_ORGID",
+  "orderValue" : 100,
   "getPSPickupDEField" : {
     "name" : "ORGID",
     "codeName" : "OrgId"
@@ -7,25 +24,8 @@
     "name" : "ORGNAME",
     "codeName" : "OrgName"
   },
-  "nestedRS" : true,
-  "masterOrder" : -1,
-  "removeActionType" : 3,
   "pickupDEFName" : "ORGID",
-  "masterRS" : 8,
+  "removeActionType" : 3,
   "removeOrder" : 0,
-  "getMajorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysOrganization.json"
-  },
-  "orderValue" : 100,
-  "codeName" : "Org",
-  "logicName" : "单位",
-  "dERType" : "DER1N",
-  "getMinorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment.json"
-  },
-  "minorCodeName" : "Depts",
-  "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment/PSDERS/DER1N_SYS_DEPT_SYS_ORG_ORGID.json",
-  "name" : "DER1N_SYS_DEPT_SYS_ORG_ORGID"
+  "nestedRS" : true
 }

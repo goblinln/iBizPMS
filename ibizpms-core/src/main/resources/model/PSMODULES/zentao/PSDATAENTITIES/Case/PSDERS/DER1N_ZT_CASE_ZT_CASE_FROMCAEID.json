@@ -1,24 +1,24 @@
 {
-  "getPSPickupDEField" : {
-    "name" : "FROMCASEID",
-    "codeName" : "FromCaseId"
-  },
-  "masterOrder" : -1,
-  "removeActionType" : -1,
-  "pickupDEFName" : "FROMCAEID",
-  "masterRS" : 0,
-  "removeOrder" : 0,
+  "codeName" : "ZTFromCase",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_CASE_FROMCAEID.json",
   "getMajorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
   },
-  "orderValue" : 100,
-  "codeName" : "ZTFromCase",
-  "dERType" : "DER1N",
+  "masterOrder" : -1,
+  "masterRS" : 0,
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
   },
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_CASE_FROMCAEID.json",
-  "name" : "DER1N_ZT_CASE_ZT_CASE_FROMCAEID"
+  "name" : "DER1N_ZT_CASE_ZT_CASE_FROMCAEID",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "FROMCASEID",
+    "codeName" : "FromCaseId"
+  },
+  "pickupDEFName" : "FROMCAEID",
+  "removeActionType" : -1,
+  "removeOrder" : 0
 }

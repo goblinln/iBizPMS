@@ -1,4 +1,19 @@
 {
+  "codeName" : "Post",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDERS/DER1N_SYS_TEAMMEMBER_SYS_POST_POSTID.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysPost.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 0,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember.json"
+  },
+  "name" : "DER1N_SYS_TEAMMEMBER_SYS_POST_POSTID",
+  "orderValue" : 100,
   "getPSPickupDEField" : {
     "name" : "POSTID",
     "codeName" : "PostId"
@@ -7,22 +22,7 @@
     "name" : "POSTNAME",
     "codeName" : "PostName"
   },
-  "masterOrder" : -1,
-  "removeActionType" : -1,
   "pickupDEFName" : "POSTID",
-  "masterRS" : 0,
-  "removeOrder" : 0,
-  "getMajorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysPost.json"
-  },
-  "orderValue" : 100,
-  "codeName" : "Post",
-  "dERType" : "DER1N",
-  "getMinorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember.json"
-  },
-  "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDERS/DER1N_SYS_TEAMMEMBER_SYS_POST_POSTID.json",
-  "name" : "DER1N_SYS_TEAMMEMBER_SYS_POST_POSTID"
+  "removeActionType" : -1,
+  "removeOrder" : 0
 }

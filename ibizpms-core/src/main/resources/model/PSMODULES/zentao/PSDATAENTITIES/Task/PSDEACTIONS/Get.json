@@ -1,35 +1,35 @@
 {
-  "transactionMode" : "DEFAULT",
-  "paramMode" : 1,
-  "generateTestUnit" : true,
-  "customParam" : false,
-  "builtinAction" : true,
+  "actionMode" : "READ",
+  "actionType" : "BUILTIN",
   "getAfterPSDEActionLogics" : [ {
-    "internalLogic" : true,
+    "attachMode" : "AFTER",
+    "name" : "附加逻辑",
     "getPSDELogic" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/ResetTaskestimate.json"
     },
-    "ignoreException" : false,
     "cloneParam" : false,
-    "attachMode" : "AFTER",
-    "name" : "附加逻辑"
+    "ignoreException" : false,
+    "internalLogic" : true
   } ],
-  "pubServiceDefault" : true,
-  "timeOut" : -1,
+  "codeName" : "Get",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Get.json",
   "extendMode" : 0,
+  "logicName" : "Get",
+  "name" : "Get",
+  "orderValue" : 31,
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"
   },
-  "orderValue" : 31,
-  "codeName" : "Get",
-  "logicName" : "Get",
-  "actionMode" : "READ",
-  "actionType" : "BUILTIN",
+  "paramMode" : 1,
   "requestField" : "ID",
   "requestParamType" : "FIELD",
   "testActionMode" : 0,
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Get.json",
-  "name" : "Get"
+  "timeOut" : -1,
+  "transactionMode" : "DEFAULT",
+  "builtinAction" : true,
+  "customParam" : false,
+  "generateTestUnit" : true,
+  "pubServiceDefault" : true
 }

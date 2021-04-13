@@ -1,48 +1,48 @@
 {
+  "codeListType" : "STATIC",
+  "codeName" : "TestCaseStatusGrid",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/TestCaseStatusGrid.json",
+  "emptyText" : "未定义",
+  "name" : "测试用例状态（表格）",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
   },
   "getPSCodeItems" : [ {
-    "value" : "wait",
     "codeName" : "Wait",
     "text" : "未开始",
+    "value" : "wait",
     "default" : true
   }, {
-    "value" : "normal",
     "codeName" : "Normal",
+    "color" : "rgba(84, 238, 19, 1)",
     "text" : "正常",
-    "color" : "rgba(84, 238, 19, 1)"
+    "value" : "normal"
   }, {
-    "value" : "blocked",
     "codeName" : "Blocked",
+    "color" : "rgba(230, 242, 3, 0.97)",
     "text" : "被阻塞",
-    "color" : "rgba(230, 242, 3, 0.97)"
+    "value" : "blocked"
   }, {
-    "value" : "investigate",
     "codeName" : "Investigate",
+    "color" : "rgba(245, 12, 12, 1)",
     "text" : "研究中",
-    "color" : "rgba(245, 12, 12, 1)"
+    "value" : "investigate"
   }, {
-    "value" : "done",
     "codeName" : "Done",
-    "text" : "已完成"
+    "text" : "已完成",
+    "value" : "done"
   }, {
-    "value" : "storychange",
     "codeName" : "Storychange",
+    "color" : "rgba(254, 8, 8, 1)",
     "text" : "需求变更",
-    "color" : "rgba(254, 8, 8, 1)"
+    "value" : "storychange"
   }, {
-    "value" : "casechange",
     "codeName" : "Casechange",
+    "color" : "rgba(247, 31, 7, 1)",
     "text" : "原用例更新",
-    "color" : "rgba(247, 31, 7, 1)"
+    "value" : "casechange"
   } ],
-  "dynaInstMode" : 1,
-  "codeListType" : "STATIC",
-  "codeName" : "TestCaseStatusGrid",
-  "emptyText" : "未定义",
-  "enableCache" : true,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/TestCaseStatusGrid.json",
-  "name" : "测试用例状态（表格）"
+  "enableCache" : true
 }

@@ -1,7 +1,4 @@
 {
-  "subSysAsCloud" : false,
-  "defaultModule" : false,
-  "subSysModule" : false,
   "getAllPSDataEntities" : [ {
     "modelref" : true,
     "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment.json"
@@ -21,8 +18,11 @@
     "modelref" : true,
     "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember.json"
   } ],
-  "deployId" : "98a604b2a2c8e0ab2884b3c066f6d80b",
   "codeName" : "ou",
+  "deployId" : "98a604b2a2c8e0ab2884b3c066f6d80b",
   "dynaModelFilePath" : "PSMODULES/ou.json",
-  "name" : "ou组织用户管理模块"
+  "name" : "ou组织用户管理模块",
+  "defaultModule" : false,
+  "subSysAsCloud" : false,
+  "subSysModule" : false
 }

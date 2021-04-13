@@ -1,52 +1,52 @@
 {
-  "codeItemValueNumber" : true,
-  "subSysCodeList" : false,
-  "subSysAsCloud" : false,
-  "systemTag" : "iBizPMS",
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Story__pri.json",
   "codeName" : "Story__pri",
-  "userScope" : false,
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Story__pri.json",
   "emptyText" : "未定义",
-  "enableCache" : true,
-  "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "1",
+    "codeName" : "Item_1",
+    "color" : "rgba(230, 43, 43, 1)",
     "getPSSysCss" : {
       "cssName" : "text-red-border-color"
     },
-    "textCls" : "text-red-border-color",
-    "codeName" : "Item_1",
     "text" : "1",
-    "color" : "rgba(230, 43, 43, 1)"
+    "textCls" : "text-red-border-color",
+    "value" : "1"
   }, {
-    "value" : "2",
+    "codeName" : "Item_2",
+    "color" : "rgba(225, 228, 33, 1)",
     "getPSSysCss" : {
       "cssName" : "text-pink-border-color"
     },
-    "textCls" : "text-pink-border-color",
-    "codeName" : "Item_2",
     "text" : "2",
-    "color" : "rgba(225, 228, 33, 1)"
+    "textCls" : "text-pink-border-color",
+    "value" : "2"
   }, {
-    "value" : "3",
+    "codeName" : "Item_3",
+    "color" : "rgba(52, 8, 248, 1)",
     "getPSSysCss" : {
       "cssName" : "text-blue-border-color"
     },
-    "textCls" : "text-blue-border-color",
-    "codeName" : "Item_3",
     "text" : "3",
-    "color" : "rgba(52, 8, 248, 1)",
+    "textCls" : "text-blue-border-color",
+    "value" : "3",
     "default" : true
   }, {
-    "value" : "4",
+    "codeName" : "Item_4",
+    "color" : "rgba(80, 133, 63, 1)",
     "getPSSysCss" : {
       "cssName" : "text-green-border-color"
     },
-    "textCls" : "text-green-border-color",
-    "codeName" : "Item_4",
     "text" : "4",
-    "color" : "rgba(80, 133, 63, 1)"
-  } ]
+    "textCls" : "text-green-border-color",
+    "value" : "4"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : true,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
 }

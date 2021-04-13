@@ -1,9 +1,9 @@
 {
-  "serviceOrder" : 0,
-  "serviceHandler" : "synchronousPMSToOuSystemService",
   "codeName" : "synchronousPMSToOuSystemService",
-  "serviceContainer" : "SC01",
-  "startMode" : "MANUAL",
   "dynaModelFilePath" : "PSMODULES/zentao/PSSYSBACKSERVICES/synchronousPMSToOuSystemService.json",
-  "name" : "定时任务同步PMS账户到OU系统"
+  "name" : "定时任务同步PMS账户到OU系统",
+  "serviceContainer" : "SC01",
+  "serviceHandler" : "synchronousPMSToOuSystemService",
+  "serviceOrder" : 0,
+  "startMode" : "MANUAL"
 }

@@ -1,18 +1,18 @@
 {
+  "codeListType" : "STATIC",
+  "codeName" : "BugCreateResolve",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/BugCreateResolve.json",
+  "emptyText" : "未定义",
+  "name" : "Bug创建解决版本",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
   },
   "getPSCodeItems" : [ {
-    "value" : "1",
     "codeName" : "Item_1",
-    "text" : "创建"
+    "text" : "创建",
+    "value" : "1"
   } ],
-  "dynaInstMode" : 1,
-  "codeListType" : "STATIC",
-  "codeName" : "BugCreateResolve",
-  "emptyText" : "未定义",
-  "enableCache" : true,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/BugCreateResolve.json",
-  "name" : "Bug创建解决版本"
+  "enableCache" : true
 }

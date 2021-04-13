@@ -1,502 +1,7 @@
 {
-  "vCName" : "trunk",
   "getAllPSApps" : [ {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSSYSAPP.json"
-  } ],
-  "getAllPSSysUserRoles" : [ {
-    "codeName" : "ProductManger",
-    "roleType" : "CUSTOM",
-    "roleTag" : "ProductManger",
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProductManger.json",
-    "name" : "产品经理"
-  }, {
-    "codeName" : "ProductSupervisor",
-    "roleType" : "CUSTOM",
-    "roleTag" : "ProductSupervisor",
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProductSupervisor.json",
-    "name" : "产品主管"
-  }, {
-    "codeName" : "TestSupervisor",
-    "roleType" : "CUSTOM",
-    "roleTag" : "TestSupervisor",
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/TestSupervisor.json",
-    "name" : "测试主管"
-  }, {
-    "codeName" : "ProjectManger",
-    "roleType" : "CUSTOM",
-    "roleTag" : "ProjectManger",
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProjectManger.json",
-    "name" : "项目经理"
-  }, {
-    "codeName" : "ResearchDirector",
-    "roleType" : "CUSTOM",
-    "roleTag" : "ResearchDirector",
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ResearchDirector.json",
-    "name" : "研发主管"
-  } ],
-  "getAllPSDataEntities" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/AccountTaskestimate.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Block.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Branch.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Build.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/CaseStats.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Company.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/CompanyStats.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Compile.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Config.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Cron.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Dept.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/DocContent.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DynaDashboard.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Effort.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Entry.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Extension.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Group.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/GroupPriv.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/History.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProKeyword.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProMessage.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProPlugin.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProTag.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProduct.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSystem.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBzDoc.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbiLogin.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductDaily.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectMonthly.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzAgent.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzCase.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzFavorites.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLib.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTempletDetail.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportRoleConfig.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzTop.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproConfig.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproProductUserTask.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproProjectUserTask.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/ImChat.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/ImChatuser.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/ImClient.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/ImConference.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/ImConferenceaction.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/ImMessage.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/ImMessagestatus.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/ImQueue.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Jenkins.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Job.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Lang.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Log.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Notify.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDEField.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDataEntity.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSModule.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysSADE.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysServiceAPI.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysApp.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqItem.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqModule.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysSFPub.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysServiceAPI.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSystemDBCfg.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectProduct.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Relation.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Repo.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/RepoBranch.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/RepoFiles.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/RepoHistory.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Score.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/StoryStage.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysOrganization.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysPost.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeam.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateFeatures.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUser.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimateStats.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskMsgRecord.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskStats.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Team.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestResult.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/User.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserContact.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserGroup.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserQuery.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserView.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/WebHook.json"
   } ],
   "getAllPSCodeLists" : [ {
     "modelref" : true,
@@ -1486,775 +991,1269 @@
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSCODELISTS/ConfigGroup.json"
   } ],
-  "getAllPSSysUniReses" : [ {
-    "resCode" : "UNIVERSALCREATE",
-    "name" : "通用创建",
-    "id" : "ibiz__UNIVERSALCREATE"
-  }, {
-    "resCode" : "CASE_CASECOF_BUT",
-    "name" : "测试用例（用例确认）",
-    "id" : "ibiz__CASE_CASECOF_BUT"
-  }, {
-    "resCode" : "CASE_DELETE_BUT",
-    "name" : "测试用例删除",
-    "id" : "ibiz__CASE_DELETE_BUT"
-  }, {
-    "resCode" : "CUTINTBEHAVIOR",
-    "name" : "通用自定义界面行为",
-    "id" : "ibiz__CUTINTBEHAVIOR"
-  }, {
-    "resCode" : "BUG_DELETE_BUT",
-    "name" : "Bug删除",
-    "id" : "ibiz__BUG_DELETE_BUT"
-  }, {
-    "resCode" : "BUG_CREATE_BUT",
-    "name" : "bug新建",
-    "id" : "ibiz__BUG_CREATE_BUT"
-  }, {
-    "resCode" : "UNIVERSALSAVE",
-    "name" : "通用保存",
-    "id" : "ibiz__UNIVERSALSAVE"
-  }, {
-    "resCode" : "CASE_UNLINK_BUT",
-    "name" : "测试用例移除",
-    "id" : "ibiz__CASE_UNLINK_BUT"
-  }, {
-    "resCode" : "STORY_FJTASK_BUT",
-    "name" : "需求分解任务",
-    "id" : "ibiz__STORY_FJTASK_BUT"
-  }, {
-    "resCode" : "CASE_RESULT_BUT",
-    "name" : "测试用例结果",
-    "id" : "ibiz__CASE_RESULT_BUT"
-  }, {
-    "resCode" : "PROJ_MANAGE_BUT",
-    "name" : "项目管理",
-    "id" : "ibiz__PROJ_MANAGE_BUT"
-  }, {
-    "resCode" : "STORY_REVIEW_BUT",
-    "name" : "需求评审",
-    "id" : "ibiz__STORY_REVIEW_BUT"
-  }, {
-    "resCode" : "TASK_DELETE_BUT",
-    "name" : "任务删除",
-    "id" : "ibiz__TASK_DELETE_BUT"
-  }, {
-    "resCode" : "PROJ_SUSPEND_BUT",
-    "name" : "项目挂起",
-    "id" : "ibiz__PROJ_SUSPEND_BUT"
-  }, {
-    "resCode" : "PRODSTA_STOREOP_BUT",
-    "name" : "产品统计打开需求",
-    "id" : "ibiz__PRODSTA_STOREOP_BUT"
-  }, {
-    "resCode" : "TESTMOD_FIX_BUT",
-    "name" : "测试模块修复路径",
-    "id" : "ibiz__TESTMOD_FIX_BUT"
-  }, {
-    "resCode" : "PRODSTA_PROJCRT_BUT",
-    "name" : "产品统计创建项目",
-    "id" : "ibiz__PRODSTA_PROJCRT_BUT"
-  }, {
-    "resCode" : "WEEKLY_SUBMIT_BUT",
-    "name" : "周报已提交",
-    "id" : "report__WEEKLY_SUBMIT_BUT"
-  }, {
-    "resCode" : "TESTT_OPEN_BUT",
-    "name" : "测试版本打开概况",
-    "id" : "ibiz__TESTT_OPEN_BUT"
-  }, {
-    "resCode" : "ADMIN",
-    "name" : "管理员操作",
-    "id" : "ibiz__ADMIN"
-  }, {
-    "resCode" : "STORY_CLOSED_BUT",
-    "name" : "需求关闭",
-    "id" : "ibiz__STORY_CLOSED_BUT"
-  }, {
-    "resCode" : "BUG_EDIT_BUT",
-    "name" : "Bug编辑",
-    "id" : "ibiz__BUG_EDIT_BUT"
-  }, {
-    "resCode" : "STORY_DELETE_BUT",
-    "name" : "需求删除",
-    "id" : "ibiz__STORY_DELETE_BUT"
-  }, {
-    "resCode" : "DOCLIBMODULE_FAVOUR_BUT",
-    "name" : "收藏文档库分类",
-    "id" : "ibiz__DOCLIBMODULE_FAVOUR_BUT"
-  }, {
-    "resCode" : "STEP_CREATE_BUT",
-    "name" : "用例库用例步骤新建",
-    "id" : "ibiz__STEP_CREATE_BUT"
-  }, {
-    "resCode" : "LIB_OPEN_BUT",
-    "name" : "用例库概况",
-    "id" : "ibiz__LIB_OPEN_BUT"
+  "getAllPSDataEntities" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/AccountTaskestimate.json"
   }, {
-    "resCode" : "PROP_LSTORY_BUT",
-    "name" : "计划关联需求",
-    "id" : "ibiz__PROP_LSTORY_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
   }, {
-    "resCode" : "TESTT_EDIT_BUT",
-    "name" : "测试版本编辑",
-    "id" : "ibiz__TESTT_EDIT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Block.json"
   }, {
-    "resCode" : "BUG_UNLINK_BUT",
-    "name" : "Bug移除",
-    "id" : "ibiz__BUG_UNLINK_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Branch.json"
   }, {
-    "resCode" : "CASE_CREATE_BUT",
-    "name" : "测试用例新建",
-    "id" : "ibiz__CASE_CREATE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
   }, {
-    "resCode" : "PROJ_CLOSED_BUT",
-    "name" : "项目关闭",
-    "id" : "ibiz__PROJ_CLOSED_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats.json"
   }, {
-    "resCode" : "PROD_UPDATE_BUT",
-    "name" : "产品更新",
-    "id" : "ibiz__PROD_UPDATE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Build.json"
   }, {
-    "resCode" : "CASE_EDIT_BUT",
-    "name" : "测试用例编辑",
-    "id" : "ibiz__CASE_EDIT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn.json"
   }, {
-    "resCode" : "CASE_CASERESULT_BUT",
-    "name" : "测试用例（用例结果）",
-    "id" : "ibiz__CASE_CASERESULT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
   }, {
-    "resCode" : "RELEASE_TERMINATE",
-    "name" : "发布操作列（停止维护）",
-    "id" : "ibiz__RELEASE_TERMINATE"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/CaseStats.json"
   }, {
-    "resCode" : "BUILD_SUBT_BUT",
-    "name" : "项目版本提交测试",
-    "id" : "ibiz__BUILD_SUBT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
   }, {
-    "resCode" : "PROJ_DELETE_BUT",
-    "name" : "项目删除",
-    "id" : "ibiz__PROJ_DELETE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Company.json"
   }, {
-    "resCode" : "PROD_EDIT_BUT",
-    "name" : "产品编辑",
-    "id" : "ibiz__PROD_EDIT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/CompanyStats.json"
   }, {
-    "resCode" : "DOCLIB_NFAVOUR_BUT",
-    "name" : "取消收藏文档库",
-    "id" : "ibiz__DOCLIB_NFAVOUR_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Compile.json"
   }, {
-    "resCode" : "STEP_EDIT_BUT",
-    "name" : "用例库用例步骤编辑",
-    "id" : "ibiz__STEP_EDIT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Config.json"
   }, {
-    "resCode" : "BUILD_DELETE_BUT",
-    "name" : "项目版本删除",
-    "id" : "ibiz__BUILD_DELETE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Cron.json"
   }, {
-    "resCode" : "LIBM_OPEN_BUT",
-    "name" : "用例库模块概况",
-    "id" : "ibiz__LIBM_OPEN_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Dept.json"
   }, {
-    "resCode" : "PROD_CLOSED_BUT",
-    "name" : "产品关闭",
-    "id" : "ibiz__PROD_CLOSED_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
   }, {
-    "resCode" : "DOCLIBMODULE_MAINTENANCE_BUT",
-    "name" : "维护分类",
-    "id" : "ibiz__DOCLIBMODULE_MAINTENANCE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/DocContent.json"
   }, {
-    "resCode" : "TASK_CREATE_BUT",
-    "name" : "任务新建",
-    "id" : "ibiz__TASK_CREATE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
   }, {
-    "resCode" : "TESTT_START_BUT",
-    "name" : "测试版本开始",
-    "id" : "ibiz__TESTT_START_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
   }, {
-    "resCode" : "TEST_TESTTASK",
-    "name" : "测试分页导航-测试单",
-    "id" : "ibiz__TEST_TESTTASK"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DynaDashboard.json"
   }, {
-    "resCode" : "PROP_EDIT_BUT",
-    "name" : "计划编辑",
-    "id" : "ibiz__PROP_EDIT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Effort.json"
   }, {
-    "resCode" : "TESTSU_EDITSUITE_BUT",
-    "name" : "测试套件编辑",
-    "id" : "ibiz__TESTSU_EDITSUITE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload.json"
   }, {
-    "resCode" : "PROJ_CREATE_BUT",
-    "name" : "项目新建",
-    "id" : "ibiz__PROJ_CREATE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Entry.json"
   }, {
-    "resCode" : "TESTSU_DELETE_BUT",
-    "name" : "测试套件删除",
-    "id" : "ibiz__TESTSU_DELETE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Extension.json"
   }, {
-    "resCode" : "TASK_CLOSE_BUT",
-    "name" : "任务关闭",
-    "id" : "ibiz__TASK_CLOSE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
   }, {
-    "resCode" : "PROP_CREATE_BUT",
-    "name" : "计划新建",
-    "id" : "ibiz__PROP_CREATE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Group.json"
   }, {
-    "resCode" : "STEP_OPEN_BUT",
-    "name" : "用例库用例步骤概况",
-    "id" : "ibiz__STEP_OPEN_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/GroupPriv.json"
   }, {
-    "resCode" : "TASK_PROCEED_BUT",
-    "name" : "任务继续",
-    "id" : "ibiz__TASK_PROCEED_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/History.json"
   }, {
-    "resCode" : "STORY_UNLP_BUT",
-    "name" : "需求移除项目关联",
-    "id" : "ibiz__STORY_UNLP_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProKeyword.json"
   }, {
-    "resCode" : "REPORTLY_EDIT_BUT",
-    "name" : "汇报编辑",
-    "id" : "report__REPORTLY_EDIT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProMessage.json"
   }, {
-    "resCode" : "LICASE_EDIT_BUT",
-    "name" : "用例库用例编辑",
-    "id" : "ibiz__LICASE_EDIT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProPlugin.json"
   }, {
-    "resCode" : "WEEKLY_NSUBMIT_BUT",
-    "name" : "周报待提交",
-    "id" : "ibiz__WEEKLY_NSUBMIT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProTag.json"
   }, {
-    "resCode" : "BUG_FAVOR_BUT",
-    "name" : "Bug已收藏",
-    "id" : "ibiz__BUG_FAVOR_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProduct.json"
   }, {
-    "resCode" : "TESTT_BLOCK_BUT",
-    "name" : "测试版本阻塞",
-    "id" : "ibiz__TESTT_BLOCK_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory.json"
   }, {
-    "resCode" : "DOCLIB_FAVOUR_BUT",
-    "name" : "收藏文档库",
-    "id" : "ibiz__DOCLIB_FAVOUR_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule.json"
   }, {
-    "resCode" : "TASK_ACTIVATION_BUT",
-    "name" : "任务激活",
-    "id" : "ibiz__TASK_ACTIVATION_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl.json"
   }, {
-    "resCode" : "BUG_RESOLVE_BUT",
-    "name" : "Bug解决",
-    "id" : "ibiz__BUG_RESOLVE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSystem.json"
   }, {
-    "resCode" : "STORY_NFAVOR_BUT",
-    "name" : "需求待收藏",
-    "id" : "ibiz__STORY_NFAVOR_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBzDoc.json"
   }, {
-    "resCode" : "TESTT_LCASE_BUT",
-    "name" : "测试版本关联用例",
-    "id" : "ibiz__TESTT_LCASE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbiLogin.json"
   }, {
-    "resCode" : "LICASE_CREATE_BUT",
-    "name" : "用例库用例新建",
-    "id" : "ibiz__LICASE_CREATE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex.json"
   }, {
-    "resCode" : "CASE_NFAVOR_BUT",
-    "name" : "用例待收藏",
-    "id" : "ibiz__CASE_NFAVOR_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductDaily.json"
   }, {
-    "resCode" : "TASK_COMPLETE_BUT",
-    "name" : "任务完成",
-    "id" : "ibiz__TASK_COMPLETE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly.json"
   }, {
-    "resCode" : "TASK_START_BUT",
-    "name" : "任务开始",
-    "id" : "ibiz__TASK_START_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly.json"
   }, {
-    "resCode" : "LIB_EDIT_BUT",
-    "name" : "用例库编辑",
-    "id" : "ibiz__LIB_EDIT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily.json"
   }, {
-    "resCode" : "TESTSU_LINKCASE_BUT",
-    "name" : "测试套件关联用例",
-    "id" : "ibiz__TESTSU_LINKCASE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectMonthly.json"
   }, {
-    "resCode" : "PLUS",
-    "name" : "Plus增强权限",
-    "id" : "ibiz__PLUS"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly.json"
   }, {
-    "resCode" : "PROJECT_REPORT_BUT",
-    "name" : "项目报告列表",
-    "id" : "ibiz__PROJECT_REPORT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzAgent.json"
   }, {
-    "resCode" : "TESTSU_CREATE_BUT",
-    "name" : "测试套件新建",
-    "id" : "ibiz__TESTSU_CREATE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzCase.json"
   }, {
-    "resCode" : "FILE_DOWNLOAD_BUT",
-    "name" : "附件下载",
-    "id" : "ibiz__FILE_DOWNLOAD_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily.json"
   }, {
-    "resCode" : "DOC_NFAVOUR_BUT",
-    "name" : "取消收藏文档",
-    "id" : "ibiz__DOC_NFAVOUR_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzFavorites.json"
   }, {
-    "resCode" : "BUG_CREATECASE_BUT",
-    "name" : "Bug建用例",
-    "id" : "ibiz__BUG_CREATECASE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLib.json"
   }, {
-    "resCode" : "RELEASE_ACTIVE",
-    "name" : "发布操作列（激活）",
-    "id" : "ibiz__RELEASE_ACTIVE"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep.json"
   }, {
-    "resCode" : "PROJ_DELAY_BUT",
-    "name" : "项目延期",
-    "id" : "ibiz__PROJ_DELAY_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps.json"
   }, {
-    "resCode" : "PROJ_EDIT_BUT",
-    "name" : "项目编辑",
-    "id" : "ibiz__PROJ_EDIT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule.json"
   }, {
-    "resCode" : "LICASE_OPEN_BUT",
-    "name" : "用例库用例概况",
-    "id" : "ibiz__LICASE_OPEN_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly.json"
   }, {
-    "resCode" : "STORY_ACTIVE_BUT",
-    "name" : "需求激活",
-    "id" : "ibiz__STORY_ACTIVE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory.json"
   }, {
-    "resCode" : "PROD_CREATE_BUT",
-    "name" : "产品新建",
-    "id" : "ibiz__PROD_CREATE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet.json"
   }, {
-    "resCode" : "TESTT_CREATE_BUT",
-    "name" : "测试版本新建",
-    "id" : "ibiz__TESTT_CREATE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTempletDetail.json"
   }, {
-    "resCode" : "CASE_TOBUG_BUT",
-    "name" : "测试用例转BUG",
-    "id" : "ibiz__CASE_TOBUG_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember.json"
   }, {
-    "resCode" : "CASE_CASETOBUG_BUT",
-    "name" : "测试用例（用例转BUG）",
-    "id" : "ibiz__CASE_CASETOBUG_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport.json"
   }, {
-    "resCode" : "MONTHLY_EDIT_BUT",
-    "name" : "月报编辑",
-    "id" : "report__MONTHLY_EDIT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportRoleConfig.json"
   }, {
-    "resCode" : "PRODUCT_MANAGER",
-    "name" : "产品经理",
-    "id" : "PRODUCT_MANAGER"
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly.json"
   }, {
-    "resCode" : "PROJ_START_BUT",
-    "name" : "项目开始",
-    "id" : "ibiz__PROJ_START_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzTop.json"
   }, {
-    "resCode" : "LIBM_CREATE_BUT",
-    "name" : "用例库模块新建",
-    "id" : "ibiz__LIBM_CREATE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly.json"
   }, {
-    "resCode" : "TASK_FAVOR_BUT",
-    "name" : "任务已收藏",
-    "id" : "ibiz__TASK_FAVOR_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproConfig.json"
   }, {
-    "resCode" : "PROJT_TM_BUT",
-    "name" : "项目团队管理",
-    "id" : "ibiz__PROJT_TM_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproProductUserTask.json"
   }, {
-    "resCode" : "TASK_PAUSE_BUT",
-    "name" : "任务暂停",
-    "id" : "ibiz__TASK_PAUSE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproProjectUserTask.json"
   }, {
-    "resCode" : "TESTT_DELETE_BUT",
-    "name" : "测试版本删除",
-    "id" : "ibiz__TESTT_DELETE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ImChat.json"
   }, {
-    "resCode" : "BUG_CLOSE_BUT",
-    "name" : "Bug关闭",
-    "id" : "ibiz__BUG_CLOSE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ImChatuser.json"
   }, {
-    "resCode" : "STORY_EDIT_BUT",
-    "name" : "需求编辑",
-    "id" : "ibiz__STORY_EDIT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ImClient.json"
   }, {
-    "resCode" : "DOC_FAVOUR_BUT",
-    "name" : "收藏文档",
-    "id" : "ibiz__DOC_FAVOUR_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ImConference.json"
   }, {
-    "resCode" : "PRODSTA_STORYCRT_BUT",
-    "name" : "产品统计提需求",
-    "id" : "ibiz__PRODSTA_STORYCRT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ImConferenceaction.json"
   }, {
-    "resCode" : "BUG_NFAVOR_BUT",
-    "name" : "Bug待收藏",
-    "id" : "ibiz__BUG_NFAVOR_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ImMessage.json"
   }, {
-    "resCode" : "PROP_CHILD_BUT",
-    "name" : "计划子计划",
-    "id" : "ibiz__PROP_CHILD_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ImMessagestatus.json"
   }, {
-    "resCode" : "TASK_XQCHANGE_BUT",
-    "name" : "任务确认需求变更",
-    "id" : "ibiz__TASK_XQCHANGE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ImQueue.json"
   }, {
-    "resCode" : "STORY_ASS_BUT",
-    "name" : "需求指派给",
-    "id" : "ibiz__STORY_ASS_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Jenkins.json"
   }, {
-    "resCode" : "PRODUCTLEFT",
-    "name" : "产品左侧资源",
-    "id" : "ibiz__PRODUCTLEFT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Job.json"
   }, {
-    "resCode" : "UNIVERSALEDIT",
-    "name" : "通用编辑",
-    "id" : "ibiz__UNIVERSALEDIT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Lang.json"
   }, {
-    "resCode" : "REPORT_EDIT_BUT",
-    "name" : "测试报告编辑",
-    "id" : "ibiz__REPORT_EDIT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Log.json"
   }, {
-    "resCode" : "BUG_TOSTORY_BUT",
-    "name" : "Bug提需求",
-    "id" : "ibiz__BUG_TOSTORY_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
   }, {
-    "resCode" : "DOCLIBMODULE_NFAVOUR_BUT",
-    "name" : "取消收藏文档库分类",
-    "id" : "ibiz__DOCLIBMODULE_NFAVOUR_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Notify.json"
   }, {
-    "resCode" : "TEST_TESTREPORT",
-    "name" : "测试分页导航-测试报告",
-    "id" : "ibiz__TEST_TESTREPORT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM.json"
   }, {
-    "resCode" : "TASK_ASSIGN_BUT",
-    "name" : "任务指派",
-    "id" : "ibiz__TASK_ASSIGN_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDEField.json"
   }, {
-    "resCode" : "TESTT_CLOSED_BUT",
-    "name" : "测试版本关闭",
-    "id" : "ibiz__TESTT_CLOSED_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDataEntity.json"
   }, {
-    "resCode" : "PROP_LBUG_BUT",
-    "name" : "计划关联bug",
-    "id" : "ibiz__PROP_LBUG_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSModule.json"
   }, {
-    "resCode" : "CASE_RUN_BUT",
-    "name" : "测试用例执行",
-    "id" : "ibiz__CASE_RUN_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysSADE.json"
   }, {
-    "resCode" : "STORY_CHANGED_BUT",
-    "name" : "需求变更",
-    "id" : "ibiz__STORY_CHANGED_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSubSysServiceAPI.json"
   }, {
-    "resCode" : "PROJ_ACTIVATION_BUT",
-    "name" : "项目激活",
-    "id" : "ibiz__PROJ_ACTIVATION_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysApp.json"
   }, {
-    "resCode" : "STORY_CCASE_BUT",
-    "name" : "需求建用例",
-    "id" : "ibiz__STORY_CCASE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqItem.json"
   }, {
-    "resCode" : "RELEASE_COMMON",
-    "name" : "发布操作列（通用）",
-    "id" : "ibiz__RELEASE_COMMON"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysReqModule.json"
   }, {
-    "resCode" : "PRODSTA_ADDPROD_BUT",
-    "name" : "产品统计添加产品",
-    "id" : "ibiz__PRODSTA_ADDPROD_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysRunSession.json"
   }, {
-    "resCode" : "BUG_ACTIVATE_BUT",
-    "name" : "Bug激活",
-    "id" : "ibiz__BUG_ACTIVATE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysSFPub.json"
   }, {
-    "resCode" : "MONTHLY_SUBMIT_BUT",
-    "name" : "月报提交",
-    "id" : "report__MONTHLY_SUBMIT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysServiceAPI.json"
   }, {
-    "resCode" : "DOC_DELETE_BUT",
-    "name" : "文档删除",
-    "id" : "ibiz__DOC_DELETE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSystemDBCfg.json"
   }, {
-    "resCode" : "STORY_FAVOR_BUT",
-    "name" : "需求已收藏",
-    "id" : "ibiz__STORY_FAVOR_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
   }, {
-    "resCode" : "PRODSTA_RELCRT_BUT",
-    "name" : "产品统计创建发布",
-    "id" : "ibiz__PRODSTA_RELCRT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife.json"
   }, {
-    "resCode" : "TASK_CONSUM_BUT",
-    "name" : "任务工时",
-    "id" : "ibiz__TASK_CONSUM_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine.json"
   }, {
-    "resCode" : "TESTMOD_OQCVIEW_BUT",
-    "name" : "测试模块打开快速编辑试图",
-    "id" : "ibiz__TESTMOD_OQCVIEW_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
   }, {
-    "resCode" : "TASK_FORWARD_BUT",
-    "name" : "任务转交",
-    "id" : "ibiz__TASK_FORWARD_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
   }, {
-    "resCode" : "LIBM_EDIT_BUT",
-    "name" : "用例库模块编辑",
-    "id" : "ibiz__LIBM_EDIT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats.json"
   }, {
-    "resCode" : "BUG_CONFIRM_BUT",
-    "name" : "Bug确认",
-    "id" : "ibiz__BUG_CONFIRM_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum.json"
   }, {
-    "resCode" : "DOC_EDIT_BUT",
-    "name" : "文档编辑",
-    "id" : "ibiz__DOC_EDIT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
   }, {
-    "resCode" : "REPORT_DELETE_BUT",
-    "name" : "测试报告删除",
-    "id" : "ibiz__REPORT_DELETE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
   }, {
-    "resCode" : "PROP_DELETE_BUT",
-    "name" : "计划删除",
-    "id" : "ibiz__PROP_DELETE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectProduct.json"
   }, {
-    "resCode" : "UNIVERSALDELETE",
-    "name" : "通用删除",
-    "id" : "ibiz__UNIVERSALDELETE"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats.json"
   }, {
-    "resCode" : "DOCLIBMODULE_EDIT_BUT",
-    "name" : "文档库分类编辑",
-    "id" : "ibiz__DOCLIBMODULE_EDIT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory.json"
   }, {
-    "resCode" : "TASK_SUBTASKS_BUT",
-    "name" : "任务子任务",
-    "id" : "ibiz__TASK_SUBTASKS_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate.json"
   }, {
-    "resCode" : "PROJ_TEST_TESTTASK",
-    "name" : "项目分页导航-测试-测试单",
-    "id" : "ibiz__PROJ_TEST_TESTTASK"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam.json"
   }, {
-    "resCode" : "LIB_CREATE_BUT",
-    "name" : "用例库新建",
-    "id" : "ibiz__LIB_CREATE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Relation.json"
   }, {
-    "resCode" : "DOCLIB_EDIT_BUT",
-    "name" : "文档库编辑",
-    "id" : "ibiz__DOCLIB_EDIT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
   }, {
-    "resCode" : "FILE_DELETE_BUT",
-    "name" : "附件删除",
-    "id" : "ibiz__FILE_DELETE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Repo.json"
   }, {
-    "resCode" : "REPORT_CREATE_BUT",
-    "name" : "测试报告新建",
-    "id" : "ibiz__REPORT_CREATE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/RepoBranch.json"
   }, {
-    "resCode" : "REPORTLY_SUBMIT_BUT",
-    "name" : "汇报提交",
-    "id" : "report__REPORTLY_SUBMIT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/RepoFiles.json"
   }, {
-    "resCode" : "DAILY_SUBMIT_BUT",
-    "name" : "日报提交",
-    "id" : "report__DAILY_SUBMIT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/RepoHistory.json"
   }, {
-    "resCode" : "CASE_CASERUN_BUT",
-    "name" : "测试用例（用例执行）",
-    "id" : "ibiz__CASE_CASERUN_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Score.json"
   }, {
-    "resCode" : "CASE_FAVOR_BUT",
-    "name" : "用例已收藏",
-    "id" : "ibiz__CASE_FAVOR_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
   }, {
-    "resCode" : "PROD_DELETE_BUT",
-    "name" : "产品删除",
-    "id" : "ibiz__PROD_DELETE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec.json"
   }, {
-    "resCode" : "TASK_NFAVOR_BUT",
-    "name" : "任务待收藏",
-    "id" : "ibiz__TASK_NFAVOR_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/StoryStage.json"
   }, {
-    "resCode" : "STORY_XQXF_BUT",
-    "name" : "需求细分",
-    "id" : "ibiz__STORY_XQXF_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase.json"
   }, {
-    "resCode" : "BUILD_EDIT_BUT",
-    "name" : "项目版本编辑",
-    "id" : "ibiz__BUILD_EDIT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment.json"
   }, {
-    "resCode" : "IBZ_LIB_M",
-    "name" : "用例库管理",
-    "id" : "ibiz__IBZ_LIB_M"
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
   }, {
-    "resCode" : "TASK_CANCEL_BUT",
-    "name" : "任务取消",
-    "id" : "ibiz__TASK_CANCEL_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysOrganization.json"
   }, {
-    "resCode" : "PROJECT_MANAGER",
-    "name" : "项目经理",
-    "id" : "PROJECT_MANAGER"
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysPost.json"
   }, {
-    "resCode" : "BUILD_LINK_BUT",
-    "name" : "项目版本关联Bug（需求）",
-    "id" : "ibiz__BUILD_LINK_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole.json"
   }, {
-    "resCode" : "TESTT_ACTIVITE_BUT",
-    "name" : "测试版本激活",
-    "id" : "ibiz__TESTT_ACTIVITE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeam.json"
   }, {
-    "resCode" : "BUILD_CREATE_BUT",
-    "name" : "项目版本新建",
-    "id" : "ibiz__BUILD_CREATE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember.json"
   }, {
-    "resCode" : "CASE_CONFIRM_BUT",
-    "name" : "测试用例确认",
-    "id" : "ibiz__CASE_CONFIRM_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateFeatures.json"
   }, {
-    "resCode" : "PRODSTA_PLANCRT_BUT",
-    "name" : "产品统计创建计划",
-    "id" : "ibiz__PRODSTA_PLANCRT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog.json"
   }, {
-    "resCode" : "STORY_CREATE_BUT",
-    "name" : "需求新建",
-    "id" : "ibiz__STORY_CREATE_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUser.json"
   }, {
-    "resCode" : "TASK_EDIT_BUT",
-    "name" : "任务编辑",
-    "id" : "ibiz__TASK_EDIT_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole.json"
   }, {
-    "resCode" : "BUG_ASSIGNTO_BUT",
-    "name" : "Bug指派",
-    "id" : "ibiz__BUG_ASSIGNTO_BUT"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimateStats.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskMsgRecord.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskStats.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Team.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestResult.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/User.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserContact.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserGroup.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserQuery.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserView.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/WebHook.json"
   } ],
   "getAllPSSysBackServices" : [ {
-    "serviceOrder" : 0,
-    "serviceHandler" : "PushProjectWeekly",
     "codeName" : "pushProjectWeekly",
-    "serviceContainer" : "SC01",
-    "startMode" : "AUTO",
     "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/pushProjectWeekly.json",
-    "name" : "定时推送项目周报"
-  }, {
+    "name" : "定时推送项目周报",
+    "serviceContainer" : "SC01",
+    "serviceHandler" : "PushProjectWeekly",
     "serviceOrder" : 0,
-    "serviceHandler" : "BurnService",
+    "startMode" : "AUTO"
+  }, {
     "codeName" : "BurnService",
-    "serviceContainer" : "SC01",
-    "startMode" : "MANUAL",
     "dynaModelFilePath" : "PSMODULES/zentao/PSSYSBACKSERVICES/BurnService.json",
-    "name" : "定时更新燃尽图服务"
-  }, {
+    "name" : "定时更新燃尽图服务",
+    "serviceContainer" : "SC01",
+    "serviceHandler" : "BurnService",
     "serviceOrder" : 0,
-    "serviceHandler" : "synchronousPMSToOuSystemService",
+    "startMode" : "MANUAL"
+  }, {
     "codeName" : "synchronousPMSToOuSystemService",
-    "serviceContainer" : "SC01",
-    "startMode" : "MANUAL",
     "dynaModelFilePath" : "PSMODULES/zentao/PSSYSBACKSERVICES/synchronousPMSToOuSystemService.json",
-    "name" : "定时任务同步PMS账户到OU系统"
-  }, {
+    "name" : "定时任务同步PMS账户到OU系统",
+    "serviceContainer" : "SC01",
+    "serviceHandler" : "synchronousPMSToOuSystemService",
     "serviceOrder" : 0,
-    "serviceHandler" : "PushProductWeekly",
+    "startMode" : "MANUAL"
+  }, {
     "codeName" : "SumProducctWeekly",
-    "serviceContainer" : "SC01",
-    "startMode" : "MANUAL",
     "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/SumProducctWeekly.json",
-    "name" : "定时生成汇总产品周报"
-  }, {
+    "name" : "定时生成汇总产品周报",
+    "serviceContainer" : "SC01",
+    "serviceHandler" : "PushProductWeekly",
     "serviceOrder" : 0,
-    "serviceHandler" : "PushReportUserMonthlyService",
+    "startMode" : "MANUAL"
+  }, {
     "codeName" : "PushReportUserMonthlyService",
-    "serviceContainer" : "SC01",
-    "startMode" : "MANUAL",
     "dynaModelFilePath" : "PSMODULES/report/PSSYSBACKSERVICES/PushReportUserMonthlyService.json",
-    "name" : "定时推送待阅提醒用户月报"
-  }, {
+    "name" : "定时推送待阅提醒用户月报",
+    "serviceContainer" : "SC01",
+    "serviceHandler" : "PushReportUserMonthlyService",
     "serviceOrder" : 0,
-    "serviceHandler" : "CreateReportUserWeeklyService",
+    "startMode" : "MANUAL"
+  }, {
     "codeName" : "CreateReportUserWeeklyService",
-    "serviceContainer" : "SC01",
-    "startMode" : "MANUAL",
     "dynaModelFilePath" : "PSMODULES/report/PSSYSBACKSERVICES/CreateReportUserWeeklyService.json",
-    "name" : "每周定时生成用户周报"
-  }, {
+    "name" : "每周定时生成用户周报",
+    "serviceContainer" : "SC01",
+    "serviceHandler" : "CreateReportUserWeeklyService",
     "serviceOrder" : 0,
-    "serviceHandler" : "PushReportUserDailyService",
+    "startMode" : "MANUAL"
+  }, {
     "codeName" : "PushReportUserDailyService",
-    "serviceContainer" : "SC01",
-    "startMode" : "MANUAL",
     "dynaModelFilePath" : "PSMODULES/report/PSSYSBACKSERVICES/PushReportUserDailyService.json",
-    "name" : "定时推送待阅提醒用户日报"
-  }, {
+    "name" : "定时推送待阅提醒用户日报",
+    "serviceContainer" : "SC01",
+    "serviceHandler" : "PushReportUserDailyService",
     "serviceOrder" : 0,
-    "serviceHandler" : "ReportService",
+    "startMode" : "MANUAL"
+  }, {
     "codeName" : "ReportService",
-    "serviceContainer" : "SC01",
-    "startMode" : "MANUAL",
     "dynaModelFilePath" : "PSMODULES/zentao/PSSYSBACKSERVICES/ReportService.json",
-    "name" : "每日任务提醒定时服务"
-  }, {
+    "name" : "每日任务提醒定时服务",
+    "serviceContainer" : "SC01",
+    "serviceHandler" : "ReportService",
     "serviceOrder" : 0,
-    "serviceHandler" : "CreateReportUserDailyService",
+    "startMode" : "MANUAL"
+  }, {
     "codeName" : "CreateReportUserDailyService",
-    "serviceContainer" : "SC01",
-    "startMode" : "MANUAL",
     "dynaModelFilePath" : "PSMODULES/report/PSSYSBACKSERVICES/CreateReportUserDailyService.json",
-    "name" : "每日定时生成用户日报"
-  }, {
+    "name" : "每日定时生成用户日报",
+    "serviceContainer" : "SC01",
+    "serviceHandler" : "CreateReportUserDailyService",
     "serviceOrder" : 0,
-    "serviceHandler" : "CreateProductMonthlyService",
+    "startMode" : "MANUAL"
+  }, {
     "codeName" : "CreateProductMonthlyService",
-    "serviceContainer" : "SC01",
-    "startMode" : "AUTO",
     "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/CreateProductMonthlyService.json",
-    "name" : "定时生成产品月报"
-  }, {
+    "name" : "定时生成产品月报",
+    "serviceContainer" : "SC01",
+    "serviceHandler" : "CreateProductMonthlyService",
     "serviceOrder" : 0,
-    "serviceHandler" : "SumPorjectMonthly",
+    "startMode" : "AUTO"
+  }, {
     "codeName" : "SumPorjectMonthly",
-    "serviceContainer" : "SC01",
-    "startMode" : "AUTO",
     "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/SumPorjectMonthly.json",
-    "name" : "汇总项目月报"
-  }, {
+    "name" : "汇总项目月报",
+    "serviceContainer" : "SC01",
+    "serviceHandler" : "SumPorjectMonthly",
     "serviceOrder" : 0,
-    "serviceHandler" : "SumPorjectDaily",
+    "startMode" : "AUTO"
+  }, {
     "codeName" : "SumPorjectDaily",
-    "serviceContainer" : "SC01",
-    "startMode" : "AUTO",
     "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/SumPorjectDaily.json",
-    "name" : "汇总项目日报"
-  }, {
+    "name" : "汇总项目日报",
+    "serviceContainer" : "SC01",
+    "serviceHandler" : "SumPorjectDaily",
     "serviceOrder" : 0,
-    "serviceHandler" : "CreateReportUserMonthlyService",
+    "startMode" : "AUTO"
+  }, {
     "codeName" : "CreateReportUserMonthlyService",
-    "serviceContainer" : "SC01",
-    "startMode" : "MANUAL",
     "dynaModelFilePath" : "PSMODULES/report/PSSYSBACKSERVICES/CreateReportUserMonthlyService.json",
-    "name" : "每月定时生成用户月报"
-  }, {
+    "name" : "每月定时生成用户月报",
+    "serviceContainer" : "SC01",
+    "serviceHandler" : "CreateReportUserMonthlyService",
     "serviceOrder" : 0,
-    "serviceHandler" : "TodoService",
+    "startMode" : "MANUAL"
+  }, {
     "codeName" : "TodoService",
-    "serviceContainer" : "SC01",
-    "startMode" : "MANUAL",
     "dynaModelFilePath" : "PSMODULES/zentao/PSSYSBACKSERVICES/TodoService.json",
-    "name" : "创建周期定时服务"
-  }, {
+    "name" : "创建周期定时服务",
+    "serviceContainer" : "SC01",
+    "serviceHandler" : "TodoService",
     "serviceOrder" : 0,
-    "serviceHandler" : "PushReportUserWeeklyService",
+    "startMode" : "MANUAL"
+  }, {
     "codeName" : "PushReportUserWeeklyService",
-    "serviceContainer" : "SC01",
-    "startMode" : "MANUAL",
     "dynaModelFilePath" : "PSMODULES/report/PSSYSBACKSERVICES/PushReportUserWeeklyService.json",
-    "name" : "定时推送待阅提醒用户周报提交"
-  }, {
+    "name" : "定时推送待阅提醒用户周报提交",
+    "serviceContainer" : "SC01",
+    "serviceHandler" : "PushReportUserWeeklyService",
     "serviceOrder" : 0,
-    "serviceHandler" : "CreateCycleTasksService",
+    "startMode" : "MANUAL"
+  }, {
     "codeName" : "CreateCycleTasksService",
-    "serviceContainer" : "SC01",
-    "startMode" : "AUTO",
     "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/CreateCycleTasksService.json",
-    "name" : "定时生成周期任务"
-  }, {
-    "serviceOrder" : 0,
-    "serviceHandler" : "CreateProductDailyService",
-    "codeName" : "CreateProductDailyService",
+    "name" : "定时生成周期任务",
     "serviceContainer" : "SC01",
-    "startMode" : "AUTO",
+    "serviceHandler" : "CreateCycleTasksService",
+    "serviceOrder" : 0,
+    "startMode" : "AUTO"
+  }, {
+    "codeName" : "CreateProductDailyService",
     "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/CreateProductDailyService.json",
-    "name" : "定时生成产品日报"
+    "name" : "定时生成产品日报",
+    "serviceContainer" : "SC01",
+    "serviceHandler" : "CreateProductDailyService",
+    "serviceOrder" : 0,
+    "startMode" : "AUTO"
+  } ],
+  "getAllPSSysUniReses" : [ {
+    "name" : "通用创建",
+    "resCode" : "UNIVERSALCREATE",
+    "id" : "ibiz__UNIVERSALCREATE"
+  }, {
+    "name" : "测试用例（用例确认）",
+    "resCode" : "CASE_CASECOF_BUT",
+    "id" : "ibiz__CASE_CASECOF_BUT"
+  }, {
+    "name" : "测试用例删除",
+    "resCode" : "CASE_DELETE_BUT",
+    "id" : "ibiz__CASE_DELETE_BUT"
+  }, {
+    "name" : "通用自定义界面行为",
+    "resCode" : "CUTINTBEHAVIOR",
+    "id" : "ibiz__CUTINTBEHAVIOR"
+  }, {
+    "name" : "Bug删除",
+    "resCode" : "BUG_DELETE_BUT",
+    "id" : "ibiz__BUG_DELETE_BUT"
+  }, {
+    "name" : "bug新建",
+    "resCode" : "BUG_CREATE_BUT",
+    "id" : "ibiz__BUG_CREATE_BUT"
+  }, {
+    "name" : "通用保存",
+    "resCode" : "UNIVERSALSAVE",
+    "id" : "ibiz__UNIVERSALSAVE"
+  }, {
+    "name" : "测试用例移除",
+    "resCode" : "CASE_UNLINK_BUT",
+    "id" : "ibiz__CASE_UNLINK_BUT"
+  }, {
+    "name" : "需求分解任务",
+    "resCode" : "STORY_FJTASK_BUT",
+    "id" : "ibiz__STORY_FJTASK_BUT"
+  }, {
+    "name" : "测试用例结果",
+    "resCode" : "CASE_RESULT_BUT",
+    "id" : "ibiz__CASE_RESULT_BUT"
+  }, {
+    "name" : "项目管理",
+    "resCode" : "PROJ_MANAGE_BUT",
+    "id" : "ibiz__PROJ_MANAGE_BUT"
+  }, {
+    "name" : "需求评审",
+    "resCode" : "STORY_REVIEW_BUT",
+    "id" : "ibiz__STORY_REVIEW_BUT"
+  }, {
+    "name" : "任务删除",
+    "resCode" : "TASK_DELETE_BUT",
+    "id" : "ibiz__TASK_DELETE_BUT"
+  }, {
+    "name" : "项目挂起",
+    "resCode" : "PROJ_SUSPEND_BUT",
+    "id" : "ibiz__PROJ_SUSPEND_BUT"
+  }, {
+    "name" : "产品统计打开需求",
+    "resCode" : "PRODSTA_STOREOP_BUT",
+    "id" : "ibiz__PRODSTA_STOREOP_BUT"
+  }, {
+    "name" : "测试模块修复路径",
+    "resCode" : "TESTMOD_FIX_BUT",
+    "id" : "ibiz__TESTMOD_FIX_BUT"
+  }, {
+    "name" : "产品统计创建项目",
+    "resCode" : "PRODSTA_PROJCRT_BUT",
+    "id" : "ibiz__PRODSTA_PROJCRT_BUT"
+  }, {
+    "name" : "周报已提交",
+    "resCode" : "WEEKLY_SUBMIT_BUT",
+    "id" : "report__WEEKLY_SUBMIT_BUT"
+  }, {
+    "name" : "测试版本打开概况",
+    "resCode" : "TESTT_OPEN_BUT",
+    "id" : "ibiz__TESTT_OPEN_BUT"
+  }, {
+    "name" : "管理员操作",
+    "resCode" : "ADMIN",
+    "id" : "ibiz__ADMIN"
+  }, {
+    "name" : "需求关闭",
+    "resCode" : "STORY_CLOSED_BUT",
+    "id" : "ibiz__STORY_CLOSED_BUT"
+  }, {
+    "name" : "Bug编辑",
+    "resCode" : "BUG_EDIT_BUT",
+    "id" : "ibiz__BUG_EDIT_BUT"
+  }, {
+    "name" : "需求删除",
+    "resCode" : "STORY_DELETE_BUT",
+    "id" : "ibiz__STORY_DELETE_BUT"
+  }, {
+    "name" : "收藏文档库分类",
+    "resCode" : "DOCLIBMODULE_FAVOUR_BUT",
+    "id" : "ibiz__DOCLIBMODULE_FAVOUR_BUT"
+  }, {
+    "name" : "用例库用例步骤新建",
+    "resCode" : "STEP_CREATE_BUT",
+    "id" : "ibiz__STEP_CREATE_BUT"
+  }, {
+    "name" : "用例库概况",
+    "resCode" : "LIB_OPEN_BUT",
+    "id" : "ibiz__LIB_OPEN_BUT"
+  }, {
+    "name" : "计划关联需求",
+    "resCode" : "PROP_LSTORY_BUT",
+    "id" : "ibiz__PROP_LSTORY_BUT"
+  }, {
+    "name" : "测试版本编辑",
+    "resCode" : "TESTT_EDIT_BUT",
+    "id" : "ibiz__TESTT_EDIT_BUT"
+  }, {
+    "name" : "Bug移除",
+    "resCode" : "BUG_UNLINK_BUT",
+    "id" : "ibiz__BUG_UNLINK_BUT"
+  }, {
+    "name" : "测试用例新建",
+    "resCode" : "CASE_CREATE_BUT",
+    "id" : "ibiz__CASE_CREATE_BUT"
+  }, {
+    "name" : "项目关闭",
+    "resCode" : "PROJ_CLOSED_BUT",
+    "id" : "ibiz__PROJ_CLOSED_BUT"
+  }, {
+    "name" : "产品更新",
+    "resCode" : "PROD_UPDATE_BUT",
+    "id" : "ibiz__PROD_UPDATE_BUT"
+  }, {
+    "name" : "测试用例编辑",
+    "resCode" : "CASE_EDIT_BUT",
+    "id" : "ibiz__CASE_EDIT_BUT"
+  }, {
+    "name" : "测试用例（用例结果）",
+    "resCode" : "CASE_CASERESULT_BUT",
+    "id" : "ibiz__CASE_CASERESULT_BUT"
+  }, {
+    "name" : "发布操作列（停止维护）",
+    "resCode" : "RELEASE_TERMINATE",
+    "id" : "ibiz__RELEASE_TERMINATE"
+  }, {
+    "name" : "项目版本提交测试",
+    "resCode" : "BUILD_SUBT_BUT",
+    "id" : "ibiz__BUILD_SUBT_BUT"
+  }, {
+    "name" : "项目删除",
+    "resCode" : "PROJ_DELETE_BUT",
+    "id" : "ibiz__PROJ_DELETE_BUT"
+  }, {
+    "name" : "产品编辑",
+    "resCode" : "PROD_EDIT_BUT",
+    "id" : "ibiz__PROD_EDIT_BUT"
+  }, {
+    "name" : "取消收藏文档库",
+    "resCode" : "DOCLIB_NFAVOUR_BUT",
+    "id" : "ibiz__DOCLIB_NFAVOUR_BUT"
+  }, {
+    "name" : "用例库用例步骤编辑",
+    "resCode" : "STEP_EDIT_BUT",
+    "id" : "ibiz__STEP_EDIT_BUT"
+  }, {
+    "name" : "项目版本删除",
+    "resCode" : "BUILD_DELETE_BUT",
+    "id" : "ibiz__BUILD_DELETE_BUT"
+  }, {
+    "name" : "用例库模块概况",
+    "resCode" : "LIBM_OPEN_BUT",
+    "id" : "ibiz__LIBM_OPEN_BUT"
+  }, {
+    "name" : "产品关闭",
+    "resCode" : "PROD_CLOSED_BUT",
+    "id" : "ibiz__PROD_CLOSED_BUT"
+  }, {
+    "name" : "维护分类",
+    "resCode" : "DOCLIBMODULE_MAINTENANCE_BUT",
+    "id" : "ibiz__DOCLIBMODULE_MAINTENANCE_BUT"
+  }, {
+    "name" : "任务新建",
+    "resCode" : "TASK_CREATE_BUT",
+    "id" : "ibiz__TASK_CREATE_BUT"
+  }, {
+    "name" : "测试版本开始",
+    "resCode" : "TESTT_START_BUT",
+    "id" : "ibiz__TESTT_START_BUT"
+  }, {
+    "name" : "测试分页导航-测试单",
+    "resCode" : "TEST_TESTTASK",
+    "id" : "ibiz__TEST_TESTTASK"
+  }, {
+    "name" : "计划编辑",
+    "resCode" : "PROP_EDIT_BUT",
+    "id" : "ibiz__PROP_EDIT_BUT"
+  }, {
+    "name" : "测试套件编辑",
+    "resCode" : "TESTSU_EDITSUITE_BUT",
+    "id" : "ibiz__TESTSU_EDITSUITE_BUT"
+  }, {
+    "name" : "项目新建",
+    "resCode" : "PROJ_CREATE_BUT",
+    "id" : "ibiz__PROJ_CREATE_BUT"
+  }, {
+    "name" : "测试套件删除",
+    "resCode" : "TESTSU_DELETE_BUT",
+    "id" : "ibiz__TESTSU_DELETE_BUT"
+  }, {
+    "name" : "任务关闭",
+    "resCode" : "TASK_CLOSE_BUT",
+    "id" : "ibiz__TASK_CLOSE_BUT"
+  }, {
+    "name" : "计划新建",
+    "resCode" : "PROP_CREATE_BUT",
+    "id" : "ibiz__PROP_CREATE_BUT"
+  }, {
+    "name" : "用例库用例步骤概况",
+    "resCode" : "STEP_OPEN_BUT",
+    "id" : "ibiz__STEP_OPEN_BUT"
+  }, {
+    "name" : "任务继续",
+    "resCode" : "TASK_PROCEED_BUT",
+    "id" : "ibiz__TASK_PROCEED_BUT"
+  }, {
+    "name" : "需求移除项目关联",
+    "resCode" : "STORY_UNLP_BUT",
+    "id" : "ibiz__STORY_UNLP_BUT"
+  }, {
+    "name" : "汇报编辑",
+    "resCode" : "REPORTLY_EDIT_BUT",
+    "id" : "report__REPORTLY_EDIT_BUT"
+  }, {
+    "name" : "用例库用例编辑",
+    "resCode" : "LICASE_EDIT_BUT",
+    "id" : "ibiz__LICASE_EDIT_BUT"
+  }, {
+    "name" : "周报待提交",
+    "resCode" : "WEEKLY_NSUBMIT_BUT",
+    "id" : "ibiz__WEEKLY_NSUBMIT_BUT"
+  }, {
+    "name" : "Bug已收藏",
+    "resCode" : "BUG_FAVOR_BUT",
+    "id" : "ibiz__BUG_FAVOR_BUT"
+  }, {
+    "name" : "测试版本阻塞",
+    "resCode" : "TESTT_BLOCK_BUT",
+    "id" : "ibiz__TESTT_BLOCK_BUT"
+  }, {
+    "name" : "收藏文档库",
+    "resCode" : "DOCLIB_FAVOUR_BUT",
+    "id" : "ibiz__DOCLIB_FAVOUR_BUT"
+  }, {
+    "name" : "任务激活",
+    "resCode" : "TASK_ACTIVATION_BUT",
+    "id" : "ibiz__TASK_ACTIVATION_BUT"
+  }, {
+    "name" : "Bug解决",
+    "resCode" : "BUG_RESOLVE_BUT",
+    "id" : "ibiz__BUG_RESOLVE_BUT"
+  }, {
+    "name" : "需求待收藏",
+    "resCode" : "STORY_NFAVOR_BUT",
+    "id" : "ibiz__STORY_NFAVOR_BUT"
+  }, {
+    "name" : "测试版本关联用例",
+    "resCode" : "TESTT_LCASE_BUT",
+    "id" : "ibiz__TESTT_LCASE_BUT"
+  }, {
+    "name" : "用例库用例新建",
+    "resCode" : "LICASE_CREATE_BUT",
+    "id" : "ibiz__LICASE_CREATE_BUT"
+  }, {
+    "name" : "用例待收藏",
+    "resCode" : "CASE_NFAVOR_BUT",
+    "id" : "ibiz__CASE_NFAVOR_BUT"
+  }, {
+    "name" : "任务完成",
+    "resCode" : "TASK_COMPLETE_BUT",
+    "id" : "ibiz__TASK_COMPLETE_BUT"
+  }, {
+    "name" : "任务开始",
+    "resCode" : "TASK_START_BUT",
+    "id" : "ibiz__TASK_START_BUT"
+  }, {
+    "name" : "用例库编辑",
+    "resCode" : "LIB_EDIT_BUT",
+    "id" : "ibiz__LIB_EDIT_BUT"
+  }, {
+    "name" : "测试套件关联用例",
+    "resCode" : "TESTSU_LINKCASE_BUT",
+    "id" : "ibiz__TESTSU_LINKCASE_BUT"
+  }, {
+    "name" : "Plus增强权限",
+    "resCode" : "PLUS",
+    "id" : "ibiz__PLUS"
+  }, {
+    "name" : "项目报告列表",
+    "resCode" : "PROJECT_REPORT_BUT",
+    "id" : "ibiz__PROJECT_REPORT_BUT"
+  }, {
+    "name" : "测试套件新建",
+    "resCode" : "TESTSU_CREATE_BUT",
+    "id" : "ibiz__TESTSU_CREATE_BUT"
+  }, {
+    "name" : "附件下载",
+    "resCode" : "FILE_DOWNLOAD_BUT",
+    "id" : "ibiz__FILE_DOWNLOAD_BUT"
+  }, {
+    "name" : "取消收藏文档",
+    "resCode" : "DOC_NFAVOUR_BUT",
+    "id" : "ibiz__DOC_NFAVOUR_BUT"
+  }, {
+    "name" : "Bug建用例",
+    "resCode" : "BUG_CREATECASE_BUT",
+    "id" : "ibiz__BUG_CREATECASE_BUT"
+  }, {
+    "name" : "发布操作列（激活）",
+    "resCode" : "RELEASE_ACTIVE",
+    "id" : "ibiz__RELEASE_ACTIVE"
+  }, {
+    "name" : "项目延期",
+    "resCode" : "PROJ_DELAY_BUT",
+    "id" : "ibiz__PROJ_DELAY_BUT"
+  }, {
+    "name" : "项目编辑",
+    "resCode" : "PROJ_EDIT_BUT",
+    "id" : "ibiz__PROJ_EDIT_BUT"
+  }, {
+    "name" : "用例库用例概况",
+    "resCode" : "LICASE_OPEN_BUT",
+    "id" : "ibiz__LICASE_OPEN_BUT"
+  }, {
+    "name" : "需求激活",
+    "resCode" : "STORY_ACTIVE_BUT",
+    "id" : "ibiz__STORY_ACTIVE_BUT"
+  }, {
+    "name" : "产品新建",
+    "resCode" : "PROD_CREATE_BUT",
+    "id" : "ibiz__PROD_CREATE_BUT"
+  }, {
+    "name" : "测试版本新建",
+    "resCode" : "TESTT_CREATE_BUT",
+    "id" : "ibiz__TESTT_CREATE_BUT"
+  }, {
+    "name" : "测试用例转BUG",
+    "resCode" : "CASE_TOBUG_BUT",
+    "id" : "ibiz__CASE_TOBUG_BUT"
+  }, {
+    "name" : "测试用例（用例转BUG）",
+    "resCode" : "CASE_CASETOBUG_BUT",
+    "id" : "ibiz__CASE_CASETOBUG_BUT"
+  }, {
+    "name" : "月报编辑",
+    "resCode" : "MONTHLY_EDIT_BUT",
+    "id" : "report__MONTHLY_EDIT_BUT"
+  }, {
+    "name" : "产品经理",
+    "resCode" : "PRODUCT_MANAGER",
+    "id" : "PRODUCT_MANAGER"
+  }, {
+    "name" : "项目开始",
+    "resCode" : "PROJ_START_BUT",
+    "id" : "ibiz__PROJ_START_BUT"
+  }, {
+    "name" : "用例库模块新建",
+    "resCode" : "LIBM_CREATE_BUT",
+    "id" : "ibiz__LIBM_CREATE_BUT"
+  }, {
+    "name" : "任务已收藏",
+    "resCode" : "TASK_FAVOR_BUT",
+    "id" : "ibiz__TASK_FAVOR_BUT"
+  }, {
+    "name" : "项目团队管理",
+    "resCode" : "PROJT_TM_BUT",
+    "id" : "ibiz__PROJT_TM_BUT"
+  }, {
+    "name" : "任务暂停",
+    "resCode" : "TASK_PAUSE_BUT",
+    "id" : "ibiz__TASK_PAUSE_BUT"
+  }, {
+    "name" : "测试版本删除",
+    "resCode" : "TESTT_DELETE_BUT",
+    "id" : "ibiz__TESTT_DELETE_BUT"
+  }, {
+    "name" : "Bug关闭",
+    "resCode" : "BUG_CLOSE_BUT",
+    "id" : "ibiz__BUG_CLOSE_BUT"
+  }, {
+    "name" : "需求编辑",
+    "resCode" : "STORY_EDIT_BUT",
+    "id" : "ibiz__STORY_EDIT_BUT"
+  }, {
+    "name" : "收藏文档",
+    "resCode" : "DOC_FAVOUR_BUT",
+    "id" : "ibiz__DOC_FAVOUR_BUT"
+  }, {
+    "name" : "产品统计提需求",
+    "resCode" : "PRODSTA_STORYCRT_BUT",
+    "id" : "ibiz__PRODSTA_STORYCRT_BUT"
+  }, {
+    "name" : "Bug待收藏",
+    "resCode" : "BUG_NFAVOR_BUT",
+    "id" : "ibiz__BUG_NFAVOR_BUT"
+  }, {
+    "name" : "计划子计划",
+    "resCode" : "PROP_CHILD_BUT",
+    "id" : "ibiz__PROP_CHILD_BUT"
+  }, {
+    "name" : "任务确认需求变更",
+    "resCode" : "TASK_XQCHANGE_BUT",
+    "id" : "ibiz__TASK_XQCHANGE_BUT"
+  }, {
+    "name" : "需求指派给",
+    "resCode" : "STORY_ASS_BUT",
+    "id" : "ibiz__STORY_ASS_BUT"
+  }, {
+    "name" : "产品左侧资源",
+    "resCode" : "PRODUCTLEFT",
+    "id" : "ibiz__PRODUCTLEFT"
+  }, {
+    "name" : "通用编辑",
+    "resCode" : "UNIVERSALEDIT",
+    "id" : "ibiz__UNIVERSALEDIT"
+  }, {
+    "name" : "测试报告编辑",
+    "resCode" : "REPORT_EDIT_BUT",
+    "id" : "ibiz__REPORT_EDIT_BUT"
+  }, {
+    "name" : "Bug提需求",
+    "resCode" : "BUG_TOSTORY_BUT",
+    "id" : "ibiz__BUG_TOSTORY_BUT"
+  }, {
+    "name" : "取消收藏文档库分类",
+    "resCode" : "DOCLIBMODULE_NFAVOUR_BUT",
+    "id" : "ibiz__DOCLIBMODULE_NFAVOUR_BUT"
+  }, {
+    "name" : "测试分页导航-测试报告",
+    "resCode" : "TEST_TESTREPORT",
+    "id" : "ibiz__TEST_TESTREPORT"
+  }, {
+    "name" : "任务指派",
+    "resCode" : "TASK_ASSIGN_BUT",
+    "id" : "ibiz__TASK_ASSIGN_BUT"
+  }, {
+    "name" : "测试版本关闭",
+    "resCode" : "TESTT_CLOSED_BUT",
+    "id" : "ibiz__TESTT_CLOSED_BUT"
+  }, {
+    "name" : "计划关联bug",
+    "resCode" : "PROP_LBUG_BUT",
+    "id" : "ibiz__PROP_LBUG_BUT"
+  }, {
+    "name" : "测试用例执行",
+    "resCode" : "CASE_RUN_BUT",
+    "id" : "ibiz__CASE_RUN_BUT"
+  }, {
+    "name" : "需求变更",
+    "resCode" : "STORY_CHANGED_BUT",
+    "id" : "ibiz__STORY_CHANGED_BUT"
+  }, {
+    "name" : "项目激活",
+    "resCode" : "PROJ_ACTIVATION_BUT",
+    "id" : "ibiz__PROJ_ACTIVATION_BUT"
+  }, {
+    "name" : "需求建用例",
+    "resCode" : "STORY_CCASE_BUT",
+    "id" : "ibiz__STORY_CCASE_BUT"
+  }, {
+    "name" : "发布操作列（通用）",
+    "resCode" : "RELEASE_COMMON",
+    "id" : "ibiz__RELEASE_COMMON"
+  }, {
+    "name" : "产品统计添加产品",
+    "resCode" : "PRODSTA_ADDPROD_BUT",
+    "id" : "ibiz__PRODSTA_ADDPROD_BUT"
+  }, {
+    "name" : "Bug激活",
+    "resCode" : "BUG_ACTIVATE_BUT",
+    "id" : "ibiz__BUG_ACTIVATE_BUT"
+  }, {
+    "name" : "月报提交",
+    "resCode" : "MONTHLY_SUBMIT_BUT",
+    "id" : "report__MONTHLY_SUBMIT_BUT"
+  }, {
+    "name" : "文档删除",
+    "resCode" : "DOC_DELETE_BUT",
+    "id" : "ibiz__DOC_DELETE_BUT"
+  }, {
+    "name" : "需求已收藏",
+    "resCode" : "STORY_FAVOR_BUT",
+    "id" : "ibiz__STORY_FAVOR_BUT"
+  }, {
+    "name" : "产品统计创建发布",
+    "resCode" : "PRODSTA_RELCRT_BUT",
+    "id" : "ibiz__PRODSTA_RELCRT_BUT"
+  }, {
+    "name" : "任务工时",
+    "resCode" : "TASK_CONSUM_BUT",
+    "id" : "ibiz__TASK_CONSUM_BUT"
+  }, {
+    "name" : "测试模块打开快速编辑试图",
+    "resCode" : "TESTMOD_OQCVIEW_BUT",
+    "id" : "ibiz__TESTMOD_OQCVIEW_BUT"
+  }, {
+    "name" : "任务转交",
+    "resCode" : "TASK_FORWARD_BUT",
+    "id" : "ibiz__TASK_FORWARD_BUT"
+  }, {
+    "name" : "用例库模块编辑",
+    "resCode" : "LIBM_EDIT_BUT",
+    "id" : "ibiz__LIBM_EDIT_BUT"
+  }, {
+    "name" : "Bug确认",
+    "resCode" : "BUG_CONFIRM_BUT",
+    "id" : "ibiz__BUG_CONFIRM_BUT"
+  }, {
+    "name" : "文档编辑",
+    "resCode" : "DOC_EDIT_BUT",
+    "id" : "ibiz__DOC_EDIT_BUT"
+  }, {
+    "name" : "测试报告删除",
+    "resCode" : "REPORT_DELETE_BUT",
+    "id" : "ibiz__REPORT_DELETE_BUT"
+  }, {
+    "name" : "计划删除",
+    "resCode" : "PROP_DELETE_BUT",
+    "id" : "ibiz__PROP_DELETE_BUT"
+  }, {
+    "name" : "通用删除",
+    "resCode" : "UNIVERSALDELETE",
+    "id" : "ibiz__UNIVERSALDELETE"
+  }, {
+    "name" : "文档库分类编辑",
+    "resCode" : "DOCLIBMODULE_EDIT_BUT",
+    "id" : "ibiz__DOCLIBMODULE_EDIT_BUT"
+  }, {
+    "name" : "任务子任务",
+    "resCode" : "TASK_SUBTASKS_BUT",
+    "id" : "ibiz__TASK_SUBTASKS_BUT"
+  }, {
+    "name" : "项目分页导航-测试-测试单",
+    "resCode" : "PROJ_TEST_TESTTASK",
+    "id" : "ibiz__PROJ_TEST_TESTTASK"
+  }, {
+    "name" : "用例库新建",
+    "resCode" : "LIB_CREATE_BUT",
+    "id" : "ibiz__LIB_CREATE_BUT"
+  }, {
+    "name" : "文档库编辑",
+    "resCode" : "DOCLIB_EDIT_BUT",
+    "id" : "ibiz__DOCLIB_EDIT_BUT"
+  }, {
+    "name" : "附件删除",
+    "resCode" : "FILE_DELETE_BUT",
+    "id" : "ibiz__FILE_DELETE_BUT"
+  }, {
+    "name" : "测试报告新建",
+    "resCode" : "REPORT_CREATE_BUT",
+    "id" : "ibiz__REPORT_CREATE_BUT"
+  }, {
+    "name" : "汇报提交",
+    "resCode" : "REPORTLY_SUBMIT_BUT",
+    "id" : "report__REPORTLY_SUBMIT_BUT"
+  }, {
+    "name" : "日报提交",
+    "resCode" : "DAILY_SUBMIT_BUT",
+    "id" : "report__DAILY_SUBMIT_BUT"
+  }, {
+    "name" : "测试用例（用例执行）",
+    "resCode" : "CASE_CASERUN_BUT",
+    "id" : "ibiz__CASE_CASERUN_BUT"
+  }, {
+    "name" : "用例已收藏",
+    "resCode" : "CASE_FAVOR_BUT",
+    "id" : "ibiz__CASE_FAVOR_BUT"
+  }, {
+    "name" : "产品删除",
+    "resCode" : "PROD_DELETE_BUT",
+    "id" : "ibiz__PROD_DELETE_BUT"
+  }, {
+    "name" : "任务待收藏",
+    "resCode" : "TASK_NFAVOR_BUT",
+    "id" : "ibiz__TASK_NFAVOR_BUT"
+  }, {
+    "name" : "需求细分",
+    "resCode" : "STORY_XQXF_BUT",
+    "id" : "ibiz__STORY_XQXF_BUT"
+  }, {
+    "name" : "项目版本编辑",
+    "resCode" : "BUILD_EDIT_BUT",
+    "id" : "ibiz__BUILD_EDIT_BUT"
+  }, {
+    "name" : "用例库管理",
+    "resCode" : "IBZ_LIB_M",
+    "id" : "ibiz__IBZ_LIB_M"
+  }, {
+    "name" : "任务取消",
+    "resCode" : "TASK_CANCEL_BUT",
+    "id" : "ibiz__TASK_CANCEL_BUT"
+  }, {
+    "name" : "项目经理",
+    "resCode" : "PROJECT_MANAGER",
+    "id" : "PROJECT_MANAGER"
+  }, {
+    "name" : "项目版本关联Bug（需求）",
+    "resCode" : "BUILD_LINK_BUT",
+    "id" : "ibiz__BUILD_LINK_BUT"
+  }, {
+    "name" : "测试版本激活",
+    "resCode" : "TESTT_ACTIVITE_BUT",
+    "id" : "ibiz__TESTT_ACTIVITE_BUT"
+  }, {
+    "name" : "项目版本新建",
+    "resCode" : "BUILD_CREATE_BUT",
+    "id" : "ibiz__BUILD_CREATE_BUT"
+  }, {
+    "name" : "测试用例确认",
+    "resCode" : "CASE_CONFIRM_BUT",
+    "id" : "ibiz__CASE_CONFIRM_BUT"
+  }, {
+    "name" : "产品统计创建计划",
+    "resCode" : "PRODSTA_PLANCRT_BUT",
+    "id" : "ibiz__PRODSTA_PLANCRT_BUT"
+  }, {
+    "name" : "需求新建",
+    "resCode" : "STORY_CREATE_BUT",
+    "id" : "ibiz__STORY_CREATE_BUT"
+  }, {
+    "name" : "任务编辑",
+    "resCode" : "TASK_EDIT_BUT",
+    "id" : "ibiz__TASK_EDIT_BUT"
+  }, {
+    "name" : "Bug指派",
+    "resCode" : "BUG_ASSIGNTO_BUT",
+    "id" : "ibiz__BUG_ASSIGNTO_BUT"
+  } ],
+  "getAllPSSysUserRoles" : [ {
+    "codeName" : "ProductManger",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProductManger.json",
+    "name" : "产品经理",
+    "roleTag" : "ProductManger",
+    "roleType" : "CUSTOM"
+  }, {
+    "codeName" : "ProductSupervisor",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProductSupervisor.json",
+    "name" : "产品主管",
+    "roleTag" : "ProductSupervisor",
+    "roleType" : "CUSTOM"
+  }, {
+    "codeName" : "TestSupervisor",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/TestSupervisor.json",
+    "name" : "测试主管",
+    "roleTag" : "TestSupervisor",
+    "roleType" : "CUSTOM"
+  }, {
+    "codeName" : "ProjectManger",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProjectManger.json",
+    "name" : "项目经理",
+    "roleTag" : "ProjectManger",
+    "roleType" : "CUSTOM"
+  }, {
+    "codeName" : "ResearchDirector",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ResearchDirector.json",
+    "name" : "研发主管",
+    "roleTag" : "ResearchDirector",
+    "roleType" : "CUSTOM"
   } ],
   "getAllPSSystemModules" : [ {
     "modelref" : true,
@@ -2281,10 +2280,11 @@
     "modelref" : true,
     "path" : "PSMODULES/ibizpro.json"
   } ],
-  "defaultLanguage" : "ZH_CN",
   "codeName" : "iBizPMS",
-  "logicName" : "iBiz软件生产管理",
+  "defaultLanguage" : "ZH_CN",
   "deploySysId" : "67F0CDDF-FF00-4012-97F5-2BF520769214",
+  "logicName" : "iBiz软件生产管理",
   "name" : "iBizPMS",
+  "vCName" : "trunk",
   "id" : "PSSYSTEM.json"
 }

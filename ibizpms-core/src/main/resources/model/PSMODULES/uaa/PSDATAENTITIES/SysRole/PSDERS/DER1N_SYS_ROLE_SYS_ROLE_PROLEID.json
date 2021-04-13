@@ -1,4 +1,20 @@
 {
+  "codeName" : "Parent",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDERS/DER1N_SYS_ROLE_SYS_ROLE_PROLEID.json",
+  "logicName" : "父角色",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 0,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole.json"
+  },
+  "name" : "DER1N_SYS_ROLE_SYS_ROLE_PROLEID",
+  "orderValue" : 100,
   "getPSPickupDEField" : {
     "name" : "PROLEID",
     "codeName" : "PRoleId"
@@ -7,23 +23,7 @@
     "name" : "PROLENAME",
     "codeName" : "PRoleName"
   },
-  "masterOrder" : -1,
-  "removeActionType" : -1,
   "pickupDEFName" : "PROLEID",
-  "masterRS" : 0,
-  "removeOrder" : 0,
-  "getMajorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole.json"
-  },
-  "orderValue" : 100,
-  "codeName" : "Parent",
-  "logicName" : "父角色",
-  "dERType" : "DER1N",
-  "getMinorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole.json"
-  },
-  "dynaModelFilePath" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDERS/DER1N_SYS_ROLE_SYS_ROLE_PROLEID.json",
-  "name" : "DER1N_SYS_ROLE_SYS_ROLE_PROLEID"
+  "removeActionType" : -1,
+  "removeOrder" : 0
 }

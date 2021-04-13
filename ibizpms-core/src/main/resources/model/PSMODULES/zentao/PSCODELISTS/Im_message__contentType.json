@@ -1,43 +1,43 @@
 {
-  "codeItemValueNumber" : false,
-  "subSysCodeList" : false,
-  "subSysAsCloud" : false,
-  "systemTag" : "iBizPMS",
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Im_message__contentType.json",
   "codeName" : "Im_message__contentType",
-  "userScope" : false,
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Im_message__contentType.json",
   "emptyText" : "未定义",
-  "enableCache" : true,
-  "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "text",
     "codeName" : "Text",
-    "text" : "text"
+    "text" : "text",
+    "value" : "text"
   }, {
-    "value" : "plain",
     "codeName" : "Plain",
-    "text" : "plain"
+    "text" : "plain",
+    "value" : "plain"
   }, {
-    "value" : "emotion",
     "codeName" : "Emotion",
-    "text" : "emotion"
+    "text" : "emotion",
+    "value" : "emotion"
   }, {
-    "value" : "image",
     "codeName" : "Image",
-    "text" : "image"
+    "text" : "image",
+    "value" : "image"
   }, {
-    "value" : "file",
     "codeName" : "File",
-    "text" : "file"
+    "text" : "file",
+    "value" : "file"
   }, {
-    "value" : "object",
     "codeName" : "Object",
-    "text" : "object"
+    "text" : "object",
+    "value" : "object"
   }, {
-    "value" : "code",
     "codeName" : "Code",
-    "text" : "code"
-  } ]
+    "text" : "code",
+    "value" : "code"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
 }

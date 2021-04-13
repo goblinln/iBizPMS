@@ -1,4 +1,19 @@
 {
+  "codeName" : "IBZProductModule",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_IBZ_PRODUCTMODULE_MODULE.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 0,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+  },
+  "name" : "DER1N_ZT_STORY_IBZ_PRODUCTMODULE_MODULE",
+  "orderValue" : 100,
   "getPSPickupDEField" : {
     "name" : "MODULE",
     "codeName" : "Module"
@@ -7,22 +22,7 @@
     "name" : "MODULENAME",
     "codeName" : "Modulename"
   },
-  "masterOrder" : -1,
-  "removeActionType" : -1,
   "pickupDEFName" : "MODULE",
-  "masterRS" : 0,
-  "removeOrder" : 0,
-  "getMajorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
-  },
-  "orderValue" : 100,
-  "codeName" : "IBZProductModule",
-  "dERType" : "DER1N",
-  "getMinorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
-  },
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_IBZ_PRODUCTMODULE_MODULE.json",
-  "name" : "DER1N_ZT_STORY_IBZ_PRODUCTMODULE_MODULE"
+  "removeActionType" : -1,
+  "removeOrder" : 0
 }

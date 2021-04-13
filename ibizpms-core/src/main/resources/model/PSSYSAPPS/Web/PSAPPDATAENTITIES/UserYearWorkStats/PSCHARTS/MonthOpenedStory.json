@@ -1,12 +1,28 @@
 {
-  "getPSDEChartTitle" : {
-    "showTitle" : false,
-    "title" : "月创建需求数",
-    "index" : 0,
-    "id" : "0"
+  "codeName" : "MonthOpenedStory",
+  "controlType" : "CHART",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSCHARTS/MonthOpenedStory.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "height" : 300.0,
+  "logicName" : "MonthOpenedStory",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
   },
   "getPSChartCoordinateSystems" : [ {
+    "eChartsType" : "cartesian2d",
+    "index" : 0,
+    "name" : "[storycnt]直角坐标系[0]",
     "getPSChartGrid" : {
+      "index" : 0,
+      "name" : "[storycnt]直角坐标系[0]",
+      "getPSChartCoordinateSystem" : {
+        "modelref" : true,
+        "id" : "0"
+      },
       "getPSChartGridXAxis0" : {
         "modelref" : true,
         "id" : "0"
@@ -15,87 +31,48 @@
         "modelref" : true,
         "id" : "0"
       },
-      "getPSChartCoordinateSystem" : {
-        "modelref" : true,
-        "id" : "0"
-      },
       "type" : "grid",
-      "index" : 0,
-      "name" : "[storycnt]直角坐标系[0]",
       "id" : "0"
     },
-    "eChartsType" : "cartesian2d",
     "type" : "XY",
-    "index" : 0,
-    "name" : "[storycnt]直角坐标系[0]",
     "id" : "0"
   } ],
-  "getPSDEChartLegend" : {
-    "showLegend" : true,
+  "getPSChartDataSetGroups" : [ {
     "index" : 0,
+    "name" : "MonthOpenedStory",
     "id" : "0"
-  },
-  "controlType" : "CHART",
-  "getPSDEChartSerieses" : [ {
-    "stack" : false,
-    "eChartsType" : "line",
-    "getPSChartCoordinateSystem" : {
-      "modelref" : true,
-      "id" : "0"
-    },
-    "enableChartDataSet" : true,
-    "getPSChartDataSet" : {
-      "modelref" : true,
-      "id" : "0"
-    },
-    "catalogField" : "CURMONTH",
-    "getPSChartSeriesEncode" : {
-      "getPSChartXAxis" : {
-        "modelref" : true,
-        "id" : "0"
-      },
-      "getPSChartYAxis" : {
-        "modelref" : true,
-        "id" : "0"
-      },
-      "x" : [ "CURMONTH" ],
-      "y" : [ "YEARSTORYCNT" ],
-      "type" : "XY",
+  } ],
+  "getPSChartDataSets" : [ {
+    "index" : 0,
+    "name" : "storycnt-MonthOpenedStory",
+    "getPSChartDataSetFields" : [ {
+      "groupMode" : "MONTH",
       "index" : 0,
-      "name" : "坐标系编码",
+      "name" : "CURMONTH",
+      "groupField" : true,
       "id" : "0"
-    },
-    "seriesType" : "line",
-    "caption" : "月累计创建需求数",
-    "valueField" : "YEARSTORYCNT",
-    "seriesLayoutBy" : "column",
-    "groupMode" : "MONTH",
-    "index" : 0,
-    "name" : "storycnt"
-  } ],
-  "codeName" : "MonthOpenedStory",
-  "getPSChartXAxises" : [ {
-    "eChartsType" : "category",
-    "eChartsPos" : "xAxis",
-    "position" : "bottom",
-    "type" : "category",
-    "caption" : "月",
-    "index" : 0,
-    "name" : "月",
-    "id" : "0"
-  } ],
-  "getPSChartYAxises" : [ {
-    "eChartsType" : "value",
-    "eChartsPos" : "yAxis",
-    "position" : "left",
-    "maxValue" : 200.0,
-    "minValue" : 0.0,
-    "type" : "numeric",
-    "index" : 0,
-    "name" : "数值",
+    }, {
+      "index" : 1,
+      "name" : "YEARSTORYCNT",
+      "groupField" : false,
+      "id" : "1"
+    } ],
     "id" : "0"
   } ],
   "getPSChartGrids" : [ {
+    "index" : 0,
+    "name" : "[storycnt]直角坐标系[0]",
+    "getPSChartCoordinateSystem" : {
+      "eChartsType" : "cartesian2d",
+      "index" : 0,
+      "name" : "[storycnt]直角坐标系[0]",
+      "getPSChartGrid" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "type" : "XY",
+      "id" : "0"
+    },
     "getPSChartGridXAxis0" : {
       "modelref" : true,
       "id" : "0"
@@ -104,60 +81,83 @@
       "modelref" : true,
       "id" : "0"
     },
+    "type" : "grid",
+    "id" : "0"
+  } ],
+  "getPSChartXAxises" : [ {
+    "caption" : "月",
+    "eChartsPos" : "xAxis",
+    "eChartsType" : "category",
+    "index" : 0,
+    "name" : "月",
+    "position" : "bottom",
+    "type" : "category",
+    "id" : "0"
+  } ],
+  "getPSChartYAxises" : [ {
+    "eChartsPos" : "yAxis",
+    "eChartsType" : "value",
+    "index" : 0,
+    "maxValue" : 200.0,
+    "minValue" : 0.0,
+    "name" : "数值",
+    "position" : "left",
+    "type" : "numeric",
+    "id" : "0"
+  } ],
+  "getPSDEChartLegend" : {
+    "index" : 0,
+    "showLegend" : true,
+    "id" : "0"
+  },
+  "getPSDEChartSerieses" : [ {
+    "caption" : "月累计创建需求数",
+    "catalogField" : "CURMONTH",
+    "eChartsType" : "line",
+    "groupMode" : "MONTH",
+    "index" : 0,
+    "name" : "storycnt",
     "getPSChartCoordinateSystem" : {
-      "getPSChartGrid" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartDataSet" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartSeriesEncode" : {
+      "index" : 0,
+      "name" : "坐标系编码",
+      "getPSChartXAxis" : {
         "modelref" : true,
         "id" : "0"
       },
-      "eChartsType" : "cartesian2d",
+      "getPSChartYAxis" : {
+        "modelref" : true,
+        "id" : "0"
+      },
       "type" : "XY",
-      "index" : 0,
-      "name" : "[storycnt]直角坐标系[0]",
+      "x" : [ "CURMONTH" ],
+      "y" : [ "YEARSTORYCNT" ],
       "id" : "0"
     },
-    "type" : "grid",
-    "index" : 0,
-    "name" : "[storycnt]直角坐标系[0]",
-    "id" : "0"
+    "seriesLayoutBy" : "column",
+    "seriesType" : "line",
+    "valueField" : "YEARSTORYCNT",
+    "enableChartDataSet" : true,
+    "stack" : false
   } ],
-  "getPSChartDataSets" : [ {
-    "getPSChartDataSetFields" : [ {
-      "groupField" : true,
-      "groupMode" : "MONTH",
-      "index" : 0,
-      "name" : "CURMONTH",
-      "id" : "0"
-    }, {
-      "groupField" : false,
-      "index" : 1,
-      "name" : "YEARSTORYCNT",
-      "id" : "1"
-    } ],
+  "getPSDEChartTitle" : {
     "index" : 0,
-    "name" : "storycnt-MonthOpenedStory",
+    "title" : "月创建需求数",
+    "showTitle" : false,
     "id" : "0"
-  } ],
-  "getPSChartDataSetGroups" : [ {
-    "index" : 0,
-    "name" : "MonthOpenedStory",
-    "id" : "0"
-  } ],
-  "getFetchPSControlAction" : {
-    "modelref" : true,
-    "id" : "fetch"
-  },
-  "readOnly" : true,
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
   },
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "NEW"
   },
-  "height" : 300.0,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats/PSCHARTS/MonthOpenedStory.json",
-  "logicName" : "MonthOpenedStory",
+  "readOnly" : true,
   "modelid" : "2ad3d195a67cf63c7a1e78851643e2c1",
   "getUserParam" : {
     "EC.color" : "[\"#76FF03\",\"#2979FF\",\"#00B0FF\",\"#2B4D6D\",'#FF9100','#FF3D00','#F57F17','#00E5FF','#00B0FF','#2979FF','#3D5AFE','#651FFF','#D500F9']"

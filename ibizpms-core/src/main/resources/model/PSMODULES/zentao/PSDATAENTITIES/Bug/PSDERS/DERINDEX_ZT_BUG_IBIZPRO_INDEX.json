@@ -1,6 +1,18 @@
 {
-  "typeValue" : "bug",
-  "inherit" : false,
+  "codeName" : "Bug",
+  "dERType" : "DERINDEX",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DERINDEX_ZT_BUG_IBIZPRO_INDEX.json",
+  "logicName" : "Bug",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex.json"
+  },
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+  },
+  "name" : "DERINDEX_ZT_BUG_IBIZPRO_INDEX",
+  "orderValue" : 100,
   "getPSDERIndexDEFieldMaps" : [ {
     "getMajorPSDEField" : {
       "name" : "DELETED",
@@ -42,19 +54,7 @@
     },
     "name" : "project=project"
   } ],
-  "virtual" : true,
-  "getMajorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex.json"
-  },
-  "orderValue" : 100,
-  "codeName" : "Bug",
-  "logicName" : "Bug",
-  "dERType" : "DERINDEX",
-  "getMinorPSDataEntity" : {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
-  },
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DERINDEX_ZT_BUG_IBIZPRO_INDEX.json",
-  "name" : "DERINDEX_ZT_BUG_IBIZPRO_INDEX"
+  "typeValue" : "bug",
+  "inherit" : false,
+  "virtual" : true
 }

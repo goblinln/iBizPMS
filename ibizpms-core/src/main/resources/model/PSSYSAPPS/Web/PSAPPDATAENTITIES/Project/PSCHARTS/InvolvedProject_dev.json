@@ -1,80 +1,22 @@
 {
-  "getPSDEChartTitle" : {
-    "showTitle" : true,
-    "title" : "参与项目(年度总结)",
-    "index" : 0,
-    "id" : "0"
+  "codeName" : "InvolvedProject_dev",
+  "controlType" : "CHART",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project/PSCHARTS/InvolvedProject_dev.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
+  "logicName" : "InvolvedProject_dev",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
   },
   "getPSChartCoordinateSystems" : [ {
     "eChartsType" : "none",
-    "type" : "NONE",
     "index" : 0,
     "name" : "[Involved]无坐标系[0]",
-    "id" : "0"
-  } ],
-  "getPSDEChartLegend" : {
-    "showLegend" : true,
-    "legendPos" : "RIGHT",
-    "index" : 0,
-    "id" : "0"
-  },
-  "controlType" : "CHART",
-  "getPSDEChartSerieses" : [ {
-    "getCatalogPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Project_staus.json"
-    },
-    "eChartsType" : "pie",
-    "getPSChartCoordinateSystem" : {
-      "modelref" : true,
-      "id" : "0"
-    },
-    "enableChartDataSet" : true,
-    "getPSChartDataSet" : {
-      "modelref" : true,
-      "id" : "0"
-    },
-    "catalogField" : "STATUS",
-    "getPSChartSeriesEncode" : {
-      "category" : "STATUS",
-      "value" : "SRFCOUNT",
-      "type" : "NONE",
-      "index" : 0,
-      "name" : "坐标系编码",
-      "id" : "0"
-    },
-    "seriesType" : "pie",
-    "valueField" : "SRFCOUNT",
-    "seriesLayoutBy" : "column",
-    "groupMode" : "CODELIST",
-    "index" : 0,
-    "name" : "Involved",
-    "getUserParam" : {
-      "ECX.labelLine" : "{show:false}",
-      "ECX.label" : "{show:false}",
-      "EC.radius" : "['60%', '70%']"
-    }
-  } ],
-  "codeName" : "InvolvedProject_dev",
-  "getPSChartDataSets" : [ {
-    "getPSChartDataSetFields" : [ {
-      "groupField" : true,
-      "getPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Project_staus.json"
-      },
-      "groupMode" : "CODELIST",
-      "index" : 0,
-      "name" : "STATUS",
-      "id" : "0"
-    }, {
-      "groupField" : false,
-      "index" : 1,
-      "name" : "SRFCOUNT",
-      "id" : "1"
-    } ],
-    "index" : 0,
-    "name" : "Involved-InvolvedProject",
+    "type" : "NONE",
     "id" : "0"
   } ],
   "getPSChartDataSetGroups" : [ {
@@ -82,22 +24,80 @@
     "name" : "InvolvedProject",
     "id" : "0"
   } ],
-  "getFetchPSControlAction" : {
-    "modelref" : true,
-    "id" : "fetch"
+  "getPSChartDataSets" : [ {
+    "index" : 0,
+    "name" : "Involved-InvolvedProject",
+    "getPSChartDataSetFields" : [ {
+      "groupMode" : "CODELIST",
+      "index" : 0,
+      "name" : "STATUS",
+      "getPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Project_staus.json"
+      },
+      "groupField" : true,
+      "id" : "0"
+    }, {
+      "index" : 1,
+      "name" : "SRFCOUNT",
+      "groupField" : false,
+      "id" : "1"
+    } ],
+    "id" : "0"
+  } ],
+  "getPSDEChartLegend" : {
+    "index" : 0,
+    "legendPos" : "RIGHT",
+    "showLegend" : true,
+    "id" : "0"
   },
-  "readOnly" : true,
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+  "getPSDEChartSerieses" : [ {
+    "catalogField" : "STATUS",
+    "getCatalogPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Project_staus.json"
+    },
+    "eChartsType" : "pie",
+    "groupMode" : "CODELIST",
+    "index" : 0,
+    "name" : "Involved",
+    "getPSChartCoordinateSystem" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartDataSet" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartSeriesEncode" : {
+      "category" : "STATUS",
+      "index" : 0,
+      "name" : "坐标系编码",
+      "type" : "NONE",
+      "value" : "SRFCOUNT",
+      "id" : "0"
+    },
+    "seriesLayoutBy" : "column",
+    "seriesType" : "pie",
+    "valueField" : "SRFCOUNT",
+    "enableChartDataSet" : true,
+    "getUserParam" : {
+      "ECX.labelLine" : "{show:false}",
+      "ECX.label" : "{show:false}",
+      "EC.radius" : "['60%', '70%']"
+    }
+  } ],
+  "getPSDEChartTitle" : {
+    "index" : 0,
+    "title" : "参与项目(年度总结)",
+    "showTitle" : true,
+    "id" : "0"
   },
-  "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
     "pluginCode" : "piePlugin"
   },
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project/PSCHARTS/InvolvedProject_dev.json",
-  "logicName" : "InvolvedProject_dev",
+  "readOnly" : true,
   "modelid" : "40d18c30ac5ff684513990fe3b683a29",
   "getUserParam" : {
     "EC.legend" : "{show:false}",

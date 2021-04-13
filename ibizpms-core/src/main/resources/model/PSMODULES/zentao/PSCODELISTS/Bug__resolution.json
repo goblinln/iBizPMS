@@ -1,47 +1,47 @@
 {
-  "codeItemValueNumber" : false,
-  "subSysCodeList" : false,
-  "subSysAsCloud" : false,
-  "systemTag" : "iBizPMS",
-  "dynaInstMode" : 1,
   "codeListType" : "STATIC",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Bug__resolution.json",
   "codeName" : "Bug__resolution",
-  "userScope" : false,
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Bug__resolution.json",
   "emptyText" : "未定义",
-  "enableCache" : true,
-  "refFlag" : true,
   "getPSCodeItems" : [ {
-    "value" : "bydesign",
     "codeName" : "Bydesign",
-    "text" : "设计如此"
+    "text" : "设计如此",
+    "value" : "bydesign"
   }, {
-    "value" : "duplicate",
     "codeName" : "Duplicate",
-    "text" : "重复Bug"
+    "text" : "重复Bug",
+    "value" : "duplicate"
   }, {
-    "value" : "external",
     "codeName" : "External",
-    "text" : "外部原因"
+    "text" : "外部原因",
+    "value" : "external"
   }, {
-    "value" : "fixed",
     "codeName" : "Fixed",
-    "text" : "已解决"
+    "text" : "已解决",
+    "value" : "fixed"
   }, {
-    "value" : "notrepro",
     "codeName" : "Notrepro",
-    "text" : "无法重现"
+    "text" : "无法重现",
+    "value" : "notrepro"
   }, {
-    "value" : "postponed",
     "codeName" : "Postponed",
-    "text" : "延期处理"
+    "text" : "延期处理",
+    "value" : "postponed"
   }, {
-    "value" : "willnotfix",
     "codeName" : "Willnotfix",
-    "text" : "不予解决"
+    "text" : "不予解决",
+    "value" : "willnotfix"
   }, {
-    "value" : "tostory",
     "codeName" : "Tostory",
-    "text" : "转为需求"
-  } ]
+    "text" : "转为需求",
+    "value" : "tostory"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
 }

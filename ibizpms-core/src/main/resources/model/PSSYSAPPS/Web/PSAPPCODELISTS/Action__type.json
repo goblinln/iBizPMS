@@ -1,314 +1,314 @@
 {
+  "codeListType" : "STATIC",
+  "codeName" : "Action__type",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Action__type.json",
+  "emptyText" : "未定义",
+  "name" : "系统日志操作类型",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
   },
   "getPSCodeItems" : [ {
-    "value" : "created",
     "codeName" : "Created",
-    "text" : "创建"
+    "text" : "创建",
+    "value" : "created"
   }, {
-    "value" : "opened",
     "codeName" : "Opened",
-    "text" : "创建"
+    "text" : "创建",
+    "value" : "opened"
   }, {
-    "value" : "changed",
     "codeName" : "Changed",
-    "text" : "变更了"
+    "text" : "变更了",
+    "value" : "changed"
   }, {
-    "value" : "edited",
     "codeName" : "Edited",
-    "text" : "编辑了"
+    "text" : "编辑了",
+    "value" : "edited"
   }, {
-    "value" : "assigned",
     "codeName" : "Assigned",
-    "text" : "指派了"
+    "text" : "指派了",
+    "value" : "assigned"
   }, {
-    "value" : "closed",
     "codeName" : "Closed",
-    "text" : "关闭了"
+    "text" : "关闭了",
+    "value" : "closed"
   }, {
-    "value" : "deleted",
     "codeName" : "Deleted",
-    "text" : "删除了"
+    "text" : "删除了",
+    "value" : "deleted"
   }, {
-    "value" : "deletedfile",
     "codeName" : "Deletedfile",
-    "text" : "删除附件"
+    "text" : "删除附件",
+    "value" : "deletedfile"
   }, {
-    "value" : "editfile",
     "codeName" : "Editfile",
-    "text" : "编辑附件"
+    "text" : "编辑附件",
+    "value" : "editfile"
   }, {
-    "value" : "erased",
     "codeName" : "Erased",
-    "text" : "删除了"
+    "text" : "删除了",
+    "value" : "erased"
   }, {
-    "value" : "undeleted",
     "codeName" : "Undeleted",
-    "text" : "还原了"
+    "text" : "还原了",
+    "value" : "undeleted"
   }, {
-    "value" : "hidden",
     "codeName" : "Hidden",
-    "text" : "隐藏了"
+    "text" : "隐藏了",
+    "value" : "hidden"
   }, {
-    "value" : "commented",
     "codeName" : "Commented",
-    "text" : "评论了"
+    "text" : "评论了",
+    "value" : "commented"
   }, {
-    "value" : "activated",
     "codeName" : "Activated",
-    "text" : "激活了"
+    "text" : "激活了",
+    "value" : "activated"
   }, {
-    "value" : "blocked",
     "codeName" : "Blocked",
-    "text" : "阻塞了"
+    "text" : "阻塞了",
+    "value" : "blocked"
   }, {
-    "value" : "resolved",
     "codeName" : "Resolved",
-    "text" : "解决了"
+    "text" : "解决了",
+    "value" : "resolved"
   }, {
-    "value" : "reviewed",
     "codeName" : "Reviewed",
-    "text" : "评审了"
+    "text" : "评审了",
+    "value" : "reviewed"
   }, {
-    "value" : "moved",
     "codeName" : "Moved",
-    "text" : "移动了"
+    "text" : "移动了",
+    "value" : "moved"
   }, {
-    "value" : "confirmed",
     "codeName" : "Confirmed",
-    "text" : "确认了需求"
+    "text" : "确认了需求",
+    "value" : "confirmed"
   }, {
-    "value" : "bugconfirmed",
     "codeName" : "Bugconfirmed",
-    "text" : "确认了"
+    "text" : "确认了",
+    "value" : "bugconfirmed"
   }, {
-    "value" : "tostory",
     "codeName" : "Tostory",
-    "text" : "转需求"
+    "text" : "转需求",
+    "value" : "tostory"
   }, {
-    "value" : "frombug",
     "codeName" : "Frombug",
-    "text" : "转需求"
+    "text" : "转需求",
+    "value" : "frombug"
   }, {
-    "value" : "fromlib",
     "codeName" : "Fromlib",
-    "text" : "从用例库导入"
+    "text" : "从用例库导入",
+    "value" : "fromlib"
   }, {
-    "value" : "totask",
     "codeName" : "Totask",
-    "text" : "转任务"
+    "text" : "转任务",
+    "value" : "totask"
   }, {
-    "value" : "svncommited",
     "codeName" : "Svncommited",
-    "text" : "提交代码"
+    "text" : "提交代码",
+    "value" : "svncommited"
   }, {
-    "value" : "gitcommited",
     "codeName" : "Gitcommited",
-    "text" : "提交代码"
+    "text" : "提交代码",
+    "value" : "gitcommited"
   }, {
-    "value" : "linked2plan",
     "codeName" : "Linked2plan",
-    "text" : "关联计划"
+    "text" : "关联计划",
+    "value" : "linked2plan"
   }, {
-    "value" : "unlinkedfromplan",
     "codeName" : "Unlinkedfromplan",
-    "text" : "移除计划"
+    "text" : "移除计划",
+    "value" : "unlinkedfromplan"
   }, {
-    "value" : "changestatus",
     "codeName" : "Changestatus",
-    "text" : "修改状态"
+    "text" : "修改状态",
+    "value" : "changestatus"
   }, {
-    "value" : "marked",
     "codeName" : "Marked",
-    "text" : "编辑了"
+    "text" : "编辑了",
+    "value" : "marked"
   }, {
-    "value" : "linked2project",
     "codeName" : "Linked2project",
-    "text" : "关联项目"
+    "text" : "关联项目",
+    "value" : "linked2project"
   }, {
-    "value" : "unlinkedfromproject",
     "codeName" : "Unlinkedfromproject",
-    "text" : "移除项目"
+    "text" : "移除项目",
+    "value" : "unlinkedfromproject"
   }, {
-    "value" : "unlinkedfrombuild",
     "codeName" : "Unlinkedfrombuild",
-    "text" : "移除版本"
+    "text" : "移除版本",
+    "value" : "unlinkedfrombuild"
   }, {
-    "value" : "linked2release",
     "codeName" : "Linked2release",
-    "text" : "关联发布"
+    "text" : "关联发布",
+    "value" : "linked2release"
   }, {
-    "value" : "unlinkedfromrelease",
     "codeName" : "Unlinkedfromrelease",
-    "text" : "移除发布"
+    "text" : "移除发布",
+    "value" : "unlinkedfromrelease"
   }, {
-    "value" : "linkrelatedbug",
     "codeName" : "Linkrelatedbug",
-    "text" : "关联了相关Bug"
+    "text" : "关联了相关Bug",
+    "value" : "linkrelatedbug"
   }, {
-    "value" : "unlinkrelatedbug",
     "codeName" : "Unlinkrelatedbug",
-    "text" : "移除了相关Bug"
+    "text" : "移除了相关Bug",
+    "value" : "unlinkrelatedbug"
   }, {
-    "value" : "linkrelatedcase",
     "codeName" : "Linkrelatedcase",
-    "text" : "关联了相关用例"
+    "text" : "关联了相关用例",
+    "value" : "linkrelatedcase"
   }, {
-    "value" : "unlinkrelatedcase",
     "codeName" : "Unlinkrelatedcase",
-    "text" : "移除了相关用例"
+    "text" : "移除了相关用例",
+    "value" : "unlinkrelatedcase"
   }, {
-    "value" : "linkrelatedstory",
     "codeName" : "Linkrelatedstory",
-    "text" : "关联了相关需求"
+    "text" : "关联了相关需求",
+    "value" : "linkrelatedstory"
   }, {
-    "value" : "unlinkrelatedstory",
     "codeName" : "Unlinkrelatedstory",
-    "text" : "移除了相关需求"
+    "text" : "移除了相关需求",
+    "value" : "unlinkrelatedstory"
   }, {
-    "value" : "subdividestory",
     "codeName" : "Subdividestory",
-    "text" : "细分了需求"
+    "text" : "细分了需求",
+    "value" : "subdividestory"
   }, {
-    "value" : "unlinkchildstory",
     "codeName" : "Unlinkchildstory",
-    "text" : "移除了细分需求"
+    "text" : "移除了细分需求",
+    "value" : "unlinkchildstory"
   }, {
-    "value" : "started",
     "codeName" : "Started",
-    "text" : "开始了"
+    "text" : "开始了",
+    "value" : "started"
   }, {
-    "value" : "restarted",
     "codeName" : "Restarted",
-    "text" : "继续了"
+    "text" : "继续了",
+    "value" : "restarted"
   }, {
-    "value" : "recordestimate",
     "codeName" : "Recordestimate",
-    "text" : "记录了工时"
+    "text" : "记录了工时",
+    "value" : "recordestimate"
   }, {
-    "value" : "editestimate",
     "codeName" : "Editestimate",
-    "text" : "编辑了工时"
+    "text" : "编辑了工时",
+    "value" : "editestimate"
   }, {
-    "value" : "canceled",
     "codeName" : "Canceled",
-    "text" : "取消了"
+    "text" : "取消了",
+    "value" : "canceled"
   }, {
-    "value" : "finished",
     "codeName" : "Finished",
-    "text" : "完成了"
+    "text" : "完成了",
+    "value" : "finished"
   }, {
-    "value" : "paused",
     "codeName" : "Paused",
-    "text" : "暂停了"
+    "text" : "暂停了",
+    "value" : "paused"
   }, {
-    "value" : "verified",
     "codeName" : "Verified",
-    "text" : "验收了"
+    "text" : "验收了",
+    "value" : "verified"
   }, {
-    "value" : "delayed",
     "codeName" : "Delayed",
-    "text" : "延期"
+    "text" : "延期",
+    "value" : "delayed"
   }, {
-    "value" : "suspended",
     "codeName" : "Suspended",
-    "text" : "挂起"
+    "text" : "挂起",
+    "value" : "suspended"
   }, {
-    "value" : "login",
     "codeName" : "Login",
-    "text" : "登录系统"
+    "text" : "登录系统",
+    "value" : "login"
   }, {
-    "value" : "logout",
     "codeName" : "Logout",
-    "text" : "退出登录"
+    "text" : "退出登录",
+    "value" : "logout"
   }, {
-    "value" : "deleteestimate",
     "codeName" : "Deleteestimate",
-    "text" : "删除了工时"
+    "text" : "删除了工时",
+    "value" : "deleteestimate"
   }, {
-    "value" : "linked2build",
     "codeName" : "Linked2build",
-    "text" : "关联了"
+    "text" : "关联了",
+    "value" : "linked2build"
   }, {
-    "value" : "linked2bug",
     "codeName" : "Linked2bug",
-    "text" : "关联了"
+    "text" : "关联了",
+    "value" : "linked2bug"
   }, {
-    "value" : "linkchildtask",
     "codeName" : "Linkchildtask",
-    "text" : "关联子任务"
+    "text" : "关联子任务",
+    "value" : "linkchildtask"
   }, {
-    "value" : "unlinkchildrentask",
     "codeName" : "Unlinkchildrentask",
-    "text" : "取消关联子任务"
+    "text" : "取消关联子任务",
+    "value" : "unlinkchildrentask"
   }, {
-    "value" : "linkparenttask",
     "codeName" : "Linkparenttask",
-    "text" : "关联到父任务"
+    "text" : "关联到父任务",
+    "value" : "linkparenttask"
   }, {
-    "value" : "unlinkparenttask",
     "codeName" : "Unlinkparenttask",
-    "text" : "从父任务取消关联"
+    "text" : "从父任务取消关联",
+    "value" : "unlinkparenttask"
   }, {
-    "value" : "batchcreate",
     "codeName" : "Batchcreate",
-    "text" : "批量创建任务"
+    "text" : "批量创建任务",
+    "value" : "batchcreate"
   }, {
-    "value" : "createchildren",
     "codeName" : "Createchildren",
-    "text" : "创建子任务"
+    "text" : "创建子任务",
+    "value" : "createchildren"
   }, {
-    "value" : "managed",
     "codeName" : "Managed",
-    "text" : "维护"
+    "text" : "维护",
+    "value" : "managed"
   }, {
-    "value" : "deletechildrentask",
     "codeName" : "Deletechildrentask",
-    "text" : "删除子任务"
+    "text" : "删除子任务",
+    "value" : "deletechildrentask"
   }, {
-    "value" : "createchildrenstory",
     "codeName" : "Createchildrenstory",
-    "text" : "创建子需求"
+    "text" : "创建子需求",
+    "value" : "createchildrenstory"
   }, {
-    "value" : "linkchildstory",
     "codeName" : "Linkchildstory",
-    "text" : "关联子需求"
+    "text" : "关联子需求",
+    "value" : "linkchildstory"
   }, {
-    "value" : "unlinkchildrenstory",
     "codeName" : "Unlinkchildrenstory",
-    "text" : "取消关联子需求"
+    "text" : "取消关联子需求",
+    "value" : "unlinkchildrenstory"
   }, {
-    "value" : "linkparentstory",
     "codeName" : "Linkparentstory",
-    "text" : "关联到父需求"
+    "text" : "关联到父需求",
+    "value" : "linkparentstory"
   }, {
-    "value" : "unlinkparentstory",
     "codeName" : "Unlinkparentstory",
-    "text" : "从父需求取消关联"
+    "text" : "从父需求取消关联",
+    "value" : "unlinkparentstory"
   }, {
-    "value" : "deletechildrenstory",
     "codeName" : "Deletechildrenstory",
-    "text" : "删除子需求"
+    "text" : "删除子需求",
+    "value" : "deletechildrenstory"
   }, {
-    "value" : "submit",
     "codeName" : "Submit",
-    "text" : "提交"
+    "text" : "提交",
+    "value" : "submit"
   }, {
-    "value" : "read",
     "codeName" : "Read",
-    "text" : "已读了"
+    "text" : "已读了",
+    "value" : "read"
   }, {
-    "value" : "remind",
     "codeName" : "Remind",
-    "text" : "提醒"
+    "text" : "提醒",
+    "value" : "remind"
   } ],
-  "dynaInstMode" : 1,
-  "codeListType" : "STATIC",
-  "codeName" : "Action__type",
-  "emptyText" : "未定义",
-  "enableCache" : true,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Action__type.json",
-  "name" : "系统日志操作类型"
+  "enableCache" : true
 }
