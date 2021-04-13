@@ -955,14 +955,16 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             newTask.setAssignedto(old.getOpenedby());
         }
 
-        //taskEstimate
-        TaskEstimate taskEstimate = new TaskEstimate();
-        taskEstimate.setTask(newTask.getId());
-        taskEstimate.setAccount(AuthenticationUser.getAuthenticationUser().getUsername());
-        taskEstimate.setDate(newTask.getRealstarted());
-        taskEstimate.setLeft(get(newTask.getLeft(), 0.0));
-        taskEstimate.setConsumed(get(newTask.getConsumed(), 0.0));
-        taskEstimateHelper.create(taskEstimate);
+        if(get(newTask.getConsumed(), 0.0) > 0) {
+            //taskEstimate
+            TaskEstimate taskEstimate = new TaskEstimate();
+            taskEstimate.setTask(newTask.getId());
+            taskEstimate.setAccount(AuthenticationUser.getAuthenticationUser().getUsername());
+            taskEstimate.setDate(newTask.getRealstarted());
+            taskEstimate.setLeft(get(newTask.getLeft(), 0.0));
+            taskEstimate.setConsumed(get(newTask.getConsumed(), 0.0));
+            taskEstimateHelper.create(taskEstimate);
+        }
 
         //teams
         List<Team> teams = teamHelper.list(new QueryWrapper<Team>().eq(FIELD_ROOT, newTask.getId()).eq(FIELD_TYPE, StaticDict.Team__type.TASK.getValue()));
