@@ -1330,9 +1330,11 @@ hide footbox
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
 |AssignedToMyTask|指派给我任务([MYSQL5](../../appendix/query_MYSQL5.md#Task_AssignedToMyTask))|否|&nbsp;|
+|AssignedToMyTaskEE|指派给我任务（EE）([MYSQL5](../../appendix/query_MYSQL5.md#Task_AssignedToMyTaskEE))|否|&nbsp;|
 |AssignedToMyTaskPc|指派给我任务（PC）([MYSQL5](../../appendix/query_MYSQL5.md#Task_AssignedToMyTaskPc))|否|&nbsp;|
 |BugTask|Bug相关任务([MYSQL5](../../appendix/query_MYSQL5.md#Task_BugTask))|否|&nbsp;|
 |ByModule|通过模块查询([MYSQL5](../../appendix/query_MYSQL5.md#Task_ByModule))|否|&nbsp;|
+|ByModuleEE|通过模块查询（聚微）([MYSQL5](../../appendix/query_MYSQL5.md#Task_ByModuleEE))|否|&nbsp;|
 |ChildDefault|数据查询（子任务）([MYSQL5](../../appendix/query_MYSQL5.md#Task_ChildDefault))|否|&nbsp;|
 |ChildDefaultMore|数据查询（子任务）（更多）([MYSQL5](../../appendix/query_MYSQL5.md#Task_ChildDefaultMore))|否|&nbsp;|
 |ChildTask|子任务([MYSQL5](../../appendix/query_MYSQL5.md#Task_ChildTask))|否|&nbsp;|
@@ -1343,6 +1345,7 @@ hide footbox
 |ESBulk|ES批量的导入([MYSQL5](../../appendix/query_MYSQL5.md#Task_ESBulk))|否|&nbsp;|
 |MyAgentTask|我代理的任务([MYSQL5](../../appendix/query_MYSQL5.md#Task_MyAgentTask))|否|&nbsp;|
 |MyAllTask|我相关的任务([MYSQL5](../../appendix/query_MYSQL5.md#Task_MyAllTask))|否|&nbsp;|
+|MyAllTaskEE|我相关的任务（聚微）([MYSQL5](../../appendix/query_MYSQL5.md#Task_MyAllTaskEE))|否|&nbsp;|
 |MyCompleteTask|我完成的任务（汇报）([MYSQL5](../../appendix/query_MYSQL5.md#Task_MyCompleteTask))|否|&nbsp;|
 |MyCompleteTaskMobDaily|我完成的任务（移动端日报）([MYSQL5](../../appendix/query_MYSQL5.md#Task_MyCompleteTaskMobDaily))|否|&nbsp;|
 |MyCompleteTaskMobMonthly|我完成的任务（移动端月报）([MYSQL5](../../appendix/query_MYSQL5.md#Task_MyCompleteTaskMobMonthly))|否|&nbsp;|
@@ -1358,6 +1361,7 @@ hide footbox
 |PlanTask|相关任务（计划）([MYSQL5](../../appendix/query_MYSQL5.md#Task_PlanTask))|否|&nbsp;|
 |ProjectAppTask|项目任务（项目立项）([MYSQL5](../../appendix/query_MYSQL5.md#Task_ProjectAppTask))|否|&nbsp;|
 |ProjectTask|项目任务([MYSQL5](../../appendix/query_MYSQL5.md#Task_ProjectTask))|否|&nbsp;|
+|ProjectTaskEE|项目任务（聚微）([MYSQL5](../../appendix/query_MYSQL5.md#Task_ProjectTaskEE))|否|&nbsp;|
 |RootTask|根任务([MYSQL5](../../appendix/query_MYSQL5.md#Task_RootTask))|否|&nbsp;|
 |TaskLinkPlan|关联计划（当前项目未关联）([MYSQL5](../../appendix/query_MYSQL5.md#Task_TaskLinkPlan))|否|&nbsp;|
 |ThisMonthCompleteTaskChoice|我本月完成的任务（下拉列表框）([MYSQL5](../../appendix/query_MYSQL5.md#Task_ThisMonthCompleteTaskChoice))|否|&nbsp;|
@@ -1375,9 +1379,11 @@ hide footbox
 | 集合编号 | 集合名称   |  包含查询  | 默认集合 |   备注|
 | --------  | --------   | -------- | --------   | ----- |
 |AssignedToMyTask|指派给我任务|AssignedToMyTask|否|&nbsp;|
+|AssignedToMyTaskEE|指派给我任务（EE）|AssignedToMyTaskEE|否|&nbsp;|
 |AssignedToMyTaskPc|指派给我任务（PC）|AssignedToMyTaskPc|否|&nbsp;|
 |BugTask|Bug相关任务|BugTask|否|&nbsp;|
 |ByModule|通过模块查询|ByModule|否|&nbsp;|
+|ByModuleEE|通过模块查询（聚微）|ByModuleEE|否|&nbsp;|
 |ChildDefault|数据查询（子任务）|ChildDefault|否|&nbsp;|
 |ChildDefaultMore|数据查询（子任务）（更多）|ChildDefaultMore|否|&nbsp;|
 |ChildTask|子任务|ChildTask|否|&nbsp;|
@@ -1388,6 +1394,7 @@ hide footbox
 |ESBulk|ES批量的导入|ESBulk|否|&nbsp;|
 |MyAgentTask|我代理的任务|MyAgentTask|否|&nbsp;|
 |MyAllTask|我相关的任务|MyAllTask|否|&nbsp;|
+|MyAllTaskEE|我相关的任务（聚微）|MyAllTaskEE|否|&nbsp;|
 |MyCompleteTask|我完成的任务（汇报）|MyCompleteTask|否|&nbsp;|
 |MyCompleteTaskMobDaily|我完成的任务（移动端日报）|MyCompleteTaskMobDaily|否|&nbsp;|
 |MyCompleteTaskMobMonthly|我完成的任务（移动端月报）|MyCompleteTaskMobMonthly|否|&nbsp;|
@@ -1403,6 +1410,7 @@ hide footbox
 |PlanTask|相关任务（计划）|PlanTask|否|&nbsp;|
 |ProjectAppTask|项目任务（项目立项）|ProjectAppTask|否|&nbsp;|
 |ProjectTask|项目任务|ProjectTask|否|&nbsp;|
+|ProjectTaskEE|项目任务（聚微）|ProjectTaskEE|否|&nbsp;|
 |RootTask|根任务|RootTask|否|&nbsp;|
 |TaskLinkPlan|关联计划（当前项目未关联）|TaskLinkPlan|否|&nbsp;|
 |ThisMonthCompleteTaskChoice|我本月完成的任务（下拉列表框）|ThisMonthCompleteTaskChoice|否|&nbsp;|

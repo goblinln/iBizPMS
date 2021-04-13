@@ -695,6 +695,42 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
 
+### 获取指派给我任务（EE）
+#### 访问路径
+/tasks/fetchassignedtomytaskee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 查询指派给我任务（EE）
+#### 访问路径
+/tasks/searchassignedtomytaskee
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
 ### 获取指派给我任务（PC）
 #### 访问路径
 /tasks/fetchassignedtomytaskpc
@@ -788,6 +824,42 @@ POST
 ### 查询通过模块查询
 #### 访问路径
 /tasks/searchbymodule
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 获取通过模块查询（聚微）
+#### 访问路径
+/tasks/fetchbymoduleee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 查询通过模块查询（聚微）
+#### 访问路径
+/tasks/searchbymoduleee
 
 #### 请求方法
 POST
@@ -1148,6 +1220,42 @@ POST
 ### 查询我相关的任务
 #### 访问路径
 /tasks/searchmyalltask
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 获取我相关的任务（聚微）
+#### 访问路径
+/tasks/fetchmyalltaskee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 查询我相关的任务（聚微）
+#### 访问路径
+/tasks/searchmyalltaskee
 
 #### 请求方法
 POST
@@ -1688,6 +1796,42 @@ POST
 ### 查询项目任务
 #### 访问路径
 /tasks/searchprojecttask
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 获取项目任务（聚微）
+#### 访问路径
+/tasks/fetchprojecttaskee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 查询项目任务（聚微）
+#### 访问路径
+/tasks/searchprojecttaskee
 
 #### 请求方法
 POST
@@ -2792,6 +2936,44 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
 
+### 根据获取指派给我任务（EE）
+#### 访问路径
+/projectmodules/{projectmodule_id}/tasks/fetchassignedtomytaskee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projectmodule_id | Long | 任务模块主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询指派给我任务（EE）
+#### 访问路径
+/projectmodules/{projectmodule_id}/tasks/searchassignedtomytaskee
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projectmodule_id | Long | 任务模块主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
 ### 根据获取指派给我任务（PC）
 #### 访问路径
 /projectmodules/{projectmodule_id}/tasks/fetchassignedtomytaskpc
@@ -2890,6 +3072,44 @@ POST
 ### 根据查询通过模块查询
 #### 访问路径
 /projectmodules/{projectmodule_id}/tasks/searchbymodule
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projectmodule_id | Long | 任务模块主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取通过模块查询（聚微）
+#### 访问路径
+/projectmodules/{projectmodule_id}/tasks/fetchbymoduleee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projectmodule_id | Long | 任务模块主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询通过模块查询（聚微）
+#### 访问路径
+/projectmodules/{projectmodule_id}/tasks/searchbymoduleee
 
 #### 请求方法
 POST
@@ -3270,6 +3490,44 @@ POST
 ### 根据查询我相关的任务
 #### 访问路径
 /projectmodules/{projectmodule_id}/tasks/searchmyalltask
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projectmodule_id | Long | 任务模块主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取我相关的任务（聚微）
+#### 访问路径
+/projectmodules/{projectmodule_id}/tasks/fetchmyalltaskee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projectmodule_id | Long | 任务模块主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询我相关的任务（聚微）
+#### 访问路径
+/projectmodules/{projectmodule_id}/tasks/searchmyalltaskee
 
 #### 请求方法
 POST
@@ -3840,6 +4098,44 @@ POST
 ### 根据查询项目任务
 #### 访问路径
 /projectmodules/{projectmodule_id}/tasks/searchprojecttask
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projectmodule_id | Long | 任务模块主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取项目任务（聚微）
+#### 访问路径
+/projectmodules/{projectmodule_id}/tasks/fetchprojecttaskee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projectmodule_id | Long | 任务模块主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询项目任务（聚微）
+#### 访问路径
+/projectmodules/{projectmodule_id}/tasks/searchprojecttaskee
 
 #### 请求方法
 POST
@@ -4965,6 +5261,44 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
 
+### 根据获取指派给我任务（EE）
+#### 访问路径
+/productplans/{productplan_id}/tasks/fetchassignedtomytaskee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | productplan_id | Long | 产品计划主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询指派给我任务（EE）
+#### 访问路径
+/productplans/{productplan_id}/tasks/searchassignedtomytaskee
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | productplan_id | Long | 产品计划主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
 ### 根据获取指派给我任务（PC）
 #### 访问路径
 /productplans/{productplan_id}/tasks/fetchassignedtomytaskpc
@@ -5063,6 +5397,44 @@ POST
 ### 根据查询通过模块查询
 #### 访问路径
 /productplans/{productplan_id}/tasks/searchbymodule
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | productplan_id | Long | 产品计划主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取通过模块查询（聚微）
+#### 访问路径
+/productplans/{productplan_id}/tasks/fetchbymoduleee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | productplan_id | Long | 产品计划主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询通过模块查询（聚微）
+#### 访问路径
+/productplans/{productplan_id}/tasks/searchbymoduleee
 
 #### 请求方法
 POST
@@ -5443,6 +5815,44 @@ POST
 ### 根据查询我相关的任务
 #### 访问路径
 /productplans/{productplan_id}/tasks/searchmyalltask
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | productplan_id | Long | 产品计划主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取我相关的任务（聚微）
+#### 访问路径
+/productplans/{productplan_id}/tasks/fetchmyalltaskee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | productplan_id | Long | 产品计划主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询我相关的任务（聚微）
+#### 访问路径
+/productplans/{productplan_id}/tasks/searchmyalltaskee
 
 #### 请求方法
 POST
@@ -6013,6 +6423,44 @@ POST
 ### 根据查询项目任务
 #### 访问路径
 /productplans/{productplan_id}/tasks/searchprojecttask
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | productplan_id | Long | 产品计划主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取项目任务（聚微）
+#### 访问路径
+/productplans/{productplan_id}/tasks/fetchprojecttaskee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | productplan_id | Long | 产品计划主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询项目任务（聚微）
+#### 访问路径
+/productplans/{productplan_id}/tasks/searchprojecttaskee
 
 #### 请求方法
 POST
@@ -7138,6 +7586,44 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
 
+### 根据获取指派给我任务（EE）
+#### 访问路径
+/stories/{story_id}/tasks/fetchassignedtomytaskee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | story_id | Long | 需求主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询指派给我任务（EE）
+#### 访问路径
+/stories/{story_id}/tasks/searchassignedtomytaskee
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | story_id | Long | 需求主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
 ### 根据获取指派给我任务（PC）
 #### 访问路径
 /stories/{story_id}/tasks/fetchassignedtomytaskpc
@@ -7236,6 +7722,44 @@ POST
 ### 根据查询通过模块查询
 #### 访问路径
 /stories/{story_id}/tasks/searchbymodule
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | story_id | Long | 需求主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取通过模块查询（聚微）
+#### 访问路径
+/stories/{story_id}/tasks/fetchbymoduleee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | story_id | Long | 需求主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询通过模块查询（聚微）
+#### 访问路径
+/stories/{story_id}/tasks/searchbymoduleee
 
 #### 请求方法
 POST
@@ -7616,6 +8140,44 @@ POST
 ### 根据查询我相关的任务
 #### 访问路径
 /stories/{story_id}/tasks/searchmyalltask
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | story_id | Long | 需求主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取我相关的任务（聚微）
+#### 访问路径
+/stories/{story_id}/tasks/fetchmyalltaskee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | story_id | Long | 需求主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询我相关的任务（聚微）
+#### 访问路径
+/stories/{story_id}/tasks/searchmyalltaskee
 
 #### 请求方法
 POST
@@ -8186,6 +8748,44 @@ POST
 ### 根据查询项目任务
 #### 访问路径
 /stories/{story_id}/tasks/searchprojecttask
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | story_id | Long | 需求主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取项目任务（聚微）
+#### 访问路径
+/stories/{story_id}/tasks/fetchprojecttaskee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | story_id | Long | 需求主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询项目任务（聚微）
+#### 访问路径
+/stories/{story_id}/tasks/searchprojecttaskee
 
 #### 请求方法
 POST
@@ -9311,6 +9911,44 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
 
+### 根据获取指派给我任务（EE）
+#### 访问路径
+/projects/{project_id}/tasks/fetchassignedtomytaskee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询指派给我任务（EE）
+#### 访问路径
+/projects/{project_id}/tasks/searchassignedtomytaskee
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
 ### 根据获取指派给我任务（PC）
 #### 访问路径
 /projects/{project_id}/tasks/fetchassignedtomytaskpc
@@ -9409,6 +10047,44 @@ POST
 ### 根据查询通过模块查询
 #### 访问路径
 /projects/{project_id}/tasks/searchbymodule
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取通过模块查询（聚微）
+#### 访问路径
+/projects/{project_id}/tasks/fetchbymoduleee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询通过模块查询（聚微）
+#### 访问路径
+/projects/{project_id}/tasks/searchbymoduleee
 
 #### 请求方法
 POST
@@ -9789,6 +10465,44 @@ POST
 ### 根据查询我相关的任务
 #### 访问路径
 /projects/{project_id}/tasks/searchmyalltask
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取我相关的任务（聚微）
+#### 访问路径
+/projects/{project_id}/tasks/fetchmyalltaskee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询我相关的任务（聚微）
+#### 访问路径
+/projects/{project_id}/tasks/searchmyalltaskee
 
 #### 请求方法
 POST
@@ -10359,6 +11073,44 @@ POST
 ### 根据查询项目任务
 #### 访问路径
 /projects/{project_id}/tasks/searchprojecttask
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取项目任务（聚微）
+#### 访问路径
+/projects/{project_id}/tasks/fetchprojecttaskee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询项目任务（聚微）
+#### 访问路径
+/projects/{project_id}/tasks/searchprojecttaskee
 
 #### 请求方法
 POST
@@ -11484,6 +12236,44 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
 
+### 根据获取指派给我任务（EE）
+#### 访问路径
+/products/{product_id}/productplans/{productplan_id}/tasks/fetchassignedtomytaskee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | productplan_id | Long | 产品计划主键ID |
+| 3 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询指派给我任务（EE）
+#### 访问路径
+/products/{product_id}/productplans/{productplan_id}/tasks/searchassignedtomytaskee
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | productplan_id | Long | 产品计划主键ID |
+| 3 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
 ### 根据获取指派给我任务（PC）
 #### 访问路径
 /products/{product_id}/productplans/{productplan_id}/tasks/fetchassignedtomytaskpc
@@ -11582,6 +12372,44 @@ POST
 ### 根据查询通过模块查询
 #### 访问路径
 /products/{product_id}/productplans/{productplan_id}/tasks/searchbymodule
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | productplan_id | Long | 产品计划主键ID |
+| 3 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取通过模块查询（聚微）
+#### 访问路径
+/products/{product_id}/productplans/{productplan_id}/tasks/fetchbymoduleee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | productplan_id | Long | 产品计划主键ID |
+| 3 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询通过模块查询（聚微）
+#### 访问路径
+/products/{product_id}/productplans/{productplan_id}/tasks/searchbymoduleee
 
 #### 请求方法
 POST
@@ -11962,6 +12790,44 @@ POST
 ### 根据查询我相关的任务
 #### 访问路径
 /products/{product_id}/productplans/{productplan_id}/tasks/searchmyalltask
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | productplan_id | Long | 产品计划主键ID |
+| 3 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取我相关的任务（聚微）
+#### 访问路径
+/products/{product_id}/productplans/{productplan_id}/tasks/fetchmyalltaskee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | productplan_id | Long | 产品计划主键ID |
+| 3 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询我相关的任务（聚微）
+#### 访问路径
+/products/{product_id}/productplans/{productplan_id}/tasks/searchmyalltaskee
 
 #### 请求方法
 POST
@@ -12532,6 +13398,44 @@ POST
 ### 根据查询项目任务
 #### 访问路径
 /products/{product_id}/productplans/{productplan_id}/tasks/searchprojecttask
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | productplan_id | Long | 产品计划主键ID |
+| 3 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取项目任务（聚微）
+#### 访问路径
+/products/{product_id}/productplans/{productplan_id}/tasks/fetchprojecttaskee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | productplan_id | Long | 产品计划主键ID |
+| 3 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询项目任务（聚微）
+#### 访问路径
+/products/{product_id}/productplans/{productplan_id}/tasks/searchprojecttaskee
 
 #### 请求方法
 POST
@@ -13657,6 +14561,44 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
 
+### 根据获取指派给我任务（EE）
+#### 访问路径
+/products/{product_id}/stories/{story_id}/tasks/fetchassignedtomytaskee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |
+| 3 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询指派给我任务（EE）
+#### 访问路径
+/products/{product_id}/stories/{story_id}/tasks/searchassignedtomytaskee
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |
+| 3 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
 ### 根据获取指派给我任务（PC）
 #### 访问路径
 /products/{product_id}/stories/{story_id}/tasks/fetchassignedtomytaskpc
@@ -13755,6 +14697,44 @@ POST
 ### 根据查询通过模块查询
 #### 访问路径
 /products/{product_id}/stories/{story_id}/tasks/searchbymodule
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |
+| 3 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取通过模块查询（聚微）
+#### 访问路径
+/products/{product_id}/stories/{story_id}/tasks/fetchbymoduleee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |
+| 3 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询通过模块查询（聚微）
+#### 访问路径
+/products/{product_id}/stories/{story_id}/tasks/searchbymoduleee
 
 #### 请求方法
 POST
@@ -14135,6 +15115,44 @@ POST
 ### 根据查询我相关的任务
 #### 访问路径
 /products/{product_id}/stories/{story_id}/tasks/searchmyalltask
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |
+| 3 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取我相关的任务（聚微）
+#### 访问路径
+/products/{product_id}/stories/{story_id}/tasks/fetchmyalltaskee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |
+| 3 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询我相关的任务（聚微）
+#### 访问路径
+/products/{product_id}/stories/{story_id}/tasks/searchmyalltaskee
 
 #### 请求方法
 POST
@@ -14705,6 +15723,44 @@ POST
 ### 根据查询项目任务
 #### 访问路径
 /products/{product_id}/stories/{story_id}/tasks/searchprojecttask
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |
+| 3 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取项目任务（聚微）
+#### 访问路径
+/products/{product_id}/stories/{story_id}/tasks/fetchprojecttaskee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |
+| 3 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询项目任务（聚微）
+#### 访问路径
+/products/{product_id}/stories/{story_id}/tasks/searchprojecttaskee
 
 #### 请求方法
 POST
@@ -15830,6 +16886,44 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
 
+### 根据获取指派给我任务（EE）
+#### 访问路径
+/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchassignedtomytaskee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |/r/n| 2 | projectmodule_id | Long | 任务模块主键ID |
+| 3 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询指派给我任务（EE）
+#### 访问路径
+/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchassignedtomytaskee
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |/r/n| 2 | projectmodule_id | Long | 任务模块主键ID |
+| 3 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
 ### 根据获取指派给我任务（PC）
 #### 访问路径
 /projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchassignedtomytaskpc
@@ -15928,6 +17022,44 @@ POST
 ### 根据查询通过模块查询
 #### 访问路径
 /projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchbymodule
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |/r/n| 2 | projectmodule_id | Long | 任务模块主键ID |
+| 3 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取通过模块查询（聚微）
+#### 访问路径
+/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchbymoduleee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |/r/n| 2 | projectmodule_id | Long | 任务模块主键ID |
+| 3 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询通过模块查询（聚微）
+#### 访问路径
+/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchbymoduleee
 
 #### 请求方法
 POST
@@ -16308,6 +17440,44 @@ POST
 ### 根据查询我相关的任务
 #### 访问路径
 /projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchmyalltask
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |/r/n| 2 | projectmodule_id | Long | 任务模块主键ID |
+| 3 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取我相关的任务（聚微）
+#### 访问路径
+/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchmyalltaskee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |/r/n| 2 | projectmodule_id | Long | 任务模块主键ID |
+| 3 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询我相关的任务（聚微）
+#### 访问路径
+/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchmyalltaskee
 
 #### 请求方法
 POST
@@ -16878,6 +18048,44 @@ POST
 ### 根据查询项目任务
 #### 访问路径
 /projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchprojecttask
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |/r/n| 2 | projectmodule_id | Long | 任务模块主键ID |
+| 3 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskDTO](#TaskDTO)>：任务实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取项目任务（聚微）
+#### 访问路径
+/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchprojecttaskee
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |/r/n| 2 | projectmodule_id | Long | 任务模块主键ID |
+| 3 | context | [TaskSearchContext](#TaskSearchContext) | 任务查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskDTO](#TaskDTO)>：任务实体传输对象列表 |
+
+### 根据查询项目任务（聚微）
+#### 访问路径
+/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchprojecttaskee
 
 #### 请求方法
 POST

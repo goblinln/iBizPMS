@@ -93,9 +93,11 @@ public interface ITaskService extends IService<Task> {
     Task taskNFavorites(Task et);
     Task updateStoryVersion(Task et);
     Page<Task> searchAssignedToMyTask(TaskSearchContext context);
+    Page<Task> searchAssignedToMyTaskEE(TaskSearchContext context);
     Page<Task> searchAssignedToMyTaskPc(TaskSearchContext context);
     Page<Task> searchBugTask(TaskSearchContext context);
     Page<Task> searchByModule(TaskSearchContext context);
+    Page<Task> searchByModuleEE(TaskSearchContext context);
     Page<Task> searchChildDefault(TaskSearchContext context);
     Page<Task> searchChildDefaultMore(TaskSearchContext context);
     Page<Task> searchChildTask(TaskSearchContext context);
@@ -106,6 +108,7 @@ public interface ITaskService extends IService<Task> {
     Page<Task> searchESBulk(TaskSearchContext context);
     Page<Task> searchMyAgentTask(TaskSearchContext context);
     Page<Task> searchMyAllTask(TaskSearchContext context);
+    Page<Task> searchMyAllTaskEE(TaskSearchContext context);
     Page<Task> searchMyCompleteTask(TaskSearchContext context);
     Page<Task> searchMyCompleteTaskMobDaily(TaskSearchContext context);
     Page<Task> searchMyCompleteTaskMobMonthly(TaskSearchContext context);
@@ -121,6 +124,7 @@ public interface ITaskService extends IService<Task> {
     Page<Task> searchPlanTask(TaskSearchContext context);
     Page<Task> searchProjectAppTask(TaskSearchContext context);
     Page<Task> searchProjectTask(TaskSearchContext context);
+    Page<Task> searchProjectTaskEE(TaskSearchContext context);
     Page<Task> searchRootTask(TaskSearchContext context);
     Page<Task> searchTaskLinkPlan(TaskSearchContext context);
     Page<Task> searchThisMonthCompleteTaskChoice(TaskSearchContext context);
