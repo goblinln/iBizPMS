@@ -258,7 +258,7 @@ public class TaskExService extends TaskServiceImpl {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Task> pages=baseMapper.searchPlanTask(context.getPages(),context,context.getSelectCond());
         List<Task> records = pages.getRecords();
 
-        this.setChildTaskToParent(records,context,pages);
+       //  this.setChildTaskToParent(records,context,pages);
         pages.setRecords(records);
         return new PageImpl<Task>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
