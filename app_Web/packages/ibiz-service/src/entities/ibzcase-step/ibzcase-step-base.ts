@@ -38,6 +38,10 @@ export abstract class IBZCaseStepBase extends EntityBase implements IIBZCaseStep
      */
     casestepid?: any;
     /**
+     * 归属部门
+     */
+    dept?: any;
+    /**
      * 实际情况
      */
     reals?: any;
@@ -53,6 +57,10 @@ export abstract class IBZCaseStepBase extends EntityBase implements IIBZCaseStep
      * @type {('step' | 'group' | 'item')} step: 步骤, group: 分组, item: 分组步骤
      */
     type?: 'step' | 'group' | 'item';
+    /**
+     * 由谁创建
+     */
+    createby?: any;
     /**
      * 编号
      */
@@ -70,9 +78,17 @@ export abstract class IBZCaseStepBase extends EntityBase implements IIBZCaseStep
      */
     files?: any;
     /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
      * 执行编号
      */
     runid?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
     /**
      * 用例版本
      */
@@ -85,22 +101,6 @@ export abstract class IBZCaseStepBase extends EntityBase implements IIBZCaseStep
      * 分组用例步骤的组编号
      */
     parent?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
 
     /**
      * 重置实体数据

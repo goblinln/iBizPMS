@@ -34,13 +34,29 @@ export abstract class StorySpecBase extends EntityBase implements IStorySpec {
         this.title = val;
     }
     /**
+     * 归属部门
+     */
+    dept?: any;
+    /**
      * 需求描述	
      */
     spec?: any;
     /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
+     * 由谁创建
+     */
+    createby?: any;
+    /**
      * 验收标准
      */
     verify?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
     /**
      * 虚拟主键
      */
@@ -57,22 +73,6 @@ export abstract class StorySpecBase extends EntityBase implements IStorySpec {
      * 需求
      */
     story?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
 
     /**
      * 重置实体数据

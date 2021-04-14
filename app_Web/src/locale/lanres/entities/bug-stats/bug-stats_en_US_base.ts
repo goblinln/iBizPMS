@@ -300,10 +300,6 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("Remove And Close Window",null),
 			},
 		},
-		productbugresolutiongridviewtoolbar_toolbar: {
-		},
-		productbugstatusgridviewtoolbar_toolbar: {
-		},
 		bugresolvedbygridviewzuzhitoolbar_toolbar: {
 			'deuiaction1': {
 				caption: commonLogic.appcommonhandle("Export",null),

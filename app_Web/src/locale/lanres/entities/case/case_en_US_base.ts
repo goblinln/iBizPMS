@@ -26,9 +26,11 @@ function getLocaleResourceBase(){
 		'comment': commonLogic.appcommonhandle("备注",null),
 		'auto': commonLogic.appcommonhandle("auto",null),
 		'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
+		'dept': commonLogic.appcommonhandle("归属部门",null),
 		'frequency': commonLogic.appcommonhandle("frequency",null),
 		'title': commonLogic.appcommonhandle("用例标题",null),
 		'lasteditedby': commonLogic.appcommonhandle("最后修改者",null),
+		'org': commonLogic.appcommonhandle("归属组织",null),
 		'reviewedby': commonLogic.appcommonhandle("由谁评审",null),
 		'files': commonLogic.appcommonhandle("附件",null),
 		'tobugcnt': commonLogic.appcommonhandle("转bug数",null),
@@ -62,8 +64,6 @@ function getLocaleResourceBase(){
 		'product': commonLogic.appcommonhandle("所属产品",null),
 		'lib': commonLogic.appcommonhandle("所属库",null),
 		'module': commonLogic.appcommonhandle("所属模块",null),
-		'org': commonLogic.appcommonhandle("归属组织",null),
-		'dept': commonLogic.appcommonhandle("归属部门",null),
 	},
 		views: {
 			'editview': {

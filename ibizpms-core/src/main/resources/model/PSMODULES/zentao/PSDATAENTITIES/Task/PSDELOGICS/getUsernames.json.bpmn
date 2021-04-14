@@ -17,19 +17,19 @@
                         <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskgetusernamesrawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="任务团队"/>
                         <endEvent id="rawsqlcall1_end" name="end"/>
                         <sequenceFlow id="rawsqlcall1_end_line" sourceRef="rawsqlcall1" targetRef="rawsqlcall1_end"/>
-                    <sequenceFlow id="gateway-begin_rawsqlcall1" sourceRef="gateway-begin" targetRef="rawsqlcall1">
-                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
-                                            $taskgetusernamesdefault:Task();
-                                    eval($taskgetusernamesdefault==taskgetusernamesdefault);
-                                eval((RuleUtils.test($taskgetusernamesdefault.get("multiple"),"EQ","1")))
-                                ]]>
-                            </conditionExpression>
-                    </sequenceFlow>
                     <sequenceFlow id="gateway-begin_rawsqlcall2" sourceRef="gateway-begin" targetRef="rawsqlcall2">
                             <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
                                             $taskgetusernamesdefault:Task();
                                     eval($taskgetusernamesdefault==taskgetusernamesdefault);
                                 eval((RuleUtils.test($taskgetusernamesdefault.get("multiple"),"NOTEQ","1")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-begin_rawsqlcall1" sourceRef="gateway-begin" targetRef="rawsqlcall1">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskgetusernamesdefault:Task();
+                                    eval($taskgetusernamesdefault==taskgetusernamesdefault);
+                                eval((RuleUtils.test($taskgetusernamesdefault.get("multiple"),"EQ","1")))
                                 ]]>
                             </conditionExpression>
                     </sequenceFlow>

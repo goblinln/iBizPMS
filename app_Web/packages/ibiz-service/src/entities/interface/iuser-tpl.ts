@@ -17,6 +17,10 @@ export interface IUserTpl extends IEntityBase {
      */
     id?: any;
     /**
+     * 归属组织
+     */
+    org?: any;
+    /**
      * content
      */
     content?: any;
@@ -40,10 +44,6 @@ export interface IUserTpl extends IEntityBase {
      * 由谁更新
      */
     updateby?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
     /**
      * 归属部门
      */

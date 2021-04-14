@@ -36,7 +36,7 @@ public class ExtensionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return extensionService.sysGet(String.valueOf(o));
+            return extensionService.sysGet((Long)o);
         }
     }
 

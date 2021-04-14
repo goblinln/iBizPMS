@@ -36,7 +36,7 @@ public class RepoHistoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return repohistoryService.sysGet(String.valueOf(o));
+            return repohistoryService.sysGet((Long)o);
         }
     }
 

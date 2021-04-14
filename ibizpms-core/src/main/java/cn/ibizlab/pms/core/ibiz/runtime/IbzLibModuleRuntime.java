@@ -36,7 +36,7 @@ public class IbzLibModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return ibzlibmoduleService.sysGet(String.valueOf(o));
+            return ibzlibmoduleService.sysGet((Long)o);
         }
     }
 

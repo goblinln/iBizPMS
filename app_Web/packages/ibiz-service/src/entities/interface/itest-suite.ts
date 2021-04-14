@@ -9,6 +9,14 @@ import { IEntityBase } from 'ibiz-core';
  */
 export interface ITestSuite extends IEntityBase {
     /**
+     * 归属部门
+     */
+    dept?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
+    /**
      * 名称
      */
     name?: any;
@@ -54,12 +62,4 @@ export interface ITestSuite extends IEntityBase {
      * 所属产品
      */
     product?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
 }

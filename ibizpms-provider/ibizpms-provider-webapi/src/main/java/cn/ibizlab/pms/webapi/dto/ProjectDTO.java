@@ -303,6 +303,16 @@ public class ProjectDTO extends DTOBase implements Serializable {
     private Integer ystarttaskcnt;
 
     /**
+     * 属性 [UPDATEBY]
+     *
+     */
+    @JSONField(name = "updateby")
+    @JsonProperty("updateby")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("由谁更新")
+    private String updateby;
+
+    /**
      * 属性 [WHITELIST]
      *
      */
@@ -792,16 +802,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("父项目")
     private Long parent;
-
-    /**
-     * 属性 [UPDATEBY]
-     *
-     */
-    @JSONField(name = "updateby")
-    @JsonProperty("updateby")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("由谁更新")
-    private String updateby;
 
 
     /**

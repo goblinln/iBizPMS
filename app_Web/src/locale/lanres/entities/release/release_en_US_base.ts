@@ -5,6 +5,7 @@ function getLocaleResourceBase(){
 	fields: {
 		'stories': commonLogic.appcommonhandle("完成的需求",null),
 		'marker': commonLogic.appcommonhandle("里程碑",null),
+		'org': commonLogic.appcommonhandle("归属组织",null),
 		'id': commonLogic.appcommonhandle("ID",null),
 		'sqlid': commonLogic.appcommonhandle("运行数据库",null),
 		'leftbugs': commonLogic.appcommonhandle("遗留的Bug",null),
@@ -20,7 +21,10 @@ function getLocaleResourceBase(){
 		'backgroundid': commonLogic.appcommonhandle("后台体系",null),
 		'desc': commonLogic.appcommonhandle("描述",null),
 		'files': commonLogic.appcommonhandle("附件",null),
+		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 		'frontapplication': commonLogic.appcommonhandle("系统应用",null),
+		'dept': commonLogic.appcommonhandle("归属部门",null),
+		'createby': commonLogic.appcommonhandle("由谁创建",null),
 		'productname': commonLogic.appcommonhandle("产品名称",null),
 		'builder': commonLogic.appcommonhandle("构建者",null),
 		'buildname': commonLogic.appcommonhandle("版本",null),
@@ -28,10 +32,6 @@ function getLocaleResourceBase(){
 		'product': commonLogic.appcommonhandle("产品",null),
 		'build': commonLogic.appcommonhandle("版本",null),
 		'branch': commonLogic.appcommonhandle("平台/分支",null),
-		'createby': commonLogic.appcommonhandle("由谁创建",null),
-		'updateby': commonLogic.appcommonhandle("由谁更新",null),
-		'org': commonLogic.appcommonhandle("归属组织",null),
-		'dept': commonLogic.appcommonhandle("归属部门",null),
 	},
 		views: {
 			'quickcreateview': {

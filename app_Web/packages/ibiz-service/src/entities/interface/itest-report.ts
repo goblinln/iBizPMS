@@ -29,6 +29,10 @@ export interface ITestReport extends IEntityBase {
      */
     members?: any;
     /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
      * 测试的Bug
      */
     bugs?: any;
@@ -67,6 +71,10 @@ export interface ITestReport extends IEntityBase {
      */
     objecttype?: 'testtask' | 'project';
     /**
+     * 归属组织
+     */
+    org?: any;
+    /**
      * 结束时间
      */
     end?: any;
@@ -74,6 +82,10 @@ export interface ITestReport extends IEntityBase {
      * 版本信息
      */
     builds?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
     /**
      * 创建时间
      */
@@ -110,16 +122,4 @@ export interface ITestReport extends IEntityBase {
      * 所属项目
      */
     project?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
 }

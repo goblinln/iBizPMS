@@ -36,7 +36,7 @@ public class UserGroupRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return usergroupService.sysGet(String.valueOf(o));
+            return usergroupService.sysGet((String)o);
         }
     }
 

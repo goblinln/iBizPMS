@@ -54,6 +54,10 @@ export abstract class TestReportBase extends EntityBase implements ITestReport {
      */
     members?: any;
     /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
      * 测试的Bug
      */
     bugs?: any;
@@ -92,6 +96,10 @@ export abstract class TestReportBase extends EntityBase implements ITestReport {
      */
     objecttype?: 'testtask' | 'project';
     /**
+     * 归属组织
+     */
+    org?: any;
+    /**
      * 结束时间
      */
     end?: any;
@@ -99,6 +107,10 @@ export abstract class TestReportBase extends EntityBase implements ITestReport {
      * 版本信息
      */
     builds?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
     /**
      * 创建时间
      */
@@ -135,18 +147,6 @@ export abstract class TestReportBase extends EntityBase implements ITestReport {
      * 所属项目
      */
     project?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
 
     /**
      * 重置实体数据

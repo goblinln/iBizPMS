@@ -28,42 +28,6 @@
     "checkMode" : 3,
     "name" : "表单项值规则",
     "getPSDEFValueRule" : {
-      "codeName" : "ValueRule3",
-      "name" : "总计消耗大于等于0",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "VALUERANGE2",
-          "dEFName" : "CONSUMED",
-          "minValue" : 0.0,
-          "name" : "[数值范围] 大于等于 0.0",
-          "ruleInfo" : "总计消耗大于等于0",
-          "includeMaxValue" : false,
-          "includeMinValue" : true,
-          "tryMode" : false
-        } ],
-        "ruleInfo" : "总计消耗大于等于0",
-        "tryMode" : false
-      },
-      "getPSDEField" : {
-        "name" : "CONSUMED",
-        "codeName" : "Consumed"
-      },
-      "ruleHolder" : 3,
-      "ruleInfo" : "总计消耗大于等于0",
-      "checkDefault" : false,
-      "defaultMode" : false,
-      "enableBackend" : true,
-      "enableFront" : true
-    },
-    "getPSDEFormItemName" : "consumed",
-    "valueRuleType" : "DEFVALUERULE"
-  }, {
-    "checkMode" : 3,
-    "name" : "表单项值规则",
-    "getPSDEFValueRule" : {
       "codeName" : "ValueRule4",
       "name" : "预计剩余大于等于0",
       "getPSDEFVRGroupCondition" : {
@@ -95,6 +59,42 @@
       "enableFront" : true
     },
     "getPSDEFormItemName" : "left",
+    "valueRuleType" : "DEFVALUERULE"
+  }, {
+    "checkMode" : 3,
+    "name" : "表单项值规则",
+    "getPSDEFValueRule" : {
+      "codeName" : "ValueRule3",
+      "name" : "总计消耗大于等于0",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "VALUERANGE2",
+          "dEFName" : "CONSUMED",
+          "minValue" : 0.0,
+          "name" : "[数值范围] 大于等于 0.0",
+          "ruleInfo" : "总计消耗大于等于0",
+          "includeMaxValue" : false,
+          "includeMinValue" : true,
+          "tryMode" : false
+        } ],
+        "ruleInfo" : "总计消耗大于等于0",
+        "tryMode" : false
+      },
+      "getPSDEField" : {
+        "name" : "CONSUMED",
+        "codeName" : "Consumed"
+      },
+      "ruleHolder" : 3,
+      "ruleInfo" : "总计消耗大于等于0",
+      "checkDefault" : false,
+      "defaultMode" : false,
+      "enableBackend" : true,
+      "enableFront" : true
+    },
+    "getPSDEFormItemName" : "consumed",
     "valueRuleType" : "DEFVALUERULE"
   } ],
   "getPSDEFormItems" : [ {

@@ -36,7 +36,7 @@ public class StoryStageRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return storystageService.sysGet(String.valueOf(o));
+            return storystageService.sysGet((String)o);
         }
     }
 

@@ -36,7 +36,7 @@ public class IbzReportlyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return ibzreportlyService.sysGet(String.valueOf(o));
+            return ibzreportlyService.sysGet((Long)o);
         }
     }
 

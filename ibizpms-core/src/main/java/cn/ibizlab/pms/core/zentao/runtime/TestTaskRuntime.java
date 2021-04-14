@@ -36,7 +36,7 @@ public class TestTaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return testtaskService.sysGet(String.valueOf(o));
+            return testtaskService.sysGet((Long)o);
         }
     }
 

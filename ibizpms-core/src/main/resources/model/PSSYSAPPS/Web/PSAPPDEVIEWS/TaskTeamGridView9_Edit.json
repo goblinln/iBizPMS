@@ -435,37 +435,34 @@
       "checkMode" : 3,
       "name" : "编辑项值规则",
       "getPSDEFValueRule" : {
-        "codeName" : "ValueRule3",
-        "name" : "总计消耗大于等于0",
+        "codeName" : "ValueRule",
+        "name" : "预计消耗大于等于0",
         "getPSDEFVRGroupCondition" : {
           "condOp" : "AND",
           "condType" : "GROUP",
           "name" : "默认组",
           "getPSDEFVRConditions" : [ {
-            "condType" : "VALUERANGE2",
-            "dEFName" : "CONSUMED",
-            "minValue" : 0.0,
-            "name" : "[数值范围] 大于等于 0.0",
-            "ruleInfo" : "总计消耗大于等于0",
-            "includeMaxValue" : false,
-            "includeMinValue" : true,
+            "condOp" : "GT",
+            "condType" : "SIMPLE",
+            "dEFName" : "ESTIMATE",
+            "name" : "[常规条件] 大于(>) (0)",
+            "paramValue" : "0",
             "tryMode" : false
           } ],
-          "ruleInfo" : "总计消耗大于等于0",
           "tryMode" : false
         },
         "getPSDEField" : {
-          "name" : "CONSUMED",
-          "codeName" : "Consumed"
+          "name" : "ESTIMATE",
+          "codeName" : "Estimate"
         },
         "ruleHolder" : 3,
-        "ruleInfo" : "总计消耗大于等于0",
+        "ruleInfo" : "预计大于等于0",
         "checkDefault" : false,
         "defaultMode" : false,
         "enableBackend" : true,
         "enableFront" : true
       },
-      "getPSDEGridEditItemName" : "consumed",
+      "getPSDEGridEditItemName" : "estimate",
       "valueRuleType" : "DEFVALUERULE"
     }, {
       "checkMode" : 3,
@@ -507,34 +504,37 @@
       "checkMode" : 3,
       "name" : "编辑项值规则",
       "getPSDEFValueRule" : {
-        "codeName" : "ValueRule",
-        "name" : "预计消耗大于等于0",
+        "codeName" : "ValueRule3",
+        "name" : "总计消耗大于等于0",
         "getPSDEFVRGroupCondition" : {
           "condOp" : "AND",
           "condType" : "GROUP",
           "name" : "默认组",
           "getPSDEFVRConditions" : [ {
-            "condOp" : "GT",
-            "condType" : "SIMPLE",
-            "dEFName" : "ESTIMATE",
-            "name" : "[常规条件] 大于(>) (0)",
-            "paramValue" : "0",
+            "condType" : "VALUERANGE2",
+            "dEFName" : "CONSUMED",
+            "minValue" : 0.0,
+            "name" : "[数值范围] 大于等于 0.0",
+            "ruleInfo" : "总计消耗大于等于0",
+            "includeMaxValue" : false,
+            "includeMinValue" : true,
             "tryMode" : false
           } ],
+          "ruleInfo" : "总计消耗大于等于0",
           "tryMode" : false
         },
         "getPSDEField" : {
-          "name" : "ESTIMATE",
-          "codeName" : "Estimate"
+          "name" : "CONSUMED",
+          "codeName" : "Consumed"
         },
         "ruleHolder" : 3,
-        "ruleInfo" : "预计大于等于0",
+        "ruleInfo" : "总计消耗大于等于0",
         "checkDefault" : false,
         "defaultMode" : false,
         "enableBackend" : true,
         "enableFront" : true
       },
-      "getPSDEGridEditItemName" : "estimate",
+      "getPSDEGridEditItemName" : "consumed",
       "valueRuleType" : "DEFVALUERULE"
     } ],
     "getPSDEGridEditItems" : [ {

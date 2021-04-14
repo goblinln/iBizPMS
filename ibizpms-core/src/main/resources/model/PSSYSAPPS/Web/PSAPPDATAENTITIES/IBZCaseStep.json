@@ -315,6 +315,12 @@
     "name" : "CASESTEPID",
     "stdDataType" : 1
   }, {
+    "codeName" : "Dept",
+    "logicName" : "归属部门",
+    "name" : "DEPT",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Reals",
     "logicName" : "实际情况",
     "name" : "REALS",
@@ -332,6 +338,12 @@
     "name" : "TYPE",
     "stdDataType" : 25,
     "stringLength" : 10
+  }, {
+    "codeName" : "CreateBy",
+    "logicName" : "由谁创建",
+    "name" : "CREATEBY",
+    "stdDataType" : 25,
+    "stringLength" : 100
   }, {
     "codeName" : "Id",
     "logicName" : "编号",
@@ -359,10 +371,22 @@
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
+    "codeName" : "UpdateBy",
+    "logicName" : "由谁更新",
+    "name" : "UPDATEBY",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Runid",
     "logicName" : "执行编号",
     "name" : "RUNID",
     "stdDataType" : 9
+  }, {
+    "codeName" : "Org",
+    "logicName" : "归属组织",
+    "name" : "ORG",
+    "stdDataType" : 25,
+    "stringLength" : 100
   }, {
     "codeName" : "Version",
     "logicName" : "用例版本",
@@ -378,30 +402,6 @@
     "logicName" : "分组用例步骤的组编号",
     "name" : "PARENT",
     "stdDataType" : 1
-  }, {
-    "codeName" : "CreateBy",
-    "logicName" : "由谁创建",
-    "name" : "CREATEBY",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "UpdateBy",
-    "logicName" : "由谁更新",
-    "name" : "UPDATEBY",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "Org",
-    "logicName" : "归属组织",
-    "name" : "ORG",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "Dept",
-    "logicName" : "归属部门",
-    "name" : "DEPT",
-    "stdDataType" : 25,
-    "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Create",

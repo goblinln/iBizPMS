@@ -125,6 +125,15 @@ public class DocLib extends EntityMP implements Serializable {
     @ApiModelProperty("已删除")
     private String deleted;
     /**
+     * 由谁更新
+     */
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @TableField(value = "updateby")
+    @JSONField(name = "updateby")
+    @JsonProperty("updateby")
+    @ApiModelProperty("由谁更新")
+    private String updateby;
+    /**
      * 分组
      */
     @DEField(defaultValue = "#EMPTY")
@@ -185,6 +194,15 @@ public class DocLib extends EntityMP implements Serializable {
     @ApiModelProperty("文件夹数")
     private Integer modulecnt;
     /**
+     * 由谁创建
+     */
+    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
+    @TableField(value = "createby")
+    @JSONField(name = "createby")
+    @JsonProperty("createby")
+    @ApiModelProperty("由谁创建")
+    private String createby;
+    /**
      * 创建时间
      */
     @TableField(exist = false)
@@ -236,24 +254,6 @@ public class DocLib extends EntityMP implements Serializable {
     @JsonProperty("product")
     @ApiModelProperty("产品库")
     private Long product;
-    /**
-     * 由谁创建
-     */
-    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "createby")
-    @JSONField(name = "createby")
-    @JsonProperty("createby")
-    @ApiModelProperty("由谁创建")
-    private String createby;
-    /**
-     * 由谁更新
-     */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "updateby")
-    @JSONField(name = "updateby")
-    @JsonProperty("updateby")
-    @ApiModelProperty("由谁更新")
-    private String updateby;
 
     /**
      * 

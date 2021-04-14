@@ -36,7 +36,7 @@ public class CaseStepRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return casestepService.sysGet(String.valueOf(o));
+            return casestepService.sysGet((Long)o);
         }
     }
 

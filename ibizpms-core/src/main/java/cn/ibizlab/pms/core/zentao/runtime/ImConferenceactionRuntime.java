@@ -36,7 +36,7 @@ public class ImConferenceactionRuntime extends cn.ibizlab.pms.core.runtime.Syste
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return imconferenceactionService.sysGet(String.valueOf(o));
+            return imconferenceactionService.sysGet((Long)o);
         }
     }
 

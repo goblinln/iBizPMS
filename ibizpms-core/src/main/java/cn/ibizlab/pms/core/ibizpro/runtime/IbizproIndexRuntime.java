@@ -36,7 +36,7 @@ public class IbizproIndexRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return ibizproindexService.sysGet(String.valueOf(o));
+            return ibizproindexService.sysGet((Long)o);
         }
     }
 

@@ -36,7 +36,7 @@ public class IbzLibCaseStepRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return ibzlibcasestepService.sysGet(String.valueOf(o));
+            return ibzlibcasestepService.sysGet((Long)o);
         }
     }
 

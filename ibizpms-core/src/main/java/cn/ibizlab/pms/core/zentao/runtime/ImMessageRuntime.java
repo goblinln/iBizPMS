@@ -36,7 +36,7 @@ public class ImMessageRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return immessageService.sysGet(String.valueOf(o));
+            return immessageService.sysGet((Long)o);
         }
     }
 

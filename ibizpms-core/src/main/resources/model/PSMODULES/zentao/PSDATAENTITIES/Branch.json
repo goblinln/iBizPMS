@@ -166,6 +166,117 @@
     "majorDEField" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "DEPT",
+      "dBType" : "MYSQL5",
+      "name" : "DEPT",
+      "queryCodeExp" : "t1.`DEPT`",
+      "autoIncrement" : false,
+      "valueAutoGen" : false
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "DEPT",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true,
+          "tryMode" : false
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]",
+        "tryMode" : false
+      },
+      "getPSDEField" : {
+        "name" : "DEPT",
+        "codeName" : "Dept"
+      },
+      "ruleHolder" : 3,
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Dept",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "deployId" : "ab0242ed6eb3eb856bf1aa21fdf930c6",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "归属部门",
+    "name" : "DEPT",
+    "predefinedType" : "ORGSECTORID",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "UPDATEBY",
+      "dBType" : "MYSQL5",
+      "name" : "UPDATEBY",
+      "queryCodeExp" : "t1.`UPDATEBY`",
+      "autoIncrement" : false,
+      "valueAutoGen" : false
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "UPDATEBY",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true,
+          "tryMode" : false
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]",
+        "tryMode" : false
+      },
+      "getPSDEField" : {
+        "name" : "UPDATEBY",
+        "codeName" : "UpdateBy"
+      },
+      "ruleHolder" : 3,
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "UpdateBy",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "deployId" : "9165778a5a64b4f848d49c69f88cad7c",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "由谁更新",
+    "name" : "UPDATEBY",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+    },
+    "predefinedType" : "UPDATEMANNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s",
+    "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "DELETED",
       "dBType" : "MYSQL5",
       "name" : "DELETED",
@@ -220,6 +331,64 @@
     "valueFormat" : "%1$s",
     "enableUICreate" : false,
     "enableUIModify" : false
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CREATEBY",
+      "dBType" : "MYSQL5",
+      "name" : "CREATEBY",
+      "queryCodeExp" : "t1.`CREATEBY`",
+      "autoIncrement" : false,
+      "valueAutoGen" : false
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "CREATEBY",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true,
+          "tryMode" : false
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]",
+        "tryMode" : false
+      },
+      "getPSDEField" : {
+        "name" : "CREATEBY",
+        "codeName" : "CreateBy"
+      },
+      "ruleHolder" : 3,
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "CreateBy",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "deployId" : "cfe81730386832dad8f293cd883abd12",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "由谁创建",
+    "name" : "CREATEBY",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+    },
+    "predefinedType" : "CREATEMANNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s",
+    "systemReserver" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "ID",
@@ -307,171 +476,6 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "PRODUCT",
-      "dBType" : "MYSQL5",
-      "name" : "PRODUCT",
-      "queryCodeExp" : "t1.`PRODUCT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : true
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
-      },
-      "getPSDEField" : {
-        "name" : "PRODUCT",
-        "codeName" : "Product"
-      },
-      "ruleHolder" : 3,
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Product",
-    "dEFType" : 1,
-    "dataType" : "PICKUP",
-    "defaultValue" : "0",
-    "deployId" : "83a072f1c1ae716cd76310a7f9be94a1",
-    "importOrder" : 1000,
-    "length" : 8,
-    "logicName" : "所属产品",
-    "name" : "PRODUCT",
-    "getPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Branch/PSDERS/DER1N_ZT_BRANCH_ZT_PRODUCT_PRODUCT.json"
-    },
-    "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "stdDataType" : 1,
-    "valueFormat" : "%1$s",
-    "linkDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "CREATEBY",
-      "dBType" : "MYSQL5",
-      "name" : "CREATEBY",
-      "queryCodeExp" : "t1.`CREATEBY`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "CREATEBY",
-          "maxValue" : 100,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[100]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[100]",
-        "tryMode" : false
-      },
-      "getPSDEField" : {
-        "name" : "CREATEBY",
-        "codeName" : "CreateBy"
-      },
-      "ruleHolder" : 3,
-      "ruleInfo" : "内容长度必须小于等于[100]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "CreateBy",
-    "dEFType" : 1,
-    "dataType" : "TEXT",
-    "deployId" : "cfe81730386832dad8f293cd883abd12",
-    "importOrder" : 1000,
-    "length" : 100,
-    "logicName" : "由谁创建",
-    "name" : "CREATEBY",
-    "getPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
-    },
-    "predefinedType" : "CREATEMANNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100,
-    "valueFormat" : "%1$s",
-    "systemReserver" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "UPDATEBY",
-      "dBType" : "MYSQL5",
-      "name" : "UPDATEBY",
-      "queryCodeExp" : "t1.`UPDATEBY`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "UPDATEBY",
-          "maxValue" : 100,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[100]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[100]",
-        "tryMode" : false
-      },
-      "getPSDEField" : {
-        "name" : "UPDATEBY",
-        "codeName" : "UpdateBy"
-      },
-      "ruleHolder" : 3,
-      "ruleInfo" : "内容长度必须小于等于[100]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "UpdateBy",
-    "dEFType" : 1,
-    "dataType" : "TEXT",
-    "deployId" : "9165778a5a64b4f848d49c69f88cad7c",
-    "importOrder" : 1000,
-    "length" : 100,
-    "logicName" : "由谁更新",
-    "name" : "UPDATEBY",
-    "getPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
-    },
-    "predefinedType" : "UPDATEMANNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100,
-    "valueFormat" : "%1$s",
-    "systemReserver" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
       "columnName" : "ORG",
       "dBType" : "MYSQL5",
       "name" : "ORG",
@@ -525,12 +529,12 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "DEPT",
+      "columnName" : "PRODUCT",
       "dBType" : "MYSQL5",
-      "name" : "DEPT",
-      "queryCodeExp" : "t1.`DEPT`",
+      "name" : "PRODUCT",
+      "queryCodeExp" : "t1.`PRODUCT`",
       "autoIncrement" : false,
-      "valueAutoGen" : false
+      "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -539,43 +543,39 @@
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "DEPT",
-          "maxValue" : 100,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[100]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[100]",
         "tryMode" : false
       },
       "getPSDEField" : {
-        "name" : "DEPT",
-        "codeName" : "Dept"
+        "name" : "PRODUCT",
+        "codeName" : "Product"
       },
       "ruleHolder" : 3,
-      "ruleInfo" : "内容长度必须小于等于[100]",
+      "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
       "enableBackend" : true,
       "enableFront" : true
     } ],
-    "codeName" : "Dept",
+    "codeName" : "Product",
     "dEFType" : 1,
-    "dataType" : "TEXT",
-    "deployId" : "ab0242ed6eb3eb856bf1aa21fdf930c6",
+    "dataType" : "PICKUP",
+    "defaultValue" : "0",
+    "deployId" : "83a072f1c1ae716cd76310a7f9be94a1",
     "importOrder" : 1000,
-    "length" : 100,
-    "logicName" : "归属部门",
-    "name" : "DEPT",
-    "predefinedType" : "ORGSECTORID",
-    "stdDataType" : 25,
-    "stringLength" : 100,
-    "valueFormat" : "%1$s"
+    "length" : 8,
+    "logicName" : "所属产品",
+    "name" : "PRODUCT",
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Branch/PSDERS/DER1N_ZT_BRANCH_ZT_PRODUCT_PRODUCT.json"
+    },
+    "getRelatedPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s",
+    "linkDEField" : true
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",

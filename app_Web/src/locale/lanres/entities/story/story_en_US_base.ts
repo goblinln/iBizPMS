@@ -44,6 +44,7 @@ function getLocaleResourceBase(){
 		'orgid': commonLogic.appcommonhandle("orgid",null),
 		'mailto': commonLogic.appcommonhandle("抄送给",null),
 		'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
+		'dept': commonLogic.appcommonhandle("归属部门",null),
 		'sourceobject': commonLogic.appcommonhandle("来源对象",null),
 		'deleted': commonLogic.appcommonhandle("已删除",null),
 		'keywords': commonLogic.appcommonhandle("关键词",null),
@@ -60,6 +61,7 @@ function getLocaleResourceBase(){
 		'closedby': commonLogic.appcommonhandle("由谁关闭",null),
 		'acl': commonLogic.appcommonhandle("acl",null),
 		'result': commonLogic.appcommonhandle("评审结果",null),
+		'org': commonLogic.appcommonhandle("归属组织",null),
 		'type': commonLogic.appcommonhandle("需求类型",null),
 		'lastediteddate': commonLogic.appcommonhandle("最后修改日期",null),
 		'ibiz_sourceid': commonLogic.appcommonhandle("来源对象标识",null),
@@ -78,8 +80,6 @@ function getLocaleResourceBase(){
 		'duplicatestory': commonLogic.appcommonhandle("重复需求ID",null),
 		'branch': commonLogic.appcommonhandle("平台/分支",null),
 		'tobug': commonLogic.appcommonhandle("转Bug",null),
-		'org': commonLogic.appcommonhandle("归属组织",null),
-		'dept': commonLogic.appcommonhandle("归属部门",null),
 	},
 		views: {
 			'maindashboardview_link': {
@@ -1338,8 +1338,6 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("Save And Close",null),
 				tip: commonLogic.appcommonhandle("Save And Close Window",null),
 			},
-		},
-		editview9toolbar_toolbar: {
 		},
 		planeditviewtoolbar_toolbar: {
 			'deuiaction1': {

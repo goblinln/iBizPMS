@@ -193,8 +193,6 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("Save And Close Window",null),
 			},
 		},
-		usr2editviewtoolbar_toolbar: {
-		},
 		usr2gridviewtoolbar_toolbar: {
 			'deuiaction1_createeveryweekreport': {
 				caption: commonLogic.appcommonhandle("生成周报",null),

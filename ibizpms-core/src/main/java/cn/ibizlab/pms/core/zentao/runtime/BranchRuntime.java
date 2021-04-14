@@ -36,7 +36,7 @@ public class BranchRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return branchService.sysGet(String.valueOf(o));
+            return branchService.sysGet((Long)o);
         }
     }
 

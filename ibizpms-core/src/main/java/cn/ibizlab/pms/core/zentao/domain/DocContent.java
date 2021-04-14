@@ -64,6 +64,24 @@ public class DocContent extends EntityMP implements Serializable {
     @ApiModelProperty("编号")
     private Long id;
     /**
+     * 归属组织
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGID)
+    @TableField(value = "org")
+    @JSONField(name = "org")
+    @JsonProperty("org")
+    @ApiModelProperty("归属组织")
+    private String org;
+    /**
+     * 归属部门
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
+    @TableField(value = "dept")
+    @JSONField(name = "dept")
+    @JsonProperty("dept")
+    @ApiModelProperty("归属部门")
+    private String dept;
+    /**
      * 文档正文
      */
     @TableField(value = "content")
@@ -71,6 +89,15 @@ public class DocContent extends EntityMP implements Serializable {
     @JsonProperty("content")
     @ApiModelProperty("文档正文")
     private String content;
+    /**
+     * 由谁更新
+     */
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @TableField(value = "updateby")
+    @JSONField(name = "updateby")
+    @JsonProperty("updateby")
+    @ApiModelProperty("由谁更新")
+    private String updateby;
     /**
      * 文档类型
      */
@@ -105,14 +132,6 @@ public class DocContent extends EntityMP implements Serializable {
     @ApiModelProperty("文档摘要")
     private String digest;
     /**
-     * 文档
-     */
-    @TableField(value = "doc")
-    @JSONField(name = "doc")
-    @JsonProperty("doc")
-    @ApiModelProperty("文档")
-    private Long doc;
-    /**
      * 由谁创建
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
@@ -122,32 +141,13 @@ public class DocContent extends EntityMP implements Serializable {
     @ApiModelProperty("由谁创建")
     private String createby;
     /**
-     * 由谁更新
+     * 文档
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "updateby")
-    @JSONField(name = "updateby")
-    @JsonProperty("updateby")
-    @ApiModelProperty("由谁更新")
-    private String updateby;
-    /**
-     * 归属组织
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "org")
-    @JSONField(name = "org")
-    @JsonProperty("org")
-    @ApiModelProperty("归属组织")
-    private String org;
-    /**
-     * 归属部门
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "dept")
-    @JSONField(name = "dept")
-    @JsonProperty("dept")
-    @ApiModelProperty("归属部门")
-    private String dept;
+    @TableField(value = "doc")
+    @JSONField(name = "doc")
+    @JsonProperty("doc")
+    @ApiModelProperty("文档")
+    private Long doc;
 
     /**
      * 

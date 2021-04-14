@@ -36,7 +36,7 @@ public class GroupPrivRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return groupprivService.sysGet(String.valueOf(o));
+            return groupprivService.sysGet((String)o);
         }
     }
 

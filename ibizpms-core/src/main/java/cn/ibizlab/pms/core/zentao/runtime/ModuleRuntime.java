@@ -36,7 +36,7 @@ public class ModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return moduleService.sysGet(String.valueOf(o));
+            return moduleService.sysGet((Long)o);
         }
     }
 

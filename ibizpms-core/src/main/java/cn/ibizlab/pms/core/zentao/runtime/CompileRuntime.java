@@ -36,7 +36,7 @@ public class CompileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return compileService.sysGet(String.valueOf(o));
+            return compileService.sysGet((Long)o);
         }
     }
 

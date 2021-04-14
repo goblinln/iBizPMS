@@ -36,7 +36,7 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return storyService.sysGet(String.valueOf(o));
+            return storyService.sysGet((Long)o);
         }
     }
 

@@ -37,6 +37,10 @@ export interface IProductPlan extends IEntityBase {
      */
     id?: any;
     /**
+     * 归属组织
+     */
+    org?: any;
+    /**
      * 开始日期
      */
     begin?: any;
@@ -81,6 +85,10 @@ export interface IProductPlan extends IEntityBase {
      */
     endstr?: any;
     /**
+     * 由谁创建
+     */
+    createby?: any;
+    /**
      * 计划状态
      *
      * @type {('wait' | 'doing' | 'done' | 'pause' | 'cancel' | 'closed')} wait: 未开始, doing: 进行中, done: 已完成, pause: 已暂停, cancel: 已取消, closed: 已关闭
@@ -90,6 +98,10 @@ export interface IProductPlan extends IEntityBase {
      * 是否过期
      */
     isexpired?: any;
+    /**
+     * 由谁更新
+     */
+    updateby?: any;
     /**
      * 已删除
      */
@@ -112,6 +124,10 @@ export interface IProductPlan extends IEntityBase {
      * @type {('on')} on: 待定
      */
     future?: 'on';
+    /**
+     * 归属部门
+     */
+    dept?: any;
     /**
      * 需求数
      */
@@ -146,20 +162,4 @@ export interface IProductPlan extends IEntityBase {
      * 产品
      */
     product?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
 }

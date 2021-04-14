@@ -36,7 +36,7 @@ public class UserRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return userService.sysGet(String.valueOf(o));
+            return userService.sysGet((Long)o);
         }
     }
 

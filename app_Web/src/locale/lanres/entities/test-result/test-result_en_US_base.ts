@@ -3,9 +3,13 @@ import commonLogic from '@/locale/logic/common/common-logic';
 function getLocaleResourceBase(){
 	const data:any = {
 	fields: {
+		'createby': commonLogic.appcommonhandle("由谁创建",null),
+		'org': commonLogic.appcommonhandle("归属组织",null),
 		'lastrunner': commonLogic.appcommonhandle("最后执行人",null),
+		'dept': commonLogic.appcommonhandle("归属部门",null),
 		'stepresults': commonLogic.appcommonhandle("步骤结果",null),
 		'caseresult': commonLogic.appcommonhandle("测试结果",null),
+		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 		'xml': commonLogic.appcommonhandle("结果文件",null),
 		'task': commonLogic.appcommonhandle("属性",null),
 		'duration': commonLogic.appcommonhandle("持续时间",null),
@@ -22,10 +26,6 @@ function getLocaleResourceBase(){
 		'ibizcase': commonLogic.appcommonhandle("用例",null),
 		'run': commonLogic.appcommonhandle("测试执行",null),
 		'compile': commonLogic.appcommonhandle("代码编译",null),
-		'createby': commonLogic.appcommonhandle("由谁创建",null),
-		'updateby': commonLogic.appcommonhandle("由谁更新",null),
-		'org': commonLogic.appcommonhandle("归属组织",null),
-		'dept': commonLogic.appcommonhandle("归属部门",null),
 	},
 		views: {
 			'editview': {

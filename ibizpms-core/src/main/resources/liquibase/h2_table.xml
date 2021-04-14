@@ -77,35 +77,37 @@
 
 
     <!--输出实体[ZT_BRANCH]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_branch-15-4">
+    <changeSet author="zentao" id="tab-zt_branch-1-4">
         <createTable tableName="zt_branch">
                 <column name="NAME" remarks="" type="VARCHAR(255)">
                 </column>
+                <column name="DEPT" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="DELETED" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_BRANCH_ID"/>
                 </column>
                 <column name="ORDER" remarks="" type="INT">
                 </column>
-                <column name="PRODUCT" remarks="" type="BIGINT">
-                </column>
-                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
-                </column>
                 <column name="ORG" remarks="" type="VARCHAR(100)">
                 </column>
-                <column name="DEPT" remarks="" type="VARCHAR(100)">
+                <column name="PRODUCT" remarks="" type="BIGINT">
                 </column>
         </createTable>
     </changeSet>
 
 
     <!--输出实体[ZT_BUG]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_bug-11-5">
+    <changeSet author="zentao" id="tab-zt_bug-1-5">
         <createTable tableName="zt_bug">
                 <column name="SEVERITY" remarks="" type="INT">
+                </column>
+                <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="STORYVERSION" remarks="" type="INT">
                 </column>
@@ -165,6 +167,8 @@
                 </column>
                 <column name="SUBSTATUS" remarks="" type="VARCHAR(30)">
                 </column>
+                <column name="ORG" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_BUG_ID"/>
                 </column>
@@ -216,10 +220,6 @@
                 </column>
                 <column name="TESTTASK" remarks="" type="BIGINT">
                 </column>
-                <column name="ORG" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="DEPT" remarks="" type="VARCHAR(100)">
-                </column>
         </createTable>
     </changeSet>
 
@@ -228,11 +228,17 @@
 
 
     <!--输出实体[ZT_BUILD]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_build-13-7">
+    <changeSet author="zentao" id="tab-zt_build-1-7">
         <createTable tableName="zt_build">
+                <column name="DEPT" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="NAME" remarks="" type="VARCHAR(150)">
                 </column>
                 <column name="BUILDER" remarks="" type="VARCHAR(30)">
+                </column>
+                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="ORG" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="DESC" remarks="" type="TEXT(65535)">
                 </column>
@@ -244,6 +250,8 @@
                 <column name="SCMPATH" remarks="" type="VARCHAR(255)">
                 </column>
                 <column name="FILEPATH" remarks="" type="VARCHAR(255)">
+                </column>
+                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="STORIES" remarks="" type="TEXT(65535)">
                 </column>
@@ -257,22 +265,22 @@
                 </column>
                 <column name="PROJECT" remarks="" type="BIGINT">
                 </column>
-                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="ORG" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="DEPT" remarks="" type="VARCHAR(100)">
-                </column>
         </createTable>
     </changeSet>
 
 
     <!--输出实体[ZT_BURN]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_burn-13-8">
+    <changeSet author="zentao" id="tab-zt_burn-1-8">
         <createTable tableName="zt_burn">
+                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="DEPT" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="DATE" remarks="" type="DATETIME">
+                </column>
+                <column name="ORG" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="CONSUMED" remarks="" type="FLOAT">
                 </column>
@@ -284,20 +292,12 @@
                 </column>
                 <column name="TASK" remarks="" type="BIGINT">
                 </column>
-                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="ORG" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="DEPT" remarks="" type="VARCHAR(100)">
-                </column>
         </createTable>
     </changeSet>
 
 
     <!--输出实体[ZT_CASE]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_case-8-9">
+    <changeSet author="zentao" id="tab-zt_case-1-9">
         <createTable tableName="zt_case">
                 <column name="LASTEDITEDDATE" remarks="" type="DATETIME">
                 </column>
@@ -329,11 +329,15 @@
                 </column>
                 <column name="AUTO" remarks="" type="VARCHAR(10)">
                 </column>
+                <column name="DEPT" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="FREQUENCY" remarks="" type="VARCHAR(1)">
                 </column>
                 <column name="TITLE" remarks="" type="VARCHAR(255)">
                 </column>
                 <column name="LASTEDITEDBY" remarks="" type="VARCHAR(30)">
+                </column>
+                <column name="ORG" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="REVIEWEDBY" remarks="" type="VARCHAR(255)">
                 </column>
@@ -382,10 +386,6 @@
                 </column>
                 <column name="MODULE" remarks="" type="BIGINT">
                 </column>
-                <column name="ORG" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="DEPT" remarks="" type="VARCHAR(100)">
-                </column>
         </createTable>
     </changeSet>
 
@@ -394,9 +394,13 @@
 
 
     <!--输出实体[ZT_CASESTEP]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_casestep-14-11">
+    <changeSet author="zentao" id="tab-zt_casestep-1-11">
         <createTable tableName="zt_casestep">
+                <column name="DEPT" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="TYPE" remarks="" type="VARCHAR(10)">
+                </column>
+                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_CASESTEP_ID"/>
@@ -405,19 +409,15 @@
                 </column>
                 <column name="EXPECT" remarks="" type="TEXT(65535)">
                 </column>
+                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="ORG" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="VERSION" remarks="" type="INT">
                 </column>
                 <column name="CASE" remarks="" type="BIGINT">
                 </column>
                 <column name="PARENT" remarks="" type="BIGINT">
-                </column>
-                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="ORG" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
         </createTable>
     </changeSet>
@@ -569,7 +569,7 @@
 
 
     <!--输出实体[ZT_DOC]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_doc-13-18">
+    <changeSet author="zentao" id="tab-zt_doc-1-18">
         <createTable tableName="zt_doc">
                 <column name="GROUPS" remarks="" type="VARCHAR(255)">
                 </column>
@@ -581,12 +581,16 @@
                 </column>
                 <column name="EDITEDBY" remarks="" type="VARCHAR(30)">
                 </column>
+                <column name="DEPT" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_DOC_ID"/>
                 </column>
                 <column name="TITLE" remarks="" type="VARCHAR(255)">
                 </column>
                 <column name="DELETED" remarks="" type="VARCHAR(1)">
+                </column>
+                <column name="ORG" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="TYPE" remarks="" type="VARCHAR(30)">
                 </column>
@@ -602,6 +606,8 @@
                 </column>
                 <column name="ADDEDBY" remarks="" type="VARCHAR(30)">
                 </column>
+                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="LIB" remarks="" type="BIGINT">
                 </column>
                 <column name="PROJECT" remarks="" type="BIGINT">
@@ -610,25 +616,25 @@
                 </column>
                 <column name="MODULE" remarks="" type="BIGINT">
                 </column>
-                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="ORG" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="DEPT" remarks="" type="VARCHAR(100)">
-                </column>
         </createTable>
     </changeSet>
 
 
     <!--输出实体[ZT_DOCCONTENT]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_doccontent-13-19">
+    <changeSet author="zentao" id="tab-zt_doccontent-1-19">
         <createTable tableName="zt_doccontent">
                 <column name="FILES" remarks="" type="TEXT(65535)">
                 </column>
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_DOCCONTENT_ID"/>
                 </column>
+                <column name="ORG" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="DEPT" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="CONTENT" remarks="" type="TEXT(65535)">
+                </column>
+                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="TYPE" remarks="" type="VARCHAR(10)">
                 </column>
@@ -638,22 +644,16 @@
                 </column>
                 <column name="DIGEST" remarks="" type="VARCHAR(255)">
                 </column>
-                <column name="DOC" remarks="" type="BIGINT">
-                </column>
                 <column name="CREATEBY" remarks="" type="VARCHAR(100)">
                 </column>
-                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="ORG" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="DEPT" remarks="" type="VARCHAR(100)">
+                <column name="DOC" remarks="" type="BIGINT">
                 </column>
         </createTable>
     </changeSet>
 
 
     <!--输出实体[ZT_DOCLIB]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_doclib-11-20">
+    <changeSet author="zentao" id="tab-zt_doclib-1-20">
         <createTable tableName="zt_doclib">
                 <column name="TYPE" remarks="" type="VARCHAR(30)">
                 </column>
@@ -667,6 +667,8 @@
                 </column>
                 <column name="DELETED" remarks="" type="VARCHAR(1)">
                 </column>
+                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="GROUPS" remarks="" type="VARCHAR(255)">
                 </column>
                 <column name="ID" remarks="" type="BIGINT">
@@ -678,15 +680,13 @@
                 </column>
                 <column name="NAME" remarks="" type="VARCHAR(60)">
                 </column>
+                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="ORDER" remarks="" type="INT">
                 </column>
                 <column name="PROJECT" remarks="" type="BIGINT">
                 </column>
                 <column name="PRODUCT" remarks="" type="BIGINT">
-                </column>
-                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
                 </column>
         </createTable>
     </changeSet>
@@ -877,11 +877,13 @@
 
 
     <!--输出实体[ZT_FILE]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_file-10-27">
+    <changeSet author="zentao" id="tab-zt_file-1-27">
         <createTable tableName="zt_file">
                 <column name="PATHNAME" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="OBJECTID" remarks="" type="BIGINT">
+                </column>
+                <column name="ORG" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="DELETED" remarks="" type="VARCHAR(1)">
                 </column>
@@ -893,9 +895,13 @@
                 </column>
                 <column name="TITLE" remarks="" type="VARCHAR(255)">
                 </column>
+                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="ADDEDDATE" remarks="" type="DATETIME">
                 </column>
                 <column name="DOWNLOADS" remarks="" type="INT">
+                </column>
+                <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="SIZE" remarks="" type="INT">
                 </column>
@@ -903,12 +909,6 @@
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_FILE_ID"/>
                 </column>
                 <column name="EXTRA" remarks="" type="VARCHAR(255)">
-                </column>
-                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="ORG" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
         </createTable>
     </changeSet>
@@ -946,7 +946,7 @@
 
 
     <!--输出实体[ZT_HISTORY]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_history-13-30">
+    <changeSet author="zentao" id="tab-zt_history-1-30">
         <createTable tableName="zt_history">
                 <column name="DIFF" remarks="" type="TEXT(16777215)">
                 </column>
@@ -954,20 +954,20 @@
                 </column>
                 <column name="NEW" remarks="" type="TEXT(65535)">
                 </column>
+                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="ORG" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="OLD" remarks="" type="TEXT(65535)">
+                </column>
+                <column name="DEPT" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_HISTORY_ID"/>
                 </column>
                 <column name="ACTION" remarks="" type="BIGINT">
-                </column>
-                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="ORG" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
         </createTable>
     </changeSet>
@@ -2272,12 +2272,14 @@
 
 
     <!--输出实体[ZT_PRODUCTPLAN]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_productplan-14-83">
+    <changeSet author="zentao" id="tab-zt_productplan-1-83">
         <createTable tableName="zt_productplan">
                 <column name="TITLE" remarks="" type="VARCHAR(90)">
                 </column>
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_PRODUCTPLAN_ID"/>
+                </column>
+                <column name="ORG" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="BEGIN" remarks="" type="DATETIME">
                 </column>
@@ -2285,25 +2287,23 @@
                 </column>
                 <column name="END" remarks="" type="DATETIME">
                 </column>
+                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="STATUS" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="DELETED" remarks="" type="VARCHAR(1)">
                 </column>
                 <column name="ORDER" remarks="" type="TEXT(65535)">
+                </column>
+                <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="BRANCH" remarks="" type="BIGINT">
                 </column>
                 <column name="PARENT" remarks="" type="BIGINT">
                 </column>
                 <column name="PRODUCT" remarks="" type="BIGINT">
-                </column>
-                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="ORG" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
         </createTable>
     </changeSet>
@@ -2322,16 +2322,8 @@
 
 
     <!--输出实体[ZT_PROJECTPRODUCT]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_projectproduct-13-88">
+    <changeSet author="zentao" id="tab-zt_projectproduct-1-88">
         <createTable tableName="zt_projectproduct">
-                <column name="PRODUCT" remarks="" type="BIGINT">
-                </column>
-                <column name="PLAN" remarks="" type="BIGINT">
-                </column>
-                <column name="BRANCH" remarks="" type="BIGINT">
-                </column>
-                <column name="PROJECT" remarks="" type="BIGINT">
-                </column>
                 <column name="CREATEBY" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
@@ -2339,6 +2331,14 @@
                 <column name="ORG" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="PRODUCT" remarks="" type="BIGINT">
+                </column>
+                <column name="PLAN" remarks="" type="BIGINT">
+                </column>
+                <column name="BRANCH" remarks="" type="BIGINT">
+                </column>
+                <column name="PROJECT" remarks="" type="BIGINT">
                 </column>
         </createTable>
     </changeSet>
@@ -2348,9 +2348,17 @@
 
 
     <!--输出实体[ZT_PROJECTSTORY]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_projectstory-13-90">
+    <changeSet author="zentao" id="tab-zt_projectstory-1-90">
         <createTable tableName="zt_projectstory">
+                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="DEPT" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="ORDER" remarks="" type="INT">
+                </column>
+                <column name="ORG" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="VERSION" remarks="" type="INT">
                 </column>
@@ -2359,14 +2367,6 @@
                 <column name="PROJECT" remarks="" type="BIGINT">
                 </column>
                 <column name="PRODUCT" remarks="" type="BIGINT">
-                </column>
-                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="ORG" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
         </createTable>
     </changeSet>
@@ -2411,11 +2411,13 @@
 
 
     <!--输出实体[ZT_RELEASE]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_release-13-94">
+    <changeSet author="zentao" id="tab-zt_release-1-94">
         <createTable tableName="zt_release">
                 <column name="STORIES" remarks="" type="TEXT(65535)">
                 </column>
                 <column name="MARKER" remarks="" type="VARCHAR(1)">
+                </column>
+                <column name="ORG" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_RELEASE_ID"/>
@@ -2436,19 +2438,17 @@
                 </column>
                 <column name="DESC" remarks="" type="TEXT(65535)">
                 </column>
+                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="DEPT" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="PRODUCT" remarks="" type="BIGINT">
                 </column>
                 <column name="BUILD" remarks="" type="BIGINT">
                 </column>
                 <column name="BRANCH" remarks="" type="BIGINT">
-                </column>
-                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="ORG" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
         </createTable>
     </changeSet>
@@ -2581,11 +2581,19 @@
 
 
     <!--输出实体[ZT_STORYSPEC]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_storyspec-13-101">
+    <changeSet author="zentao" id="tab-zt_storyspec-1-101">
         <createTable tableName="zt_storyspec">
+                <column name="DEPT" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="SPEC" remarks="" type="TEXT(65535)">
                 </column>
+                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="VERIFY" remarks="" type="TEXT(65535)">
+                </column>
+                <column name="ORG" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="TITLE" remarks="" type="VARCHAR(255)">
                 </column>
@@ -2593,21 +2601,21 @@
                 </column>
                 <column name="STORY" remarks="" type="BIGINT">
                 </column>
-                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="ORG" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="DEPT" remarks="" type="VARCHAR(100)">
-                </column>
         </createTable>
     </changeSet>
 
 
     <!--输出实体[ZT_STORYSTAGE]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_storystage-13-102">
+    <changeSet author="zentao" id="tab-zt_storystage-1-102">
         <createTable tableName="zt_storystage">
+                <column name="DEPT" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="ORG" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="STAGEDBY" remarks="" type="VARCHAR(30)">
                 </column>
                 <column name="STAGE" remarks="" type="VARCHAR(50)">
@@ -2616,21 +2624,21 @@
                 </column>
                 <column name="BRANCH" remarks="" type="BIGINT">
                 </column>
-                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="DEPT" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="ORG" remarks="" type="VARCHAR(100)">
-                </column>
         </createTable>
     </changeSet>
 
 
     <!--输出实体[ZT_SUITECASE]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_suitecase-13-103">
+    <changeSet author="zentao" id="tab-zt_suitecase-1-103">
         <createTable tableName="zt_suitecase">
+                <column name="DEPT" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="ORG" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="VERSION" remarks="" type="INT">
                 </column>
                 <column name="SUITE" remarks="" type="BIGINT">
@@ -2638,14 +2646,6 @@
                 <column name="CASE" remarks="" type="BIGINT">
                 </column>
                 <column name="PRODUCT" remarks="" type="BIGINT">
-                </column>
-                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="ORG" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
         </createTable>
     </changeSet>
@@ -2752,13 +2752,15 @@
 
 
     <!--输出实体[ZT_TESTREPORT]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_testreport-10-114">
+    <changeSet author="zentao" id="tab-zt_testreport-1-114">
         <createTable tableName="zt_testreport">
                 <column name="OBJECTID" remarks="" type="INT">
                 </column>
                 <column name="CASES" remarks="" type="TEXT(65535)">
                 </column>
                 <column name="MEMBERS" remarks="" type="TEXT(65535)">
+                </column>
+                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="BUGS" remarks="" type="TEXT(65535)">
                 </column>
@@ -2774,9 +2776,13 @@
                 </column>
                 <column name="OBJECTTYPE" remarks="" type="VARCHAR(20)">
                 </column>
+                <column name="ORG" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="END" remarks="" type="DATETIME">
                 </column>
                 <column name="BUILDS" remarks="" type="VARCHAR(255)">
+                </column>
+                <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="CREATEDDATE" remarks="" type="DATETIME">
                 </column>
@@ -2793,24 +2799,26 @@
                 </column>
                 <column name="PROJECT" remarks="" type="BIGINT">
                 </column>
-                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="ORG" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="DEPT" remarks="" type="VARCHAR(100)">
-                </column>
         </createTable>
     </changeSet>
 
 
     <!--输出实体[ZT_TESTRESULT]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_testresult-13-115">
+    <changeSet author="zentao" id="tab-zt_testresult-1-115">
         <createTable tableName="zt_testresult">
+                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="ORG" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="LASTRUNNER" remarks="" type="VARCHAR(30)">
+                </column>
+                <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="STEPRESULTS" remarks="" type="TEXT(65535)">
                 </column>
                 <column name="CASERESULT" remarks="" type="VARCHAR(30)">
+                </column>
+                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="XML" remarks="" type="TEXT(65535)">
                 </column>
@@ -2831,26 +2839,24 @@
                 </column>
                 <column name="COMPILE" remarks="" type="BIGINT">
                 </column>
-                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="ORG" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="DEPT" remarks="" type="VARCHAR(100)">
-                </column>
         </createTable>
     </changeSet>
 
 
     <!--输出实体[ZT_TESTRUN]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_testrun-13-116">
+    <changeSet author="zentao" id="tab-zt_testrun-1-116">
         <createTable tableName="zt_testrun">
                 <column name="LASTRUNRESULT" remarks="" type="VARCHAR(30)">
                 </column>
                 <column name="LASTRUNDATE" remarks="" type="DATETIME">
                 </column>
+                <column name="ORG" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="ASSIGNEDTO" remarks="" type="VARCHAR(30)">
+                </column>
+                <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="LASTRUNNER" remarks="" type="VARCHAR(30)">
                 </column>
@@ -2859,19 +2865,13 @@
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_TESTRUN_ID"/>
                 </column>
+                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="VERSION" remarks="" type="INT">
                 </column>
                 <column name="CASE" remarks="" type="BIGINT">
                 </column>
                 <column name="TASK" remarks="" type="BIGINT">
-                </column>
-                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="ORG" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
         </createTable>
     </changeSet>
@@ -2881,15 +2881,23 @@
 
 
     <!--输出实体[ZT_TESTTASK]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_testtask-13-118">
+    <changeSet author="zentao" id="tab-zt_testtask-1-118">
         <createTable tableName="zt_testtask">
+                <column name="DEPT" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="END" remarks="" type="DATETIME">
                 </column>
                 <column name="BEGIN" remarks="" type="DATETIME">
                 </column>
                 <column name="MAILTO" remarks="" type="VARCHAR(65535)">
                 </column>
+                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="ORG" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="PRI" remarks="" type="INT">
+                </column>
+                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="SUBSTATUS" remarks="" type="VARCHAR(30)">
                 </column>
@@ -2916,20 +2924,12 @@
                 </column>
                 <column name="PROJECT" remarks="" type="BIGINT">
                 </column>
-                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="ORG" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="DEPT" remarks="" type="VARCHAR(100)">
-                </column>
         </createTable>
     </changeSet>
 
 
     <!--输出实体[ZT_TODO]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_todo-3-119">
+    <changeSet author="zentao" id="tab-zt_todo-1-119">
         <createTable tableName="zt_todo">
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_TODO_ID"/>
@@ -2984,22 +2984,22 @@
 
 
     <!--输出实体[ZT_USERCONTACT]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_usercontact-12-121">
+    <changeSet author="zentao" id="tab-zt_usercontact-1-121">
         <createTable tableName="zt_usercontact">
                 <column name="USERLIST" remarks="" type="TEXT(65535)">
+                </column>
+                <column name="ORG" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="LISTNAME" remarks="" type="VARCHAR(60)">
                 </column>
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_USERCONTACT_ID"/>
                 </column>
-                <column name="ACCOUNT" remarks="" type="VARCHAR(30)">
-                </column>
                 <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
                 </column>
-                <column name="ORG" remarks="" type="VARCHAR(100)">
-                </column>
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="ACCOUNT" remarks="" type="VARCHAR(30)">
                 </column>
         </createTable>
     </changeSet>
@@ -3039,12 +3039,14 @@
 
 
     <!--输出实体[ZT_USERTPL]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_usertpl-10-124">
+    <changeSet author="zentao" id="tab-zt_usertpl-1-124">
         <createTable tableName="zt_usertpl">
                 <column name="TITLE" remarks="" type="VARCHAR(150)">
                 </column>
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_USERTPL_ID"/>
+                </column>
+                <column name="ORG" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="CONTENT" remarks="" type="TEXT(65535)">
                 </column>
@@ -3055,8 +3057,6 @@
                 <column name="PUBLIC" remarks="" type="VARCHAR(1)">
                 </column>
                 <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="ORG" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>

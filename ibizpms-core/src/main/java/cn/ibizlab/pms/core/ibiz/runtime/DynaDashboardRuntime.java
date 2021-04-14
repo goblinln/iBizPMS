@@ -36,7 +36,7 @@ public class DynaDashboardRuntime extends cn.ibizlab.pms.core.runtime.SystemData
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return dynadashboardService.sysGet(String.valueOf(o));
+            return dynadashboardService.sysGet((String)o);
         }
     }
 

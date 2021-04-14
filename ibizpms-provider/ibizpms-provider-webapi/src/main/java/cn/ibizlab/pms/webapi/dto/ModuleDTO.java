@@ -112,6 +112,16 @@ public class ModuleDTO extends DTOBase implements Serializable {
     private String orderpk;
 
     /**
+     * 属性 [CREATEBY]
+     *
+     */
+    @JSONField(name = "createby")
+    @JsonProperty("createby")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("由谁创建")
+    private String createby;
+
+    /**
      * 属性 [COLLECTOR]
      *
      */
@@ -120,6 +130,16 @@ public class ModuleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 65535, message = "内容长度必须小于等于[65535]")
     @ApiModelProperty("收藏者")
     private String collector;
+
+    /**
+     * 属性 [UPDATEBY]
+     *
+     */
+    @JSONField(name = "updateby")
+    @JsonProperty("updateby")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("由谁更新")
+    private String updateby;
 
     /**
      * 属性 [SHORT]
@@ -200,26 +220,6 @@ public class ModuleDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("上级模块")
     private Long parent;
-
-    /**
-     * 属性 [CREATEBY]
-     *
-     */
-    @JSONField(name = "createby")
-    @JsonProperty("createby")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("由谁创建")
-    private String createby;
-
-    /**
-     * 属性 [UPDATEBY]
-     *
-     */
-    @JSONField(name = "updateby")
-    @JsonProperty("updateby")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("由谁更新")
-    private String updateby;
 
 
     /**

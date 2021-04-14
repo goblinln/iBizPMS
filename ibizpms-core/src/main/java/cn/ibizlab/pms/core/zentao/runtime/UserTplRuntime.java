@@ -36,7 +36,7 @@ public class UserTplRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return usertplService.sysGet(String.valueOf(o));
+            return usertplService.sysGet((Long)o);
         }
     }
 

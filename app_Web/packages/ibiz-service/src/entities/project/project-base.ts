@@ -148,6 +148,10 @@ export abstract class ProjectBase extends EntityBase implements IProject {
      */
     ystarttaskcnt?: any;
     /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
      * 分组白名单
      */
     whitelist?: any;
@@ -369,10 +373,6 @@ export abstract class ProjectBase extends EntityBase implements IProject {
      * 父项目
      */
     parent?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
 
     /**
      * 重置实体数据

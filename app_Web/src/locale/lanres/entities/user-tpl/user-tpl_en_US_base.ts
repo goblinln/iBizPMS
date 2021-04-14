@@ -5,12 +5,12 @@ function getLocaleResourceBase(){
 	fields: {
 		'title': commonLogic.appcommonhandle("模板标题",null),
 		'id': commonLogic.appcommonhandle("id",null),
+		'org': commonLogic.appcommonhandle("归属组织",null),
 		'content': commonLogic.appcommonhandle("content",null),
 		'type': commonLogic.appcommonhandle("type",null),
 		'account': commonLogic.appcommonhandle("account",null),
 		'ibizpublic': commonLogic.appcommonhandle("公开",null),
 		'updateby': commonLogic.appcommonhandle("由谁更新",null),
-		'org': commonLogic.appcommonhandle("归属组织",null),
 		'dept': commonLogic.appcommonhandle("归属部门",null),
 	},
 		views: {

@@ -36,7 +36,7 @@ public class BurnRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return burnService.sysGet(String.valueOf(o));
+            return burnService.sysGet((String)o);
         }
     }
 

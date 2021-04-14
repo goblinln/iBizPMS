@@ -1,6 +1,7 @@
 export default [
     'stories',
     'marker',
+    'org',
     'id',
     'sqlid',
     'leftbugs',
@@ -16,7 +17,10 @@ export default [
     'backgroundid',
     'desc',
     'files',
+    'updateby',
     'frontapplication',
+    'dept',
+    'createby',
     'productname',
     'builder',
     'buildname',
@@ -24,8 +28,4 @@ export default [
     'product',
     'build',
     'branch',
-    'createby',
-    'updateby',
-    'org',
-    'dept',
 ];

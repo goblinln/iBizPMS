@@ -3,18 +3,18 @@ import commonLogic from '@/locale/logic/common/common-logic';
 function getLocaleResourceBase(){
 	const data:any = {
 	fields: {
+		'createby': commonLogic.appcommonhandle("由谁创建",null),
 		'isweekend': commonLogic.appcommonhandle("周末",null),
+		'updateby': commonLogic.appcommonhandle("由谁更新",null),
+		'dept': commonLogic.appcommonhandle("归属部门",null),
 		'date': commonLogic.appcommonhandle("日期",null),
+		'org': commonLogic.appcommonhandle("归属组织",null),
 		'id': commonLogic.appcommonhandle("虚拟主键",null),
 		'consumed': commonLogic.appcommonhandle("总计消耗",null),
 		'left': commonLogic.appcommonhandle("预计剩余",null),
 		'estimate': commonLogic.appcommonhandle("最初预计",null),
 		'project': commonLogic.appcommonhandle("所属项目",null),
 		'task': commonLogic.appcommonhandle("任务",null),
-		'createby': commonLogic.appcommonhandle("由谁创建",null),
-		'updateby': commonLogic.appcommonhandle("由谁更新",null),
-		'org': commonLogic.appcommonhandle("归属组织",null),
-		'dept': commonLogic.appcommonhandle("归属部门",null),
 	},
 		views: {
 			'chartview': {

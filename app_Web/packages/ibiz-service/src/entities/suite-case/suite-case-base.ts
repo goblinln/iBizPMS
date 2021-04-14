@@ -29,9 +29,25 @@ export abstract class SuiteCaseBase extends EntityBase implements ISuiteCase {
     }
     // SuiteCase 实体未设置主文本属性
     /**
+     * 归属部门
+     */
+    dept?: any;
+    /**
+     * 由谁创建
+     */
+    createby?: any;
+    /**
      * 虚拟主键
      */
     id?: any;
+    /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
     /**
      * 用例版本
      */
@@ -48,22 +64,6 @@ export abstract class SuiteCaseBase extends EntityBase implements ISuiteCase {
      * 所属产品
      */
     product?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
 
     /**
      * 重置实体数据

@@ -36,7 +36,7 @@ public class AccountTaskestimateRuntime extends cn.ibizlab.pms.core.runtime.Syst
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return accounttaskestimateService.sysGet(String.valueOf(o));
+            return accounttaskestimateService.sysGet((String)o);
         }
     }
 

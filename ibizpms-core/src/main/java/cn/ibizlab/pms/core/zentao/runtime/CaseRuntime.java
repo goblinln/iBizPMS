@@ -36,7 +36,7 @@ public class CaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return caseService.sysGet(String.valueOf(o));
+            return caseService.sysGet((Long)o);
         }
     }
 

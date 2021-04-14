@@ -36,7 +36,7 @@ public class NotifyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return notifyService.sysGet(String.valueOf(o));
+            return notifyService.sysGet((Long)o);
         }
     }
 

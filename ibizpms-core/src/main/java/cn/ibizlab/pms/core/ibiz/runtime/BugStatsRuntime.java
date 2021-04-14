@@ -36,7 +36,7 @@ public class BugStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return bugstatsService.sysGet(String.valueOf(o));
+            return bugstatsService.sysGet((Long)o);
         }
     }
 

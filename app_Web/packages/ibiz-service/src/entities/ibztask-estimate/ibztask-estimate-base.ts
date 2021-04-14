@@ -34,9 +34,17 @@ export abstract class IBZTaskEstimateBase extends EntityBase implements IIBZTask
         this.id = val;
     }
     /**
+     * 归属组织
+     */
+    org?: any;
+    /**
      * 月（显示）
      */
     monthname?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
     /**
      * 年
      */
@@ -53,6 +61,10 @@ export abstract class IBZTaskEstimateBase extends EntityBase implements IIBZTask
      * 总计消耗
      */
     consumed?: any;
+    /**
+     * 由谁创建
+     */
+    createby?: any;
     /**
      * 评估成本
      */
@@ -81,6 +93,10 @@ export abstract class IBZTaskEstimateBase extends EntityBase implements IIBZTask
      * 日期
      */
     date?: any;
+    /**
+     * 由谁更新
+     */
+    updateby?: any;
     /**
      * 评估工时
      */
@@ -137,22 +153,6 @@ export abstract class IBZTaskEstimateBase extends EntityBase implements IIBZTask
      * 任务
      */
     task?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
 
     /**
      * 重置实体数据

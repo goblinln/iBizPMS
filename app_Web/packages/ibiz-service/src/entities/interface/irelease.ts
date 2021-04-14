@@ -19,6 +19,10 @@ export interface IRelease extends IEntityBase {
      */
     marker?: '1' | '0';
     /**
+     * 归属组织
+     */
+    org?: any;
+    /**
      * ID
      */
     id?: any;
@@ -85,9 +89,21 @@ export interface IRelease extends IEntityBase {
      */
     files?: any;
     /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
      * 系统应用
      */
     frontapplication?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
+    /**
+     * 由谁创建
+     */
+    createby?: any;
     /**
      * 产品名称
      */
@@ -116,20 +132,4 @@ export interface IRelease extends IEntityBase {
      * 平台/分支
      */
     branch?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
 }

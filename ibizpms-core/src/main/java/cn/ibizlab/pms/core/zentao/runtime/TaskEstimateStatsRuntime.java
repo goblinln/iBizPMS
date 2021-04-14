@@ -36,7 +36,7 @@ public class TaskEstimateStatsRuntime extends cn.ibizlab.pms.core.runtime.System
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return taskestimatestatsService.sysGet(String.valueOf(o));
+            return taskestimatestatsService.sysGet((Long)o);
         }
     }
 

@@ -320,6 +320,64 @@
     "queryColumn" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "UPDATEBY",
+      "dBType" : "MYSQL5",
+      "name" : "UPDATEBY",
+      "queryCodeExp" : "t1.`UPDATEBY`",
+      "autoIncrement" : false,
+      "valueAutoGen" : false
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "UPDATEBY",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true,
+          "tryMode" : false
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]",
+        "tryMode" : false
+      },
+      "getPSDEField" : {
+        "name" : "UPDATEBY",
+        "codeName" : "UpdateBy"
+      },
+      "ruleHolder" : 3,
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "UpdateBy",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "deployId" : "de103c191fe0a95b20f517efa48d7e4f",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "由谁更新",
+    "name" : "UPDATEBY",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName_Gird.json"
+    },
+    "predefinedType" : "UPDATEMANNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s",
+    "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "BUGS",
       "dBType" : "MYSQL5",
       "name" : "BUGS",
@@ -788,6 +846,59 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "ORG",
+      "dBType" : "MYSQL5",
+      "name" : "ORG",
+      "queryCodeExp" : "t1.`ORG`",
+      "autoIncrement" : false,
+      "valueAutoGen" : false
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "ORG",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true,
+          "tryMode" : false
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]",
+        "tryMode" : false
+      },
+      "getPSDEField" : {
+        "name" : "ORG",
+        "codeName" : "Org"
+      },
+      "ruleHolder" : 3,
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Org",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "deployId" : "73742c542e425a4c60caa5fbd0b8c917",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "归属组织",
+    "name" : "ORG",
+    "predefinedType" : "ORGID",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "END",
       "dBType" : "MYSQL5",
       "name" : "END",
@@ -908,6 +1019,59 @@
     "name" : "BUILDS",
     "stdDataType" : 25,
     "stringLength" : 255,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "DEPT",
+      "dBType" : "MYSQL5",
+      "name" : "DEPT",
+      "queryCodeExp" : "t1.`DEPT`",
+      "autoIncrement" : false,
+      "valueAutoGen" : false
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "DEPT",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true,
+          "tryMode" : false
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]",
+        "tryMode" : false
+      },
+      "getPSDEField" : {
+        "name" : "DEPT",
+        "codeName" : "Dept"
+      },
+      "ruleHolder" : 3,
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Dept",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "deployId" : "73ff0cf5da40a733beee255d13cd7b22",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "归属部门",
+    "name" : "DEPT",
+    "predefinedType" : "ORGSECTORID",
+    "stdDataType" : 25,
+    "stringLength" : 100,
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
@@ -1383,170 +1547,6 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "linkDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "UPDATEBY",
-      "dBType" : "MYSQL5",
-      "name" : "UPDATEBY",
-      "queryCodeExp" : "t1.`UPDATEBY`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "UPDATEBY",
-          "maxValue" : 100,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[100]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[100]",
-        "tryMode" : false
-      },
-      "getPSDEField" : {
-        "name" : "UPDATEBY",
-        "codeName" : "UpdateBy"
-      },
-      "ruleHolder" : 3,
-      "ruleInfo" : "内容长度必须小于等于[100]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "UpdateBy",
-    "dEFType" : 1,
-    "dataType" : "TEXT",
-    "deployId" : "de103c191fe0a95b20f517efa48d7e4f",
-    "importOrder" : 1000,
-    "length" : 100,
-    "logicName" : "由谁更新",
-    "name" : "UPDATEBY",
-    "getPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName_Gird.json"
-    },
-    "predefinedType" : "UPDATEMANNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100,
-    "valueFormat" : "%1$s",
-    "systemReserver" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "ORG",
-      "dBType" : "MYSQL5",
-      "name" : "ORG",
-      "queryCodeExp" : "t1.`ORG`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "ORG",
-          "maxValue" : 100,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[100]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[100]",
-        "tryMode" : false
-      },
-      "getPSDEField" : {
-        "name" : "ORG",
-        "codeName" : "Org"
-      },
-      "ruleHolder" : 3,
-      "ruleInfo" : "内容长度必须小于等于[100]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Org",
-    "dEFType" : 1,
-    "dataType" : "TEXT",
-    "deployId" : "73742c542e425a4c60caa5fbd0b8c917",
-    "importOrder" : 1000,
-    "length" : 100,
-    "logicName" : "归属组织",
-    "name" : "ORG",
-    "predefinedType" : "ORGID",
-    "stdDataType" : 25,
-    "stringLength" : 100,
-    "valueFormat" : "%1$s"
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "DEPT",
-      "dBType" : "MYSQL5",
-      "name" : "DEPT",
-      "queryCodeExp" : "t1.`DEPT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "DEPT",
-          "maxValue" : 100,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[100]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[100]",
-        "tryMode" : false
-      },
-      "getPSDEField" : {
-        "name" : "DEPT",
-        "codeName" : "Dept"
-      },
-      "ruleHolder" : 3,
-      "ruleInfo" : "内容长度必须小于等于[100]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Dept",
-    "dEFType" : 1,
-    "dataType" : "TEXT",
-    "deployId" : "73ff0cf5da40a733beee255d13cd7b22",
-    "importOrder" : 1000,
-    "length" : 100,
-    "logicName" : "归属部门",
-    "name" : "DEPT",
-    "predefinedType" : "ORGSECTORID",
-    "stdDataType" : 25,
-    "stringLength" : 100,
-    "valueFormat" : "%1$s"
   } ],
   "getAllPSDELogics" : [ {
     "modelref" : true,

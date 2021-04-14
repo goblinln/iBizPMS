@@ -36,7 +36,7 @@ public class UserYearWorkStatsRuntime extends cn.ibizlab.pms.core.runtime.System
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return useryearworkstatsService.sysGet(String.valueOf(o));
+            return useryearworkstatsService.sysGet((Long)o);
         }
     }
 

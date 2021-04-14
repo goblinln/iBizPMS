@@ -1,11 +1,11 @@
 export default [
     'name',
+    'dept',
+    'updateby',
     'deleted',
+    'createby',
     'id',
     'order',
-    'product',
-    'createby',
-    'updateby',
     'org',
-    'dept',
+    'product',
 ];

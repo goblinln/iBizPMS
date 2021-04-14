@@ -36,7 +36,7 @@ public class IbizproProductDailyRuntime extends cn.ibizlab.pms.core.runtime.Syst
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return ibizproproductdailyService.sysGet(String.valueOf(o));
+            return ibizproproductdailyService.sysGet((Long)o);
         }
     }
 

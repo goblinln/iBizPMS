@@ -282,8 +282,6 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("导出",null),
 			},
 		},
-		dailyinfocalendareditviewtoolbar_toolbar: {
-		},
 	};
 	return data;
 }

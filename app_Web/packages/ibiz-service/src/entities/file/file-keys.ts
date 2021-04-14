@@ -1,6 +1,7 @@
 export default [
     'pathname',
     'objectid',
+    'org',
     'strsize',
     'doclibtype',
     'deleted',
@@ -8,12 +9,11 @@ export default [
     'objecttype',
     'addedby',
     'title',
+    'updateby',
     'addeddate',
     'downloads',
+    'dept',
     'size',
     'id',
     'extra',
-    'updateby',
-    'org',
-    'dept',
 ];

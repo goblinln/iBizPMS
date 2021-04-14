@@ -33,18 +33,6 @@
     "rawValue" : false
   } ],
   "getPSControls" : [ {
-    "codeName" : "DailyInfoCalendarEditViewtoolbar",
-    "controlType" : "TOOLBAR",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
-    },
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "modelid" : "76003f5bfdaf10f360db4f5931c37916_toolbar"
-  }, {
     "codeName" : "DailyInfoCalendar",
     "controlType" : "FORM",
     "getCreatePSControlAction" : {

@@ -97,8 +97,6 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("导出",null),
 			},
 		},
-		userfinishtasksumgridviewtoolbar_toolbar: {
-		},
 	};
 	return data;
 }

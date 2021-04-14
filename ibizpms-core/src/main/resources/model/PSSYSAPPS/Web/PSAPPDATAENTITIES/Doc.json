@@ -429,6 +429,12 @@
     "stdDataType" : 25,
     "stringLength" : 30
   }, {
+    "codeName" : "Dept",
+    "logicName" : "归属部门",
+    "name" : "DEPT",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Id",
     "logicName" : "文档编号",
     "name" : "ID",
@@ -453,6 +459,12 @@
     "logicName" : "最近更新数量",
     "name" : "RECENTUPDATECNT",
     "stdDataType" : 9
+  }, {
+    "codeName" : "Org",
+    "logicName" : "归属组织",
+    "name" : "ORG",
+    "stdDataType" : 25,
+    "stringLength" : 100
   }, {
     "codeName" : "Type",
     "logicName" : "文档类型",
@@ -538,6 +550,12 @@
     "name" : "TODAYUPDATECNT",
     "stdDataType" : 9
   }, {
+    "codeName" : "UpdateBy",
+    "logicName" : "由谁更新",
+    "name" : "UPDATEBY",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Files",
     "logicName" : "附件",
     "name" : "FILES",
@@ -587,24 +605,6 @@
     "logicName" : "所属分类",
     "name" : "MODULE",
     "stdDataType" : 1
-  }, {
-    "codeName" : "UpdateBy",
-    "logicName" : "由谁更新",
-    "name" : "UPDATEBY",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "Org",
-    "logicName" : "归属组织",
-    "name" : "ORG",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "Dept",
-    "logicName" : "归属部门",
-    "name" : "DEPT",
-    "stdDataType" : 25,
-    "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

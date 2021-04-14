@@ -96,18 +96,6 @@
     }
   } ],
   "getPSControls" : [ {
-    "codeName" : "ProductBugResolutionGridViewtoolbar",
-    "controlType" : "TOOLBAR",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats.json"
-    },
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "modelid" : "59f7278a2d42e40c347241347f1c954b_toolbar"
-  }, {
     "aggMode" : "PAGE",
     "codeName" : "ProductBugResolutionStats",
     "columnEnableLink" : 2,

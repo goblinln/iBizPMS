@@ -63,6 +63,15 @@ public class File extends EntityMP implements Serializable {
     @ApiModelProperty("对象ID")
     private Long objectid;
     /**
+     * 归属组织
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGID)
+    @TableField(value = "org")
+    @JSONField(name = "org")
+    @JsonProperty("org")
+    @ApiModelProperty("归属组织")
+    private String org;
+    /**
      * 显示大小
      */
     @TableField(exist = false)
@@ -122,6 +131,15 @@ public class File extends EntityMP implements Serializable {
     @ApiModelProperty("标题")
     private String title;
     /**
+     * 由谁更新
+     */
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @TableField(value = "updateby")
+    @JSONField(name = "updateby")
+    @JsonProperty("updateby")
+    @ApiModelProperty("由谁更新")
+    private String updateby;
+    /**
      * 添加时间
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
@@ -140,6 +158,15 @@ public class File extends EntityMP implements Serializable {
     @JsonProperty("downloads")
     @ApiModelProperty("下载次数")
     private Integer downloads;
+    /**
+     * 归属部门
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
+    @TableField(value = "dept")
+    @JSONField(name = "dept")
+    @JsonProperty("dept")
+    @ApiModelProperty("归属部门")
+    private String dept;
     /**
      * 大小
      */
@@ -166,33 +193,6 @@ public class File extends EntityMP implements Serializable {
     @JsonProperty("extra")
     @ApiModelProperty("备注")
     private String extra;
-    /**
-     * 由谁更新
-     */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "updateby")
-    @JSONField(name = "updateby")
-    @JsonProperty("updateby")
-    @ApiModelProperty("由谁更新")
-    private String updateby;
-    /**
-     * 归属组织
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "org")
-    @JSONField(name = "org")
-    @JsonProperty("org")
-    @ApiModelProperty("归属组织")
-    private String org;
-    /**
-     * 归属部门
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "dept")
-    @JSONField(name = "dept")
-    @JsonProperty("dept")
-    @ApiModelProperty("归属部门")
-    private String dept;
 
 
 

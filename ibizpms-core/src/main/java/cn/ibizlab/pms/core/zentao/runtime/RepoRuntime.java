@@ -36,7 +36,7 @@ public class RepoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return repoService.sysGet(String.valueOf(o));
+            return repoService.sysGet((Long)o);
         }
     }
 

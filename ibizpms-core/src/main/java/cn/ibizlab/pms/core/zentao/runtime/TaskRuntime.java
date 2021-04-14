@@ -36,7 +36,7 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return taskService.sysGet(String.valueOf(o));
+            return taskService.sysGet((Long)o);
         }
     }
 

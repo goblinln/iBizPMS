@@ -54,6 +54,16 @@ public class UserTplDTO extends DTOBase implements Serializable {
     private Long id;
 
     /**
+     * 属性 [ORG]
+     *
+     */
+    @JSONField(name = "org")
+    @JsonProperty("org")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属组织")
+    private String org;
+
+    /**
      * 属性 [CONTENT]
      *
      */
@@ -102,16 +112,6 @@ public class UserTplDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁更新")
     private String updateby;
-
-    /**
-     * 属性 [ORG]
-     *
-     */
-    @JSONField(name = "org")
-    @JsonProperty("org")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("归属组织")
-    private String org;
 
     /**
      * 属性 [DEPT]

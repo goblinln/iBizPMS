@@ -134,6 +134,10 @@ export abstract class CaseBase extends EntityBase implements ICase {
      */
     isfavorites?: any;
     /**
+     * 归属部门
+     */
+    dept?: any;
+    /**
      * frequency
      *
      * @type {('1' | '2' | '3')} 1: 1, 2: 2, 3: 3
@@ -147,6 +151,10 @@ export abstract class CaseBase extends EntityBase implements ICase {
      * 最后修改者
      */
     lasteditedby?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
     /**
      * 由谁评审
      */
@@ -289,14 +297,6 @@ export abstract class CaseBase extends EntityBase implements ICase {
      * 所属模块
      */
     module?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
 
     /**
      * 重置实体数据

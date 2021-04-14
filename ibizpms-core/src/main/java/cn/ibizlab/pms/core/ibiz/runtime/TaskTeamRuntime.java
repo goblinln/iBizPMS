@@ -36,7 +36,7 @@ public class TaskTeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return taskteamService.sysGet(String.valueOf(o));
+            return taskteamService.sysGet((Long)o);
         }
     }
 

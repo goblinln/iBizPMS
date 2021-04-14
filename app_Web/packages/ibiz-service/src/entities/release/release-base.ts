@@ -44,6 +44,10 @@ export abstract class ReleaseBase extends EntityBase implements IRelease {
      */
     marker?: '1' | '0';
     /**
+     * 归属组织
+     */
+    org?: any;
+    /**
      * ID
      */
     id?: any;
@@ -110,9 +114,21 @@ export abstract class ReleaseBase extends EntityBase implements IRelease {
      */
     files?: any;
     /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
      * 系统应用
      */
     frontapplication?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
+    /**
+     * 由谁创建
+     */
+    createby?: any;
     /**
      * 产品名称
      */
@@ -141,22 +157,6 @@ export abstract class ReleaseBase extends EntityBase implements IRelease {
      * 平台/分支
      */
     branch?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
 
     /**
      * 重置实体数据

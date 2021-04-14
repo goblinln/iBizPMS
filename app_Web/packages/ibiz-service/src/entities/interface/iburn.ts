@@ -9,13 +9,29 @@ import { IEntityBase } from 'ibiz-core';
  */
 export interface IBurn extends IEntityBase {
     /**
+     * 由谁创建
+     */
+    createby?: any;
+    /**
      * 周末
      */
     isweekend?: any;
     /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
+    /**
      * 日期
      */
     date?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
     /**
      * 虚拟主键
      */
@@ -40,20 +56,4 @@ export interface IBurn extends IEntityBase {
      * 任务
      */
     task?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
 }

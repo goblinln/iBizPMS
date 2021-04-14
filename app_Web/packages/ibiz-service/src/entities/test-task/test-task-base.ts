@@ -34,6 +34,10 @@ export abstract class TestTaskBase extends EntityBase implements ITestTask {
         this.name = val;
     }
     /**
+     * 归属部门
+     */
+    dept?: any;
+    /**
      * 结束日期
      */
     end?: any;
@@ -58,6 +62,14 @@ export abstract class TestTaskBase extends EntityBase implements ITestTask {
      */
     mailtopk?: any;
     /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
+    /**
      * 优先级
      *
      * @type {(1 | 2 | 3 | 4)} 1: 1, 2: 2, 3: 3, 4: 4
@@ -67,6 +79,10 @@ export abstract class TestTaskBase extends EntityBase implements ITestTask {
      * 备注
      */
     comment?: any;
+    /**
+     * 由谁创建
+     */
+    createby?: any;
     /**
      * 子状态
      */
@@ -133,22 +149,6 @@ export abstract class TestTaskBase extends EntityBase implements ITestTask {
      * 所属项目
      */
     project?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
 
     /**
      * 重置实体数据

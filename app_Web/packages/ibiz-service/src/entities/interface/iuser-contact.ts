@@ -13,6 +13,10 @@ export interface IUserContact extends IEntityBase {
      */
     userlist?: any;
     /**
+     * 归属组织
+     */
+    org?: any;
+    /**
      * 标题
      */
     listname?: any;
@@ -21,19 +25,15 @@ export interface IUserContact extends IEntityBase {
      */
     id?: any;
     /**
-     * account
-     */
-    account?: any;
-    /**
      * 由谁更新
      */
     updateby?: any;
     /**
-     * 归属组织
-     */
-    org?: any;
-    /**
      * 归属部门
      */
     dept?: any;
+    /**
+     * account
+     */
+    account?: any;
 }

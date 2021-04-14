@@ -29,18 +29,6 @@
     "rawValue" : false
   } ],
   "getPSControls" : [ {
-    "codeName" : "Usr2EditViewtoolbar",
-    "controlType" : "TOOLBAR",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
-    },
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "modelid" : "6a298e81fa0ad8687b47f7e2f99ff4a0_toolbar"
-  }, {
     "codeName" : "WeeklyMsg",
     "controlType" : "FORM",
     "getCreatePSControlAction" : {

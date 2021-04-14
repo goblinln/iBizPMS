@@ -36,7 +36,7 @@ public class DeptRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return deptService.sysGet(String.valueOf(o));
+            return deptService.sysGet((Long)o);
         }
     }
 

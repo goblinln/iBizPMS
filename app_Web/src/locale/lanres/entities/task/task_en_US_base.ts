@@ -22,6 +22,7 @@ function getLocaleResourceBase(){
 		'isleaf': commonLogic.appcommonhandle("是否子任务",null),
 		'realstarted': commonLogic.appcommonhandle("实际开始",null),
 		'status1': commonLogic.appcommonhandle("任务状态",null),
+		'org': commonLogic.appcommonhandle("归属组织",null),
 		'replycount': commonLogic.appcommonhandle("回复数量",null),
 		'configbegin': commonLogic.appcommonhandle("开始日期",null),
 		'updatedate': commonLogic.appcommonhandle("最后的更新日期",null),
@@ -30,6 +31,7 @@ function getLocaleResourceBase(){
 		'currentconsumed': commonLogic.appcommonhandle("本次消耗",null),
 		'files': commonLogic.appcommonhandle("附件",null),
 		'substatus': commonLogic.appcommonhandle("子状态",null),
+		'dept': commonLogic.appcommonhandle("归属部门",null),
 		'closedreason': commonLogic.appcommonhandle("关闭原因",null),
 		'taskspecies': commonLogic.appcommonhandle("任务种别",null),
 		'lastediteddate': commonLogic.appcommonhandle("最后修改日期",null),
@@ -88,8 +90,6 @@ function getLocaleResourceBase(){
 		'story': commonLogic.appcommonhandle("相关需求",null),
 		'parent': commonLogic.appcommonhandle("父任务",null),
 		'frombug': commonLogic.appcommonhandle("来源Bug",null),
-		'org': commonLogic.appcommonhandle("归属组织",null),
-		'dept': commonLogic.appcommonhandle("归属部门",null),
 	},
 		views: {
 			'dailycompletezsgridview': {
@@ -1677,8 +1677,6 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("Filter",null),
 				tip: commonLogic.appcommonhandle("Filter",null),
 			},
-		},
-		todoeditviewtoolbar_toolbar: {
 		},
 		mainmygridviewtoolbar_toolbar: {
 			'deuiaction1': {

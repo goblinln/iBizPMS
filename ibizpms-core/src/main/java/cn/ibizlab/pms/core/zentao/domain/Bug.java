@@ -56,6 +56,15 @@ public class Bug extends EntityMP implements Serializable {
     @ApiModelProperty("严重程度")
     private Integer severity;
     /**
+     * 归属部门
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
+    @TableField(value = "dept")
+    @JSONField(name = "dept")
+    @JsonProperty("dept")
+    @ApiModelProperty("归属部门")
+    private String dept;
+    /**
      * 需求版本
      */
     @DEField(defaultValue = "1")
@@ -416,6 +425,15 @@ public class Bug extends EntityMP implements Serializable {
     @ApiModelProperty("子状态")
     private String substatus;
     /**
+     * 归属组织
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGID)
+    @TableField(value = "org")
+    @JSONField(name = "org")
+    @JsonProperty("org")
+    @ApiModelProperty("归属组织")
+    private String org;
+    /**
      * 版本项目
      */
     @TableField(exist = false)
@@ -710,24 +728,6 @@ public class Bug extends EntityMP implements Serializable {
     @JsonProperty("testtask")
     @ApiModelProperty("测试单")
     private Long testtask;
-    /**
-     * 归属组织
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "org")
-    @JSONField(name = "org")
-    @JsonProperty("org")
-    @ApiModelProperty("归属组织")
-    private String org;
-    /**
-     * 归属部门
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "dept")
-    @JSONField(name = "dept")
-    @JsonProperty("dept")
-    @ApiModelProperty("归属部门")
-    private String dept;
 
     /**
      * 

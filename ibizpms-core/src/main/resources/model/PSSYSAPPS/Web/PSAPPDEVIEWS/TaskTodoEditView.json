@@ -23,18 +23,6 @@
     } ]
   } ],
   "getPSControls" : [ {
-    "codeName" : "TodoEditViewtoolbar",
-    "controlType" : "TOOLBAR",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-    },
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "modelid" : "4f94ec3ac2a019aeeca8a8fee6fda464_toolbar"
-  }, {
     "codeName" : "PendingSubmission",
     "controlType" : "FORM",
     "getCreatePSControlAction" : {

@@ -12,6 +12,7 @@ function getLocaleResourceBase(){
 		'acl': commonLogic.appcommonhandle("权限",null),
 		'root': commonLogic.appcommonhandle("Root",null),
 		'deleted': commonLogic.appcommonhandle("已删除",null),
+		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 		'groups': commonLogic.appcommonhandle("分组",null),
 		'doccnt': commonLogic.appcommonhandle("文档数量",null),
 		'id': commonLogic.appcommonhandle("编号",null),
@@ -19,14 +20,13 @@ function getLocaleResourceBase(){
 		'main': commonLogic.appcommonhandle("是否是主库",null),
 		'name': commonLogic.appcommonhandle("文档库名称",null),
 		'modulecnt': commonLogic.appcommonhandle("文件夹数",null),
+		'createby': commonLogic.appcommonhandle("由谁创建",null),
 		'openeddate': commonLogic.appcommonhandle("创建时间",null),
 		'order': commonLogic.appcommonhandle("排序",null),
 		'productname': commonLogic.appcommonhandle("所属产品",null),
 		'projectname': commonLogic.appcommonhandle("所属项目",null),
 		'project': commonLogic.appcommonhandle("项目库",null),
 		'product': commonLogic.appcommonhandle("产品库",null),
-		'createby': commonLogic.appcommonhandle("由谁创建",null),
-		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 	},
 		views: {
 			'usr2treeview': {

@@ -46,13 +46,13 @@ function getLocaleResourceBase(){
 		'code': commonLogic.appcommonhandle("产品代号",null),
 		'srfcount': commonLogic.appcommonhandle("属性",null),
 		'order1': commonLogic.appcommonhandle("排序",null),
+		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 		'buildcnt': commonLogic.appcommonhandle("BUILD数",null),
 		'createddate': commonLogic.appcommonhandle("创建日期",null),
 		'noticeusers': commonLogic.appcommonhandle("消息通知用户",null),
 		'activestorycnt': commonLogic.appcommonhandle("激活需求数",null),
 		'linename': commonLogic.appcommonhandle("产品线",null),
 		'line': commonLogic.appcommonhandle("产品线",null),
-		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 	},
 		views: {
 			'testtabexpview': {

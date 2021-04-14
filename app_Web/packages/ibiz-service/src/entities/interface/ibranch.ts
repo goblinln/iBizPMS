@@ -13,9 +13,21 @@ export interface IBranch extends IEntityBase {
      */
     name?: any;
     /**
+     * 归属部门
+     */
+    dept?: any;
+    /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
      * 已删除
      */
     deleted?: any;
+    /**
+     * 由谁创建
+     */
+    createby?: any;
     /**
      * 编号
      */
@@ -25,23 +37,11 @@ export interface IBranch extends IEntityBase {
      */
     order?: any;
     /**
-     * 所属产品
-     */
-    product?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
      * 归属组织
      */
     org?: any;
     /**
-     * 归属部门
+     * 所属产品
      */
-    dept?: any;
+    product?: any;
 }

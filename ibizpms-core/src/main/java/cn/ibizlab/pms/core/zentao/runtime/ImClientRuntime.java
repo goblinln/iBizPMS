@@ -36,7 +36,7 @@ public class ImClientRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return imclientService.sysGet(String.valueOf(o));
+            return imclientService.sysGet((Long)o);
         }
     }
 

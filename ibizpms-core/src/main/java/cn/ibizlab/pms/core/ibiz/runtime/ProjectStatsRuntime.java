@@ -36,7 +36,7 @@ public class ProjectStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return projectstatsService.sysGet(String.valueOf(o));
+            return projectstatsService.sysGet((Long)o);
         }
     }
 

@@ -36,7 +36,7 @@ public class IbzFavoritesRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return ibzfavoritesService.sysGet(String.valueOf(o));
+            return ibzfavoritesService.sysGet((String)o);
         }
     }
 

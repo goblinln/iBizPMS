@@ -36,7 +36,7 @@ public class TaskMsgRecordRuntime extends cn.ibizlab.pms.core.runtime.SystemData
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return taskmsgrecordService.sysGet(String.valueOf(o));
+            return taskmsgrecordService.sysGet((String)o);
         }
     }
 

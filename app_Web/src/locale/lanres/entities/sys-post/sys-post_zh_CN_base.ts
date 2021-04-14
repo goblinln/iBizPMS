@@ -76,8 +76,6 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("删除",null),
 			},
 		},
-		usr2gridviewtoolbar_toolbar: {
-		},
 	};
 	return data;
 }

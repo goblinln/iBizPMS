@@ -123,6 +123,16 @@ public class DocLibDTO extends DTOBase implements Serializable {
     private String deleted;
 
     /**
+     * 属性 [UPDATEBY]
+     *
+     */
+    @JSONField(name = "updateby")
+    @JsonProperty("updateby")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("由谁更新")
+    private String updateby;
+
+    /**
      * 属性 [GROUPS]
      *
      */
@@ -192,6 +202,16 @@ public class DocLibDTO extends DTOBase implements Serializable {
     private Integer modulecnt;
 
     /**
+     * 属性 [CREATEBY]
+     *
+     */
+    @JSONField(name = "createby")
+    @JsonProperty("createby")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("由谁创建")
+    private String createby;
+
+    /**
      * 属性 [OPENEDDATE]
      *
      */
@@ -249,26 +269,6 @@ public class DocLibDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("产品库")
     private Long product;
-
-    /**
-     * 属性 [CREATEBY]
-     *
-     */
-    @JSONField(name = "createby")
-    @JsonProperty("createby")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("由谁创建")
-    private String createby;
-
-    /**
-     * 属性 [UPDATEBY]
-     *
-     */
-    @JSONField(name = "updateby")
-    @JsonProperty("updateby")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("由谁更新")
-    private String updateby;
 
 
     /**

@@ -36,7 +36,7 @@ public class EntryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return entryService.sysGet(String.valueOf(o));
+            return entryService.sysGet((Long)o);
         }
     }
 

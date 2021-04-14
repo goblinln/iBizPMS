@@ -36,7 +36,7 @@ public class IbzCaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return ibzcaseService.sysGet(String.valueOf(o));
+            return ibzcaseService.sysGet((Long)o);
         }
     }
 

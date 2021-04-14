@@ -36,7 +36,7 @@ public class IbzAgentRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return ibzagentService.sysGet(String.valueOf(o));
+            return ibzagentService.sysGet((Long)o);
         }
     }
 

@@ -56,18 +56,6 @@
     "name" : "EDITDATA"
   } ],
   "getPSControls" : [ {
-    "codeName" : "UserFinishTaskSumGridViewtoolbar",
-    "controlType" : "TOOLBAR",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskStats.json"
-    },
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "modelid" : "9c718f75d8c130ae7c44ba1c18edcc62_toolbar"
-  }, {
     "aggMode" : "NONE",
     "codeName" : "UserFinishTaskSum",
     "columnEnableLink" : 2,

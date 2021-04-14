@@ -36,7 +36,7 @@ public class ProductLifeRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return productlifeService.sysGet(String.valueOf(o));
+            return productlifeService.sysGet((String)o);
         }
     }
 

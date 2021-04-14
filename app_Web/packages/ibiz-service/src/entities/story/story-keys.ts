@@ -40,6 +40,7 @@ export default [
     'orgid',
     'mailto',
     'isfavorites',
+    'dept',
     'sourceobject',
     'deleted',
     'keywords',
@@ -56,6 +57,7 @@ export default [
     'closedby',
     'acl',
     'result',
+    'org',
     'type',
     'lastediteddate',
     'ibiz_sourceid',
@@ -74,6 +76,4 @@ export default [
     'duplicatestory',
     'branch',
     'tobug',
-    'org',
-    'dept',
 ];

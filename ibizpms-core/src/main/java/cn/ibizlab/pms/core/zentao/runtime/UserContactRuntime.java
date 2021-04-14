@@ -36,7 +36,7 @@ public class UserContactRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return usercontactService.sysGet(String.valueOf(o));
+            return usercontactService.sysGet((Long)o);
         }
     }
 

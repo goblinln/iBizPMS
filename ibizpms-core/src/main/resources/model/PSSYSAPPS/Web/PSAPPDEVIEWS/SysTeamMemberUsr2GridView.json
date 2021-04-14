@@ -96,18 +96,6 @@
     }
   } ],
   "getPSControls" : [ {
-    "codeName" : "Usr2GridViewtoolbar",
-    "controlType" : "TOOLBAR",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json"
-    },
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "modelid" : "40fb48b28c828af32d6662eaf3cbe795_toolbar"
-  }, {
     "aggMode" : "NONE",
     "codeName" : "Main",
     "columnEnableLink" : 2,

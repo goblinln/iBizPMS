@@ -36,7 +36,7 @@ public class BuildRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return buildService.sysGet(String.valueOf(o));
+            return buildService.sysGet((Long)o);
         }
     }
 

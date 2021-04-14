@@ -1,7 +1,11 @@
 export default [
+    'createby',
+    'org',
     'lastrunner',
+    'dept',
     'stepresults',
     'caseresult',
+    'updateby',
     'xml',
     'task',
     'duration',
@@ -18,8 +22,4 @@ export default [
     'ibizcase',
     'run',
     'compile',
-    'createby',
-    'updateby',
-    'org',
-    'dept',
 ];

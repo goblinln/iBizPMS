@@ -1,9 +1,9 @@
 export default [
     'userlist',
+    'org',
     'listname',
     'id',
-    'account',
     'updateby',
-    'org',
     'dept',
+    'account',
 ];

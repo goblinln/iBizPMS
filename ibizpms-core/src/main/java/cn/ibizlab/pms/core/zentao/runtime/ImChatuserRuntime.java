@@ -36,7 +36,7 @@ public class ImChatuserRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return imchatuserService.sysGet(String.valueOf(o));
+            return imchatuserService.sysGet((Long)o);
         }
     }
 

@@ -96,18 +96,6 @@
     }
   } ],
   "getPSControls" : [ {
-    "codeName" : "Usr3GridViewUserConcattoolbar",
-    "controlType" : "TOOLBAR",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
-    },
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "modelid" : "ea2fd7d5009d70ea21005bed6e7591fb_toolbar"
-  }, {
     "aggMode" : "NONE",
     "codeName" : "Main",
     "columnEnableLink" : 2,

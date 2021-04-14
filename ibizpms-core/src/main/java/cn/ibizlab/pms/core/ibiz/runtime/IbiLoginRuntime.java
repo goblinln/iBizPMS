@@ -36,7 +36,7 @@ public class IbiLoginRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return ibiloginService.sysGet(String.valueOf(o));
+            return ibiloginService.sysGet((Long)o);
         }
     }
 

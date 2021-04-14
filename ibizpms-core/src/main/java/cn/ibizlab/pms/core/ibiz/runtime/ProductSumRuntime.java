@@ -36,7 +36,7 @@ public class ProductSumRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return productsumService.sysGet(String.valueOf(o));
+            return productsumService.sysGet((Long)o);
         }
     }
 

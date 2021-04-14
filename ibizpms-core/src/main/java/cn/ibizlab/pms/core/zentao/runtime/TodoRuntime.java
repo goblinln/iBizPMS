@@ -36,7 +36,7 @@ public class TodoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return todoService.sysGet(String.valueOf(o));
+            return todoService.sysGet((Long)o);
         }
     }
 

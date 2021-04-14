@@ -22,9 +22,11 @@ export default [
     'comment',
     'auto',
     'isfavorites',
+    'dept',
     'frequency',
     'title',
     'lasteditedby',
+    'org',
     'reviewedby',
     'files',
     'tobugcnt',
@@ -58,6 +60,4 @@ export default [
     'product',
     'lib',
     'module',
-    'org',
-    'dept',
 ];

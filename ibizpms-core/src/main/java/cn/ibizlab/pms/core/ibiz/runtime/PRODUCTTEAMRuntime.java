@@ -36,7 +36,7 @@ public class PRODUCTTEAMRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return productteamService.sysGet(String.valueOf(o));
+            return productteamService.sysGet((Long)o);
         }
     }
 

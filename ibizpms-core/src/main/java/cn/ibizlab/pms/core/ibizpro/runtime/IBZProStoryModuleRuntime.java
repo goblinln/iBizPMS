@@ -36,7 +36,7 @@ public class IBZProStoryModuleRuntime extends cn.ibizlab.pms.core.runtime.System
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return ibzprostorymoduleService.sysGet(String.valueOf(o));
+            return ibzprostorymoduleService.sysGet((Long)o);
         }
     }
 

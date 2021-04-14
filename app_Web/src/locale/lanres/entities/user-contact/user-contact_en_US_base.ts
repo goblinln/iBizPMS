@@ -4,12 +4,12 @@ function getLocaleResourceBase(){
 	const data:any = {
 	fields: {
 		'userlist': commonLogic.appcommonhandle("userList",null),
+		'org': commonLogic.appcommonhandle("归属组织",null),
 		'listname': commonLogic.appcommonhandle("标题",null),
 		'id': commonLogic.appcommonhandle("id",null),
-		'account': commonLogic.appcommonhandle("account",null),
 		'updateby': commonLogic.appcommonhandle("由谁更新",null),
-		'org': commonLogic.appcommonhandle("归属组织",null),
 		'dept': commonLogic.appcommonhandle("归属部门",null),
+		'account': commonLogic.appcommonhandle("account",null),
 	},
 		views: {
 			'editview': {
@@ -121,8 +121,6 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("Remove And Close",null),
 				tip: commonLogic.appcommonhandle("Remove And Close Window",null),
 			},
-		},
-		usr2gridviewtoolbar_toolbar: {
 		},
 		concatlist_treeview: {
 			nodata:commonLogic.appcommonhandle("",null),

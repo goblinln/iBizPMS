@@ -36,7 +36,7 @@ public class ProductModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemData
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return productmoduleService.sysGet(String.valueOf(o));
+            return productmoduleService.sysGet((Long)o);
         }
     }
 

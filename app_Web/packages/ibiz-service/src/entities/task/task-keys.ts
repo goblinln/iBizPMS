@@ -18,6 +18,7 @@ export default [
     'isleaf',
     'realstarted',
     'status1',
+    'org',
     'replycount',
     'configbegin',
     'updatedate',
@@ -26,6 +27,7 @@ export default [
     'currentconsumed',
     'files',
     'substatus',
+    'dept',
     'closedreason',
     'taskspecies',
     'lastediteddate',
@@ -84,6 +86,4 @@ export default [
     'story',
     'parent',
     'frombug',
-    'org',
-    'dept',
 ];

@@ -42,9 +42,21 @@ export abstract class DocContentBase extends EntityBase implements IDocContent {
      */
     id?: any;
     /**
+     * 归属组织
+     */
+    org?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
+    /**
      * 文档正文
      */
     content?: any;
+    /**
+     * 由谁更新
+     */
+    updateby?: any;
     /**
      * 文档类型
      *
@@ -64,25 +76,13 @@ export abstract class DocContentBase extends EntityBase implements IDocContent {
      */
     digest?: any;
     /**
-     * 文档
-     */
-    doc?: any;
-    /**
      * 由谁创建
      */
     createby?: any;
     /**
-     * 由谁更新
+     * 文档
      */
-    updateby?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
+    doc?: any;
 
     /**
      * 重置实体数据

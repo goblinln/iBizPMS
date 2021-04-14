@@ -38,6 +38,10 @@ export abstract class UserContactBase extends EntityBase implements IUserContact
      */
     userlist?: any;
     /**
+     * 归属组织
+     */
+    org?: any;
+    /**
      * 标题
      */
     listname?: any;
@@ -46,21 +50,17 @@ export abstract class UserContactBase extends EntityBase implements IUserContact
      */
     id?: any;
     /**
-     * account
-     */
-    account?: any;
-    /**
      * 由谁更新
      */
     updateby?: any;
     /**
-     * 归属组织
-     */
-    org?: any;
-    /**
      * 归属部门
      */
     dept?: any;
+    /**
+     * account
+     */
+    account?: any;
 
     /**
      * 重置实体数据

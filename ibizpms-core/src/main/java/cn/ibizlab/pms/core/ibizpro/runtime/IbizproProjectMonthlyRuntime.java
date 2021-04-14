@@ -36,7 +36,7 @@ public class IbizproProjectMonthlyRuntime extends cn.ibizlab.pms.core.runtime.Sy
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return ibizproprojectmonthlyService.sysGet(String.valueOf(o));
+            return ibizproprojectmonthlyService.sysGet((String)o);
         }
     }
 

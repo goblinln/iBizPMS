@@ -36,7 +36,7 @@ public class ProjectStoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return projectstoryService.sysGet(String.valueOf(o));
+            return projectstoryService.sysGet((String)o);
         }
     }
 

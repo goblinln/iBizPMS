@@ -56,6 +56,15 @@ public class Team extends EntityMP implements Serializable {
     @ApiModelProperty("最初预计")
     private Double estimate;
     /**
+     * 归属部门
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
+    @TableField(value = "dept")
+    @JSONField(name = "dept")
+    @JsonProperty("dept")
+    @ApiModelProperty("归属部门")
+    private String dept;
+    /**
      * 总计消耗
      */
     @DEField(defaultValue = "0.00")
@@ -119,6 +128,15 @@ public class Team extends EntityMP implements Serializable {
     @ApiModelProperty("预计剩余")
     private Double left;
     /**
+     * 归属组织
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGID)
+    @TableField(value = "org")
+    @JSONField(name = "org")
+    @JsonProperty("org")
+    @ApiModelProperty("归属组织")
+    private String org;
+    /**
      * 排序
      */
     @DEField(defaultValue = "0")
@@ -127,6 +145,15 @@ public class Team extends EntityMP implements Serializable {
     @JsonProperty("order")
     @ApiModelProperty("排序")
     private Integer order;
+    /**
+     * 由谁更新
+     */
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @TableField(value = "updateby")
+    @JSONField(name = "updateby")
+    @JsonProperty("updateby")
+    @ApiModelProperty("由谁更新")
+    private String updateby;
     /**
      * 可用工日
      */
@@ -155,15 +182,6 @@ public class Team extends EntityMP implements Serializable {
     @ApiModelProperty("受限用户")
     private String limited;
     /**
-     * 关联编号
-     */
-    @DEField(defaultValue = "0")
-    @TableField(value = "root")
-    @JSONField(name = "root")
-    @JsonProperty("root")
-    @ApiModelProperty("关联编号")
-    private Long root;
-    /**
      * 由谁创建
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
@@ -173,32 +191,14 @@ public class Team extends EntityMP implements Serializable {
     @ApiModelProperty("由谁创建")
     private String createby;
     /**
-     * 由谁更新
+     * 关联编号
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "updateby")
-    @JSONField(name = "updateby")
-    @JsonProperty("updateby")
-    @ApiModelProperty("由谁更新")
-    private String updateby;
-    /**
-     * 归属组织
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "org")
-    @JSONField(name = "org")
-    @JsonProperty("org")
-    @ApiModelProperty("归属组织")
-    private String org;
-    /**
-     * 归属部门
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "dept")
-    @JSONField(name = "dept")
-    @JsonProperty("dept")
-    @ApiModelProperty("归属部门")
-    private String dept;
+    @DEField(defaultValue = "0")
+    @TableField(value = "root")
+    @JSONField(name = "root")
+    @JsonProperty("root")
+    @ApiModelProperty("关联编号")
+    private Long root;
 
 
 

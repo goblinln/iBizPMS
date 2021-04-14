@@ -194,10 +194,6 @@ function getLocaleResourceBase(){
 			uiactions: {
 			},
 		},
-		usr2gridviewtoolbar_toolbar: {
-		},
-		usr3gridviewuserconcattoolbar_toolbar: {
-		},
 		gridviewtoolbar_toolbar: {
 			'tbitem3': {
 				caption: commonLogic.appcommonhandle("新建",null),
@@ -255,8 +251,6 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("帮助",null),
 				tip: commonLogic.appcommonhandle("帮助",null),
 			},
-		},
-		usr3gridviewtoolbar_toolbar: {
 		},
 		emptreemenuzs_treeview: {
 			nodata:commonLogic.appcommonhandle("",null),

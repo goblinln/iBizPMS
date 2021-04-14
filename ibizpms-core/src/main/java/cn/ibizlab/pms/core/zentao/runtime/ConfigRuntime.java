@@ -36,7 +36,7 @@ public class ConfigRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return configService.sysGet(String.valueOf(o));
+            return configService.sysGet((Long)o);
         }
     }
 

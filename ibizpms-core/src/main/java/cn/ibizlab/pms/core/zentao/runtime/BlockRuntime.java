@@ -36,7 +36,7 @@ public class BlockRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return blockService.sysGet(String.valueOf(o));
+            return blockService.sysGet((Long)o);
         }
     }
 

@@ -4,14 +4,14 @@ function getLocaleResourceBase(){
 	const data:any = {
 	fields: {
 		'name': commonLogic.appcommonhandle("名称",null),
+		'dept': commonLogic.appcommonhandle("归属部门",null),
+		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 		'deleted': commonLogic.appcommonhandle("已删除",null),
+		'createby': commonLogic.appcommonhandle("由谁创建",null),
 		'id': commonLogic.appcommonhandle("编号",null),
 		'order': commonLogic.appcommonhandle("排序",null),
-		'product': commonLogic.appcommonhandle("所属产品",null),
-		'createby': commonLogic.appcommonhandle("由谁创建",null),
-		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 		'org': commonLogic.appcommonhandle("归属组织",null),
-		'dept': commonLogic.appcommonhandle("归属部门",null),
+		'product': commonLogic.appcommonhandle("所属产品",null),
 	},
 		views: {
 			'pmgridview': {

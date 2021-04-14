@@ -116,6 +116,10 @@ export abstract class TaskBase extends EntityBase implements ITask {
      */
     status1?: 'wait' | 'doing' | 'done' | 'pause' | 'cancel' | 'closed' | 'storychange';
     /**
+     * 归属组织
+     */
+    org?: any;
+    /**
      * 回复数量
      */
     replycount?: any;
@@ -147,6 +151,10 @@ export abstract class TaskBase extends EntityBase implements ITask {
      * 子状态
      */
     substatus?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
     /**
      * 关闭原因
      *
@@ -395,14 +403,6 @@ export abstract class TaskBase extends EntityBase implements ITask {
      * 来源Bug
      */
     frombug?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
 
     /**
      * 重置实体数据

@@ -23,6 +23,45 @@
   "getPSDETreeNodeRSs" : [ {
     "getChildPSDETreeNode" : {
       "modelref" : true,
+      "id" : "ChildDoclibModule"
+    },
+    "name" : "根文档库模块 - 子文档库模块",
+    "parentFilter" : "parent",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "RootDoclibModule"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "RootDoclibModule"
+    },
+    "name" : "文档库 - 根文档库模块",
+    "parentFilter" : "root",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "DocLib"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ChildDoclibModule"
+    },
+    "name" : "子文档库模块 - 子文档库模块",
+    "parentFilter" : "parent",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ChildDoclibModule"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
       "id" : "DocLib"
     },
     "name" : "项目 - 文档库",
@@ -67,44 +106,6 @@
   }, {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ChildDoclibModule"
-    },
-    "name" : "根文档库模块 - 子文档库模块",
-    "parentFilter" : "parent",
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "RootDoclibModule"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "Project"
-    },
-    "name" : "所有项目 - 项目",
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ALLUnDoneProject"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "RootDoclibModule"
-    },
-    "name" : "文档库 - 根文档库模块",
-    "parentFilter" : "root",
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "DocLib"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
       "id" : "ALLUnDoneProject"
     },
     "name" : "默认根节点 - 所有项目",
@@ -117,13 +118,12 @@
   }, {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ChildDoclibModule"
+      "id" : "Project"
     },
-    "name" : "子文档库模块 - 子文档库模块",
-    "parentFilter" : "parent",
+    "name" : "所有项目 - 项目",
     "getParentPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ChildDoclibModule"
+      "id" : "ALLUnDoneProject"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3

@@ -191,6 +191,12 @@
     "stdDataType" : 21,
     "stringLength" : 65535
   }, {
+    "codeName" : "Org",
+    "logicName" : "归属组织",
+    "name" : "ORG",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "ListName",
     "logicName" : "标题",
     "name" : "LISTNAME",
@@ -205,21 +211,9 @@
     "stdDataType" : 1,
     "keyField" : true
   }, {
-    "codeName" : "Account",
-    "logicName" : "account",
-    "name" : "ACCOUNT",
-    "stdDataType" : 25,
-    "stringLength" : 30
-  }, {
     "codeName" : "UpdateBy",
     "logicName" : "由谁更新",
     "name" : "UPDATEBY",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "Org",
-    "logicName" : "归属组织",
-    "name" : "ORG",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
@@ -228,6 +222,12 @@
     "name" : "DEPT",
     "stdDataType" : 25,
     "stringLength" : 100
+  }, {
+    "codeName" : "Account",
+    "logicName" : "account",
+    "name" : "ACCOUNT",
+    "stdDataType" : 25,
+    "stringLength" : 30
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

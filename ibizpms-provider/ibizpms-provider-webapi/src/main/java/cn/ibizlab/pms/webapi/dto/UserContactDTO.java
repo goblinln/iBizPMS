@@ -43,6 +43,16 @@ public class UserContactDTO extends DTOBase implements Serializable {
     private String userlist;
 
     /**
+     * 属性 [ORG]
+     *
+     */
+    @JSONField(name = "org")
+    @JsonProperty("org")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属组织")
+    private String org;
+
+    /**
      * 属性 [LISTNAME]
      *
      */
@@ -63,16 +73,6 @@ public class UserContactDTO extends DTOBase implements Serializable {
     private Long id;
 
     /**
-     * 属性 [ACCOUNT]
-     *
-     */
-    @JSONField(name = "account")
-    @JsonProperty("account")
-    @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
-    @ApiModelProperty("account")
-    private String account;
-
-    /**
      * 属性 [UPDATEBY]
      *
      */
@@ -83,16 +83,6 @@ public class UserContactDTO extends DTOBase implements Serializable {
     private String updateby;
 
     /**
-     * 属性 [ORG]
-     *
-     */
-    @JSONField(name = "org")
-    @JsonProperty("org")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("归属组织")
-    private String org;
-
-    /**
      * 属性 [DEPT]
      *
      */
@@ -101,6 +91,16 @@ public class UserContactDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门")
     private String dept;
+
+    /**
+     * 属性 [ACCOUNT]
+     *
+     */
+    @JSONField(name = "account")
+    @JsonProperty("account")
+    @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
+    @ApiModelProperty("account")
+    private String account;
 
 
     /**

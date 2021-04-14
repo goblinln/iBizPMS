@@ -1408,6 +1408,31 @@
   "getPSDETreeNodeRSs" : [ {
     "getChildPSDETreeNode" : {
       "modelref" : true,
+      "id" : "RootModule"
+    },
+    "name" : "默认根节点 - 根目录",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "Doc"
+    },
+    "name" : "根目录 - 文档",
+    "parentFilter" : "module",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "RootModule"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
       "id" : "ChildModule"
     },
     "name" : "子目录 - 子目录",
@@ -1454,56 +1479,6 @@
   }, {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "RootModule"
-    },
-    "name" : "默认根节点 - 根目录",
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ROOT"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "Doc"
-    },
-    "name" : "根目录 - 文档",
-    "parentFilter" : "module",
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "RootModule"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "Doc"
-    },
-    "name" : "子目录 - 文档",
-    "parentFilter" : "module",
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ChildModule"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "DocLibDoc"
-    },
-    "name" : "默认根节点 - 文档库文档",
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ROOT"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
       "id" : "ChildModule"
     },
     "name" : "根目录 - 子目录",
@@ -1544,6 +1519,31 @@
     "getParentPSDETreeNode" : {
       "modelref" : true,
       "id" : "RootModule"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "Doc"
+    },
+    "name" : "子目录 - 文档",
+    "parentFilter" : "module",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ChildModule"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "DocLibDoc"
+    },
+    "name" : "默认根节点 - 文档库文档",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3

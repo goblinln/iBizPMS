@@ -36,7 +36,7 @@ public class EffortRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return effortService.sysGet(String.valueOf(o));
+            return effortService.sysGet((Long)o);
         }
     }
 

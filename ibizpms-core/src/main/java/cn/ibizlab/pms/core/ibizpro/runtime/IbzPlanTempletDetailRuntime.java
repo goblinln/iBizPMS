@@ -36,7 +36,7 @@ public class IbzPlanTempletDetailRuntime extends cn.ibizlab.pms.core.runtime.Sys
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return ibzplantempletdetailService.sysGet(String.valueOf(o));
+            return ibzplantempletdetailService.sysGet((String)o);
         }
     }
 

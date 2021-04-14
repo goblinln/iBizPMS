@@ -183,6 +183,12 @@
     "stdDataType" : 1,
     "keyField" : true
   }, {
+    "codeName" : "Org",
+    "logicName" : "归属组织",
+    "name" : "ORG",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Content",
     "logicName" : "content",
     "name" : "CONTENT",
@@ -210,12 +216,6 @@
     "codeName" : "UpdateBy",
     "logicName" : "由谁更新",
     "name" : "UPDATEBY",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "Org",
-    "logicName" : "归属组织",
-    "name" : "ORG",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {

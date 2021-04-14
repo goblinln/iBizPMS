@@ -297,8 +297,6 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("导出",null),
 			},
 		},
-		usr2gridviewproductcompletetoolbar_toolbar: {
-		},
 		allgridviewtoolbar_toolbar: {
 			'deuiaction3_addproduct': {
 				caption: commonLogic.appcommonhandle("添加产品",null),

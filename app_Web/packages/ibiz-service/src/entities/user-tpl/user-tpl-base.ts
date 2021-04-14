@@ -42,6 +42,10 @@ export abstract class UserTplBase extends EntityBase implements IUserTpl {
      */
     id?: any;
     /**
+     * 归属组织
+     */
+    org?: any;
+    /**
      * content
      */
     content?: any;
@@ -65,10 +69,6 @@ export abstract class UserTplBase extends EntityBase implements IUserTpl {
      * 由谁更新
      */
     updateby?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
     /**
      * 归属部门
      */

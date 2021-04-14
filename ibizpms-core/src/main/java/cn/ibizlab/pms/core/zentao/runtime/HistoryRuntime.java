@@ -36,7 +36,7 @@ public class HistoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return historyService.sysGet(String.valueOf(o));
+            return historyService.sysGet((Long)o);
         }
     }
 

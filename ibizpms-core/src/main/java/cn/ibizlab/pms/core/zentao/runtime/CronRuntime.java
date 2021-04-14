@@ -36,7 +36,7 @@ public class CronRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return cronService.sysGet(String.valueOf(o));
+            return cronService.sysGet((Long)o);
         }
     }
 

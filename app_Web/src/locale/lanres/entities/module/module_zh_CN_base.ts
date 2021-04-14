@@ -11,7 +11,9 @@ function getLocaleResourceBase(){
 		'owner': commonLogic.appcommonhandle("负责人",null),
 		'id': commonLogic.appcommonhandle("id",null),
 		'orderpk': commonLogic.appcommonhandle("数据选择排序",null),
+		'createby': commonLogic.appcommonhandle("由谁创建",null),
 		'collector': commonLogic.appcommonhandle("收藏者",null),
+		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 		'ibizshort': commonLogic.appcommonhandle("简称",null),
 		'path': commonLogic.appcommonhandle("路径",null),
 		'mdeptid': commonLogic.appcommonhandle("部门标识",null),
@@ -20,8 +22,6 @@ function getLocaleResourceBase(){
 		'parentname': commonLogic.appcommonhandle("上级模块",null),
 		'branch': commonLogic.appcommonhandle("平台/分支",null),
 		'parent': commonLogic.appcommonhandle("上级模块",null),
-		'createby': commonLogic.appcommonhandle("由谁创建",null),
-		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 	},
 		views: {
 			'linegridview': {

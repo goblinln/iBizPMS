@@ -93,18 +93,6 @@
     }
   } ],
   "getPSControls" : [ {
-    "codeName" : "Usr2GridViewPRoductCompletetoolbar",
-    "controlType" : "TOOLBAR",
-    "name" : "toolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
-    },
-    "getPSControlParam" : {
-      "id" : "TOOLBAR"
-    },
-    "modelid" : "447e12e8af1b4093ba48f74d18d71c08_toolbar"
-  }, {
     "aggMode" : "PAGE",
     "codeName" : "ProductCompleteTable",
     "columnEnableLink" : 2,

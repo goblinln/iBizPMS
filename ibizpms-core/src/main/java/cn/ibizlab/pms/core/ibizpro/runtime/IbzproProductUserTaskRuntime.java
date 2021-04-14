@@ -36,7 +36,7 @@ public class IbzproProductUserTaskRuntime extends cn.ibizlab.pms.core.runtime.Sy
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return ibzproproductusertaskService.sysGet(String.valueOf(o));
+            return ibzproproductusertaskService.sysGet((Long)o);
         }
     }
 

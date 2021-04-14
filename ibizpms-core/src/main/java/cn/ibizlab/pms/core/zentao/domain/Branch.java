@@ -55,6 +55,24 @@ public class Branch extends EntityMP implements Serializable {
     @ApiModelProperty("名称")
     private String name;
     /**
+     * 归属部门
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
+    @TableField(value = "dept")
+    @JSONField(name = "dept")
+    @JsonProperty("dept")
+    @ApiModelProperty("归属部门")
+    private String dept;
+    /**
+     * 由谁更新
+     */
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @TableField(value = "updateby")
+    @JSONField(name = "updateby")
+    @JsonProperty("updateby")
+    @ApiModelProperty("由谁更新")
+    private String updateby;
+    /**
      * 已删除
      */
     @DEField(defaultValue = "0", preType = DEPredefinedFieldType.LOGICVALID, logicval = "0", logicdelval = "1")
@@ -64,6 +82,15 @@ public class Branch extends EntityMP implements Serializable {
     @JsonProperty("deleted")
     @ApiModelProperty("已删除")
     private String deleted;
+    /**
+     * 由谁创建
+     */
+    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
+    @TableField(value = "createby")
+    @JSONField(name = "createby")
+    @JsonProperty("createby")
+    @ApiModelProperty("由谁创建")
+    private String createby;
     /**
      * 编号
      */
@@ -83,33 +110,6 @@ public class Branch extends EntityMP implements Serializable {
     @ApiModelProperty("排序")
     private Integer order;
     /**
-     * 所属产品
-     */
-    @DEField(defaultValue = "0")
-    @TableField(value = "product")
-    @JSONField(name = "product")
-    @JsonProperty("product")
-    @ApiModelProperty("所属产品")
-    private Long product;
-    /**
-     * 由谁创建
-     */
-    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "createby")
-    @JSONField(name = "createby")
-    @JsonProperty("createby")
-    @ApiModelProperty("由谁创建")
-    private String createby;
-    /**
-     * 由谁更新
-     */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "updateby")
-    @JSONField(name = "updateby")
-    @JsonProperty("updateby")
-    @ApiModelProperty("由谁更新")
-    private String updateby;
-    /**
      * 归属组织
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
@@ -119,14 +119,14 @@ public class Branch extends EntityMP implements Serializable {
     @ApiModelProperty("归属组织")
     private String org;
     /**
-     * 归属部门
+     * 所属产品
      */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "dept")
-    @JSONField(name = "dept")
-    @JsonProperty("dept")
-    @ApiModelProperty("归属部门")
-    private String dept;
+    @DEField(defaultValue = "0")
+    @TableField(value = "product")
+    @JSONField(name = "product")
+    @JsonProperty("product")
+    @ApiModelProperty("所属产品")
+    private Long product;
 
     /**
      * 

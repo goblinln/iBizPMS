@@ -36,7 +36,7 @@ public class SysUpdateFeaturesRuntime extends cn.ibizlab.pms.core.runtime.System
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return sysupdatefeaturesService.sysGet(String.valueOf(o));
+            return sysupdatefeaturesService.sysGet((String)o);
         }
     }
 

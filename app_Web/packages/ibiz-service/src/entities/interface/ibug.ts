@@ -15,6 +15,10 @@ export interface IBug extends IEntityBase {
      */
     severity?: 1 | 2 | 3 | 4;
     /**
+     * 归属部门
+     */
+    dept?: any;
+    /**
      * 需求版本
      */
     storyversion?: any;
@@ -193,6 +197,10 @@ export interface IBug extends IEntityBase {
      */
     substatus?: any;
     /**
+     * 归属组织
+     */
+    org?: any;
+    /**
      * 版本项目
      */
     buildproject?: any;
@@ -332,12 +340,4 @@ export interface IBug extends IEntityBase {
      * 测试单
      */
     testtask?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
 }

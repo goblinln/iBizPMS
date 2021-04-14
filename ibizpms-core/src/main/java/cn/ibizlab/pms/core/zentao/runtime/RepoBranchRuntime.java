@@ -36,7 +36,7 @@ public class RepoBranchRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return repobranchService.sysGet(String.valueOf(o));
+            return repobranchService.sysGet((String)o);
         }
     }
 

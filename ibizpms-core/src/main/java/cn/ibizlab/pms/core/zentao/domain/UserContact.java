@@ -55,6 +55,15 @@ public class UserContact extends EntityMP implements Serializable {
     @ApiModelProperty("userList")
     private String userlist;
     /**
+     * 归属组织
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGID)
+    @TableField(value = "org")
+    @JSONField(name = "org")
+    @JsonProperty("org")
+    @ApiModelProperty("归属组织")
+    private String org;
+    /**
      * 标题
      */
     @TableField(value = "listname")
@@ -72,15 +81,6 @@ public class UserContact extends EntityMP implements Serializable {
     @ApiModelProperty("id")
     private Long id;
     /**
-     * account
-     */
-    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "account")
-    @JSONField(name = "account")
-    @JsonProperty("account")
-    @ApiModelProperty("account")
-    private String account;
-    /**
      * 由谁更新
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
@@ -90,15 +90,6 @@ public class UserContact extends EntityMP implements Serializable {
     @ApiModelProperty("由谁更新")
     private String updateby;
     /**
-     * 归属组织
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "org")
-    @JSONField(name = "org")
-    @JsonProperty("org")
-    @ApiModelProperty("归属组织")
-    private String org;
-    /**
      * 归属部门
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
@@ -107,6 +98,15 @@ public class UserContact extends EntityMP implements Serializable {
     @JsonProperty("dept")
     @ApiModelProperty("归属部门")
     private String dept;
+    /**
+     * account
+     */
+    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
+    @TableField(value = "account")
+    @JSONField(name = "account")
+    @JsonProperty("account")
+    @ApiModelProperty("account")
+    private String account;
 
 
 

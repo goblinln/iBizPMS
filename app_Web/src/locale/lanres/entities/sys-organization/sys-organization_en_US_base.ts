@@ -155,8 +155,6 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("Help",null),
 			},
 		},
-		usr2gridviewtoolbar_toolbar: {
-		},
 	};
 	return data;
 }

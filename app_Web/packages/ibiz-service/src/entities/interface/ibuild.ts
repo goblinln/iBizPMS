@@ -9,6 +9,10 @@ import { IEntityBase } from 'ibiz-core';
  */
 export interface IBuild extends IEntityBase {
     /**
+     * 归属部门
+     */
+    dept?: any;
+    /**
      * Bug版本健值
      */
     ids?: any;
@@ -24,6 +28,10 @@ export interface IBuild extends IEntityBase {
      * 构建者
      */
     builder?: any;
+    /**
+     * 由谁创建
+     */
+    createby?: any;
     /**
      * 附件
      */
@@ -44,6 +52,10 @@ export interface IBuild extends IEntityBase {
      * @type {(0 | 1 | 4 | 2)} 0: 无操作, 1: 快速（删除本地项目与代码仓库多余文件）, 4: 修复模型, 2: 完整（完全重建本地项目及代码仓库）
      */
     rebuild?: 0 | 1 | 4 | 2;
+    /**
+     * 归属组织
+     */
+    org?: any;
     /**
      * 描述
      */
@@ -72,6 +84,10 @@ export interface IBuild extends IEntityBase {
      * 产生的bug
      */
     createbugcnt?: any;
+    /**
+     * 由谁更新
+     */
+    updateby?: any;
     /**
      * 完成的需求
      */
@@ -108,20 +124,4 @@ export interface IBuild extends IEntityBase {
      * 所属项目
      */
     project?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
 }

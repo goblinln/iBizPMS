@@ -62,6 +62,10 @@ export abstract class DocBase extends EntityBase implements IDoc {
      */
     editedby?: any;
     /**
+     * 归属部门
+     */
+    dept?: any;
+    /**
      * 文档编号
      */
     id?: any;
@@ -77,6 +81,10 @@ export abstract class DocBase extends EntityBase implements IDoc {
      * 最近更新数量
      */
     recentupdatecnt?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
     /**
      * 文档类型
      *
@@ -142,6 +150,10 @@ export abstract class DocBase extends EntityBase implements IDoc {
      */
     todayupdatecnt?: any;
     /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
      * 附件
      */
     files?: any;
@@ -177,18 +189,6 @@ export abstract class DocBase extends EntityBase implements IDoc {
      * 所属分类
      */
     module?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
 
     /**
      * 重置实体数据

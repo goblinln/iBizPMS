@@ -9,6 +9,10 @@ import { IEntityBase } from 'ibiz-core';
  */
 export interface ITestTask extends IEntityBase {
     /**
+     * 归属部门
+     */
+    dept?: any;
+    /**
      * 结束日期
      */
     end?: any;
@@ -33,6 +37,14 @@ export interface ITestTask extends IEntityBase {
      */
     mailtopk?: any;
     /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
+    /**
      * 优先级
      *
      * @type {(1 | 2 | 3 | 4)} 1: 1, 2: 2, 3: 3, 4: 4
@@ -42,6 +54,10 @@ export interface ITestTask extends IEntityBase {
      * 备注
      */
     comment?: any;
+    /**
+     * 由谁创建
+     */
+    createby?: any;
     /**
      * 子状态
      */
@@ -108,20 +124,4 @@ export interface ITestTask extends IEntityBase {
      * 所属项目
      */
     project?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
 }

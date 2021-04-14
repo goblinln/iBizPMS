@@ -36,7 +36,7 @@ public class IbzMyTerritoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return ibzmyterritoryService.sysGet(String.valueOf(o));
+            return ibzmyterritoryService.sysGet((Long)o);
         }
     }
 

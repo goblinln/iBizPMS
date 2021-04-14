@@ -27,6 +27,7 @@ export default [
     'rd',
     'managemembers',
     'ystarttaskcnt',
+    'updateby',
     'whitelist',
     'mobimage',
     'totalwh',
@@ -79,5 +80,4 @@ export default [
     'qd',
     'parentname',
     'parent',
-    'updateby',
 ];

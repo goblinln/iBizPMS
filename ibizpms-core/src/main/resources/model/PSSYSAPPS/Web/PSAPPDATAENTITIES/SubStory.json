@@ -1481,6 +1481,12 @@
     "stdDataType" : 25,
     "stringLength" : 200
   }, {
+    "codeName" : "Dept",
+    "logicName" : "归属部门",
+    "name" : "DEPT",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "SOURCEOBJECT",
     "logicName" : "来源对象",
     "name" : "SOURCEOBJECT",
@@ -1575,6 +1581,12 @@
     "name" : "RESULT",
     "stdDataType" : 25,
     "stringLength" : 200
+  }, {
+    "codeName" : "Org",
+    "logicName" : "归属组织",
+    "name" : "ORG",
+    "stdDataType" : 25,
+    "stringLength" : 100
   }, {
     "codeName" : "Type",
     "logicName" : "需求类型",
@@ -1675,18 +1687,6 @@
     "logicName" : "转Bug",
     "name" : "TOBUG",
     "stdDataType" : 1
-  }, {
-    "codeName" : "Org",
-    "logicName" : "归属组织",
-    "name" : "ORG",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "Dept",
-    "logicName" : "归属部门",
-    "name" : "DEPT",
-    "stdDataType" : 25,
-    "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

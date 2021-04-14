@@ -445,18 +445,6 @@
               "rawValue" : true
             } ],
             "getPSControls" : [ {
-              "codeName" : "EditView9toolbar",
-              "controlType" : "TOOLBAR",
-              "name" : "toolbar",
-              "getPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-              },
-              "getPSControlParam" : {
-                "id" : "TOOLBAR"
-              },
-              "modelid" : "8c3bd17ea668e9cf5802751378c3a378_toolbar"
-            }, {
               "codeName" : "TaskStorySpec",
               "controlType" : "FORM",
               "getCreatePSControlAction" : {

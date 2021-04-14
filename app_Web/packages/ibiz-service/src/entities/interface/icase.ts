@@ -109,6 +109,10 @@ export interface ICase extends IEntityBase {
      */
     isfavorites?: any;
     /**
+     * 归属部门
+     */
+    dept?: any;
+    /**
      * frequency
      *
      * @type {('1' | '2' | '3')} 1: 1, 2: 2, 3: 3
@@ -122,6 +126,10 @@ export interface ICase extends IEntityBase {
      * 最后修改者
      */
     lasteditedby?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
     /**
      * 由谁评审
      */
@@ -264,12 +272,4 @@ export interface ICase extends IEntityBase {
      * 所属模块
      */
     module?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
 }

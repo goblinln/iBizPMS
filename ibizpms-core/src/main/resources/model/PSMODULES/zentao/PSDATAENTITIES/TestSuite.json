@@ -99,6 +99,112 @@
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "DEPT",
+      "dBType" : "MYSQL5",
+      "name" : "DEPT",
+      "queryCodeExp" : "t1.`DEPT`",
+      "autoIncrement" : false,
+      "valueAutoGen" : false
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "DEPT",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true,
+          "tryMode" : false
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]",
+        "tryMode" : false
+      },
+      "getPSDEField" : {
+        "name" : "DEPT",
+        "codeName" : "Dept"
+      },
+      "ruleHolder" : 3,
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Dept",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "deployId" : "83478f0d862908b9ab975b6ad5e3d19f",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "归属部门",
+    "name" : "DEPT",
+    "predefinedType" : "ORGSECTORID",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "ORG",
+      "dBType" : "MYSQL5",
+      "name" : "ORG",
+      "queryCodeExp" : "t1.`ORG`",
+      "autoIncrement" : false,
+      "valueAutoGen" : false
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "ORG",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true,
+          "tryMode" : false
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]",
+        "tryMode" : false
+      },
+      "getPSDEField" : {
+        "name" : "ORG",
+        "codeName" : "Org"
+      },
+      "ruleHolder" : 3,
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Org",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "deployId" : "9f3f7154a0dc6874f1587d09ac5a855b",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "归属组织",
+    "name" : "ORG",
+    "predefinedType" : "ORGID",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "NAME",
       "dBType" : "MYSQL5",
       "name" : "NAME",
@@ -653,112 +759,6 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "linkDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "ORG",
-      "dBType" : "MYSQL5",
-      "name" : "ORG",
-      "queryCodeExp" : "t1.`ORG`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "ORG",
-          "maxValue" : 100,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[100]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[100]",
-        "tryMode" : false
-      },
-      "getPSDEField" : {
-        "name" : "ORG",
-        "codeName" : "Org"
-      },
-      "ruleHolder" : 3,
-      "ruleInfo" : "内容长度必须小于等于[100]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Org",
-    "dEFType" : 1,
-    "dataType" : "TEXT",
-    "deployId" : "9f3f7154a0dc6874f1587d09ac5a855b",
-    "importOrder" : 1000,
-    "length" : 100,
-    "logicName" : "归属组织",
-    "name" : "ORG",
-    "predefinedType" : "ORGID",
-    "stdDataType" : 25,
-    "stringLength" : 100,
-    "valueFormat" : "%1$s"
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "DEPT",
-      "dBType" : "MYSQL5",
-      "name" : "DEPT",
-      "queryCodeExp" : "t1.`DEPT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "DEPT",
-          "maxValue" : 100,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[100]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[100]",
-        "tryMode" : false
-      },
-      "getPSDEField" : {
-        "name" : "DEPT",
-        "codeName" : "Dept"
-      },
-      "ruleHolder" : 3,
-      "ruleInfo" : "内容长度必须小于等于[100]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Dept",
-    "dEFType" : 1,
-    "dataType" : "TEXT",
-    "deployId" : "83478f0d862908b9ab975b6ad5e3d19f",
-    "importOrder" : 1000,
-    "length" : 100,
-    "logicName" : "归属部门",
-    "name" : "DEPT",
-    "predefinedType" : "ORGSECTORID",
-    "stdDataType" : 25,
-    "stringLength" : 100,
-    "valueFormat" : "%1$s"
   } ],
   "getAllPSDELogics" : [ {
     "modelref" : true,

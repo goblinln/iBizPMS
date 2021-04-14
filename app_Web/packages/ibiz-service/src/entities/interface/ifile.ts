@@ -17,6 +17,10 @@ export interface IFile extends IEntityBase {
      */
     objectid?: any;
     /**
+     * 归属组织
+     */
+    org?: any;
+    /**
      * 显示大小
      */
     strsize?: any;
@@ -47,6 +51,10 @@ export interface IFile extends IEntityBase {
      */
     title?: any;
     /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
      * 添加时间
      */
     addeddate?: any;
@@ -54,6 +62,10 @@ export interface IFile extends IEntityBase {
      * 下载次数
      */
     downloads?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
     /**
      * 大小
      */
@@ -66,16 +78,4 @@ export interface IFile extends IEntityBase {
      * 备注
      */
     extra?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
 }

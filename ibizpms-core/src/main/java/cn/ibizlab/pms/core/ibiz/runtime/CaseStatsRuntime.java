@@ -36,7 +36,7 @@ public class CaseStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return casestatsService.sysGet(String.valueOf(o));
+            return casestatsService.sysGet((Long)o);
         }
     }
 

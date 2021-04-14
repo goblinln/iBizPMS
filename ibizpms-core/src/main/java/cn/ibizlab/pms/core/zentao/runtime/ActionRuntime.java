@@ -36,7 +36,7 @@ public class ActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return actionService.sysGet(String.valueOf(o));
+            return actionService.sysGet((Long)o);
         }
     }
 

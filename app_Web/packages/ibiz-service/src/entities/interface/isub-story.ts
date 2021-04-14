@@ -189,6 +189,10 @@ export interface ISubStory extends IEntityBase {
      */
     isfavorites?: any;
     /**
+     * 归属部门
+     */
+    dept?: any;
+    /**
      * 来源对象
      */
     sourceobject?: any;
@@ -256,6 +260,10 @@ export interface ISubStory extends IEntityBase {
      * @type {('pass' | 'revert' | 'clarify' | 'reject')} pass: 确认通过, revert: 撤销变更, clarify: 有待明确, reject: 拒绝
      */
     result?: 'pass' | 'revert' | 'clarify' | 'reject';
+    /**
+     * 归属组织
+     */
+    org?: any;
     /**
      * 需求类型
      *
@@ -330,12 +338,4 @@ export interface ISubStory extends IEntityBase {
      * 转Bug
      */
     tobug?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
 }

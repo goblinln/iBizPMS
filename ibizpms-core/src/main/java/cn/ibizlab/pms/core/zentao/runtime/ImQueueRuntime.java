@@ -36,7 +36,7 @@ public class ImQueueRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return imqueueService.sysGet(String.valueOf(o));
+            return imqueueService.sysGet((Long)o);
         }
     }
 

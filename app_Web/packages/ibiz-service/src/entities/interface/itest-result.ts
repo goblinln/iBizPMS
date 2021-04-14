@@ -9,9 +9,21 @@ import { IEntityBase } from 'ibiz-core';
  */
 export interface ITestResult extends IEntityBase {
     /**
+     * 由谁创建
+     */
+    createby?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
+    /**
      * 最后执行人
      */
     lastrunner?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
     /**
      * 步骤结果
      */
@@ -22,6 +34,10 @@ export interface ITestResult extends IEntityBase {
      * @type {('n/a' | 'pass' | 'fail' | 'blocked')} n/a: 忽略, pass: 通过, fail: 失败, blocked: 阻塞
      */
     caseresult?: 'n/a' | 'pass' | 'fail' | 'blocked';
+    /**
+     * 由谁更新
+     */
+    updateby?: any;
     /**
      * 结果文件
      */
@@ -86,20 +102,4 @@ export interface ITestResult extends IEntityBase {
      * 代码编译
      */
     compile?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
 }

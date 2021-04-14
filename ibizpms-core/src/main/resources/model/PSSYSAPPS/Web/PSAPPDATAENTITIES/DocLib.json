@@ -359,6 +359,12 @@
     "stdDataType" : 25,
     "stringLength" : 1
   }, {
+    "codeName" : "UpdateBy",
+    "logicName" : "由谁更新",
+    "name" : "UPDATEBY",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Groups",
     "logicName" : "分组",
     "name" : "GROUPS",
@@ -401,6 +407,12 @@
     "name" : "MODULECNT",
     "stdDataType" : 9
   }, {
+    "codeName" : "CreateBy",
+    "logicName" : "由谁创建",
+    "name" : "CREATEBY",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "OpenedDate",
     "logicName" : "创建时间",
     "name" : "OPENEDDATE",
@@ -433,18 +445,6 @@
     "logicName" : "产品库",
     "name" : "PRODUCT",
     "stdDataType" : 1
-  }, {
-    "codeName" : "CreateBy",
-    "logicName" : "由谁创建",
-    "name" : "CREATEBY",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "UpdateBy",
-    "logicName" : "由谁更新",
-    "name" : "UPDATEBY",
-    "stdDataType" : 25,
-    "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

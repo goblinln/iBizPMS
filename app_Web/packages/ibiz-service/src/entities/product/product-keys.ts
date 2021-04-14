@@ -42,11 +42,11 @@ export default [
     'code',
     'srfcount',
     'order1',
+    'updateby',
     'buildcnt',
     'createddate',
     'noticeusers',
     'activestorycnt',
     'linename',
     'line',
-    'updateby',
 ];

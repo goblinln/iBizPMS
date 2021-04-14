@@ -36,7 +36,7 @@ public class IbzTopRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return ibztopService.sysGet(String.valueOf(o));
+            return ibztopService.sysGet((String)o);
         }
     }
 

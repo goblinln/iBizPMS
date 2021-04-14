@@ -5,17 +5,17 @@ function getLocaleResourceBase(){
 	fields: {
 		'lastrunresult': commonLogic.appcommonhandle("结果",null),
 		'lastrundate': commonLogic.appcommonhandle("最后执行时间",null),
+		'org': commonLogic.appcommonhandle("归属组织",null),
+		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 		'assignedto': commonLogic.appcommonhandle("指派给",null),
+		'dept': commonLogic.appcommonhandle("归属部门",null),
 		'lastrunner': commonLogic.appcommonhandle("最后执行人",null),
 		'status': commonLogic.appcommonhandle("当前状态",null),
 		'id': commonLogic.appcommonhandle("编号",null),
+		'createby': commonLogic.appcommonhandle("由谁创建",null),
 		'version': commonLogic.appcommonhandle("用例版本",null),
 		'ibizcase': commonLogic.appcommonhandle("测试用例",null),
 		'task': commonLogic.appcommonhandle("测试单",null),
-		'createby': commonLogic.appcommonhandle("由谁创建",null),
-		'updateby': commonLogic.appcommonhandle("由谁更新",null),
-		'org': commonLogic.appcommonhandle("归属组织",null),
-		'dept': commonLogic.appcommonhandle("归属部门",null),
 	},
 		views: {
 			'meditview9': {

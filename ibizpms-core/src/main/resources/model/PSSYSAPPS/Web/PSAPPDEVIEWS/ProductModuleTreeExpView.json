@@ -960,55 +960,6 @@
       "getPSDETreeNodeRSs" : [ {
         "getChildPSDETreeNode" : {
           "modelref" : true,
-          "id" : "ALL"
-        },
-        "name" : "默认根节点 - 所有模块",
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "ROOT"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "BRANCHS"
-        },
-        "name" : "平台 - 平台（动态）",
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "BRANCH"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "ROOTMODULE"
-        },
-        "name" : "平台（动态） - 根模块（动态）",
-        "parentFilter" : "branch",
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "BRANCHS"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "Root_NoBranch"
-        },
-        "name" : "所有模块 - 根模块无分支（动态）",
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "ALL"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
           "id" : "MODULE"
         },
         "name" : "非根模块（动态） - 非根模块（动态）",
@@ -1047,6 +998,30 @@
         "getParentPSDETreeNode" : {
           "modelref" : true,
           "id" : "MODULE"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "Root_NoBranch"
+        },
+        "name" : "所有模块 - 根模块无分支（动态）",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ALL"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "BRANCHS"
+        },
+        "name" : "平台 - 平台（动态）",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "BRANCH"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3
@@ -1097,6 +1072,19 @@
       }, {
         "getChildPSDETreeNode" : {
           "modelref" : true,
+          "id" : "ROOTMODULE"
+        },
+        "name" : "平台（动态） - 根模块（动态）",
+        "parentFilter" : "branch",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "BRANCHS"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
           "id" : "MODULE"
         },
         "name" : "根模块（动态） - 非根模块（动态）",
@@ -1135,6 +1123,18 @@
         "getParentPSDETreeNode" : {
           "modelref" : true,
           "id" : "ROOTMODULE"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ALL"
+        },
+        "name" : "默认根节点 - 所有模块",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ROOT"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3

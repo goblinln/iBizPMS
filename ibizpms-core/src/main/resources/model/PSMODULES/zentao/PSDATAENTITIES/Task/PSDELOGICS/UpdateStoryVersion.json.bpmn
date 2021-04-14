@@ -17,19 +17,19 @@
                         <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdatestoryversionprepareparam1" id="prepareparam1" implementation="http://www.jboss.org/drools/rule" name="重置需求版本"/>
                         <endEvent id="prepareparam1_end" name="end"/>
                         <sequenceFlow id="prepareparam1_end_line" sourceRef="prepareparam1" targetRef="prepareparam1_end"/>
-                    <sequenceFlow id="gateway-begin_prepareparam1" sourceRef="gateway-begin" targetRef="prepareparam1">
-                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
-                                            $taskupdatestoryversiondefault:Task();
-                                    eval($taskupdatestoryversiondefault==taskupdatestoryversiondefault);
-                                eval(((RuleUtils.test($taskupdatestoryversiondefault.get("story"),"EQ","0"))||(RuleUtils.test($taskupdatestoryversiondefault.get("story"),"ISNULL",""))))
-                                ]]>
-                            </conditionExpression>
-                    </sequenceFlow>
                     <sequenceFlow id="gateway-begin_rawsqlcall1" sourceRef="gateway-begin" targetRef="rawsqlcall1">
                             <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
                                             $taskupdatestoryversiondefault:Task();
                                     eval($taskupdatestoryversiondefault==taskupdatestoryversiondefault);
                                 eval((RuleUtils.test($taskupdatestoryversiondefault.get("story"),"ISNOTNULL",""))&&(RuleUtils.test($taskupdatestoryversiondefault.get("story"),"NOTEQ","0")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-begin_prepareparam1" sourceRef="gateway-begin" targetRef="prepareparam1">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdatestoryversiondefault:Task();
+                                    eval($taskupdatestoryversiondefault==taskupdatestoryversiondefault);
+                                eval(((RuleUtils.test($taskupdatestoryversiondefault.get("story"),"EQ","0"))||(RuleUtils.test($taskupdatestoryversiondefault.get("story"),"ISNULL",""))))
                                 ]]>
                             </conditionExpression>
                     </sequenceFlow>

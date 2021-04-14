@@ -36,7 +36,7 @@ public class JobRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return jobService.sysGet(String.valueOf(o));
+            return jobService.sysGet((Long)o);
         }
     }
 

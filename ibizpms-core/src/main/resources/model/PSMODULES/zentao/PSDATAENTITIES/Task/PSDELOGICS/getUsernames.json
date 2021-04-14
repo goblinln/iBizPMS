@@ -9,34 +9,6 @@
   "getPSDELogicLinks" : [ {
     "getDstPSDELogicNode" : {
       "modelref" : true,
-      "id" : "Rawsqlcall1"
-    },
-    "name" : "连接9577",
-    "getPSDELogicLinkGroupCond" : {
-      "groupOP" : "AND",
-      "logicType" : "GROUP",
-      "getPSDELogicLinkConds" : [ {
-        "condOP" : "EQ",
-        "dstFieldName" : "MULTIPLE",
-        "getDstLogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "logicType" : "SINGLE",
-        "name" : "Default[MULTIPLE] 等于(=) (1)",
-        "paramValue" : "1"
-      } ],
-      "notMode" : false,
-      "id" : "0aa8a79016044ceb90ec1fc7b10c60aa"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Begin"
-    },
-    "defaultLink" : false
-  }, {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
       "id" : "Rawsqlcall2"
     },
     "name" : "连接6464",
@@ -55,7 +27,35 @@
         "paramValue" : "1"
       } ],
       "notMode" : false,
-      "id" : "676b2d3b2979982e113415e78823df1f"
+      "id" : "163698cc888d1e368504ec61a68a62bc"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "name" : "连接9577",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "MULTIPLE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "logicType" : "SINGLE",
+        "name" : "Default[MULTIPLE] 等于(=) (1)",
+        "paramValue" : "1"
+      } ],
+      "notMode" : false,
+      "id" : "4aa51fbc4edc84cb77be6fe75c886568"
     },
     "getSrcPSDELogicNode" : {
       "modelref" : true,
@@ -90,10 +90,10 @@
     "name" : "开始",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
-      "id" : "连接9577"
+      "id" : "连接6464"
     }, {
       "modelref" : true,
-      "id" : "连接6464"
+      "id" : "连接9577"
     } ],
     "parallelOutput" : true
   }, {

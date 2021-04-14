@@ -37,6 +37,10 @@ export interface IDoc extends IEntityBase {
      */
     editedby?: any;
     /**
+     * 归属部门
+     */
+    dept?: any;
+    /**
      * 文档编号
      */
     id?: any;
@@ -52,6 +56,10 @@ export interface IDoc extends IEntityBase {
      * 最近更新数量
      */
     recentupdatecnt?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
     /**
      * 文档类型
      *
@@ -117,6 +125,10 @@ export interface IDoc extends IEntityBase {
      */
     todayupdatecnt?: any;
     /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
      * 附件
      */
     files?: any;
@@ -152,16 +164,4 @@ export interface IDoc extends IEntityBase {
      * 所属分类
      */
     module?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
 }

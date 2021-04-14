@@ -8,6 +8,7 @@ function getLocaleResourceBase(){
 		'objectid': commonLogic.appcommonhandle("所属对象",null),
 		'cases': commonLogic.appcommonhandle("用例",null),
 		'members': commonLogic.appcommonhandle("参与人员",null),
+		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 		'bugs': commonLogic.appcommonhandle("测试的Bug",null),
 		'createdby': commonLogic.appcommonhandle("由谁创建",null),
 		'stories': commonLogic.appcommonhandle("测试的需求",null),
@@ -17,8 +18,10 @@ function getLocaleResourceBase(){
 		'title': commonLogic.appcommonhandle("标题",null),
 		'begin': commonLogic.appcommonhandle("开始时间",null),
 		'objecttype': commonLogic.appcommonhandle("对象类型",null),
+		'org': commonLogic.appcommonhandle("归属组织",null),
 		'end': commonLogic.appcommonhandle("结束时间",null),
 		'builds': commonLogic.appcommonhandle("版本信息",null),
+		'dept': commonLogic.appcommonhandle("归属部门",null),
 		'createddate': commonLogic.appcommonhandle("创建时间",null),
 		'report': commonLogic.appcommonhandle("总结",null),
 		'id': commonLogic.appcommonhandle("编号",null),
@@ -28,9 +31,6 @@ function getLocaleResourceBase(){
 		'productname': commonLogic.appcommonhandle("所属产品",null),
 		'product': commonLogic.appcommonhandle("所属产品",null),
 		'project': commonLogic.appcommonhandle("所属项目",null),
-		'updateby': commonLogic.appcommonhandle("由谁更新",null),
-		'org': commonLogic.appcommonhandle("归属组织",null),
-		'dept': commonLogic.appcommonhandle("归属部门",null),
 	},
 		views: {
 			'projectgridview': {

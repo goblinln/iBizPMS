@@ -189,6 +189,10 @@ export interface IProduct extends IEntityBase {
      */
     order1?: any;
     /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
      * BUILD数
      */
     buildcnt?: any;
@@ -212,8 +216,4 @@ export interface IProduct extends IEntityBase {
      * 产品线
      */
     line?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
 }

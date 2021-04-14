@@ -36,7 +36,7 @@ public class ScoreRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return scoreService.sysGet(String.valueOf(o));
+            return scoreService.sysGet((Long)o);
         }
     }
 

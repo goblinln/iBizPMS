@@ -184,62 +184,6 @@
       "getPSDETreeNodeRSs" : [ {
         "getChildPSDETreeNode" : {
           "modelref" : true,
-          "id" : "ALL"
-        },
-        "name" : "默认根节点 - 全部",
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "ROOT"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "MODULE"
-        },
-        "name" : "非根模块（动态） - 非根模块（动态）",
-        "getParentPSAppDEField" : {
-          "name" : "PARENT",
-          "codeName" : "Parent"
-        },
-        "getParentPSDER1N" : {
-          "codeName" : "ParentModule",
-          "dERType" : "DER1N",
-          "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDERS/DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT.json",
-          "getMajorPSDataEntity" : {
-            "modelref" : true,
-            "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
-          },
-          "masterOrder" : -1,
-          "masterRS" : 0,
-          "getMinorPSDataEntity" : {
-            "modelref" : true,
-            "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
-          },
-          "name" : "DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT",
-          "orderValue" : 100,
-          "getPSPickupDEField" : {
-            "name" : "PARENT",
-            "codeName" : "Parent"
-          },
-          "getPSPickupTextDEField" : {
-            "name" : "PARENTNAME",
-            "codeName" : "ParentName"
-          },
-          "pickupDEFName" : "PARENT",
-          "removeActionType" : -1,
-          "removeOrder" : 0
-        },
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "MODULE"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
           "id" : "MODULE"
         },
         "name" : "根模块（动态） - 非根模块（动态）",
@@ -290,6 +234,62 @@
         "getParentPSDETreeNode" : {
           "modelref" : true,
           "id" : "ALL"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "MODULE"
+        },
+        "name" : "非根模块（动态） - 非根模块（动态）",
+        "getParentPSAppDEField" : {
+          "name" : "PARENT",
+          "codeName" : "Parent"
+        },
+        "getParentPSDER1N" : {
+          "codeName" : "ParentModule",
+          "dERType" : "DER1N",
+          "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDERS/DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT.json",
+          "getMajorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+          },
+          "masterOrder" : -1,
+          "masterRS" : 0,
+          "getMinorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+          },
+          "name" : "DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT",
+          "orderValue" : 100,
+          "getPSPickupDEField" : {
+            "name" : "PARENT",
+            "codeName" : "Parent"
+          },
+          "getPSPickupTextDEField" : {
+            "name" : "PARENTNAME",
+            "codeName" : "ParentName"
+          },
+          "pickupDEFName" : "PARENT",
+          "removeActionType" : -1,
+          "removeOrder" : 0
+        },
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "MODULE"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ALL"
+        },
+        "name" : "默认根节点 - 全部",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ROOT"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3

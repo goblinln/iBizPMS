@@ -31,6 +31,7 @@ function getLocaleResourceBase(){
 		'rd': commonLogic.appcommonhandle("发布负责人",null),
 		'managemembers': commonLogic.appcommonhandle("复制团队",null),
 		'ystarttaskcnt': commonLogic.appcommonhandle("进行中任务数",null),
+		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 		'whitelist': commonLogic.appcommonhandle("分组白名单",null),
 		'mobimage': commonLogic.appcommonhandle("移动端图片",null),
 		'totalwh': commonLogic.appcommonhandle("总工时",null),
@@ -83,7 +84,6 @@ function getLocaleResourceBase(){
 		'qd': commonLogic.appcommonhandle("测试负责人",null),
 		'parentname': commonLogic.appcommonhandle("parent",null),
 		'parent': commonLogic.appcommonhandle("父项目",null),
-		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 	},
 		views: {
 			'tasktreeexpview': {

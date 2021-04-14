@@ -823,12 +823,12 @@
       "getPSDETreeNodeRSs" : [ {
         "getChildPSDETreeNode" : {
           "modelref" : true,
-          "id" : "Root_NoBranch"
+          "id" : "ALL"
         },
-        "name" : "所以模块 - 根模块无分支（动态）",
+        "name" : "默认根节点 - 所以模块",
         "getParentPSDETreeNode" : {
           "modelref" : true,
-          "id" : "ALL"
+          "id" : "ROOT"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3
@@ -879,37 +879,12 @@
       }, {
         "getChildPSDETreeNode" : {
           "modelref" : true,
-          "id" : "ROOTMODULE"
+          "id" : "Root_NoBranch"
         },
-        "name" : "平台（动态） - 跟模块（动态）",
-        "parentFilter" : "branch",
+        "name" : "所以模块 - 根模块无分支（动态）",
         "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "BRANCHS"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
           "modelref" : true,
           "id" : "ALL"
-        },
-        "name" : "默认根节点 - 所以模块",
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "ROOT"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "BRANCHS"
-        },
-        "name" : "平台 - 平台（动态）",
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "BRANCH"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3
@@ -998,6 +973,31 @@
         "getParentPSDETreeNode" : {
           "modelref" : true,
           "id" : "MODULE"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "BRANCHS"
+        },
+        "name" : "平台 - 平台（动态）",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "BRANCH"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ROOTMODULE"
+        },
+        "name" : "平台（动态） - 跟模块（动态）",
+        "parentFilter" : "branch",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "BRANCHS"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3

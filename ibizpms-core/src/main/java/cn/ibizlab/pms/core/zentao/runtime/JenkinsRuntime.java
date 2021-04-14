@@ -36,7 +36,7 @@ public class JenkinsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return jenkinsService.sysGet(String.valueOf(o));
+            return jenkinsService.sysGet((Long)o);
         }
     }
 

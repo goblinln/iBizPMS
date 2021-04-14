@@ -36,7 +36,7 @@ public class IbzDailyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return ibzdailyService.sysGet(String.valueOf(o));
+            return ibzdailyService.sysGet((Long)o);
         }
     }
 

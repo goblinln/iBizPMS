@@ -36,7 +36,7 @@ public class ReleaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return releaseService.sysGet(String.valueOf(o));
+            return releaseService.sysGet((Long)o);
         }
     }
 

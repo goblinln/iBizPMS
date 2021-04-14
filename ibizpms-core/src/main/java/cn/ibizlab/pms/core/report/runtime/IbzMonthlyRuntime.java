@@ -36,7 +36,7 @@ public class IbzMonthlyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return ibzmonthlyService.sysGet(String.valueOf(o));
+            return ibzmonthlyService.sysGet((Long)o);
         }
     }
 

@@ -36,7 +36,7 @@ public class LogRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return logService.sysGet(String.valueOf(o));
+            return logService.sysGet((Long)o);
         }
     }
 

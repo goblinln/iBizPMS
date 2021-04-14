@@ -282,8 +282,6 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("Export {0} Data To Excel",null),
 			},
 		},
-		dailyinfocalendareditviewtoolbar_toolbar: {
-		},
 	};
 	return data;
 }

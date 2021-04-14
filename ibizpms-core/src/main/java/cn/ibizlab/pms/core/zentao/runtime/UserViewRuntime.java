@@ -36,7 +36,7 @@ public class UserViewRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return userviewService.sysGet(String.valueOf(o));
+            return userviewService.sysGet((String)o);
         }
     }
 

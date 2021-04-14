@@ -36,7 +36,7 @@ public class CompanyStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return companystatsService.sysGet(String.valueOf(o));
+            return companystatsService.sysGet((Long)o);
         }
     }
 

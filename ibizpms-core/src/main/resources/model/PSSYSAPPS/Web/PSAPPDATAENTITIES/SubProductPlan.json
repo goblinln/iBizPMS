@@ -638,6 +638,12 @@
     "stdDataType" : 1,
     "keyField" : true
   }, {
+    "codeName" : "Org",
+    "logicName" : "归属组织",
+    "name" : "ORG",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Begin",
     "logicName" : "开始日期",
     "name" : "BEGIN",
@@ -703,6 +709,12 @@
     "stdDataType" : 25,
     "stringLength" : 200
   }, {
+    "codeName" : "CreateBy",
+    "logicName" : "由谁创建",
+    "name" : "CREATEBY",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Status",
     "logicName" : "计划状态",
     "name" : "STATUS",
@@ -714,6 +726,12 @@
     "name" : "ISEXPIRED",
     "stdDataType" : 25,
     "stringLength" : 200
+  }, {
+    "codeName" : "UpdateBy",
+    "logicName" : "由谁更新",
+    "name" : "UPDATEBY",
+    "stdDataType" : 25,
+    "stringLength" : 100
   }, {
     "codeName" : "Deleted",
     "logicName" : "已删除",
@@ -743,6 +761,12 @@
     "name" : "FUTURE",
     "stdDataType" : 25,
     "stringLength" : 200
+  }, {
+    "codeName" : "Dept",
+    "logicName" : "归属部门",
+    "name" : "DEPT",
+    "stdDataType" : 25,
+    "stringLength" : 100
   }, {
     "codeName" : "StoryCnt",
     "logicName" : "需求数",
@@ -785,30 +809,6 @@
     "logicName" : "产品",
     "name" : "PRODUCT",
     "stdDataType" : 1
-  }, {
-    "codeName" : "CreateBy",
-    "logicName" : "由谁创建",
-    "name" : "CREATEBY",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "UpdateBy",
-    "logicName" : "由谁更新",
-    "name" : "UPDATEBY",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "Org",
-    "logicName" : "归属组织",
-    "name" : "ORG",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "Dept",
-    "logicName" : "归属部门",
-    "name" : "DEPT",
-    "stdDataType" : 25,
-    "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

@@ -21,9 +21,25 @@ export interface IHistory extends IEntityBase {
      */
     ibiznew?: any;
     /**
+     * 由谁创建
+     */
+    createby?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
+    /**
      * 旧值
      */
     old?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
+    /**
+     * 由谁更新
+     */
+    updateby?: any;
     /**
      * id
      */
@@ -32,20 +48,4 @@ export interface IHistory extends IEntityBase {
      * 关联日志
      */
     action?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
 }

@@ -91,6 +91,10 @@ export interface ISubTask extends IEntityBase {
      */
     status1?: 'wait' | 'doing' | 'done' | 'pause' | 'cancel' | 'closed' | 'storychange';
     /**
+     * 归属组织
+     */
+    org?: any;
+    /**
      * 回复数量
      */
     replycount?: any;
@@ -122,6 +126,10 @@ export interface ISubTask extends IEntityBase {
      * 子状态
      */
     substatus?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
     /**
      * 关闭原因
      *
@@ -370,12 +378,4 @@ export interface ISubTask extends IEntityBase {
      * 来源Bug
      */
     frombug?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
 }

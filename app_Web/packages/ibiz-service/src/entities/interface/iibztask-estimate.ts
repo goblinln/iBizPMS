@@ -9,9 +9,17 @@ import { IEntityBase } from 'ibiz-core';
  */
 export interface IIBZTaskEstimate extends IEntityBase {
     /**
+     * 归属组织
+     */
+    org?: any;
+    /**
      * 月（显示）
      */
     monthname?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
     /**
      * 年
      */
@@ -28,6 +36,10 @@ export interface IIBZTaskEstimate extends IEntityBase {
      * 总计消耗
      */
     consumed?: any;
+    /**
+     * 由谁创建
+     */
+    createby?: any;
     /**
      * 评估成本
      */
@@ -56,6 +68,10 @@ export interface IIBZTaskEstimate extends IEntityBase {
      * 日期
      */
     date?: any;
+    /**
+     * 由谁更新
+     */
+    updateby?: any;
     /**
      * 评估工时
      */
@@ -112,20 +128,4 @@ export interface IIBZTaskEstimate extends IEntityBase {
      * 任务
      */
     task?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
 }

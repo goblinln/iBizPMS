@@ -1154,6 +1154,12 @@
     "stdDataType" : 25,
     "stringLength" : 200
   }, {
+    "codeName" : "Dept",
+    "logicName" : "归属部门",
+    "name" : "DEPT",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Frequency",
     "logicName" : "frequency",
     "name" : "FREQUENCY",
@@ -1173,6 +1179,12 @@
     "name" : "LASTEDITEDBY",
     "stdDataType" : 25,
     "stringLength" : 30
+  }, {
+    "codeName" : "Org",
+    "logicName" : "归属组织",
+    "name" : "ORG",
+    "stdDataType" : 25,
+    "stringLength" : 100
   }, {
     "codeName" : "ReviewedBy",
     "logicName" : "由谁评审",
@@ -1359,18 +1371,6 @@
     "logicName" : "所属模块",
     "name" : "MODULE",
     "stdDataType" : 1
-  }, {
-    "codeName" : "Org",
-    "logicName" : "归属组织",
-    "name" : "ORG",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "Dept",
-    "logicName" : "归属部门",
-    "name" : "DEPT",
-    "stdDataType" : 25,
-    "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

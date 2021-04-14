@@ -36,7 +36,7 @@ public class SysUpdateLogRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return sysupdatelogService.sysGet(String.valueOf(o));
+            return sysupdatelogService.sysGet((String)o);
         }
     }
 

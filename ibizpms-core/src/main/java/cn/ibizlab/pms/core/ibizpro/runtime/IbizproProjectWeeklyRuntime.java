@@ -36,7 +36,7 @@ public class IbizproProjectWeeklyRuntime extends cn.ibizlab.pms.core.runtime.Sys
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return ibizproprojectweeklyService.sysGet(String.valueOf(o));
+            return ibizproprojectweeklyService.sysGet((String)o);
         }
     }
 

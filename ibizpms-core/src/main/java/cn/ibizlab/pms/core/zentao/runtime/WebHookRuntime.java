@@ -36,7 +36,7 @@ public class WebHookRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return webhookService.sysGet(String.valueOf(o));
+            return webhookService.sysGet((Long)o);
         }
     }
 

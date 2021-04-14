@@ -4,6 +4,7 @@ function getLocaleResourceBase(){
 	const data:any = {
 	fields: {
 		'severity': commonLogic.appcommonhandle("严重程度",null),
+		'dept': commonLogic.appcommonhandle("归属部门",null),
 		'storyversion': commonLogic.appcommonhandle("需求版本",null),
 		'buildname': commonLogic.appcommonhandle("版本名称",null),
 		'linkbug': commonLogic.appcommonhandle("相关Bug",null),
@@ -45,6 +46,7 @@ function getLocaleResourceBase(){
 		'deleted': commonLogic.appcommonhandle("已删除",null),
 		'lines': commonLogic.appcommonhandle("lines",null),
 		'substatus': commonLogic.appcommonhandle("子状态",null),
+		'org': commonLogic.appcommonhandle("归属组织",null),
 		'buildproject': commonLogic.appcommonhandle("版本项目",null),
 		'id': commonLogic.appcommonhandle("Bug编号",null),
 		'delay': commonLogic.appcommonhandle("延期",null),
@@ -79,8 +81,6 @@ function getLocaleResourceBase(){
 		'project': commonLogic.appcommonhandle("所属项目",null),
 		'task': commonLogic.appcommonhandle("相关任务",null),
 		'testtask': commonLogic.appcommonhandle("测试单",null),
-		'org': commonLogic.appcommonhandle("归属组织",null),
-		'dept': commonLogic.appcommonhandle("归属部门",null),
 	},
 		views: {
 			'testbugsgridview': {
@@ -1608,8 +1608,6 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("Filter",null),
 				tip: commonLogic.appcommonhandle("Filter",null),
 			},
-		},
-		todoeditviewtoolbar_toolbar: {
 		},
 		mainmygridviewtoolbar_toolbar: {
 			'deuiaction1': {

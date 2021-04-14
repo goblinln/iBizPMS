@@ -36,7 +36,7 @@ public class IbzWeeklyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return ibzweeklyService.sysGet(String.valueOf(o));
+            return ibzweeklyService.sysGet((Long)o);
         }
     }
 

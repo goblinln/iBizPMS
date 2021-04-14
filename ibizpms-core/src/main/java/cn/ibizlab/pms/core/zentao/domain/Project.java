@@ -283,6 +283,15 @@ public class Project extends EntityMP implements Serializable {
     @ApiModelProperty("进行中任务数")
     private Integer ystarttaskcnt;
     /**
+     * 由谁更新
+     */
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @TableField(value = "updateby")
+    @JSONField(name = "updateby")
+    @JsonProperty("updateby")
+    @ApiModelProperty("由谁更新")
+    private String updateby;
+    /**
      * 分组白名单
      */
     @DEField(defaultValue = "#EMPTY")
@@ -715,15 +724,6 @@ public class Project extends EntityMP implements Serializable {
     @JsonProperty("parent")
     @ApiModelProperty("父项目")
     private Long parent;
-    /**
-     * 由谁更新
-     */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "updateby")
-    @JSONField(name = "updateby")
-    @JsonProperty("updateby")
-    @ApiModelProperty("由谁更新")
-    private String updateby;
 
     /**
      * 

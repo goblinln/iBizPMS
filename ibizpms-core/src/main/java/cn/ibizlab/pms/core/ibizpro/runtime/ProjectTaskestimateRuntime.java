@@ -36,7 +36,7 @@ public class ProjectTaskestimateRuntime extends cn.ibizlab.pms.core.runtime.Syst
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return projecttaskestimateService.sysGet(String.valueOf(o));
+            return projecttaskestimateService.sysGet((String)o);
         }
     }
 

@@ -36,7 +36,7 @@ public class DocLibModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return doclibmoduleService.sysGet(String.valueOf(o));
+            return doclibmoduleService.sysGet((Long)o);
         }
     }
 

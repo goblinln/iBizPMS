@@ -1,4 +1,8 @@
 export default [
+    'createby',
+    'updateby',
+    'org',
+    'dept',
     'id',
     'productname',
     'projectname',
@@ -7,8 +11,4 @@ export default [
     'plan',
     'branch',
     'project',
-    'createby',
-    'updateby',
-    'org',
-    'dept',
 ];

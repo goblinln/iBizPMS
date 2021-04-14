@@ -36,7 +36,7 @@ public class IbzProjectMemberRuntime extends cn.ibizlab.pms.core.runtime.SystemD
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return ibzprojectmemberService.sysGet(String.valueOf(o));
+            return ibzprojectmemberService.sysGet((Long)o);
         }
     }
 

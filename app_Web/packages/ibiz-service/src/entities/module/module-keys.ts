@@ -7,7 +7,9 @@ export default [
     'owner',
     'id',
     'orderpk',
+    'createby',
     'collector',
+    'updateby',
     'ibizshort',
     'path',
     'mdeptid',
@@ -16,6 +18,4 @@ export default [
     'parentname',
     'branch',
     'parent',
-    'createby',
-    'updateby',
 ];

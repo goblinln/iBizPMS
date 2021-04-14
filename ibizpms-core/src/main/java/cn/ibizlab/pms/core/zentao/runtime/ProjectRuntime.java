@@ -36,7 +36,7 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return projectService.sysGet(String.valueOf(o));
+            return projectService.sysGet((Long)o);
         }
     }
 

@@ -36,7 +36,7 @@ public class IbzReportRoleConfigRuntime extends cn.ibizlab.pms.core.runtime.Syst
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return ibzreportroleconfigService.sysGet(String.valueOf(o));
+            return ibzreportroleconfigService.sysGet((String)o);
         }
     }
 

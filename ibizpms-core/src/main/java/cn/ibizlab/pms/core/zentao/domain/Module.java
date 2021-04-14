@@ -116,6 +116,15 @@ public class Module extends EntityMP implements Serializable {
     @ApiModelProperty("数据选择排序")
     private String orderpk;
     /**
+     * 由谁创建
+     */
+    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
+    @TableField(value = "createby")
+    @JSONField(name = "createby")
+    @JsonProperty("createby")
+    @ApiModelProperty("由谁创建")
+    private String createby;
+    /**
      * 收藏者
      */
     @DEField(defaultValue = "/")
@@ -124,6 +133,15 @@ public class Module extends EntityMP implements Serializable {
     @JsonProperty("collector")
     @ApiModelProperty("收藏者")
     private String collector;
+    /**
+     * 由谁更新
+     */
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @TableField(value = "updateby")
+    @JSONField(name = "updateby")
+    @JsonProperty("updateby")
+    @ApiModelProperty("由谁更新")
+    private String updateby;
     /**
      * 简称
      */
@@ -195,24 +213,6 @@ public class Module extends EntityMP implements Serializable {
     @JsonProperty("parent")
     @ApiModelProperty("上级模块")
     private Long parent;
-    /**
-     * 由谁创建
-     */
-    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "createby")
-    @JSONField(name = "createby")
-    @JsonProperty("createby")
-    @ApiModelProperty("由谁创建")
-    private String createby;
-    /**
-     * 由谁更新
-     */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "updateby")
-    @JSONField(name = "updateby")
-    @JsonProperty("updateby")
-    @ApiModelProperty("由谁更新")
-    private String updateby;
 
     /**
      * 

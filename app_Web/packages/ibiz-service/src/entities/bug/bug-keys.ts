@@ -1,5 +1,6 @@
 export default [
     'severity',
+    'dept',
     'storyversion',
     'buildname',
     'linkbug',
@@ -41,6 +42,7 @@ export default [
     'deleted',
     'lines',
     'substatus',
+    'org',
     'buildproject',
     'id',
     'delay',
@@ -75,6 +77,4 @@ export default [
     'project',
     'task',
     'testtask',
-    'org',
-    'dept',
 ];

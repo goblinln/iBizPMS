@@ -36,7 +36,7 @@ public class EmpLoyeeloadRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return employeeloadService.sysGet(String.valueOf(o));
+            return employeeloadService.sysGet((Long)o);
         }
     }
 

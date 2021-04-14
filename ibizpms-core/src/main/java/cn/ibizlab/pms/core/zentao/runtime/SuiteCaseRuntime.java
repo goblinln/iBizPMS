@@ -36,7 +36,7 @@ public class SuiteCaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return suitecaseService.sysGet(String.valueOf(o));
+            return suitecaseService.sysGet((String)o);
         }
     }
 

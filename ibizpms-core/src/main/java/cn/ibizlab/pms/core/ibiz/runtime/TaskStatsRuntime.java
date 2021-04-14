@@ -36,7 +36,7 @@ public class TaskStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return taskstatsService.sysGet(String.valueOf(o));
+            return taskstatsService.sysGet((Long)o);
         }
     }
 

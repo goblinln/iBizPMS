@@ -36,7 +36,7 @@ public class TestModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return testmoduleService.sysGet(String.valueOf(o));
+            return testmoduleService.sysGet((Long)o);
         }
     }
 

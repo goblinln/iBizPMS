@@ -51,6 +51,10 @@ export interface IDocLib extends IEntityBase {
      */
     deleted?: any;
     /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
      * 分组
      */
     groups?: any;
@@ -79,6 +83,10 @@ export interface IDocLib extends IEntityBase {
      */
     modulecnt?: any;
     /**
+     * 由谁创建
+     */
+    createby?: any;
+    /**
      * 创建时间
      */
     openeddate?: any;
@@ -102,12 +110,4 @@ export interface IDocLib extends IEntityBase {
      * 产品库
      */
     product?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
 }

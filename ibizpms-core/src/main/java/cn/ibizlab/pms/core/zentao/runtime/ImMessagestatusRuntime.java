@@ -36,7 +36,7 @@ public class ImMessagestatusRuntime extends cn.ibizlab.pms.core.runtime.SystemDa
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return immessagestatusService.sysGet(String.valueOf(o));
+            return immessagestatusService.sysGet((String)o);
         }
     }
 

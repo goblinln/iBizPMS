@@ -36,7 +36,7 @@ public class GroupRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return groupService.sysGet(String.valueOf(o));
+            return groupService.sysGet((Long)o);
         }
     }
 

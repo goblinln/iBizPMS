@@ -36,7 +36,7 @@ public class TestReportRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return testreportService.sysGet(String.valueOf(o));
+            return testreportService.sysGet((Long)o);
         }
     }
 

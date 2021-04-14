@@ -36,7 +36,7 @@ public class RelationRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return relationService.sysGet(String.valueOf(o));
+            return relationService.sysGet((Long)o);
         }
     }
 
