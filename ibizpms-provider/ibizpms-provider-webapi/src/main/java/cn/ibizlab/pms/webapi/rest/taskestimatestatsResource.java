@@ -12,6 +12,7 @@ import javax.servlet.ServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.PageRequest;
@@ -33,6 +34,7 @@ import cn.ibizlab.pms.core.zentao.domain.TaskEstimateStats;
 import cn.ibizlab.pms.core.zentao.service.ITaskEstimateStatsService;
 import cn.ibizlab.pms.core.zentao.filter.TaskEstimateStatsSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.runtime.TaskEstimateStatsRuntime;
 
 @Slf4j
 @Api(tags = {"任务工时统计" })
@@ -44,20 +46,26 @@ public class taskestimatestatsResource {
     public ITaskEstimateStatsService taskestimatestatsService;
 
     @Autowired
+    public TaskEstimateStatsRuntime taskestimatestatsRuntime;
+
+    @Autowired
     @Lazy
     public taskestimatestatsMapping taskestimatestatsMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-Create-all')")
+    @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建任务工时统计", tags = {"任务工时统计" },  notes = "新建任务工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskestimatestats")
+    @Transactional
     public ResponseEntity<taskestimatestatsDTO> create(@Validated @RequestBody taskestimatestatsDTO taskestimatestatsdto) {
         TaskEstimateStats domain = taskestimatestatsMapping.toDomain(taskestimatestatsdto);
 		taskestimatestatsService.create(domain);
+        if(!taskestimatestatsRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         taskestimatestatsDTO dto = taskestimatestatsMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-Create-all')")
+    @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量新建任务工时统计", tags = {"任务工时统计" },  notes = "批量新建任务工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskestimatestats/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<taskestimatestatsDTO> taskestimatestatsdtos) {
@@ -65,18 +73,21 @@ public class taskestimatestatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-Update-all')")
+    @PreAuthorize("@TaskEstimateStatsRuntime.test(#taskestimatestats_id,'UPDATE')")
     @ApiOperation(value = "更新任务工时统计", tags = {"任务工时统计" },  notes = "更新任务工时统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/taskestimatestats/{taskestimatestats_id}")
+    @Transactional
     public ResponseEntity<taskestimatestatsDTO> update(@PathVariable("taskestimatestats_id") Long taskestimatestats_id, @RequestBody taskestimatestatsDTO taskestimatestatsdto) {
 		TaskEstimateStats domain  = taskestimatestatsMapping.toDomain(taskestimatestatsdto);
-        domain .setId(taskestimatestats_id);
+        domain.setId(taskestimatestats_id);
 		taskestimatestatsService.update(domain );
+        if(!taskestimatestatsRuntime.test(taskestimatestats_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
 		taskestimatestatsDTO dto = taskestimatestatsMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-Update-all')")
+    @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "批量更新任务工时统计", tags = {"任务工时统计" },  notes = "批量更新任务工时统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/taskestimatestats/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<taskestimatestatsDTO> taskestimatestatsdtos) {
@@ -84,14 +95,14 @@ public class taskestimatestatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-Remove-all')")
+    @PreAuthorize("@TaskEstimateStatsRuntime.test(#taskestimatestats_id,'DELETE')")
     @ApiOperation(value = "删除任务工时统计", tags = {"任务工时统计" },  notes = "删除任务工时统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/taskestimatestats/{taskestimatestats_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("taskestimatestats_id") Long taskestimatestats_id) {
          return ResponseEntity.status(HttpStatus.OK).body(taskestimatestatsService.remove(taskestimatestats_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-Remove-all')")
+    @PreAuthorize("@TaskEstimateStatsRuntime.test(#ids,'DELETE')")
     @ApiOperation(value = "批量删除任务工时统计", tags = {"任务工时统计" },  notes = "批量删除任务工时统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/taskestimatestats/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +110,7 @@ public class taskestimatestatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-Get-all')")
+    @PreAuthorize("@TaskEstimateStatsRuntime.test(#taskestimatestats_id,'READ')")
     @ApiOperation(value = "获取任务工时统计", tags = {"任务工时统计" },  notes = "获取任务工时统计")
 	@RequestMapping(method = RequestMethod.GET, value = "/taskestimatestats/{taskestimatestats_id}")
     public ResponseEntity<taskestimatestatsDTO> get(@PathVariable("taskestimatestats_id") Long taskestimatestats_id) {
@@ -121,7 +132,6 @@ public class taskestimatestatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(taskestimatestatsService.checkKey(taskestimatestatsMapping.toDomain(taskestimatestatsdto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-Save-all')")
     @ApiOperation(value = "保存任务工时统计", tags = {"任务工时统计" },  notes = "保存任务工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskestimatestats/save")
     public ResponseEntity<taskestimatestatsDTO> save(@RequestBody taskestimatestatsDTO taskestimatestatsdto) {
@@ -130,7 +140,6 @@ public class taskestimatestatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskestimatestatsMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-Save-all')")
     @ApiOperation(value = "批量保存任务工时统计", tags = {"任务工时统计" },  notes = "批量保存任务工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskestimatestats/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<taskestimatestatsDTO> taskestimatestatsdtos) {
@@ -138,10 +147,11 @@ public class taskestimatestatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-searchActionMonth-all')")
+    @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取日志月", tags = {"任务工时统计" } ,notes = "获取日志月")
     @RequestMapping(method= RequestMethod.GET , value="/taskestimatestats/fetchactionmonth")
 	public ResponseEntity<List<taskestimatestatsDTO>> fetchActionMonth(TaskEstimateStatsSearchContext context) {
+        taskestimatestatsRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimateStats> domains = taskestimatestatsService.searchActionMonth(context) ;
         List<taskestimatestatsDTO> list = taskestimatestatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -151,19 +161,21 @@ public class taskestimatestatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-searchActionMonth-all')")
+    @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询日志月", tags = {"任务工时统计" } ,notes = "查询日志月")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimatestats/searchactionmonth")
 	public ResponseEntity<Page<taskestimatestatsDTO>> searchActionMonth(@RequestBody TaskEstimateStatsSearchContext context) {
+        taskestimatestatsRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimateStats> domains = taskestimatestatsService.searchActionMonth(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimatestatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-searchActionYear-all')")
+    @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取日志年", tags = {"任务工时统计" } ,notes = "获取日志年")
     @RequestMapping(method= RequestMethod.GET , value="/taskestimatestats/fetchactionyear")
 	public ResponseEntity<List<taskestimatestatsDTO>> fetchActionYear(TaskEstimateStatsSearchContext context) {
+        taskestimatestatsRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimateStats> domains = taskestimatestatsService.searchActionYear(context) ;
         List<taskestimatestatsDTO> list = taskestimatestatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -173,19 +185,21 @@ public class taskestimatestatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-searchActionYear-all')")
+    @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询日志年", tags = {"任务工时统计" } ,notes = "查询日志年")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimatestats/searchactionyear")
 	public ResponseEntity<Page<taskestimatestatsDTO>> searchActionYear(@RequestBody TaskEstimateStatsSearchContext context) {
+        taskestimatestatsRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimateStats> domains = taskestimatestatsService.searchActionYear(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimatestatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-searchDefault-all')")
+    @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"任务工时统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/taskestimatestats/fetchdefault")
 	public ResponseEntity<List<taskestimatestatsDTO>> fetchDefault(TaskEstimateStatsSearchContext context) {
+        taskestimatestatsRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimateStats> domains = taskestimatestatsService.searchDefault(context) ;
         List<taskestimatestatsDTO> list = taskestimatestatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -195,10 +209,11 @@ public class taskestimatestatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimateStats-searchDefault-all')")
+    @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"任务工时统计" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimatestats/searchdefault")
 	public ResponseEntity<Page<taskestimatestatsDTO>> searchDefault(@RequestBody TaskEstimateStatsSearchContext context) {
+        taskestimatestatsRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimateStats> domains = taskestimatestatsService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimatestatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -212,6 +227,5 @@ public class taskestimatestatsResource {
         taskestimatestatsdto = taskestimatestatsMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskestimatestatsdto);
     }
-
 }
 

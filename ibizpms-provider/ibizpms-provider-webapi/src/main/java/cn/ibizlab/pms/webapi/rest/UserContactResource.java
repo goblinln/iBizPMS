@@ -12,6 +12,7 @@ import javax.servlet.ServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.PageRequest;
@@ -33,6 +34,7 @@ import cn.ibizlab.pms.core.zentao.domain.UserContact;
 import cn.ibizlab.pms.core.zentao.service.IUserContactService;
 import cn.ibizlab.pms.core.zentao.filter.UserContactSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.runtime.UserContactRuntime;
 
 @Slf4j
 @Api(tags = {"用户联系方式" })
@@ -44,20 +46,26 @@ public class UserContactResource {
     public IUserContactService usercontactService;
 
     @Autowired
+    public UserContactRuntime usercontactRuntime;
+
+    @Autowired
     @Lazy
     public UserContactMapping usercontactMapping;
 
-    @PreAuthorize("hasPermission(this.usercontactMapping.toDomain(#usercontactdto),'iBizPMS-UserContact-Create')")
+    @PreAuthorize("@UserContactRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建用户联系方式", tags = {"用户联系方式" },  notes = "新建用户联系方式")
 	@RequestMapping(method = RequestMethod.POST, value = "/usercontacts")
+    @Transactional
     public ResponseEntity<UserContactDTO> create(@Validated @RequestBody UserContactDTO usercontactdto) {
         UserContact domain = usercontactMapping.toDomain(usercontactdto);
 		usercontactService.create(domain);
+        if(!usercontactRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         UserContactDTO dto = usercontactMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.usercontactMapping.toDomain(#usercontactdtos),'iBizPMS-UserContact-Create')")
+    @PreAuthorize("@UserContactRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量新建用户联系方式", tags = {"用户联系方式" },  notes = "批量新建用户联系方式")
 	@RequestMapping(method = RequestMethod.POST, value = "/usercontacts/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<UserContactDTO> usercontactdtos) {
@@ -65,18 +73,21 @@ public class UserContactResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.usercontactService.get(#usercontact_id),'iBizPMS-UserContact-Update')")
+    @PreAuthorize("@UserContactRuntime.test(#usercontact_id,'UPDATE')")
     @ApiOperation(value = "更新用户联系方式", tags = {"用户联系方式" },  notes = "更新用户联系方式")
 	@RequestMapping(method = RequestMethod.PUT, value = "/usercontacts/{usercontact_id}")
+    @Transactional
     public ResponseEntity<UserContactDTO> update(@PathVariable("usercontact_id") Long usercontact_id, @RequestBody UserContactDTO usercontactdto) {
 		UserContact domain  = usercontactMapping.toDomain(usercontactdto);
-        domain .setId(usercontact_id);
+        domain.setId(usercontact_id);
 		usercontactService.update(domain );
+        if(!usercontactRuntime.test(usercontact_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
 		UserContactDTO dto = usercontactMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.usercontactService.getUsercontactByEntities(this.usercontactMapping.toDomain(#usercontactdtos)),'iBizPMS-UserContact-Update')")
+    @PreAuthorize("@UserContactRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "批量更新用户联系方式", tags = {"用户联系方式" },  notes = "批量更新用户联系方式")
 	@RequestMapping(method = RequestMethod.PUT, value = "/usercontacts/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<UserContactDTO> usercontactdtos) {
@@ -84,14 +95,14 @@ public class UserContactResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.usercontactService.get(#usercontact_id),'iBizPMS-UserContact-Remove')")
+    @PreAuthorize("@UserContactRuntime.test(#usercontact_id,'DELETE')")
     @ApiOperation(value = "删除用户联系方式", tags = {"用户联系方式" },  notes = "删除用户联系方式")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/usercontacts/{usercontact_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("usercontact_id") Long usercontact_id) {
          return ResponseEntity.status(HttpStatus.OK).body(usercontactService.remove(usercontact_id));
     }
 
-    @PreAuthorize("hasPermission(this.usercontactService.getUsercontactByIds(#ids),'iBizPMS-UserContact-Remove')")
+    @PreAuthorize("@UserContactRuntime.test(#ids,'DELETE')")
     @ApiOperation(value = "批量删除用户联系方式", tags = {"用户联系方式" },  notes = "批量删除用户联系方式")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/usercontacts/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +110,7 @@ public class UserContactResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.usercontactMapping.toDomain(returnObject.body),'iBizPMS-UserContact-Get')")
+    @PreAuthorize("@UserContactRuntime.test(#usercontact_id,'READ')")
     @ApiOperation(value = "获取用户联系方式", tags = {"用户联系方式" },  notes = "获取用户联系方式")
 	@RequestMapping(method = RequestMethod.GET, value = "/usercontacts/{usercontact_id}")
     public ResponseEntity<UserContactDTO> get(@PathVariable("usercontact_id") Long usercontact_id) {
@@ -121,7 +132,6 @@ public class UserContactResource {
         return  ResponseEntity.status(HttpStatus.OK).body(usercontactService.checkKey(usercontactMapping.toDomain(usercontactdto)));
     }
 
-    @PreAuthorize("hasPermission(this.usercontactMapping.toDomain(#usercontactdto),'iBizPMS-UserContact-Save')")
     @ApiOperation(value = "保存用户联系方式", tags = {"用户联系方式" },  notes = "保存用户联系方式")
 	@RequestMapping(method = RequestMethod.POST, value = "/usercontacts/save")
     public ResponseEntity<UserContactDTO> save(@RequestBody UserContactDTO usercontactdto) {
@@ -130,7 +140,6 @@ public class UserContactResource {
         return ResponseEntity.status(HttpStatus.OK).body(usercontactMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.usercontactMapping.toDomain(#usercontactdtos),'iBizPMS-UserContact-Save')")
     @ApiOperation(value = "批量保存用户联系方式", tags = {"用户联系方式" },  notes = "批量保存用户联系方式")
 	@RequestMapping(method = RequestMethod.POST, value = "/usercontacts/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<UserContactDTO> usercontactdtos) {
@@ -138,10 +147,11 @@ public class UserContactResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-UserContact-searchCurUSERCONTACT-all') and hasPermission(#context,'iBizPMS-UserContact-Get')")
+    @PreAuthorize("@UserContactRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取抄送联系人", tags = {"用户联系方式" } ,notes = "获取抄送联系人")
     @RequestMapping(method= RequestMethod.GET , value="/usercontacts/fetchcurusercontact")
 	public ResponseEntity<List<UserContactDTO>> fetchCurUSERCONTACT(UserContactSearchContext context) {
+        usercontactRuntime.addAuthorityConditions(context,"READ");
         Page<UserContact> domains = usercontactService.searchCurUSERCONTACT(context) ;
         List<UserContactDTO> list = usercontactMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -151,19 +161,21 @@ public class UserContactResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-UserContact-searchCurUSERCONTACT-all') and hasPermission(#context,'iBizPMS-UserContact-Get')")
+    @PreAuthorize("@UserContactRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询抄送联系人", tags = {"用户联系方式" } ,notes = "查询抄送联系人")
     @RequestMapping(method= RequestMethod.POST , value="/usercontacts/searchcurusercontact")
 	public ResponseEntity<Page<UserContactDTO>> searchCurUSERCONTACT(@RequestBody UserContactSearchContext context) {
+        usercontactRuntime.addAuthorityConditions(context,"READ");
         Page<UserContact> domains = usercontactService.searchCurUSERCONTACT(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(usercontactMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-UserContact-searchDefault-all') and hasPermission(#context,'iBizPMS-UserContact-Get')")
+    @PreAuthorize("@UserContactRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"用户联系方式" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/usercontacts/fetchdefault")
 	public ResponseEntity<List<UserContactDTO>> fetchDefault(UserContactSearchContext context) {
+        usercontactRuntime.addAuthorityConditions(context,"READ");
         Page<UserContact> domains = usercontactService.searchDefault(context) ;
         List<UserContactDTO> list = usercontactMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -173,19 +185,21 @@ public class UserContactResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-UserContact-searchDefault-all') and hasPermission(#context,'iBizPMS-UserContact-Get')")
+    @PreAuthorize("@UserContactRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"用户联系方式" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/usercontacts/searchdefault")
 	public ResponseEntity<Page<UserContactDTO>> searchDefault(@RequestBody UserContactSearchContext context) {
+        usercontactRuntime.addAuthorityConditions(context,"READ");
         Page<UserContact> domains = usercontactService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(usercontactMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-UserContact-searchMyUSERCONTACT-all') and hasPermission(#context,'iBizPMS-UserContact-Get')")
+    @PreAuthorize("@UserContactRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的联系人", tags = {"用户联系方式" } ,notes = "获取我的联系人")
     @RequestMapping(method= RequestMethod.GET , value="/usercontacts/fetchmyusercontact")
 	public ResponseEntity<List<UserContactDTO>> fetchMyUSERCONTACT(UserContactSearchContext context) {
+        usercontactRuntime.addAuthorityConditions(context,"READ");
         Page<UserContact> domains = usercontactService.searchMyUSERCONTACT(context) ;
         List<UserContactDTO> list = usercontactMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -195,10 +209,11 @@ public class UserContactResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-UserContact-searchMyUSERCONTACT-all') and hasPermission(#context,'iBizPMS-UserContact-Get')")
+    @PreAuthorize("@UserContactRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询我的联系人", tags = {"用户联系方式" } ,notes = "查询我的联系人")
     @RequestMapping(method= RequestMethod.POST , value="/usercontacts/searchmyusercontact")
 	public ResponseEntity<Page<UserContactDTO>> searchMyUSERCONTACT(@RequestBody UserContactSearchContext context) {
+        usercontactRuntime.addAuthorityConditions(context,"READ");
         Page<UserContact> domains = usercontactService.searchMyUSERCONTACT(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(usercontactMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -212,6 +227,5 @@ public class UserContactResource {
         usercontactdto = usercontactMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(usercontactdto);
     }
-
 }
 

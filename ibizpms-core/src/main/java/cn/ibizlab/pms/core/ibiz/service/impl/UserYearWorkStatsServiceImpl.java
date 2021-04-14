@@ -85,6 +85,16 @@ public class UserYearWorkStatsServiceImpl extends ServiceImpl<UserYearWorkStatsM
 
     @Override
     @Transactional
+    public boolean sysUpdate(UserYearWorkStats et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(Long key) {
         boolean result = removeById(key);
         return result ;
@@ -100,11 +110,24 @@ public class UserYearWorkStatsServiceImpl extends ServiceImpl<UserYearWorkStatsM
     @Transactional
     public UserYearWorkStats get(Long key) {
         UserYearWorkStats et = getById(key);
-        if(et == null){
-            et = new UserYearWorkStats();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public UserYearWorkStats sysGet(Long key) {
+        UserYearWorkStats et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -126,8 +149,26 @@ public class UserYearWorkStatsServiceImpl extends ServiceImpl<UserYearWorkStatsM
 
     @Override
     @Transactional
+    public boolean getDevInfomationBatch(List<UserYearWorkStats> etList) {
+        for(UserYearWorkStats et : etList) {
+            getDevInfomation(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public UserYearWorkStats getPoInfomation(UserYearWorkStats et) {
          return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean getPoInfomationBatch(List<UserYearWorkStats> etList) {
+        for(UserYearWorkStats et : etList) {
+            getPoInfomation(et);
+        }
+        return true;
     }
 
     @Override
@@ -138,11 +179,19 @@ public class UserYearWorkStatsServiceImpl extends ServiceImpl<UserYearWorkStatsM
 
     @Override
     @Transactional
+    public boolean getQaInfomationBatch(List<UserYearWorkStats> etList) {
+        for(UserYearWorkStats et : etList) {
+            getQaInfomation(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public UserYearWorkStats getUserYearAction(UserYearWorkStats et) {
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean getUserYearActionBatch(List<UserYearWorkStats> etList) {
@@ -218,7 +267,6 @@ public class UserYearWorkStatsServiceImpl extends ServiceImpl<UserYearWorkStatsM
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean updateTitleByYearBatch(List<UserYearWorkStats> etList) {
@@ -307,5 +355,6 @@ public class UserYearWorkStatsServiceImpl extends ServiceImpl<UserYearWorkStatsM
         return et;
     }
 }
+
 
 

@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IRelationService extends IService<Relation> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "relation";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "relations";
-
     boolean create(Relation et);
     void createBatch(List<Relation> list);
     boolean update(Relation et);
+    boolean sysUpdate(Relation et);
     void updateBatch(List<Relation> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     Relation get(Long key);
+    Relation sysGet(Long key);
     Relation getDraft(Relation et);
     boolean checkKey(Relation et);
     boolean save(Relation et);

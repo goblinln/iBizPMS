@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IEntryService extends IService<Entry> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "entry";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "entries";
-
     boolean create(Entry et);
     void createBatch(List<Entry> list);
     boolean update(Entry et);
+    boolean sysUpdate(Entry et);
     void updateBatch(List<Entry> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     Entry get(Long key);
+    Entry sysGet(Long key);
     Entry getDraft(Entry et);
     boolean checkKey(Entry et);
     boolean save(Entry et);

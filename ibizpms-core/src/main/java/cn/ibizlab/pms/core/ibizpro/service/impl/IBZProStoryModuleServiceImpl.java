@@ -74,7 +74,9 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Transactional
     public void createBatch(List<IBZProStoryModule> list) {
         list.forEach(item->fillParentData(item));
-        this.saveBatch(list, batchSize);
+        for (IBZProStoryModule et : list) {
+            getProxyService().save(et);
+        }
     }
 
     @Override
@@ -92,7 +94,19 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Transactional
     public void updateBatch(List<IBZProStoryModule> list) {
         list.forEach(item->fillParentData(item));
-        updateBatchById(list, batchSize);
+        for (IBZProStoryModule et : list) {
+            getProxyService().update(et);
+        }
+    }
+
+    @Override
+    @Transactional
+    public boolean sysUpdate(IBZProStoryModule et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
@@ -112,11 +126,24 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Transactional
     public IBZProStoryModule get(Long key) {
         IBZProStoryModule et = getById(key);
-        if(et == null){
-            et = new IBZProStoryModule();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public IBZProStoryModule sysGet(Long key) {
+        IBZProStoryModule et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -199,7 +226,6 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean syncFromIBIZBatch(List<IBZProStoryModule> etList) {
@@ -295,5 +321,6 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
         return et;
     }
 }
+
 
 

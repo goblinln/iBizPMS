@@ -89,11 +89,24 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
     @Transactional
     public IbzWeekly get(Long key) {
         IbzWeekly et = getById(key);
-        if(et == null){
-            et = new IbzWeekly();
-            et.setIbzweeklyid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public IbzWeekly sysGet(Long key) {
+        IbzWeekly et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -128,7 +141,6 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean createGetLastWeekPlanAndWorkBatch(List<IbzWeekly> etList) {
@@ -144,7 +156,6 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean editGetLastWeekTaskAndComTaskBatch(List<IbzWeekly> etList) {
@@ -175,7 +186,6 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean jugThisWeekCreateWeeklyBatch(List<IbzWeekly> etList) {
@@ -384,5 +394,6 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
         return et;
     }
 }
+
 
 

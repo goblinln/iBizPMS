@@ -12,6 +12,7 @@ import javax.servlet.ServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.PageRequest;
@@ -33,6 +34,7 @@ import cn.ibizlab.pms.core.zentao.domain.Product;
 import cn.ibizlab.pms.core.zentao.service.IProductService;
 import cn.ibizlab.pms.core.zentao.filter.ProductSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.runtime.ProductRuntime;
 
 @Slf4j
 @Api(tags = {"产品" })
@@ -44,20 +46,26 @@ public class ProductResource {
     public IProductService productService;
 
     @Autowired
+    public ProductRuntime productRuntime;
+
+    @Autowired
     @Lazy
     public ProductMapping productMapping;
 
-    @PreAuthorize("hasPermission(this.productMapping.toDomain(#productdto),'iBizPMS-Product-Create')")
+    @PreAuthorize("@ProductRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建产品", tags = {"产品" },  notes = "新建产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/products")
+    @Transactional
     public ResponseEntity<ProductDTO> create(@Validated @RequestBody ProductDTO productdto) {
         Product domain = productMapping.toDomain(productdto);
 		productService.create(domain);
+        if(!productRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         ProductDTO dto = productMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.productMapping.toDomain(#productdtos),'iBizPMS-Product-Create')")
+    @PreAuthorize("@ProductRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量新建产品", tags = {"产品" },  notes = "批量新建产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<ProductDTO> productdtos) {
@@ -65,18 +73,21 @@ public class ProductResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.productService.get(#product_id),'iBizPMS-Product-Update')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "更新产品", tags = {"产品" },  notes = "更新产品")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}")
+    @Transactional
     public ResponseEntity<ProductDTO> update(@PathVariable("product_id") Long product_id, @RequestBody ProductDTO productdto) {
 		Product domain  = productMapping.toDomain(productdto);
-        domain .setId(product_id);
+        domain.setId(product_id);
 		productService.update(domain );
+        if(!productRuntime.test(product_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
 		ProductDTO dto = productMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.productService.getProductByEntities(this.productMapping.toDomain(#productdtos)),'iBizPMS-Product-Update')")
+    @PreAuthorize("@ProductRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "批量更新产品", tags = {"产品" },  notes = "批量更新产品")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<ProductDTO> productdtos) {
@@ -84,14 +95,14 @@ public class ProductResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.productService.get(#product_id),'iBizPMS-Product-Remove')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
     @ApiOperation(value = "删除产品", tags = {"产品" },  notes = "删除产品")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("product_id") Long product_id) {
          return ResponseEntity.status(HttpStatus.OK).body(productService.remove(product_id));
     }
 
-    @PreAuthorize("hasPermission(this.productService.getProductByIds(#ids),'iBizPMS-Product-Remove')")
+    @PreAuthorize("@ProductRuntime.test(#ids,'DELETE')")
     @ApiOperation(value = "批量删除产品", tags = {"产品" },  notes = "批量删除产品")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +110,7 @@ public class ProductResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.productMapping.toDomain(returnObject.body),'iBizPMS-Product-Get')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "获取产品", tags = {"产品" },  notes = "获取产品")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}")
     public ResponseEntity<ProductDTO> get(@PathVariable("product_id") Long product_id) {
@@ -115,7 +126,6 @@ public class ProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(productMapping.toDto(productService.getDraft(domain)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Product-CancelProductTop-all')")
     @ApiOperation(value = "取消置顶", tags = {"产品" },  notes = "取消置顶")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cancelproducttop")
     public ResponseEntity<ProductDTO> cancelProductTop(@PathVariable("product_id") Long product_id, @RequestBody ProductDTO productdto) {
@@ -132,7 +142,6 @@ public class ProductResource {
         return  ResponseEntity.status(HttpStatus.OK).body(productService.checkKey(productMapping.toDomain(productdto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Product-Close-all')")
     @ApiOperation(value = "关闭", tags = {"产品" },  notes = "关闭")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/close")
     public ResponseEntity<ProductDTO> close(@PathVariable("product_id") Long product_id, @RequestBody ProductDTO productdto) {
@@ -142,7 +151,6 @@ public class ProductResource {
         productdto = productMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(productdto);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Product-Close-all')")
     @ApiOperation(value = "批量处理[关闭]", tags = {"产品" },  notes = "批量处理[关闭]")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/closebatch")
     public ResponseEntity<Boolean> closeBatch(@RequestBody List<ProductDTO> productdtos) {
@@ -151,7 +159,6 @@ public class ProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Product-MobProductCounter-all')")
     @ApiOperation(value = "产品移动端计数器方法", tags = {"产品" },  notes = "产品移动端计数器方法")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/mobproductcounter")
     public ResponseEntity<ProductDTO> mobProductCounter(@PathVariable("product_id") Long product_id, @RequestBody ProductDTO productdto) {
@@ -162,7 +169,6 @@ public class ProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(productdto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Product-MobProductTestCounter-all')")
     @ApiOperation(value = "移动端测试计数器", tags = {"产品" },  notes = "移动端测试计数器")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/mobproducttestcounter")
     public ResponseEntity<ProductDTO> mobProductTestCounter(@PathVariable("product_id") Long product_id, @RequestBody ProductDTO productdto) {
@@ -173,7 +179,6 @@ public class ProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(productdto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Product-ProductTop-all')")
     @ApiOperation(value = "置顶", tags = {"产品" },  notes = "置顶")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/producttop")
     public ResponseEntity<ProductDTO> productTop(@PathVariable("product_id") Long product_id, @RequestBody ProductDTO productdto) {
@@ -184,7 +189,6 @@ public class ProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(productdto);
     }
 
-    @PreAuthorize("hasPermission(this.productMapping.toDomain(#productdto),'iBizPMS-Product-Save')")
     @ApiOperation(value = "保存产品", tags = {"产品" },  notes = "保存产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/save")
     public ResponseEntity<ProductDTO> save(@RequestBody ProductDTO productdto) {
@@ -193,7 +197,6 @@ public class ProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(productMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.productMapping.toDomain(#productdtos),'iBizPMS-Product-Save')")
     @ApiOperation(value = "批量保存产品", tags = {"产品" },  notes = "批量保存产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<ProductDTO> productdtos) {
@@ -201,10 +204,11 @@ public class ProductResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Product-searchAllList-all') and hasPermission(#context,'iBizPMS-Product-Get')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取全部产品", tags = {"产品" } ,notes = "获取全部产品")
     @RequestMapping(method= RequestMethod.GET , value="/products/fetchalllist")
 	public ResponseEntity<List<ProductDTO>> fetchAllList(ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchAllList(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -214,19 +218,21 @@ public class ProductResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Product-searchAllList-all') and hasPermission(#context,'iBizPMS-Product-Get')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询全部产品", tags = {"产品" } ,notes = "查询全部产品")
     @RequestMapping(method= RequestMethod.POST , value="/products/searchalllist")
 	public ResponseEntity<Page<ProductDTO>> searchAllList(@RequestBody ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchAllList(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Product-searchAllProduct-all') and hasPermission(#context,'iBizPMS-Product-Get')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取所有产品", tags = {"产品" } ,notes = "获取所有产品")
     @RequestMapping(method= RequestMethod.GET , value="/products/fetchallproduct")
 	public ResponseEntity<List<ProductDTO>> fetchAllProduct(ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchAllProduct(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -236,19 +242,21 @@ public class ProductResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Product-searchAllProduct-all') and hasPermission(#context,'iBizPMS-Product-Get')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询所有产品", tags = {"产品" } ,notes = "查询所有产品")
     @RequestMapping(method= RequestMethod.POST , value="/products/searchallproduct")
 	public ResponseEntity<Page<ProductDTO>> searchAllProduct(@RequestBody ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchAllProduct(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Product-searchCheckNameOrCode-all') and hasPermission(#context,'iBizPMS-Product-Get')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取校验产品名称或产品代号是否已经存在", tags = {"产品" } ,notes = "获取校验产品名称或产品代号是否已经存在")
     @RequestMapping(method= RequestMethod.GET , value="/products/fetchchecknameorcode")
 	public ResponseEntity<List<ProductDTO>> fetchCheckNameOrCode(ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchCheckNameOrCode(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -258,19 +266,21 @@ public class ProductResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Product-searchCheckNameOrCode-all') and hasPermission(#context,'iBizPMS-Product-Get')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询校验产品名称或产品代号是否已经存在", tags = {"产品" } ,notes = "查询校验产品名称或产品代号是否已经存在")
     @RequestMapping(method= RequestMethod.POST , value="/products/searchchecknameorcode")
 	public ResponseEntity<Page<ProductDTO>> searchCheckNameOrCode(@RequestBody ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchCheckNameOrCode(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Product-searchCurProject-all') and hasPermission(#context,'iBizPMS-Product-Get')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前项目", tags = {"产品" } ,notes = "获取当前项目")
     @RequestMapping(method= RequestMethod.GET , value="/products/fetchcurproject")
 	public ResponseEntity<List<ProductDTO>> fetchCurProject(ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchCurProject(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -280,19 +290,21 @@ public class ProductResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Product-searchCurProject-all') and hasPermission(#context,'iBizPMS-Product-Get')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询当前项目", tags = {"产品" } ,notes = "查询当前项目")
     @RequestMapping(method= RequestMethod.POST , value="/products/searchcurproject")
 	public ResponseEntity<Page<ProductDTO>> searchCurProject(@RequestBody ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchCurProject(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Product-searchCurUer-all') and hasPermission(#context,'iBizPMS-Product-Get')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前用户", tags = {"产品" } ,notes = "获取当前用户")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchcuruer")
 	public ResponseEntity<List<ProductDTO>> fetchCurUer(@RequestBody ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchCurUer(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -302,19 +314,21 @@ public class ProductResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Product-searchCurUer-all') and hasPermission(#context,'iBizPMS-Product-Get')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询当前用户", tags = {"产品" } ,notes = "查询当前用户")
     @RequestMapping(method= RequestMethod.POST , value="/products/searchcuruer")
 	public ResponseEntity<Page<ProductDTO>> searchCurUer(@RequestBody ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchCurUer(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Product-searchDefault-all') and hasPermission(#context,'iBizPMS-Product-Get')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"产品" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/products/fetchdefault")
 	public ResponseEntity<List<ProductDTO>> fetchDefault(ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchDefault(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -324,19 +338,21 @@ public class ProductResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Product-searchDefault-all') and hasPermission(#context,'iBizPMS-Product-Get')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"产品" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/searchdefault")
 	public ResponseEntity<Page<ProductDTO>> searchDefault(@RequestBody ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Product-searchESBulk-all') and hasPermission(#context,'iBizPMS-Product-Get')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取ES批量的导入", tags = {"产品" } ,notes = "获取ES批量的导入")
     @RequestMapping(method= RequestMethod.GET , value="/products/fetchesbulk")
 	public ResponseEntity<List<ProductDTO>> fetchESBulk(ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchESBulk(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -346,19 +362,21 @@ public class ProductResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Product-searchESBulk-all') and hasPermission(#context,'iBizPMS-Product-Get')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询ES批量的导入", tags = {"产品" } ,notes = "查询ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/products/searchesbulk")
 	public ResponseEntity<Page<ProductDTO>> searchESBulk(@RequestBody ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchESBulk(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Product-searchProductPM-all') and hasPermission(#context,'iBizPMS-Product-Get')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品总览", tags = {"产品" } ,notes = "获取产品总览")
     @RequestMapping(method= RequestMethod.GET , value="/products/fetchproductpm")
 	public ResponseEntity<List<ProductDTO>> fetchProductPM(ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchProductPM(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -368,19 +386,21 @@ public class ProductResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Product-searchProductPM-all') and hasPermission(#context,'iBizPMS-Product-Get')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询产品总览", tags = {"产品" } ,notes = "查询产品总览")
     @RequestMapping(method= RequestMethod.POST , value="/products/searchproductpm")
 	public ResponseEntity<Page<ProductDTO>> searchProductPM(@RequestBody ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchProductPM(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Product-searchProductTeam-all') and hasPermission(#context,'iBizPMS-Product-Get')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品团队", tags = {"产品" } ,notes = "获取产品团队")
     @RequestMapping(method= RequestMethod.GET , value="/products/fetchproductteam")
 	public ResponseEntity<List<ProductDTO>> fetchProductTeam(ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchProductTeam(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -390,19 +410,21 @@ public class ProductResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Product-searchProductTeam-all') and hasPermission(#context,'iBizPMS-Product-Get')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询产品团队", tags = {"产品" } ,notes = "查询产品团队")
     @RequestMapping(method= RequestMethod.POST , value="/products/searchproductteam")
 	public ResponseEntity<Page<ProductDTO>> searchProductTeam(@RequestBody ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchProductTeam(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Product-searchStoryCurProject-all') and hasPermission(#context,'iBizPMS-Product-Get')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前项目", tags = {"产品" } ,notes = "获取当前项目")
     @RequestMapping(method= RequestMethod.GET , value="/products/fetchstorycurproject")
 	public ResponseEntity<List<ProductDTO>> fetchStoryCurProject(ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchStoryCurProject(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -412,10 +434,11 @@ public class ProductResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Product-searchStoryCurProject-all') and hasPermission(#context,'iBizPMS-Product-Get')")
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询当前项目", tags = {"产品" } ,notes = "查询当前项目")
     @RequestMapping(method= RequestMethod.POST , value="/products/searchstorycurproject")
 	public ResponseEntity<Page<ProductDTO>> searchStoryCurProject(@RequestBody ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchStoryCurProject(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -429,6 +452,5 @@ public class ProductResource {
         productdto = productMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(productdto);
     }
-
 }
 

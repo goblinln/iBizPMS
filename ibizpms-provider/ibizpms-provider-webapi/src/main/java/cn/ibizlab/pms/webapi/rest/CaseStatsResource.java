@@ -12,6 +12,7 @@ import javax.servlet.ServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.PageRequest;
@@ -33,6 +34,7 @@ import cn.ibizlab.pms.core.ibiz.domain.CaseStats;
 import cn.ibizlab.pms.core.ibiz.service.ICaseStatsService;
 import cn.ibizlab.pms.core.ibiz.filter.CaseStatsSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.runtime.CaseStatsRuntime;
 
 @Slf4j
 @Api(tags = {"测试用例统计" })
@@ -44,20 +46,26 @@ public class CaseStatsResource {
     public ICaseStatsService casestatsService;
 
     @Autowired
+    public CaseStatsRuntime casestatsRuntime;
+
+    @Autowired
     @Lazy
     public CaseStatsMapping casestatsMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-Create-all')")
+    @PreAuthorize("@CaseStatsRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建测试用例统计", tags = {"测试用例统计" },  notes = "新建测试用例统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/casestats")
+    @Transactional
     public ResponseEntity<CaseStatsDTO> create(@Validated @RequestBody CaseStatsDTO casestatsdto) {
         CaseStats domain = casestatsMapping.toDomain(casestatsdto);
 		casestatsService.create(domain);
+        if(!casestatsRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         CaseStatsDTO dto = casestatsMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-Create-all')")
+    @PreAuthorize("@CaseStatsRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量新建测试用例统计", tags = {"测试用例统计" },  notes = "批量新建测试用例统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/casestats/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<CaseStatsDTO> casestatsdtos) {
@@ -65,18 +73,21 @@ public class CaseStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-Update-all')")
+    @PreAuthorize("@CaseStatsRuntime.test(#casestats_id,'UPDATE')")
     @ApiOperation(value = "更新测试用例统计", tags = {"测试用例统计" },  notes = "更新测试用例统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/casestats/{casestats_id}")
+    @Transactional
     public ResponseEntity<CaseStatsDTO> update(@PathVariable("casestats_id") Long casestats_id, @RequestBody CaseStatsDTO casestatsdto) {
 		CaseStats domain  = casestatsMapping.toDomain(casestatsdto);
-        domain .setId(casestats_id);
+        domain.setId(casestats_id);
 		casestatsService.update(domain );
+        if(!casestatsRuntime.test(casestats_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
 		CaseStatsDTO dto = casestatsMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-Update-all')")
+    @PreAuthorize("@CaseStatsRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "批量更新测试用例统计", tags = {"测试用例统计" },  notes = "批量更新测试用例统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/casestats/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<CaseStatsDTO> casestatsdtos) {
@@ -84,14 +95,14 @@ public class CaseStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-Remove-all')")
+    @PreAuthorize("@CaseStatsRuntime.test(#casestats_id,'DELETE')")
     @ApiOperation(value = "删除测试用例统计", tags = {"测试用例统计" },  notes = "删除测试用例统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/casestats/{casestats_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("casestats_id") Long casestats_id) {
          return ResponseEntity.status(HttpStatus.OK).body(casestatsService.remove(casestats_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-Remove-all')")
+    @PreAuthorize("@CaseStatsRuntime.test(#ids,'DELETE')")
     @ApiOperation(value = "批量删除测试用例统计", tags = {"测试用例统计" },  notes = "批量删除测试用例统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/casestats/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +110,7 @@ public class CaseStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-Get-all')")
+    @PreAuthorize("@CaseStatsRuntime.test(#casestats_id,'READ')")
     @ApiOperation(value = "获取测试用例统计", tags = {"测试用例统计" },  notes = "获取测试用例统计")
 	@RequestMapping(method = RequestMethod.GET, value = "/casestats/{casestats_id}")
     public ResponseEntity<CaseStatsDTO> get(@PathVariable("casestats_id") Long casestats_id) {
@@ -121,7 +132,6 @@ public class CaseStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(casestatsService.checkKey(casestatsMapping.toDomain(casestatsdto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-Save-all')")
     @ApiOperation(value = "保存测试用例统计", tags = {"测试用例统计" },  notes = "保存测试用例统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/casestats/save")
     public ResponseEntity<CaseStatsDTO> save(@RequestBody CaseStatsDTO casestatsdto) {
@@ -130,7 +140,6 @@ public class CaseStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(casestatsMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-Save-all')")
     @ApiOperation(value = "批量保存测试用例统计", tags = {"测试用例统计" },  notes = "批量保存测试用例统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/casestats/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<CaseStatsDTO> casestatsdtos) {
@@ -138,10 +147,11 @@ public class CaseStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-searchDefault-all')")
+    @PreAuthorize("@CaseStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"测试用例统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/casestats/fetchdefault")
 	public ResponseEntity<List<CaseStatsDTO>> fetchDefault(CaseStatsSearchContext context) {
+        casestatsRuntime.addAuthorityConditions(context,"READ");
         Page<CaseStats> domains = casestatsService.searchDefault(context) ;
         List<CaseStatsDTO> list = casestatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -151,19 +161,21 @@ public class CaseStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-searchDefault-all')")
+    @PreAuthorize("@CaseStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"测试用例统计" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/casestats/searchdefault")
 	public ResponseEntity<Page<CaseStatsDTO>> searchDefault(@RequestBody CaseStatsSearchContext context) {
+        casestatsRuntime.addAuthorityConditions(context,"READ");
         Page<CaseStats> domains = casestatsService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(casestatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-searchTestCaseStats-all')")
+    @PreAuthorize("@CaseStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试用例统计", tags = {"测试用例统计" } ,notes = "获取测试用例统计")
     @RequestMapping(method= RequestMethod.GET , value="/casestats/fetchtestcasestats")
 	public ResponseEntity<List<CaseStatsDTO>> fetchTestCaseStats(CaseStatsSearchContext context) {
+        casestatsRuntime.addAuthorityConditions(context,"READ");
         Page<CaseStats> domains = casestatsService.searchTestCaseStats(context) ;
         List<CaseStatsDTO> list = casestatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -173,10 +185,11 @@ public class CaseStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-CaseStats-searchTestCaseStats-all')")
+    @PreAuthorize("@CaseStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询测试用例统计", tags = {"测试用例统计" } ,notes = "查询测试用例统计")
     @RequestMapping(method= RequestMethod.POST , value="/casestats/searchtestcasestats")
 	public ResponseEntity<Page<CaseStatsDTO>> searchTestCaseStats(@RequestBody CaseStatsSearchContext context) {
+        casestatsRuntime.addAuthorityConditions(context,"READ");
         Page<CaseStats> domains = casestatsService.searchTestCaseStats(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(casestatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -190,6 +203,5 @@ public class CaseStatsResource {
         casestatsdto = casestatsMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casestatsdto);
     }
-
 }
 

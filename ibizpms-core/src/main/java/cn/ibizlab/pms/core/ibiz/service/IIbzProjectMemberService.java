@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IIbzProjectMemberService extends IService<IbzProjectMember> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "项目相关成员";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "ibzprojectmembers";
-
     boolean create(IbzProjectMember et);
     void createBatch(List<IbzProjectMember> list);
     boolean update(IbzProjectMember et);
+    boolean sysUpdate(IbzProjectMember et);
     void updateBatch(List<IbzProjectMember> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     IbzProjectMember get(Long key);
+    IbzProjectMember sysGet(Long key);
     IbzProjectMember getDraft(IbzProjectMember et);
     boolean checkKey(IbzProjectMember et);
     boolean save(IbzProjectMember et);

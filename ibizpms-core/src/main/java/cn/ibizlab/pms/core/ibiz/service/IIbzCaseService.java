@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IIbzCaseService extends IService<IbzCase> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "测试用例";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "ibzcases";
-
     boolean create(IbzCase et);
     void createBatch(List<IbzCase> list);
     boolean update(IbzCase et);
+    boolean sysUpdate(IbzCase et);
     void updateBatch(List<IbzCase> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     IbzCase get(Long key);
+    IbzCase sysGet(Long key);
     IbzCase getDraft(IbzCase et);
     boolean checkKey(IbzCase et);
     boolean save(IbzCase et);

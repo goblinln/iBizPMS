@@ -30,16 +30,10 @@ public class IbzAgentSearchContext extends QueryWrapperContext<IbzAgent> {
 	private String n_createmanname_eq;//[创建人姓名]
 	public void setN_createmanname_eq(String n_createmanname_eq) {
         this.n_createmanname_eq = n_createmanname_eq;
-        if(!ObjectUtils.isEmpty(this.n_createmanname_eq)){
-            this.getSearchCond().eq("`createmanname`", n_createmanname_eq);
-        }
     }
 	private String n_ibz_agentname_like;//[代理名称]
 	public void setN_ibz_agentname_like(String n_ibz_agentname_like) {
         this.n_ibz_agentname_like = n_ibz_agentname_like;
-        if(!ObjectUtils.isEmpty(this.n_ibz_agentname_like)){
-            this.getSearchCond().like("`ibz_agentname`", n_ibz_agentname_like);
-        }
     }
 
     /**
@@ -51,7 +45,7 @@ public class IbzAgentSearchContext extends QueryWrapperContext<IbzAgent> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("`ibz_agentname`", query)
+                     wrapper.like("ibz_agentname", query)
             );
 		 }
 	}

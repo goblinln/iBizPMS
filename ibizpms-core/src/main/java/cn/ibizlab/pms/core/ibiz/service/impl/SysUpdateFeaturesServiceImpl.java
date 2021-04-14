@@ -92,6 +92,16 @@ public class SysUpdateFeaturesServiceImpl extends ServiceImpl<SysUpdateFeaturesM
 
     @Override
     @Transactional
+    public boolean sysUpdate(SysUpdateFeatures et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("sys_update_featuresid", et.getSysupdatefeaturesid()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getSysupdatefeaturesid()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(String key) {
         boolean result = removeById(key);
         return result ;
@@ -107,11 +117,24 @@ public class SysUpdateFeaturesServiceImpl extends ServiceImpl<SysUpdateFeaturesM
     @Transactional
     public SysUpdateFeatures get(String key) {
         SysUpdateFeatures et = getById(key);
-        if(et == null){
-            et = new SysUpdateFeatures();
-            et.setSysupdatefeaturesid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public SysUpdateFeatures sysGet(String key) {
+        SysUpdateFeatures et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         return et;
     }
@@ -291,5 +314,6 @@ public class SysUpdateFeaturesServiceImpl extends ServiceImpl<SysUpdateFeaturesM
         return et;
     }
 }
+
 
 

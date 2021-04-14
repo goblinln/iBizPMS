@@ -49,7 +49,7 @@ public class User extends EntityMP implements Serializable {
     /**
      * 密码
      */
-    @TableField(value = "`password`")
+    @TableField(value = "password")
     @JSONField(name = "password")
     @JsonProperty("password")
     @ApiModelProperty("密码")
@@ -57,7 +57,7 @@ public class User extends EntityMP implements Serializable {
     /**
      * 通讯地址
      */
-    @TableField(value = "`address`")
+    @TableField(value = "address")
     @JSONField(name = "address")
     @JsonProperty("address")
     @ApiModelProperty("通讯地址")
@@ -65,7 +65,7 @@ public class User extends EntityMP implements Serializable {
     /**
      * 微信
      */
-    @TableField(value = "`weixin`")
+    @TableField(value = "weixin")
     @JSONField(name = "weixin")
     @JsonProperty("weixin")
     @ApiModelProperty("微信")
@@ -73,7 +73,7 @@ public class User extends EntityMP implements Serializable {
     /**
      * 钉钉
      */
-    @TableField(value = "`dingding`")
+    @TableField(value = "dingding")
     @JSONField(name = "dingding")
     @JsonProperty("dingding")
     @ApiModelProperty("钉钉")
@@ -82,7 +82,7 @@ public class User extends EntityMP implements Serializable {
      * fails
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`fails`")
+    @TableField(value = "fails")
     @JSONField(name = "fails")
     @JsonProperty("fails")
     @ApiModelProperty("fails")
@@ -90,7 +90,7 @@ public class User extends EntityMP implements Serializable {
     /**
      * slack
      */
-    @TableField(value = "`slack`")
+    @TableField(value = "slack")
     @JSONField(name = "slack")
     @JsonProperty("slack")
     @ApiModelProperty("slack")
@@ -98,7 +98,7 @@ public class User extends EntityMP implements Serializable {
     /**
      * ranzhi
      */
-    @TableField(value = "`ranzhi`")
+    @TableField(value = "ranzhi")
     @JSONField(name = "ranzhi")
     @JsonProperty("ranzhi")
     @ApiModelProperty("ranzhi")
@@ -106,7 +106,7 @@ public class User extends EntityMP implements Serializable {
     /**
      * 账户
      */
-    @TableField(value = "`account`")
+    @TableField(value = "account")
     @JSONField(name = "account")
     @JsonProperty("account")
     @ApiModelProperty("账户")
@@ -115,7 +115,7 @@ public class User extends EntityMP implements Serializable {
      * locked
      */
     @DEField(defaultValue = "0000-00-00 00:00:00")
-    @TableField(value = "`locked`")
+    @TableField(value = "locked")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "locked", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("locked")
@@ -124,7 +124,7 @@ public class User extends EntityMP implements Serializable {
     /**
      * avatar
      */
-    @TableField(value = "`avatar`")
+    @TableField(value = "avatar")
     @JSONField(name = "avatar")
     @JsonProperty("avatar")
     @ApiModelProperty("avatar")
@@ -133,7 +133,7 @@ public class User extends EntityMP implements Serializable {
      * scoreLevel
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`scorelevel`")
+    @TableField(value = "scorelevel")
     @JSONField(name = "scorelevel")
     @JsonProperty("scorelevel")
     @ApiModelProperty("scoreLevel")
@@ -141,7 +141,7 @@ public class User extends EntityMP implements Serializable {
     /**
      * 真实姓名
      */
-    @TableField(value = "`realname`")
+    @TableField(value = "realname")
     @JSONField(name = "realname")
     @JsonProperty("realname")
     @ApiModelProperty("真实姓名")
@@ -149,7 +149,7 @@ public class User extends EntityMP implements Serializable {
     /**
      * zipcode
      */
-    @TableField(value = "`zipcode`")
+    @TableField(value = "zipcode")
     @JSONField(name = "zipcode")
     @JsonProperty("zipcode")
     @ApiModelProperty("zipcode")
@@ -158,7 +158,7 @@ public class User extends EntityMP implements Serializable {
      * 所属部门
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`dept`")
+    @TableField(value = "dept")
     @JSONField(name = "dept")
     @JsonProperty("dept")
     @ApiModelProperty("所属部门")
@@ -166,7 +166,7 @@ public class User extends EntityMP implements Serializable {
     /**
      * 源代码账户
      */
-    @TableField(value = "`commiter`")
+    @TableField(value = "commiter")
     @JSONField(name = "commiter")
     @JsonProperty("commiter")
     @ApiModelProperty("源代码账户")
@@ -174,7 +174,7 @@ public class User extends EntityMP implements Serializable {
     /**
      * 职位
      */
-    @TableField(value = "`role`")
+    @TableField(value = "role")
     @JSONField(name = "role")
     @JsonProperty("role")
     @ApiModelProperty("职位")
@@ -184,7 +184,7 @@ public class User extends EntityMP implements Serializable {
      */
     @DEField(defaultValue = "0", preType = DEPredefinedFieldType.LOGICVALID, logicval = "0", logicdelval = "1")
     @TableLogic(value = "0", delval = "1")
-    @TableField(value = "`deleted`")
+    @TableField(value = "deleted")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
     @ApiModelProperty("逻辑删除标志")
@@ -193,7 +193,7 @@ public class User extends EntityMP implements Serializable {
      * 最后登录
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`last`")
+    @TableField(value = "last")
     @JSONField(name = "last")
     @JsonProperty("last")
     @ApiModelProperty("最后登录")
@@ -201,7 +201,7 @@ public class User extends EntityMP implements Serializable {
     /**
      * clientStatus
      */
-    @TableField(value = "`clientstatus`")
+    @TableField(value = "clientstatus")
     @JSONField(name = "clientstatus")
     @JsonProperty("clientstatus")
     @ApiModelProperty("clientStatus")
@@ -209,7 +209,7 @@ public class User extends EntityMP implements Serializable {
     /**
      * skype
      */
-    @TableField(value = "`skype`")
+    @TableField(value = "skype")
     @JSONField(name = "skype")
     @JsonProperty("skype")
     @ApiModelProperty("skype")
@@ -217,7 +217,7 @@ public class User extends EntityMP implements Serializable {
     /**
      * whatsapp
      */
-    @TableField(value = "`whatsapp`")
+    @TableField(value = "whatsapp")
     @JSONField(name = "whatsapp")
     @JsonProperty("whatsapp")
     @ApiModelProperty("whatsapp")
@@ -226,7 +226,7 @@ public class User extends EntityMP implements Serializable {
      * score
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`score`")
+    @TableField(value = "score")
     @JSONField(name = "score")
     @JsonProperty("score")
     @ApiModelProperty("score")
@@ -234,7 +234,7 @@ public class User extends EntityMP implements Serializable {
     /**
      * 性别
      */
-    @TableField(value = "`gender`")
+    @TableField(value = "gender")
     @JSONField(name = "gender")
     @JsonProperty("gender")
     @ApiModelProperty("性别")
@@ -242,7 +242,7 @@ public class User extends EntityMP implements Serializable {
     /**
      * 手机
      */
-    @TableField(value = "`mobile`")
+    @TableField(value = "mobile")
     @JSONField(name = "mobile")
     @JsonProperty("mobile")
     @ApiModelProperty("手机")
@@ -251,7 +251,7 @@ public class User extends EntityMP implements Serializable {
      * clientLang
      */
     @DEField(defaultValue = "zh-cn")
-    @TableField(value = "`clientlang`")
+    @TableField(value = "clientlang")
     @JSONField(name = "clientlang")
     @JsonProperty("clientlang")
     @ApiModelProperty("clientLang")
@@ -260,7 +260,7 @@ public class User extends EntityMP implements Serializable {
      * 访问次数
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`visits`")
+    @TableField(value = "visits")
     @JSONField(name = "visits")
     @JsonProperty("visits")
     @ApiModelProperty("访问次数")
@@ -269,7 +269,7 @@ public class User extends EntityMP implements Serializable {
      * 入职日期
      */
     @DEField(defaultValue = "0000-00-00")
-    @TableField(value = "`join`")
+    @TableField(value = "join")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "join", format = "yyyy-MM-dd")
     @JsonProperty("join")
@@ -278,7 +278,7 @@ public class User extends EntityMP implements Serializable {
     /**
      * 邮箱
      */
-    @TableField(value = "`email`")
+    @TableField(value = "email")
     @JSONField(name = "email")
     @JsonProperty("email")
     @ApiModelProperty("邮箱")
@@ -286,7 +286,7 @@ public class User extends EntityMP implements Serializable {
     /**
      * ip
      */
-    @TableField(value = "`ip`")
+    @TableField(value = "ip")
     @JSONField(name = "ip")
     @JsonProperty("ip")
     @ApiModelProperty("ip")
@@ -295,7 +295,7 @@ public class User extends EntityMP implements Serializable {
      * birthday
      */
     @DEField(defaultValue = "0000-00-00")
-    @TableField(value = "`birthday`")
+    @TableField(value = "birthday")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "birthday", format = "yyyy-MM-dd")
     @JsonProperty("birthday")
@@ -304,7 +304,7 @@ public class User extends EntityMP implements Serializable {
     /**
      * nickname
      */
-    @TableField(value = "`nickname`")
+    @TableField(value = "nickname")
     @JSONField(name = "nickname")
     @JsonProperty("nickname")
     @ApiModelProperty("nickname")
@@ -312,7 +312,7 @@ public class User extends EntityMP implements Serializable {
     /**
      * 电话
      */
-    @TableField(value = "`phone`")
+    @TableField(value = "phone")
     @JSONField(name = "phone")
     @JsonProperty("phone")
     @ApiModelProperty("电话")
@@ -329,7 +329,7 @@ public class User extends EntityMP implements Serializable {
     /**
      * QQ
      */
-    @TableField(value = "`qq`")
+    @TableField(value = "qq")
     @JSONField(name = "qq")
     @JsonProperty("qq")
     @ApiModelProperty("QQ")

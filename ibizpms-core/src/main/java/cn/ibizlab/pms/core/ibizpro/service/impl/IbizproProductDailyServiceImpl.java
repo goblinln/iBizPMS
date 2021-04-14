@@ -92,6 +92,16 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
 
     @Override
     @Transactional
+    public boolean sysUpdate(IbizproProductDaily et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibizpro_productdailyid", et.getIbizproproductdailyid()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getIbizproproductdailyid()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(Long key) {
         boolean result = removeById(key);
         return result ;
@@ -107,11 +117,24 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
     @Transactional
     public IbizproProductDaily get(Long key) {
         IbizproProductDaily et = getById(key);
-        if(et == null){
-            et = new IbizproProductDaily();
-            et.setIbizproproductdailyid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public IbizproProductDaily sysGet(Long key) {
+        IbizproProductDaily et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -132,7 +155,6 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean manualCreateDailyBatch(List<IbizproProductDaily> etList) {
@@ -210,7 +232,6 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean statsProductDailyBatch(List<IbizproProductDaily> etList) {
@@ -327,5 +348,6 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
         return et;
     }
 }
+
 
 

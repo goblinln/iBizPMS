@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ILangService extends IService<Lang> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "lang";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "langs";
-
     boolean create(Lang et);
     void createBatch(List<Lang> list);
     boolean update(Lang et);
+    boolean sysUpdate(Lang et);
     void updateBatch(List<Lang> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     Lang get(Long key);
+    Lang sysGet(Long key);
     Lang getDraft(Lang et);
     boolean checkKey(Lang et);
     boolean save(Lang et);

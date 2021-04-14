@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ICaseStatsService extends IService<CaseStats> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "测试用例统计";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "casestats";
-
     boolean create(CaseStats et);
     void createBatch(List<CaseStats> list);
     boolean update(CaseStats et);
+    boolean sysUpdate(CaseStats et);
     void updateBatch(List<CaseStats> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     CaseStats get(Long key);
+    CaseStats sysGet(Long key);
     CaseStats getDraft(CaseStats et);
     boolean checkKey(CaseStats et);
     boolean save(CaseStats et);

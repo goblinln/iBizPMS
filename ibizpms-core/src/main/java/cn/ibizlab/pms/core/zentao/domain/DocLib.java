@@ -49,7 +49,7 @@ public class DocLib extends EntityMP implements Serializable {
     /**
      * 文档类型
      */
-    @TableField(value = "`type`")
+    @TableField(value = "type")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("文档类型")
@@ -74,7 +74,7 @@ public class DocLib extends EntityMP implements Serializable {
      * 收藏者
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`collector`")
+    @TableField(value = "collector")
     @JSONField(name = "collector")
     @JsonProperty("collector")
     @ApiModelProperty("收藏者")
@@ -83,7 +83,7 @@ public class DocLib extends EntityMP implements Serializable {
      * 部门标识
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "`mdeptid`")
+    @TableField(value = "mdeptid")
     @JSONField(name = "mdeptid")
     @JsonProperty("mdeptid")
     @ApiModelProperty("部门标识")
@@ -92,7 +92,7 @@ public class DocLib extends EntityMP implements Serializable {
      * 组织标识
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "`orgid`")
+    @TableField(value = "orgid")
     @JSONField(name = "orgid")
     @JsonProperty("orgid")
     @ApiModelProperty("组织标识")
@@ -101,7 +101,7 @@ public class DocLib extends EntityMP implements Serializable {
      * 权限
      */
     @DEField(defaultValue = "default")
-    @TableField(value = "`acl`")
+    @TableField(value = "acl")
     @JSONField(name = "acl")
     @JsonProperty("acl")
     @ApiModelProperty("权限")
@@ -119,7 +119,7 @@ public class DocLib extends EntityMP implements Serializable {
      */
     @DEField(defaultValue = "0", preType = DEPredefinedFieldType.LOGICVALID, logicval = "0", logicdelval = "1")
     @TableLogic(value = "0", delval = "1")
-    @TableField(value = "`deleted`")
+    @TableField(value = "deleted")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
     @ApiModelProperty("已删除")
@@ -128,7 +128,7 @@ public class DocLib extends EntityMP implements Serializable {
      * 分组
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`groups`")
+    @TableField(value = "groups")
     @JSONField(name = "groups")
     @JsonProperty("groups")
     @ApiModelProperty("分组")
@@ -154,7 +154,7 @@ public class DocLib extends EntityMP implements Serializable {
      * 用户
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`users`")
+    @TableField(value = "users")
     @JSONField(name = "users")
     @JsonProperty("users")
     @ApiModelProperty("用户")
@@ -163,7 +163,7 @@ public class DocLib extends EntityMP implements Serializable {
      * 是否是主库
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`main`")
+    @TableField(value = "main")
     @JSONField(name = "main")
     @JsonProperty("main")
     @ApiModelProperty("是否是主库")
@@ -171,7 +171,7 @@ public class DocLib extends EntityMP implements Serializable {
     /**
      * 文档库名称
      */
-    @TableField(value = "`name`")
+    @TableField(value = "name")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("文档库名称")
@@ -197,7 +197,7 @@ public class DocLib extends EntityMP implements Serializable {
      * 排序
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`order`")
+    @TableField(value = "order")
     @JSONField(name = "order")
     @JsonProperty("order")
     @ApiModelProperty("排序")
@@ -222,7 +222,7 @@ public class DocLib extends EntityMP implements Serializable {
      * 项目库
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`project`")
+    @TableField(value = "project")
     @JSONField(name = "project")
     @JsonProperty("project")
     @ApiModelProperty("项目库")
@@ -231,7 +231,7 @@ public class DocLib extends EntityMP implements Serializable {
      * 产品库
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`product`")
+    @TableField(value = "product")
     @JSONField(name = "product")
     @JsonProperty("product")
     @ApiModelProperty("产品库")
@@ -240,7 +240,7 @@ public class DocLib extends EntityMP implements Serializable {
      * 由谁创建
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "`createby`")
+    @TableField(value = "createby")
     @JSONField(name = "createby")
     @JsonProperty("createby")
     @ApiModelProperty("由谁创建")
@@ -249,7 +249,7 @@ public class DocLib extends EntityMP implements Serializable {
      * 由谁更新
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "`updateby`")
+    @TableField(value = "updateby")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")
     @ApiModelProperty("由谁更新")

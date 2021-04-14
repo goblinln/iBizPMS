@@ -23,13 +23,6 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8081
-        volumeMounts:
-        - name: data
-          mountPath: /app/file
-      volumes:      
-      - name: data
-        persistentVolumeClaim:
-          claimName: demo-date-pvc-nfs
 
 ---
 apiVersion: v1

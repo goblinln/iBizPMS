@@ -2,16 +2,34 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper	namespace="cn.ibizlab.pms.core.zentao.mapper.RepoBranchMapper">
+	
+	<!-- 无视图模式 -->
+	<sql id="select" databaseId="mysql">
+        <![CDATA[ SELECT t1.`BRANCH`, concat(t1.`REPO`,'__',t1.`REVISION`,'__',t1.`BRANCH`) AS `ID`, t1.`REPO`, t1.`REVISION` FROM `zt_repobranch` t1   ]]>
+    </sql>
+
+	
+	<!-- 搜索条件 -->
+	<sql id="searchMode" databaseId="mysql">
+		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
+		AND ${ew.sqlSegment}
+		</if>
+	</sql>
+
 
     <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
 	<select id="selectById"  resultMap="RepoBranchResultMap" databaseId="mysql">
-        <![CDATA[select t1.* from (SELECT t1.`BRANCH`, concat(t1.`REPO`,'__',t1.`REVISION`,'__',t1.`BRANCH`) AS `ID`, t1.`REPO`, t1.`REVISION` FROM `zt_repobranch` t1  ) t1 where id=#{id}]]>
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND T1.ID = #{id} ]]>
+		</trim>
     </select>
+
 
     <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
     <resultMap id="RepoBranchResultMap" type="cn.ibizlab.pms.core.zentao.domain.RepoBranch" autoMapping="true">
-
-
+            
+		
     </resultMap>
 
 
@@ -20,19 +38,23 @@
          select t1.* from (
                 <include refid="Default" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BRANCH`, concat(t1.`REPO`,'__',t1.`REVISION`,'__',t1.`BRANCH`) AS `ID`, t1.`REPO`, t1.`REVISION` FROM `zt_repobranch` t1  
-			]]>
+		<![CDATA[ SELECT t1.`BRANCH`, concat(t1.`REPO`,'__',t1.`REVISION`,'__',t1.`BRANCH`) AS `ID`, t1.`REPO`, t1.`REVISION` FROM `zt_repobranch` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BRANCH`, concat(t1.`REPO`,'__',t1.`REVISION`,'__',t1.`BRANCH`) AS `ID`, t1.`REPO`, t1.`REVISION` FROM `zt_repobranch` t1  
-			]]>
+		<![CDATA[ SELECT t1.`BRANCH`, concat(t1.`REPO`,'__',t1.`REVISION`,'__',t1.`BRANCH`) AS `ID`, t1.`REPO`, t1.`REVISION` FROM `zt_repobranch` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
 </mapper>
 

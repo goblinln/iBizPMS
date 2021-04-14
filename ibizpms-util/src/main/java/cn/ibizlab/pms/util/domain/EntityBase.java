@@ -15,7 +15,7 @@ import java.lang.reflect.Field;
 import org.springframework.util.StringUtils;
 import java.util.*;
 
-public class EntityBase implements Serializable {
+public class EntityBase implements Serializable,net.ibizsys.runtime.util.IEntity {
 
     @JsonIgnore
     @JSONField(serialize = false)
@@ -130,4 +130,25 @@ public class EntityBase implements Serializable {
     public void reset(String field){
 
     }
+
+    @Override
+    public boolean contains(String s) {
+        Object o = this.get(s);
+        if(o!=null||this.getFocusNull().contains(s)){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void resetAll() {
+        extensionparams.clear();
+        getFocusNull().clear();
+    }
+    
+    @Override
+    public void copyTo(net.ibizsys.runtime.util.IEntity iEntity) {
+
+    }
+
 }

@@ -25,28 +25,23 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IUserYearWorkStatsService extends IService<UserYearWorkStats> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "用户年度工作内容统计";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "useryearworkstats";
-
     boolean create(UserYearWorkStats et);
     void createBatch(List<UserYearWorkStats> list);
     boolean update(UserYearWorkStats et);
+    boolean sysUpdate(UserYearWorkStats et);
     void updateBatch(List<UserYearWorkStats> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     UserYearWorkStats get(Long key);
+    UserYearWorkStats sysGet(Long key);
     UserYearWorkStats getDraft(UserYearWorkStats et);
     boolean checkKey(UserYearWorkStats et);
     UserYearWorkStats getDevInfomation(UserYearWorkStats et);
+    boolean getDevInfomationBatch(List<UserYearWorkStats> etList);
     UserYearWorkStats getPoInfomation(UserYearWorkStats et);
+    boolean getPoInfomationBatch(List<UserYearWorkStats> etList);
     UserYearWorkStats getQaInfomation(UserYearWorkStats et);
+    boolean getQaInfomationBatch(List<UserYearWorkStats> etList);
     UserYearWorkStats getUserYearAction(UserYearWorkStats et);
     boolean getUserYearActionBatch(List<UserYearWorkStats> etList);
     boolean save(UserYearWorkStats et);

@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IUserGroupService extends IService<UserGroup> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "用户组";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "usergroups";
-
     boolean create(UserGroup et);
     void createBatch(List<UserGroup> list);
     boolean update(UserGroup et);
+    boolean sysUpdate(UserGroup et);
     void updateBatch(List<UserGroup> list);
     boolean remove(String key);
     void removeBatch(Collection<String> idList);
     UserGroup get(String key);
+    UserGroup sysGet(String key);
     UserGroup getDraft(UserGroup et);
     boolean checkKey(UserGroup et);
     boolean save(UserGroup et);

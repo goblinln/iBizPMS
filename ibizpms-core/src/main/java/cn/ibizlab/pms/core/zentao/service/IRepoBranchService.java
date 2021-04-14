@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IRepoBranchService extends IService<RepoBranch> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "repobranch";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "repobranches";
-
     boolean create(RepoBranch et);
     void createBatch(List<RepoBranch> list);
     boolean update(RepoBranch et);
+    boolean sysUpdate(RepoBranch et);
     void updateBatch(List<RepoBranch> list);
     boolean remove(String key);
     void removeBatch(Collection<String> idList);
     RepoBranch get(String key);
+    RepoBranch sysGet(String key);
     RepoBranch getDraft(RepoBranch et);
     boolean checkKey(RepoBranch et);
     boolean save(RepoBranch et);

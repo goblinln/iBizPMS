@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IIbzWeeklyService extends IService<IbzWeekly> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "周报";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "ibzweeklies";
-
     boolean create(IbzWeekly et);
     void createBatch(List<IbzWeekly> list);
     boolean update(IbzWeekly et);
+    boolean sysUpdate(IbzWeekly et);
     void updateBatch(List<IbzWeekly> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     IbzWeekly get(Long key);
+    IbzWeekly sysGet(Long key);
     IbzWeekly getDraft(IbzWeekly et);
     boolean checkKey(IbzWeekly et);
     IbzWeekly createEveryWeekReport(IbzWeekly et);

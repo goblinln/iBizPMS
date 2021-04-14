@@ -23,14 +23,14 @@ public class IBIZProMessageFallback implements IBIZProMessageFeignClient {
         return null;
     }
 
-    public IBIZProMessage create(IBIZProMessage et) {
+    public IBIZProMessage create(IBIZProMessage ibizpromessage) {
         return null;
     }
     public Boolean createBatch(List<IBIZProMessage> ibizpromessages) {
         return false;
     }
 
-    public IBIZProMessage update(String ibizpromessageid, IBIZProMessage et) {
+    public IBIZProMessage update(String ibizpromessageid, IBIZProMessage ibizpromessage) {
         return null;
     }
     public Boolean updateBatch(List<IBIZProMessage> ibizpromessages) {
@@ -50,41 +50,37 @@ public class IBIZProMessageFallback implements IBIZProMessageFeignClient {
     }
 
 
-    public String getByCodeName(String codeName) {
-            return null;
-    }
-
-
     public IBIZProMessage getDraft(IBIZProMessage entity){
         return null;
     }
 
 
 
-    public Boolean checkKey(IBIZProMessage et) {
+    public Boolean checkKey(IBIZProMessage ibizpromessage) {
         return false;
     }
 
 
-    public IBIZProMessage markDone( String ibizpromessageid, IBIZProMessage et) {
+    public IBIZProMessage markDone( String ibizpromessageid, IBIZProMessage ibizpromessage) {
         return null;
     }
 
-    public IBIZProMessage markRead( String ibizpromessageid, IBIZProMessage et) {
+    public IBIZProMessage markRead( String ibizpromessageid, IBIZProMessage ibizpromessage) {
         return null;
     }
 
-    public Object saveEntity(IBIZProMessage et) {
+    public Object saveEntity(IBIZProMessage ibizpromessage) {
         return null;
     }
-    public Boolean save(IBIZProMessage et) {
+
+    public Boolean save(IBIZProMessage ibizpromessage) {
         return false;
     }
     public Boolean saveBatch(List<IBIZProMessage> ibizpromessages) {
         return false;
     }
 
-    public IBIZProMessage send( String ibizpromessageid, IBIZProMessage et) {
+    public IBIZProMessage send( String ibizpromessageid, IBIZProMessage ibizpromessage) {
         return null;
     }
 

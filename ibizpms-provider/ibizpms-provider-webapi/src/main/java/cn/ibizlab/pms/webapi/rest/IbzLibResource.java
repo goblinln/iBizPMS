@@ -12,6 +12,7 @@ import javax.servlet.ServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.PageRequest;
@@ -33,6 +34,7 @@ import cn.ibizlab.pms.core.ibiz.domain.IbzLib;
 import cn.ibizlab.pms.core.ibiz.service.IIbzLibService;
 import cn.ibizlab.pms.core.ibiz.filter.IbzLibSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.runtime.IbzLibRuntime;
 
 @Slf4j
 @Api(tags = {"用例库" })
@@ -44,20 +46,26 @@ public class IbzLibResource {
     public IIbzLibService ibzlibService;
 
     @Autowired
+    public IbzLibRuntime ibzlibRuntime;
+
+    @Autowired
     @Lazy
     public IbzLibMapping ibzlibMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLib-Create-all')")
+    @PreAuthorize("@IbzLibRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建用例库", tags = {"用例库" },  notes = "新建用例库")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs")
+    @Transactional
     public ResponseEntity<IbzLibDTO> create(@Validated @RequestBody IbzLibDTO ibzlibdto) {
         IbzLib domain = ibzlibMapping.toDomain(ibzlibdto);
 		ibzlibService.create(domain);
+        if(!ibzlibRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         IbzLibDTO dto = ibzlibMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLib-Create-all')")
+    @PreAuthorize("@IbzLibRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量新建用例库", tags = {"用例库" },  notes = "批量新建用例库")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzLibDTO> ibzlibdtos) {
@@ -66,18 +74,21 @@ public class IbzLibResource {
     }
 
     @VersionCheck(entity = "ibzlib" , versionfield = "lastediteddate")
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLib-Update-all')")
+    @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id,'UPDATE')")
     @ApiOperation(value = "更新用例库", tags = {"用例库" },  notes = "更新用例库")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzlibs/{ibzlib_id}")
+    @Transactional
     public ResponseEntity<IbzLibDTO> update(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody IbzLibDTO ibzlibdto) {
 		IbzLib domain  = ibzlibMapping.toDomain(ibzlibdto);
-        domain .setId(ibzlib_id);
+        domain.setId(ibzlib_id);
 		ibzlibService.update(domain );
+        if(!ibzlibRuntime.test(ibzlib_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
 		IbzLibDTO dto = ibzlibMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLib-Update-all')")
+    @PreAuthorize("@IbzLibRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "批量更新用例库", tags = {"用例库" },  notes = "批量更新用例库")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzlibs/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzLibDTO> ibzlibdtos) {
@@ -85,14 +96,14 @@ public class IbzLibResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLib-Remove-all')")
+    @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id,'DELETE')")
     @ApiOperation(value = "删除用例库", tags = {"用例库" },  notes = "删除用例库")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzlibs/{ibzlib_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzlib_id") Long ibzlib_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibzlibService.remove(ibzlib_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLib-Remove-all')")
+    @PreAuthorize("@IbzLibRuntime.test(#ids,'DELETE')")
     @ApiOperation(value = "批量删除用例库", tags = {"用例库" },  notes = "批量删除用例库")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzlibs/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -100,7 +111,7 @@ public class IbzLibResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLib-Get-all')")
+    @PreAuthorize("@IbzLibRuntime.test(#ibzlib_id,'READ')")
     @ApiOperation(value = "获取用例库", tags = {"用例库" },  notes = "获取用例库")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzlibs/{ibzlib_id}")
     public ResponseEntity<IbzLibDTO> get(@PathVariable("ibzlib_id") Long ibzlib_id) {
@@ -122,7 +133,6 @@ public class IbzLibResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzlibService.checkKey(ibzlibMapping.toDomain(ibzlibdto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLib-Save-all')")
     @ApiOperation(value = "保存用例库", tags = {"用例库" },  notes = "保存用例库")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/save")
     public ResponseEntity<IbzLibDTO> save(@RequestBody IbzLibDTO ibzlibdto) {
@@ -131,7 +141,6 @@ public class IbzLibResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzlibMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLib-Save-all')")
     @ApiOperation(value = "批量保存用例库", tags = {"用例库" },  notes = "批量保存用例库")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzLibDTO> ibzlibdtos) {
@@ -139,10 +148,11 @@ public class IbzLibResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLib-searchDefault-all')")
+    @PreAuthorize("@IbzLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"用例库" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/ibzlibs/fetchdefault")
 	public ResponseEntity<List<IbzLibDTO>> fetchDefault(IbzLibSearchContext context) {
+        ibzlibRuntime.addAuthorityConditions(context,"READ");
         Page<IbzLib> domains = ibzlibService.searchDefault(context) ;
         List<IbzLibDTO> list = ibzlibMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -152,10 +162,11 @@ public class IbzLibResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzLib-searchDefault-all')")
+    @PreAuthorize("@IbzLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"用例库" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/searchdefault")
 	public ResponseEntity<Page<IbzLibDTO>> searchDefault(@RequestBody IbzLibSearchContext context) {
+        ibzlibRuntime.addAuthorityConditions(context,"READ");
         Page<IbzLib> domains = ibzlibService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzlibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -169,6 +180,5 @@ public class IbzLibResource {
         ibzlibdto = ibzlibMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibzlibdto);
     }
-
 }
 

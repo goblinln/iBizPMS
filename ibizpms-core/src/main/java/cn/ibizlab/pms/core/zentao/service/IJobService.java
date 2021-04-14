@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IJobService extends IService<Job> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "job";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "jobs";
-
     boolean create(Job et);
     void createBatch(List<Job> list);
     boolean update(Job et);
+    boolean sysUpdate(Job et);
     void updateBatch(List<Job> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     Job get(Long key);
+    Job sysGet(Long key);
     Job getDraft(Job et);
     boolean checkKey(Job et);
     boolean save(Job et);

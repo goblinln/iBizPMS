@@ -12,6 +12,7 @@ import javax.servlet.ServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.PageRequest;
@@ -33,6 +34,7 @@ import cn.ibizlab.pms.core.zentao.domain.Company;
 import cn.ibizlab.pms.core.zentao.service.ICompanyService;
 import cn.ibizlab.pms.core.zentao.filter.CompanySearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.runtime.CompanyRuntime;
 
 @Slf4j
 @Api(tags = {"公司" })
@@ -44,20 +46,26 @@ public class CompanyResource {
     public ICompanyService companyService;
 
     @Autowired
+    public CompanyRuntime companyRuntime;
+
+    @Autowired
     @Lazy
     public CompanyMapping companyMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Company-Create-all')")
+    @PreAuthorize("@CompanyRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建公司", tags = {"公司" },  notes = "新建公司")
 	@RequestMapping(method = RequestMethod.POST, value = "/companies")
+    @Transactional
     public ResponseEntity<CompanyDTO> create(@Validated @RequestBody CompanyDTO companydto) {
         Company domain = companyMapping.toDomain(companydto);
 		companyService.create(domain);
+        if(!companyRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         CompanyDTO dto = companyMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Company-Create-all')")
+    @PreAuthorize("@CompanyRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量新建公司", tags = {"公司" },  notes = "批量新建公司")
 	@RequestMapping(method = RequestMethod.POST, value = "/companies/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<CompanyDTO> companydtos) {
@@ -65,18 +73,21 @@ public class CompanyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Company-Update-all')")
+    @PreAuthorize("@CompanyRuntime.test(#company_id,'UPDATE')")
     @ApiOperation(value = "更新公司", tags = {"公司" },  notes = "更新公司")
 	@RequestMapping(method = RequestMethod.PUT, value = "/companies/{company_id}")
+    @Transactional
     public ResponseEntity<CompanyDTO> update(@PathVariable("company_id") Long company_id, @RequestBody CompanyDTO companydto) {
 		Company domain  = companyMapping.toDomain(companydto);
-        domain .setId(company_id);
+        domain.setId(company_id);
 		companyService.update(domain );
+        if(!companyRuntime.test(company_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
 		CompanyDTO dto = companyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Company-Update-all')")
+    @PreAuthorize("@CompanyRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "批量更新公司", tags = {"公司" },  notes = "批量更新公司")
 	@RequestMapping(method = RequestMethod.PUT, value = "/companies/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<CompanyDTO> companydtos) {
@@ -84,14 +95,14 @@ public class CompanyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Company-Remove-all')")
+    @PreAuthorize("@CompanyRuntime.test(#company_id,'DELETE')")
     @ApiOperation(value = "删除公司", tags = {"公司" },  notes = "删除公司")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/companies/{company_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("company_id") Long company_id) {
          return ResponseEntity.status(HttpStatus.OK).body(companyService.remove(company_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Company-Remove-all')")
+    @PreAuthorize("@CompanyRuntime.test(#ids,'DELETE')")
     @ApiOperation(value = "批量删除公司", tags = {"公司" },  notes = "批量删除公司")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/companies/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +110,7 @@ public class CompanyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Company-Get-all')")
+    @PreAuthorize("@CompanyRuntime.test(#company_id,'READ')")
     @ApiOperation(value = "获取公司", tags = {"公司" },  notes = "获取公司")
 	@RequestMapping(method = RequestMethod.GET, value = "/companies/{company_id}")
     public ResponseEntity<CompanyDTO> get(@PathVariable("company_id") Long company_id) {
@@ -121,7 +132,6 @@ public class CompanyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(companyService.checkKey(companyMapping.toDomain(companydto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Company-Save-all')")
     @ApiOperation(value = "保存公司", tags = {"公司" },  notes = "保存公司")
 	@RequestMapping(method = RequestMethod.POST, value = "/companies/save")
     public ResponseEntity<CompanyDTO> save(@RequestBody CompanyDTO companydto) {
@@ -130,7 +140,6 @@ public class CompanyResource {
         return ResponseEntity.status(HttpStatus.OK).body(companyMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Company-Save-all')")
     @ApiOperation(value = "批量保存公司", tags = {"公司" },  notes = "批量保存公司")
 	@RequestMapping(method = RequestMethod.POST, value = "/companies/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<CompanyDTO> companydtos) {
@@ -138,10 +147,11 @@ public class CompanyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Company-searchDefault-all')")
+    @PreAuthorize("@CompanyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"公司" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/companies/fetchdefault")
 	public ResponseEntity<List<CompanyDTO>> fetchDefault(CompanySearchContext context) {
+        companyRuntime.addAuthorityConditions(context,"READ");
         Page<Company> domains = companyService.searchDefault(context) ;
         List<CompanyDTO> list = companyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -151,10 +161,11 @@ public class CompanyResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Company-searchDefault-all')")
+    @PreAuthorize("@CompanyRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"公司" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/companies/searchdefault")
 	public ResponseEntity<Page<CompanyDTO>> searchDefault(@RequestBody CompanySearchContext context) {
+        companyRuntime.addAuthorityConditions(context,"READ");
         Page<Company> domains = companyService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(companyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -168,6 +179,5 @@ public class CompanyResource {
         companydto = companyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(companydto);
     }
-
 }
 

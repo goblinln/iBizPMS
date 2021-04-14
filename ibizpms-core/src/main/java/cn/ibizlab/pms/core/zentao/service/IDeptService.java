@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IDeptService extends IService<Dept> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "部门";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "depts";
-
     boolean create(Dept et);
     void createBatch(List<Dept> list);
     boolean update(Dept et);
+    boolean sysUpdate(Dept et);
     void updateBatch(List<Dept> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     Dept get(Long key);
+    Dept sysGet(Long key);
     Dept getDraft(Dept et);
     boolean checkKey(Dept et);
     boolean save(Dept et);

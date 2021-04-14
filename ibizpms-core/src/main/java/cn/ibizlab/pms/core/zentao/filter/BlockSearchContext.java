@@ -30,9 +30,6 @@ public class BlockSearchContext extends QueryWrapperContext<Block> {
 	private String n_title_like;//[区块名称]
 	public void setN_title_like(String n_title_like) {
         this.n_title_like = n_title_like;
-        if(!ObjectUtils.isEmpty(this.n_title_like)){
-            this.getSearchCond().like("`title`", n_title_like);
-        }
     }
 
     /**
@@ -44,7 +41,7 @@ public class BlockSearchContext extends QueryWrapperContext<Block> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("`title`", query)
+                     wrapper.like("title", query)
             );
 		 }
 	}

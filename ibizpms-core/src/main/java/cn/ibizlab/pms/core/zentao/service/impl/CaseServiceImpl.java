@@ -121,12 +121,25 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
     @Transactional
     public Case get(Long key) {
         Case et = getById(key);
-        if(et == null){
-            et = new Case();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
             et.setCasestep(casestepService.selectByIbizcase(key));
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public Case sysGet(Long key) {
+        Case et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -145,8 +158,26 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
 
     @Override
     @Transactional
+    public boolean caseFavoriteBatch(List<Case> etList) {
+        for(Case et : etList) {
+            caseFavorite(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public Case caseNFavorite(Case et) {
          return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean caseNFavoriteBatch(List<Case> etList) {
+        for(Case et : etList) {
+            caseNFavorite(et);
+        }
+        return true;
     }
 
     @Override
@@ -189,7 +220,6 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean getByTestTaskBatch(List<Case> etList) {
@@ -205,7 +235,6 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean getTestTaskCntRunBatch(List<Case> etList) {
@@ -264,6 +293,15 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
     @Transactional
     public Case runCases(Case et) {
          return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean runCasesBatch(List<Case> etList) {
+        for(Case et : etList) {
+            runCases(et);
+        }
+        return true;
     }
 
     @Override
@@ -349,6 +387,15 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
          return et ;
     }
 
+    @Override
+    @Transactional
+    public boolean testRunCasesBatch(List<Case> etList) {
+        for(Case et : etList) {
+            testRunCases(et);
+        }
+        return true;
+    }
+
        @Override
     @Transactional
     public Case testsuitelinkCase(Case et) {
@@ -385,6 +432,15 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
          return et ;
     }
 
+    @Override
+    @Transactional
+    public boolean unlinkCasesBatch(List<Case> etList) {
+        for(Case et : etList) {
+            unlinkCases(et);
+        }
+        return true;
+    }
+
        @Override
     @Transactional
     public Case unlinkSuiteCase(Case et) {
@@ -404,6 +460,15 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
     @Transactional
     public Case unlinkSuiteCases(Case et) {
          return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean unlinkSuiteCasesBatch(List<Case> etList) {
+        for(Case et : etList) {
+            unlinkSuiteCases(et);
+        }
+        return true;
     }
 
 
@@ -788,5 +853,6 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
         return et;
     }
 }
+
 
 

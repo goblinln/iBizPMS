@@ -30,23 +30,14 @@ public class ProductSumSearchContext extends QueryWrapperContext<ProductSum> {
 	private String n_po_eq;//[产品负责人]
 	public void setN_po_eq(String n_po_eq) {
         this.n_po_eq = n_po_eq;
-        if(!ObjectUtils.isEmpty(this.n_po_eq)){
-            this.getSearchCond().eq("`po`", n_po_eq);
-        }
     }
 	private Long n_id_eq;//[主键标识]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;
-        if(!ObjectUtils.isEmpty(this.n_id_eq)){
-            this.getSearchCond().eq("`id`", n_id_eq);
-        }
     }
 	private Long n_plan_eq;//[计划]
 	public void setN_plan_eq(Long n_plan_eq) {
         this.n_plan_eq = n_plan_eq;
-        if(!ObjectUtils.isEmpty(this.n_plan_eq)){
-            this.getSearchCond().eq("`plan`", n_plan_eq);
-        }
     }
 
     /**
@@ -58,7 +49,7 @@ public class ProductSumSearchContext extends QueryWrapperContext<ProductSum> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("`name`", query)
+                     wrapper.like("name", query)
             );
 		 }
 	}

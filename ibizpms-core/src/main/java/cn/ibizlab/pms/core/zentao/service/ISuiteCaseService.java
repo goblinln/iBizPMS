@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ISuiteCaseService extends IService<SuiteCase> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "套件用例";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "suitecases";
-
     boolean create(SuiteCase et);
     void createBatch(List<SuiteCase> list);
     boolean update(SuiteCase et);
+    boolean sysUpdate(SuiteCase et);
     void updateBatch(List<SuiteCase> list);
     boolean remove(String key);
     void removeBatch(Collection<String> idList);
     SuiteCase get(String key);
+    SuiteCase sysGet(String key);
     SuiteCase getDraft(SuiteCase et);
     boolean checkKey(SuiteCase et);
     boolean save(SuiteCase et);

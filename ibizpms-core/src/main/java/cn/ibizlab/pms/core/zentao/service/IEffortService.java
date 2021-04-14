@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IEffortService extends IService<Effort> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "effort";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "efforts";
-
     boolean create(Effort et);
     void createBatch(List<Effort> list);
     boolean update(Effort et);
+    boolean sysUpdate(Effort et);
     void updateBatch(List<Effort> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     Effort get(Long key);
+    Effort sysGet(Long key);
     Effort getDraft(Effort et);
     boolean checkKey(Effort et);
     boolean save(Effort et);

@@ -12,6 +12,7 @@ import javax.servlet.ServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.PageRequest;
@@ -33,6 +34,7 @@ import cn.ibizlab.pms.core.ibizpro.domain.IbzPlanTemplet;
 import cn.ibizlab.pms.core.ibizpro.service.IIbzPlanTempletService;
 import cn.ibizlab.pms.core.ibizpro.filter.IbzPlanTempletSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibizpro.runtime.IbzPlanTempletRuntime;
 import cn.ibizlab.pms.core.ibizpro.filter.IbzPlanTempletDetailSearchContext;
 import cn.ibizlab.pms.core.ibizpro.domain.IbzPlanTempletDetail;
 import cn.ibizlab.pms.core.ibizpro.service.IIbzPlanTempletDetailService;
@@ -47,23 +49,29 @@ public class IbzPlanTempletResource {
     public IIbzPlanTempletService ibzplantempletService;
 
     @Autowired
+    public IbzPlanTempletRuntime ibzplantempletRuntime;
+
+    @Autowired
     @Lazy
     public IbzPlanTempletMapping ibzplantempletMapping;
 
     @Autowired
     private IIbzPlanTempletDetailService ibzplantempletdetailService;
 
-    @PreAuthorize("hasPermission(this.ibzplantempletMapping.toDomain(#ibzplantempletdto),'iBizPMS-IbzPlanTemplet-Create')")
+    @PreAuthorize("@IbzPlanTempletRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建计划模板", tags = {"计划模板" },  notes = "新建计划模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzplantemplets")
+    @Transactional
     public ResponseEntity<IbzPlanTempletDTO> create(@Validated @RequestBody IbzPlanTempletDTO ibzplantempletdto) {
         IbzPlanTemplet domain = ibzplantempletMapping.toDomain(ibzplantempletdto);
 		ibzplantempletService.create(domain);
+        if(!ibzplantempletRuntime.test(domain.getIbzplantempletid(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         IbzPlanTempletDTO dto = ibzplantempletMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.ibzplantempletMapping.toDomain(#ibzplantempletdtos),'iBizPMS-IbzPlanTemplet-Create')")
+    @PreAuthorize("@IbzPlanTempletRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量新建计划模板", tags = {"计划模板" },  notes = "批量新建计划模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzplantemplets/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzPlanTempletDTO> ibzplantempletdtos) {
@@ -72,18 +80,21 @@ public class IbzPlanTempletResource {
     }
 
     @VersionCheck(entity = "ibzplantemplet" , versionfield = "updatedate")
-    @PreAuthorize("hasPermission(this.ibzplantempletService.get(#ibzplantemplet_id),'iBizPMS-IbzPlanTemplet-Update')")
+    @PreAuthorize("@IbzPlanTempletRuntime.test(#ibzplantemplet_id,'UPDATE')")
     @ApiOperation(value = "更新计划模板", tags = {"计划模板" },  notes = "更新计划模板")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzplantemplets/{ibzplantemplet_id}")
+    @Transactional
     public ResponseEntity<IbzPlanTempletDTO> update(@PathVariable("ibzplantemplet_id") String ibzplantemplet_id, @RequestBody IbzPlanTempletDTO ibzplantempletdto) {
 		IbzPlanTemplet domain  = ibzplantempletMapping.toDomain(ibzplantempletdto);
-        domain .setIbzplantempletid(ibzplantemplet_id);
+        domain.setIbzplantempletid(ibzplantemplet_id);
 		ibzplantempletService.update(domain );
+        if(!ibzplantempletRuntime.test(ibzplantemplet_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
 		IbzPlanTempletDTO dto = ibzplantempletMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.ibzplantempletService.getIbzplantempletByEntities(this.ibzplantempletMapping.toDomain(#ibzplantempletdtos)),'iBizPMS-IbzPlanTemplet-Update')")
+    @PreAuthorize("@IbzPlanTempletRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "批量更新计划模板", tags = {"计划模板" },  notes = "批量更新计划模板")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzplantemplets/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzPlanTempletDTO> ibzplantempletdtos) {
@@ -91,14 +102,14 @@ public class IbzPlanTempletResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.ibzplantempletService.get(#ibzplantemplet_id),'iBizPMS-IbzPlanTemplet-Remove')")
+    @PreAuthorize("@IbzPlanTempletRuntime.test(#ibzplantemplet_id,'DELETE')")
     @ApiOperation(value = "删除计划模板", tags = {"计划模板" },  notes = "删除计划模板")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzplantemplets/{ibzplantemplet_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzplantemplet_id") String ibzplantemplet_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibzplantempletService.remove(ibzplantemplet_id));
     }
 
-    @PreAuthorize("hasPermission(this.ibzplantempletService.getIbzplantempletByIds(#ids),'iBizPMS-IbzPlanTemplet-Remove')")
+    @PreAuthorize("@IbzPlanTempletRuntime.test(#ids,'DELETE')")
     @ApiOperation(value = "批量删除计划模板", tags = {"计划模板" },  notes = "批量删除计划模板")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzplantemplets/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -106,7 +117,7 @@ public class IbzPlanTempletResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.ibzplantempletMapping.toDomain(returnObject.body),'iBizPMS-IbzPlanTemplet-Get')")
+    @PreAuthorize("@IbzPlanTempletRuntime.test(#ibzplantemplet_id,'READ')")
     @ApiOperation(value = "获取计划模板", tags = {"计划模板" },  notes = "获取计划模板")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzplantemplets/{ibzplantemplet_id}")
     public ResponseEntity<IbzPlanTempletDTO> get(@PathVariable("ibzplantemplet_id") String ibzplantemplet_id) {
@@ -128,7 +139,7 @@ public class IbzPlanTempletResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzplantempletService.checkKey(ibzplantempletMapping.toDomain(ibzplantempletdto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzPlanTemplet-GetPlan-all')")
+    @PreAuthorize("@IbzPlanTempletRuntime.test(#ibzplantemplet_id,'READ')")
     @ApiOperation(value = "获取计划", tags = {"计划模板" },  notes = "获取计划")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzplantemplets/{ibzplantemplet_id}/getplan")
     public ResponseEntity<IbzPlanTempletDTO> getPlan(@PathVariable("ibzplantemplet_id") String ibzplantemplet_id, @RequestBody IbzPlanTempletDTO ibzplantempletdto) {
@@ -138,7 +149,7 @@ public class IbzPlanTempletResource {
         ibzplantempletdto = ibzplantempletMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibzplantempletdto);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzPlanTemplet-GetPlan-all')")
+    @PreAuthorize("@IbzPlanTempletRuntime.test('READ')")
     @ApiOperation(value = "批量处理[获取计划]", tags = {"计划模板" },  notes = "批量处理[获取计划]")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzplantemplets/getplanbatch")
     public ResponseEntity<Boolean> getPlanBatch(@RequestBody List<IbzPlanTempletDTO> ibzplantempletdtos) {
@@ -147,7 +158,6 @@ public class IbzPlanTempletResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("hasPermission(this.ibzplantempletMapping.toDomain(#ibzplantempletdto),'iBizPMS-IbzPlanTemplet-Save')")
     @ApiOperation(value = "保存计划模板", tags = {"计划模板" },  notes = "保存计划模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzplantemplets/save")
     public ResponseEntity<IbzPlanTempletDTO> save(@RequestBody IbzPlanTempletDTO ibzplantempletdto) {
@@ -156,7 +166,6 @@ public class IbzPlanTempletResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzplantempletMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.ibzplantempletMapping.toDomain(#ibzplantempletdtos),'iBizPMS-IbzPlanTemplet-Save')")
     @ApiOperation(value = "批量保存计划模板", tags = {"计划模板" },  notes = "批量保存计划模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzplantemplets/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzPlanTempletDTO> ibzplantempletdtos) {
@@ -164,10 +173,11 @@ public class IbzPlanTempletResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzPlanTemplet-searchCurUserTemplet-all') and hasPermission(#context,'iBizPMS-IbzPlanTemplet-Get')")
+    @PreAuthorize("@IbzPlanTempletRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取CurUserTemplet", tags = {"计划模板" } ,notes = "获取CurUserTemplet")
     @RequestMapping(method= RequestMethod.GET , value="/ibzplantemplets/fetchcurusertemplet")
 	public ResponseEntity<List<IbzPlanTempletDTO>> fetchCurUserTemplet(IbzPlanTempletSearchContext context) {
+        ibzplantempletRuntime.addAuthorityConditions(context,"READ");
         Page<IbzPlanTemplet> domains = ibzplantempletService.searchCurUserTemplet(context) ;
         List<IbzPlanTempletDTO> list = ibzplantempletMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -177,19 +187,21 @@ public class IbzPlanTempletResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzPlanTemplet-searchCurUserTemplet-all') and hasPermission(#context,'iBizPMS-IbzPlanTemplet-Get')")
+    @PreAuthorize("@IbzPlanTempletRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询CurUserTemplet", tags = {"计划模板" } ,notes = "查询CurUserTemplet")
     @RequestMapping(method= RequestMethod.POST , value="/ibzplantemplets/searchcurusertemplet")
 	public ResponseEntity<Page<IbzPlanTempletDTO>> searchCurUserTemplet(@RequestBody IbzPlanTempletSearchContext context) {
+        ibzplantempletRuntime.addAuthorityConditions(context,"READ");
         Page<IbzPlanTemplet> domains = ibzplantempletService.searchCurUserTemplet(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzplantempletMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzPlanTemplet-searchDefault-all') and hasPermission(#context,'iBizPMS-IbzPlanTemplet-Get')")
+    @PreAuthorize("@IbzPlanTempletRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"计划模板" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibzplantemplets/fetchdefault")
 	public ResponseEntity<List<IbzPlanTempletDTO>> fetchDefault(IbzPlanTempletSearchContext context) {
+        ibzplantempletRuntime.addAuthorityConditions(context,"READ");
         Page<IbzPlanTemplet> domains = ibzplantempletService.searchDefault(context) ;
         List<IbzPlanTempletDTO> list = ibzplantempletMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -199,10 +211,11 @@ public class IbzPlanTempletResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzPlanTemplet-searchDefault-all') and hasPermission(#context,'iBizPMS-IbzPlanTemplet-Get')")
+    @PreAuthorize("@IbzPlanTempletRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"计划模板" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzplantemplets/searchdefault")
 	public ResponseEntity<Page<IbzPlanTempletDTO>> searchDefault(@RequestBody IbzPlanTempletSearchContext context) {
+        ibzplantempletRuntime.addAuthorityConditions(context,"READ");
         Page<IbzPlanTemplet> domains = ibzplantempletService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzplantempletMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -216,6 +229,5 @@ public class IbzPlanTempletResource {
         ibzplantempletdto = ibzplantempletMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibzplantempletdto);
     }
-
 }
 

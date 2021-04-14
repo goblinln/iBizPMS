@@ -92,6 +92,16 @@ public class IbizproProjectDailyServiceImpl extends ServiceImpl<IbizproProjectDa
 
     @Override
     @Transactional
+    public boolean sysUpdate(IbizproProjectDaily et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibizpro_projectdailyid", et.getIbizproprojectdailyid()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getIbizproprojectdailyid()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(String key) {
         boolean result = removeById(key);
         return result ;
@@ -107,11 +117,24 @@ public class IbizproProjectDailyServiceImpl extends ServiceImpl<IbizproProjectDa
     @Transactional
     public IbizproProjectDaily get(String key) {
         IbizproProjectDaily et = getById(key);
-        if(et == null){
-            et = new IbizproProjectDaily();
-            et.setIbizproprojectdailyid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public IbizproProjectDaily sysGet(String key) {
+        IbizproProjectDaily et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         return et;
     }
@@ -194,7 +217,6 @@ public class IbizproProjectDailyServiceImpl extends ServiceImpl<IbizproProjectDa
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean sumProjectDailyBatch(List<IbizproProjectDaily> etList) {
@@ -302,5 +324,6 @@ public class IbizproProjectDailyServiceImpl extends ServiceImpl<IbizproProjectDa
         return et;
     }
 }
+
 
 

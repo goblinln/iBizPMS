@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IBugStatsService extends IService<BugStats> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "Bug统计";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "bugstats";
-
     boolean create(BugStats et);
     void createBatch(List<BugStats> list);
     boolean update(BugStats et);
+    boolean sysUpdate(BugStats et);
     void updateBatch(List<BugStats> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     BugStats get(Long key);
+    BugStats sysGet(Long key);
     BugStats getDraft(BugStats et);
     boolean checkKey(BugStats et);
     boolean save(BugStats et);

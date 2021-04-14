@@ -100,11 +100,24 @@ public class TaskEstimateServiceImpl extends ServiceImpl<TaskEstimateMapper, Tas
     @Transactional
     public TaskEstimate get(Long key) {
         TaskEstimate et = getById(key);
-        if(et == null){
-            et = new TaskEstimate();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public TaskEstimate sysGet(Long key) {
+        TaskEstimate et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -125,7 +138,6 @@ public class TaskEstimateServiceImpl extends ServiceImpl<TaskEstimateMapper, Tas
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean pMEvaluationBatch(List<TaskEstimate> etList) {
@@ -383,5 +395,6 @@ public class TaskEstimateServiceImpl extends ServiceImpl<TaskEstimateMapper, Tas
         return et;
     }
 }
+
 
 

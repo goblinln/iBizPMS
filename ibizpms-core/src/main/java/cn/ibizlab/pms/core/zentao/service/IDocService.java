@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IDocService extends IService<Doc> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "文档";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "docs";
-
     boolean create(Doc et);
     void createBatch(List<Doc> list);
     boolean update(Doc et);
+    boolean sysUpdate(Doc et);
     void updateBatch(List<Doc> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     Doc get(Long key);
+    Doc sysGet(Long key);
     Doc getDraft(Doc et);
     Doc byVersionUpdateContext(Doc et);
     boolean byVersionUpdateContextBatch(List<Doc> etList);

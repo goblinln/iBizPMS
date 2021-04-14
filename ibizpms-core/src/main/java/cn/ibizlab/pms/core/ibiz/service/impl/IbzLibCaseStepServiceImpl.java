@@ -85,6 +85,16 @@ public class IbzLibCaseStepServiceImpl extends ServiceImpl<IbzLibCaseStepMapper,
 
     @Override
     @Transactional
+    public boolean sysUpdate(IbzLibCaseStep et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(Long key) {
         boolean result = removeById(key);
         return result ;
@@ -100,11 +110,24 @@ public class IbzLibCaseStepServiceImpl extends ServiceImpl<IbzLibCaseStepMapper,
     @Transactional
     public IbzLibCaseStep get(Long key) {
         IbzLibCaseStep et = getById(key);
-        if(et == null){
-            et = new IbzLibCaseStep();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public IbzLibCaseStep sysGet(Long key) {
+        IbzLibCaseStep et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -230,5 +253,6 @@ public class IbzLibCaseStepServiceImpl extends ServiceImpl<IbzLibCaseStepMapper,
         return et;
     }
 }
+
 
 

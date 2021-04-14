@@ -85,6 +85,16 @@ public class ProjectStatsServiceImpl extends ServiceImpl<ProjectStatsMapper, Pro
 
     @Override
     @Transactional
+    public boolean sysUpdate(ProjectStats et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(Long key) {
         boolean result = removeById(key);
         return result ;
@@ -100,11 +110,24 @@ public class ProjectStatsServiceImpl extends ServiceImpl<ProjectStatsMapper, Pro
     @Transactional
     public ProjectStats get(Long key) {
         ProjectStats et = getById(key);
-        if(et == null){
-            et = new ProjectStats();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public ProjectStats sysGet(Long key) {
+        ProjectStats et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -122,6 +145,15 @@ public class ProjectStatsServiceImpl extends ServiceImpl<ProjectStatsMapper, Pro
     @Transactional
     public ProjectStats projectQualitySum(ProjectStats et) {
          return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean projectQualitySumBatch(List<ProjectStats> etList) {
+        for(ProjectStats et : etList) {
+            projectQualitySum(et);
+        }
+        return true;
     }
 
     @Override
@@ -326,5 +358,6 @@ public class ProjectStatsServiceImpl extends ServiceImpl<ProjectStatsMapper, Pro
         return et;
     }
 }
+
 
 

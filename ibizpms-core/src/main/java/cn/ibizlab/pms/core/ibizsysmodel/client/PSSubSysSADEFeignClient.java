@@ -16,7 +16,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 /**
  * 实体[PSSubSysSADE] 服务对象接口
  */
-//@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSSubSysSADE", fallback = PSSubSysSADEFallback.class)
+@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSSubSysSADE", fallback = PSSubSysSADEFallback.class)
 public interface PSSubSysSADEFeignClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssubsyssades/select")
@@ -24,14 +24,14 @@ public interface PSSubSysSADEFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssubsyssades")
-    PSSubSysSADE create(@RequestBody PSSubSysSADE et);
+    PSSubSysSADE create(@RequestBody PSSubSysSADE pssubsyssade);
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssubsyssades/batch")
     Boolean createBatch(@RequestBody List<PSSubSysSADE> pssubsyssades);
 
 
     @RequestMapping(method = RequestMethod.PUT, value = "/pssubsyssades/{pssubsyssadeid}")
-    PSSubSysSADE update(@PathVariable("pssubsyssadeid") String pssubsyssadeid, @RequestBody PSSubSysSADE et);
+    PSSubSysSADE update(@PathVariable("pssubsyssadeid") String pssubsyssadeid,@RequestBody PSSubSysSADE pssubsyssade);
 
     @RequestMapping(method = RequestMethod.PUT, value = "/pssubsyssades/batch")
     Boolean updateBatch(@RequestBody List<PSSubSysSADE> pssubsyssades);
@@ -47,22 +47,19 @@ public interface PSSubSysSADEFeignClient {
     @RequestMapping(method = RequestMethod.GET, value = "/pssubsyssades/{pssubsyssadeid}")
     PSSubSysSADE get(@PathVariable("pssubsyssadeid") String pssubsyssadeid);
 
-    @RequestMapping(method = RequestMethod.GET, value = "/pssubsyssades/getbycodename/{pssubsyssadeid}")
-    String getByCodeName(@PathVariable("pssubsyssadeid") String codeName);
-
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssubsyssades/getdraft")
     PSSubSysSADE getDraft(PSSubSysSADE entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssubsyssades/checkkey")
-    Boolean checkKey(@RequestBody PSSubSysSADE et);
+    Boolean checkKey(@RequestBody PSSubSysSADE pssubsyssade);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssubsyssades/save")
-    Object saveEntity(@RequestBody PSSubSysSADE et);
+    Object saveEntity(@RequestBody PSSubSysSADE pssubsyssade);
 
-    default Boolean save(@RequestBody PSSubSysSADE et) { return saveEntity(et)!=null; }
+    default Boolean save(@RequestBody PSSubSysSADE pssubsyssade) { return saveEntity(pssubsyssade)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssubsyssades/savebatch")
     Boolean saveBatch(@RequestBody List<PSSubSysSADE> pssubsyssades);

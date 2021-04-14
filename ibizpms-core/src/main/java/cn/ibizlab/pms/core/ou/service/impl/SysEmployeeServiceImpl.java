@@ -34,9 +34,6 @@ import cn.ibizlab.pms.util.helper.DEFieldCacheMap;
 
 
 import cn.ibizlab.pms.core.ou.client.SysEmployeeFeignClient;
-import cn.ibizlab.pms.util.security.SpringContextHolder;
-import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
-import org.apache.commons.lang3.StringUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
@@ -50,7 +47,6 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
     SysEmployeeFeignClient sysEmployeeFeignClient;
 
 
-
     @Override
     public boolean create(SysEmployee et) {
         SysEmployee rt = sysEmployeeFeignClient.create(et);
@@ -60,11 +56,9 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
         return true;
     }
 
-
     public void createBatch(List<SysEmployee> list){
         sysEmployeeFeignClient.createBatch(list) ;
     }
-
 
     @Override
     public boolean update(SysEmployee et) {
@@ -76,11 +70,19 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
 
     }
 
-
     public void updateBatch(List<SysEmployee> list){
         sysEmployeeFeignClient.updateBatch(list) ;
     }
 
+    @Override
+    public boolean sysUpdate(SysEmployee et) {
+                                SysEmployee rt = sysEmployeeFeignClient.update(et.getUserid(),et);
+        if(rt==null)
+            return false;
+
+        CachedBeanCopier.copy(rt, et);
+        return true;
+    }
 
     @Override
     public boolean remove(String userid) {
@@ -88,24 +90,25 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
         return result;
     }
 
-
     public void removeBatch(Collection<String> idList){
         sysEmployeeFeignClient.removeBatch(idList);
     }
-
 
     @Override
     public SysEmployee get(String userid) {
 		SysEmployee et=sysEmployeeFeignClient.get(userid);
         if(et==null){
-            et=new SysEmployee();
-            et.setUserid(userid);
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), userid);
         }
         else{
         }
         return  et;
     }
 
+    @Override
+    public SysEmployee sysGet(String userid) {
+         return null;
+    }
 
     @Override
     public SysEmployee getDraft(SysEmployee et) {
@@ -113,13 +116,10 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
         return et;
     }
 
-
     @Override
     public boolean checkKey(SysEmployee et) {
         return sysEmployeeFeignClient.checkKey(et);
     }
-
-
     @Override
     @Transactional
     public boolean save(SysEmployee et) {
@@ -142,13 +142,10 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
             return result;
     }
 
-
-
     @Override
     public void saveBatch(List<SysEmployee> list) {
         sysEmployeeFeignClient.saveBatch(list) ;
     }
-
 
 
 
@@ -159,8 +156,6 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
         context.setN_mdeptid_eq(deptid);
         return sysEmployeeFeignClient.searchDefault(context).getContent();
     }
-
-
     @Override
     public void resetByMdeptid(String deptid) {
     }
@@ -180,7 +175,6 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
             this.removeBatch(delIds);
     }
 
-
 	@Override
     public List<SysEmployee> selectByOrgid(String orgid) {
         SysEmployeeSearchContext context=new SysEmployeeSearchContext();
@@ -188,8 +182,6 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
         context.setN_orgid_eq(orgid);
         return sysEmployeeFeignClient.searchDefault(context).getContent();
     }
-
-
     @Override
     public void resetByOrgid(String orgid) {
     }
@@ -211,7 +203,6 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
 
 
 
-
     /**
      * 查询集合 Bug用户
      */
@@ -220,7 +211,6 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
         Page<SysEmployee> sysEmployees=sysEmployeeFeignClient.searchBugUser(context);
         return sysEmployees;
     }
-
 
     /**
      * 查询集合 联系人用户
@@ -231,7 +221,6 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
         return sysEmployees;
     }
 
-
     /**
      * 查询集合 数据集
      */
@@ -240,7 +229,6 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
         Page<SysEmployee> sysEmployees=sysEmployeeFeignClient.searchDefault(context);
         return sysEmployees;
     }
-
 
     /**
      * 查询集合 项目团队管理
@@ -251,7 +239,6 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
         return sysEmployees;
     }
 
-
     /**
      * 查询集合 项目团队管理
      */
@@ -260,7 +247,6 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
         Page<SysEmployee> sysEmployees=sysEmployeeFeignClient.searchProjectTeamM(context);
         return sysEmployees;
     }
-
 
     /**
      * 查询集合 项目团队管理
@@ -271,7 +257,6 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
         return sysEmployees;
     }
 
-
     /**
      * 查询集合 项目团队成员(临时)
      */
@@ -280,7 +265,6 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
         Page<SysEmployee> sysEmployees=sysEmployeeFeignClient.searchProjectTeamTaskUserTemp(context);
         return sysEmployees;
     }
-
 
     /**
      * 查询集合 项目团队成员
@@ -291,7 +275,6 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
         return sysEmployees;
     }
 
-
     /**
      * 查询集合 项目团队成员
      */
@@ -300,7 +283,6 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
         Page<SysEmployee> sysEmployees=sysEmployeeFeignClient.searchProjectTeamUserTask(context);
         return sysEmployees;
     }
-
 
     /**
      * 查询集合 项目团队成员选择
@@ -311,7 +293,6 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
         return sysEmployees;
     }
 
-
     /**
      * 查询集合 产品团队成员选择
      */
@@ -320,7 +301,6 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
         Page<SysEmployee> sysEmployees=sysEmployeeFeignClient.searchStoryProductTeamPK(context);
         return sysEmployees;
     }
-
 
     /**
      * 查询集合 任务多人团队
@@ -331,7 +311,6 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
         return sysEmployees;
     }
 
-
     /**
      * 查询集合 数据查询2
      */
@@ -341,12 +320,12 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
         return sysEmployees;
     }
 
-
     @Override
     @Transactional
     public SysEmployee dynamicCall(String key, String action, SysEmployee et) {
         return et;
     }
 }
+
 
 

@@ -92,6 +92,16 @@ public class ProjectTeamServiceImpl extends ServiceImpl<ProjectTeamMapper, Proje
 
     @Override
     @Transactional
+    public boolean sysUpdate(ProjectTeam et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(Long key) {
         boolean result = removeById(key);
         return result ;
@@ -107,11 +117,24 @@ public class ProjectTeamServiceImpl extends ServiceImpl<ProjectTeamMapper, Proje
     @Transactional
     public ProjectTeam get(Long key) {
         ProjectTeam et = getById(key);
-        if(et == null){
-            et = new ProjectTeam();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public ProjectTeam sysGet(Long key) {
+        ProjectTeam et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -132,7 +155,6 @@ public class ProjectTeamServiceImpl extends ServiceImpl<ProjectTeamMapper, Proje
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean getUserRoleBatch(List<ProjectTeam> etList) {
@@ -338,5 +360,6 @@ public class ProjectTeamServiceImpl extends ServiceImpl<ProjectTeamMapper, Proje
         return et;
     }
 }
+
 
 

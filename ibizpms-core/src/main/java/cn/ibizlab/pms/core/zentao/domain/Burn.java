@@ -57,7 +57,7 @@ public class Burn extends EntityMP implements Serializable {
     /**
      * 日期
      */
-    @TableField(value = "`date`")
+    @TableField(value = "date")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "date", format = "yyyy-MM-dd")
     @JsonProperty("date")
@@ -75,7 +75,7 @@ public class Burn extends EntityMP implements Serializable {
     /**
      * 总计消耗
      */
-    @TableField(value = "`consumed`")
+    @TableField(value = "consumed")
     @JSONField(name = "consumed")
     @JsonProperty("consumed")
     @ApiModelProperty("总计消耗")
@@ -83,7 +83,7 @@ public class Burn extends EntityMP implements Serializable {
     /**
      * 预计剩余
      */
-    @TableField(value = "`left`")
+    @TableField(value = "left")
     @JSONField(name = "left")
     @JsonProperty("left")
     @ApiModelProperty("预计剩余")
@@ -91,7 +91,7 @@ public class Burn extends EntityMP implements Serializable {
     /**
      * 最初预计
      */
-    @TableField(value = "`estimate`")
+    @TableField(value = "estimate")
     @JSONField(name = "estimate")
     @JsonProperty("estimate")
     @ApiModelProperty("最初预计")
@@ -99,7 +99,7 @@ public class Burn extends EntityMP implements Serializable {
     /**
      * 所属项目
      */
-    @TableField(value = "`project`")
+    @TableField(value = "project")
     @JSONField(name = "project")
     @JsonProperty("project")
     @ApiModelProperty("所属项目")
@@ -107,7 +107,7 @@ public class Burn extends EntityMP implements Serializable {
     /**
      * 任务
      */
-    @TableField(value = "`task`")
+    @TableField(value = "task")
     @JSONField(name = "task")
     @JsonProperty("task")
     @ApiModelProperty("任务")
@@ -116,7 +116,7 @@ public class Burn extends EntityMP implements Serializable {
      * 由谁创建
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "`createby`")
+    @TableField(value = "createby")
     @JSONField(name = "createby")
     @JsonProperty("createby")
     @ApiModelProperty("由谁创建")
@@ -125,7 +125,7 @@ public class Burn extends EntityMP implements Serializable {
      * 由谁更新
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "`updateby`")
+    @TableField(value = "updateby")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")
     @ApiModelProperty("由谁更新")
@@ -134,7 +134,7 @@ public class Burn extends EntityMP implements Serializable {
      * 归属组织
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "`org`")
+    @TableField(value = "org")
     @JSONField(name = "org")
     @JsonProperty("org")
     @ApiModelProperty("归属组织")
@@ -143,7 +143,7 @@ public class Burn extends EntityMP implements Serializable {
      * 归属部门
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "`dept`")
+    @TableField(value = "dept")
     @JSONField(name = "dept")
     @JsonProperty("dept")
     @ApiModelProperty("归属部门")

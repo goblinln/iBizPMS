@@ -12,6 +12,7 @@ import javax.servlet.ServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.PageRequest;
@@ -33,6 +34,7 @@ import cn.ibizlab.pms.core.zentao.domain.UserTpl;
 import cn.ibizlab.pms.core.zentao.service.IUserTplService;
 import cn.ibizlab.pms.core.zentao.filter.UserTplSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.runtime.UserTplRuntime;
 
 @Slf4j
 @Api(tags = {"用户模板" })
@@ -44,20 +46,26 @@ public class UserTplResource {
     public IUserTplService usertplService;
 
     @Autowired
+    public UserTplRuntime usertplRuntime;
+
+    @Autowired
     @Lazy
     public UserTplMapping usertplMapping;
 
-    @PreAuthorize("hasPermission(this.usertplMapping.toDomain(#usertpldto),'iBizPMS-UserTpl-Create')")
+    @PreAuthorize("@UserTplRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建用户模板", tags = {"用户模板" },  notes = "新建用户模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/usertpls")
+    @Transactional
     public ResponseEntity<UserTplDTO> create(@Validated @RequestBody UserTplDTO usertpldto) {
         UserTpl domain = usertplMapping.toDomain(usertpldto);
 		usertplService.create(domain);
+        if(!usertplRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         UserTplDTO dto = usertplMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.usertplMapping.toDomain(#usertpldtos),'iBizPMS-UserTpl-Create')")
+    @PreAuthorize("@UserTplRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量新建用户模板", tags = {"用户模板" },  notes = "批量新建用户模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/usertpls/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<UserTplDTO> usertpldtos) {
@@ -65,18 +73,21 @@ public class UserTplResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.usertplService.get(#usertpl_id),'iBizPMS-UserTpl-Update')")
+    @PreAuthorize("@UserTplRuntime.test(#usertpl_id,'UPDATE')")
     @ApiOperation(value = "更新用户模板", tags = {"用户模板" },  notes = "更新用户模板")
 	@RequestMapping(method = RequestMethod.PUT, value = "/usertpls/{usertpl_id}")
+    @Transactional
     public ResponseEntity<UserTplDTO> update(@PathVariable("usertpl_id") Long usertpl_id, @RequestBody UserTplDTO usertpldto) {
 		UserTpl domain  = usertplMapping.toDomain(usertpldto);
-        domain .setId(usertpl_id);
+        domain.setId(usertpl_id);
 		usertplService.update(domain );
+        if(!usertplRuntime.test(usertpl_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
 		UserTplDTO dto = usertplMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.usertplService.getUsertplByEntities(this.usertplMapping.toDomain(#usertpldtos)),'iBizPMS-UserTpl-Update')")
+    @PreAuthorize("@UserTplRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "批量更新用户模板", tags = {"用户模板" },  notes = "批量更新用户模板")
 	@RequestMapping(method = RequestMethod.PUT, value = "/usertpls/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<UserTplDTO> usertpldtos) {
@@ -84,14 +95,14 @@ public class UserTplResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.usertplService.get(#usertpl_id),'iBizPMS-UserTpl-Remove')")
+    @PreAuthorize("@UserTplRuntime.test(#usertpl_id,'DELETE')")
     @ApiOperation(value = "删除用户模板", tags = {"用户模板" },  notes = "删除用户模板")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/usertpls/{usertpl_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("usertpl_id") Long usertpl_id) {
          return ResponseEntity.status(HttpStatus.OK).body(usertplService.remove(usertpl_id));
     }
 
-    @PreAuthorize("hasPermission(this.usertplService.getUsertplByIds(#ids),'iBizPMS-UserTpl-Remove')")
+    @PreAuthorize("@UserTplRuntime.test(#ids,'DELETE')")
     @ApiOperation(value = "批量删除用户模板", tags = {"用户模板" },  notes = "批量删除用户模板")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/usertpls/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +110,7 @@ public class UserTplResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.usertplMapping.toDomain(returnObject.body),'iBizPMS-UserTpl-Get')")
+    @PreAuthorize("@UserTplRuntime.test(#usertpl_id,'READ')")
     @ApiOperation(value = "获取用户模板", tags = {"用户模板" },  notes = "获取用户模板")
 	@RequestMapping(method = RequestMethod.GET, value = "/usertpls/{usertpl_id}")
     public ResponseEntity<UserTplDTO> get(@PathVariable("usertpl_id") Long usertpl_id) {
@@ -121,7 +132,6 @@ public class UserTplResource {
         return  ResponseEntity.status(HttpStatus.OK).body(usertplService.checkKey(usertplMapping.toDomain(usertpldto)));
     }
 
-    @PreAuthorize("hasPermission(this.usertplMapping.toDomain(#usertpldto),'iBizPMS-UserTpl-Save')")
     @ApiOperation(value = "保存用户模板", tags = {"用户模板" },  notes = "保存用户模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/usertpls/save")
     public ResponseEntity<UserTplDTO> save(@RequestBody UserTplDTO usertpldto) {
@@ -130,7 +140,6 @@ public class UserTplResource {
         return ResponseEntity.status(HttpStatus.OK).body(usertplMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.usertplMapping.toDomain(#usertpldtos),'iBizPMS-UserTpl-Save')")
     @ApiOperation(value = "批量保存用户模板", tags = {"用户模板" },  notes = "批量保存用户模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/usertpls/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<UserTplDTO> usertpldtos) {
@@ -138,10 +147,11 @@ public class UserTplResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-UserTpl-searchDefault-all') and hasPermission(#context,'iBizPMS-UserTpl-Get')")
+    @PreAuthorize("@UserTplRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"用户模板" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/usertpls/fetchdefault")
 	public ResponseEntity<List<UserTplDTO>> fetchDefault(UserTplSearchContext context) {
+        usertplRuntime.addAuthorityConditions(context,"READ");
         Page<UserTpl> domains = usertplService.searchDefault(context) ;
         List<UserTplDTO> list = usertplMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -151,19 +161,21 @@ public class UserTplResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-UserTpl-searchDefault-all') and hasPermission(#context,'iBizPMS-UserTpl-Get')")
+    @PreAuthorize("@UserTplRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"用户模板" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/usertpls/searchdefault")
 	public ResponseEntity<Page<UserTplDTO>> searchDefault(@RequestBody UserTplSearchContext context) {
+        usertplRuntime.addAuthorityConditions(context,"READ");
         Page<UserTpl> domains = usertplService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(usertplMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-UserTpl-searchMyUserTpl-all') and hasPermission(#context,'iBizPMS-UserTpl-Get')")
+    @PreAuthorize("@UserTplRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的模板", tags = {"用户模板" } ,notes = "获取我的模板")
     @RequestMapping(method= RequestMethod.GET , value="/usertpls/fetchmyusertpl")
 	public ResponseEntity<List<UserTplDTO>> fetchMyUserTpl(UserTplSearchContext context) {
+        usertplRuntime.addAuthorityConditions(context,"READ");
         Page<UserTpl> domains = usertplService.searchMyUserTpl(context) ;
         List<UserTplDTO> list = usertplMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -173,10 +185,11 @@ public class UserTplResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-UserTpl-searchMyUserTpl-all') and hasPermission(#context,'iBizPMS-UserTpl-Get')")
+    @PreAuthorize("@UserTplRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询我的模板", tags = {"用户模板" } ,notes = "查询我的模板")
     @RequestMapping(method= RequestMethod.POST , value="/usertpls/searchmyusertpl")
 	public ResponseEntity<Page<UserTplDTO>> searchMyUserTpl(@RequestBody UserTplSearchContext context) {
+        usertplRuntime.addAuthorityConditions(context,"READ");
         Page<UserTpl> domains = usertplService.searchMyUserTpl(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(usertplMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -190,6 +203,5 @@ public class UserTplResource {
         usertpldto = usertplMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(usertpldto);
     }
-
 }
 

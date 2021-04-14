@@ -89,11 +89,24 @@ public class IbzDailyServiceImpl extends ServiceImpl<IbzDailyMapper, IbzDaily> i
     @Transactional
     public IbzDaily get(Long key) {
         IbzDaily et = getById(key);
-        if(et == null){
-            et = new IbzDaily();
-            et.setIbzdailyid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public IbzDaily sysGet(Long key) {
+        IbzDaily et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -128,7 +141,6 @@ public class IbzDailyServiceImpl extends ServiceImpl<IbzDailyMapper, IbzDaily> i
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean getYeaterdayDailyPlansTaskEditBatch(List<IbzDaily> etList) {
@@ -144,7 +156,6 @@ public class IbzDailyServiceImpl extends ServiceImpl<IbzDailyMapper, IbzDaily> i
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean getYesterdayDailyPlansTaskBatch(List<IbzDaily> etList) {
@@ -175,7 +186,6 @@ public class IbzDailyServiceImpl extends ServiceImpl<IbzDailyMapper, IbzDaily> i
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean linkCompleteTaskBatch(List<IbzDaily> etList) {
@@ -402,5 +412,6 @@ public class IbzDailyServiceImpl extends ServiceImpl<IbzDailyMapper, IbzDaily> i
         return et;
     }
 }
+
 
 

@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IImClientService extends IService<ImClient> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "ImClient";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "imclients";
-
     boolean create(ImClient et);
     void createBatch(List<ImClient> list);
     boolean update(ImClient et);
+    boolean sysUpdate(ImClient et);
     void updateBatch(List<ImClient> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     ImClient get(Long key);
+    ImClient sysGet(Long key);
     ImClient getDraft(ImClient et);
     boolean checkKey(ImClient et);
     boolean save(ImClient et);

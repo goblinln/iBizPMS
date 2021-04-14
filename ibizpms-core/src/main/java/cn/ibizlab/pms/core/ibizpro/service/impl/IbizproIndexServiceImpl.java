@@ -85,6 +85,16 @@ public class IbizproIndexServiceImpl extends ServiceImpl<IbizproIndexMapper, Ibi
 
     @Override
     @Transactional
+    public boolean sysUpdate(IbizproIndex et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("indexid", et.getIndexid()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getIndexid()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(Long key) {
         boolean result = removeById(key);
         return result ;
@@ -100,11 +110,24 @@ public class IbizproIndexServiceImpl extends ServiceImpl<IbizproIndexMapper, Ibi
     @Transactional
     public IbizproIndex get(Long key) {
         IbizproIndex et = getById(key);
-        if(et == null){
-            et = new IbizproIndex();
-            et.setIndexid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public IbizproIndex sysGet(Long key) {
+        IbizproIndex et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -292,5 +315,6 @@ public class IbizproIndexServiceImpl extends ServiceImpl<IbizproIndexMapper, Ibi
         return et;
     }
 }
+
 
 

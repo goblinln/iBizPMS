@@ -12,6 +12,7 @@ import javax.servlet.ServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.PageRequest;
@@ -43,13 +44,14 @@ public class SysOrganizationResource {
     @Autowired
     public ISysOrganizationService sysorganizationService;
 
+
     @Autowired
     @Lazy
     public SysOrganizationMapping sysorganizationMapping;
 
-    @PreAuthorize("hasPermission(this.sysorganizationMapping.toDomain(#sysorganizationdto),'iBizPMS-SysOrganization-Create')")
     @ApiOperation(value = "新建单位", tags = {"单位" },  notes = "新建单位")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysorganizations")
+    @Transactional
     public ResponseEntity<SysOrganizationDTO> create(@Validated @RequestBody SysOrganizationDTO sysorganizationdto) {
         SysOrganization domain = sysorganizationMapping.toDomain(sysorganizationdto);
 		sysorganizationService.create(domain);
@@ -57,7 +59,6 @@ public class SysOrganizationResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.sysorganizationMapping.toDomain(#sysorganizationdtos),'iBizPMS-SysOrganization-Create')")
     @ApiOperation(value = "批量新建单位", tags = {"单位" },  notes = "批量新建单位")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysorganizations/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<SysOrganizationDTO> sysorganizationdtos) {
@@ -66,18 +67,17 @@ public class SysOrganizationResource {
     }
 
     @VersionCheck(entity = "sysorganization" , versionfield = "updatedate")
-    @PreAuthorize("hasPermission(this.sysorganizationService.get(#sysorganization_id),'iBizPMS-SysOrganization-Update')")
     @ApiOperation(value = "更新单位", tags = {"单位" },  notes = "更新单位")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysorganizations/{sysorganization_id}")
+    @Transactional
     public ResponseEntity<SysOrganizationDTO> update(@PathVariable("sysorganization_id") String sysorganization_id, @RequestBody SysOrganizationDTO sysorganizationdto) {
 		SysOrganization domain  = sysorganizationMapping.toDomain(sysorganizationdto);
-        domain .setOrgid(sysorganization_id);
+        domain.setOrgid(sysorganization_id);
 		sysorganizationService.update(domain );
 		SysOrganizationDTO dto = sysorganizationMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.sysorganizationService.getSysorganizationByEntities(this.sysorganizationMapping.toDomain(#sysorganizationdtos)),'iBizPMS-SysOrganization-Update')")
     @ApiOperation(value = "批量更新单位", tags = {"单位" },  notes = "批量更新单位")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysorganizations/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<SysOrganizationDTO> sysorganizationdtos) {
@@ -85,14 +85,12 @@ public class SysOrganizationResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.sysorganizationService.get(#sysorganization_id),'iBizPMS-SysOrganization-Remove')")
     @ApiOperation(value = "删除单位", tags = {"单位" },  notes = "删除单位")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysorganizations/{sysorganization_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("sysorganization_id") String sysorganization_id) {
          return ResponseEntity.status(HttpStatus.OK).body(sysorganizationService.remove(sysorganization_id));
     }
 
-    @PreAuthorize("hasPermission(this.sysorganizationService.getSysorganizationByIds(#ids),'iBizPMS-SysOrganization-Remove')")
     @ApiOperation(value = "批量删除单位", tags = {"单位" },  notes = "批量删除单位")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysorganizations/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -100,7 +98,6 @@ public class SysOrganizationResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.sysorganizationMapping.toDomain(returnObject.body),'iBizPMS-SysOrganization-Get')")
     @ApiOperation(value = "获取单位", tags = {"单位" },  notes = "获取单位")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysorganizations/{sysorganization_id}")
     public ResponseEntity<SysOrganizationDTO> get(@PathVariable("sysorganization_id") String sysorganization_id) {
@@ -122,7 +119,6 @@ public class SysOrganizationResource {
         return  ResponseEntity.status(HttpStatus.OK).body(sysorganizationService.checkKey(sysorganizationMapping.toDomain(sysorganizationdto)));
     }
 
-    @PreAuthorize("hasPermission(this.sysorganizationMapping.toDomain(#sysorganizationdto),'iBizPMS-SysOrganization-Save')")
     @ApiOperation(value = "保存单位", tags = {"单位" },  notes = "保存单位")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysorganizations/save")
     public ResponseEntity<SysOrganizationDTO> save(@RequestBody SysOrganizationDTO sysorganizationdto) {
@@ -131,7 +127,6 @@ public class SysOrganizationResource {
         return ResponseEntity.status(HttpStatus.OK).body(sysorganizationMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.sysorganizationMapping.toDomain(#sysorganizationdtos),'iBizPMS-SysOrganization-Save')")
     @ApiOperation(value = "批量保存单位", tags = {"单位" },  notes = "批量保存单位")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysorganizations/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<SysOrganizationDTO> sysorganizationdtos) {
@@ -139,7 +134,6 @@ public class SysOrganizationResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysOrganization-searchDefault-all') and hasPermission(#context,'iBizPMS-SysOrganization-Get')")
 	@ApiOperation(value = "获取数据集", tags = {"单位" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/sysorganizations/fetchdefault")
 	public ResponseEntity<List<SysOrganizationDTO>> fetchDefault(SysOrganizationSearchContext context) {
@@ -152,7 +146,6 @@ public class SysOrganizationResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SysOrganization-searchDefault-all') and hasPermission(#context,'iBizPMS-SysOrganization-Get')")
 	@ApiOperation(value = "查询数据集", tags = {"单位" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysorganizations/searchdefault")
 	public ResponseEntity<Page<SysOrganizationDTO>> searchDefault(@RequestBody SysOrganizationSearchContext context) {
@@ -169,6 +162,5 @@ public class SysOrganizationResource {
         sysorganizationdto = sysorganizationMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(sysorganizationdto);
     }
-
 }
 

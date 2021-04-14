@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ITestTaskService extends IService<TestTask> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "测试版本";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "testtasks";
-
     boolean create(TestTask et);
     void createBatch(List<TestTask> list);
     boolean update(TestTask et);
+    boolean sysUpdate(TestTask et);
     void updateBatch(List<TestTask> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     TestTask get(Long key);
+    TestTask sysGet(Long key);
     TestTask getDraft(TestTask et);
     TestTask activate(TestTask et);
     boolean activateBatch(List<TestTask> etList);
@@ -53,6 +45,7 @@ public interface ITestTaskService extends IService<TestTask> {
     TestTask linkCase(TestTask et);
     boolean linkCaseBatch(List<TestTask> etList);
     TestTask mobTestTaskCounter(TestTask et);
+    boolean mobTestTaskCounterBatch(List<TestTask> etList);
     boolean save(TestTask et);
     void saveBatch(List<TestTask> list);
     TestTask start(TestTask et);

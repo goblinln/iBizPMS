@@ -98,6 +98,16 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
 
     @Override
     @Transactional
+    public boolean sysUpdate(ProjectStory et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(String key) {
         boolean result = removeById(key);
         return result ;
@@ -113,11 +123,24 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
     @Transactional
     public ProjectStory get(String key) {
         ProjectStory et = getById(key);
-        if(et == null){
-            et = new ProjectStory();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public ProjectStory sysGet(String key) {
+        ProjectStory et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         return et;
     }
@@ -310,5 +333,6 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
         return et;
     }
 }
+
 
 

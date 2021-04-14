@@ -24,23 +24,15 @@ import cn.ibizlab.pms.core.ibizsysmodel.filter.PSSysReqModuleSearchContext;
  */
 public interface IPSSysReqModuleService {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "系统需求模块";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "pssysreqmodules";
-
     boolean create(PSSysReqModule et);
     void createBatch(List<PSSysReqModule> list);
     boolean update(PSSysReqModule et);
+    boolean sysUpdate(PSSysReqModule et);
     void updateBatch(List<PSSysReqModule> list);
     boolean remove(String key);
     void removeBatch(Collection<String> idList);
     PSSysReqModule get(String key);
+    PSSysReqModule sysGet(String key);
     PSSysReqModule getDraft(PSSysReqModule et);
     boolean checkKey(PSSysReqModule et);
     boolean save(PSSysReqModule et);
@@ -53,25 +45,6 @@ public interface IPSSysReqModuleService {
     List<PSSysReqModule> selectByPpssysreqmoduleid(Collection<String> ids);
     void removeByPpssysreqmoduleid(String pssysreqmoduleid);
     PSSysReqModule dynamicCall(String key, String action, PSSysReqModule et);
-
-    boolean create(String devSlnSysId , PSSysReqModule et) ;
-    void createBatch(String devSlnSysId, List<PSSysReqModule> list);
-    boolean update(String devSlnSysId, PSSysReqModule et);
-    void updateBatch(String devSlnSysId, List<PSSysReqModule> list);
-    boolean remove(String devSlnSysId, String key);
-    void removeBatch(String devSlnSysId , Collection<String> idList) ;
-    PSSysReqModule get(String devSlnSysId , String key);
-    String getByCodeName(String devSlnSysId , String codeName);
-    PSSysReqModule getDraft(String devSlnSysId, PSSysReqModule et);
-    boolean checkKey(String devSlnSysId, PSSysReqModule et);
-    boolean save(String devSlnSysId, PSSysReqModule et);
-    void saveBatch(String devSlnSysId, List<PSSysReqModule> list);
-    Page<PSSysReqModule> searchDefault(String devSlnSysId, PSSysReqModuleSearchContext context);
-    List<PSSysReqModule> selectByPsmoduleid(String devSlnSysId, String psmoduleid);
-    void removeByPsmoduleid(String devSlnSysId, String psmoduleid);
-    List<PSSysReqModule> selectByPpssysreqmoduleid(String devSlnSysId, String pssysreqmoduleid);
-    void removeByPpssysreqmoduleid(String devSlnSysId, String pssysreqmoduleid);
-
 }
 
 

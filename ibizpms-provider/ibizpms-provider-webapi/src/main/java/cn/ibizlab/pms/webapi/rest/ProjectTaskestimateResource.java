@@ -12,6 +12,7 @@ import javax.servlet.ServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.PageRequest;
@@ -33,6 +34,7 @@ import cn.ibizlab.pms.core.ibizpro.domain.ProjectTaskestimate;
 import cn.ibizlab.pms.core.ibizpro.service.IProjectTaskestimateService;
 import cn.ibizlab.pms.core.ibizpro.filter.ProjectTaskestimateSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibizpro.runtime.ProjectTaskestimateRuntime;
 
 @Slf4j
 @Api(tags = {"项目工时统计" })
@@ -44,20 +46,26 @@ public class ProjectTaskestimateResource {
     public IProjectTaskestimateService projecttaskestimateService;
 
     @Autowired
+    public ProjectTaskestimateRuntime projecttaskestimateRuntime;
+
+    @Autowired
     @Lazy
     public ProjectTaskestimateMapping projecttaskestimateMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTaskestimate-Create-all')")
+    @PreAuthorize("@ProjectTaskestimateRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建项目工时统计", tags = {"项目工时统计" },  notes = "新建项目工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projecttaskestimates")
+    @Transactional
     public ResponseEntity<ProjectTaskestimateDTO> create(@Validated @RequestBody ProjectTaskestimateDTO projecttaskestimatedto) {
         ProjectTaskestimate domain = projecttaskestimateMapping.toDomain(projecttaskestimatedto);
 		projecttaskestimateService.create(domain);
+        if(!projecttaskestimateRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         ProjectTaskestimateDTO dto = projecttaskestimateMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTaskestimate-Create-all')")
+    @PreAuthorize("@ProjectTaskestimateRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量新建项目工时统计", tags = {"项目工时统计" },  notes = "批量新建项目工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projecttaskestimates/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<ProjectTaskestimateDTO> projecttaskestimatedtos) {
@@ -65,18 +73,21 @@ public class ProjectTaskestimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTaskestimate-Update-all')")
+    @PreAuthorize("@ProjectTaskestimateRuntime.test(#projecttaskestimate_id,'UPDATE')")
     @ApiOperation(value = "更新项目工时统计", tags = {"项目工时统计" },  notes = "更新项目工时统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projecttaskestimates/{projecttaskestimate_id}")
+    @Transactional
     public ResponseEntity<ProjectTaskestimateDTO> update(@PathVariable("projecttaskestimate_id") String projecttaskestimate_id, @RequestBody ProjectTaskestimateDTO projecttaskestimatedto) {
 		ProjectTaskestimate domain  = projecttaskestimateMapping.toDomain(projecttaskestimatedto);
-        domain .setId(projecttaskestimate_id);
+        domain.setId(projecttaskestimate_id);
 		projecttaskestimateService.update(domain );
+        if(!projecttaskestimateRuntime.test(projecttaskestimate_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
 		ProjectTaskestimateDTO dto = projecttaskestimateMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTaskestimate-Update-all')")
+    @PreAuthorize("@ProjectTaskestimateRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "批量更新项目工时统计", tags = {"项目工时统计" },  notes = "批量更新项目工时统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projecttaskestimates/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<ProjectTaskestimateDTO> projecttaskestimatedtos) {
@@ -84,14 +95,14 @@ public class ProjectTaskestimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTaskestimate-Remove-all')")
+    @PreAuthorize("@ProjectTaskestimateRuntime.test(#projecttaskestimate_id,'DELETE')")
     @ApiOperation(value = "删除项目工时统计", tags = {"项目工时统计" },  notes = "删除项目工时统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projecttaskestimates/{projecttaskestimate_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("projecttaskestimate_id") String projecttaskestimate_id) {
          return ResponseEntity.status(HttpStatus.OK).body(projecttaskestimateService.remove(projecttaskestimate_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTaskestimate-Remove-all')")
+    @PreAuthorize("@ProjectTaskestimateRuntime.test(#ids,'DELETE')")
     @ApiOperation(value = "批量删除项目工时统计", tags = {"项目工时统计" },  notes = "批量删除项目工时统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projecttaskestimates/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -99,7 +110,7 @@ public class ProjectTaskestimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTaskestimate-Get-all')")
+    @PreAuthorize("@ProjectTaskestimateRuntime.test(#projecttaskestimate_id,'READ')")
     @ApiOperation(value = "获取项目工时统计", tags = {"项目工时统计" },  notes = "获取项目工时统计")
 	@RequestMapping(method = RequestMethod.GET, value = "/projecttaskestimates/{projecttaskestimate_id}")
     public ResponseEntity<ProjectTaskestimateDTO> get(@PathVariable("projecttaskestimate_id") String projecttaskestimate_id) {
@@ -121,7 +132,6 @@ public class ProjectTaskestimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(projecttaskestimateService.checkKey(projecttaskestimateMapping.toDomain(projecttaskestimatedto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTaskestimate-Save-all')")
     @ApiOperation(value = "保存项目工时统计", tags = {"项目工时统计" },  notes = "保存项目工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projecttaskestimates/save")
     public ResponseEntity<ProjectTaskestimateDTO> save(@RequestBody ProjectTaskestimateDTO projecttaskestimatedto) {
@@ -130,7 +140,6 @@ public class ProjectTaskestimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(projecttaskestimateMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTaskestimate-Save-all')")
     @ApiOperation(value = "批量保存项目工时统计", tags = {"项目工时统计" },  notes = "批量保存项目工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projecttaskestimates/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<ProjectTaskestimateDTO> projecttaskestimatedtos) {
@@ -138,10 +147,11 @@ public class ProjectTaskestimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTaskestimate-searchAccountDetail-all')")
+    @PreAuthorize("@ProjectTaskestimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取用户月工时详情", tags = {"项目工时统计" } ,notes = "获取用户月工时详情")
     @RequestMapping(method= RequestMethod.GET , value="/projecttaskestimates/fetchaccountdetail")
 	public ResponseEntity<List<ProjectTaskestimateDTO>> fetchAccountDetail(ProjectTaskestimateSearchContext context) {
+        projecttaskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectTaskestimate> domains = projecttaskestimateService.searchAccountDetail(context) ;
         List<ProjectTaskestimateDTO> list = projecttaskestimateMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -151,19 +161,21 @@ public class ProjectTaskestimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTaskestimate-searchAccountDetail-all')")
+    @PreAuthorize("@ProjectTaskestimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询用户月工时详情", tags = {"项目工时统计" } ,notes = "查询用户月工时详情")
     @RequestMapping(method= RequestMethod.POST , value="/projecttaskestimates/searchaccountdetail")
 	public ResponseEntity<Page<ProjectTaskestimateDTO>> searchAccountDetail(@RequestBody ProjectTaskestimateSearchContext context) {
+        projecttaskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectTaskestimate> domains = projecttaskestimateService.searchAccountDetail(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projecttaskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTaskestimate-searchDefault-all')")
+    @PreAuthorize("@ProjectTaskestimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"项目工时统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/projecttaskestimates/fetchdefault")
 	public ResponseEntity<List<ProjectTaskestimateDTO>> fetchDefault(ProjectTaskestimateSearchContext context) {
+        projecttaskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectTaskestimate> domains = projecttaskestimateService.searchDefault(context) ;
         List<ProjectTaskestimateDTO> list = projecttaskestimateMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -173,10 +185,11 @@ public class ProjectTaskestimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectTaskestimate-searchDefault-all')")
+    @PreAuthorize("@ProjectTaskestimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"项目工时统计" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/projecttaskestimates/searchdefault")
 	public ResponseEntity<Page<ProjectTaskestimateDTO>> searchDefault(@RequestBody ProjectTaskestimateSearchContext context) {
+        projecttaskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectTaskestimate> domains = projecttaskestimateService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projecttaskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -190,6 +203,5 @@ public class ProjectTaskestimateResource {
         projecttaskestimatedto = projecttaskestimateMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(projecttaskestimatedto);
     }
-
 }
 

@@ -24,23 +24,15 @@ import cn.ibizlab.pms.core.uaa.filter.SysUserSearchContext;
  */
 public interface ISysUserService {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "系统用户";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "sysusers";
-
     boolean create(SysUser et);
     void createBatch(List<SysUser> list);
     boolean update(SysUser et);
+    boolean sysUpdate(SysUser et);
     void updateBatch(List<SysUser> list);
     boolean remove(String key);
     void removeBatch(Collection<String> idList);
     SysUser get(String key);
+    SysUser sysGet(String key);
     SysUser getDraft(SysUser et);
     SysUser changePwd(SysUser et);
     boolean changePwdBatch(List<SysUser> etList);
@@ -49,8 +41,6 @@ public interface ISysUserService {
     void saveBatch(List<SysUser> list);
     Page<SysUser> searchDefault(SysUserSearchContext context);
     SysUser dynamicCall(String key, String action, SysUser et);
-
-
 }
 
 

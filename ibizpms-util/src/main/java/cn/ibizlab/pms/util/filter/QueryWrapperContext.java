@@ -22,6 +22,14 @@ public class QueryWrapperContext<T> extends SearchContextBase implements ISearch
     @JSONField(serialize = false)
     private QueryWrapper<T> selectCond=new QueryWrapper<T>();
 
+    
+    public String srfcustomizedcond;
+
+    public void setsrfcustomizedcond(String srfcustomizedcond){
+        this.srfcustomizedcond = srfcustomizedcond;
+        ((QueryWrapper)selectCond).and(ScopeUtils.parse(srfcustomizedcond));
+    }
+
     /**
      * 解析查询上下文中的参数，构建mybatis-plus分页对象
      * @return

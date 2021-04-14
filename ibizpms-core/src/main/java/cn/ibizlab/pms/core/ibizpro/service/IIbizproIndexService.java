@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IIbizproIndexService extends IService<IbizproIndex> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "索引检索";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "ibizproindices";
-
     boolean create(IbizproIndex et);
     void createBatch(List<IbizproIndex> list);
     boolean update(IbizproIndex et);
+    boolean sysUpdate(IbizproIndex et);
     void updateBatch(List<IbizproIndex> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     IbizproIndex get(Long key);
+    IbizproIndex sysGet(Long key);
     IbizproIndex getDraft(IbizproIndex et);
     boolean checkKey(IbizproIndex et);
     boolean save(IbizproIndex et);

@@ -30,23 +30,14 @@ public class IbzReportlySearchContext extends QueryWrapperContext<IbzReportly> {
 	private String n_account_eq;//[用户]
 	public void setN_account_eq(String n_account_eq) {
         this.n_account_eq = n_account_eq;
-        if(!ObjectUtils.isEmpty(this.n_account_eq)){
-            this.getSearchCond().eq("`account`", n_account_eq);
-        }
     }
 	private String n_ibz_reportlyname_like;//[汇报名称]
 	public void setN_ibz_reportlyname_like(String n_ibz_reportlyname_like) {
         this.n_ibz_reportlyname_like = n_ibz_reportlyname_like;
-        if(!ObjectUtils.isEmpty(this.n_ibz_reportlyname_like)){
-            this.getSearchCond().like("`ibz_reportlyname`", n_ibz_reportlyname_like);
-        }
     }
 	private String n_issubmit_eq;//[是否提交]
 	public void setN_issubmit_eq(String n_issubmit_eq) {
         this.n_issubmit_eq = n_issubmit_eq;
-        if(!ObjectUtils.isEmpty(this.n_issubmit_eq)){
-            this.getSearchCond().eq("`issubmit`", n_issubmit_eq);
-        }
     }
 
     /**
@@ -58,7 +49,7 @@ public class IbzReportlySearchContext extends QueryWrapperContext<IbzReportly> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("`ibz_reportlyname`", query)
+                     wrapper.like("ibz_reportlyname", query)
             );
 		 }
 	}

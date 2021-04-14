@@ -85,6 +85,16 @@ public class ProductLifeServiceImpl extends ServiceImpl<ProductLifeMapper, Produ
 
     @Override
     @Transactional
+    public boolean sysUpdate(ProductLife et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibz_productlifeid", et.getProductlifeid()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getProductlifeid()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(String key) {
         boolean result = removeById(key);
         return result ;
@@ -100,11 +110,24 @@ public class ProductLifeServiceImpl extends ServiceImpl<ProductLifeMapper, Produ
     @Transactional
     public ProductLife get(String key) {
         ProductLife et = getById(key);
-        if(et == null){
-            et = new ProductLife();
-            et.setProductlifeid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public ProductLife sysGet(String key) {
+        ProductLife et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         return et;
     }
@@ -278,5 +301,6 @@ public class ProductLifeServiceImpl extends ServiceImpl<ProductLifeMapper, Produ
         return et;
     }
 }
+
 
 

@@ -23,14 +23,14 @@ public class IBIZProTagFallback implements IBIZProTagFeignClient {
         return null;
     }
 
-    public IBIZProTag create(IBIZProTag et) {
+    public IBIZProTag create(IBIZProTag ibizprotag) {
         return null;
     }
     public Boolean createBatch(List<IBIZProTag> ibizprotags) {
         return false;
     }
 
-    public IBIZProTag update(String id, IBIZProTag et) {
+    public IBIZProTag update(String id, IBIZProTag ibizprotag) {
         return null;
     }
     public Boolean updateBatch(List<IBIZProTag> ibizprotags) {
@@ -50,26 +50,22 @@ public class IBIZProTagFallback implements IBIZProTagFeignClient {
     }
 
 
-    public String getByCodeName(String codeName) {
-            return null;
-    }
-
-
     public IBIZProTag getDraft(IBIZProTag entity){
         return null;
     }
 
 
 
-    public Boolean checkKey(IBIZProTag et) {
+    public Boolean checkKey(IBIZProTag ibizprotag) {
         return false;
     }
 
 
-    public Object saveEntity(IBIZProTag et) {
+    public Object saveEntity(IBIZProTag ibizprotag) {
         return null;
     }
-    public Boolean save(IBIZProTag et) {
+
+    public Boolean save(IBIZProTag ibizprotag) {
         return false;
     }
     public Boolean saveBatch(List<IBIZProTag> ibizprotags) {

@@ -60,6 +60,11 @@ public class ProductLineServiceImpl implements IProductLineService {
     }
 
     @Override
+    public boolean sysUpdate(ProductLine et) {
+        return true;
+    }
+
+    @Override
     public boolean remove(String key) {
         return true;
     }
@@ -74,6 +79,11 @@ public class ProductLineServiceImpl implements IProductLineService {
         return et;
     }
 
+    @Override
+    public ProductLine sysGet(String key) {
+        ProductLine et = new ProductLine();
+        return et;
+    }
     @Override
     public ProductLine getDraft(ProductLine et) {
         return et;
@@ -112,4 +122,5 @@ public class ProductLineServiceImpl implements IProductLineService {
         return et;
     }
 }
+
 

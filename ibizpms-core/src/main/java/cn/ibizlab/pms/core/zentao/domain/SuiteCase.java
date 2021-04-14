@@ -58,7 +58,7 @@ public class SuiteCase extends EntityMP implements Serializable {
     /**
      * 用例版本
      */
-    @TableField(value = "`version`")
+    @TableField(value = "version")
     @JSONField(name = "version")
     @JsonProperty("version")
     @ApiModelProperty("用例版本")
@@ -67,7 +67,7 @@ public class SuiteCase extends EntityMP implements Serializable {
      * 测试套件
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`suite`")
+    @TableField(value = "suite")
     @JSONField(name = "suite")
     @JsonProperty("suite")
     @ApiModelProperty("测试套件")
@@ -76,7 +76,7 @@ public class SuiteCase extends EntityMP implements Serializable {
      * 用例
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`case`")
+    @TableField(value = "case")
     @JSONField(name = "ibizcase")
     @JsonProperty("ibizcase")
     @ApiModelProperty("用例")
@@ -85,7 +85,7 @@ public class SuiteCase extends EntityMP implements Serializable {
      * 所属产品
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`product`")
+    @TableField(value = "product")
     @JSONField(name = "product")
     @JsonProperty("product")
     @ApiModelProperty("所属产品")
@@ -94,7 +94,7 @@ public class SuiteCase extends EntityMP implements Serializable {
      * 由谁创建
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "`createby`")
+    @TableField(value = "createby")
     @JSONField(name = "createby")
     @JsonProperty("createby")
     @ApiModelProperty("由谁创建")
@@ -103,7 +103,7 @@ public class SuiteCase extends EntityMP implements Serializable {
      * 由谁更新
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "`updateby`")
+    @TableField(value = "updateby")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")
     @ApiModelProperty("由谁更新")
@@ -112,7 +112,7 @@ public class SuiteCase extends EntityMP implements Serializable {
      * 归属组织
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "`org`")
+    @TableField(value = "org")
     @JSONField(name = "org")
     @JsonProperty("org")
     @ApiModelProperty("归属组织")
@@ -121,7 +121,7 @@ public class SuiteCase extends EntityMP implements Serializable {
      * 归属部门
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "`dept`")
+    @TableField(value = "dept")
     @JSONField(name = "dept")
     @JsonProperty("dept")
     @ApiModelProperty("归属部门")

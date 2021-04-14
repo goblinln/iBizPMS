@@ -12,6 +12,7 @@ import javax.servlet.ServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.PageRequest;
@@ -33,6 +34,7 @@ import cn.ibizlab.pms.core.ibizpro.domain.IBZProProduct;
 import cn.ibizlab.pms.core.ibizpro.service.IIBZProProductService;
 import cn.ibizlab.pms.core.ibizpro.filter.IBZProProductSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibizpro.runtime.IBZProProductRuntime;
 
 @Slf4j
 @Api(tags = {"平台产品" })
@@ -44,20 +46,26 @@ public class IBZProProductResource {
     public IIBZProProductService ibzproproductService;
 
     @Autowired
+    public IBZProProductRuntime ibzproproductRuntime;
+
+    @Autowired
     @Lazy
     public IBZProProductMapping ibzproproductMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBZProProduct-Create-all')")
+    @PreAuthorize("@IBZProProductRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建平台产品", tags = {"平台产品" },  notes = "新建平台产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproducts")
+    @Transactional
     public ResponseEntity<IBZProProductDTO> create(@Validated @RequestBody IBZProProductDTO ibzproproductdto) {
         IBZProProduct domain = ibzproproductMapping.toDomain(ibzproproductdto);
 		ibzproproductService.create(domain);
+        if(!ibzproproductRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         IBZProProductDTO dto = ibzproproductMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBZProProduct-Create-all')")
+    @PreAuthorize("@IBZProProductRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量新建平台产品", tags = {"平台产品" },  notes = "批量新建平台产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproducts/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<IBZProProductDTO> ibzproproductdtos) {
@@ -65,18 +73,21 @@ public class IBZProProductResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBZProProduct-Update-all')")
+    @PreAuthorize("@IBZProProductRuntime.test(#ibzproproduct_id,'UPDATE')")
     @ApiOperation(value = "更新平台产品", tags = {"平台产品" },  notes = "更新平台产品")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproproducts/{ibzproproduct_id}")
+    @Transactional
     public ResponseEntity<IBZProProductDTO> update(@PathVariable("ibzproproduct_id") Long ibzproproduct_id, @RequestBody IBZProProductDTO ibzproproductdto) {
 		IBZProProduct domain  = ibzproproductMapping.toDomain(ibzproproductdto);
-        domain .setId(ibzproproduct_id);
+        domain.setId(ibzproproduct_id);
 		ibzproproductService.update(domain );
+        if(!ibzproproductRuntime.test(ibzproproduct_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
 		IBZProProductDTO dto = ibzproproductMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBZProProduct-Update-all')")
+    @PreAuthorize("@IBZProProductRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "批量更新平台产品", tags = {"平台产品" },  notes = "批量更新平台产品")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproproducts/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<IBZProProductDTO> ibzproproductdtos) {
@@ -84,14 +95,14 @@ public class IBZProProductResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBZProProduct-Remove-all')")
+    @PreAuthorize("@IBZProProductRuntime.test(#ibzproproduct_id,'DELETE')")
     @ApiOperation(value = "删除平台产品", tags = {"平台产品" },  notes = "删除平台产品")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproproducts/{ibzproproduct_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzproproduct_id") Long ibzproproduct_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibzproproductService.remove(ibzproproduct_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBZProProduct-Remove-all')")
+    @PreAuthorize("@IBZProProductRuntime.test(#ids,'DELETE')")
     @ApiOperation(value = "批量删除平台产品", tags = {"平台产品" },  notes = "批量删除平台产品")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproproducts/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +110,7 @@ public class IBZProProductResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBZProProduct-Get-all')")
+    @PreAuthorize("@IBZProProductRuntime.test(#ibzproproduct_id,'READ')")
     @ApiOperation(value = "获取平台产品", tags = {"平台产品" },  notes = "获取平台产品")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproproducts/{ibzproproduct_id}")
     public ResponseEntity<IBZProProductDTO> get(@PathVariable("ibzproproduct_id") Long ibzproproduct_id) {
@@ -121,7 +132,6 @@ public class IBZProProductResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzproproductService.checkKey(ibzproproductMapping.toDomain(ibzproproductdto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBZProProduct-Save-all')")
     @ApiOperation(value = "保存平台产品", tags = {"平台产品" },  notes = "保存平台产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproducts/save")
     public ResponseEntity<IBZProProductDTO> save(@RequestBody IBZProProductDTO ibzproproductdto) {
@@ -130,7 +140,6 @@ public class IBZProProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBZProProduct-Save-all')")
     @ApiOperation(value = "批量保存平台产品", tags = {"平台产品" },  notes = "批量保存平台产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproducts/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<IBZProProductDTO> ibzproproductdtos) {
@@ -138,10 +147,11 @@ public class IBZProProductResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBZProProduct-searchDefault-all')")
+    @PreAuthorize("@IBZProProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"平台产品" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibzproproducts/fetchdefault")
 	public ResponseEntity<List<IBZProProductDTO>> fetchDefault(IBZProProductSearchContext context) {
+        ibzproproductRuntime.addAuthorityConditions(context,"READ");
         Page<IBZProProduct> domains = ibzproproductService.searchDefault(context) ;
         List<IBZProProductDTO> list = ibzproproductMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -151,10 +161,11 @@ public class IBZProProductResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBZProProduct-searchDefault-all')")
+    @PreAuthorize("@IBZProProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"平台产品" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproducts/searchdefault")
 	public ResponseEntity<Page<IBZProProductDTO>> searchDefault(@RequestBody IBZProProductSearchContext context) {
+        ibzproproductRuntime.addAuthorityConditions(context,"READ");
         Page<IBZProProduct> domains = ibzproproductService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzproproductMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -168,6 +179,5 @@ public class IBZProProductResource {
         ibzproproductdto = ibzproproductMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductdto);
     }
-
 }
 

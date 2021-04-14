@@ -2,6 +2,8 @@ package cn.ibizlab.pms.util.domain;
 
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import org.springframework.util.StringUtils;
+import cn.ibizlab.pms.util.helper.DEFieldCacheMap;
+import java.lang.reflect.Field;
 
 public class EntityMP extends EntityBase {
 
@@ -34,5 +36,25 @@ public class EntityMP extends EntityBase {
             getFocusNull().remove(resetField);
         }
     }
+
+    @Override
+    public boolean contains(String s) {
+        try {
+            Field field = DEFieldCacheMap.getField(this.getClass(), s);
+            field.setAccessible(true);
+            Object value = field.get(this);
+            if (value == null) {
+                if (this.getFocusNull().contains(s.toLowerCase())) {
+                    return true;
+                }
+                return false;
+            } else {
+                return true;
+            }
+        } catch (IllegalAccessException e) {
+            return false;
+        }
+    }
+
 }
 

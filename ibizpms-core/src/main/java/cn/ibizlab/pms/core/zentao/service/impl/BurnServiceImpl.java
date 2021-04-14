@@ -95,6 +95,16 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
 
     @Override
     @Transactional
+    public boolean sysUpdate(Burn et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(String key) {
         boolean result = removeById(key);
         return result ;
@@ -110,11 +120,24 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
     @Transactional
     public Burn get(String key) {
         Burn et = getById(key);
-        if(et == null){
-            et = new Burn();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public Burn sysGet(String key) {
+        Burn et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         return et;
     }
@@ -135,7 +158,6 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean computeBurnBatch(List<Burn> etList) {
@@ -325,5 +347,6 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
         return et;
     }
 }
+
 
 

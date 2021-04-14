@@ -1,6 +1,7 @@
 package cn.ibizlab.pms.core.report.mapper;
 
 import java.util.List;
+import com.baomidou.mybatisplus.annotation.InterceptorIgnore;
 import org.apache.ibatis.annotations.*;
 import java.util.Map;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;

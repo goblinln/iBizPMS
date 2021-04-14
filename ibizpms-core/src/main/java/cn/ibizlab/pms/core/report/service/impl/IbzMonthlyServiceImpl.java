@@ -89,11 +89,24 @@ public class IbzMonthlyServiceImpl extends ServiceImpl<IbzMonthlyMapper, IbzMont
     @Transactional
     public IbzMonthly get(Long key) {
         IbzMonthly et = getById(key);
-        if(et == null){
-            et = new IbzMonthly();
-            et.setIbzmonthlyid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public IbzMonthly sysGet(Long key) {
+        IbzMonthly et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -113,7 +126,6 @@ public class IbzMonthlyServiceImpl extends ServiceImpl<IbzMonthlyMapper, IbzMont
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean createGetInfoBatch(List<IbzMonthly> etList) {
@@ -144,7 +156,6 @@ public class IbzMonthlyServiceImpl extends ServiceImpl<IbzMonthlyMapper, IbzMont
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean editGetCompleteTaskBatch(List<IbzMonthly> etList) {
@@ -386,5 +397,6 @@ public class IbzMonthlyServiceImpl extends ServiceImpl<IbzMonthlyMapper, IbzMont
         return et;
     }
 }
+
 
 

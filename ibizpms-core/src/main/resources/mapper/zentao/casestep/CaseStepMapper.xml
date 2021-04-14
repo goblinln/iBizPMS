@@ -2,19 +2,53 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper	namespace="cn.ibizlab.pms.core.zentao.mapper.CaseStepMapper">
+	
+	<!-- 无视图模式 -->
+	<sql id="select" databaseId="mysql">
+        <![CDATA[ SELECT t1.`CASE`, t1.id AS `CASESTEPID`, t1.`CREATEBY`, t1.`DEPT`, t1.`DESC`, t1.`EXPECT`, t1.`ID`, t1.`ORG`, t1.`PARENT`, t1.`TYPE`, t1.`UPDATEBY`, t1.`VERSION` FROM `zt_casestep` t1   ]]>
+    </sql>
+
+	
+	<!-- 搜索条件 -->
+	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_type_eq != null ">
+			<![CDATA[ AND  t1.`TYPE` = #{srf.n_type_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_expect_like != null ">
+            <bind name="bind_n_expect_like" value="'%' + srf.n_expect_like + '%'" />
+            <![CDATA[ AND  t1.`EXPECT` like #{bind_n_expect_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_version_eq != null ">
+			<![CDATA[ AND  t1.`VERSION` = #{srf.n_version_eq,jdbcType=INTEGER} ]]>
+        </if>
+		<if test="srf.n_case_eq != null ">
+			<![CDATA[ AND  t1.`CASE` = #{srf.n_case_eq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="srf.n_parent_eq != null ">
+			<![CDATA[ AND  t1.`PARENT` = #{srf.n_parent_eq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
+		AND ${ew.sqlSegment}
+		</if>
+	</sql>
+
 
     <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
 	<select id="selectById"  resultMap="CaseStepResultMap" databaseId="mysql">
-        <![CDATA[select t1.* from (SELECT t1.`CASE`, t1.id AS `CASESTEPID`, t1.`CREATEBY`, t1.`DEPT`, t1.`DESC`, t1.`EXPECT`, t1.`ID`, t1.`ORG`, t1.`PARENT`, t1.`TYPE`, t1.`UPDATEBY`, t1.`VERSION` FROM `zt_casestep` t1  ) t1 where id=#{id}]]>
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND T1.ID = #{id} ]]>
+		</trim>
     </select>
+
 
     <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
     <resultMap id="CaseStepResultMap" type="cn.ibizlab.pms.core.zentao.domain.CaseStep" autoMapping="true">
 		<id property="id" column="id" /><!--主键字段映射-->
 		<result property="ibizcase" column="case" />
 		<result property="parent" column="parent" />
-
-
+            
+		
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
 		<association property="ztcase" javaType="cn.ibizlab.pms.core.zentao.domain.Case" column="case" select="cn.ibizlab.pms.core.zentao.mapper.CaseMapper.selectById" fetchType="lazy"></association>
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
@@ -22,18 +56,18 @@
     </resultMap>
 
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_CASESTEP_ZT_CASE_CASE] -->
-	 <select id="selectByIbizcase" resultMap="CaseStepResultMap">
-         select t1.* from (
-                <include refid="Default" />
-			 ) t1
-			 where  case=#{id}
+	 <select id="selectByIbizcase" resultMap="CaseStepResultMap"  databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND T1.CASE=#{id} ]]>
+		</trim>
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N__ZT_CASESTEP__ZT_CASESTEP__PARENT] -->
-	 <select id="selectByParent" resultMap="CaseStepResultMap">
-         select t1.* from (
-                <include refid="Default" />
-			 ) t1
-			 where  parent=#{id}
+	 <select id="selectByParent" resultMap="CaseStepResultMap"  databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND T1.PARENT=#{id} ]]>
+		</trim>
      </select>
 
     <!--数据集合[CurTest]-->
@@ -42,10 +76,8 @@
          select t1.* from (
                 <include refid="CurTest" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
 		 )t1
-		 order by `id`  asc  
+		 order by id  asc  
      </select>
 
     <!--数据集合[Default]-->
@@ -53,8 +85,6 @@
          select t1.* from (
                 <include refid="Default" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据集合[Default1]-->
@@ -62,8 +92,6 @@
          select t1.* from (
                 <include refid="Default1" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据集合[Mob]-->
@@ -71,8 +99,6 @@
          select t1.* from (
                 <include refid="Mob" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据集合[Version]-->
@@ -80,8 +106,6 @@
          select t1.* from (
                 <include refid="Version" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据集合[Versions]-->
@@ -89,45 +113,66 @@
          select t1.* from (
                 <include refid="Versions" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据查询[CurTest]-->
     <sql id="CurTest" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CASE`, t1.`DESC`, t1.`EXPECT`, t1.`ID`, t1.id AS `CASESTEPID`, t1.`PARENT`, t1.`TYPE`, t1.`VERSION`, t21.stepResults as STEPS FROM `zt_casestep` t1  RIGHT JOIN zt_case t11 ON t1.`CASE` = t11.ID  LEFT OUTER JOIN zt_testresult t21 ON t11.ID = t21.`CASE`  AND t1.version = t21.version 
-					 WHERE 	( t21.`ID` = #{srf.webcontext.srfparentkey} )
-			]]>
+		<![CDATA[ SELECT t1.`CASE`, t1.`DESC`, t1.`EXPECT`, t1.`ID`, t1.id AS `CASESTEPID`, t1.`PARENT`, t1.`TYPE`, t1.`VERSION`, t21.stepResults as STEPS FROM `zt_casestep` t1  RIGHT JOIN zt_case t11 ON t1.`CASE` = t11.ID  LEFT OUTER JOIN zt_testresult t21 ON t11.ID = t21.`CASE`  AND t1.version = t21.version  ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND ( t21.`ID` = #{srf.webcontext.srfparentkey} ) ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT 	t1.`CASE`, 	t1.`DESC`, 	t1.`EXPECT`,         t1.id AS `CASESTEPID`, 	t1.`ID`, 	@rownum := @rownum + 1 AS RUNID, 	t1.`PARENT`, 	t1.`TYPE`, 	t1.`VERSION`  FROM 	`zt_casestep` t1, (select @rownum := 0) m  
-			]]>
+		<![CDATA[ SELECT 	t1.`CASE`, 	t1.`DESC`, 	t1.`EXPECT`,         t1.id AS `CASESTEPID`, 	t1.`ID`, 	@rownum := @rownum + 1 AS RUNID, 	t1.`PARENT`, 	t1.`TYPE`, 	t1.`VERSION`  FROM 	`zt_casestep` t1, (select @rownum := 0) m   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[Default1]-->
     <sql id="Default1" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CASE`, t1.id AS `CASESTEPID`, t1.`CREATEBY`, t1.`DEPT`, t1.`DESC`, t1.`EXPECT`, t1.`ID`, t1.`ORG`, t1.`PARENT`, t1.`TYPE`, t1.`UPDATEBY`, t1.`VERSION` FROM `zt_casestep` t1  
-			]]>
+		<![CDATA[ SELECT t1.`CASE`, t1.id AS `CASESTEPID`, t1.`CREATEBY`, t1.`DEPT`, t1.`DESC`, t1.`EXPECT`, t1.`ID`, t1.`ORG`, t1.`PARENT`, t1.`TYPE`, t1.`UPDATEBY`, t1.`VERSION` FROM `zt_casestep` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[Mob]-->
     <sql id="Mob" databaseId="mysql">
-		<![CDATA[ SELECT 	t1.`CASE`, 	t1.`DESC`, 	t1.`EXPECT`, 	t1.`ID`,         t1.id AS `CASESTEPID`, 	t1.`PARENT`, 	t1.`TYPE`, 	t1.`VERSION`  FROM 	`zt_casestep` t1 	inner JOIN zt_case t11 ON t1.`case` = t11.id  	AND t1.version = t11.version
-			]]>
+		<![CDATA[ SELECT 	t1.`CASE`, 	t1.`DESC`, 	t1.`EXPECT`, 	t1.`ID`,         t1.id AS `CASESTEPID`, 	t1.`PARENT`, 	t1.`TYPE`, 	t1.`VERSION`  FROM 	`zt_casestep` t1 	inner JOIN zt_case t11 ON t1.`case` = t11.id  	AND t1.version = t11.version ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[Version]-->
     <sql id="Version" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CASE`,t1.type,t1.parent,t1.expect,t1.`desc`, t1.`ID`, t1.`VERSION` FROM `zt_casestep` t1
-			]]>
+		<![CDATA[ SELECT t1.`CASE`,t1.type,t1.parent,t1.expect,t1.`desc`, t1.`ID`, t1.`VERSION` FROM `zt_casestep` t1 ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[Versions]-->
     <sql id="Versions" databaseId="mysql">
-		<![CDATA[ SELECT 	t1.ID,t1.`case`,t1.VERSION,CONCAT('#',t1.VERSION) as expect FROM 	( SELECT 	t1.`ID`, 	t1.`CASE`, 	t1.`VERSION`  FROM 	`zt_casestep` t1 where t1.version <> 1  GROUP BY 	t1.`CASE`, 	t1.`VERSION` UNION ALL SELECT 	1 AS ID, 	t1.`id` AS `CASE`, 	1 AS `VERSION`  FROM 	zt_case t1   	) t1
-			]]>
+		<![CDATA[ SELECT 	t1.ID,t1.`case`,t1.VERSION,CONCAT('#',t1.VERSION) as expect FROM 	( SELECT 	t1.`ID`, 	t1.`CASE`, 	t1.`VERSION`  FROM 	`zt_casestep` t1 where t1.version <> 1  GROUP BY 	t1.`CASE`, 	t1.`VERSION` UNION ALL SELECT 	1 AS ID, 	t1.`id` AS `CASE`, 	1 AS `VERSION`  FROM 	zt_case t1   	) t1 ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CASE`, t1.id AS `CASESTEPID`, t1.`CREATEBY`, t1.`DEPT`, t1.`DESC`, t1.`EXPECT`, t1.`ID`, t1.`ORG`, t1.`PARENT`, t1.`TYPE`, t1.`UPDATEBY`, t1.`VERSION` FROM `zt_casestep` t1  
-			]]>
+		<![CDATA[ SELECT t1.`CASE`, t1.id AS `CASESTEPID`, t1.`CREATEBY`, t1.`DEPT`, t1.`DESC`, t1.`EXPECT`, t1.`ID`, t1.`ORG`, t1.`PARENT`, t1.`TYPE`, t1.`UPDATEBY`, t1.`VERSION` FROM `zt_casestep` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
 </mapper>
 

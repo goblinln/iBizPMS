@@ -35,11 +35,6 @@ import cn.ibizlab.pms.util.domain.EntityClient;
 @Data
 @ApiModel("实体属性")
 public class PSDEField extends EntityClient implements Serializable {
-    @Override
-    public void modify(String field, Object val) {
-        getExtensionparams().put("dirtyflagenable", true);
-        super.modify(field, val);
-    }
 
     /**
      * 自定义参数

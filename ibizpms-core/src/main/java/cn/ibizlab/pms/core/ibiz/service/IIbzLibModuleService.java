@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IIbzLibModuleService extends IService<IbzLibModule> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "用例库模块";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "ibzlibmodules";
-
     boolean create(IbzLibModule et);
     void createBatch(List<IbzLibModule> list);
     boolean update(IbzLibModule et);
+    boolean sysUpdate(IbzLibModule et);
     void updateBatch(List<IbzLibModule> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     IbzLibModule get(Long key);
+    IbzLibModule sysGet(Long key);
     IbzLibModule getDraft(IbzLibModule et);
     boolean checkKey(IbzLibModule et);
     boolean save(IbzLibModule et);

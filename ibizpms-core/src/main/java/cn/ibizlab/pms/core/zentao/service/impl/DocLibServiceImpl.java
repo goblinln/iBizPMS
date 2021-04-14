@@ -100,11 +100,24 @@ public class DocLibServiceImpl extends ServiceImpl<DocLibMapper, DocLib> impleme
     @Transactional
     public DocLib get(Long key) {
         DocLib et = getById(key);
-        if(et == null){
-            et = new DocLib();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public DocLib sysGet(Long key) {
+        DocLib et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -125,7 +138,6 @@ public class DocLibServiceImpl extends ServiceImpl<DocLibMapper, DocLib> impleme
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean collectBatch(List<DocLib> etList) {
@@ -203,7 +215,6 @@ public class DocLibServiceImpl extends ServiceImpl<DocLibMapper, DocLib> impleme
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean unCollectBatch(List<DocLib> etList) {
@@ -402,5 +413,6 @@ public class DocLibServiceImpl extends ServiceImpl<DocLibMapper, DocLib> impleme
         return et;
     }
 }
+
 
 

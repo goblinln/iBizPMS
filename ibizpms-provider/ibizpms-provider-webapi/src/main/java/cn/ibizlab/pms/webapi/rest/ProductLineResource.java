@@ -12,6 +12,7 @@ import javax.servlet.ServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.PageRequest;
@@ -43,12 +44,14 @@ public class ProductLineResource {
     @Autowired
     public IProductLineService productlineService;
 
+
     @Autowired
     @Lazy
     public ProductLineMapping productlineMapping;
 
     @ApiOperation(value = "新建产品线", tags = {"产品线" },  notes = "新建产品线")
 	@RequestMapping(method = RequestMethod.POST, value = "/productlines")
+    @Transactional
     public ResponseEntity<ProductLineDTO> create(@Validated @RequestBody ProductLineDTO productlinedto) {
         ProductLine domain = productlineMapping.toDomain(productlinedto);
 		productlineService.create(domain);
@@ -66,9 +69,10 @@ public class ProductLineResource {
     @VersionCheck(entity = "productline" , versionfield = "updatedate")
     @ApiOperation(value = "更新产品线", tags = {"产品线" },  notes = "更新产品线")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productlines/{productline_id}")
+    @Transactional
     public ResponseEntity<ProductLineDTO> update(@PathVariable("productline_id") String productline_id, @RequestBody ProductLineDTO productlinedto) {
 		ProductLine domain  = productlineMapping.toDomain(productlinedto);
-        domain .setProductlineid(productline_id);
+        domain.setProductlineid(productline_id);
 		productlineService.update(domain );
 		ProductLineDTO dto = productlineMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
@@ -158,6 +162,5 @@ public class ProductLineResource {
         productlinedto = productlineMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(productlinedto);
     }
-
 }
 

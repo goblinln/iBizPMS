@@ -74,7 +74,7 @@ public class CompanyStats extends EntityMP implements Serializable {
     /**
      * 日志日期
      */
-    @TableField(value = "`date`")
+    @TableField(value = "date")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "date", format = "yyyy-MM-dd")
     @JsonProperty("date")
@@ -131,7 +131,7 @@ public class CompanyStats extends EntityMP implements Serializable {
     /**
      * 备注
      */
-    @TableField(value = "`comment`")
+    @TableField(value = "comment")
     @JSONField(name = "comment")
     @JsonProperty("comment")
     @ApiModelProperty("备注")

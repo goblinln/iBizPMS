@@ -49,7 +49,7 @@ public class TaskEstimateStats extends EntityMP implements Serializable {
     /**
      * 日期
      */
-    @TableField(value = "`date`")
+    @TableField(value = "date")
     @JSONField(name = "date")
     @JsonProperty("date")
     @ApiModelProperty("日期")
@@ -73,7 +73,7 @@ public class TaskEstimateStats extends EntityMP implements Serializable {
     /**
      * 评估状态
      */
-    @TableField(value = "`evaluationstatus`")
+    @TableField(value = "evaluationstatus")
     @JSONField(name = "evaluationstatus")
     @JsonProperty("evaluationstatus")
     @ApiModelProperty("评估状态")
@@ -81,7 +81,7 @@ public class TaskEstimateStats extends EntityMP implements Serializable {
     /**
      * 用户
      */
-    @TableField(value = "`account`")
+    @TableField(value = "account")
     @JSONField(name = "account")
     @JsonProperty("account")
     @ApiModelProperty("用户")
@@ -98,7 +98,7 @@ public class TaskEstimateStats extends EntityMP implements Serializable {
     /**
      * 月（显示）
      */
-    @TableField(value = "`monthname`")
+    @TableField(value = "monthname")
     @JSONField(name = "monthname")
     @JsonProperty("monthname")
     @ApiModelProperty("月（显示）")
@@ -122,7 +122,7 @@ public class TaskEstimateStats extends EntityMP implements Serializable {
     /**
      * 评估工时
      */
-    @TableField(value = "`evaluationtime`")
+    @TableField(value = "evaluationtime")
     @JSONField(name = "evaluationtime")
     @JsonProperty("evaluationtime")
     @ApiModelProperty("评估工时")
@@ -130,7 +130,7 @@ public class TaskEstimateStats extends EntityMP implements Serializable {
     /**
      * 评估成本
      */
-    @TableField(value = "`evaluationcost`")
+    @TableField(value = "evaluationcost")
     @JSONField(name = "evaluationcost")
     @JsonProperty("evaluationcost")
     @ApiModelProperty("评估成本")
@@ -138,7 +138,7 @@ public class TaskEstimateStats extends EntityMP implements Serializable {
     /**
      * 投入成本
      */
-    @TableField(value = "`inputcost`")
+    @TableField(value = "inputcost")
     @JSONField(name = "inputcost")
     @JsonProperty("inputcost")
     @ApiModelProperty("投入成本")

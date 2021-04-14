@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IIbzPlanTempletService extends IService<IbzPlanTemplet> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "计划模板";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "ibzplantemplets";
-
     boolean create(IbzPlanTemplet et);
     void createBatch(List<IbzPlanTemplet> list);
     boolean update(IbzPlanTemplet et);
+    boolean sysUpdate(IbzPlanTemplet et);
     void updateBatch(List<IbzPlanTemplet> list);
     boolean remove(String key);
     void removeBatch(Collection<String> idList);
     IbzPlanTemplet get(String key);
+    IbzPlanTemplet sysGet(String key);
     IbzPlanTemplet getDraft(IbzPlanTemplet et);
     boolean checkKey(IbzPlanTemplet et);
     IbzPlanTemplet getPlan(IbzPlanTemplet et);

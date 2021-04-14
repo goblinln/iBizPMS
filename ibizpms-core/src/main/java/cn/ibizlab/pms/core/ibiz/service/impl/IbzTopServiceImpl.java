@@ -85,6 +85,16 @@ public class IbzTopServiceImpl extends ServiceImpl<IbzTopMapper, IbzTop> impleme
 
     @Override
     @Transactional
+    public boolean sysUpdate(IbzTop et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibz_topid", et.getIbztopid()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getIbztopid()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(String key) {
         boolean result = removeById(key);
         return result ;
@@ -100,11 +110,24 @@ public class IbzTopServiceImpl extends ServiceImpl<IbzTopMapper, IbzTop> impleme
     @Transactional
     public IbzTop get(String key) {
         IbzTop et = getById(key);
-        if(et == null){
-            et = new IbzTop();
-            et.setIbztopid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public IbzTop sysGet(String key) {
+        IbzTop et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         return et;
     }
@@ -251,5 +274,6 @@ public class IbzTopServiceImpl extends ServiceImpl<IbzTopMapper, IbzTop> impleme
         return et;
     }
 }
+
 
 

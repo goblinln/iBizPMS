@@ -85,6 +85,16 @@ public class DynaDashboardServiceImpl extends ServiceImpl<DynaDashboardMapper, D
 
     @Override
     @Transactional
+    public boolean sysUpdate(DynaDashboard et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("dynadashboardid", et.getDynadashboardid()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getDynadashboardid()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(String key) {
         boolean result = removeById(key);
         return result ;
@@ -100,11 +110,24 @@ public class DynaDashboardServiceImpl extends ServiceImpl<DynaDashboardMapper, D
     @Transactional
     public DynaDashboard get(String key) {
         DynaDashboard et = getById(key);
-        if(et == null){
-            et = new DynaDashboard();
-            et.setDynadashboardid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public DynaDashboard sysGet(String key) {
+        DynaDashboard et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         return et;
     }
@@ -251,5 +274,6 @@ public class DynaDashboardServiceImpl extends ServiceImpl<DynaDashboardMapper, D
         return et;
     }
 }
+
 
 

@@ -117,11 +117,24 @@ public class ModuleServiceImpl extends ServiceImpl<ModuleMapper, Module> impleme
     @Transactional
     public Module get(Long key) {
         Module et = getById(key);
-        if(et == null){
-            et = new Module();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public Module sysGet(Long key) {
+        Module et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -374,5 +387,6 @@ public class ModuleServiceImpl extends ServiceImpl<ModuleMapper, Module> impleme
         return et;
     }
 }
+
 
 

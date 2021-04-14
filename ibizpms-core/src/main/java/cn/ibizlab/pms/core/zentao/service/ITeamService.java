@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ITeamService extends IService<Team> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "群组";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "teams";
-
     boolean create(Team et);
     void createBatch(List<Team> list);
     boolean update(Team et);
+    boolean sysUpdate(Team et);
     void updateBatch(List<Team> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     Team get(Long key);
+    Team sysGet(Long key);
     Team getDraft(Team et);
     boolean checkKey(Team et);
     Team managePorjectMembers(Team et);

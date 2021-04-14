@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IIBZProStoryService extends IService<IBZProStory> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "需求";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "ibzprostories";
-
     boolean create(IBZProStory et);
     void createBatch(List<IBZProStory> list);
     boolean update(IBZProStory et);
+    boolean sysUpdate(IBZProStory et);
     void updateBatch(List<IBZProStory> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     IBZProStory get(Long key);
+    IBZProStory sysGet(Long key);
     IBZProStory getDraft(IBZProStory et);
     boolean checkKey(IBZProStory et);
     boolean save(IBZProStory et);

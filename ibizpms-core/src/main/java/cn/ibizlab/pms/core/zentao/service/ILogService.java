@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ILogService extends IService<Log> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "log";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "logs";
-
     boolean create(Log et);
     void createBatch(List<Log> list);
     boolean update(Log et);
+    boolean sysUpdate(Log et);
     void updateBatch(List<Log> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     Log get(Long key);
+    Log sysGet(Long key);
     Log getDraft(Log et);
     boolean checkKey(Log et);
     boolean save(Log et);

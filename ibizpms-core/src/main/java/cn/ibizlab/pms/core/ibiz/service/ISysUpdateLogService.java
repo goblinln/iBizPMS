@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ISysUpdateLogService extends IService<SysUpdateLog> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "更新日志";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "sysupdatelogs";
-
     boolean create(SysUpdateLog et);
     void createBatch(List<SysUpdateLog> list);
     boolean update(SysUpdateLog et);
+    boolean sysUpdate(SysUpdateLog et);
     void updateBatch(List<SysUpdateLog> list);
     boolean remove(String key);
     void removeBatch(Collection<String> idList);
     SysUpdateLog get(String key);
+    SysUpdateLog sysGet(String key);
     SysUpdateLog getDraft(SysUpdateLog et);
     boolean checkKey(SysUpdateLog et);
     SysUpdateLog getLastUpdateInfo(SysUpdateLog et);

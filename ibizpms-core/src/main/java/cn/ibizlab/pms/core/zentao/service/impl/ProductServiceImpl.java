@@ -161,12 +161,25 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     @Transactional
     public Product get(Long key) {
         Product et = getById(key);
-        if(et == null){
-            et = new Product();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
             et.setProductteam(productteamService.selectByRoot(key));
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public Product sysGet(Long key) {
+        Product et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -181,6 +194,15 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     @Transactional
     public Product cancelProductTop(Product et) {
          return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean cancelProductTopBatch(List<Product> etList) {
+        for(Product et : etList) {
+            cancelProductTop(et);
+        }
+        return true;
     }
 
     @Override
@@ -210,14 +232,41 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
 
     @Override
     @Transactional
+    public boolean mobProductCounterBatch(List<Product> etList) {
+        for(Product et : etList) {
+            mobProductCounter(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public Product mobProductTestCounter(Product et) {
          return et ;
     }
 
     @Override
     @Transactional
+    public boolean mobProductTestCounterBatch(List<Product> etList) {
+        for(Product et : etList) {
+            mobProductTestCounter(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public Product productTop(Product et) {
          return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean productTopBatch(List<Product> etList) {
+        for(Product et : etList) {
+            productTop(et);
+        }
+        return true;
     }
 
     @Override
@@ -461,5 +510,6 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         return et;
     }
 }
+
 
 

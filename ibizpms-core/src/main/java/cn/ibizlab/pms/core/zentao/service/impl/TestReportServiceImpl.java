@@ -95,11 +95,24 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
     @Transactional
     public TestReport get(Long key) {
         TestReport et = getById(key);
-        if(et == null){
-            et = new TestReport();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public TestReport sysGet(Long key) {
+        TestReport et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -122,8 +135,26 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
 
     @Override
     @Transactional
+    public boolean getInfoTaskOvByTimeBatch(List<TestReport> etList) {
+        for(TestReport et : etList) {
+            getInfoTaskOvByTime(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public TestReport getInfoTestTask(TestReport et) {
          return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean getInfoTestTaskBatch(List<TestReport> etList) {
+        for(TestReport et : etList) {
+            getInfoTestTask(et);
+        }
+        return true;
     }
 
     @Override
@@ -134,8 +165,26 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
 
     @Override
     @Transactional
+    public boolean getInfoTestTaskOvProjectBatch(List<TestReport> etList) {
+        for(TestReport et : etList) {
+            getInfoTestTaskOvProject(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public TestReport getInfoTestTaskProject(TestReport et) {
          return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean getInfoTestTaskProjectBatch(List<TestReport> etList) {
+        for(TestReport et : etList) {
+            getInfoTestTaskProject(et);
+        }
+        return true;
     }
 
     @Override
@@ -146,8 +195,26 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
 
     @Override
     @Transactional
+    public boolean getInfoTestTaskRBatch(List<TestReport> etList) {
+        for(TestReport et : etList) {
+            getInfoTestTaskR(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public TestReport getInfoTestTaskS(TestReport et) {
          return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean getInfoTestTaskSBatch(List<TestReport> etList) {
+        for(TestReport et : etList) {
+            getInfoTestTaskS(et);
+        }
+        return true;
     }
 
     @Override
@@ -158,8 +225,26 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
 
     @Override
     @Transactional
+    public boolean getTestReportBasicInfoBatch(List<TestReport> etList) {
+        for(TestReport et : etList) {
+            getTestReportBasicInfo(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public TestReport getTestReportProject(TestReport et) {
          return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean getTestReportProjectBatch(List<TestReport> etList) {
+        for(TestReport et : etList) {
+            getTestReportProject(et);
+        }
+        return true;
     }
 
     @Override
@@ -341,5 +426,6 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
         return et;
     }
 }
+
 
 

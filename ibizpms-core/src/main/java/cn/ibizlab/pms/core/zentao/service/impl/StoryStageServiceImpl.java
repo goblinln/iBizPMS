@@ -95,6 +95,16 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
 
     @Override
     @Transactional
+    public boolean sysUpdate(StoryStage et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(String key) {
         boolean result = removeById(key);
         return result ;
@@ -110,11 +120,24 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
     @Transactional
     public StoryStage get(String key) {
         StoryStage et = getById(key);
-        if(et == null){
-            et = new StoryStage();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public StoryStage sysGet(String key) {
+        StoryStage et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         return et;
     }
@@ -299,5 +322,6 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
         return et;
     }
 }
+
 
 

@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IIbzFavoritesService extends IService<IbzFavorites> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "收藏";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "ibzfavorites";
-
     boolean create(IbzFavorites et);
     void createBatch(List<IbzFavorites> list);
     boolean update(IbzFavorites et);
+    boolean sysUpdate(IbzFavorites et);
     void updateBatch(List<IbzFavorites> list);
     boolean remove(String key);
     void removeBatch(Collection<String> idList);
     IbzFavorites get(String key);
+    IbzFavorites sysGet(String key);
     IbzFavorites getDraft(IbzFavorites et);
     boolean checkKey(IbzFavorites et);
     boolean save(IbzFavorites et);

@@ -12,6 +12,7 @@ import javax.servlet.ServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.PageRequest;
@@ -33,6 +34,7 @@ import cn.ibizlab.pms.core.ibiz.domain.TestModule;
 import cn.ibizlab.pms.core.ibiz.service.ITestModuleService;
 import cn.ibizlab.pms.core.ibiz.filter.TestModuleSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.runtime.TestModuleRuntime;
 
 @Slf4j
 @Api(tags = {"测试模块" })
@@ -44,20 +46,26 @@ public class TestModuleResource {
     public ITestModuleService testmoduleService;
 
     @Autowired
+    public TestModuleRuntime testmoduleRuntime;
+
+    @Autowired
     @Lazy
     public TestModuleMapping testmoduleMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-Create-all')")
+    @PreAuthorize("@TestModuleRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建测试模块", tags = {"测试模块" },  notes = "新建测试模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/testmodules")
+    @Transactional
     public ResponseEntity<TestModuleDTO> create(@Validated @RequestBody TestModuleDTO testmoduledto) {
         TestModule domain = testmoduleMapping.toDomain(testmoduledto);
 		testmoduleService.create(domain);
+        if(!testmoduleRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         TestModuleDTO dto = testmoduleMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-Create-all')")
+    @PreAuthorize("@TestModuleRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量新建测试模块", tags = {"测试模块" },  notes = "批量新建测试模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/testmodules/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<TestModuleDTO> testmoduledtos) {
@@ -65,18 +73,21 @@ public class TestModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-Update-all')")
+    @PreAuthorize("@TestModuleRuntime.test(#testmodule_id,'UPDATE')")
     @ApiOperation(value = "更新测试模块", tags = {"测试模块" },  notes = "更新测试模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/testmodules/{testmodule_id}")
+    @Transactional
     public ResponseEntity<TestModuleDTO> update(@PathVariable("testmodule_id") Long testmodule_id, @RequestBody TestModuleDTO testmoduledto) {
 		TestModule domain  = testmoduleMapping.toDomain(testmoduledto);
-        domain .setId(testmodule_id);
+        domain.setId(testmodule_id);
 		testmoduleService.update(domain );
+        if(!testmoduleRuntime.test(testmodule_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
 		TestModuleDTO dto = testmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-Update-all')")
+    @PreAuthorize("@TestModuleRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "批量更新测试模块", tags = {"测试模块" },  notes = "批量更新测试模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/testmodules/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<TestModuleDTO> testmoduledtos) {
@@ -84,14 +95,14 @@ public class TestModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-Remove-all')")
+    @PreAuthorize("@TestModuleRuntime.test(#testmodule_id,'DELETE')")
     @ApiOperation(value = "删除测试模块", tags = {"测试模块" },  notes = "删除测试模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/testmodules/{testmodule_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("testmodule_id") Long testmodule_id) {
          return ResponseEntity.status(HttpStatus.OK).body(testmoduleService.remove(testmodule_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-Remove-all')")
+    @PreAuthorize("@TestModuleRuntime.test(#ids,'DELETE')")
     @ApiOperation(value = "批量删除测试模块", tags = {"测试模块" },  notes = "批量删除测试模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/testmodules/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +110,7 @@ public class TestModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-Get-all')")
+    @PreAuthorize("@TestModuleRuntime.test(#testmodule_id,'READ')")
     @ApiOperation(value = "获取测试模块", tags = {"测试模块" },  notes = "获取测试模块")
 	@RequestMapping(method = RequestMethod.GET, value = "/testmodules/{testmodule_id}")
     public ResponseEntity<TestModuleDTO> get(@PathVariable("testmodule_id") Long testmodule_id) {
@@ -121,7 +132,6 @@ public class TestModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(testmoduleService.checkKey(testmoduleMapping.toDomain(testmoduledto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-Fix-all')")
     @ApiOperation(value = "重建模块路径", tags = {"测试模块" },  notes = "重建模块路径")
 	@RequestMapping(method = RequestMethod.POST, value = "/testmodules/{testmodule_id}/fix")
     public ResponseEntity<TestModuleDTO> fix(@PathVariable("testmodule_id") Long testmodule_id, @RequestBody TestModuleDTO testmoduledto) {
@@ -132,7 +142,7 @@ public class TestModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(testmoduledto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-RemoveModule-all')")
+    @PreAuthorize("@TestModuleRuntime.test(#testmodule_id,'DELETE')")
     @ApiOperation(value = "删除模块", tags = {"测试模块" },  notes = "删除模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/testmodules/{testmodule_id}/removemodule")
     public ResponseEntity<TestModuleDTO> removeModule(@PathVariable("testmodule_id") Long testmodule_id, @RequestBody TestModuleDTO testmoduledto) {
@@ -143,7 +153,6 @@ public class TestModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(testmoduledto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-Save-all')")
     @ApiOperation(value = "保存测试模块", tags = {"测试模块" },  notes = "保存测试模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/testmodules/save")
     public ResponseEntity<TestModuleDTO> save(@RequestBody TestModuleDTO testmoduledto) {
@@ -152,7 +161,6 @@ public class TestModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(testmoduleMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-Save-all')")
     @ApiOperation(value = "批量保存测试模块", tags = {"测试模块" },  notes = "批量保存测试模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/testmodules/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<TestModuleDTO> testmoduledtos) {
@@ -160,10 +168,11 @@ public class TestModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-searchByPath-all')")
+    @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取BYPATH", tags = {"测试模块" } ,notes = "获取BYPATH")
     @RequestMapping(method= RequestMethod.GET , value="/testmodules/fetchbypath")
 	public ResponseEntity<List<TestModuleDTO>> fetchByPath(TestModuleSearchContext context) {
+        testmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchByPath(context) ;
         List<TestModuleDTO> list = testmoduleMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -173,19 +182,21 @@ public class TestModuleResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-searchByPath-all')")
+    @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询BYPATH", tags = {"测试模块" } ,notes = "查询BYPATH")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/searchbypath")
 	public ResponseEntity<Page<TestModuleDTO>> searchByPath(@RequestBody TestModuleSearchContext context) {
+        testmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchByPath(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-searchDefault-all')")
+    @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试模块" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/testmodules/fetchdefault")
 	public ResponseEntity<List<TestModuleDTO>> fetchDefault(TestModuleSearchContext context) {
+        testmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchDefault(context) ;
         List<TestModuleDTO> list = testmoduleMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -195,19 +206,21 @@ public class TestModuleResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-searchDefault-all')")
+    @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"测试模块" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/searchdefault")
 	public ResponseEntity<Page<TestModuleDTO>> searchDefault(@RequestBody TestModuleSearchContext context) {
+        testmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-searchParentModule-all')")
+    @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取父模块", tags = {"测试模块" } ,notes = "获取父模块")
     @RequestMapping(method= RequestMethod.GET , value="/testmodules/fetchparentmodule")
 	public ResponseEntity<List<TestModuleDTO>> fetchParentModule(TestModuleSearchContext context) {
+        testmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchParentModule(context) ;
         List<TestModuleDTO> list = testmoduleMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -217,19 +230,21 @@ public class TestModuleResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-searchParentModule-all')")
+    @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询父模块", tags = {"测试模块" } ,notes = "查询父模块")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/searchparentmodule")
 	public ResponseEntity<Page<TestModuleDTO>> searchParentModule(@RequestBody TestModuleSearchContext context) {
+        testmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchParentModule(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-searchRoot-all')")
+    @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根模块", tags = {"测试模块" } ,notes = "获取根模块")
     @RequestMapping(method= RequestMethod.GET , value="/testmodules/fetchroot")
 	public ResponseEntity<List<TestModuleDTO>> fetchRoot(TestModuleSearchContext context) {
+        testmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchRoot(context) ;
         List<TestModuleDTO> list = testmoduleMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -239,19 +254,21 @@ public class TestModuleResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-searchRoot-all')")
+    @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询根模块", tags = {"测试模块" } ,notes = "查询根模块")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/searchroot")
 	public ResponseEntity<Page<TestModuleDTO>> searchRoot(@RequestBody TestModuleSearchContext context) {
+        testmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchRoot(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-searchRoot_NoBranch-all')")
+    @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根模块_无分支", tags = {"测试模块" } ,notes = "获取根模块_无分支")
     @RequestMapping(method= RequestMethod.GET , value="/testmodules/fetchroot_nobranch")
 	public ResponseEntity<List<TestModuleDTO>> fetchRoot_NoBranch(TestModuleSearchContext context) {
+        testmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchRoot_NoBranch(context) ;
         List<TestModuleDTO> list = testmoduleMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -261,19 +278,21 @@ public class TestModuleResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-searchRoot_NoBranch-all')")
+    @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询根模块_无分支", tags = {"测试模块" } ,notes = "查询根模块_无分支")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/searchroot_nobranch")
 	public ResponseEntity<Page<TestModuleDTO>> searchRoot_NoBranch(@RequestBody TestModuleSearchContext context) {
+        testmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchRoot_NoBranch(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-searchTestModule-all')")
+    @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取TestModule", tags = {"测试模块" } ,notes = "获取TestModule")
     @RequestMapping(method= RequestMethod.GET , value="/testmodules/fetchtestmodule")
 	public ResponseEntity<List<TestModuleDTO>> fetchTestModule(TestModuleSearchContext context) {
+        testmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchTestModule(context) ;
         List<TestModuleDTO> list = testmoduleMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -283,10 +302,11 @@ public class TestModuleResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-searchTestModule-all')")
+    @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询TestModule", tags = {"测试模块" } ,notes = "查询TestModule")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/searchtestmodule")
 	public ResponseEntity<Page<TestModuleDTO>> searchTestModule(@RequestBody TestModuleSearchContext context) {
+        testmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchTestModule(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -300,8 +320,6 @@ public class TestModuleResource {
         testmoduledto = testmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testmoduledto);
     }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-Create-all')")
     @ApiOperation(value = "根据产品建立测试模块", tags = {"测试模块" },  notes = "根据产品建立测试模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testmodules")
     public ResponseEntity<TestModuleDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestModuleDTO testmoduledto) {
@@ -312,7 +330,6 @@ public class TestModuleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-Create-all')")
     @ApiOperation(value = "根据产品批量建立测试模块", tags = {"测试模块" },  notes = "根据产品批量建立测试模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testmodules/batch")
     public ResponseEntity<Boolean> createBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<TestModuleDTO> testmoduledtos) {
@@ -324,7 +341,6 @@ public class TestModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-Update-all')")
     @ApiOperation(value = "根据产品更新测试模块", tags = {"测试模块" },  notes = "根据产品更新测试模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testmodules/{testmodule_id}")
     public ResponseEntity<TestModuleDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testmodule_id") Long testmodule_id, @RequestBody TestModuleDTO testmoduledto) {
@@ -336,7 +352,6 @@ public class TestModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-Update-all')")
     @ApiOperation(value = "根据产品批量更新测试模块", tags = {"测试模块" },  notes = "根据产品批量更新测试模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testmodules/batch")
     public ResponseEntity<Boolean> updateBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<TestModuleDTO> testmoduledtos) {
@@ -348,14 +363,12 @@ public class TestModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-Remove-all')")
     @ApiOperation(value = "根据产品删除测试模块", tags = {"测试模块" },  notes = "根据产品删除测试模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testmodules/{testmodule_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testmodule_id") Long testmodule_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(testmoduleService.remove(testmodule_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-Remove-all')")
     @ApiOperation(value = "根据产品批量删除测试模块", tags = {"测试模块" },  notes = "根据产品批量删除测试模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testmodules/batch")
     public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
@@ -363,7 +376,6 @@ public class TestModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-Get-all')")
     @ApiOperation(value = "根据产品获取测试模块", tags = {"测试模块" },  notes = "根据产品获取测试模块")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testmodules/{testmodule_id}")
     public ResponseEntity<TestModuleDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testmodule_id") Long testmodule_id) {
@@ -386,7 +398,6 @@ public class TestModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(testmoduleService.checkKey(testmoduleMapping.toDomain(testmoduledto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-Fix-all')")
     @ApiOperation(value = "根据产品测试模块", tags = {"测试模块" },  notes = "根据产品测试模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testmodules/{testmodule_id}/fix")
     public ResponseEntity<TestModuleDTO> fixByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testmodule_id") Long testmodule_id, @RequestBody TestModuleDTO testmoduledto) {
@@ -396,7 +407,6 @@ public class TestModuleResource {
         testmoduledto = testmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testmoduledto);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-RemoveModule-all')")
     @ApiOperation(value = "根据产品测试模块", tags = {"测试模块" },  notes = "根据产品测试模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testmodules/{testmodule_id}/removemodule")
     public ResponseEntity<TestModuleDTO> removeModuleByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testmodule_id") Long testmodule_id, @RequestBody TestModuleDTO testmoduledto) {
@@ -406,7 +416,6 @@ public class TestModuleResource {
         testmoduledto = testmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testmoduledto);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-Save-all')")
     @ApiOperation(value = "根据产品保存测试模块", tags = {"测试模块" },  notes = "根据产品保存测试模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testmodules/save")
     public ResponseEntity<TestModuleDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestModuleDTO testmoduledto) {
@@ -416,7 +425,6 @@ public class TestModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(testmoduleMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-Save-all')")
     @ApiOperation(value = "根据产品批量保存测试模块", tags = {"测试模块" },  notes = "根据产品批量保存测试模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testmodules/savebatch")
     public ResponseEntity<Boolean> saveBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<TestModuleDTO> testmoduledtos) {
@@ -428,7 +436,6 @@ public class TestModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-searchByPath-all')")
 	@ApiOperation(value = "根据产品获取BYPATH", tags = {"测试模块" } ,notes = "根据产品获取BYPATH")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/testmodules/fetchbypath")
 	public ResponseEntity<List<TestModuleDTO>> fetchTestModuleByPathByProduct(@PathVariable("product_id") Long product_id,TestModuleSearchContext context) {
@@ -442,7 +449,6 @@ public class TestModuleResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-searchByPath-all')")
 	@ApiOperation(value = "根据产品查询BYPATH", tags = {"测试模块" } ,notes = "根据产品查询BYPATH")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testmodules/searchbypath")
 	public ResponseEntity<Page<TestModuleDTO>> searchTestModuleByPathByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestModuleSearchContext context) {
@@ -451,7 +457,6 @@ public class TestModuleResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-searchDefault-all')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"测试模块" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/testmodules/fetchdefault")
 	public ResponseEntity<List<TestModuleDTO>> fetchTestModuleDefaultByProduct(@PathVariable("product_id") Long product_id,TestModuleSearchContext context) {
@@ -465,7 +470,6 @@ public class TestModuleResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-searchDefault-all')")
 	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"测试模块" } ,notes = "根据产品查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testmodules/searchdefault")
 	public ResponseEntity<Page<TestModuleDTO>> searchTestModuleDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestModuleSearchContext context) {
@@ -474,7 +478,6 @@ public class TestModuleResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-searchParentModule-all')")
 	@ApiOperation(value = "根据产品获取父模块", tags = {"测试模块" } ,notes = "根据产品获取父模块")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/testmodules/fetchparentmodule")
 	public ResponseEntity<List<TestModuleDTO>> fetchTestModuleParentModuleByProduct(@PathVariable("product_id") Long product_id,TestModuleSearchContext context) {
@@ -488,7 +491,6 @@ public class TestModuleResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-searchParentModule-all')")
 	@ApiOperation(value = "根据产品查询父模块", tags = {"测试模块" } ,notes = "根据产品查询父模块")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testmodules/searchparentmodule")
 	public ResponseEntity<Page<TestModuleDTO>> searchTestModuleParentModuleByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestModuleSearchContext context) {
@@ -497,7 +499,6 @@ public class TestModuleResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-searchRoot-all')")
 	@ApiOperation(value = "根据产品获取根模块", tags = {"测试模块" } ,notes = "根据产品获取根模块")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/testmodules/fetchroot")
 	public ResponseEntity<List<TestModuleDTO>> fetchTestModuleRootByProduct(@PathVariable("product_id") Long product_id,TestModuleSearchContext context) {
@@ -511,7 +512,6 @@ public class TestModuleResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-searchRoot-all')")
 	@ApiOperation(value = "根据产品查询根模块", tags = {"测试模块" } ,notes = "根据产品查询根模块")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testmodules/searchroot")
 	public ResponseEntity<Page<TestModuleDTO>> searchTestModuleRootByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestModuleSearchContext context) {
@@ -520,7 +520,6 @@ public class TestModuleResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-searchRoot_NoBranch-all')")
 	@ApiOperation(value = "根据产品获取根模块_无分支", tags = {"测试模块" } ,notes = "根据产品获取根模块_无分支")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/testmodules/fetchroot_nobranch")
 	public ResponseEntity<List<TestModuleDTO>> fetchTestModuleRoot_NoBranchByProduct(@PathVariable("product_id") Long product_id,TestModuleSearchContext context) {
@@ -534,7 +533,6 @@ public class TestModuleResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-searchRoot_NoBranch-all')")
 	@ApiOperation(value = "根据产品查询根模块_无分支", tags = {"测试模块" } ,notes = "根据产品查询根模块_无分支")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testmodules/searchroot_nobranch")
 	public ResponseEntity<Page<TestModuleDTO>> searchTestModuleRoot_NoBranchByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestModuleSearchContext context) {
@@ -543,7 +541,6 @@ public class TestModuleResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-searchTestModule-all')")
 	@ApiOperation(value = "根据产品获取TestModule", tags = {"测试模块" } ,notes = "根据产品获取TestModule")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/testmodules/fetchtestmodule")
 	public ResponseEntity<List<TestModuleDTO>> fetchTestModuleTestModuleByProduct(@PathVariable("product_id") Long product_id,TestModuleSearchContext context) {
@@ -557,7 +554,6 @@ public class TestModuleResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestModule-searchTestModule-all')")
 	@ApiOperation(value = "根据产品查询TestModule", tags = {"测试模块" } ,notes = "根据产品查询TestModule")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testmodules/searchtestmodule")
 	public ResponseEntity<Page<TestModuleDTO>> searchTestModuleTestModuleByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestModuleSearchContext context) {

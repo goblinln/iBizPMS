@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IImMessagestatusService extends IService<ImMessagestatus> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "ImMessagestatus";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "immessagestatuses";
-
     boolean create(ImMessagestatus et);
     void createBatch(List<ImMessagestatus> list);
     boolean update(ImMessagestatus et);
+    boolean sysUpdate(ImMessagestatus et);
     void updateBatch(List<ImMessagestatus> list);
     boolean remove(String key);
     void removeBatch(Collection<String> idList);
     ImMessagestatus get(String key);
+    ImMessagestatus sysGet(String key);
     ImMessagestatus getDraft(ImMessagestatus et);
     boolean checkKey(ImMessagestatus et);
     boolean save(ImMessagestatus et);

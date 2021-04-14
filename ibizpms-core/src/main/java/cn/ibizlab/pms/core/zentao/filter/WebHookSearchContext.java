@@ -30,16 +30,10 @@ public class WebHookSearchContext extends QueryWrapperContext<WebHook> {
 	private String n_name_like;//[name]
 	public void setN_name_like(String n_name_like) {
         this.n_name_like = n_name_like;
-        if(!ObjectUtils.isEmpty(this.n_name_like)){
-            this.getSearchCond().like("`name`", n_name_like);
-        }
     }
 	private String n_sendtype_eq;//[sendType]
 	public void setN_sendtype_eq(String n_sendtype_eq) {
         this.n_sendtype_eq = n_sendtype_eq;
-        if(!ObjectUtils.isEmpty(this.n_sendtype_eq)){
-            this.getSearchCond().eq("`sendtype`", n_sendtype_eq);
-        }
     }
 
     /**
@@ -51,7 +45,7 @@ public class WebHookSearchContext extends QueryWrapperContext<WebHook> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("`name`", query)
+                     wrapper.like("name", query)
             );
 		 }
 	}

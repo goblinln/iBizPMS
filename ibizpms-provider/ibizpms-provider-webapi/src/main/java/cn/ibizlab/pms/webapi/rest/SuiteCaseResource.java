@@ -12,6 +12,7 @@ import javax.servlet.ServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.PageRequest;
@@ -33,6 +34,7 @@ import cn.ibizlab.pms.core.zentao.domain.SuiteCase;
 import cn.ibizlab.pms.core.zentao.service.ISuiteCaseService;
 import cn.ibizlab.pms.core.zentao.filter.SuiteCaseSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.runtime.SuiteCaseRuntime;
 
 @Slf4j
 @Api(tags = {"套件用例" })
@@ -44,20 +46,26 @@ public class SuiteCaseResource {
     public ISuiteCaseService suitecaseService;
 
     @Autowired
+    public SuiteCaseRuntime suitecaseRuntime;
+
+    @Autowired
     @Lazy
     public SuiteCaseMapping suitecaseMapping;
 
-    @PreAuthorize("hasPermission(this.suitecaseMapping.toDomain(#suitecasedto),'iBizPMS-SuiteCase-Create')")
+    @PreAuthorize("@SuiteCaseRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建套件用例", tags = {"套件用例" },  notes = "新建套件用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/suitecases")
+    @Transactional
     public ResponseEntity<SuiteCaseDTO> create(@Validated @RequestBody SuiteCaseDTO suitecasedto) {
         SuiteCase domain = suitecaseMapping.toDomain(suitecasedto);
 		suitecaseService.create(domain);
+        if(!suitecaseRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         SuiteCaseDTO dto = suitecaseMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.suitecaseMapping.toDomain(#suitecasedtos),'iBizPMS-SuiteCase-Create')")
+    @PreAuthorize("@SuiteCaseRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量新建套件用例", tags = {"套件用例" },  notes = "批量新建套件用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/suitecases/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<SuiteCaseDTO> suitecasedtos) {
@@ -65,18 +73,21 @@ public class SuiteCaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.suitecaseService.get(#suitecase_id),'iBizPMS-SuiteCase-Update')")
+    @PreAuthorize("@SuiteCaseRuntime.test(#suitecase_id,'UPDATE')")
     @ApiOperation(value = "更新套件用例", tags = {"套件用例" },  notes = "更新套件用例")
 	@RequestMapping(method = RequestMethod.PUT, value = "/suitecases/{suitecase_id}")
+    @Transactional
     public ResponseEntity<SuiteCaseDTO> update(@PathVariable("suitecase_id") String suitecase_id, @RequestBody SuiteCaseDTO suitecasedto) {
 		SuiteCase domain  = suitecaseMapping.toDomain(suitecasedto);
-        domain .setId(suitecase_id);
+        domain.setId(suitecase_id);
 		suitecaseService.update(domain );
+        if(!suitecaseRuntime.test(suitecase_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
 		SuiteCaseDTO dto = suitecaseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.suitecaseService.getSuitecaseByEntities(this.suitecaseMapping.toDomain(#suitecasedtos)),'iBizPMS-SuiteCase-Update')")
+    @PreAuthorize("@SuiteCaseRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "批量更新套件用例", tags = {"套件用例" },  notes = "批量更新套件用例")
 	@RequestMapping(method = RequestMethod.PUT, value = "/suitecases/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<SuiteCaseDTO> suitecasedtos) {
@@ -84,14 +95,14 @@ public class SuiteCaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.suitecaseService.get(#suitecase_id),'iBizPMS-SuiteCase-Remove')")
+    @PreAuthorize("@SuiteCaseRuntime.test(#suitecase_id,'DELETE')")
     @ApiOperation(value = "删除套件用例", tags = {"套件用例" },  notes = "删除套件用例")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/suitecases/{suitecase_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("suitecase_id") String suitecase_id) {
          return ResponseEntity.status(HttpStatus.OK).body(suitecaseService.remove(suitecase_id));
     }
 
-    @PreAuthorize("hasPermission(this.suitecaseService.getSuitecaseByIds(#ids),'iBizPMS-SuiteCase-Remove')")
+    @PreAuthorize("@SuiteCaseRuntime.test(#ids,'DELETE')")
     @ApiOperation(value = "批量删除套件用例", tags = {"套件用例" },  notes = "批量删除套件用例")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/suitecases/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -99,7 +110,7 @@ public class SuiteCaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.suitecaseMapping.toDomain(returnObject.body),'iBizPMS-SuiteCase-Get')")
+    @PreAuthorize("@SuiteCaseRuntime.test(#suitecase_id,'READ')")
     @ApiOperation(value = "获取套件用例", tags = {"套件用例" },  notes = "获取套件用例")
 	@RequestMapping(method = RequestMethod.GET, value = "/suitecases/{suitecase_id}")
     public ResponseEntity<SuiteCaseDTO> get(@PathVariable("suitecase_id") String suitecase_id) {
@@ -121,7 +132,6 @@ public class SuiteCaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(suitecaseService.checkKey(suitecaseMapping.toDomain(suitecasedto)));
     }
 
-    @PreAuthorize("hasPermission(this.suitecaseMapping.toDomain(#suitecasedto),'iBizPMS-SuiteCase-Save')")
     @ApiOperation(value = "保存套件用例", tags = {"套件用例" },  notes = "保存套件用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/suitecases/save")
     public ResponseEntity<SuiteCaseDTO> save(@RequestBody SuiteCaseDTO suitecasedto) {
@@ -130,7 +140,6 @@ public class SuiteCaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(suitecaseMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.suitecaseMapping.toDomain(#suitecasedtos),'iBizPMS-SuiteCase-Save')")
     @ApiOperation(value = "批量保存套件用例", tags = {"套件用例" },  notes = "批量保存套件用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/suitecases/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<SuiteCaseDTO> suitecasedtos) {
@@ -138,10 +147,11 @@ public class SuiteCaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SuiteCase-searchDefault-all') and hasPermission(#context,'iBizPMS-SuiteCase-Get')")
+    @PreAuthorize("@SuiteCaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"套件用例" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/suitecases/fetchdefault")
 	public ResponseEntity<List<SuiteCaseDTO>> fetchDefault(SuiteCaseSearchContext context) {
+        suitecaseRuntime.addAuthorityConditions(context,"READ");
         Page<SuiteCase> domains = suitecaseService.searchDefault(context) ;
         List<SuiteCaseDTO> list = suitecaseMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -151,10 +161,11 @@ public class SuiteCaseResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-SuiteCase-searchDefault-all') and hasPermission(#context,'iBizPMS-SuiteCase-Get')")
+    @PreAuthorize("@SuiteCaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"套件用例" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/suitecases/searchdefault")
 	public ResponseEntity<Page<SuiteCaseDTO>> searchDefault(@RequestBody SuiteCaseSearchContext context) {
+        suitecaseRuntime.addAuthorityConditions(context,"READ");
         Page<SuiteCase> domains = suitecaseService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(suitecaseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -168,6 +179,5 @@ public class SuiteCaseResource {
         suitecasedto = suitecaseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(suitecasedto);
     }
-
 }
 

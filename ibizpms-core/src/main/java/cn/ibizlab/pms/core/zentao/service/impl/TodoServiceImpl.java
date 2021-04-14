@@ -89,11 +89,24 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
     @Transactional
     public Todo get(Long key) {
         Todo et = getById(key);
-        if(et == null){
-            et = new Todo();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public Todo sysGet(Long key) {
+        Todo et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -158,7 +171,6 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean createCycleBatch(List<Todo> etList) {
@@ -376,5 +388,6 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
         return et;
     }
 }
+
 
 

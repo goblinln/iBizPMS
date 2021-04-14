@@ -85,6 +85,16 @@ public class IbzReportRoleConfigServiceImpl extends ServiceImpl<IbzReportRoleCon
 
     @Override
     @Transactional
+    public boolean sysUpdate(IbzReportRoleConfig et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibz_report_role_configid", et.getIbzreportroleconfigid()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getIbzreportroleconfigid()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(String key) {
         boolean result = removeById(key);
         return result ;
@@ -100,11 +110,24 @@ public class IbzReportRoleConfigServiceImpl extends ServiceImpl<IbzReportRoleCon
     @Transactional
     public IbzReportRoleConfig get(String key) {
         IbzReportRoleConfig et = getById(key);
-        if(et == null){
-            et = new IbzReportRoleConfig();
-            et.setIbzreportroleconfigid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public IbzReportRoleConfig sysGet(String key) {
+        IbzReportRoleConfig et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         return et;
     }
@@ -251,5 +274,6 @@ public class IbzReportRoleConfigServiceImpl extends ServiceImpl<IbzReportRoleCon
         return et;
     }
 }
+
 
 

@@ -82,7 +82,7 @@ public class ProjectProduct extends EntityMP implements Serializable {
     /**
      * 产品
      */
-    @TableField(value = "`product`")
+    @TableField(value = "product")
     @JSONField(name = "product")
     @JsonProperty("product")
     @ApiModelProperty("产品")
@@ -90,7 +90,7 @@ public class ProjectProduct extends EntityMP implements Serializable {
     /**
      * 产品计划
      */
-    @TableField(value = "`plan`")
+    @TableField(value = "plan")
     @JSONField(name = "plan")
     @JsonProperty("plan")
     @ApiModelProperty("产品计划")
@@ -98,7 +98,7 @@ public class ProjectProduct extends EntityMP implements Serializable {
     /**
      * 平台/分支
      */
-    @TableField(value = "`branch`")
+    @TableField(value = "branch")
     @JSONField(name = "branch")
     @JsonProperty("branch")
     @ApiModelProperty("平台/分支")
@@ -106,7 +106,7 @@ public class ProjectProduct extends EntityMP implements Serializable {
     /**
      * 项目
      */
-    @TableField(value = "`project`")
+    @TableField(value = "project")
     @JSONField(name = "project")
     @JsonProperty("project")
     @ApiModelProperty("项目")
@@ -115,7 +115,7 @@ public class ProjectProduct extends EntityMP implements Serializable {
      * 由谁创建
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "`createby`")
+    @TableField(value = "createby")
     @JSONField(name = "createby")
     @JsonProperty("createby")
     @ApiModelProperty("由谁创建")
@@ -124,7 +124,7 @@ public class ProjectProduct extends EntityMP implements Serializable {
      * 由谁更新
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "`updateby`")
+    @TableField(value = "updateby")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")
     @ApiModelProperty("由谁更新")
@@ -133,7 +133,7 @@ public class ProjectProduct extends EntityMP implements Serializable {
      * 归属组织
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "`org`")
+    @TableField(value = "org")
     @JSONField(name = "org")
     @JsonProperty("org")
     @ApiModelProperty("归属组织")
@@ -142,7 +142,7 @@ public class ProjectProduct extends EntityMP implements Serializable {
      * 归属部门
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "`dept`")
+    @TableField(value = "dept")
     @JSONField(name = "dept")
     @JsonProperty("dept")
     @ApiModelProperty("归属部门")

@@ -12,6 +12,7 @@ import javax.servlet.ServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.PageRequest;
@@ -33,6 +34,7 @@ import cn.ibizlab.pms.core.ibiz.domain.IbzFavorites;
 import cn.ibizlab.pms.core.ibiz.service.IIbzFavoritesService;
 import cn.ibizlab.pms.core.ibiz.filter.IbzFavoritesSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.runtime.IbzFavoritesRuntime;
 
 @Slf4j
 @Api(tags = {"收藏" })
@@ -44,20 +46,26 @@ public class IbzFavoritesResource {
     public IIbzFavoritesService ibzfavoritesService;
 
     @Autowired
+    public IbzFavoritesRuntime ibzfavoritesRuntime;
+
+    @Autowired
     @Lazy
     public IbzFavoritesMapping ibzfavoritesMapping;
 
-    @PreAuthorize("hasPermission(this.ibzfavoritesMapping.toDomain(#ibzfavoritesdto),'iBizPMS-IbzFavorites-Create')")
+    @PreAuthorize("@IbzFavoritesRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建收藏", tags = {"收藏" },  notes = "新建收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzfavorites")
+    @Transactional
     public ResponseEntity<IbzFavoritesDTO> create(@Validated @RequestBody IbzFavoritesDTO ibzfavoritesdto) {
         IbzFavorites domain = ibzfavoritesMapping.toDomain(ibzfavoritesdto);
 		ibzfavoritesService.create(domain);
+        if(!ibzfavoritesRuntime.test(domain.getIbzfavoritesid(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         IbzFavoritesDTO dto = ibzfavoritesMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.ibzfavoritesMapping.toDomain(#ibzfavoritesdtos),'iBizPMS-IbzFavorites-Create')")
+    @PreAuthorize("@IbzFavoritesRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量新建收藏", tags = {"收藏" },  notes = "批量新建收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzfavorites/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzFavoritesDTO> ibzfavoritesdtos) {
@@ -66,18 +74,21 @@ public class IbzFavoritesResource {
     }
 
     @VersionCheck(entity = "ibzfavorites" , versionfield = "updatedate")
-    @PreAuthorize("hasPermission(this.ibzfavoritesService.get(#ibzfavorites_id),'iBizPMS-IbzFavorites-Update')")
+    @PreAuthorize("@IbzFavoritesRuntime.test(#ibzfavorites_id,'UPDATE')")
     @ApiOperation(value = "更新收藏", tags = {"收藏" },  notes = "更新收藏")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzfavorites/{ibzfavorites_id}")
+    @Transactional
     public ResponseEntity<IbzFavoritesDTO> update(@PathVariable("ibzfavorites_id") String ibzfavorites_id, @RequestBody IbzFavoritesDTO ibzfavoritesdto) {
 		IbzFavorites domain  = ibzfavoritesMapping.toDomain(ibzfavoritesdto);
-        domain .setIbzfavoritesid(ibzfavorites_id);
+        domain.setIbzfavoritesid(ibzfavorites_id);
 		ibzfavoritesService.update(domain );
+        if(!ibzfavoritesRuntime.test(ibzfavorites_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
 		IbzFavoritesDTO dto = ibzfavoritesMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.ibzfavoritesService.getIbzfavoritesByEntities(this.ibzfavoritesMapping.toDomain(#ibzfavoritesdtos)),'iBizPMS-IbzFavorites-Update')")
+    @PreAuthorize("@IbzFavoritesRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "批量更新收藏", tags = {"收藏" },  notes = "批量更新收藏")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzfavorites/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzFavoritesDTO> ibzfavoritesdtos) {
@@ -85,14 +96,14 @@ public class IbzFavoritesResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.ibzfavoritesService.get(#ibzfavorites_id),'iBizPMS-IbzFavorites-Remove')")
+    @PreAuthorize("@IbzFavoritesRuntime.test(#ibzfavorites_id,'DELETE')")
     @ApiOperation(value = "删除收藏", tags = {"收藏" },  notes = "删除收藏")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzfavorites/{ibzfavorites_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzfavorites_id") String ibzfavorites_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibzfavoritesService.remove(ibzfavorites_id));
     }
 
-    @PreAuthorize("hasPermission(this.ibzfavoritesService.getIbzfavoritesByIds(#ids),'iBizPMS-IbzFavorites-Remove')")
+    @PreAuthorize("@IbzFavoritesRuntime.test(#ids,'DELETE')")
     @ApiOperation(value = "批量删除收藏", tags = {"收藏" },  notes = "批量删除收藏")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzfavorites/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -100,7 +111,7 @@ public class IbzFavoritesResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.ibzfavoritesMapping.toDomain(returnObject.body),'iBizPMS-IbzFavorites-Get')")
+    @PreAuthorize("@IbzFavoritesRuntime.test(#ibzfavorites_id,'READ')")
     @ApiOperation(value = "获取收藏", tags = {"收藏" },  notes = "获取收藏")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzfavorites/{ibzfavorites_id}")
     public ResponseEntity<IbzFavoritesDTO> get(@PathVariable("ibzfavorites_id") String ibzfavorites_id) {
@@ -122,7 +133,6 @@ public class IbzFavoritesResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzfavoritesService.checkKey(ibzfavoritesMapping.toDomain(ibzfavoritesdto)));
     }
 
-    @PreAuthorize("hasPermission(this.ibzfavoritesMapping.toDomain(#ibzfavoritesdto),'iBizPMS-IbzFavorites-Save')")
     @ApiOperation(value = "保存收藏", tags = {"收藏" },  notes = "保存收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzfavorites/save")
     public ResponseEntity<IbzFavoritesDTO> save(@RequestBody IbzFavoritesDTO ibzfavoritesdto) {
@@ -131,7 +141,6 @@ public class IbzFavoritesResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzfavoritesMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.ibzfavoritesMapping.toDomain(#ibzfavoritesdtos),'iBizPMS-IbzFavorites-Save')")
     @ApiOperation(value = "批量保存收藏", tags = {"收藏" },  notes = "批量保存收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzfavorites/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzFavoritesDTO> ibzfavoritesdtos) {
@@ -139,10 +148,11 @@ public class IbzFavoritesResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzFavorites-searchDefault-all') and hasPermission(#context,'iBizPMS-IbzFavorites-Get')")
+    @PreAuthorize("@IbzFavoritesRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"收藏" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibzfavorites/fetchdefault")
 	public ResponseEntity<List<IbzFavoritesDTO>> fetchDefault(IbzFavoritesSearchContext context) {
+        ibzfavoritesRuntime.addAuthorityConditions(context,"READ");
         Page<IbzFavorites> domains = ibzfavoritesService.searchDefault(context) ;
         List<IbzFavoritesDTO> list = ibzfavoritesMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -152,10 +162,11 @@ public class IbzFavoritesResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzFavorites-searchDefault-all') and hasPermission(#context,'iBizPMS-IbzFavorites-Get')")
+    @PreAuthorize("@IbzFavoritesRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"收藏" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzfavorites/searchdefault")
 	public ResponseEntity<Page<IbzFavoritesDTO>> searchDefault(@RequestBody IbzFavoritesSearchContext context) {
+        ibzfavoritesRuntime.addAuthorityConditions(context,"READ");
         Page<IbzFavorites> domains = ibzfavoritesService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzfavoritesMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -169,6 +180,5 @@ public class IbzFavoritesResource {
         ibzfavoritesdto = ibzfavoritesMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibzfavoritesdto);
     }
-
 }
 

@@ -23,14 +23,14 @@ public class SysUserRoleFallback implements SysUserRoleFeignClient {
         return null;
     }
 
-    public SysUserRole create(SysUserRole et) {
+    public SysUserRole create(SysUserRole sysuserrole) {
         return null;
     }
     public Boolean createBatch(List<SysUserRole> sysuserroles) {
         return false;
     }
 
-    public SysUserRole update(String userroleid, SysUserRole et) {
+    public SysUserRole update(String userroleid, SysUserRole sysuserrole) {
         return null;
     }
     public Boolean updateBatch(List<SysUserRole> sysuserroles) {
@@ -50,26 +50,22 @@ public class SysUserRoleFallback implements SysUserRoleFeignClient {
     }
 
 
-    public String getByCodeName(String codeName) {
-            return null;
-    }
-
-
     public SysUserRole getDraft(SysUserRole entity){
         return null;
     }
 
 
 
-    public Boolean checkKey(SysUserRole et) {
+    public Boolean checkKey(SysUserRole sysuserrole) {
         return false;
     }
 
 
-    public Object saveEntity(SysUserRole et) {
+    public Object saveEntity(SysUserRole sysuserrole) {
         return null;
     }
-    public Boolean save(SysUserRole et) {
+
+    public Boolean save(SysUserRole sysuserrole) {
         return false;
     }
     public Boolean saveBatch(List<SysUserRole> sysuserroles) {

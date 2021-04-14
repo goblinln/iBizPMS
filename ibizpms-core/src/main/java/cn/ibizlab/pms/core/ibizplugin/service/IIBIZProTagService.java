@@ -24,31 +24,21 @@ import cn.ibizlab.pms.core.ibizplugin.filter.IBIZProTagSearchContext;
  */
 public interface IIBIZProTagService {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "标签";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "ibizprotags";
-
     boolean create(IBIZProTag et);
     void createBatch(List<IBIZProTag> list);
     boolean update(IBIZProTag et);
+    boolean sysUpdate(IBIZProTag et);
     void updateBatch(List<IBIZProTag> list);
     boolean remove(String key);
     void removeBatch(Collection<String> idList);
     IBIZProTag get(String key);
+    IBIZProTag sysGet(String key);
     IBIZProTag getDraft(IBIZProTag et);
     boolean checkKey(IBIZProTag et);
     boolean save(IBIZProTag et);
     void saveBatch(List<IBIZProTag> list);
     Page<IBIZProTag> searchDefault(IBIZProTagSearchContext context);
     IBIZProTag dynamicCall(String key, String action, IBIZProTag et);
-
-
 }
 
 

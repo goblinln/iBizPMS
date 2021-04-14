@@ -58,7 +58,7 @@ public class StoryStage extends EntityMP implements Serializable {
     /**
      * 设置阶段者
      */
-    @TableField(value = "`stagedby`")
+    @TableField(value = "stagedby")
     @JSONField(name = "stagedby")
     @JsonProperty("stagedby")
     @ApiModelProperty("设置阶段者")
@@ -66,7 +66,7 @@ public class StoryStage extends EntityMP implements Serializable {
     /**
      * 所处阶段
      */
-    @TableField(value = "`stage`")
+    @TableField(value = "stage")
     @JSONField(name = "stage")
     @JsonProperty("stage")
     @ApiModelProperty("所处阶段")
@@ -74,7 +74,7 @@ public class StoryStage extends EntityMP implements Serializable {
     /**
      * 需求
      */
-    @TableField(value = "`story`")
+    @TableField(value = "story")
     @JSONField(name = "story")
     @JsonProperty("story")
     @ApiModelProperty("需求")
@@ -82,7 +82,7 @@ public class StoryStage extends EntityMP implements Serializable {
     /**
      * 平台/分支
      */
-    @TableField(value = "`branch`")
+    @TableField(value = "branch")
     @JSONField(name = "branch")
     @JsonProperty("branch")
     @ApiModelProperty("平台/分支")
@@ -91,7 +91,7 @@ public class StoryStage extends EntityMP implements Serializable {
      * 由谁创建
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "`createby`")
+    @TableField(value = "createby")
     @JSONField(name = "createby")
     @JsonProperty("createby")
     @ApiModelProperty("由谁创建")
@@ -100,7 +100,7 @@ public class StoryStage extends EntityMP implements Serializable {
      * 由谁更新
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "`updateby`")
+    @TableField(value = "updateby")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")
     @ApiModelProperty("由谁更新")
@@ -109,7 +109,7 @@ public class StoryStage extends EntityMP implements Serializable {
      * 归属部门
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "`dept`")
+    @TableField(value = "dept")
     @JSONField(name = "dept")
     @JsonProperty("dept")
     @ApiModelProperty("归属部门")
@@ -118,7 +118,7 @@ public class StoryStage extends EntityMP implements Serializable {
      * 归属组织
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "`org`")
+    @TableField(value = "org")
     @JSONField(name = "org")
     @JsonProperty("org")
     @ApiModelProperty("归属组织")

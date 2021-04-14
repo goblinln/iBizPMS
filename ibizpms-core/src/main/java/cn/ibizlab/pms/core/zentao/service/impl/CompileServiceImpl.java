@@ -88,6 +88,16 @@ public class CompileServiceImpl extends ServiceImpl<CompileMapper, Compile> impl
 
     @Override
     @Transactional
+    public boolean sysUpdate(Compile et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(Long key) {
         boolean result = removeById(key);
         return result ;
@@ -103,11 +113,24 @@ public class CompileServiceImpl extends ServiceImpl<CompileMapper, Compile> impl
     @Transactional
     public Compile get(Long key) {
         Compile et = getById(key);
-        if(et == null){
-            et = new Compile();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public Compile sysGet(Long key) {
+        Compile et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -233,5 +256,6 @@ public class CompileServiceImpl extends ServiceImpl<CompileMapper, Compile> impl
         return et;
     }
 }
+
 
 

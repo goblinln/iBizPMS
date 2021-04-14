@@ -98,11 +98,24 @@ public class TestSuiteServiceImpl extends ServiceImpl<TestSuiteMapper, TestSuite
     @Transactional
     public TestSuite get(Long key) {
         TestSuite et = getById(key);
-        if(et == null){
-            et = new TestSuite();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public TestSuite sysGet(Long key) {
+        TestSuite et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -120,6 +133,15 @@ public class TestSuiteServiceImpl extends ServiceImpl<TestSuiteMapper, TestSuite
     @Transactional
     public TestSuite mobTestSuiteCount(TestSuite et) {
          return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean mobTestSuiteCountBatch(List<TestSuite> etList) {
+        for(TestSuite et : etList) {
+            mobTestSuiteCount(et);
+        }
+        return true;
     }
 
     @Override
@@ -273,5 +295,6 @@ public class TestSuiteServiceImpl extends ServiceImpl<TestSuiteMapper, TestSuite
         return et;
     }
 }
+
 
 

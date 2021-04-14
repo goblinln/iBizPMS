@@ -85,6 +85,16 @@ public class IbzproConfigServiceImpl extends ServiceImpl<IbzproConfigMapper, Ibz
 
     @Override
     @Transactional
+    public boolean sysUpdate(IbzproConfig et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibzpro_configid", et.getIbzproconfigid()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getIbzproconfigid()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(String key) {
         boolean result = removeById(key);
         return result ;
@@ -100,11 +110,24 @@ public class IbzproConfigServiceImpl extends ServiceImpl<IbzproConfigMapper, Ibz
     @Transactional
     public IbzproConfig get(String key) {
         IbzproConfig et = getById(key);
-        if(et == null){
-            et = new IbzproConfig();
-            et.setIbzproconfigid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public IbzproConfig sysGet(String key) {
+        IbzproConfig et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         return et;
     }
@@ -124,7 +147,6 @@ public class IbzproConfigServiceImpl extends ServiceImpl<IbzproConfigMapper, Ibz
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean getSystemConfigBatch(List<IbzproConfig> etList) {
@@ -267,5 +289,6 @@ public class IbzproConfigServiceImpl extends ServiceImpl<IbzproConfigMapper, Ibz
         return et;
     }
 }
+
 
 

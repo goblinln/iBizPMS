@@ -96,6 +96,16 @@ public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> i
 
     @Override
     @Transactional
+    public boolean sysUpdate(CaseStep et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(Long key) {
         boolean result = removeById(key);
         return result ;
@@ -111,12 +121,25 @@ public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> i
     @Transactional
     public CaseStep get(Long key) {
         CaseStep et = getById(key);
-        if(et == null){
-            et = new CaseStep();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
             et.setCasestep(casestepService.selectByParent(key));
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public CaseStep sysGet(Long key) {
+        CaseStep et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -403,5 +426,6 @@ public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> i
         return et;
     }
 }
+
 
 

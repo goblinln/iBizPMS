@@ -25,31 +25,27 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IProductService extends IService<Product> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "产品";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "products";
-
     boolean create(Product et);
     void createBatch(List<Product> list);
     boolean update(Product et);
+    boolean sysUpdate(Product et);
     void updateBatch(List<Product> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     Product get(Long key);
+    Product sysGet(Long key);
     Product getDraft(Product et);
     Product cancelProductTop(Product et);
+    boolean cancelProductTopBatch(List<Product> etList);
     boolean checkKey(Product et);
     Product close(Product et);
     boolean closeBatch(List<Product> etList);
     Product mobProductCounter(Product et);
+    boolean mobProductCounterBatch(List<Product> etList);
     Product mobProductTestCounter(Product et);
+    boolean mobProductTestCounterBatch(List<Product> etList);
     Product productTop(Product et);
+    boolean productTopBatch(List<Product> etList);
     boolean save(Product et);
     void saveBatch(List<Product> list);
     Page<Product> searchAllList(ProductSearchContext context);

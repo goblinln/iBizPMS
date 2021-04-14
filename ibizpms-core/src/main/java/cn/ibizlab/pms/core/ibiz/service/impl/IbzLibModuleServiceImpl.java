@@ -74,7 +74,9 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
     @Transactional
     public void createBatch(List<IbzLibModule> list) {
         list.forEach(item->fillParentData(item));
-        this.saveBatch(list, batchSize);
+        for (IbzLibModule et : list) {
+            getProxyService().save(et);
+        }
     }
 
     @Override
@@ -92,7 +94,19 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
     @Transactional
     public void updateBatch(List<IbzLibModule> list) {
         list.forEach(item->fillParentData(item));
-        updateBatchById(list, batchSize);
+        for (IbzLibModule et : list) {
+            getProxyService().update(et);
+        }
+    }
+
+    @Override
+    @Transactional
+    public boolean sysUpdate(IbzLibModule et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
@@ -112,11 +126,24 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
     @Transactional
     public IbzLibModule get(Long key) {
         IbzLibModule et = getById(key);
-        if(et == null){
-            et = new IbzLibModule();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public IbzLibModule sysGet(Long key) {
+        IbzLibModule et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -288,5 +315,6 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
         return et;
     }
 }
+
 
 

@@ -12,6 +12,7 @@ import javax.servlet.ServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.PageRequest;
@@ -33,6 +34,7 @@ import cn.ibizlab.pms.core.zentao.domain.TestSuite;
 import cn.ibizlab.pms.core.zentao.service.ITestSuiteService;
 import cn.ibizlab.pms.core.zentao.filter.TestSuiteSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.runtime.TestSuiteRuntime;
 
 @Slf4j
 @Api(tags = {"测试套件" })
@@ -44,20 +46,26 @@ public class TestSuiteResource {
     public ITestSuiteService testsuiteService;
 
     @Autowired
+    public TestSuiteRuntime testsuiteRuntime;
+
+    @Autowired
     @Lazy
     public TestSuiteMapping testsuiteMapping;
 
-    @PreAuthorize("hasPermission(this.testsuiteMapping.toDomain(#testsuitedto),'iBizPMS-TestSuite-Create')")
+    @PreAuthorize("@TestSuiteRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建测试套件", tags = {"测试套件" },  notes = "新建测试套件")
 	@RequestMapping(method = RequestMethod.POST, value = "/testsuites")
+    @Transactional
     public ResponseEntity<TestSuiteDTO> create(@Validated @RequestBody TestSuiteDTO testsuitedto) {
         TestSuite domain = testsuiteMapping.toDomain(testsuitedto);
 		testsuiteService.create(domain);
+        if(!testsuiteRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         TestSuiteDTO dto = testsuiteMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.testsuiteMapping.toDomain(#testsuitedtos),'iBizPMS-TestSuite-Create')")
+    @PreAuthorize("@TestSuiteRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量新建测试套件", tags = {"测试套件" },  notes = "批量新建测试套件")
 	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<TestSuiteDTO> testsuitedtos) {
@@ -66,18 +74,21 @@ public class TestSuiteResource {
     }
 
     @VersionCheck(entity = "testsuite" , versionfield = "lastediteddate")
-    @PreAuthorize("hasPermission(this.testsuiteService.get(#testsuite_id),'iBizPMS-TestSuite-Update')")
+    @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'UPDATE')")
     @ApiOperation(value = "更新测试套件", tags = {"测试套件" },  notes = "更新测试套件")
 	@RequestMapping(method = RequestMethod.PUT, value = "/testsuites/{testsuite_id}")
+    @Transactional
     public ResponseEntity<TestSuiteDTO> update(@PathVariable("testsuite_id") Long testsuite_id, @RequestBody TestSuiteDTO testsuitedto) {
 		TestSuite domain  = testsuiteMapping.toDomain(testsuitedto);
-        domain .setId(testsuite_id);
+        domain.setId(testsuite_id);
 		testsuiteService.update(domain );
+        if(!testsuiteRuntime.test(testsuite_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
 		TestSuiteDTO dto = testsuiteMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.testsuiteService.getTestsuiteByEntities(this.testsuiteMapping.toDomain(#testsuitedtos)),'iBizPMS-TestSuite-Update')")
+    @PreAuthorize("@TestSuiteRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "批量更新测试套件", tags = {"测试套件" },  notes = "批量更新测试套件")
 	@RequestMapping(method = RequestMethod.PUT, value = "/testsuites/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<TestSuiteDTO> testsuitedtos) {
@@ -85,14 +96,14 @@ public class TestSuiteResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.testsuiteService.get(#testsuite_id),'iBizPMS-TestSuite-Remove')")
+    @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'DELETE')")
     @ApiOperation(value = "删除测试套件", tags = {"测试套件" },  notes = "删除测试套件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/testsuites/{testsuite_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("testsuite_id") Long testsuite_id) {
          return ResponseEntity.status(HttpStatus.OK).body(testsuiteService.remove(testsuite_id));
     }
 
-    @PreAuthorize("hasPermission(this.testsuiteService.getTestsuiteByIds(#ids),'iBizPMS-TestSuite-Remove')")
+    @PreAuthorize("@TestSuiteRuntime.test(#ids,'DELETE')")
     @ApiOperation(value = "批量删除测试套件", tags = {"测试套件" },  notes = "批量删除测试套件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/testsuites/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -100,7 +111,7 @@ public class TestSuiteResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.testsuiteMapping.toDomain(returnObject.body),'iBizPMS-TestSuite-Get')")
+    @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'READ')")
     @ApiOperation(value = "获取测试套件", tags = {"测试套件" },  notes = "获取测试套件")
 	@RequestMapping(method = RequestMethod.GET, value = "/testsuites/{testsuite_id}")
     public ResponseEntity<TestSuiteDTO> get(@PathVariable("testsuite_id") Long testsuite_id) {
@@ -122,7 +133,6 @@ public class TestSuiteResource {
         return  ResponseEntity.status(HttpStatus.OK).body(testsuiteService.checkKey(testsuiteMapping.toDomain(testsuitedto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestSuite-MobTestSuiteCount-all')")
     @ApiOperation(value = "移动端测试套件计数器", tags = {"测试套件" },  notes = "移动端测试套件计数器")
 	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/{testsuite_id}/mobtestsuitecount")
     public ResponseEntity<TestSuiteDTO> mobTestSuiteCount(@PathVariable("testsuite_id") Long testsuite_id, @RequestBody TestSuiteDTO testsuitedto) {
@@ -133,7 +143,6 @@ public class TestSuiteResource {
         return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);
     }
 
-    @PreAuthorize("hasPermission(this.testsuiteMapping.toDomain(#testsuitedto),'iBizPMS-TestSuite-Save')")
     @ApiOperation(value = "保存测试套件", tags = {"测试套件" },  notes = "保存测试套件")
 	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/save")
     public ResponseEntity<TestSuiteDTO> save(@RequestBody TestSuiteDTO testsuitedto) {
@@ -142,7 +151,6 @@ public class TestSuiteResource {
         return ResponseEntity.status(HttpStatus.OK).body(testsuiteMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.testsuiteMapping.toDomain(#testsuitedtos),'iBizPMS-TestSuite-Save')")
     @ApiOperation(value = "批量保存测试套件", tags = {"测试套件" },  notes = "批量保存测试套件")
 	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<TestSuiteDTO> testsuitedtos) {
@@ -150,10 +158,11 @@ public class TestSuiteResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestSuite-searchDefault-all') and hasPermission(#context,'iBizPMS-TestSuite-Get')")
+    @PreAuthorize("@TestSuiteRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试套件" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/testsuites/fetchdefault")
 	public ResponseEntity<List<TestSuiteDTO>> fetchDefault(TestSuiteSearchContext context) {
+        testsuiteRuntime.addAuthorityConditions(context,"READ");
         Page<TestSuite> domains = testsuiteService.searchDefault(context) ;
         List<TestSuiteDTO> list = testsuiteMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -163,19 +172,21 @@ public class TestSuiteResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestSuite-searchDefault-all') and hasPermission(#context,'iBizPMS-TestSuite-Get')")
+    @PreAuthorize("@TestSuiteRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"测试套件" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/searchdefault")
 	public ResponseEntity<Page<TestSuiteDTO>> searchDefault(@RequestBody TestSuiteSearchContext context) {
+        testsuiteRuntime.addAuthorityConditions(context,"READ");
         Page<TestSuite> domains = testsuiteService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testsuiteMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestSuite-searchPublicTestSuite-all') and hasPermission(#context,'iBizPMS-TestSuite-Get')")
+    @PreAuthorize("@TestSuiteRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取公开套件", tags = {"测试套件" } ,notes = "获取公开套件")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/fetchpublictestsuite")
 	public ResponseEntity<List<TestSuiteDTO>> fetchPublicTestSuite(@RequestBody TestSuiteSearchContext context) {
+        testsuiteRuntime.addAuthorityConditions(context,"READ");
         Page<TestSuite> domains = testsuiteService.searchPublicTestSuite(context) ;
         List<TestSuiteDTO> list = testsuiteMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -185,10 +196,11 @@ public class TestSuiteResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestSuite-searchPublicTestSuite-all') and hasPermission(#context,'iBizPMS-TestSuite-Get')")
+    @PreAuthorize("@TestSuiteRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询公开套件", tags = {"测试套件" } ,notes = "查询公开套件")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/searchpublictestsuite")
 	public ResponseEntity<Page<TestSuiteDTO>> searchPublicTestSuite(@RequestBody TestSuiteSearchContext context) {
+        testsuiteRuntime.addAuthorityConditions(context,"READ");
         Page<TestSuite> domains = testsuiteService.searchPublicTestSuite(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testsuiteMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -202,8 +214,6 @@ public class TestSuiteResource {
         testsuitedto = testsuiteMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);
     }
-
-    @PreAuthorize("hasPermission(this.testsuiteMapping.toDomain(#testsuitedto),'iBizPMS-TestSuite-Create')")
     @ApiOperation(value = "根据产品建立测试套件", tags = {"测试套件" },  notes = "根据产品建立测试套件")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites")
     public ResponseEntity<TestSuiteDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestSuiteDTO testsuitedto) {
@@ -214,7 +224,6 @@ public class TestSuiteResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.testsuiteMapping.toDomain(#testsuitedtos),'iBizPMS-TestSuite-Create')")
     @ApiOperation(value = "根据产品批量建立测试套件", tags = {"测试套件" },  notes = "根据产品批量建立测试套件")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/batch")
     public ResponseEntity<Boolean> createBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<TestSuiteDTO> testsuitedtos) {
@@ -227,7 +236,6 @@ public class TestSuiteResource {
     }
 
     @VersionCheck(entity = "testsuite" , versionfield = "lastediteddate")
-    @PreAuthorize("hasPermission(this.testsuiteService.get(#testsuite_id),'iBizPMS-TestSuite-Update')")
     @ApiOperation(value = "根据产品更新测试套件", tags = {"测试套件" },  notes = "根据产品更新测试套件")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testsuites/{testsuite_id}")
     public ResponseEntity<TestSuiteDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody TestSuiteDTO testsuitedto) {
@@ -239,7 +247,6 @@ public class TestSuiteResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.testsuiteService.getTestsuiteByEntities(this.testsuiteMapping.toDomain(#testsuitedtos)),'iBizPMS-TestSuite-Update')")
     @ApiOperation(value = "根据产品批量更新测试套件", tags = {"测试套件" },  notes = "根据产品批量更新测试套件")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testsuites/batch")
     public ResponseEntity<Boolean> updateBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<TestSuiteDTO> testsuitedtos) {
@@ -251,14 +258,12 @@ public class TestSuiteResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.testsuiteService.get(#testsuite_id),'iBizPMS-TestSuite-Remove')")
     @ApiOperation(value = "根据产品删除测试套件", tags = {"测试套件" },  notes = "根据产品删除测试套件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testsuites/{testsuite_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(testsuiteService.remove(testsuite_id));
     }
 
-    @PreAuthorize("hasPermission(this.testsuiteService.getTestsuiteByIds(#ids),'iBizPMS-TestSuite-Remove')")
     @ApiOperation(value = "根据产品批量删除测试套件", tags = {"测试套件" },  notes = "根据产品批量删除测试套件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testsuites/batch")
     public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
@@ -266,7 +271,6 @@ public class TestSuiteResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.testsuiteMapping.toDomain(returnObject.body),'iBizPMS-TestSuite-Get')")
     @ApiOperation(value = "根据产品获取测试套件", tags = {"测试套件" },  notes = "根据产品获取测试套件")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testsuites/{testsuite_id}")
     public ResponseEntity<TestSuiteDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id) {
@@ -289,7 +293,6 @@ public class TestSuiteResource {
         return  ResponseEntity.status(HttpStatus.OK).body(testsuiteService.checkKey(testsuiteMapping.toDomain(testsuitedto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestSuite-MobTestSuiteCount-all')")
     @ApiOperation(value = "根据产品测试套件", tags = {"测试套件" },  notes = "根据产品测试套件")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/{testsuite_id}/mobtestsuitecount")
     public ResponseEntity<TestSuiteDTO> mobTestSuiteCountByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody TestSuiteDTO testsuitedto) {
@@ -299,7 +302,6 @@ public class TestSuiteResource {
         testsuitedto = testsuiteMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);
     }
-    @PreAuthorize("hasPermission(this.testsuiteMapping.toDomain(#testsuitedto),'iBizPMS-TestSuite-Save')")
     @ApiOperation(value = "根据产品保存测试套件", tags = {"测试套件" },  notes = "根据产品保存测试套件")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/save")
     public ResponseEntity<TestSuiteDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestSuiteDTO testsuitedto) {
@@ -309,7 +311,6 @@ public class TestSuiteResource {
         return ResponseEntity.status(HttpStatus.OK).body(testsuiteMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.testsuiteMapping.toDomain(#testsuitedtos),'iBizPMS-TestSuite-Save')")
     @ApiOperation(value = "根据产品批量保存测试套件", tags = {"测试套件" },  notes = "根据产品批量保存测试套件")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/savebatch")
     public ResponseEntity<Boolean> saveBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<TestSuiteDTO> testsuitedtos) {
@@ -321,7 +322,6 @@ public class TestSuiteResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestSuite-searchDefault-all') and hasPermission(#context,'iBizPMS-TestSuite-Get')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"测试套件" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/testsuites/fetchdefault")
 	public ResponseEntity<List<TestSuiteDTO>> fetchTestSuiteDefaultByProduct(@PathVariable("product_id") Long product_id,TestSuiteSearchContext context) {
@@ -335,7 +335,6 @@ public class TestSuiteResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestSuite-searchDefault-all') and hasPermission(#context,'iBizPMS-TestSuite-Get')")
 	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"测试套件" } ,notes = "根据产品查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/searchdefault")
 	public ResponseEntity<Page<TestSuiteDTO>> searchTestSuiteDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestSuiteSearchContext context) {
@@ -344,7 +343,6 @@ public class TestSuiteResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testsuiteMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestSuite-searchPublicTestSuite-all') and hasPermission(#context,'iBizPMS-TestSuite-Get')")
 	@ApiOperation(value = "根据产品获取公开套件", tags = {"测试套件" } ,notes = "根据产品获取公开套件")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/fetchpublictestsuite")
 	public ResponseEntity<List<TestSuiteDTO>> fetchTestSuitePublicTestSuiteByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestSuiteSearchContext context) {
@@ -358,7 +356,6 @@ public class TestSuiteResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestSuite-searchPublicTestSuite-all') and hasPermission(#context,'iBizPMS-TestSuite-Get')")
 	@ApiOperation(value = "根据产品查询公开套件", tags = {"测试套件" } ,notes = "根据产品查询公开套件")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/searchpublictestsuite")
 	public ResponseEntity<Page<TestSuiteDTO>> searchTestSuitePublicTestSuiteByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestSuiteSearchContext context) {

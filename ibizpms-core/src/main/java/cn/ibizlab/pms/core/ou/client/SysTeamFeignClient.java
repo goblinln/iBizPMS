@@ -24,14 +24,14 @@ public interface SysTeamFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/systeams")
-    SysTeam create(@RequestBody SysTeam et);
+    SysTeam create(@RequestBody SysTeam systeam);
 
     @RequestMapping(method = RequestMethod.POST, value = "/systeams/batch")
     Boolean createBatch(@RequestBody List<SysTeam> systeams);
 
 
     @RequestMapping(method = RequestMethod.PUT, value = "/systeams/{teamid}")
-    SysTeam update(@PathVariable("teamid") String teamid, @RequestBody SysTeam et);
+    SysTeam update(@PathVariable("teamid") String teamid,@RequestBody SysTeam systeam);
 
     @RequestMapping(method = RequestMethod.PUT, value = "/systeams/batch")
     Boolean updateBatch(@RequestBody List<SysTeam> systeams);
@@ -47,22 +47,19 @@ public interface SysTeamFeignClient {
     @RequestMapping(method = RequestMethod.GET, value = "/systeams/{teamid}")
     SysTeam get(@PathVariable("teamid") String teamid);
 
-    @RequestMapping(method = RequestMethod.GET, value = "/systeams/getbycodename/{teamid}")
-    String getByCodeName(@PathVariable("teamid") String codeName);
-
 
     @RequestMapping(method = RequestMethod.GET, value = "/systeams/getdraft")
     SysTeam getDraft(SysTeam entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/systeams/checkkey")
-    Boolean checkKey(@RequestBody SysTeam et);
+    Boolean checkKey(@RequestBody SysTeam systeam);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/systeams/save")
-    Object saveEntity(@RequestBody SysTeam et);
+    Object saveEntity(@RequestBody SysTeam systeam);
 
-    default Boolean save(@RequestBody SysTeam et) { return saveEntity(et)!=null; }
+    default Boolean save(@RequestBody SysTeam systeam) { return saveEntity(systeam)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/systeams/savebatch")
     Boolean saveBatch(@RequestBody List<SysTeam> systeams);

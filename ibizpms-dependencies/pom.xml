@@ -28,8 +28,9 @@
         <alibaba-druid.version>1.1.21</alibaba-druid.version>
 
         <!--  Mybatis Plus -->
-        <mybatis-plus.version>3.3.1</mybatis-plus.version>
-        <mybatis-plus-dynamic-datasource.version>3.0.0</mybatis-plus-dynamic-datasource.version>
+        <mybatis.version>3.5.6</mybatis.version>
+        <mybatis-plus.version>3.4.2</mybatis-plus.version>
+        <mybatis-plus-dynamic-datasource.version>3.3.2</mybatis-plus-dynamic-datasource.version>
 
         <!--  Swagger2 -->
         <springfox-swagger.version>2.9.2</springfox-swagger.version>
@@ -119,6 +120,11 @@
             </dependency>
 
             <!--  Mybatis Plus  -->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>

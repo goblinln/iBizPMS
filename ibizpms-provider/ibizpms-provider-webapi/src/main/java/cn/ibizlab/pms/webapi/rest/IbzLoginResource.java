@@ -12,6 +12,7 @@ import javax.servlet.ServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.PageRequest;
@@ -33,6 +34,7 @@ import cn.ibizlab.pms.core.ibiz.domain.IbiLogin;
 import cn.ibizlab.pms.core.ibiz.service.IIbiLoginService;
 import cn.ibizlab.pms.core.ibiz.filter.IbiLoginSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.runtime.IbiLoginRuntime;
 
 @Slf4j
 @Api(tags = {"实体" })
@@ -44,10 +46,13 @@ public class IbzLoginResource {
     public IIbiLoginService ibiloginService;
 
     @Autowired
+    public IbiLoginRuntime ibiloginRuntime;
+
+    @Autowired
     @Lazy
     public IbzLoginMapping ibzloginMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbiLogin-GetUser-all')")
+    @PreAuthorize("@IbiLoginRuntime.test(#ibzlogin_id,'READ')")
     @ApiOperation(value = "获取ZT账户登录信息", tags = {"实体" },  notes = "获取ZT账户登录信息")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzlogins/{ibzlogin_id}/getuser")
     public ResponseEntity<IbzLoginDTO> getUser(@PathVariable("ibzlogin_id") Long ibzlogin_id, @RequestBody IbzLoginDTO ibzlogindto) {
@@ -57,7 +62,7 @@ public class IbzLoginResource {
         ibzlogindto = ibzloginMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibzlogindto);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbiLogin-GetUser-all')")
+    @PreAuthorize("@IbiLoginRuntime.test('READ')")
     @ApiOperation(value = "批量处理[获取ZT账户登录信息]", tags = {"实体" },  notes = "批量处理[获取ZT账户登录信息]")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzlogins/getuserbatch")
     public ResponseEntity<Boolean> getUserBatch(@RequestBody List<IbzLoginDTO> ibzlogindtos) {
@@ -66,7 +71,6 @@ public class IbzLoginResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbiLogin-Ztlogin-all')")
     @ApiOperation(value = "ZT登录", tags = {"实体" },  notes = "ZT登录")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlogins/{ibzlogin_id}/ztlogin")
     public ResponseEntity<IbzLoginDTO> ztlogin(@PathVariable("ibzlogin_id") Long ibzlogin_id, @RequestBody IbzLoginDTO ibzlogindto) {
@@ -76,7 +80,6 @@ public class IbzLoginResource {
         ibzlogindto = ibzloginMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibzlogindto);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbiLogin-Ztlogin-all')")
     @ApiOperation(value = "批量处理[ZT登录]", tags = {"实体" },  notes = "批量处理[ZT登录]")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlogins/ztloginbatch")
     public ResponseEntity<Boolean> ztloginBatch(@RequestBody List<IbzLoginDTO> ibzlogindtos) {
@@ -93,6 +96,5 @@ public class IbzLoginResource {
         ibzlogindto = ibzloginMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibzlogindto);
     }
-
 }
 

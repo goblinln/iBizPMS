@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IIbizproProductDailyService extends IService<IbizproProductDaily> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "产品日报";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "ibizproproductdailies";
-
     boolean create(IbizproProductDaily et);
     void createBatch(List<IbizproProductDaily> list);
     boolean update(IbizproProductDaily et);
+    boolean sysUpdate(IbizproProductDaily et);
     void updateBatch(List<IbizproProductDaily> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     IbizproProductDaily get(Long key);
+    IbizproProductDaily sysGet(Long key);
     IbizproProductDaily getDraft(IbizproProductDaily et);
     boolean checkKey(IbizproProductDaily et);
     IbizproProductDaily manualCreateDaily(IbizproProductDaily et);

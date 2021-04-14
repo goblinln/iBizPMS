@@ -67,7 +67,9 @@ public class SysUpdateLogServiceImpl extends ServiceImpl<SysUpdateLogMapper, Sys
     @Override
     @Transactional
     public void createBatch(List<SysUpdateLog> list) {
-        this.saveBatch(list, batchSize);
+        for (SysUpdateLog et : list) {
+            getProxyService().save(et);
+        }
     }
 
     @Override
@@ -84,6 +86,16 @@ public class SysUpdateLogServiceImpl extends ServiceImpl<SysUpdateLogMapper, Sys
     @Transactional
     public void updateBatch(List<SysUpdateLog> list) {
         updateBatchById(list, batchSize);
+    }
+
+    @Override
+    @Transactional
+    public boolean sysUpdate(SysUpdateLog et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("sys_update_logid", et.getSysupdatelogid()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getSysupdatelogid()), et);
+        return true;
     }
 
     @Override
@@ -105,11 +117,24 @@ public class SysUpdateLogServiceImpl extends ServiceImpl<SysUpdateLogMapper, Sys
     @Transactional
     public SysUpdateLog get(String key) {
         SysUpdateLog et = getById(key);
-        if(et == null){
-            et = new SysUpdateLog();
-            et.setSysupdatelogid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public SysUpdateLog sysGet(String key) {
+        SysUpdateLog et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         return et;
     }
@@ -129,7 +154,6 @@ public class SysUpdateLogServiceImpl extends ServiceImpl<SysUpdateLogMapper, Sys
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean getLastUpdateInfoBatch(List<SysUpdateLog> etList) {
@@ -272,5 +296,6 @@ public class SysUpdateLogServiceImpl extends ServiceImpl<SysUpdateLogMapper, Sys
         return et;
     }
 }
+
 
 

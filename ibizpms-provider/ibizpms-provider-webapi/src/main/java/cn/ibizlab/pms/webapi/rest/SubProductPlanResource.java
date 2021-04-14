@@ -12,6 +12,7 @@ import javax.servlet.ServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.PageRequest;
@@ -33,6 +34,7 @@ import cn.ibizlab.pms.core.zentao.domain.ProductPlan;
 import cn.ibizlab.pms.core.zentao.service.IProductPlanService;
 import cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.runtime.ProductPlanRuntime;
 
 @Slf4j
 @Api(tags = {"产品计划" })
@@ -44,10 +46,12 @@ public class SubProductPlanResource {
     public IProductPlanService productplanService;
 
     @Autowired
+    public ProductPlanRuntime productplanRuntime;
+
+    @Autowired
     @Lazy
     public SubProductPlanMapping subproductplanMapping;
 
-    @PreAuthorize("hasPermission(this.subproductplanMapping.toDomain(#subproductplandto),'iBizPMS-ProductPlan-Create')")
     @ApiOperation(value = "根据产品计划建立产品计划", tags = {"产品计划" },  notes = "根据产品计划建立产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans")
     public ResponseEntity<SubProductPlanDTO> createByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -58,7 +62,6 @@ public class SubProductPlanResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.subproductplanMapping.toDomain(#subproductplandtos),'iBizPMS-ProductPlan-Create')")
     @ApiOperation(value = "根据产品计划批量建立产品计划", tags = {"产品计划" },  notes = "根据产品计划批量建立产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/batch")
     public ResponseEntity<Boolean> createBatchByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody List<SubProductPlanDTO> subproductplandtos) {
@@ -70,7 +73,6 @@ public class SubProductPlanResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.productplanService.get(#subproductplan_id),'iBizPMS-ProductPlan-Update')")
     @ApiOperation(value = "根据产品计划更新产品计划", tags = {"产品计划" },  notes = "根据产品计划更新产品计划")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
     public ResponseEntity<SubProductPlanDTO> updateByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -82,7 +84,6 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.productplanService.getProductplanByEntities(this.subproductplanMapping.toDomain(#subproductplandtos)),'iBizPMS-ProductPlan-Update')")
     @ApiOperation(value = "根据产品计划批量更新产品计划", tags = {"产品计划" },  notes = "根据产品计划批量更新产品计划")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}/subproductplans/batch")
     public ResponseEntity<Boolean> updateBatchByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody List<SubProductPlanDTO> subproductplandtos) {
@@ -94,14 +95,12 @@ public class SubProductPlanResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.productplanService.get(#subproductplan_id),'iBizPMS-ProductPlan-Remove')")
     @ApiOperation(value = "根据产品计划删除产品计划", tags = {"产品计划" },  notes = "根据产品计划删除产品计划")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
     public ResponseEntity<Boolean> removeByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(productplanService.remove(subproductplan_id));
     }
 
-    @PreAuthorize("hasPermission(this.productplanService.getProductplanByIds(#ids),'iBizPMS-ProductPlan-Remove')")
     @ApiOperation(value = "根据产品计划批量删除产品计划", tags = {"产品计划" },  notes = "根据产品计划批量删除产品计划")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/productplans/{productplan_id}/subproductplans/batch")
     public ResponseEntity<Boolean> removeBatchByProductPlan(@RequestBody List<Long> ids) {
@@ -109,7 +108,6 @@ public class SubProductPlanResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.subproductplanMapping.toDomain(returnObject.body),'iBizPMS-ProductPlan-Get')")
     @ApiOperation(value = "根据产品计划获取产品计划", tags = {"产品计划" },  notes = "根据产品计划获取产品计划")
 	@RequestMapping(method = RequestMethod.GET, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
     public ResponseEntity<SubProductPlanDTO> getByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id) {
@@ -126,7 +124,6 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplanMapping.toDto(productplanService.getDraft(domain)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-BatchUnlinkBug-all')")
     @ApiOperation(value = "根据产品计划产品计划", tags = {"产品计划" },  notes = "根据产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/batchunlinkbug")
     public ResponseEntity<SubProductPlanDTO> batchUnlinkBugByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -143,7 +140,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.batchUnlinkBugBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-BatchUnlinkStory-all')")
     @ApiOperation(value = "根据产品计划产品计划", tags = {"产品计划" },  notes = "根据产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/batchunlinkstory")
     public ResponseEntity<SubProductPlanDTO> batchUnlinkStoryByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -166,7 +162,6 @@ public class SubProductPlanResource {
         return  ResponseEntity.status(HttpStatus.OK).body(productplanService.checkKey(subproductplanMapping.toDomain(subproductplandto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-EeActivePlan-all')")
     @ApiOperation(value = "根据产品计划产品计划", tags = {"产品计划" },  notes = "根据产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eeactiveplan")
     public ResponseEntity<SubProductPlanDTO> eeActivePlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -183,7 +178,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.eeActivePlanBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-EeCancelPlan-all')")
     @ApiOperation(value = "根据产品计划产品计划", tags = {"产品计划" },  notes = "根据产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eecancelplan")
     public ResponseEntity<SubProductPlanDTO> eeCancelPlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -200,7 +194,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.eeCancelPlanBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-EeClosePlan-all')")
     @ApiOperation(value = "根据产品计划产品计划", tags = {"产品计划" },  notes = "根据产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eecloseplan")
     public ResponseEntity<SubProductPlanDTO> eeClosePlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -217,7 +210,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.eeClosePlanBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-EeFinishPlan-all')")
     @ApiOperation(value = "根据产品计划产品计划", tags = {"产品计划" },  notes = "根据产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eefinishplan")
     public ResponseEntity<SubProductPlanDTO> eeFinishPlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -234,7 +226,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.eeFinishPlanBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-EePausePlan-all')")
     @ApiOperation(value = "根据产品计划产品计划", tags = {"产品计划" },  notes = "根据产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eepauseplan")
     public ResponseEntity<SubProductPlanDTO> eePausePlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -251,7 +242,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.eePausePlanBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-EeRestartPlan-all')")
     @ApiOperation(value = "根据产品计划产品计划", tags = {"产品计划" },  notes = "根据产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eerestartplan")
     public ResponseEntity<SubProductPlanDTO> eeRestartPlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -268,7 +258,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.eeRestartPlanBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-EeStartPlan-all')")
     @ApiOperation(value = "根据产品计划产品计划", tags = {"产品计划" },  notes = "根据产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eestartplan")
     public ResponseEntity<SubProductPlanDTO> eeStartPlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -285,7 +274,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.eeStartPlanBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-GetOldPlanName-all')")
     @ApiOperation(value = "根据产品计划产品计划", tags = {"产品计划" },  notes = "根据产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/getoldplanname")
     public ResponseEntity<SubProductPlanDTO> getOldPlanNameByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -295,7 +283,6 @@ public class SubProductPlanResource {
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-ImportPlanTemplet-all')")
     @ApiOperation(value = "根据产品计划产品计划", tags = {"产品计划" },  notes = "根据产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/importplantemplet")
     public ResponseEntity<SubProductPlanDTO> importPlanTempletByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -312,7 +299,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.importPlanTempletBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-LinkBug-all')")
     @ApiOperation(value = "根据产品计划产品计划", tags = {"产品计划" },  notes = "根据产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/linkbug")
     public ResponseEntity<SubProductPlanDTO> linkBugByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -329,7 +315,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.linkBugBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-LinkStory-all')")
     @ApiOperation(value = "根据产品计划产品计划", tags = {"产品计划" },  notes = "根据产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/linkstory")
     public ResponseEntity<SubProductPlanDTO> linkStoryByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -346,7 +331,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.linkStoryBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-LinkTask-all')")
     @ApiOperation(value = "根据产品计划产品计划", tags = {"产品计划" },  notes = "根据产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/linktask")
     public ResponseEntity<SubProductPlanDTO> linkTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -363,7 +347,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.linkTaskBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-MobProductPlanCounter-all')")
     @ApiOperation(value = "根据产品计划产品计划", tags = {"产品计划" },  notes = "根据产品计划产品计划")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/mobproductplancounter")
     public ResponseEntity<SubProductPlanDTO> mobProductPlanCounterByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -373,7 +356,6 @@ public class SubProductPlanResource {
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
-    @PreAuthorize("hasPermission(this.subproductplanMapping.toDomain(#subproductplandto),'iBizPMS-ProductPlan-Save')")
     @ApiOperation(value = "根据产品计划保存产品计划", tags = {"产品计划" },  notes = "根据产品计划保存产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/save")
     public ResponseEntity<SubProductPlanDTO> saveByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -383,7 +365,6 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplanMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.subproductplanMapping.toDomain(#subproductplandtos),'iBizPMS-ProductPlan-Save')")
     @ApiOperation(value = "根据产品计划批量保存产品计划", tags = {"产品计划" },  notes = "根据产品计划批量保存产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/savebatch")
     public ResponseEntity<Boolean> saveBatchByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody List<SubProductPlanDTO> subproductplandtos) {
@@ -395,7 +376,6 @@ public class SubProductPlanResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-UnlinkBug-all')")
     @ApiOperation(value = "根据产品计划产品计划", tags = {"产品计划" },  notes = "根据产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/unlinkbug")
     public ResponseEntity<SubProductPlanDTO> unlinkBugByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -412,7 +392,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.unlinkBugBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-UnlinkStory-all')")
     @ApiOperation(value = "根据产品计划产品计划", tags = {"产品计划" },  notes = "根据产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/unlinkstory")
     public ResponseEntity<SubProductPlanDTO> unlinkStoryByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -429,7 +408,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.unlinkStoryBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchChildPlan-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品计划获取子计划", tags = {"产品计划" } ,notes = "根据产品计划获取子计划")
     @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/subproductplans/fetchchildplan")
 	public ResponseEntity<List<SubProductPlanDTO>> fetchSubProductPlanChildPlanByProductPlan(@PathVariable("productplan_id") Long productplan_id,ProductPlanSearchContext context) {
@@ -443,7 +421,6 @@ public class SubProductPlanResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchChildPlan-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品计划查询子计划", tags = {"产品计划" } ,notes = "根据产品计划查询子计划")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/subproductplans/searchchildplan")
 	public ResponseEntity<Page<SubProductPlanDTO>> searchSubProductPlanChildPlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanSearchContext context) {
@@ -452,7 +429,6 @@ public class SubProductPlanResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchCurProductPlan-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品计划获取CurProductPlan", tags = {"产品计划" } ,notes = "根据产品计划获取CurProductPlan")
     @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/subproductplans/fetchcurproductplan")
 	public ResponseEntity<List<SubProductPlanDTO>> fetchSubProductPlanCurProductPlanByProductPlan(@PathVariable("productplan_id") Long productplan_id,ProductPlanSearchContext context) {
@@ -466,7 +442,6 @@ public class SubProductPlanResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchCurProductPlan-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品计划查询CurProductPlan", tags = {"产品计划" } ,notes = "根据产品计划查询CurProductPlan")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/subproductplans/searchcurproductplan")
 	public ResponseEntity<Page<SubProductPlanDTO>> searchSubProductPlanCurProductPlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanSearchContext context) {
@@ -475,7 +450,6 @@ public class SubProductPlanResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchDefault-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品计划获取DEFAULT", tags = {"产品计划" } ,notes = "根据产品计划获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/subproductplans/fetchdefault")
 	public ResponseEntity<List<SubProductPlanDTO>> fetchSubProductPlanDefaultByProductPlan(@PathVariable("productplan_id") Long productplan_id,ProductPlanSearchContext context) {
@@ -489,7 +463,6 @@ public class SubProductPlanResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchDefault-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品计划查询DEFAULT", tags = {"产品计划" } ,notes = "根据产品计划查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/subproductplans/searchdefault")
 	public ResponseEntity<Page<SubProductPlanDTO>> searchSubProductPlanDefaultByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanSearchContext context) {
@@ -498,7 +471,6 @@ public class SubProductPlanResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchDefaultParent-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品计划获取默认查询", tags = {"产品计划" } ,notes = "根据产品计划获取默认查询")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/subproductplans/fetchdefaultparent")
 	public ResponseEntity<List<SubProductPlanDTO>> fetchSubProductPlanDefaultParentByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody ProductPlanSearchContext context) {
@@ -512,7 +484,6 @@ public class SubProductPlanResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchDefaultParent-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品计划查询默认查询", tags = {"产品计划" } ,notes = "根据产品计划查询默认查询")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/subproductplans/searchdefaultparent")
 	public ResponseEntity<Page<SubProductPlanDTO>> searchSubProductPlanDefaultParentByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanSearchContext context) {
@@ -521,7 +492,6 @@ public class SubProductPlanResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchPlanCodeList-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品计划获取计划（代码表）", tags = {"产品计划" } ,notes = "根据产品计划获取计划（代码表）")
     @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/subproductplans/fetchplancodelist")
 	public ResponseEntity<List<SubProductPlanDTO>> fetchSubProductPlanPlanCodeListByProductPlan(@PathVariable("productplan_id") Long productplan_id,ProductPlanSearchContext context) {
@@ -535,7 +505,6 @@ public class SubProductPlanResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchPlanCodeList-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品计划查询计划（代码表）", tags = {"产品计划" } ,notes = "根据产品计划查询计划（代码表）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/subproductplans/searchplancodelist")
 	public ResponseEntity<Page<SubProductPlanDTO>> searchSubProductPlanPlanCodeListByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanSearchContext context) {
@@ -544,7 +513,6 @@ public class SubProductPlanResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchPlanTasks-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品计划获取项目计划任务（项目管理-项目计划）", tags = {"产品计划" } ,notes = "根据产品计划获取项目计划任务（项目管理-项目计划）")
     @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/subproductplans/fetchplantasks")
 	public ResponseEntity<List<SubProductPlanDTO>> fetchSubProductPlanPlanTasksByProductPlan(@PathVariable("productplan_id") Long productplan_id,ProductPlanSearchContext context) {
@@ -558,7 +526,6 @@ public class SubProductPlanResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchPlanTasks-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品计划查询项目计划任务（项目管理-项目计划）", tags = {"产品计划" } ,notes = "根据产品计划查询项目计划任务（项目管理-项目计划）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/subproductplans/searchplantasks")
 	public ResponseEntity<Page<SubProductPlanDTO>> searchSubProductPlanPlanTasksByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanSearchContext context) {
@@ -567,7 +534,6 @@ public class SubProductPlanResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchProjectApp-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品计划获取项目立项", tags = {"产品计划" } ,notes = "根据产品计划获取项目立项")
     @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/subproductplans/fetchprojectapp")
 	public ResponseEntity<List<SubProductPlanDTO>> fetchSubProductPlanProjectAppByProductPlan(@PathVariable("productplan_id") Long productplan_id,ProductPlanSearchContext context) {
@@ -581,7 +547,6 @@ public class SubProductPlanResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchProjectApp-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品计划查询项目立项", tags = {"产品计划" } ,notes = "根据产品计划查询项目立项")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/subproductplans/searchprojectapp")
 	public ResponseEntity<Page<SubProductPlanDTO>> searchSubProductPlanProjectAppByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanSearchContext context) {
@@ -590,7 +555,6 @@ public class SubProductPlanResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchProjectPlan-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品计划获取项目计划列表", tags = {"产品计划" } ,notes = "根据产品计划获取项目计划列表")
     @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/subproductplans/fetchprojectplan")
 	public ResponseEntity<List<SubProductPlanDTO>> fetchSubProductPlanProjectPlanByProductPlan(@PathVariable("productplan_id") Long productplan_id,ProductPlanSearchContext context) {
@@ -604,7 +568,6 @@ public class SubProductPlanResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchProjectPlan-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品计划查询项目计划列表", tags = {"产品计划" } ,notes = "根据产品计划查询项目计划列表")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/subproductplans/searchprojectplan")
 	public ResponseEntity<Page<SubProductPlanDTO>> searchSubProductPlanProjectPlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanSearchContext context) {
@@ -613,7 +576,6 @@ public class SubProductPlanResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchRootPlan-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品计划获取跟计划", tags = {"产品计划" } ,notes = "根据产品计划获取跟计划")
     @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/subproductplans/fetchrootplan")
 	public ResponseEntity<List<SubProductPlanDTO>> fetchSubProductPlanRootPlanByProductPlan(@PathVariable("productplan_id") Long productplan_id,ProductPlanSearchContext context) {
@@ -627,7 +589,6 @@ public class SubProductPlanResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchRootPlan-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品计划查询跟计划", tags = {"产品计划" } ,notes = "根据产品计划查询跟计划")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/subproductplans/searchrootplan")
 	public ResponseEntity<Page<SubProductPlanDTO>> searchSubProductPlanRootPlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanSearchContext context) {
@@ -636,7 +597,6 @@ public class SubProductPlanResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchTaskPlan-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品计划获取任务计划", tags = {"产品计划" } ,notes = "根据产品计划获取任务计划")
     @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/subproductplans/fetchtaskplan")
 	public ResponseEntity<List<SubProductPlanDTO>> fetchSubProductPlanTaskPlanByProductPlan(@PathVariable("productplan_id") Long productplan_id,ProductPlanSearchContext context) {
@@ -650,7 +610,6 @@ public class SubProductPlanResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchTaskPlan-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品计划查询任务计划", tags = {"产品计划" } ,notes = "根据产品计划查询任务计划")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/subproductplans/searchtaskplan")
 	public ResponseEntity<Page<SubProductPlanDTO>> searchSubProductPlanTaskPlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanSearchContext context) {
@@ -659,7 +618,6 @@ public class SubProductPlanResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasPermission(this.subproductplanMapping.toDomain(#subproductplandto),'iBizPMS-ProductPlan-Create')")
     @ApiOperation(value = "根据产品产品计划建立产品计划", tags = {"产品计划" },  notes = "根据产品产品计划建立产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans")
     public ResponseEntity<SubProductPlanDTO> createByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -670,7 +628,6 @@ public class SubProductPlanResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.subproductplanMapping.toDomain(#subproductplandtos),'iBizPMS-ProductPlan-Create')")
     @ApiOperation(value = "根据产品产品计划批量建立产品计划", tags = {"产品计划" },  notes = "根据产品产品计划批量建立产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/batch")
     public ResponseEntity<Boolean> createBatchByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody List<SubProductPlanDTO> subproductplandtos) {
@@ -682,7 +639,6 @@ public class SubProductPlanResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.productplanService.get(#subproductplan_id),'iBizPMS-ProductPlan-Update')")
     @ApiOperation(value = "根据产品产品计划更新产品计划", tags = {"产品计划" },  notes = "根据产品产品计划更新产品计划")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
     public ResponseEntity<SubProductPlanDTO> updateByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -694,7 +650,6 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.productplanService.getProductplanByEntities(this.subproductplanMapping.toDomain(#subproductplandtos)),'iBizPMS-ProductPlan-Update')")
     @ApiOperation(value = "根据产品产品计划批量更新产品计划", tags = {"产品计划" },  notes = "根据产品产品计划批量更新产品计划")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/batch")
     public ResponseEntity<Boolean> updateBatchByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody List<SubProductPlanDTO> subproductplandtos) {
@@ -706,14 +661,12 @@ public class SubProductPlanResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.productplanService.get(#subproductplan_id),'iBizPMS-ProductPlan-Remove')")
     @ApiOperation(value = "根据产品产品计划删除产品计划", tags = {"产品计划" },  notes = "根据产品产品计划删除产品计划")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
     public ResponseEntity<Boolean> removeByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(productplanService.remove(subproductplan_id));
     }
 
-    @PreAuthorize("hasPermission(this.productplanService.getProductplanByIds(#ids),'iBizPMS-ProductPlan-Remove')")
     @ApiOperation(value = "根据产品产品计划批量删除产品计划", tags = {"产品计划" },  notes = "根据产品产品计划批量删除产品计划")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/batch")
     public ResponseEntity<Boolean> removeBatchByProductProductPlan(@RequestBody List<Long> ids) {
@@ -721,7 +674,6 @@ public class SubProductPlanResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.subproductplanMapping.toDomain(returnObject.body),'iBizPMS-ProductPlan-Get')")
     @ApiOperation(value = "根据产品产品计划获取产品计划", tags = {"产品计划" },  notes = "根据产品产品计划获取产品计划")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
     public ResponseEntity<SubProductPlanDTO> getByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id) {
@@ -738,7 +690,6 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplanMapping.toDto(productplanService.getDraft(domain)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-BatchUnlinkBug-all')")
     @ApiOperation(value = "根据产品产品计划产品计划", tags = {"产品计划" },  notes = "根据产品产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/batchunlinkbug")
     public ResponseEntity<SubProductPlanDTO> batchUnlinkBugByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -755,7 +706,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.batchUnlinkBugBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-BatchUnlinkStory-all')")
     @ApiOperation(value = "根据产品产品计划产品计划", tags = {"产品计划" },  notes = "根据产品产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/batchunlinkstory")
     public ResponseEntity<SubProductPlanDTO> batchUnlinkStoryByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -778,7 +728,6 @@ public class SubProductPlanResource {
         return  ResponseEntity.status(HttpStatus.OK).body(productplanService.checkKey(subproductplanMapping.toDomain(subproductplandto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-EeActivePlan-all')")
     @ApiOperation(value = "根据产品产品计划产品计划", tags = {"产品计划" },  notes = "根据产品产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eeactiveplan")
     public ResponseEntity<SubProductPlanDTO> eeActivePlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -795,7 +744,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.eeActivePlanBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-EeCancelPlan-all')")
     @ApiOperation(value = "根据产品产品计划产品计划", tags = {"产品计划" },  notes = "根据产品产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eecancelplan")
     public ResponseEntity<SubProductPlanDTO> eeCancelPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -812,7 +760,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.eeCancelPlanBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-EeClosePlan-all')")
     @ApiOperation(value = "根据产品产品计划产品计划", tags = {"产品计划" },  notes = "根据产品产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eecloseplan")
     public ResponseEntity<SubProductPlanDTO> eeClosePlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -829,7 +776,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.eeClosePlanBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-EeFinishPlan-all')")
     @ApiOperation(value = "根据产品产品计划产品计划", tags = {"产品计划" },  notes = "根据产品产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eefinishplan")
     public ResponseEntity<SubProductPlanDTO> eeFinishPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -846,7 +792,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.eeFinishPlanBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-EePausePlan-all')")
     @ApiOperation(value = "根据产品产品计划产品计划", tags = {"产品计划" },  notes = "根据产品产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eepauseplan")
     public ResponseEntity<SubProductPlanDTO> eePausePlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -863,7 +808,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.eePausePlanBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-EeRestartPlan-all')")
     @ApiOperation(value = "根据产品产品计划产品计划", tags = {"产品计划" },  notes = "根据产品产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eerestartplan")
     public ResponseEntity<SubProductPlanDTO> eeRestartPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -880,7 +824,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.eeRestartPlanBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-EeStartPlan-all')")
     @ApiOperation(value = "根据产品产品计划产品计划", tags = {"产品计划" },  notes = "根据产品产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eestartplan")
     public ResponseEntity<SubProductPlanDTO> eeStartPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -897,7 +840,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.eeStartPlanBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-GetOldPlanName-all')")
     @ApiOperation(value = "根据产品产品计划产品计划", tags = {"产品计划" },  notes = "根据产品产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/getoldplanname")
     public ResponseEntity<SubProductPlanDTO> getOldPlanNameByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -907,7 +849,6 @@ public class SubProductPlanResource {
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-ImportPlanTemplet-all')")
     @ApiOperation(value = "根据产品产品计划产品计划", tags = {"产品计划" },  notes = "根据产品产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/importplantemplet")
     public ResponseEntity<SubProductPlanDTO> importPlanTempletByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -924,7 +865,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.importPlanTempletBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-LinkBug-all')")
     @ApiOperation(value = "根据产品产品计划产品计划", tags = {"产品计划" },  notes = "根据产品产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/linkbug")
     public ResponseEntity<SubProductPlanDTO> linkBugByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -941,7 +881,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.linkBugBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-LinkStory-all')")
     @ApiOperation(value = "根据产品产品计划产品计划", tags = {"产品计划" },  notes = "根据产品产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/linkstory")
     public ResponseEntity<SubProductPlanDTO> linkStoryByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -958,7 +897,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.linkStoryBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-LinkTask-all')")
     @ApiOperation(value = "根据产品产品计划产品计划", tags = {"产品计划" },  notes = "根据产品产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/linktask")
     public ResponseEntity<SubProductPlanDTO> linkTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -975,7 +913,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.linkTaskBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-MobProductPlanCounter-all')")
     @ApiOperation(value = "根据产品产品计划产品计划", tags = {"产品计划" },  notes = "根据产品产品计划产品计划")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/mobproductplancounter")
     public ResponseEntity<SubProductPlanDTO> mobProductPlanCounterByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -985,7 +922,6 @@ public class SubProductPlanResource {
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
-    @PreAuthorize("hasPermission(this.subproductplanMapping.toDomain(#subproductplandto),'iBizPMS-ProductPlan-Save')")
     @ApiOperation(value = "根据产品产品计划保存产品计划", tags = {"产品计划" },  notes = "根据产品产品计划保存产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/save")
     public ResponseEntity<SubProductPlanDTO> saveByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -995,7 +931,6 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplanMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.subproductplanMapping.toDomain(#subproductplandtos),'iBizPMS-ProductPlan-Save')")
     @ApiOperation(value = "根据产品产品计划批量保存产品计划", tags = {"产品计划" },  notes = "根据产品产品计划批量保存产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/savebatch")
     public ResponseEntity<Boolean> saveBatchByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody List<SubProductPlanDTO> subproductplandtos) {
@@ -1007,7 +942,6 @@ public class SubProductPlanResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-UnlinkBug-all')")
     @ApiOperation(value = "根据产品产品计划产品计划", tags = {"产品计划" },  notes = "根据产品产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/unlinkbug")
     public ResponseEntity<SubProductPlanDTO> unlinkBugByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -1024,7 +958,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.unlinkBugBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-UnlinkStory-all')")
     @ApiOperation(value = "根据产品产品计划产品计划", tags = {"产品计划" },  notes = "根据产品产品计划产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/unlinkstory")
     public ResponseEntity<SubProductPlanDTO> unlinkStoryByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -1041,7 +974,6 @@ public class SubProductPlanResource {
         boolean result = productplanService.unlinkStoryBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchChildPlan-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品产品计划获取子计划", tags = {"产品计划" } ,notes = "根据产品产品计划获取子计划")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/subproductplans/fetchchildplan")
 	public ResponseEntity<List<SubProductPlanDTO>> fetchSubProductPlanChildPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,ProductPlanSearchContext context) {
@@ -1055,7 +987,6 @@ public class SubProductPlanResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchChildPlan-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品产品计划查询子计划", tags = {"产品计划" } ,notes = "根据产品产品计划查询子计划")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/subproductplans/searchchildplan")
 	public ResponseEntity<Page<SubProductPlanDTO>> searchSubProductPlanChildPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanSearchContext context) {
@@ -1064,7 +995,6 @@ public class SubProductPlanResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchCurProductPlan-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品产品计划获取CurProductPlan", tags = {"产品计划" } ,notes = "根据产品产品计划获取CurProductPlan")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/subproductplans/fetchcurproductplan")
 	public ResponseEntity<List<SubProductPlanDTO>> fetchSubProductPlanCurProductPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,ProductPlanSearchContext context) {
@@ -1078,7 +1008,6 @@ public class SubProductPlanResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchCurProductPlan-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品产品计划查询CurProductPlan", tags = {"产品计划" } ,notes = "根据产品产品计划查询CurProductPlan")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/subproductplans/searchcurproductplan")
 	public ResponseEntity<Page<SubProductPlanDTO>> searchSubProductPlanCurProductPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanSearchContext context) {
@@ -1087,7 +1016,6 @@ public class SubProductPlanResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchDefault-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品产品计划获取DEFAULT", tags = {"产品计划" } ,notes = "根据产品产品计划获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/subproductplans/fetchdefault")
 	public ResponseEntity<List<SubProductPlanDTO>> fetchSubProductPlanDefaultByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,ProductPlanSearchContext context) {
@@ -1101,7 +1029,6 @@ public class SubProductPlanResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchDefault-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品产品计划查询DEFAULT", tags = {"产品计划" } ,notes = "根据产品产品计划查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/subproductplans/searchdefault")
 	public ResponseEntity<Page<SubProductPlanDTO>> searchSubProductPlanDefaultByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanSearchContext context) {
@@ -1110,7 +1037,6 @@ public class SubProductPlanResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchDefaultParent-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品产品计划获取默认查询", tags = {"产品计划" } ,notes = "根据产品产品计划获取默认查询")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/subproductplans/fetchdefaultparent")
 	public ResponseEntity<List<SubProductPlanDTO>> fetchSubProductPlanDefaultParentByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody ProductPlanSearchContext context) {
@@ -1124,7 +1050,6 @@ public class SubProductPlanResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchDefaultParent-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品产品计划查询默认查询", tags = {"产品计划" } ,notes = "根据产品产品计划查询默认查询")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/subproductplans/searchdefaultparent")
 	public ResponseEntity<Page<SubProductPlanDTO>> searchSubProductPlanDefaultParentByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanSearchContext context) {
@@ -1133,7 +1058,6 @@ public class SubProductPlanResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchPlanCodeList-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品产品计划获取计划（代码表）", tags = {"产品计划" } ,notes = "根据产品产品计划获取计划（代码表）")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/subproductplans/fetchplancodelist")
 	public ResponseEntity<List<SubProductPlanDTO>> fetchSubProductPlanPlanCodeListByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,ProductPlanSearchContext context) {
@@ -1147,7 +1071,6 @@ public class SubProductPlanResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchPlanCodeList-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品产品计划查询计划（代码表）", tags = {"产品计划" } ,notes = "根据产品产品计划查询计划（代码表）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/subproductplans/searchplancodelist")
 	public ResponseEntity<Page<SubProductPlanDTO>> searchSubProductPlanPlanCodeListByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanSearchContext context) {
@@ -1156,7 +1079,6 @@ public class SubProductPlanResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchPlanTasks-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品产品计划获取项目计划任务（项目管理-项目计划）", tags = {"产品计划" } ,notes = "根据产品产品计划获取项目计划任务（项目管理-项目计划）")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/subproductplans/fetchplantasks")
 	public ResponseEntity<List<SubProductPlanDTO>> fetchSubProductPlanPlanTasksByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,ProductPlanSearchContext context) {
@@ -1170,7 +1092,6 @@ public class SubProductPlanResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchPlanTasks-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品产品计划查询项目计划任务（项目管理-项目计划）", tags = {"产品计划" } ,notes = "根据产品产品计划查询项目计划任务（项目管理-项目计划）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/subproductplans/searchplantasks")
 	public ResponseEntity<Page<SubProductPlanDTO>> searchSubProductPlanPlanTasksByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanSearchContext context) {
@@ -1179,7 +1100,6 @@ public class SubProductPlanResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchProjectApp-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品产品计划获取项目立项", tags = {"产品计划" } ,notes = "根据产品产品计划获取项目立项")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/subproductplans/fetchprojectapp")
 	public ResponseEntity<List<SubProductPlanDTO>> fetchSubProductPlanProjectAppByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,ProductPlanSearchContext context) {
@@ -1193,7 +1113,6 @@ public class SubProductPlanResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchProjectApp-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品产品计划查询项目立项", tags = {"产品计划" } ,notes = "根据产品产品计划查询项目立项")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/subproductplans/searchprojectapp")
 	public ResponseEntity<Page<SubProductPlanDTO>> searchSubProductPlanProjectAppByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanSearchContext context) {
@@ -1202,7 +1121,6 @@ public class SubProductPlanResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchProjectPlan-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品产品计划获取项目计划列表", tags = {"产品计划" } ,notes = "根据产品产品计划获取项目计划列表")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/subproductplans/fetchprojectplan")
 	public ResponseEntity<List<SubProductPlanDTO>> fetchSubProductPlanProjectPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,ProductPlanSearchContext context) {
@@ -1216,7 +1134,6 @@ public class SubProductPlanResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchProjectPlan-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品产品计划查询项目计划列表", tags = {"产品计划" } ,notes = "根据产品产品计划查询项目计划列表")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/subproductplans/searchprojectplan")
 	public ResponseEntity<Page<SubProductPlanDTO>> searchSubProductPlanProjectPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanSearchContext context) {
@@ -1225,7 +1142,6 @@ public class SubProductPlanResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchRootPlan-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品产品计划获取跟计划", tags = {"产品计划" } ,notes = "根据产品产品计划获取跟计划")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/subproductplans/fetchrootplan")
 	public ResponseEntity<List<SubProductPlanDTO>> fetchSubProductPlanRootPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,ProductPlanSearchContext context) {
@@ -1239,7 +1155,6 @@ public class SubProductPlanResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchRootPlan-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品产品计划查询跟计划", tags = {"产品计划" } ,notes = "根据产品产品计划查询跟计划")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/subproductplans/searchrootplan")
 	public ResponseEntity<Page<SubProductPlanDTO>> searchSubProductPlanRootPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanSearchContext context) {
@@ -1248,7 +1163,6 @@ public class SubProductPlanResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchTaskPlan-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品产品计划获取任务计划", tags = {"产品计划" } ,notes = "根据产品产品计划获取任务计划")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/subproductplans/fetchtaskplan")
 	public ResponseEntity<List<SubProductPlanDTO>> fetchSubProductPlanTaskPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,ProductPlanSearchContext context) {
@@ -1262,7 +1176,6 @@ public class SubProductPlanResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProductPlan-searchTaskPlan-all') and hasPermission(#context,'iBizPMS-ProductPlan-Get')")
 	@ApiOperation(value = "根据产品产品计划查询任务计划", tags = {"产品计划" } ,notes = "根据产品产品计划查询任务计划")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/subproductplans/searchtaskplan")
 	public ResponseEntity<Page<SubProductPlanDTO>> searchSubProductPlanTaskPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanSearchContext context) {

@@ -23,14 +23,14 @@ public class SysDepartmentFallback implements SysDepartmentFeignClient {
         return null;
     }
 
-    public SysDepartment create(SysDepartment et) {
+    public SysDepartment create(SysDepartment sysdepartment) {
         return null;
     }
     public Boolean createBatch(List<SysDepartment> sysdepartments) {
         return false;
     }
 
-    public SysDepartment update(String deptid, SysDepartment et) {
+    public SysDepartment update(String deptid, SysDepartment sysdepartment) {
         return null;
     }
     public Boolean updateBatch(List<SysDepartment> sysdepartments) {
@@ -50,26 +50,22 @@ public class SysDepartmentFallback implements SysDepartmentFeignClient {
     }
 
 
-    public String getByCodeName(String codeName) {
-            return null;
-    }
-
-
     public SysDepartment getDraft(SysDepartment entity){
         return null;
     }
 
 
 
-    public Boolean checkKey(SysDepartment et) {
+    public Boolean checkKey(SysDepartment sysdepartment) {
         return false;
     }
 
 
-    public Object saveEntity(SysDepartment et) {
+    public Object saveEntity(SysDepartment sysdepartment) {
         return null;
     }
-    public Boolean save(SysDepartment et) {
+
+    public Boolean save(SysDepartment sysdepartment) {
         return false;
     }
     public Boolean saveBatch(List<SysDepartment> sysdepartments) {

@@ -16,7 +16,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 /**
  * 实体[PSSysApp] 服务对象接口
  */
-//@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSSysApp", fallback = PSSysAppFallback.class)
+@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSSysApp", fallback = PSSysAppFallback.class)
 public interface PSSysAppFeignClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssysapps/select")
@@ -24,14 +24,14 @@ public interface PSSysAppFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysapps")
-    PSSysApp create(@RequestBody PSSysApp et);
+    PSSysApp create(@RequestBody PSSysApp pssysapp);
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysapps/batch")
     Boolean createBatch(@RequestBody List<PSSysApp> pssysapps);
 
 
     @RequestMapping(method = RequestMethod.PUT, value = "/pssysapps/{pssysappid}")
-    PSSysApp update(@PathVariable("pssysappid") String pssysappid, @RequestBody PSSysApp et);
+    PSSysApp update(@PathVariable("pssysappid") String pssysappid,@RequestBody PSSysApp pssysapp);
 
     @RequestMapping(method = RequestMethod.PUT, value = "/pssysapps/batch")
     Boolean updateBatch(@RequestBody List<PSSysApp> pssysapps);
@@ -47,22 +47,19 @@ public interface PSSysAppFeignClient {
     @RequestMapping(method = RequestMethod.GET, value = "/pssysapps/{pssysappid}")
     PSSysApp get(@PathVariable("pssysappid") String pssysappid);
 
-    @RequestMapping(method = RequestMethod.GET, value = "/pssysapps/getbycodename/{pssysappid}")
-    String getByCodeName(@PathVariable("pssysappid") String codeName);
-
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssysapps/getdraft")
     PSSysApp getDraft(PSSysApp entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysapps/checkkey")
-    Boolean checkKey(@RequestBody PSSysApp et);
+    Boolean checkKey(@RequestBody PSSysApp pssysapp);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysapps/save")
-    Object saveEntity(@RequestBody PSSysApp et);
+    Object saveEntity(@RequestBody PSSysApp pssysapp);
 
-    default Boolean save(@RequestBody PSSysApp et) { return saveEntity(et)!=null; }
+    default Boolean save(@RequestBody PSSysApp pssysapp) { return saveEntity(pssysapp)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysapps/savebatch")
     Boolean saveBatch(@RequestBody List<PSSysApp> pssysapps);

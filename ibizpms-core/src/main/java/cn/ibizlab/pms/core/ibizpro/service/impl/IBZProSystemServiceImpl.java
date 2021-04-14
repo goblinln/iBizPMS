@@ -85,6 +85,16 @@ public class IBZProSystemServiceImpl extends ServiceImpl<IBZProSystemMapper, IBZ
 
     @Override
     @Transactional
+    public boolean sysUpdate(IBZProSystem et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibzpro_systemid", et.getIbzprosystemid()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getIbzprosystemid()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(String key) {
         boolean result = removeById(key);
         return result ;
@@ -100,11 +110,24 @@ public class IBZProSystemServiceImpl extends ServiceImpl<IBZProSystemMapper, IBZ
     @Transactional
     public IBZProSystem get(String key) {
         IBZProSystem et = getById(key);
-        if(et == null){
-            et = new IBZProSystem();
-            et.setIbzprosystemid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public IBZProSystem sysGet(String key) {
+        IBZProSystem et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         return et;
     }
@@ -251,5 +274,6 @@ public class IBZProSystemServiceImpl extends ServiceImpl<IBZProSystemMapper, IBZ
         return et;
     }
 }
+
 
 

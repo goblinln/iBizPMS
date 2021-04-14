@@ -92,6 +92,16 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
 
     @Override
     @Transactional
+    public boolean sysUpdate(IbizproProductMonthly et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibizpro_productmonthlyid", et.getIbizproproductmonthlyid()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getIbizproproductmonthlyid()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(Long key) {
         boolean result = removeById(key);
         return result ;
@@ -107,11 +117,24 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
     @Transactional
     public IbizproProductMonthly get(Long key) {
         IbizproProductMonthly et = getById(key);
-        if(et == null){
-            et = new IbizproProductMonthly();
-            et.setIbizproproductmonthlyid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public IbizproProductMonthly sysGet(Long key) {
+        IbizproProductMonthly et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -132,7 +155,6 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean manualCreateMonthlyBatch(List<IbizproProductMonthly> etList) {
@@ -210,7 +232,6 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean statsProductMonthlyBatch(List<IbizproProductMonthly> etList) {
@@ -319,5 +340,6 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
         return et;
     }
 }
+
 
 

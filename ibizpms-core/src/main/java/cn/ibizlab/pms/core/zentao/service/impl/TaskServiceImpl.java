@@ -115,13 +115,26 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     @Transactional
     public Task get(Long key) {
         Task et = getById(key);
-        if(et == null){
-            et = new Task();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
             et.setTaskteam(taskteamService.selectByRoot(key));
             et.setTaskestimate(taskestimateService.selectByTask(key));
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public Task sysGet(Long key) {
+        Task et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -217,7 +230,6 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean createCycleTasksBatch(List<Task> etList) {
@@ -293,7 +305,6 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean getTeamUserLeftActivityBatch(List<Task> etList) {
@@ -309,7 +320,6 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean getTeamUserLeftStartBatch(List<Task> etList) {
@@ -323,6 +333,15 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     @Transactional
     public Task getUsernames(Task et) {
          return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean getUsernamesBatch(List<Task> etList) {
+        for(Task et : etList) {
+            getUsernames(et);
+        }
+        return true;
     }
 
        @Override
@@ -539,11 +558,19 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
 
     @Override
     @Transactional
+    public boolean taskFavoritesBatch(List<Task> etList) {
+        for(Task et : etList) {
+            taskFavorites(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public Task taskForward(Task et) {
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean taskForwardBatch(List<Task> etList) {
@@ -561,8 +588,26 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
 
     @Override
     @Transactional
+    public boolean taskNFavoritesBatch(List<Task> etList) {
+        for(Task et : etList) {
+            taskNFavorites(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public Task updateStoryVersion(Task et) {
          return et ;
+    }
+
+    @Override
+    @Transactional
+    public boolean updateStoryVersionBatch(List<Task> etList) {
+        for(Task et : etList) {
+            updateStoryVersion(et);
+        }
+        return true;
     }
 
 
@@ -1085,5 +1130,6 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         return et;
     }
 }
+
 
 

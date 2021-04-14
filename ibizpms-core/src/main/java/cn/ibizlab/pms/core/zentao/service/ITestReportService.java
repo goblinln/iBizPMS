@@ -25,33 +25,33 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ITestReportService extends IService<TestReport> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "测试报告";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "testreports";
-
     boolean create(TestReport et);
     void createBatch(List<TestReport> list);
     boolean update(TestReport et);
+    boolean sysUpdate(TestReport et);
     void updateBatch(List<TestReport> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     TestReport get(Long key);
+    TestReport sysGet(Long key);
     TestReport getDraft(TestReport et);
     boolean checkKey(TestReport et);
     TestReport getInfoTaskOvByTime(TestReport et);
+    boolean getInfoTaskOvByTimeBatch(List<TestReport> etList);
     TestReport getInfoTestTask(TestReport et);
+    boolean getInfoTestTaskBatch(List<TestReport> etList);
     TestReport getInfoTestTaskOvProject(TestReport et);
+    boolean getInfoTestTaskOvProjectBatch(List<TestReport> etList);
     TestReport getInfoTestTaskProject(TestReport et);
+    boolean getInfoTestTaskProjectBatch(List<TestReport> etList);
     TestReport getInfoTestTaskR(TestReport et);
+    boolean getInfoTestTaskRBatch(List<TestReport> etList);
     TestReport getInfoTestTaskS(TestReport et);
+    boolean getInfoTestTaskSBatch(List<TestReport> etList);
     TestReport getTestReportBasicInfo(TestReport et);
+    boolean getTestReportBasicInfoBatch(List<TestReport> etList);
     TestReport getTestReportProject(TestReport et);
+    boolean getTestReportProjectBatch(List<TestReport> etList);
     boolean save(TestReport et);
     void saveBatch(List<TestReport> list);
     Page<TestReport> searchDefault(TestReportSearchContext context);

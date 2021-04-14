@@ -12,6 +12,7 @@ import javax.servlet.ServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.PageRequest;
@@ -33,6 +34,7 @@ import cn.ibizlab.pms.core.ibizpro.domain.IbzPlanTempletDetail;
 import cn.ibizlab.pms.core.ibizpro.service.IIbzPlanTempletDetailService;
 import cn.ibizlab.pms.core.ibizpro.filter.IbzPlanTempletDetailSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibizpro.runtime.IbzPlanTempletDetailRuntime;
 
 @Slf4j
 @Api(tags = {"计划模板详情" })
@@ -42,6 +44,9 @@ public class IbzPlanTempletDetailResource {
 
     @Autowired
     public IIbzPlanTempletDetailService ibzplantempletdetailService;
+
+    @Autowired
+    public IbzPlanTempletDetailRuntime ibzplantempletdetailRuntime;
 
     @Autowired
     @Lazy

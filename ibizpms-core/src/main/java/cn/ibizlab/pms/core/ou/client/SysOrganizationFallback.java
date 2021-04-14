@@ -23,14 +23,14 @@ public class SysOrganizationFallback implements SysOrganizationFeignClient {
         return null;
     }
 
-    public SysOrganization create(SysOrganization et) {
+    public SysOrganization create(SysOrganization sysorganization) {
         return null;
     }
     public Boolean createBatch(List<SysOrganization> sysorganizations) {
         return false;
     }
 
-    public SysOrganization update(String orgid, SysOrganization et) {
+    public SysOrganization update(String orgid, SysOrganization sysorganization) {
         return null;
     }
     public Boolean updateBatch(List<SysOrganization> sysorganizations) {
@@ -50,26 +50,22 @@ public class SysOrganizationFallback implements SysOrganizationFeignClient {
     }
 
 
-    public String getByCodeName(String codeName) {
-            return null;
-    }
-
-
     public SysOrganization getDraft(SysOrganization entity){
         return null;
     }
 
 
 
-    public Boolean checkKey(SysOrganization et) {
+    public Boolean checkKey(SysOrganization sysorganization) {
         return false;
     }
 
 
-    public Object saveEntity(SysOrganization et) {
+    public Object saveEntity(SysOrganization sysorganization) {
         return null;
     }
-    public Boolean save(SysOrganization et) {
+
+    public Boolean save(SysOrganization sysorganization) {
         return false;
     }
     public Boolean saveBatch(List<SysOrganization> sysorganizations) {

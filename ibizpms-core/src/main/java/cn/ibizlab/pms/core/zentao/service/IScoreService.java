@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IScoreService extends IService<Score> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "score";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "scores";
-
     boolean create(Score et);
     void createBatch(List<Score> list);
     boolean update(Score et);
+    boolean sysUpdate(Score et);
     void updateBatch(List<Score> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     Score get(Long key);
+    Score sysGet(Long key);
     Score getDraft(Score et);
     boolean checkKey(Score et);
     boolean save(Score et);

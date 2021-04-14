@@ -92,6 +92,16 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
 
     @Override
     @Transactional
+    public boolean sysUpdate(EmpLoyeeload et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(Long key) {
         boolean result = removeById(key);
         return result ;
@@ -107,11 +117,24 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
     @Transactional
     public EmpLoyeeload get(Long key) {
         EmpLoyeeload et = getById(key);
-        if(et == null){
-            et = new EmpLoyeeload();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public EmpLoyeeload sysGet(Long key) {
+        EmpLoyeeload et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -274,5 +297,6 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
         return et;
     }
 }
+
 
 

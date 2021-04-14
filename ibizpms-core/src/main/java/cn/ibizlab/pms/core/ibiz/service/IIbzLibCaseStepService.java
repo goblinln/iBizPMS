@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IIbzLibCaseStepService extends IService<IbzLibCaseStep> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "用例库用例步骤";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "ibzlibcasesteps";
-
     boolean create(IbzLibCaseStep et);
     void createBatch(List<IbzLibCaseStep> list);
     boolean update(IbzLibCaseStep et);
+    boolean sysUpdate(IbzLibCaseStep et);
     void updateBatch(List<IbzLibCaseStep> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     IbzLibCaseStep get(Long key);
+    IbzLibCaseStep sysGet(Long key);
     IbzLibCaseStep getDraft(IbzLibCaseStep et);
     boolean checkKey(IbzLibCaseStep et);
     boolean save(IbzLibCaseStep et);

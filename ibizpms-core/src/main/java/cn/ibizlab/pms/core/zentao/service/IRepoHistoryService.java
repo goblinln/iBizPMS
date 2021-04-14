@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IRepoHistoryService extends IService<RepoHistory> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "repohistory";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "repohistories";
-
     boolean create(RepoHistory et);
     void createBatch(List<RepoHistory> list);
     boolean update(RepoHistory et);
+    boolean sysUpdate(RepoHistory et);
     void updateBatch(List<RepoHistory> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     RepoHistory get(Long key);
+    RepoHistory sysGet(Long key);
     RepoHistory getDraft(RepoHistory et);
     boolean checkKey(RepoHistory et);
     boolean save(RepoHistory et);

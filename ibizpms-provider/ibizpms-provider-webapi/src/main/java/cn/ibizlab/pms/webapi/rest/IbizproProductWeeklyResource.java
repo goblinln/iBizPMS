@@ -12,6 +12,7 @@ import javax.servlet.ServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.PageRequest;
@@ -33,6 +34,7 @@ import cn.ibizlab.pms.core.ibizpro.domain.IbizproProductWeekly;
 import cn.ibizlab.pms.core.ibizpro.service.IIbizproProductWeeklyService;
 import cn.ibizlab.pms.core.ibizpro.filter.IbizproProductWeeklySearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibizpro.runtime.IbizproProductWeeklyRuntime;
 
 @Slf4j
 @Api(tags = {"产品周报" })
@@ -44,20 +46,26 @@ public class IbizproProductWeeklyResource {
     public IIbizproProductWeeklyService ibizproproductweeklyService;
 
     @Autowired
+    public IbizproProductWeeklyRuntime ibizproproductweeklyRuntime;
+
+    @Autowired
     @Lazy
     public IbizproProductWeeklyMapping ibizproproductweeklyMapping;
 
-    @PreAuthorize("hasPermission(this.ibizproproductweeklyMapping.toDomain(#ibizproproductweeklydto),'iBizPMS-IbizproProductWeekly-Create')")
+    @PreAuthorize("@IbizproProductWeeklyRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建产品周报", tags = {"产品周报" },  notes = "新建产品周报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductweeklies")
+    @Transactional
     public ResponseEntity<IbizproProductWeeklyDTO> create(@Validated @RequestBody IbizproProductWeeklyDTO ibizproproductweeklydto) {
         IbizproProductWeekly domain = ibizproproductweeklyMapping.toDomain(ibizproproductweeklydto);
 		ibizproproductweeklyService.create(domain);
+        if(!ibizproproductweeklyRuntime.test(domain.getIbizproProductweeklyid(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         IbizproProductWeeklyDTO dto = ibizproproductweeklyMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.ibizproproductweeklyMapping.toDomain(#ibizproproductweeklydtos),'iBizPMS-IbizproProductWeekly-Create')")
+    @PreAuthorize("@IbizproProductWeeklyRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量新建产品周报", tags = {"产品周报" },  notes = "批量新建产品周报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductweeklies/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<IbizproProductWeeklyDTO> ibizproproductweeklydtos) {
@@ -66,18 +74,21 @@ public class IbizproProductWeeklyResource {
     }
 
     @VersionCheck(entity = "ibizproproductweekly" , versionfield = "updatedate")
-    @PreAuthorize("hasPermission(this.ibizproproductweeklyService.get(#ibizproproductweekly_id),'iBizPMS-IbizproProductWeekly-Update')")
+    @PreAuthorize("@IbizproProductWeeklyRuntime.test(#ibizproproductweekly_id,'UPDATE')")
     @ApiOperation(value = "更新产品周报", tags = {"产品周报" },  notes = "更新产品周报")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizproproductweeklies/{ibizproproductweekly_id}")
+    @Transactional
     public ResponseEntity<IbizproProductWeeklyDTO> update(@PathVariable("ibizproproductweekly_id") Long ibizproproductweekly_id, @RequestBody IbizproProductWeeklyDTO ibizproproductweeklydto) {
 		IbizproProductWeekly domain  = ibizproproductweeklyMapping.toDomain(ibizproproductweeklydto);
-        domain .setIbizproProductweeklyid(ibizproproductweekly_id);
+        domain.setIbizproProductweeklyid(ibizproproductweekly_id);
 		ibizproproductweeklyService.update(domain );
+        if(!ibizproproductweeklyRuntime.test(ibizproproductweekly_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
 		IbizproProductWeeklyDTO dto = ibizproproductweeklyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.ibizproproductweeklyService.getIbizproproductweeklyByEntities(this.ibizproproductweeklyMapping.toDomain(#ibizproproductweeklydtos)),'iBizPMS-IbizproProductWeekly-Update')")
+    @PreAuthorize("@IbizproProductWeeklyRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "批量更新产品周报", tags = {"产品周报" },  notes = "批量更新产品周报")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizproproductweeklies/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbizproProductWeeklyDTO> ibizproproductweeklydtos) {
@@ -85,14 +96,14 @@ public class IbizproProductWeeklyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.ibizproproductweeklyService.get(#ibizproproductweekly_id),'iBizPMS-IbizproProductWeekly-Remove')")
+    @PreAuthorize("@IbizproProductWeeklyRuntime.test(#ibizproproductweekly_id,'DELETE')")
     @ApiOperation(value = "删除产品周报", tags = {"产品周报" },  notes = "删除产品周报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproproductweeklies/{ibizproproductweekly_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibizproproductweekly_id") Long ibizproproductweekly_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibizproproductweeklyService.remove(ibizproproductweekly_id));
     }
 
-    @PreAuthorize("hasPermission(this.ibizproproductweeklyService.getIbizproproductweeklyByIds(#ids),'iBizPMS-IbizproProductWeekly-Remove')")
+    @PreAuthorize("@IbizproProductWeeklyRuntime.test(#ids,'DELETE')")
     @ApiOperation(value = "批量删除产品周报", tags = {"产品周报" },  notes = "批量删除产品周报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproproductweeklies/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -100,7 +111,7 @@ public class IbizproProductWeeklyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.ibizproproductweeklyMapping.toDomain(returnObject.body),'iBizPMS-IbizproProductWeekly-Get')")
+    @PreAuthorize("@IbizproProductWeeklyRuntime.test(#ibizproproductweekly_id,'READ')")
     @ApiOperation(value = "获取产品周报", tags = {"产品周报" },  notes = "获取产品周报")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizproproductweeklies/{ibizproproductweekly_id}")
     public ResponseEntity<IbizproProductWeeklyDTO> get(@PathVariable("ibizproproductweekly_id") Long ibizproproductweekly_id) {
@@ -122,7 +133,6 @@ public class IbizproProductWeeklyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibizproproductweeklyService.checkKey(ibizproproductweeklyMapping.toDomain(ibizproproductweeklydto)));
     }
 
-    @PreAuthorize("hasPermission(this.ibizproproductweeklyMapping.toDomain(#ibizproproductweeklydto),'iBizPMS-IbizproProductWeekly-Save')")
     @ApiOperation(value = "保存产品周报", tags = {"产品周报" },  notes = "保存产品周报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductweeklies/save")
     public ResponseEntity<IbizproProductWeeklyDTO> save(@RequestBody IbizproProductWeeklyDTO ibizproproductweeklydto) {
@@ -131,7 +141,6 @@ public class IbizproProductWeeklyResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibizproproductweeklyMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.ibizproproductweeklyMapping.toDomain(#ibizproproductweeklydtos),'iBizPMS-IbizproProductWeekly-Save')")
     @ApiOperation(value = "批量保存产品周报", tags = {"产品周报" },  notes = "批量保存产品周报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductweeklies/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbizproProductWeeklyDTO> ibizproproductweeklydtos) {
@@ -139,7 +148,6 @@ public class IbizproProductWeeklyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbizproProductWeekly-SumProductWeekly-all')")
     @ApiOperation(value = "统计产品周报", tags = {"产品周报" },  notes = "统计产品周报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductweeklies/{ibizproproductweekly_id}/sumproductweekly")
     public ResponseEntity<IbizproProductWeeklyDTO> sumProductWeekly(@PathVariable("ibizproproductweekly_id") Long ibizproproductweekly_id, @RequestBody IbizproProductWeeklyDTO ibizproproductweeklydto) {
@@ -149,7 +157,6 @@ public class IbizproProductWeeklyResource {
         ibizproproductweeklydto = ibizproproductweeklyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproproductweeklydto);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbizproProductWeekly-SumProductWeekly-all')")
     @ApiOperation(value = "批量处理[统计产品周报]", tags = {"产品周报" },  notes = "批量处理[统计产品周报]")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductweeklies/sumproductweeklybatch")
     public ResponseEntity<Boolean> sumProductWeeklyBatch(@RequestBody List<IbizproProductWeeklyDTO> ibizproproductweeklydtos) {
@@ -158,10 +165,11 @@ public class IbizproProductWeeklyResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbizproProductWeekly-searchDefault-all') and hasPermission(#context,'iBizPMS-IbizproProductWeekly-Get')")
+    @PreAuthorize("@IbizproProductWeeklyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"产品周报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibizproproductweeklies/fetchdefault")
 	public ResponseEntity<List<IbizproProductWeeklyDTO>> fetchDefault(IbizproProductWeeklySearchContext context) {
+        ibizproproductweeklyRuntime.addAuthorityConditions(context,"READ");
         Page<IbizproProductWeekly> domains = ibizproproductweeklyService.searchDefault(context) ;
         List<IbizproProductWeeklyDTO> list = ibizproproductweeklyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -171,10 +179,11 @@ public class IbizproProductWeeklyResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbizproProductWeekly-searchDefault-all') and hasPermission(#context,'iBizPMS-IbizproProductWeekly-Get')")
+    @PreAuthorize("@IbizproProductWeeklyRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"产品周报" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproproductweeklies/searchdefault")
 	public ResponseEntity<Page<IbizproProductWeeklyDTO>> searchDefault(@RequestBody IbizproProductWeeklySearchContext context) {
+        ibizproproductweeklyRuntime.addAuthorityConditions(context,"READ");
         Page<IbizproProductWeekly> domains = ibizproproductweeklyService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibizproproductweeklyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -188,6 +197,5 @@ public class IbizproProductWeeklyResource {
         ibizproproductweeklydto = ibizproproductweeklyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproproductweeklydto);
     }
-
 }
 

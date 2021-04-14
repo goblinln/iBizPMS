@@ -146,7 +146,7 @@ public class IbzProjectMember extends EntityMP implements Serializable {
     /**
      * 项目名称
      */
-    @TableField(value = "`name`")
+    @TableField(value = "name")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("项目名称")

@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface INotifyService extends IService<Notify> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "通知";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "notifies";
-
     boolean create(Notify et);
     void createBatch(List<Notify> list);
     boolean update(Notify et);
+    boolean sysUpdate(Notify et);
     void updateBatch(List<Notify> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     Notify get(Long key);
+    Notify sysGet(Long key);
     Notify getDraft(Notify et);
     boolean checkKey(Notify et);
     boolean save(Notify et);

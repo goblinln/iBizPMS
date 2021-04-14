@@ -2,18 +2,61 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper	namespace="cn.ibizlab.pms.core.report.mapper.IbzDailyMapper">
+	
+	<!-- 无视图模式 -->
+	<sql id="select" databaseId="mysql">
+        <![CDATA[ SELECT t1.`ACCOUNT`, t1.`COMMENT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CREATEMANNAME`, t1.`DATE`, t1.`IBZ_DAILYID`, t1.`IBZ_DAILYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, t1.MAILTO AS `MAILTOPK`, t1.`PLANSTOMORROW`, t1.`REPORTSTATUS`, t1.`REPORTTO`, t1.REPORTTO AS `REPORTTOPK`, t1.`SUBMITTIME`, t1.`TODAYTASK`, t1.`TOMORROWPLANSTASK`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPDATEMANNAME`, t1.`WORKTODAY` FROM `T_IBZ_DAILY` t1   ]]>
+    </sql>
+
+	
+	<!-- 搜索条件 -->
+	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_reportto_eq != null ">
+			<![CDATA[ AND  t1.`REPORTTO` = #{srf.n_reportto_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_issubmit_eq != null ">
+			<![CDATA[ AND  t1.`ISSUBMIT` = #{srf.n_issubmit_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_date_eq != null ">
+			<![CDATA[ AND  t1.`DATE` = #{srf.n_date_eq,jdbcType=TIMESTAMP} ]]>
+        </if>
+		<if test="srf.n_date_gtandeq != null ">
+			<![CDATA[ AND  t1.`DATE` >= #{srf.n_date_gtandeq,jdbcType=TIMESTAMP} ]]>
+        </if>
+		<if test="srf.n_date_ltandeq != null ">
+			<![CDATA[ AND  t1.`DATE` <= #{srf.n_date_ltandeq,jdbcType=TIMESTAMP} ]]>
+        </if>
+		<if test="srf.n_reportstatus_eq != null ">
+			<![CDATA[ AND  t1.`REPORTSTATUS` = #{srf.n_reportstatus_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_account_eq != null ">
+			<![CDATA[ AND  t1.`ACCOUNT` = #{srf.n_account_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_ibz_dailyname_like != null ">
+            <bind name="bind_n_ibz_dailyname_like" value="'%' + srf.n_ibz_dailyname_like + '%'" />
+            <![CDATA[ AND  t1.`IBZ_DAILYNAME` like #{bind_n_ibz_dailyname_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
+		AND ${ew.sqlSegment}
+		</if>
+	</sql>
+
 
     <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
 	<select id="selectById"  resultMap="IbzDailyResultMap" databaseId="mysql">
-        <![CDATA[select t1.* from (SELECT t1.`ACCOUNT`, t1.`COMMENT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CREATEMANNAME`, t1.`DATE`, t1.`IBZ_DAILYID`, t1.`IBZ_DAILYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, t1.MAILTO AS `MAILTOPK`, t1.`PLANSTOMORROW`, t1.`REPORTSTATUS`, t1.`REPORTTO`, t1.REPORTTO AS `REPORTTOPK`, t1.`SUBMITTIME`, t1.`TODAYTASK`, t1.`TOMORROWPLANSTASK`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPDATEMANNAME`, t1.`WORKTODAY` FROM `T_IBZ_DAILY` t1  ) t1 where ibz_dailyid=#{id}]]>
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND T1.IBZ_DAILYID = #{id} ]]>
+		</trim>
     </select>
+
 
     <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
     <resultMap id="IbzDailyResultMap" type="cn.ibizlab.pms.core.report.domain.IbzDaily" autoMapping="true">
 		<id property="ibzdailyid" column="ibz_dailyid" /><!--主键字段映射-->
 		<result property="ibzdailyname" column="ibz_dailyname" />
-
-
+            
+		
     </resultMap>
 
 
@@ -22,8 +65,6 @@
          select t1.* from (
                 <include refid="Default" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据集合[MyAllDaily]-->
@@ -31,8 +72,6 @@
          select t1.* from (
                 <include refid="MyAllDaily" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据集合[MyDaily]-->
@@ -40,8 +79,6 @@
          select t1.* from (
                 <include refid="MyDaily" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据集合[MyNotSubmit]-->
@@ -49,8 +86,6 @@
          select t1.* from (
                 <include refid="MyNotSubmit" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据集合[MySubmitDaily]-->
@@ -58,8 +93,6 @@
          select t1.* from (
                 <include refid="MySubmitDaily" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据集合[ProductDaily]-->
@@ -67,8 +100,6 @@
          select t1.* from (
                 <include refid="ProductDaily" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据集合[ProjectDaily]-->
@@ -76,54 +107,86 @@
          select t1.* from (
                 <include refid="ProjectDaily" />
          )t1
-         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
-         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CREATEMANNAME`, t1.`DATE`, t1.`IBZ_DAILYID`, t1.`IBZ_DAILYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, t1.MAILTO AS `MAILTOPK`, t1.`REPORTSTATUS`, t1.`REPORTTO`, t1.REPORTTO AS `REPORTTOPK`, t1.`SUBMITTIME`, t1.`TODAYTASK`, t1.`TOMORROWPLANSTASK`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPDATEMANNAME` FROM `T_IBZ_DAILY` t1  
-			]]>
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CREATEMANNAME`, t1.`DATE`, t1.`IBZ_DAILYID`, t1.`IBZ_DAILYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, t1.MAILTO AS `MAILTOPK`, t1.`REPORTSTATUS`, t1.`REPORTTO`, t1.REPORTTO AS `REPORTTOPK`, t1.`SUBMITTIME`, t1.`TODAYTASK`, t1.`TOMORROWPLANSTASK`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPDATEMANNAME` FROM `T_IBZ_DAILY` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[MyAllDaily]-->
     <sql id="MyAllDaily" databaseId="mysql">
-		<![CDATA[ SELECT 		t1.`ACCOUNT`, 		t1.`CREATEDATE`, 		t1.`CREATEMAN`, 		t1.`CREATEMANNAME`, 		t1.`DATE`, 		t1.`IBZ_DAILYID`, 		t1.`IBZ_DAILYNAME`, 		t1.`ISSUBMIT`, 		t1.`MAILTO`, 		t1.MAILTO AS `MAILTOPK`, 		( CASE WHEN t11.id IS NOT NULL THEN '1' ELSE '0' END ) AS `REPORTSTATUS`, 		t1.`REPORTTO`, 		t1.REPORTTO AS `REPORTTOPK`, 		t1.`SUBMITTIME`, 		t1.`TODAYTASK`, 		t1.`TOMORROWPLANSTASK`, 		t1.`UPDATEDATE`, 		t1.`UPDATEMAN`, 		t1.`UPDATEMANNAME`  	FROM 		`T_IBZ_DAILY` t1 		LEFT JOIN zt_action t11 ON t11.objectID = t1.IBZ_DAILYID  		AND t11.objectType = 'daily'  		AND t11.action = 'read'  		AND t11.actor = #{srf.sessioncontext.srfloginname}
-					 WHERE 	t1.account =  #{srf.sessioncontext.srfloginname}
-			]]>
+		<![CDATA[ SELECT 		t1.`ACCOUNT`, 		t1.`CREATEDATE`, 		t1.`CREATEMAN`, 		t1.`CREATEMANNAME`, 		t1.`DATE`, 		t1.`IBZ_DAILYID`, 		t1.`IBZ_DAILYNAME`, 		t1.`ISSUBMIT`, 		t1.`MAILTO`, 		t1.MAILTO AS `MAILTOPK`, 		( CASE WHEN t11.id IS NOT NULL THEN '1' ELSE '0' END ) AS `REPORTSTATUS`, 		t1.`REPORTTO`, 		t1.REPORTTO AS `REPORTTOPK`, 		t1.`SUBMITTIME`, 		t1.`TODAYTASK`, 		t1.`TOMORROWPLANSTASK`, 		t1.`UPDATEDATE`, 		t1.`UPDATEMAN`, 		t1.`UPDATEMANNAME`  	FROM 		`T_IBZ_DAILY` t1 		LEFT JOIN zt_action t11 ON t11.objectID = t1.IBZ_DAILYID  		AND t11.objectType = 'daily'  		AND t11.action = 'read'  		AND t11.actor = #{srf.sessioncontext.srfloginname} ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.account =  #{srf.sessioncontext.srfloginname} ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[MyDaily]-->
     <sql id="MyDaily" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CREATEMANNAME`, t1.`DATE`, t1.`IBZ_DAILYID`, t1.`IBZ_DAILYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, (case when t11.id is not null then '1' else '0' end ) as `REPORTSTATUS`, t1.`REPORTTO`, t1.`TODAYTASK`, t1.`TOMORROWPLANSTASK`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPDATEMANNAME` FROM `T_IBZ_DAILY` t1 left join zt_action t11 on t11.objectID = t1.IBZ_DAILYID and t11.objectType = 'daily' and t11.action = 'read' and t11.actor = #{srf.sessioncontext.srfloginname}
-					 WHERE 	t1.issubmit = '1'
-						 AND (t1.REPORTTO = #{srf.sessioncontext.srfloginname} or FIND_IN_SET(#{srf.sessioncontext.srfloginname},t1.MAILTO))
-			]]>
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CREATEMANNAME`, t1.`DATE`, t1.`IBZ_DAILYID`, t1.`IBZ_DAILYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, (case when t11.id is not null then '1' else '0' end ) as `REPORTSTATUS`, t1.`REPORTTO`, t1.`TODAYTASK`, t1.`TOMORROWPLANSTASK`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPDATEMANNAME` FROM `T_IBZ_DAILY` t1 left join zt_action t11 on t11.objectID = t1.IBZ_DAILYID and t11.objectType = 'daily' and t11.action = 'read' and t11.actor = #{srf.sessioncontext.srfloginname} ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.issubmit = '1' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND (t1.REPORTTO = #{srf.sessioncontext.srfloginname} or FIND_IN_SET(#{srf.sessioncontext.srfloginname},t1.MAILTO)) ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[MyNotSubmit]-->
     <sql id="MyNotSubmit" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CREATEMANNAME`, DATE_FORMAT(t1.DATE,'%Y-%m-%d') as `DATE`, t1.`IBZ_DAILYID`, t1.`IBZ_DAILYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, '1' as `REPORTSTATUS`, t1.`REPORTTO`, t1.SUBMITTIME as `SUBMITTIME`, t1.`TODAYTASK`, t1.`TOMORROWPLANSTASK`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPDATEMANNAME`, CONCAT_WS('','今日工作：',case when t1.WORKTODAY is null then '无' else t1.WORKTODAY end) as WORKTODAY, t1.`COMMENT`, CONCAT_WS('','明日计划：',case when t1.PLANSTOMORROW is null then '无' else t1.PLANSTOMORROW end) AS PLANSTOMORROW, 'daily' as type  FROM `T_IBZ_DAILY` t1
-			]]>
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CREATEMANNAME`, DATE_FORMAT(t1.DATE,'%Y-%m-%d') as `DATE`, t1.`IBZ_DAILYID`, t1.`IBZ_DAILYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, '1' as `REPORTSTATUS`, t1.`REPORTTO`, t1.SUBMITTIME as `SUBMITTIME`, t1.`TODAYTASK`, t1.`TOMORROWPLANSTASK`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPDATEMANNAME`, CONCAT_WS('','今日工作：',case when t1.WORKTODAY is null then '无' else t1.WORKTODAY end) as WORKTODAY, t1.`COMMENT`, CONCAT_WS('','明日计划：',case when t1.PLANSTOMORROW is null then '无' else t1.PLANSTOMORROW end) AS PLANSTOMORROW, 'daily' as type  FROM `T_IBZ_DAILY` t1 ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[MySubmitDaily]-->
     <sql id="MySubmitDaily" databaseId="mysql">
-		<![CDATA[ SELECT 	t1. IBZ_DAILYID, 	t1.IBZ_DAILYNAME, 	t1.ACCOUNT, 	t1.DATE, 	t1.ISSUBMIT, 	t1.REPORTTO, 	t1.REPORTSTATUS FROM 	t_ibz_daily t1   
-					 WHERE 	t1.account=#{srf.sessioncontext.srfloginname}
-			]]>
+		<![CDATA[ SELECT 	t1. IBZ_DAILYID, 	t1.IBZ_DAILYNAME, 	t1.ACCOUNT, 	t1.DATE, 	t1.ISSUBMIT, 	t1.REPORTTO, 	t1.REPORTSTATUS FROM 	t_ibz_daily t1    ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.account=#{srf.sessioncontext.srfloginname} ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[ProductDaily]-->
     <sql id="ProductDaily" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CREATEMANNAME`, t1.`DATE`, t1.`IBZ_DAILYID`, t1.`IBZ_DAILYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, t1.MAILTO AS `MAILTOPK`, t1.`REPORTSTATUS`, t1.`REPORTTO`, t1.REPORTTO AS `REPORTTOPK`, t1.`SUBMITTIME`, t1.`TODAYTASK`, t1.`TOMORROWPLANSTASK`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPDATEMANNAME` FROM `T_IBZ_DAILY` t1  where t1.`ISSUBMIT` = '1'  AND exists(select 1 from zt_team t2 where t2.account = t1.`ACCOUNT` and t2.type = 'product' and t2.root = #{srf.datacontext.curproduct})  AND DATE_FORMAT(t1.date,'%Y-%m-%d') = DATE_FORMAT(#{srf.datacontext.date},'%Y-%m-%d')
-			]]>
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CREATEMANNAME`, t1.`DATE`, t1.`IBZ_DAILYID`, t1.`IBZ_DAILYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, t1.MAILTO AS `MAILTOPK`, t1.`REPORTSTATUS`, t1.`REPORTTO`, t1.REPORTTO AS `REPORTTOPK`, t1.`SUBMITTIME`, t1.`TODAYTASK`, t1.`TOMORROWPLANSTASK`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPDATEMANNAME` FROM `T_IBZ_DAILY` t1  where t1.`ISSUBMIT` = '1'  AND exists(select 1 from zt_team t2 where t2.account = t1.`ACCOUNT` and t2.type = 'product' and t2.root = #{srf.datacontext.curproduct})  AND DATE_FORMAT(t1.date,'%Y-%m-%d') = DATE_FORMAT(#{srf.datacontext.date},'%Y-%m-%d') ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[ProjectDaily]-->
     <sql id="ProjectDaily" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CREATEMANNAME`, t1.`DATE`, t1.`IBZ_DAILYID`, t1.`IBZ_DAILYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, t1.MAILTO AS `MAILTOPK`, t1.`REPORTSTATUS`, t1.`REPORTTO`, t1.REPORTTO AS `REPORTTOPK`, t1.`SUBMITTIME`, t1.`TODAYTASK`, t1.`TOMORROWPLANSTASK`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPDATEMANNAME` FROM `T_IBZ_DAILY` t1  
-					 WHERE 	( t1.`ISSUBMIT` = '1'  AND  t1.ACCOUNT in (select t.ACCOUNT from zt_team t where t.type = 'project' and t.root =#{srf.datacontext.curproject})  AND  DATE_FORMAT(t1.date,'%Y-%m-%d') = DATE_FORMAT(#{srf.datacontext.date},'%Y-%m-%d') )
-			]]>
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CREATEMANNAME`, t1.`DATE`, t1.`IBZ_DAILYID`, t1.`IBZ_DAILYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, t1.MAILTO AS `MAILTOPK`, t1.`REPORTSTATUS`, t1.`REPORTTO`, t1.REPORTTO AS `REPORTTOPK`, t1.`SUBMITTIME`, t1.`TODAYTASK`, t1.`TOMORROWPLANSTASK`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPDATEMANNAME` FROM `T_IBZ_DAILY` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND ( t1.`ISSUBMIT` = '1'  AND  t1.ACCOUNT in (select t.ACCOUNT from zt_team t where t.type = 'project' and t.root =#{srf.datacontext.curproject})  AND  DATE_FORMAT(t1.date,'%Y-%m-%d') = DATE_FORMAT(#{srf.datacontext.date},'%Y-%m-%d') ) ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`COMMENT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CREATEMANNAME`, t1.`DATE`, t1.`IBZ_DAILYID`, t1.`IBZ_DAILYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, t1.MAILTO AS `MAILTOPK`, t1.`PLANSTOMORROW`, t1.`REPORTSTATUS`, t1.`REPORTTO`, t1.REPORTTO AS `REPORTTOPK`, t1.`SUBMITTIME`, t1.`TODAYTASK`, t1.`TOMORROWPLANSTASK`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPDATEMANNAME`, t1.`WORKTODAY` FROM `T_IBZ_DAILY` t1  
-			]]>
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`COMMENT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CREATEMANNAME`, t1.`DATE`, t1.`IBZ_DAILYID`, t1.`IBZ_DAILYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, t1.MAILTO AS `MAILTOPK`, t1.`PLANSTOMORROW`, t1.`REPORTSTATUS`, t1.`REPORTTO`, t1.REPORTTO AS `REPORTTOPK`, t1.`SUBMITTIME`, t1.`TODAYTASK`, t1.`TOMORROWPLANSTASK`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPDATEMANNAME`, t1.`WORKTODAY` FROM `T_IBZ_DAILY` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
     </sql>
+
 </mapper>
 

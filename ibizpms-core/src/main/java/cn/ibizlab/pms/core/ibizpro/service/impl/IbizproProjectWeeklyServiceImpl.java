@@ -92,6 +92,16 @@ public class IbizproProjectWeeklyServiceImpl extends ServiceImpl<IbizproProjectW
 
     @Override
     @Transactional
+    public boolean sysUpdate(IbizproProjectWeekly et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibzpro_projectweeklyid", et.getProjectweeklyid()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getProjectweeklyid()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(String key) {
         boolean result = removeById(key);
         return result ;
@@ -107,11 +117,24 @@ public class IbizproProjectWeeklyServiceImpl extends ServiceImpl<IbizproProjectW
     @Transactional
     public IbizproProjectWeekly get(String key) {
         IbizproProjectWeekly et = getById(key);
-        if(et == null){
-            et = new IbizproProjectWeekly();
-            et.setProjectweeklyid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public IbizproProjectWeekly sysGet(String key) {
+        IbizproProjectWeekly et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         return et;
     }
@@ -132,7 +155,6 @@ public class IbizproProjectWeeklyServiceImpl extends ServiceImpl<IbizproProjectW
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean pushSumProjectWeeklyBatch(List<IbizproProjectWeekly> etList) {
@@ -302,5 +324,6 @@ public class IbizproProjectWeeklyServiceImpl extends ServiceImpl<IbizproProjectW
         return et;
     }
 }
+
 
 

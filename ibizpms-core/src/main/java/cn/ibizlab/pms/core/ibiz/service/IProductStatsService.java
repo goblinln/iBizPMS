@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IProductStatsService extends IService<ProductStats> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "产品统计";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "productstats";
-
     boolean create(ProductStats et);
     void createBatch(List<ProductStats> list);
     boolean update(ProductStats et);
+    boolean sysUpdate(ProductStats et);
     void updateBatch(List<ProductStats> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     ProductStats get(Long key);
+    ProductStats sysGet(Long key);
     ProductStats getDraft(ProductStats et);
     boolean checkKey(ProductStats et);
     ProductStats getTestStats(ProductStats et);

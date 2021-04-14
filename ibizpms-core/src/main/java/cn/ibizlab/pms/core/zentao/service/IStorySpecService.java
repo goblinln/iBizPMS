@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IStorySpecService extends IService<StorySpec> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "需求描述";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "storyspecs";
-
     boolean create(StorySpec et);
     void createBatch(List<StorySpec> list);
     boolean update(StorySpec et);
+    boolean sysUpdate(StorySpec et);
     void updateBatch(List<StorySpec> list);
     boolean remove(String key);
     void removeBatch(Collection<String> idList);
     StorySpec get(String key);
+    StorySpec sysGet(String key);
     StorySpec getDraft(StorySpec et);
     boolean checkKey(StorySpec et);
     boolean save(StorySpec et);

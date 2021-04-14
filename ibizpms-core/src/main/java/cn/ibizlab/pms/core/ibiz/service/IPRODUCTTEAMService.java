@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IPRODUCTTEAMService extends IService<PRODUCTTEAM> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "产品团队";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "productteams";
-
     boolean create(PRODUCTTEAM et);
     void createBatch(List<PRODUCTTEAM> list);
     boolean update(PRODUCTTEAM et);
+    boolean sysUpdate(PRODUCTTEAM et);
     void updateBatch(List<PRODUCTTEAM> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     PRODUCTTEAM get(Long key);
+    PRODUCTTEAM sysGet(Long key);
     PRODUCTTEAM getDraft(PRODUCTTEAM et);
     boolean checkKey(PRODUCTTEAM et);
     PRODUCTTEAM productTeamGuoLv(PRODUCTTEAM et);

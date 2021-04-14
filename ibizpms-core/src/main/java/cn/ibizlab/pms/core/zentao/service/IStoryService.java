@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IStoryService extends IService<Story> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "需求";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "stories";
-
     boolean create(Story et);
     void createBatch(List<Story> list);
     boolean update(Story et);
+    boolean sysUpdate(Story et);
     void updateBatch(List<Story> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     Story get(Long key);
+    Story sysGet(Long key);
     Story getDraft(Story et);
     Story activate(Story et);
     boolean activateBatch(List<Story> etList);
@@ -74,6 +66,7 @@ public interface IStoryService extends IService<Story> {
     Story buildUnlinkStory(Story et);
     boolean buildUnlinkStoryBatch(List<Story> etList);
     Story buildUnlinkStorys(Story et);
+    boolean buildUnlinkStorysBatch(List<Story> etList);
     Story change(Story et);
     boolean changeBatch(List<Story> etList);
     boolean checkKey(Story et);
@@ -84,6 +77,7 @@ public interface IStoryService extends IService<Story> {
     Story getStorySpec(Story et);
     boolean getStorySpecBatch(List<Story> etList);
     Story getStorySpecs(Story et);
+    boolean getStorySpecsBatch(List<Story> etList);
     Story importPlanStories(Story et);
     boolean importPlanStoriesBatch(List<Story> etList);
     Story linkStory(Story et);
@@ -95,6 +89,7 @@ public interface IStoryService extends IService<Story> {
     Story projectUnlinkStory(Story et);
     boolean projectUnlinkStoryBatch(List<Story> etList);
     Story projectUnlinkStorys(Story et);
+    boolean projectUnlinkStorysBatch(List<Story> etList);
     Story push(Story et);
     boolean pushBatch(List<Story> etList);
     Story releaseBatchUnlinkStory(Story et);
@@ -114,7 +109,9 @@ public interface IStoryService extends IService<Story> {
     Story sendMsgPreProcess(Story et);
     boolean sendMsgPreProcessBatch(List<Story> etList);
     Story storyFavorites(Story et);
+    boolean storyFavoritesBatch(List<Story> etList);
     Story storyNFavorites(Story et);
+    boolean storyNFavoritesBatch(List<Story> etList);
     Story syncFromIbiz(Story et);
     boolean syncFromIbizBatch(List<Story> etList);
     Story unlinkStory(Story et);

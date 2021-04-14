@@ -24,14 +24,14 @@ public interface SysUserFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysusers")
-    SysUser create(@RequestBody SysUser et);
+    SysUser create(@RequestBody SysUser sysuser);
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysusers/batch")
     Boolean createBatch(@RequestBody List<SysUser> sysusers);
 
 
     @RequestMapping(method = RequestMethod.PUT, value = "/sysusers/{userid}")
-    SysUser update(@PathVariable("userid") String userid, @RequestBody SysUser et);
+    SysUser update(@PathVariable("userid") String userid,@RequestBody SysUser sysuser);
 
     @RequestMapping(method = RequestMethod.PUT, value = "/sysusers/batch")
     Boolean updateBatch(@RequestBody List<SysUser> sysusers);
@@ -47,26 +47,23 @@ public interface SysUserFeignClient {
     @RequestMapping(method = RequestMethod.GET, value = "/sysusers/{userid}")
     SysUser get(@PathVariable("userid") String userid);
 
-    @RequestMapping(method = RequestMethod.GET, value = "/sysusers/getbycodename/{userid}")
-    String getByCodeName(@PathVariable("userid") String codeName);
-
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysusers/getdraft")
     SysUser getDraft(SysUser entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysusers/{userid}/changepwd")
-    SysUser changePwd(@PathVariable("userid") String userid, @RequestBody SysUser et);
+    SysUser changePwd(@PathVariable("userid") String userid,@RequestBody SysUser sysuser);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysusers/checkkey")
-    Boolean checkKey(@RequestBody SysUser et);
+    Boolean checkKey(@RequestBody SysUser sysuser);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysusers/save")
-    Object saveEntity(@RequestBody SysUser et);
+    Object saveEntity(@RequestBody SysUser sysuser);
 
-    default Boolean save(@RequestBody SysUser et) { return saveEntity(et)!=null; }
+    default Boolean save(@RequestBody SysUser sysuser) { return saveEntity(sysuser)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysusers/savebatch")
     Boolean saveBatch(@RequestBody List<SysUser> sysusers);

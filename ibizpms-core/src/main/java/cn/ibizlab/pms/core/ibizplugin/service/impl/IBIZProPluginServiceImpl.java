@@ -34,9 +34,6 @@ import cn.ibizlab.pms.util.helper.DEFieldCacheMap;
 
 
 import cn.ibizlab.pms.core.ibizplugin.client.IBIZProPluginFeignClient;
-import cn.ibizlab.pms.util.security.SpringContextHolder;
-import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
-import org.apache.commons.lang3.StringUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
@@ -50,7 +47,6 @@ public class IBIZProPluginServiceImpl implements IIBIZProPluginService {
     IBIZProPluginFeignClient iBIZProPluginFeignClient;
 
 
-
     @Override
     public boolean create(IBIZProPlugin et) {
         IBIZProPlugin rt = iBIZProPluginFeignClient.create(et);
@@ -60,11 +56,9 @@ public class IBIZProPluginServiceImpl implements IIBIZProPluginService {
         return true;
     }
 
-
     public void createBatch(List<IBIZProPlugin> list){
         iBIZProPluginFeignClient.createBatch(list) ;
     }
-
 
     @Override
     public boolean update(IBIZProPlugin et) {
@@ -76,11 +70,19 @@ public class IBIZProPluginServiceImpl implements IIBIZProPluginService {
 
     }
 
-
     public void updateBatch(List<IBIZProPlugin> list){
         iBIZProPluginFeignClient.updateBatch(list) ;
     }
 
+    @Override
+    public boolean sysUpdate(IBIZProPlugin et) {
+                                IBIZProPlugin rt = iBIZProPluginFeignClient.update(et.getIbizpropluginid(),et);
+        if(rt==null)
+            return false;
+
+        CachedBeanCopier.copy(rt, et);
+        return true;
+    }
 
     @Override
     public boolean remove(String ibizpropluginid) {
@@ -88,24 +90,25 @@ public class IBIZProPluginServiceImpl implements IIBIZProPluginService {
         return result;
     }
 
-
     public void removeBatch(Collection<String> idList){
         iBIZProPluginFeignClient.removeBatch(idList);
     }
-
 
     @Override
     public IBIZProPlugin get(String ibizpropluginid) {
 		IBIZProPlugin et=iBIZProPluginFeignClient.get(ibizpropluginid);
         if(et==null){
-            et=new IBIZProPlugin();
-            et.setIbizpropluginid(ibizpropluginid);
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), ibizpropluginid);
         }
         else{
         }
         return  et;
     }
 
+    @Override
+    public IBIZProPlugin sysGet(String ibizpropluginid) {
+         return null;
+    }
 
     @Override
     public IBIZProPlugin getDraft(IBIZProPlugin et) {
@@ -113,13 +116,10 @@ public class IBIZProPluginServiceImpl implements IIBIZProPluginService {
         return et;
     }
 
-
     @Override
     public boolean checkKey(IBIZProPlugin et) {
         return iBIZProPluginFeignClient.checkKey(et);
     }
-
-
     @Override
     @Transactional
     public boolean save(IBIZProPlugin et) {
@@ -142,13 +142,10 @@ public class IBIZProPluginServiceImpl implements IIBIZProPluginService {
             return result;
     }
 
-
-
     @Override
     public void saveBatch(List<IBIZProPlugin> list) {
         iBIZProPluginFeignClient.saveBatch(list) ;
     }
-
 
 
 
@@ -163,12 +160,12 @@ public class IBIZProPluginServiceImpl implements IIBIZProPluginService {
         return iBIZProPlugins;
     }
 
-
     @Override
     @Transactional
     public IBIZProPlugin dynamicCall(String key, String action, IBIZProPlugin et) {
         return et;
     }
 }
+
 
 

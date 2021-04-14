@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IUserQueryService extends IService<UserQuery> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "用户查询";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "userqueries";
-
     boolean create(UserQuery et);
     void createBatch(List<UserQuery> list);
     boolean update(UserQuery et);
+    boolean sysUpdate(UserQuery et);
     void updateBatch(List<UserQuery> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     UserQuery get(Long key);
+    UserQuery sysGet(Long key);
     UserQuery getDraft(UserQuery et);
     boolean checkKey(UserQuery et);
     boolean save(UserQuery et);

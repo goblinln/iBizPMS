@@ -24,23 +24,15 @@ import cn.ibizlab.pms.core.ibizsysmodel.filter.PSDataEntitySearchContext;
  */
 public interface IPSDataEntityService {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "实体";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "psdataentities";
-
     boolean create(PSDataEntity et);
     void createBatch(List<PSDataEntity> list);
     boolean update(PSDataEntity et);
+    boolean sysUpdate(PSDataEntity et);
     void updateBatch(List<PSDataEntity> list);
     boolean remove(String key);
     void removeBatch(Collection<String> idList);
     PSDataEntity get(String key);
+    PSDataEntity sysGet(String key);
     PSDataEntity getDraft(PSDataEntity et);
     boolean checkKey(PSDataEntity et);
     boolean save(PSDataEntity et);
@@ -59,29 +51,6 @@ public interface IPSDataEntityService {
     List<PSDataEntity> selectByPssysreqitemid(Collection<String> ids);
     void removeByPssysreqitemid(String pssysreqitemid);
     PSDataEntity dynamicCall(String key, String action, PSDataEntity et);
-
-    boolean create(String devSlnSysId , PSDataEntity et) ;
-    void createBatch(String devSlnSysId, List<PSDataEntity> list);
-    boolean update(String devSlnSysId, PSDataEntity et);
-    void updateBatch(String devSlnSysId, List<PSDataEntity> list);
-    boolean remove(String devSlnSysId, String key);
-    void removeBatch(String devSlnSysId , Collection<String> idList) ;
-    PSDataEntity get(String devSlnSysId , String key);
-    String getByCodeName(String devSlnSysId , String codeName);
-    PSDataEntity getDraft(String devSlnSysId, PSDataEntity et);
-    boolean checkKey(String devSlnSysId, PSDataEntity et);
-    boolean save(String devSlnSysId, PSDataEntity et);
-    void saveBatch(String devSlnSysId, List<PSDataEntity> list);
-    Page<PSDataEntity> searchDefault(String devSlnSysId, PSDataEntitySearchContext context);
-    List<PSDataEntity> selectByPsmoduleid(String devSlnSysId, String psmoduleid);
-    void removeByPsmoduleid(String devSlnSysId, String psmoduleid);
-    List<PSDataEntity> selectByPssubsyssadeid(String devSlnSysId, String pssubsyssadeid);
-    void removeByPssubsyssadeid(String devSlnSysId, String pssubsyssadeid);
-    List<PSDataEntity> selectByPssubsysserviceapiid(String devSlnSysId, String pssubsysserviceapiid);
-    void removeByPssubsysserviceapiid(String devSlnSysId, String pssubsysserviceapiid);
-    List<PSDataEntity> selectByPssysreqitemid(String devSlnSysId, String pssysreqitemid);
-    void removeByPssysreqitemid(String devSlnSysId, String pssysreqitemid);
-
 }
 
 

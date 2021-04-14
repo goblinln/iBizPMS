@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IImConferenceService extends IService<ImConference> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "ImConference";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "imconferences";
-
     boolean create(ImConference et);
     void createBatch(List<ImConference> list);
     boolean update(ImConference et);
+    boolean sysUpdate(ImConference et);
     void updateBatch(List<ImConference> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     ImConference get(Long key);
+    ImConference sysGet(Long key);
     ImConference getDraft(ImConference et);
     boolean checkKey(ImConference et);
     boolean save(ImConference et);

@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IBugService extends IService<Bug> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "Bug";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "bugs";
-
     boolean create(Bug et);
     void createBatch(List<Bug> list);
     boolean update(Bug et);
+    boolean sysUpdate(Bug et);
     void updateBatch(List<Bug> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     Bug get(Long key);
+    Bug sysGet(Long key);
     Bug getDraft(Bug et);
     Bug activate(Bug et);
     boolean activateBatch(List<Bug> etList);
@@ -50,7 +42,9 @@ public interface IBugService extends IService<Bug> {
     Bug batchUnlinkBug(Bug et);
     boolean batchUnlinkBugBatch(List<Bug> etList);
     Bug bugFavorites(Bug et);
+    boolean bugFavoritesBatch(List<Bug> etList);
     Bug bugNFavorites(Bug et);
+    boolean bugNFavoritesBatch(List<Bug> etList);
     Bug buildBatchUnlinkBug(Bug et);
     boolean buildBatchUnlinkBugBatch(List<Bug> etList);
     Bug buildLinkBug(Bug et);
@@ -87,6 +81,7 @@ public interface IBugService extends IService<Bug> {
     Bug unlinkBug(Bug et);
     boolean unlinkBugBatch(List<Bug> etList);
     Bug updateStoryVersion(Bug et);
+    boolean updateStoryVersionBatch(List<Bug> etList);
     Page<Bug> searchAssignedToMyBug(BugSearchContext context);
     Page<Bug> searchAssignedToMyBugPc(BugSearchContext context);
     Page<Bug> searchBugsByBuild(BugSearchContext context);

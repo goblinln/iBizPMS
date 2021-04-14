@@ -23,14 +23,14 @@ public class PSDEFieldFallback implements PSDEFieldFeignClient {
         return null;
     }
 
-    public PSDEField create(PSDEField et) {
+    public PSDEField create(PSDEField psdefield) {
         return null;
     }
     public Boolean createBatch(List<PSDEField> psdefields) {
         return false;
     }
 
-    public PSDEField update(String psdefieldid, PSDEField et) {
+    public PSDEField update(String psdefieldid, PSDEField psdefield) {
         return null;
     }
     public Boolean updateBatch(List<PSDEField> psdefields) {
@@ -50,26 +50,22 @@ public class PSDEFieldFallback implements PSDEFieldFeignClient {
     }
 
 
-    public String getByCodeName(String codeName) {
-            return null;
-    }
-
-
     public PSDEField getDraft(PSDEField entity){
         return null;
     }
 
 
 
-    public Boolean checkKey(PSDEField et) {
+    public Boolean checkKey(PSDEField psdefield) {
         return false;
     }
 
 
-    public Object saveEntity(PSDEField et) {
+    public Object saveEntity(PSDEField psdefield) {
         return null;
     }
-    public Boolean save(PSDEField et) {
+
+    public Boolean save(PSDEField psdefield) {
         return false;
     }
     public Boolean saveBatch(List<PSDEField> psdefields) {

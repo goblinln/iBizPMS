@@ -25,26 +25,19 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ITestSuiteService extends IService<TestSuite> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "测试套件";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "testsuites";
-
     boolean create(TestSuite et);
     void createBatch(List<TestSuite> list);
     boolean update(TestSuite et);
+    boolean sysUpdate(TestSuite et);
     void updateBatch(List<TestSuite> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     TestSuite get(Long key);
+    TestSuite sysGet(Long key);
     TestSuite getDraft(TestSuite et);
     boolean checkKey(TestSuite et);
     TestSuite mobTestSuiteCount(TestSuite et);
+    boolean mobTestSuiteCountBatch(List<TestSuite> etList);
     boolean save(TestSuite et);
     void saveBatch(List<TestSuite> list);
     Page<TestSuite> searchDefault(TestSuiteSearchContext context);

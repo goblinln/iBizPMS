@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IIbzproConfigService extends IService<IbzproConfig> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "系统配置表";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "ibzproconfigs";
-
     boolean create(IbzproConfig et);
     void createBatch(List<IbzproConfig> list);
     boolean update(IbzproConfig et);
+    boolean sysUpdate(IbzproConfig et);
     void updateBatch(List<IbzproConfig> list);
     boolean remove(String key);
     void removeBatch(Collection<String> idList);
     IbzproConfig get(String key);
+    IbzproConfig sysGet(String key);
     IbzproConfig getDraft(IbzproConfig et);
     boolean checkKey(IbzproConfig et);
     IbzproConfig getSystemConfig(IbzproConfig et);

@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ITaskMsgRecordService extends IService<TaskMsgRecord> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "待办消息记录";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "taskmsgrecords";
-
     boolean create(TaskMsgRecord et);
     void createBatch(List<TaskMsgRecord> list);
     boolean update(TaskMsgRecord et);
+    boolean sysUpdate(TaskMsgRecord et);
     void updateBatch(List<TaskMsgRecord> list);
     boolean remove(String key);
     void removeBatch(Collection<String> idList);
     TaskMsgRecord get(String key);
+    TaskMsgRecord sysGet(String key);
     TaskMsgRecord getDraft(TaskMsgRecord et);
     boolean checkKey(TaskMsgRecord et);
     boolean save(TaskMsgRecord et);

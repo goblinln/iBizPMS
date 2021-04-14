@@ -24,23 +24,15 @@ import cn.ibizlab.pms.core.ou.filter.SysDepartmentSearchContext;
  */
 public interface ISysDepartmentService {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "部门";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "sysdepartments";
-
     boolean create(SysDepartment et);
     void createBatch(List<SysDepartment> list);
     boolean update(SysDepartment et);
+    boolean sysUpdate(SysDepartment et);
     void updateBatch(List<SysDepartment> list);
     boolean remove(String key);
     void removeBatch(Collection<String> idList);
     SysDepartment get(String key);
+    SysDepartment sysGet(String key);
     SysDepartment getDraft(SysDepartment et);
     boolean checkKey(SysDepartment et);
     boolean save(SysDepartment et);
@@ -54,8 +46,6 @@ public interface ISysDepartmentService {
     void removeByOrgid(String orgid);
     void saveByOrgid(String orgid, List<SysDepartment> list) ;
     SysDepartment dynamicCall(String key, String action, SysDepartment et);
-
-
 }
 
 

@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IIbzTopService extends IService<IbzTop> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "置顶";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "ibztops";
-
     boolean create(IbzTop et);
     void createBatch(List<IbzTop> list);
     boolean update(IbzTop et);
+    boolean sysUpdate(IbzTop et);
     void updateBatch(List<IbzTop> list);
     boolean remove(String key);
     void removeBatch(Collection<String> idList);
     IbzTop get(String key);
+    IbzTop sysGet(String key);
     IbzTop getDraft(IbzTop et);
     boolean checkKey(IbzTop et);
     boolean save(IbzTop et);

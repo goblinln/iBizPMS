@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IImChatuserService extends IService<ImChatuser> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "ImChatuser";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "imchatusers";
-
     boolean create(ImChatuser et);
     void createBatch(List<ImChatuser> list);
     boolean update(ImChatuser et);
+    boolean sysUpdate(ImChatuser et);
     void updateBatch(List<ImChatuser> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     ImChatuser get(Long key);
+    ImChatuser sysGet(Long key);
     ImChatuser getDraft(ImChatuser et);
     boolean checkKey(ImChatuser et);
     boolean save(ImChatuser et);

@@ -24,14 +24,14 @@ public interface SysRoleFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysroles")
-    SysRole create(@RequestBody SysRole et);
+    SysRole create(@RequestBody SysRole sysrole);
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysroles/batch")
     Boolean createBatch(@RequestBody List<SysRole> sysroles);
 
 
     @RequestMapping(method = RequestMethod.PUT, value = "/sysroles/{roleid}")
-    SysRole update(@PathVariable("roleid") String roleid, @RequestBody SysRole et);
+    SysRole update(@PathVariable("roleid") String roleid,@RequestBody SysRole sysrole);
 
     @RequestMapping(method = RequestMethod.PUT, value = "/sysroles/batch")
     Boolean updateBatch(@RequestBody List<SysRole> sysroles);
@@ -47,22 +47,19 @@ public interface SysRoleFeignClient {
     @RequestMapping(method = RequestMethod.GET, value = "/sysroles/{roleid}")
     SysRole get(@PathVariable("roleid") String roleid);
 
-    @RequestMapping(method = RequestMethod.GET, value = "/sysroles/getbycodename/{roleid}")
-    String getByCodeName(@PathVariable("roleid") String codeName);
-
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysroles/getdraft")
     SysRole getDraft(SysRole entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysroles/checkkey")
-    Boolean checkKey(@RequestBody SysRole et);
+    Boolean checkKey(@RequestBody SysRole sysrole);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysroles/save")
-    Object saveEntity(@RequestBody SysRole et);
+    Object saveEntity(@RequestBody SysRole sysrole);
 
-    default Boolean save(@RequestBody SysRole et) { return saveEntity(et)!=null; }
+    default Boolean save(@RequestBody SysRole sysrole) { return saveEntity(sysrole)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysroles/savebatch")
     Boolean saveBatch(@RequestBody List<SysRole> sysroles);

@@ -92,6 +92,16 @@ public class IbizproProjectMonthlyServiceImpl extends ServiceImpl<IbizproProject
 
     @Override
     @Transactional
+    public boolean sysUpdate(IbizproProjectMonthly et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibizpro_projectmonthlyid", et.getIbizproprojectmonthlyid()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getIbizproprojectmonthlyid()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(String key) {
         boolean result = removeById(key);
         return result ;
@@ -107,11 +117,24 @@ public class IbizproProjectMonthlyServiceImpl extends ServiceImpl<IbizproProject
     @Transactional
     public IbizproProjectMonthly get(String key) {
         IbizproProjectMonthly et = getById(key);
-        if(et == null){
-            et = new IbizproProjectMonthly();
-            et.setIbizproprojectmonthlyid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public IbizproProjectMonthly sysGet(String key) {
+        IbizproProjectMonthly et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         return et;
     }
@@ -132,7 +155,6 @@ public class IbizproProjectMonthlyServiceImpl extends ServiceImpl<IbizproProject
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean manualCreateMonthlyBatch(List<IbizproProjectMonthly> etList) {
@@ -210,7 +232,6 @@ public class IbizproProjectMonthlyServiceImpl extends ServiceImpl<IbizproProject
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean sumProjectMonthlyBatch(List<IbizproProjectMonthly> etList) {
@@ -319,5 +340,6 @@ public class IbizproProjectMonthlyServiceImpl extends ServiceImpl<IbizproProject
         return et;
     }
 }
+
 
 

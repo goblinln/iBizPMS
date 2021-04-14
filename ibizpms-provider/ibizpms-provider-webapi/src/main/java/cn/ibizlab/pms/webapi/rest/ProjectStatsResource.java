@@ -12,6 +12,7 @@ import javax.servlet.ServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.PageRequest;
@@ -33,6 +34,7 @@ import cn.ibizlab.pms.core.ibiz.domain.ProjectStats;
 import cn.ibizlab.pms.core.ibiz.service.IProjectStatsService;
 import cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.runtime.ProjectStatsRuntime;
 
 @Slf4j
 @Api(tags = {"项目统计" })
@@ -44,20 +46,26 @@ public class ProjectStatsResource {
     public IProjectStatsService projectstatsService;
 
     @Autowired
+    public ProjectStatsRuntime projectstatsRuntime;
+
+    @Autowired
     @Lazy
     public ProjectStatsMapping projectstatsMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-Create-all')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建项目统计", tags = {"项目统计" },  notes = "新建项目统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectstats")
+    @Transactional
     public ResponseEntity<ProjectStatsDTO> create(@Validated @RequestBody ProjectStatsDTO projectstatsdto) {
         ProjectStats domain = projectstatsMapping.toDomain(projectstatsdto);
 		projectstatsService.create(domain);
+        if(!projectstatsRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         ProjectStatsDTO dto = projectstatsMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-Create-all')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量新建项目统计", tags = {"项目统计" },  notes = "批量新建项目统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectstats/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<ProjectStatsDTO> projectstatsdtos) {
@@ -65,18 +73,21 @@ public class ProjectStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-Update-all')")
+    @PreAuthorize("@ProjectStatsRuntime.test(#projectstats_id,'UPDATE')")
     @ApiOperation(value = "更新项目统计", tags = {"项目统计" },  notes = "更新项目统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projectstats/{projectstats_id}")
+    @Transactional
     public ResponseEntity<ProjectStatsDTO> update(@PathVariable("projectstats_id") Long projectstats_id, @RequestBody ProjectStatsDTO projectstatsdto) {
 		ProjectStats domain  = projectstatsMapping.toDomain(projectstatsdto);
-        domain .setId(projectstats_id);
+        domain.setId(projectstats_id);
 		projectstatsService.update(domain );
+        if(!projectstatsRuntime.test(projectstats_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
 		ProjectStatsDTO dto = projectstatsMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-Update-all')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "批量更新项目统计", tags = {"项目统计" },  notes = "批量更新项目统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projectstats/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<ProjectStatsDTO> projectstatsdtos) {
@@ -84,14 +95,14 @@ public class ProjectStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-Remove-all')")
+    @PreAuthorize("@ProjectStatsRuntime.test(#projectstats_id,'DELETE')")
     @ApiOperation(value = "删除项目统计", tags = {"项目统计" },  notes = "删除项目统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projectstats/{projectstats_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("projectstats_id") Long projectstats_id) {
          return ResponseEntity.status(HttpStatus.OK).body(projectstatsService.remove(projectstats_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-Remove-all')")
+    @PreAuthorize("@ProjectStatsRuntime.test(#ids,'DELETE')")
     @ApiOperation(value = "批量删除项目统计", tags = {"项目统计" },  notes = "批量删除项目统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projectstats/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +110,7 @@ public class ProjectStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-Get-all')")
+    @PreAuthorize("@ProjectStatsRuntime.test(#projectstats_id,'READ')")
     @ApiOperation(value = "获取项目统计", tags = {"项目统计" },  notes = "获取项目统计")
 	@RequestMapping(method = RequestMethod.GET, value = "/projectstats/{projectstats_id}")
     public ResponseEntity<ProjectStatsDTO> get(@PathVariable("projectstats_id") Long projectstats_id) {
@@ -121,7 +132,6 @@ public class ProjectStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(projectstatsService.checkKey(projectstatsMapping.toDomain(projectstatsdto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-ProjectQualitySum-all')")
     @ApiOperation(value = "项目质量表聚合逻辑", tags = {"项目统计" },  notes = "项目质量表聚合逻辑")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectstats/{projectstats_id}/projectqualitysum")
     public ResponseEntity<ProjectStatsDTO> projectQualitySum(@PathVariable("projectstats_id") Long projectstats_id, @RequestBody ProjectStatsDTO projectstatsdto) {
@@ -132,7 +142,6 @@ public class ProjectStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectstatsdto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-Save-all')")
     @ApiOperation(value = "保存项目统计", tags = {"项目统计" },  notes = "保存项目统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectstats/save")
     public ResponseEntity<ProjectStatsDTO> save(@RequestBody ProjectStatsDTO projectstatsdto) {
@@ -141,7 +150,6 @@ public class ProjectStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectstatsMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-Save-all')")
     @ApiOperation(value = "批量保存项目统计", tags = {"项目统计" },  notes = "批量保存项目统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectstats/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<ProjectStatsDTO> projectstatsdtos) {
@@ -149,10 +157,11 @@ public class ProjectStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-searchDefault-all')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"项目统计" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/projectstats/fetchdefault")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchDefault(ProjectStatsSearchContext context) {
+        projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchDefault(context) ;
         List<ProjectStatsDTO> list = projectstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -162,19 +171,21 @@ public class ProjectStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-searchDefault-all')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"项目统计" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/searchdefault")
 	public ResponseEntity<Page<ProjectStatsDTO>> searchDefault(@RequestBody ProjectStatsSearchContext context) {
+        projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projectstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-searchNoOpenProduct-all')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取未关闭产品", tags = {"项目统计" } ,notes = "获取未关闭产品")
     @RequestMapping(method= RequestMethod.GET , value="/projectstats/fetchnoopenproduct")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchNoOpenProduct(ProjectStatsSearchContext context) {
+        projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchNoOpenProduct(context) ;
         List<ProjectStatsDTO> list = projectstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -184,19 +195,21 @@ public class ProjectStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-searchNoOpenProduct-all')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询未关闭产品", tags = {"项目统计" } ,notes = "查询未关闭产品")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/searchnoopenproduct")
 	public ResponseEntity<Page<ProjectStatsDTO>> searchNoOpenProduct(@RequestBody ProjectStatsSearchContext context) {
+        projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchNoOpenProduct(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projectstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-searchProjectBugType-all')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目bug类型统计", tags = {"项目统计" } ,notes = "获取项目bug类型统计")
     @RequestMapping(method= RequestMethod.GET , value="/projectstats/fetchprojectbugtype")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchProjectBugType(ProjectStatsSearchContext context) {
+        projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchProjectBugType(context) ;
         List<ProjectStatsDTO> list = projectstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -206,19 +219,21 @@ public class ProjectStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-searchProjectBugType-all')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询项目bug类型统计", tags = {"项目统计" } ,notes = "查询项目bug类型统计")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/searchprojectbugtype")
 	public ResponseEntity<Page<ProjectStatsDTO>> searchProjectBugType(@RequestBody ProjectStatsSearchContext context) {
+        projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchProjectBugType(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projectstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-searchProjectInputStats-all')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目投入统计", tags = {"项目统计" } ,notes = "获取项目投入统计")
     @RequestMapping(method= RequestMethod.GET , value="/projectstats/fetchprojectinputstats")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchProjectInputStats(ProjectStatsSearchContext context) {
+        projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchProjectInputStats(context) ;
         List<ProjectStatsDTO> list = projectstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -228,19 +243,21 @@ public class ProjectStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-searchProjectInputStats-all')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询项目投入统计", tags = {"项目统计" } ,notes = "查询项目投入统计")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/searchprojectinputstats")
 	public ResponseEntity<Page<ProjectStatsDTO>> searchProjectInputStats(@RequestBody ProjectStatsSearchContext context) {
+        projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchProjectInputStats(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projectstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-searchProjectProgress-all')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目进度", tags = {"项目统计" } ,notes = "获取项目进度")
     @RequestMapping(method= RequestMethod.GET , value="/projectstats/fetchprojectprogress")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchProjectProgress(ProjectStatsSearchContext context) {
+        projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchProjectProgress(context) ;
         List<ProjectStatsDTO> list = projectstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -250,19 +267,21 @@ public class ProjectStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-searchProjectProgress-all')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询项目进度", tags = {"项目统计" } ,notes = "查询项目进度")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/searchprojectprogress")
 	public ResponseEntity<Page<ProjectStatsDTO>> searchProjectProgress(@RequestBody ProjectStatsSearchContext context) {
+        projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchProjectProgress(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projectstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-searchProjectQuality-all')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目质量", tags = {"项目统计" } ,notes = "获取项目质量")
     @RequestMapping(method= RequestMethod.GET , value="/projectstats/fetchprojectquality")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchProjectQuality(ProjectStatsSearchContext context) {
+        projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchProjectQuality(context) ;
         List<ProjectStatsDTO> list = projectstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -272,19 +291,21 @@ public class ProjectStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-searchProjectQuality-all')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询项目质量", tags = {"项目统计" } ,notes = "查询项目质量")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/searchprojectquality")
 	public ResponseEntity<Page<ProjectStatsDTO>> searchProjectQuality(@RequestBody ProjectStatsSearchContext context) {
+        projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchProjectQuality(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projectstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-searchProjectStoryStageStats-all')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目需求阶段统计", tags = {"项目统计" } ,notes = "获取项目需求阶段统计")
     @RequestMapping(method= RequestMethod.GET , value="/projectstats/fetchprojectstorystagestats")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchProjectStoryStageStats(ProjectStatsSearchContext context) {
+        projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchProjectStoryStageStats(context) ;
         List<ProjectStatsDTO> list = projectstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -294,19 +315,21 @@ public class ProjectStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-searchProjectStoryStageStats-all')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询项目需求阶段统计", tags = {"项目统计" } ,notes = "查询项目需求阶段统计")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/searchprojectstorystagestats")
 	public ResponseEntity<Page<ProjectStatsDTO>> searchProjectStoryStageStats(@RequestBody ProjectStatsSearchContext context) {
+        projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchProjectStoryStageStats(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projectstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-searchProjectStoryStatusStats-all')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目需求状态统计", tags = {"项目统计" } ,notes = "获取项目需求状态统计")
     @RequestMapping(method= RequestMethod.GET , value="/projectstats/fetchprojectstorystatusstats")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchProjectStoryStatusStats(ProjectStatsSearchContext context) {
+        projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchProjectStoryStatusStats(context) ;
         List<ProjectStatsDTO> list = projectstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -316,19 +339,21 @@ public class ProjectStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-searchProjectStoryStatusStats-all')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询项目需求状态统计", tags = {"项目统计" } ,notes = "查询项目需求状态统计")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/searchprojectstorystatusstats")
 	public ResponseEntity<Page<ProjectStatsDTO>> searchProjectStoryStatusStats(@RequestBody ProjectStatsSearchContext context) {
+        projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchProjectStoryStatusStats(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projectstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-searchProjectTaskCountByTaskStatus-all')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目任务统计(任务状态)", tags = {"项目统计" } ,notes = "获取项目任务统计(任务状态)")
     @RequestMapping(method= RequestMethod.GET , value="/projectstats/fetchprojecttaskcountbytaskstatus")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchProjectTaskCountByTaskStatus(ProjectStatsSearchContext context) {
+        projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchProjectTaskCountByTaskStatus(context) ;
         List<ProjectStatsDTO> list = projectstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -338,19 +363,21 @@ public class ProjectStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-searchProjectTaskCountByTaskStatus-all')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询项目任务统计(任务状态)", tags = {"项目统计" } ,notes = "查询项目任务统计(任务状态)")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/searchprojecttaskcountbytaskstatus")
 	public ResponseEntity<Page<ProjectStatsDTO>> searchProjectTaskCountByTaskStatus(@RequestBody ProjectStatsSearchContext context) {
+        projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchProjectTaskCountByTaskStatus(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projectstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-searchProjectTaskCountByType-all')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目任务类型统计", tags = {"项目统计" } ,notes = "获取项目任务类型统计")
     @RequestMapping(method= RequestMethod.GET , value="/projectstats/fetchprojecttaskcountbytype")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchProjectTaskCountByType(ProjectStatsSearchContext context) {
+        projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchProjectTaskCountByType(context) ;
         List<ProjectStatsDTO> list = projectstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -360,19 +387,21 @@ public class ProjectStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-searchProjectTaskCountByType-all')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询项目任务类型统计", tags = {"项目统计" } ,notes = "查询项目任务类型统计")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/searchprojecttaskcountbytype")
 	public ResponseEntity<Page<ProjectStatsDTO>> searchProjectTaskCountByType(@RequestBody ProjectStatsSearchContext context) {
+        projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchProjectTaskCountByType(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projectstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-searchTaskTime-all')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取任务工时消耗剩余查询", tags = {"项目统计" } ,notes = "获取任务工时消耗剩余查询")
     @RequestMapping(method= RequestMethod.GET , value="/projectstats/fetchtasktime")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchTaskTime(ProjectStatsSearchContext context) {
+        projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchTaskTime(context) ;
         List<ProjectStatsDTO> list = projectstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -382,10 +411,11 @@ public class ProjectStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-ProjectStats-searchTaskTime-all')")
+    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询任务工时消耗剩余查询", tags = {"项目统计" } ,notes = "查询任务工时消耗剩余查询")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/searchtasktime")
 	public ResponseEntity<Page<ProjectStatsDTO>> searchTaskTime(@RequestBody ProjectStatsSearchContext context) {
+        projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchTaskTime(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projectstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -399,6 +429,5 @@ public class ProjectStatsResource {
         projectstatsdto = projectstatsMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(projectstatsdto);
     }
-
 }
 

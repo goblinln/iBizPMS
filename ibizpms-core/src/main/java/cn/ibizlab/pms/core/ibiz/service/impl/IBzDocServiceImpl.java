@@ -60,6 +60,11 @@ public class IBzDocServiceImpl implements IIBzDocService {
     }
 
     @Override
+    public boolean sysUpdate(IBzDoc et) {
+        return true;
+    }
+
+    @Override
     public boolean remove(String key) {
         return true;
     }
@@ -74,6 +79,11 @@ public class IBzDocServiceImpl implements IIBzDocService {
         return et;
     }
 
+    @Override
+    public IBzDoc sysGet(String key) {
+        IBzDoc et = new IBzDoc();
+        return et;
+    }
     @Override
     public IBzDoc getDraft(IBzDoc et) {
         return et;
@@ -112,4 +122,5 @@ public class IBzDocServiceImpl implements IIBzDocService {
         return et;
     }
 }
+
 

@@ -85,6 +85,16 @@ public class IbzFavoritesServiceImpl extends ServiceImpl<IbzFavoritesMapper, Ibz
 
     @Override
     @Transactional
+    public boolean sysUpdate(IbzFavorites et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibz_favoritesid", et.getIbzfavoritesid()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getIbzfavoritesid()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(String key) {
         boolean result = removeById(key);
         return result ;
@@ -100,11 +110,24 @@ public class IbzFavoritesServiceImpl extends ServiceImpl<IbzFavoritesMapper, Ibz
     @Transactional
     public IbzFavorites get(String key) {
         IbzFavorites et = getById(key);
-        if(et == null){
-            et = new IbzFavorites();
-            et.setIbzfavoritesid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public IbzFavorites sysGet(String key) {
+        IbzFavorites et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         return et;
     }
@@ -251,5 +274,6 @@ public class IbzFavoritesServiceImpl extends ServiceImpl<IbzFavoritesMapper, Ibz
         return et;
     }
 }
+
 
 

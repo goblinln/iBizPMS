@@ -12,6 +12,7 @@ import javax.servlet.ServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.PageRequest;
@@ -33,6 +34,7 @@ import cn.ibizlab.pms.core.ibiz.domain.IbzProjectMember;
 import cn.ibizlab.pms.core.ibiz.service.IIbzProjectMemberService;
 import cn.ibizlab.pms.core.ibiz.filter.IbzProjectMemberSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.runtime.IbzProjectMemberRuntime;
 
 @Slf4j
 @Api(tags = {"项目相关成员" })
@@ -44,20 +46,26 @@ public class IbzProjectMemberResource {
     public IIbzProjectMemberService ibzprojectmemberService;
 
     @Autowired
+    public IbzProjectMemberRuntime ibzprojectmemberRuntime;
+
+    @Autowired
     @Lazy
     public IbzProjectMemberMapping ibzprojectmemberMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzProjectMember-Create-all')")
+    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建项目相关成员", tags = {"项目相关成员" },  notes = "新建项目相关成员")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprojectmembers")
+    @Transactional
     public ResponseEntity<IbzProjectMemberDTO> create(@Validated @RequestBody IbzProjectMemberDTO ibzprojectmemberdto) {
         IbzProjectMember domain = ibzprojectmemberMapping.toDomain(ibzprojectmemberdto);
 		ibzprojectmemberService.create(domain);
+        if(!ibzprojectmemberRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         IbzProjectMemberDTO dto = ibzprojectmemberMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzProjectMember-Create-all')")
+    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量新建项目相关成员", tags = {"项目相关成员" },  notes = "批量新建项目相关成员")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprojectmembers/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzProjectMemberDTO> ibzprojectmemberdtos) {
@@ -65,18 +73,21 @@ public class IbzProjectMemberResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzProjectMember-Update-all')")
+    @PreAuthorize("@IbzProjectMemberRuntime.test(#ibzprojectmember_id,'UPDATE')")
     @ApiOperation(value = "更新项目相关成员", tags = {"项目相关成员" },  notes = "更新项目相关成员")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzprojectmembers/{ibzprojectmember_id}")
+    @Transactional
     public ResponseEntity<IbzProjectMemberDTO> update(@PathVariable("ibzprojectmember_id") Long ibzprojectmember_id, @RequestBody IbzProjectMemberDTO ibzprojectmemberdto) {
 		IbzProjectMember domain  = ibzprojectmemberMapping.toDomain(ibzprojectmemberdto);
-        domain .setId(ibzprojectmember_id);
+        domain.setId(ibzprojectmember_id);
 		ibzprojectmemberService.update(domain );
+        if(!ibzprojectmemberRuntime.test(ibzprojectmember_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
 		IbzProjectMemberDTO dto = ibzprojectmemberMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzProjectMember-Update-all')")
+    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "批量更新项目相关成员", tags = {"项目相关成员" },  notes = "批量更新项目相关成员")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzprojectmembers/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzProjectMemberDTO> ibzprojectmemberdtos) {
@@ -84,14 +95,14 @@ public class IbzProjectMemberResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzProjectMember-Remove-all')")
+    @PreAuthorize("@IbzProjectMemberRuntime.test(#ibzprojectmember_id,'DELETE')")
     @ApiOperation(value = "删除项目相关成员", tags = {"项目相关成员" },  notes = "删除项目相关成员")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprojectmembers/{ibzprojectmember_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzprojectmember_id") Long ibzprojectmember_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibzprojectmemberService.remove(ibzprojectmember_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzProjectMember-Remove-all')")
+    @PreAuthorize("@IbzProjectMemberRuntime.test(#ids,'DELETE')")
     @ApiOperation(value = "批量删除项目相关成员", tags = {"项目相关成员" },  notes = "批量删除项目相关成员")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprojectmembers/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +110,7 @@ public class IbzProjectMemberResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzProjectMember-Get-all')")
+    @PreAuthorize("@IbzProjectMemberRuntime.test(#ibzprojectmember_id,'READ')")
     @ApiOperation(value = "获取项目相关成员", tags = {"项目相关成员" },  notes = "获取项目相关成员")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprojectmembers/{ibzprojectmember_id}")
     public ResponseEntity<IbzProjectMemberDTO> get(@PathVariable("ibzprojectmember_id") Long ibzprojectmember_id) {
@@ -121,7 +132,6 @@ public class IbzProjectMemberResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprojectmemberService.checkKey(ibzprojectmemberMapping.toDomain(ibzprojectmemberdto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzProjectMember-Save-all')")
     @ApiOperation(value = "保存项目相关成员", tags = {"项目相关成员" },  notes = "保存项目相关成员")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprojectmembers/save")
     public ResponseEntity<IbzProjectMemberDTO> save(@RequestBody IbzProjectMemberDTO ibzprojectmemberdto) {
@@ -130,7 +140,6 @@ public class IbzProjectMemberResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzprojectmemberMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzProjectMember-Save-all')")
     @ApiOperation(value = "批量保存项目相关成员", tags = {"项目相关成员" },  notes = "批量保存项目相关成员")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprojectmembers/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzProjectMemberDTO> ibzprojectmemberdtos) {
@@ -138,10 +147,11 @@ public class IbzProjectMemberResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzProjectMember-searchDefault-all')")
+    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"项目相关成员" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/ibzprojectmembers/fetchdefault")
 	public ResponseEntity<List<IbzProjectMemberDTO>> fetchDefault(IbzProjectMemberSearchContext context) {
+        ibzprojectmemberRuntime.addAuthorityConditions(context,"READ");
         Page<IbzProjectMember> domains = ibzprojectmemberService.searchDefault(context) ;
         List<IbzProjectMemberDTO> list = ibzprojectmemberMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -151,10 +161,11 @@ public class IbzProjectMemberResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzProjectMember-searchDefault-all')")
+    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"项目相关成员" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzprojectmembers/searchdefault")
 	public ResponseEntity<Page<IbzProjectMemberDTO>> searchDefault(@RequestBody IbzProjectMemberSearchContext context) {
+        ibzprojectmemberRuntime.addAuthorityConditions(context,"READ");
         Page<IbzProjectMember> domains = ibzprojectmemberService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzprojectmemberMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -168,6 +179,5 @@ public class IbzProjectMemberResource {
         ibzprojectmemberdto = ibzprojectmemberMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibzprojectmemberdto);
     }
-
 }
 

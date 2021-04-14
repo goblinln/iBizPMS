@@ -30,30 +30,18 @@ public class BurnSearchContext extends QueryWrapperContext<Burn> {
 	private String n_isweekend_eq;//[周末]
 	public void setN_isweekend_eq(String n_isweekend_eq) {
         this.n_isweekend_eq = n_isweekend_eq;
-        if(!ObjectUtils.isEmpty(this.n_isweekend_eq)){
-            this.getSearchCond().eq("`isweekend`", n_isweekend_eq);
-        }
     }
 	private String n_isweekend_in;//[周末]
 	public void setN_isweekend_in(String n_isweekend_in) {
         this.n_isweekend_in = n_isweekend_in;
-        if(!ObjectUtils.isEmpty(this.n_isweekend_in)){
-			this.getSearchCond().in("`isweekend`",this.n_isweekend_in.split(";"));
-        }
     }
 	private Long n_project_eq;//[所属项目]
 	public void setN_project_eq(Long n_project_eq) {
         this.n_project_eq = n_project_eq;
-        if(!ObjectUtils.isEmpty(this.n_project_eq)){
-            this.getSearchCond().eq("`project`", n_project_eq);
-        }
     }
 	private Long n_task_eq;//[任务]
 	public void setN_task_eq(Long n_task_eq) {
         this.n_task_eq = n_task_eq;
-        if(!ObjectUtils.isEmpty(this.n_task_eq)){
-            this.getSearchCond().eq("`task`", n_task_eq);
-        }
     }
 
     /**
@@ -65,7 +53,7 @@ public class BurnSearchContext extends QueryWrapperContext<Burn> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("`date`", query)
+                     wrapper.like("date", query)
             );
 		 }
 	}

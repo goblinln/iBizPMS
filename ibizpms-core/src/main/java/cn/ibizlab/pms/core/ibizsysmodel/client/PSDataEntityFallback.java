@@ -23,14 +23,14 @@ public class PSDataEntityFallback implements PSDataEntityFeignClient {
         return null;
     }
 
-    public PSDataEntity create(PSDataEntity et) {
+    public PSDataEntity create(PSDataEntity psdataentity) {
         return null;
     }
     public Boolean createBatch(List<PSDataEntity> psdataentities) {
         return false;
     }
 
-    public PSDataEntity update(String psdataentityid, PSDataEntity et) {
+    public PSDataEntity update(String psdataentityid, PSDataEntity psdataentity) {
         return null;
     }
     public Boolean updateBatch(List<PSDataEntity> psdataentities) {
@@ -50,26 +50,22 @@ public class PSDataEntityFallback implements PSDataEntityFeignClient {
     }
 
 
-    public String getByCodeName(String codeName) {
-            return null;
-    }
-
-
     public PSDataEntity getDraft(PSDataEntity entity){
         return null;
     }
 
 
 
-    public Boolean checkKey(PSDataEntity et) {
+    public Boolean checkKey(PSDataEntity psdataentity) {
         return false;
     }
 
 
-    public Object saveEntity(PSDataEntity et) {
+    public Object saveEntity(PSDataEntity psdataentity) {
         return null;
     }
-    public Boolean save(PSDataEntity et) {
+
+    public Boolean save(PSDataEntity psdataentity) {
         return false;
     }
     public Boolean saveBatch(List<PSDataEntity> psdataentities) {

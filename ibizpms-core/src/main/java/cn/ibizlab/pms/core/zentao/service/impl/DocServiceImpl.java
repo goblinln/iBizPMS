@@ -103,11 +103,24 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
     @Transactional
     public Doc get(Long key) {
         Doc et = getById(key);
-        if(et == null){
-            et = new Doc();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public Doc sysGet(Long key) {
+        Doc et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -124,7 +137,6 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean byVersionUpdateContextBatch(List<Doc> etList) {
@@ -144,7 +156,6 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean collectBatch(List<Doc> etList) {
@@ -160,7 +171,6 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean getDocStatusBatch(List<Doc> etList) {
@@ -176,7 +186,6 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean onlyCollectDocBatch(List<Doc> etList) {
@@ -192,7 +201,6 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean onlyUnCollectDocBatch(List<Doc> etList) {
@@ -270,7 +278,6 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean unCollectBatch(List<Doc> etList) {
@@ -525,5 +532,6 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
         return et;
     }
 }
+
 
 

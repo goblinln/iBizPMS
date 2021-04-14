@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IRepoFilesService extends IService<RepoFiles> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "repofiles";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "repofiles";
-
     boolean create(RepoFiles et);
     void createBatch(List<RepoFiles> list);
     boolean update(RepoFiles et);
+    boolean sysUpdate(RepoFiles et);
     void updateBatch(List<RepoFiles> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     RepoFiles get(Long key);
+    RepoFiles sysGet(Long key);
     RepoFiles getDraft(RepoFiles et);
     boolean checkKey(RepoFiles et);
     boolean save(RepoFiles et);

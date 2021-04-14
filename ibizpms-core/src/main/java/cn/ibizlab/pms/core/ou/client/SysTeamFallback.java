@@ -23,14 +23,14 @@ public class SysTeamFallback implements SysTeamFeignClient {
         return null;
     }
 
-    public SysTeam create(SysTeam et) {
+    public SysTeam create(SysTeam systeam) {
         return null;
     }
     public Boolean createBatch(List<SysTeam> systeams) {
         return false;
     }
 
-    public SysTeam update(String teamid, SysTeam et) {
+    public SysTeam update(String teamid, SysTeam systeam) {
         return null;
     }
     public Boolean updateBatch(List<SysTeam> systeams) {
@@ -50,26 +50,22 @@ public class SysTeamFallback implements SysTeamFeignClient {
     }
 
 
-    public String getByCodeName(String codeName) {
-            return null;
-    }
-
-
     public SysTeam getDraft(SysTeam entity){
         return null;
     }
 
 
 
-    public Boolean checkKey(SysTeam et) {
+    public Boolean checkKey(SysTeam systeam) {
         return false;
     }
 
 
-    public Object saveEntity(SysTeam et) {
+    public Object saveEntity(SysTeam systeam) {
         return null;
     }
-    public Boolean save(SysTeam et) {
+
+    public Boolean save(SysTeam systeam) {
         return false;
     }
     public Boolean saveBatch(List<SysTeam> systeams) {

@@ -24,14 +24,14 @@ public interface IBIZProKeywordFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizprokeywords")
-    IBIZProKeyword create(@RequestBody IBIZProKeyword et);
+    IBIZProKeyword create(@RequestBody IBIZProKeyword ibizprokeyword);
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizprokeywords/batch")
     Boolean createBatch(@RequestBody List<IBIZProKeyword> ibizprokeywords);
 
 
     @RequestMapping(method = RequestMethod.PUT, value = "/ibizprokeywords/{id}")
-    IBIZProKeyword update(@PathVariable("id") String id, @RequestBody IBIZProKeyword et);
+    IBIZProKeyword update(@PathVariable("id") String id,@RequestBody IBIZProKeyword ibizprokeyword);
 
     @RequestMapping(method = RequestMethod.PUT, value = "/ibizprokeywords/batch")
     Boolean updateBatch(@RequestBody List<IBIZProKeyword> ibizprokeywords);
@@ -47,22 +47,19 @@ public interface IBIZProKeywordFeignClient {
     @RequestMapping(method = RequestMethod.GET, value = "/ibizprokeywords/{id}")
     IBIZProKeyword get(@PathVariable("id") String id);
 
-    @RequestMapping(method = RequestMethod.GET, value = "/ibizprokeywords/getbycodename/{id}")
-    String getByCodeName(@PathVariable("id") String codeName);
-
 
     @RequestMapping(method = RequestMethod.GET, value = "/ibizprokeywords/getdraft")
     IBIZProKeyword getDraft(IBIZProKeyword entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizprokeywords/checkkey")
-    Boolean checkKey(@RequestBody IBIZProKeyword et);
+    Boolean checkKey(@RequestBody IBIZProKeyword ibizprokeyword);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizprokeywords/save")
-    Object saveEntity(@RequestBody IBIZProKeyword et);
+    Object saveEntity(@RequestBody IBIZProKeyword ibizprokeyword);
 
-    default Boolean save(@RequestBody IBIZProKeyword et) { return saveEntity(et)!=null; }
+    default Boolean save(@RequestBody IBIZProKeyword ibizprokeyword) { return saveEntity(ibizprokeyword)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizprokeywords/savebatch")
     Boolean saveBatch(@RequestBody List<IBIZProKeyword> ibizprokeywords);

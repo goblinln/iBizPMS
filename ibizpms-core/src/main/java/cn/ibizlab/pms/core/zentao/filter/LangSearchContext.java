@@ -30,9 +30,6 @@ public class LangSearchContext extends QueryWrapperContext<Lang> {
 	private String n_system_eq;//[system]
 	public void setN_system_eq(String n_system_eq) {
         this.n_system_eq = n_system_eq;
-        if(!ObjectUtils.isEmpty(this.n_system_eq)){
-            this.getSearchCond().eq("`system`", n_system_eq);
-        }
     }
 
     /**

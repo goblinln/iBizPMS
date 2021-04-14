@@ -98,6 +98,16 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
 
     @Override
     @Transactional
+    public boolean sysUpdate(SuiteCase et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(String key) {
         boolean result = removeById(key);
         return result ;
@@ -113,11 +123,24 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
     @Transactional
     public SuiteCase get(String key) {
         SuiteCase et = getById(key);
-        if(et == null){
-            et = new SuiteCase();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public SuiteCase sysGet(String key) {
+        SuiteCase et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         return et;
     }
@@ -310,5 +333,6 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
         return et;
     }
 }
+
 
 

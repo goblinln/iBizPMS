@@ -50,7 +50,7 @@ public class IbzDaily extends EntityMP implements Serializable {
      * 更新时间
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
-    @TableField(value = "`updatedate`")
+    @TableField(value = "updatedate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
@@ -59,7 +59,7 @@ public class IbzDaily extends EntityMP implements Serializable {
     /**
      * 提交时间
      */
-    @TableField(value = "`submittime`")
+    @TableField(value = "submittime")
     @JsonFormat(pattern = "HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "submittime", format = "HH:mm:ss")
     @JsonProperty("submittime")
@@ -68,7 +68,7 @@ public class IbzDaily extends EntityMP implements Serializable {
     /**
      * 完成任务
      */
-    @TableField(value = "`todaytask`")
+    @TableField(value = "todaytask")
     @JSONField(name = "todaytask")
     @JsonProperty("todaytask")
     @ApiModelProperty("完成任务")
@@ -76,7 +76,7 @@ public class IbzDaily extends EntityMP implements Serializable {
     /**
      * 今日工作
      */
-    @TableField(value = "`worktoday`")
+    @TableField(value = "worktoday")
     @JSONField(name = "worktoday")
     @JsonProperty("worktoday")
     @ApiModelProperty("今日工作")
@@ -84,7 +84,7 @@ public class IbzDaily extends EntityMP implements Serializable {
     /**
      * 明日计划任务
      */
-    @TableField(value = "`tomorrowplanstask`")
+    @TableField(value = "tomorrowplanstask")
     @JSONField(name = "tomorrowplanstask")
     @JsonProperty("tomorrowplanstask")
     @ApiModelProperty("明日计划任务")
@@ -92,7 +92,7 @@ public class IbzDaily extends EntityMP implements Serializable {
     /**
      * 汇报给
      */
-    @TableField(value = "`reportto`")
+    @TableField(value = "reportto")
     @JSONField(name = "reportto")
     @JsonProperty("reportto")
     @ApiModelProperty("汇报给")
@@ -101,7 +101,7 @@ public class IbzDaily extends EntityMP implements Serializable {
      * 建立人
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMAN)
-    @TableField(value = "`createman`", fill = FieldFill.INSERT)
+    @TableField(value = "createman", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
     @ApiModelProperty("建立人")
@@ -110,7 +110,7 @@ public class IbzDaily extends EntityMP implements Serializable {
      * 建立时间
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "`createdate`", fill = FieldFill.INSERT)
+    @TableField(value = "createdate", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
@@ -120,7 +120,7 @@ public class IbzDaily extends EntityMP implements Serializable {
      * 是否提交
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`issubmit`")
+    @TableField(value = "issubmit")
     @JSONField(name = "issubmit")
     @JsonProperty("issubmit")
     @ApiModelProperty("是否提交")
@@ -128,7 +128,7 @@ public class IbzDaily extends EntityMP implements Serializable {
     /**
      * 日期
      */
-    @TableField(value = "`date`")
+    @TableField(value = "date")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "date", format = "yyyy-MM-dd")
     @JsonProperty("date")
@@ -146,7 +146,7 @@ public class IbzDaily extends EntityMP implements Serializable {
      * 更新人名称
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "`updatemanname`")
+    @TableField(value = "updatemanname")
     @JSONField(name = "updatemanname")
     @JsonProperty("updatemanname")
     @ApiModelProperty("更新人名称")
@@ -163,7 +163,7 @@ public class IbzDaily extends EntityMP implements Serializable {
      * 状态
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`reportstatus`")
+    @TableField(value = "reportstatus")
     @JSONField(name = "reportstatus")
     @JsonProperty("reportstatus")
     @ApiModelProperty("状态")
@@ -171,7 +171,7 @@ public class IbzDaily extends EntityMP implements Serializable {
     /**
      * 其他事项
      */
-    @TableField(value = "`comment`")
+    @TableField(value = "comment")
     @JSONField(name = "comment")
     @JsonProperty("comment")
     @ApiModelProperty("其他事项")
@@ -180,7 +180,7 @@ public class IbzDaily extends EntityMP implements Serializable {
      * 更新人
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
-    @TableField(value = "`updateman`")
+    @TableField(value = "updateman")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
     @ApiModelProperty("更新人")
@@ -188,7 +188,7 @@ public class IbzDaily extends EntityMP implements Serializable {
     /**
      * 明日计划
      */
-    @TableField(value = "`planstomorrow`")
+    @TableField(value = "planstomorrow")
     @JSONField(name = "planstomorrow")
     @JsonProperty("planstomorrow")
     @ApiModelProperty("明日计划")
@@ -196,7 +196,7 @@ public class IbzDaily extends EntityMP implements Serializable {
     /**
      * 抄送给
      */
-    @TableField(value = "`mailto`")
+    @TableField(value = "mailto")
     @JSONField(name = "mailto")
     @JsonProperty("mailto")
     @ApiModelProperty("抄送给")
@@ -213,7 +213,7 @@ public class IbzDaily extends EntityMP implements Serializable {
     /**
      * 用户
      */
-    @TableField(value = "`account`")
+    @TableField(value = "account")
     @JSONField(name = "account")
     @JsonProperty("account")
     @ApiModelProperty("用户")
@@ -230,7 +230,7 @@ public class IbzDaily extends EntityMP implements Serializable {
      * 建立人名称
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "`createmanname`")
+    @TableField(value = "createmanname")
     @JSONField(name = "createmanname")
     @JsonProperty("createmanname")
     @ApiModelProperty("建立人名称")
@@ -239,7 +239,7 @@ public class IbzDaily extends EntityMP implements Serializable {
      * 日报名称
      */
     @DEField(name = "ibz_dailyname")
-    @TableField(value = "`ibz_dailyname`")
+    @TableField(value = "ibz_dailyname")
     @JSONField(name = "ibzdailyname")
     @JsonProperty("ibzdailyname")
     @ApiModelProperty("日报名称")

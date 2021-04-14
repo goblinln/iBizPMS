@@ -24,31 +24,21 @@ import cn.ibizlab.pms.core.ou.filter.SysTeamSearchContext;
  */
 public interface ISysTeamService {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "组";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "systeams";
-
     boolean create(SysTeam et);
     void createBatch(List<SysTeam> list);
     boolean update(SysTeam et);
+    boolean sysUpdate(SysTeam et);
     void updateBatch(List<SysTeam> list);
     boolean remove(String key);
     void removeBatch(Collection<String> idList);
     SysTeam get(String key);
+    SysTeam sysGet(String key);
     SysTeam getDraft(SysTeam et);
     boolean checkKey(SysTeam et);
     boolean save(SysTeam et);
     void saveBatch(List<SysTeam> list);
     Page<SysTeam> searchDefault(SysTeamSearchContext context);
     SysTeam dynamicCall(String key, String action, SysTeam et);
-
-
 }
 
 

@@ -12,6 +12,7 @@ import javax.servlet.ServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.PageRequest;
@@ -33,6 +34,7 @@ import cn.ibizlab.pms.core.ibiz.domain.DynaDashboard;
 import cn.ibizlab.pms.core.ibiz.service.IDynaDashboardService;
 import cn.ibizlab.pms.core.ibiz.filter.DynaDashboardSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.runtime.DynaDashboardRuntime;
 
 @Slf4j
 @Api(tags = {"动态数据看板" })
@@ -44,20 +46,26 @@ public class DynaDashboardResource {
     public IDynaDashboardService dynadashboardService;
 
     @Autowired
+    public DynaDashboardRuntime dynadashboardRuntime;
+
+    @Autowired
     @Lazy
     public DynaDashboardMapping dynadashboardMapping;
 
-    @PreAuthorize("hasPermission(this.dynadashboardMapping.toDomain(#dynadashboarddto),'iBizPMS-DynaDashboard-Create')")
+    @PreAuthorize("@DynaDashboardRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建动态数据看板", tags = {"动态数据看板" },  notes = "新建动态数据看板")
 	@RequestMapping(method = RequestMethod.POST, value = "/dynadashboards")
+    @Transactional
     public ResponseEntity<DynaDashboardDTO> create(@Validated @RequestBody DynaDashboardDTO dynadashboarddto) {
         DynaDashboard domain = dynadashboardMapping.toDomain(dynadashboarddto);
 		dynadashboardService.create(domain);
+        if(!dynadashboardRuntime.test(domain.getDynadashboardid(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         DynaDashboardDTO dto = dynadashboardMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.dynadashboardMapping.toDomain(#dynadashboarddtos),'iBizPMS-DynaDashboard-Create')")
+    @PreAuthorize("@DynaDashboardRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量新建动态数据看板", tags = {"动态数据看板" },  notes = "批量新建动态数据看板")
 	@RequestMapping(method = RequestMethod.POST, value = "/dynadashboards/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<DynaDashboardDTO> dynadashboarddtos) {
@@ -66,18 +74,21 @@ public class DynaDashboardResource {
     }
 
     @VersionCheck(entity = "dynadashboard" , versionfield = "updatedate")
-    @PreAuthorize("hasPermission(this.dynadashboardService.get(#dynadashboard_id),'iBizPMS-DynaDashboard-Update')")
+    @PreAuthorize("@DynaDashboardRuntime.test(#dynadashboard_id,'UPDATE')")
     @ApiOperation(value = "更新动态数据看板", tags = {"动态数据看板" },  notes = "更新动态数据看板")
 	@RequestMapping(method = RequestMethod.PUT, value = "/dynadashboards/{dynadashboard_id}")
+    @Transactional
     public ResponseEntity<DynaDashboardDTO> update(@PathVariable("dynadashboard_id") String dynadashboard_id, @RequestBody DynaDashboardDTO dynadashboarddto) {
 		DynaDashboard domain  = dynadashboardMapping.toDomain(dynadashboarddto);
-        domain .setDynadashboardid(dynadashboard_id);
+        domain.setDynadashboardid(dynadashboard_id);
 		dynadashboardService.update(domain );
+        if(!dynadashboardRuntime.test(dynadashboard_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
 		DynaDashboardDTO dto = dynadashboardMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.dynadashboardService.getDynadashboardByEntities(this.dynadashboardMapping.toDomain(#dynadashboarddtos)),'iBizPMS-DynaDashboard-Update')")
+    @PreAuthorize("@DynaDashboardRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "批量更新动态数据看板", tags = {"动态数据看板" },  notes = "批量更新动态数据看板")
 	@RequestMapping(method = RequestMethod.PUT, value = "/dynadashboards/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<DynaDashboardDTO> dynadashboarddtos) {
@@ -85,14 +96,14 @@ public class DynaDashboardResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.dynadashboardService.get(#dynadashboard_id),'iBizPMS-DynaDashboard-Remove')")
+    @PreAuthorize("@DynaDashboardRuntime.test(#dynadashboard_id,'DELETE')")
     @ApiOperation(value = "删除动态数据看板", tags = {"动态数据看板" },  notes = "删除动态数据看板")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/dynadashboards/{dynadashboard_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("dynadashboard_id") String dynadashboard_id) {
          return ResponseEntity.status(HttpStatus.OK).body(dynadashboardService.remove(dynadashboard_id));
     }
 
-    @PreAuthorize("hasPermission(this.dynadashboardService.getDynadashboardByIds(#ids),'iBizPMS-DynaDashboard-Remove')")
+    @PreAuthorize("@DynaDashboardRuntime.test(#ids,'DELETE')")
     @ApiOperation(value = "批量删除动态数据看板", tags = {"动态数据看板" },  notes = "批量删除动态数据看板")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/dynadashboards/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -100,7 +111,7 @@ public class DynaDashboardResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.dynadashboardMapping.toDomain(returnObject.body),'iBizPMS-DynaDashboard-Get')")
+    @PreAuthorize("@DynaDashboardRuntime.test(#dynadashboard_id,'READ')")
     @ApiOperation(value = "获取动态数据看板", tags = {"动态数据看板" },  notes = "获取动态数据看板")
 	@RequestMapping(method = RequestMethod.GET, value = "/dynadashboards/{dynadashboard_id}")
     public ResponseEntity<DynaDashboardDTO> get(@PathVariable("dynadashboard_id") String dynadashboard_id) {
@@ -122,7 +133,6 @@ public class DynaDashboardResource {
         return  ResponseEntity.status(HttpStatus.OK).body(dynadashboardService.checkKey(dynadashboardMapping.toDomain(dynadashboarddto)));
     }
 
-    @PreAuthorize("hasPermission(this.dynadashboardMapping.toDomain(#dynadashboarddto),'iBizPMS-DynaDashboard-Save')")
     @ApiOperation(value = "保存动态数据看板", tags = {"动态数据看板" },  notes = "保存动态数据看板")
 	@RequestMapping(method = RequestMethod.POST, value = "/dynadashboards/save")
     public ResponseEntity<DynaDashboardDTO> save(@RequestBody DynaDashboardDTO dynadashboarddto) {
@@ -131,7 +141,6 @@ public class DynaDashboardResource {
         return ResponseEntity.status(HttpStatus.OK).body(dynadashboardMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.dynadashboardMapping.toDomain(#dynadashboarddtos),'iBizPMS-DynaDashboard-Save')")
     @ApiOperation(value = "批量保存动态数据看板", tags = {"动态数据看板" },  notes = "批量保存动态数据看板")
 	@RequestMapping(method = RequestMethod.POST, value = "/dynadashboards/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<DynaDashboardDTO> dynadashboarddtos) {
@@ -139,10 +148,11 @@ public class DynaDashboardResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DynaDashboard-searchDefault-all') and hasPermission(#context,'iBizPMS-DynaDashboard-Get')")
+    @PreAuthorize("@DynaDashboardRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"动态数据看板" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/dynadashboards/fetchdefault")
 	public ResponseEntity<List<DynaDashboardDTO>> fetchDefault(DynaDashboardSearchContext context) {
+        dynadashboardRuntime.addAuthorityConditions(context,"READ");
         Page<DynaDashboard> domains = dynadashboardService.searchDefault(context) ;
         List<DynaDashboardDTO> list = dynadashboardMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -152,10 +162,11 @@ public class DynaDashboardResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-DynaDashboard-searchDefault-all') and hasPermission(#context,'iBizPMS-DynaDashboard-Get')")
+    @PreAuthorize("@DynaDashboardRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"动态数据看板" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/dynadashboards/searchdefault")
 	public ResponseEntity<Page<DynaDashboardDTO>> searchDefault(@RequestBody DynaDashboardSearchContext context) {
+        dynadashboardRuntime.addAuthorityConditions(context,"READ");
         Page<DynaDashboard> domains = dynadashboardService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(dynadashboardMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -169,6 +180,5 @@ public class DynaDashboardResource {
         dynadashboarddto = dynadashboardMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dynadashboarddto);
     }
-
 }
 

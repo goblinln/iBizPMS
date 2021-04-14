@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IIbzAgentService extends IService<IbzAgent> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "代理";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "ibzagents";
-
     boolean create(IbzAgent et);
     void createBatch(List<IbzAgent> list);
     boolean update(IbzAgent et);
+    boolean sysUpdate(IbzAgent et);
     void updateBatch(List<IbzAgent> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     IbzAgent get(Long key);
+    IbzAgent sysGet(Long key);
     IbzAgent getDraft(IbzAgent et);
     boolean checkKey(IbzAgent et);
     boolean save(IbzAgent et);

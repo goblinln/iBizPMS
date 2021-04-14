@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IImQueueService extends IService<ImQueue> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "ImQueue";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "imqueues";
-
     boolean create(ImQueue et);
     void createBatch(List<ImQueue> list);
     boolean update(ImQueue et);
+    boolean sysUpdate(ImQueue et);
     void updateBatch(List<ImQueue> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     ImQueue get(Long key);
+    ImQueue sysGet(Long key);
     ImQueue getDraft(ImQueue et);
     boolean checkKey(ImQueue et);
     boolean save(ImQueue et);

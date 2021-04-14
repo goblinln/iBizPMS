@@ -23,14 +23,14 @@ public class PSSysReqItemFallback implements PSSysReqItemFeignClient {
         return null;
     }
 
-    public PSSysReqItem create(PSSysReqItem et) {
+    public PSSysReqItem create(PSSysReqItem pssysreqitem) {
         return null;
     }
     public Boolean createBatch(List<PSSysReqItem> pssysreqitems) {
         return false;
     }
 
-    public PSSysReqItem update(String pssysreqitemid, PSSysReqItem et) {
+    public PSSysReqItem update(String pssysreqitemid, PSSysReqItem pssysreqitem) {
         return null;
     }
     public Boolean updateBatch(List<PSSysReqItem> pssysreqitems) {
@@ -50,26 +50,22 @@ public class PSSysReqItemFallback implements PSSysReqItemFeignClient {
     }
 
 
-    public String getByCodeName(String codeName) {
-            return null;
-    }
-
-
     public PSSysReqItem getDraft(PSSysReqItem entity){
         return null;
     }
 
 
 
-    public Boolean checkKey(PSSysReqItem et) {
+    public Boolean checkKey(PSSysReqItem pssysreqitem) {
         return false;
     }
 
 
-    public Object saveEntity(PSSysReqItem et) {
+    public Object saveEntity(PSSysReqItem pssysreqitem) {
         return null;
     }
-    public Boolean save(PSSysReqItem et) {
+
+    public Boolean save(PSSysReqItem pssysreqitem) {
         return false;
     }
     public Boolean saveBatch(List<PSSysReqItem> pssysreqitems) {

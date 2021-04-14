@@ -12,6 +12,7 @@ import javax.servlet.ServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.PageRequest;
@@ -33,6 +34,7 @@ import cn.ibizlab.pms.core.ibiz.domain.IbzTop;
 import cn.ibizlab.pms.core.ibiz.service.IIbzTopService;
 import cn.ibizlab.pms.core.ibiz.filter.IbzTopSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.runtime.IbzTopRuntime;
 
 @Slf4j
 @Api(tags = {"置顶" })
@@ -44,20 +46,26 @@ public class IbzTopResource {
     public IIbzTopService ibztopService;
 
     @Autowired
+    public IbzTopRuntime ibztopRuntime;
+
+    @Autowired
     @Lazy
     public IbzTopMapping ibztopMapping;
 
-    @PreAuthorize("hasPermission(this.ibztopMapping.toDomain(#ibztopdto),'iBizPMS-IbzTop-Create')")
+    @PreAuthorize("@IbzTopRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建置顶", tags = {"置顶" },  notes = "新建置顶")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibztops")
+    @Transactional
     public ResponseEntity<IbzTopDTO> create(@Validated @RequestBody IbzTopDTO ibztopdto) {
         IbzTop domain = ibztopMapping.toDomain(ibztopdto);
 		ibztopService.create(domain);
+        if(!ibztopRuntime.test(domain.getIbztopid(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         IbzTopDTO dto = ibztopMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.ibztopMapping.toDomain(#ibztopdtos),'iBizPMS-IbzTop-Create')")
+    @PreAuthorize("@IbzTopRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量新建置顶", tags = {"置顶" },  notes = "批量新建置顶")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibztops/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzTopDTO> ibztopdtos) {
@@ -66,18 +74,21 @@ public class IbzTopResource {
     }
 
     @VersionCheck(entity = "ibztop" , versionfield = "updatedate")
-    @PreAuthorize("hasPermission(this.ibztopService.get(#ibztop_id),'iBizPMS-IbzTop-Update')")
+    @PreAuthorize("@IbzTopRuntime.test(#ibztop_id,'UPDATE')")
     @ApiOperation(value = "更新置顶", tags = {"置顶" },  notes = "更新置顶")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibztops/{ibztop_id}")
+    @Transactional
     public ResponseEntity<IbzTopDTO> update(@PathVariable("ibztop_id") String ibztop_id, @RequestBody IbzTopDTO ibztopdto) {
 		IbzTop domain  = ibztopMapping.toDomain(ibztopdto);
-        domain .setIbztopid(ibztop_id);
+        domain.setIbztopid(ibztop_id);
 		ibztopService.update(domain );
+        if(!ibztopRuntime.test(ibztop_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
 		IbzTopDTO dto = ibztopMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.ibztopService.getIbztopByEntities(this.ibztopMapping.toDomain(#ibztopdtos)),'iBizPMS-IbzTop-Update')")
+    @PreAuthorize("@IbzTopRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "批量更新置顶", tags = {"置顶" },  notes = "批量更新置顶")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibztops/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzTopDTO> ibztopdtos) {
@@ -85,14 +96,14 @@ public class IbzTopResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.ibztopService.get(#ibztop_id),'iBizPMS-IbzTop-Remove')")
+    @PreAuthorize("@IbzTopRuntime.test(#ibztop_id,'DELETE')")
     @ApiOperation(value = "删除置顶", tags = {"置顶" },  notes = "删除置顶")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibztops/{ibztop_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibztop_id") String ibztop_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibztopService.remove(ibztop_id));
     }
 
-    @PreAuthorize("hasPermission(this.ibztopService.getIbztopByIds(#ids),'iBizPMS-IbzTop-Remove')")
+    @PreAuthorize("@IbzTopRuntime.test(#ids,'DELETE')")
     @ApiOperation(value = "批量删除置顶", tags = {"置顶" },  notes = "批量删除置顶")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibztops/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -100,7 +111,7 @@ public class IbzTopResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.ibztopMapping.toDomain(returnObject.body),'iBizPMS-IbzTop-Get')")
+    @PreAuthorize("@IbzTopRuntime.test(#ibztop_id,'READ')")
     @ApiOperation(value = "获取置顶", tags = {"置顶" },  notes = "获取置顶")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibztops/{ibztop_id}")
     public ResponseEntity<IbzTopDTO> get(@PathVariable("ibztop_id") String ibztop_id) {
@@ -122,7 +133,6 @@ public class IbzTopResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibztopService.checkKey(ibztopMapping.toDomain(ibztopdto)));
     }
 
-    @PreAuthorize("hasPermission(this.ibztopMapping.toDomain(#ibztopdto),'iBizPMS-IbzTop-Save')")
     @ApiOperation(value = "保存置顶", tags = {"置顶" },  notes = "保存置顶")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibztops/save")
     public ResponseEntity<IbzTopDTO> save(@RequestBody IbzTopDTO ibztopdto) {
@@ -131,7 +141,6 @@ public class IbzTopResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibztopMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.ibztopMapping.toDomain(#ibztopdtos),'iBizPMS-IbzTop-Save')")
     @ApiOperation(value = "批量保存置顶", tags = {"置顶" },  notes = "批量保存置顶")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibztops/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzTopDTO> ibztopdtos) {
@@ -139,10 +148,11 @@ public class IbzTopResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzTop-searchDefault-all') and hasPermission(#context,'iBizPMS-IbzTop-Get')")
+    @PreAuthorize("@IbzTopRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"置顶" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibztops/fetchdefault")
 	public ResponseEntity<List<IbzTopDTO>> fetchDefault(IbzTopSearchContext context) {
+        ibztopRuntime.addAuthorityConditions(context,"READ");
         Page<IbzTop> domains = ibztopService.searchDefault(context) ;
         List<IbzTopDTO> list = ibztopMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -152,10 +162,11 @@ public class IbzTopResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IbzTop-searchDefault-all') and hasPermission(#context,'iBizPMS-IbzTop-Get')")
+    @PreAuthorize("@IbzTopRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"置顶" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibztops/searchdefault")
 	public ResponseEntity<Page<IbzTopDTO>> searchDefault(@RequestBody IbzTopSearchContext context) {
+        ibztopRuntime.addAuthorityConditions(context,"READ");
         Page<IbzTop> domains = ibztopService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibztopMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -169,6 +180,5 @@ public class IbzTopResource {
         ibztopdto = ibztopMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibztopdto);
     }
-
 }
 

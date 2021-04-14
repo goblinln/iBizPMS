@@ -12,6 +12,7 @@ import javax.servlet.ServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.PageRequest;
@@ -43,6 +44,7 @@ public class IBzDocResource {
     @Autowired
     public IIBzDocService ibzdocService;
 
+
     @Autowired
     @Lazy
     public IBzDocMapping ibzdocMapping;
@@ -55,6 +57,5 @@ public class IBzDocResource {
         ibzdocdto = ibzdocMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibzdocdto);
     }
-
 }
 

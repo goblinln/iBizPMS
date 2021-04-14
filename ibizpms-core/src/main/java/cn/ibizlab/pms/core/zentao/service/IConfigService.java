@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IConfigService extends IService<Config> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "配置";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "configs";
-
     boolean create(Config et);
     void createBatch(List<Config> list);
     boolean update(Config et);
+    boolean sysUpdate(Config et);
     void updateBatch(List<Config> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     Config get(Long key);
+    Config sysGet(Long key);
     Config getDraft(Config et);
     boolean checkKey(Config et);
     boolean save(Config et);

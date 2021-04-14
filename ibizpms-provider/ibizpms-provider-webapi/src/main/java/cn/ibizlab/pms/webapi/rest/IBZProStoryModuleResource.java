@@ -12,6 +12,7 @@ import javax.servlet.ServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.PageRequest;
@@ -33,6 +34,7 @@ import cn.ibizlab.pms.core.ibizpro.domain.IBZProStoryModule;
 import cn.ibizlab.pms.core.ibizpro.service.IIBZProStoryModuleService;
 import cn.ibizlab.pms.core.ibizpro.filter.IBZProStoryModuleSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibizpro.runtime.IBZProStoryModuleRuntime;
 
 @Slf4j
 @Api(tags = {"需求模块" })
@@ -44,20 +46,26 @@ public class IBZProStoryModuleResource {
     public IIBZProStoryModuleService ibzprostorymoduleService;
 
     @Autowired
+    public IBZProStoryModuleRuntime ibzprostorymoduleRuntime;
+
+    @Autowired
     @Lazy
     public IBZProStoryModuleMapping ibzprostorymoduleMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBZProStoryModule-Create-all')")
+    @PreAuthorize("@IBZProStoryModuleRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建需求模块", tags = {"需求模块" },  notes = "新建需求模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprostorymodules")
+    @Transactional
     public ResponseEntity<IBZProStoryModuleDTO> create(@Validated @RequestBody IBZProStoryModuleDTO ibzprostorymoduledto) {
         IBZProStoryModule domain = ibzprostorymoduleMapping.toDomain(ibzprostorymoduledto);
 		ibzprostorymoduleService.create(domain);
+        if(!ibzprostorymoduleRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         IBZProStoryModuleDTO dto = ibzprostorymoduleMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBZProStoryModule-Create-all')")
+    @PreAuthorize("@IBZProStoryModuleRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量新建需求模块", tags = {"需求模块" },  notes = "批量新建需求模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprostorymodules/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<IBZProStoryModuleDTO> ibzprostorymoduledtos) {
@@ -65,18 +73,21 @@ public class IBZProStoryModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBZProStoryModule-Update-all')")
+    @PreAuthorize("@IBZProStoryModuleRuntime.test(#ibzprostorymodule_id,'UPDATE')")
     @ApiOperation(value = "更新需求模块", tags = {"需求模块" },  notes = "更新需求模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzprostorymodules/{ibzprostorymodule_id}")
+    @Transactional
     public ResponseEntity<IBZProStoryModuleDTO> update(@PathVariable("ibzprostorymodule_id") Long ibzprostorymodule_id, @RequestBody IBZProStoryModuleDTO ibzprostorymoduledto) {
 		IBZProStoryModule domain  = ibzprostorymoduleMapping.toDomain(ibzprostorymoduledto);
-        domain .setId(ibzprostorymodule_id);
+        domain.setId(ibzprostorymodule_id);
 		ibzprostorymoduleService.update(domain );
+        if(!ibzprostorymoduleRuntime.test(ibzprostorymodule_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
 		IBZProStoryModuleDTO dto = ibzprostorymoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBZProStoryModule-Update-all')")
+    @PreAuthorize("@IBZProStoryModuleRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "批量更新需求模块", tags = {"需求模块" },  notes = "批量更新需求模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzprostorymodules/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<IBZProStoryModuleDTO> ibzprostorymoduledtos) {
@@ -84,14 +95,14 @@ public class IBZProStoryModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBZProStoryModule-Remove-all')")
+    @PreAuthorize("@IBZProStoryModuleRuntime.test(#ibzprostorymodule_id,'DELETE')")
     @ApiOperation(value = "删除需求模块", tags = {"需求模块" },  notes = "删除需求模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprostorymodules/{ibzprostorymodule_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzprostorymodule_id") Long ibzprostorymodule_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibzprostorymoduleService.remove(ibzprostorymodule_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBZProStoryModule-Remove-all')")
+    @PreAuthorize("@IBZProStoryModuleRuntime.test(#ids,'DELETE')")
     @ApiOperation(value = "批量删除需求模块", tags = {"需求模块" },  notes = "批量删除需求模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprostorymodules/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +110,7 @@ public class IBZProStoryModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBZProStoryModule-Get-all')")
+    @PreAuthorize("@IBZProStoryModuleRuntime.test(#ibzprostorymodule_id,'READ')")
     @ApiOperation(value = "获取需求模块", tags = {"需求模块" },  notes = "获取需求模块")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprostorymodules/{ibzprostorymodule_id}")
     public ResponseEntity<IBZProStoryModuleDTO> get(@PathVariable("ibzprostorymodule_id") Long ibzprostorymodule_id) {
@@ -121,7 +132,6 @@ public class IBZProStoryModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprostorymoduleService.checkKey(ibzprostorymoduleMapping.toDomain(ibzprostorymoduledto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBZProStoryModule-Save-all')")
     @ApiOperation(value = "保存需求模块", tags = {"需求模块" },  notes = "保存需求模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprostorymodules/save")
     public ResponseEntity<IBZProStoryModuleDTO> save(@RequestBody IBZProStoryModuleDTO ibzprostorymoduledto) {
@@ -130,7 +140,6 @@ public class IBZProStoryModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzprostorymoduleMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBZProStoryModule-Save-all')")
     @ApiOperation(value = "批量保存需求模块", tags = {"需求模块" },  notes = "批量保存需求模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprostorymodules/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<IBZProStoryModuleDTO> ibzprostorymoduledtos) {
@@ -138,7 +147,6 @@ public class IBZProStoryModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBZProStoryModule-SyncFromIBIZ-all')")
     @ApiOperation(value = "同步Ibz平台模块", tags = {"需求模块" },  notes = "同步Ibz平台模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprostorymodules/{ibzprostorymodule_id}/syncfromibiz")
     public ResponseEntity<IBZProStoryModuleDTO> syncFromIBIZ(@PathVariable("ibzprostorymodule_id") Long ibzprostorymodule_id, @RequestBody IBZProStoryModuleDTO ibzprostorymoduledto) {
@@ -148,7 +156,6 @@ public class IBZProStoryModuleResource {
         ibzprostorymoduledto = ibzprostorymoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibzprostorymoduledto);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBZProStoryModule-SyncFromIBIZ-all')")
     @ApiOperation(value = "批量处理[同步Ibz平台模块]", tags = {"需求模块" },  notes = "批量处理[同步Ibz平台模块]")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprostorymodules/syncfromibizbatch")
     public ResponseEntity<Boolean> syncFromIBIZBatch(@RequestBody List<IBZProStoryModuleDTO> ibzprostorymoduledtos) {
@@ -157,10 +164,11 @@ public class IBZProStoryModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBZProStoryModule-searchDefault-all')")
+    @PreAuthorize("@IBZProStoryModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"需求模块" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/ibzprostorymodules/fetchdefault")
 	public ResponseEntity<List<IBZProStoryModuleDTO>> fetchDefault(IBZProStoryModuleSearchContext context) {
+        ibzprostorymoduleRuntime.addAuthorityConditions(context,"READ");
         Page<IBZProStoryModule> domains = ibzprostorymoduleService.searchDefault(context) ;
         List<IBZProStoryModuleDTO> list = ibzprostorymoduleMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -170,10 +178,11 @@ public class IBZProStoryModuleResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-IBZProStoryModule-searchDefault-all')")
+    @PreAuthorize("@IBZProStoryModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"需求模块" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzprostorymodules/searchdefault")
 	public ResponseEntity<Page<IBZProStoryModuleDTO>> searchDefault(@RequestBody IBZProStoryModuleSearchContext context) {
+        ibzprostorymoduleRuntime.addAuthorityConditions(context,"READ");
         Page<IBZProStoryModule> domains = ibzprostorymoduleService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzprostorymoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -187,6 +196,5 @@ public class IBZProStoryModuleResource {
         ibzprostorymoduledto = ibzprostorymoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibzprostorymoduledto);
     }
-
 }
 

@@ -86,6 +86,16 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
         updateBatchById(list, batchSize);
     }
 
+    @Override
+    @Transactional
+    public boolean sysUpdate(File et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
         @Override
     @Transactional
     public boolean remove(Long key) {
@@ -104,11 +114,24 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
     @Transactional
     public File get(Long key) {
         File et = getById(key);
-        if(et == null){
-            et = new File();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public File sysGet(Long key) {
+        File et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -306,5 +329,6 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
         return et;
     }
 }
+
 
 

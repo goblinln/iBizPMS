@@ -90,6 +90,16 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
 
     @Override
     @Transactional
+    public boolean sysUpdate(IbzPlanTemplet et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibz_plantempletid", et.getIbzplantempletid()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getIbzplantempletid()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(String key) {
         ibzplantempletdetailService.removeByPlantempletid(key) ;
         boolean result = removeById(key);
@@ -106,12 +116,25 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
     @Transactional
     public IbzPlanTemplet get(String key) {
         IbzPlanTemplet et = getById(key);
-        if(et == null){
-            et = new IbzPlanTemplet();
-            et.setIbzplantempletid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
             et.setIbzplantempletdetail(ibzplantempletdetailService.selectByPlantempletid(key));
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public IbzPlanTemplet sysGet(String key) {
+        IbzPlanTemplet et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         return et;
     }
@@ -131,7 +154,6 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean getPlanBatch(List<IbzPlanTemplet> etList) {
@@ -283,5 +305,6 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
         return et;
     }
 }
+
 
 

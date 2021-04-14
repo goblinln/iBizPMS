@@ -85,6 +85,16 @@ public class TaskMsgRecordServiceImpl extends ServiceImpl<TaskMsgRecordMapper, T
 
     @Override
     @Transactional
+    public boolean sysUpdate(TaskMsgRecord et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("taskmsgrecordid", et.getTaskmsgrecordid()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getTaskmsgrecordid()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(String key) {
         boolean result = removeById(key);
         return result ;
@@ -100,11 +110,24 @@ public class TaskMsgRecordServiceImpl extends ServiceImpl<TaskMsgRecordMapper, T
     @Transactional
     public TaskMsgRecord get(String key) {
         TaskMsgRecord et = getById(key);
-        if(et == null){
-            et = new TaskMsgRecord();
-            et.setTaskmsgrecordid(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public TaskMsgRecord sysGet(String key) {
+        TaskMsgRecord et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         return et;
     }
@@ -251,5 +274,6 @@ public class TaskMsgRecordServiceImpl extends ServiceImpl<TaskMsgRecordMapper, T
         return et;
     }
 }
+
 
 

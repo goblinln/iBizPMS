@@ -85,6 +85,16 @@ public class ProductSumServiceImpl extends ServiceImpl<ProductSumMapper, Product
 
     @Override
     @Transactional
+    public boolean sysUpdate(ProductSum et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(Long key) {
         boolean result = removeById(key);
         return result ;
@@ -100,11 +110,24 @@ public class ProductSumServiceImpl extends ServiceImpl<ProductSumMapper, Product
     @Transactional
     public ProductSum get(Long key) {
         ProductSum et = getById(key);
-        if(et == null){
-            et = new ProductSum();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public ProductSum sysGet(Long key) {
+        ProductSum et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -284,5 +307,6 @@ public class ProductSumServiceImpl extends ServiceImpl<ProductSumMapper, Product
         return et;
     }
 }
+
 
 

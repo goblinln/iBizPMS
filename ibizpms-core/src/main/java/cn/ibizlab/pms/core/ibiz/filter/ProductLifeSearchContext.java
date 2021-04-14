@@ -30,16 +30,10 @@ public class ProductLifeSearchContext extends QueryWrapperContext<ProductLife> {
 	private String n_ibz_productlifename_like;//[产品生命周期名称]
 	public void setN_ibz_productlifename_like(String n_ibz_productlifename_like) {
         this.n_ibz_productlifename_like = n_ibz_productlifename_like;
-        if(!ObjectUtils.isEmpty(this.n_ibz_productlifename_like)){
-            this.getSearchCond().like("`ibz_productlifename`", n_ibz_productlifename_like);
-        }
     }
 	private String n_year_eq;//[年]
 	public void setN_year_eq(String n_year_eq) {
         this.n_year_eq = n_year_eq;
-        if(!ObjectUtils.isEmpty(this.n_year_eq)){
-            this.getSearchCond().eq("`year`", n_year_eq);
-        }
     }
 
     /**
@@ -51,7 +45,7 @@ public class ProductLifeSearchContext extends QueryWrapperContext<ProductLife> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("`ibz_productlifename`", query)
+                     wrapper.like("ibz_productlifename", query)
             );
 		 }
 	}

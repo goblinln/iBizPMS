@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IProjectProductService extends IService<ProjectProduct> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "项目产品";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "projectproducts";
-
     boolean create(ProjectProduct et);
     void createBatch(List<ProjectProduct> list);
     boolean update(ProjectProduct et);
+    boolean sysUpdate(ProjectProduct et);
     void updateBatch(List<ProjectProduct> list);
     boolean remove(String key);
     void removeBatch(Collection<String> idList);
     ProjectProduct get(String key);
+    ProjectProduct sysGet(String key);
     ProjectProduct getDraft(ProjectProduct et);
     boolean checkKey(ProjectProduct et);
     boolean save(ProjectProduct et);

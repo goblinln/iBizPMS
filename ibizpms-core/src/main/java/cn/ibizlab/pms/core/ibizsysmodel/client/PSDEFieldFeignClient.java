@@ -16,7 +16,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 /**
  * 实体[PSDEField] 服务对象接口
  */
-//@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSDEField", fallback = PSDEFieldFallback.class)
+@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSDEField", fallback = PSDEFieldFallback.class)
 public interface PSDEFieldFeignClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/psdefields/select")
@@ -24,14 +24,14 @@ public interface PSDEFieldFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/psdefields")
-    PSDEField create(@RequestBody PSDEField et);
+    PSDEField create(@RequestBody PSDEField psdefield);
 
     @RequestMapping(method = RequestMethod.POST, value = "/psdefields/batch")
     Boolean createBatch(@RequestBody List<PSDEField> psdefields);
 
 
     @RequestMapping(method = RequestMethod.PUT, value = "/psdefields/{psdefieldid}")
-    PSDEField update(@PathVariable("psdefieldid") String psdefieldid, @RequestBody PSDEField et);
+    PSDEField update(@PathVariable("psdefieldid") String psdefieldid,@RequestBody PSDEField psdefield);
 
     @RequestMapping(method = RequestMethod.PUT, value = "/psdefields/batch")
     Boolean updateBatch(@RequestBody List<PSDEField> psdefields);
@@ -47,22 +47,19 @@ public interface PSDEFieldFeignClient {
     @RequestMapping(method = RequestMethod.GET, value = "/psdefields/{psdefieldid}")
     PSDEField get(@PathVariable("psdefieldid") String psdefieldid);
 
-    @RequestMapping(method = RequestMethod.GET, value = "/psdefields/getbycodename/{psdefieldid}")
-    String getByCodeName(@PathVariable("psdefieldid") String codeName);
-
 
     @RequestMapping(method = RequestMethod.GET, value = "/psdefields/getdraft")
     PSDEField getDraft(PSDEField entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/psdefields/checkkey")
-    Boolean checkKey(@RequestBody PSDEField et);
+    Boolean checkKey(@RequestBody PSDEField psdefield);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/psdefields/save")
-    Object saveEntity(@RequestBody PSDEField et);
+    Object saveEntity(@RequestBody PSDEField psdefield);
 
-    default Boolean save(@RequestBody PSDEField et) { return saveEntity(et)!=null; }
+    default Boolean save(@RequestBody PSDEField psdefield) { return saveEntity(psdefield)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/psdefields/savebatch")
     Boolean saveBatch(@RequestBody List<PSDEField> psdefields);

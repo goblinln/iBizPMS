@@ -85,6 +85,16 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 
     @Override
     @Transactional
+    public boolean sysUpdate(User et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean remove(Long key) {
         boolean result = removeById(key);
         return result ;
@@ -100,11 +110,24 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     @Transactional
     public User get(Long key) {
         User et = getById(key);
-        if(et == null){
-            et = new User();
-            et.setId(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public User sysGet(Long key) {
+        User et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         return et;
     }
@@ -191,7 +214,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         //自定义代码
         return et;
     }
-
     @Override
     @Transactional
     public boolean syncAccountBatch(List<User> etList) {
@@ -307,5 +329,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         return et;
     }
 }
+
 
 

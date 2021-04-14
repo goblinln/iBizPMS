@@ -12,6 +12,7 @@ import javax.servlet.ServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.data.domain.PageRequest;
@@ -33,6 +34,7 @@ import cn.ibizlab.pms.core.zentao.domain.TaskEstimate;
 import cn.ibizlab.pms.core.zentao.service.ITaskEstimateService;
 import cn.ibizlab.pms.core.zentao.filter.TaskEstimateSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.zentao.runtime.TaskEstimateRuntime;
 
 @Slf4j
 @Api(tags = {"任务预计" })
@@ -44,20 +46,26 @@ public class TaskEstimateResource {
     public ITaskEstimateService taskestimateService;
 
     @Autowired
+    public TaskEstimateRuntime taskestimateRuntime;
+
+    @Autowired
     @Lazy
     public TaskEstimateMapping taskestimateMapping;
 
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedto),'iBizPMS-TaskEstimate-Create')")
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建任务预计", tags = {"任务预计" },  notes = "新建任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskestimates")
+    @Transactional
     public ResponseEntity<TaskEstimateDTO> create(@Validated @RequestBody TaskEstimateDTO taskestimatedto) {
         TaskEstimate domain = taskestimateMapping.toDomain(taskestimatedto);
 		taskestimateService.create(domain);
+        if(!taskestimateRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedtos),'iBizPMS-TaskEstimate-Create')")
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量新建任务预计", tags = {"任务预计" },  notes = "批量新建任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskestimates/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -65,18 +73,21 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.get(#taskestimate_id),'iBizPMS-TaskEstimate-Update')")
+    @PreAuthorize("@TaskEstimateRuntime.test(#taskestimate_id,'UPDATE')")
     @ApiOperation(value = "更新任务预计", tags = {"任务预计" },  notes = "更新任务预计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/taskestimates/{taskestimate_id}")
+    @Transactional
     public ResponseEntity<TaskEstimateDTO> update(@PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
 		TaskEstimate domain  = taskestimateMapping.toDomain(taskestimatedto);
-        domain .setId(taskestimate_id);
+        domain.setId(taskestimate_id);
 		taskestimateService.update(domain );
+        if(!taskestimateRuntime.test(taskestimate_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
 		TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.getTaskestimateByEntities(this.taskestimateMapping.toDomain(#taskestimatedtos)),'iBizPMS-TaskEstimate-Update')")
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "批量更新任务预计", tags = {"任务预计" },  notes = "批量更新任务预计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/taskestimates/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -84,14 +95,14 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.get(#taskestimate_id),'iBizPMS-TaskEstimate-Remove')")
+    @PreAuthorize("@TaskEstimateRuntime.test(#taskestimate_id,'DELETE')")
     @ApiOperation(value = "删除任务预计", tags = {"任务预计" },  notes = "删除任务预计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/taskestimates/{taskestimate_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("taskestimate_id") Long taskestimate_id) {
          return ResponseEntity.status(HttpStatus.OK).body(taskestimateService.remove(taskestimate_id));
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.getTaskestimateByIds(#ids),'iBizPMS-TaskEstimate-Remove')")
+    @PreAuthorize("@TaskEstimateRuntime.test(#ids,'DELETE')")
     @ApiOperation(value = "批量删除任务预计", tags = {"任务预计" },  notes = "批量删除任务预计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/taskestimates/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +110,7 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.taskestimateMapping.toDomain(returnObject.body),'iBizPMS-TaskEstimate-Get')")
+    @PreAuthorize("@TaskEstimateRuntime.test(#taskestimate_id,'READ')")
     @ApiOperation(value = "获取任务预计", tags = {"任务预计" },  notes = "获取任务预计")
 	@RequestMapping(method = RequestMethod.GET, value = "/taskestimates/{taskestimate_id}")
     public ResponseEntity<TaskEstimateDTO> get(@PathVariable("taskestimate_id") Long taskestimate_id) {
@@ -121,7 +132,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(taskestimateService.checkKey(taskestimateMapping.toDomain(taskestimatedto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-PMEvaluation-all')")
     @ApiOperation(value = "项目经理评估", tags = {"任务预计" },  notes = "项目经理评估")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskestimates/{taskestimate_id}/pmevaluation")
     public ResponseEntity<TaskEstimateDTO> pMEvaluation(@PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -131,7 +141,6 @@ public class TaskEstimateResource {
         taskestimatedto = taskestimateMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskestimatedto);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-PMEvaluation-all')")
     @ApiOperation(value = "批量处理[项目经理评估]", tags = {"任务预计" },  notes = "批量处理[项目经理评估]")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskestimates/pmevaluationbatch")
     public ResponseEntity<Boolean> pMEvaluationBatch(@RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -140,7 +149,6 @@ public class TaskEstimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedto),'iBizPMS-TaskEstimate-Save')")
     @ApiOperation(value = "保存任务预计", tags = {"任务预计" },  notes = "保存任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskestimates/save")
     public ResponseEntity<TaskEstimateDTO> save(@RequestBody TaskEstimateDTO taskestimatedto) {
@@ -149,7 +157,6 @@ public class TaskEstimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskestimateMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedtos),'iBizPMS-TaskEstimate-Save')")
     @ApiOperation(value = "批量保存任务预计", tags = {"任务预计" },  notes = "批量保存任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskestimates/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -157,10 +164,11 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取日志月", tags = {"任务预计" } ,notes = "获取日志月")
     @RequestMapping(method= RequestMethod.GET , value="/taskestimates/fetchactionmonth")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchActionMonth(TaskEstimateSearchContext context) {
+        taskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchActionMonth(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -170,19 +178,21 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询日志月", tags = {"任务预计" } ,notes = "查询日志月")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimates/searchactionmonth")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchActionMonth(@RequestBody TaskEstimateSearchContext context) {
+        taskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchActionMonth(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取日志年", tags = {"任务预计" } ,notes = "获取日志年")
     @RequestMapping(method= RequestMethod.GET , value="/taskestimates/fetchactionyear")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchActionYear(TaskEstimateSearchContext context) {
+        taskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchActionYear(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -192,19 +202,21 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询日志年", tags = {"任务预计" } ,notes = "查询日志年")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimates/searchactionyear")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchActionYear(@RequestBody TaskEstimateSearchContext context) {
+        taskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchActionYear(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefault-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"任务预计" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/taskestimates/fetchdefault")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchDefault(TaskEstimateSearchContext context) {
+        taskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchDefault(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -214,19 +226,21 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefault-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"任务预计" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimates/searchdefault")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchDefault(@RequestBody TaskEstimateSearchContext context) {
+        taskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefaults-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT1", tags = {"任务预计" } ,notes = "获取DEFAULT1")
     @RequestMapping(method= RequestMethod.GET , value="/taskestimates/fetchdefaults")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchDefaults(TaskEstimateSearchContext context) {
+        taskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchDefaults(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -236,19 +250,21 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefaults-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询DEFAULT1", tags = {"任务预计" } ,notes = "查询DEFAULT1")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimates/searchdefaults")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchDefaults(@RequestBody TaskEstimateSearchContext context) {
+        taskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchDefaults(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取日志月（项目）", tags = {"任务预计" } ,notes = "获取日志月（项目）")
     @RequestMapping(method= RequestMethod.GET , value="/taskestimates/fetchprojectactionmonth")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchProjectActionMonth(TaskEstimateSearchContext context) {
+        taskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionMonth(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -258,19 +274,21 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询日志月（项目）", tags = {"任务预计" } ,notes = "查询日志月（项目）")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimates/searchprojectactionmonth")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchProjectActionMonth(@RequestBody TaskEstimateSearchContext context) {
+        taskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionMonth(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取日志年（项目）", tags = {"任务预计" } ,notes = "获取日志年（项目）")
     @RequestMapping(method= RequestMethod.GET , value="/taskestimates/fetchprojectactionyear")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchProjectActionYear(TaskEstimateSearchContext context) {
+        taskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionYear(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -280,19 +298,21 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询日志年（项目）", tags = {"任务预计" } ,notes = "查询日志年（项目）")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimates/searchprojectactionyear")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchProjectActionYear(@RequestBody TaskEstimateSearchContext context) {
+        taskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionYear(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectTaskEstimate-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目日志", tags = {"任务预计" } ,notes = "获取项目日志")
     @RequestMapping(method= RequestMethod.GET , value="/taskestimates/fetchprojecttaskestimate")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchProjectTaskEstimate(TaskEstimateSearchContext context) {
+        taskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchProjectTaskEstimate(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -302,10 +322,11 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectTaskEstimate-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询项目日志", tags = {"任务预计" } ,notes = "查询项目日志")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimates/searchprojecttaskestimate")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchProjectTaskEstimate(@RequestBody TaskEstimateSearchContext context) {
+        taskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchProjectTaskEstimate(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -319,8 +340,6 @@ public class TaskEstimateResource {
         taskestimatedto = taskestimateMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskestimatedto);
     }
-
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedto),'iBizPMS-TaskEstimate-Create')")
     @ApiOperation(value = "根据任务建立任务预计", tags = {"任务预计" },  notes = "根据任务建立任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/taskestimates")
     public ResponseEntity<TaskEstimateDTO> createByTask(@PathVariable("task_id") Long task_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -331,7 +350,6 @@ public class TaskEstimateResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedtos),'iBizPMS-TaskEstimate-Create')")
     @ApiOperation(value = "根据任务批量建立任务预计", tags = {"任务预计" },  notes = "根据任务批量建立任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/taskestimates/batch")
     public ResponseEntity<Boolean> createBatchByTask(@PathVariable("task_id") Long task_id, @RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -343,7 +361,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.get(#taskestimate_id),'iBizPMS-TaskEstimate-Update')")
     @ApiOperation(value = "根据任务更新任务预计", tags = {"任务预计" },  notes = "根据任务更新任务预计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<TaskEstimateDTO> updateByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -355,7 +372,6 @@ public class TaskEstimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.getTaskestimateByEntities(this.taskestimateMapping.toDomain(#taskestimatedtos)),'iBizPMS-TaskEstimate-Update')")
     @ApiOperation(value = "根据任务批量更新任务预计", tags = {"任务预计" },  notes = "根据任务批量更新任务预计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/tasks/{task_id}/taskestimates/batch")
     public ResponseEntity<Boolean> updateBatchByTask(@PathVariable("task_id") Long task_id, @RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -367,14 +383,12 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.get(#taskestimate_id),'iBizPMS-TaskEstimate-Remove')")
     @ApiOperation(value = "根据任务删除任务预计", tags = {"任务预计" },  notes = "根据任务删除任务预计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<Boolean> removeByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(taskestimateService.remove(taskestimate_id));
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.getTaskestimateByIds(#ids),'iBizPMS-TaskEstimate-Remove')")
     @ApiOperation(value = "根据任务批量删除任务预计", tags = {"任务预计" },  notes = "根据任务批量删除任务预计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/tasks/{task_id}/taskestimates/batch")
     public ResponseEntity<Boolean> removeBatchByTask(@RequestBody List<Long> ids) {
@@ -382,7 +396,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.taskestimateMapping.toDomain(returnObject.body),'iBizPMS-TaskEstimate-Get')")
     @ApiOperation(value = "根据任务获取任务预计", tags = {"任务预计" },  notes = "根据任务获取任务预计")
 	@RequestMapping(method = RequestMethod.GET, value = "/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<TaskEstimateDTO> getByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
@@ -405,7 +418,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(taskestimateService.checkKey(taskestimateMapping.toDomain(taskestimatedto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-PMEvaluation-all')")
     @ApiOperation(value = "根据任务任务预计", tags = {"任务预计" },  notes = "根据任务任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/taskestimates/{taskestimate_id}/pmevaluation")
     public ResponseEntity<TaskEstimateDTO> pMEvaluationByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -422,7 +434,6 @@ public class TaskEstimateResource {
         boolean result = taskestimateService.pMEvaluationBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedto),'iBizPMS-TaskEstimate-Save')")
     @ApiOperation(value = "根据任务保存任务预计", tags = {"任务预计" },  notes = "根据任务保存任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/taskestimates/save")
     public ResponseEntity<TaskEstimateDTO> saveByTask(@PathVariable("task_id") Long task_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -432,7 +443,6 @@ public class TaskEstimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskestimateMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedtos),'iBizPMS-TaskEstimate-Save')")
     @ApiOperation(value = "根据任务批量保存任务预计", tags = {"任务预计" },  notes = "根据任务批量保存任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/taskestimates/savebatch")
     public ResponseEntity<Boolean> saveBatchByTask(@PathVariable("task_id") Long task_id, @RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -444,7 +454,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务获取日志月", tags = {"任务预计" } ,notes = "根据任务获取日志月")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/taskestimates/fetchactionmonth")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionMonthByTask(@PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -458,7 +467,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务查询日志月", tags = {"任务预计" } ,notes = "根据任务查询日志月")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/taskestimates/searchactionmonth")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateActionMonthByTask(@PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -467,7 +475,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务获取日志年", tags = {"任务预计" } ,notes = "根据任务获取日志年")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/taskestimates/fetchactionyear")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionYearByTask(@PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -481,7 +488,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务查询日志年", tags = {"任务预计" } ,notes = "根据任务查询日志年")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/taskestimates/searchactionyear")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateActionYearByTask(@PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -490,7 +496,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefault-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务获取DEFAULT", tags = {"任务预计" } ,notes = "根据任务获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/taskestimates/fetchdefault")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultByTask(@PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -504,7 +509,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefault-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务查询DEFAULT", tags = {"任务预计" } ,notes = "根据任务查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/taskestimates/searchdefault")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateDefaultByTask(@PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -513,7 +517,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefaults-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务获取DEFAULT1", tags = {"任务预计" } ,notes = "根据任务获取DEFAULT1")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/taskestimates/fetchdefaults")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultsByTask(@PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -527,7 +530,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefaults-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务查询DEFAULT1", tags = {"任务预计" } ,notes = "根据任务查询DEFAULT1")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/taskestimates/searchdefaults")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateDefaultsByTask(@PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -536,7 +538,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务获取日志月（项目）", tags = {"任务预计" } ,notes = "根据任务获取日志月（项目）")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/taskestimates/fetchprojectactionmonth")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionMonthByTask(@PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -550,7 +551,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务查询日志月（项目）", tags = {"任务预计" } ,notes = "根据任务查询日志月（项目）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/taskestimates/searchprojectactionmonth")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateProjectActionMonthByTask(@PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -559,7 +559,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务获取日志年（项目）", tags = {"任务预计" } ,notes = "根据任务获取日志年（项目）")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/taskestimates/fetchprojectactionyear")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionYearByTask(@PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -573,7 +572,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务查询日志年（项目）", tags = {"任务预计" } ,notes = "根据任务查询日志年（项目）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/taskestimates/searchprojectactionyear")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateProjectActionYearByTask(@PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -582,7 +580,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectTaskEstimate-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务获取项目日志", tags = {"任务预计" } ,notes = "根据任务获取项目日志")
     @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/taskestimates/fetchprojecttaskestimate")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectTaskEstimateByTask(@PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -596,7 +593,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectTaskEstimate-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务查询项目日志", tags = {"任务预计" } ,notes = "根据任务查询项目日志")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/taskestimates/searchprojecttaskestimate")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateProjectTaskEstimateByTask(@PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -605,7 +601,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedto),'iBizPMS-TaskEstimate-Create')")
     @ApiOperation(value = "根据任务模块任务建立任务预计", tags = {"任务预计" },  notes = "根据任务模块任务建立任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates")
     public ResponseEntity<TaskEstimateDTO> createByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -616,7 +611,6 @@ public class TaskEstimateResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedtos),'iBizPMS-TaskEstimate-Create')")
     @ApiOperation(value = "根据任务模块任务批量建立任务预计", tags = {"任务预计" },  notes = "根据任务模块任务批量建立任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/batch")
     public ResponseEntity<Boolean> createBatchByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -628,7 +622,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.get(#taskestimate_id),'iBizPMS-TaskEstimate-Update')")
     @ApiOperation(value = "根据任务模块任务更新任务预计", tags = {"任务预计" },  notes = "根据任务模块任务更新任务预计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<TaskEstimateDTO> updateByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -640,7 +633,6 @@ public class TaskEstimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.getTaskestimateByEntities(this.taskestimateMapping.toDomain(#taskestimatedtos)),'iBizPMS-TaskEstimate-Update')")
     @ApiOperation(value = "根据任务模块任务批量更新任务预计", tags = {"任务预计" },  notes = "根据任务模块任务批量更新任务预计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/batch")
     public ResponseEntity<Boolean> updateBatchByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -652,14 +644,12 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.get(#taskestimate_id),'iBizPMS-TaskEstimate-Remove')")
     @ApiOperation(value = "根据任务模块任务删除任务预计", tags = {"任务预计" },  notes = "根据任务模块任务删除任务预计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<Boolean> removeByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(taskestimateService.remove(taskestimate_id));
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.getTaskestimateByIds(#ids),'iBizPMS-TaskEstimate-Remove')")
     @ApiOperation(value = "根据任务模块任务批量删除任务预计", tags = {"任务预计" },  notes = "根据任务模块任务批量删除任务预计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/batch")
     public ResponseEntity<Boolean> removeBatchByProjectModuleTask(@RequestBody List<Long> ids) {
@@ -667,7 +657,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.taskestimateMapping.toDomain(returnObject.body),'iBizPMS-TaskEstimate-Get')")
     @ApiOperation(value = "根据任务模块任务获取任务预计", tags = {"任务预计" },  notes = "根据任务模块任务获取任务预计")
 	@RequestMapping(method = RequestMethod.GET, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<TaskEstimateDTO> getByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
@@ -690,7 +679,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(taskestimateService.checkKey(taskestimateMapping.toDomain(taskestimatedto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-PMEvaluation-all')")
     @ApiOperation(value = "根据任务模块任务任务预计", tags = {"任务预计" },  notes = "根据任务模块任务任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/{taskestimate_id}/pmevaluation")
     public ResponseEntity<TaskEstimateDTO> pMEvaluationByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -707,7 +695,6 @@ public class TaskEstimateResource {
         boolean result = taskestimateService.pMEvaluationBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedto),'iBizPMS-TaskEstimate-Save')")
     @ApiOperation(value = "根据任务模块任务保存任务预计", tags = {"任务预计" },  notes = "根据任务模块任务保存任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/save")
     public ResponseEntity<TaskEstimateDTO> saveByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -717,7 +704,6 @@ public class TaskEstimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskestimateMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedtos),'iBizPMS-TaskEstimate-Save')")
     @ApiOperation(value = "根据任务模块任务批量保存任务预计", tags = {"任务预计" },  notes = "根据任务模块任务批量保存任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/savebatch")
     public ResponseEntity<Boolean> saveBatchByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -729,7 +715,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务模块任务获取日志月", tags = {"任务预计" } ,notes = "根据任务模块任务获取日志月")
     @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchactionmonth")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionMonthByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -743,7 +728,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务模块任务查询日志月", tags = {"任务预计" } ,notes = "根据任务模块任务查询日志月")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/searchactionmonth")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateActionMonthByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -752,7 +736,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务模块任务获取日志年", tags = {"任务预计" } ,notes = "根据任务模块任务获取日志年")
     @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchactionyear")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionYearByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -766,7 +749,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务模块任务查询日志年", tags = {"任务预计" } ,notes = "根据任务模块任务查询日志年")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/searchactionyear")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateActionYearByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -775,7 +757,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefault-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务模块任务获取DEFAULT", tags = {"任务预计" } ,notes = "根据任务模块任务获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchdefault")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -789,7 +770,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefault-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务模块任务查询DEFAULT", tags = {"任务预计" } ,notes = "根据任务模块任务查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/searchdefault")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateDefaultByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -798,7 +778,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefaults-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务模块任务获取DEFAULT1", tags = {"任务预计" } ,notes = "根据任务模块任务获取DEFAULT1")
     @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchdefaults")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultsByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -812,7 +791,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefaults-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务模块任务查询DEFAULT1", tags = {"任务预计" } ,notes = "根据任务模块任务查询DEFAULT1")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/searchdefaults")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateDefaultsByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -821,7 +799,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务模块任务获取日志月（项目）", tags = {"任务预计" } ,notes = "根据任务模块任务获取日志月（项目）")
     @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchprojectactionmonth")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionMonthByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -835,7 +812,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务模块任务查询日志月（项目）", tags = {"任务预计" } ,notes = "根据任务模块任务查询日志月（项目）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/searchprojectactionmonth")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateProjectActionMonthByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -844,7 +820,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务模块任务获取日志年（项目）", tags = {"任务预计" } ,notes = "根据任务模块任务获取日志年（项目）")
     @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchprojectactionyear")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionYearByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -858,7 +833,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务模块任务查询日志年（项目）", tags = {"任务预计" } ,notes = "根据任务模块任务查询日志年（项目）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/searchprojectactionyear")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateProjectActionYearByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -867,7 +841,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectTaskEstimate-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务模块任务获取项目日志", tags = {"任务预计" } ,notes = "根据任务模块任务获取项目日志")
     @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchprojecttaskestimate")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectTaskEstimateByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -881,7 +854,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectTaskEstimate-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据任务模块任务查询项目日志", tags = {"任务预计" } ,notes = "根据任务模块任务查询项目日志")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/searchprojecttaskestimate")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateProjectTaskEstimateByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -890,7 +862,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedto),'iBizPMS-TaskEstimate-Create')")
     @ApiOperation(value = "根据产品计划任务建立任务预计", tags = {"任务预计" },  notes = "根据产品计划任务建立任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/tasks/{task_id}/taskestimates")
     public ResponseEntity<TaskEstimateDTO> createByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -901,7 +872,6 @@ public class TaskEstimateResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedtos),'iBizPMS-TaskEstimate-Create')")
     @ApiOperation(value = "根据产品计划任务批量建立任务预计", tags = {"任务预计" },  notes = "根据产品计划任务批量建立任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/tasks/{task_id}/taskestimates/batch")
     public ResponseEntity<Boolean> createBatchByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -913,7 +883,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.get(#taskestimate_id),'iBizPMS-TaskEstimate-Update')")
     @ApiOperation(value = "根据产品计划任务更新任务预计", tags = {"任务预计" },  notes = "根据产品计划任务更新任务预计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<TaskEstimateDTO> updateByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -925,7 +894,6 @@ public class TaskEstimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.getTaskestimateByEntities(this.taskestimateMapping.toDomain(#taskestimatedtos)),'iBizPMS-TaskEstimate-Update')")
     @ApiOperation(value = "根据产品计划任务批量更新任务预计", tags = {"任务预计" },  notes = "根据产品计划任务批量更新任务预计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}/tasks/{task_id}/taskestimates/batch")
     public ResponseEntity<Boolean> updateBatchByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -937,14 +905,12 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.get(#taskestimate_id),'iBizPMS-TaskEstimate-Remove')")
     @ApiOperation(value = "根据产品计划任务删除任务预计", tags = {"任务预计" },  notes = "根据产品计划任务删除任务预计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/productplans/{productplan_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<Boolean> removeByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(taskestimateService.remove(taskestimate_id));
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.getTaskestimateByIds(#ids),'iBizPMS-TaskEstimate-Remove')")
     @ApiOperation(value = "根据产品计划任务批量删除任务预计", tags = {"任务预计" },  notes = "根据产品计划任务批量删除任务预计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/productplans/{productplan_id}/tasks/{task_id}/taskestimates/batch")
     public ResponseEntity<Boolean> removeBatchByProductPlanTask(@RequestBody List<Long> ids) {
@@ -952,7 +918,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.taskestimateMapping.toDomain(returnObject.body),'iBizPMS-TaskEstimate-Get')")
     @ApiOperation(value = "根据产品计划任务获取任务预计", tags = {"任务预计" },  notes = "根据产品计划任务获取任务预计")
 	@RequestMapping(method = RequestMethod.GET, value = "/productplans/{productplan_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<TaskEstimateDTO> getByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
@@ -975,7 +940,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(taskestimateService.checkKey(taskestimateMapping.toDomain(taskestimatedto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-PMEvaluation-all')")
     @ApiOperation(value = "根据产品计划任务任务预计", tags = {"任务预计" },  notes = "根据产品计划任务任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/tasks/{task_id}/taskestimates/{taskestimate_id}/pmevaluation")
     public ResponseEntity<TaskEstimateDTO> pMEvaluationByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -992,7 +956,6 @@ public class TaskEstimateResource {
         boolean result = taskestimateService.pMEvaluationBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedto),'iBizPMS-TaskEstimate-Save')")
     @ApiOperation(value = "根据产品计划任务保存任务预计", tags = {"任务预计" },  notes = "根据产品计划任务保存任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/tasks/{task_id}/taskestimates/save")
     public ResponseEntity<TaskEstimateDTO> saveByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -1002,7 +965,6 @@ public class TaskEstimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskestimateMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedtos),'iBizPMS-TaskEstimate-Save')")
     @ApiOperation(value = "根据产品计划任务批量保存任务预计", tags = {"任务预计" },  notes = "根据产品计划任务批量保存任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/tasks/{task_id}/taskestimates/savebatch")
     public ResponseEntity<Boolean> saveBatchByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -1014,7 +976,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品计划任务获取日志月", tags = {"任务预计" } ,notes = "根据产品计划任务获取日志月")
     @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchactionmonth")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionMonthByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -1028,7 +989,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品计划任务查询日志月", tags = {"任务预计" } ,notes = "根据产品计划任务查询日志月")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/searchactionmonth")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateActionMonthByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -1037,7 +997,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品计划任务获取日志年", tags = {"任务预计" } ,notes = "根据产品计划任务获取日志年")
     @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchactionyear")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionYearByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -1051,7 +1010,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品计划任务查询日志年", tags = {"任务预计" } ,notes = "根据产品计划任务查询日志年")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/searchactionyear")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateActionYearByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -1060,7 +1018,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefault-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品计划任务获取DEFAULT", tags = {"任务预计" } ,notes = "根据产品计划任务获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchdefault")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -1074,7 +1031,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefault-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品计划任务查询DEFAULT", tags = {"任务预计" } ,notes = "根据产品计划任务查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/searchdefault")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateDefaultByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -1083,7 +1039,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefaults-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品计划任务获取DEFAULT1", tags = {"任务预计" } ,notes = "根据产品计划任务获取DEFAULT1")
     @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchdefaults")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultsByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -1097,7 +1052,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefaults-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品计划任务查询DEFAULT1", tags = {"任务预计" } ,notes = "根据产品计划任务查询DEFAULT1")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/searchdefaults")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateDefaultsByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -1106,7 +1060,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品计划任务获取日志月（项目）", tags = {"任务预计" } ,notes = "根据产品计划任务获取日志月（项目）")
     @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchprojectactionmonth")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionMonthByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -1120,7 +1073,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品计划任务查询日志月（项目）", tags = {"任务预计" } ,notes = "根据产品计划任务查询日志月（项目）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/searchprojectactionmonth")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateProjectActionMonthByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -1129,7 +1081,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品计划任务获取日志年（项目）", tags = {"任务预计" } ,notes = "根据产品计划任务获取日志年（项目）")
     @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchprojectactionyear")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionYearByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -1143,7 +1094,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品计划任务查询日志年（项目）", tags = {"任务预计" } ,notes = "根据产品计划任务查询日志年（项目）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/searchprojectactionyear")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateProjectActionYearByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -1152,7 +1102,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectTaskEstimate-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品计划任务获取项目日志", tags = {"任务预计" } ,notes = "根据产品计划任务获取项目日志")
     @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchprojecttaskestimate")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectTaskEstimateByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -1166,7 +1115,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectTaskEstimate-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品计划任务查询项目日志", tags = {"任务预计" } ,notes = "根据产品计划任务查询项目日志")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/searchprojecttaskestimate")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateProjectTaskEstimateByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -1175,7 +1123,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedto),'iBizPMS-TaskEstimate-Create')")
     @ApiOperation(value = "根据需求任务建立任务预计", tags = {"任务预计" },  notes = "根据需求任务建立任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/tasks/{task_id}/taskestimates")
     public ResponseEntity<TaskEstimateDTO> createByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -1186,7 +1133,6 @@ public class TaskEstimateResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedtos),'iBizPMS-TaskEstimate-Create')")
     @ApiOperation(value = "根据需求任务批量建立任务预计", tags = {"任务预计" },  notes = "根据需求任务批量建立任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/tasks/{task_id}/taskestimates/batch")
     public ResponseEntity<Boolean> createBatchByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -1198,7 +1144,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.get(#taskestimate_id),'iBizPMS-TaskEstimate-Update')")
     @ApiOperation(value = "根据需求任务更新任务预计", tags = {"任务预计" },  notes = "根据需求任务更新任务预计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<TaskEstimateDTO> updateByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -1210,7 +1155,6 @@ public class TaskEstimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.getTaskestimateByEntities(this.taskestimateMapping.toDomain(#taskestimatedtos)),'iBizPMS-TaskEstimate-Update')")
     @ApiOperation(value = "根据需求任务批量更新任务预计", tags = {"任务预计" },  notes = "根据需求任务批量更新任务预计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/tasks/{task_id}/taskestimates/batch")
     public ResponseEntity<Boolean> updateBatchByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -1222,14 +1166,12 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.get(#taskestimate_id),'iBizPMS-TaskEstimate-Remove')")
     @ApiOperation(value = "根据需求任务删除任务预计", tags = {"任务预计" },  notes = "根据需求任务删除任务预计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<Boolean> removeByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(taskestimateService.remove(taskestimate_id));
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.getTaskestimateByIds(#ids),'iBizPMS-TaskEstimate-Remove')")
     @ApiOperation(value = "根据需求任务批量删除任务预计", tags = {"任务预计" },  notes = "根据需求任务批量删除任务预计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}/tasks/{task_id}/taskestimates/batch")
     public ResponseEntity<Boolean> removeBatchByStoryTask(@RequestBody List<Long> ids) {
@@ -1237,7 +1179,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.taskestimateMapping.toDomain(returnObject.body),'iBizPMS-TaskEstimate-Get')")
     @ApiOperation(value = "根据需求任务获取任务预计", tags = {"任务预计" },  notes = "根据需求任务获取任务预计")
 	@RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<TaskEstimateDTO> getByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
@@ -1260,7 +1201,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(taskestimateService.checkKey(taskestimateMapping.toDomain(taskestimatedto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-PMEvaluation-all')")
     @ApiOperation(value = "根据需求任务任务预计", tags = {"任务预计" },  notes = "根据需求任务任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/tasks/{task_id}/taskestimates/{taskestimate_id}/pmevaluation")
     public ResponseEntity<TaskEstimateDTO> pMEvaluationByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -1277,7 +1217,6 @@ public class TaskEstimateResource {
         boolean result = taskestimateService.pMEvaluationBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedto),'iBizPMS-TaskEstimate-Save')")
     @ApiOperation(value = "根据需求任务保存任务预计", tags = {"任务预计" },  notes = "根据需求任务保存任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/tasks/{task_id}/taskestimates/save")
     public ResponseEntity<TaskEstimateDTO> saveByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -1287,7 +1226,6 @@ public class TaskEstimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskestimateMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedtos),'iBizPMS-TaskEstimate-Save')")
     @ApiOperation(value = "根据需求任务批量保存任务预计", tags = {"任务预计" },  notes = "根据需求任务批量保存任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/tasks/{task_id}/taskestimates/savebatch")
     public ResponseEntity<Boolean> saveBatchByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -1299,7 +1237,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据需求任务获取日志月", tags = {"任务预计" } ,notes = "根据需求任务获取日志月")
     @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/taskestimates/fetchactionmonth")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionMonthByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -1313,7 +1250,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据需求任务查询日志月", tags = {"任务预计" } ,notes = "根据需求任务查询日志月")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/taskestimates/searchactionmonth")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateActionMonthByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -1322,7 +1258,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据需求任务获取日志年", tags = {"任务预计" } ,notes = "根据需求任务获取日志年")
     @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/taskestimates/fetchactionyear")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionYearByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -1336,7 +1271,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据需求任务查询日志年", tags = {"任务预计" } ,notes = "根据需求任务查询日志年")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/taskestimates/searchactionyear")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateActionYearByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -1345,7 +1279,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefault-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据需求任务获取DEFAULT", tags = {"任务预计" } ,notes = "根据需求任务获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/taskestimates/fetchdefault")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -1359,7 +1292,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefault-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据需求任务查询DEFAULT", tags = {"任务预计" } ,notes = "根据需求任务查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/taskestimates/searchdefault")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateDefaultByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -1368,7 +1300,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefaults-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据需求任务获取DEFAULT1", tags = {"任务预计" } ,notes = "根据需求任务获取DEFAULT1")
     @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/taskestimates/fetchdefaults")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultsByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -1382,7 +1313,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefaults-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据需求任务查询DEFAULT1", tags = {"任务预计" } ,notes = "根据需求任务查询DEFAULT1")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/taskestimates/searchdefaults")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateDefaultsByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -1391,7 +1321,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据需求任务获取日志月（项目）", tags = {"任务预计" } ,notes = "根据需求任务获取日志月（项目）")
     @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/taskestimates/fetchprojectactionmonth")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionMonthByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -1405,7 +1334,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据需求任务查询日志月（项目）", tags = {"任务预计" } ,notes = "根据需求任务查询日志月（项目）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/taskestimates/searchprojectactionmonth")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateProjectActionMonthByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -1414,7 +1342,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据需求任务获取日志年（项目）", tags = {"任务预计" } ,notes = "根据需求任务获取日志年（项目）")
     @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/taskestimates/fetchprojectactionyear")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionYearByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -1428,7 +1355,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据需求任务查询日志年（项目）", tags = {"任务预计" } ,notes = "根据需求任务查询日志年（项目）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/taskestimates/searchprojectactionyear")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateProjectActionYearByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -1437,7 +1363,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectTaskEstimate-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据需求任务获取项目日志", tags = {"任务预计" } ,notes = "根据需求任务获取项目日志")
     @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/taskestimates/fetchprojecttaskestimate")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectTaskEstimateByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -1451,7 +1376,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectTaskEstimate-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据需求任务查询项目日志", tags = {"任务预计" } ,notes = "根据需求任务查询项目日志")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/taskestimates/searchprojecttaskestimate")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateProjectTaskEstimateByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -1460,7 +1384,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedto),'iBizPMS-TaskEstimate-Create')")
     @ApiOperation(value = "根据项目任务建立任务预计", tags = {"任务预计" },  notes = "根据项目任务建立任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/taskestimates")
     public ResponseEntity<TaskEstimateDTO> createByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -1471,7 +1394,6 @@ public class TaskEstimateResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedtos),'iBizPMS-TaskEstimate-Create')")
     @ApiOperation(value = "根据项目任务批量建立任务预计", tags = {"任务预计" },  notes = "根据项目任务批量建立任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/batch")
     public ResponseEntity<Boolean> createBatchByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -1483,7 +1405,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.get(#taskestimate_id),'iBizPMS-TaskEstimate-Update')")
     @ApiOperation(value = "根据项目任务更新任务预计", tags = {"任务预计" },  notes = "根据项目任务更新任务预计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<TaskEstimateDTO> updateByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -1495,7 +1416,6 @@ public class TaskEstimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.getTaskestimateByEntities(this.taskestimateMapping.toDomain(#taskestimatedtos)),'iBizPMS-TaskEstimate-Update')")
     @ApiOperation(value = "根据项目任务批量更新任务预计", tags = {"任务预计" },  notes = "根据项目任务批量更新任务预计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/batch")
     public ResponseEntity<Boolean> updateBatchByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -1507,14 +1427,12 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.get(#taskestimate_id),'iBizPMS-TaskEstimate-Remove')")
     @ApiOperation(value = "根据项目任务删除任务预计", tags = {"任务预计" },  notes = "根据项目任务删除任务预计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<Boolean> removeByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(taskestimateService.remove(taskestimate_id));
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.getTaskestimateByIds(#ids),'iBizPMS-TaskEstimate-Remove')")
     @ApiOperation(value = "根据项目任务批量删除任务预计", tags = {"任务预计" },  notes = "根据项目任务批量删除任务预计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/batch")
     public ResponseEntity<Boolean> removeBatchByProjectTask(@RequestBody List<Long> ids) {
@@ -1522,7 +1440,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.taskestimateMapping.toDomain(returnObject.body),'iBizPMS-TaskEstimate-Get')")
     @ApiOperation(value = "根据项目任务获取任务预计", tags = {"任务预计" },  notes = "根据项目任务获取任务预计")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<TaskEstimateDTO> getByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
@@ -1545,7 +1462,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(taskestimateService.checkKey(taskestimateMapping.toDomain(taskestimatedto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-PMEvaluation-all')")
     @ApiOperation(value = "根据项目任务任务预计", tags = {"任务预计" },  notes = "根据项目任务任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/{taskestimate_id}/pmevaluation")
     public ResponseEntity<TaskEstimateDTO> pMEvaluationByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -1562,7 +1478,6 @@ public class TaskEstimateResource {
         boolean result = taskestimateService.pMEvaluationBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedto),'iBizPMS-TaskEstimate-Save')")
     @ApiOperation(value = "根据项目任务保存任务预计", tags = {"任务预计" },  notes = "根据项目任务保存任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/save")
     public ResponseEntity<TaskEstimateDTO> saveByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -1572,7 +1487,6 @@ public class TaskEstimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskestimateMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedtos),'iBizPMS-TaskEstimate-Save')")
     @ApiOperation(value = "根据项目任务批量保存任务预计", tags = {"任务预计" },  notes = "根据项目任务批量保存任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/savebatch")
     public ResponseEntity<Boolean> saveBatchByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -1584,7 +1498,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务获取日志月", tags = {"任务预计" } ,notes = "根据项目任务获取日志月")
     @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/taskestimates/fetchactionmonth")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionMonthByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -1598,7 +1511,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务查询日志月", tags = {"任务预计" } ,notes = "根据项目任务查询日志月")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/taskestimates/searchactionmonth")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateActionMonthByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -1607,7 +1519,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务获取日志年", tags = {"任务预计" } ,notes = "根据项目任务获取日志年")
     @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/taskestimates/fetchactionyear")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionYearByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -1621,7 +1532,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务查询日志年", tags = {"任务预计" } ,notes = "根据项目任务查询日志年")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/taskestimates/searchactionyear")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateActionYearByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -1630,7 +1540,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefault-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务获取DEFAULT", tags = {"任务预计" } ,notes = "根据项目任务获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/taskestimates/fetchdefault")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -1644,7 +1553,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefault-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务查询DEFAULT", tags = {"任务预计" } ,notes = "根据项目任务查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/taskestimates/searchdefault")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateDefaultByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -1653,7 +1561,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefaults-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务获取DEFAULT1", tags = {"任务预计" } ,notes = "根据项目任务获取DEFAULT1")
     @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/taskestimates/fetchdefaults")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultsByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -1667,7 +1574,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefaults-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务查询DEFAULT1", tags = {"任务预计" } ,notes = "根据项目任务查询DEFAULT1")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/taskestimates/searchdefaults")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateDefaultsByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -1676,7 +1582,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务获取日志月（项目）", tags = {"任务预计" } ,notes = "根据项目任务获取日志月（项目）")
     @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/taskestimates/fetchprojectactionmonth")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionMonthByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -1690,7 +1595,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务查询日志月（项目）", tags = {"任务预计" } ,notes = "根据项目任务查询日志月（项目）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/taskestimates/searchprojectactionmonth")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateProjectActionMonthByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -1699,7 +1603,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务获取日志年（项目）", tags = {"任务预计" } ,notes = "根据项目任务获取日志年（项目）")
     @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/taskestimates/fetchprojectactionyear")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionYearByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -1713,7 +1616,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务查询日志年（项目）", tags = {"任务预计" } ,notes = "根据项目任务查询日志年（项目）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/taskestimates/searchprojectactionyear")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateProjectActionYearByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -1722,7 +1624,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectTaskEstimate-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务获取项目日志", tags = {"任务预计" } ,notes = "根据项目任务获取项目日志")
     @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/taskestimates/fetchprojecttaskestimate")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectTaskEstimateByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -1736,7 +1637,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectTaskEstimate-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务查询项目日志", tags = {"任务预计" } ,notes = "根据项目任务查询项目日志")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/taskestimates/searchprojecttaskestimate")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateProjectTaskEstimateByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -1745,7 +1645,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedto),'iBizPMS-TaskEstimate-Create')")
     @ApiOperation(value = "根据产品产品计划任务建立任务预计", tags = {"任务预计" },  notes = "根据产品产品计划任务建立任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates")
     public ResponseEntity<TaskEstimateDTO> createByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -1756,7 +1655,6 @@ public class TaskEstimateResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedtos),'iBizPMS-TaskEstimate-Create')")
     @ApiOperation(value = "根据产品产品计划任务批量建立任务预计", tags = {"任务预计" },  notes = "根据产品产品计划任务批量建立任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/batch")
     public ResponseEntity<Boolean> createBatchByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -1768,7 +1666,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.get(#taskestimate_id),'iBizPMS-TaskEstimate-Update')")
     @ApiOperation(value = "根据产品产品计划任务更新任务预计", tags = {"任务预计" },  notes = "根据产品产品计划任务更新任务预计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<TaskEstimateDTO> updateByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -1780,7 +1677,6 @@ public class TaskEstimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.getTaskestimateByEntities(this.taskestimateMapping.toDomain(#taskestimatedtos)),'iBizPMS-TaskEstimate-Update')")
     @ApiOperation(value = "根据产品产品计划任务批量更新任务预计", tags = {"任务预计" },  notes = "根据产品产品计划任务批量更新任务预计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/batch")
     public ResponseEntity<Boolean> updateBatchByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -1792,14 +1688,12 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.get(#taskestimate_id),'iBizPMS-TaskEstimate-Remove')")
     @ApiOperation(value = "根据产品产品计划任务删除任务预计", tags = {"任务预计" },  notes = "根据产品产品计划任务删除任务预计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<Boolean> removeByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(taskestimateService.remove(taskestimate_id));
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.getTaskestimateByIds(#ids),'iBizPMS-TaskEstimate-Remove')")
     @ApiOperation(value = "根据产品产品计划任务批量删除任务预计", tags = {"任务预计" },  notes = "根据产品产品计划任务批量删除任务预计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/batch")
     public ResponseEntity<Boolean> removeBatchByProductProductPlanTask(@RequestBody List<Long> ids) {
@@ -1807,7 +1701,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.taskestimateMapping.toDomain(returnObject.body),'iBizPMS-TaskEstimate-Get')")
     @ApiOperation(value = "根据产品产品计划任务获取任务预计", tags = {"任务预计" },  notes = "根据产品产品计划任务获取任务预计")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<TaskEstimateDTO> getByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
@@ -1830,7 +1723,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(taskestimateService.checkKey(taskestimateMapping.toDomain(taskestimatedto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-PMEvaluation-all')")
     @ApiOperation(value = "根据产品产品计划任务任务预计", tags = {"任务预计" },  notes = "根据产品产品计划任务任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/{taskestimate_id}/pmevaluation")
     public ResponseEntity<TaskEstimateDTO> pMEvaluationByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -1847,7 +1739,6 @@ public class TaskEstimateResource {
         boolean result = taskestimateService.pMEvaluationBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedto),'iBizPMS-TaskEstimate-Save')")
     @ApiOperation(value = "根据产品产品计划任务保存任务预计", tags = {"任务预计" },  notes = "根据产品产品计划任务保存任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/save")
     public ResponseEntity<TaskEstimateDTO> saveByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -1857,7 +1748,6 @@ public class TaskEstimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskestimateMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedtos),'iBizPMS-TaskEstimate-Save')")
     @ApiOperation(value = "根据产品产品计划任务批量保存任务预计", tags = {"任务预计" },  notes = "根据产品产品计划任务批量保存任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/savebatch")
     public ResponseEntity<Boolean> saveBatchByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -1869,7 +1759,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品产品计划任务获取日志月", tags = {"任务预计" } ,notes = "根据产品产品计划任务获取日志月")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchactionmonth")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionMonthByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -1883,7 +1772,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品产品计划任务查询日志月", tags = {"任务预计" } ,notes = "根据产品产品计划任务查询日志月")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/searchactionmonth")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateActionMonthByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -1892,7 +1780,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品产品计划任务获取日志年", tags = {"任务预计" } ,notes = "根据产品产品计划任务获取日志年")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchactionyear")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionYearByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -1906,7 +1793,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品产品计划任务查询日志年", tags = {"任务预计" } ,notes = "根据产品产品计划任务查询日志年")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/searchactionyear")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateActionYearByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -1915,7 +1801,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefault-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品产品计划任务获取DEFAULT", tags = {"任务预计" } ,notes = "根据产品产品计划任务获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchdefault")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -1929,7 +1814,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefault-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品产品计划任务查询DEFAULT", tags = {"任务预计" } ,notes = "根据产品产品计划任务查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/searchdefault")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateDefaultByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -1938,7 +1822,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefaults-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品产品计划任务获取DEFAULT1", tags = {"任务预计" } ,notes = "根据产品产品计划任务获取DEFAULT1")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchdefaults")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultsByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -1952,7 +1835,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefaults-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品产品计划任务查询DEFAULT1", tags = {"任务预计" } ,notes = "根据产品产品计划任务查询DEFAULT1")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/searchdefaults")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateDefaultsByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -1961,7 +1843,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品产品计划任务获取日志月（项目）", tags = {"任务预计" } ,notes = "根据产品产品计划任务获取日志月（项目）")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchprojectactionmonth")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionMonthByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -1975,7 +1856,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品产品计划任务查询日志月（项目）", tags = {"任务预计" } ,notes = "根据产品产品计划任务查询日志月（项目）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/searchprojectactionmonth")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateProjectActionMonthByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -1984,7 +1864,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品产品计划任务获取日志年（项目）", tags = {"任务预计" } ,notes = "根据产品产品计划任务获取日志年（项目）")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchprojectactionyear")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionYearByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -1998,7 +1877,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品产品计划任务查询日志年（项目）", tags = {"任务预计" } ,notes = "根据产品产品计划任务查询日志年（项目）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/searchprojectactionyear")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateProjectActionYearByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -2007,7 +1885,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectTaskEstimate-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品产品计划任务获取项目日志", tags = {"任务预计" } ,notes = "根据产品产品计划任务获取项目日志")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchprojecttaskestimate")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectTaskEstimateByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -2021,7 +1898,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectTaskEstimate-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品产品计划任务查询项目日志", tags = {"任务预计" } ,notes = "根据产品产品计划任务查询项目日志")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/searchprojecttaskestimate")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateProjectTaskEstimateByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -2030,7 +1906,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedto),'iBizPMS-TaskEstimate-Create')")
     @ApiOperation(value = "根据产品需求任务建立任务预计", tags = {"任务预计" },  notes = "根据产品需求任务建立任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates")
     public ResponseEntity<TaskEstimateDTO> createByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -2041,7 +1916,6 @@ public class TaskEstimateResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedtos),'iBizPMS-TaskEstimate-Create')")
     @ApiOperation(value = "根据产品需求任务批量建立任务预计", tags = {"任务预计" },  notes = "根据产品需求任务批量建立任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/batch")
     public ResponseEntity<Boolean> createBatchByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -2053,7 +1927,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.get(#taskestimate_id),'iBizPMS-TaskEstimate-Update')")
     @ApiOperation(value = "根据产品需求任务更新任务预计", tags = {"任务预计" },  notes = "根据产品需求任务更新任务预计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<TaskEstimateDTO> updateByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -2065,7 +1938,6 @@ public class TaskEstimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.getTaskestimateByEntities(this.taskestimateMapping.toDomain(#taskestimatedtos)),'iBizPMS-TaskEstimate-Update')")
     @ApiOperation(value = "根据产品需求任务批量更新任务预计", tags = {"任务预计" },  notes = "根据产品需求任务批量更新任务预计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/batch")
     public ResponseEntity<Boolean> updateBatchByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -2077,14 +1949,12 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.get(#taskestimate_id),'iBizPMS-TaskEstimate-Remove')")
     @ApiOperation(value = "根据产品需求任务删除任务预计", tags = {"任务预计" },  notes = "根据产品需求任务删除任务预计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<Boolean> removeByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(taskestimateService.remove(taskestimate_id));
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.getTaskestimateByIds(#ids),'iBizPMS-TaskEstimate-Remove')")
     @ApiOperation(value = "根据产品需求任务批量删除任务预计", tags = {"任务预计" },  notes = "根据产品需求任务批量删除任务预计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/batch")
     public ResponseEntity<Boolean> removeBatchByProductStoryTask(@RequestBody List<Long> ids) {
@@ -2092,7 +1962,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.taskestimateMapping.toDomain(returnObject.body),'iBizPMS-TaskEstimate-Get')")
     @ApiOperation(value = "根据产品需求任务获取任务预计", tags = {"任务预计" },  notes = "根据产品需求任务获取任务预计")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<TaskEstimateDTO> getByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
@@ -2115,7 +1984,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(taskestimateService.checkKey(taskestimateMapping.toDomain(taskestimatedto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-PMEvaluation-all')")
     @ApiOperation(value = "根据产品需求任务任务预计", tags = {"任务预计" },  notes = "根据产品需求任务任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/{taskestimate_id}/pmevaluation")
     public ResponseEntity<TaskEstimateDTO> pMEvaluationByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -2132,7 +2000,6 @@ public class TaskEstimateResource {
         boolean result = taskestimateService.pMEvaluationBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedto),'iBizPMS-TaskEstimate-Save')")
     @ApiOperation(value = "根据产品需求任务保存任务预计", tags = {"任务预计" },  notes = "根据产品需求任务保存任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/save")
     public ResponseEntity<TaskEstimateDTO> saveByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -2142,7 +2009,6 @@ public class TaskEstimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskestimateMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedtos),'iBizPMS-TaskEstimate-Save')")
     @ApiOperation(value = "根据产品需求任务批量保存任务预计", tags = {"任务预计" },  notes = "根据产品需求任务批量保存任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/savebatch")
     public ResponseEntity<Boolean> saveBatchByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -2154,7 +2020,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品需求任务获取日志月", tags = {"任务预计" } ,notes = "根据产品需求任务获取日志月")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/fetchactionmonth")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionMonthByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -2168,7 +2033,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品需求任务查询日志月", tags = {"任务预计" } ,notes = "根据产品需求任务查询日志月")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/searchactionmonth")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateActionMonthByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -2177,7 +2041,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品需求任务获取日志年", tags = {"任务预计" } ,notes = "根据产品需求任务获取日志年")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/fetchactionyear")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionYearByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -2191,7 +2054,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品需求任务查询日志年", tags = {"任务预计" } ,notes = "根据产品需求任务查询日志年")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/searchactionyear")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateActionYearByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -2200,7 +2062,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefault-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品需求任务获取DEFAULT", tags = {"任务预计" } ,notes = "根据产品需求任务获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/fetchdefault")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -2214,7 +2075,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefault-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品需求任务查询DEFAULT", tags = {"任务预计" } ,notes = "根据产品需求任务查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/searchdefault")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateDefaultByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -2223,7 +2083,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefaults-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品需求任务获取DEFAULT1", tags = {"任务预计" } ,notes = "根据产品需求任务获取DEFAULT1")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/fetchdefaults")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultsByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -2237,7 +2096,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefaults-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品需求任务查询DEFAULT1", tags = {"任务预计" } ,notes = "根据产品需求任务查询DEFAULT1")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/searchdefaults")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateDefaultsByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -2246,7 +2104,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品需求任务获取日志月（项目）", tags = {"任务预计" } ,notes = "根据产品需求任务获取日志月（项目）")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/fetchprojectactionmonth")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionMonthByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -2260,7 +2117,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品需求任务查询日志月（项目）", tags = {"任务预计" } ,notes = "根据产品需求任务查询日志月（项目）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/searchprojectactionmonth")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateProjectActionMonthByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -2269,7 +2125,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品需求任务获取日志年（项目）", tags = {"任务预计" } ,notes = "根据产品需求任务获取日志年（项目）")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/fetchprojectactionyear")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionYearByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -2283,7 +2138,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品需求任务查询日志年（项目）", tags = {"任务预计" } ,notes = "根据产品需求任务查询日志年（项目）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/searchprojectactionyear")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateProjectActionYearByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -2292,7 +2146,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectTaskEstimate-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品需求任务获取项目日志", tags = {"任务预计" } ,notes = "根据产品需求任务获取项目日志")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/fetchprojecttaskestimate")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectTaskEstimateByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -2306,7 +2159,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectTaskEstimate-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据产品需求任务查询项目日志", tags = {"任务预计" } ,notes = "根据产品需求任务查询项目日志")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/searchprojecttaskestimate")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateProjectTaskEstimateByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -2315,7 +2167,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedto),'iBizPMS-TaskEstimate-Create')")
     @ApiOperation(value = "根据项目任务模块任务建立任务预计", tags = {"任务预计" },  notes = "根据项目任务模块任务建立任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates")
     public ResponseEntity<TaskEstimateDTO> createByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -2326,7 +2177,6 @@ public class TaskEstimateResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedtos),'iBizPMS-TaskEstimate-Create')")
     @ApiOperation(value = "根据项目任务模块任务批量建立任务预计", tags = {"任务预计" },  notes = "根据项目任务模块任务批量建立任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/batch")
     public ResponseEntity<Boolean> createBatchByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -2338,7 +2188,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.get(#taskestimate_id),'iBizPMS-TaskEstimate-Update')")
     @ApiOperation(value = "根据项目任务模块任务更新任务预计", tags = {"任务预计" },  notes = "根据项目任务模块任务更新任务预计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<TaskEstimateDTO> updateByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -2350,7 +2199,6 @@ public class TaskEstimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.getTaskestimateByEntities(this.taskestimateMapping.toDomain(#taskestimatedtos)),'iBizPMS-TaskEstimate-Update')")
     @ApiOperation(value = "根据项目任务模块任务批量更新任务预计", tags = {"任务预计" },  notes = "根据项目任务模块任务批量更新任务预计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/batch")
     public ResponseEntity<Boolean> updateBatchByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -2362,14 +2210,12 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.get(#taskestimate_id),'iBizPMS-TaskEstimate-Remove')")
     @ApiOperation(value = "根据项目任务模块任务删除任务预计", tags = {"任务预计" },  notes = "根据项目任务模块任务删除任务预计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<Boolean> removeByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(taskestimateService.remove(taskestimate_id));
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateService.getTaskestimateByIds(#ids),'iBizPMS-TaskEstimate-Remove')")
     @ApiOperation(value = "根据项目任务模块任务批量删除任务预计", tags = {"任务预计" },  notes = "根据项目任务模块任务批量删除任务预计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/batch")
     public ResponseEntity<Boolean> removeBatchByProjectProjectModuleTask(@RequestBody List<Long> ids) {
@@ -2377,7 +2223,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.taskestimateMapping.toDomain(returnObject.body),'iBizPMS-TaskEstimate-Get')")
     @ApiOperation(value = "根据项目任务模块任务获取任务预计", tags = {"任务预计" },  notes = "根据项目任务模块任务获取任务预计")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<TaskEstimateDTO> getByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
@@ -2400,7 +2245,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(taskestimateService.checkKey(taskestimateMapping.toDomain(taskestimatedto)));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-PMEvaluation-all')")
     @ApiOperation(value = "根据项目任务模块任务任务预计", tags = {"任务预计" },  notes = "根据项目任务模块任务任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/{taskestimate_id}/pmevaluation")
     public ResponseEntity<TaskEstimateDTO> pMEvaluationByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -2417,7 +2261,6 @@ public class TaskEstimateResource {
         boolean result = taskestimateService.pMEvaluationBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedto),'iBizPMS-TaskEstimate-Save')")
     @ApiOperation(value = "根据项目任务模块任务保存任务预计", tags = {"任务预计" },  notes = "根据项目任务模块任务保存任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/save")
     public ResponseEntity<TaskEstimateDTO> saveByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -2427,7 +2270,6 @@ public class TaskEstimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskestimateMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.taskestimateMapping.toDomain(#taskestimatedtos),'iBizPMS-TaskEstimate-Save')")
     @ApiOperation(value = "根据项目任务模块任务批量保存任务预计", tags = {"任务预计" },  notes = "根据项目任务模块任务批量保存任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/savebatch")
     public ResponseEntity<Boolean> saveBatchByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody List<TaskEstimateDTO> taskestimatedtos) {
@@ -2439,7 +2281,6 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务模块任务获取日志月", tags = {"任务预计" } ,notes = "根据项目任务模块任务获取日志月")
     @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchactionmonth")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionMonthByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -2453,7 +2294,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务模块任务查询日志月", tags = {"任务预计" } ,notes = "根据项目任务模块任务查询日志月")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/searchactionmonth")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateActionMonthByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -2462,7 +2302,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务模块任务获取日志年", tags = {"任务预计" } ,notes = "根据项目任务模块任务获取日志年")
     @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchactionyear")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionYearByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -2476,7 +2315,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务模块任务查询日志年", tags = {"任务预计" } ,notes = "根据项目任务模块任务查询日志年")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/searchactionyear")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateActionYearByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -2485,7 +2323,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefault-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务模块任务获取DEFAULT", tags = {"任务预计" } ,notes = "根据项目任务模块任务获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchdefault")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -2499,7 +2336,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefault-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务模块任务查询DEFAULT", tags = {"任务预计" } ,notes = "根据项目任务模块任务查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/searchdefault")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateDefaultByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -2508,7 +2344,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefaults-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务模块任务获取DEFAULT1", tags = {"任务预计" } ,notes = "根据项目任务模块任务获取DEFAULT1")
     @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchdefaults")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultsByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -2522,7 +2357,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchDefaults-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务模块任务查询DEFAULT1", tags = {"任务预计" } ,notes = "根据项目任务模块任务查询DEFAULT1")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/searchdefaults")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateDefaultsByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -2531,7 +2365,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务模块任务获取日志月（项目）", tags = {"任务预计" } ,notes = "根据项目任务模块任务获取日志月（项目）")
     @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchprojectactionmonth")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionMonthByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -2545,7 +2378,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionMonth-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务模块任务查询日志月（项目）", tags = {"任务预计" } ,notes = "根据项目任务模块任务查询日志月（项目）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/searchprojectactionmonth")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateProjectActionMonthByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -2554,7 +2386,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务模块任务获取日志年（项目）", tags = {"任务预计" } ,notes = "根据项目任务模块任务获取日志年（项目）")
     @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchprojectactionyear")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionYearByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -2568,7 +2399,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectActionYear-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务模块任务查询日志年（项目）", tags = {"任务预计" } ,notes = "根据项目任务模块任务查询日志年（项目）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/searchprojectactionyear")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateProjectActionYearByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {
@@ -2577,7 +2407,6 @@ public class TaskEstimateResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectTaskEstimate-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务模块任务获取项目日志", tags = {"任务预计" } ,notes = "根据项目任务模块任务获取项目日志")
     @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchprojecttaskestimate")
 	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectTaskEstimateByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
@@ -2591,7 +2420,6 @@ public class TaskEstimateResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TaskEstimate-searchProjectTaskEstimate-all') and hasPermission(#context,'iBizPMS-TaskEstimate-Get')")
 	@ApiOperation(value = "根据项目任务模块任务查询项目日志", tags = {"任务预计" } ,notes = "根据项目任务模块任务查询项目日志")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/searchprojecttaskestimate")
 	public ResponseEntity<Page<TaskEstimateDTO>> searchTaskEstimateProjectTaskEstimateByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskEstimateSearchContext context) {

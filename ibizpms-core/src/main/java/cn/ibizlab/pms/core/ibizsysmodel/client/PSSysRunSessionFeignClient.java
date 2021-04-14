@@ -16,7 +16,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 /**
  * 实体[PSSysRunSession] 服务对象接口
  */
-//@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSSysRunSession", fallback = PSSysRunSessionFallback.class)
+@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSSysRunSession", fallback = PSSysRunSessionFallback.class)
 public interface PSSysRunSessionFeignClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssysrunsessions/select")
@@ -24,14 +24,14 @@ public interface PSSysRunSessionFeignClient {
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysrunsessions")
-    PSSysRunSession create(@RequestBody PSSysRunSession et);
+    PSSysRunSession create(@RequestBody PSSysRunSession pssysrunsession);
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysrunsessions/batch")
     Boolean createBatch(@RequestBody List<PSSysRunSession> pssysrunsessions);
 
 
     @RequestMapping(method = RequestMethod.PUT, value = "/pssysrunsessions/{pssysrunsessionid}")
-    PSSysRunSession update(@PathVariable("pssysrunsessionid") String pssysrunsessionid, @RequestBody PSSysRunSession et);
+    PSSysRunSession update(@PathVariable("pssysrunsessionid") String pssysrunsessionid,@RequestBody PSSysRunSession pssysrunsession);
 
     @RequestMapping(method = RequestMethod.PUT, value = "/pssysrunsessions/batch")
     Boolean updateBatch(@RequestBody List<PSSysRunSession> pssysrunsessions);
@@ -47,22 +47,19 @@ public interface PSSysRunSessionFeignClient {
     @RequestMapping(method = RequestMethod.GET, value = "/pssysrunsessions/{pssysrunsessionid}")
     PSSysRunSession get(@PathVariable("pssysrunsessionid") String pssysrunsessionid);
 
-    @RequestMapping(method = RequestMethod.GET, value = "/pssysrunsessions/getbycodename/{pssysrunsessionid}")
-    String getByCodeName(@PathVariable("pssysrunsessionid") String codeName);
-
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssysrunsessions/getdraft")
     PSSysRunSession getDraft(PSSysRunSession entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysrunsessions/checkkey")
-    Boolean checkKey(@RequestBody PSSysRunSession et);
+    Boolean checkKey(@RequestBody PSSysRunSession pssysrunsession);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysrunsessions/save")
-    Object saveEntity(@RequestBody PSSysRunSession et);
+    Object saveEntity(@RequestBody PSSysRunSession pssysrunsession);
 
-    default Boolean save(@RequestBody PSSysRunSession et) { return saveEntity(et)!=null; }
+    default Boolean save(@RequestBody PSSysRunSession pssysrunsession) { return saveEntity(pssysrunsession)!=null; }
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysrunsessions/savebatch")
     Boolean saveBatch(@RequestBody List<PSSysRunSession> pssysrunsessions);

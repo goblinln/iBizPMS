@@ -24,31 +24,21 @@ import cn.ibizlab.pms.core.ibizplugin.filter.IBIZProPluginSearchContext;
  */
 public interface IIBIZProPluginService {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "系统插件";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "ibizproplugins";
-
     boolean create(IBIZProPlugin et);
     void createBatch(List<IBIZProPlugin> list);
     boolean update(IBIZProPlugin et);
+    boolean sysUpdate(IBIZProPlugin et);
     void updateBatch(List<IBIZProPlugin> list);
     boolean remove(String key);
     void removeBatch(Collection<String> idList);
     IBIZProPlugin get(String key);
+    IBIZProPlugin sysGet(String key);
     IBIZProPlugin getDraft(IBIZProPlugin et);
     boolean checkKey(IBIZProPlugin et);
     boolean save(IBIZProPlugin et);
     void saveBatch(List<IBIZProPlugin> list);
     Page<IBIZProPlugin> searchDefault(IBIZProPluginSearchContext context);
     IBIZProPlugin dynamicCall(String key, String action, IBIZProPlugin et);
-
-
 }
 
 

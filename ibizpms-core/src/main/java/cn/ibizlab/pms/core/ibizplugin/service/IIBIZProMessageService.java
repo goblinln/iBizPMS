@@ -24,23 +24,15 @@ import cn.ibizlab.pms.core.ibizplugin.filter.IBIZProMessageSearchContext;
  */
 public interface IIBIZProMessageService {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "消息";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "ibizpromessages";
-
     boolean create(IBIZProMessage et);
     void createBatch(List<IBIZProMessage> list);
     boolean update(IBIZProMessage et);
+    boolean sysUpdate(IBIZProMessage et);
     void updateBatch(List<IBIZProMessage> list);
     boolean remove(String key);
     void removeBatch(Collection<String> idList);
     IBIZProMessage get(String key);
+    IBIZProMessage sysGet(String key);
     IBIZProMessage getDraft(IBIZProMessage et);
     boolean checkKey(IBIZProMessage et);
     IBIZProMessage markDone(IBIZProMessage et);
@@ -55,8 +47,6 @@ public interface IIBIZProMessageService {
     Page<IBIZProMessage> searchUserAllMessages(IBIZProMessageSearchContext context);
     Page<IBIZProMessage> searchUserUnreadMessages(IBIZProMessageSearchContext context);
     IBIZProMessage dynamicCall(String key, String action, IBIZProMessage et);
-
-
 }
 
 

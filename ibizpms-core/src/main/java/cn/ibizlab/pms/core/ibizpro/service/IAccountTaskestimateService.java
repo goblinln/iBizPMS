@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IAccountTaskestimateService extends IService<AccountTaskestimate> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "用户工时统计";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "accounttaskestimates";
-
     boolean create(AccountTaskestimate et);
     void createBatch(List<AccountTaskestimate> list);
     boolean update(AccountTaskestimate et);
+    boolean sysUpdate(AccountTaskestimate et);
     void updateBatch(List<AccountTaskestimate> list);
     boolean remove(String key);
     void removeBatch(Collection<String> idList);
     AccountTaskestimate get(String key);
+    AccountTaskestimate sysGet(String key);
     AccountTaskestimate getDraft(AccountTaskestimate et);
     boolean checkKey(AccountTaskestimate et);
     boolean save(AccountTaskestimate et);

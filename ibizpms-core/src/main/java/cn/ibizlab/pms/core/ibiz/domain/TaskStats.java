@@ -175,7 +175,7 @@ public class TaskStats extends EntityMP implements Serializable {
     /**
      * 名称
      */
-    @TableField(value = "`name`")
+    @TableField(value = "name")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("名称")

@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ITestResultService extends IService<TestResult> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "测试结果";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "testresults";
-
     boolean create(TestResult et);
     void createBatch(List<TestResult> list);
     boolean update(TestResult et);
+    boolean sysUpdate(TestResult et);
     void updateBatch(List<TestResult> list);
     boolean remove(Long key);
     void removeBatch(Collection<Long> idList);
     TestResult get(Long key);
+    TestResult sysGet(Long key);
     TestResult getDraft(TestResult et);
     boolean checkKey(TestResult et);
     boolean save(TestResult et);

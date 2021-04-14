@@ -25,23 +25,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IIbizproProjectMonthlyService extends IService<IbizproProjectMonthly> {
 
-    /**
-     * 业务实体显示文本名称
-     */
-    final static String OBJECT_TEXT_NAME = "项目月报";
-
-    /**
-     * 业务实体资源路径名
-     */
-    final static String OBJECT_SOURCE_PATH = "ibizproprojectmonthlies";
-
     boolean create(IbizproProjectMonthly et);
     void createBatch(List<IbizproProjectMonthly> list);
     boolean update(IbizproProjectMonthly et);
+    boolean sysUpdate(IbizproProjectMonthly et);
     void updateBatch(List<IbizproProjectMonthly> list);
     boolean remove(String key);
     void removeBatch(Collection<String> idList);
     IbizproProjectMonthly get(String key);
+    IbizproProjectMonthly sysGet(String key);
     IbizproProjectMonthly getDraft(IbizproProjectMonthly et);
     boolean checkKey(IbizproProjectMonthly et);
     IbizproProjectMonthly manualCreateMonthly(IbizproProjectMonthly et);

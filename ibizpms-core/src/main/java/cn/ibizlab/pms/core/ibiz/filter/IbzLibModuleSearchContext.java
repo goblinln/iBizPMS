@@ -30,23 +30,14 @@ public class IbzLibModuleSearchContext extends QueryWrapperContext<IbzLibModule>
 	private String n_name_like;//[名称]
 	public void setN_name_like(String n_name_like) {
         this.n_name_like = n_name_like;
-        if(!ObjectUtils.isEmpty(this.n_name_like)){
-            this.getSearchCond().like("`name`", n_name_like);
-        }
     }
 	private Long n_root_eq;//[编号]
 	public void setN_root_eq(Long n_root_eq) {
         this.n_root_eq = n_root_eq;
-        if(!ObjectUtils.isEmpty(this.n_root_eq)){
-            this.getSearchCond().eq("`root`", n_root_eq);
-        }
     }
 	private Long n_parent_eq;//[id]
 	public void setN_parent_eq(Long n_parent_eq) {
         this.n_parent_eq = n_parent_eq;
-        if(!ObjectUtils.isEmpty(this.n_parent_eq)){
-            this.getSearchCond().eq("`parent`", n_parent_eq);
-        }
     }
 
     /**
@@ -58,7 +49,7 @@ public class IbzLibModuleSearchContext extends QueryWrapperContext<IbzLibModule>
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("`name`", query)
+                     wrapper.like("name", query)
             );
 		 }
 	}
