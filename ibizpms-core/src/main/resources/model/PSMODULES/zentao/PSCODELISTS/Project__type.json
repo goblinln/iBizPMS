@@ -1,0 +1,28 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "Project__type",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Project__type.json",
+  "emptyText" : "未定义",
+  "getPSCodeItems" : [ {
+    "codeName" : "Sprint",
+    "text" : "短期项目",
+    "value" : "sprint",
+    "default" : true
+  }, {
+    "codeName" : "Waterfall",
+    "text" : "长期项目",
+    "value" : "waterfall"
+  }, {
+    "codeName" : "Ops",
+    "text" : "运维项目",
+    "value" : "ops"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
+}

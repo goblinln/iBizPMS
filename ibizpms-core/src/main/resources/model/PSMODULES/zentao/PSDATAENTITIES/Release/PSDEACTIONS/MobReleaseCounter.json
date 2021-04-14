@@ -1,0 +1,23 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "DELOGIC",
+  "codeName" : "MobReleaseCounter",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/MobReleaseCounter.json",
+  "extendMode" : 0,
+  "logicName" : "移动端发布计数器",
+  "name" : "MobReleaseCounter",
+  "orderValue" : 99999,
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDELOGICS/MobReleaseCounter.json"
+  },
+  "paramMode" : 1,
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "timeOut" : -1,
+  "transactionMode" : "DEFAULT",
+  "builtinAction" : false,
+  "customParam" : false,
+  "generateTestUnit" : false,
+  "pubServiceDefault" : true
+}

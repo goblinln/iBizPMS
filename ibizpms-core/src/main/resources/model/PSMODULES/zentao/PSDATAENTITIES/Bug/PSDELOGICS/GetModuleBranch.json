@@ -1,0 +1,159 @@
+{
+  "codeName" : "GetModuleBranch",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/GetModuleBranch.json",
+  "logicHolder" : 1,
+  "logicName" : "获取模块的平台",
+  "logicSubType" : "NONE",
+  "name" : "获取模块的平台",
+  "getPSDELogicLinks" : [ {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Deaction1"
+    },
+    "name" : "连接6882",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam1"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam1"
+    },
+    "name" : "连接1496",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "ISNOTNULL",
+        "dstFieldName" : "MODULE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "logicType" : "SINGLE",
+        "name" : "Default[MODULE] 值不为空(NotNil)"
+      } ],
+      "notMode" : false,
+      "id" : "87305d0111576435af0510abbef59b91"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam2"
+    },
+    "name" : "连接9306",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Deaction1"
+    },
+    "defaultLink" : false
+  } ],
+  "getPSDELogicNodes" : [ {
+    "codeName" : "Deaction1",
+    "getDstPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDEACTIONS/Get.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Module"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+    },
+    "logicHolder" : 3,
+    "logicNodeType" : "DEACTION",
+    "name" : "获取模块详情",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接9306"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Prepareparam1",
+    "logicHolder" : 3,
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "设置模块参数",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接6882"
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "dstFieldName" : "ID",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Module"
+      },
+      "name" : "Default[MODULE] ==> Module[ID]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "MODULE",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Begin",
+    "logicHolder" : 3,
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接1496"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Prepareparam2",
+    "logicHolder" : 3,
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "设置bug平台值",
+    "getPSDELogicNodeParams" : [ {
+      "dstFieldName" : "BRANCH",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "name" : "Module[BRANCH] ==> Default[BRANCH]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "BRANCH",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Module"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "parallelOutput" : true
+  } ],
+  "getPSDELogicParams" : [ {
+    "codeName" : "Module",
+    "name" : "模块",
+    "default" : false,
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
+  }, {
+    "codeName" : "Default",
+    "name" : "传入变量",
+    "default" : true,
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
+  } ],
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : true,
+  "enableFront" : false
+}

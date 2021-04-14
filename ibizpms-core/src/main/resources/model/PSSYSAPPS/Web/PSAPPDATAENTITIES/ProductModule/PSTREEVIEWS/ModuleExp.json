@@ -1,0 +1,1628 @@
+{
+  "codeName" : "ModuleExp",
+  "controlType" : "TREEVIEW",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule/PSTREEVIEWS/ModuleExp.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+  "logicName" : "模块导航视图树",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+  },
+  "getPSAppViewLogics" : [ {
+    "eventArg" : "deuiaction1",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "branch_cm_deuiaction1_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "branch_cm_deuiaction1"
+    },
+    "getPSViewCtrlName" : "branch_cm"
+  }, {
+    "eventArg" : "deuiaction1",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "all_cm_deuiaction1_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "all_cm_deuiaction1"
+    },
+    "getPSViewCtrlName" : "all_cm"
+  }, {
+    "eventArg" : "deuiaction1",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "rootmodule_cm_deuiaction1_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "rootmodule_cm_deuiaction1"
+    },
+    "getPSViewCtrlName" : "rootmodule_cm"
+  }, {
+    "eventArg" : "deuiaction2",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "rootmodule_cm_deuiaction2_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "rootmodule_cm_deuiaction2"
+    },
+    "getPSViewCtrlName" : "rootmodule_cm"
+  }, {
+    "eventArg" : "deuiaction1",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "module_cm_deuiaction1_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "module_cm_deuiaction1"
+    },
+    "getPSViewCtrlName" : "module_cm"
+  }, {
+    "eventArg" : "deuiaction2",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "module_cm_deuiaction2_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "module_cm_deuiaction2"
+    },
+    "getPSViewCtrlName" : "module_cm"
+  }, {
+    "eventArg" : "deuiaction1",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "branchs_cm_deuiaction1_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "branchs_cm_deuiaction1"
+    },
+    "getPSViewCtrlName" : "branchs_cm"
+  }, {
+    "eventArg" : "deuiaction1",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "root_nobranch_cm_deuiaction1_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "root_nobranch_cm_deuiaction1"
+    },
+    "getPSViewCtrlName" : "root_nobranch_cm"
+  }, {
+    "eventArg" : "deuiaction2",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "root_nobranch_cm_deuiaction2_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "root_nobranch_cm_deuiaction2"
+    },
+    "getPSViewCtrlName" : "root_nobranch_cm"
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "name" : "branch_cm_deuiaction1",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "RefreshParent"
+    },
+    "xDataControlName" : "treeexpbar_tree"
+  }, {
+    "name" : "all_cm_deuiaction1",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "RefreshAll"
+    },
+    "xDataControlName" : "treeexpbar_tree"
+  }, {
+    "name" : "rootmodule_cm_deuiaction1",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+      },
+      "modelref" : true,
+      "id" : "OpenQuickCfgView@ProductModule"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "treeexpbar_tree"
+  }, {
+    "name" : "rootmodule_cm_deuiaction2",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "RefreshAll"
+    },
+    "xDataControlName" : "treeexpbar_tree"
+  }, {
+    "name" : "module_cm_deuiaction1",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+      },
+      "modelref" : true,
+      "id" : "OpenQuickCfgView@ProductModule"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "treeexpbar_tree"
+  }, {
+    "name" : "module_cm_deuiaction2",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "RefreshAll"
+    },
+    "xDataControlName" : "treeexpbar_tree"
+  }, {
+    "name" : "branchs_cm_deuiaction1",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "RefreshParent"
+    },
+    "xDataControlName" : "treeexpbar_tree"
+  }, {
+    "name" : "root_nobranch_cm_deuiaction1",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+      },
+      "modelref" : true,
+      "id" : "OpenQuickCfgView@ProductModule"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "treeexpbar_tree"
+  }, {
+    "name" : "root_nobranch_cm_deuiaction2",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "RefreshAll"
+    },
+    "xDataControlName" : "treeexpbar_tree"
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "TreeExpViewbranchs_cm",
+    "controlType" : "CONTEXTMENU",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "树节点默认工具栏",
+    "name" : "branchs_cm",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+    },
+    "getPSControlParam" : {
+      "id" : "branchs_cm"
+    },
+    "getPSDEToolbarItems" : [ {
+      "caption" : "刷新",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction1",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "branchs_cm_deuiaction1"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf021@FontAwesome",
+        "cssClass" : "fa fa-refresh"
+      },
+      "getPSUIAction" : {
+        "getNoPrivDisplayMode" : 2,
+        "caption" : "刷新",
+        "codeName" : "RefreshParent",
+        "fullCodeName" : "RefreshParent",
+        "name" : "树界面_刷新父节点操作",
+        "getPSSysImage" : {
+          "glyph" : "xf021@FontAwesome",
+          "cssClass" : "fa fa-refresh"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "RefreshParent",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "刷新",
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "469ba7ea4acf6809bb19ecce4890c1d9"
+  }, {
+    "codeName" : "TreeExpViewall_cm",
+    "controlType" : "CONTEXTMENU",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "树节点默认工具栏（刷新全部）",
+    "name" : "all_cm",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+    },
+    "getPSControlParam" : {
+      "id" : "all_cm"
+    },
+    "getPSDEToolbarItems" : [ {
+      "caption" : "刷新",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction1",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "all_cm_deuiaction1"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf021@FontAwesome",
+        "cssClass" : "fa fa-refresh"
+      },
+      "getPSUIAction" : {
+        "getNoPrivDisplayMode" : 2,
+        "caption" : "刷新",
+        "codeName" : "RefreshAll",
+        "fullCodeName" : "RefreshAll",
+        "name" : "树界面_刷新全部操作",
+        "getPSSysImage" : {
+          "glyph" : "xf021@FontAwesome",
+          "cssClass" : "fa fa-refresh"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "RefreshAll",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "刷新",
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "022f0111597cba0a05a1d53d48a8cb04"
+  }, {
+    "codeName" : "TreeExpViewmodule_cm",
+    "controlType" : "CONTEXTMENU",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "需求模块树节点菜单栏",
+    "name" : "module_cm",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+    },
+    "getPSControlParam" : {
+      "id" : "module_cm"
+    },
+    "getPSDEToolbarItems" : [ {
+      "caption" : "编辑",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction1",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "module_cm_deuiaction1"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf044@FontAwesome",
+        "cssClass" : "fa fa-edit"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEKEY",
+        "getNoPrivDisplayMode" : 2,
+        "caption" : "编辑",
+        "codeName" : "OpenQuickCfgView",
+        "dataAccessAction" : "SRFUR__UNIVERSALEDIT",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleQuickCfgView.json",
+          "viewType" : "DEOPTVIEW"
+        },
+        "frontProcessType" : "WIZARD",
+        "fullCodeName" : "ProductModule_OpenQuickCfgView",
+        "name" : "打开快速编辑视图",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf044@FontAwesome",
+          "cssClass" : "fa fa-edit"
+        },
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "OpenQuickCfgView",
+        "uIActionType" : "DEUIACTION",
+        "reloadData" : true,
+        "id" : "OpenQuickCfgView@ProductModule"
+      },
+      "tooltip" : "编辑",
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "caption" : "刷新",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction2",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "module_cm_deuiaction2"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf021@FontAwesome",
+        "cssClass" : "fa fa-refresh"
+      },
+      "getPSUIAction" : {
+        "getNoPrivDisplayMode" : 2,
+        "caption" : "刷新",
+        "codeName" : "RefreshAll",
+        "fullCodeName" : "RefreshAll",
+        "name" : "树界面_刷新全部操作",
+        "getPSSysImage" : {
+          "glyph" : "xf021@FontAwesome",
+          "cssClass" : "fa fa-refresh"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "RefreshAll",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "刷新",
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "f842b635803663de702a36939ed73d01"
+  }, {
+    "codeName" : "TreeExpViewrootmodule_cm",
+    "controlType" : "CONTEXTMENU",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "需求模块树节点菜单栏",
+    "name" : "rootmodule_cm",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+    },
+    "getPSControlParam" : {
+      "id" : "rootmodule_cm"
+    },
+    "getPSDEToolbarItems" : [ {
+      "caption" : "编辑",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction1",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "rootmodule_cm_deuiaction1"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf044@FontAwesome",
+        "cssClass" : "fa fa-edit"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEKEY",
+        "getNoPrivDisplayMode" : 2,
+        "caption" : "编辑",
+        "codeName" : "OpenQuickCfgView",
+        "dataAccessAction" : "SRFUR__UNIVERSALEDIT",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleQuickCfgView.json",
+          "viewType" : "DEOPTVIEW"
+        },
+        "frontProcessType" : "WIZARD",
+        "fullCodeName" : "ProductModule_OpenQuickCfgView",
+        "name" : "打开快速编辑视图",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf044@FontAwesome",
+          "cssClass" : "fa fa-edit"
+        },
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "OpenQuickCfgView",
+        "uIActionType" : "DEUIACTION",
+        "reloadData" : true,
+        "id" : "OpenQuickCfgView@ProductModule"
+      },
+      "tooltip" : "编辑",
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "caption" : "刷新",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction2",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "rootmodule_cm_deuiaction2"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf021@FontAwesome",
+        "cssClass" : "fa fa-refresh"
+      },
+      "getPSUIAction" : {
+        "getNoPrivDisplayMode" : 2,
+        "caption" : "刷新",
+        "codeName" : "RefreshAll",
+        "fullCodeName" : "RefreshAll",
+        "name" : "树界面_刷新全部操作",
+        "getPSSysImage" : {
+          "glyph" : "xf021@FontAwesome",
+          "cssClass" : "fa fa-refresh"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "RefreshAll",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "刷新",
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "f842b635803663de702a36939ed73d01"
+  }, {
+    "codeName" : "TreeExpViewroot_nobranch_cm",
+    "controlType" : "CONTEXTMENU",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "需求模块树节点菜单栏",
+    "name" : "root_nobranch_cm",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+    },
+    "getPSControlParam" : {
+      "id" : "root_nobranch_cm"
+    },
+    "getPSDEToolbarItems" : [ {
+      "caption" : "编辑",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction1",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "root_nobranch_cm_deuiaction1"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf044@FontAwesome",
+        "cssClass" : "fa fa-edit"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEKEY",
+        "getNoPrivDisplayMode" : 2,
+        "caption" : "编辑",
+        "codeName" : "OpenQuickCfgView",
+        "dataAccessAction" : "SRFUR__UNIVERSALEDIT",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleQuickCfgView.json",
+          "viewType" : "DEOPTVIEW"
+        },
+        "frontProcessType" : "WIZARD",
+        "fullCodeName" : "ProductModule_OpenQuickCfgView",
+        "name" : "打开快速编辑视图",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf044@FontAwesome",
+          "cssClass" : "fa fa-edit"
+        },
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "OpenQuickCfgView",
+        "uIActionType" : "DEUIACTION",
+        "reloadData" : true,
+        "id" : "OpenQuickCfgView@ProductModule"
+      },
+      "tooltip" : "编辑",
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "caption" : "刷新",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction2",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "root_nobranch_cm_deuiaction2"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf021@FontAwesome",
+        "cssClass" : "fa fa-refresh"
+      },
+      "getPSUIAction" : {
+        "getNoPrivDisplayMode" : 2,
+        "caption" : "刷新",
+        "codeName" : "RefreshAll",
+        "fullCodeName" : "RefreshAll",
+        "name" : "树界面_刷新全部操作",
+        "getPSSysImage" : {
+          "glyph" : "xf021@FontAwesome",
+          "cssClass" : "fa fa-refresh"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "RefreshAll",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "刷新",
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "f842b635803663de702a36939ed73d01"
+  }, {
+    "codeName" : "TreeExpViewbranch_cm",
+    "controlType" : "CONTEXTMENU",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "树节点默认工具栏",
+    "name" : "branch_cm",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+    },
+    "getPSControlParam" : {
+      "id" : "branch_cm"
+    },
+    "getPSDEToolbarItems" : [ {
+      "caption" : "刷新",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction1",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "branch_cm_deuiaction1"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf021@FontAwesome",
+        "cssClass" : "fa fa-refresh"
+      },
+      "getPSUIAction" : {
+        "getNoPrivDisplayMode" : 2,
+        "caption" : "刷新",
+        "codeName" : "RefreshParent",
+        "fullCodeName" : "RefreshParent",
+        "name" : "树界面_刷新父节点操作",
+        "getPSSysImage" : {
+          "glyph" : "xf021@FontAwesome",
+          "cssClass" : "fa fa-refresh"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "RefreshParent",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "刷新",
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "469ba7ea4acf6809bb19ecce4890c1d9"
+  } ],
+  "getPSDETreeNodeRSs" : [ {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "MODULE"
+    },
+    "name" : "非根模块（动态） - 非根模块（动态）",
+    "getParentPSAppDEField" : {
+      "name" : "PARENT",
+      "codeName" : "Parent"
+    },
+    "getParentPSDER1N" : {
+      "codeName" : "ParentModule",
+      "dERType" : "DER1N",
+      "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDERS/DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT.json",
+      "getMajorPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+      },
+      "masterOrder" : -1,
+      "masterRS" : 0,
+      "getMinorPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+      },
+      "name" : "DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT",
+      "orderValue" : 100,
+      "getPSPickupDEField" : {
+        "name" : "PARENT",
+        "codeName" : "Parent"
+      },
+      "getPSPickupTextDEField" : {
+        "name" : "PARENTNAME",
+        "codeName" : "ParentName"
+      },
+      "pickupDEFName" : "PARENT",
+      "removeActionType" : -1,
+      "removeOrder" : 0
+    },
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "MODULE"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "Root_NoBranch"
+    },
+    "name" : "所有模块 - 根模块无分支（动态）",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ALL"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "BRANCHS"
+    },
+    "name" : "平台 - 平台（动态）",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "BRANCH"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "MODULE"
+    },
+    "name" : "根模块无分支（动态） - 非根模块（动态）",
+    "getParentPSAppDEField" : {
+      "name" : "PARENT",
+      "codeName" : "Parent"
+    },
+    "getParentPSDER1N" : {
+      "codeName" : "ParentModule",
+      "dERType" : "DER1N",
+      "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDERS/DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT.json",
+      "getMajorPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+      },
+      "masterOrder" : -1,
+      "masterRS" : 0,
+      "getMinorPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+      },
+      "name" : "DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT",
+      "orderValue" : 100,
+      "getPSPickupDEField" : {
+        "name" : "PARENT",
+        "codeName" : "Parent"
+      },
+      "getPSPickupTextDEField" : {
+        "name" : "PARENTNAME",
+        "codeName" : "ParentName"
+      },
+      "pickupDEFName" : "PARENT",
+      "removeActionType" : -1,
+      "removeOrder" : 0
+    },
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "Root_NoBranch"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOTMODULE"
+    },
+    "name" : "平台（动态） - 根模块（动态）",
+    "parentFilter" : "branch",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "BRANCHS"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "MODULE"
+    },
+    "name" : "根模块（动态） - 非根模块（动态）",
+    "getParentPSAppDEField" : {
+      "name" : "PARENT",
+      "codeName" : "Parent"
+    },
+    "getParentPSDER1N" : {
+      "codeName" : "ParentModule",
+      "dERType" : "DER1N",
+      "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDERS/DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT.json",
+      "getMajorPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+      },
+      "masterOrder" : -1,
+      "masterRS" : 0,
+      "getMinorPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+      },
+      "name" : "DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT",
+      "orderValue" : 100,
+      "getPSPickupDEField" : {
+        "name" : "PARENT",
+        "codeName" : "Parent"
+      },
+      "getPSPickupTextDEField" : {
+        "name" : "PARENTNAME",
+        "codeName" : "ParentName"
+      },
+      "pickupDEFName" : "PARENT",
+      "removeActionType" : -1,
+      "removeOrder" : 0
+    },
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOTMODULE"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ALL"
+    },
+    "name" : "默认根节点 - 所有模块",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "BRANCH"
+    },
+    "name" : "所有模块 - 平台",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ALL"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  } ],
+  "getPSDETreeNodes" : [ {
+    "counterMode" : 0,
+    "name" : "平台",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleGridViewBranch.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "nodeType" : "BRANCH",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+    },
+    "getPSDEContextMenu" : {
+      "codeName" : "TreeExpViewbranch_cm",
+      "controlType" : "CONTEXTMENU",
+      "hookEventNames" : [ "CLICK" ],
+      "logicName" : "树节点默认工具栏",
+      "name" : "branch_cm",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+      },
+      "getPSControlParam" : {
+        "id" : "branch_cm"
+      },
+      "getPSDEToolbarItems" : [ {
+        "caption" : "刷新",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction1",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "branch_cm_deuiaction1"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf021@FontAwesome",
+          "cssClass" : "fa fa-refresh"
+        },
+        "getPSUIAction" : {
+          "getNoPrivDisplayMode" : 2,
+          "caption" : "刷新",
+          "codeName" : "RefreshParent",
+          "fullCodeName" : "RefreshParent",
+          "name" : "树界面_刷新父节点操作",
+          "getPSSysImage" : {
+            "glyph" : "xf021@FontAwesome",
+            "cssClass" : "fa fa-refresh"
+          },
+          "timeout" : 60000,
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "RefreshParent",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "刷新",
+        "showCaption" : true,
+        "showIcon" : true
+      } ],
+      "modelid" : "469ba7ea4acf6809bb19ecce4890c1d9"
+    },
+    "getPSNavigateContexts" : [ {
+      "key" : "SRFPARENTKEY",
+      "name" : "SRFPARENTKEY",
+      "value" : "0",
+      "rawValue" : true
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "n_branch_noteq",
+      "name" : "n_branch_noteq",
+      "value" : "0",
+      "rawValue" : true
+    } ],
+    "text" : "平台",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : true,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : true,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : true,
+    "expanded" : true,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "BRANCH"
+  }, {
+    "counterMode" : 0,
+    "name" : "默认根节点",
+    "nodeType" : "ROOT",
+    "nodeValue" : "root",
+    "text" : "默认根节点",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : true,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : true,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : true,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "ROOT"
+  }, {
+    "counterMode" : 0,
+    "name" : "所有模块",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "nodeType" : "ALL",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+    },
+    "getPSDEContextMenu" : {
+      "codeName" : "TreeExpViewall_cm",
+      "controlType" : "CONTEXTMENU",
+      "hookEventNames" : [ "CLICK" ],
+      "logicName" : "树节点默认工具栏（刷新全部）",
+      "name" : "all_cm",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+      },
+      "getPSControlParam" : {
+        "id" : "all_cm"
+      },
+      "getPSDEToolbarItems" : [ {
+        "caption" : "刷新",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction1",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "all_cm_deuiaction1"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf021@FontAwesome",
+          "cssClass" : "fa fa-refresh"
+        },
+        "getPSUIAction" : {
+          "getNoPrivDisplayMode" : 2,
+          "caption" : "刷新",
+          "codeName" : "RefreshAll",
+          "fullCodeName" : "RefreshAll",
+          "name" : "树界面_刷新全部操作",
+          "getPSSysImage" : {
+            "glyph" : "xf021@FontAwesome",
+            "cssClass" : "fa fa-refresh"
+          },
+          "timeout" : 60000,
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "RefreshAll",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "刷新",
+        "showCaption" : true,
+        "showIcon" : true
+      } ],
+      "modelid" : "022f0111597cba0a05a1d53d48a8cb04"
+    },
+    "getPSNavigateContexts" : [ {
+      "key" : "SRFPARENTKEY",
+      "name" : "SRFPARENTKEY",
+      "value" : "0",
+      "rawValue" : true
+    }, {
+      "key" : "BRANCH",
+      "name" : "BRANCH",
+      "value" : "0",
+      "rawValue" : true
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "n_parent_eq",
+      "name" : "n_parent_eq",
+      "value" : "0",
+      "rawValue" : true
+    }, {
+      "key" : "branch",
+      "name" : "branch",
+      "value" : "0",
+      "rawValue" : true
+    } ],
+    "text" : "所有模块",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : true,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : true,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : true,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "ALL"
+  }, {
+    "counterMode" : 0,
+    "getIdPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getLeafFlagPSAppDEField" : {
+      "name" : "ISLEAF",
+      "codeName" : "IsLeaf"
+    },
+    "maxSize" : -1,
+    "name" : "根模块（动态）",
+    "navFilter" : "n_parent_eq",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "nodeType" : "ROOTMODULE",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchRoot"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+    },
+    "getPSDEContextMenu" : {
+      "codeName" : "TreeExpViewrootmodule_cm",
+      "controlType" : "CONTEXTMENU",
+      "hookEventNames" : [ "CLICK" ],
+      "logicName" : "需求模块树节点菜单栏",
+      "name" : "rootmodule_cm",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+      },
+      "getPSControlParam" : {
+        "id" : "rootmodule_cm"
+      },
+      "getPSDEToolbarItems" : [ {
+        "caption" : "编辑",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction1",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "rootmodule_cm_deuiaction1"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf044@FontAwesome",
+          "cssClass" : "fa fa-edit"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "getNoPrivDisplayMode" : 2,
+          "caption" : "编辑",
+          "codeName" : "OpenQuickCfgView",
+          "dataAccessAction" : "SRFUR__UNIVERSALEDIT",
+          "getFrontPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleQuickCfgView.json",
+            "viewType" : "DEOPTVIEW"
+          },
+          "frontProcessType" : "WIZARD",
+          "fullCodeName" : "ProductModule_OpenQuickCfgView",
+          "name" : "打开快速编辑视图",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+          },
+          "getPSSysImage" : {
+            "glyph" : "xf044@FontAwesome",
+            "cssClass" : "fa fa-edit"
+          },
+          "refreshMode" : 1,
+          "timeout" : 60000,
+          "uIActionMode" : "FRONT",
+          "uIActionTag" : "OpenQuickCfgView",
+          "uIActionType" : "DEUIACTION",
+          "reloadData" : true,
+          "id" : "OpenQuickCfgView@ProductModule"
+        },
+        "tooltip" : "编辑",
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "caption" : "刷新",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction2",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "rootmodule_cm_deuiaction2"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf021@FontAwesome",
+          "cssClass" : "fa fa-refresh"
+        },
+        "getPSUIAction" : {
+          "getNoPrivDisplayMode" : 2,
+          "caption" : "刷新",
+          "codeName" : "RefreshAll",
+          "fullCodeName" : "RefreshAll",
+          "name" : "树界面_刷新全部操作",
+          "getPSSysImage" : {
+            "glyph" : "xf021@FontAwesome",
+            "cssClass" : "fa fa-refresh"
+          },
+          "timeout" : 60000,
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "RefreshAll",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "刷新",
+        "showCaption" : true,
+        "showIcon" : true
+      } ],
+      "modelid" : "f842b635803663de702a36939ed73d01"
+    },
+    "getPSNavigateContexts" : [ {
+      "key" : "BRANCH",
+      "name" : "BRANCH",
+      "value" : "branch",
+      "rawValue" : false
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "branch",
+      "name" : "branch",
+      "value" : "branch",
+      "rawValue" : false
+    } ],
+    "getTextPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "treeNodeType" : "DE",
+    "hasPSDETreeNodeRSs" : true,
+    "appendCaption" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : true,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : true,
+    "expanded" : true,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "ROOTMODULE"
+  }, {
+    "counterMode" : 0,
+    "getIdPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getLeafFlagPSAppDEField" : {
+      "name" : "ISLEAF",
+      "codeName" : "IsLeaf"
+    },
+    "maxSize" : -1,
+    "name" : "非根模块（动态）",
+    "navFilter" : "n_parent_eq",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "nodeType" : "MODULE",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+    },
+    "getPSDEContextMenu" : {
+      "codeName" : "TreeExpViewmodule_cm",
+      "controlType" : "CONTEXTMENU",
+      "hookEventNames" : [ "CLICK" ],
+      "logicName" : "需求模块树节点菜单栏",
+      "name" : "module_cm",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+      },
+      "getPSControlParam" : {
+        "id" : "module_cm"
+      },
+      "getPSDEToolbarItems" : [ {
+        "caption" : "编辑",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction1",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "module_cm_deuiaction1"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf044@FontAwesome",
+          "cssClass" : "fa fa-edit"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "getNoPrivDisplayMode" : 2,
+          "caption" : "编辑",
+          "codeName" : "OpenQuickCfgView",
+          "dataAccessAction" : "SRFUR__UNIVERSALEDIT",
+          "getFrontPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleQuickCfgView.json",
+            "viewType" : "DEOPTVIEW"
+          },
+          "frontProcessType" : "WIZARD",
+          "fullCodeName" : "ProductModule_OpenQuickCfgView",
+          "name" : "打开快速编辑视图",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+          },
+          "getPSSysImage" : {
+            "glyph" : "xf044@FontAwesome",
+            "cssClass" : "fa fa-edit"
+          },
+          "refreshMode" : 1,
+          "timeout" : 60000,
+          "uIActionMode" : "FRONT",
+          "uIActionTag" : "OpenQuickCfgView",
+          "uIActionType" : "DEUIACTION",
+          "reloadData" : true,
+          "id" : "OpenQuickCfgView@ProductModule"
+        },
+        "tooltip" : "编辑",
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "caption" : "刷新",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction2",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "module_cm_deuiaction2"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf021@FontAwesome",
+          "cssClass" : "fa fa-refresh"
+        },
+        "getPSUIAction" : {
+          "getNoPrivDisplayMode" : 2,
+          "caption" : "刷新",
+          "codeName" : "RefreshAll",
+          "fullCodeName" : "RefreshAll",
+          "name" : "树界面_刷新全部操作",
+          "getPSSysImage" : {
+            "glyph" : "xf021@FontAwesome",
+            "cssClass" : "fa fa-refresh"
+          },
+          "timeout" : 60000,
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "RefreshAll",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "刷新",
+        "showCaption" : true,
+        "showIcon" : true
+      } ],
+      "modelid" : "f842b635803663de702a36939ed73d01"
+    },
+    "getPSNavigateContexts" : [ {
+      "key" : "BRANCH",
+      "name" : "BRANCH",
+      "value" : "branch",
+      "rawValue" : false
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "branch",
+      "name" : "branch",
+      "value" : "branch",
+      "rawValue" : false
+    } ],
+    "getTextPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "treeNodeType" : "DE",
+    "hasPSDETreeNodeRSs" : true,
+    "appendCaption" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : true,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "MODULE"
+  }, {
+    "counterMode" : 0,
+    "getIdPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "maxSize" : -1,
+    "name" : "平台（动态）",
+    "navFilter" : "n_branch_eq",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleGridViewBranch.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "nodeType" : "BRANCHS",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Branch.json"
+    },
+    "getPSDEContextMenu" : {
+      "codeName" : "TreeExpViewbranchs_cm",
+      "controlType" : "CONTEXTMENU",
+      "hookEventNames" : [ "CLICK" ],
+      "logicName" : "树节点默认工具栏",
+      "name" : "branchs_cm",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+      },
+      "getPSControlParam" : {
+        "id" : "branchs_cm"
+      },
+      "getPSDEToolbarItems" : [ {
+        "caption" : "刷新",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction1",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "branchs_cm_deuiaction1"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf021@FontAwesome",
+          "cssClass" : "fa fa-refresh"
+        },
+        "getPSUIAction" : {
+          "getNoPrivDisplayMode" : 2,
+          "caption" : "刷新",
+          "codeName" : "RefreshParent",
+          "fullCodeName" : "RefreshParent",
+          "name" : "树界面_刷新父节点操作",
+          "getPSSysImage" : {
+            "glyph" : "xf021@FontAwesome",
+            "cssClass" : "fa fa-refresh"
+          },
+          "timeout" : 60000,
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "RefreshParent",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "刷新",
+        "showCaption" : true,
+        "showIcon" : true
+      } ],
+      "modelid" : "469ba7ea4acf6809bb19ecce4890c1d9"
+    },
+    "getPSNavigateContexts" : [ {
+      "key" : "SRFPARENTKEY",
+      "name" : "SRFPARENTKEY",
+      "value" : "0",
+      "rawValue" : true
+    }, {
+      "key" : "BRANCH",
+      "name" : "BRANCH",
+      "value" : "branch",
+      "rawValue" : false
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "branch",
+      "name" : "branch",
+      "value" : "branch",
+      "rawValue" : false
+    } ],
+    "getTextPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "treeNodeType" : "DE",
+    "hasPSDETreeNodeRSs" : true,
+    "appendCaption" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : true,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "BRANCHS"
+  }, {
+    "counterMode" : 0,
+    "getIdPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getLeafFlagPSAppDEField" : {
+      "name" : "ISLEAF",
+      "codeName" : "IsLeaf"
+    },
+    "maxSize" : -1,
+    "name" : "根模块无分支（动态）",
+    "navFilter" : "n_parent_eq",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "nodeType" : "Root_NoBranch",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchRoot_NoBranch"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+    },
+    "getPSDEContextMenu" : {
+      "codeName" : "TreeExpViewroot_nobranch_cm",
+      "controlType" : "CONTEXTMENU",
+      "hookEventNames" : [ "CLICK" ],
+      "logicName" : "需求模块树节点菜单栏",
+      "name" : "root_nobranch_cm",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+      },
+      "getPSControlParam" : {
+        "id" : "root_nobranch_cm"
+      },
+      "getPSDEToolbarItems" : [ {
+        "caption" : "编辑",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction1",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "root_nobranch_cm_deuiaction1"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf044@FontAwesome",
+          "cssClass" : "fa fa-edit"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "getNoPrivDisplayMode" : 2,
+          "caption" : "编辑",
+          "codeName" : "OpenQuickCfgView",
+          "dataAccessAction" : "SRFUR__UNIVERSALEDIT",
+          "getFrontPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleQuickCfgView.json",
+            "viewType" : "DEOPTVIEW"
+          },
+          "frontProcessType" : "WIZARD",
+          "fullCodeName" : "ProductModule_OpenQuickCfgView",
+          "name" : "打开快速编辑视图",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+          },
+          "getPSSysImage" : {
+            "glyph" : "xf044@FontAwesome",
+            "cssClass" : "fa fa-edit"
+          },
+          "refreshMode" : 1,
+          "timeout" : 60000,
+          "uIActionMode" : "FRONT",
+          "uIActionTag" : "OpenQuickCfgView",
+          "uIActionType" : "DEUIACTION",
+          "reloadData" : true,
+          "id" : "OpenQuickCfgView@ProductModule"
+        },
+        "tooltip" : "编辑",
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "caption" : "刷新",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction2",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "root_nobranch_cm_deuiaction2"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf021@FontAwesome",
+          "cssClass" : "fa fa-refresh"
+        },
+        "getPSUIAction" : {
+          "getNoPrivDisplayMode" : 2,
+          "caption" : "刷新",
+          "codeName" : "RefreshAll",
+          "fullCodeName" : "RefreshAll",
+          "name" : "树界面_刷新全部操作",
+          "getPSSysImage" : {
+            "glyph" : "xf021@FontAwesome",
+            "cssClass" : "fa fa-refresh"
+          },
+          "timeout" : 60000,
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "RefreshAll",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "刷新",
+        "showCaption" : true,
+        "showIcon" : true
+      } ],
+      "modelid" : "f842b635803663de702a36939ed73d01"
+    },
+    "getPSNavigateContexts" : [ {
+      "key" : "BRANCH",
+      "name" : "BRANCH",
+      "value" : "branch",
+      "rawValue" : false
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "branch",
+      "name" : "branch",
+      "value" : "branch",
+      "rawValue" : false
+    } ],
+    "getTextPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "treeNodeType" : "DE",
+    "hasPSDETreeNodeRSs" : true,
+    "appendCaption" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : true,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : true,
+    "expanded" : true,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "Root_NoBranch"
+  } ],
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "treeGridMode" : 0,
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "enableRootSelect" : false,
+  "enableSearchDefault" : true,
+  "outputIconDefault" : false,
+  "rootVisible" : false,
+  "modelid" : "4edd6263fd8d1443b94d9da4b9d51ca0"
+}

@@ -1,0 +1,228 @@
+import { IBizEditorModel, ModelParser, Util } from 'ibiz-core';
+import { Vue, Component, Prop, Inject, Model, Emit } from 'vue-property-decorator';
+import { AppComponentService } from '../../../app-service';
+import { Watch } from '../../../decorators/vue-lifecycleprocessing';
+
+/**
+ * editor解析器基类
+ *
+ * @export
+ * @class EditorBase
+ * @extends {Vue}
+ */
+export class EditorBase extends Vue {
+
+    /**
+     * 编辑器值
+     *
+     * @type {*}
+     * @memberof EditorBase
+     */
+    @Prop() value!: any;
+
+    /**
+     * 编辑器值
+     *
+     * @type {*}
+     * @memberof EditorBase
+     */
+    @Prop() editorInstance!: IBizEditorModel;
+    
+    /**
+     * 应用上下文
+     *
+     * @type {*}
+     * @memberof EditorBase
+     */
+    @Prop() public context!: any;
+
+    /**
+     * 视图参数
+     *
+     * @type {*}
+     * @memberof EditorBase
+     */
+    @Prop() public viewparams!: any;
+
+    /**
+     * 上下文data数据(form里的data，表格里的row)
+     *
+     * @type {*}
+     * @memberof EditorBase
+     */
+    @Prop() public contextData?: any;
+
+    /**
+     * 是否禁用
+     *
+     * @type {*}
+     * @memberof EditorBase
+     */
+    @Prop({default: false}) public disabled!: boolean;
+
+    /**
+     * 编辑器状态(表单里的formState)
+     *
+     * @type {*}
+     * @memberof EditorBase
+     */    
+    @Prop() public contextState?: any;
+    
+    /**
+     * 表单服务
+     *
+     * @type {*}
+     * @memberof EditorBase
+     */    
+    @Prop() public service?: any;
+    
+    /**
+     * 编辑器组件名称
+     *
+     * @type {*}
+     * @memberof EditorBase
+     */
+    public editorComponentName!: string;
+
+    /**
+     * 自定义样式的对象
+     *
+     * @type {*}
+     * @memberof EditorBase
+     */
+    public customStyle: any = {};
+
+    /**
+     * 设置自定义props
+     *
+     * @type {*}
+     * @memberof EditorBase
+     */
+    public customProps: any = {};
+
+    /**
+     * 编辑器是否初始化完成
+     * 
+     * @type {boolean}
+     * @memberof EditorBase
+     */
+    public editorIsLoaded: boolean = false;
+    
+    /**
+     * 编辑器change事件
+     *
+     * @param {*} value
+     * @memberof EditorBase
+     */
+    @Emit('change')
+    public editorChange(value: any): void {}
+
+    /**
+     * 生命周期-created
+     *
+     * @memberof EditorBase
+     */
+    created() {}
+
+    /**
+     * editorJsonStr值变化
+     *
+     * @param {*} newVal
+     * @param {*} oldVal
+     * @memberof EditorBase
+     */
+    @Watch('editorInstance', { immediate: true, deep: true })
+    public onEditorInstanceChange(newVal: any, oldVal: any) {
+        if (newVal && newVal != oldVal) {
+            this.initEditorBase();
+        }
+    }
+
+    /**
+     * 编辑器初始化(基类)
+     *
+     * @memberof EditorBase
+     */
+    public initEditorBase() {
+        this.editorChange = this.editorChange.bind(this);
+        this.customProps = {
+            placeholder: this.editorInstance.placeHolder,
+        };
+        this.editorComponentName = AppComponentService.getEditorComponents(this.editorInstance.editorType,this.editorInstance.editorStyle);
+        this.editorInstance.loaded().then(() => {
+            this.setCustomStyle();
+            this.initEditor();
+            this.setEditorParams();
+            this.editorIsLoaded = true;
+        })
+    }
+
+    /**
+     * 编辑器初始化
+     *
+     * @memberof EditorBase
+     */
+    public initEditor() {}
+
+    /**
+     * 设置编辑器的自定义高宽
+     *
+     * @memberof EditorBase
+     */
+    public setCustomStyle() {
+        let { editorWidth, editorHeight } = this.editorInstance;
+        this.customStyle = {};
+        if (!Util.isEmpty(editorWidth) && editorWidth != 0) {
+            this.customStyle.width = editorWidth + 'px';
+        }
+        if (!Util.isEmpty(editorHeight) && editorHeight != 0) {
+            this.customStyle.height = editorHeight + 'px';
+        }
+    }
+
+    /**
+     * 设置编辑器导航参数
+     * 
+     * @param keys 编辑器参数key
+     * @memberof EditorBase
+     */
+    public setEditorParams() {
+        Object.assign(this.customProps, {
+            localContext: ModelParser.getNavigateContext(this.editorInstance),
+            localParam: ModelParser.getNavigateParams(this.editorInstance)
+        });
+        for (const key of this.editorInstance.allEditorParams) {
+          let param: any;
+          if (key == 'uploadparams' || key == 'exportparams') {
+            param = eval('(' + this.editorInstance.getEditorParam(key) + ')');
+          }else {
+            param = this.editorInstance.getEditorParam(key);
+          }
+            if(key.indexOf('.') != -1) {
+                let splitArr: Array<any> = key.split('.');
+                switch (splitArr[0]) {
+                    case "SRFNAVPARAM":
+                        Object.assign(this.customProps.localParam, { [splitArr[1]]: param });
+                        break;
+                    case "SRFNAVCTX":
+                        Object.assign(this.customProps.localContext, { [splitArr[1]]: param });
+                        break;
+                }
+            } else {
+                if(param) {
+                    this.customProps[key] = param;
+                }
+            }
+        }
+    }
+
+    /**
+     * 绘制内容
+     *
+     * @returns {*}
+     * @memberof EditorBase
+     */
+    public render(): any {
+        return <div>{this.editorInstance ? '基类不输出' : 'editor实例不存在！'}</div>;
+    }
+}

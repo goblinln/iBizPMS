@@ -1,0 +1,28 @@
+{
+  "codeName" : "ValuePSDEF",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDEField/PSDERS/DER1N_PSDEFIELD_PSDEFIELD_VALUEPSDEFID.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDEField.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 0,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDEField.json"
+  },
+  "name" : "DER1N_PSDEFIELD_PSDEFIELD_VALUEPSDEFID",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "VALUEPSDEFID",
+    "codeName" : "ValuePSDEFId"
+  },
+  "getPSPickupTextDEField" : {
+    "name" : "VALUEPSDEFNAME",
+    "codeName" : "ValuePSDEFName"
+  },
+  "pickupDEFName" : "VALUEPSDEFID",
+  "removeActionType" : 3,
+  "removeOrder" : 0
+}

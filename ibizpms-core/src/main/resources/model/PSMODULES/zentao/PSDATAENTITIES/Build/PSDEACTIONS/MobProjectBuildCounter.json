@@ -1,0 +1,23 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "DELOGIC",
+  "codeName" : "MobProjectBuildCounter",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/MobProjectBuildCounter.json",
+  "extendMode" : 0,
+  "logicName" : "移动端项目版本计数器",
+  "name" : "MobProjectBuildCounter",
+  "orderValue" : 99999,
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDELOGICS/MobProjectBuildCounter.json"
+  },
+  "paramMode" : 1,
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "timeOut" : -1,
+  "transactionMode" : "DEFAULT",
+  "builtinAction" : false,
+  "customParam" : false,
+  "generateTestUnit" : false,
+  "pubServiceDefault" : true
+}

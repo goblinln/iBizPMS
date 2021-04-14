@@ -1,0 +1,25 @@
+{
+  "actionMode" : "CREATE",
+  "actionType" : "BUILTIN",
+  "codeName" : "CreateTempMajor",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateTempMajor.json",
+  "extendMode" : 0,
+  "logicName" : "CreateTempMajor",
+  "name" : "CreateTempMajor",
+  "orderValue" : 3,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "CREATE"
+  },
+  "paramMode" : 1,
+  "requestParamType" : "ENTITY",
+  "tempDataMode" : 1,
+  "testActionMode" : 0,
+  "timeOut" : -1,
+  "transactionMode" : "DEFAULT",
+  "builtinAction" : true,
+  "customParam" : false,
+  "enableTempData" : true,
+  "generateTestUnit" : false,
+  "pubServiceDefault" : true
+}

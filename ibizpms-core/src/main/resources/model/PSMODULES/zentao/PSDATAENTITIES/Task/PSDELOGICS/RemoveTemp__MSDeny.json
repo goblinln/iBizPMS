@@ -1,0 +1,3058 @@
+{
+  "codeName" : "RemoveTemp__MSDeny",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/RemoveTemp__MSDeny.json",
+  "logicHolder" : 1,
+  "logicName" : "行为[RemoveTemp]主状态拒绝逻辑",
+  "logicSubType" : "NONE",
+  "name" : "行为[RemoveTemp]主状态拒绝逻辑",
+  "getPSDELogicLinks" : [ {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "PrepareTemp"
+    },
+    "name" : "默认连接",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "defaultLink" : true
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "name" : "默认连接",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "PrepareTemp"
+    },
+    "defaultLink" : true
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBycancel_0_10"
+    },
+    "name" : "状态[已取消_未收藏_多人任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[cancel]",
+        "paramValue" : "cancel"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[0]",
+        "paramValue" : "0"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[10]",
+        "paramValue" : "10"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__cancel_0_10"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBycancel_0_20"
+    },
+    "name" : "状态[已取消_未收藏_父任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[cancel]",
+        "paramValue" : "cancel"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[0]",
+        "paramValue" : "0"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[20]",
+        "paramValue" : "20"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__cancel_0_20"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBycancel_0_40"
+    },
+    "name" : "状态[已取消_未收藏_子任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[cancel]",
+        "paramValue" : "cancel"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[0]",
+        "paramValue" : "0"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[40]",
+        "paramValue" : "40"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__cancel_0_40"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBycancel_1_10"
+    },
+    "name" : "状态[已取消_已收藏_多人任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[cancel]",
+        "paramValue" : "cancel"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[10]",
+        "paramValue" : "10"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__cancel_1_10"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBycancel_1_20"
+    },
+    "name" : "状态[已取消_已收藏_父任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[cancel]",
+        "paramValue" : "cancel"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[20]",
+        "paramValue" : "20"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__cancel_1_20"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBycancel_1_30"
+    },
+    "name" : "状态[已取消_已收藏_常规任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[cancel]",
+        "paramValue" : "cancel"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[30]",
+        "paramValue" : "30"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__cancel_1_30"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBycancel_1_40"
+    },
+    "name" : "状态[已取消_已收藏_子任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[cancel]",
+        "paramValue" : "cancel"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[40]",
+        "paramValue" : "40"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__cancel_1_40"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyByclosed_0_10"
+    },
+    "name" : "状态[已关闭_未收藏_多人任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[closed]",
+        "paramValue" : "closed"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[0]",
+        "paramValue" : "0"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[10]",
+        "paramValue" : "10"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__closed_0_10"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyByclosed_0_20"
+    },
+    "name" : "状态[已关闭_未收藏_父任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[closed]",
+        "paramValue" : "closed"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[0]",
+        "paramValue" : "0"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[20]",
+        "paramValue" : "20"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__closed_0_20"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyByclosed_0_40"
+    },
+    "name" : "状态[已关闭_未收藏_子任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[closed]",
+        "paramValue" : "closed"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[0]",
+        "paramValue" : "0"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[40]",
+        "paramValue" : "40"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__closed_0_40"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyByclosed_1_10"
+    },
+    "name" : "状态[已关闭_已收藏_多人任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[closed]",
+        "paramValue" : "closed"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[10]",
+        "paramValue" : "10"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__closed_1_10"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyByclosed_1_20"
+    },
+    "name" : "状态[已关闭_已收藏_父任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[closed]",
+        "paramValue" : "closed"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[20]",
+        "paramValue" : "20"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__closed_1_20"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyByclosed_1_30"
+    },
+    "name" : "状态[已关闭_已收藏_常规任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[closed]",
+        "paramValue" : "closed"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[30]",
+        "paramValue" : "30"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__closed_1_30"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyByclosed_1_40"
+    },
+    "name" : "状态[已关闭_已收藏_子任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[closed]",
+        "paramValue" : "closed"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[40]",
+        "paramValue" : "40"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__closed_1_40"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBydoing_0_10"
+    },
+    "name" : "状态[进行中_未收藏_多人任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[doing]",
+        "paramValue" : "doing"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[0]",
+        "paramValue" : "0"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[10]",
+        "paramValue" : "10"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__doing_0_10"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBydoing_0_20"
+    },
+    "name" : "状态[进行中_未收藏_父任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[doing]",
+        "paramValue" : "doing"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[0]",
+        "paramValue" : "0"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[20]",
+        "paramValue" : "20"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__doing_0_20"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBydoing_0_40"
+    },
+    "name" : "状态[进行中_未收藏_子任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[doing]",
+        "paramValue" : "doing"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[0]",
+        "paramValue" : "0"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[40]",
+        "paramValue" : "40"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__doing_0_40"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBydoing_1_10"
+    },
+    "name" : "状态[进行中_已收藏_多人任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[doing]",
+        "paramValue" : "doing"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[10]",
+        "paramValue" : "10"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__doing_1_10"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBydoing_1_20"
+    },
+    "name" : "状态[进行中_已收藏_父任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[doing]",
+        "paramValue" : "doing"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[20]",
+        "paramValue" : "20"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__doing_1_20"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBydoing_1_30"
+    },
+    "name" : "状态[进行中_已收藏_常规任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[doing]",
+        "paramValue" : "doing"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[30]",
+        "paramValue" : "30"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__doing_1_30"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBydoing_1_40"
+    },
+    "name" : "状态[进行中_已收藏_子任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[doing]",
+        "paramValue" : "doing"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[40]",
+        "paramValue" : "40"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__doing_1_40"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBydone_0_10"
+    },
+    "name" : "状态[已完成_未收藏_多人任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[done]",
+        "paramValue" : "done"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[0]",
+        "paramValue" : "0"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[10]",
+        "paramValue" : "10"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__done_0_10"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBydone_0_20"
+    },
+    "name" : "状态[已完成_未收藏_父任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[done]",
+        "paramValue" : "done"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[0]",
+        "paramValue" : "0"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[20]",
+        "paramValue" : "20"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__done_0_20"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBydone_0_40"
+    },
+    "name" : "状态[已完成_未收藏_子任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[done]",
+        "paramValue" : "done"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[0]",
+        "paramValue" : "0"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[40]",
+        "paramValue" : "40"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__done_0_40"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBydone_1_10"
+    },
+    "name" : "状态[已完成_已收藏_多人任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[done]",
+        "paramValue" : "done"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[10]",
+        "paramValue" : "10"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__done_1_10"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBydone_1_20"
+    },
+    "name" : "状态[已完成_已收藏_父任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[done]",
+        "paramValue" : "done"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[20]",
+        "paramValue" : "20"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__done_1_20"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBydone_1_30"
+    },
+    "name" : "状态[已完成_已收藏_常规任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[done]",
+        "paramValue" : "done"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[30]",
+        "paramValue" : "30"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__done_1_30"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBydone_1_40"
+    },
+    "name" : "状态[已完成_已收藏_子任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[done]",
+        "paramValue" : "done"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[40]",
+        "paramValue" : "40"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__done_1_40"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBypause_0_10"
+    },
+    "name" : "状态[已暂停_未收藏_多人任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[pause]",
+        "paramValue" : "pause"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[0]",
+        "paramValue" : "0"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[10]",
+        "paramValue" : "10"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__pause_0_10"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBypause_0_20"
+    },
+    "name" : "状态[已暂停_未收藏_父任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[pause]",
+        "paramValue" : "pause"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[0]",
+        "paramValue" : "0"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[20]",
+        "paramValue" : "20"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__pause_0_20"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBypause_0_40"
+    },
+    "name" : "状态[已暂停_未收藏_子任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[pause]",
+        "paramValue" : "pause"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[0]",
+        "paramValue" : "0"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[40]",
+        "paramValue" : "40"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__pause_0_40"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBypause_1_10"
+    },
+    "name" : "状态[已暂停_已收藏_多人任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[pause]",
+        "paramValue" : "pause"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[10]",
+        "paramValue" : "10"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__pause_1_10"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBypause_1_20"
+    },
+    "name" : "状态[已暂停_已收藏_父任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[pause]",
+        "paramValue" : "pause"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[20]",
+        "paramValue" : "20"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__pause_1_20"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBypause_1_30"
+    },
+    "name" : "状态[已暂停_已收藏_常规任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[pause]",
+        "paramValue" : "pause"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[30]",
+        "paramValue" : "30"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__pause_1_30"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBypause_1_40"
+    },
+    "name" : "状态[已暂停_已收藏_子任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[pause]",
+        "paramValue" : "pause"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[40]",
+        "paramValue" : "40"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__pause_1_40"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBystorychange_0_10"
+    },
+    "name" : "状态[需求变更_未收藏_多人任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[storychange]",
+        "paramValue" : "storychange"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[0]",
+        "paramValue" : "0"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[10]",
+        "paramValue" : "10"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__storychange_0_10"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBystorychange_0_20"
+    },
+    "name" : "状态[需求变更_未收藏_父任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[storychange]",
+        "paramValue" : "storychange"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[0]",
+        "paramValue" : "0"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[20]",
+        "paramValue" : "20"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__storychange_0_20"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBystorychange_0_30"
+    },
+    "name" : "状态[需求变更_未收藏_常规任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[storychange]",
+        "paramValue" : "storychange"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[0]",
+        "paramValue" : "0"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[30]",
+        "paramValue" : "30"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__storychange_0_30"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBystorychange_0_40"
+    },
+    "name" : "状态[需求变更_未收藏_子任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[storychange]",
+        "paramValue" : "storychange"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[0]",
+        "paramValue" : "0"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[40]",
+        "paramValue" : "40"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__storychange_0_40"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBystorychange_1_10"
+    },
+    "name" : "状态[需求变更_已收藏_多人任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[storychange]",
+        "paramValue" : "storychange"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[10]",
+        "paramValue" : "10"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__storychange_1_10"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBystorychange_1_20"
+    },
+    "name" : "状态[需求变更_已收藏_父任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[storychange]",
+        "paramValue" : "storychange"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[20]",
+        "paramValue" : "20"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__storychange_1_20"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBystorychange_1_30"
+    },
+    "name" : "状态[需求变更_已收藏_常规任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[storychange]",
+        "paramValue" : "storychange"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[30]",
+        "paramValue" : "30"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__storychange_1_30"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBystorychange_1_40"
+    },
+    "name" : "状态[需求变更_已收藏_子任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[storychange]",
+        "paramValue" : "storychange"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[40]",
+        "paramValue" : "40"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__storychange_1_40"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBywait_0_10"
+    },
+    "name" : "状态[未进行_未收藏_多人任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[wait]",
+        "paramValue" : "wait"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[0]",
+        "paramValue" : "0"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[10]",
+        "paramValue" : "10"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__wait_0_10"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBywait_0_20"
+    },
+    "name" : "状态[未进行_未收藏_父任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[wait]",
+        "paramValue" : "wait"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[0]",
+        "paramValue" : "0"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[20]",
+        "paramValue" : "20"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__wait_0_20"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBywait_0_40"
+    },
+    "name" : "状态[未进行_未收藏_子任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[wait]",
+        "paramValue" : "wait"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[0]",
+        "paramValue" : "0"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[40]",
+        "paramValue" : "40"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__wait_0_40"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBywait_1_10"
+    },
+    "name" : "状态[未进行_已收藏_多人任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[wait]",
+        "paramValue" : "wait"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[10]",
+        "paramValue" : "10"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__wait_1_10"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBywait_1_20"
+    },
+    "name" : "状态[未进行_已收藏_父任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[wait]",
+        "paramValue" : "wait"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[20]",
+        "paramValue" : "20"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__wait_1_20"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBywait_1_30"
+    },
+    "name" : "状态[未进行_已收藏_常规任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[wait]",
+        "paramValue" : "wait"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[30]",
+        "paramValue" : "30"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__wait_1_30"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "DenyBywait_1_40"
+    },
+    "name" : "状态[未进行_已收藏_子任务]拒绝[RemoveTemp]操作",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "STATUS1",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[STATUS1]等于[wait]",
+        "paramValue" : "wait"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "ISFAVORITES",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[ISFAVORITES]等于[1]",
+        "paramValue" : "1"
+      }, {
+        "condOP" : "EQ",
+        "dstFieldName" : "TASKTYPE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "logicType" : "SINGLE",
+        "name" : "属性[TASKTYPE]等于[40]",
+        "paramValue" : "40"
+      } ],
+      "notMode" : false,
+      "id" : "a34bcc21d63861b0333cb000e644285a__MSDENY__wait_1_40"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "defaultLink" : false
+  } ],
+  "getPSDELogicNodes" : [ {
+    "codeName" : "DenyBycancel_0_20",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已取消_未收藏_父任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已取消_未收藏_父任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBystorychange_0_20",
+    "errorCode" : 0,
+    "errorInfo" : "状态[需求变更_未收藏_父任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[需求变更_未收藏_父任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBycancel_1_20",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已取消_已收藏_父任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已取消_已收藏_父任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBywait_0_10",
+    "errorCode" : 0,
+    "errorInfo" : "状态[未进行_未收藏_多人任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[未进行_未收藏_多人任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyByclosed_1_40",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已关闭_已收藏_子任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已关闭_已收藏_子任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBydone_0_20",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已完成_未收藏_父任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已完成_未收藏_父任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBywait_1_10",
+    "errorCode" : 0,
+    "errorInfo" : "状态[未进行_已收藏_多人任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[未进行_已收藏_多人任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBystorychange_1_20",
+    "errorCode" : 0,
+    "errorInfo" : "状态[需求变更_已收藏_父任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[需求变更_已收藏_父任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBydoing_0_20",
+    "errorCode" : 0,
+    "errorInfo" : "状态[进行中_未收藏_父任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[进行中_未收藏_父任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBydone_1_40",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已完成_已收藏_子任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已完成_已收藏_子任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyByclosed_0_10",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已关闭_未收藏_多人任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已关闭_未收藏_多人任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBypause_1_10",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已暂停_已收藏_多人任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已暂停_已收藏_多人任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBycancel_1_10",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已取消_已收藏_多人任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已取消_已收藏_多人任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBystorychange_0_10",
+    "errorCode" : 0,
+    "errorInfo" : "状态[需求变更_未收藏_多人任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[需求变更_未收藏_多人任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "PrepareTemp",
+    "logicHolder" : 3,
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "准备临时参数",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "默认连接"
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "dstFieldName" : "ID",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Temp"
+      },
+      "name" : "复制主键",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "ID",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBycancel_0_10",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已取消_未收藏_多人任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已取消_未收藏_多人任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBydone_1_30",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已完成_已收藏_常规任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已完成_已收藏_常规任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBywait_1_20",
+    "errorCode" : 0,
+    "errorInfo" : "状态[未进行_已收藏_父任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[未进行_已收藏_父任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBystorychange_1_30",
+    "errorCode" : 0,
+    "errorInfo" : "状态[需求变更_已收藏_常规任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[需求变更_已收藏_常规任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBydoing_1_40",
+    "errorCode" : 0,
+    "errorInfo" : "状态[进行中_已收藏_子任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[进行中_已收藏_子任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBydoing_0_10",
+    "errorCode" : 0,
+    "errorInfo" : "状态[进行中_未收藏_多人任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[进行中_未收藏_多人任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBypause_0_20",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已暂停_未收藏_父任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已暂停_未收藏_父任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyByclosed_0_20",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已关闭_未收藏_父任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已关闭_未收藏_父任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "Begin",
+    "logicHolder" : 3,
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "默认连接"
+    } ],
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBypause_1_20",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已暂停_已收藏_父任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已暂停_已收藏_父任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyByclosed_1_10",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已关闭_已收藏_多人任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已关闭_已收藏_多人任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBydoing_0_40",
+    "errorCode" : 0,
+    "errorInfo" : "状态[进行中_未收藏_子任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[进行中_未收藏_子任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyByclosed_1_20",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已关闭_已收藏_父任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已关闭_已收藏_父任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "Get",
+    "getDstPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Get.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Temp"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+    },
+    "logicHolder" : 3,
+    "logicNodeType" : "DEACTION",
+    "name" : "获取数据",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "状态[已取消_未收藏_多人任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已取消_未收藏_父任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已取消_未收藏_子任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已取消_已收藏_多人任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已取消_已收藏_父任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已取消_已收藏_常规任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已取消_已收藏_子任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已关闭_未收藏_多人任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已关闭_未收藏_父任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已关闭_未收藏_子任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已关闭_已收藏_多人任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已关闭_已收藏_父任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已关闭_已收藏_常规任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已关闭_已收藏_子任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[进行中_未收藏_多人任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[进行中_未收藏_父任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[进行中_未收藏_子任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[进行中_已收藏_多人任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[进行中_已收藏_父任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[进行中_已收藏_常规任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[进行中_已收藏_子任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已完成_未收藏_多人任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已完成_未收藏_父任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已完成_未收藏_子任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已完成_已收藏_多人任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已完成_已收藏_父任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已完成_已收藏_常规任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已完成_已收藏_子任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已暂停_未收藏_多人任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已暂停_未收藏_父任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已暂停_未收藏_子任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已暂停_已收藏_多人任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已暂停_已收藏_父任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已暂停_已收藏_常规任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[已暂停_已收藏_子任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[需求变更_未收藏_多人任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[需求变更_未收藏_父任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[需求变更_未收藏_常规任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[需求变更_未收藏_子任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[需求变更_已收藏_多人任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[需求变更_已收藏_父任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[需求变更_已收藏_常规任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[需求变更_已收藏_子任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[未进行_未收藏_多人任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[未进行_未收藏_父任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[未进行_未收藏_子任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[未进行_已收藏_多人任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[未进行_已收藏_父任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[未进行_已收藏_常规任务]拒绝[RemoveTemp]操作"
+    }, {
+      "modelref" : true,
+      "id" : "状态[未进行_已收藏_子任务]拒绝[RemoveTemp]操作"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "DenyBydone_1_20",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已完成_已收藏_父任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已完成_已收藏_父任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBystorychange_0_40",
+    "errorCode" : 0,
+    "errorInfo" : "状态[需求变更_未收藏_子任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[需求变更_未收藏_子任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBycancel_1_40",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已取消_已收藏_子任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已取消_已收藏_子任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBypause_1_30",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已暂停_已收藏_常规任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已暂停_已收藏_常规任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBywait_1_30",
+    "errorCode" : 0,
+    "errorInfo" : "状态[未进行_已收藏_常规任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[未进行_已收藏_常规任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBydoing_1_30",
+    "errorCode" : 0,
+    "errorInfo" : "状态[进行中_已收藏_常规任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[进行中_已收藏_常规任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBywait_0_40",
+    "errorCode" : 0,
+    "errorInfo" : "状态[未进行_未收藏_子任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[未进行_未收藏_子任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBypause_0_10",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已暂停_未收藏_多人任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已暂停_未收藏_多人任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyByclosed_1_30",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已关闭_已收藏_常规任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已关闭_已收藏_常规任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBystorychange_1_10",
+    "errorCode" : 0,
+    "errorInfo" : "状态[需求变更_已收藏_多人任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[需求变更_已收藏_多人任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBydone_0_10",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已完成_未收藏_多人任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已完成_未收藏_多人任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBypause_1_40",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已暂停_已收藏_子任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已暂停_已收藏_子任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBywait_1_40",
+    "errorCode" : 0,
+    "errorInfo" : "状态[未进行_已收藏_子任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[未进行_已收藏_子任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBycancel_1_30",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已取消_已收藏_常规任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已取消_已收藏_常规任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBywait_0_20",
+    "errorCode" : 0,
+    "errorInfo" : "状态[未进行_未收藏_父任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[未进行_未收藏_父任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBydone_1_10",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已完成_已收藏_多人任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已完成_已收藏_多人任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBydoing_1_20",
+    "errorCode" : 0,
+    "errorInfo" : "状态[进行中_已收藏_父任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[进行中_已收藏_父任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBystorychange_0_30",
+    "errorCode" : 0,
+    "errorInfo" : "状态[需求变更_未收藏_常规任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[需求变更_未收藏_常规任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBycancel_0_40",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已取消_未收藏_子任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已取消_未收藏_子任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBystorychange_1_40",
+    "errorCode" : 0,
+    "errorInfo" : "状态[需求变更_已收藏_子任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[需求变更_已收藏_子任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBydone_0_40",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已完成_未收藏_子任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已完成_未收藏_子任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyByclosed_0_40",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已关闭_未收藏_子任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已关闭_未收藏_子任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBypause_0_40",
+    "errorCode" : 0,
+    "errorInfo" : "状态[已暂停_未收藏_子任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[已暂停_未收藏_子任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  }, {
+    "codeName" : "DenyBydoing_1_10",
+    "errorCode" : 0,
+    "errorInfo" : "状态[进行中_已收藏_多人任务]拒绝[RemoveTemp]操作",
+    "logicHolder" : 3,
+    "logicNodeType" : "THROWEXCEPTION",
+    "name" : "状态[进行中_已收藏_多人任务]拒绝[RemoveTemp]操作",
+    "parallelOutput" : false
+  } ],
+  "getPSDELogicParams" : [ {
+    "codeName" : "Temp",
+    "name" : "临时变量",
+    "default" : false,
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
+  }, {
+    "codeName" : "Default",
+    "name" : "默认变量",
+    "default" : true,
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
+  } ],
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : true,
+  "enableFront" : false
+}

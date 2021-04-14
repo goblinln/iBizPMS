@@ -1,0 +1,19 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "OneClickRelease",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/OneClickRelease.json",
+  "extendMode" : 0,
+  "logicName" : "一键发布",
+  "name" : "OneClickRelease",
+  "orderValue" : 99999,
+  "paramMode" : 1,
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "timeOut" : -1,
+  "transactionMode" : "DEFAULT",
+  "builtinAction" : false,
+  "customParam" : false,
+  "generateTestUnit" : false,
+  "pubServiceDefault" : true
+}

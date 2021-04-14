@@ -1,0 +1,35 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "Testtask__status",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testtask__status.json",
+  "emptyText" : "未定义",
+  "name" : "测试单状态",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+  },
+  "getPSCodeItems" : [ {
+    "codeName" : "Wait",
+    "color" : "rgba(220, 214, 214, 1)",
+    "text" : "未开始",
+    "value" : "wait",
+    "default" : true
+  }, {
+    "codeName" : "Doing",
+    "color" : "rgba(208, 20, 20, 1)",
+    "text" : "进行中",
+    "value" : "doing"
+  }, {
+    "codeName" : "Done",
+    "color" : "rgba(30, 234, 12, 1)",
+    "text" : "已完成",
+    "value" : "done"
+  }, {
+    "codeName" : "Blocked",
+    "color" : "rgba(221, 217, 10, 1)",
+    "text" : "被阻塞",
+    "value" : "blocked"
+  } ],
+  "enableCache" : true
+}

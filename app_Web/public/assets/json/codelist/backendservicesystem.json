@@ -1,0 +1,1 @@
+{"codeListType":"DYNAMIC","codeName":"Backendservicesystem","dynaInstMode":1,"dynaModelFilePath":"PSSYSAPPS/Web/PSAPPCODELISTS/Backendservicesystem.json","emptyText":"未定义","name":"后台服务体系","getPSAppDEDataSet":{"modelref":true,"id":"FetchDefault"},"getPSAppDataEntity":{"modelref":true,"path":"PSSYSAPPS/Web/PSAPPDATAENTITIES/PSSysSFPub.json"},"enableCache":true}

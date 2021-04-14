@@ -1,0 +1,121 @@
+.app-studioaction {
+    .studio-config-container {
+        position: absolute;
+        top: 10px;
+        right: 30px;
+        z-index: 20;
+        background: rgba(22, 22, 22, 0.6);
+        border-radius: 5px;
+        display: flex;
+
+        > .title {
+            color: #fff;
+            border-right: 1px solid var(--item-border-color);
+            padding: 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+        > .title:hover {
+            color: #1890ff;
+        }
+        > .actions {
+            display: flex;
+            .action-item > .ivu-btn.ivu-btn-text {
+                color: #fff;
+            }
+            .action-item > .ivu-btn.ivu-btn-text:hover {
+                color: #1890ff;
+            }
+        }
+    }
+}
+.view-config.el-popover.el-popper {
+    width: 300px;
+    background: rgba(22, 22, 22, 0.6);
+    color: #fff;
+    border-color: rgba(22, 22, 22, 0.4);
+    .view-config-message {
+        width: 100%;
+        .title {
+            padding-bottom: 10px;
+            font-size: 16px;
+            position: relative;
+            strong {
+                cursor: pointer;
+                margin-left: 20px;
+            }
+        }
+        .content {
+            padding: 0 12px;
+            overflow: hidden; //超出的文本隐藏
+            text-overflow: ellipsis; //溢出用省略号显示
+            white-space: nowrap; //溢出不换行
+        }
+        .control-config,
+        .view-viewparams,
+        .view-context {
+            margin-bottom: -14px;
+        }
+        .isExpand {
+            margin-bottom: 0px;
+        }
+        .control-config > .title,
+        .view-context > .title,
+        .view-viewparams > .title {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .el-divider {
+            margin: 12px 0;
+        }
+        .icon {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            position: absolute;
+            line-height: 10;
+            top: 3px;
+            background: #d81a1a;
+        }
+        .view-message > .title > .icon {
+            background: #57a3f3;
+        }
+        .entity-config > .title > .icon {
+            background: #c0b40d;
+        }
+        .view-viewparams > .title > .icon {
+            background: #49d309;
+        }
+        .view-context > .title > .icon {
+            background: #bd0cae;
+        }
+        .view-message > .content,
+        .entity-config > .content,
+        .control-config > .content {
+            line-height: 18px;
+        }
+        .view-viewparams,
+        .view-context {
+            .title {
+                margin-bottom: -6px;
+            }
+        }
+        span {
+            cursor: pointer;
+            -moz-user-select: all; /*火狐*/
+            -webkit-user-select: all; /*webkit浏览器*/
+            -ms-user-select: all; /*IE10*/
+            -khtml-user-select: all; /*早期浏览器*/
+            user-select: all;
+        }
+        .view-message .content div,
+        .control-config .content div,
+        .context-item,
+        viewparams-item {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+}

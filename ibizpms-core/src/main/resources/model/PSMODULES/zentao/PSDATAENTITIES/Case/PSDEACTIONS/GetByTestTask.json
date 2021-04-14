@@ -1,0 +1,24 @@
+{
+  "actionMode" : "READ",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "GetByTestTask",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/GetByTestTask.json",
+  "extendMode" : 0,
+  "logicName" : "根据测试单获取或者状态",
+  "name" : "GetByTestTask",
+  "orderValue" : 99999,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "READ"
+  },
+  "paramMode" : 1,
+  "requestField" : "ID",
+  "requestParamType" : "FIELD",
+  "testActionMode" : 0,
+  "timeOut" : -1,
+  "transactionMode" : "DEFAULT",
+  "builtinAction" : false,
+  "customParam" : false,
+  "generateTestUnit" : false,
+  "pubServiceDefault" : true
+}

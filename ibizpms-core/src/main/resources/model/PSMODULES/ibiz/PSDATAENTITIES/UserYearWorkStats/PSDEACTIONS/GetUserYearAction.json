@@ -1,0 +1,34 @@
+{
+  "actionMode" : "READ",
+  "actionType" : "USERCUSTOM",
+  "getAfterPSDEActionLogics" : [ {
+    "attachMode" : "AFTER",
+    "name" : "附加逻辑",
+    "getPSDELogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/GetInfo.json"
+    },
+    "cloneParam" : false,
+    "ignoreException" : false,
+    "internalLogic" : true
+  } ],
+  "codeName" : "GetUserYearAction",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetUserYearAction.json",
+  "extendMode" : 0,
+  "logicName" : "获取用户所选年度的动作",
+  "name" : "GetUserYearAction",
+  "orderValue" : 99999,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "READ"
+  },
+  "paramMode" : 1,
+  "requestParamType" : "ENTITY",
+  "testActionMode" : 0,
+  "timeOut" : -1,
+  "transactionMode" : "DEFAULT",
+  "builtinAction" : false,
+  "customParam" : false,
+  "generateTestUnit" : false,
+  "pubServiceDefault" : true
+}

@@ -1,0 +1,24 @@
+{
+  "actionMode" : "READ",
+  "actionType" : "BUILTIN",
+  "codeName" : "Get",
+  "dynaModelFilePath" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSysSFPub/PSDEACTIONS/Get.json",
+  "extendMode" : 0,
+  "logicName" : "Get",
+  "name" : "Get",
+  "orderValue" : 31,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "READ"
+  },
+  "paramMode" : 1,
+  "requestField" : "PSSYSSFPUBID",
+  "requestParamType" : "FIELD",
+  "testActionMode" : 0,
+  "timeOut" : -1,
+  "transactionMode" : "DEFAULT",
+  "builtinAction" : true,
+  "customParam" : false,
+  "generateTestUnit" : true,
+  "pubServiceDefault" : true
+}

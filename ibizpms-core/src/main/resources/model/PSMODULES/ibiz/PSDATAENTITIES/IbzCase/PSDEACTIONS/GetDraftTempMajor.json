@@ -1,0 +1,26 @@
+{
+  "actionMode" : "GETDRAFT",
+  "actionType" : "BUILTIN",
+  "codeName" : "GetDraftTempMajor",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzCase/PSDEACTIONS/GetDraftTempMajor.json",
+  "extendMode" : 0,
+  "logicName" : "GetDraftTempMajor",
+  "name" : "GetDraftTempMajor",
+  "orderValue" : 45,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "CREATE"
+  },
+  "paramMode" : 1,
+  "requestField" : "ID",
+  "requestParamType" : "FIELD",
+  "tempDataMode" : 1,
+  "testActionMode" : 0,
+  "timeOut" : -1,
+  "transactionMode" : "DEFAULT",
+  "builtinAction" : true,
+  "customParam" : false,
+  "enableTempData" : true,
+  "generateTestUnit" : false,
+  "pubServiceDefault" : true
+}

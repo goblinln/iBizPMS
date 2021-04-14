@@ -1,0 +1,39 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "Doccontent__type",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Doccontent__type.json",
+  "emptyText" : "未定义",
+  "getPSCodeItems" : [ {
+    "codeName" : "Html",
+    "text" : "富文本",
+    "value" : "html"
+  }, {
+    "codeName" : "Markdown",
+    "text" : "Markdown",
+    "value" : "markdown"
+  }, {
+    "codeName" : "Url",
+    "text" : "链接",
+    "value" : "url"
+  }, {
+    "codeName" : "Word",
+    "text" : "Word",
+    "value" : "word"
+  }, {
+    "codeName" : "Ppt",
+    "text" : "PPT",
+    "value" : "ppt"
+  }, {
+    "codeName" : "Excel",
+    "text" : "Excel",
+    "value" : "excel"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
+}

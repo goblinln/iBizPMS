@@ -1,0 +1,60 @@
+package cn.ibizlab.pms.ibiz.logic.doclibmodulelogic.update__msdeny;
+        import java.util.Map;
+        import java.util.HashMap;
+        import com.alibaba.fastjson.JSONObject;
+        import org.springframework.util.StringUtils;
+        import org.springframework.util.ObjectUtils;
+        import cn.ibizlab.pms.util.errors.BadRequestAlertException;
+                global cn.ibizlab.pms.core.ibiz.domain.DocLibModule doclibmoduleupdate__msdenytemp;
+                global cn.ibizlab.pms.core.ibiz.domain.DocLibModule doclibmoduleupdate__msdenydefault;
+                    global cn.ibizlab.pms.core.ibiz.service.IDocLibModuleService doclibmoduleservice;
+        global cn.ibizlab.pms.core.ibiz.service.IDocLibModuleService iBzSysDoclibmoduleDefaultService;
+        global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
+
+
+    no-loop
+
+            //逻辑处理节点[状态[模块_已收藏]拒绝[update]操作]
+            rule "denybymodule_1"
+            ruleflow-group "doclibmoduleupdate__msdenydenybymodule_1"
+            when
+            then
+                        update(doclibmoduleupdate__msdenytemp);//更新fact中变量值
+                        update(doclibmoduleupdate__msdenydefault);//更新fact中变量值
+            end
+
+            //逻辑处理节点[状态[模块_未收藏]拒绝[update]操作]
+            rule "denybymodule_0"
+            ruleflow-group "doclibmoduleupdate__msdenydenybymodule_0"
+            when
+            then
+                        update(doclibmoduleupdate__msdenytemp);//更新fact中变量值
+                        update(doclibmoduleupdate__msdenydefault);//更新fact中变量值
+            end
+
+            //逻辑处理节点[获取数据]
+            rule "get"
+            ruleflow-group "doclibmoduleupdate__msdenyget"
+            when
+            then
+                            cn.ibizlab.pms.util.helper.CachedBeanCopier.copy(doclibmoduleservice.get(doclibmoduleupdate__msdenytemp.getId()),doclibmoduleupdate__msdenytemp);
+                        update(doclibmoduleupdate__msdenytemp);//更新fact中变量值
+                        update(doclibmoduleupdate__msdenydefault);//更新fact中变量值
+            end
+
+            //逻辑处理节点[开始]
+            rule "begin"
+            ruleflow-group "doclibmoduleupdate__msdenybegin"
+            when
+            then
+            end
+
+            //逻辑处理节点[准备临时参数]
+            rule "preparetemp"
+            ruleflow-group "doclibmoduleupdate__msdenypreparetemp"
+            when
+            then
+                            doclibmoduleupdate__msdenytemp.set("id",doclibmoduleupdate__msdenydefault.get("id"));
+                        update(doclibmoduleupdate__msdenytemp);//更新fact中变量值
+                        update(doclibmoduleupdate__msdenydefault);//更新fact中变量值
+            end

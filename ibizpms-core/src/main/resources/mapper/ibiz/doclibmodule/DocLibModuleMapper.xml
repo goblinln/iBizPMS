@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="cn.ibizlab.pms.core.ibiz.mapper.DocLibModuleMapper">
+	
+	<!-- 无视图模式 -->
+	<sql id="select" databaseId="mysql">
+        <![CDATA[ SELECT t1.`BRANCH`, t1.`COLLECTOR`, t1.`DELETED`, (select count(1) from zt_doc t where t.deleted = '0' and t.module = t1.id) + (select count(1) from zt_module t where t.deleted = '0' and t.type = 'doc' and t.root = t1.root and t.parent = t1.id) AS `DOCCNT`, t21.`NAME` AS `DOCLIBNAME`, t1.`GRADE`, t1.`ID`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t11.`NAME` AS `MODULENAME`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t1.`PATH`, t1.`ROOT`, t1.`SHORT`, t1.`TYPE` FROM `zt_module` t1  LEFT JOIN `zt_module` t11 ON t1.`PARENT` = t11.`ID`  LEFT JOIN `zt_doclib` t21 ON t1.`ROOT` = t21.`ID`   ]]>
+    </sql>
+
+	
+	<!-- 搜索条件 -->
+	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_name_like != null ">
+            <bind name="bind_n_name_like" value="'%' + srf.n_name_like + '%'" />
+            <![CDATA[ AND  t1.`NAME` like #{bind_n_name_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_modulename_eq != null ">
+			<![CDATA[ AND  t11.`NAME` = #{srf.n_modulename_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_modulename_like != null ">
+            <bind name="bind_n_modulename_like" value="'%' + srf.n_modulename_like + '%'" />
+            <![CDATA[ AND  t11.`NAME` like #{bind_n_modulename_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_doclibname_eq != null ">
+			<![CDATA[ AND  t21.`NAME` = #{srf.n_doclibname_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_doclibname_like != null ">
+            <bind name="bind_n_doclibname_like" value="'%' + srf.n_doclibname_like + '%'" />
+            <![CDATA[ AND  t21.`NAME` like #{bind_n_doclibname_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_parent_eq != null ">
+			<![CDATA[ AND  t1.`PARENT` = #{srf.n_parent_eq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="srf.n_root_eq != null ">
+			<![CDATA[ AND  t1.`ROOT` = #{srf.n_root_eq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
+		AND ${ew.sqlSegment}
+		</if>
+	</sql>
+
+
+    <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
+	<select id="selectById"  resultMap="DocLibModuleResultMap" databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<![CDATA[ AND T1.ID = #{id} ]]>
+		</trim>
+    </select>
+
+
+    <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="DocLibModuleResultMap" type="cn.ibizlab.pms.core.ibiz.domain.DocLibModule" autoMapping="true">
+		<id property="id" column="id" /><!--主键字段映射-->
+		<result property="ibizshort" column="short" />
+		<result property="parent" column="parent" />
+		<result property="root" column="root" />
+            
+		
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="pdoclibmodule" javaType="cn.ibizlab.pms.core.ibiz.domain.DocLibModule" column="parent" select="cn.ibizlab.pms.core.ibiz.mapper.DocLibModuleMapper.selectById" fetchType="lazy"></association>
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="doclib" javaType="cn.ibizlab.pms.core.zentao.domain.DocLib" column="root" select="cn.ibizlab.pms.core.zentao.mapper.DocLibMapper.selectById" fetchType="lazy"></association>
+    </resultMap>
+
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT] -->
+	 <select id="selectByParent" resultMap="DocLibModuleResultMap"  databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<![CDATA[ AND T1.PARENT=#{id} ]]>
+		</trim>
+     </select>
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_IBZ_DOCLIBMODULE_ZT_DOCLIB_ROOT] -->
+	 <select id="selectByRoot" resultMap="DocLibModuleResultMap"  databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<![CDATA[ AND T1.ROOT=#{id} ]]>
+		</trim>
+     </select>
+
+    <!--数据集合[AllDocLibModule_Custom]-->
+	 <select id="searchAllDocLibModule_Custom"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext"  resultMap="DocLibModuleResultMap">
+         select t1.* from (
+                <include refid="AllDoclibModule_Custom" />
+         )t1
+     </select>
+
+    <!--数据集合[AllDoclibModule]-->
+	 <select id="searchAllDoclibModule"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext"  resultMap="DocLibModuleResultMap">
+         select t1.* from (
+                <include refid="DefaultDoclib" />
+         )t1
+     </select>
+
+    <!--数据集合[ChildModuleByParent]-->
+	 <select id="searchChildModuleByParent"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext"  resultMap="DocLibModuleResultMap">
+         select t1.* from (
+                <include refid="ChildModuleByParent" />
+         )t1
+     </select>
+
+    <!--数据集合[ChildModuleByRealParent]-->
+	 <select id="searchChildModuleByRealParent"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext"  resultMap="DocLibModuleResultMap">
+         select t1.* from (
+                <include refid="ChildModuleByRealParent" />
+         )t1
+     </select>
+
+    <!--数据集合[Default]-->
+	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext"  resultMap="DocLibModuleResultMap">
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+     </select>
+
+    <!--数据集合[MyFavourites]-->
+	 <select id="searchMyFavourites"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext"  resultMap="DocLibModuleResultMap">
+         select t1.* from (
+                <include refid="MyFavourites" />
+         )t1
+     </select>
+
+    <!--数据集合[ParentModule]-->
+	 <select id="searchParentModule"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext"  resultMap="DocLibModuleResultMap">
+         select t1.* from (
+                <include refid="ParentModule" />
+         )t1
+     </select>
+
+    <!--数据集合[RootModuleMuLu]-->
+	 <select id="searchRootModuleMuLu"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext"  resultMap="DocLibModuleResultMap">
+         select t1.* from (
+                <include refid="RootModuleMuLu" />
+         )t1
+     </select>
+
+    <!--数据集合[RootModuleMuLuByRoot]-->
+	 <select id="searchRootModuleMuLuByRoot"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext"  resultMap="DocLibModuleResultMap">
+         select t1.* from (
+                <include refid="RootModuleMuLuByRoot" />
+         )t1
+     </select>
+
+    <!--数据集合[RootModuleMuLuBysrfparentkey]-->
+	 <select id="searchRootModuleMuLuBysrfparentkey"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext"  resultMap="DocLibModuleResultMap">
+         select t1.* from (
+                <include refid="RootModuleMuLuBysrfparentkey" />
+         )t1
+     </select>
+
+    <!--数据查询[AllDoclibModule_Custom]-->
+    <sql id="AllDoclibModule_Custom" databaseId="mysql">
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t11.`NAME` AS `DOCLIBNAME`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t21.`NAME` AS `MODULENAME`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t1.`PATH`, t1.`ROOT`, t1.`SHORT`, t1.`TYPE`,  'module' AS `DOCQTYPE`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES` FROM `zt_module` t1  LEFT JOIN zt_doclib t11 ON t1.ROOT = t11.ID  LEFT JOIN zt_module t21 ON t1.PARENT = t21.ID   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND (t1.parent = 0 or t1.parent is null ) and t1.type = 'doc' ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[ChildModuleByParent]-->
+    <sql id="ChildModuleByParent" databaseId="mysql">
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t11.`NAME` AS `DOCLIBNAME`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t21.`NAME` AS `MODULENAME`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t1.`PATH`, t1.`ROOT`, t1.`SHORT`, t1.`TYPE`,  'module' AS `DOCQTYPE`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES` FROM `zt_module` t1  LEFT JOIN zt_doclib t11 ON t1.ROOT = t11.ID  LEFT JOIN zt_module t21 ON t1.PARENT = t21.ID   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND t1.type = 'doc' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND t1.parent = #{srf.datacontext.srfparentkey} ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[ChildModuleByRealParent]-->
+    <sql id="ChildModuleByRealParent" databaseId="mysql">
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t11.`NAME` AS `DOCLIBNAME`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t21.`NAME` AS `MODULENAME`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t1.`PATH`, t1.`ROOT`, t1.`SHORT`, t1.`TYPE`,  'module' AS `DOCQTYPE`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES` FROM `zt_module` t1  LEFT JOIN zt_doclib t11 ON t1.ROOT = t11.ID  LEFT JOIN zt_module t21 ON t1.PARENT = t21.ID ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.deleted = '0' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND t1.type = 'doc' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND t1.parent = #{srf.datacontext.srfparent} ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[Default]-->
+    <sql id="Default" databaseId="mysql">
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, (select count(1) from zt_doc t where t.deleted = '0' and t.module = t1.id) + (select count(1) from zt_module t where t.deleted = '0' and t.type = 'doc' and t.root = t1.root and t.parent = t1.id) AS `DOCCNT`, t21.`NAME` AS `DOCLIBNAME`, t1.`GRADE`, t1.`ID`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t11.`NAME` AS `MODULENAME`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t1.`PATH`, t1.`ROOT`, t1.`SHORT`, t1.`TYPE` FROM `zt_module` t1  LEFT JOIN `zt_module` t11 ON t1.`PARENT` = t11.`ID`  LEFT JOIN `zt_doclib` t21 ON t1.`ROOT` = t21.`ID`   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[DefaultDoclib]-->
+    <sql id="DefaultDoclib" databaseId="mysql">
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t11.`NAME` AS `DOCLIBNAME`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t21.`NAME` AS `MODULENAME`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t1.`PATH`, t1.`ROOT`, t1.`SHORT`, t1.`TYPE`,  'module' AS `DOCQTYPE`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES` FROM `zt_module` t1  LEFT JOIN zt_doclib t11 ON t1.ROOT = t11.ID  LEFT JOIN zt_module t21 ON t1.PARENT = t21.ID   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND t1.type = 'doc' ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[MyFavourites]-->
+    <sql id="MyFavourites" databaseId="mysql">
+		<![CDATA[ SELECT 	t1.`BRANCH`, 	t1.`DELETED`, 	t1.`GRADE`, 	t1.`ID`, 	'module' AS `DOCQTYPE`, 	1 AS `ISFAVOURITES`, 	( CASE WHEN EXISTS ( SELECT 1 FROM ZT_MODULE WHERE PARENT = t1.`ID` ) THEN FALSE ELSE TRUE END ) AS `ISLEAF`, 	t1.`NAME`, 	t1.`ORDER`, 	t1.`OWNER`, 	t1.`PARENT`, 	t1.`PATH`, 	t1.`ROOT`, 	t1.`SHORT`, 	t1.`TYPE`  FROM 	`zt_module` t1 ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.deleted = '0' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[ParentModule]-->
+    <sql id="ParentModule" databaseId="mysql">
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t11.`NAME` AS `DOCLIBNAME`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t21.`NAME` AS `MODULENAME`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t1.`PATH`, t1.`ROOT`, t1.`SHORT`, t1.`TYPE`,  'module' AS `DOCQTYPE`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES` FROM `zt_module` t1  LEFT JOIN zt_doclib t11 ON t1.ROOT = t11.ID  LEFT JOIN zt_module t21 ON t1.PARENT = t21.ID   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND t1.type = 'doc' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND t1.id <> #{srf.webcontext.id} and find_in_set(#{srf.webcontext.id},t1.path) = 0 ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[RootModuleMuLu]-->
+    <sql id="RootModuleMuLu" databaseId="mysql">
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t11.`NAME` AS `DOCLIBNAME`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t21.`NAME` AS `MODULENAME`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t1.`PATH`, t1.`ROOT`, t1.`SHORT`, 'module'  as `TYPE`, 'module' AS `DOCQTYPE`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES`, (select count(1) from zt_doc t where t.deleted = '0' and t.module = t1.id) + (select count(1) from zt_module t where t.deleted = '0' and t.type = 'doc' and t.root = t1.root and t.parent = t1.id) as doccnt FROM `zt_module` t1  LEFT JOIN zt_doclib t11 ON t1.ROOT = t11.ID  LEFT JOIN zt_module t21 ON t1.PARENT = t21.ID   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND (t1.parent = 0 or t1.parent is null ) and t1.type = 'doc' ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[RootModuleMuLuByRoot]-->
+    <sql id="RootModuleMuLuByRoot" databaseId="mysql">
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t11.`NAME` AS `DOCLIBNAME`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t21.`NAME` AS `MODULENAME`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t1.`PATH`, t1.`ROOT`, t1.`SHORT`, t1.`TYPE`,  'module' AS `DOCQTYPE`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES` FROM `zt_module` t1  LEFT JOIN zt_doclib t11 ON t1.ROOT = t11.ID  LEFT JOIN zt_module t21 ON t1.PARENT = t21.ID   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND (t1.parent = 0 or t1.parent is null ) and t1.type = 'doc' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND t1.root = #{srf.webcontext.id} ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[RootModuleMuLuBysrfparentkey]-->
+    <sql id="RootModuleMuLuBysrfparentkey" databaseId="mysql">
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t11.`NAME` AS `DOCLIBNAME`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t21.`NAME` AS `MODULENAME`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t1.`PATH`, t1.`ROOT`, t1.`SHORT`, t1.`TYPE`, 'module' AS `DOCQTYPE`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES` FROM `zt_module` t1  LEFT JOIN zt_doclib t11 ON t1.ROOT = t11.ID  LEFT JOIN zt_module t21 ON t1.PARENT = t21.ID    ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND (t1.parent = 0 or t1.parent is null ) and t1.type = 'doc' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND t1.root = #{srf.webcontext.srfparentkey} ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[View]-->
+    <sql id="View" databaseId="mysql">
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`COLLECTOR`, t1.`DELETED`, (select count(1) from zt_doc t where t.deleted = '0' and t.module = t1.id) + (select count(1) from zt_module t where t.deleted = '0' and t.type = 'doc' and t.root = t1.root and t.parent = t1.id) AS `DOCCNT`, t21.`NAME` AS `DOCLIBNAME`, t1.`GRADE`, t1.`ID`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t11.`NAME` AS `MODULENAME`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t1.`PATH`, t1.`ROOT`, t1.`SHORT`, t1.`TYPE` FROM `zt_module` t1  LEFT JOIN `zt_module` t11 ON t1.`PARENT` = t11.`ID`  LEFT JOIN `zt_doclib` t21 ON t1.`ROOT` = t21.`ID`   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+</mapper>
+

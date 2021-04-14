@@ -1,0 +1,124 @@
+{
+  "codeName" : "MyFavoriteCount",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDELOGICS/MyFavoriteCount.json",
+  "logicHolder" : 1,
+  "logicName" : "我的收藏计数器",
+  "logicSubType" : "NONE",
+  "name" : "我的收藏计数器",
+  "getPSDELogicLinks" : [ {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall3"
+    },
+    "name" : "连接7826",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall2"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall2"
+    },
+    "name" : "连接9351",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "name" : "连接9195",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "defaultLink" : false
+  } ],
+  "getPSDELogicNodes" : [ {
+    "codeName" : "Begin",
+    "logicHolder" : 3,
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接9195"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall3",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicHolder" : 1,
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "我的收藏任务数",
+    "getPSDELogicNodeParams" : [ {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall1",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicHolder" : 1,
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取我的收藏需求数",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接9351"
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall2",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicHolder" : 1,
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "我的收藏Bug数",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接7826"
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "用户全局对象[srfloginname]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "srfloginname",
+      "srcValueType" : "SESSION"
+    } ],
+    "parallelOutput" : true
+  } ],
+  "getPSDELogicParams" : [ {
+    "codeName" : "Default",
+    "name" : "传入变量",
+    "default" : true,
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
+  } ],
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : true,
+  "enableFront" : false
+}

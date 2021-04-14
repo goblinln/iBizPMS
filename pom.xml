@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>ibizpms</artifactId>
+    <groupId>cn.ibizlab.pms</groupId>
+    <version>1.0.0.0</version>
+    <name>Ibizpms</name>
+    <description></description>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>cn.ibizlab.pms</groupId>
+        <artifactId>ibizpms-dependencies</artifactId>
+        <version>1.0.0.0</version>
+        <relativePath>ibizpms-dependencies/pom.xml</relativePath>
+    </parent>
+
+    <modules>
+        <!-- dependencies -->
+        <module>ibizpms-dependencies</module>
+        <!-- utils -->
+        <module>ibizpms-util</module>
+        <!-- cores -->
+        <module>ibizpms-core</module>
+        <!-- services -->
+        <module>ibizpms-provider</module>
+        <!-- apps -->
+        <module>ibizpms-app</module>
+        <!-- boot -->
+        <module>ibizpms-boot</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>net.ibizsys.model</groupId>
+            <artifactId>ibizlab-model</artifactId>
+            <version>1.0.29</version>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+		<repository>
+			<id>ibizmvnrepository</id>
+			<name>ibizmvnrepository</name>
+			<url>http://172.16.240.220:8081/nexus/content/groups/public/</url>
+			<layout>default</layout>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+
+</project>

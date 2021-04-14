@@ -1,0 +1,16 @@
+export default [
+    'end',
+    'date',
+    'updatedate',
+    'ibizproproductdailyname',
+    'updateman',
+    'createman',
+    'tasks',
+    'createdate',
+    'ibizproproductdailyid',
+    'totalestimates',
+    'begin',
+    'po',
+    'productname',
+    'product',
+];

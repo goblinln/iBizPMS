@@ -1,0 +1,45 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "Task__status",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__status.json",
+  "emptyText" : "未定义",
+  "name" : "任务状态",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+  },
+  "getPSCodeItems" : [ {
+    "codeName" : "Wait",
+    "color" : "rgba(131, 138, 157, 1)",
+    "text" : "未开始",
+    "value" : "wait",
+    "default" : true
+  }, {
+    "codeName" : "Doing",
+    "color" : "rgba(255, 93, 93, 1)",
+    "text" : "进行中",
+    "value" : "doing"
+  }, {
+    "codeName" : "Done",
+    "color" : "rgba(67, 160, 71, 1)",
+    "text" : "已完成",
+    "value" : "done"
+  }, {
+    "codeName" : "Pause",
+    "color" : "rgba(255, 152, 0, 1)",
+    "text" : "已暂停",
+    "value" : "pause"
+  }, {
+    "codeName" : "Cancel",
+    "color" : "rgba(131, 138, 157, 1)",
+    "text" : "已取消",
+    "value" : "cancel"
+  }, {
+    "codeName" : "Closed",
+    "color" : "rgba(131, 138, 157, 1)",
+    "text" : "已关闭",
+    "value" : "closed"
+  } ],
+  "enableCache" : true
+}

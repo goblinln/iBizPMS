@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="cn.ibizlab.pms.core.zentao.mapper.TestTaskMapper">
+	
+	<!-- 无视图模式 -->
+	<sql id="select" databaseId="mysql">
+        <![CDATA[ SELECT t1.`AUTO`, t1.`BEGIN`, t1.`BUILD`, t11.`NAME` AS `BUILDNAME`, 0 AS `CASECNT`, t1.`CREATEBY`, t1.`DELETED`, t1.`DEPT`, t1.`DESC`, t1.`END`, t1.`ID`, t1.`MAILTO`, '' AS `MAILTOPK`, t1.`NAME`, t1.`ORG`, t1.`OWNER`, t1.OWNER AS `OWNERPK`, t1.`PRI`, t1.`PRODUCT`, t21.`NAME` AS `PRODUCTNAME`, t1.`PROJECT`, t31.`NAME` AS `PROJECTTNAME`, t1.`REPORT`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`UPDATEBY` FROM `zt_testtask` t1  LEFT JOIN `zt_build` t11 ON t1.`BUILD` = t11.`ID`  LEFT JOIN `zt_product` t21 ON t1.`PRODUCT` = t21.`ID`  LEFT JOIN `zt_project` t31 ON t1.`PROJECT` = t31.`ID`   ]]>
+    </sql>
+
+	
+	<!-- 搜索条件 -->
+	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_pri_eq != null ">
+			<![CDATA[ AND  t1.`PRI` = #{srf.n_pri_eq,jdbcType=INTEGER} ]]>
+        </if>
+		<if test="srf.n_status_eq != null ">
+			<![CDATA[ AND  t1.`STATUS` = #{srf.n_status_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_status_noteq != null ">
+			<![CDATA[ AND  t1.`STATUS` <> #{srf.n_status_noteq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_owner_eq != null ">
+			<![CDATA[ AND  t1.`OWNER` = #{srf.n_owner_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_name_like != null ">
+            <bind name="bind_n_name_like" value="'%' + srf.n_name_like + '%'" />
+            <![CDATA[ AND  t1.`NAME` like #{bind_n_name_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_buildname_eq != null ">
+			<![CDATA[ AND  t11.`NAME` = #{srf.n_buildname_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_buildname_like != null ">
+            <bind name="bind_n_buildname_like" value="'%' + srf.n_buildname_like + '%'" />
+            <![CDATA[ AND  t11.`NAME` like #{bind_n_buildname_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_productname_eq != null ">
+			<![CDATA[ AND  t21.`NAME` = #{srf.n_productname_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_productname_like != null ">
+            <bind name="bind_n_productname_like" value="'%' + srf.n_productname_like + '%'" />
+            <![CDATA[ AND  t21.`NAME` like #{bind_n_productname_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_projecttname_eq != null ">
+			<![CDATA[ AND  t31.`NAME` = #{srf.n_projecttname_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_projecttname_like != null ">
+            <bind name="bind_n_projecttname_like" value="'%' + srf.n_projecttname_like + '%'" />
+            <![CDATA[ AND  t31.`NAME` like #{bind_n_projecttname_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_product_eq != null ">
+			<![CDATA[ AND  t1.`PRODUCT` = #{srf.n_product_eq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="srf.n_build_eq != null ">
+			<![CDATA[ AND  t1.`BUILD` = #{srf.n_build_eq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="srf.n_project_eq != null ">
+			<![CDATA[ AND  t1.`PROJECT` = #{srf.n_project_eq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
+		AND ${ew.sqlSegment}
+		</if>
+	</sql>
+
+
+    <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
+	<select id="selectById"  resultMap="TestTaskResultMap" databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<![CDATA[ AND T1.ID = #{id} ]]>
+		</trim>
+    </select>
+
+
+    <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="TestTaskResultMap" type="cn.ibizlab.pms.core.zentao.domain.TestTask" autoMapping="true">
+		<id property="id" column="id" /><!--主键字段映射-->
+		<result property="product" column="product" />
+		<result property="build" column="build" />
+		<result property="project" column="project" />
+            
+		
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="ztbuild" javaType="cn.ibizlab.pms.core.zentao.domain.Build" column="build" select="cn.ibizlab.pms.core.zentao.mapper.BuildMapper.selectById" fetchType="lazy"></association>
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="ztproduct" javaType="cn.ibizlab.pms.core.zentao.domain.Product" column="product" select="cn.ibizlab.pms.core.zentao.mapper.ProductMapper.selectById" fetchType="lazy"></association>
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="ztproject" javaType="cn.ibizlab.pms.core.zentao.domain.Project" column="project" select="cn.ibizlab.pms.core.zentao.mapper.ProjectMapper.selectById" fetchType="lazy"></association>
+    </resultMap>
+
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_TESTTASK_ZT_BUILD_BUILD] -->
+	 <select id="selectByBuild" resultMap="TestTaskResultMap"  databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<![CDATA[ AND T1.BUILD=#{id} ]]>
+		</trim>
+     </select>
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_TESTTASK_ZT_PRODUCT_PRODUCT] -->
+	 <select id="selectByProduct" resultMap="TestTaskResultMap"  databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<![CDATA[ AND T1.PRODUCT=#{id} ]]>
+		</trim>
+     </select>
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_TESTTASK_ZT_PROJECT_PROJECT] -->
+	 <select id="selectByProject" resultMap="TestTaskResultMap"  databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<![CDATA[ AND T1.PROJECT=#{id} ]]>
+		</trim>
+     </select>
+
+    <!--数据集合[Default]-->
+	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.TestTaskSearchContext"  resultMap="TestTaskResultMap">
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+     </select>
+
+    <!--数据集合[MyTestTaskPc]-->
+	 <select id="searchMyTestTaskPc"  parameterType="cn.ibizlab.pms.core.zentao.filter.TestTaskSearchContext"  resultMap="TestTaskResultMap">
+         select t1.* from (
+                <include refid="MyTestTaskPc" />
+         )t1
+     </select>
+
+    <!--数据查询[Default]-->
+    <sql id="Default" databaseId="mysql">
+		<![CDATA[ SELECT t1.`AUTO`, t1.`BEGIN`, t1.`BUILD`, t11.`NAME` AS `BUILDNAME`, 0 AS `CASECNT`, t1.`CREATEBY`, t1.`DELETED`, t1.`DEPT`, t1.`END`, t1.`ID`, t1.`MAILTO`, '' AS `MAILTOPK`, t1.`NAME`, t1.`ORG`, t1.`OWNER`, t1.OWNER AS `OWNERPK`, t1.`PRI`, t1.`PRODUCT`, t21.`NAME` AS `PRODUCTNAME`, t1.`PROJECT`, t31.`NAME` AS `PROJECTTNAME`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`UPDATEBY` FROM `zt_testtask` t1  LEFT JOIN `zt_build` t11 ON t1.`BUILD` = t11.`ID`  LEFT JOIN `zt_product` t21 ON t1.`PRODUCT` = t21.`ID`  LEFT JOIN `zt_project` t31 ON t1.`PROJECT` = t31.`ID`   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[MyTestTaskPc]-->
+    <sql id="MyTestTaskPc" databaseId="mysql">
+		<![CDATA[ SELECT 	t1.`id`, 	t1.`name`, 	t1.`product`, 	t1.`project`, 	t1.`build`, 	t1.`owner`, 	t1.`pri`, 	t1.`begin`, 	t1.`end`, 	t1.`mailto`, 	t1.`desc`, 	t1.`report`, 	t1.`status`, 	t1.`auto`, 	t1.`subStatus`, 	t1.`deleted` FROM 	zt_testtask t1  WHERE 	t1.`owner` = #{srf.sessioncontext.srfloginname}  	and t1.`deleted` = '0' ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[View]-->
+    <sql id="View" databaseId="mysql">
+		<![CDATA[ SELECT t1.`AUTO`, t1.`BEGIN`, t1.`BUILD`, t11.`NAME` AS `BUILDNAME`, 0 AS `CASECNT`, t1.`CREATEBY`, t1.`DELETED`, t1.`DEPT`, t1.`DESC`, t1.`END`, t1.`ID`, t1.`MAILTO`, '' AS `MAILTOPK`, t1.`NAME`, t1.`ORG`, t1.`OWNER`, t1.OWNER AS `OWNERPK`, t1.`PRI`, t1.`PRODUCT`, t21.`NAME` AS `PRODUCTNAME`, t1.`PROJECT`, t31.`NAME` AS `PROJECTTNAME`, t1.`REPORT`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`UPDATEBY` FROM `zt_testtask` t1  LEFT JOIN `zt_build` t11 ON t1.`BUILD` = t11.`ID`  LEFT JOIN `zt_product` t21 ON t1.`PRODUCT` = t21.`ID`  LEFT JOIN `zt_project` t31 ON t1.`PROJECT` = t31.`ID`   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+</mapper>
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:g="http://www.jboss.org/drools/flow/gpd" xmlns:tns="http://www.jboss.org/drools" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" expressionLanguage="http://www.mvel.org/2.0" id="Definition" name="" targetNamespace="http://www.jboss.org/drools" typeLanguage="http://www.java.com/javaTypes">
+    <process id="cn.ibizlab.pms.core.ibiz.service.logic.ibzmyterritorymobmenucount" isClosed="false" isExecutable="true" name="ibiz_ibzmyterritory_mobmenucount_RuleFlow" processType="Private" tns:packageName="cn.ibizlab.pms.core.ibiz.service.logic.ibzmyterritorymobmenucount">
+        <extensionElements>
+            <tns:import name="java.util.Map" />
+            <tns:import name="org.springframework.util.StringUtils"/>
+            <tns:import name="cn.ibizlab.pms.util.helper.RuleUtils"/>
+            <tns:metaData express="" name="ibzmyterritorymobmenucountdefault" type="entity"/>
+            <tns:metaData express="T(cn.ibizlab.pms.util.security.SpringContextHolder).getBean(T(cn.ibizlab.pms.core.ibiz.service.IIbzMyTerritoryService))" name="ibzmyterritoryservice" type="service"/>
+            <tns:metaData express="T(cn.ibizlab.pms.util.security.SpringContextHolder).getBean(T(cn.ibizlab.pms.core.ibiz.service.IIbzMyTerritoryService))" name="iBzSysIbzmyterritoryDefaultService" type="service"/>
+            <tns:metaData express="T(cn.ibizlab.pms.util.security.AuthenticationUser).getAuthenticationUser()" name="curuser" type="session"/>
+        <tns:global identifier="ibzmyterritorymobmenucountdefault" type="cn.ibizlab.pms.core.ibiz.domain.IbzMyTerritory" />
+        </extensionElements>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="ibzmyterritorymobmenucountrawsqlcall3" id="rawsqlcall3" implementation="http://www.jboss.org/drools/rule" name="计算我的收藏数"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="ibzmyterritorymobmenucountdeaction2" id="deaction2" implementation="http://www.jboss.org/drools/rule" name="我的"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="ibzmyterritorymobmenucountrawsqlcall2" id="rawsqlcall2" implementation="http://www.jboss.org/drools/rule" name="项目数"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="ibzmyterritorymobmenucountrawsqlcall4" id="rawsqlcall4" implementation="http://www.jboss.org/drools/rule" name="计算我的"/>
+     <endEvent id="rawsqlcall4_end" name="end"/>
+     <sequenceFlow id="rawsqlcall4_end_line" sourceRef="rawsqlcall4" targetRef="rawsqlcall4_end"/>
+     <startEvent id="begin" isInterrupting="true"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="ibzmyterritorymobmenucountrawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="产品数"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="ibzmyterritorymobmenucountdeaction1" id="deaction1" implementation="http://www.jboss.org/drools/rule" name="收藏"/>
+     <sequenceFlow id="rawsqlcall2_deaction1" sourceRef="rawsqlcall2" targetRef="deaction1">
+     </sequenceFlow>
+     <sequenceFlow id="rawsqlcall3_deaction2" sourceRef="rawsqlcall3" targetRef="deaction2">
+     </sequenceFlow>
+     <sequenceFlow id="deaction2_rawsqlcall4" sourceRef="deaction2" targetRef="rawsqlcall4">
+     </sequenceFlow>
+     <sequenceFlow id="begin_rawsqlcall1" sourceRef="begin" targetRef="rawsqlcall1">
+     </sequenceFlow>
+     <sequenceFlow id="rawsqlcall1_rawsqlcall2" sourceRef="rawsqlcall1" targetRef="rawsqlcall2">
+     </sequenceFlow>
+     <sequenceFlow id="deaction1_rawsqlcall3" sourceRef="deaction1" targetRef="rawsqlcall3">
+     </sequenceFlow>
+    </process>
+</definitions>
+

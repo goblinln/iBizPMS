@@ -1,0 +1,65 @@
+.app-content-bottom-exp {
+    > .ivu-tabs {
+        > .ivu-tabs-content {
+            > .ivu-tabs-tabpane {
+                > .tab-exp-item-content {
+                    > .studio-view.view-container {
+                        position: unset;
+
+                        > .view-header {
+                            position: absolute;
+                            top: 0px;
+                            right: 30px;
+                            z-index: 1;
+                            width: auto;
+                            height: 30px;
+                            border: 0px;
+
+                            > .title {
+                                display: none;
+                            }
+
+                            > .toolbar {
+                                font-size: 12px;
+
+                                > .toolbar-container {
+                                    > .ivu-btn.ivu-btn-default {
+                                        font-size: 12px;
+                                        background-color: transparent;
+                                        border: 0px;
+                                    }
+
+                                    > .ivu-btn.ivu-btn-default:disabled {
+                                        color: var(--view-button-background-color-disabled);
+                                    }
+                                }
+                            }
+
+                            > .quick-search {
+                                width: 230px;
+
+                                > .ivu-input-wrapper.ivu-input-wrapper-default.ivu-input-type-text {
+                                    > .ivu-input.ivu-input-default.ivu-input-with-suffix {
+                                        height: 24px;
+                                        line-height: 24px;
+                                        background-color: transparent;
+                                    }
+
+                                    > .ivu-input-icon {
+                                        width: 24px;
+                                        height: 24px;
+                                        line-height: 24px;
+                                    }
+                                }
+                            }
+                        }
+
+                        > .view-content {
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

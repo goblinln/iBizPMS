@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="cn.ibizlab.pms.core.ibiz.mapper.TaskTeamMapper">
+	
+	<!-- 无视图模式 -->
+	<sql id="select" databaseId="mysql">
+        <![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONSUMED`, t1.`DAYS`, t1.`ESTIMATE`, t1.`HOURS`, t1.`ID`, t1.`JOIN`, t1.`LEFT`, t1.`LIMITED`, t1.`ORDER`, t1.`ROLE`, t1.`ROOT`, (t1.`DAYS` * t1.`HOURS`) AS `TOTAL`, t1.`TYPE`, t1.account AS `USERNAME` FROM `zt_team` t1   ]]>
+    </sql>
+
+	
+	<!-- 搜索条件 -->
+	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_account_like != null ">
+            <bind name="bind_n_account_like" value="'%' + srf.n_account_like + '%'" />
+            <![CDATA[ AND  t1.`ACCOUNT` like #{bind_n_account_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_limited_eq != null ">
+			<![CDATA[ AND  t1.`LIMITED` = #{srf.n_limited_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_type_eq != null ">
+			<![CDATA[ AND  t1.`TYPE` = #{srf.n_type_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_root_eq != null ">
+			<![CDATA[ AND  t1.`ROOT` = #{srf.n_root_eq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
+		AND ${ew.sqlSegment}
+		</if>
+	</sql>
+
+
+    <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
+	<select id="selectById"  resultMap="TaskTeamResultMap" databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND T1.ID = #{id} ]]>
+		</trim>
+    </select>
+
+
+    <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="TaskTeamResultMap" type="cn.ibizlab.pms.core.ibiz.domain.TaskTeam" autoMapping="true">
+		<id property="id" column="id" /><!--主键字段映射-->
+		<result property="root" column="root" />
+            
+		
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="taskteam" javaType="cn.ibizlab.pms.core.zentao.domain.Task" column="root" select="cn.ibizlab.pms.core.zentao.mapper.TaskMapper.selectById" fetchType="lazy"></association>
+    </resultMap>
+
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_IBZ_TASKTEAM_ZT_TASK_ROOT] -->
+	 <select id="selectByRoot" resultMap="TaskTeamResultMap"  databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND T1.ROOT=#{id} ]]>
+		</trim>
+     </select>
+
+    <!--数据集合[Default]-->
+	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.TaskTeamSearchContext"  resultMap="TaskTeamResultMap">
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+     </select>
+
+    <!--数据查询[Default]-->
+    <sql id="Default" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONSUMED`, t1.`DAYS`, t1.`ESTIMATE`, t1.`HOURS`, t1.`ID`, t1.`JOIN`, t1.`LEFT`, t1.`LIMITED`, t1.`ORDER`, t1.`ROLE`, t1.`ROOT`, (t1.`DAYS` * t1.`HOURS`) AS `TOTAL`, t1.`TYPE`, t1.account AS `USERNAME` FROM `zt_team` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND ( t1.`TYPE` = 'task' ) ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[View]-->
+    <sql id="View" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONSUMED`, t1.`DAYS`, t1.`ESTIMATE`, t1.`HOURS`, t1.`ID`, t1.`JOIN`, t1.`LEFT`, t1.`LIMITED`, t1.`ORDER`, t1.`ROLE`, t1.`ROOT`, (t1.`DAYS` * t1.`HOURS`) AS `TOTAL`, t1.`TYPE`, t1.account AS `USERNAME` FROM `zt_team` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+</mapper>
+

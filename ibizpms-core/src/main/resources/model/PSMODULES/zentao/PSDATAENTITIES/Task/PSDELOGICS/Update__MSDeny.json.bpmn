@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:g="http://www.jboss.org/drools/flow/gpd" xmlns:tns="http://www.jboss.org/drools" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" expressionLanguage="http://www.mvel.org/2.0" id="Definition" name="" targetNamespace="http://www.jboss.org/drools" typeLanguage="http://www.java.com/javaTypes">
+        <process id="cn.ibizlab.pms.core.zentao.service.logic.taskupdate__msdeny" isClosed="false" isExecutable="true" name="zentao_task_update__msdeny_ruleFlow" processType="Private" tns:packageName="cn.ibizlab.pms.core.zentao.service.logic.taskupdate__msdeny">
+            <extensionElements>
+                <tns:import name="java.util.Map" />
+                <tns:import name="org.springframework.util.StringUtils"/>
+                <tns:import name="cn.ibizlab.pms.util.helper.RuleUtils"/>
+                                <tns:metaData express="new cn.ibizlab.pms.core.zentao.domain.Task()" name="taskupdate__msdenytemp" type="refentity"/>
+                                <tns:metaData express="" name="taskupdate__msdenydefault" type="entity"/>
+                                    <tns:metaData express="T(cn.ibizlab.pms.util.security.SpringContextHolder).getBean(T(cn.ibizlab.pms.core.zentao.service.ITaskService))" name="taskservice" type="service"/>
+                    <tns:metaData express="T(cn.ibizlab.pms.util.security.SpringContextHolder).getBean(T(cn.ibizlab.pms.core.zentao.service.ITaskService))" name="iBzSysTaskDefaultService" type="service"/>
+                    <tns:metaData express="T(cn.ibizlab.pms.util.security.AuthenticationUser).getAuthenticationUser()" name="curuser" type="session"/>
+                            <tns:global identifier="taskupdate__msdenytemp" type="cn.ibizlab.pms.core.zentao.domain.Task" />
+                            <tns:global identifier="taskupdate__msdenydefault" type="cn.ibizlab.pms.core.zentao.domain.Task" />
+            </extensionElements>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybypause_1_10" id="denybypause_1_10" implementation="http://www.jboss.org/drools/rule" name="状态[已暂停_已收藏_多人任务]拒绝[Update]操作"/>
+                        <endEvent id="denybypause_1_10_end" name="end"/>
+                        <sequenceFlow id="denybypause_1_10_end_line" sourceRef="denybypause_1_10" targetRef="denybypause_1_10_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybydoing_0_20" id="denybydoing_0_20" implementation="http://www.jboss.org/drools/rule" name="状态[进行中_未收藏_父任务]拒绝[Update]操作"/>
+                        <endEvent id="denybydoing_0_20_end" name="end"/>
+                        <sequenceFlow id="denybydoing_0_20_end_line" sourceRef="denybydoing_0_20" targetRef="denybydoing_0_20_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybydone_1_30" id="denybydone_1_30" implementation="http://www.jboss.org/drools/rule" name="状态[已完成_已收藏_常规任务]拒绝[Update]操作"/>
+                        <endEvent id="denybydone_1_30_end" name="end"/>
+                        <sequenceFlow id="denybydone_1_30_end_line" sourceRef="denybydone_1_30" targetRef="denybydone_1_30_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybycancel_1_30" id="denybycancel_1_30" implementation="http://www.jboss.org/drools/rule" name="状态[已取消_已收藏_常规任务]拒绝[Update]操作"/>
+                        <endEvent id="denybycancel_1_30_end" name="end"/>
+                        <sequenceFlow id="denybycancel_1_30_end_line" sourceRef="denybycancel_1_30" targetRef="denybycancel_1_30_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybywait_1_40" id="denybywait_1_40" implementation="http://www.jboss.org/drools/rule" name="状态[未进行_已收藏_子任务]拒绝[Update]操作"/>
+                        <endEvent id="denybywait_1_40_end" name="end"/>
+                        <sequenceFlow id="denybywait_1_40_end_line" sourceRef="denybywait_1_40" targetRef="denybywait_1_40_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybypause_0_40" id="denybypause_0_40" implementation="http://www.jboss.org/drools/rule" name="状态[已暂停_未收藏_子任务]拒绝[Update]操作"/>
+                        <endEvent id="denybypause_0_40_end" name="end"/>
+                        <sequenceFlow id="denybypause_0_40_end_line" sourceRef="denybypause_0_40" targetRef="denybypause_0_40_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybywait_0_20" id="denybywait_0_20" implementation="http://www.jboss.org/drools/rule" name="状态[未进行_未收藏_父任务]拒绝[Update]操作"/>
+                        <endEvent id="denybywait_0_20_end" name="end"/>
+                        <sequenceFlow id="denybywait_0_20_end_line" sourceRef="denybywait_0_20" targetRef="denybywait_0_20_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybycancel_0_40" id="denybycancel_0_40" implementation="http://www.jboss.org/drools/rule" name="状态[已取消_未收藏_子任务]拒绝[Update]操作"/>
+                        <endEvent id="denybycancel_0_40_end" name="end"/>
+                        <sequenceFlow id="denybycancel_0_40_end_line" sourceRef="denybycancel_0_40" targetRef="denybycancel_0_40_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybystorychange_1_20" id="denybystorychange_1_20" implementation="http://www.jboss.org/drools/rule" name="状态[需求变更_已收藏_父任务]拒绝[Update]操作"/>
+                        <endEvent id="denybystorychange_1_20_end" name="end"/>
+                        <sequenceFlow id="denybystorychange_1_20_end_line" sourceRef="denybystorychange_1_20" targetRef="denybystorychange_1_20_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybyclosed_1_10" id="denybyclosed_1_10" implementation="http://www.jboss.org/drools/rule" name="状态[已关闭_已收藏_多人任务]拒绝[Update]操作"/>
+                        <endEvent id="denybyclosed_1_10_end" name="end"/>
+                        <sequenceFlow id="denybyclosed_1_10_end_line" sourceRef="denybyclosed_1_10" targetRef="denybyclosed_1_10_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenyget" id="get" implementation="http://www.jboss.org/drools/rule" name="获取数据"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybydone_0_20" id="denybydone_0_20" implementation="http://www.jboss.org/drools/rule" name="状态[已完成_未收藏_父任务]拒绝[Update]操作"/>
+                        <endEvent id="denybydone_0_20_end" name="end"/>
+                        <sequenceFlow id="denybydone_0_20_end_line" sourceRef="denybydone_0_20" targetRef="denybydone_0_20_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybydoing_1_30" id="denybydoing_1_30" implementation="http://www.jboss.org/drools/rule" name="状态[进行中_已收藏_常规任务]拒绝[Update]操作"/>
+                        <endEvent id="denybydoing_1_30_end" name="end"/>
+                        <sequenceFlow id="denybydoing_1_30_end_line" sourceRef="denybydoing_1_30" targetRef="denybydoing_1_30_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybystorychange_0_30" id="denybystorychange_0_30" implementation="http://www.jboss.org/drools/rule" name="状态[需求变更_未收藏_常规任务]拒绝[Update]操作"/>
+                        <endEvent id="denybystorychange_0_30_end" name="end"/>
+                        <sequenceFlow id="denybystorychange_0_30_end_line" sourceRef="denybystorychange_0_30" targetRef="denybystorychange_0_30_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybystorychange_0_40" id="denybystorychange_0_40" implementation="http://www.jboss.org/drools/rule" name="状态[需求变更_未收藏_子任务]拒绝[Update]操作"/>
+                        <endEvent id="denybystorychange_0_40_end" name="end"/>
+                        <sequenceFlow id="denybystorychange_0_40_end_line" sourceRef="denybystorychange_0_40" targetRef="denybystorychange_0_40_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybypause_0_10" id="denybypause_0_10" implementation="http://www.jboss.org/drools/rule" name="状态[已暂停_未收藏_多人任务]拒绝[Update]操作"/>
+                        <endEvent id="denybypause_0_10_end" name="end"/>
+                        <sequenceFlow id="denybypause_0_10_end_line" sourceRef="denybypause_0_10" targetRef="denybypause_0_10_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybydoing_0_10" id="denybydoing_0_10" implementation="http://www.jboss.org/drools/rule" name="状态[进行中_未收藏_多人任务]拒绝[Update]操作"/>
+                        <endEvent id="denybydoing_0_10_end" name="end"/>
+                        <sequenceFlow id="denybydoing_0_10_end_line" sourceRef="denybydoing_0_10" targetRef="denybydoing_0_10_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybydone_1_20" id="denybydone_1_20" implementation="http://www.jboss.org/drools/rule" name="状态[已完成_已收藏_父任务]拒绝[Update]操作"/>
+                        <endEvent id="denybydone_1_20_end" name="end"/>
+                        <sequenceFlow id="denybydone_1_20_end_line" sourceRef="denybydone_1_20" targetRef="denybydone_1_20_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybypause_1_20" id="denybypause_1_20" implementation="http://www.jboss.org/drools/rule" name="状态[已暂停_已收藏_父任务]拒绝[Update]操作"/>
+                        <endEvent id="denybypause_1_20_end" name="end"/>
+                        <sequenceFlow id="denybypause_1_20_end_line" sourceRef="denybypause_1_20" targetRef="denybypause_1_20_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybywait_1_30" id="denybywait_1_30" implementation="http://www.jboss.org/drools/rule" name="状态[未进行_已收藏_常规任务]拒绝[Update]操作"/>
+                        <endEvent id="denybywait_1_30_end" name="end"/>
+                        <sequenceFlow id="denybywait_1_30_end_line" sourceRef="denybywait_1_30" targetRef="denybywait_1_30_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybyclosed_0_40" id="denybyclosed_0_40" implementation="http://www.jboss.org/drools/rule" name="状态[已关闭_未收藏_子任务]拒绝[Update]操作"/>
+                        <endEvent id="denybyclosed_0_40_end" name="end"/>
+                        <sequenceFlow id="denybyclosed_0_40_end_line" sourceRef="denybyclosed_0_40" targetRef="denybyclosed_0_40_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybycancel_1_20" id="denybycancel_1_20" implementation="http://www.jboss.org/drools/rule" name="状态[已取消_已收藏_父任务]拒绝[Update]操作"/>
+                        <endEvent id="denybycancel_1_20_end" name="end"/>
+                        <sequenceFlow id="denybycancel_1_20_end_line" sourceRef="denybycancel_1_20" targetRef="denybycancel_1_20_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybyclosed_1_40" id="denybyclosed_1_40" implementation="http://www.jboss.org/drools/rule" name="状态[已关闭_已收藏_子任务]拒绝[Update]操作"/>
+                        <endEvent id="denybyclosed_1_40_end" name="end"/>
+                        <sequenceFlow id="denybyclosed_1_40_end_line" sourceRef="denybyclosed_1_40" targetRef="denybyclosed_1_40_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybystorychange_1_10" id="denybystorychange_1_10" implementation="http://www.jboss.org/drools/rule" name="状态[需求变更_已收藏_多人任务]拒绝[Update]操作"/>
+                        <endEvent id="denybystorychange_1_10_end" name="end"/>
+                        <sequenceFlow id="denybystorychange_1_10_end_line" sourceRef="denybystorychange_1_10" targetRef="denybystorychange_1_10_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybystorychange_0_20" id="denybystorychange_0_20" implementation="http://www.jboss.org/drools/rule" name="状态[需求变更_未收藏_父任务]拒绝[Update]操作"/>
+                        <endEvent id="denybystorychange_0_20_end" name="end"/>
+                        <sequenceFlow id="denybystorychange_0_20_end_line" sourceRef="denybystorychange_0_20" targetRef="denybystorychange_0_20_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybydoing_1_20" id="denybydoing_1_20" implementation="http://www.jboss.org/drools/rule" name="状态[进行中_已收藏_父任务]拒绝[Update]操作"/>
+                        <endEvent id="denybydoing_1_20_end" name="end"/>
+                        <sequenceFlow id="denybydoing_1_20_end_line" sourceRef="denybydoing_1_20" targetRef="denybydoing_1_20_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybydone_0_10" id="denybydone_0_10" implementation="http://www.jboss.org/drools/rule" name="状态[已完成_未收藏_多人任务]拒绝[Update]操作"/>
+                        <endEvent id="denybydone_0_10_end" name="end"/>
+                        <sequenceFlow id="denybydone_0_10_end_line" sourceRef="denybydone_0_10" targetRef="denybydone_0_10_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybyclosed_0_10" id="denybyclosed_0_10" implementation="http://www.jboss.org/drools/rule" name="状态[已关闭_未收藏_多人任务]拒绝[Update]操作"/>
+                        <endEvent id="denybyclosed_0_10_end" name="end"/>
+                        <sequenceFlow id="denybyclosed_0_10_end_line" sourceRef="denybyclosed_0_10" targetRef="denybyclosed_0_10_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybydoing_0_40" id="denybydoing_0_40" implementation="http://www.jboss.org/drools/rule" name="状态[进行中_未收藏_子任务]拒绝[Update]操作"/>
+                        <endEvent id="denybydoing_0_40_end" name="end"/>
+                        <sequenceFlow id="denybydoing_0_40_end_line" sourceRef="denybydoing_0_40" targetRef="denybydoing_0_40_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybywait_1_20" id="denybywait_1_20" implementation="http://www.jboss.org/drools/rule" name="状态[未进行_已收藏_父任务]拒绝[Update]操作"/>
+                        <endEvent id="denybywait_1_20_end" name="end"/>
+                        <sequenceFlow id="denybywait_1_20_end_line" sourceRef="denybywait_1_20" targetRef="denybywait_1_20_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybydone_1_10" id="denybydone_1_10" implementation="http://www.jboss.org/drools/rule" name="状态[已完成_已收藏_多人任务]拒绝[Update]操作"/>
+                        <endEvent id="denybydone_1_10_end" name="end"/>
+                        <sequenceFlow id="denybydone_1_10_end_line" sourceRef="denybydone_1_10" targetRef="denybydone_1_10_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybycancel_1_10" id="denybycancel_1_10" implementation="http://www.jboss.org/drools/rule" name="状态[已取消_已收藏_多人任务]拒绝[Update]操作"/>
+                        <endEvent id="denybycancel_1_10_end" name="end"/>
+                        <sequenceFlow id="denybycancel_1_10_end_line" sourceRef="denybycancel_1_10" targetRef="denybycancel_1_10_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybypause_0_20" id="denybypause_0_20" implementation="http://www.jboss.org/drools/rule" name="状态[已暂停_未收藏_父任务]拒绝[Update]操作"/>
+                        <endEvent id="denybypause_0_20_end" name="end"/>
+                        <sequenceFlow id="denybypause_0_20_end_line" sourceRef="denybypause_0_20" targetRef="denybypause_0_20_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybycancel_0_20" id="denybycancel_0_20" implementation="http://www.jboss.org/drools/rule" name="状态[已取消_未收藏_父任务]拒绝[Update]操作"/>
+                        <endEvent id="denybycancel_0_20_end" name="end"/>
+                        <sequenceFlow id="denybycancel_0_20_end_line" sourceRef="denybycancel_0_20" targetRef="denybycancel_0_20_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybystorychange_1_40" id="denybystorychange_1_40" implementation="http://www.jboss.org/drools/rule" name="状态[需求变更_已收藏_子任务]拒绝[Update]操作"/>
+                        <endEvent id="denybystorychange_1_40_end" name="end"/>
+                        <sequenceFlow id="denybystorychange_1_40_end_line" sourceRef="denybystorychange_1_40" targetRef="denybystorychange_1_40_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybywait_0_40" id="denybywait_0_40" implementation="http://www.jboss.org/drools/rule" name="状态[未进行_未收藏_子任务]拒绝[Update]操作"/>
+                        <endEvent id="denybywait_0_40_end" name="end"/>
+                        <sequenceFlow id="denybywait_0_40_end_line" sourceRef="denybywait_0_40" targetRef="denybywait_0_40_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybyclosed_1_30" id="denybyclosed_1_30" implementation="http://www.jboss.org/drools/rule" name="状态[已关闭_已收藏_常规任务]拒绝[Update]操作"/>
+                        <endEvent id="denybyclosed_1_30_end" name="end"/>
+                        <sequenceFlow id="denybyclosed_1_30_end_line" sourceRef="denybyclosed_1_30" targetRef="denybyclosed_1_30_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybystorychange_0_10" id="denybystorychange_0_10" implementation="http://www.jboss.org/drools/rule" name="状态[需求变更_未收藏_多人任务]拒绝[Update]操作"/>
+                        <endEvent id="denybystorychange_0_10_end" name="end"/>
+                        <sequenceFlow id="denybystorychange_0_10_end_line" sourceRef="denybystorychange_0_10" targetRef="denybystorychange_0_10_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybydone_0_40" id="denybydone_0_40" implementation="http://www.jboss.org/drools/rule" name="状态[已完成_未收藏_子任务]拒绝[Update]操作"/>
+                        <endEvent id="denybydone_0_40_end" name="end"/>
+                        <sequenceFlow id="denybydone_0_40_end_line" sourceRef="denybydone_0_40" targetRef="denybydone_0_40_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybypause_1_30" id="denybypause_1_30" implementation="http://www.jboss.org/drools/rule" name="状态[已暂停_已收藏_常规任务]拒绝[Update]操作"/>
+                        <endEvent id="denybypause_1_30_end" name="end"/>
+                        <sequenceFlow id="denybypause_1_30_end_line" sourceRef="denybypause_1_30" targetRef="denybypause_1_30_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybydoing_1_10" id="denybydoing_1_10" implementation="http://www.jboss.org/drools/rule" name="状态[进行中_已收藏_多人任务]拒绝[Update]操作"/>
+                        <endEvent id="denybydoing_1_10_end" name="end"/>
+                        <sequenceFlow id="denybydoing_1_10_end_line" sourceRef="denybydoing_1_10" targetRef="denybydoing_1_10_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybydone_1_40" id="denybydone_1_40" implementation="http://www.jboss.org/drools/rule" name="状态[已完成_已收藏_子任务]拒绝[Update]操作"/>
+                        <endEvent id="denybydone_1_40_end" name="end"/>
+                        <sequenceFlow id="denybydone_1_40_end_line" sourceRef="denybydone_1_40" targetRef="denybydone_1_40_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybyclosed_0_20" id="denybyclosed_0_20" implementation="http://www.jboss.org/drools/rule" name="状态[已关闭_未收藏_父任务]拒绝[Update]操作"/>
+                        <endEvent id="denybyclosed_0_20_end" name="end"/>
+                        <sequenceFlow id="denybyclosed_0_20_end_line" sourceRef="denybyclosed_0_20" targetRef="denybyclosed_0_20_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybycancel_1_40" id="denybycancel_1_40" implementation="http://www.jboss.org/drools/rule" name="状态[已取消_已收藏_子任务]拒绝[Update]操作"/>
+                        <endEvent id="denybycancel_1_40_end" name="end"/>
+                        <sequenceFlow id="denybycancel_1_40_end_line" sourceRef="denybycancel_1_40" targetRef="denybycancel_1_40_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenypreparetemp" id="preparetemp" implementation="http://www.jboss.org/drools/rule" name="准备临时参数"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybywait_0_10" id="denybywait_0_10" implementation="http://www.jboss.org/drools/rule" name="状态[未进行_未收藏_多人任务]拒绝[Update]操作"/>
+                        <endEvent id="denybywait_0_10_end" name="end"/>
+                        <sequenceFlow id="denybywait_0_10_end_line" sourceRef="denybywait_0_10" targetRef="denybywait_0_10_end"/>
+                        <startEvent id="begin" isInterrupting="true"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybycancel_0_10" id="denybycancel_0_10" implementation="http://www.jboss.org/drools/rule" name="状态[已取消_未收藏_多人任务]拒绝[Update]操作"/>
+                        <endEvent id="denybycancel_0_10_end" name="end"/>
+                        <sequenceFlow id="denybycancel_0_10_end_line" sourceRef="denybycancel_0_10" targetRef="denybycancel_0_10_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybystorychange_1_30" id="denybystorychange_1_30" implementation="http://www.jboss.org/drools/rule" name="状态[需求变更_已收藏_常规任务]拒绝[Update]操作"/>
+                        <endEvent id="denybystorychange_1_30_end" name="end"/>
+                        <sequenceFlow id="denybystorychange_1_30_end_line" sourceRef="denybystorychange_1_30" targetRef="denybystorychange_1_30_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybydoing_1_40" id="denybydoing_1_40" implementation="http://www.jboss.org/drools/rule" name="状态[进行中_已收藏_子任务]拒绝[Update]操作"/>
+                        <endEvent id="denybydoing_1_40_end" name="end"/>
+                        <sequenceFlow id="denybydoing_1_40_end_line" sourceRef="denybydoing_1_40" targetRef="denybydoing_1_40_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybywait_1_10" id="denybywait_1_10" implementation="http://www.jboss.org/drools/rule" name="状态[未进行_已收藏_多人任务]拒绝[Update]操作"/>
+                        <endEvent id="denybywait_1_10_end" name="end"/>
+                        <sequenceFlow id="denybywait_1_10_end_line" sourceRef="denybywait_1_10" targetRef="denybywait_1_10_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybyclosed_1_20" id="denybyclosed_1_20" implementation="http://www.jboss.org/drools/rule" name="状态[已关闭_已收藏_父任务]拒绝[Update]操作"/>
+                        <endEvent id="denybyclosed_1_20_end" name="end"/>
+                        <sequenceFlow id="denybyclosed_1_20_end_line" sourceRef="denybyclosed_1_20" targetRef="denybyclosed_1_20_end"/>
+                        <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="taskupdate__msdenydenybypause_1_40" id="denybypause_1_40" implementation="http://www.jboss.org/drools/rule" name="状态[已暂停_已收藏_子任务]拒绝[Update]操作"/>
+                        <endEvent id="denybypause_1_40_end" name="end"/>
+                        <sequenceFlow id="denybypause_1_40_end_line" sourceRef="denybypause_1_40" targetRef="denybypause_1_40_end"/>
+                    <sequenceFlow id="begin_preparetemp" sourceRef="begin" targetRef="preparetemp">
+                    </sequenceFlow>
+                    <sequenceFlow id="preparetemp_get" sourceRef="preparetemp" targetRef="get">
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybycancel_0_10" sourceRef="gateway-get" targetRef="denybycancel_0_10">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","cancel"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","0"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","10")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybycancel_0_20" sourceRef="gateway-get" targetRef="denybycancel_0_20">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","cancel"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","0"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","20")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybycancel_0_40" sourceRef="gateway-get" targetRef="denybycancel_0_40">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","cancel"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","0"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","40")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybycancel_1_10" sourceRef="gateway-get" targetRef="denybycancel_1_10">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","cancel"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","10")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybycancel_1_20" sourceRef="gateway-get" targetRef="denybycancel_1_20">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","cancel"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","20")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybycancel_1_30" sourceRef="gateway-get" targetRef="denybycancel_1_30">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","cancel"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","30")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybycancel_1_40" sourceRef="gateway-get" targetRef="denybycancel_1_40">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","cancel"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","40")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybyclosed_0_10" sourceRef="gateway-get" targetRef="denybyclosed_0_10">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","closed"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","0"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","10")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybyclosed_0_20" sourceRef="gateway-get" targetRef="denybyclosed_0_20">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","closed"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","0"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","20")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybyclosed_0_40" sourceRef="gateway-get" targetRef="denybyclosed_0_40">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","closed"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","0"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","40")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybyclosed_1_10" sourceRef="gateway-get" targetRef="denybyclosed_1_10">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","closed"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","10")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybyclosed_1_20" sourceRef="gateway-get" targetRef="denybyclosed_1_20">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","closed"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","20")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybyclosed_1_30" sourceRef="gateway-get" targetRef="denybyclosed_1_30">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","closed"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","30")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybyclosed_1_40" sourceRef="gateway-get" targetRef="denybyclosed_1_40">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","closed"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","40")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybydoing_0_10" sourceRef="gateway-get" targetRef="denybydoing_0_10">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","doing"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","0"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","10")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybydoing_0_20" sourceRef="gateway-get" targetRef="denybydoing_0_20">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","doing"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","0"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","20")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybydoing_0_40" sourceRef="gateway-get" targetRef="denybydoing_0_40">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","doing"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","0"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","40")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybydoing_1_10" sourceRef="gateway-get" targetRef="denybydoing_1_10">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","doing"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","10")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybydoing_1_20" sourceRef="gateway-get" targetRef="denybydoing_1_20">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","doing"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","20")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybydoing_1_30" sourceRef="gateway-get" targetRef="denybydoing_1_30">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","doing"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","30")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybydoing_1_40" sourceRef="gateway-get" targetRef="denybydoing_1_40">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","doing"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","40")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybydone_0_10" sourceRef="gateway-get" targetRef="denybydone_0_10">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","done"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","0"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","10")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybydone_0_20" sourceRef="gateway-get" targetRef="denybydone_0_20">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","done"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","0"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","20")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybydone_0_40" sourceRef="gateway-get" targetRef="denybydone_0_40">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","done"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","0"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","40")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybydone_1_10" sourceRef="gateway-get" targetRef="denybydone_1_10">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","done"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","10")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybydone_1_20" sourceRef="gateway-get" targetRef="denybydone_1_20">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","done"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","20")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybydone_1_30" sourceRef="gateway-get" targetRef="denybydone_1_30">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","done"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","30")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybydone_1_40" sourceRef="gateway-get" targetRef="denybydone_1_40">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","done"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","40")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybypause_0_10" sourceRef="gateway-get" targetRef="denybypause_0_10">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","pause"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","0"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","10")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybypause_0_20" sourceRef="gateway-get" targetRef="denybypause_0_20">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","pause"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","0"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","20")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybypause_0_40" sourceRef="gateway-get" targetRef="denybypause_0_40">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","pause"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","0"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","40")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybypause_1_10" sourceRef="gateway-get" targetRef="denybypause_1_10">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","pause"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","10")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybypause_1_20" sourceRef="gateway-get" targetRef="denybypause_1_20">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","pause"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","20")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybypause_1_30" sourceRef="gateway-get" targetRef="denybypause_1_30">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","pause"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","30")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybypause_1_40" sourceRef="gateway-get" targetRef="denybypause_1_40">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","pause"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","40")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybystorychange_0_10" sourceRef="gateway-get" targetRef="denybystorychange_0_10">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","storychange"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","0"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","10")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybystorychange_0_20" sourceRef="gateway-get" targetRef="denybystorychange_0_20">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","storychange"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","0"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","20")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybystorychange_0_30" sourceRef="gateway-get" targetRef="denybystorychange_0_30">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","storychange"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","0"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","30")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybystorychange_0_40" sourceRef="gateway-get" targetRef="denybystorychange_0_40">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","storychange"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","0"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","40")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybystorychange_1_10" sourceRef="gateway-get" targetRef="denybystorychange_1_10">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","storychange"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","10")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybystorychange_1_20" sourceRef="gateway-get" targetRef="denybystorychange_1_20">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","storychange"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","20")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybystorychange_1_30" sourceRef="gateway-get" targetRef="denybystorychange_1_30">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","storychange"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","30")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybystorychange_1_40" sourceRef="gateway-get" targetRef="denybystorychange_1_40">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","storychange"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","40")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybywait_0_10" sourceRef="gateway-get" targetRef="denybywait_0_10">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","wait"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","0"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","10")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybywait_0_20" sourceRef="gateway-get" targetRef="denybywait_0_20">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","wait"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","0"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","20")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybywait_0_40" sourceRef="gateway-get" targetRef="denybywait_0_40">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","wait"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","0"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","40")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybywait_1_10" sourceRef="gateway-get" targetRef="denybywait_1_10">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","wait"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","10")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybywait_1_20" sourceRef="gateway-get" targetRef="denybywait_1_20">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","wait"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","20")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybywait_1_30" sourceRef="gateway-get" targetRef="denybywait_1_30">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","wait"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","30")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-get_denybywait_1_40" sourceRef="gateway-get" targetRef="denybywait_1_40">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $taskupdate__msdenytemp:Task();
+                                            $taskupdate__msdenydefault:Task();
+                                    eval($taskupdate__msdenytemp==taskupdate__msdenytemp && $taskupdate__msdenydefault==taskupdate__msdenydefault);
+                                eval((RuleUtils.test($taskupdate__msdenytemp.get("status1"),"EQ","wait"))&&(RuleUtils.test($taskupdate__msdenytemp.get("isfavorites"),"EQ","1"))&&(RuleUtils.test($taskupdate__msdenytemp.get("tasktype"),"EQ","40")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                            <exclusiveGateway id="gateway-get" name="Gateway" gatewayDirection="Diverging" default="gateway-get_end_line"></exclusiveGateway>
+                            <sequenceFlow id="get_gateway-get_gatewayline" sourceRef="get" targetRef="gateway-get"></sequenceFlow>
+                            <sequenceFlow id="gateway-get_end_line" sourceRef="gateway-get" targetRef="gateway-get_end"/>
+                            <endEvent id="gateway-get_end" name="end"/>
+        </process>
+    </definitions>

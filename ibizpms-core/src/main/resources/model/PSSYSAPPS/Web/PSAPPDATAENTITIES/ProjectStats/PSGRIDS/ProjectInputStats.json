@@ -1,0 +1,234 @@
+{
+  "aggMode" : "PAGE",
+  "codeName" : "ProjectInputStats",
+  "columnEnableLink" : 2,
+  "controlType" : "GRID",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats/PSGRIDS/ProjectInputStats.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "项目投入统计",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+  },
+  "getPSDEGridColumns" : [ {
+    "align" : "CENTER",
+    "cLConvertMode" : "NONE",
+    "caption" : "项目名称",
+    "codeName" : "name",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "name",
+    "excelCaption" : "项目名称",
+    "name" : "name",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "width" : 200,
+    "widthUnit" : "STAR",
+    "enableSort" : true
+  }, {
+    "align" : "CENTER",
+    "cLConvertMode" : "NONE",
+    "caption" : "工期",
+    "codeName" : "timescale",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "timescale",
+    "excelCaption" : "工期",
+    "name" : "timescale",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "TIMESCALE",
+      "codeName" : "Timescale"
+    },
+    "width" : 200,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "aggMode" : "SUM",
+    "align" : "CENTER",
+    "cLConvertMode" : "NONE",
+    "caption" : "任务数",
+    "codeName" : "taskcnt",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "taskcnt",
+    "excelCaption" : "任务数",
+    "name" : "taskcnt",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "TASKCNT",
+      "codeName" : "TaskCnt"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "aggMode" : "SUM",
+    "align" : "CENTER",
+    "cLConvertMode" : "NONE",
+    "caption" : "需求数",
+    "codeName" : "storycnt",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "storycnt",
+    "excelCaption" : "需求数",
+    "name" : "storycnt",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "STORYCNT",
+      "codeName" : "StoryCnt"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "aggMode" : "SUM",
+    "align" : "CENTER",
+    "cLConvertMode" : "NONE",
+    "caption" : "人数",
+    "codeName" : "membercnt",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "membercnt",
+    "excelCaption" : "人数",
+    "name" : "membercnt",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "MEMBERCNT",
+      "codeName" : "Membercnt"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "aggMode" : "SUM",
+    "align" : "CENTER",
+    "cLConvertMode" : "NONE",
+    "caption" : "总消耗",
+    "codeName" : "projecttotalconsumed",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "projecttotalconsumed",
+    "excelCaption" : "总消耗",
+    "name" : "projecttotalconsumed",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "PROJECTTOTALCONSUMED",
+      "codeName" : "Projecttotalconsumed"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  } ],
+  "getPSDEGridDataItems" : [ {
+    "dataType" : 9,
+    "name" : "taskcnt",
+    "getPSAppDEField" : {
+      "name" : "TASKCNT",
+      "codeName" : "TaskCnt"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "timescale",
+    "getPSAppDEField" : {
+      "name" : "TIMESCALE",
+      "codeName" : "Timescale"
+    }
+  }, {
+    "dataType" : 7,
+    "name" : "projecttotalconsumed",
+    "getPSAppDEField" : {
+      "name" : "PROJECTTOTALCONSUMED",
+      "codeName" : "Projecttotalconsumed"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "membercnt",
+    "getPSAppDEField" : {
+      "name" : "MEMBERCNT",
+      "codeName" : "Membercnt"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "name",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "storycnt",
+    "getPSAppDEField" : {
+      "name" : "STORYCNT",
+      "codeName" : "StoryCnt"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "项目编号",
+    "codeName" : "srfkey",
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
+  "pagingSize" : 1000,
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+    }
+  },
+  "sortMode" : "REMOTE",
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableGroup" : false,
+  "enablePagingBar" : false,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : false,
+  "singleSelect" : true,
+  "modelid" : "7cd8f7fd73a3dad77aa31fde5af4eb11"
+}

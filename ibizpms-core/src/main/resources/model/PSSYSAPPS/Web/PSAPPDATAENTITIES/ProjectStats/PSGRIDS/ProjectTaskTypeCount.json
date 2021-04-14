@@ -1,0 +1,360 @@
+{
+  "aggMode" : "PAGE",
+  "codeName" : "ProjectTaskTypeCount",
+  "columnEnableLink" : 2,
+  "controlType" : "GRID",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats/PSGRIDS/ProjectTaskTypeCount.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "项目任务类型统计",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+  },
+  "getPSDEGridColumns" : [ {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "项目名称",
+    "codeName" : "name",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "name",
+    "excelCaption" : "项目名称",
+    "name" : "name",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "width" : 100,
+    "widthUnit" : "STAR",
+    "enableSort" : false
+  }, {
+    "aggMode" : "SUM",
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "设计",
+    "codeName" : "designtaskcnt",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "designtaskcnt",
+    "excelCaption" : "设计",
+    "name" : "designtaskcnt",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "DESIGNTASKCNT",
+      "codeName" : "DesignTASKCNT"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "aggMode" : "SUM",
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "开发",
+    "codeName" : "develtaskcnt",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "develtaskcnt",
+    "excelCaption" : "开发",
+    "name" : "develtaskcnt",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "DEVELTASKCNT",
+      "codeName" : "DEVELTASKCNT"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "aggMode" : "SUM",
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "测试",
+    "codeName" : "testtaskcnt",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "testtaskcnt",
+    "excelCaption" : "测试",
+    "name" : "testtaskcnt",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "TESTTASKCNT",
+      "codeName" : "TESTTASKCNT"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "aggMode" : "SUM",
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "研究",
+    "codeName" : "studytaskcnt",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "studytaskcnt",
+    "excelCaption" : "研究",
+    "name" : "studytaskcnt",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "STUDYTASKCNT",
+      "codeName" : "StudyTASKCNT"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "aggMode" : "SUM",
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "讨论",
+    "codeName" : "discusstaskcnt",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "discusstaskcnt",
+    "excelCaption" : "讨论",
+    "name" : "discusstaskcnt",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "DISCUSSTASKCNT",
+      "codeName" : "DiscussTASKCNT"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "aggMode" : "SUM",
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "界面",
+    "codeName" : "uitaskcnt",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "uitaskcnt",
+    "excelCaption" : "界面",
+    "name" : "uitaskcnt",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "UITASKCNT",
+      "codeName" : "UiTASKCNT"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "aggMode" : "SUM",
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "事务",
+    "codeName" : "affairtaskcnt",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "affairtaskcnt",
+    "excelCaption" : "事务",
+    "name" : "affairtaskcnt",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "AFFAIRTASKCNT",
+      "codeName" : "AFFAIRTASKCNT"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "aggMode" : "SUM",
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "服务",
+    "codeName" : "servetaskcnt",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "servetaskcnt",
+    "excelCaption" : "服务",
+    "name" : "servetaskcnt",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "SERVETASKCNT",
+      "codeName" : "SERVETASKCNT"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "aggMode" : "SUM",
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "其他",
+    "codeName" : "misctaskcnt",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "misctaskcnt",
+    "excelCaption" : "其他",
+    "name" : "misctaskcnt",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "MISCTASKCNT",
+      "codeName" : "MISCTASKCNT"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "aggMode" : "SUM",
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "总计",
+    "codeName" : "taskcnt",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "taskcnt",
+    "excelCaption" : "总计",
+    "name" : "taskcnt",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "TASKCNT",
+      "codeName" : "TaskCnt"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  } ],
+  "getPSDEGridDataItems" : [ {
+    "dataType" : 9,
+    "name" : "designtaskcnt",
+    "getPSAppDEField" : {
+      "name" : "DESIGNTASKCNT",
+      "codeName" : "DesignTASKCNT"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "misctaskcnt",
+    "getPSAppDEField" : {
+      "name" : "MISCTASKCNT",
+      "codeName" : "MISCTASKCNT"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "taskcnt",
+    "getPSAppDEField" : {
+      "name" : "TASKCNT",
+      "codeName" : "TaskCnt"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "servetaskcnt",
+    "getPSAppDEField" : {
+      "name" : "SERVETASKCNT",
+      "codeName" : "SERVETASKCNT"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "discusstaskcnt",
+    "getPSAppDEField" : {
+      "name" : "DISCUSSTASKCNT",
+      "codeName" : "DiscussTASKCNT"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "develtaskcnt",
+    "getPSAppDEField" : {
+      "name" : "DEVELTASKCNT",
+      "codeName" : "DEVELTASKCNT"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "name",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "studytaskcnt",
+    "getPSAppDEField" : {
+      "name" : "STUDYTASKCNT",
+      "codeName" : "StudyTASKCNT"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "affairtaskcnt",
+    "getPSAppDEField" : {
+      "name" : "AFFAIRTASKCNT",
+      "codeName" : "AFFAIRTASKCNT"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "testtaskcnt",
+    "getPSAppDEField" : {
+      "name" : "TESTTASKCNT",
+      "codeName" : "TESTTASKCNT"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "uitaskcnt",
+    "getPSAppDEField" : {
+      "name" : "UITASKCNT",
+      "codeName" : "UiTASKCNT"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "项目编号",
+    "codeName" : "srfkey",
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
+  "pagingSize" : 500,
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+    }
+  },
+  "sortMode" : "REMOTE",
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableGroup" : false,
+  "enablePagingBar" : false,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : false,
+  "singleSelect" : true,
+  "modelid" : "55031318ddf81a1ab02532326c1c94d6"
+}
