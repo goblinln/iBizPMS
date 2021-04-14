@@ -17,4 +17,10 @@ window.Environment = {
     SysId: "B428B5BE-EA90-4101-A493-BA7085D89F0A",
     // 前端应用标识
     AppId: "6e0b7357169ef4eba84e1347ed94bd84",
+
+    remoteDynaPath: "http://172.16.170.145/dynamodel/",
+    // 远端动态副本路径
+    remoteDynaPath2: "http://172.16.170.145/dynamodel2/",
+    
+    bDynamic: true,
 }
