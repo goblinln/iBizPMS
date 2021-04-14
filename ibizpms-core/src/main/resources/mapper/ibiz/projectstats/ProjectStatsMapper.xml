@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="cn.ibizlab.pms.core.ibiz.mapper.ProjectStatsMapper">
+	
+	<!-- 无视图模式 -->
+	<sql id="select" databaseId="mysql">
+        <![CDATA[ SELECT (SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0') AS `ACTIVEBUGCNT`, 0 AS `ACTIVESTORY`, t1.`BEGIN`, (SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND DELETED = '0') AS `BUGCNT`, 0 AS `CHANGEDSTORY`, 0 AS `CLOSEDSTAGESTORYCNT`, 0 AS `CLOSEDSTORY`, (SELECT COUNT(1) FROM ZT_STORY WHERE `STATUS` =  'closed' AND FIND_IN_SET (PRODUCT, (SELECT GROUP_CONCAT(PRODUCT) FROM ZT_PROJECTPRODUCT WHERE PROJECT= t1.`ID`)) AND DELETED = '0' ) AS `CLOSEDSTORYCNT`, t1.`DELETED`, 0 AS `DEVELOPEDSTAGESTORYCNT`, 0 AS `DEVELOPINGSTAGESTORYCNT`, 0 AS `DRAFTSTORY`, 0 AS `EMPTYSTAGESTORYCNT`, 0 AS `EMPTYSTORY`, t1.`END`, (SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND `STATUS` <> 'active' AND DELETED = '0') AS `FINISHBUGCNT`, (SELECT COUNT(1) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND `STATUS` IN ('done','cancel','closed') AND DELETED = '0') AS `FINISHTASKCNT`, t1.`ID`, 0 AS `MEMBERCNT`, t1.`NAME`, t1.`order` AS `ORDER1`, 0 AS `PLANNEDSTAGESTORYCNT`, 0 AS `PROJECTEDSTAGESTORYCNT`, 0 AS `PROJECTTOTALCONSUMED`, 0 AS `RELEASEDSTAGESTORYCNT`, (SELECT COUNT(1) FROM ZT_STORY LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY WHERE stage = 'released' AND PROJECT = t1.id AND DELETED = '0') AS `RELEASEDSTORYCNT`, null AS `SERIOUSBUGPROPORTION`, t1.`STATUS`, (SELECT COUNT(1) FROM ZT_STORY LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY WHERE PROJECT = t1.`ID` AND DELETED = '0') AS `STORYCNT`, (SELECT COUNT(1) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0') AS `TASKCNT`, 0 AS `TESTEDSTAGESTORYCNT`, 0 AS `TESTINGSTAGESTORYCNT`, (SELECT round(SUM(CONSUMED),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' or `parent` = '0' or `parent` = '-1')) AS `TOTALCONSUMED`, (SELECT round(SUM(ESTIMATE),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED =  '0' AND ( `parent` = '' or `parent` = '0' or `parent` = '-1')) AS `TOTALESTIMATE`, (SELECT round(SUM(`LEFT`),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' or `parent` = '0' or `parent` = '-1')) AS `TOTALLEFT`, ((SELECT round(SUM( `LEFT` ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) ) + (SELECT round(SUM( CONSUMED ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) )) AS `TOTALWH`, (SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0') AS `UNCLOSEDBUGCNT`, (SELECT COUNT(1) FROM ZT_STORY LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY WHERE `STATUS` <>  'closed' AND PROJECT = t1.`ID` AND DELETED = '0') AS `UNCLOSEDSTORYCNT`, (SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0') AS `UNCONFIRMEDBUGCNT`, (SELECT COUNT(1) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND `STATUS` NOT IN ('done','cancel','closed') AND DELETED =  '0') AS `UNDONETASKCNT`, 0 AS `VERIFIEDSTAGESTORYCNT`, 0 AS `WAITSTAGESTORYCNT`, (select COUNT(1) from zt_task t where t.deleted = '0' and t.project = t1.id and t.`status` = 'closed' and t.closedDate BETWEEN CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 00:00:00') and CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 23:59:59') ) AS `YESTERDAYCTASKCNT`, (SELECT COUNT( 1 ) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND `STATUS` = 'resolved' AND DELETED = '0' and RESOLVEDDATE BETWEEN CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 00:00:00') and CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 23:59:59')) AS `YESTERDAYRBUGCNT` FROM `zt_project` t1   ]]>
+    </sql>
+
+	
+	<!-- 搜索条件 -->
+	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_end_ltandeq != null ">
+			<![CDATA[ AND  t1.`END` <= #{srf.n_end_ltandeq,jdbcType=TIMESTAMP} ]]>
+        </if>
+		<if test="srf.n_status_eq != null ">
+			<![CDATA[ AND  t1.`STATUS` = #{srf.n_status_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_status_noteq != null ">
+			<![CDATA[ AND  t1.`STATUS` <> #{srf.n_status_noteq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_name_like != null ">
+            <bind name="bind_n_name_like" value="'%' + srf.n_name_like + '%'" />
+            <![CDATA[ AND  t1.`NAME` like #{bind_n_name_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
+		AND ${ew.sqlSegment}
+		</if>
+	</sql>
+
+
+    <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
+	<select id="selectById"  resultMap="ProjectStatsResultMap" databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<![CDATA[ AND T1.ID = #{id} ]]>
+		</trim>
+    </select>
+
+
+    <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="ProjectStatsResultMap" type="cn.ibizlab.pms.core.ibiz.domain.ProjectStats" autoMapping="true">
+		<id property="id" column="id" /><!--主键字段映射-->
+            
+		
+    </resultMap>
+
+
+    <!--数据集合[Default]-->
+	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext"  resultMap="ProjectStatsResultMap">
+	 	select * from (
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+		 )t1
+		 order by order1  desc , id   desc
+     </select>
+
+    <!--数据集合[NoOpenProduct]-->
+	 <select id="searchNoOpenProduct"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext"  resultMap="ProjectStatsResultMap">
+	 	select * from (
+         select t1.* from (
+                <include refid="NoOpenProduct" />
+         )t1
+		 )t1
+		 order by order1  desc , id   desc
+     </select>
+
+    <!--数据集合[ProjectBugType]-->
+	 <select id="searchProjectBugType"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext"  resultMap="ProjectStatsResultMap">
+         select t1.* from (
+                <include refid="ProjectBugType" />
+         )t1
+     </select>
+
+    <!--数据集合[ProjectInputStats]-->
+	 <select id="searchProjectInputStats"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext"  resultMap="ProjectStatsResultMap">
+         select t1.* from (
+                <include refid="ProjectInputStats" />
+         )t1
+     </select>
+
+    <!--数据集合[ProjectProgress]-->
+	 <select id="searchProjectProgress"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext"  resultMap="ProjectStatsResultMap">
+         select t1.* from (
+                <include refid="ProjectProgress" />
+         )t1
+     </select>
+
+    <!--数据集合[ProjectQuality]-->
+	 <select id="searchProjectQuality"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext"  resultMap="ProjectStatsResultMap">
+         select t1.* from (
+                <include refid="ProjectQuality" />
+         )t1
+     </select>
+
+    <!--数据集合[ProjectStoryStageStats]-->
+	 <select id="searchProjectStoryStageStats"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext"  resultMap="ProjectStatsResultMap">
+         select t1.* from (
+                <include refid="ProjectStoryStageStats" />
+         )t1
+     </select>
+
+    <!--数据集合[ProjectStoryStatusStats]-->
+	 <select id="searchProjectStoryStatusStats"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext"  resultMap="ProjectStatsResultMap">
+         select t1.* from (
+                <include refid="ProjectStoryStatusStats" />
+         )t1
+     </select>
+
+    <!--数据集合[ProjectTaskCountByTaskStatus]-->
+	 <select id="searchProjectTaskCountByTaskStatus"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext"  resultMap="ProjectStatsResultMap">
+         select t1.* from (
+                <include refid="ProjectTaskCountByTaskStatus" />
+         )t1
+     </select>
+
+    <!--数据集合[ProjectTaskCountByType]-->
+	 <select id="searchProjectTaskCountByType"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext"  resultMap="ProjectStatsResultMap">
+         select t1.* from (
+                <include refid="ProjectTaskCountByType" />
+         )t1
+     </select>
+
+    <!--数据集合[TaskTime]-->
+	 <select id="searchTaskTime"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext"  resultMap="ProjectStatsResultMap">
+         select t1.* from (
+                <include refid="TaskTime" />
+         )t1
+     </select>
+
+    <!--数据查询[Default]-->
+    <sql id="Default" databaseId="mysql">
+		<![CDATA[ SELECT 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0' ) AS `ACTIVEBUGCNT`, 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND DELETED = '0' ) AS `BUGCNT`, 	( SELECT 	COUNT( 1 )  FROM 	ZT_STORY  WHERE 	`STATUS` = 'closed'  	AND FIND_IN_SET ( PRODUCT, ( SELECT GROUP_CONCAT( PRODUCT ) FROM ZT_PROJECTPRODUCT WHERE PROJECT = t1.`ID` ) )  	AND DELETED = '0'  	) AS `CLOSEDSTORYCNT`, 	t1.`DELETED`, 	t1.`END`, 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND `STATUS` <> 'active' AND DELETED = '0' ) AS `FINISHBUGCNT`, 	( SELECT 	COUNT( 1 )  FROM 	ZT_TASK  WHERE 	PROJECT = t1.`ID`  	AND `STATUS` IN ( 'done', 'cancel', 'closed' )  	AND DELETED = '0'  	) AS `FINISHTASKCNT`, 	t1.`ID`, 	t1.`NAME`, 	( SELECT 	COUNT( 1 )  FROM 	ZT_STORY 	LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY  WHERE 	stage = 'released'  	AND PROJECT = t1.id  	AND DELETED = '0'  	) AS `RELEASEDSTORYCNT`, 	t1.`STATUS`, 	( SELECT 	COUNT( 1 )  FROM 	ZT_STORY 	LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY  WHERE 	PROJECT = t1.`ID`  	AND DELETED = '0'  	) AS `STORYCNT`, 	( SELECT COUNT( 1 ) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' ) AS `TASKCNT`, 	( SELECT 	round( SUM( CONSUMED ), 0 )  FROM 	ZT_TASK  WHERE 	PROJECT = t1.`ID`  	AND DELETED = '0'  	AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' )  	) AS `TOTALCONSUMED`, 	( SELECT 	round( SUM( ESTIMATE ), 0 )  FROM 	ZT_TASK  WHERE 	PROJECT = t1.`ID`  	AND DELETED = '0'  	AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' )  	) AS `TOTALESTIMATE`, 	( SELECT 	round( SUM( `LEFT` ), 0 )  FROM 	ZT_TASK  WHERE 	PROJECT = t1.`ID`  	AND DELETED = '0'  	AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' )  	) AS `TOTALLEFT`, 	( 	( SELECT 	round( SUM( `LEFT` ), 0 )  FROM 	ZT_TASK  WHERE 	PROJECT = t1.`ID`  	AND DELETED = '0'  	AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' )  	) + ( SELECT 	round( SUM( CONSUMED ), 0 )  FROM 	ZT_TASK  WHERE 	PROJECT = t1.`ID`  	AND DELETED = '0'  	AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' )  	)  	) AS `TOTALWH`, 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0' ) AS `UNCLOSEDBUGCNT`, 	( SELECT 	COUNT( 1 )  FROM 	ZT_STORY 	LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY  WHERE 	`STATUS` <> 'closed'  	AND PROJECT = t1.`ID`  	AND DELETED = '0'  	) AS `UNCLOSEDSTORYCNT`, 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0' ) AS `UNCONFIRMEDBUGCNT`, 	( SELECT 	COUNT( 1 )  FROM 	ZT_TASK  WHERE 	PROJECT = t1.`ID`  	AND `STATUS` NOT IN ( 'done', 'cancel', 'closed' )  	AND DELETED = '0'  	) AS `UNDONETASKCNT`, 	( SELECT 	COUNT( 1 )  FROM 	zt_task t  WHERE 	t.deleted = '0'  	AND t.project = t1.id  	AND t.`status` = 'closed'  	AND t.closedDate BETWEEN CONCAT( 	YEAR ( DATE_ADD( now( ), INTERVAL - 1 DAY ) ), 	'-', 	MONTH ( DATE_ADD( now( ), INTERVAL - 1 DAY ) ), 	'-', 	DAY ( DATE_ADD( now( ), INTERVAL - 1 DAY ) ), 	' 00:00:00'  	)  	AND CONCAT( 	YEAR ( DATE_ADD( now( ), INTERVAL - 1 DAY ) ), 	'-', 	MONTH ( DATE_ADD( now( ), INTERVAL - 1 DAY ) ), 	'-', 	DAY ( DATE_ADD( now( ), INTERVAL - 1 DAY ) ), 	' 23:59:59'  	)  	) AS `YESTERDAYCTASKCNT`, 	( SELECT 	COUNT( 1 )  FROM 	ZT_BUG  WHERE 	PROJECT = t1.`ID`  	AND `STATUS` = 'resolved'  	AND DELETED = '0'  	AND RESOLVEDDATE BETWEEN CONCAT( 	YEAR ( DATE_ADD( now( ), INTERVAL - 1 DAY ) ), 	'-', 	MONTH ( DATE_ADD( now( ), INTERVAL - 1 DAY ) ), 	'-', 	DAY ( DATE_ADD( now( ), INTERVAL - 1 DAY ) ), 	' 00:00:00'  	)  	AND CONCAT( 	YEAR ( DATE_ADD( now( ), INTERVAL - 1 DAY ) ), 	'-', 	MONTH ( DATE_ADD( now( ), INTERVAL - 1 DAY ) ), 	'-', 	DAY ( DATE_ADD( now( ), INTERVAL - 1 DAY ) ), 	' 23:59:59'  	)  	) AS `YESTERDAYRBUGCNT` , 	(CASE WHEN T2.OBJECTORDER IS NOT NULL THEN T2.OBJECTORDER ELSE  t1.`ORDER` END) as `ORDER1`, 	(CASE WHEN T2.OBJECTORDER IS NOT NULL THEN 1 ELSE 0 END) as `ISTOP` FROM 	`zt_project` t1 	left join t_ibz_top t2 on t1.id = t2.OBJECTID and t2.type = 'project' and t2.ACCOUNT = #{srf.sessioncontext.srfloginname} ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND ((t1.acl = 'private' and t1.id in (select t3.root from zt_team t3 where t3.account = #{srf.sessioncontext.srfloginname}  and t3.type = 'project')) or t1.acl = 'open') ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[NoOpenProduct]-->
+    <sql id="NoOpenProduct" databaseId="mysql">
+		<![CDATA[ SELECT 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0' ) AS `ACTIVEBUGCNT`, 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND DELETED = '0' ) AS `BUGCNT`, 	( SELECT 	COUNT( 1 )  FROM 	ZT_STORY  WHERE 	`STATUS` = 'closed'  	AND FIND_IN_SET ( PRODUCT, ( SELECT GROUP_CONCAT( PRODUCT ) FROM ZT_PROJECTPRODUCT WHERE PROJECT = t1.`ID` ) )  	AND DELETED = '0'  	) AS `CLOSEDSTORYCNT`, 	t1.`DELETED`, 	t1.`END`, 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND `STATUS` <> 'active' AND DELETED = '0' ) AS `FINISHBUGCNT`, 	( SELECT 	COUNT( 1 )  FROM 	ZT_TASK  WHERE 	PROJECT = t1.`ID`  	AND `STATUS` IN ( 'done', 'cancel', 'closed' )  	AND DELETED = '0'  	) AS `FINISHTASKCNT`, 	t1.`ID`, 	t1.`NAME`, 	( SELECT 	COUNT( 1 )  FROM 	ZT_STORY 	LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY  WHERE 	stage = 'released'  	AND PROJECT = t1.id  	AND DELETED = '0'  	) AS `RELEASEDSTORYCNT`, 	t1.`STATUS`, 	( SELECT 	COUNT( 1 )  FROM 	ZT_STORY 	LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY  WHERE 	PROJECT = t1.`ID`  	AND DELETED = '0'  	) AS `STORYCNT`, 	( SELECT COUNT( 1 ) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' ) AS `TASKCNT`, 	( SELECT 	round( SUM( CONSUMED ), 0 )  FROM 	ZT_TASK  WHERE 	PROJECT = t1.`ID`  	AND DELETED = '0'  	AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' )  	) AS `TOTALCONSUMED`, 	( SELECT 	round( SUM( ESTIMATE ), 0 )  FROM 	ZT_TASK  WHERE 	PROJECT = t1.`ID`  	AND DELETED = '0'  	AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' )  	) AS `TOTALESTIMATE`, 	( SELECT 	round( SUM( `LEFT` ), 0 )  FROM 	ZT_TASK  WHERE 	PROJECT = t1.`ID`  	AND DELETED = '0'  	AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' )  	) AS `TOTALLEFT`, 	( 	( SELECT 	round( SUM( `LEFT` ), 0 )  FROM 	ZT_TASK  WHERE 	PROJECT = t1.`ID`  	AND DELETED = '0'  	AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' )  	) + ( SELECT 	round( SUM( CONSUMED ), 0 )  FROM 	ZT_TASK  WHERE 	PROJECT = t1.`ID`  	AND DELETED = '0'  	AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' )  	)  	) AS `TOTALWH`, 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0' ) AS `UNCLOSEDBUGCNT`, 	( SELECT 	COUNT( 1 )  FROM 	ZT_STORY 	LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY  WHERE 	`STATUS` <> 'closed'  	AND PROJECT = t1.`ID`  	AND DELETED = '0'  	) AS `UNCLOSEDSTORYCNT`, 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0' ) AS `UNCONFIRMEDBUGCNT`, 	( SELECT 	COUNT( 1 )  FROM 	ZT_TASK  WHERE 	PROJECT = t1.`ID`  	AND `STATUS` NOT IN ( 'done', 'cancel', 'closed' )  	AND DELETED = '0'  	) AS `UNDONETASKCNT`, 	( SELECT 	COUNT( 1 )  FROM 	zt_task t  WHERE 	t.deleted = '0'  	AND t.project = t1.id  	AND t.`status` = 'closed'  	AND t.closedDate BETWEEN CONCAT( 	YEAR ( DATE_ADD( now( ), INTERVAL - 1 DAY ) ), 	'-', 	MONTH ( DATE_ADD( now( ), INTERVAL - 1 DAY ) ), 	'-', 	DAY ( DATE_ADD( now( ), INTERVAL - 1 DAY ) ), 	' 00:00:00'  	)  	AND CONCAT( 	YEAR ( DATE_ADD( now( ), INTERVAL - 1 DAY ) ), 	'-', 	MONTH ( DATE_ADD( now( ), INTERVAL - 1 DAY ) ), 	'-', 	DAY ( DATE_ADD( now( ), INTERVAL - 1 DAY ) ), 	' 23:59:59'  	)  	) AS `YESTERDAYCTASKCNT`, 	( SELECT 	COUNT( 1 )  FROM 	ZT_BUG  WHERE 	PROJECT = t1.`ID`  	AND `STATUS` = 'resolved'  	AND DELETED = '0'  	AND RESOLVEDDATE BETWEEN CONCAT( 	YEAR ( DATE_ADD( now( ), INTERVAL - 1 DAY ) ), 	'-', 	MONTH ( DATE_ADD( now( ), INTERVAL - 1 DAY ) ), 	'-', 	DAY ( DATE_ADD( now( ), INTERVAL - 1 DAY ) ), 	' 00:00:00'  	)  	AND CONCAT( 	YEAR ( DATE_ADD( now( ), INTERVAL - 1 DAY ) ), 	'-', 	MONTH ( DATE_ADD( now( ), INTERVAL - 1 DAY ) ), 	'-', 	DAY ( DATE_ADD( now( ), INTERVAL - 1 DAY ) ), 	' 23:59:59'  	)  	) AS `YESTERDAYRBUGCNT` , 	(CASE WHEN T2.OBJECTORDER IS NOT NULL THEN T2.OBJECTORDER ELSE  t1.`ORDER` END) as `ORDER1`, 	(CASE WHEN T2.OBJECTORDER IS NOT NULL THEN 1 ELSE 0 END) as `ISTOP` FROM 	`zt_project` t1 	left join t_ibz_top t2 on t1.id = t2.OBJECTID and t2.type = 'project' and t2.ACCOUNT = #{srf.sessioncontext.srfloginname} ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND ( t1.`STATUS` <> 'closed' ) ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND ((t1.acl = 'private' and t1.id in (select t3.root from zt_team t3 where t3.account = #{srf.sessioncontext.srfloginname}  and t3.type = 'project')) or t1.acl = 'open') ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[ProjectBugType]-->
+    <sql id="ProjectBugType" databaseId="mysql">
+		<![CDATA[ SELECT 	t1.*, 	SUM( 	IFNULL( t1.codeerror, 0 ) + IFNULL( t1.config, 0 ) + IFNULL( t1.designdefect, 0 ) + IFNULL( t1.standard, 0 ) + IFNULL( t1.performance, 0 ) + IFNULL( t1.others, 0 ) + IFNULL( t1.INSTALL, 0 ) + IFNULL( t1.automation, 0 ) + IFNULL( t1.SECURITY, 0 )  	) AS bugcnt  FROM ( SELECT 	t1.id, 	t1.po, 	t1.`status`, 	t1.NAME, 	sum( IF ( t1.type = 'codeerror' AND t1.deleted = '0', t1.rowcnt, 0 ) ) AS 'codeerror', 	sum( IF ( t1.type = 'config' AND t1.deleted = '0', t1.rowcnt, 0 ) ) AS 'config', 	sum( IF ( t1.type = 'designdefect' AND t1.deleted = '0', t1.rowcnt, 0 ) ) AS 'designdefect', 	sum( IF ( t1.type = 'standard' AND t1.deleted = '0', t1.rowcnt, 0 ) ) AS 'standard', 	sum( IF ( t1.type = 'performance' AND t1.deleted = '0', t1.rowcnt, 0 ) ) AS 'performance', 	sum( IF ( t1.type = 'others' AND t1.deleted = '0', t1.rowcnt, 0 ) ) AS 'others', 	sum( IF ( t1.type = 'install' AND t1.deleted = '0', t1.rowcnt, 0 ) ) AS 'install', 	sum( IF ( t1.type = 'automation' AND t1.deleted = '0', t1.rowcnt, 0 ) ) AS 'automation', 	sum( IF ( t1.type = 'security' AND t1.deleted = '0', t1.rowcnt, 0 ) ) AS 'security'  	from  	(SELECT 	t1.`id`, 	t1.`name`, 	t1.`po`, 	t1.`status`, 	t2.`type`, 	t2.`title`, 	t2.`deleted`, 	1 AS `rowcnt`  FROM 	zt_project t1 	LEFT JOIN zt_bug t2 ON t1.`id` = t2.`project`  WHERE 	t1.`deleted` = '0' )t1   GROUP BY t1.id )t1 GROUP BY t1.id ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[ProjectInputStats]-->
+    <sql id="ProjectInputStats" databaseId="mysql">
+		<![CDATA[ select t1.id,  t1.`name`,  CONCAT(t1.`begin`, ' ~ ', t1.`end`) as `timescale`,  t1.`begin`,  t1.`end`,  t1.`status`,  (select count(1) from zt_task t2 where t1.id = t2.project and t2.deleted = '0') as `taskcnt`, (select count(1) from zt_projectstory t2 where t1.id = t2.project and exists(select 1 from zt_story t3 where t2.story = t3.id and t3.deleted = '0')) as `storycnt`, (select count(1) from zt_team t2 where t2.type = 'project' and t1.id = t2.root) as `membercnt`,  IFNULL((select sum(t2.consumed) from zt_taskestimate t2 where exists(select 1 from zt_task t3 where t3.project = t1.id and t3.id = t2.task and t3.deleted = '0')), 0) as `projecttotalconsumed`  from zt_project t1 ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.deleted = '0' ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[ProjectProgress]-->
+    <sql id="ProjectProgress" databaseId="mysql">
+		<![CDATA[ SELECT 	t1.*, 	CONCAT( 	IFNULL( ROUND( ( t1.TOTALCONSUMED / ( t1.TOTALCONSUMED + t1.TOTALLEFT ) )*100, 2 ), 0 ), 	'%'  	) AS progress  FROM 	( SELECT 	IFNULL( 	( SELECT 	COUNT( 1 )  FROM 	ZT_STORY  WHERE 	`STAGE` IN ( 'projected', 'developing' )  	AND FIND_IN_SET ( PRODUCT, ( SELECT GROUP_CONCAT( PRODUCT ) FROM ZT_PROJECTPRODUCT WHERE PROJECT = t1.`ID` ) )  	AND DELETED = '0'  	), 	0  	) AS `LEFTSTORYCNT`, 	t1.`DELETED`, 	t1.`ID`, 	t1.`NAME`, 	t1.`STATUS`, 	IFNULL( 	( SELECT 	COUNT( 1 )  FROM 	ZT_STORY  WHERE 	 FIND_IN_SET ( PRODUCT, ( SELECT GROUP_CONCAT( PRODUCT ) FROM ZT_PROJECTPRODUCT WHERE PROJECT = t1.`ID` ) )  	AND DELETED = '0' 	), 	0  	) AS `STORYCNT`, 	IFNULL( ( SELECT COUNT( 1 ) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' ), 0 ) AS `TASKCNT`, 	IFNULL( 	( SELECT 	round( SUM( CONSUMED ), 0 )  FROM 	ZT_TASK  WHERE 	PROJECT = t1.`ID`  	AND DELETED = '0'  	AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' )  	), 	0  	) AS `TOTALCONSUMED`, 	IFNULL( 	( SELECT 	round( SUM( `LEFT` ), 0 )  FROM 	ZT_TASK  WHERE 	PROJECT = t1.`ID`  	AND DELETED = '0'  	AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' )  	), 	0  	) AS `TOTALLEFT`, 	IFNULL( 	( SELECT 	COUNT( 1 )  FROM 	ZT_TASK  WHERE 	PROJECT = t1.`ID`  	AND `STATUS` NOT IN ( 'done', 'cancel', 'closed' )  	AND DELETED = '0'  	), 	0  	) AS `UNDONETASKCNT`, 	( CASE WHEN T2.OBJECTORDER IS NOT NULL THEN T2.OBJECTORDER ELSE t1.`ORDER` END ) AS `ORDER1`, 	( CASE WHEN T2.OBJECTORDER IS NOT NULL THEN 1 ELSE 0 END ) AS `ISTOP`  FROM 	`zt_project` t1 	LEFT JOIN t_ibz_top t2 ON t1.id = t2.OBJECTID  	AND t2.type = 'project'  	AND t2.ACCOUNT = #{srf.sessioncontext.srfloginname}  WHERE 	t1.DELETED = '0'  	AND ( 	( 	t1.acl = 'private'  	AND t1.id IN ( SELECT t3.root FROM zt_team t3 WHERE t3.account = #{srf.sessioncontext.srfloginname} AND t3.type = 'project' )  	)  	OR t1.acl = 'open'  	)  	) t1 ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[ProjectQuality]-->
+    <sql id="ProjectQuality" databaseId="mysql">
+		<![CDATA[ SELECT t1.bugcnt,t1.completetaskcnt,t1.completestorycnt,t1.name,t1.storycnt,t1.FINISHBUGCNT,t1.taskcnt,t1.bugstory,t1.bugtask,IFNULL(t4.IMPORTANTBUGCNT,0) as IMPORTANTBUGCNT ,CONCAT(round(IFNULL((IMPORTANTBUGCNT/t1.bugcnt),0),2)*100,'%')  as SERIOUSBUGPROPORTION from ( SELECT 	t1.*, 	IFNULL( t3.bugtask, 0 ) AS bugtask  FROM 	( SELECT 	t1.*, 	IFNULL( t22.bugstory, 0 ) AS bugstory  FROM 	( SELECT 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND DELETED = '0' ) AS `BUGCNT`, 	t1.`DELETED`, 	t1.`END`, 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND `STATUS` <> 'active' AND DELETED = '0' ) AS `FINISHBUGCNT`, 	(SELECT count(1) from zt_task where PROJECT = t1.`ID` AND `STATUS`='done' AND DELETED = '0')as completetaskcnt, 	(SELECT count( 1 ) FROM (SELECT t1.project,t1.story from zt_projectstory t1 left join zt_story t2 on t1.story = t2.id where t2.stage in ('verified','released','closed') and t2.deleted='0' )t2 WHERE t1.id = t2.project) as completestorycnt, 	t1.`ID`, 	t1.`NAME`, 	t1.`STATUS`, 	( SELECT 	COUNT( 1 )  FROM 	ZT_STORY 	LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY  WHERE 	PROJECT = t1.`ID`  	AND DELETED = '0'  	) AS `STORYCNT`, 	( SELECT COUNT( 1 ) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' ) AS `TASKCNT`  FROM 	`zt_project` t1 	LEFT JOIN t_ibz_top t2 ON t1.id = t2.OBJECTID  	AND t2.type = 'project'  	AND t2.ACCOUNT = 'csd123_123'  WHERE 	t1.DELETED = '0'  	AND ( 	( 	t1.acl = 'private'  	AND t1.id IN ( SELECT t3.root FROM zt_team t3 WHERE t3.account = 'csd123_123' AND t3.type = 'project' )  	)  	OR t1.acl = 'open'  	)  	) t1 	LEFT JOIN ( SELECT 	t1.project, 	count( 1 ) AS bugstory  FROM 	( SELECT 	t1.project, 	t1.story, 	t2.title  FROM 	zt_bug t1 	LEFT JOIN zt_story t2 ON t1.story = t2.id 	LEFT JOIN zt_project t22 ON t1.project = t22.id  WHERE 	t1.deleted = '0'  	AND t1.project <> '0'  	AND t1.story <> '0'  	AND t22.deleted = '0'  	) t1  GROUP BY 	t1.project  	) t22 ON t1.id = t22.project  	) t1 	LEFT JOIN ( SELECT 	t1.project, 	count( 1 ) AS bugtask  FROM 	( SELECT 	t1.project, 	t1.task, 	t1.title, 	t2.NAME  FROM 	zt_bug t1 	LEFT JOIN zt_task t2 ON t1.task = t2.id 	LEFT JOIN zt_project t22 ON t1.project = t22.id  WHERE 	t1.deleted = '0'  	AND t1.project <> '0'  	AND t1.task <> '0'  	AND t22.deleted = '0'  	) t1  GROUP BY 	t1.project  	) t3 ON t1.id = t3.project 	)t1 Left join (SELECT t1.project, count(1) as IMPORTANTBUGCNT from zt_bug t1 where t1.severity <=3 and t1.deleted='0' and t1.project <> '0' GROUP BY t1.project)t4 on t1.id=t4.project ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[ProjectStoryStageStats]-->
+    <sql id="ProjectStoryStageStats" databaseId="mysql">
+		<![CDATA[ select  t1.id,  t1.`name`,  t1.`status`,  sum(case when t3.`stage` = '' then 1 else 0 end) as `EmptyStageStoryCNT`,  sum(case when t3.`stage` = 'wait' then 1 else 0 end) as `WaitStageStoryCNT`,  sum(case when t3.`stage` = 'planned' then 1 else 0 end) as `PlannedStageStoryCNT`,  sum(case when t3.`stage` = 'projected' then 1 else 0 end) as `ProjectedStageStoryCNT`,  sum(case when t3.`stage` = 'developing' then 1 else 0 end) as `DevelopingStageStoryCNT`,  sum(case when t3.`stage` = 'developed' then 1 else 0 end) as `DevelopedStageStoryCNT`,  sum(case when t3.`stage` = 'testing' then 1 else 0 end) as `TestingStageStoryCNT`,  sum(case when t3.`stage` = 'tested' then 1 else 0 end) as `TestedStageStoryCNT`,  sum(case when t3.`stage` = 'verified' then 1 else 0 end) as `VerifiedStageStoryCNT`,  sum(case when t3.`stage` = 'released' then 1 else 0 end) as `ReleasedStageStoryCNT`,  sum(case when t3.`stage` = 'closed' then 1 else 0 end) as `ClosedStageStoryCNT`,  sum(case when t3.`stage` is not null then 1 else 0 end) as `StoryCNT`  from  zt_project t1  left join zt_projectstory t2 on t1.id = t2.project  left join zt_story t3 on t2.story = t3.id and t3.deleted = '0'  where t1.deleted = '0'  group by t1.id ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[ProjectStoryStatusStats]-->
+    <sql id="ProjectStoryStatusStats" databaseId="mysql">
+		<![CDATA[ select  t1.id,  t1.`name`,  t1.`status`,  sum(case when t3.`status` = '' then 1 else 0 end) as `EmptyStory`,  sum(case when t3.`status` = 'draft' then 1 else 0 end) as `DraftStory`,  sum(case when t3.`status` = 'active' then 1 else 0 end) as `ActiveStory`,  sum(case when t3.`status` = 'closed' then 1 else 0 end) as `ClosedStory`,  sum(case when t3.`status` = 'changed' then 1 else 0 end) as `ChangedStory`,  sum(case when t3.`status` is not null then 1 else 0 end) as `StoryCNT`  from  zt_project t1  left join zt_projectstory t2 on t1.id = t2.project  left join zt_story t3 on t2.story = t3.id and t3.deleted = '0'  where t1.deleted = '0'  group by t1.id ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[ProjectTaskCountByTaskStatus]-->
+    <sql id="ProjectTaskCountByTaskStatus" databaseId="mysql">
+		<![CDATA[ SELECT t1.project,t1.projectname  as name, SUM(IF(t1.`status` = 'closed',t1.ss,0)) as closedtaskcnt, SUM(IF(t1.`status` = 'cancel',t1.ss,0)) as cancelTaskcnt, SUM(IF(t1.`status` = 'done',t1.ss,0)) as doneTaskcnt, SUM(IF(t1.`status` = 'pause',t1.ss,0)) as pauseTaskcnt, SUM(IF(t1.`status` = 'wait',t1.ss,0)) as waitTaskcnt, SUM(IF(t1.`status` = 'doing',t1.ss,0)) as doingTaskcnt, COUNT(1) as taskcnt, t1.deleted from ( select t1.`status`,t1.project,t2.`name` as projectname, 1 as ss,t2.deleted from zt_task t1 LEFT JOIN zt_project t2 on t1.project = t2.id where t1.deleted = '0' and t1.project <> '0' ) t1 GROUP BY t1.project ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[ProjectTaskCountByType]-->
+    <sql id="ProjectTaskCountByType" databaseId="mysql">
+		<![CDATA[ SELECT t2.id,t2.`name`,IFNULL(t1.designtaskcnt,0) as designtaskcnt,IFNULL(t1.discusstaskcnt,0) as discusstaskcnt, IFNULL(t1.studytaskcnt,0) as studytaskcnt,IFNULL(t1.uitaskcnt,0) as uitaskcnt, IFNULL(t1.testtaskcnt,0) as testtaskcnt,IFNULL(t1.servetaskcnt,0) as servetaskcnt,IFNULL(t1.develtaskcnt,0) as develtaskcnt,IFNULL(t1.misctaskcnt,0) as misctaskcnt,IFNULL(t1.affairtaskcnt,0) as affairtaskcnt,IFNULL(t1.taskcnt,0) as taskcnt ,t1.`status`,t1.`begin`,t1.closedDate as `end`  from ( SELECT t1.project,t1.`name`,t1.`status`,t1.`begin`,t1.closedDate, SUM(IF(t1.type = 'design',t1.num,0)) as designtaskcnt, SUM(IF(t1.type = 'discuss',t1.num,0)) as discusstaskcnt, SUM(IF(t1.type = 'study',t1.num,0)) as studytaskcnt, SUM(IF(t1.type = 'ui',t1.num,0)) as uitaskcnt, SUM(IF(t1.type = 'test',t1.num,0)) as testtaskcnt, SUM(IF(t1.type = 'serve',t1.num,0)) as servetaskcnt, SUM(IF(t1.type = 'devel',t1.num,0)) as develtaskcnt, SUM(IF(t1.type = 'misc',t1.num,0)) as misctaskcnt, SUM(IF(t1.type = 'affair',t1.num,0)) as affairtaskcnt, COUNT(1) as taskcnt from( select t1.type,t1.project,t2.`name`,t2.`status`,t2.`begin`,t2.closedDate,1 as num from zt_task t1 LEFT JOIN zt_project t2 on t1.project = t2.id where t1.deleted = '0' and t2.id <> '0' and t2.deleted = '0') t1 GROUP BY t1.project ) t1 RIGHT JOIN zt_project t2 on t1.project = t2.id where t2.deleted = '0' and (t1.`status` = #{srf.datacontext.status} or #{srf.datacontext.status} is null) and (DATE_FORMAT(t1.`begin`,'%Y-%m-%d') >=  #{srf.datacontext.begin} or #{srf.datacontext.begin} is null) and (DATE_FORMAT(t1.`closedDate`,'%Y-%m-%d') >=  #{srf.datacontext.end} or #{srf.datacontext.end} is null)  ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[TaskTime]-->
+    <sql id="TaskTime" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ID`, (SELECT SUM(CONSUMED) FROM ZT_TASK WHERE PROJECT = t1.`ID`) AS `TIME`, 'CONSUMED' AS `TYPE` FROM `zt_project` t1 WHERE t1.`ID` =  #{srf.datacontext.srfparentkey} AND t1.DELETED = 0 UNION ALL  SELECT t2.`ID`, (SELECT SUM(`LEFT`) FROM ZT_TASK WHERE PROJECT = t2.`ID` AND t1.DELETED = 0) AS `TIME`, 'LEFT' AS `TYPE` FROM `zt_project` t2 WHERE t2.`ID` = #{srf.datacontext.srfparentkey}  AND t1.DELETED = 0  ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[View]-->
+    <sql id="View" databaseId="mysql">
+		<![CDATA[ SELECT (SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0') AS `ACTIVEBUGCNT`, 0 AS `ACTIVESTORY`, t1.`BEGIN`, (SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND DELETED = '0') AS `BUGCNT`, 0 AS `CHANGEDSTORY`, 0 AS `CLOSEDSTAGESTORYCNT`, 0 AS `CLOSEDSTORY`, (SELECT COUNT(1) FROM ZT_STORY WHERE `STATUS` =  'closed' AND FIND_IN_SET (PRODUCT, (SELECT GROUP_CONCAT(PRODUCT) FROM ZT_PROJECTPRODUCT WHERE PROJECT= t1.`ID`)) AND DELETED = '0' ) AS `CLOSEDSTORYCNT`, t1.`DELETED`, 0 AS `DEVELOPEDSTAGESTORYCNT`, 0 AS `DEVELOPINGSTAGESTORYCNT`, 0 AS `DRAFTSTORY`, 0 AS `EMPTYSTAGESTORYCNT`, 0 AS `EMPTYSTORY`, t1.`END`, (SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND `STATUS` <> 'active' AND DELETED = '0') AS `FINISHBUGCNT`, (SELECT COUNT(1) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND `STATUS` IN ('done','cancel','closed') AND DELETED = '0') AS `FINISHTASKCNT`, t1.`ID`, 0 AS `MEMBERCNT`, t1.`NAME`, t1.`order` AS `ORDER1`, 0 AS `PLANNEDSTAGESTORYCNT`, 0 AS `PROJECTEDSTAGESTORYCNT`, 0 AS `PROJECTTOTALCONSUMED`, 0 AS `RELEASEDSTAGESTORYCNT`, (SELECT COUNT(1) FROM ZT_STORY LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY WHERE stage = 'released' AND PROJECT = t1.id AND DELETED = '0') AS `RELEASEDSTORYCNT`, null AS `SERIOUSBUGPROPORTION`, t1.`STATUS`, (SELECT COUNT(1) FROM ZT_STORY LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY WHERE PROJECT = t1.`ID` AND DELETED = '0') AS `STORYCNT`, (SELECT COUNT(1) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0') AS `TASKCNT`, 0 AS `TESTEDSTAGESTORYCNT`, 0 AS `TESTINGSTAGESTORYCNT`, (SELECT round(SUM(CONSUMED),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' or `parent` = '0' or `parent` = '-1')) AS `TOTALCONSUMED`, (SELECT round(SUM(ESTIMATE),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED =  '0' AND ( `parent` = '' or `parent` = '0' or `parent` = '-1')) AS `TOTALESTIMATE`, (SELECT round(SUM(`LEFT`),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' or `parent` = '0' or `parent` = '-1')) AS `TOTALLEFT`, ((SELECT round(SUM( `LEFT` ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) ) + (SELECT round(SUM( CONSUMED ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) )) AS `TOTALWH`, (SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0') AS `UNCLOSEDBUGCNT`, (SELECT COUNT(1) FROM ZT_STORY LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY WHERE `STATUS` <>  'closed' AND PROJECT = t1.`ID` AND DELETED = '0') AS `UNCLOSEDSTORYCNT`, (SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0') AS `UNCONFIRMEDBUGCNT`, (SELECT COUNT(1) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND `STATUS` NOT IN ('done','cancel','closed') AND DELETED =  '0') AS `UNDONETASKCNT`, 0 AS `VERIFIEDSTAGESTORYCNT`, 0 AS `WAITSTAGESTORYCNT`, (select COUNT(1) from zt_task t where t.deleted = '0' and t.project = t1.id and t.`status` = 'closed' and t.closedDate BETWEEN CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 00:00:00') and CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 23:59:59') ) AS `YESTERDAYCTASKCNT`, (SELECT COUNT( 1 ) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND `STATUS` = 'resolved' AND DELETED = '0' and RESOLVEDDATE BETWEEN CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 00:00:00') and CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 23:59:59')) AS `YESTERDAYRBUGCNT` FROM `zt_project` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+</mapper>
+

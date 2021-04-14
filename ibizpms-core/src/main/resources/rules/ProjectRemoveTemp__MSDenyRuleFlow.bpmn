@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:g="http://www.jboss.org/drools/flow/gpd" xmlns:tns="http://www.jboss.org/drools" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" expressionLanguage="http://www.mvel.org/2.0" id="Definition" name="" targetNamespace="http://www.jboss.org/drools" typeLanguage="http://www.java.com/javaTypes">
+    <process id="cn.ibizlab.pms.core.zentao.service.logic.projectremovetemp__msdeny" isClosed="false" isExecutable="true" name="zentao_project_removetemp__msdeny_RuleFlow" processType="Private" tns:packageName="cn.ibizlab.pms.core.zentao.service.logic.projectremovetemp__msdeny">
+        <extensionElements>
+            <tns:import name="java.util.Map" />
+            <tns:import name="org.springframework.util.StringUtils"/>
+            <tns:import name="cn.ibizlab.pms.util.helper.RuleUtils"/>
+            <tns:metaData express="new cn.ibizlab.pms.core.zentao.domain.Project()" name="projectremovetemp__msdenytemp" type="refentity"/>
+            <tns:metaData express="" name="projectremovetemp__msdenydefault" type="entity"/>
+            <tns:metaData express="T(cn.ibizlab.pms.util.security.SpringContextHolder).getBean(T(cn.ibizlab.pms.core.zentao.service.IProjectService))" name="projectservice" type="service"/>
+            <tns:metaData express="T(cn.ibizlab.pms.util.security.SpringContextHolder).getBean(T(cn.ibizlab.pms.core.zentao.service.IProjectService))" name="iBzSysProjectDefaultService" type="service"/>
+            <tns:metaData express="T(cn.ibizlab.pms.util.security.AuthenticationUser).getAuthenticationUser()" name="curuser" type="session"/>
+        <tns:global identifier="projectremovetemp__msdenytemp" type="cn.ibizlab.pms.core.zentao.domain.Project" />
+        <tns:global identifier="projectremovetemp__msdenydefault" type="cn.ibizlab.pms.core.zentao.domain.Project" />
+        </extensionElements>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectremovetemp__msdenydenybydoing_0" id="denybydoing_0" implementation="http://www.jboss.org/drools/rule" name="状态[进行中_未置顶]拒绝[RemoveTemp]操作"/>
+     <endEvent id="denybydoing_0_end" name="end"/>
+     <sequenceFlow id="denybydoing_0_end_line" sourceRef="denybydoing_0" targetRef="denybydoing_0_end"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectremovetemp__msdenydenybyclosed_0" id="denybyclosed_0" implementation="http://www.jboss.org/drools/rule" name="状态[已关闭_未置顶]拒绝[RemoveTemp]操作"/>
+     <endEvent id="denybyclosed_0_end" name="end"/>
+     <sequenceFlow id="denybyclosed_0_end_line" sourceRef="denybyclosed_0" targetRef="denybyclosed_0_end"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectremovetemp__msdenydenybyclosed_1" id="denybyclosed_1" implementation="http://www.jboss.org/drools/rule" name="状态[已关闭_已置顶]拒绝[RemoveTemp]操作"/>
+     <endEvent id="denybyclosed_1_end" name="end"/>
+     <sequenceFlow id="denybyclosed_1_end_line" sourceRef="denybyclosed_1" targetRef="denybyclosed_1_end"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectremovetemp__msdenydenybysuspended_1" id="denybysuspended_1" implementation="http://www.jboss.org/drools/rule" name="状态[已挂起_已置顶]拒绝[RemoveTemp]操作"/>
+     <endEvent id="denybysuspended_1_end" name="end"/>
+     <sequenceFlow id="denybysuspended_1_end_line" sourceRef="denybysuspended_1" targetRef="denybysuspended_1_end"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectremovetemp__msdenydenybydoing_1" id="denybydoing_1" implementation="http://www.jboss.org/drools/rule" name="状态[进行中_已置顶]拒绝[RemoveTemp]操作"/>
+     <endEvent id="denybydoing_1_end" name="end"/>
+     <sequenceFlow id="denybydoing_1_end_line" sourceRef="denybydoing_1" targetRef="denybydoing_1_end"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectremovetemp__msdenyget" id="get" implementation="http://www.jboss.org/drools/rule" name="获取数据"/>
+     <startEvent id="begin" isInterrupting="true"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectremovetemp__msdenydenybywait_1" id="denybywait_1" implementation="http://www.jboss.org/drools/rule" name="状态[未开始_已置顶]拒绝[RemoveTemp]操作"/>
+     <endEvent id="denybywait_1_end" name="end"/>
+     <sequenceFlow id="denybywait_1_end_line" sourceRef="denybywait_1" targetRef="denybywait_1_end"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectremovetemp__msdenydenybysuspended_0" id="denybysuspended_0" implementation="http://www.jboss.org/drools/rule" name="状态[已挂起_未置顶]拒绝[RemoveTemp]操作"/>
+     <endEvent id="denybysuspended_0_end" name="end"/>
+     <sequenceFlow id="denybysuspended_0_end_line" sourceRef="denybysuspended_0" targetRef="denybysuspended_0_end"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectremovetemp__msdenypreparetemp" id="preparetemp" implementation="http://www.jboss.org/drools/rule" name="准备临时参数"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectremovetemp__msdenydenybywait_0" id="denybywait_0" implementation="http://www.jboss.org/drools/rule" name="状态[未开始_未置顶]拒绝[RemoveTemp]操作"/>
+     <endEvent id="denybywait_0_end" name="end"/>
+     <sequenceFlow id="denybywait_0_end_line" sourceRef="denybywait_0" targetRef="denybywait_0_end"/>
+     <sequenceFlow id="begin_preparetemp" sourceRef="begin" targetRef="preparetemp">
+     </sequenceFlow>
+     <sequenceFlow id="preparetemp_get" sourceRef="preparetemp" targetRef="get">
+     </sequenceFlow>
+     <sequenceFlow id="gateway-get_denybyclosed_0" sourceRef="gateway-get" targetRef="denybyclosed_0">
+            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+            $projectremovetemp__msdenytemp:Project();
+            $projectremovetemp__msdenydefault:Project();
+            eval($projectremovetemp__msdenytemp==projectremovetemp__msdenytemp && $projectremovetemp__msdenydefault==projectremovetemp__msdenydefault);
+                eval((RuleUtils.test($projectremovetemp__msdenytemp.get("status"),"EQ","closed"))&&(RuleUtils.test($projectremovetemp__msdenytemp.get("istop"),"EQ","0")))
+                ]]>
+            </conditionExpression>
+     </sequenceFlow>
+     <sequenceFlow id="gateway-get_denybyclosed_1" sourceRef="gateway-get" targetRef="denybyclosed_1">
+            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+            $projectremovetemp__msdenytemp:Project();
+            $projectremovetemp__msdenydefault:Project();
+            eval($projectremovetemp__msdenytemp==projectremovetemp__msdenytemp && $projectremovetemp__msdenydefault==projectremovetemp__msdenydefault);
+                eval((RuleUtils.test($projectremovetemp__msdenytemp.get("status"),"EQ","closed"))&&(RuleUtils.test($projectremovetemp__msdenytemp.get("istop"),"EQ","1")))
+                ]]>
+            </conditionExpression>
+     </sequenceFlow>
+     <sequenceFlow id="gateway-get_denybydoing_0" sourceRef="gateway-get" targetRef="denybydoing_0">
+            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+            $projectremovetemp__msdenytemp:Project();
+            $projectremovetemp__msdenydefault:Project();
+            eval($projectremovetemp__msdenytemp==projectremovetemp__msdenytemp && $projectremovetemp__msdenydefault==projectremovetemp__msdenydefault);
+                eval((RuleUtils.test($projectremovetemp__msdenytemp.get("status"),"EQ","doing"))&&(RuleUtils.test($projectremovetemp__msdenytemp.get("istop"),"EQ","0")))
+                ]]>
+            </conditionExpression>
+     </sequenceFlow>
+     <sequenceFlow id="gateway-get_denybydoing_1" sourceRef="gateway-get" targetRef="denybydoing_1">
+            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+            $projectremovetemp__msdenytemp:Project();
+            $projectremovetemp__msdenydefault:Project();
+            eval($projectremovetemp__msdenytemp==projectremovetemp__msdenytemp && $projectremovetemp__msdenydefault==projectremovetemp__msdenydefault);
+                eval((RuleUtils.test($projectremovetemp__msdenytemp.get("status"),"EQ","doing"))&&(RuleUtils.test($projectremovetemp__msdenytemp.get("istop"),"EQ","1")))
+                ]]>
+            </conditionExpression>
+     </sequenceFlow>
+     <sequenceFlow id="gateway-get_denybysuspended_0" sourceRef="gateway-get" targetRef="denybysuspended_0">
+            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+            $projectremovetemp__msdenytemp:Project();
+            $projectremovetemp__msdenydefault:Project();
+            eval($projectremovetemp__msdenytemp==projectremovetemp__msdenytemp && $projectremovetemp__msdenydefault==projectremovetemp__msdenydefault);
+                eval((RuleUtils.test($projectremovetemp__msdenytemp.get("status"),"EQ","suspended"))&&(RuleUtils.test($projectremovetemp__msdenytemp.get("istop"),"EQ","0")))
+                ]]>
+            </conditionExpression>
+     </sequenceFlow>
+     <sequenceFlow id="gateway-get_denybysuspended_1" sourceRef="gateway-get" targetRef="denybysuspended_1">
+            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+            $projectremovetemp__msdenytemp:Project();
+            $projectremovetemp__msdenydefault:Project();
+            eval($projectremovetemp__msdenytemp==projectremovetemp__msdenytemp && $projectremovetemp__msdenydefault==projectremovetemp__msdenydefault);
+                eval((RuleUtils.test($projectremovetemp__msdenytemp.get("status"),"EQ","suspended"))&&(RuleUtils.test($projectremovetemp__msdenytemp.get("istop"),"EQ","1")))
+                ]]>
+            </conditionExpression>
+     </sequenceFlow>
+     <sequenceFlow id="gateway-get_denybywait_0" sourceRef="gateway-get" targetRef="denybywait_0">
+            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+            $projectremovetemp__msdenytemp:Project();
+            $projectremovetemp__msdenydefault:Project();
+            eval($projectremovetemp__msdenytemp==projectremovetemp__msdenytemp && $projectremovetemp__msdenydefault==projectremovetemp__msdenydefault);
+                eval((RuleUtils.test($projectremovetemp__msdenytemp.get("status"),"EQ","wait"))&&(RuleUtils.test($projectremovetemp__msdenytemp.get("istop"),"EQ","0")))
+                ]]>
+            </conditionExpression>
+     </sequenceFlow>
+     <sequenceFlow id="gateway-get_denybywait_1" sourceRef="gateway-get" targetRef="denybywait_1">
+            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+            $projectremovetemp__msdenytemp:Project();
+            $projectremovetemp__msdenydefault:Project();
+            eval($projectremovetemp__msdenytemp==projectremovetemp__msdenytemp && $projectremovetemp__msdenydefault==projectremovetemp__msdenydefault);
+                eval((RuleUtils.test($projectremovetemp__msdenytemp.get("status"),"EQ","wait"))&&(RuleUtils.test($projectremovetemp__msdenytemp.get("istop"),"EQ","1")))
+                ]]>
+            </conditionExpression>
+     </sequenceFlow>
+    <exclusiveGateway id="gateway-get" name="Gateway" gatewayDirection="Diverging" default="gateway-get_end_line"></exclusiveGateway>
+    <sequenceFlow id="get_gateway-get_gatewayline" sourceRef="get" targetRef="gateway-get"></sequenceFlow>
+    <sequenceFlow id="gateway-get_end_line" sourceRef="gateway-get" targetRef="gateway-get_end"/>
+    <endEvent id="gateway-get_end" name="end"/>
+    </process>
+</definitions>
+

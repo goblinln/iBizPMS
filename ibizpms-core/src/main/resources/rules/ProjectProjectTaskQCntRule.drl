@@ -1,0 +1,221 @@
+package cn.ibizlab.pms.zentao.logic.projectlogic.projecttaskqcnt;
+import java.util.Map;
+import java.util.HashMap;
+import com.alibaba.fastjson.JSONObject;
+import org.springframework.util.StringUtils;
+import org.springframework.util.ObjectUtils;
+import cn.ibizlab.pms.util.errors.BadRequestAlertException;
+global cn.ibizlab.pms.core.zentao.domain.Project projectprojecttaskqcntdefault;
+global cn.ibizlab.pms.core.zentao.service.IProjectService iBzSysProjectDefaultService;
+global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
+
+
+no-loop
+
+//逻辑处理节点[开始]
+rule "begin"
+ruleflow-group "projectprojecttaskqcntbegin"
+    when
+    then
+    end
+
+//逻辑处理节点[进行中的任务]
+rule "rawsqlcall8"
+ruleflow-group "projectprojecttaskqcntrawsqlcall8"
+    when
+    then
+    Map param =new HashMap();
+    param.put("param0",projectprojecttaskqcntdefault.get("id"));
+    String strSql="select count(t.id) as YSTARTASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'doing' and t.project = #{et.param0} and t.parent <= '0'";
+    java.util.List<JSONObject> entities=iBzSysProjectDefaultService.select(strSql,param);//SQL调用
+    if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
+        JSONObject entity=entities.get(0);
+        for (Map.Entry entry : entity.entrySet()) {
+            projectprojecttaskqcntdefault.set(String.valueOf(entry.getKey()),entry.getValue());
+        }
+    }
+    update(projectprojecttaskqcntdefault);//更新fact中变量值
+    end
+
+//逻辑处理节点[未关闭的任务数]
+rule "rawsqlcall10"
+ruleflow-group "projectprojecttaskqcntrawsqlcall10"
+    when
+    then
+    Map param =new HashMap();
+    param.put("param0",projectprojecttaskqcntdefault.get("id"));
+    String strSql="select count(t.id) as UNCOMPLETETASKCNT from zt_task t where t.deleted = '0' and t.`status` in( 'wait','cancel','doing') and t.project = #{et.param0} and t.parent <= '0'";
+    java.util.List<JSONObject> entities=iBzSysProjectDefaultService.select(strSql,param);//SQL调用
+    if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
+        JSONObject entity=entities.get(0);
+        for (Map.Entry entry : entity.entrySet()) {
+            projectprojecttaskqcntdefault.set(String.valueOf(entry.getKey()),entry.getValue());
+        }
+    }
+    update(projectprojecttaskqcntdefault);//更新fact中变量值
+    end
+
+//逻辑处理节点[未关闭任务数]
+rule "rawsqlcall1"
+ruleflow-group "projectprojecttaskqcntrawsqlcall1"
+    when
+    then
+    Map param =new HashMap();
+    param.put("param0",projectprojecttaskqcntdefault.get("id"));
+    String strSql="select count(t.id) as UNCLOSETASKCNT from zt_task t where t.deleted = '0' and t.`status` <> 'closed' and t.project = #{et.param0} and t.parent <= '0'";
+    java.util.List<JSONObject> entities=iBzSysProjectDefaultService.select(strSql,param);//SQL调用
+    if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
+        JSONObject entity=entities.get(0);
+        for (Map.Entry entry : entity.entrySet()) {
+            projectprojecttaskqcntdefault.set(String.valueOf(entry.getKey()),entry.getValue());
+        }
+    }
+    update(projectprojecttaskqcntdefault);//更新fact中变量值
+    end
+
+//逻辑处理节点[已关闭的任务数]
+rule "rawsqlcall7"
+ruleflow-group "projectprojecttaskqcntrawsqlcall7"
+    when
+    then
+    Map param =new HashMap();
+    param.put("param0",projectprojecttaskqcntdefault.get("id"));
+    String strSql="select count(t.id) as CLOSETASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'closed' and t.project = #{et.param0} and t.parent <= '0'";
+    java.util.List<JSONObject> entities=iBzSysProjectDefaultService.select(strSql,param);//SQL调用
+    if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
+        JSONObject entity=entities.get(0);
+        for (Map.Entry entry : entity.entrySet()) {
+            projectprojecttaskqcntdefault.set(String.valueOf(entry.getKey()),entry.getValue());
+        }
+    }
+    update(projectprojecttaskqcntdefault);//更新fact中变量值
+    end
+
+//逻辑处理节点[指派给我的任务数]
+rule "rawsqlcall2"
+ruleflow-group "projectprojecttaskqcntrawsqlcall2"
+    when
+    then
+    Map param =new HashMap();
+    param.put("param0",curuser.getSessionParams().get("srfloginname"));
+    param.put("param1",projectprojecttaskqcntdefault.get("id"));
+    String strSql="select count(t.id) as ASSTOMYTASKCNT from zt_task t where t.deleted = '0' and t.assignedTo = #{et.param0} and t.project = #{et.param1} and t.parent <= '0'";
+    java.util.List<JSONObject> entities=iBzSysProjectDefaultService.select(strSql,param);//SQL调用
+    if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
+        JSONObject entity=entities.get(0);
+        for (Map.Entry entry : entity.entrySet()) {
+            projectprojecttaskqcntdefault.set(String.valueOf(entry.getKey()),entry.getValue());
+        }
+    }
+    update(projectprojecttaskqcntdefault);//更新fact中变量值
+    end
+
+//逻辑处理节点[所有任务]
+rule "rawsqlcall5"
+ruleflow-group "projectprojecttaskqcntrawsqlcall5"
+    when
+    then
+    Map param =new HashMap();
+    param.put("param0",projectprojecttaskqcntdefault.get("id"));
+    String strSql="select count(t.id) as ALLTASKCNT from zt_task t where t.deleted = '0'  and t.project = #{et.param0} and t.parent <= '0'";
+    java.util.List<JSONObject> entities=iBzSysProjectDefaultService.select(strSql,param);//SQL调用
+    if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
+        JSONObject entity=entities.get(0);
+        for (Map.Entry entry : entity.entrySet()) {
+            projectprojecttaskqcntdefault.set(String.valueOf(entry.getKey()),entry.getValue());
+        }
+    }
+    update(projectprojecttaskqcntdefault);//更新fact中变量值
+    end
+
+//逻辑处理节点[已完成的任务数]
+rule "rawsqlcall3"
+ruleflow-group "projectprojecttaskqcntrawsqlcall3"
+    when
+    then
+    Map param =new HashMap();
+    param.put("param0",projectprojecttaskqcntdefault.get("id"));
+    String strSql="select count(t.id) as YCOMPLETETASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'done' and t.project = #{et.param0} and t.parent <= '0'";
+    java.util.List<JSONObject> entities=iBzSysProjectDefaultService.select(strSql,param);//SQL调用
+    if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
+        JSONObject entity=entities.get(0);
+        for (Map.Entry entry : entity.entrySet()) {
+            projectprojecttaskqcntdefault.set(String.valueOf(entry.getKey()),entry.getValue());
+        }
+    }
+    update(projectprojecttaskqcntdefault);//更新fact中变量值
+    end
+
+//逻辑处理节点[已取消任务]
+rule "rawsqlcall6"
+ruleflow-group "projectprojecttaskqcntrawsqlcall6"
+    when
+    then
+    Map param =new HashMap();
+    param.put("param0",projectprojecttaskqcntdefault.get("id"));
+    String strSql="select count(t.id) as CANCELTASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'cancel' and t.project = #{et.param0} and t.parent <= '0'";
+    java.util.List<JSONObject> entities=iBzSysProjectDefaultService.select(strSql,param);//SQL调用
+    if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
+        JSONObject entity=entities.get(0);
+        for (Map.Entry entry : entity.entrySet()) {
+            projectprojecttaskqcntdefault.set(String.valueOf(entry.getKey()),entry.getValue());
+        }
+    }
+    update(projectprojecttaskqcntdefault);//更新fact中变量值
+    end
+
+//逻辑处理节点[未开始的任务数]
+rule "rawsqlcall9"
+ruleflow-group "projectprojecttaskqcntrawsqlcall9"
+    when
+    then
+    Map param =new HashMap();
+    param.put("param0",projectprojecttaskqcntdefault.get("id"));
+    String strSql="select count(t.id) as UNSTARTTASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'wait' and t.project = #{et.param0} and t.parent <= '0'";
+    java.util.List<JSONObject> entities=iBzSysProjectDefaultService.select(strSql,param);//SQL调用
+    if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
+        JSONObject entity=entities.get(0);
+        for (Map.Entry entry : entity.entrySet()) {
+            projectprojecttaskqcntdefault.set(String.valueOf(entry.getKey()),entry.getValue());
+        }
+    }
+    update(projectprojecttaskqcntdefault);//更新fact中变量值
+    end
+
+//逻辑处理节点[我完成的任务数]
+rule "rawsqlcall4"
+ruleflow-group "projectprojecttaskqcntrawsqlcall4"
+    when
+    then
+    Map param =new HashMap();
+    param.put("param0",curuser.getSessionParams().get("srfloginname"));
+    param.put("param1",projectprojecttaskqcntdefault.get("id"));
+    String strSql="select count(t.id) as MYCOMPLETETASKCNT from zt_task t where t.deleted = '0' and t.`finishedby` = #{et.param0} and t.project = #{et.param1} and t.parent <= '0'";
+    java.util.List<JSONObject> entities=iBzSysProjectDefaultService.select(strSql,param);//SQL调用
+    if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
+        JSONObject entity=entities.get(0);
+        for (Map.Entry entry : entity.entrySet()) {
+            projectprojecttaskqcntdefault.set(String.valueOf(entry.getKey()),entry.getValue());
+        }
+    }
+    update(projectprojecttaskqcntdefault);//更新fact中变量值
+    end
+
+//逻辑处理节点[需求变更数]
+rule "rawsqlcall11"
+ruleflow-group "projectprojecttaskqcntrawsqlcall11"
+    when
+    then
+    Map param =new HashMap();
+    param.put("param0",projectprojecttaskqcntdefault.get("id"));
+    String strSql="select count(t.id) as STORYCHANGECNT from zt_task t left join zt_story t21 on t.story = t21.id where t.deleted = '0'  and t.project = #{et.param0} and t.storyVersion < t21.version and t21.`status` <> 'changed'";
+    java.util.List<JSONObject> entities=iBzSysProjectDefaultService.select(strSql,param);//SQL调用
+    if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
+        JSONObject entity=entities.get(0);
+        for (Map.Entry entry : entity.entrySet()) {
+            projectprojecttaskqcntdefault.set(String.valueOf(entry.getKey()),entry.getValue());
+        }
+    }
+    update(projectprojecttaskqcntdefault);//更新fact中变量值
+    end
+

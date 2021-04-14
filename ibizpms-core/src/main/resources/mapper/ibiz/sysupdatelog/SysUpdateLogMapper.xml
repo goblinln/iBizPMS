@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="cn.ibizlab.pms.core.ibiz.mapper.SysUpdateLogMapper">
+	
+	<!-- 无视图模式 -->
+	<sql id="select" databaseId="mysql">
+        <![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`LATESTUPDATE`, t1.`SYS_UPDATE_LOGID`, t1.`SYS_UPDATE_LOGNAME`, t1.`UPDATE`, t1.`UPDATEBRANCH`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPDESC` FROM `T_SYS_UPDATE_LOG` t1   ]]>
+    </sql>
+
+	
+	<!-- 搜索条件 -->
+	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_updatebranch_eq != null ">
+			<![CDATA[ AND  t1.`UPDATEBRANCH` = #{srf.n_updatebranch_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_sys_update_logname_like != null ">
+            <bind name="bind_n_sys_update_logname_like" value="'%' + srf.n_sys_update_logname_like + '%'" />
+            <![CDATA[ AND  t1.`SYS_UPDATE_LOGNAME` like #{bind_n_sys_update_logname_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_latestupdate_eq != null ">
+			<![CDATA[ AND  t1.`LATESTUPDATE` = #{srf.n_latestupdate_eq,jdbcType=INTEGER} ]]>
+        </if>
+		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
+		AND ${ew.sqlSegment}
+		</if>
+	</sql>
+
+
+    <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
+	<select id="selectById"  resultMap="SysUpdateLogResultMap" databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND T1.SYS_UPDATE_LOGID = #{id} ]]>
+		</trim>
+    </select>
+
+
+    <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="SysUpdateLogResultMap" type="cn.ibizlab.pms.core.ibiz.domain.SysUpdateLog" autoMapping="true">
+		<id property="sysupdatelogid" column="sys_update_logid" /><!--主键字段映射-->
+		<result property="sysupdatelogname" column="sys_update_logname" />
+            
+		
+    </resultMap>
+
+
+    <!--数据集合[Default]-->
+	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.SysUpdateLogSearchContext"  resultMap="SysUpdateLogResultMap">
+	 	select * from (
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+		 )t1
+		 order by updatedate  desc  
+     </select>
+
+    <!--数据查询[Default]-->
+    <sql id="Default" databaseId="mysql">
+		<![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`LATESTUPDATE`, t1.`SYS_UPDATE_LOGID`, t1.`SYS_UPDATE_LOGNAME`, t1.`UPDATE`, t1.`UPDATEBRANCH`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_SYS_UPDATE_LOG` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[View]-->
+    <sql id="View" databaseId="mysql">
+		<![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`LATESTUPDATE`, t1.`SYS_UPDATE_LOGID`, t1.`SYS_UPDATE_LOGNAME`, t1.`UPDATE`, t1.`UPDATEBRANCH`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPDESC` FROM `T_SYS_UPDATE_LOG` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+</mapper>
+

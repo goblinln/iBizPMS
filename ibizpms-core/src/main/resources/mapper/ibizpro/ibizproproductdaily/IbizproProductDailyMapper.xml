@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="cn.ibizlab.pms.core.ibizpro.mapper.IbizproProductDailyMapper">
+	
+	<!-- 无视图模式 -->
+	<sql id="select" databaseId="mysql">
+        <![CDATA[ SELECT t1.`BEGIN`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATE`, t1.`END`, t1.`IBIZPRO_PRODUCTDAILYID`, t1.`IBIZPRO_PRODUCTDAILYNAME`, t1.`PO`, t1.`PRODUCT`, t11.`NAME` AS `PRODUCTNAME`, t1.`TASKS`, t1.`TOTALESTIMATES`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBIZPRO_PRODUCTDAILY` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`ID`   ]]>
+    </sql>
+
+	
+	<!-- 搜索条件 -->
+	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_ibizpro_productdailyname_like != null ">
+            <bind name="bind_n_ibizpro_productdailyname_like" value="'%' + srf.n_ibizpro_productdailyname_like + '%'" />
+            <![CDATA[ AND  t1.`IBIZPRO_PRODUCTDAILYNAME` like #{bind_n_ibizpro_productdailyname_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_po_eq != null ">
+			<![CDATA[ AND  t1.`PO` = #{srf.n_po_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_productname_eq != null ">
+			<![CDATA[ AND  t11.`NAME` = #{srf.n_productname_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_productname_like != null ">
+            <bind name="bind_n_productname_like" value="'%' + srf.n_productname_like + '%'" />
+            <![CDATA[ AND  t11.`NAME` like #{bind_n_productname_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_product_eq != null ">
+			<![CDATA[ AND  t1.`PRODUCT` = #{srf.n_product_eq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
+		AND ${ew.sqlSegment}
+		</if>
+	</sql>
+
+
+    <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
+	<select id="selectById"  resultMap="IbizproProductDailyResultMap" databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND T1.IBIZPRO_PRODUCTDAILYID = #{id} ]]>
+		</trim>
+    </select>
+
+
+    <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="IbizproProductDailyResultMap" type="cn.ibizlab.pms.core.ibizpro.domain.IbizproProductDaily" autoMapping="true">
+		<id property="ibizproproductdailyid" column="ibizpro_productdailyid" /><!--主键字段映射-->
+		<result property="ibizproproductdailyname" column="ibizpro_productdailyname" />
+		<result property="product" column="product" />
+            
+		
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="ztproduct" javaType="cn.ibizlab.pms.core.zentao.domain.Product" column="product" select="cn.ibizlab.pms.core.zentao.mapper.ProductMapper.selectById" fetchType="lazy"></association>
+    </resultMap>
+
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_IBIZPRO_PRODUCTDAILY_ZT_PRODUCT_PRODUCT] -->
+	 <select id="selectByProduct" resultMap="IbizproProductDailyResultMap"  databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND T1.PRODUCT=#{id} ]]>
+		</trim>
+     </select>
+
+    <!--数据集合[Default]-->
+	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbizproProductDailySearchContext"  resultMap="IbizproProductDailyResultMap">
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+     </select>
+
+    <!--数据集合[ProductDaily]-->
+	 <select id="searchProductDaily"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbizproProductDailySearchContext"  resultMap="IbizproProductDailyResultMap">
+         select t1.* from (
+                <include refid="ProductDaily" />
+         )t1
+     </select>
+
+    <!--数据查询[Default]-->
+    <sql id="Default" databaseId="mysql">
+		<![CDATA[ SELECT t1.`BEGIN`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATE`, t1.`END`, t1.`IBIZPRO_PRODUCTDAILYID`, t1.`IBIZPRO_PRODUCTDAILYNAME`, t1.`PO`, t1.`PRODUCT`, t11.`NAME` AS `PRODUCTNAME`, t1.`TASKS`, t1.`TOTALESTIMATES`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBIZPRO_PRODUCTDAILY` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`ID`   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[ProductDaily]-->
+    <sql id="ProductDaily" databaseId="mysql">
+		<![CDATA[ SELECT t1.`BEGIN`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATE`, t1.`END`, t1.`IBIZPRO_PRODUCTDAILYID`, t1.`IBIZPRO_PRODUCTDAILYNAME`, t1.`PO`, t1.`PRODUCT`, t2.`NAME` AS `PRODUCTNAME`, t1.`TASKS`, t1.`TOTALESTIMATES`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBIZPRO_PRODUCTDAILY` t1  LEFT JOIN `ZT_PRODUCT` t2 ON t1.`PRODUCT` = t2.`ID` ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[View]-->
+    <sql id="View" databaseId="mysql">
+		<![CDATA[ SELECT t1.`BEGIN`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATE`, t1.`END`, t1.`IBIZPRO_PRODUCTDAILYID`, t1.`IBIZPRO_PRODUCTDAILYNAME`, t1.`PO`, t1.`PRODUCT`, t11.`NAME` AS `PRODUCTNAME`, t1.`TASKS`, t1.`TOTALESTIMATES`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBIZPRO_PRODUCTDAILY` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`ID`   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+</mapper>
+

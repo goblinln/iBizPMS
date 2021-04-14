@@ -1,0 +1,13 @@
+{
+    "viewType": "NOTSUPPORTEDVIEW",
+    "title": "视图加载出现异常",
+    "caption": "错误",
+    "accUserMode": 2,
+    "enableDP": true,
+    "showCaptionBar": true,
+    "getPSDEViewCodeName": "ERRORView",
+    "deployId": "1570848d19d5a106ebfb90550eea864a",
+    "codeName": "ERRORView",
+    "viewStyle": "DEFAULT",
+    "name": "ERROR"
+}

@@ -1,0 +1,111 @@
+import { Util } from 'ibiz-core';
+import Vue from 'vue';
+import { Prop, Component } from 'vue-property-decorator';
+import './app-default-view-layout.less';
+
+/**
+ * 视图基础布局
+ *
+ * @export
+ * @class AppDefaultViewLayout
+ * @extends {Vue}
+ */
+@Component({})
+export class AppDefaultViewLayout extends Vue {
+
+    /**
+     * 视图模型数据
+     * 
+     * @memberof AppDefaultViewLayout
+     */
+    @Prop() public viewInstance!: any;
+
+    /**
+     * 应用上下文
+     * 
+     * @memberof AppDefaultViewLayout
+     */
+    @Prop() public context!: any;
+
+    /**
+     * 视图参数
+     * 
+     * @memberof AppDefaultViewLayout
+     */
+    @Prop() public viewparams!: any;
+
+    /**
+     * 绘制头部内容
+     * 
+     * @memberof AppDefaultViewLayout
+     */
+    public renderViewHeader(): any {
+        return [
+            this.viewInstance.showCaptionBar ? <span class='caption-info'>{this.$slots.captionInfo?this.$slots.captionInfo:this.viewInstance.caption}</span> : null,
+            this.viewInstance.viewIsshowToolbar ? <div class='toolbar-container'>
+                {this.$slots.toolbar}
+            </div> : null,
+        ]
+    }
+
+    /**
+     * 绘制内容
+     * 
+     * @memberof AppDefaultViewLayout
+     */
+    public renderContent() {
+        let cardClass = {
+            'view-card': true,
+            'view-no-caption': !this.viewInstance.showCaptionBar,
+            'view-no-toolbar': !this.viewInstance.viewIsshowToolbar,
+        };
+        return (
+            <card class={cardClass} disHover={true} bordered={false}>
+                {(this.viewInstance.showCaptionBar || this.viewInstance.viewIsshowToolbar) && (
+                    <div slot='title' class='header-container' key='view-header'>
+                        {this.renderViewHeader()}
+                    </div>
+                )}
+                {this.$slots.topMessage}
+                {this.$slots.searchForm}
+                <div class='content-container'>
+                    <div style="margin-bottom: 6px;">
+                        {this.$slots.quickGroupSearch}
+                        {this.$slots.quickSearch}
+                    </div>
+                    {this.$slots.bodyMessage}
+                    {this.$slots.default}
+                </div>
+                {this.$slots.bottomMessage}
+            </card>
+        );
+    }
+
+    /**
+     * 绘制布局
+     * 
+     * @memberof AppDefaultViewLayout
+     */
+    public render(h: any) {
+        let viewClass = {
+            'view-container': true,
+            'view-default': true,
+            [this.viewInstance.viewType.toLowerCase()]: true,
+            [Util.srfFilePath2(this.viewInstance.codeName)]: true,
+            [this.viewInstance.getPSSysCss?.cssName || '']: true,
+        };
+        
+        return (
+            <div class={viewClass}>
+                <app-studioaction
+                    viewInstance={this.viewInstance} 
+                    context={this.context}
+                    viewparams={this.viewparams}
+                    viewName={this.viewInstance.codeName.toLowerCase()} 
+                    viewTitle={this.viewInstance.title} />
+                { this.renderContent()}
+            </div>
+        );
+    }
+
+}

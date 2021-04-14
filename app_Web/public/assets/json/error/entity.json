@@ -1,0 +1,28 @@
+{
+    "dataAccCtrlMode": 1,
+    "storageMode": 0,
+    "dataAccCtrlArch": 1,
+    "enableTempData": false,
+    "enableUICreate": true,
+    "enableUIModify": true,
+    "defaultMode": true,
+    "codeName": "ERROR",
+    "logicName": "错误",
+    "enableUIRemove": true,
+    "major": true,
+    "enableUIActions": 15,
+    "getAllPSAppDEMethods": [
+        
+    ],
+    "getAllPSAppDEFields": [
+        
+    ],
+    "getAllPSAppDEACModes": [
+        
+    ],
+    "enableFilterActions": true,
+    "name": "ERROR",
+    "getAllPSDEOPPrivs": [
+       
+    ]
+}
