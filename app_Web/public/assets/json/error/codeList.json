@@ -1,8 +1,0 @@
-{
-    "getPSCodeItems": [],
-    "codeListType": "STATIC",
-    "codeName": "ERRORCODELIST",
-    "emptyText": "未定义",
-    "dynaModelFilePath": "error.codeList.json",
-    "name": "代码表错误"
-}

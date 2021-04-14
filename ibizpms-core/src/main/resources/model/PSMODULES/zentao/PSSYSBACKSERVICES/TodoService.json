@@ -1,9 +1,0 @@
-{
-  "codeName" : "TodoService",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSSYSBACKSERVICES/TodoService.json",
-  "name" : "创建周期定时服务",
-  "serviceContainer" : "SC01",
-  "serviceHandler" : "TodoService",
-  "serviceOrder" : 0,
-  "startMode" : "MANUAL"
-}

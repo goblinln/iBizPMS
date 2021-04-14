@@ -1,9 +1,0 @@
-{
-  "codeName" : "PushReportUserWeeklyService",
-  "dynaModelFilePath" : "PSMODULES/report/PSSYSBACKSERVICES/PushReportUserWeeklyService.json",
-  "name" : "定时推送待阅提醒用户周报提交",
-  "serviceContainer" : "SC01",
-  "serviceHandler" : "PushReportUserWeeklyService",
-  "serviceOrder" : 0,
-  "startMode" : "MANUAL"
-}

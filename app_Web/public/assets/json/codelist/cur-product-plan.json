@@ -1,1 +1,0 @@
-{"cacheTimeout":600,"codeListType":"DYNAMIC","codeName":"CurProductPlan","dynaInstMode":1,"dynaModelFilePath":"PSSYSAPPS/Web/PSAPPCODELISTS/CurProductPlan.json","emptyText":"未定义","name":"当前产品计划（动态）_缓存","getPSAppDEDataSet":{"modelref":true,"id":"FetchDefault"},"getPSAppDataEntity":{"modelref":true,"path":"PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"},"enableCache":true}

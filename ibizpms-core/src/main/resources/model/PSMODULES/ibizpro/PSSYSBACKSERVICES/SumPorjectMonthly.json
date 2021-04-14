@@ -1,9 +1,0 @@
-{
-  "codeName" : "SumPorjectMonthly",
-  "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/SumPorjectMonthly.json",
-  "name" : "汇总项目月报",
-  "serviceContainer" : "SC01",
-  "serviceHandler" : "SumPorjectMonthly",
-  "serviceOrder" : 0,
-  "startMode" : "AUTO"
-}

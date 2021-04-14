@@ -1,7 +1,0 @@
-{
-  "codeName" : "ProjectManger",
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProjectManger.json",
-  "name" : "项目经理",
-  "roleTag" : "ProjectManger",
-  "roleType" : "CUSTOM"
-}
