@@ -1080,13 +1080,13 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
         if (!StaticDict.Task__status.DONE.getValue().equals(old.getStatus()) && !StaticDict.Task__status.CLOSED.getValue().equals(old.getStatus()) && (et.getLeft() == null || et.getLeft() == 0)) {
             throw new RuntimeException("[预计剩余]不能为空！");
         }
-        TaskEstimate taskEstimate = new TaskEstimate();
-        taskEstimate.setTask(newTask.getId());
-        taskEstimate.setAccount(AuthenticationUser.getAuthenticationUser().getUsername());
-        taskEstimate.setDate(ZTDateUtil.now());
-        taskEstimate.setLeft(newTask.getLeft());
-        taskEstimate.setConsumed(0d);
-        taskEstimateHelper.create(taskEstimate);
+//        TaskEstimate taskEstimate = new TaskEstimate();
+//        taskEstimate.setTask(newTask.getId());
+//        taskEstimate.setAccount(AuthenticationUser.getAuthenticationUser().getUsername());
+//        taskEstimate.setDate(ZTDateUtil.now());
+//        taskEstimate.setLeft(newTask.getLeft());
+//        taskEstimate.setConsumed(0d);
+//        taskEstimateHelper.create(taskEstimate);
         //teams
         List<Team> teams = teamHelper.list(new QueryWrapper<Team>().eq(FIELD_ROOT, et.getId()).eq(FIELD_TYPE, StaticDict.Team__type.TASK.getValue()));
         if (teams.size() > 0) {
