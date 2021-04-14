@@ -1,1 +1,0 @@
-{"codeListType":"DYNAMIC","codeName":"ProjectTeam","dynaInstMode":1,"dynaModelFilePath":"PSSYSAPPS/Web/PSAPPCODELISTS/ProjectTeam.json","emptyText":"未定义","name":"项目团队","getPSAppDEDataSet":{"modelref":true,"id":"FetchProjectTeam"},"getPSAppDataEntity":{"modelref":true,"path":"PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"}}

@@ -1,5 +1,0 @@
-spring:
-  profiles:
-    include: sys, nacos, mob-prod, mob-zentao
-  application:
-    name: ibizpms-mob

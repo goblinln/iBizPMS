@@ -1,1 +1,0 @@
-{"codeListType":"STATIC","codeName":"Beginend_disable","dynaInstMode":1,"dynaModelFilePath":"PSSYSAPPS/Web/PSAPPCODELISTS/Beginend_disable.json","emptyText":"未定义","name":"起止时间_暂时不设定时间","getPSAppDataEntity":{"modelref":true,"path":"PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"},"getPSCodeItems":[{"codeName":"On","text":"暂时不设定时间","value":"on"}],"enableCache":true}

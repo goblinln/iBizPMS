@@ -1,5 +1,0 @@
-spring:
-  profiles:
-    include: sys, nacos, webapi-prod, zentao
-  application:
-    name: ibizpms-webapi
