@@ -68,7 +68,10 @@ public class IbiLoginRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     @Override
     public Object executeAction(String strActionName, IPSDEAction iPSDEAction, Object[] args) throws Throwable {
         if (iPSDEAction != null) {
-            if (iPSDEAction.getName().equals("getUser")) {
+            if (iPSDEAction.getName().equals("Get")) {
+                return ibiloginService.get((Long) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("getUser")) {
                 return ibiloginService.getUser((IbiLogin) args[0]);
             }
             else if (iPSDEAction.getName().equals("ztlogin")) {
@@ -123,7 +126,10 @@ public class IbiLoginRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
             return point.proceed();
         }
         String action = point.getSignature().getName();
-        if (action.equals("getUser")) {
+        if (action.equals("get")) {
+            return aroundAction("Get", point);
+        }
+        else if (action.equals("getUser")) {
             return aroundAction("getUser", point);
         }
         else if (action.equals("ztlogin")) {

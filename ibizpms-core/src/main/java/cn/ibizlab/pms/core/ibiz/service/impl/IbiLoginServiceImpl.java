@@ -52,6 +52,32 @@ public class IbiLoginServiceImpl extends ServiceImpl<IbiLoginMapper, IbiLogin> i
     protected int batchSize = 500;
 
     @Override
+    @Transactional
+    public IbiLogin get(Long key) {
+        IbiLogin et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        }
+        else {
+        }
+        return et;
+    }
+
+     /**
+     *  系统获取
+     *  @return
+     */
+    @Override
+    @Transactional
+    public IbiLogin sysGet(Long key) {
+        IbiLogin et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        }
+        return et;
+    }
+
+    @Override
     public IbiLogin getUser(IbiLogin et) {
         //自定义代码
         return et;

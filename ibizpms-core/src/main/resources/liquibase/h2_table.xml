@@ -1139,7 +1139,7 @@
 
 
     <!--输出实体[IBZ_LOGIN]数据结构 -->
-    <changeSet author="zentao" id="tab-ibz_login-1-36">
+    <changeSet author="zentao" id="tab-ibz_login-2-36">
         <createTable tableName="zt_user">
                 <column name="REALNAME" remarks="" type="VARCHAR(100)">
                 </column>

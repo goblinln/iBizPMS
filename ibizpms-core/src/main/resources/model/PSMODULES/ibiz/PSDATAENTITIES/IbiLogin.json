@@ -1,6 +1,9 @@
 {
   "getAllPSDEActions" : [ {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbiLogin/PSDEACTIONS/Get.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbiLogin/PSDEACTIONS/GetUser.json"
   }, {
     "modelref" : true,
