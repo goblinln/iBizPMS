@@ -309,6 +309,27 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
         return true;
     }
 
+    @Override
+    public List<TestReport> getTestreportByIds(List<Long> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<TestReport> getTestreportByEntities(List<TestReport> entities) {
+        List ids =new ArrayList();
+        for(TestReport entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     public ITestReportService getProxyService() {

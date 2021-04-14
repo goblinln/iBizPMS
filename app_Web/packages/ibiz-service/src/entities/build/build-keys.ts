@@ -23,4 +23,8 @@ export default [
     'product',
     'branch',
     'project',
+    'createby',
+    'updateby',
+    'org',
+    'dept',
 ];

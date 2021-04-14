@@ -21,6 +21,10 @@ hide members
 |最初预计|ESTIMATE|PICKUPDATA|&nbsp;|
 |所属项目|PROJECT|PICKUP|&nbsp;|
 |任务|TASK|PICKUP|&nbsp;|
+|由谁创建|CREATEBY|TEXT|&nbsp;|
+|由谁更新|UPDATEBY|TEXT|&nbsp;|
+|归属组织|ORG|TEXT|&nbsp;|
+|归属部门|DEPT|TEXT|&nbsp;|
 
 ## 值规则
 | 属性名称    | 规则    |  说明  |
@@ -33,6 +37,10 @@ hide members
 |最初预计|默认规则|默认规则|
 |所属项目|默认规则|默认规则|
 |任务|默认规则|默认规则|
+|由谁创建|默认规则|内容长度必须小于等于[100]|
+|由谁更新|默认规则|内容长度必须小于等于[100]|
+|归属组织|默认规则|内容长度必须小于等于[100]|
+|归属部门|默认规则|内容长度必须小于等于[100]|
 
 ## 状态控制
 

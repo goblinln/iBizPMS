@@ -7,6 +7,10 @@
   "logicName" : "获取产品经理相关数据",
   "name" : "GetPoInfomation",
   "orderValue" : 99999,
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/GetPOInfomation.json"
+  },
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"

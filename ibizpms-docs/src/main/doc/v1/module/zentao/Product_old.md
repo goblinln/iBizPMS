@@ -85,6 +85,7 @@ hide members
 |激活需求数|ACTIVESTORYCNT|INT|&nbsp;|
 |产品线|LINENAME|PICKUPTEXT|&nbsp;|
 |产品线|LINE|PICKUP|&nbsp;|
+|由谁更新|UPDATEBY|TEXT|&nbsp;|
 
 ## 值规则
 | 属性名称    | 规则    |  说明  |
@@ -140,6 +141,7 @@ hide members
 |激活需求数|默认规则|默认规则|
 |产品线|默认规则|内容长度必须小于等于[60]|
 |产品线|默认规则|默认规则|
+|由谁更新|默认规则|内容长度必须小于等于[100]|
 
 ## 状态控制
 

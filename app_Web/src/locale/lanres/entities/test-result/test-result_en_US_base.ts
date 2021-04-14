@@ -22,6 +22,10 @@ function getLocaleResourceBase(){
 		'ibizcase': commonLogic.appcommonhandle("用例",null),
 		'run': commonLogic.appcommonhandle("测试执行",null),
 		'compile': commonLogic.appcommonhandle("代码编译",null),
+		'createby': commonLogic.appcommonhandle("由谁创建",null),
+		'updateby': commonLogic.appcommonhandle("由谁更新",null),
+		'org': commonLogic.appcommonhandle("归属组织",null),
+		'dept': commonLogic.appcommonhandle("归属部门",null),
 	},
 		views: {
 			'editview': {

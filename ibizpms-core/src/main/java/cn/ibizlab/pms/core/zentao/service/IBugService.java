@@ -163,6 +163,8 @@ public interface IBugService extends IService<Bug> {
      */
     boolean execute(String sql, Map param);
 
+    List<Bug> getBugByIds(List<Long> ids);
+    List<Bug> getBugByEntities(List<Bug> entities);
 }
 
 

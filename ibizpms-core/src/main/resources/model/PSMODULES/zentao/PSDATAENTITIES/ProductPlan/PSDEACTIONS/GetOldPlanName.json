@@ -7,6 +7,10 @@
   "logicName" : "获取上一个计划的名称",
   "name" : "GetOldPlanName",
   "orderValue" : 99999,
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDELOGICS/GetOldPlanName.json"
+  },
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"

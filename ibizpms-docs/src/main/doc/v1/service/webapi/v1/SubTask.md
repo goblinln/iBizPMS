@@ -19195,7 +19195,9 @@ POST
 | 81 | story | Long | 允许 | 相关需求 |
 | 82 | parent | Long | 允许 | 父任务 |
 | 83 | frombug | Long | 允许 | 来源Bug |
-| 84 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 84 | org | String | 允许 | 归属组织 |
+| 85 | dept | String | 允许 | 归属部门 |
+| 86 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### TaskSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

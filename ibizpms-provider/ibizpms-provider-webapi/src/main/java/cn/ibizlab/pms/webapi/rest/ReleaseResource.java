@@ -47,7 +47,7 @@ public class ReleaseResource {
     @Lazy
     public ReleaseMapping releaseMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-Create-all')")
+    @PreAuthorize("hasPermission(this.releaseMapping.toDomain(#releasedto),'iBizPMS-Release-Create')")
     @ApiOperation(value = "新建发布", tags = {"发布" },  notes = "新建发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/releases")
     public ResponseEntity<ReleaseDTO> create(@Validated @RequestBody ReleaseDTO releasedto) {
@@ -57,7 +57,7 @@ public class ReleaseResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-Create-all')")
+    @PreAuthorize("hasPermission(this.releaseMapping.toDomain(#releasedtos),'iBizPMS-Release-Create')")
     @ApiOperation(value = "批量新建发布", tags = {"发布" },  notes = "批量新建发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/releases/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<ReleaseDTO> releasedtos) {
@@ -65,7 +65,7 @@ public class ReleaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-Update-all')")
+    @PreAuthorize("hasPermission(this.releaseService.get(#release_id),'iBizPMS-Release-Update')")
     @ApiOperation(value = "更新发布", tags = {"发布" },  notes = "更新发布")
 	@RequestMapping(method = RequestMethod.PUT, value = "/releases/{release_id}")
     public ResponseEntity<ReleaseDTO> update(@PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
@@ -76,7 +76,7 @@ public class ReleaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-Update-all')")
+    @PreAuthorize("hasPermission(this.releaseService.getReleaseByEntities(this.releaseMapping.toDomain(#releasedtos)),'iBizPMS-Release-Update')")
     @ApiOperation(value = "批量更新发布", tags = {"发布" },  notes = "批量更新发布")
 	@RequestMapping(method = RequestMethod.PUT, value = "/releases/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<ReleaseDTO> releasedtos) {
@@ -84,14 +84,14 @@ public class ReleaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-Remove-all')")
+    @PreAuthorize("hasPermission(this.releaseService.get(#release_id),'iBizPMS-Release-Remove')")
     @ApiOperation(value = "删除发布", tags = {"发布" },  notes = "删除发布")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/releases/{release_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("release_id") Long release_id) {
          return ResponseEntity.status(HttpStatus.OK).body(releaseService.remove(release_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-Remove-all')")
+    @PreAuthorize("hasPermission(this.releaseService.getReleaseByIds(#ids),'iBizPMS-Release-Remove')")
     @ApiOperation(value = "批量删除发布", tags = {"发布" },  notes = "批量删除发布")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/releases/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class ReleaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-Get-all')")
+    @PostAuthorize("hasPermission(this.releaseMapping.toDomain(returnObject.body),'iBizPMS-Release-Get')")
     @ApiOperation(value = "获取发布", tags = {"发布" },  notes = "获取发布")
 	@RequestMapping(method = RequestMethod.GET, value = "/releases/{release_id}")
     public ResponseEntity<ReleaseDTO> get(@PathVariable("release_id") Long release_id) {
@@ -284,7 +284,7 @@ public class ReleaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-Save-all')")
+    @PreAuthorize("hasPermission(this.releaseMapping.toDomain(#releasedto),'iBizPMS-Release-Save')")
     @ApiOperation(value = "保存发布", tags = {"发布" },  notes = "保存发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/releases/save")
     public ResponseEntity<ReleaseDTO> save(@RequestBody ReleaseDTO releasedto) {
@@ -293,7 +293,7 @@ public class ReleaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(releaseMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-Save-all')")
+    @PreAuthorize("hasPermission(this.releaseMapping.toDomain(#releasedtos),'iBizPMS-Release-Save')")
     @ApiOperation(value = "批量保存发布", tags = {"发布" },  notes = "批量保存发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/releases/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<ReleaseDTO> releasedtos) {
@@ -339,7 +339,7 @@ public class ReleaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-searchDefault-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-searchDefault-all') and hasPermission(#context,'iBizPMS-Release-Get')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"发布" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/releases/fetchdefault")
 	public ResponseEntity<List<ReleaseDTO>> fetchDefault(@RequestBody ReleaseSearchContext context) {
@@ -352,7 +352,7 @@ public class ReleaseResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-searchDefault-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-searchDefault-all') and hasPermission(#context,'iBizPMS-Release-Get')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"发布" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/releases/searchdefault")
 	public ResponseEntity<Page<ReleaseDTO>> searchDefault(@RequestBody ReleaseSearchContext context) {
@@ -361,7 +361,7 @@ public class ReleaseResource {
                 .body(new PageImpl(releaseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-searchReportRelease-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-searchReportRelease-all') and hasPermission(#context,'iBizPMS-Release-Get')")
 	@ApiOperation(value = "获取测试报告关联发布", tags = {"发布" } ,notes = "获取测试报告关联发布")
     @RequestMapping(method= RequestMethod.GET , value="/releases/fetchreportrelease")
 	public ResponseEntity<List<ReleaseDTO>> fetchReportRelease(ReleaseSearchContext context) {
@@ -374,7 +374,7 @@ public class ReleaseResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-searchReportRelease-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-searchReportRelease-all') and hasPermission(#context,'iBizPMS-Release-Get')")
 	@ApiOperation(value = "查询测试报告关联发布", tags = {"发布" } ,notes = "查询测试报告关联发布")
     @RequestMapping(method= RequestMethod.POST , value="/releases/searchreportrelease")
 	public ResponseEntity<Page<ReleaseDTO>> searchReportRelease(@RequestBody ReleaseSearchContext context) {
@@ -392,7 +392,7 @@ public class ReleaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-Create-all')")
+    @PreAuthorize("hasPermission(this.releaseMapping.toDomain(#releasedto),'iBizPMS-Release-Create')")
     @ApiOperation(value = "根据产品建立发布", tags = {"发布" },  notes = "根据产品建立发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/releases")
     public ResponseEntity<ReleaseDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody ReleaseDTO releasedto) {
@@ -403,7 +403,7 @@ public class ReleaseResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-Create-all')")
+    @PreAuthorize("hasPermission(this.releaseMapping.toDomain(#releasedtos),'iBizPMS-Release-Create')")
     @ApiOperation(value = "根据产品批量建立发布", tags = {"发布" },  notes = "根据产品批量建立发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/releases/batch")
     public ResponseEntity<Boolean> createBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ReleaseDTO> releasedtos) {
@@ -415,7 +415,7 @@ public class ReleaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-Update-all')")
+    @PreAuthorize("hasPermission(this.releaseService.get(#release_id),'iBizPMS-Release-Update')")
     @ApiOperation(value = "根据产品更新发布", tags = {"发布" },  notes = "根据产品更新发布")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/releases/{release_id}")
     public ResponseEntity<ReleaseDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
@@ -427,7 +427,7 @@ public class ReleaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-Update-all')")
+    @PreAuthorize("hasPermission(this.releaseService.getReleaseByEntities(this.releaseMapping.toDomain(#releasedtos)),'iBizPMS-Release-Update')")
     @ApiOperation(value = "根据产品批量更新发布", tags = {"发布" },  notes = "根据产品批量更新发布")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/releases/batch")
     public ResponseEntity<Boolean> updateBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ReleaseDTO> releasedtos) {
@@ -439,14 +439,14 @@ public class ReleaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-Remove-all')")
+    @PreAuthorize("hasPermission(this.releaseService.get(#release_id),'iBizPMS-Release-Remove')")
     @ApiOperation(value = "根据产品删除发布", tags = {"发布" },  notes = "根据产品删除发布")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/releases/{release_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(releaseService.remove(release_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-Remove-all')")
+    @PreAuthorize("hasPermission(this.releaseService.getReleaseByIds(#ids),'iBizPMS-Release-Remove')")
     @ApiOperation(value = "根据产品批量删除发布", tags = {"发布" },  notes = "根据产品批量删除发布")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/releases/batch")
     public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
@@ -454,7 +454,7 @@ public class ReleaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-Get-all')")
+    @PostAuthorize("hasPermission(this.releaseMapping.toDomain(returnObject.body),'iBizPMS-Release-Get')")
     @ApiOperation(value = "根据产品获取发布", tags = {"发布" },  notes = "根据产品获取发布")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/releases/{release_id}")
     public ResponseEntity<ReleaseDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id) {
@@ -623,7 +623,7 @@ public class ReleaseResource {
         boolean result = releaseService.oneClickReleaseBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-Save-all')")
+    @PreAuthorize("hasPermission(this.releaseMapping.toDomain(#releasedto),'iBizPMS-Release-Save')")
     @ApiOperation(value = "根据产品保存发布", tags = {"发布" },  notes = "根据产品保存发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/releases/save")
     public ResponseEntity<ReleaseDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody ReleaseDTO releasedto) {
@@ -633,7 +633,7 @@ public class ReleaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(releaseMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-Save-all')")
+    @PreAuthorize("hasPermission(this.releaseMapping.toDomain(#releasedtos),'iBizPMS-Release-Save')")
     @ApiOperation(value = "根据产品批量保存发布", tags = {"发布" },  notes = "根据产品批量保存发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/releases/savebatch")
     public ResponseEntity<Boolean> saveBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ReleaseDTO> releasedtos) {
@@ -679,7 +679,7 @@ public class ReleaseResource {
         boolean result = releaseService.unlinkBugBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-searchDefault-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-searchDefault-all') and hasPermission(#context,'iBizPMS-Release-Get')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"发布" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/releases/fetchdefault")
 	public ResponseEntity<List<ReleaseDTO>> fetchReleaseDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody ReleaseSearchContext context) {
@@ -693,7 +693,7 @@ public class ReleaseResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-searchDefault-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-searchDefault-all') and hasPermission(#context,'iBizPMS-Release-Get')")
 	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"发布" } ,notes = "根据产品查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/releases/searchdefault")
 	public ResponseEntity<Page<ReleaseDTO>> searchReleaseDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody ReleaseSearchContext context) {
@@ -702,7 +702,7 @@ public class ReleaseResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(releaseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-searchReportRelease-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-searchReportRelease-all') and hasPermission(#context,'iBizPMS-Release-Get')")
 	@ApiOperation(value = "根据产品获取测试报告关联发布", tags = {"发布" } ,notes = "根据产品获取测试报告关联发布")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/releases/fetchreportrelease")
 	public ResponseEntity<List<ReleaseDTO>> fetchReleaseReportReleaseByProduct(@PathVariable("product_id") Long product_id,ReleaseSearchContext context) {
@@ -716,7 +716,7 @@ public class ReleaseResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-searchReportRelease-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-Release-searchReportRelease-all') and hasPermission(#context,'iBizPMS-Release-Get')")
 	@ApiOperation(value = "根据产品查询测试报告关联发布", tags = {"发布" } ,notes = "根据产品查询测试报告关联发布")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/releases/searchreportrelease")
 	public ResponseEntity<Page<ReleaseDTO>> searchReleaseReportReleaseByProduct(@PathVariable("product_id") Long product_id, @RequestBody ReleaseSearchContext context) {

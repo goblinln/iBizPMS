@@ -4,4 +4,8 @@ export default [
     'suite',
     'ibizcase',
     'product',
+    'createby',
+    'updateby',
+    'org',
+    'dept',
 ];

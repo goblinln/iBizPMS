@@ -11,6 +11,10 @@ function getLocaleResourceBase(){
 		'plan': commonLogic.appcommonhandle("产品计划",null),
 		'branch': commonLogic.appcommonhandle("平台/分支",null),
 		'project': commonLogic.appcommonhandle("项目",null),
+		'createby': commonLogic.appcommonhandle("由谁创建",null),
+		'updateby': commonLogic.appcommonhandle("由谁更新",null),
+		'org': commonLogic.appcommonhandle("归属组织",null),
+		'dept': commonLogic.appcommonhandle("归属部门",null),
 	},
 		views: {
 			'planlistview9': {

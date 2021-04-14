@@ -921,7 +921,11 @@ POST
 | 7 | version | Integer | 允许 | 用例版本 |
 | 8 | ibizcase | Long | 允许 | 测试用例 |
 | 9 | task | Long | 允许 | 测试单 |
-| 10 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 10 | createby | String | 允许 | 由谁创建 |
+| 11 | updateby | String | 允许 | 由谁更新 |
+| 12 | org | String | 允许 | 归属组织 |
+| 13 | dept | String | 允许 | 归属部门 |
+| 14 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### TestRunSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

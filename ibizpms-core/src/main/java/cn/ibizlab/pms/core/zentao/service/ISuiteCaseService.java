@@ -69,6 +69,8 @@ public interface ISuiteCaseService extends IService<SuiteCase> {
      */
     boolean execute(String sql, Map param);
 
+    List<SuiteCase> getSuitecaseByIds(List<String> ids);
+    List<SuiteCase> getSuitecaseByEntities(List<SuiteCase> entities);
 }
 
 

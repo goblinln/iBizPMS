@@ -64,6 +64,8 @@ public interface IUserTplService extends IService<UserTpl> {
      */
     boolean execute(String sql, Map param);
 
+    List<UserTpl> getUsertplByIds(List<Long> ids);
+    List<UserTpl> getUsertplByEntities(List<UserTpl> entities);
 }
 
 

@@ -9,6 +9,10 @@ function getLocaleResourceBase(){
 		'old': commonLogic.appcommonhandle("旧值",null),
 		'id': commonLogic.appcommonhandle("id",null),
 		'action': commonLogic.appcommonhandle("关联日志",null),
+		'createby': commonLogic.appcommonhandle("由谁创建",null),
+		'updateby': commonLogic.appcommonhandle("由谁更新",null),
+		'org': commonLogic.appcommonhandle("归属组织",null),
+		'dept': commonLogic.appcommonhandle("归属部门",null),
 	},
 		default_list: {
 			nodata:commonLogic.appcommonhandle("",null),

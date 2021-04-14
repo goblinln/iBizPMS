@@ -60,4 +60,20 @@ export interface ICaseStep extends IEntityBase {
      * 分组用例步骤的组编号
      */
     parent?: any;
+    /**
+     * 由谁创建
+     */
+    createby?: any;
+    /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
 }

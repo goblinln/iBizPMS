@@ -1,18 +1,13 @@
 {
   "getAllPSPanelFields" : [ {
-    "modelref" : true,
     "id" : "pri"
   }, {
-    "modelref" : true,
     "id" : "title"
   }, {
-    "modelref" : true,
     "id" : "status"
   }, {
-    "modelref" : true,
     "id" : "resolution"
   }, {
-    "modelref" : true,
     "id" : "assignedto"
   } ],
   "codeName" : "Mob",

@@ -10,4 +10,6 @@ export default [
     'casecnt',
     'desc',
     'product',
+    'org',
+    'dept',
 ];

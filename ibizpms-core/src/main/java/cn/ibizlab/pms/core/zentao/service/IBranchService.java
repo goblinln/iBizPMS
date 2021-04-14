@@ -68,6 +68,8 @@ public interface IBranchService extends IService<Branch> {
      */
     boolean execute(String sql, Map param);
 
+    List<Branch> getBranchByIds(List<Long> ids);
+    List<Branch> getBranchByEntities(List<Branch> entities);
 }
 
 

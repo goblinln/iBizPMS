@@ -575,7 +575,11 @@ POST
 | 6 | estimate | Double | 允许 | 最初预计 |
 | 7 | project | Long | 允许 | 所属项目 |
 | 8 | task | Long | 允许 | 任务 |
-| 9 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 9 | createby | String | 允许 | 由谁创建 |
+| 10 | updateby | String | 允许 | 由谁更新 |
+| 11 | org | String | 允许 | 归属组织 |
+| 12 | dept | String | 允许 | 归属部门 |
+| 13 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### BurnSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

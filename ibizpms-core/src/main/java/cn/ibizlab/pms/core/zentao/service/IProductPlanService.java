@@ -110,6 +110,8 @@ public interface IProductPlanService extends IService<ProductPlan> {
      */
     boolean execute(String sql, Map param);
 
+    List<ProductPlan> getProductplanByIds(List<Long> ids);
+    List<ProductPlan> getProductplanByEntities(List<ProductPlan> entities);
 }
 
 

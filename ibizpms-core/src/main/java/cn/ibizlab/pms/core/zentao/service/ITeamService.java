@@ -67,6 +67,8 @@ public interface ITeamService extends IService<Team> {
      */
     boolean execute(String sql, Map param);
 
+    List<Team> getTeamByIds(List<Long> ids);
+    List<Team> getTeamByEntities(List<Team> entities);
 }
 
 

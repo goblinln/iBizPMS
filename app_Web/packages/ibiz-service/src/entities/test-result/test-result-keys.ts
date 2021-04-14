@@ -18,4 +18,8 @@ export default [
     'ibizcase',
     'run',
     'compile',
+    'createby',
+    'updateby',
+    'org',
+    'dept',
 ];

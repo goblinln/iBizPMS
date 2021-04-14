@@ -1444,7 +1444,11 @@ POST
 | 22 | product | Long | 允许 | 产品 |
 | 23 | branch | Long | 允许 | 平台/分支 |
 | 24 | project | Long | 允许 | 所属项目 |
-| 25 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 25 | createby | String | 允许 | 由谁创建 |
+| 26 | updateby | String | 允许 | 由谁更新 |
+| 27 | org | String | 允许 | 归属组织 |
+| 28 | dept | String | 允许 | 归属部门 |
+| 29 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### BuildSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

@@ -395,6 +395,14 @@ export abstract class SubTaskBase extends EntityBase implements ISubTask {
      * 来源Bug
      */
     frombug?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
 
     /**
      * 重置实体数据

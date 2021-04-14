@@ -7,6 +7,10 @@
   "logicName" : "移动端菜单计数器",
   "name" : "MobMenuCount",
   "orderValue" : 99999,
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDELOGICS/MobMenuCount.json"
+  },
   "paramMode" : 1,
   "requestParamType" : "NONE",
   "testActionMode" : 0,

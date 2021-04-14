@@ -21,4 +21,6 @@ export default [
     'projectname',
     'project',
     'product',
+    'createby',
+    'updateby',
 ];

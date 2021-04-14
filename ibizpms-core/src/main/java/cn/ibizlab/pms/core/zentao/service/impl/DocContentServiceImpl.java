@@ -240,6 +240,27 @@ public class DocContentServiceImpl extends ServiceImpl<DocContentMapper, DocCont
         return true;
     }
 
+    @Override
+    public List<DocContent> getDoccontentByIds(List<Long> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<DocContent> getDoccontentByEntities(List<DocContent> entities) {
+        List ids =new ArrayList();
+        for(DocContent entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     public IDocContentService getProxyService() {

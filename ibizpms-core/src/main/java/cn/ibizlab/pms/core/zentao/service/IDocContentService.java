@@ -66,6 +66,8 @@ public interface IDocContentService extends IService<DocContent> {
      */
     boolean execute(String sql, Map param);
 
+    List<DocContent> getDoccontentByIds(List<Long> ids);
+    List<DocContent> getDoccontentByEntities(List<DocContent> entities);
 }
 
 

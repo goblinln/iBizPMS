@@ -47,7 +47,7 @@ public class TestTaskResource {
     @Lazy
     public TestTaskMapping testtaskMapping;
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Create-all')")
+    @PreAuthorize("hasPermission(this.testtaskMapping.toDomain(#testtaskdto),'iBizPMS-TestTask-Create')")
     @ApiOperation(value = "新建测试版本", tags = {"测试版本" },  notes = "新建测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/testtasks")
     public ResponseEntity<TestTaskDTO> create(@Validated @RequestBody TestTaskDTO testtaskdto) {
@@ -57,7 +57,7 @@ public class TestTaskResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Create-all')")
+    @PreAuthorize("hasPermission(this.testtaskMapping.toDomain(#testtaskdtos),'iBizPMS-TestTask-Create')")
     @ApiOperation(value = "批量新建测试版本", tags = {"测试版本" },  notes = "批量新建测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<TestTaskDTO> testtaskdtos) {
@@ -65,7 +65,7 @@ public class TestTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Update-all')")
+    @PreAuthorize("hasPermission(this.testtaskService.get(#testtask_id),'iBizPMS-TestTask-Update')")
     @ApiOperation(value = "更新测试版本", tags = {"测试版本" },  notes = "更新测试版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> update(@PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
@@ -76,7 +76,7 @@ public class TestTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Update-all')")
+    @PreAuthorize("hasPermission(this.testtaskService.getTesttaskByEntities(this.testtaskMapping.toDomain(#testtaskdtos)),'iBizPMS-TestTask-Update')")
     @ApiOperation(value = "批量更新测试版本", tags = {"测试版本" },  notes = "批量更新测试版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/testtasks/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<TestTaskDTO> testtaskdtos) {
@@ -84,14 +84,14 @@ public class TestTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Remove-all')")
+    @PreAuthorize("hasPermission(this.testtaskService.get(#testtask_id),'iBizPMS-TestTask-Remove')")
     @ApiOperation(value = "删除测试版本", tags = {"测试版本" },  notes = "删除测试版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/testtasks/{testtask_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("testtask_id") Long testtask_id) {
          return ResponseEntity.status(HttpStatus.OK).body(testtaskService.remove(testtask_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Remove-all')")
+    @PreAuthorize("hasPermission(this.testtaskService.getTesttaskByIds(#ids),'iBizPMS-TestTask-Remove')")
     @ApiOperation(value = "批量删除测试版本", tags = {"测试版本" },  notes = "批量删除测试版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/testtasks/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class TestTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Get-all')")
+    @PostAuthorize("hasPermission(this.testtaskMapping.toDomain(returnObject.body),'iBizPMS-TestTask-Get')")
     @ApiOperation(value = "获取测试版本", tags = {"测试版本" },  notes = "获取测试版本")
 	@RequestMapping(method = RequestMethod.GET, value = "/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> get(@PathVariable("testtask_id") Long testtask_id) {
@@ -208,7 +208,7 @@ public class TestTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Save-all')")
+    @PreAuthorize("hasPermission(this.testtaskMapping.toDomain(#testtaskdto),'iBizPMS-TestTask-Save')")
     @ApiOperation(value = "保存测试版本", tags = {"测试版本" },  notes = "保存测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/save")
     public ResponseEntity<TestTaskDTO> save(@RequestBody TestTaskDTO testtaskdto) {
@@ -217,7 +217,7 @@ public class TestTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(testtaskMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Save-all')")
+    @PreAuthorize("hasPermission(this.testtaskMapping.toDomain(#testtaskdtos),'iBizPMS-TestTask-Save')")
     @ApiOperation(value = "批量保存测试版本", tags = {"测试版本" },  notes = "批量保存测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<TestTaskDTO> testtaskdtos) {
@@ -263,7 +263,7 @@ public class TestTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-searchDefault-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-searchDefault-all') and hasPermission(#context,'iBizPMS-TestTask-Get')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试版本" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testtasks/fetchdefault")
 	public ResponseEntity<List<TestTaskDTO>> fetchDefault(@RequestBody TestTaskSearchContext context) {
@@ -276,7 +276,7 @@ public class TestTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-searchDefault-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-searchDefault-all') and hasPermission(#context,'iBizPMS-TestTask-Get')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"测试版本" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testtasks/searchdefault")
 	public ResponseEntity<Page<TestTaskDTO>> searchDefault(@RequestBody TestTaskSearchContext context) {
@@ -285,7 +285,7 @@ public class TestTaskResource {
                 .body(new PageImpl(testtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-searchMyTestTaskPc-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-searchMyTestTaskPc-all') and hasPermission(#context,'iBizPMS-TestTask-Get')")
 	@ApiOperation(value = "获取我的测试单", tags = {"测试版本" } ,notes = "获取我的测试单")
     @RequestMapping(method= RequestMethod.GET , value="/testtasks/fetchmytesttaskpc")
 	public ResponseEntity<List<TestTaskDTO>> fetchMyTestTaskPc(TestTaskSearchContext context) {
@@ -298,7 +298,7 @@ public class TestTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-searchMyTestTaskPc-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-searchMyTestTaskPc-all') and hasPermission(#context,'iBizPMS-TestTask-Get')")
 	@ApiOperation(value = "查询我的测试单", tags = {"测试版本" } ,notes = "查询我的测试单")
     @RequestMapping(method= RequestMethod.POST , value="/testtasks/searchmytesttaskpc")
 	public ResponseEntity<Page<TestTaskDTO>> searchMyTestTaskPc(@RequestBody TestTaskSearchContext context) {
@@ -316,7 +316,7 @@ public class TestTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Create-all')")
+    @PreAuthorize("hasPermission(this.testtaskMapping.toDomain(#testtaskdto),'iBizPMS-TestTask-Create')")
     @ApiOperation(value = "根据产品建立测试版本", tags = {"测试版本" },  notes = "根据产品建立测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks")
     public ResponseEntity<TestTaskDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestTaskDTO testtaskdto) {
@@ -327,7 +327,7 @@ public class TestTaskResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Create-all')")
+    @PreAuthorize("hasPermission(this.testtaskMapping.toDomain(#testtaskdtos),'iBizPMS-TestTask-Create')")
     @ApiOperation(value = "根据产品批量建立测试版本", tags = {"测试版本" },  notes = "根据产品批量建立测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/batch")
     public ResponseEntity<Boolean> createBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<TestTaskDTO> testtaskdtos) {
@@ -339,7 +339,7 @@ public class TestTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Update-all')")
+    @PreAuthorize("hasPermission(this.testtaskService.get(#testtask_id),'iBizPMS-TestTask-Update')")
     @ApiOperation(value = "根据产品更新测试版本", tags = {"测试版本" },  notes = "根据产品更新测试版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
@@ -351,7 +351,7 @@ public class TestTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Update-all')")
+    @PreAuthorize("hasPermission(this.testtaskService.getTesttaskByEntities(this.testtaskMapping.toDomain(#testtaskdtos)),'iBizPMS-TestTask-Update')")
     @ApiOperation(value = "根据产品批量更新测试版本", tags = {"测试版本" },  notes = "根据产品批量更新测试版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testtasks/batch")
     public ResponseEntity<Boolean> updateBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<TestTaskDTO> testtaskdtos) {
@@ -363,14 +363,14 @@ public class TestTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Remove-all')")
+    @PreAuthorize("hasPermission(this.testtaskService.get(#testtask_id),'iBizPMS-TestTask-Remove')")
     @ApiOperation(value = "根据产品删除测试版本", tags = {"测试版本" },  notes = "根据产品删除测试版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testtasks/{testtask_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(testtaskService.remove(testtask_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Remove-all')")
+    @PreAuthorize("hasPermission(this.testtaskService.getTesttaskByIds(#ids),'iBizPMS-TestTask-Remove')")
     @ApiOperation(value = "根据产品批量删除测试版本", tags = {"测试版本" },  notes = "根据产品批量删除测试版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testtasks/batch")
     public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
@@ -378,7 +378,7 @@ public class TestTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Get-all')")
+    @PostAuthorize("hasPermission(this.testtaskMapping.toDomain(returnObject.body),'iBizPMS-TestTask-Get')")
     @ApiOperation(value = "根据产品获取测试版本", tags = {"测试版本" },  notes = "根据产品获取测试版本")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id) {
@@ -479,7 +479,7 @@ public class TestTaskResource {
         testtaskdto = testtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Save-all')")
+    @PreAuthorize("hasPermission(this.testtaskMapping.toDomain(#testtaskdto),'iBizPMS-TestTask-Save')")
     @ApiOperation(value = "根据产品保存测试版本", tags = {"测试版本" },  notes = "根据产品保存测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/save")
     public ResponseEntity<TestTaskDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestTaskDTO testtaskdto) {
@@ -489,7 +489,7 @@ public class TestTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(testtaskMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Save-all')")
+    @PreAuthorize("hasPermission(this.testtaskMapping.toDomain(#testtaskdtos),'iBizPMS-TestTask-Save')")
     @ApiOperation(value = "根据产品批量保存测试版本", tags = {"测试版本" },  notes = "根据产品批量保存测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/savebatch")
     public ResponseEntity<Boolean> saveBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<TestTaskDTO> testtaskdtos) {
@@ -535,7 +535,7 @@ public class TestTaskResource {
         boolean result = testtaskService.unlinkCaseBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-searchDefault-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-searchDefault-all') and hasPermission(#context,'iBizPMS-TestTask-Get')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"测试版本" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/fetchdefault")
 	public ResponseEntity<List<TestTaskDTO>> fetchTestTaskDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestTaskSearchContext context) {
@@ -549,7 +549,7 @@ public class TestTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-searchDefault-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-searchDefault-all') and hasPermission(#context,'iBizPMS-TestTask-Get')")
 	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"测试版本" } ,notes = "根据产品查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/searchdefault")
 	public ResponseEntity<Page<TestTaskDTO>> searchTestTaskDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestTaskSearchContext context) {
@@ -558,7 +558,7 @@ public class TestTaskResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-searchMyTestTaskPc-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-searchMyTestTaskPc-all') and hasPermission(#context,'iBizPMS-TestTask-Get')")
 	@ApiOperation(value = "根据产品获取我的测试单", tags = {"测试版本" } ,notes = "根据产品获取我的测试单")
     @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/testtasks/fetchmytesttaskpc")
 	public ResponseEntity<List<TestTaskDTO>> fetchTestTaskMyTestTaskPcByProduct(@PathVariable("product_id") Long product_id,TestTaskSearchContext context) {
@@ -572,7 +572,7 @@ public class TestTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-searchMyTestTaskPc-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-searchMyTestTaskPc-all') and hasPermission(#context,'iBizPMS-TestTask-Get')")
 	@ApiOperation(value = "根据产品查询我的测试单", tags = {"测试版本" } ,notes = "根据产品查询我的测试单")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/searchmytesttaskpc")
 	public ResponseEntity<Page<TestTaskDTO>> searchTestTaskMyTestTaskPcByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestTaskSearchContext context) {
@@ -581,7 +581,7 @@ public class TestTaskResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Create-all')")
+    @PreAuthorize("hasPermission(this.testtaskMapping.toDomain(#testtaskdto),'iBizPMS-TestTask-Create')")
     @ApiOperation(value = "根据项目建立测试版本", tags = {"测试版本" },  notes = "根据项目建立测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks")
     public ResponseEntity<TestTaskDTO> createByProject(@PathVariable("project_id") Long project_id, @RequestBody TestTaskDTO testtaskdto) {
@@ -592,7 +592,7 @@ public class TestTaskResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Create-all')")
+    @PreAuthorize("hasPermission(this.testtaskMapping.toDomain(#testtaskdtos),'iBizPMS-TestTask-Create')")
     @ApiOperation(value = "根据项目批量建立测试版本", tags = {"测试版本" },  notes = "根据项目批量建立测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/batch")
     public ResponseEntity<Boolean> createBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<TestTaskDTO> testtaskdtos) {
@@ -604,7 +604,7 @@ public class TestTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Update-all')")
+    @PreAuthorize("hasPermission(this.testtaskService.get(#testtask_id),'iBizPMS-TestTask-Update')")
     @ApiOperation(value = "根据项目更新测试版本", tags = {"测试版本" },  notes = "根据项目更新测试版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
@@ -616,7 +616,7 @@ public class TestTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Update-all')")
+    @PreAuthorize("hasPermission(this.testtaskService.getTesttaskByEntities(this.testtaskMapping.toDomain(#testtaskdtos)),'iBizPMS-TestTask-Update')")
     @ApiOperation(value = "根据项目批量更新测试版本", tags = {"测试版本" },  notes = "根据项目批量更新测试版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testtasks/batch")
     public ResponseEntity<Boolean> updateBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<TestTaskDTO> testtaskdtos) {
@@ -628,14 +628,14 @@ public class TestTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Remove-all')")
+    @PreAuthorize("hasPermission(this.testtaskService.get(#testtask_id),'iBizPMS-TestTask-Remove')")
     @ApiOperation(value = "根据项目删除测试版本", tags = {"测试版本" },  notes = "根据项目删除测试版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/testtasks/{testtask_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(testtaskService.remove(testtask_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Remove-all')")
+    @PreAuthorize("hasPermission(this.testtaskService.getTesttaskByIds(#ids),'iBizPMS-TestTask-Remove')")
     @ApiOperation(value = "根据项目批量删除测试版本", tags = {"测试版本" },  notes = "根据项目批量删除测试版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/testtasks/batch")
     public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
@@ -643,7 +643,7 @@ public class TestTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Get-all')")
+    @PostAuthorize("hasPermission(this.testtaskMapping.toDomain(returnObject.body),'iBizPMS-TestTask-Get')")
     @ApiOperation(value = "根据项目获取测试版本", tags = {"测试版本" },  notes = "根据项目获取测试版本")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id) {
@@ -744,7 +744,7 @@ public class TestTaskResource {
         testtaskdto = testtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Save-all')")
+    @PreAuthorize("hasPermission(this.testtaskMapping.toDomain(#testtaskdto),'iBizPMS-TestTask-Save')")
     @ApiOperation(value = "根据项目保存测试版本", tags = {"测试版本" },  notes = "根据项目保存测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/save")
     public ResponseEntity<TestTaskDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody TestTaskDTO testtaskdto) {
@@ -754,7 +754,7 @@ public class TestTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(testtaskMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-Save-all')")
+    @PreAuthorize("hasPermission(this.testtaskMapping.toDomain(#testtaskdtos),'iBizPMS-TestTask-Save')")
     @ApiOperation(value = "根据项目批量保存测试版本", tags = {"测试版本" },  notes = "根据项目批量保存测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/savebatch")
     public ResponseEntity<Boolean> saveBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<TestTaskDTO> testtaskdtos) {
@@ -800,7 +800,7 @@ public class TestTaskResource {
         boolean result = testtaskService.unlinkCaseBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-searchDefault-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-searchDefault-all') and hasPermission(#context,'iBizPMS-TestTask-Get')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"测试版本" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/fetchdefault")
 	public ResponseEntity<List<TestTaskDTO>> fetchTestTaskDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody TestTaskSearchContext context) {
@@ -814,7 +814,7 @@ public class TestTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-searchDefault-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-searchDefault-all') and hasPermission(#context,'iBizPMS-TestTask-Get')")
 	@ApiOperation(value = "根据项目查询DEFAULT", tags = {"测试版本" } ,notes = "根据项目查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/searchdefault")
 	public ResponseEntity<Page<TestTaskDTO>> searchTestTaskDefaultByProject(@PathVariable("project_id") Long project_id, @RequestBody TestTaskSearchContext context) {
@@ -823,7 +823,7 @@ public class TestTaskResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-searchMyTestTaskPc-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-searchMyTestTaskPc-all') and hasPermission(#context,'iBizPMS-TestTask-Get')")
 	@ApiOperation(value = "根据项目获取我的测试单", tags = {"测试版本" } ,notes = "根据项目获取我的测试单")
     @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/testtasks/fetchmytesttaskpc")
 	public ResponseEntity<List<TestTaskDTO>> fetchTestTaskMyTestTaskPcByProject(@PathVariable("project_id") Long project_id,TestTaskSearchContext context) {
@@ -837,7 +837,7 @@ public class TestTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-searchMyTestTaskPc-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestTask-searchMyTestTaskPc-all') and hasPermission(#context,'iBizPMS-TestTask-Get')")
 	@ApiOperation(value = "根据项目查询我的测试单", tags = {"测试版本" } ,notes = "根据项目查询我的测试单")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/searchmytesttaskpc")
 	public ResponseEntity<Page<TestTaskDTO>> searchTestTaskMyTestTaskPcByProject(@PathVariable("project_id") Long project_id, @RequestBody TestTaskSearchContext context) {

@@ -13,4 +13,7 @@ export default [
     'size',
     'id',
     'extra',
+    'updateby',
+    'org',
+    'dept',
 ];

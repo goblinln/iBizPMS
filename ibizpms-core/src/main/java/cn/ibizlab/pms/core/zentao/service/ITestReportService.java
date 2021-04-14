@@ -75,6 +75,8 @@ public interface ITestReportService extends IService<TestReport> {
      */
     boolean execute(String sql, Map param);
 
+    List<TestReport> getTestreportByIds(List<Long> ids);
+    List<TestReport> getTestreportByEntities(List<TestReport> entities);
 }
 
 

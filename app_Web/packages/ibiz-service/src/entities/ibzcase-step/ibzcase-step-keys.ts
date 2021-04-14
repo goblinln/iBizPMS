@@ -11,4 +11,8 @@ export default [
     'version',
     'ibizcase',
     'parent',
+    'createby',
+    'updateby',
+    'org',
+    'dept',
 ];

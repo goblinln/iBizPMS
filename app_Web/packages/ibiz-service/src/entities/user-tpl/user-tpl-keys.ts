@@ -5,4 +5,7 @@ export default [
     'type',
     'account',
     'ibizpublic',
+    'updateby',
+    'org',
+    'dept',
 ];

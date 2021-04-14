@@ -477,7 +477,9 @@ POST
 | 15 | parentname | String | 允许 | 上级模块 |
 | 16 | branch | Long | 允许 | 平台/分支 |
 | 17 | parent | Long | 允许 | 上级模块 |
-| 18 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 18 | createby | String | 允许 | 由谁创建 |
+| 19 | updateby | String | 允许 | 由谁更新 |
+| 20 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### ModuleSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

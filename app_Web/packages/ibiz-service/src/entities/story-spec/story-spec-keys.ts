@@ -5,4 +5,8 @@ export default [
     'title',
     'version',
     'story',
+    'createby',
+    'updateby',
+    'org',
+    'dept',
 ];

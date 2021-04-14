@@ -9,6 +9,9 @@ function getLocaleResourceBase(){
 		'type': commonLogic.appcommonhandle("type",null),
 		'account': commonLogic.appcommonhandle("account",null),
 		'ibizpublic': commonLogic.appcommonhandle("公开",null),
+		'updateby': commonLogic.appcommonhandle("由谁更新",null),
+		'org': commonLogic.appcommonhandle("归属组织",null),
+		'dept': commonLogic.appcommonhandle("归属部门",null),
 	},
 		views: {
 			'gridview': {

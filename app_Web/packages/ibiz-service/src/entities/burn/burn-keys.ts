@@ -7,4 +7,8 @@ export default [
     'estimate',
     'project',
     'task',
+    'createby',
+    'updateby',
+    'org',
+    'dept',
 ];

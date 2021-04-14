@@ -32,4 +32,8 @@ export default [
     'branch',
     'parent',
     'product',
+    'createby',
+    'updateby',
+    'org',
+    'dept',
 ];

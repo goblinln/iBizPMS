@@ -79,6 +79,14 @@ export abstract class TestSuiteBase extends EntityBase implements ITestSuite {
      * 所属产品
      */
     product?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
 
     /**
      * 重置实体数据

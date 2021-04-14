@@ -844,19 +844,14 @@
             "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
             "getItemPSLayoutPanel" : {
               "getAllPSPanelFields" : [ {
-                "modelref" : true,
                 "id" : "mytodocnt"
               }, {
-                "modelref" : true,
                 "id" : "mystorys"
               }, {
-                "modelref" : true,
                 "id" : "mytasks"
               }, {
-                "modelref" : true,
                 "id" : "mybugs"
               }, {
-                "modelref" : true,
                 "id" : "myfavoritebugs"
               } ],
               "codeName" : "PersonInfoMianBan",

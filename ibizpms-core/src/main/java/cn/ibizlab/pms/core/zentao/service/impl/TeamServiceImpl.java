@@ -249,6 +249,27 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team> implements IT
         return true;
     }
 
+    @Override
+    public List<Team> getTeamByIds(List<Long> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<Team> getTeamByEntities(List<Team> entities) {
+        List ids =new ArrayList();
+        for(Team entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     public ITeamService getProxyService() {

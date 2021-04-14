@@ -91,6 +91,8 @@ public interface IReleaseService extends IService<Release> {
      */
     boolean execute(String sql, Map param);
 
+    List<Release> getReleaseByIds(List<Long> ids);
+    List<Release> getReleaseByEntities(List<Release> entities);
 }
 
 

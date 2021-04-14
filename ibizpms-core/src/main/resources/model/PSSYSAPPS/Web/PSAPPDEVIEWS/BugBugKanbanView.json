@@ -424,65 +424,53 @@
     "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "getItemPSLayoutPanel" : {
       "getAllPSPanelFields" : [ {
-        "modelref" : true,
         "id" : "name"
       }, {
-        "modelref" : true,
         "id" : "severity"
       }, {
-        "modelref" : true,
         "id" : "pri"
       }, {
-        "modelref" : true,
         "id" : "deadline"
       }, {
-        "modelref" : true,
         "id" : "delay"
       }, {
-        "modelref" : true,
         "id" : "resolveddate"
       }, {
-        "modelref" : true,
         "id" : "delayresolve"
       }, {
-        "modelref" : true,
         "id" : "resolvedby"
       }, {
-        "modelref" : true,
         "id" : "closeddate"
       }, {
-        "modelref" : true,
         "id" : "closedby"
       }, {
-        "modelref" : true,
         "id" : "resolution"
       }, {
-        "modelref" : true,
         "id" : "assignedto"
       }, {
-        "modelref" : true,
-        "id" : "product"
+        "id" : "product",
+        "hidden" : true
       }, {
-        "modelref" : true,
-        "id" : "project"
+        "id" : "project",
+        "hidden" : true
       }, {
-        "modelref" : true,
-        "id" : "confirmed"
+        "id" : "confirmed",
+        "hidden" : true
       }, {
-        "modelref" : true,
-        "id" : "isfavorites"
+        "id" : "isfavorites",
+        "hidden" : true
       }, {
-        "modelref" : true,
-        "id" : "module"
+        "id" : "module",
+        "hidden" : true
       }, {
-        "modelref" : true,
-        "id" : "srfkey"
+        "id" : "srfkey",
+        "hidden" : true
       }, {
-        "modelref" : true,
-        "id" : "story"
+        "id" : "story",
+        "hidden" : true
       }, {
-        "modelref" : true,
-        "id" : "status"
+        "id" : "status",
+        "hidden" : true
       } ],
       "codeName" : "BugKanBan",
       "controlType" : "PANEL",

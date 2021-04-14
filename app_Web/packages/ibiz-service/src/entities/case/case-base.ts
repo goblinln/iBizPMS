@@ -289,6 +289,14 @@ export abstract class CaseBase extends EntityBase implements ICase {
      * 所属模块
      */
     module?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
 
     /**
      * 重置实体数据

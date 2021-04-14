@@ -40,4 +40,20 @@ export interface IBurn extends IEntityBase {
      * 任务
      */
     task?: any;
+    /**
+     * 由谁创建
+     */
+    createby?: any;
+    /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
 }

@@ -18,6 +18,10 @@ hide members
 |需求名称|TITLE|PICKUPTEXT|&nbsp;|
 |版本号|VERSION|PICKUPDATA|&nbsp;|
 |需求|STORY|PICKUP|&nbsp;|
+|由谁创建|CREATEBY|TEXT|&nbsp;|
+|由谁更新|UPDATEBY|TEXT|&nbsp;|
+|归属组织|ORG|TEXT|&nbsp;|
+|归属部门|DEPT|TEXT|&nbsp;|
 
 ## 值规则
 | 属性名称    | 规则    |  说明  |
@@ -28,6 +32,10 @@ hide members
 |需求名称|默认规则|内容长度必须小于等于[255]|
 |版本号|默认规则|默认规则|
 |需求|默认规则|默认规则|
+|由谁创建|默认规则|内容长度必须小于等于[100]|
+|由谁更新|默认规则|内容长度必须小于等于[100]|
+|归属组织|默认规则|内容长度必须小于等于[100]|
+|归属部门|默认规则|内容长度必须小于等于[100]|
 
 ## 状态控制
 

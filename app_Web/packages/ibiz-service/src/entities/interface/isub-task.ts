@@ -370,4 +370,12 @@ export interface ISubTask extends IEntityBase {
      * 来源Bug
      */
     frombug?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
 }

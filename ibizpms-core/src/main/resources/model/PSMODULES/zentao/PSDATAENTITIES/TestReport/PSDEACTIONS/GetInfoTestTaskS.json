@@ -7,6 +7,10 @@
   "logicName" : "根据测试单获取相应信息（项目报告）（测试）",
   "name" : "GetInfoTestTaskS",
   "orderValue" : 99999,
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDELOGICS/GetInfoTestTaskS.json"
+  },
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"

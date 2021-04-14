@@ -4,4 +4,8 @@ export default [
     'id',
     'order',
     'product',
+    'createby',
+    'updateby',
+    'org',
+    'dept',
 ];

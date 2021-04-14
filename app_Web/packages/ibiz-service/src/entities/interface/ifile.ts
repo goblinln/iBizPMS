@@ -66,4 +66,16 @@ export interface IFile extends IEntityBase {
      * 备注
      */
     extra?: any;
+    /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
 }

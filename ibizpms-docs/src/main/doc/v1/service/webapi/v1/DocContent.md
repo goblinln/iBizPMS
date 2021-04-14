@@ -536,7 +536,11 @@ POST
 | 6 | version | Integer | 允许 | 版本号 |
 | 7 | digest | String | 允许 | 文档摘要 |
 | 8 | doc | Long | 允许 | 文档 |
-| 9 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 9 | createby | String | 允许 | 由谁创建 |
+| 10 | updateby | String | 允许 | 由谁更新 |
+| 11 | org | String | 允许 | 归属组织 |
+| 12 | dept | String | 允许 | 归属部门 |
+| 13 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### DocContentSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

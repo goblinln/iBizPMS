@@ -65,6 +65,8 @@ public interface IHistoryService extends IService<History> {
      */
     boolean execute(String sql, Map param);
 
+    List<History> getHistoryByIds(List<Long> ids);
+    List<History> getHistoryByEntities(List<History> entities);
 }
 
 

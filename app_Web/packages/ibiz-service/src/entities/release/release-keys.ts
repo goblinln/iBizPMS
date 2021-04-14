@@ -24,4 +24,8 @@ export default [
     'product',
     'build',
     'branch',
+    'createby',
+    'updateby',
+    'org',
+    'dept',
 ];

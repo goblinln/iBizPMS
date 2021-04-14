@@ -69,6 +69,8 @@ public interface IFileService extends IService<File> {
      */
     boolean execute(String sql, Map param);
 
+    List<File> getFileByIds(List<Long> ids);
+    List<File> getFileByEntities(List<File> entities);
 }
 
 

@@ -112,6 +112,7 @@ hide members
 |测试负责人|QD|SSCODELIST|&nbsp;|
 |parent|PARENTNAME|PICKUPTEXT|&nbsp;|
 |父项目|PARENT|PICKUP|&nbsp;|
+|由谁更新|UPDATEBY|TEXT|&nbsp;|
 
 ## 值规则
 | 属性名称    | 规则    |  说明  |
@@ -198,6 +199,7 @@ hide members
 |测试负责人|默认规则|内容长度必须小于等于[30]|
 |parent|默认规则|内容长度必须小于等于[90]|
 |父项目|默认规则|默认规则|
+|由谁更新|默认规则|内容长度必须小于等于[100]|
 
 ## 状态控制
 

@@ -37,6 +37,8 @@ hide members
 |所属项目|PROJECTNAME|PICKUPTEXT|&nbsp;|
 |项目库|PROJECT|PICKUP|&nbsp;|
 |产品库|PRODUCT|PICKUP|&nbsp;|
+|由谁创建|CREATEBY|TEXT|&nbsp;|
+|由谁更新|UPDATEBY|TEXT|&nbsp;|
 
 ## 值规则
 | 属性名称    | 规则    |  说明  |
@@ -63,6 +65,8 @@ hide members
 |所属项目|默认规则|内容长度必须小于等于[90]|
 |项目库|默认规则|默认规则|
 |产品库|默认规则|默认规则|
+|由谁创建|默认规则|内容长度必须小于等于[100]|
+|由谁更新|默认规则|内容长度必须小于等于[100]|
 
 ## 状态控制
 

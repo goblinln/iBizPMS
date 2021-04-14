@@ -1,9 +1,7 @@
 {
   "getAllPSPanelFields" : [ {
-    "modelref" : true,
     "id" : "account"
   }, {
-    "modelref" : true,
     "id" : "role"
   } ],
   "codeName" : "Mob",

@@ -72,6 +72,8 @@ public interface IProjectProductService extends IService<ProjectProduct> {
      */
     boolean execute(String sql, Map param);
 
+    List<ProjectProduct> getProjectproductByIds(List<String> ids);
+    List<ProjectProduct> getProjectproductByEntities(List<ProjectProduct> entities);
 }
 
 

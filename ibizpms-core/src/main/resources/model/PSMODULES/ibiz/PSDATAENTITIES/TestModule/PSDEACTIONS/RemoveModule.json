@@ -7,6 +7,10 @@
   "logicName" : "删除模块",
   "name" : "RemoveModule",
   "orderValue" : 99999,
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDELOGICS/RemoveModule.json"
+  },
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "DELETE"

@@ -572,7 +572,11 @@ POST
 | 3 | id | Long | 不可 | 编号 |
 | 4 | order | Integer | 允许 | 排序 |
 | 5 | product | Long | 允许 | 所属产品 |
-| 6 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 6 | createby | String | 允许 | 由谁创建 |
+| 7 | updateby | String | 允许 | 由谁更新 |
+| 8 | org | String | 允许 | 归属组织 |
+| 9 | dept | String | 允许 | 归属部门 |
+| 10 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### BranchSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

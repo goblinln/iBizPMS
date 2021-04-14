@@ -8,6 +8,10 @@ function getLocaleResourceBase(){
 		'suite': commonLogic.appcommonhandle("测试套件",null),
 		'ibizcase': commonLogic.appcommonhandle("用例",null),
 		'product': commonLogic.appcommonhandle("所属产品",null),
+		'createby': commonLogic.appcommonhandle("由谁创建",null),
+		'updateby': commonLogic.appcommonhandle("由谁更新",null),
+		'org': commonLogic.appcommonhandle("归属组织",null),
+		'dept': commonLogic.appcommonhandle("归属部门",null),
 	},
 	};
 	return data;

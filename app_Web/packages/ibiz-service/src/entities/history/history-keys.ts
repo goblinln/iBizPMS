@@ -5,4 +5,8 @@ export default [
     'old',
     'id',
     'action',
+    'createby',
+    'updateby',
+    'org',
+    'dept',
 ];

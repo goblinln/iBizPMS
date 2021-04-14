@@ -84,4 +84,6 @@ export default [
     'story',
     'parent',
     'frombug',
+    'org',
+    'dept',
 ];

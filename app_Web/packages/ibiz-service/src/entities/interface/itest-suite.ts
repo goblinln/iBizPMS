@@ -54,4 +54,12 @@ export interface ITestSuite extends IEntityBase {
      * 所属产品
      */
     product?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
 }

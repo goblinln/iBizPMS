@@ -651,6 +651,12 @@
     "logicName" : "产品线",
     "name" : "LINE",
     "stdDataType" : 1
+  }, {
+    "codeName" : "UpdateBy",
+    "logicName" : "由谁更新",
+    "name" : "UPDATEBY",
+    "stdDataType" : 25,
+    "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

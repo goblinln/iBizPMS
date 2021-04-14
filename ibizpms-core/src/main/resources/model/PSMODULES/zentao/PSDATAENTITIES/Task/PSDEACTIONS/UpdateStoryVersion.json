@@ -11,6 +11,10 @@
   "logicName" : "更新需求版本",
   "name" : "updateStoryVersion",
   "orderValue" : 99999,
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/UpdateStoryVersion.json"
+  },
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "UPDATE"

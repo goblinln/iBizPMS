@@ -578,7 +578,9 @@ POST
 | 9 | casecnt | Integer | 允许 | 用例数 |
 | 10 | desc | String | 允许 | 描述 |
 | 11 | product | Long | 允许 | 所属产品 |
-| 12 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 12 | org | String | 允许 | 归属组织 |
+| 13 | dept | String | 允许 | 归属部门 |
+| 14 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### TestSuiteSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

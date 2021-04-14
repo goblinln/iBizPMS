@@ -354,6 +354,27 @@ public class TaskEstimateServiceImpl extends ServiceImpl<TaskEstimateMapper, Tas
         return true;
     }
 
+    @Override
+    public List<TaskEstimate> getTaskestimateByIds(List<Long> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<TaskEstimate> getTaskestimateByEntities(List<TaskEstimate> entities) {
+        List ids =new ArrayList();
+        for(TaskEstimate entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     @Override

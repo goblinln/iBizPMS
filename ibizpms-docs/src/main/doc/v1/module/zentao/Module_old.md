@@ -36,6 +36,8 @@ hide members
 |上级模块|PARENTNAME|PICKUPTEXT|&nbsp;|
 |平台/分支|BRANCH|PICKUP|&nbsp;|
 |上级模块|PARENT|PICKUP|&nbsp;|
+|由谁创建|CREATEBY|TEXT|&nbsp;|
+|由谁更新|UPDATEBY|TEXT|&nbsp;|
 
 ## 值规则
 | 属性名称    | 规则    |  说明  |
@@ -57,6 +59,8 @@ hide members
 |上级模块|默认规则|内容长度必须小于等于[60]|
 |平台/分支|默认规则|默认规则|
 |上级模块|默认规则|默认规则|
+|由谁创建|默认规则|内容长度必须小于等于[100]|
+|由谁更新|默认规则|内容长度必须小于等于[100]|
 
 ## 状态控制
 

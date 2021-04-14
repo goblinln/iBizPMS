@@ -702,6 +702,13 @@
   "storageMode" : 4,
   "systemTag" : "iBizPMS",
   "tableName" : "IBZUSER_ROLE",
+  "getUnionKeyValuePSDEFields" : [ {
+    "name" : "SYS_ROLEID",
+    "codeName" : "RoleId"
+  }, {
+    "name" : "SYS_USERID",
+    "codeName" : "UserId"
+  } ],
   "virtualMode" : 0,
   "enableAPIStorage" : true,
   "enableCreate" : true,

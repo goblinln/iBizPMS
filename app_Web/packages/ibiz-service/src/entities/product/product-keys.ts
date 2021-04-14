@@ -48,4 +48,5 @@ export default [
     'activestorycnt',
     'linename',
     'line',
+    'updateby',
 ];

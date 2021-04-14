@@ -3,4 +3,7 @@ export default [
     'listname',
     'id',
     'account',
+    'updateby',
+    'org',
+    'dept',
 ];

@@ -65,6 +65,8 @@ public interface IUserContactService extends IService<UserContact> {
      */
     boolean execute(String sql, Map param);
 
+    List<UserContact> getUsercontactByIds(List<Long> ids);
+    List<UserContact> getUsercontactByEntities(List<UserContact> entities);
 }
 
 

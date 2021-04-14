@@ -237,6 +237,27 @@ public class UserContactServiceImpl extends ServiceImpl<UserContactMapper, UserC
         return true;
     }
 
+    @Override
+    public List<UserContact> getUsercontactByIds(List<Long> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<UserContact> getUsercontactByEntities(List<UserContact> entities) {
+        List ids =new ArrayList();
+        for(UserContact entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     public IUserContactService getProxyService() {

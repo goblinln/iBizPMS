@@ -87,6 +87,8 @@ public interface ITestTaskService extends IService<TestTask> {
      */
     boolean execute(String sql, Map param);
 
+    List<TestTask> getTesttaskByIds(List<Long> ids);
+    List<TestTask> getTesttaskByEntities(List<TestTask> entities);
 }
 
 

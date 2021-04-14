@@ -126,6 +126,8 @@ public interface ICaseService extends IService<Case> {
      */
     boolean execute(String sql, Map param);
 
+    List<Case> getCaseByIds(List<Long> ids);
+    List<Case> getCaseByEntities(List<Case> entities);
 }
 
 

@@ -460,7 +460,11 @@ POST
 | 4 | old | String | 允许 | 旧值 |
 | 5 | id | Long | 不可 | id |
 | 6 | action | Long | 允许 | 关联日志 |
-| 7 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 7 | createby | String | 允许 | 由谁创建 |
+| 8 | updateby | String | 允许 | 由谁更新 |
+| 9 | org | String | 允许 | 归属组织 |
+| 10 | dept | String | 允许 | 归属部门 |
+| 11 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### HistorySearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

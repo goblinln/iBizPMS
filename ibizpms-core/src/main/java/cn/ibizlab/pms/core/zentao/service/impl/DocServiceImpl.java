@@ -493,6 +493,27 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
         return true;
     }
 
+    @Override
+    public List<Doc> getDocByIds(List<Long> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<Doc> getDocByEntities(List<Doc> entities) {
+        List ids =new ArrayList();
+        for(Doc entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     public IDocService getProxyService() {

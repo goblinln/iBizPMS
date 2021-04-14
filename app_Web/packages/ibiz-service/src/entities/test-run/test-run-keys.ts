@@ -8,4 +8,8 @@ export default [
     'version',
     'ibizcase',
     'task',
+    'createby',
+    'updateby',
+    'org',
+    'dept',
 ];

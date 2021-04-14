@@ -278,6 +278,27 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
         return true;
     }
 
+    @Override
+    public List<SuiteCase> getSuitecaseByIds(List<String> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<SuiteCase> getSuitecaseByEntities(List<SuiteCase> entities) {
+        List ids =new ArrayList();
+        for(SuiteCase entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     public ISuiteCaseService getProxyService() {

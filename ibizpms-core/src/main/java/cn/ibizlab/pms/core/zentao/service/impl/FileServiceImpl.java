@@ -274,6 +274,27 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
         return true;
     }
 
+    @Override
+    public List<File> getFileByIds(List<Long> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<File> getFileByEntities(List<File> entities) {
+        List ids =new ArrayList();
+        for(File entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     public IFileService getProxyService() {

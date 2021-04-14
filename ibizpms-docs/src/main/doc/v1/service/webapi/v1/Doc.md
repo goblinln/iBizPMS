@@ -734,7 +734,10 @@ POST
 | 33 | project | Long | 允许 | 所属项目 |
 | 34 | product | Long | 允许 | 所属产品 |
 | 35 | module | Long | 允许 | 所属分类 |
-| 36 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 36 | updateby | String | 允许 | 由谁更新 |
+| 37 | org | String | 允许 | 归属组织 |
+| 38 | dept | String | 允许 | 归属部门 |
+| 39 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### DocSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

@@ -1180,7 +1180,10 @@ POST
 | 23 | productname | String | 允许 | 所属产品 |
 | 24 | product | Long | 允许 | 所属产品 |
 | 25 | project | Long | 允许 | 所属项目 |
-| 26 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 26 | updateby | String | 允许 | 由谁更新 |
+| 27 | org | String | 允许 | 归属组织 |
+| 28 | dept | String | 允许 | 归属部门 |
+| 29 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### TestReportSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

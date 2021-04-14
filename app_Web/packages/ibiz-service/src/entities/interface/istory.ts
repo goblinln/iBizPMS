@@ -330,4 +330,12 @@ export interface IStory extends IEntityBase {
      * 转Bug
      */
     tobug?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
 }

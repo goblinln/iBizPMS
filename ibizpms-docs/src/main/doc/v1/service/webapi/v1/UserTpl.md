@@ -267,7 +267,10 @@ POST
 | 4 | type | String | 允许 | type |
 | 5 | account | String | 允许 | account |
 | 6 | ibizpublic | String | 允许 | 公开 |
-| 7 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 7 | updateby | String | 允许 | 由谁更新 |
+| 8 | org | String | 允许 | 归属组织 |
+| 9 | dept | String | 允许 | 归属部门 |
+| 10 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### UserTplSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

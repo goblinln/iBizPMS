@@ -15,6 +15,9 @@
 |type|TYPE|SSCODELIST|&nbsp;|
 |account|ACCOUNT|TEXT|&nbsp;|
 |公开|PUBLIC|SSCODELIST|&nbsp;|
+|由谁更新|UPDATEBY|TEXT|&nbsp;|
+|归属组织|ORG|TEXT|&nbsp;|
+|归属部门|DEPT|TEXT|&nbsp;|
 
 ## 值规则
 | 属性名称    | 规则    |  说明  |
@@ -25,6 +28,9 @@
 |type|默认规则|内容长度必须小于等于[30]|
 |account|默认规则|内容长度必须小于等于[30]|
 |公开|默认规则|内容长度必须小于等于[1]|
+|由谁更新|默认规则|内容长度必须小于等于[100]|
+|归属组织|默认规则|内容长度必须小于等于[100]|
+|归属部门|默认规则|内容长度必须小于等于[100]|
 
 ## 状态控制
 

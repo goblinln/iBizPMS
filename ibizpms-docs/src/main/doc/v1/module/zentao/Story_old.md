@@ -103,6 +103,8 @@ hide members
 |重复需求ID|DUPLICATESTORY|PICKUP|&nbsp;|
 |平台/分支|BRANCH|PICKUP|&nbsp;|
 |转Bug|TOBUG|PICKUP|&nbsp;暂时没找到使用地方（页面操作了从需求转Bug也没有更新该字段）|
+|归属组织|ORG|TEXT|&nbsp;|
+|归属部门|DEPT|TEXT|&nbsp;|
 
 ## 值规则
 | 属性名称    | 规则    |  说明  |
@@ -182,6 +184,8 @@ hide members
 |重复需求ID|默认规则|默认规则|
 |平台/分支|默认规则|默认规则|
 |转Bug|默认规则|默认规则|
+|归属组织|默认规则|内容长度必须小于等于[100]|
+|归属部门|默认规则|内容长度必须小于等于[100]|
 
 ## 状态控制
 

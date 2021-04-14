@@ -1,61 +1,56 @@
 {
   "getAllPSPanelFields" : [ {
-    "modelref" : true,
     "id" : "name"
   }, {
-    "modelref" : true,
     "id" : "deadline"
   }, {
-    "modelref" : true,
     "id" : "delay"
   }, {
-    "modelref" : true,
     "id" : "assignedto"
   }, {
-    "modelref" : true,
     "id" : "left"
   }, {
-    "modelref" : true,
-    "id" : "project"
+    "id" : "project",
+    "hidden" : true
   }, {
-    "modelref" : true,
-    "id" : "module"
+    "id" : "module",
+    "hidden" : true
   }, {
-    "modelref" : true,
-    "id" : "srfkey"
+    "id" : "srfkey",
+    "hidden" : true
   }, {
-    "modelref" : true,
-    "id" : "story"
+    "id" : "story",
+    "hidden" : true
   }, {
-    "modelref" : true,
-    "id" : "pri"
+    "id" : "pri",
+    "hidden" : true
   }, {
-    "modelref" : true,
-    "id" : "desc"
+    "id" : "desc",
+    "hidden" : true
   }, {
-    "modelref" : true,
-    "id" : "mailto"
+    "id" : "mailto",
+    "hidden" : true
   }, {
-    "modelref" : true,
-    "id" : "parent"
+    "id" : "parent",
+    "hidden" : true
   }, {
-    "modelref" : true,
-    "id" : "eststarted"
+    "id" : "eststarted",
+    "hidden" : true
   }, {
-    "modelref" : true,
-    "id" : "consumed"
+    "id" : "consumed",
+    "hidden" : true
   }, {
-    "modelref" : true,
-    "id" : "color"
+    "id" : "color",
+    "hidden" : true
   }, {
-    "modelref" : true,
-    "id" : "isfavorites"
+    "id" : "isfavorites",
+    "hidden" : true
   }, {
-    "modelref" : true,
-    "id" : "status1"
+    "id" : "status1",
+    "hidden" : true
   }, {
-    "modelref" : true,
-    "id" : "tasktype"
+    "id" : "tasktype",
+    "hidden" : true
   } ],
   "codeName" : "TaskKanBan",
   "controlType" : "PANEL",

@@ -982,7 +982,11 @@ POST
 | 23 | product | Long | 允许 | 产品 |
 | 24 | build | Long | 允许 | 版本 |
 | 25 | branch | Long | 允许 | 平台/分支 |
-| 26 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 26 | createby | String | 允许 | 由谁创建 |
+| 27 | updateby | String | 允许 | 由谁更新 |
+| 28 | org | String | 允许 | 归属组织 |
+| 29 | dept | String | 允许 | 归属部门 |
+| 30 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### ReleaseSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

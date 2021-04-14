@@ -1059,8 +1059,9 @@ POST
 | 77 | qd | String | 允许 | 测试负责人 |
 | 78 | parentname | String | 允许 | parent |
 | 79 | parent | Long | 允许 | 父项目 |
-| 80 | ibzprojectteams | List<[IBZPROJECTTEAMDTO}](#IBZPROJECTTEAMDTO})> | 允许 | 项目团队 |
-| 81 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 80 | updateby | String | 允许 | 由谁更新 |
+| 81 | ibzprojectteams | List<[IBZPROJECTTEAMDTO}](#IBZPROJECTTEAMDTO})> | 允许 | 项目团队 |
+| 82 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### IBZPROJECTTEAMDTO
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

@@ -67,6 +67,8 @@ public interface IStoryStageService extends IService<StoryStage> {
      */
     boolean execute(String sql, Map param);
 
+    List<StoryStage> getStorystageByIds(List<String> ids);
+    List<StoryStage> getStorystageByEntities(List<StoryStage> entities);
 }
 
 

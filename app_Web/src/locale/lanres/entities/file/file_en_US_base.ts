@@ -17,6 +17,9 @@ function getLocaleResourceBase(){
 		'size': commonLogic.appcommonhandle("大小",null),
 		'id': commonLogic.appcommonhandle("id",null),
 		'extra': commonLogic.appcommonhandle("备注",null),
+		'updateby': commonLogic.appcommonhandle("由谁更新",null),
+		'org': commonLogic.appcommonhandle("归属组织",null),
+		'dept': commonLogic.appcommonhandle("归属部门",null),
 	},
 		views: {
 			'productgridview': {

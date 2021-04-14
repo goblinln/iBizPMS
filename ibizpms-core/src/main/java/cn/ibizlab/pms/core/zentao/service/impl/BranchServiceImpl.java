@@ -283,6 +283,27 @@ public class BranchServiceImpl extends ServiceImpl<BranchMapper, Branch> impleme
         return true;
     }
 
+    @Override
+    public List<Branch> getBranchByIds(List<Long> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<Branch> getBranchByEntities(List<Branch> entities) {
+        List ids =new ArrayList();
+        for(Branch entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     public IBranchService getProxyService() {

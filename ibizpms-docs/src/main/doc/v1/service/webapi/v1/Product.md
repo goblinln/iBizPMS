@@ -693,7 +693,8 @@ POST
 | 47 | activestorycnt | Integer | 允许 | 激活需求数 |
 | 48 | linename | String | 允许 | 产品线 |
 | 49 | line | Long | 允许 | 产品线 |
-| 50 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 50 | updateby | String | 允许 | 由谁更新 |
+| 51 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### ProductSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

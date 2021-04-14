@@ -51,19 +51,14 @@
     },
     "getPSLayoutPanel" : {
       "getAllPSPanelFields" : [ {
-        "modelref" : true,
         "id" : "pri"
       }, {
-        "modelref" : true,
         "id" : "title"
       }, {
-        "modelref" : true,
         "id" : "status"
       }, {
-        "modelref" : true,
         "id" : "resolution"
       }, {
-        "modelref" : true,
         "id" : "assignedto"
       } ],
       "codeName" : "Mob",
@@ -346,19 +341,14 @@
     },
     "getPSLayoutPanel" : {
       "getAllPSPanelFields" : [ {
-        "modelref" : true,
         "id" : "pri"
       }, {
-        "modelref" : true,
         "id" : "name"
       }, {
-        "modelref" : true,
         "id" : "status"
       }, {
-        "modelref" : true,
         "id" : "assignedto"
       }, {
-        "modelref" : true,
         "id" : "left"
       } ],
       "codeName" : "Mob",
@@ -628,19 +618,14 @@
     },
     "getPSLayoutPanel" : {
       "getAllPSPanelFields" : [ {
-        "modelref" : true,
         "id" : "pri"
       }, {
-        "modelref" : true,
         "id" : "name"
       }, {
-        "modelref" : true,
         "id" : "date1"
       }, {
-        "modelref" : true,
         "id" : "begin"
       }, {
-        "modelref" : true,
         "id" : "status"
       } ],
       "codeName" : "Mob",
@@ -924,10 +909,8 @@
     },
     "getPSLayoutPanel" : {
       "getAllPSPanelFields" : [ {
-        "modelref" : true,
         "id" : "account"
       }, {
-        "modelref" : true,
         "id" : "role"
       } ],
       "codeName" : "Mob",

@@ -7,6 +7,10 @@
   "logicName" : "获取测试人员相关数据",
   "name" : "GetQaInfomation",
   "orderValue" : 99999,
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/GetQAInformation.json"
+  },
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"

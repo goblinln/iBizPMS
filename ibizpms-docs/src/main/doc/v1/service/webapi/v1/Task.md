@@ -17060,9 +17060,11 @@ POST
 | 81 | story | Long | 允许 | 相关需求 |
 | 82 | parent | Long | 允许 | 父任务 |
 | 83 | frombug | Long | 允许 | 来源Bug |
-| 84 | ibztaskestimates | List<[IBZTaskEstimateDTO}](#IBZTaskEstimateDTO})> | 允许 | 任务预计 |
-| 85 | ibztaskteams | List<[IBZTaskTeamDTO}](#IBZTaskTeamDTO})> | 允许 | 任务团队 |
-| 86 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 84 | org | String | 允许 | 归属组织 |
+| 85 | dept | String | 允许 | 归属部门 |
+| 86 | ibztaskestimates | List<[IBZTaskEstimateDTO}](#IBZTaskEstimateDTO})> | 允许 | 任务预计 |
+| 87 | ibztaskteams | List<[IBZTaskTeamDTO}](#IBZTaskTeamDTO})> | 允许 | 任务团队 |
+| 88 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### IBZTaskEstimateDTO
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |
@@ -17092,7 +17094,11 @@ POST
 | 23 | deleted | String | 允许 | 任务删除标识 |
 | 24 | project | Long | 允许 | 项目 |
 | 25 | task | Long | 允许 | 任务 |
-| 26 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 26 | createby | String | 允许 | 由谁创建 |
+| 27 | updateby | String | 允许 | 由谁更新 |
+| 28 | org | String | 允许 | 归属组织 |
+| 29 | dept | String | 允许 | 归属部门 |
+| 30 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### IBZTaskTeamDTO
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

@@ -158,31 +158,22 @@
               "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
               "getItemPSLayoutPanel" : {
                 "getAllPSPanelFields" : [ {
-                  "modelref" : true,
                   "id" : "account"
                 }, {
-                  "modelref" : true,
                   "id" : "mytasks"
                 }, {
-                  "modelref" : true,
                   "id" : "myetasks"
                 }, {
-                  "modelref" : true,
                   "id" : "mybugs"
                 }, {
-                  "modelref" : true,
                   "id" : "myebugs"
                 }, {
-                  "modelref" : true,
                   "id" : "mystorys"
                 }, {
-                  "modelref" : true,
                   "id" : "projects"
                 }, {
-                  "modelref" : true,
                   "id" : "eprojects"
                 }, {
-                  "modelref" : true,
                   "id" : "products"
                 } ],
                 "codeName" : "MyWork2",

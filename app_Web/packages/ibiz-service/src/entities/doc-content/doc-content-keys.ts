@@ -7,4 +7,8 @@ export default [
     'version',
     'digest',
     'doc',
+    'createby',
+    'updateby',
+    'org',
+    'dept',
 ];

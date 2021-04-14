@@ -7,4 +7,8 @@ export default [
     'plan',
     'branch',
     'project',
+    'createby',
+    'updateby',
+    'org',
+    'dept',
 ];

@@ -58,4 +58,6 @@ export default [
     'product',
     'lib',
     'module',
+    'org',
+    'dept',
 ];

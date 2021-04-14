@@ -7,6 +7,10 @@
   "logicName" : "我的地盘移动端计数器",
   "name" : "MyTerritoryCount",
   "orderValue" : 99999,
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDELOGICS/MyTerritoryCount.json"
+  },
   "paramMode" : 1,
   "requestParamType" : "NONE",
   "testActionMode" : 0,

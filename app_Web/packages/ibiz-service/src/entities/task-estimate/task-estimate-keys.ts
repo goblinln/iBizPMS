@@ -24,4 +24,8 @@ export default [
     'deleted',
     'project',
     'task',
+    'createby',
+    'updateby',
+    'org',
+    'dept',
 ];

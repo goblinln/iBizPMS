@@ -551,11 +551,15 @@ WHERE t1.DELETED = '0'
 ### DEFAULT(DEFAULT)<div id="Branch_Default"></div>
 ```sql
 SELECT
+t1.`CREATEBY`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`ID`,
 t1.`NAME`,
 t1.`ORDER`,
-t1.`PRODUCT`
+t1.`ORG`,
+t1.`PRODUCT`,
+t1.`UPDATEBY`
 FROM `zt_branch` t1 
 
 WHERE t1.DELETED = '0' 
@@ -576,11 +580,15 @@ WHERE
 ### 默认（全部数据）(VIEW)<div id="Branch_View"></div>
 ```sql
 SELECT
+t1.`CREATEBY`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`ID`,
 t1.`NAME`,
 t1.`ORDER`,
-t1.`PRODUCT`
+t1.`ORG`,
+t1.`PRODUCT`,
+t1.`UPDATEBY`
 FROM `zt_branch` t1 
 
 WHERE t1.DELETED = '0' 
@@ -3050,6 +3058,7 @@ t1.`DEADLINE`,
 (case when t1.deadline is null or t1.deadline = '0000-00-00' or t1.deadline = '1970-01-01' then '' when t1.`status` ='active' and t1.deadline <DATE_FORMAT(now(),'%y-%m-%d')  then CONCAT_WS('','延期',TIMESTAMPDIFF(DAY, t1.deadline, now()),'天') else '' end) AS `DELAY`,
 ( CASE WHEN t1.deadline IS NULL  OR t1.deadline = '0000-00-00'  OR t1.deadline = '1970-01-01' THEN ''  WHEN t1.`status` = 'resolved'  AND t1.deadline < DATE_FORMAT( t1.resolvedDate, '%y-%m-%d' ) THEN CONCAT_WS( '', '延期', TIMESTAMPDIFF( DAY, t1.deadline, t1.resolvedDate ), '天' ) ELSE ''  END ) AS `DELAYRESOLVE`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`DUPLICATEBUG`,
 t1.`ENTRY`,
 t1.`FOUND`,
@@ -3069,6 +3078,7 @@ t71.`NAME` AS `MODULENAME`,
 t1.`OPENEDBUILD`,
 t1.`OPENEDBY`,
 t1.`OPENEDDATE`,
+t1.`ORG`,
 t1.`OS`,
 (case when t1.DEADLINE = '0000-00-00' then 0 else datediff(t1.deadline, now() ) end) AS `OVERDUEBUGS`,
 t1.`PLAN`,
@@ -3494,15 +3504,19 @@ SELECT
 t1.`BRANCH`,
 t1.`BUILDER`,
 t1.BUILDER AS `BUILDERPK`,
+t1.`CREATEBY`,
 t1.`DATE`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`FILEPATH`,
 t1.`ID`,
 t1.`NAME`,
+t1.`ORG`,
 t1.`PRODUCT`,
 t11.`NAME` AS `PRODUCTNAME`,
 t1.`PROJECT`,
-t1.`SCMPATH`
+t1.`SCMPATH`,
+t1.`UPDATEBY`
 FROM `zt_build` t1 
 LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`ID` 
 
@@ -3516,15 +3530,19 @@ SELECT
 t1.`BRANCH`,
 t1.`BUILDER`,
 t1.BUILDER AS `BUILDERPK`,
+t1.`CREATEBY`,
 t1.`DATE`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`FILEPATH`,
 t1.`ID`,
 t1.`NAME`,
+t1.`ORG`,
 t1.`PRODUCT`,
 t11.`NAME` AS `PRODUCTNAME`,
 t1.`PROJECT`,
-t1.`SCMPATH`
+t1.`SCMPATH`,
+t1.`UPDATEBY`
 FROM `zt_build` t1 
 LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`ID` 
 
@@ -3556,15 +3574,19 @@ SELECT
 t1.`BRANCH`,
 t1.`BUILDER`,
 t1.BUILDER AS `BUILDERPK`,
+t1.`CREATEBY`,
 t1.`DATE`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`FILEPATH`,
 t1.`ID`,
 t1.`NAME`,
+t1.`ORG`,
 t1.`PRODUCT`,
 t11.`NAME` AS `PRODUCTNAME`,
 t1.`PROJECT`,
-t1.`SCMPATH`
+t1.`SCMPATH`,
+t1.`UPDATEBY`
 FROM `zt_build` t1 
 LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`ID` 
 
@@ -3601,17 +3623,21 @@ t1.`BRANCH`,
 t1.`BUGS`,
 t1.`BUILDER`,
 t1.BUILDER AS `BUILDERPK`,
+t1.`CREATEBY`,
 t1.`DATE`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`DESC`,
 t1.`FILEPATH`,
 t1.`ID`,
 t1.`NAME`,
+t1.`ORG`,
 t1.`PRODUCT`,
 t11.`NAME` AS `PRODUCTNAME`,
 t1.`PROJECT`,
 t1.`SCMPATH`,
-t1.`STORIES`
+t1.`STORIES`,
+t1.`UPDATEBY`
 FROM `zt_build` t1 
 LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`ID` 
 
@@ -3625,13 +3651,17 @@ WHERE t1.DELETED = '0'
 ```sql
 SELECT
 t1.`CONSUMED`,
+t1.`CREATEBY`,
 t1.`DATE`,
+t1.`DEPT`,
 t1.`ESTIMATE`,
 concat(t1.`PROJECT`,'__',t1.`TASK`,'__',t1.`DATE`) AS `ID`,
 1 AS `ISWEEKEND`,
 t1.`LEFT`,
+t1.`ORG`,
 t1.`PROJECT`,
-t1.`TASK`
+t1.`TASK`,
+t1.`UPDATEBY`
 FROM `zt_burn` t1 
 
 ```
@@ -3651,13 +3681,17 @@ LEFT JOIN zt_project t2 on t1.project=t2.id
 ```sql
 SELECT
 t1.`CONSUMED`,
+t1.`CREATEBY`,
 t1.`DATE`,
+t1.`DEPT`,
 t1.`ESTIMATE`,
 concat(t1.`PROJECT`,'__',t1.`TASK`,'__',t1.`DATE`) AS `ID`,
 1 AS `ISWEEKEND`,
 t1.`LEFT`,
+t1.`ORG`,
 t1.`PROJECT`,
-t1.`TASK`
+t1.`TASK`,
+t1.`UPDATEBY`
 FROM `zt_burn` t1 
 
 ```
@@ -3671,6 +3705,7 @@ t1.`AUTO`,
 t1.`BRANCH`,
 t1.`COLOR`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`FRAME`,
 t1.`FREQUENCY`,
 t1.`FROMBUG`,
@@ -3695,6 +3730,7 @@ t31.`NAME` AS `MODULENAME`,
 t1.`OPENEDBY`,
 t1.`OPENEDDATE`,
 t1.`ORDER`,
+t1.`ORG`,
 t1.`PATH`,
 t1.`PRI`,
 t1.`PRODUCT`,
@@ -3736,6 +3772,7 @@ t1.`AUTO`,
 t1.`BRANCH`,
 t1.`COLOR`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`FRAME`,
 t1.`FREQUENCY`,
 t1.`FROMBUG`,
@@ -3760,6 +3797,7 @@ t31.`NAME` AS `MODULENAME`,
 t1.`OPENEDBY`,
 t1.`OPENEDDATE`,
 t1.`ORDER`,
+t1.`ORG`,
 t1.`PATH`,
 t1.`PRI`,
 t1.`PRODUCT`,
@@ -3801,6 +3839,7 @@ t1.`AUTO`,
 t1.`BRANCH`,
 t1.`COLOR`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`FRAME`,
 t1.`FREQUENCY`,
 t1.`FROMBUG`,
@@ -3825,6 +3864,7 @@ t31.`NAME` AS `MODULENAME`,
 t1.`OPENEDBY`,
 t1.`OPENEDDATE`,
 t1.`ORDER`,
+t1.`ORG`,
 t1.`PATH`,
 t1.`PRI`,
 t1.`PRODUCT`,
@@ -5057,6 +5097,7 @@ t1.`AUTO`,
 t1.`BRANCH`,
 t1.`COLOR`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`FRAME`,
 t1.`FREQUENCY`,
 t1.`FROMBUG`,
@@ -5081,6 +5122,7 @@ t31.`NAME` AS `MODULENAME`,
 t1.`OPENEDBY`,
 t1.`OPENEDDATE`,
 t1.`ORDER`,
+t1.`ORG`,
 t1.`PATH`,
 t1.`PRECONDITION`,
 t1.`PRI`,
@@ -5231,11 +5273,15 @@ FROM
 SELECT
 t1.`CASE`,
 t1.id AS `CASESTEPID`,
+t1.`CREATEBY`,
+t1.`DEPT`,
 t1.`DESC`,
 t1.`EXPECT`,
 t1.`ID`,
+t1.`ORG`,
 t1.`PARENT`,
 t1.`TYPE`,
+t1.`UPDATEBY`,
 t1.`VERSION`
 FROM `zt_casestep` t1 
 
@@ -5289,11 +5335,15 @@ FROM
 SELECT
 t1.`CASE`,
 t1.id AS `CASESTEPID`,
+t1.`CREATEBY`,
+t1.`DEPT`,
 t1.`DESC`,
 t1.`EXPECT`,
 t1.`ID`,
+t1.`ORG`,
 t1.`PARENT`,
 t1.`TYPE`,
+t1.`UPDATEBY`,
 t1.`VERSION`
 FROM `zt_casestep` t1 
 
@@ -5870,6 +5920,7 @@ t1.`ACL`,
 t1.`ADDEDBY`,
 t1.`ADDEDDATE`,
 t1.`DELETED`,
+t1.`DEPT`,
 'doc' AS `DOCQTYPE`,
 t1.`EDITEDBY`,
 t1.`EDITEDDATE`,
@@ -5881,12 +5932,14 @@ t1.`LIB`,
 t31.`NAME` AS `LIBNAME`,
 t1.`MODULE`,
 t41.`NAME` AS `MODULENAME`,
+t1.`ORG`,
 t1.`PRODUCT`,
 t11.`NAME` AS `PRODUCTNAME`,
 t1.`PROJECT`,
 t21.`NAME` AS `PROJECTNAME`,
 t1.`TITLE`,
 t1.`TYPE`,
+t1.`UPDATEBY`,
 t1.`VERSION`,
 t1.`VIEWS`
 FROM `zt_doc` t1 
@@ -6058,6 +6111,7 @@ t1.`ADDEDBY`,
 t1.`ADDEDDATE`,
 t1.`COLLECTOR`,
 t1.`DELETED`,
+t1.`DEPT`,
 'doc' AS `DOCQTYPE`,
 t1.`EDITEDBY`,
 t1.`EDITEDDATE`,
@@ -6069,12 +6123,14 @@ t1.`LIB`,
 t31.`NAME` AS `LIBNAME`,
 t1.`MODULE`,
 t41.`NAME` AS `MODULENAME`,
+t1.`ORG`,
 t1.`PRODUCT`,
 t11.`NAME` AS `PRODUCTNAME`,
 t1.`PROJECT`,
 t21.`NAME` AS `PROJECTNAME`,
 t1.`TITLE`,
 t1.`TYPE`,
+t1.`UPDATEBY`,
 t1.`USERS`,
 t1.`VERSION`,
 t1.`VIEWS`
@@ -6097,11 +6153,15 @@ SELECT t1.id AS `ID`, t1.`DOC`, t1.`VERSION`, CONCAT('#',t1.`version`) as `TITLE
 ### DEFAULT(DEFAULT)<div id="DocContent_Default"></div>
 ```sql
 SELECT
+t1.`CREATEBY`,
+t1.`DEPT`,
 t1.`DIGEST`,
 t1.`DOC`,
 t1.`ID`,
+t1.`ORG`,
 t1.`TITLE`,
 t1.`TYPE`,
+t1.`UPDATEBY`,
 t1.`VERSION`
 FROM `zt_doccontent` t1 
 
@@ -6110,12 +6170,16 @@ FROM `zt_doccontent` t1
 ```sql
 SELECT
 t1.`CONTENT`,
+t1.`CREATEBY`,
+t1.`DEPT`,
 t1.`DIGEST`,
 t1.`DOC`,
 t1.`FILES`,
 t1.`ID`,
+t1.`ORG`,
 t1.`TITLE`,
 t1.`TYPE`,
+t1.`UPDATEBY`,
 t1.`VERSION`
 FROM `zt_doccontent` t1 
 
@@ -6127,6 +6191,7 @@ FROM `zt_doccontent` t1
 ```sql
 SELECT
 t1.`ACL`,
+t1.`CREATEBY`,
 t1.`DELETED`,
 'doc' AS `DOCLIBTYPE`,
 t1.`GROUPS`,
@@ -6143,7 +6208,8 @@ t1.`PRODUCT`,
 t11.`NAME` AS `PRODUCTNAME`,
 t1.`PROJECT`,
 t21.`NAME` AS `PROJECTNAME`,
-t1.`TYPE`
+t1.`TYPE`,
+t1.`UPDATEBY`
 FROM `zt_doclib` t1 
 LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`ID` 
 LEFT JOIN `zt_project` t21 ON t1.`PROJECT` = t21.`ID` 
@@ -6338,6 +6404,7 @@ WHERE t1.orgid = #{srf.sessioncontext.srforgid}
 ```sql
 SELECT
 t1.`ACL`,
+t1.`CREATEBY`,
 t1.`DELETED`,
 'doc' AS `DOCLIBTYPE`,
 t1.`GROUPS`,
@@ -6354,7 +6421,8 @@ t1.`PRODUCT`,
 t11.`NAME` AS `PRODUCTNAME`,
 t1.`PROJECT`,
 t21.`NAME` AS `PROJECTNAME`,
-t1.`TYPE`
+t1.`TYPE`,
+t1.`UPDATEBY`
 FROM `zt_doclib` t1 
 LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`ID` 
 LEFT JOIN `zt_project` t21 ON t1.`PROJECT` = t21.`ID` 
@@ -6416,6 +6484,7 @@ WHERE t1.DELETED = '0'
 SELECT
 t1.`ACL`,
 t1.`COLLECTOR`,
+t1.`CREATEBY`,
 t1.`DELETED`,
 'doc' AS `DOCLIBTYPE`,
 t1.`GROUPS`,
@@ -6433,6 +6502,7 @@ t11.`NAME` AS `PRODUCTNAME`,
 t1.`PROJECT`,
 t21.`NAME` AS `PROJECTNAME`,
 t1.`TYPE`,
+t1.`UPDATEBY`,
 t1.`USERS`
 FROM `zt_doclib` t1 
 LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`ID` 
@@ -6991,16 +7061,19 @@ SELECT
 t1.`ADDEDBY`,
 t1.`ADDEDDATE`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`DOWNLOADS`,
 t1.`EXTENSION`,
 t1.`EXTRA`,
 t1.`ID`,
 t1.`OBJECTID`,
 t1.`OBJECTTYPE`,
+t1.`ORG`,
 t1.`PATHNAME`,
 t1.`SIZE`,
 CONCAT_WS('',case when (t1.size/1024) > 1024 then ROUND(t1.size/(1024 * 1024), 1) when (t1.size/1024) > 1 then ROUND(t1.size/1024, 1) else ROUND(t1.size, 1) end, case when (t1.size/1024) > 1024 then 'MB' when (t1.size/1024) > 1 then 'KB' else 'B' end) AS `STRSIZE`,
-t1.`TITLE`
+t1.`TITLE`,
+t1.`UPDATEBY`
 FROM `zt_file` t1 
 
 WHERE t1.DELETED = '0' 
@@ -7056,16 +7129,19 @@ SELECT
 t1.`ADDEDBY`,
 t1.`ADDEDDATE`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`DOWNLOADS`,
 t1.`EXTENSION`,
 t1.`EXTRA`,
 t1.`ID`,
 t1.`OBJECTID`,
 t1.`OBJECTTYPE`,
+t1.`ORG`,
 t1.`PATHNAME`,
 t1.`SIZE`,
 CONCAT_WS('',case when (t1.size/1024) > 1024 then ROUND(t1.size/(1024 * 1024), 1) when (t1.size/1024) > 1 then ROUND(t1.size/1024, 1) else ROUND(t1.size, 1) end, case when (t1.size/1024) > 1024 then 'MB' when (t1.size/1024) > 1 then 'KB' else 'B' end) AS `STRSIZE`,
-t1.`TITLE`
+t1.`TITLE`,
+t1.`UPDATEBY`
 FROM `zt_file` t1 
 
 WHERE t1.DELETED = '0' 
@@ -7100,16 +7176,19 @@ SELECT
 t1.`ADDEDBY`,
 t1.`ADDEDDATE`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`DOWNLOADS`,
 t1.`EXTENSION`,
 t1.`EXTRA`,
 t1.`ID`,
 t1.`OBJECTID`,
 t1.`OBJECTTYPE`,
+t1.`ORG`,
 t1.`PATHNAME`,
 t1.`SIZE`,
 CONCAT_WS('',case when (t1.size/1024) > 1024 then ROUND(t1.size/(1024 * 1024), 1) when (t1.size/1024) > 1 then ROUND(t1.size/1024, 1) else ROUND(t1.size, 1) end, case when (t1.size/1024) > 1024 then 'MB' when (t1.size/1024) > 1 then 'KB' else 'B' end) AS `STRSIZE`,
-t1.`TITLE`
+t1.`TITLE`,
+t1.`UPDATEBY`
 FROM `zt_file` t1 
 
 WHERE t1.DELETED = '0' 
@@ -7169,11 +7248,15 @@ FROM `zt_grouppriv` t1
 ```sql
 SELECT
 t1.`ACTION`,
+t1.`CREATEBY`,
+t1.`DEPT`,
 t1.`DIFF`,
 t1.`FIELD`,
 t1.`ID`,
 t1.`NEW`,
-t1.`OLD`
+t1.`OLD`,
+t1.`ORG`,
+t1.`UPDATEBY`
 FROM `zt_history` t1 
 
 WHERE ( (t1.`FIELD` NOT LIKE '%cnt')  AND  (t1.`FIELD` NOT LIKE '%pk') ) 
@@ -7183,11 +7266,15 @@ WHERE ( (t1.`FIELD` NOT LIKE '%cnt')  AND  (t1.`FIELD` NOT LIKE '%pk') )
 ```sql
 SELECT
 t1.`ACTION`,
+t1.`CREATEBY`,
+t1.`DEPT`,
 t1.`DIFF`,
 t1.`FIELD`,
 t1.`ID`,
 t1.`NEW`,
-t1.`OLD`
+t1.`OLD`,
+t1.`ORG`,
+t1.`UPDATEBY`
 FROM `zt_history` t1 
 
 ```
@@ -10580,6 +10667,7 @@ t1.type = 'story'
 ```sql
 SELECT
 t1.`BRANCH`,
+t1.`CREATEBY`,
 t1.`DELETED`,
 t1.`GRADE`,
 t1.`ID`,
@@ -10593,7 +10681,8 @@ t11.`NAME` AS `PARENTNAME`,
 t1.`PATH`,
 t1.`ROOT`,
 t1.`SHORT`,
-t1.`TYPE`
+t1.`TYPE`,
+t1.`UPDATEBY`
 FROM `zt_module` t1 
 LEFT JOIN `zt_module` t11 ON t1.`PARENT` = t11.`ID` 
 
@@ -10665,6 +10754,7 @@ WHERE t1.DELETED = '0'
 ```sql
 SELECT
 t1.`BRANCH`,
+t1.`CREATEBY`,
 t1.`DELETED`,
 t1.`GRADE`,
 t1.`ID`,
@@ -10678,7 +10768,8 @@ t11.`NAME` AS `PARENTNAME`,
 t1.`PATH`,
 t1.`ROOT`,
 t1.`SHORT`,
-t1.`TYPE`
+t1.`TYPE`,
+t1.`UPDATEBY`
 FROM `zt_module` t1 
 LEFT JOIN `zt_module` t11 ON t1.`PARENT` = t11.`ID` 
 
@@ -10690,6 +10781,7 @@ WHERE t1.DELETED = '0'
 ```sql
 SELECT
 t1.`BRANCH`,
+t1.`CREATEBY`,
 t1.`DELETED`,
 t1.`GRADE`,
 t1.`ID`,
@@ -10703,7 +10795,8 @@ t11.`NAME` AS `PARENTNAME`,
 t1.`PATH`,
 t1.`ROOT`,
 t1.`SHORT`,
-t1.`TYPE`
+t1.`TYPE`,
+t1.`UPDATEBY`
 FROM `zt_module` t1 
 LEFT JOIN `zt_module` t11 ON t1.`PARENT` = t11.`ID` 
 
@@ -10715,6 +10808,7 @@ WHERE t1.DELETED = '0'
 ```sql
 SELECT
 t1.`BRANCH`,
+t1.`CREATEBY`,
 t1.`DELETED`,
 t1.`GRADE`,
 t1.`ID`,
@@ -10728,7 +10822,8 @@ t11.`NAME` AS `PARENTNAME`,
 t1.`PATH`,
 t1.`ROOT`,
 t1.`SHORT`,
-t1.`TYPE`
+t1.`TYPE`,
+t1.`UPDATEBY`
 FROM `zt_module` t1 
 LEFT JOIN `zt_module` t11 ON t1.`PARENT` = t11.`ID` 
 
@@ -10741,6 +10836,7 @@ WHERE t1.DELETED = '0'
 SELECT
 t1.`BRANCH`,
 t1.`COLLECTOR`,
+t1.`CREATEBY`,
 t1.`DELETED`,
 t1.`GRADE`,
 t1.`ID`,
@@ -10754,7 +10850,8 @@ t11.`NAME` AS `PARENTNAME`,
 t1.`PATH`,
 t1.`ROOT`,
 t1.`SHORT`,
-t1.`TYPE`
+t1.`TYPE`,
+t1.`UPDATEBY`
 FROM `zt_module` t1 
 LEFT JOIN `zt_module` t11 ON t1.`PARENT` = t11.`ID` 
 
@@ -12469,7 +12566,8 @@ t1.`STATUS`,
 t1.`SUBSTATUS`,
 t1.`SUPPROREPORT`,
 t1.`TYPE`,
-(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0') AS `UNCONFIRMBUGCNT`
+(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0') AS `UNCONFIRMBUGCNT`,
+t1.`UPDATEBY`
 FROM `zt_product` t1 
 LEFT JOIN `zt_module` t11 ON t1.`LINE` = t11.`ID` 
 
@@ -12556,7 +12654,8 @@ t1.`STATUS`,
 t1.`SUBSTATUS`,
 t1.`SUPPROREPORT`,
 t1.`TYPE`,
-(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0') AS `UNCONFIRMBUGCNT`
+(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0') AS `UNCONFIRMBUGCNT`,
+t1.`UPDATEBY`
 FROM `zt_product` t1 
 LEFT JOIN `zt_module` t11 ON t1.`LINE` = t11.`ID` 
 
@@ -12734,7 +12833,8 @@ t1.`STATUS`,
 t1.`SUBSTATUS`,
 t1.`SUPPROREPORT`,
 t1.`TYPE`,
-(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0') AS `UNCONFIRMBUGCNT`
+(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0') AS `UNCONFIRMBUGCNT`,
+t1.`UPDATEBY`
 FROM `zt_product` t1 
 LEFT JOIN `zt_module` t11 ON t1.`LINE` = t11.`ID` 
 
@@ -12850,7 +12950,8 @@ t1.`STATUS`,
 t1.`SUBSTATUS`,
 t1.`SUPPROREPORT`,
 t1.`TYPE`,
-(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0') AS `UNCONFIRMBUGCNT`
+(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0') AS `UNCONFIRMBUGCNT`,
+t1.`UPDATEBY`
 FROM `zt_product` t1 
 LEFT JOIN `zt_module` t11 ON t1.`LINE` = t11.`ID` 
 
@@ -12905,6 +13006,7 @@ t1.`SUBSTATUS`,
 t1.`SUPPROREPORT`,
 t1.`TYPE`,
 (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0') AS `UNCONFIRMBUGCNT`,
+t1.`UPDATEBY`,
 t1.`WHITELIST`
 FROM `zt_product` t1 
 LEFT JOIN `zt_module` t11 ON t1.`LINE` = t11.`ID` 
@@ -13392,8 +13494,10 @@ t1.`BEGIN`,
 (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`,
 t1.`BRANCH`,
 ((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`,
+t1.`CREATEBY`,
 case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end AS `DELAY`,
 t1.`DELETED`,
+t1.`DEPT`,
 (to_Days(t1.`END`) - to_Days(t1.`BEGIN`)) AS `DURATION`,
 t1.`END`,
 (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`,
@@ -13401,13 +13505,15 @@ t1.`END`,
 (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`,
 t1.`ID`,
 (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`,
+t1.`ORG`,
 t1.`PARENT`,
 t11.`TITLE` AS `PARENTNAME`,
 t1.`PRODUCT`,
 t1.`STATUS`,
 (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`,
 ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,
-t1.`TITLE`
+t1.`TITLE`,
+t1.`UPDATEBY`
 FROM `zt_productplan` t1 
 LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID` 
 
@@ -13421,8 +13527,10 @@ t1.`BEGIN`,
 (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`,
 t1.`BRANCH`,
 ((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`,
+t1.`CREATEBY`,
 case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end AS `DELAY`,
 t1.`DELETED`,
+t1.`DEPT`,
 (to_Days(t1.`END`) - to_Days(t1.`BEGIN`)) AS `DURATION`,
 t1.`END`,
 (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`,
@@ -13430,13 +13538,15 @@ t1.`END`,
 (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`,
 t1.`ID`,
 (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`,
+t1.`ORG`,
 t1.`PARENT`,
 t11.`TITLE` AS `PARENTNAME`,
 t1.`PRODUCT`,
 t1.`STATUS`,
 (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`,
 ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,
-t1.`TITLE`
+t1.`TITLE`,
+t1.`UPDATEBY`
 FROM `zt_productplan` t1 
 LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID` 
 
@@ -13451,8 +13561,10 @@ t1.`BEGIN`,
 (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`,
 t1.`BRANCH`,
 ((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`,
+t1.`CREATEBY`,
 case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end AS `DELAY`,
 t1.`DELETED`,
+t1.`DEPT`,
 (to_Days(t1.`END`) - to_Days(t1.`BEGIN`)) AS `DURATION`,
 t1.`END`,
 (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`,
@@ -13460,13 +13572,15 @@ t1.`END`,
 (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`,
 t1.`ID`,
 (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`,
+t1.`ORG`,
 t1.`PARENT`,
 t11.`TITLE` AS `PARENTNAME`,
 t1.`PRODUCT`,
 t1.`STATUS`,
 (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`,
 ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,
-t1.`TITLE`
+t1.`TITLE`,
+t1.`UPDATEBY`
 FROM `zt_productplan` t1 
 LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID` 
 
@@ -13661,8 +13775,10 @@ t1.`BEGIN`,
 (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`,
 t1.`BRANCH`,
 ((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`,
+t1.`CREATEBY`,
 case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end AS `DELAY`,
 t1.`DELETED`,
+t1.`DEPT`,
 (to_Days(t1.`END`) - to_Days(t1.`BEGIN`)) AS `DURATION`,
 t1.`END`,
 (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`,
@@ -13670,13 +13786,15 @@ t1.`END`,
 (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`,
 t1.`ID`,
 (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`,
+t1.`ORG`,
 t1.`PARENT`,
 t11.`TITLE` AS `PARENTNAME`,
 t1.`PRODUCT`,
 t1.`STATUS`,
 (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`,
 ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,
-t1.`TITLE`
+t1.`TITLE`,
+t1.`UPDATEBY`
 FROM `zt_productplan` t1 
 LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID` 
 
@@ -13736,8 +13854,10 @@ t1.`BEGIN`,
 (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`,
 t1.`BRANCH`,
 ((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`,
+t1.`CREATEBY`,
 case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end AS `DELAY`,
 t1.`DELETED`,
+t1.`DEPT`,
 (to_Days(t1.`END`) - to_Days(t1.`BEGIN`)) AS `DURATION`,
 t1.`END`,
 (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`,
@@ -13745,13 +13865,15 @@ t1.`END`,
 (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`,
 t1.`ID`,
 (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`,
+t1.`ORG`,
 t1.`PARENT`,
 t11.`TITLE` AS `PARENTNAME`,
 t1.`PRODUCT`,
 t1.`STATUS`,
 (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`,
 ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,
-t1.`TITLE`
+t1.`TITLE`,
+t1.`UPDATEBY`
 FROM `zt_productplan` t1 
 LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID` 
 
@@ -13766,8 +13888,10 @@ t1.`BEGIN`,
 (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`,
 t1.`BRANCH`,
 ((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`,
+t1.`CREATEBY`,
 case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end AS `DELAY`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`DESC`,
 (to_Days(t1.`END`) - to_Days(t1.`BEGIN`)) AS `DURATION`,
 t1.`END`,
@@ -13777,13 +13901,15 @@ t1.`END`,
 t1.`ID`,
 (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`,
 t1.`ORDER`,
+t1.`ORG`,
 t1.`PARENT`,
 t11.`TITLE` AS `PARENTNAME`,
 t1.`PRODUCT`,
 t1.`STATUS`,
 (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`,
 ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,
-t1.`TITLE`
+t1.`TITLE`,
+t1.`UPDATEBY`
 FROM `zt_productplan` t1 
 LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID` 
 
@@ -14420,7 +14546,8 @@ t1.`TEAM`,
 (select sum(days * hours)  from zt_team tt where type = 'project' and root = t1.id) AS `TOTALHOURS`,
 (SELECT round(SUM(`LEFT`),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' and `status` in ('doing','wait','pause') AND ( `parent` = '' or `parent` = '0' or `parent` = '-1')) AS `TOTALLEFT`,
 ((SELECT round(SUM( `LEFT` ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) AND `status` in ('doing','wait','pause')) + (SELECT round(SUM( CONSUMED ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ))) AS `TOTALWH`,
-t1.`TYPE`
+t1.`TYPE`,
+t1.`UPDATEBY`
 FROM `zt_project` t1 
 LEFT JOIN `zt_project` t11 ON t1.`PARENT` = t11.`ID` 
 LEFT OUTER JOIN `zt_projectproduct` t21 ON t1.`ID` = t21.`PROJECT` 
@@ -14474,7 +14601,8 @@ t1.`TEAM`,
 (select sum(days * hours)  from zt_team tt where type = 'project' and root = t1.id) AS `TOTALHOURS`,
 (SELECT round(SUM(`LEFT`),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' and `status` in ('doing','wait','pause') AND ( `parent` = '' or `parent` = '0' or `parent` = '-1')) AS `TOTALLEFT`,
 ((SELECT round(SUM( `LEFT` ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) AND `status` in ('doing','wait','pause')) + (SELECT round(SUM( CONSUMED ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ))) AS `TOTALWH`,
-t1.`TYPE`
+t1.`TYPE`,
+t1.`UPDATEBY`
 FROM `zt_project` t1 
 LEFT JOIN `zt_project` t11 ON t1.`PARENT` = t11.`ID` 
 LEFT OUTER JOIN `zt_projectproduct` t21 ON t1.`ID` = t21.`PROJECT` 
@@ -14528,7 +14656,8 @@ t1.`TEAM`,
 (select sum(days * hours)  from zt_team tt where type = 'project' and root = t1.id) AS `TOTALHOURS`,
 (SELECT round(SUM(`LEFT`),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' and `status` in ('doing','wait','pause') AND ( `parent` = '' or `parent` = '0' or `parent` = '-1')) AS `TOTALLEFT`,
 ((SELECT round(SUM( `LEFT` ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) AND `status` in ('doing','wait','pause')) + (SELECT round(SUM( CONSUMED ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ))) AS `TOTALWH`,
-t1.`TYPE`
+t1.`TYPE`,
+t1.`UPDATEBY`
 FROM `zt_project` t1 
 LEFT JOIN `zt_project` t11 ON t1.`PARENT` = t11.`ID` 
 
@@ -14789,7 +14918,8 @@ t1.`TEAM`,
 (select sum(days * hours)  from zt_team tt where type = 'project' and root = t1.id) AS `TOTALHOURS`,
 (SELECT round(SUM(`LEFT`),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' and `status` in ('doing','wait','pause') AND ( `parent` = '' or `parent` = '0' or `parent` = '-1')) AS `TOTALLEFT`,
 ((SELECT round(SUM( `LEFT` ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) AND `status` in ('doing','wait','pause')) + (SELECT round(SUM( CONSUMED ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ))) AS `TOTALWH`,
-t1.`TYPE`
+t1.`TYPE`,
+t1.`UPDATEBY`
 FROM `zt_project` t1 
 LEFT JOIN `zt_project` t11 ON t1.`PARENT` = t11.`ID` 
 
@@ -15184,6 +15314,7 @@ t1.`TEAM`,
 (SELECT round(SUM(`LEFT`),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' and `status` in ('doing','wait','pause') AND ( `parent` = '' or `parent` = '0' or `parent` = '-1')) AS `TOTALLEFT`,
 ((SELECT round(SUM( `LEFT` ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) AND `status` in ('doing','wait','pause')) + (SELECT round(SUM( CONSUMED ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ))) AS `TOTALWH`,
 t1.`TYPE`,
+t1.`UPDATEBY`,
 t1.`WHITELIST`
 FROM `zt_project` t1 
 LEFT JOIN `zt_project` t11 ON t1.`PARENT` = t11.`ID` 
@@ -15500,13 +15631,17 @@ WHERE t1.DELETED = '0'
 ```sql
 SELECT
 t1.`BRANCH`,
+t1.`CREATEBY`,
+t1.`DEPT`,
 concat(t1.`PROJECT`,'__',t1.`PRODUCT`) AS `ID`,
+t1.`ORG`,
 t1.`PLAN`,
 t31.`TITLE` AS `PLANNAME`,
 t1.`PRODUCT`,
 t11.`NAME` AS `PRODUCTNAME`,
 t1.`PROJECT`,
-t21.`NAME` AS `PROJECTNAME`
+t21.`NAME` AS `PROJECTNAME`,
+t1.`UPDATEBY`
 FROM `zt_projectproduct` t1 
 LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`ID` 
 LEFT JOIN `zt_project` t21 ON t1.`PROJECT` = t21.`ID` 
@@ -15517,13 +15652,17 @@ LEFT JOIN `zt_productplan` t31 ON t1.`PLAN` = t31.`ID`
 ```sql
 SELECT
 t1.`BRANCH`,
+t1.`CREATEBY`,
+t1.`DEPT`,
 concat(t1.`PROJECT`,'__',t1.`PRODUCT`) AS `ID`,
+t1.`ORG`,
 t1.`PLAN`,
 t31.`TITLE` AS `PLANNAME`,
 t1.`PRODUCT`,
 t11.`NAME` AS `PRODUCTNAME`,
 t1.`PROJECT`,
-t21.`NAME` AS `PROJECTNAME`
+t21.`NAME` AS `PROJECTNAME`,
+t1.`UPDATEBY`
 FROM `zt_projectproduct` t1 
 LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`ID` 
 LEFT JOIN `zt_project` t21 ON t1.`PROJECT` = t21.`ID` 
@@ -15536,13 +15675,17 @@ WHERE ( t1.`PLAN` <> 0 )
 ```sql
 SELECT
 t1.`BRANCH`,
+t1.`CREATEBY`,
+t1.`DEPT`,
 concat(t1.`PROJECT`,'__',t1.`PRODUCT`) AS `ID`,
+t1.`ORG`,
 t1.`PLAN`,
 t31.`TITLE` AS `PLANNAME`,
 t1.`PRODUCT`,
 t11.`NAME` AS `PRODUCTNAME`,
 t1.`PROJECT`,
-t21.`NAME` AS `PROJECTNAME`
+t21.`NAME` AS `PROJECTNAME`,
+t1.`UPDATEBY`
 FROM `zt_projectproduct` t1 
 LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`ID` 
 LEFT JOIN `zt_project` t21 ON t1.`PROJECT` = t21.`ID` 
@@ -16339,11 +16482,15 @@ WHERE t1.DELETED = '0'
 ### DEFAULT(DEFAULT)<div id="ProjectStory_Default"></div>
 ```sql
 SELECT
+t1.`CREATEBY`,
+t1.`DEPT`,
 concat(t1.`PROJECT`,'__',t1.`STORY`) AS `ID`,
 t1.`ORDER`,
+t1.`ORG`,
 t1.`PRODUCT`,
 t1.`PROJECT`,
 t1.`STORY`,
+t1.`UPDATEBY`,
 t1.`VERSION`
 FROM `zt_projectstory` t1 
 
@@ -16351,11 +16498,15 @@ FROM `zt_projectstory` t1
 ### 默认（全部数据）(VIEW)<div id="ProjectStory_View"></div>
 ```sql
 SELECT
+t1.`CREATEBY`,
+t1.`DEPT`,
 concat(t1.`PROJECT`,'__',t1.`STORY`) AS `ID`,
 t1.`ORDER`,
+t1.`ORG`,
 t1.`PRODUCT`,
 t1.`PROJECT`,
 t1.`STORY`,
+t1.`UPDATEBY`,
 t1.`VERSION`
 FROM `zt_projectstory` t1 
 
@@ -16968,15 +17119,19 @@ t1.`BUILD`,
 t21.`DATE` AS `BUILDDATE`,
 t21.`BUILDER`,
 t21.`NAME` AS `BUILDNAME`,
+t1.`CREATEBY`,
 t1.`DATE`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`ID`,
 t1.`MARKER`,
 t1.`NAME`,
+t1.`ORG`,
 t1.`PRODUCT`,
 t11.`NAME` AS `PRODUCTNAME`,
 t1.`STATUS`,
-t1.`SUBSTATUS`
+t1.`SUBSTATUS`,
+t1.`UPDATEBY`
 FROM `zt_release` t1 
 LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`ID` 
 LEFT JOIN `zt_build` t21 ON t1.`BUILD` = t21.`ID` 
@@ -16992,15 +17147,19 @@ t1.`BUILD`,
 t21.`DATE` AS `BUILDDATE`,
 t21.`BUILDER`,
 t21.`NAME` AS `BUILDNAME`,
+t1.`CREATEBY`,
 t1.`DATE`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`ID`,
 t1.`MARKER`,
 t1.`NAME`,
+t1.`ORG`,
 t1.`PRODUCT`,
 t11.`NAME` AS `PRODUCTNAME`,
 t1.`STATUS`,
-t1.`SUBSTATUS`
+t1.`SUBSTATUS`,
+t1.`UPDATEBY`
 FROM `zt_release` t1 
 LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`ID` 
 LEFT JOIN `zt_build` t21 ON t1.`BUILD` = t21.`ID` 
@@ -17017,15 +17176,19 @@ t1.`BUILD`,
 t21.`DATE` AS `BUILDDATE`,
 t21.`BUILDER`,
 t21.`NAME` AS `BUILDNAME`,
+t1.`CREATEBY`,
 t1.`DATE`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`ID`,
 t1.`MARKER`,
 t1.`NAME`,
+t1.`ORG`,
 t1.`PRODUCT`,
 t11.`NAME` AS `PRODUCTNAME`,
 t1.`STATUS`,
-t1.`SUBSTATUS`
+t1.`SUBSTATUS`,
+t1.`UPDATEBY`
 FROM `zt_release` t1 
 LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`ID` 
 LEFT JOIN `zt_build` t21 ON t1.`BUILD` = t21.`ID` 
@@ -17043,18 +17206,22 @@ t1.`BUILD`,
 t21.`DATE` AS `BUILDDATE`,
 t21.`BUILDER`,
 t21.`NAME` AS `BUILDNAME`,
+t1.`CREATEBY`,
 t1.`DATE`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`DESC`,
 t1.`ID`,
 t1.`LEFTBUGS`,
 t1.`MARKER`,
 t1.`NAME`,
+t1.`ORG`,
 t1.`PRODUCT`,
 t11.`NAME` AS `PRODUCTNAME`,
 t1.`STATUS`,
 t1.`STORIES`,
-t1.`SUBSTATUS`
+t1.`SUBSTATUS`,
+t1.`UPDATEBY`
 FROM `zt_release` t1 
 LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`ID` 
 LEFT JOIN `zt_build` t21 ON t1.`BUILD` = t21.`ID` 
@@ -17780,6 +17947,7 @@ t1.`CLOSEDDATE`,
 t1.`CLOSEDREASON`,
 t1.`COLOR`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`DUPLICATESTORY`,
 t1.`ESTIMATE`,
 t1.`FROMBUG`,
@@ -17802,6 +17970,7 @@ t11.`NAME` AS `MODULENAME`,
 (case when t1.module = '0' then '/' else (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' ) FROM zt_module tt  WHERE FIND_IN_SET( tt.id, t11.path ) AND tt.type = 'story' GROUP BY	tt.root limit 0,1) end) AS `MODULENAME1`,
 t1.`OPENEDBY`,
 t1.`OPENEDDATE`,
+t1.`ORG`,
 t1.`PARENT`,
 t21.`TITLE` AS `PARENTNAME`,
 t11.`PATH`,
@@ -17912,6 +18081,7 @@ t1.`CLOSEDDATE`,
 t1.`CLOSEDREASON`,
 t1.`COLOR`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`DUPLICATESTORY`,
 t1.`ESTIMATE`,
 t1.`FROMBUG`,
@@ -17934,6 +18104,7 @@ t11.`NAME` AS `MODULENAME`,
 (case when t1.module = '0' then '/' else (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' ) FROM zt_module tt  WHERE FIND_IN_SET( tt.id, t11.path ) AND tt.type = 'story' GROUP BY	tt.root limit 0,1) end) AS `MODULENAME1`,
 t1.`OPENEDBY`,
 t1.`OPENEDDATE`,
+t1.`ORG`,
 t1.`PARENT`,
 t21.`TITLE` AS `PARENTNAME`,
 t11.`PATH`,
@@ -18228,6 +18399,7 @@ t1.`CLOSEDDATE`,
 t1.`CLOSEDREASON`,
 t1.`COLOR`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`DUPLICATESTORY`,
 t1.`ESTIMATE`,
 t1.`FROMBUG`,
@@ -18250,6 +18422,7 @@ t11.`NAME` AS `MODULENAME`,
 (case when t1.module = '0' then '/' else (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' ) FROM zt_module tt  WHERE FIND_IN_SET( tt.id, t11.path ) AND tt.type = 'story' GROUP BY	tt.root limit 0,1) end) AS `MODULENAME1`,
 t1.`OPENEDBY`,
 t1.`OPENEDDATE`,
+t1.`ORG`,
 t1.`PARENT`,
 t21.`TITLE` AS `PARENTNAME`,
 t11.`PATH`,
@@ -18566,6 +18739,7 @@ t1.`CLOSEDDATE`,
 t1.`CLOSEDREASON`,
 t1.`COLOR`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`DUPLICATESTORY`,
 t1.`ESTIMATE`,
 t1.`FROMBUG`,
@@ -18588,6 +18762,7 @@ t11.`NAME` AS `MODULENAME`,
 (case when t1.module = '0' then '/' else (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' ) FROM zt_module tt  WHERE FIND_IN_SET( tt.id, t11.path ) AND tt.type = 'story' GROUP BY	tt.root limit 0,1) end) AS `MODULENAME1`,
 t1.`OPENEDBY`,
 t1.`OPENEDDATE`,
+t1.`ORG`,
 t1.`PARENT`,
 t21.`TITLE` AS `PARENTNAME`,
 t11.`PATH`,
@@ -18697,6 +18872,7 @@ t1.`CLOSEDDATE`,
 t1.`CLOSEDREASON`,
 t1.`COLOR`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`DUPLICATESTORY`,
 t1.`ESTIMATE`,
 t1.`FROMBUG`,
@@ -18719,6 +18895,7 @@ t11.`NAME` AS `MODULENAME`,
 (case when t1.module = '0' then '/' else (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' ) FROM zt_module tt  WHERE FIND_IN_SET( tt.id, t11.path ) AND tt.type = 'story' GROUP BY	tt.root limit 0,1) end) AS `MODULENAME1`,
 t1.`OPENEDBY`,
 t1.`OPENEDDATE`,
+t1.`ORG`,
 t1.`PARENT`,
 t21.`TITLE` AS `PARENTNAME`,
 t11.`PATH`,
@@ -18761,10 +18938,14 @@ WHERE t1.DELETED = '0'
 ### DEFAULT(DEFAULT)<div id="StorySpec_Default"></div>
 ```sql
 SELECT
+t1.`CREATEBY`,
+t1.`DEPT`,
 concat(t1.`STORY`,'__',t1.`VERSION`) AS `ID`,
+t1.`ORG`,
 t1.`SPEC`,
 t1.`STORY`,
 t1.`TITLE`,
+t1.`UPDATEBY`,
 t1.`VERIFY`,
 t1.`VERSION`
 FROM `zt_storyspec` t1 
@@ -18783,10 +18964,14 @@ FROM `zt_storyspec` t1
 ### 默认（全部数据）(VIEW)<div id="StorySpec_View"></div>
 ```sql
 SELECT
+t1.`CREATEBY`,
+t1.`DEPT`,
 concat(t1.`STORY`,'__',t1.`VERSION`) AS `ID`,
+t1.`ORG`,
 t1.`SPEC`,
 t1.`STORY`,
 t1.`TITLE`,
+t1.`UPDATEBY`,
 t1.`VERIFY`,
 t1.`VERSION`
 FROM `zt_storyspec` t1 
@@ -18799,10 +18984,14 @@ FROM `zt_storyspec` t1
 ```sql
 SELECT
 t1.`BRANCH`,
+t1.`CREATEBY`,
+t1.`DEPT`,
 concat(t1.`STORY`,'__',t1.`BRANCH`) AS `ID`,
+t1.`ORG`,
 t1.`STAGE`,
 t1.`STAGEDBY`,
-t1.`STORY`
+t1.`STORY`,
+t1.`UPDATEBY`
 FROM `zt_storystage` t1 
 
 ```
@@ -18810,10 +18999,14 @@ FROM `zt_storystage` t1
 ```sql
 SELECT
 t1.`BRANCH`,
+t1.`CREATEBY`,
+t1.`DEPT`,
 concat(t1.`STORY`,'__',t1.`BRANCH`) AS `ID`,
+t1.`ORG`,
 t1.`STAGE`,
 t1.`STAGEDBY`,
-t1.`STORY`
+t1.`STORY`,
+t1.`UPDATEBY`
 FROM `zt_storystage` t1 
 
 ```
@@ -18824,9 +19017,13 @@ FROM `zt_storystage` t1
 ```sql
 SELECT
 t1.`CASE`,
+t1.`CREATEBY`,
+t1.`DEPT`,
 concat(t1.`SUITE`,'__',t1.`CASE`) AS `ID`,
+t1.`ORG`,
 t1.`PRODUCT`,
 t1.`SUITE`,
+t1.`UPDATEBY`,
 t1.`VERSION`
 FROM `zt_suitecase` t1 
 
@@ -18835,9 +19032,13 @@ FROM `zt_suitecase` t1
 ```sql
 SELECT
 t1.`CASE`,
+t1.`CREATEBY`,
+t1.`DEPT`,
 concat(t1.`SUITE`,'__',t1.`CASE`) AS `ID`,
+t1.`ORG`,
 t1.`PRODUCT`,
 t1.`SUITE`,
+t1.`UPDATEBY`,
 t1.`VERSION`
 FROM `zt_suitecase` t1 
 
@@ -20121,6 +20322,7 @@ t1.`CYCLE`,
 t1.`DEADLINE`,
 (case when t1.deadline is null or t1.deadline = '0000-00-00' or t1.deadline = '1970-01-01' then '' when t1.`status` in ('wait','doing') and t1.deadline <DATE_FORMAT(now(),'%y-%m-%d')  then CONCAT_WS('','延期',TIMESTAMPDIFF(DAY, t1.deadline, now()),'天') else '' end) AS `DELAY`,
 t1.`DELETED`,
+t1.`DEPT`,
 (To_Days(t1.`DEADLINE`)-To_Days(t1.`ESTSTARTED`)) AS `DURATION`,
 t1.`ESTIMATE`,
 t1.`ESTSTARTED`,
@@ -20145,6 +20347,7 @@ t1.CONSUMED AS `MYCONSUMED`,
 t1.`NAME`,
 t1.`OPENEDBY`,
 t1.`OPENEDDATE`,
+t1.`ORG`,
 t1.`PARENT`,
 t61.`NAME` AS `PARENTNAME`,
 t11.`PATH`,
@@ -20360,6 +20563,7 @@ t1.`CYCLE`,
 t1.`DEADLINE`,
 (case when t1.deadline is null or t1.deadline = '0000-00-00' or t1.deadline = '1970-01-01' then '' when t1.`status` in ('wait','doing') and t1.deadline <DATE_FORMAT(now(),'%y-%m-%d')  then CONCAT_WS('','延期',TIMESTAMPDIFF(DAY, t1.deadline, now()),'天') else '' end) AS `DELAY`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`DESC`,
 (To_Days(t1.`DEADLINE`)-To_Days(t1.`ESTSTARTED`)) AS `DURATION`,
 t1.`ESTIMATE`,
@@ -20386,6 +20590,7 @@ t1.CONSUMED AS `MYCONSUMED`,
 t1.`NAME`,
 t1.`OPENEDBY`,
 t1.`OPENEDDATE`,
+t1.`ORG`,
 t1.`PARENT`,
 t61.`NAME` AS `PARENTNAME`,
 t11.`PATH`,
@@ -20450,9 +20655,11 @@ select t1.`YEAR`,concat(t1.`year`, '年') as yearname from (select DISTINCT year
 SELECT
 t1.`ACCOUNT`,
 t1.`CONSUMED`,
+t1.`CREATEBY`,
 t1.`DATE`,
 t1.`date` AS `DATES`,
 t11.`DELETED`,
+t1.`DEPT`,
 t1.`EVALUATIONCOST`,
 t1.`EVALUATIONSTATUS`,
 t1.`EVALUATIONTIME`,
@@ -20461,12 +20668,14 @@ t1.`ID`,
 t1.`INPUTCOST`,
 t1.`LEFT`,
 t1.`MONTHNAME`,
+t1.`ORG`,
 t11.`PROJECT`,
 t21.`NAME` AS `PROJECTNAME`,
 t1.`TASK`,
 t11.`NAME` AS `TASKNAME`,
 t11.`TASKSPECIES`,
-t11.`TYPE`
+t11.`TYPE`,
+t1.`UPDATEBY`
 FROM `zt_taskestimate` t1 
 LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID` 
 LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`ID` 
@@ -20477,9 +20686,11 @@ LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`ID`
 SELECT
 t1.`ACCOUNT`,
 t1.`CONSUMED`,
+t1.`CREATEBY`,
 t1.`DATE`,
 t1.`date` AS `DATES`,
 t11.`DELETED`,
+t1.`DEPT`,
 t1.`EVALUATIONCOST`,
 t1.`EVALUATIONSTATUS`,
 t1.`EVALUATIONTIME`,
@@ -20488,12 +20699,14 @@ t1.`ID`,
 t1.`INPUTCOST`,
 t1.`LEFT`,
 t1.`MONTHNAME`,
+t1.`ORG`,
 t11.`PROJECT`,
 t21.`NAME` AS `PROJECTNAME`,
 t1.`TASK`,
 t11.`NAME` AS `TASKNAME`,
 t11.`TASKSPECIES`,
-t11.`TYPE`
+t11.`TYPE`,
+t1.`UPDATEBY`
 FROM `zt_taskestimate` t1 
 LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID` 
 LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`ID` 
@@ -20539,9 +20752,11 @@ WHERE t1.project =#{srf.webcontext.project}
 SELECT
 t1.`ACCOUNT`,
 t1.`CONSUMED`,
+t1.`CREATEBY`,
 t1.`DATE`,
 t1.`date` AS `DATES`,
 t11.`DELETED`,
+t1.`DEPT`,
 t1.`EVALUATIONCOST`,
 t1.`EVALUATIONSTATUS`,
 t1.`EVALUATIONTIME`,
@@ -20550,12 +20765,14 @@ t1.`ID`,
 t1.`INPUTCOST`,
 t1.`LEFT`,
 t1.`MONTHNAME`,
+t1.`ORG`,
 t11.`PROJECT`,
 t21.`NAME` AS `PROJECTNAME`,
 t1.`TASK`,
 t11.`NAME` AS `TASKNAME`,
 t11.`TASKSPECIES`,
-t11.`TYPE`
+t11.`TYPE`,
+t1.`UPDATEBY`
 FROM `zt_taskestimate` t1 
 LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID` 
 LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`ID` 
@@ -20568,9 +20785,11 @@ WHERE ( t11.`PROJECT` = ${srfwebcontext('project','{"defname":"PROJECT","dename"
 SELECT
 t1.`ACCOUNT`,
 t1.`CONSUMED`,
+t1.`CREATEBY`,
 t1.`DATE`,
 t1.`date` AS `DATES`,
 t11.`DELETED`,
+t1.`DEPT`,
 t1.`EVALUATIONCOST`,
 t1.`EVALUATIONDESC`,
 t1.`EVALUATIONSTATUS`,
@@ -20580,12 +20799,14 @@ t1.`ID`,
 t1.`INPUTCOST`,
 t1.`LEFT`,
 t1.`MONTHNAME`,
+t1.`ORG`,
 t11.`PROJECT`,
 t21.`NAME` AS `PROJECTNAME`,
 t1.`TASK`,
 t11.`NAME` AS `TASKNAME`,
 t11.`TASKSPECIES`,
 t11.`TYPE`,
+t1.`UPDATEBY`,
 t1.`WORK`
 FROM `zt_taskestimate` t1 
 LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID` 
@@ -20893,7 +21114,9 @@ FROM `zt_team` t1
 SELECT
 t1.`ACCOUNT`,
 t1.`CONSUMED`,
+t1.`CREATEBY`,
 t1.`DAYS`,
+t1.`DEPT`,
 t1.`ESTIMATE`,
 t1.`HOURS`,
 t1.`ID`,
@@ -20901,9 +21124,11 @@ t1.`JOIN`,
 t1.`LEFT`,
 t1.`LIMITED`,
 t1.`ORDER`,
+t1.`ORG`,
 t1.`ROLE`,
 t1.`ROOT`,
-t1.`TYPE`
+t1.`TYPE`,
+t1.`UPDATEBY`
 FROM `zt_team` t1 
 
 ```
@@ -20912,7 +21137,9 @@ FROM `zt_team` t1
 SELECT
 t1.`ACCOUNT`,
 t1.`CONSUMED`,
+t1.`CREATEBY`,
 t1.`DAYS`,
+t1.`DEPT`,
 t1.`ESTIMATE`,
 t1.`HOURS`,
 t1.`ID`,
@@ -20920,9 +21147,11 @@ t1.`JOIN`,
 t1.`LEFT`,
 t1.`LIMITED`,
 t1.`ORDER`,
+t1.`ORG`,
 t1.`ROLE`,
 t1.`ROOT`,
-t1.`TYPE`
+t1.`TYPE`,
+t1.`UPDATEBY`
 FROM `zt_team` t1 
 
 ```
@@ -21132,17 +21361,20 @@ t1.`BUILDS`,
 t1.`CREATEDBY`,
 t1.`CREATEDDATE`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`END`,
 t1.`ID`,
 t1.`OBJECTID`,
 t1.`OBJECTTYPE`,
+t1.`ORG`,
 t1.`OWNER`,
 t1.`PRODUCT`,
 t21.`NAME` AS `PRODUCTNAME`,
 t1.`PROJECT`,
 t11.`NAME` AS `PROJECTNAME`,
 t1.`TASKS`,
-t1.`TITLE`
+t1.`TITLE`,
+t1.`UPDATEBY`
 FROM `zt_testreport` t1 
 LEFT JOIN `zt_project` t11 ON t1.`PROJECT` = t11.`ID` 
 LEFT JOIN `zt_product` t21 ON t1.`PRODUCT` = t21.`ID` 
@@ -21160,11 +21392,13 @@ t1.`CASES`,
 t1.`CREATEDBY`,
 t1.`CREATEDDATE`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`END`,
 t1.`ID`,
 t1.`MEMBERS`,
 t1.`OBJECTID`,
 t1.`OBJECTTYPE`,
+t1.`ORG`,
 t1.`OWNER`,
 t1.`PRODUCT`,
 t21.`NAME` AS `PRODUCTNAME`,
@@ -21173,7 +21407,8 @@ t11.`NAME` AS `PROJECTNAME`,
 t1.`REPORT`,
 t1.`STORIES`,
 t1.`TASKS`,
-t1.`TITLE`
+t1.`TITLE`,
+t1.`UPDATEBY`
 FROM `zt_testreport` t1 
 LEFT JOIN `zt_project` t11 ON t1.`PROJECT` = t11.`ID` 
 LEFT JOIN `zt_product` t21 ON t1.`PRODUCT` = t21.`ID` 
@@ -21190,16 +21425,20 @@ SELECT
 t1.`CASE`,
 t1.`CASERESULT`,
 t1.`COMPILE`,
+t1.`CREATEBY`,
 t1.`DATE`,
+t1.`DEPT`,
 t1.`DURATION`,
 t1.`ID`,
 t1.`JOB`,
 t1.`LASTRUNNER`,
 t11.`MODULE`,
 t21.`NAME` AS `MODULENAME`,
+t1.`ORG`,
 t11.`PRODUCT`,
 t1.`RUN`,
 t11.`STORY`,
+t1.`UPDATEBY`,
 t1.`VERSION`
 FROM `zt_testresult` t1 
 LEFT JOIN `zt_case` t11 ON t1.`CASE` = t11.`ID` 
@@ -21215,16 +21454,20 @@ SELECT
 t1.`CASE`,
 t1.`CASERESULT`,
 t1.`COMPILE`,
+t1.`CREATEBY`,
 t1.`DATE`,
+t1.`DEPT`,
 t1.`DURATION`,
 t1.`ID`,
 t1.`JOB`,
 t1.`LASTRUNNER`,
 t11.`MODULE`,
 t21.`NAME` AS `MODULENAME`,
+t1.`ORG`,
 t11.`PRODUCT`,
 t1.`RUN`,
 t11.`STORY`,
+t1.`UPDATEBY`,
 t1.`VERSION`
 FROM `zt_testresult` t1 
 LEFT JOIN `zt_case` t11 ON t1.`CASE` = t11.`ID` 
@@ -21237,18 +21480,22 @@ SELECT
 t1.`CASE`,
 t1.`CASERESULT`,
 t1.`COMPILE`,
+t1.`CREATEBY`,
 t1.`DATE`,
+t1.`DEPT`,
 t1.`DURATION`,
 t1.`ID`,
 t1.`JOB`,
 t1.`LASTRUNNER`,
 t11.`MODULE`,
 t21.`NAME` AS `MODULENAME`,
+t1.`ORG`,
 t11.`PRECONDITION`,
 t11.`PRODUCT`,
 t1.`RUN`,
 t1.`STEPRESULTS`,
 t11.`STORY`,
+t1.`UPDATEBY`,
 t1.`VERSION`,
 t1.`XML`
 FROM `zt_testresult` t1 
@@ -21264,12 +21511,16 @@ LEFT JOIN `zt_module` t21 ON t11.`MODULE` = t21.`ID`
 SELECT
 t1.`ASSIGNEDTO`,
 t1.`CASE`,
+t1.`CREATEBY`,
+t1.`DEPT`,
 t1.`ID`,
 t1.`LASTRUNDATE`,
 t1.`LASTRUNNER`,
 t1.`LASTRUNRESULT`,
+t1.`ORG`,
 t1.`STATUS`,
 t1.`TASK`,
+t1.`UPDATEBY`,
 t1.`VERSION`
 FROM `zt_testrun` t1 
 
@@ -21279,12 +21530,16 @@ FROM `zt_testrun` t1
 SELECT
 t1.`ASSIGNEDTO`,
 t1.`CASE`,
+t1.`CREATEBY`,
+t1.`DEPT`,
 t1.`ID`,
 t1.`LASTRUNDATE`,
 t1.`LASTRUNNER`,
 t1.`LASTRUNRESULT`,
+t1.`ORG`,
 t1.`STATUS`,
 t1.`TASK`,
+t1.`UPDATEBY`,
 t1.`VERSION`
 FROM `zt_testrun` t1 
 
@@ -21299,10 +21554,12 @@ t1.`ADDEDBY`,
 t1.`ADDEDDATE`,
 0 AS `CASECNT`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`ID`,
 t1.`LASTEDITEDBY`,
 t1.`LASTEDITEDDATE`,
 t1.`NAME`,
+t1.`ORG`,
 t1.`PRODUCT`,
 t1.`TYPE`
 FROM `zt_testsuite` t1 
@@ -21317,10 +21574,12 @@ t1.`ADDEDBY`,
 t1.`ADDEDDATE`,
 0 AS `CASECNT`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`ID`,
 t1.`LASTEDITEDBY`,
 t1.`LASTEDITEDDATE`,
 t1.`NAME`,
+t1.`ORG`,
 t1.`PRODUCT`,
 t1.`TYPE`
 FROM `zt_testsuite` t1 
@@ -21336,11 +21595,13 @@ t1.`ADDEDBY`,
 t1.`ADDEDDATE`,
 0 AS `CASECNT`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`DESC`,
 t1.`ID`,
 t1.`LASTEDITEDBY`,
 t1.`LASTEDITEDDATE`,
 t1.`NAME`,
+t1.`ORG`,
 t1.`PRODUCT`,
 t1.`TYPE`
 FROM `zt_testsuite` t1 
@@ -21359,12 +21620,15 @@ t1.`BEGIN`,
 t1.`BUILD`,
 t11.`NAME` AS `BUILDNAME`,
 0 AS `CASECNT`,
+t1.`CREATEBY`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`END`,
 t1.`ID`,
 t1.`MAILTO`,
 '' AS `MAILTOPK`,
 t1.`NAME`,
+t1.`ORG`,
 t1.`OWNER`,
 t1.OWNER AS `OWNERPK`,
 t1.`PRI`,
@@ -21373,7 +21637,8 @@ t21.`NAME` AS `PRODUCTNAME`,
 t1.`PROJECT`,
 t31.`NAME` AS `PROJECTTNAME`,
 t1.`STATUS`,
-t1.`SUBSTATUS`
+t1.`SUBSTATUS`,
+t1.`UPDATEBY`
 FROM `zt_testtask` t1 
 LEFT JOIN `zt_build` t11 ON t1.`BUILD` = t11.`ID` 
 LEFT JOIN `zt_product` t21 ON t1.`PRODUCT` = t21.`ID` 
@@ -21415,13 +21680,16 @@ t1.`BEGIN`,
 t1.`BUILD`,
 t11.`NAME` AS `BUILDNAME`,
 0 AS `CASECNT`,
+t1.`CREATEBY`,
 t1.`DELETED`,
+t1.`DEPT`,
 t1.`DESC`,
 t1.`END`,
 t1.`ID`,
 t1.`MAILTO`,
 '' AS `MAILTOPK`,
 t1.`NAME`,
+t1.`ORG`,
 t1.`OWNER`,
 t1.OWNER AS `OWNERPK`,
 t1.`PRI`,
@@ -21431,7 +21699,8 @@ t1.`PROJECT`,
 t31.`NAME` AS `PROJECTTNAME`,
 t1.`REPORT`,
 t1.`STATUS`,
-t1.`SUBSTATUS`
+t1.`SUBSTATUS`,
+t1.`UPDATEBY`
 FROM `zt_testtask` t1 
 LEFT JOIN `zt_build` t11 ON t1.`BUILD` = t11.`ID` 
 LEFT JOIN `zt_product` t21 ON t1.`PRODUCT` = t21.`ID` 
@@ -21929,8 +22198,11 @@ WHERE ( t1.`ACCOUNT` =  ${srfsessioncontext('srfloginname','{"defname":"ACCOUNT"
 ```sql
 SELECT
 t1.`ACCOUNT`,
+t1.`DEPT`,
 t1.`ID`,
-t1.`LISTNAME`
+t1.`LISTNAME`,
+t1.`ORG`,
+t1.`UPDATEBY`
 FROM `zt_usercontact` t1 
 
 ```
@@ -21938,8 +22210,11 @@ FROM `zt_usercontact` t1
 ```sql
 SELECT
 t1.`ACCOUNT`,
+t1.`DEPT`,
 t1.`ID`,
-t1.`LISTNAME`
+t1.`LISTNAME`,
+t1.`ORG`,
+t1.`UPDATEBY`
 FROM `zt_usercontact` t1 
 
 WHERE ( t1.`ACCOUNT` =  ${srfsessioncontext('srfloginname','{"defname":"ACCOUNT","dename":"ZT_USERCONTACT"}')} ) 
@@ -21949,8 +22224,11 @@ WHERE ( t1.`ACCOUNT` =  ${srfsessioncontext('srfloginname','{"defname":"ACCOUNT"
 ```sql
 SELECT
 t1.`ACCOUNT`,
+t1.`DEPT`,
 t1.`ID`,
 t1.`LISTNAME`,
+t1.`ORG`,
+t1.`UPDATEBY`,
 t1.`USERLIST`
 FROM `zt_usercontact` t1 
 
@@ -22011,10 +22289,13 @@ FROM `zt_userquery` t1
 SELECT
 t1.`ACCOUNT`,
 t1.`CONTENT`,
+t1.`DEPT`,
 t1.`ID`,
+t1.`ORG`,
 t1.`PUBLIC`,
 t1.`TITLE`,
-t1.`TYPE`
+t1.`TYPE`,
+t1.`UPDATEBY`
 FROM `zt_usertpl` t1 
 
 WHERE ( ( t1.`PUBLIC` = '1'  OR  t1.`ACCOUNT` =  ${srfwebcontext('account','{"defname":"ACCOUNT","dename":"ZT_USERTPL"}')} )  AND  t1.`TYPE` =  ${srfwebcontext('type','{"defname":"TYPE","dename":"ZT_USERTPL"}')} ) 
@@ -22025,10 +22306,13 @@ WHERE ( ( t1.`PUBLIC` = '1'  OR  t1.`ACCOUNT` =  ${srfwebcontext('account','{"de
 SELECT
 t1.`ACCOUNT`,
 t1.`CONTENT`,
+t1.`DEPT`,
 t1.`ID`,
+t1.`ORG`,
 t1.`PUBLIC`,
 t1.`TITLE`,
-t1.`TYPE`
+t1.`TYPE`,
+t1.`UPDATEBY`
 FROM `zt_usertpl` t1 
 
 WHERE ( t1.`ACCOUNT` =  ${srfsessioncontext('srfloginname','{"defname":"ACCOUNT","dename":"ZT_USERTPL"}')} ) 
@@ -22039,10 +22323,13 @@ WHERE ( t1.`ACCOUNT` =  ${srfsessioncontext('srfloginname','{"defname":"ACCOUNT"
 SELECT
 t1.`ACCOUNT`,
 t1.`CONTENT`,
+t1.`DEPT`,
 t1.`ID`,
+t1.`ORG`,
 t1.`PUBLIC`,
 t1.`TITLE`,
-t1.`TYPE`
+t1.`TYPE`,
+t1.`UPDATEBY`
 FROM `zt_usertpl` t1 
 
 ```

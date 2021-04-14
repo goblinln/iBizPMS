@@ -79,4 +79,5 @@ export default [
     'qd',
     'parentname',
     'parent',
+    'updateby',
 ];

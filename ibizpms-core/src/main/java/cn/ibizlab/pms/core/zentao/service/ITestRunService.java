@@ -67,6 +67,8 @@ public interface ITestRunService extends IService<TestRun> {
      */
     boolean execute(String sql, Map param);
 
+    List<TestRun> getTestrunByIds(List<Long> ids);
+    List<TestRun> getTestrunByEntities(List<TestRun> entities);
 }
 
 

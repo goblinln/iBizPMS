@@ -7,6 +7,10 @@
   "logicName" : "根据测试报告获取基本信息",
   "name" : "GetTestReportBasicInfo",
   "orderValue" : 99999,
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDELOGICS/GetTestReportBasicInfo.json"
+  },
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"

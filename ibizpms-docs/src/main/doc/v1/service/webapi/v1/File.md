@@ -402,7 +402,10 @@ POST
 | 12 | size | Integer | 允许 | 大小 |
 | 13 | id | Long | 不可 | id |
 | 14 | extra | String | 允许 | 备注 |
-| 15 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 15 | updateby | String | 允许 | 由谁更新 |
+| 16 | org | String | 允许 | 归属组织 |
+| 17 | dept | String | 允许 | 归属部门 |
+| 18 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### FileSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

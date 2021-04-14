@@ -93,6 +93,8 @@ public interface IDocService extends IService<Doc> {
      */
     boolean execute(String sql, Map param);
 
+    List<Doc> getDocByIds(List<Long> ids);
+    List<Doc> getDocByEntities(List<Doc> entities);
 }
 
 

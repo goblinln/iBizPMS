@@ -223,6 +223,27 @@ public class UserTplServiceImpl extends ServiceImpl<UserTplMapper, UserTpl> impl
         return true;
     }
 
+    @Override
+    public List<UserTpl> getUsertplByIds(List<Long> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<UserTpl> getUsertplByEntities(List<UserTpl> entities) {
+        List ids =new ArrayList();
+        for(UserTpl entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     public IUserTplService getProxyService() {

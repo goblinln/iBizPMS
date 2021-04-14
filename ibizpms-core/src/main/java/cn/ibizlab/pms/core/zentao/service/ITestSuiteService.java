@@ -67,6 +67,8 @@ public interface ITestSuiteService extends IService<TestSuite> {
      */
     boolean execute(String sql, Map param);
 
+    List<TestSuite> getTestsuiteByIds(List<Long> ids);
+    List<TestSuite> getTestsuiteByEntities(List<TestSuite> entities);
 }
 
 

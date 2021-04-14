@@ -7,6 +7,10 @@
   "logicName" : "根据起始时间获取概况信息",
   "name" : "GetInfoTaskOvByTime",
   "orderValue" : 99999,
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDELOGICS/GetInfoTestTaskOvByTime.json"
+  },
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"

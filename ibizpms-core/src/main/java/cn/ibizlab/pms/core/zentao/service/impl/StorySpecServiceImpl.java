@@ -264,6 +264,27 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
         return true;
     }
 
+    @Override
+    public List<StorySpec> getStoryspecByIds(List<String> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<StorySpec> getStoryspecByEntities(List<StorySpec> entities) {
+        List ids =new ArrayList();
+        for(StorySpec entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     public IStorySpecService getProxyService() {

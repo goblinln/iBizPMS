@@ -573,7 +573,9 @@ POST
 | 20 | projectname | String | 允许 | 所属项目 |
 | 21 | project | Long | 允许 | 项目库 |
 | 22 | product | Long | 允许 | 产品库 |
-| 23 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 23 | createby | String | 允许 | 由谁创建 |
+| 24 | updateby | String | 允许 | 由谁更新 |
+| 25 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### DocLibSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

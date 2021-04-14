@@ -374,6 +374,27 @@ public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> i
         return true;
     }
 
+    @Override
+    public List<CaseStep> getCasestepByIds(List<Long> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<CaseStep> getCasestepByEntities(List<CaseStep> entities) {
+        List ids =new ArrayList();
+        for(CaseStep entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     @Override

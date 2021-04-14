@@ -269,6 +269,27 @@ public class TestRunServiceImpl extends ServiceImpl<TestRunMapper, TestRun> impl
         return true;
     }
 
+    @Override
+    public List<TestRun> getTestrunByIds(List<Long> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<TestRun> getTestrunByEntities(List<TestRun> entities) {
+        List ids =new ArrayList();
+        for(TestRun entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     public ITestRunService getProxyService() {

@@ -158,6 +158,8 @@ public interface ITaskService extends IService<Task> {
      */
     boolean execute(String sql, Map param);
 
+    List<Task> getTaskByIds(List<Long> ids);
+    List<Task> getTaskByEntities(List<Task> entities);
 }
 
 

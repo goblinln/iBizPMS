@@ -58,7 +58,7 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-Create-all')")
+    @PreAuthorize("hasPermission(this.testreportMapping.toDomain(#testreportdto),'iBizPMS-TestReport-Create')")
     @ApiOperation(value = "新建测试报告", tags = {"测试报告" },  notes = "新建测试报告")
 	@RequestMapping(method = RequestMethod.POST, value = "/testreports")
     public ResponseEntity<TestReportDTO> create(@Validated @RequestBody TestReportDTO testreportdto) {
@@ -68,7 +68,7 @@ public class TestReportResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-Create-all')")
+    @PreAuthorize("hasPermission(this.testreportMapping.toDomain(#testreportdtos),'iBizPMS-TestReport-Create')")
     @ApiOperation(value = "批量新建测试报告", tags = {"测试报告" },  notes = "批量新建测试报告")
 	@RequestMapping(method = RequestMethod.POST, value = "/testreports/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<TestReportDTO> testreportdtos) {
@@ -76,7 +76,7 @@ public class TestReportResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-Update-all')")
+    @PreAuthorize("hasPermission(this.testreportService.get(#testreport_id),'iBizPMS-TestReport-Update')")
     @ApiOperation(value = "更新测试报告", tags = {"测试报告" },  notes = "更新测试报告")
 	@RequestMapping(method = RequestMethod.PUT, value = "/testreports/{testreport_id}")
     public ResponseEntity<TestReportDTO> update(@PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
@@ -87,7 +87,7 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-Update-all')")
+    @PreAuthorize("hasPermission(this.testreportService.getTestreportByEntities(this.testreportMapping.toDomain(#testreportdtos)),'iBizPMS-TestReport-Update')")
     @ApiOperation(value = "批量更新测试报告", tags = {"测试报告" },  notes = "批量更新测试报告")
 	@RequestMapping(method = RequestMethod.PUT, value = "/testreports/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<TestReportDTO> testreportdtos) {
@@ -95,14 +95,14 @@ public class TestReportResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-Remove-all')")
+    @PreAuthorize("hasPermission(this.testreportService.get(#testreport_id),'iBizPMS-TestReport-Remove')")
     @ApiOperation(value = "删除测试报告", tags = {"测试报告" },  notes = "删除测试报告")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/testreports/{testreport_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("testreport_id") Long testreport_id) {
          return ResponseEntity.status(HttpStatus.OK).body(testreportService.remove(testreport_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-Remove-all')")
+    @PreAuthorize("hasPermission(this.testreportService.getTestreportByIds(#ids),'iBizPMS-TestReport-Remove')")
     @ApiOperation(value = "批量删除测试报告", tags = {"测试报告" },  notes = "批量删除测试报告")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/testreports/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -110,7 +110,7 @@ public class TestReportResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-Get-all')")
+    @PostAuthorize("hasPermission(this.testreportMapping.toDomain(returnObject.body),'iBizPMS-TestReport-Get')")
     @ApiOperation(value = "获取测试报告", tags = {"测试报告" },  notes = "获取测试报告")
 	@RequestMapping(method = RequestMethod.GET, value = "/testreports/{testreport_id}")
     public ResponseEntity<TestReportDTO> get(@PathVariable("testreport_id") Long testreport_id) {
@@ -209,7 +209,7 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-Save-all')")
+    @PreAuthorize("hasPermission(this.testreportMapping.toDomain(#testreportdto),'iBizPMS-TestReport-Save')")
     @ApiOperation(value = "保存测试报告", tags = {"测试报告" },  notes = "保存测试报告")
 	@RequestMapping(method = RequestMethod.POST, value = "/testreports/save")
     public ResponseEntity<TestReportDTO> save(@RequestBody TestReportDTO testreportdto) {
@@ -218,7 +218,7 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(testreportMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-Save-all')")
+    @PreAuthorize("hasPermission(this.testreportMapping.toDomain(#testreportdtos),'iBizPMS-TestReport-Save')")
     @ApiOperation(value = "批量保存测试报告", tags = {"测试报告" },  notes = "批量保存测试报告")
 	@RequestMapping(method = RequestMethod.POST, value = "/testreports/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<TestReportDTO> testreportdtos) {
@@ -226,7 +226,7 @@ public class TestReportResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-searchDefault-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-searchDefault-all') and hasPermission(#context,'iBizPMS-TestReport-Get')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试报告" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testreports/fetchdefault")
 	public ResponseEntity<List<TestReportDTO>> fetchDefault(@RequestBody TestReportSearchContext context) {
@@ -239,7 +239,7 @@ public class TestReportResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-searchDefault-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-searchDefault-all') and hasPermission(#context,'iBizPMS-TestReport-Get')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"测试报告" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testreports/searchdefault")
 	public ResponseEntity<Page<TestReportDTO>> searchDefault(@RequestBody TestReportSearchContext context) {
@@ -267,7 +267,7 @@ public class TestReportResource {
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-Create-all')")
+    @PreAuthorize("hasPermission(this.testreportMapping.toDomain(#testreportdto),'iBizPMS-TestReport-Create')")
     @ApiOperation(value = "根据产品建立测试报告", tags = {"测试报告" },  notes = "根据产品建立测试报告")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testreports")
     public ResponseEntity<TestReportDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestReportDTO testreportdto) {
@@ -278,7 +278,7 @@ public class TestReportResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-Create-all')")
+    @PreAuthorize("hasPermission(this.testreportMapping.toDomain(#testreportdtos),'iBizPMS-TestReport-Create')")
     @ApiOperation(value = "根据产品批量建立测试报告", tags = {"测试报告" },  notes = "根据产品批量建立测试报告")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testreports/batch")
     public ResponseEntity<Boolean> createBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<TestReportDTO> testreportdtos) {
@@ -290,7 +290,7 @@ public class TestReportResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-Update-all')")
+    @PreAuthorize("hasPermission(this.testreportService.get(#testreport_id),'iBizPMS-TestReport-Update')")
     @ApiOperation(value = "根据产品更新测试报告", tags = {"测试报告" },  notes = "根据产品更新测试报告")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testreports/{testreport_id}")
     public ResponseEntity<TestReportDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
@@ -302,7 +302,7 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-Update-all')")
+    @PreAuthorize("hasPermission(this.testreportService.getTestreportByEntities(this.testreportMapping.toDomain(#testreportdtos)),'iBizPMS-TestReport-Update')")
     @ApiOperation(value = "根据产品批量更新测试报告", tags = {"测试报告" },  notes = "根据产品批量更新测试报告")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testreports/batch")
     public ResponseEntity<Boolean> updateBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<TestReportDTO> testreportdtos) {
@@ -314,14 +314,14 @@ public class TestReportResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-Remove-all')")
+    @PreAuthorize("hasPermission(this.testreportService.get(#testreport_id),'iBizPMS-TestReport-Remove')")
     @ApiOperation(value = "根据产品删除测试报告", tags = {"测试报告" },  notes = "根据产品删除测试报告")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testreports/{testreport_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(testreportService.remove(testreport_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-Remove-all')")
+    @PreAuthorize("hasPermission(this.testreportService.getTestreportByIds(#ids),'iBizPMS-TestReport-Remove')")
     @ApiOperation(value = "根据产品批量删除测试报告", tags = {"测试报告" },  notes = "根据产品批量删除测试报告")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testreports/batch")
     public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
@@ -329,7 +329,7 @@ public class TestReportResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-Get-all')")
+    @PostAuthorize("hasPermission(this.testreportMapping.toDomain(returnObject.body),'iBizPMS-TestReport-Get')")
     @ApiOperation(value = "根据产品获取测试报告", tags = {"测试报告" },  notes = "根据产品获取测试报告")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testreports/{testreport_id}")
     public ResponseEntity<TestReportDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id) {
@@ -422,7 +422,7 @@ public class TestReportResource {
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-Save-all')")
+    @PreAuthorize("hasPermission(this.testreportMapping.toDomain(#testreportdto),'iBizPMS-TestReport-Save')")
     @ApiOperation(value = "根据产品保存测试报告", tags = {"测试报告" },  notes = "根据产品保存测试报告")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testreports/save")
     public ResponseEntity<TestReportDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestReportDTO testreportdto) {
@@ -432,7 +432,7 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(testreportMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-Save-all')")
+    @PreAuthorize("hasPermission(this.testreportMapping.toDomain(#testreportdtos),'iBizPMS-TestReport-Save')")
     @ApiOperation(value = "根据产品批量保存测试报告", tags = {"测试报告" },  notes = "根据产品批量保存测试报告")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testreports/savebatch")
     public ResponseEntity<Boolean> saveBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<TestReportDTO> testreportdtos) {
@@ -444,7 +444,7 @@ public class TestReportResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-searchDefault-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-searchDefault-all') and hasPermission(#context,'iBizPMS-TestReport-Get')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"测试报告" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testreports/fetchdefault")
 	public ResponseEntity<List<TestReportDTO>> fetchTestReportDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestReportSearchContext context) {
@@ -458,7 +458,7 @@ public class TestReportResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-searchDefault-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-searchDefault-all') and hasPermission(#context,'iBizPMS-TestReport-Get')")
 	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"测试报告" } ,notes = "根据产品查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testreports/searchdefault")
 	public ResponseEntity<Page<TestReportDTO>> searchTestReportDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestReportSearchContext context) {
@@ -477,7 +477,7 @@ public class TestReportResource {
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-Create-all')")
+    @PreAuthorize("hasPermission(this.testreportMapping.toDomain(#testreportdto),'iBizPMS-TestReport-Create')")
     @ApiOperation(value = "根据项目建立测试报告", tags = {"测试报告" },  notes = "根据项目建立测试报告")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports")
     public ResponseEntity<TestReportDTO> createByProject(@PathVariable("project_id") Long project_id, @RequestBody TestReportDTO testreportdto) {
@@ -488,7 +488,7 @@ public class TestReportResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-Create-all')")
+    @PreAuthorize("hasPermission(this.testreportMapping.toDomain(#testreportdtos),'iBizPMS-TestReport-Create')")
     @ApiOperation(value = "根据项目批量建立测试报告", tags = {"测试报告" },  notes = "根据项目批量建立测试报告")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports/batch")
     public ResponseEntity<Boolean> createBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<TestReportDTO> testreportdtos) {
@@ -500,7 +500,7 @@ public class TestReportResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-Update-all')")
+    @PreAuthorize("hasPermission(this.testreportService.get(#testreport_id),'iBizPMS-TestReport-Update')")
     @ApiOperation(value = "根据项目更新测试报告", tags = {"测试报告" },  notes = "根据项目更新测试报告")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testreports/{testreport_id}")
     public ResponseEntity<TestReportDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
@@ -512,7 +512,7 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-Update-all')")
+    @PreAuthorize("hasPermission(this.testreportService.getTestreportByEntities(this.testreportMapping.toDomain(#testreportdtos)),'iBizPMS-TestReport-Update')")
     @ApiOperation(value = "根据项目批量更新测试报告", tags = {"测试报告" },  notes = "根据项目批量更新测试报告")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testreports/batch")
     public ResponseEntity<Boolean> updateBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<TestReportDTO> testreportdtos) {
@@ -524,14 +524,14 @@ public class TestReportResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-Remove-all')")
+    @PreAuthorize("hasPermission(this.testreportService.get(#testreport_id),'iBizPMS-TestReport-Remove')")
     @ApiOperation(value = "根据项目删除测试报告", tags = {"测试报告" },  notes = "根据项目删除测试报告")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/testreports/{testreport_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(testreportService.remove(testreport_id));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-Remove-all')")
+    @PreAuthorize("hasPermission(this.testreportService.getTestreportByIds(#ids),'iBizPMS-TestReport-Remove')")
     @ApiOperation(value = "根据项目批量删除测试报告", tags = {"测试报告" },  notes = "根据项目批量删除测试报告")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/testreports/batch")
     public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
@@ -539,7 +539,7 @@ public class TestReportResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-Get-all')")
+    @PostAuthorize("hasPermission(this.testreportMapping.toDomain(returnObject.body),'iBizPMS-TestReport-Get')")
     @ApiOperation(value = "根据项目获取测试报告", tags = {"测试报告" },  notes = "根据项目获取测试报告")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testreports/{testreport_id}")
     public ResponseEntity<TestReportDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id) {
@@ -632,7 +632,7 @@ public class TestReportResource {
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-Save-all')")
+    @PreAuthorize("hasPermission(this.testreportMapping.toDomain(#testreportdto),'iBizPMS-TestReport-Save')")
     @ApiOperation(value = "根据项目保存测试报告", tags = {"测试报告" },  notes = "根据项目保存测试报告")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports/save")
     public ResponseEntity<TestReportDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody TestReportDTO testreportdto) {
@@ -642,7 +642,7 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(testreportMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-Save-all')")
+    @PreAuthorize("hasPermission(this.testreportMapping.toDomain(#testreportdtos),'iBizPMS-TestReport-Save')")
     @ApiOperation(value = "根据项目批量保存测试报告", tags = {"测试报告" },  notes = "根据项目批量保存测试报告")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports/savebatch")
     public ResponseEntity<Boolean> saveBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<TestReportDTO> testreportdtos) {
@@ -654,7 +654,7 @@ public class TestReportResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-searchDefault-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-searchDefault-all') and hasPermission(#context,'iBizPMS-TestReport-Get')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"测试报告" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/fetchdefault")
 	public ResponseEntity<List<TestReportDTO>> fetchTestReportDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody TestReportSearchContext context) {
@@ -668,7 +668,7 @@ public class TestReportResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-searchDefault-all')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','iBizPMS-TestReport-searchDefault-all') and hasPermission(#context,'iBizPMS-TestReport-Get')")
 	@ApiOperation(value = "根据项目查询DEFAULT", tags = {"测试报告" } ,notes = "根据项目查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/searchdefault")
 	public ResponseEntity<Page<TestReportDTO>> searchTestReportDefaultByProject(@PathVariable("project_id") Long project_id, @RequestBody TestReportSearchContext context) {

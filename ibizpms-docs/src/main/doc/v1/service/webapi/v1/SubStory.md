@@ -5971,7 +5971,9 @@ POST
 | 73 | duplicatestory | Long | 允许 | 重复需求ID |
 | 74 | branch | Long | 允许 | 平台/分支 |
 | 75 | tobug | Long | 允许 | 转Bug |
-| 76 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 76 | org | String | 允许 | 归属组织 |
+| 77 | dept | String | 允许 | 归属部门 |
+| 78 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### StorySearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

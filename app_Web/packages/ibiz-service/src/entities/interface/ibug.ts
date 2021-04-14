@@ -332,4 +332,12 @@ export interface IBug extends IEntityBase {
      * 测试单
      */
     testtask?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
 }

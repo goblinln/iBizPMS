@@ -9223,7 +9223,9 @@ POST
 | 74 | project | Long | 允许 | 所属项目 |
 | 75 | task | Long | 允许 | 相关任务 |
 | 76 | testtask | Long | 允许 | 测试单 |
-| 77 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 77 | org | String | 允许 | 归属组织 |
+| 78 | dept | String | 允许 | 归属部门 |
+| 79 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### BugSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

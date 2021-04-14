@@ -34,4 +34,7 @@ export default [
     'project',
     'product',
     'module',
+    'updateby',
+    'org',
+    'dept',
 ];

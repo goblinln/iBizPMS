@@ -7,6 +7,10 @@
   "logicName" : "获取研发人员相关数据",
   "name" : "GetDevInfomation",
   "orderValue" : 99999,
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/GetDevInfomation.json"
+  },
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"

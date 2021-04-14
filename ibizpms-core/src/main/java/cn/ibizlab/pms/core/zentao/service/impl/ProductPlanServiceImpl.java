@@ -590,6 +590,27 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
         return true;
     }
 
+    @Override
+    public List<ProductPlan> getProductplanByIds(List<Long> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<ProductPlan> getProductplanByEntities(List<ProductPlan> entities) {
+        List ids =new ArrayList();
+        for(ProductPlan entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     public IProductPlanService getProxyService() {

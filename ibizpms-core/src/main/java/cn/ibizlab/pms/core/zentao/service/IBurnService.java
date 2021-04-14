@@ -70,6 +70,8 @@ public interface IBurnService extends IService<Burn> {
      */
     boolean execute(String sql, Map param);
 
+    List<Burn> getBurnByIds(List<String> ids);
+    List<Burn> getBurnByEntities(List<Burn> entities);
 }
 
 

@@ -79,6 +79,8 @@ public interface IBuildService extends IService<Build> {
      */
     boolean execute(String sql, Map param);
 
+    List<Build> getBuildByIds(List<Long> ids);
+    List<Build> getBuildByEntities(List<Build> entities);
 }
 
 

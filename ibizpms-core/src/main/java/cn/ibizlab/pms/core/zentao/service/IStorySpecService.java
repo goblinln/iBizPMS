@@ -66,6 +66,8 @@ public interface IStorySpecService extends IService<StorySpec> {
      */
     boolean execute(String sql, Map param);
 
+    List<StorySpec> getStoryspecByIds(List<String> ids);
+    List<StorySpec> getStoryspecByEntities(List<StorySpec> entities);
 }
 
 

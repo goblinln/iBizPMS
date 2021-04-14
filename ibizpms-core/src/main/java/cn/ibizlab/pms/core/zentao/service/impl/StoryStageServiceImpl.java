@@ -267,6 +267,27 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
         return true;
     }
 
+    @Override
+    public List<StoryStage> getStorystageByIds(List<String> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<StoryStage> getStorystageByEntities(List<StoryStage> entities) {
+        List ids =new ArrayList();
+        for(StoryStage entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     public IStoryStageService getProxyService() {

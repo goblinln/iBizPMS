@@ -1,34 +1,25 @@
 {
   "getAllPSPanelFields" : [ {
-    "modelref" : true,
     "id" : "account"
   }, {
-    "modelref" : true,
     "id" : "role"
   }, {
-    "modelref" : true,
     "id" : "join"
   }, {
-    "modelref" : true,
     "id" : "days"
   }, {
-    "modelref" : true,
     "id" : "hours"
   }, {
-    "modelref" : true,
     "id" : "total"
   }, {
-    "modelref" : true,
     "id" : "consumed"
   }, {
-    "modelref" : true,
     "id" : "left"
   }, {
-    "modelref" : true,
     "id" : "estimate"
   }, {
-    "modelref" : true,
-    "id" : "id"
+    "id" : "id",
+    "hidden" : true
   } ],
   "codeName" : "ProductTeamPc",
   "controlType" : "PANEL",

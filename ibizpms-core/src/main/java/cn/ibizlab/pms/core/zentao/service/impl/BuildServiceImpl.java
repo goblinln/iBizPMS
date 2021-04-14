@@ -351,6 +351,27 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
         return true;
     }
 
+    @Override
+    public List<Build> getBuildByIds(List<Long> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<Build> getBuildByEntities(List<Build> entities) {
+        List ids =new ArrayList();
+        for(Build entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     public IBuildService getProxyService() {

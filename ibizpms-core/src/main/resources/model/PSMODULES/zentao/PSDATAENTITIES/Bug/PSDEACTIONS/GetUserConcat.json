@@ -7,6 +7,10 @@
   "logicName" : "获取联系人",
   "name" : "GetUserConcat",
   "orderValue" : 99999,
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/GetCurUserConcat.json"
+  },
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"

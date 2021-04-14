@@ -1,31 +1,27 @@
 {
   "getAllPSPanelFields" : [ {
-    "modelref" : true,
     "id" : "title"
   }, {
-    "modelref" : true,
     "id" : "pri"
   }, {
-    "modelref" : true,
     "id" : "status"
   }, {
-    "modelref" : true,
     "id" : "estimate"
   }, {
-    "modelref" : true,
-    "id" : "srfkey"
+    "id" : "srfkey",
+    "hidden" : true
   }, {
-    "modelref" : true,
-    "id" : "stage"
+    "id" : "stage",
+    "hidden" : true
   }, {
-    "modelref" : true,
-    "id" : "story"
+    "id" : "story",
+    "hidden" : true
   }, {
-    "modelref" : true,
-    "id" : "isfavorites"
+    "id" : "isfavorites",
+    "hidden" : true
   }, {
-    "modelref" : true,
-    "id" : "ischild"
+    "id" : "ischild",
+    "hidden" : true
   } ],
   "codeName" : "ProductStoryKanBan",
   "controlType" : "PANEL",

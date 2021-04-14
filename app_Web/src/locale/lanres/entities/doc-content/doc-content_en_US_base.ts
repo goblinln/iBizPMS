@@ -11,6 +11,10 @@ function getLocaleResourceBase(){
 		'version': commonLogic.appcommonhandle("版本号",null),
 		'digest': commonLogic.appcommonhandle("文档摘要",null),
 		'doc': commonLogic.appcommonhandle("文档",null),
+		'createby': commonLogic.appcommonhandle("由谁创建",null),
+		'updateby': commonLogic.appcommonhandle("由谁更新",null),
+		'org': commonLogic.appcommonhandle("归属组织",null),
+		'dept': commonLogic.appcommonhandle("归属部门",null),
 	},
 	};
 	return data;

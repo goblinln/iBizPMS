@@ -5463,8 +5463,10 @@ POST
 | 56 | product | Long | 允许 | 所属产品 |
 | 57 | lib | Long | 允许 | 所属库 |
 | 58 | module | Long | 允许 | 所属模块 |
-| 59 | ibzcasesteps | List<[IBZCaseStepDTO}](#IBZCaseStepDTO})> | 允许 | 用例步骤 |
-| 60 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 59 | org | String | 允许 | 归属组织 |
+| 60 | dept | String | 允许 | 归属部门 |
+| 61 | ibzcasesteps | List<[IBZCaseStepDTO}](#IBZCaseStepDTO})> | 允许 | 用例步骤 |
+| 62 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### IBZCaseStepDTO
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |
@@ -5481,7 +5483,11 @@ POST
 | 10 | version | Integer | 允许 | 用例版本 |
 | 11 | ibizcase | Long | 允许 | 用例 |
 | 12 | parent | Long | 允许 | 分组用例步骤的组编号 |
-| 13 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 13 | createby | String | 允许 | 由谁创建 |
+| 14 | updateby | String | 允许 | 由谁更新 |
+| 15 | org | String | 允许 | 归属组织 |
+| 16 | dept | String | 允许 | 归属部门 |
+| 17 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### CaseSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

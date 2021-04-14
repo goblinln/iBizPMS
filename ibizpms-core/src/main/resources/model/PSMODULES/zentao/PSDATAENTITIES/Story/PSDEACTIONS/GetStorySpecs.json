@@ -7,6 +7,10 @@
   "logicName" : "获取需求描述",
   "name" : "GetStorySpecs",
   "orderValue" : 99999,
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/GetStorySpecs.json"
+  },
   "getPSDEOPPriv" : {
     "modelref" : true,
     "id" : "READ"

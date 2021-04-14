@@ -1348,7 +1348,11 @@ POST
 | 17 | ibizcase | Long | 允许 | 用例 |
 | 18 | run | Long | 允许 | 测试执行 |
 | 19 | compile | Long | 允许 | 代码编译 |
-| 20 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 20 | createby | String | 允许 | 由谁创建 |
+| 21 | updateby | String | 允许 | 由谁更新 |
+| 22 | org | String | 允许 | 归属组织 |
+| 23 | dept | String | 允许 | 归属部门 |
+| 24 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### TestResultSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

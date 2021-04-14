@@ -801,7 +801,11 @@ POST
 | 4 | title | String | 不可 | 需求名称 |
 | 5 | version | Integer | 允许 | 版本号 |
 | 6 | story | Long | 允许 | 需求 |
-| 7 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 7 | createby | String | 允许 | 由谁创建 |
+| 8 | updateby | String | 允许 | 由谁更新 |
+| 9 | org | String | 允许 | 归属组织 |
+| 10 | dept | String | 允许 | 归属部门 |
+| 11 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### StorySpecSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

@@ -52,6 +52,7 @@ function getLocaleResourceBase(){
 		'activestorycnt': commonLogic.appcommonhandle("激活需求数",null),
 		'linename': commonLogic.appcommonhandle("产品线",null),
 		'line': commonLogic.appcommonhandle("产品线",null),
+		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 	},
 		views: {
 			'testtabexpview': {

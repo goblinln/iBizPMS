@@ -231,6 +231,27 @@ public class HistoryServiceImpl extends ServiceImpl<HistoryMapper, History> impl
         return true;
     }
 
+    @Override
+    public List<History> getHistoryByIds(List<Long> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<History> getHistoryByEntities(List<History> entities) {
+        List ids =new ArrayList();
+        for(History entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     public IHistoryService getProxyService() {

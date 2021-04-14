@@ -14,6 +14,8 @@ function getLocaleResourceBase(){
 		'casecnt': commonLogic.appcommonhandle("用例数",null),
 		'desc': commonLogic.appcommonhandle("描述",null),
 		'product': commonLogic.appcommonhandle("所属产品",null),
+		'org': commonLogic.appcommonhandle("归属组织",null),
+		'dept': commonLogic.appcommonhandle("归属部门",null),
 	},
 		views: {
 			'maindashboardview': {

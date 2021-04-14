@@ -4301,7 +4301,11 @@ POST
 | 23 | deleted | String | 允许 | 任务删除标识 |
 | 24 | project | Long | 允许 | 项目 |
 | 25 | task | Long | 允许 | 任务 |
-| 26 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 26 | createby | String | 允许 | 由谁创建 |
+| 27 | updateby | String | 允许 | 由谁更新 |
+| 28 | org | String | 允许 | 归属组织 |
+| 29 | dept | String | 允许 | 归属部门 |
+| 30 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### TaskEstimateSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

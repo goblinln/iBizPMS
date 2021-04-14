@@ -293,6 +293,27 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
         return true;
     }
 
+    @Override
+    public List<Burn> getBurnByIds(List<String> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<Burn> getBurnByEntities(List<Burn> entities) {
+        List ids =new ArrayList();
+        for(Burn entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     public IBurnService getProxyService() {

@@ -344,4 +344,8 @@ export interface IProject extends IEntityBase {
      * 父项目
      */
     parent?: any;
+    /**
+     * 由谁更新
+     */
+    updateby?: any;
 }

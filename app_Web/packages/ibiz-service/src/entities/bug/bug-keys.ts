@@ -75,4 +75,6 @@ export default [
     'project',
     'task',
     'testtask',
+    'org',
+    'dept',
 ];

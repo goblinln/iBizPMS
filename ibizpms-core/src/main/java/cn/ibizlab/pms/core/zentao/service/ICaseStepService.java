@@ -74,6 +74,8 @@ public interface ICaseStepService extends IService<CaseStep> {
      */
     boolean execute(String sql, Map param);
 
+    List<CaseStep> getCasestepByIds(List<Long> ids);
+    List<CaseStep> getCasestepByEntities(List<CaseStep> entities);
 }
 
 

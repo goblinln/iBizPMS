@@ -78,6 +78,8 @@ function getLocaleResourceBase(){
 		'duplicatestory': commonLogic.appcommonhandle("重复需求ID",null),
 		'branch': commonLogic.appcommonhandle("平台/分支",null),
 		'tobug': commonLogic.appcommonhandle("转Bug",null),
+		'org': commonLogic.appcommonhandle("归属组织",null),
+		'dept': commonLogic.appcommonhandle("归属部门",null),
 	},
 		views: {
 			'maindashboardview_link': {

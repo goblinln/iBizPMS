@@ -61,6 +61,18 @@ export abstract class UserTplBase extends EntityBase implements IUserTpl {
      * @type {('1' | '0')} 1: 是, 0: 否
      */
     ibizpublic?: '1' | '0';
+    /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
 
     /**
      * 重置实体数据

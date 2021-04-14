@@ -74,6 +74,8 @@ public interface ITaskEstimateService extends IService<TaskEstimate> {
      */
     boolean execute(String sql, Map param);
 
+    List<TaskEstimate> getTaskestimateByIds(List<Long> ids);
+    List<TaskEstimate> getTaskestimateByEntities(List<TaskEstimate> entities);
 }
 
 

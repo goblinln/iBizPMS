@@ -319,6 +319,27 @@ public class ProjectProductServiceImpl extends ServiceImpl<ProjectProductMapper,
         return true;
     }
 
+    @Override
+    public List<ProjectProduct> getProjectproductByIds(List<String> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<ProjectProduct> getProjectproductByEntities(List<ProjectProduct> entities) {
+        List ids =new ArrayList();
+        for(ProjectProduct entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     public IProjectProductService getProxyService() {

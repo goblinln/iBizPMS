@@ -7,6 +7,10 @@
   "logicName" : "我的收藏计数器",
   "name" : "MyFavoriteCount",
   "orderValue" : 99999,
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDELOGICS/MyFavoriteCount.json"
+  },
   "paramMode" : 1,
   "requestParamType" : "NONE",
   "testActionMode" : 0,
