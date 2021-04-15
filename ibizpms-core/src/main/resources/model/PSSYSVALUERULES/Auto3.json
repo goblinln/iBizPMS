@@ -1,0 +1,11 @@
+{
+  "codeName" : "Auto3",
+  "dynaModelFilePath" : "PSSYSVALUERULES/Auto3.json",
+  "name" : "email地址",
+  "regExCode" : "[\\w-]+(\\.[\\w-]+)*@[\\w-]+(\\.[\\w-]+)+",
+  "ruleHolder" : 3,
+  "ruleInfo" : "内容必须为电子邮件格式",
+  "ruleType" : "REG",
+  "enableBackend" : true,
+  "enableFront" : true
+}

@@ -123,40 +123,72 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
 
     protected int batchSize = 500;
 
-        @Override
+    @Override
     @Transactional
     public boolean create(Product et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ProductHelper.class).create(et);
+        fillParentData(et);
+        if(!this.retBool(this.baseMapper.insert(et))) {
+            return false;
+        }
+        productteamService.saveByRoot(et.getId(), et.getProductteam());
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
+    @Transactional
     public void createBatch(List<Product> list) {
-
+        list.forEach(item->fillParentData(item));
+        this.saveBatch(list, batchSize);
     }
-        @Override
+
+    @Override
     @Transactional
     public boolean update(Product et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ProductHelper.class).edit(et);
+        fillParentData(et);
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        productteamService.saveByRoot(et.getId(), et.getProductteam());
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
-    public void updateBatch(List<Product> list) {
-
-    }
-        @Override
     @Transactional
-    public boolean remove(Long key) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ProductHelper.class).delete(key);
-    }
-
-    @Override
-    public void removeBatch(Collection<Long> idList){
-        if (idList != null && !idList.isEmpty()) {
-            for (Long id : idList) {
-                this.remove(id);
-            }
+    public void updateBatch(List<Product> list) {
+        list.forEach(item->fillParentData(item));
+        for (Product et : list) {
+            getProxyService().update(et);
         }
     }
+
+    @Override
+    @Transactional
+    public boolean sysUpdate(Product et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public boolean remove(Long key) {
+        productteamService.removeByRoot(key) ;
+        boolean result = removeById(key);
+        return result ;
+    }
+
+    @Override
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        for (Long id : idList) {
+            getProxyService().removeById(id);
+        }
+    }
+
     @Override
     @Transactional
     public Product get(Long key) {
@@ -209,19 +241,19 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     public boolean checkKey(Product et) {
         return (!ObjectUtils.isEmpty(et.getId())) && (!Objects.isNull(this.getById(et.getId())));
     }
-       @Override
+    @Override
     @Transactional
     public Product close(Product et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ProductHelper.class).close(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean closeBatch (List<Product> etList) {
-		 for(Product et : etList) {
-		   close(et);
-		 }
-	 	 return true;
+    public boolean closeBatch(List<Product> etList) {
+        for(Product et : etList) {
+            close(et);
+        }
+        return true;
     }
 
     @Override

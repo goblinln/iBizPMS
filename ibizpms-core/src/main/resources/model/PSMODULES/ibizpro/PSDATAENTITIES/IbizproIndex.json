@@ -118,8 +118,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "INDEXID",
@@ -168,11 +167,9 @@
           "ruleInfo" : "内容长度必须小于等于[200]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[200]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[200]"
       },
       "getPSDEField" : {
         "name" : "ACL",
@@ -214,11 +211,9 @@
           "ruleInfo" : "内容长度必须小于等于[100]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[100]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[100]"
       },
       "getPSDEField" : {
         "name" : "DOCID",
@@ -269,11 +264,9 @@
           "ruleInfo" : "内容长度必须小于等于[200]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[200]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[200]"
       },
       "getPSDEField" : {
         "name" : "INDEXNAME",
@@ -324,11 +317,9 @@
           "ruleInfo" : "内容长度必须小于等于[200]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[200]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[200]"
       },
       "getPSDEField" : {
         "name" : "COLOR",
@@ -378,11 +369,9 @@
           "ruleInfo" : "内容长度必须小于等于[200]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[200]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[200]"
       },
       "getPSDEField" : {
         "name" : "DELETED",
@@ -432,11 +421,9 @@
           "ruleInfo" : "内容长度必须小于等于[200]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[200]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[200]"
       },
       "getPSDEField" : {
         "name" : "ACLLIST",
@@ -485,11 +472,9 @@
           "ruleInfo" : "内容长度必须小于等于[200]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[200]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[200]"
       },
       "getPSDEField" : {
         "name" : "INDEXDESC",
@@ -523,8 +508,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "PRODUCT",
@@ -572,11 +556,9 @@
           "ruleInfo" : "内容长度必须小于等于[200]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[200]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[200]"
       },
       "getPSDEField" : {
         "name" : "INDEX_TYPE",
@@ -632,11 +614,9 @@
           "ruleInfo" : "内容长度必须小于等于[200]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[200]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[200]"
       },
       "getPSDEField" : {
         "name" : "MDEPTID",
@@ -676,8 +656,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "PROJECT",
@@ -725,11 +704,9 @@
           "ruleInfo" : "内容长度必须小于等于[200]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[200]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[200]"
       },
       "getPSDEField" : {
         "name" : "ORGID",

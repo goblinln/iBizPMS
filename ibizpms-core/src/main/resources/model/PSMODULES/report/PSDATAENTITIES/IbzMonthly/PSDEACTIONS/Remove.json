@@ -11,10 +11,6 @@
     "modelref" : true,
     "id" : "DELETE"
   },
-  "getPSSysSFPlugin" : {
-    "pluginType" : "DEACTION",
-    "pluginCode" : "ZTRemove"
-  },
   "paramMode" : 1,
   "requestField" : "IBZ_MONTHLYID",
   "requestParamType" : "FIELD",

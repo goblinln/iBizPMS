@@ -215,11 +215,9 @@
           "ruleInfo" : "内容长度必须小于等于[45]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[45]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[45]"
       },
       "getPSDEField" : {
         "name" : "CODE",
@@ -258,8 +256,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "ID",
@@ -295,8 +292,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "FINISHEDSTORYCNT",
@@ -335,8 +331,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "RELEASEDSTORYCNT",
@@ -376,11 +371,9 @@
           "ruleInfo" : "内容长度必须小于等于[100]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[100]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[100]"
       },
       "getPSDEField" : {
         "name" : "IMPORTANTBUGPERCENT",
@@ -421,8 +414,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "UNDONERESPROJECTCNT",
@@ -461,8 +453,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "ASSIGNTOMEBUGCNT",
@@ -510,11 +501,9 @@
           "ruleInfo" : "内容长度必须小于等于[1]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[1]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[1]"
       },
       "getPSDEField" : {
         "name" : "DELETED",
@@ -549,8 +538,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "ISTOP",
@@ -589,8 +577,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "RESPROJECTCNT",
@@ -629,8 +616,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "BUGCNT",
@@ -661,8 +647,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "HAVECONSUMED",
@@ -710,11 +695,9 @@
           "ruleInfo" : "内容长度必须小于等于[60]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[60]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[60]"
       },
       "getPSDEField" : {
         "name" : "TYPE",
@@ -757,8 +740,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "WAITSTORYCNT",
@@ -789,8 +771,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "BUGSTORY",
@@ -829,8 +810,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "STORYCNT",
@@ -878,11 +858,9 @@
           "ruleInfo" : "内容长度必须小于等于[90]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[90]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[90]"
       },
       "getPSDEField" : {
         "name" : "NAME",
@@ -916,8 +894,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "IMPORTANTBUGCNT",
@@ -956,8 +933,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "YESTERDAYCLOSEDBUGCNT",
@@ -1005,11 +981,9 @@
           "ruleInfo" : "内容长度必须小于等于[60]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[60]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[60]"
       },
       "getPSDEField" : {
         "name" : "STATUS",
@@ -1052,8 +1026,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "YESTERDAYRESOLVEDBUGCNT",
@@ -1092,8 +1065,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "DEVELOPINGSTORYCNT",
@@ -1132,8 +1104,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "ACTIVESTORYCNT",
@@ -1172,8 +1143,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "NOTCLOSEDBUGCNT",
@@ -1212,8 +1182,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "NORMALRELEASECNT",
@@ -1251,8 +1220,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "ORDER1",
@@ -1301,11 +1269,9 @@
           "ruleInfo" : "内容长度必须小于等于[200]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[200]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[200]"
       },
       "getPSDEField" : {
         "name" : "CURRPROJECT",
@@ -1346,8 +1312,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "TESTINGSTORYCNT",
@@ -1386,8 +1351,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "PRODUCTPLANCNT",
@@ -1426,8 +1390,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "RELEASECNT",
@@ -1466,8 +1429,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "YESTERDAYCONFIRMBUGCNT",
@@ -1506,8 +1468,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "POSTPONEDPROJECTCNT",
@@ -1546,8 +1507,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "UNENDPRODUCTPLANCNT",
@@ -1578,8 +1538,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "RESOLVEDBUGCNT",
@@ -1618,8 +1577,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "PLANNEDSTORYCNT",
@@ -1658,8 +1616,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "UNCONFIRMBUGCNT",
@@ -1698,8 +1655,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "ACTIVEBUGCNT",

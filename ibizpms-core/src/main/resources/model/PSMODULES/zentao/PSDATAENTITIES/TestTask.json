@@ -142,11 +142,9 @@
           "ruleInfo" : "内容长度必须小于等于[100]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[100]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[100]"
       },
       "getPSDEField" : {
         "name" : "DEPT",
@@ -194,11 +192,9 @@
           "name" : "[常规条件] 大于等于(>=) 数据对象属性(BEGIN)",
           "paramType" : "ENTITYFIELD",
           "paramValue" : "BEGIN",
-          "ruleInfo" : "结束日期必须大于等于开始日期!",
-          "tryMode" : false
+          "ruleInfo" : "结束日期必须大于等于开始日期!"
         } ],
-        "ruleInfo" : "结束日期必须大于等于开始日期!",
-        "tryMode" : false
+        "ruleInfo" : "结束日期必须大于等于开始日期!"
       },
       "getPSDEField" : {
         "name" : "END",
@@ -216,8 +212,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "END",
@@ -254,8 +249,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "BEGIN",
@@ -301,11 +295,9 @@
           "ruleInfo" : "内容长度必须小于等于[200]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[200]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[200]"
       },
       "getPSDEField" : {
         "name" : "OWNERPK",
@@ -355,11 +347,9 @@
           "ruleInfo" : "内容长度必须小于等于[65535]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[65535]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[65535]"
       },
       "getPSDEField" : {
         "name" : "MAILTO",
@@ -403,8 +393,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "CASECNT",
@@ -452,11 +441,9 @@
           "ruleInfo" : "内容长度必须小于等于[65535]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[65535]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[65535]"
       },
       "getPSDEField" : {
         "name" : "MAILTOPK",
@@ -506,11 +493,9 @@
           "ruleInfo" : "内容长度必须小于等于[100]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[100]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[100]"
       },
       "getPSDEField" : {
         "name" : "UPDATEBY",
@@ -564,11 +549,9 @@
           "ruleInfo" : "内容长度必须小于等于[100]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[100]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[100]"
       },
       "getPSDEField" : {
         "name" : "ORG",
@@ -608,8 +591,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "PRI",
@@ -653,11 +635,9 @@
           "ruleInfo" : "内容长度必须小于等于[1048576]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[1048576]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[1048576]"
       },
       "getPSDEField" : {
         "name" : "COMMENT",
@@ -708,11 +688,9 @@
           "ruleInfo" : "内容长度必须小于等于[100]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[100]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[100]"
       },
       "getPSDEField" : {
         "name" : "CREATEBY",
@@ -766,11 +744,9 @@
           "ruleInfo" : "内容长度必须小于等于[30]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[30]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[30]"
       },
       "getPSDEField" : {
         "name" : "SUBSTATUS",
@@ -819,11 +795,9 @@
           "ruleInfo" : "内容长度必须小于等于[65535]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[65535]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[65535]"
       },
       "getPSDEField" : {
         "name" : "REPORT",
@@ -873,11 +847,9 @@
           "ruleInfo" : "内容长度必须小于等于[65535]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[65535]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[65535]"
       },
       "getPSDEField" : {
         "name" : "DESC",
@@ -918,8 +890,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "ID",
@@ -972,11 +943,9 @@
           "ruleInfo" : "内容长度必须小于等于[7]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[7]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[7]"
       },
       "getPSDEField" : {
         "name" : "STATUS",
@@ -1022,11 +991,9 @@
           "ruleInfo" : "内容长度必须小于等于[100]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[100]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[100]"
       },
       "getPSDEField" : {
         "name" : "MAILTOCONACT",
@@ -1076,11 +1043,9 @@
           "ruleInfo" : "内容长度必须小于等于[30]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[30]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[30]"
       },
       "getPSDEField" : {
         "name" : "OWNER",
@@ -1133,11 +1098,9 @@
           "ruleInfo" : "内容长度必须小于等于[1]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[1]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[1]"
       },
       "getPSDEField" : {
         "name" : "DELETED",
@@ -1189,11 +1152,9 @@
           "ruleInfo" : "内容长度必须小于等于[10]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[10]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[10]"
       },
       "getPSDEField" : {
         "name" : "AUTO",
@@ -1242,11 +1203,9 @@
           "ruleInfo" : "内容长度必须小于等于[90]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[90]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[90]"
       },
       "getPSDEField" : {
         "name" : "NAME",
@@ -1297,11 +1256,9 @@
           "ruleInfo" : "内容长度必须小于等于[150]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[150]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[150]"
       },
       "getPSDEField" : {
         "name" : "BUILDNAME",
@@ -1359,11 +1316,9 @@
           "ruleInfo" : "内容长度必须小于等于[90]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[90]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[90]"
       },
       "getPSDEField" : {
         "name" : "PRODUCTNAME",
@@ -1421,11 +1376,9 @@
           "ruleInfo" : "内容长度必须小于等于[90]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[90]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[90]"
       },
       "getPSDEField" : {
         "name" : "PROJECTTNAME",
@@ -1474,8 +1427,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "PRODUCT",
@@ -1523,8 +1475,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "BUILD",
@@ -1571,8 +1522,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "PROJECT",

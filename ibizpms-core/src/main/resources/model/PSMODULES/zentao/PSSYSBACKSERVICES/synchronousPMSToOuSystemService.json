@@ -2,6 +2,14 @@
   "codeName" : "synchronousPMSToOuSystemService",
   "dynaModelFilePath" : "PSMODULES/zentao/PSSYSBACKSERVICES/synchronousPMSToOuSystemService.json",
   "name" : "定时任务同步PMS账户到OU系统",
+  "getPSDEAction" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/User/PSDEACTIONS/SyncAccount.json"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/User.json"
+  },
   "serviceContainer" : "SC01",
   "serviceHandler" : "synchronousPMSToOuSystemService",
   "serviceOrder" : 0,

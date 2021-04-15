@@ -57,40 +57,61 @@ public class IbzLibServiceImpl extends ServiceImpl<IbzLibMapper, IbzLib> impleme
 
     protected int batchSize = 500;
 
-        @Override
+    @Override
     @Transactional
     public boolean create(IbzLib et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzLibHelper.class).create(et);
+        if(!this.retBool(this.baseMapper.insert(et))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
+    @Transactional
     public void createBatch(List<IbzLib> list) {
-
+        this.saveBatch(list, batchSize);
     }
-        @Override
+
+    @Override
     @Transactional
     public boolean update(IbzLib et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzLibHelper.class).edit(et);
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
+    @Transactional
     public void updateBatch(List<IbzLib> list) {
-
+        updateBatchById(list, batchSize);
     }
-        @Override
+
+    @Override
+    @Transactional
+    public boolean sysUpdate(IbzLib et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
+    @Override
     @Transactional
     public boolean remove(Long key) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzLibHelper.class).delete(key);
+        boolean result = removeById(key);
+        return result ;
     }
 
     @Override
-    public void removeBatch(Collection<Long> idList){
-        if (idList != null && !idList.isEmpty()) {
-            for (Long id : idList) {
-                this.remove(id);
-            }
-        }
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        removeByIds(idList);
     }
+
     @Override
     @Transactional
     public IbzLib get(Long key) {

@@ -7,10 +7,6 @@
   "logicName" : "移除成员",
   "name" : "UnlinkMember",
   "orderValue" : 99999,
-  "getPSSysSFPlugin" : {
-    "pluginType" : "DEACTION",
-    "pluginCode" : "ZTCommon"
-  },
   "paramMode" : 1,
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,

@@ -63,26 +63,52 @@ public class DocLibServiceImpl extends ServiceImpl<DocLibMapper, DocLib> impleme
 
     protected int batchSize = 500;
 
-        @Override
+    @Override
     @Transactional
     public boolean create(DocLib et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.DocLibHelper.class).create(et);
+        fillParentData(et);
+        if(!this.retBool(this.baseMapper.insert(et))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
+    @Transactional
     public void createBatch(List<DocLib> list) {
-
+        list.forEach(item->fillParentData(item));
+        this.saveBatch(list, batchSize);
     }
-        @Override
+
+    @Override
     @Transactional
     public boolean update(DocLib et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.DocLibHelper.class).edit(et);
+        fillParentData(et);
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
+    @Transactional
     public void updateBatch(List<DocLib> list) {
-
+        list.forEach(item->fillParentData(item));
+        updateBatchById(list, batchSize);
     }
+
+    @Override
+    @Transactional
+    public boolean sysUpdate(DocLib et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
     @Override
     @Transactional
     public boolean remove(Long key) {

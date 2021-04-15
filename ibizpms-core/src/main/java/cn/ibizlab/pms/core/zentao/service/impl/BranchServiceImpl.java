@@ -123,20 +123,19 @@ public class BranchServiceImpl extends ServiceImpl<BranchMapper, Branch> impleme
         return true;
     }
 
-        @Override
+    @Override
     @Transactional
     public boolean remove(Long key) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.BranchHelper.class).delete(key);
+        boolean result = removeById(key);
+        return result ;
     }
 
     @Override
-    public void removeBatch(Collection<Long> idList){
-        if (idList != null && !idList.isEmpty()) {
-            for (Long id : idList) {
-                this.remove(id);
-            }
-        }
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        removeByIds(idList);
     }
+
     @Override
     @Transactional
     public Branch get(Long key) {
@@ -232,19 +231,19 @@ public class BranchServiceImpl extends ServiceImpl<BranchMapper, Branch> impleme
         }
     }
 
-       @Override
+    @Override
     @Transactional
     public Branch sort(Branch et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.BranchHelper.class).sort(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean sortBatch (List<Branch> etList) {
-		 for(Branch et : etList) {
-		   sort(et);
-		 }
-	 	 return true;
+    public boolean sortBatch(List<Branch> etList) {
+        for(Branch et : etList) {
+            sort(et);
+        }
+        return true;
     }
 
 

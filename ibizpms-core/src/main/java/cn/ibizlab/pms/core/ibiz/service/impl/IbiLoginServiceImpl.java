@@ -53,6 +53,61 @@ public class IbiLoginServiceImpl extends ServiceImpl<IbiLoginMapper, IbiLogin> i
 
     @Override
     @Transactional
+    public boolean create(IbiLogin et) {
+        if(!this.retBool(this.baseMapper.insert(et))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public void createBatch(List<IbiLogin> list) {
+        this.saveBatch(list, batchSize);
+    }
+
+    @Override
+    @Transactional
+    public boolean update(IbiLogin et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public void updateBatch(List<IbiLogin> list) {
+        updateBatchById(list, batchSize);
+    }
+
+    @Override
+    @Transactional
+    public boolean sysUpdate(IbiLogin et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public boolean remove(Long key) {
+        boolean result = removeById(key);
+        return result ;
+    }
+
+    @Override
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        removeByIds(idList);
+    }
+
+    @Override
+    @Transactional
     public IbiLogin get(Long key) {
         IbiLogin et = getById(key);
         if (et == null) {

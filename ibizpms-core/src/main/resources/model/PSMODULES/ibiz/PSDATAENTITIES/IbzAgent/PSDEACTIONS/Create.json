@@ -11,10 +11,6 @@
     "modelref" : true,
     "id" : "CREATE"
   },
-  "getPSSysSFPlugin" : {
-    "pluginType" : "DEACTION",
-    "pluginCode" : "ZTCreate"
-  },
   "paramMode" : 1,
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,

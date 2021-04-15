@@ -229,11 +229,9 @@
           "ruleInfo" : "内容长度必须小于等于[60]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[60]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[60]"
       },
       "getPSDEField" : {
         "name" : "ISSUBMIT",
@@ -286,11 +284,9 @@
           "ruleInfo" : "内容长度必须小于等于[1048576]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[1048576]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[1048576]"
       },
       "getPSDEField" : {
         "name" : "PLANNEXTWEEK",
@@ -339,11 +335,9 @@
           "ruleInfo" : "内容长度必须小于等于[200]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[200]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[200]"
       },
       "getPSDEField" : {
         "name" : "IBZ_WEEKLYNAME",
@@ -393,11 +387,9 @@
           "ruleInfo" : "内容长度必须小于等于[2000]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[2000]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[2000]"
       },
       "getPSDEField" : {
         "name" : "MAILTO",
@@ -449,11 +441,9 @@
           "ruleInfo" : "内容长度必须小于等于[200]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[200]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[200]"
       },
       "getPSDEField" : {
         "name" : "REPORTTOPK",
@@ -503,11 +493,9 @@
           "ruleInfo" : "内容长度必须小于等于[100]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[100]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[100]"
       },
       "getPSDEField" : {
         "name" : "NEXTWEEKTASK",
@@ -550,8 +538,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "IBZ_WEEKLYID",
@@ -593,8 +580,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "SUBMITTIME",
@@ -640,11 +626,9 @@
           "ruleInfo" : "内容长度必须小于等于[200]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[200]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[200]"
       },
       "getPSDEField" : {
         "name" : "MAILTOPK",
@@ -694,11 +678,9 @@
           "ruleInfo" : "内容长度必须小于等于[60]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[60]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[60]"
       },
       "getPSDEField" : {
         "name" : "CREATEMAN",
@@ -753,11 +735,9 @@
           "ruleInfo" : "内容长度必须小于等于[60]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[60]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[60]"
       },
       "getPSDEField" : {
         "name" : "REPORTSTATUS",
@@ -802,11 +782,9 @@
           "ruleInfo" : "内容长度必须小于等于[100]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[100]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[100]"
       },
       "getPSDEField" : {
         "name" : "FILES",
@@ -856,11 +834,9 @@
           "ruleInfo" : "内容长度必须小于等于[1048576]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[1048576]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[1048576]"
       },
       "getPSDEField" : {
         "name" : "WORKTHISWEEK",
@@ -909,11 +885,9 @@
           "ruleInfo" : "内容长度必须小于等于[60]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[60]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[60]"
       },
       "getPSDEField" : {
         "name" : "REPORTTO",
@@ -965,11 +939,9 @@
           "ruleInfo" : "内容长度必须小于等于[60]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[60]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[60]"
       },
       "getPSDEField" : {
         "name" : "UPDATEMANNAME",
@@ -1020,11 +992,9 @@
           "ruleInfo" : "内容长度必须小于等于[60]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[60]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[60]"
       },
       "getPSDEField" : {
         "name" : "ACCOUNT",
@@ -1076,11 +1046,9 @@
           "ruleInfo" : "内容长度必须小于等于[100]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[100]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[100]"
       },
       "getPSDEField" : {
         "name" : "THISWEEKTASK",
@@ -1132,11 +1100,9 @@
           "ruleInfo" : "内容长度必须小于等于[1048576]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[1048576]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[1048576]"
       },
       "getPSDEField" : {
         "name" : "COMMENT",
@@ -1176,8 +1142,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "DATE",
@@ -1223,11 +1188,9 @@
           "ruleInfo" : "内容长度必须小于等于[60]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[60]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[60]"
       },
       "getPSDEField" : {
         "name" : "UPDATEMAN",
@@ -1282,11 +1245,9 @@
           "ruleInfo" : "内容长度必须小于等于[60]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[60]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[60]"
       },
       "getPSDEField" : {
         "name" : "CREATEMANNAME",
@@ -1328,8 +1289,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "CREATEDATE",
@@ -1370,8 +1330,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "UPDATEDATE",

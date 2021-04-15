@@ -1,0 +1,11 @@
+{
+  "codeName" : "Auto17",
+  "dynaModelFilePath" : "PSSYSVALUERULES/Auto17.json",
+  "name" : "文件名称",
+  "regExCode" : "[^\\\\\\/\\:\\*\\?\\\"\\<\\>\\|]+(\\[^\\\\\\/\\:\\*\\?\\\"\\<\\>\\|]+)*",
+  "ruleHolder" : 3,
+  "ruleInfo" : "内容不能包括/、\\、?、*、<、>、:",
+  "ruleType" : "REG",
+  "enableBackend" : true,
+  "enableFront" : true
+}

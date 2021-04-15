@@ -7,10 +7,6 @@
   "logicName" : "EE关闭计划",
   "name" : "EeClosePlan",
   "orderValue" : 99999,
-  "getPSSysSFPlugin" : {
-    "pluginType" : "DEACTION",
-    "pluginCode" : "ZTCommon"
-  },
   "paramMode" : 1,
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,

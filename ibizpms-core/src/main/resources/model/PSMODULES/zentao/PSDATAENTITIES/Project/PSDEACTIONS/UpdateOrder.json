@@ -15,10 +15,6 @@
     "modelref" : true,
     "id" : "UPDATE"
   },
-  "getPSSysSFPlugin" : {
-    "pluginType" : "DEACTION",
-    "pluginCode" : "ZTCommon"
-  },
   "paramMode" : 1,
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,

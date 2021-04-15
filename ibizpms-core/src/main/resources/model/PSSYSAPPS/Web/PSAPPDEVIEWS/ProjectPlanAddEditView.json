@@ -310,14 +310,11 @@
               "name" : "[常规条件] 大于等于(>=) 数据对象属性(BEGIN)",
               "paramType" : "ENTITYFIELD",
               "paramValue" : "BEGIN",
-              "ruleInfo" : "截止日期应该大于起始日期",
-              "tryMode" : false
+              "ruleInfo" : "截止日期应该大于起始日期"
             } ],
-            "ruleInfo" : "截止日期应该大于起始日期",
-            "tryMode" : false
+            "ruleInfo" : "截止日期应该大于起始日期"
           } ],
-          "ruleInfo" : "截止日期应该大于起始日期",
-          "tryMode" : false
+          "ruleInfo" : "截止日期应该大于起始日期"
         },
         "getPSDEField" : {
           "name" : "END",

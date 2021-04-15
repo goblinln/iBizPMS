@@ -277,11 +277,9 @@
                       "name" : "[字符长度] 小于等于 100",
                       "ruleInfo" : "任务名称不大于10",
                       "includeMaxValue" : true,
-                      "includeMinValue" : false,
-                      "tryMode" : false
+                      "includeMinValue" : false
                     } ],
-                    "ruleInfo" : "任务名称不大于10",
-                    "tryMode" : false
+                    "ruleInfo" : "任务名称不大于10"
                   },
                   "getPSDEField" : {
                     "name" : "NAME",

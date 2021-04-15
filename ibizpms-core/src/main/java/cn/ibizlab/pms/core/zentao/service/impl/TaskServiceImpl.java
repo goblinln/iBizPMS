@@ -77,40 +77,75 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
 
     protected int batchSize = 500;
 
-        @Override
+    @Override
     @Transactional
     public boolean create(Task et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskHelper.class).create(et);
+        fillParentData(et);
+        if(!this.retBool(this.baseMapper.insert(et))) {
+            return false;
+        }
+        taskteamService.saveByRoot(et.getId(), et.getTaskteam());
+        taskestimateService.saveByTask(et.getId(), et.getTaskestimate());
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
+    @Transactional
     public void createBatch(List<Task> list) {
-
+        list.forEach(item->fillParentData(item));
+        this.saveBatch(list, batchSize);
     }
-        @Override
+
+    @Override
     @Transactional
     public boolean update(Task et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskHelper.class).edit(et);
+        fillParentData(et);
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        taskteamService.saveByRoot(et.getId(), et.getTaskteam());
+        taskestimateService.saveByTask(et.getId(), et.getTaskestimate());
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
-    public void updateBatch(List<Task> list) {
-
-    }
-        @Override
     @Transactional
-    public boolean remove(Long key) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskHelper.class).delete(key);
-    }
-
-    @Override
-    public void removeBatch(Collection<Long> idList){
-        if (idList != null && !idList.isEmpty()) {
-            for (Long id : idList) {
-                this.remove(id);
-            }
+    public void updateBatch(List<Task> list) {
+        list.forEach(item->fillParentData(item));
+        for (Task et : list) {
+            getProxyService().update(et);
         }
     }
+
+    @Override
+    @Transactional
+    public boolean sysUpdate(Task et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public boolean remove(Long key) {
+        taskteamService.removeByRoot(key) ;
+        taskestimateService.removeByTask(key) ;
+        boolean result = removeById(key);
+        return result ;
+    }
+
+    @Override
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        for (Long id : idList) {
+            getProxyService().removeById(id);
+        }
+    }
+
     @Override
     @Transactional
     public Task get(Long key) {
@@ -145,83 +180,83 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         return et;
     }
 
-       @Override
+    @Override
     @Transactional
     public Task activate(Task et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskHelper.class).activate(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean activateBatch (List<Task> etList) {
-		 for(Task et : etList) {
-		   activate(et);
-		 }
-	 	 return true;
+    public boolean activateBatch(List<Task> etList) {
+        for(Task et : etList) {
+            activate(et);
+        }
+        return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Task assignTo(Task et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskHelper.class).assignTo(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean assignToBatch (List<Task> etList) {
-		 for(Task et : etList) {
-		   assignTo(et);
-		 }
-	 	 return true;
+    public boolean assignToBatch(List<Task> etList) {
+        for(Task et : etList) {
+            assignTo(et);
+        }
+        return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Task cancel(Task et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskHelper.class).cancel(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean cancelBatch (List<Task> etList) {
-		 for(Task et : etList) {
-		   cancel(et);
-		 }
-	 	 return true;
+    public boolean cancelBatch(List<Task> etList) {
+        for(Task et : etList) {
+            cancel(et);
+        }
+        return true;
     }
 
     @Override
     public boolean checkKey(Task et) {
         return (!ObjectUtils.isEmpty(et.getId())) && (!Objects.isNull(this.getById(et.getId())));
     }
-       @Override
+    @Override
     @Transactional
     public Task close(Task et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskHelper.class).close(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean closeBatch (List<Task> etList) {
-		 for(Task et : etList) {
-		   close(et);
-		 }
-	 	 return true;
+    public boolean closeBatch(List<Task> etList) {
+        for(Task et : etList) {
+            close(et);
+        }
+        return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Task confirmStoryChange(Task et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskHelper.class).confirmStoryChange(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean confirmStoryChangeBatch (List<Task> etList) {
-		 for(Task et : etList) {
-		   confirmStoryChange(et);
-		 }
-	 	 return true;
+    public boolean confirmStoryChangeBatch(List<Task> etList) {
+        for(Task et : etList) {
+            confirmStoryChange(et);
+        }
+        return true;
     }
 
     @Override
@@ -239,64 +274,64 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Task deleteEstimate(Task et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskHelper.class).deleteEstimate(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean deleteEstimateBatch (List<Task> etList) {
-		 for(Task et : etList) {
-		   deleteEstimate(et);
-		 }
-	 	 return true;
+    public boolean deleteEstimateBatch(List<Task> etList) {
+        for(Task et : etList) {
+            deleteEstimate(et);
+        }
+        return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Task editEstimate(Task et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskHelper.class).editEstimate(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean editEstimateBatch (List<Task> etList) {
-		 for(Task et : etList) {
-		   editEstimate(et);
-		 }
-	 	 return true;
+    public boolean editEstimateBatch(List<Task> etList) {
+        for(Task et : etList) {
+            editEstimate(et);
+        }
+        return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Task finish(Task et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskHelper.class).finish(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean finishBatch (List<Task> etList) {
-		 for(Task et : etList) {
-		   finish(et);
-		 }
-	 	 return true;
+    public boolean finishBatch(List<Task> etList) {
+        for(Task et : etList) {
+            finish(et);
+        }
+        return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Task getNextTeamUser(Task et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskHelper.class).getNextTeamUser(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean getNextTeamUserBatch (List<Task> etList) {
-		 for(Task et : etList) {
-		   getNextTeamUser(et);
-		 }
-	 	 return true;
+    public boolean getNextTeamUserBatch(List<Task> etList) {
+        for(Task et : etList) {
+            getNextTeamUser(et);
+        }
+        return true;
     }
 
     @Override
@@ -344,79 +379,79 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Task linkPlan(Task et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskHelper.class).linkPlan(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean linkPlanBatch (List<Task> etList) {
-		 for(Task et : etList) {
-		   linkPlan(et);
-		 }
-	 	 return true;
+    public boolean linkPlanBatch(List<Task> etList) {
+        for(Task et : etList) {
+            linkPlan(et);
+        }
+        return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Task otherUpdate(Task et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskHelper.class).otherUpdate(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean otherUpdateBatch (List<Task> etList) {
-		 for(Task et : etList) {
-		   otherUpdate(et);
-		 }
-	 	 return true;
+    public boolean otherUpdateBatch(List<Task> etList) {
+        for(Task et : etList) {
+            otherUpdate(et);
+        }
+        return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Task pause(Task et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskHelper.class).pause(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean pauseBatch (List<Task> etList) {
-		 for(Task et : etList) {
-		   pause(et);
-		 }
-	 	 return true;
+    public boolean pauseBatch(List<Task> etList) {
+        for(Task et : etList) {
+            pause(et);
+        }
+        return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Task recordEstimate(Task et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskHelper.class).recordEstimate(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean recordEstimateBatch (List<Task> etList) {
-		 for(Task et : etList) {
-		   recordEstimate(et);
-		 }
-	 	 return true;
+    public boolean recordEstimateBatch(List<Task> etList) {
+        for(Task et : etList) {
+            recordEstimate(et);
+        }
+        return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Task restart(Task et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskHelper.class).restart(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean restartBatch (List<Task> etList) {
-		 for(Task et : etList) {
-		   restart(et);
-		 }
-	 	 return true;
+    public boolean restartBatch(List<Task> etList) {
+        for(Task et : etList) {
+            restart(et);
+        }
+        return true;
     }
 
     @Override
@@ -481,73 +516,49 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         }
     }
 
-      /**
-   * 发送消息通知。
-   */
-	@Override
-	public Task sendMessage(Task et) {
- 		String pcLinkView = "maindashboardview_link";
-  		String mobLinkView = "mobeditview";
-  	
-  		cn.ibizlab.pms.core.util.message.IMsgService dingTalkMsgService = cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.message.IMsgService.class);
-  		if(dingTalkMsgService!=null){
-        	dingTalkMsgService.send(et, "任务", pcLinkView, mobLinkView);
-		}
-	  	return et;
-	}
-
-	@Override
+    @Override
     @Transactional
-    public boolean sendMessageBatch (List<Task> etList) {
-		 for(Task et : etList) {
-		   sendMessage(et);
-		 }
-	 	 return true;
+    public Task sendMessage(Task et) {
+        //自定义代码
+        return et;
     }
-      /**
-   * 发送消息前置处理逻辑。
-   */
-	@Override
-	public Task sendMsgPreProcess(Task et) {
-	  	Task dbet = this.get(et.getId());
-        Map<String,Object> params = et.getExtensionparams();
-
-  		//assignedto has changed
-  		if(!cn.ibizlab.pms.core.util.message.MsgDestParser.equalsInValue(dbet.get("assignedto"),et.get("assignedto"))) {
-            params.put("assignedToChanged", true);
-        }
-  		params.put("preassignedto",dbet.get("assignedto"));
-
-        if(!cn.ibizlab.pms.core.util.message.MsgDestParser.equalsInValue(dbet.get("status"),et.get("status"))){
-            params.put("prestatus",dbet.get("status"));
-        }
-
-	  	//mailto filter duplicated
-	  	
-	  	return et;
-	}
-
-	@Override
+    @Override
     @Transactional
-    public boolean sendMsgPreProcessBatch (List<Task> etList) {
-		 for(Task et : etList) {
-		   sendMsgPreProcess(et);
-		 }
-	 	 return true;
+    public boolean sendMessageBatch(List<Task> etList) {
+        for(Task et : etList) {
+            sendMessage(et);
+        }
+        return true;
     }
-       @Override
+
+    @Override
+    @Transactional
+    public Task sendMsgPreProcess(Task et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendMsgPreProcessBatch(List<Task> etList) {
+        for(Task et : etList) {
+            sendMsgPreProcess(et);
+        }
+        return true;
+    }
+
+    @Override
     @Transactional
     public Task start(Task et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskHelper.class).start(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean startBatch (List<Task> etList) {
-		 for(Task et : etList) {
-		   start(et);
-		 }
-	 	 return true;
+    public boolean startBatch(List<Task> etList) {
+        for(Task et : etList) {
+            start(et);
+        }
+        return true;
     }
 
     @Override

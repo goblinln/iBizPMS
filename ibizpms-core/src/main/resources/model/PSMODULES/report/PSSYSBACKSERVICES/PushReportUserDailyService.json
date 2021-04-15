@@ -2,6 +2,14 @@
   "codeName" : "PushReportUserDailyService",
   "dynaModelFilePath" : "PSMODULES/report/PSSYSBACKSERVICES/PushReportUserDailyService.json",
   "name" : "定时推送待阅提醒用户日报",
+  "getPSDEAction" : {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/PushUserDaily.json"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily.json"
+  },
   "serviceContainer" : "SC01",
   "serviceHandler" : "PushReportUserDailyService",
   "serviceOrder" : 0,

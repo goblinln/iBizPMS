@@ -255,11 +255,9 @@
             "name" : "[常规条件] 大于等于(>=) 数据对象属性(BEGIN)",
             "paramType" : "ENTITYFIELD",
             "paramValue" : "BEGIN",
-            "ruleInfo" : "结束日期必须大于等于开始日期!",
-            "tryMode" : false
+            "ruleInfo" : "结束日期必须大于等于开始日期!"
           } ],
-          "ruleInfo" : "结束日期必须大于等于开始日期!",
-          "tryMode" : false
+          "ruleInfo" : "结束日期必须大于等于开始日期!"
         },
         "getPSDEField" : {
           "name" : "END",

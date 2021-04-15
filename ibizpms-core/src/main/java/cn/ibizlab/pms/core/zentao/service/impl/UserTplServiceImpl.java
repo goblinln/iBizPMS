@@ -51,16 +51,22 @@ public class UserTplServiceImpl extends ServiceImpl<UserTplMapper, UserTpl> impl
 
     protected int batchSize = 500;
 
-        @Override
+    @Override
     @Transactional
     public boolean create(UserTpl et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.UserTplHelper.class).create(et);
+        if(!this.retBool(this.baseMapper.insert(et))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
+    @Transactional
     public void createBatch(List<UserTpl> list) {
-
+        this.saveBatch(list, batchSize);
     }
+
     @Override
     @Transactional
     public boolean update(UserTpl et) {
@@ -87,20 +93,19 @@ public class UserTplServiceImpl extends ServiceImpl<UserTplMapper, UserTpl> impl
         return true;
     }
 
-        @Override
+    @Override
     @Transactional
     public boolean remove(Long key) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.UserTplHelper.class).delete(key);
+        boolean result = removeById(key);
+        return result ;
     }
 
     @Override
-    public void removeBatch(Collection<Long> idList){
-        if (idList != null && !idList.isEmpty()) {
-            for (Long id : idList) {
-                this.remove(id);
-            }
-        }
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        removeByIds(idList);
     }
+
     @Override
     @Transactional
     public UserTpl get(Long key) {

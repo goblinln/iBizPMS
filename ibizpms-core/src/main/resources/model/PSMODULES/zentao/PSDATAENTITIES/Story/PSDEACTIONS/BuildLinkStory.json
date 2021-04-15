@@ -7,10 +7,6 @@
   "logicName" : "项目关联需求",
   "name" : "buildLinkStory",
   "orderValue" : 99999,
-  "getPSSysSFPlugin" : {
-    "pluginType" : "DEACTION",
-    "pluginCode" : "ZTCommon"
-  },
   "paramMode" : 1,
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,

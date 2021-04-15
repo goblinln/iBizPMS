@@ -7,10 +7,6 @@
   "logicName" : "版本批量解除关联Bug",
   "name" : "buildBatchUnlinkBug",
   "orderValue" : 99999,
-  "getPSSysSFPlugin" : {
-    "pluginType" : "DEACTION",
-    "pluginCode" : "ZTCommon"
-  },
   "paramMode" : 1,
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,

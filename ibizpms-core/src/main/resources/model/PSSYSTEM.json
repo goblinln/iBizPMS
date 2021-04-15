@@ -1455,141 +1455,56 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/WebHook.json"
   } ],
   "getAllPSSysBackServices" : [ {
-    "codeName" : "pushProjectWeekly",
-    "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/pushProjectWeekly.json",
-    "name" : "定时推送项目周报",
-    "serviceContainer" : "SC01",
-    "serviceHandler" : "PushProjectWeekly",
-    "serviceOrder" : 0,
-    "startMode" : "AUTO"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/pushProjectWeekly.json"
   }, {
-    "codeName" : "BurnService",
-    "dynaModelFilePath" : "PSMODULES/zentao/PSSYSBACKSERVICES/BurnService.json",
-    "name" : "定时更新燃尽图服务",
-    "serviceContainer" : "SC01",
-    "serviceHandler" : "BurnService",
-    "serviceOrder" : 0,
-    "startMode" : "MANUAL"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSSYSBACKSERVICES/BurnService.json"
   }, {
-    "codeName" : "synchronousPMSToOuSystemService",
-    "dynaModelFilePath" : "PSMODULES/zentao/PSSYSBACKSERVICES/synchronousPMSToOuSystemService.json",
-    "name" : "定时任务同步PMS账户到OU系统",
-    "serviceContainer" : "SC01",
-    "serviceHandler" : "synchronousPMSToOuSystemService",
-    "serviceOrder" : 0,
-    "startMode" : "MANUAL"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSSYSBACKSERVICES/synchronousPMSToOuSystemService.json"
   }, {
-    "codeName" : "SumProducctWeekly",
-    "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/SumProducctWeekly.json",
-    "name" : "定时生成汇总产品周报",
-    "serviceContainer" : "SC01",
-    "serviceHandler" : "PushProductWeekly",
-    "serviceOrder" : 0,
-    "startMode" : "MANUAL"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/SumProducctWeekly.json"
   }, {
-    "codeName" : "PushReportUserMonthlyService",
-    "dynaModelFilePath" : "PSMODULES/report/PSSYSBACKSERVICES/PushReportUserMonthlyService.json",
-    "name" : "定时推送待阅提醒用户月报",
-    "serviceContainer" : "SC01",
-    "serviceHandler" : "PushReportUserMonthlyService",
-    "serviceOrder" : 0,
-    "startMode" : "MANUAL"
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSSYSBACKSERVICES/PushReportUserMonthlyService.json"
   }, {
-    "codeName" : "CreateReportUserWeeklyService",
-    "dynaModelFilePath" : "PSMODULES/report/PSSYSBACKSERVICES/CreateReportUserWeeklyService.json",
-    "name" : "每周定时生成用户周报",
-    "serviceContainer" : "SC01",
-    "serviceHandler" : "CreateReportUserWeeklyService",
-    "serviceOrder" : 0,
-    "startMode" : "MANUAL"
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSSYSBACKSERVICES/CreateReportUserWeeklyService.json"
   }, {
-    "codeName" : "PushReportUserDailyService",
-    "dynaModelFilePath" : "PSMODULES/report/PSSYSBACKSERVICES/PushReportUserDailyService.json",
-    "name" : "定时推送待阅提醒用户日报",
-    "serviceContainer" : "SC01",
-    "serviceHandler" : "PushReportUserDailyService",
-    "serviceOrder" : 0,
-    "startMode" : "MANUAL"
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSSYSBACKSERVICES/PushReportUserDailyService.json"
   }, {
-    "codeName" : "ReportService",
-    "dynaModelFilePath" : "PSMODULES/zentao/PSSYSBACKSERVICES/ReportService.json",
-    "name" : "每日任务提醒定时服务",
-    "serviceContainer" : "SC01",
-    "serviceHandler" : "ReportService",
-    "serviceOrder" : 0,
-    "startMode" : "MANUAL"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSSYSBACKSERVICES/ReportService.json"
   }, {
-    "codeName" : "CreateReportUserDailyService",
-    "dynaModelFilePath" : "PSMODULES/report/PSSYSBACKSERVICES/CreateReportUserDailyService.json",
-    "name" : "每日定时生成用户日报",
-    "serviceContainer" : "SC01",
-    "serviceHandler" : "CreateReportUserDailyService",
-    "serviceOrder" : 0,
-    "startMode" : "MANUAL"
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSSYSBACKSERVICES/CreateReportUserDailyService.json"
   }, {
-    "codeName" : "CreateProductMonthlyService",
-    "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/CreateProductMonthlyService.json",
-    "name" : "定时生成产品月报",
-    "serviceContainer" : "SC01",
-    "serviceHandler" : "CreateProductMonthlyService",
-    "serviceOrder" : 0,
-    "startMode" : "AUTO"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/CreateProductMonthlyService.json"
   }, {
-    "codeName" : "SumPorjectMonthly",
-    "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/SumPorjectMonthly.json",
-    "name" : "汇总项目月报",
-    "serviceContainer" : "SC01",
-    "serviceHandler" : "SumPorjectMonthly",
-    "serviceOrder" : 0,
-    "startMode" : "AUTO"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/SumPorjectMonthly.json"
   }, {
-    "codeName" : "SumPorjectDaily",
-    "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/SumPorjectDaily.json",
-    "name" : "汇总项目日报",
-    "serviceContainer" : "SC01",
-    "serviceHandler" : "SumPorjectDaily",
-    "serviceOrder" : 0,
-    "startMode" : "AUTO"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/SumPorjectDaily.json"
   }, {
-    "codeName" : "CreateReportUserMonthlyService",
-    "dynaModelFilePath" : "PSMODULES/report/PSSYSBACKSERVICES/CreateReportUserMonthlyService.json",
-    "name" : "每月定时生成用户月报",
-    "serviceContainer" : "SC01",
-    "serviceHandler" : "CreateReportUserMonthlyService",
-    "serviceOrder" : 0,
-    "startMode" : "MANUAL"
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSSYSBACKSERVICES/CreateReportUserMonthlyService.json"
   }, {
-    "codeName" : "TodoService",
-    "dynaModelFilePath" : "PSMODULES/zentao/PSSYSBACKSERVICES/TodoService.json",
-    "name" : "创建周期定时服务",
-    "serviceContainer" : "SC01",
-    "serviceHandler" : "TodoService",
-    "serviceOrder" : 0,
-    "startMode" : "MANUAL"
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSSYSBACKSERVICES/TodoService.json"
   }, {
-    "codeName" : "PushReportUserWeeklyService",
-    "dynaModelFilePath" : "PSMODULES/report/PSSYSBACKSERVICES/PushReportUserWeeklyService.json",
-    "name" : "定时推送待阅提醒用户周报提交",
-    "serviceContainer" : "SC01",
-    "serviceHandler" : "PushReportUserWeeklyService",
-    "serviceOrder" : 0,
-    "startMode" : "MANUAL"
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSSYSBACKSERVICES/PushReportUserWeeklyService.json"
   }, {
-    "codeName" : "CreateCycleTasksService",
-    "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/CreateCycleTasksService.json",
-    "name" : "定时生成周期任务",
-    "serviceContainer" : "SC01",
-    "serviceHandler" : "CreateCycleTasksService",
-    "serviceOrder" : 0,
-    "startMode" : "AUTO"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/CreateCycleTasksService.json"
   }, {
-    "codeName" : "CreateProductDailyService",
-    "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/CreateProductDailyService.json",
-    "name" : "定时生成产品日报",
-    "serviceContainer" : "SC01",
-    "serviceHandler" : "CreateProductDailyService",
-    "serviceOrder" : 0,
-    "startMode" : "AUTO"
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/CreateProductDailyService.json"
   } ],
   "getAllPSSysUniReses" : [ {
     "name" : "通用创建",
@@ -2225,35 +2140,78 @@
     "id" : "ibiz__BUG_ASSIGNTO_BUT"
   } ],
   "getAllPSSysUserRoles" : [ {
-    "codeName" : "ProductManger",
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProductManger.json",
-    "name" : "产品经理",
-    "roleTag" : "ProductManger",
-    "roleType" : "CUSTOM"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProductManger.json"
   }, {
-    "codeName" : "ProductSupervisor",
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProductSupervisor.json",
-    "name" : "产品主管",
-    "roleTag" : "ProductSupervisor",
-    "roleType" : "CUSTOM"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProductSupervisor.json"
   }, {
-    "codeName" : "TestSupervisor",
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/TestSupervisor.json",
-    "name" : "测试主管",
-    "roleTag" : "TestSupervisor",
-    "roleType" : "CUSTOM"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/TestSupervisor.json"
   }, {
-    "codeName" : "ProjectManger",
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProjectManger.json",
-    "name" : "项目经理",
-    "roleTag" : "ProjectManger",
-    "roleType" : "CUSTOM"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProjectManger.json"
   }, {
-    "codeName" : "ResearchDirector",
-    "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ResearchDirector.json",
-    "name" : "研发主管",
-    "roleTag" : "ResearchDirector",
-    "roleType" : "CUSTOM"
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/ResearchDirector.json"
+  } ],
+  "getAllPSSysValueRules" : [ {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto6.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto17.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto15.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto2.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto18.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto13.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto14.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto3.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto9.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto5.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto12.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto7.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto8.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto10.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto1.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto16.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto19.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto11.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto4.json"
   } ],
   "getAllPSSystemModules" : [ {
     "modelref" : true,

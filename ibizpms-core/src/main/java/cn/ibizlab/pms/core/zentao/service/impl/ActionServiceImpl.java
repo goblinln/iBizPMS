@@ -57,26 +57,50 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
 
     protected int batchSize = 500;
 
-        @Override
+    @Override
     @Transactional
     public boolean create(Action et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ActionHelper.class).create(et);
+        if(!this.retBool(this.baseMapper.insert(et))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
+    @Transactional
     public void createBatch(List<Action> list) {
-
+        for (Action et : list) {
+            getProxyService().save(et);
+        }
     }
-        @Override
+
+    @Override
     @Transactional
     public boolean update(Action et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ActionHelper.class).edit(et);
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
+    @Transactional
     public void updateBatch(List<Action> list) {
-
+        updateBatchById(list, batchSize);
     }
+
+    @Override
+    @Transactional
+    public boolean sysUpdate(Action et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
     @Override
     @Transactional
     public boolean remove(Long key) {
@@ -140,34 +164,34 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
         return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Action editComment(Action et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ActionHelper.class).editComment(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean editCommentBatch (List<Action> etList) {
-		 for(Action et : etList) {
-		   editComment(et);
-		 }
-	 	 return true;
+    public boolean editCommentBatch(List<Action> etList) {
+        for(Action et : etList) {
+            editComment(et);
+        }
+        return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Action managePmsEe(Action et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ActionHelper.class).managePmsEe(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean managePmsEeBatch (List<Action> etList) {
-		 for(Action et : etList) {
-		   managePmsEe(et);
-		 }
-	 	 return true;
+    public boolean managePmsEeBatch(List<Action> etList) {
+        for(Action et : etList) {
+            managePmsEe(et);
+        }
+        return true;
     }
 
     @Override
