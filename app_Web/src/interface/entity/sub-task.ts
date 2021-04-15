@@ -685,4 +685,12 @@ export interface SubTask {
      * @memberof SubTask
      */
     frombug?: any;
+
+    /**
+     * 排序
+     *
+     * @returns {*}
+     * @memberof SubTask
+     */
+    ordernum?: any;
 }

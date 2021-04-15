@@ -277,4 +277,12 @@ export interface ProductPlan {
      * @memberof ProductPlan
      */
     begintime?: any;
+
+    /**
+     * 排序
+     *
+     * @returns {*}
+     * @memberof ProductPlan
+     */
+    ordernum?: any;
 }

@@ -685,4 +685,12 @@ export interface Task {
      * @memberof Task
      */
     frombug?: any;
+
+    /**
+     * 排序
+     *
+     * @returns {*}
+     * @memberof Task
+     */
+    ordernum?: any;
 }

@@ -270,6 +270,9 @@ export default class WorkInfoModel {
       {
         name: 'frombug',
       },
+      {
+        name: 'ordernum',
+      },
     ]
   }
 

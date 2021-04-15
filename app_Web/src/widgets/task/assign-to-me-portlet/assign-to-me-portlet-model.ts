@@ -270,6 +270,9 @@ export default class AssignToMeModel {
       {
         name: 'frombug',
       },
+      {
+        name: 'ordernum',
+      },
     ]
   }
 

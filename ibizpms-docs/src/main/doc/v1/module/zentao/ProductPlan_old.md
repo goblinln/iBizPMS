@@ -52,6 +52,7 @@ hide members
 |父计划|PARENT|PICKUP|&nbsp;|
 |产品|PRODUCT|PICKUP|&nbsp;|
 |开始时间|BEGINTIME|TEXT|&nbsp;|
+|排序|ORDERNUM|TEXT|&nbsp;|
 
 ## 值规则
 | 属性名称    | 规则    |  说明  |
@@ -90,6 +91,7 @@ hide members
 |父计划|默认规则|默认规则|
 |产品|默认规则|默认规则|
 |开始时间|默认规则|内容长度必须小于等于[100]|
+|排序|默认规则|内容长度必须小于等于[200]|
 
 ## 状态控制
 

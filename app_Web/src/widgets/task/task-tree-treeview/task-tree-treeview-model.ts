@@ -270,6 +270,9 @@ export default class TaskTreeModel {
       {
         name: 'frombug',
       },
+      {
+        name: 'ordernum',
+      },
     ]
   }
 

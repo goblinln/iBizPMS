@@ -270,6 +270,9 @@ export default class ToolbarModel {
       {
         name: 'frombug',
       },
+      {
+        name: 'ordernum',
+      },
     ]
   }
 

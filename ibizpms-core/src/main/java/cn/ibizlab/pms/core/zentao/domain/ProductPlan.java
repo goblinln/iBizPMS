@@ -329,6 +329,14 @@ public class ProductPlan extends EntityMP implements Serializable {
     @JsonProperty("begintime")
     @ApiModelProperty("开始时间")
     private String begintime;
+    /**
+     * 排序
+     */
+    @TableField(exist = false)
+    @JSONField(name = "ordernum")
+    @JsonProperty("ordernum")
+    @ApiModelProperty("排序")
+    private String ordernum;
 
     /**
      * 

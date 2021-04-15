@@ -270,6 +270,9 @@ export default class GroupTreeExpViewtreeexpbarModel {
       {
         name: 'frombug',
       },
+      {
+        name: 'ordernum',
+      },
     ]
   }
 

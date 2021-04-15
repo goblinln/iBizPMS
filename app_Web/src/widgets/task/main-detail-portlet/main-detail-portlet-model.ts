@@ -270,6 +270,9 @@ export default class MainDetailModel {
       {
         name: 'frombug',
       },
+      {
+        name: 'ordernum',
+      },
     ]
   }
 

@@ -185320,6 +185320,7 @@ CREATE TABLE `zt_module`(
 | DELAY        | 延期  | VARCHAR      |   200   | &nbsp; |
 | TITLE        | 名称  | VARCHAR      |   90   | &nbsp; |
 | STATUS        | 计划状态  | VARCHAR      |   100   | &nbsp; |
+| ORDERNUM        | 排序  | VARCHAR      |   200   | &nbsp; |
 | ISEXPIRED        | 是否过期  | VARCHAR      |   200   | &nbsp; |
 | STORYCNT        | 需求数  | INTEGER      |   -1   | &nbsp; |
 | DESC        | 描述  | CLOB      |   65,535   | &nbsp; |

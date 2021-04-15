@@ -270,6 +270,9 @@ export default class CurFinishedbyTaskModel {
       {
         name: 'frombug',
       },
+      {
+        name: 'ordernum',
+      },
     ]
   }
 

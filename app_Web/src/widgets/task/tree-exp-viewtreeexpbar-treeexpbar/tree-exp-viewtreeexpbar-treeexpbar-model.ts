@@ -270,6 +270,9 @@ export default class TreeExpViewtreeexpbarModel {
       {
         name: 'frombug',
       },
+      {
+        name: 'ordernum',
+      },
     ]
   }
 

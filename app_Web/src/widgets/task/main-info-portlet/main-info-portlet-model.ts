@@ -270,6 +270,9 @@ export default class MainInfoModel {
       {
         name: 'frombug',
       },
+      {
+        name: 'ordernum',
+      },
     ]
   }
 

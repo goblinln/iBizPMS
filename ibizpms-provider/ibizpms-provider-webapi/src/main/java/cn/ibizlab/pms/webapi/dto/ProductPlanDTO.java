@@ -363,6 +363,16 @@ public class ProductPlanDTO extends DTOBase implements Serializable {
     @ApiModelProperty("开始时间")
     private String begintime;
 
+    /**
+     * 属性 [ORDERNUM]
+     *
+     */
+    @JSONField(name = "ordernum")
+    @JsonProperty("ordernum")
+    @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
+    @ApiModelProperty("排序")
+    private String ordernum;
+
 
     /**
      * 设置 [TITLE]

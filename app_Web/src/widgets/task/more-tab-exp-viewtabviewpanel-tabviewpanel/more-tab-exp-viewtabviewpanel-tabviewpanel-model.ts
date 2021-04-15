@@ -270,6 +270,9 @@ export default class MoreTabExpViewtabviewpanelModel {
       {
         name: 'frombug',
       },
+      {
+        name: 'ordernum',
+      },
     ]
   }
 
