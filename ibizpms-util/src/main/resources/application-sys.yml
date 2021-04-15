@@ -100,7 +100,15 @@ ribbon:
 #缓存级别：无缓存(无配置项)、一级缓存(L1)、二级缓存(L2)
 ibiz:
   enablePermissionValid: true
-  cacheLevel: L1 #(L1)一级本地caffeine缓存;(L2)caffeine缓存+Redis缓存
+  cacheLevel: L2 #(L1)一级本地caffeine缓存;(L2)caffeine缓存+Redis缓存
+  ref:
+    service:
+      uaa: ibizrt4ebsx-rt4ebsx
+      ou: ibizrt4ebsx-rt4ebsx
+      dict: ibizrt4ebsx-rt4ebsx
+      lite: ibizrt4ebsx-rt4ebsx
+      disk: ibizrt4ebsx-rt4ebsx
+      wf: ibzwf-api
   saas: 
     column: SRFDCID
     sys-tables: ACT_RU_TASK,act_re_procdef,databasechangelog,databasechangeloglock
