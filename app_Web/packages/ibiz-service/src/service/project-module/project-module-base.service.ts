@@ -304,9 +304,9 @@ export class ProjectModuleBaseService extends EntityBaseService<IProjectModule> 
      */
     async FetchByPath(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/fetchbypath`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/fetchbypath`, _data);
         }
-        return this.http.get(`/projectmodules/fetchbypath`, _data);
+        return this.http.post(`/projectmodules/fetchbypath`, _data);
     }
     /**
      * FetchDefault
@@ -318,9 +318,9 @@ export class ProjectModuleBaseService extends EntityBaseService<IProjectModule> 
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/fetchdefault`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/fetchdefault`, _data);
         }
-        return this.http.get(`/projectmodules/fetchdefault`, _data);
+        return this.http.post(`/projectmodules/fetchdefault`, _data);
     }
     /**
      * FetchParentModule
@@ -332,9 +332,9 @@ export class ProjectModuleBaseService extends EntityBaseService<IProjectModule> 
      */
     async FetchParentModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/fetchparentmodule`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/fetchparentmodule`, _data);
         }
-        return this.http.get(`/projectmodules/fetchparentmodule`, _data);
+        return this.http.post(`/projectmodules/fetchparentmodule`, _data);
     }
     /**
      * FetchRoot
@@ -346,9 +346,9 @@ export class ProjectModuleBaseService extends EntityBaseService<IProjectModule> 
      */
     async FetchRoot(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/fetchroot`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/fetchroot`, _data);
         }
-        return this.http.get(`/projectmodules/fetchroot`, _data);
+        return this.http.post(`/projectmodules/fetchroot`, _data);
     }
     /**
      * FetchRoot_NoBranch
@@ -360,9 +360,9 @@ export class ProjectModuleBaseService extends EntityBaseService<IProjectModule> 
      */
     async FetchRoot_NoBranch(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/fetchroot_nobranch`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/fetchroot_nobranch`, _data);
         }
-        return this.http.get(`/projectmodules/fetchroot_nobranch`, _data);
+        return this.http.post(`/projectmodules/fetchroot_nobranch`, _data);
     }
     /**
      * FetchRoot_Task
@@ -374,9 +374,9 @@ export class ProjectModuleBaseService extends EntityBaseService<IProjectModule> 
      */
     async FetchRoot_Task(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/fetchroot_task`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/fetchroot_task`, _data);
         }
-        return this.http.get(`/projectmodules/fetchroot_task`, _data);
+        return this.http.post(`/projectmodules/fetchroot_task`, _data);
     }
     /**
      * FetchTaskModules
@@ -388,8 +388,8 @@ export class ProjectModuleBaseService extends EntityBaseService<IProjectModule> 
      */
     async FetchTaskModules(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/fetchtaskmodules`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/fetchtaskmodules`, _data);
         }
-        return this.http.get(`/projectmodules/fetchtaskmodules`, _data);
+        return this.http.post(`/projectmodules/fetchtaskmodules`, _data);
     }
 }

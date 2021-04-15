@@ -151,6 +151,6 @@ export class IBIZProTagBaseService extends EntityBaseService<IIBIZProTag> {
      * @memberof IBIZProTagService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibizprotags/fetchdefault`, _data);
+        return this.http.post(`/ibizprotags/fetchdefault`, _data);
     }
 }

@@ -174,7 +174,7 @@ export class DeptBaseService extends EntityBaseService<IDept> {
      * @memberof DeptService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/depts/fetchdefault`, _data);
+        return this.http.post(`/depts/fetchdefault`, _data);
     }
     /**
      * FetchRoot
@@ -185,6 +185,6 @@ export class DeptBaseService extends EntityBaseService<IDept> {
      * @memberof DeptService
      */
     async FetchRoot(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/depts/fetchroot`, _data);
+        return this.http.post(`/depts/fetchroot`, _data);
     }
 }

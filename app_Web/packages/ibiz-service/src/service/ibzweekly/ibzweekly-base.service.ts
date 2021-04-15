@@ -229,7 +229,7 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
      * @memberof IBZWEEKLYService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzweeklies/fetchdefault`, _data);
+        return this.http.post(`/ibzweeklies/fetchdefault`, _data);
     }
     /**
      * FetchMyNotSubmit
@@ -240,7 +240,7 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
      * @memberof IBZWEEKLYService
      */
     async FetchMyNotSubmit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzweeklies/fetchmynotsubmit`, _data);
+        return this.http.post(`/ibzweeklies/fetchmynotsubmit`, _data);
     }
     /**
      * FetchMyWeekly
@@ -251,7 +251,7 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
      * @memberof IBZWEEKLYService
      */
     async FetchMyWeekly(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzweeklies/fetchmyweekly`, _data);
+        return this.http.post(`/ibzweeklies/fetchmyweekly`, _data);
     }
     /**
      * FetchProductTeamMemberWeekly
@@ -262,7 +262,7 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
      * @memberof IBZWEEKLYService
      */
     async FetchProductTeamMemberWeekly(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzweeklies/fetchproductteammemberweekly`, _data);
+        return this.http.post(`/ibzweeklies/fetchproductteammemberweekly`, _data);
     }
     /**
      * FetchProjectWeekly
@@ -273,6 +273,6 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
      * @memberof IBZWEEKLYService
      */
     async FetchProjectWeekly(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzweeklies/fetchprojectweekly`, _data);
+        return this.http.post(`/ibzweeklies/fetchprojectweekly`, _data);
     }
 }

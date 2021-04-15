@@ -152,6 +152,6 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
      * @memberof ProductLineService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/productlines/fetchdefault`, _data);
+        return this.http.post(`/productlines/fetchdefault`, _data);
     }
 }

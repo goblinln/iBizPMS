@@ -175,8 +175,8 @@ public class IbzPlanTempletResource {
 
     @PreAuthorize("@IbzPlanTempletRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取CurUserTemplet", tags = {"计划模板" } ,notes = "获取CurUserTemplet")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzplantemplets/fetchcurusertemplet")
-	public ResponseEntity<List<IbzPlanTempletDTO>> fetchCurUserTemplet(IbzPlanTempletSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzplantemplets/fetchcurusertemplet")
+	public ResponseEntity<List<IbzPlanTempletDTO>> fetchCurUserTemplet(@RequestBody IbzPlanTempletSearchContext context) {
         ibzplantempletRuntime.addAuthorityConditions(context,"READ");
         Page<IbzPlanTemplet> domains = ibzplantempletService.searchCurUserTemplet(context) ;
         List<IbzPlanTempletDTO> list = ibzplantempletMapping.toDto(domains.getContent());
@@ -199,8 +199,8 @@ public class IbzPlanTempletResource {
 
     @PreAuthorize("@IbzPlanTempletRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"计划模板" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzplantemplets/fetchdefault")
-	public ResponseEntity<List<IbzPlanTempletDTO>> fetchDefault(IbzPlanTempletSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzplantemplets/fetchdefault")
+	public ResponseEntity<List<IbzPlanTempletDTO>> fetchDefault(@RequestBody IbzPlanTempletSearchContext context) {
         ibzplantempletRuntime.addAuthorityConditions(context,"READ");
         Page<IbzPlanTemplet> domains = ibzplantempletService.searchDefault(context) ;
         List<IbzPlanTempletDTO> list = ibzplantempletMapping.toDto(domains.getContent());

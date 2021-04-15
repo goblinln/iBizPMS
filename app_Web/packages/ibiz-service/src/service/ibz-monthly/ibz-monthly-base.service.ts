@@ -260,7 +260,7 @@ export class IbzMonthlyBaseService extends EntityBaseService<IIbzMonthly> {
      * @memberof IbzMonthlyService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzmonthlies/fetchdefault`, _data);
+        return this.http.post(`/ibzmonthlies/fetchdefault`, _data);
     }
     /**
      * FetchMyMonthly
@@ -271,7 +271,7 @@ export class IbzMonthlyBaseService extends EntityBaseService<IIbzMonthly> {
      * @memberof IbzMonthlyService
      */
     async FetchMyMonthly(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzmonthlies/fetchmymonthly`, _data);
+        return this.http.post(`/ibzmonthlies/fetchmymonthly`, _data);
     }
     /**
      * FetchMyMonthlyMob
@@ -282,7 +282,7 @@ export class IbzMonthlyBaseService extends EntityBaseService<IIbzMonthly> {
      * @memberof IbzMonthlyService
      */
     async FetchMyMonthlyMob(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzmonthlies/fetchmymonthlymob`, _data);
+        return this.http.post(`/ibzmonthlies/fetchmymonthlymob`, _data);
     }
     /**
      * FetchMyReceivedMonthly
@@ -293,7 +293,7 @@ export class IbzMonthlyBaseService extends EntityBaseService<IIbzMonthly> {
      * @memberof IbzMonthlyService
      */
     async FetchMyReceivedMonthly(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzmonthlies/fetchmyreceivedmonthly`, _data);
+        return this.http.post(`/ibzmonthlies/fetchmyreceivedmonthly`, _data);
     }
     /**
      * FetchMySubmitMonthly
@@ -304,7 +304,7 @@ export class IbzMonthlyBaseService extends EntityBaseService<IIbzMonthly> {
      * @memberof IbzMonthlyService
      */
     async FetchMySubmitMonthly(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzmonthlies/fetchmysubmitmonthly`, _data);
+        return this.http.post(`/ibzmonthlies/fetchmysubmitmonthly`, _data);
     }
     /**
      * FetchProductMonthly
@@ -315,7 +315,7 @@ export class IbzMonthlyBaseService extends EntityBaseService<IIbzMonthly> {
      * @memberof IbzMonthlyService
      */
     async FetchProductMonthly(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzmonthlies/fetchproductmonthly`, _data);
+        return this.http.post(`/ibzmonthlies/fetchproductmonthly`, _data);
     }
     /**
      * FetchProjectMonthly
@@ -326,6 +326,6 @@ export class IbzMonthlyBaseService extends EntityBaseService<IIbzMonthly> {
      * @memberof IbzMonthlyService
      */
     async FetchProjectMonthly(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzmonthlies/fetchprojectmonthly`, _data);
+        return this.http.post(`/ibzmonthlies/fetchprojectmonthly`, _data);
     }
 }

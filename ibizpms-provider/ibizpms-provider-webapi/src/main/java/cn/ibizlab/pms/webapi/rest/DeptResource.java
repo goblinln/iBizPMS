@@ -149,8 +149,8 @@ public class DeptResource {
 
     @PreAuthorize("@DeptRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"部门" } ,notes = "获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/depts/fetchdefault")
-	public ResponseEntity<List<DeptDTO>> fetchDefault(DeptSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/depts/fetchdefault")
+	public ResponseEntity<List<DeptDTO>> fetchDefault(@RequestBody DeptSearchContext context) {
         deptRuntime.addAuthorityConditions(context,"READ");
         Page<Dept> domains = deptService.searchDefault(context) ;
         List<DeptDTO> list = deptMapping.toDto(domains.getContent());
@@ -173,8 +173,8 @@ public class DeptResource {
 
     @PreAuthorize("@DeptRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根部门", tags = {"部门" } ,notes = "获取根部门")
-    @RequestMapping(method= RequestMethod.GET , value="/depts/fetchroot")
-	public ResponseEntity<List<DeptDTO>> fetchRoot(DeptSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/depts/fetchroot")
+	public ResponseEntity<List<DeptDTO>> fetchRoot(@RequestBody DeptSearchContext context) {
         deptRuntime.addAuthorityConditions(context,"READ");
         Page<Dept> domains = deptService.searchRoot(context) ;
         List<DeptDTO> list = deptMapping.toDto(domains.getContent());

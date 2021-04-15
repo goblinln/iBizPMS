@@ -413,8 +413,8 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
      */
     async FetchReportRelease(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/releases/fetchreportrelease`, _data);
+            return this.http.post(`/products/${_context.product}/releases/fetchreportrelease`, _data);
         }
-        return this.http.get(`/releases/fetchreportrelease`, _data);
+        return this.http.post(`/releases/fetchreportrelease`, _data);
     }
 }

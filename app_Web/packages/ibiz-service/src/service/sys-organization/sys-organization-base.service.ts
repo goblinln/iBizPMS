@@ -152,6 +152,6 @@ export class SysOrganizationBaseService extends EntityBaseService<ISysOrganizati
      * @memberof SysOrganizationService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysorganizations/fetchdefault`, _data);
+        return this.http.post(`/sysorganizations/fetchdefault`, _data);
     }
 }

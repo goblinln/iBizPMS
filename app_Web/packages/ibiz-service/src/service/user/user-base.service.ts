@@ -225,7 +225,7 @@ export class UserBaseService extends EntityBaseService<IUser> {
      * @memberof UserService
      */
     async FetchBugUser(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/users/fetchbuguser`, _data);
+        return this.http.post(`/users/fetchbuguser`, _data);
     }
     /**
      * FetchDefault
@@ -236,7 +236,7 @@ export class UserBaseService extends EntityBaseService<IUser> {
      * @memberof UserService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/users/fetchdefault`, _data);
+        return this.http.post(`/users/fetchdefault`, _data);
     }
     /**
      * FetchGetByCommiter
@@ -247,7 +247,7 @@ export class UserBaseService extends EntityBaseService<IUser> {
      * @memberof UserService
      */
     async FetchGetByCommiter(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/users/fetchgetbycommiter`, _data);
+        return this.http.post(`/users/fetchgetbycommiter`, _data);
     }
     /**
      * FetchProjectTeamM
@@ -258,7 +258,7 @@ export class UserBaseService extends EntityBaseService<IUser> {
      * @memberof UserService
      */
     async FetchProjectTeamM(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/users/fetchprojectteamm`, _data);
+        return this.http.post(`/users/fetchprojectteamm`, _data);
     }
     /**
      * FetchProjectTeamUser
@@ -269,7 +269,7 @@ export class UserBaseService extends EntityBaseService<IUser> {
      * @memberof UserService
      */
     async FetchProjectTeamUser(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/users/fetchprojectteamuser`, _data);
+        return this.http.post(`/users/fetchprojectteamuser`, _data);
     }
     /**
      * FetchProjectTeamUserTask
@@ -280,7 +280,7 @@ export class UserBaseService extends EntityBaseService<IUser> {
      * @memberof UserService
      */
     async FetchProjectTeamUserTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/users/fetchprojectteamusertask`, _data);
+        return this.http.post(`/users/fetchprojectteamusertask`, _data);
     }
     /**
      * FetchTaskTeam
@@ -291,6 +291,6 @@ export class UserBaseService extends EntityBaseService<IUser> {
      * @memberof UserService
      */
     async FetchTaskTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/users/fetchtaskteam`, _data);
+        return this.http.post(`/users/fetchtaskteam`, _data);
     }
 }

@@ -135,8 +135,8 @@ public class PSSysAppResource {
     }
 
 	@ApiOperation(value = "获取版本", tags = {"系统应用" } ,notes = "获取版本")
-    @RequestMapping(method= RequestMethod.GET , value="/pssysapps/fetchbuild")
-	public ResponseEntity<List<PSSysAppDTO>> fetchBuild(PSSysAppSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/pssysapps/fetchbuild")
+	public ResponseEntity<List<PSSysAppDTO>> fetchBuild(@RequestBody PSSysAppSearchContext context) {
         Page<PSSysApp> domains = pssysappService.searchBuild(context) ;
         List<PSSysAppDTO> list = pssysappMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -155,8 +155,8 @@ public class PSSysAppResource {
 	}
 
 	@ApiOperation(value = "获取数据集", tags = {"系统应用" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/pssysapps/fetchdefault")
-	public ResponseEntity<List<PSSysAppDTO>> fetchDefault(PSSysAppSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/pssysapps/fetchdefault")
+	public ResponseEntity<List<PSSysAppDTO>> fetchDefault(@RequestBody PSSysAppSearchContext context) {
         Page<PSSysApp> domains = pssysappService.searchDefault(context) ;
         List<PSSysAppDTO> list = pssysappMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

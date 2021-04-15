@@ -152,6 +152,6 @@ export class IBIZProPluginBaseService extends EntityBaseService<IIBIZProPlugin> 
      * @memberof IBIZProPluginService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibizproplugins/fetchdefault`, _data);
+        return this.http.post(`/ibizproplugins/fetchdefault`, _data);
     }
 }

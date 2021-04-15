@@ -159,8 +159,8 @@ public class ProjectStatsResource {
 
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"项目统计" } ,notes = "获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/projectstats/fetchdefault")
-	public ResponseEntity<List<ProjectStatsDTO>> fetchDefault(ProjectStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchdefault")
+	public ResponseEntity<List<ProjectStatsDTO>> fetchDefault(@RequestBody ProjectStatsSearchContext context) {
         projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchDefault(context) ;
         List<ProjectStatsDTO> list = projectstatsMapping.toDto(domains.getContent());
@@ -183,8 +183,8 @@ public class ProjectStatsResource {
 
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取未关闭产品", tags = {"项目统计" } ,notes = "获取未关闭产品")
-    @RequestMapping(method= RequestMethod.GET , value="/projectstats/fetchnoopenproduct")
-	public ResponseEntity<List<ProjectStatsDTO>> fetchNoOpenProduct(ProjectStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchnoopenproduct")
+	public ResponseEntity<List<ProjectStatsDTO>> fetchNoOpenProduct(@RequestBody ProjectStatsSearchContext context) {
         projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchNoOpenProduct(context) ;
         List<ProjectStatsDTO> list = projectstatsMapping.toDto(domains.getContent());
@@ -207,8 +207,8 @@ public class ProjectStatsResource {
 
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目bug类型统计", tags = {"项目统计" } ,notes = "获取项目bug类型统计")
-    @RequestMapping(method= RequestMethod.GET , value="/projectstats/fetchprojectbugtype")
-	public ResponseEntity<List<ProjectStatsDTO>> fetchProjectBugType(ProjectStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojectbugtype")
+	public ResponseEntity<List<ProjectStatsDTO>> fetchProjectBugType(@RequestBody ProjectStatsSearchContext context) {
         projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchProjectBugType(context) ;
         List<ProjectStatsDTO> list = projectstatsMapping.toDto(domains.getContent());
@@ -231,8 +231,8 @@ public class ProjectStatsResource {
 
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目投入统计", tags = {"项目统计" } ,notes = "获取项目投入统计")
-    @RequestMapping(method= RequestMethod.GET , value="/projectstats/fetchprojectinputstats")
-	public ResponseEntity<List<ProjectStatsDTO>> fetchProjectInputStats(ProjectStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojectinputstats")
+	public ResponseEntity<List<ProjectStatsDTO>> fetchProjectInputStats(@RequestBody ProjectStatsSearchContext context) {
         projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchProjectInputStats(context) ;
         List<ProjectStatsDTO> list = projectstatsMapping.toDto(domains.getContent());
@@ -255,8 +255,8 @@ public class ProjectStatsResource {
 
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目进度", tags = {"项目统计" } ,notes = "获取项目进度")
-    @RequestMapping(method= RequestMethod.GET , value="/projectstats/fetchprojectprogress")
-	public ResponseEntity<List<ProjectStatsDTO>> fetchProjectProgress(ProjectStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojectprogress")
+	public ResponseEntity<List<ProjectStatsDTO>> fetchProjectProgress(@RequestBody ProjectStatsSearchContext context) {
         projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchProjectProgress(context) ;
         List<ProjectStatsDTO> list = projectstatsMapping.toDto(domains.getContent());
@@ -279,8 +279,8 @@ public class ProjectStatsResource {
 
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目质量", tags = {"项目统计" } ,notes = "获取项目质量")
-    @RequestMapping(method= RequestMethod.GET , value="/projectstats/fetchprojectquality")
-	public ResponseEntity<List<ProjectStatsDTO>> fetchProjectQuality(ProjectStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojectquality")
+	public ResponseEntity<List<ProjectStatsDTO>> fetchProjectQuality(@RequestBody ProjectStatsSearchContext context) {
         projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchProjectQuality(context) ;
         List<ProjectStatsDTO> list = projectstatsMapping.toDto(domains.getContent());
@@ -303,8 +303,8 @@ public class ProjectStatsResource {
 
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目需求阶段统计", tags = {"项目统计" } ,notes = "获取项目需求阶段统计")
-    @RequestMapping(method= RequestMethod.GET , value="/projectstats/fetchprojectstorystagestats")
-	public ResponseEntity<List<ProjectStatsDTO>> fetchProjectStoryStageStats(ProjectStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojectstorystagestats")
+	public ResponseEntity<List<ProjectStatsDTO>> fetchProjectStoryStageStats(@RequestBody ProjectStatsSearchContext context) {
         projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchProjectStoryStageStats(context) ;
         List<ProjectStatsDTO> list = projectstatsMapping.toDto(domains.getContent());
@@ -327,8 +327,8 @@ public class ProjectStatsResource {
 
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目需求状态统计", tags = {"项目统计" } ,notes = "获取项目需求状态统计")
-    @RequestMapping(method= RequestMethod.GET , value="/projectstats/fetchprojectstorystatusstats")
-	public ResponseEntity<List<ProjectStatsDTO>> fetchProjectStoryStatusStats(ProjectStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojectstorystatusstats")
+	public ResponseEntity<List<ProjectStatsDTO>> fetchProjectStoryStatusStats(@RequestBody ProjectStatsSearchContext context) {
         projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchProjectStoryStatusStats(context) ;
         List<ProjectStatsDTO> list = projectstatsMapping.toDto(domains.getContent());
@@ -351,8 +351,8 @@ public class ProjectStatsResource {
 
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目任务统计(任务状态)", tags = {"项目统计" } ,notes = "获取项目任务统计(任务状态)")
-    @RequestMapping(method= RequestMethod.GET , value="/projectstats/fetchprojecttaskcountbytaskstatus")
-	public ResponseEntity<List<ProjectStatsDTO>> fetchProjectTaskCountByTaskStatus(ProjectStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojecttaskcountbytaskstatus")
+	public ResponseEntity<List<ProjectStatsDTO>> fetchProjectTaskCountByTaskStatus(@RequestBody ProjectStatsSearchContext context) {
         projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchProjectTaskCountByTaskStatus(context) ;
         List<ProjectStatsDTO> list = projectstatsMapping.toDto(domains.getContent());
@@ -375,8 +375,8 @@ public class ProjectStatsResource {
 
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目任务类型统计", tags = {"项目统计" } ,notes = "获取项目任务类型统计")
-    @RequestMapping(method= RequestMethod.GET , value="/projectstats/fetchprojecttaskcountbytype")
-	public ResponseEntity<List<ProjectStatsDTO>> fetchProjectTaskCountByType(ProjectStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojecttaskcountbytype")
+	public ResponseEntity<List<ProjectStatsDTO>> fetchProjectTaskCountByType(@RequestBody ProjectStatsSearchContext context) {
         projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchProjectTaskCountByType(context) ;
         List<ProjectStatsDTO> list = projectstatsMapping.toDto(domains.getContent());
@@ -399,8 +399,8 @@ public class ProjectStatsResource {
 
     @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取任务工时消耗剩余查询", tags = {"项目统计" } ,notes = "获取任务工时消耗剩余查询")
-    @RequestMapping(method= RequestMethod.GET , value="/projectstats/fetchtasktime")
-	public ResponseEntity<List<ProjectStatsDTO>> fetchTaskTime(ProjectStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchtasktime")
+	public ResponseEntity<List<ProjectStatsDTO>> fetchTaskTime(@RequestBody ProjectStatsSearchContext context) {
         projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchTaskTime(context) ;
         List<ProjectStatsDTO> list = projectstatsMapping.toDto(domains.getContent());

@@ -152,6 +152,6 @@ export class IBZProProductBaseService extends EntityBaseService<IIBZProProduct> 
      * @memberof IBZProProductService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzproproducts/fetchdefault`, _data);
+        return this.http.post(`/ibzproproducts/fetchdefault`, _data);
     }
 }

@@ -353,8 +353,8 @@ public class ReleaseResource {
 
     @PreAuthorize("@ReleaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试报告关联发布", tags = {"发布" } ,notes = "获取测试报告关联发布")
-    @RequestMapping(method= RequestMethod.GET , value="/releases/fetchreportrelease")
-	public ResponseEntity<List<ReleaseDTO>> fetchReportRelease(ReleaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/releases/fetchreportrelease")
+	public ResponseEntity<List<ReleaseDTO>> fetchReportRelease(@RequestBody ReleaseSearchContext context) {
         releaseRuntime.addAuthorityConditions(context,"READ");
         Page<Release> domains = releaseService.searchReportRelease(context) ;
         List<ReleaseDTO> list = releaseMapping.toDto(domains.getContent());
@@ -672,8 +672,8 @@ public class ReleaseResource {
                 .body(new PageImpl(releaseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品获取测试报告关联发布", tags = {"发布" } ,notes = "根据产品获取测试报告关联发布")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/releases/fetchreportrelease")
-	public ResponseEntity<List<ReleaseDTO>> fetchReleaseReportReleaseByProduct(@PathVariable("product_id") Long product_id,ReleaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/releases/fetchreportrelease")
+	public ResponseEntity<List<ReleaseDTO>> fetchReleaseReportReleaseByProduct(@PathVariable("product_id") Long product_id,@RequestBody ReleaseSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Release> domains = releaseService.searchReportRelease(context) ;
         List<ReleaseDTO> list = releaseMapping.toDto(domains.getContent());

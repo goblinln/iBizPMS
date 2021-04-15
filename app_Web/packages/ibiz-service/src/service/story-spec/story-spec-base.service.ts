@@ -232,12 +232,12 @@ export class StorySpecBaseService extends EntityBaseService<IStorySpec> {
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/storyspecs/fetchdefault`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/storyspecs/fetchdefault`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/storyspecs/fetchdefault`, _data);
+            return this.http.post(`/stories/${_context.story}/storyspecs/fetchdefault`, _data);
         }
-        return this.http.get(`/storyspecs/fetchdefault`, _data);
+        return this.http.post(`/storyspecs/fetchdefault`, _data);
     }
     /**
      * FetchVersion
@@ -249,11 +249,11 @@ export class StorySpecBaseService extends EntityBaseService<IStorySpec> {
      */
     async FetchVersion(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/storyspecs/fetchversion`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/storyspecs/fetchversion`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/storyspecs/fetchversion`, _data);
+            return this.http.post(`/stories/${_context.story}/storyspecs/fetchversion`, _data);
         }
-        return this.http.get(`/storyspecs/fetchversion`, _data);
+        return this.http.post(`/storyspecs/fetchversion`, _data);
     }
 }

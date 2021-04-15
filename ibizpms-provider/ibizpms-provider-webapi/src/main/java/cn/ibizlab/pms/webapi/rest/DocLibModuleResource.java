@@ -213,8 +213,8 @@ public class DocLibModuleResource {
 
     @PreAuthorize("@DocLibModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取自定义文档库的模块", tags = {"文档库分类" } ,notes = "获取自定义文档库的模块")
-    @RequestMapping(method= RequestMethod.GET , value="/doclibmodules/fetchalldoclibmodule_custom")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchAllDocLibModule_Custom(DocLibModuleSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/doclibmodules/fetchalldoclibmodule_custom")
+	public ResponseEntity<List<DocLibModuleDTO>> fetchAllDocLibModule_Custom(@RequestBody DocLibModuleSearchContext context) {
         doclibmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<DocLibModule> domains = doclibmoduleService.searchAllDocLibModule_Custom(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -237,8 +237,8 @@ public class DocLibModuleResource {
 
     @PreAuthorize("@DocLibModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取所有文档库模块", tags = {"文档库分类" } ,notes = "获取所有文档库模块")
-    @RequestMapping(method= RequestMethod.GET , value="/doclibmodules/fetchalldoclibmodule")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchAllDoclibModule(DocLibModuleSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/doclibmodules/fetchalldoclibmodule")
+	public ResponseEntity<List<DocLibModuleDTO>> fetchAllDoclibModule(@RequestBody DocLibModuleSearchContext context) {
         doclibmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<DocLibModule> domains = doclibmoduleService.searchAllDoclibModule(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -261,8 +261,8 @@ public class DocLibModuleResource {
 
     @PreAuthorize("@DocLibModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取子模块目录", tags = {"文档库分类" } ,notes = "获取子模块目录")
-    @RequestMapping(method= RequestMethod.GET , value="/doclibmodules/fetchchildmodulebyparent")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchChildModuleByParent(DocLibModuleSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/doclibmodules/fetchchildmodulebyparent")
+	public ResponseEntity<List<DocLibModuleDTO>> fetchChildModuleByParent(@RequestBody DocLibModuleSearchContext context) {
         doclibmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<DocLibModule> domains = doclibmoduleService.searchChildModuleByParent(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -285,8 +285,8 @@ public class DocLibModuleResource {
 
     @PreAuthorize("@DocLibModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取文档库分类子模块", tags = {"文档库分类" } ,notes = "获取文档库分类子模块")
-    @RequestMapping(method= RequestMethod.GET , value="/doclibmodules/fetchchildmodulebyrealparent")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchChildModuleByRealParent(DocLibModuleSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/doclibmodules/fetchchildmodulebyrealparent")
+	public ResponseEntity<List<DocLibModuleDTO>> fetchChildModuleByRealParent(@RequestBody DocLibModuleSearchContext context) {
         doclibmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<DocLibModule> domains = doclibmoduleService.searchChildModuleByRealParent(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -309,8 +309,8 @@ public class DocLibModuleResource {
 
     @PreAuthorize("@DocLibModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"文档库分类" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/doclibmodules/fetchdefault")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDefault(DocLibModuleSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/doclibmodules/fetchdefault")
+	public ResponseEntity<List<DocLibModuleDTO>> fetchDefault(@RequestBody DocLibModuleSearchContext context) {
         doclibmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<DocLibModule> domains = doclibmoduleService.searchDefault(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -333,8 +333,8 @@ public class DocLibModuleResource {
 
     @PreAuthorize("@DocLibModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的收藏", tags = {"文档库分类" } ,notes = "获取我的收藏")
-    @RequestMapping(method= RequestMethod.GET , value="/doclibmodules/fetchmyfavourites")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchMyFavourites(DocLibModuleSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/doclibmodules/fetchmyfavourites")
+	public ResponseEntity<List<DocLibModuleDTO>> fetchMyFavourites(@RequestBody DocLibModuleSearchContext context) {
         doclibmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<DocLibModule> domains = doclibmoduleService.searchMyFavourites(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -357,8 +357,8 @@ public class DocLibModuleResource {
 
     @PreAuthorize("@DocLibModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取父集合", tags = {"文档库分类" } ,notes = "获取父集合")
-    @RequestMapping(method= RequestMethod.GET , value="/doclibmodules/fetchparentmodule")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchParentModule(DocLibModuleSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/doclibmodules/fetchparentmodule")
+	public ResponseEntity<List<DocLibModuleDTO>> fetchParentModule(@RequestBody DocLibModuleSearchContext context) {
         doclibmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<DocLibModule> domains = doclibmoduleService.searchParentModule(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -381,8 +381,8 @@ public class DocLibModuleResource {
 
     @PreAuthorize("@DocLibModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取所有根模块目录", tags = {"文档库分类" } ,notes = "获取所有根模块目录")
-    @RequestMapping(method= RequestMethod.GET , value="/doclibmodules/fetchrootmodulemulu")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchRootModuleMuLu(DocLibModuleSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/doclibmodules/fetchrootmodulemulu")
+	public ResponseEntity<List<DocLibModuleDTO>> fetchRootModuleMuLu(@RequestBody DocLibModuleSearchContext context) {
         doclibmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<DocLibModule> domains = doclibmoduleService.searchRootModuleMuLu(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -405,8 +405,8 @@ public class DocLibModuleResource {
 
     @PreAuthorize("@DocLibModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根模块目录", tags = {"文档库分类" } ,notes = "获取根模块目录")
-    @RequestMapping(method= RequestMethod.GET , value="/doclibmodules/fetchrootmodulemulubyroot")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchRootModuleMuLuByRoot(DocLibModuleSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/doclibmodules/fetchrootmodulemulubyroot")
+	public ResponseEntity<List<DocLibModuleDTO>> fetchRootModuleMuLuByRoot(@RequestBody DocLibModuleSearchContext context) {
         doclibmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<DocLibModule> domains = doclibmoduleService.searchRootModuleMuLuByRoot(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -429,8 +429,8 @@ public class DocLibModuleResource {
 
     @PreAuthorize("@DocLibModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根模块目录动态", tags = {"文档库分类" } ,notes = "获取根模块目录动态")
-    @RequestMapping(method= RequestMethod.GET , value="/doclibmodules/fetchrootmodulemulubysrfparentkey")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchRootModuleMuLuBysrfparentkey(DocLibModuleSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/doclibmodules/fetchrootmodulemulubysrfparentkey")
+	public ResponseEntity<List<DocLibModuleDTO>> fetchRootModuleMuLuBysrfparentkey(@RequestBody DocLibModuleSearchContext context) {
         doclibmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<DocLibModule> domains = doclibmoduleService.searchRootModuleMuLuBysrfparentkey(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());

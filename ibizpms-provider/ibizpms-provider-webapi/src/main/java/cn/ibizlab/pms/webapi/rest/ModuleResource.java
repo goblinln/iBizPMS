@@ -166,8 +166,8 @@ public class ModuleResource {
 
     @PreAuthorize("@ModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取BugModule", tags = {"模块" } ,notes = "获取BugModule")
-    @RequestMapping(method= RequestMethod.GET , value="/modules/fetchbugmodule")
-	public ResponseEntity<List<ModuleDTO>> fetchBugModule(ModuleSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/modules/fetchbugmodule")
+	public ResponseEntity<List<ModuleDTO>> fetchBugModule(@RequestBody ModuleSearchContext context) {
         moduleRuntime.addAuthorityConditions(context,"READ");
         Page<Module> domains = moduleService.searchBugModule(context) ;
         List<ModuleDTO> list = moduleMapping.toDto(domains.getContent());
@@ -190,8 +190,8 @@ public class ModuleResource {
 
     @PreAuthorize("@ModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"模块" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/modules/fetchbugmodulecodelist")
-	public ResponseEntity<List<ModuleDTO>> fetchBugModuleCodeList(ModuleSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/modules/fetchbugmodulecodelist")
+	public ResponseEntity<List<ModuleDTO>> fetchBugModuleCodeList(@RequestBody ModuleSearchContext context) {
         moduleRuntime.addAuthorityConditions(context,"READ");
         Page<Module> domains = moduleService.searchBugModuleCodeList(context) ;
         List<ModuleDTO> list = moduleMapping.toDto(domains.getContent());
@@ -214,8 +214,8 @@ public class ModuleResource {
 
     @PreAuthorize("@ModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"模块" } ,notes = "获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/modules/fetchdefault")
-	public ResponseEntity<List<ModuleDTO>> fetchDefault(ModuleSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/modules/fetchdefault")
+	public ResponseEntity<List<ModuleDTO>> fetchDefault(@RequestBody ModuleSearchContext context) {
         moduleRuntime.addAuthorityConditions(context,"READ");
         Page<Module> domains = moduleService.searchDefault(context) ;
         List<ModuleDTO> list = moduleMapping.toDto(domains.getContent());
@@ -238,8 +238,8 @@ public class ModuleResource {
 
     @PreAuthorize("@ModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取文档目录", tags = {"模块" } ,notes = "获取文档目录")
-    @RequestMapping(method= RequestMethod.GET , value="/modules/fetchdocmodule")
-	public ResponseEntity<List<ModuleDTO>> fetchDocModule(ModuleSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/modules/fetchdocmodule")
+	public ResponseEntity<List<ModuleDTO>> fetchDocModule(@RequestBody ModuleSearchContext context) {
         moduleRuntime.addAuthorityConditions(context,"READ");
         Page<Module> domains = moduleService.searchDocModule(context) ;
         List<ModuleDTO> list = moduleMapping.toDto(domains.getContent());
@@ -262,8 +262,8 @@ public class ModuleResource {
 
     @PreAuthorize("@ModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品线", tags = {"模块" } ,notes = "获取产品线")
-    @RequestMapping(method= RequestMethod.GET , value="/modules/fetchline")
-	public ResponseEntity<List<ModuleDTO>> fetchLine(ModuleSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/modules/fetchline")
+	public ResponseEntity<List<ModuleDTO>> fetchLine(@RequestBody ModuleSearchContext context) {
         moduleRuntime.addAuthorityConditions(context,"READ");
         Page<Module> domains = moduleService.searchLine(context) ;
         List<ModuleDTO> list = moduleMapping.toDto(domains.getContent());
@@ -286,8 +286,8 @@ public class ModuleResource {
 
     @PreAuthorize("@ModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取需求模块", tags = {"模块" } ,notes = "获取需求模块")
-    @RequestMapping(method= RequestMethod.GET , value="/modules/fetchstorymodule")
-	public ResponseEntity<List<ModuleDTO>> fetchStoryModule(ModuleSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/modules/fetchstorymodule")
+	public ResponseEntity<List<ModuleDTO>> fetchStoryModule(@RequestBody ModuleSearchContext context) {
         moduleRuntime.addAuthorityConditions(context,"READ");
         Page<Module> domains = moduleService.searchStoryModule(context) ;
         List<ModuleDTO> list = moduleMapping.toDto(domains.getContent());
@@ -310,8 +310,8 @@ public class ModuleResource {
 
     @PreAuthorize("@ModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取任务模块", tags = {"模块" } ,notes = "获取任务模块")
-    @RequestMapping(method= RequestMethod.GET , value="/modules/fetchtaskmodule")
-	public ResponseEntity<List<ModuleDTO>> fetchTaskModule(ModuleSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/modules/fetchtaskmodule")
+	public ResponseEntity<List<ModuleDTO>> fetchTaskModule(@RequestBody ModuleSearchContext context) {
         moduleRuntime.addAuthorityConditions(context,"READ");
         Page<Module> domains = moduleService.searchTaskModule(context) ;
         List<ModuleDTO> list = moduleMapping.toDto(domains.getContent());

@@ -149,8 +149,8 @@ public class CaseStepResource {
 
     @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前测试步骤", tags = {"用例步骤" } ,notes = "获取当前测试步骤")
-    @RequestMapping(method= RequestMethod.GET , value="/casesteps/fetchcurtest")
-	public ResponseEntity<List<CaseStepDTO>> fetchCurTest(CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/casesteps/fetchcurtest")
+	public ResponseEntity<List<CaseStepDTO>> fetchCurTest(@RequestBody CaseStepSearchContext context) {
         casestepRuntime.addAuthorityConditions(context,"READ");
         Page<CaseStep> domains = casestepService.searchCurTest(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -173,8 +173,8 @@ public class CaseStepResource {
 
     @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"用例步骤" } ,notes = "获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/casesteps/fetchdefault")
-	public ResponseEntity<List<CaseStepDTO>> fetchDefault(CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/casesteps/fetchdefault")
+	public ResponseEntity<List<CaseStepDTO>> fetchDefault(@RequestBody CaseStepSearchContext context) {
         casestepRuntime.addAuthorityConditions(context,"READ");
         Page<CaseStep> domains = casestepService.searchDefault(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -197,8 +197,8 @@ public class CaseStepResource {
 
     @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT1", tags = {"用例步骤" } ,notes = "获取DEFAULT1")
-    @RequestMapping(method= RequestMethod.GET , value="/casesteps/fetchdefault1")
-	public ResponseEntity<List<CaseStepDTO>> fetchDefault1(CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/casesteps/fetchdefault1")
+	public ResponseEntity<List<CaseStepDTO>> fetchDefault1(@RequestBody CaseStepSearchContext context) {
         casestepRuntime.addAuthorityConditions(context,"READ");
         Page<CaseStep> domains = casestepService.searchDefault1(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -221,8 +221,8 @@ public class CaseStepResource {
 
     @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Mob", tags = {"用例步骤" } ,notes = "获取Mob")
-    @RequestMapping(method= RequestMethod.GET , value="/casesteps/fetchmob")
-	public ResponseEntity<List<CaseStepDTO>> fetchMob(CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/casesteps/fetchmob")
+	public ResponseEntity<List<CaseStepDTO>> fetchMob(@RequestBody CaseStepSearchContext context) {
         casestepRuntime.addAuthorityConditions(context,"READ");
         Page<CaseStep> domains = casestepService.searchMob(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -245,8 +245,8 @@ public class CaseStepResource {
 
     @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本", tags = {"用例步骤" } ,notes = "获取版本")
-    @RequestMapping(method= RequestMethod.GET , value="/casesteps/fetchversion")
-	public ResponseEntity<List<CaseStepDTO>> fetchVersion(CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/casesteps/fetchversion")
+	public ResponseEntity<List<CaseStepDTO>> fetchVersion(@RequestBody CaseStepSearchContext context) {
         casestepRuntime.addAuthorityConditions(context,"READ");
         Page<CaseStep> domains = casestepService.searchVersion(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -269,8 +269,8 @@ public class CaseStepResource {
 
     @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本1", tags = {"用例步骤" } ,notes = "获取版本1")
-    @RequestMapping(method= RequestMethod.GET , value="/casesteps/fetchversions")
-	public ResponseEntity<List<CaseStepDTO>> fetchVersions(CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/casesteps/fetchversions")
+	public ResponseEntity<List<CaseStepDTO>> fetchVersions(@RequestBody CaseStepSearchContext context) {
         casestepRuntime.addAuthorityConditions(context,"READ");
         Page<CaseStep> domains = casestepService.searchVersions(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -398,8 +398,8 @@ public class CaseStepResource {
     }
 
 	@ApiOperation(value = "根据测试用例获取当前测试步骤", tags = {"用例步骤" } ,notes = "根据测试用例获取当前测试步骤")
-    @RequestMapping(method= RequestMethod.GET , value="/cases/{case_id}/casesteps/fetchcurtest")
-	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepCurTestByCase(@PathVariable("case_id") Long case_id,CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/casesteps/fetchcurtest")
+	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepCurTestByCase(@PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {
         context.setN_case_eq(case_id);
         Page<CaseStep> domains = casestepService.searchCurTest(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -419,8 +419,8 @@ public class CaseStepResource {
                 .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据测试用例获取DEFAULT", tags = {"用例步骤" } ,notes = "根据测试用例获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/cases/{case_id}/casesteps/fetchdefault")
-	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepDefaultByCase(@PathVariable("case_id") Long case_id,CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/casesteps/fetchdefault")
+	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepDefaultByCase(@PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {
         context.setN_case_eq(case_id);
         Page<CaseStep> domains = casestepService.searchDefault(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -440,8 +440,8 @@ public class CaseStepResource {
                 .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据测试用例获取DEFAULT1", tags = {"用例步骤" } ,notes = "根据测试用例获取DEFAULT1")
-    @RequestMapping(method= RequestMethod.GET , value="/cases/{case_id}/casesteps/fetchdefault1")
-	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepDefault1ByCase(@PathVariable("case_id") Long case_id,CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/casesteps/fetchdefault1")
+	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepDefault1ByCase(@PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {
         context.setN_case_eq(case_id);
         Page<CaseStep> domains = casestepService.searchDefault1(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -461,8 +461,8 @@ public class CaseStepResource {
                 .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据测试用例获取Mob", tags = {"用例步骤" } ,notes = "根据测试用例获取Mob")
-    @RequestMapping(method= RequestMethod.GET , value="/cases/{case_id}/casesteps/fetchmob")
-	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepMobByCase(@PathVariable("case_id") Long case_id,CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/casesteps/fetchmob")
+	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepMobByCase(@PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {
         context.setN_case_eq(case_id);
         Page<CaseStep> domains = casestepService.searchMob(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -482,8 +482,8 @@ public class CaseStepResource {
                 .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据测试用例获取版本", tags = {"用例步骤" } ,notes = "根据测试用例获取版本")
-    @RequestMapping(method= RequestMethod.GET , value="/cases/{case_id}/casesteps/fetchversion")
-	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepVersionByCase(@PathVariable("case_id") Long case_id,CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/casesteps/fetchversion")
+	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepVersionByCase(@PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {
         context.setN_case_eq(case_id);
         Page<CaseStep> domains = casestepService.searchVersion(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -503,8 +503,8 @@ public class CaseStepResource {
                 .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据测试用例获取版本1", tags = {"用例步骤" } ,notes = "根据测试用例获取版本1")
-    @RequestMapping(method= RequestMethod.GET , value="/cases/{case_id}/casesteps/fetchversions")
-	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepVersionsByCase(@PathVariable("case_id") Long case_id,CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/casesteps/fetchversions")
+	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepVersionsByCase(@PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {
         context.setN_case_eq(case_id);
         Page<CaseStep> domains = casestepService.searchVersions(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -622,8 +622,8 @@ public class CaseStepResource {
     }
 
 	@ApiOperation(value = "根据产品测试用例获取当前测试步骤", tags = {"用例步骤" } ,notes = "根据产品测试用例获取当前测试步骤")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/cases/{case_id}/casesteps/fetchcurtest")
-	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepCurTestByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id,CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/casesteps/fetchcurtest")
+	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepCurTestByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {
         context.setN_case_eq(case_id);
         Page<CaseStep> domains = casestepService.searchCurTest(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -643,8 +643,8 @@ public class CaseStepResource {
                 .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品测试用例获取DEFAULT", tags = {"用例步骤" } ,notes = "根据产品测试用例获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/cases/{case_id}/casesteps/fetchdefault")
-	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepDefaultByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id,CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/casesteps/fetchdefault")
+	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepDefaultByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {
         context.setN_case_eq(case_id);
         Page<CaseStep> domains = casestepService.searchDefault(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -664,8 +664,8 @@ public class CaseStepResource {
                 .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品测试用例获取DEFAULT1", tags = {"用例步骤" } ,notes = "根据产品测试用例获取DEFAULT1")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/cases/{case_id}/casesteps/fetchdefault1")
-	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepDefault1ByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id,CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/casesteps/fetchdefault1")
+	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepDefault1ByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {
         context.setN_case_eq(case_id);
         Page<CaseStep> domains = casestepService.searchDefault1(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -685,8 +685,8 @@ public class CaseStepResource {
                 .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品测试用例获取Mob", tags = {"用例步骤" } ,notes = "根据产品测试用例获取Mob")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/cases/{case_id}/casesteps/fetchmob")
-	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepMobByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id,CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/casesteps/fetchmob")
+	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepMobByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {
         context.setN_case_eq(case_id);
         Page<CaseStep> domains = casestepService.searchMob(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -706,8 +706,8 @@ public class CaseStepResource {
                 .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品测试用例获取版本", tags = {"用例步骤" } ,notes = "根据产品测试用例获取版本")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/cases/{case_id}/casesteps/fetchversion")
-	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepVersionByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id,CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/casesteps/fetchversion")
+	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepVersionByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {
         context.setN_case_eq(case_id);
         Page<CaseStep> domains = casestepService.searchVersion(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -727,8 +727,8 @@ public class CaseStepResource {
                 .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品测试用例获取版本1", tags = {"用例步骤" } ,notes = "根据产品测试用例获取版本1")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/cases/{case_id}/casesteps/fetchversions")
-	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepVersionsByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id,CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/casesteps/fetchversions")
+	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepVersionsByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {
         context.setN_case_eq(case_id);
         Page<CaseStep> domains = casestepService.searchVersions(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -846,8 +846,8 @@ public class CaseStepResource {
     }
 
 	@ApiOperation(value = "根据需求测试用例获取当前测试步骤", tags = {"用例步骤" } ,notes = "根据需求测试用例获取当前测试步骤")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/cases/{case_id}/casesteps/fetchcurtest")
-	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepCurTestByStoryCase(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/cases/{case_id}/casesteps/fetchcurtest")
+	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepCurTestByStoryCase(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {
         context.setN_case_eq(case_id);
         Page<CaseStep> domains = casestepService.searchCurTest(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -867,8 +867,8 @@ public class CaseStepResource {
                 .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求测试用例获取DEFAULT", tags = {"用例步骤" } ,notes = "根据需求测试用例获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/cases/{case_id}/casesteps/fetchdefault")
-	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepDefaultByStoryCase(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/cases/{case_id}/casesteps/fetchdefault")
+	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepDefaultByStoryCase(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {
         context.setN_case_eq(case_id);
         Page<CaseStep> domains = casestepService.searchDefault(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -888,8 +888,8 @@ public class CaseStepResource {
                 .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求测试用例获取DEFAULT1", tags = {"用例步骤" } ,notes = "根据需求测试用例获取DEFAULT1")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/cases/{case_id}/casesteps/fetchdefault1")
-	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepDefault1ByStoryCase(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/cases/{case_id}/casesteps/fetchdefault1")
+	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepDefault1ByStoryCase(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {
         context.setN_case_eq(case_id);
         Page<CaseStep> domains = casestepService.searchDefault1(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -909,8 +909,8 @@ public class CaseStepResource {
                 .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求测试用例获取Mob", tags = {"用例步骤" } ,notes = "根据需求测试用例获取Mob")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/cases/{case_id}/casesteps/fetchmob")
-	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepMobByStoryCase(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/cases/{case_id}/casesteps/fetchmob")
+	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepMobByStoryCase(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {
         context.setN_case_eq(case_id);
         Page<CaseStep> domains = casestepService.searchMob(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -930,8 +930,8 @@ public class CaseStepResource {
                 .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求测试用例获取版本", tags = {"用例步骤" } ,notes = "根据需求测试用例获取版本")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/cases/{case_id}/casesteps/fetchversion")
-	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepVersionByStoryCase(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/cases/{case_id}/casesteps/fetchversion")
+	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepVersionByStoryCase(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {
         context.setN_case_eq(case_id);
         Page<CaseStep> domains = casestepService.searchVersion(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -951,8 +951,8 @@ public class CaseStepResource {
                 .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求测试用例获取版本1", tags = {"用例步骤" } ,notes = "根据需求测试用例获取版本1")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/cases/{case_id}/casesteps/fetchversions")
-	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepVersionsByStoryCase(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/cases/{case_id}/casesteps/fetchversions")
+	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepVersionsByStoryCase(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {
         context.setN_case_eq(case_id);
         Page<CaseStep> domains = casestepService.searchVersions(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -1070,8 +1070,8 @@ public class CaseStepResource {
     }
 
 	@ApiOperation(value = "根据产品需求测试用例获取当前测试步骤", tags = {"用例步骤" } ,notes = "根据产品需求测试用例获取当前测试步骤")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/cases/{case_id}/casesteps/fetchcurtest")
-	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepCurTestByProductStoryCase(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/cases/{case_id}/casesteps/fetchcurtest")
+	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepCurTestByProductStoryCase(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {
         context.setN_case_eq(case_id);
         Page<CaseStep> domains = casestepService.searchCurTest(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -1091,8 +1091,8 @@ public class CaseStepResource {
                 .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求测试用例获取DEFAULT", tags = {"用例步骤" } ,notes = "根据产品需求测试用例获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/cases/{case_id}/casesteps/fetchdefault")
-	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepDefaultByProductStoryCase(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/cases/{case_id}/casesteps/fetchdefault")
+	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepDefaultByProductStoryCase(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {
         context.setN_case_eq(case_id);
         Page<CaseStep> domains = casestepService.searchDefault(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -1112,8 +1112,8 @@ public class CaseStepResource {
                 .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求测试用例获取DEFAULT1", tags = {"用例步骤" } ,notes = "根据产品需求测试用例获取DEFAULT1")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/cases/{case_id}/casesteps/fetchdefault1")
-	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepDefault1ByProductStoryCase(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/cases/{case_id}/casesteps/fetchdefault1")
+	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepDefault1ByProductStoryCase(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {
         context.setN_case_eq(case_id);
         Page<CaseStep> domains = casestepService.searchDefault1(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -1133,8 +1133,8 @@ public class CaseStepResource {
                 .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求测试用例获取Mob", tags = {"用例步骤" } ,notes = "根据产品需求测试用例获取Mob")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/cases/{case_id}/casesteps/fetchmob")
-	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepMobByProductStoryCase(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/cases/{case_id}/casesteps/fetchmob")
+	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepMobByProductStoryCase(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {
         context.setN_case_eq(case_id);
         Page<CaseStep> domains = casestepService.searchMob(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -1154,8 +1154,8 @@ public class CaseStepResource {
                 .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求测试用例获取版本", tags = {"用例步骤" } ,notes = "根据产品需求测试用例获取版本")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/cases/{case_id}/casesteps/fetchversion")
-	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepVersionByProductStoryCase(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/cases/{case_id}/casesteps/fetchversion")
+	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepVersionByProductStoryCase(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {
         context.setN_case_eq(case_id);
         Page<CaseStep> domains = casestepService.searchVersion(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
@@ -1175,8 +1175,8 @@ public class CaseStepResource {
                 .body(new PageImpl(casestepMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求测试用例获取版本1", tags = {"用例步骤" } ,notes = "根据产品需求测试用例获取版本1")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/cases/{case_id}/casesteps/fetchversions")
-	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepVersionsByProductStoryCase(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,CaseStepSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/cases/{case_id}/casesteps/fetchversions")
+	public ResponseEntity<List<CaseStepDTO>> fetchCaseStepVersionsByProductStoryCase(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {
         context.setN_case_eq(case_id);
         Page<CaseStep> domains = casestepService.searchVersions(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());

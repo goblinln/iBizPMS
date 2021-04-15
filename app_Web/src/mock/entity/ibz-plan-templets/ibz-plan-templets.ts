@@ -358,25 +358,728 @@ mock.onGet(new RegExp(/^\/ibzplantemplets\/fetchdefault(\?[\w-./?%&=,]*)*$/)).re
     console.groupEnd();
     return [status, records ?  records : []];
 });
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
+        
+// CreateTemp
+mock.onPost(new RegExp(/^\/ibzplantemplets\/?([a-zA-Z0-9\-\;]{0,35})\/fetchdefault$/)).reply((config: any) => {
+    console.groupCollapsed("实体:ibzplantemplet 方法: CreateTemp");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['ibzplantempletid'];
+    const matchArray:any = new RegExp(/^\/ibzplantemplets\/([a-zA-Z0-9\-\;]{1,35})\/fetchdefault$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.ibzplantempletid, tempValue.ibzplantempletid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['ibzplantempletid'] == tempValue['ibzplantempletid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(data);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, data];
+});
+        
+// CreateTempMajor
+mock.onPost(new RegExp(/^\/ibzplantemplets\/?([a-zA-Z0-9\-\;]{0,35})\/fetchdefault$/)).reply((config: any) => {
+    console.groupCollapsed("实体:ibzplantemplet 方法: CreateTempMajor");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['ibzplantempletid'];
+    const matchArray:any = new RegExp(/^\/ibzplantemplets\/([a-zA-Z0-9\-\;]{1,35})\/fetchdefault$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.ibzplantempletid, tempValue.ibzplantempletid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['ibzplantempletid'] == tempValue['ibzplantempletid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(data);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, data];
+});
+        
+// UpdateTemp
+mock.onPost(new RegExp(/^\/ibzplantemplets\/?([a-zA-Z0-9\-\;]{0,35})\/fetchdefault$/)).reply((config: any) => {
+    console.groupCollapsed("实体:ibzplantemplet 方法: UpdateTemp");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['ibzplantempletid'];
+    const matchArray:any = new RegExp(/^\/ibzplantemplets\/([a-zA-Z0-9\-\;]{1,35})\/fetchdefault$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.ibzplantempletid, tempValue.ibzplantempletid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['ibzplantempletid'] == tempValue['ibzplantempletid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(data);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, data];
+});
+        
+// UpdateTempMajor
+mock.onPost(new RegExp(/^\/ibzplantemplets\/?([a-zA-Z0-9\-\;]{0,35})\/fetchdefault$/)).reply((config: any) => {
+    console.groupCollapsed("实体:ibzplantemplet 方法: UpdateTempMajor");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['ibzplantempletid'];
+    const matchArray:any = new RegExp(/^\/ibzplantemplets\/([a-zA-Z0-9\-\;]{1,35})\/fetchdefault$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.ibzplantempletid, tempValue.ibzplantempletid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['ibzplantempletid'] == tempValue['ibzplantempletid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(data);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, data];
+});
+        
+// RemoveTemp
+mock.onPost(new RegExp(/^\/ibzplantemplets\/?([a-zA-Z0-9\-\;]{0,35})\/fetchdefault$/)).reply((config: any) => {
+    console.groupCollapsed("实体:ibzplantemplet 方法: RemoveTemp");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['ibzplantempletid'];
+    const matchArray:any = new RegExp(/^\/ibzplantemplets\/([a-zA-Z0-9\-\;]{1,35})\/fetchdefault$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.ibzplantempletid, tempValue.ibzplantempletid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['ibzplantempletid'] == tempValue['ibzplantempletid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(data);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, data];
+});
+        
+// RemoveTempMajor
+mock.onPost(new RegExp(/^\/ibzplantemplets\/?([a-zA-Z0-9\-\;]{0,35})\/fetchdefault$/)).reply((config: any) => {
+    console.groupCollapsed("实体:ibzplantemplet 方法: RemoveTempMajor");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['ibzplantempletid'];
+    const matchArray:any = new RegExp(/^\/ibzplantemplets\/([a-zA-Z0-9\-\;]{1,35})\/fetchdefault$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.ibzplantempletid, tempValue.ibzplantempletid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['ibzplantempletid'] == tempValue['ibzplantempletid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(data);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, data];
+});
+        
+// GetTemp
+mock.onPost(new RegExp(/^\/ibzplantemplets\/?([a-zA-Z0-9\-\;]{0,35})\/fetchdefault$/)).reply((config: any) => {
+    console.groupCollapsed("实体:ibzplantemplet 方法: GetTemp");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['ibzplantempletid'];
+    const matchArray:any = new RegExp(/^\/ibzplantemplets\/([a-zA-Z0-9\-\;]{1,35})\/fetchdefault$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.ibzplantempletid, tempValue.ibzplantempletid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['ibzplantempletid'] == tempValue['ibzplantempletid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(data);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, data];
+});
+        
+// GetTempMajor
+mock.onPost(new RegExp(/^\/ibzplantemplets\/?([a-zA-Z0-9\-\;]{0,35})\/fetchdefault$/)).reply((config: any) => {
+    console.groupCollapsed("实体:ibzplantemplet 方法: GetTempMajor");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['ibzplantempletid'];
+    const matchArray:any = new RegExp(/^\/ibzplantemplets\/([a-zA-Z0-9\-\;]{1,35})\/fetchdefault$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.ibzplantempletid, tempValue.ibzplantempletid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['ibzplantempletid'] == tempValue['ibzplantempletid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(data);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, data];
+});
+        
+// GetDraftTemp
+mock.onPost(new RegExp(/^\/ibzplantemplets\/?([a-zA-Z0-9\-\;]{0,35})\/fetchdefault$/)).reply((config: any) => {
+    console.groupCollapsed("实体:ibzplantemplet 方法: GetDraftTemp");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['ibzplantempletid'];
+    const matchArray:any = new RegExp(/^\/ibzplantemplets\/([a-zA-Z0-9\-\;]{1,35})\/fetchdefault$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.ibzplantempletid, tempValue.ibzplantempletid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['ibzplantempletid'] == tempValue['ibzplantempletid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(data);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, data];
+});
+        
+// GetDraftTempMajor
+mock.onPost(new RegExp(/^\/ibzplantemplets\/?([a-zA-Z0-9\-\;]{0,35})\/fetchdefault$/)).reply((config: any) => {
+    console.groupCollapsed("实体:ibzplantemplet 方法: GetDraftTempMajor");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['ibzplantempletid'];
+    const matchArray:any = new RegExp(/^\/ibzplantemplets\/([a-zA-Z0-9\-\;]{1,35})\/fetchdefault$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.ibzplantempletid, tempValue.ibzplantempletid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['ibzplantempletid'] == tempValue['ibzplantempletid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(data);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, data];
+});
+        
+// FetchTempCurUserTemplet
+mock.onPost(new RegExp(/^\/ibzplantemplets\/?([a-zA-Z0-9\-\;]{0,35})\/fetchdefault$/)).reply((config: any) => {
+    console.groupCollapsed("实体:ibzplantemplet 方法: FetchTempCurUserTemplet");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['ibzplantempletid'];
+    const matchArray:any = new RegExp(/^\/ibzplantemplets\/([a-zA-Z0-9\-\;]{1,35})\/fetchdefault$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.ibzplantempletid, tempValue.ibzplantempletid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['ibzplantempletid'] == tempValue['ibzplantempletid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(data);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, data];
+});
+        
+// FetchTempDefault
+mock.onPost(new RegExp(/^\/ibzplantemplets\/?([a-zA-Z0-9\-\;]{0,35})\/fetchdefault$/)).reply((config: any) => {
+    console.groupCollapsed("实体:ibzplantemplet 方法: FetchTempDefault");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['ibzplantempletid'];
+    const matchArray:any = new RegExp(/^\/ibzplantemplets\/([a-zA-Z0-9\-\;]{1,35})\/fetchdefault$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.ibzplantempletid, tempValue.ibzplantempletid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['ibzplantempletid'] == tempValue['ibzplantempletid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(data);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, data];
+});
+        
+// FilterUpdate
+mock.onPost(new RegExp(/^\/ibzplantemplets\/?([a-zA-Z0-9\-\;]{0,35})\/fetchdefault$/)).reply((config: any) => {
+    console.groupCollapsed("实体:ibzplantemplet 方法: FilterUpdate");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['ibzplantempletid'];
+    const matchArray:any = new RegExp(/^\/ibzplantemplets\/([a-zA-Z0-9\-\;]{1,35})\/fetchdefault$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.ibzplantempletid, tempValue.ibzplantempletid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['ibzplantempletid'] == tempValue['ibzplantempletid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(data);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, data];
+});
+        
+// FilterSearch
+mock.onPost(new RegExp(/^\/ibzplantemplets\/?([a-zA-Z0-9\-\;]{0,35})\/fetchdefault$/)).reply((config: any) => {
+    console.groupCollapsed("实体:ibzplantemplet 方法: FilterSearch");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['ibzplantempletid'];
+    const matchArray:any = new RegExp(/^\/ibzplantemplets\/([a-zA-Z0-9\-\;]{1,35})\/fetchdefault$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.ibzplantempletid, tempValue.ibzplantempletid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['ibzplantempletid'] == tempValue['ibzplantempletid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(data);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, data];
+});
+        
+// FilterGet
+mock.onPost(new RegExp(/^\/ibzplantemplets\/?([a-zA-Z0-9\-\;]{0,35})\/fetchdefault$/)).reply((config: any) => {
+    console.groupCollapsed("实体:ibzplantemplet 方法: FilterGet");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['ibzplantempletid'];
+    const matchArray:any = new RegExp(/^\/ibzplantemplets\/([a-zA-Z0-9\-\;]{1,35})\/fetchdefault$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.ibzplantempletid, tempValue.ibzplantempletid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['ibzplantempletid'] == tempValue['ibzplantempletid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(data);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, data];
+});
+        
+// FilterCreate
+mock.onPost(new RegExp(/^\/ibzplantemplets\/?([a-zA-Z0-9\-\;]{0,35})\/fetchdefault$/)).reply((config: any) => {
+    console.groupCollapsed("实体:ibzplantemplet 方法: FilterCreate");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['ibzplantempletid'];
+    const matchArray:any = new RegExp(/^\/ibzplantemplets\/([a-zA-Z0-9\-\;]{1,35})\/fetchdefault$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.ibzplantempletid, tempValue.ibzplantempletid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['ibzplantempletid'] == tempValue['ibzplantempletid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(data);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, data];
+});
+        
+// FilterGetDraft
+mock.onPost(new RegExp(/^\/ibzplantemplets\/?([a-zA-Z0-9\-\;]{0,35})\/fetchdefault$/)).reply((config: any) => {
+    console.groupCollapsed("实体:ibzplantemplet 方法: FilterGetDraft");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['ibzplantempletid'];
+    const matchArray:any = new RegExp(/^\/ibzplantemplets\/([a-zA-Z0-9\-\;]{1,35})\/fetchdefault$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.ibzplantempletid, tempValue.ibzplantempletid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['ibzplantempletid'] == tempValue['ibzplantempletid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(data);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, data];
+});
+        
+// FilterRemove
+mock.onPost(new RegExp(/^\/ibzplantemplets\/?([a-zA-Z0-9\-\;]{0,35})\/fetchdefault$/)).reply((config: any) => {
+    console.groupCollapsed("实体:ibzplantemplet 方法: FilterRemove");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['ibzplantempletid'];
+    const matchArray:any = new RegExp(/^\/ibzplantemplets\/([a-zA-Z0-9\-\;]{1,35})\/fetchdefault$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.ibzplantempletid, tempValue.ibzplantempletid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['ibzplantempletid'] == tempValue['ibzplantempletid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(data);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, data];
+});
+        
+// FilterFetch
+mock.onPost(new RegExp(/^\/ibzplantemplets\/?([a-zA-Z0-9\-\;]{0,35})\/fetchdefault$/)).reply((config: any) => {
+    console.groupCollapsed("实体:ibzplantemplet 方法: FilterFetch");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['ibzplantempletid'];
+    const matchArray:any = new RegExp(/^\/ibzplantemplets\/([a-zA-Z0-9\-\;]{1,35})\/fetchdefault$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.ibzplantempletid, tempValue.ibzplantempletid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['ibzplantempletid'] == tempValue['ibzplantempletid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(data);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, data];
+});
 
 
 // Remove

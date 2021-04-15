@@ -200,8 +200,8 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysupdatelog && true) {
-            return this.http.get(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures/fetchdefault`, _data);
+            return this.http.post(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures/fetchdefault`, _data);
         }
-        return this.http.get(`/sysupdatefeatures/fetchdefault`, _data);
+        return this.http.post(`/sysupdatefeatures/fetchdefault`, _data);
     }
 }

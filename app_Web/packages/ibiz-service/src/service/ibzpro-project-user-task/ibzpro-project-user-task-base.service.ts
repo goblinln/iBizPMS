@@ -152,7 +152,7 @@ export class IbzproProjectUserTaskBaseService extends EntityBaseService<IIbzproP
      * @memberof IbzproProjectUserTaskService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzproprojectusertasks/fetchdefault`, _data);
+        return this.http.post(`/ibzproprojectusertasks/fetchdefault`, _data);
     }
     /**
      * FetchProjectDailyTask
@@ -163,7 +163,7 @@ export class IbzproProjectUserTaskBaseService extends EntityBaseService<IIbzproP
      * @memberof IbzproProjectUserTaskService
      */
     async FetchProjectDailyTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzproprojectusertasks/fetchprojectdailytask`, _data);
+        return this.http.post(`/ibzproprojectusertasks/fetchprojectdailytask`, _data);
     }
     /**
      * FetchProjectMonthlyTask
@@ -174,7 +174,7 @@ export class IbzproProjectUserTaskBaseService extends EntityBaseService<IIbzproP
      * @memberof IbzproProjectUserTaskService
      */
     async FetchProjectMonthlyTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzproprojectusertasks/fetchprojectmonthlytask`, _data);
+        return this.http.post(`/ibzproprojectusertasks/fetchprojectmonthlytask`, _data);
     }
     /**
      * FetchProjectWeeklyTask
@@ -185,6 +185,6 @@ export class IbzproProjectUserTaskBaseService extends EntityBaseService<IIbzproP
      * @memberof IbzproProjectUserTaskService
      */
     async FetchProjectWeeklyTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzproprojectusertasks/fetchprojectweeklytask`, _data);
+        return this.http.post(`/ibzproprojectusertasks/fetchprojectweeklytask`, _data);
     }
 }

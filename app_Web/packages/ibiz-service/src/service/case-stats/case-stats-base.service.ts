@@ -152,7 +152,7 @@ export class CaseStatsBaseService extends EntityBaseService<ICaseStats> {
      * @memberof CaseStatsService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/casestats/fetchdefault`, _data);
+        return this.http.post(`/casestats/fetchdefault`, _data);
     }
     /**
      * FetchTestCaseStats
@@ -163,6 +163,6 @@ export class CaseStatsBaseService extends EntityBaseService<ICaseStats> {
      * @memberof CaseStatsService
      */
     async FetchTestCaseStats(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/casestats/fetchtestcasestats`, _data);
+        return this.http.post(`/casestats/fetchtestcasestats`, _data);
     }
 }

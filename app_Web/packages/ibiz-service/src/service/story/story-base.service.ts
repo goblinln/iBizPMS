@@ -1009,9 +1009,9 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      */
     async FetchAssignedToMyStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/stories/fetchassignedtomystory`, _data);
+            return this.http.post(`/products/${_context.product}/stories/fetchassignedtomystory`, _data);
         }
-        return this.http.get(`/stories/fetchassignedtomystory`, _data);
+        return this.http.post(`/stories/fetchassignedtomystory`, _data);
     }
     /**
      * FetchAssignedToMyStoryCalendar
@@ -1023,9 +1023,9 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      */
     async FetchAssignedToMyStoryCalendar(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/stories/fetchassignedtomystorycalendar`, _data);
+            return this.http.post(`/products/${_context.product}/stories/fetchassignedtomystorycalendar`, _data);
         }
-        return this.http.get(`/stories/fetchassignedtomystorycalendar`, _data);
+        return this.http.post(`/stories/fetchassignedtomystorycalendar`, _data);
     }
     /**
      * FetchBugStory
@@ -1037,9 +1037,9 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      */
     async FetchBugStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/stories/fetchbugstory`, _data);
+            return this.http.post(`/products/${_context.product}/stories/fetchbugstory`, _data);
         }
-        return this.http.get(`/stories/fetchbugstory`, _data);
+        return this.http.post(`/stories/fetchbugstory`, _data);
     }
     /**
      * FetchBuildLinkCompletedStories
@@ -1051,9 +1051,9 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      */
     async FetchBuildLinkCompletedStories(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/stories/fetchbuildlinkcompletedstories`, _data);
+            return this.http.post(`/products/${_context.product}/stories/fetchbuildlinkcompletedstories`, _data);
         }
-        return this.http.get(`/stories/fetchbuildlinkcompletedstories`, _data);
+        return this.http.post(`/stories/fetchbuildlinkcompletedstories`, _data);
     }
     /**
      * FetchBuildLinkableStories
@@ -1065,9 +1065,9 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      */
     async FetchBuildLinkableStories(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/stories/fetchbuildlinkablestories`, _data);
+            return this.http.post(`/products/${_context.product}/stories/fetchbuildlinkablestories`, _data);
         }
-        return this.http.get(`/stories/fetchbuildlinkablestories`, _data);
+        return this.http.post(`/stories/fetchbuildlinkablestories`, _data);
     }
     /**
      * FetchBuildStories
@@ -1107,9 +1107,9 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      */
     async FetchCaseStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/stories/fetchcasestory`, _data);
+            return this.http.post(`/products/${_context.product}/stories/fetchcasestory`, _data);
         }
-        return this.http.get(`/stories/fetchcasestory`, _data);
+        return this.http.post(`/stories/fetchcasestory`, _data);
     }
     /**
      * FetchDefault
@@ -1135,9 +1135,9 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      */
     async FetchESBulk(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/stories/fetchesbulk`, _data);
+            return this.http.post(`/products/${_context.product}/stories/fetchesbulk`, _data);
         }
-        return this.http.get(`/stories/fetchesbulk`, _data);
+        return this.http.post(`/stories/fetchesbulk`, _data);
     }
     /**
      * FetchGetProductStories
@@ -1149,9 +1149,9 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      */
     async FetchGetProductStories(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/stories/fetchgetproductstories`, _data);
+            return this.http.post(`/products/${_context.product}/stories/fetchgetproductstories`, _data);
         }
-        return this.http.get(`/stories/fetchgetproductstories`, _data);
+        return this.http.post(`/stories/fetchgetproductstories`, _data);
     }
     /**
      * FetchMyAgentStory
@@ -1163,9 +1163,9 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      */
     async FetchMyAgentStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/stories/fetchmyagentstory`, _data);
+            return this.http.post(`/products/${_context.product}/stories/fetchmyagentstory`, _data);
         }
-        return this.http.get(`/stories/fetchmyagentstory`, _data);
+        return this.http.post(`/stories/fetchmyagentstory`, _data);
     }
     /**
      * FetchMyCurOpenedStory
@@ -1177,9 +1177,9 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      */
     async FetchMyCurOpenedStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/stories/fetchmycuropenedstory`, _data);
+            return this.http.post(`/products/${_context.product}/stories/fetchmycuropenedstory`, _data);
         }
-        return this.http.get(`/stories/fetchmycuropenedstory`, _data);
+        return this.http.post(`/stories/fetchmycuropenedstory`, _data);
     }
     /**
      * FetchMyFavorites
@@ -1205,9 +1205,9 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      */
     async FetchNotCurPlanLinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/stories/fetchnotcurplanlinkstory`, _data);
+            return this.http.post(`/products/${_context.product}/stories/fetchnotcurplanlinkstory`, _data);
         }
-        return this.http.get(`/stories/fetchnotcurplanlinkstory`, _data);
+        return this.http.post(`/stories/fetchnotcurplanlinkstory`, _data);
     }
     /**
      * FetchParentDefault
@@ -1233,9 +1233,9 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      */
     async FetchParentDefaultQ(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/stories/fetchparentdefaultq`, _data);
+            return this.http.post(`/products/${_context.product}/stories/fetchparentdefaultq`, _data);
         }
-        return this.http.get(`/stories/fetchparentdefaultq`, _data);
+        return this.http.post(`/stories/fetchparentdefaultq`, _data);
     }
     /**
      * FetchProjectLinkStory
@@ -1247,9 +1247,9 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      */
     async FetchProjectLinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/stories/fetchprojectlinkstory`, _data);
+            return this.http.post(`/products/${_context.product}/stories/fetchprojectlinkstory`, _data);
         }
-        return this.http.get(`/stories/fetchprojectlinkstory`, _data);
+        return this.http.post(`/stories/fetchprojectlinkstory`, _data);
     }
     /**
      * FetchProjectStories
@@ -1275,9 +1275,9 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      */
     async FetchReleaseLinkableStories(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/stories/fetchreleaselinkablestories`, _data);
+            return this.http.post(`/products/${_context.product}/stories/fetchreleaselinkablestories`, _data);
         }
-        return this.http.get(`/stories/fetchreleaselinkablestories`, _data);
+        return this.http.post(`/stories/fetchreleaselinkablestories`, _data);
     }
     /**
      * FetchReleaseStories
@@ -1317,9 +1317,9 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      */
     async FetchStoryChild(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/stories/fetchstorychild`, _data);
+            return this.http.post(`/products/${_context.product}/stories/fetchstorychild`, _data);
         }
-        return this.http.get(`/stories/fetchstorychild`, _data);
+        return this.http.post(`/stories/fetchstorychild`, _data);
     }
     /**
      * FetchStoryRelated
@@ -1331,9 +1331,9 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      */
     async FetchStoryRelated(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/stories/fetchstoryrelated`, _data);
+            return this.http.post(`/products/${_context.product}/stories/fetchstoryrelated`, _data);
         }
-        return this.http.get(`/stories/fetchstoryrelated`, _data);
+        return this.http.post(`/stories/fetchstoryrelated`, _data);
     }
     /**
      * FetchSubStory
@@ -1345,9 +1345,9 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      */
     async FetchSubStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/stories/fetchsubstory`, _data);
+            return this.http.post(`/products/${_context.product}/stories/fetchsubstory`, _data);
         }
-        return this.http.get(`/stories/fetchsubstory`, _data);
+        return this.http.post(`/stories/fetchsubstory`, _data);
     }
     /**
      * FetchTaskRelatedStory
@@ -1359,9 +1359,9 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      */
     async FetchTaskRelatedStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/stories/fetchtaskrelatedstory`, _data);
+            return this.http.post(`/products/${_context.product}/stories/fetchtaskrelatedstory`, _data);
         }
-        return this.http.get(`/stories/fetchtaskrelatedstory`, _data);
+        return this.http.post(`/stories/fetchtaskrelatedstory`, _data);
     }
     /**
      * FetchView
@@ -1373,9 +1373,9 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      */
     async FetchView(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/stories/fetchview`, _data);
+            return this.http.post(`/products/${_context.product}/stories/fetchview`, _data);
         }
-        return this.http.get(`/stories/fetchview`, _data);
+        return this.http.post(`/stories/fetchview`, _data);
     }
     /**
      * GetUserConcat

@@ -152,7 +152,7 @@ export class CompanyStatsBaseService extends EntityBaseService<ICompanyStats> {
      * @memberof CompanyStatsService
      */
     async FetchCompanyDynamicStats(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/companystats/fetchcompanydynamicstats`, _data);
+        return this.http.post(`/companystats/fetchcompanydynamicstats`, _data);
     }
     /**
      * FetchDefault
@@ -163,6 +163,6 @@ export class CompanyStatsBaseService extends EntityBaseService<ICompanyStats> {
      * @memberof CompanyStatsService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/companystats/fetchdefault`, _data);
+        return this.http.post(`/companystats/fetchdefault`, _data);
     }
 }

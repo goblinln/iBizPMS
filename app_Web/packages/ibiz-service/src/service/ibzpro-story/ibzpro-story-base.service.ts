@@ -163,6 +163,6 @@ export class IBZProStoryBaseService extends EntityBaseService<IIBZProStory> {
      * @memberof IBZProStoryService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzprostories/fetchdefault`, _data);
+        return this.http.post(`/ibzprostories/fetchdefault`, _data);
     }
 }

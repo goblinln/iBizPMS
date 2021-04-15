@@ -149,8 +149,8 @@ public class EmpLoyeeloadResource {
 
     @PreAuthorize("@EmpLoyeeloadRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"员工负载表" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/employeeloads/fetchdefault")
-	public ResponseEntity<List<EmpLoyeeloadDTO>> fetchDefault(EmpLoyeeloadSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/employeeloads/fetchdefault")
+	public ResponseEntity<List<EmpLoyeeloadDTO>> fetchDefault(@RequestBody EmpLoyeeloadSearchContext context) {
         employeeloadRuntime.addAuthorityConditions(context,"READ");
         Page<EmpLoyeeload> domains = employeeloadService.searchDefault(context) ;
         List<EmpLoyeeloadDTO> list = employeeloadMapping.toDto(domains.getContent());
@@ -173,8 +173,8 @@ public class EmpLoyeeloadResource {
 
     @PreAuthorize("@EmpLoyeeloadRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取获取员工负载表", tags = {"员工负载表" } ,notes = "获取获取员工负载表")
-    @RequestMapping(method= RequestMethod.GET , value="/employeeloads/fetchgetwoerkload")
-	public ResponseEntity<List<EmpLoyeeloadDTO>> fetchGETWOERKLOAD(EmpLoyeeloadSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/employeeloads/fetchgetwoerkload")
+	public ResponseEntity<List<EmpLoyeeloadDTO>> fetchGETWOERKLOAD(@RequestBody EmpLoyeeloadSearchContext context) {
         employeeloadRuntime.addAuthorityConditions(context,"READ");
         Page<EmpLoyeeload> domains = employeeloadService.searchGETWOERKLOAD(context) ;
         List<EmpLoyeeloadDTO> list = employeeloadMapping.toDto(domains.getContent());

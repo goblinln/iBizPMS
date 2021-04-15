@@ -152,6 +152,6 @@ export class GroupBaseService extends EntityBaseService<IGroup> {
      * @memberof GroupService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/groups/fetchdefault`, _data);
+        return this.http.post(`/groups/fetchdefault`, _data);
     }
 }

@@ -149,8 +149,8 @@ public class StorySpecResource {
 
     @PreAuthorize("@StorySpecRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"需求描述" } ,notes = "获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/storyspecs/fetchdefault")
-	public ResponseEntity<List<StorySpecDTO>> fetchDefault(StorySpecSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/storyspecs/fetchdefault")
+	public ResponseEntity<List<StorySpecDTO>> fetchDefault(@RequestBody StorySpecSearchContext context) {
         storyspecRuntime.addAuthorityConditions(context,"READ");
         Page<StorySpec> domains = storyspecService.searchDefault(context) ;
         List<StorySpecDTO> list = storyspecMapping.toDto(domains.getContent());
@@ -173,8 +173,8 @@ public class StorySpecResource {
 
     @PreAuthorize("@StorySpecRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本", tags = {"需求描述" } ,notes = "获取版本")
-    @RequestMapping(method= RequestMethod.GET , value="/storyspecs/fetchversion")
-	public ResponseEntity<List<StorySpecDTO>> fetchVersion(StorySpecSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/storyspecs/fetchversion")
+	public ResponseEntity<List<StorySpecDTO>> fetchVersion(@RequestBody StorySpecSearchContext context) {
         storyspecRuntime.addAuthorityConditions(context,"READ");
         Page<StorySpec> domains = storyspecService.searchVersion(context) ;
         List<StorySpecDTO> list = storyspecMapping.toDto(domains.getContent());
@@ -302,8 +302,8 @@ public class StorySpecResource {
     }
 
 	@ApiOperation(value = "根据需求获取DEFAULT", tags = {"需求描述" } ,notes = "根据需求获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/storyspecs/fetchdefault")
-	public ResponseEntity<List<StorySpecDTO>> fetchStorySpecDefaultByStory(@PathVariable("story_id") Long story_id,StorySpecSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/storyspecs/fetchdefault")
+	public ResponseEntity<List<StorySpecDTO>> fetchStorySpecDefaultByStory(@PathVariable("story_id") Long story_id,@RequestBody StorySpecSearchContext context) {
         context.setN_story_eq(story_id);
         Page<StorySpec> domains = storyspecService.searchDefault(context) ;
         List<StorySpecDTO> list = storyspecMapping.toDto(domains.getContent());
@@ -323,8 +323,8 @@ public class StorySpecResource {
                 .body(new PageImpl(storyspecMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取版本", tags = {"需求描述" } ,notes = "根据需求获取版本")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/storyspecs/fetchversion")
-	public ResponseEntity<List<StorySpecDTO>> fetchStorySpecVersionByStory(@PathVariable("story_id") Long story_id,StorySpecSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/storyspecs/fetchversion")
+	public ResponseEntity<List<StorySpecDTO>> fetchStorySpecVersionByStory(@PathVariable("story_id") Long story_id,@RequestBody StorySpecSearchContext context) {
         context.setN_story_eq(story_id);
         Page<StorySpec> domains = storyspecService.searchVersion(context) ;
         List<StorySpecDTO> list = storyspecMapping.toDto(domains.getContent());
@@ -442,8 +442,8 @@ public class StorySpecResource {
     }
 
 	@ApiOperation(value = "根据产品需求获取DEFAULT", tags = {"需求描述" } ,notes = "根据产品需求获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/storyspecs/fetchdefault")
-	public ResponseEntity<List<StorySpecDTO>> fetchStorySpecDefaultByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,StorySpecSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/storyspecs/fetchdefault")
+	public ResponseEntity<List<StorySpecDTO>> fetchStorySpecDefaultByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySpecSearchContext context) {
         context.setN_story_eq(story_id);
         Page<StorySpec> domains = storyspecService.searchDefault(context) ;
         List<StorySpecDTO> list = storyspecMapping.toDto(domains.getContent());
@@ -463,8 +463,8 @@ public class StorySpecResource {
                 .body(new PageImpl(storyspecMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取版本", tags = {"需求描述" } ,notes = "根据产品需求获取版本")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/storyspecs/fetchversion")
-	public ResponseEntity<List<StorySpecDTO>> fetchStorySpecVersionByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,StorySpecSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/storyspecs/fetchversion")
+	public ResponseEntity<List<StorySpecDTO>> fetchStorySpecVersionByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySpecSearchContext context) {
         context.setN_story_eq(story_id);
         Page<StorySpec> domains = storyspecService.searchVersion(context) ;
         List<StorySpecDTO> list = storyspecMapping.toDto(domains.getContent());

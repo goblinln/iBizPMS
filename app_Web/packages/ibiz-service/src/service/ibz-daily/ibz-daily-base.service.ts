@@ -271,7 +271,7 @@ export class IbzDailyBaseService extends EntityBaseService<IIbzDaily> {
      * @memberof IbzDailyService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzdailies/fetchdefault`, _data);
+        return this.http.post(`/ibzdailies/fetchdefault`, _data);
     }
     /**
      * FetchMyAllDaily
@@ -282,7 +282,7 @@ export class IbzDailyBaseService extends EntityBaseService<IIbzDaily> {
      * @memberof IbzDailyService
      */
     async FetchMyAllDaily(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzdailies/fetchmyalldaily`, _data);
+        return this.http.post(`/ibzdailies/fetchmyalldaily`, _data);
     }
     /**
      * FetchMyDaily
@@ -293,7 +293,7 @@ export class IbzDailyBaseService extends EntityBaseService<IIbzDaily> {
      * @memberof IbzDailyService
      */
     async FetchMyDaily(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzdailies/fetchmydaily`, _data);
+        return this.http.post(`/ibzdailies/fetchmydaily`, _data);
     }
     /**
      * FetchMyNotSubmit
@@ -304,7 +304,7 @@ export class IbzDailyBaseService extends EntityBaseService<IIbzDaily> {
      * @memberof IbzDailyService
      */
     async FetchMyNotSubmit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzdailies/fetchmynotsubmit`, _data);
+        return this.http.post(`/ibzdailies/fetchmynotsubmit`, _data);
     }
     /**
      * FetchMySubmitDaily
@@ -315,7 +315,7 @@ export class IbzDailyBaseService extends EntityBaseService<IIbzDaily> {
      * @memberof IbzDailyService
      */
     async FetchMySubmitDaily(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzdailies/fetchmysubmitdaily`, _data);
+        return this.http.post(`/ibzdailies/fetchmysubmitdaily`, _data);
     }
     /**
      * FetchProductDaily
@@ -326,7 +326,7 @@ export class IbzDailyBaseService extends EntityBaseService<IIbzDaily> {
      * @memberof IbzDailyService
      */
     async FetchProductDaily(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzdailies/fetchproductdaily`, _data);
+        return this.http.post(`/ibzdailies/fetchproductdaily`, _data);
     }
     /**
      * FetchProjectDaily
@@ -337,6 +337,6 @@ export class IbzDailyBaseService extends EntityBaseService<IIbzDaily> {
      * @memberof IbzDailyService
      */
     async FetchProjectDaily(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzdailies/fetchprojectdaily`, _data);
+        return this.http.post(`/ibzdailies/fetchprojectdaily`, _data);
     }
 }

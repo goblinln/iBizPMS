@@ -150,8 +150,8 @@ public class SysUpdateFeaturesResource {
 
     @PreAuthorize("@SysUpdateFeaturesRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"系统更新功能" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/sysupdatefeatures/fetchdefault")
-	public ResponseEntity<List<SysUpdateFeaturesDTO>> fetchDefault(SysUpdateFeaturesSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/sysupdatefeatures/fetchdefault")
+	public ResponseEntity<List<SysUpdateFeaturesDTO>> fetchDefault(@RequestBody SysUpdateFeaturesSearchContext context) {
         sysupdatefeaturesRuntime.addAuthorityConditions(context,"READ");
         Page<SysUpdateFeatures> domains = sysupdatefeaturesService.searchDefault(context) ;
         List<SysUpdateFeaturesDTO> list = sysupdatefeaturesMapping.toDto(domains.getContent());
@@ -280,8 +280,8 @@ public class SysUpdateFeaturesResource {
     }
 
 	@ApiOperation(value = "根据更新日志获取数据集", tags = {"系统更新功能" } ,notes = "根据更新日志获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures/fetchdefault")
-	public ResponseEntity<List<SysUpdateFeaturesDTO>> fetchSysUpdateFeaturesDefaultBySysUpdateLog(@PathVariable("sysupdatelog_id") String sysupdatelog_id,SysUpdateFeaturesSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures/fetchdefault")
+	public ResponseEntity<List<SysUpdateFeaturesDTO>> fetchSysUpdateFeaturesDefaultBySysUpdateLog(@PathVariable("sysupdatelog_id") String sysupdatelog_id,@RequestBody SysUpdateFeaturesSearchContext context) {
         context.setN_sys_update_logid_eq(sysupdatelog_id);
         Page<SysUpdateFeatures> domains = sysupdatefeaturesService.searchDefault(context) ;
         List<SysUpdateFeaturesDTO> list = sysupdatefeaturesMapping.toDto(domains.getContent());

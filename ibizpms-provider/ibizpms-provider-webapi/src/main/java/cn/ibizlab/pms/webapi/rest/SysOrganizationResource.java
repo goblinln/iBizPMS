@@ -135,8 +135,8 @@ public class SysOrganizationResource {
     }
 
 	@ApiOperation(value = "获取数据集", tags = {"单位" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/sysorganizations/fetchdefault")
-	public ResponseEntity<List<SysOrganizationDTO>> fetchDefault(SysOrganizationSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/sysorganizations/fetchdefault")
+	public ResponseEntity<List<SysOrganizationDTO>> fetchDefault(@RequestBody SysOrganizationSearchContext context) {
         Page<SysOrganization> domains = sysorganizationService.searchDefault(context) ;
         List<SysOrganizationDTO> list = sysorganizationMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

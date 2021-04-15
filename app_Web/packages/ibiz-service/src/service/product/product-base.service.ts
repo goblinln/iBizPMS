@@ -279,7 +279,7 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async FetchAllList(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/products/fetchalllist`, _data);
+        return this.http.post(`/products/fetchalllist`, _data);
     }
     /**
      * FetchAllProduct
@@ -290,7 +290,7 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async FetchAllProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/products/fetchallproduct`, _data);
+        return this.http.post(`/products/fetchallproduct`, _data);
     }
     /**
      * FetchCheckNameOrCode
@@ -301,7 +301,7 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async FetchCheckNameOrCode(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/products/fetchchecknameorcode`, _data);
+        return this.http.post(`/products/fetchchecknameorcode`, _data);
     }
     /**
      * FetchCurProject
@@ -312,7 +312,7 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async FetchCurProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/products/fetchcurproject`, _data);
+        return this.http.post(`/products/fetchcurproject`, _data);
     }
     /**
      * FetchCurUer
@@ -334,7 +334,7 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/products/fetchdefault`, _data);
+        return this.http.post(`/products/fetchdefault`, _data);
     }
     /**
      * FetchESBulk
@@ -345,7 +345,7 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async FetchESBulk(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/products/fetchesbulk`, _data);
+        return this.http.post(`/products/fetchesbulk`, _data);
     }
     /**
      * FetchProductPM
@@ -356,7 +356,7 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async FetchProductPM(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/products/fetchproductpm`, _data);
+        return this.http.post(`/products/fetchproductpm`, _data);
     }
     /**
      * FetchProductTeam
@@ -367,7 +367,7 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async FetchProductTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/products/fetchproductteam`, _data);
+        return this.http.post(`/products/fetchproductteam`, _data);
     }
     /**
      * FetchStoryCurProject
@@ -378,6 +378,6 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async FetchStoryCurProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/products/fetchstorycurproject`, _data);
+        return this.http.post(`/products/fetchstorycurproject`, _data);
     }
 }

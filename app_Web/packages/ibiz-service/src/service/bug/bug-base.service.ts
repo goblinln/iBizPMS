@@ -1213,18 +1213,18 @@ export class BugBaseService extends EntityBaseService<IBug> {
      */
     async FetchAssignedToMyBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/bugs/fetchassignedtomybug`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/fetchassignedtomybug`, _data);
         }
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/bugs/fetchassignedtomybug`, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/fetchassignedtomybug`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/bugs/fetchassignedtomybug`, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/fetchassignedtomybug`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/bugs/fetchassignedtomybug`, _data);
+            return this.http.post(`/products/${_context.product}/bugs/fetchassignedtomybug`, _data);
         }
-        return this.http.get(`/bugs/fetchassignedtomybug`, _data);
+        return this.http.post(`/bugs/fetchassignedtomybug`, _data);
     }
     /**
      * FetchAssignedToMyBugPc
@@ -1236,18 +1236,18 @@ export class BugBaseService extends EntityBaseService<IBug> {
      */
     async FetchAssignedToMyBugPc(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/bugs/fetchassignedtomybugpc`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/fetchassignedtomybugpc`, _data);
         }
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/bugs/fetchassignedtomybugpc`, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/fetchassignedtomybugpc`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/bugs/fetchassignedtomybugpc`, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/fetchassignedtomybugpc`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/bugs/fetchassignedtomybugpc`, _data);
+            return this.http.post(`/products/${_context.product}/bugs/fetchassignedtomybugpc`, _data);
         }
-        return this.http.get(`/bugs/fetchassignedtomybugpc`, _data);
+        return this.http.post(`/bugs/fetchassignedtomybugpc`, _data);
     }
     /**
      * FetchBugsByBuild
@@ -1351,18 +1351,18 @@ export class BugBaseService extends EntityBaseService<IBug> {
      */
     async FetchBuildProduceBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/bugs/fetchbuildproducebug`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/fetchbuildproducebug`, _data);
         }
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/bugs/fetchbuildproducebug`, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/fetchbuildproducebug`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/bugs/fetchbuildproducebug`, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/fetchbuildproducebug`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/bugs/fetchbuildproducebug`, _data);
+            return this.http.post(`/products/${_context.product}/bugs/fetchbuildproducebug`, _data);
         }
-        return this.http.get(`/bugs/fetchbuildproducebug`, _data);
+        return this.http.post(`/bugs/fetchbuildproducebug`, _data);
     }
     /**
      * FetchBuildProduceBugModule
@@ -1374,18 +1374,18 @@ export class BugBaseService extends EntityBaseService<IBug> {
      */
     async FetchBuildProduceBugModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/bugs/fetchbuildproducebugmodule`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/fetchbuildproducebugmodule`, _data);
         }
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/bugs/fetchbuildproducebugmodule`, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/fetchbuildproducebugmodule`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/bugs/fetchbuildproducebugmodule`, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/fetchbuildproducebugmodule`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/bugs/fetchbuildproducebugmodule`, _data);
+            return this.http.post(`/products/${_context.product}/bugs/fetchbuildproducebugmodule`, _data);
         }
-        return this.http.get(`/bugs/fetchbuildproducebugmodule`, _data);
+        return this.http.post(`/bugs/fetchbuildproducebugmodule`, _data);
     }
     /**
      * FetchBuildProduceBugModule_Project
@@ -1397,18 +1397,18 @@ export class BugBaseService extends EntityBaseService<IBug> {
      */
     async FetchBuildProduceBugModule_Project(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/bugs/fetchbuildproducebugmodule_project`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/fetchbuildproducebugmodule_project`, _data);
         }
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/bugs/fetchbuildproducebugmodule_project`, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/fetchbuildproducebugmodule_project`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/bugs/fetchbuildproducebugmodule_project`, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/fetchbuildproducebugmodule_project`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/bugs/fetchbuildproducebugmodule_project`, _data);
+            return this.http.post(`/products/${_context.product}/bugs/fetchbuildproducebugmodule_project`, _data);
         }
-        return this.http.get(`/bugs/fetchbuildproducebugmodule_project`, _data);
+        return this.http.post(`/bugs/fetchbuildproducebugmodule_project`, _data);
     }
     /**
      * FetchBuildProduceBugOpenedBy
@@ -1420,18 +1420,18 @@ export class BugBaseService extends EntityBaseService<IBug> {
      */
     async FetchBuildProduceBugOpenedBy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/bugs/fetchbuildproducebugopenedby`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/fetchbuildproducebugopenedby`, _data);
         }
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/bugs/fetchbuildproducebugopenedby`, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/fetchbuildproducebugopenedby`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/bugs/fetchbuildproducebugopenedby`, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/fetchbuildproducebugopenedby`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/bugs/fetchbuildproducebugopenedby`, _data);
+            return this.http.post(`/products/${_context.product}/bugs/fetchbuildproducebugopenedby`, _data);
         }
-        return this.http.get(`/bugs/fetchbuildproducebugopenedby`, _data);
+        return this.http.post(`/bugs/fetchbuildproducebugopenedby`, _data);
     }
     /**
      * FetchBuildProduceBugOpenedBy_Project
@@ -1443,18 +1443,18 @@ export class BugBaseService extends EntityBaseService<IBug> {
      */
     async FetchBuildProduceBugOpenedBy_Project(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/bugs/fetchbuildproducebugopenedby_project`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/fetchbuildproducebugopenedby_project`, _data);
         }
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/bugs/fetchbuildproducebugopenedby_project`, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/fetchbuildproducebugopenedby_project`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/bugs/fetchbuildproducebugopenedby_project`, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/fetchbuildproducebugopenedby_project`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/bugs/fetchbuildproducebugopenedby_project`, _data);
+            return this.http.post(`/products/${_context.product}/bugs/fetchbuildproducebugopenedby_project`, _data);
         }
-        return this.http.get(`/bugs/fetchbuildproducebugopenedby_project`, _data);
+        return this.http.post(`/bugs/fetchbuildproducebugopenedby_project`, _data);
     }
     /**
      * FetchBuildProduceBugRES
@@ -1466,18 +1466,18 @@ export class BugBaseService extends EntityBaseService<IBug> {
      */
     async FetchBuildProduceBugRES(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/bugs/fetchbuildproducebugres`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/fetchbuildproducebugres`, _data);
         }
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/bugs/fetchbuildproducebugres`, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/fetchbuildproducebugres`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/bugs/fetchbuildproducebugres`, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/fetchbuildproducebugres`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/bugs/fetchbuildproducebugres`, _data);
+            return this.http.post(`/products/${_context.product}/bugs/fetchbuildproducebugres`, _data);
         }
-        return this.http.get(`/bugs/fetchbuildproducebugres`, _data);
+        return this.http.post(`/bugs/fetchbuildproducebugres`, _data);
     }
     /**
      * FetchBuildProduceBugRESOLVEDBY
@@ -1489,18 +1489,18 @@ export class BugBaseService extends EntityBaseService<IBug> {
      */
     async FetchBuildProduceBugRESOLVEDBY(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/bugs/fetchbuildproducebugresolvedby`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/fetchbuildproducebugresolvedby`, _data);
         }
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/bugs/fetchbuildproducebugresolvedby`, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/fetchbuildproducebugresolvedby`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/bugs/fetchbuildproducebugresolvedby`, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/fetchbuildproducebugresolvedby`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/bugs/fetchbuildproducebugresolvedby`, _data);
+            return this.http.post(`/products/${_context.product}/bugs/fetchbuildproducebugresolvedby`, _data);
         }
-        return this.http.get(`/bugs/fetchbuildproducebugresolvedby`, _data);
+        return this.http.post(`/bugs/fetchbuildproducebugresolvedby`, _data);
     }
     /**
      * FetchBuildProduceBugRESOLVEDBY_Project
@@ -1512,18 +1512,18 @@ export class BugBaseService extends EntityBaseService<IBug> {
      */
     async FetchBuildProduceBugRESOLVEDBY_Project(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/bugs/fetchbuildproducebugresolvedby_project`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/fetchbuildproducebugresolvedby_project`, _data);
         }
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/bugs/fetchbuildproducebugresolvedby_project`, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/fetchbuildproducebugresolvedby_project`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/bugs/fetchbuildproducebugresolvedby_project`, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/fetchbuildproducebugresolvedby_project`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/bugs/fetchbuildproducebugresolvedby_project`, _data);
+            return this.http.post(`/products/${_context.product}/bugs/fetchbuildproducebugresolvedby_project`, _data);
         }
-        return this.http.get(`/bugs/fetchbuildproducebugresolvedby_project`, _data);
+        return this.http.post(`/bugs/fetchbuildproducebugresolvedby_project`, _data);
     }
     /**
      * FetchBuildProduceBugResolution_Project
@@ -1535,18 +1535,18 @@ export class BugBaseService extends EntityBaseService<IBug> {
      */
     async FetchBuildProduceBugResolution_Project(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/bugs/fetchbuildproducebugresolution_project`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/fetchbuildproducebugresolution_project`, _data);
         }
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/bugs/fetchbuildproducebugresolution_project`, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/fetchbuildproducebugresolution_project`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/bugs/fetchbuildproducebugresolution_project`, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/fetchbuildproducebugresolution_project`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/bugs/fetchbuildproducebugresolution_project`, _data);
+            return this.http.post(`/products/${_context.product}/bugs/fetchbuildproducebugresolution_project`, _data);
         }
-        return this.http.get(`/bugs/fetchbuildproducebugresolution_project`, _data);
+        return this.http.post(`/bugs/fetchbuildproducebugresolution_project`, _data);
     }
     /**
      * FetchBuildProduceBugSeverity_Project
@@ -1558,18 +1558,18 @@ export class BugBaseService extends EntityBaseService<IBug> {
      */
     async FetchBuildProduceBugSeverity_Project(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/bugs/fetchbuildproducebugseverity_project`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/fetchbuildproducebugseverity_project`, _data);
         }
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/bugs/fetchbuildproducebugseverity_project`, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/fetchbuildproducebugseverity_project`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/bugs/fetchbuildproducebugseverity_project`, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/fetchbuildproducebugseverity_project`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/bugs/fetchbuildproducebugseverity_project`, _data);
+            return this.http.post(`/products/${_context.product}/bugs/fetchbuildproducebugseverity_project`, _data);
         }
-        return this.http.get(`/bugs/fetchbuildproducebugseverity_project`, _data);
+        return this.http.post(`/bugs/fetchbuildproducebugseverity_project`, _data);
     }
     /**
      * FetchBuildProduceBugStatus_Project
@@ -1581,18 +1581,18 @@ export class BugBaseService extends EntityBaseService<IBug> {
      */
     async FetchBuildProduceBugStatus_Project(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/bugs/fetchbuildproducebugstatus_project`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/fetchbuildproducebugstatus_project`, _data);
         }
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/bugs/fetchbuildproducebugstatus_project`, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/fetchbuildproducebugstatus_project`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/bugs/fetchbuildproducebugstatus_project`, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/fetchbuildproducebugstatus_project`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/bugs/fetchbuildproducebugstatus_project`, _data);
+            return this.http.post(`/products/${_context.product}/bugs/fetchbuildproducebugstatus_project`, _data);
         }
-        return this.http.get(`/bugs/fetchbuildproducebugstatus_project`, _data);
+        return this.http.post(`/bugs/fetchbuildproducebugstatus_project`, _data);
     }
     /**
      * FetchBuildProduceBugType_Project
@@ -1604,18 +1604,18 @@ export class BugBaseService extends EntityBaseService<IBug> {
      */
     async FetchBuildProduceBugType_Project(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/bugs/fetchbuildproducebugtype_project`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/fetchbuildproducebugtype_project`, _data);
         }
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/bugs/fetchbuildproducebugtype_project`, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/fetchbuildproducebugtype_project`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/bugs/fetchbuildproducebugtype_project`, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/fetchbuildproducebugtype_project`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/bugs/fetchbuildproducebugtype_project`, _data);
+            return this.http.post(`/products/${_context.product}/bugs/fetchbuildproducebugtype_project`, _data);
         }
-        return this.http.get(`/bugs/fetchbuildproducebugtype_project`, _data);
+        return this.http.post(`/bugs/fetchbuildproducebugtype_project`, _data);
     }
     /**
      * FetchCurUserResolve
@@ -1627,18 +1627,18 @@ export class BugBaseService extends EntityBaseService<IBug> {
      */
     async FetchCurUserResolve(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/bugs/fetchcuruserresolve`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/fetchcuruserresolve`, _data);
         }
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/bugs/fetchcuruserresolve`, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/fetchcuruserresolve`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/bugs/fetchcuruserresolve`, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/fetchcuruserresolve`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/bugs/fetchcuruserresolve`, _data);
+            return this.http.post(`/products/${_context.product}/bugs/fetchcuruserresolve`, _data);
         }
-        return this.http.get(`/bugs/fetchcuruserresolve`, _data);
+        return this.http.post(`/bugs/fetchcuruserresolve`, _data);
     }
     /**
      * FetchDefault
@@ -1673,18 +1673,18 @@ export class BugBaseService extends EntityBaseService<IBug> {
      */
     async FetchESBulk(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/bugs/fetchesbulk`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/fetchesbulk`, _data);
         }
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/bugs/fetchesbulk`, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/fetchesbulk`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/bugs/fetchesbulk`, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/fetchesbulk`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/bugs/fetchesbulk`, _data);
+            return this.http.post(`/products/${_context.product}/bugs/fetchesbulk`, _data);
         }
-        return this.http.get(`/bugs/fetchesbulk`, _data);
+        return this.http.post(`/bugs/fetchesbulk`, _data);
     }
     /**
      * FetchMyAgentBug
@@ -1696,18 +1696,18 @@ export class BugBaseService extends EntityBaseService<IBug> {
      */
     async FetchMyAgentBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/bugs/fetchmyagentbug`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/fetchmyagentbug`, _data);
         }
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/bugs/fetchmyagentbug`, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/fetchmyagentbug`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/bugs/fetchmyagentbug`, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/fetchmyagentbug`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/bugs/fetchmyagentbug`, _data);
+            return this.http.post(`/products/${_context.product}/bugs/fetchmyagentbug`, _data);
         }
-        return this.http.get(`/bugs/fetchmyagentbug`, _data);
+        return this.http.post(`/bugs/fetchmyagentbug`, _data);
     }
     /**
      * FetchMyCurOpenedBug
@@ -1719,18 +1719,18 @@ export class BugBaseService extends EntityBaseService<IBug> {
      */
     async FetchMyCurOpenedBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/bugs/fetchmycuropenedbug`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/fetchmycuropenedbug`, _data);
         }
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/bugs/fetchmycuropenedbug`, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/fetchmycuropenedbug`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/bugs/fetchmycuropenedbug`, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/fetchmycuropenedbug`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/bugs/fetchmycuropenedbug`, _data);
+            return this.http.post(`/products/${_context.product}/bugs/fetchmycuropenedbug`, _data);
         }
-        return this.http.get(`/bugs/fetchmycuropenedbug`, _data);
+        return this.http.post(`/bugs/fetchmycuropenedbug`, _data);
     }
     /**
      * FetchMyFavorites
@@ -1765,18 +1765,18 @@ export class BugBaseService extends EntityBaseService<IBug> {
      */
     async FetchNotCurPlanLinkBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/bugs/fetchnotcurplanlinkbug`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/fetchnotcurplanlinkbug`, _data);
         }
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/bugs/fetchnotcurplanlinkbug`, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/fetchnotcurplanlinkbug`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/bugs/fetchnotcurplanlinkbug`, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/fetchnotcurplanlinkbug`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/bugs/fetchnotcurplanlinkbug`, _data);
+            return this.http.post(`/products/${_context.product}/bugs/fetchnotcurplanlinkbug`, _data);
         }
-        return this.http.get(`/bugs/fetchnotcurplanlinkbug`, _data);
+        return this.http.post(`/bugs/fetchnotcurplanlinkbug`, _data);
     }
     /**
      * FetchProjectBugs
@@ -1857,18 +1857,18 @@ export class BugBaseService extends EntityBaseService<IBug> {
      */
     async FetchReleaseLinkableLeftBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/bugs/fetchreleaselinkableleftbug`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/fetchreleaselinkableleftbug`, _data);
         }
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/bugs/fetchreleaselinkableleftbug`, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/fetchreleaselinkableleftbug`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/bugs/fetchreleaselinkableleftbug`, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/fetchreleaselinkableleftbug`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/bugs/fetchreleaselinkableleftbug`, _data);
+            return this.http.post(`/products/${_context.product}/bugs/fetchreleaselinkableleftbug`, _data);
         }
-        return this.http.get(`/bugs/fetchreleaselinkableleftbug`, _data);
+        return this.http.post(`/bugs/fetchreleaselinkableleftbug`, _data);
     }
     /**
      * FetchReleaseLinkableResolvedBug
@@ -1880,18 +1880,18 @@ export class BugBaseService extends EntityBaseService<IBug> {
      */
     async FetchReleaseLinkableResolvedBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/bugs/fetchreleaselinkableresolvedbug`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/fetchreleaselinkableresolvedbug`, _data);
         }
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/bugs/fetchreleaselinkableresolvedbug`, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/fetchreleaselinkableresolvedbug`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/bugs/fetchreleaselinkableresolvedbug`, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/fetchreleaselinkableresolvedbug`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/bugs/fetchreleaselinkableresolvedbug`, _data);
+            return this.http.post(`/products/${_context.product}/bugs/fetchreleaselinkableresolvedbug`, _data);
         }
-        return this.http.get(`/bugs/fetchreleaselinkableresolvedbug`, _data);
+        return this.http.post(`/bugs/fetchreleaselinkableresolvedbug`, _data);
     }
     /**
      * FetchReportBugs
@@ -1926,18 +1926,18 @@ export class BugBaseService extends EntityBaseService<IBug> {
      */
     async FetchTaskRelatedBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/bugs/fetchtaskrelatedbug`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/fetchtaskrelatedbug`, _data);
         }
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/bugs/fetchtaskrelatedbug`, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/fetchtaskrelatedbug`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/bugs/fetchtaskrelatedbug`, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/fetchtaskrelatedbug`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/bugs/fetchtaskrelatedbug`, _data);
+            return this.http.post(`/products/${_context.product}/bugs/fetchtaskrelatedbug`, _data);
         }
-        return this.http.get(`/bugs/fetchtaskrelatedbug`, _data);
+        return this.http.post(`/bugs/fetchtaskrelatedbug`, _data);
     }
     /**
      * GetUserConcat

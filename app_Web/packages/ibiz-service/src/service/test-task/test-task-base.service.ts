@@ -398,12 +398,12 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      */
     async FetchMyTestTaskPc(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/testtasks/fetchmytesttaskpc`, _data);
+            return this.http.post(`/projects/${_context.project}/testtasks/fetchmytesttaskpc`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/testtasks/fetchmytesttaskpc`, _data);
+            return this.http.post(`/products/${_context.product}/testtasks/fetchmytesttaskpc`, _data);
         }
-        return this.http.get(`/testtasks/fetchmytesttaskpc`, _data);
+        return this.http.post(`/testtasks/fetchmytesttaskpc`, _data);
     }
     /**
      * GetUserConcat

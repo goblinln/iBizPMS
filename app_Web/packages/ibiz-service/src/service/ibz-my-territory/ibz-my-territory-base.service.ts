@@ -189,7 +189,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzmyterritories/fetchdefault`, _data);
+        return this.http.post(`/ibzmyterritories/fetchdefault`, _data);
     }
     /**
      * FetchMyWork
@@ -200,7 +200,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async FetchMyWork(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzmyterritories/fetchmywork`, _data);
+        return this.http.post(`/ibzmyterritories/fetchmywork`, _data);
     }
     /**
      * FetchMyWorkMob
@@ -211,7 +211,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async FetchMyWorkMob(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzmyterritories/fetchmyworkmob`, _data);
+        return this.http.post(`/ibzmyterritories/fetchmyworkmob`, _data);
     }
     /**
      * FetchMyWorkPm
@@ -222,7 +222,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async FetchMyWorkPm(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzmyterritories/fetchmyworkpm`, _data);
+        return this.http.post(`/ibzmyterritories/fetchmyworkpm`, _data);
     }
     /**
      * FetchPersonInfo
@@ -233,7 +233,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async FetchPersonInfo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzmyterritories/fetchpersoninfo`, _data);
+        return this.http.post(`/ibzmyterritories/fetchpersoninfo`, _data);
     }
     /**
      * FetchWelcome
@@ -244,6 +244,6 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async FetchWelcome(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzmyterritories/fetchwelcome`, _data);
+        return this.http.post(`/ibzmyterritories/fetchwelcome`, _data);
     }
 }

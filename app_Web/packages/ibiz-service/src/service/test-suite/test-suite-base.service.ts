@@ -235,9 +235,9 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/testsuites/fetchdefault`, _data);
+            return this.http.post(`/products/${_context.product}/testsuites/fetchdefault`, _data);
         }
-        return this.http.get(`/testsuites/fetchdefault`, _data);
+        return this.http.post(`/testsuites/fetchdefault`, _data);
     }
     /**
      * FetchPublicTestSuite

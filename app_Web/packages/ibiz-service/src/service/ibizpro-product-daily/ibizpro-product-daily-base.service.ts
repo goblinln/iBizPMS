@@ -174,7 +174,7 @@ export class IbizproProductDailyBaseService extends EntityBaseService<IIbizproPr
      * @memberof IbizproProductDailyService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibizproproductdailies/fetchdefault`, _data);
+        return this.http.post(`/ibizproproductdailies/fetchdefault`, _data);
     }
     /**
      * FetchProductDaily
@@ -185,6 +185,6 @@ export class IbizproProductDailyBaseService extends EntityBaseService<IIbizproPr
      * @memberof IbizproProductDailyService
      */
     async FetchProductDaily(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibizproproductdailies/fetchproductdaily`, _data);
+        return this.http.post(`/ibizproproductdailies/fetchproductdaily`, _data);
     }
 }

@@ -425,8 +425,8 @@ public class ProductPlanResource {
 
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取子计划", tags = {"产品计划" } ,notes = "获取子计划")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/fetchchildplan")
-	public ResponseEntity<List<ProductPlanDTO>> fetchChildPlan(ProductPlanSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchchildplan")
+	public ResponseEntity<List<ProductPlanDTO>> fetchChildPlan(@RequestBody ProductPlanSearchContext context) {
         productplanRuntime.addAuthorityConditions(context,"READ");
         Page<ProductPlan> domains = productplanService.searchChildPlan(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
@@ -449,8 +449,8 @@ public class ProductPlanResource {
 
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取CurProductPlan", tags = {"产品计划" } ,notes = "获取CurProductPlan")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/fetchcurproductplan")
-	public ResponseEntity<List<ProductPlanDTO>> fetchCurProductPlan(ProductPlanSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchcurproductplan")
+	public ResponseEntity<List<ProductPlanDTO>> fetchCurProductPlan(@RequestBody ProductPlanSearchContext context) {
         productplanRuntime.addAuthorityConditions(context,"READ");
         Page<ProductPlan> domains = productplanService.searchCurProductPlan(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
@@ -473,8 +473,8 @@ public class ProductPlanResource {
 
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"产品计划" } ,notes = "获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/fetchdefault")
-	public ResponseEntity<List<ProductPlanDTO>> fetchDefault(ProductPlanSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchdefault")
+	public ResponseEntity<List<ProductPlanDTO>> fetchDefault(@RequestBody ProductPlanSearchContext context) {
         productplanRuntime.addAuthorityConditions(context,"READ");
         Page<ProductPlan> domains = productplanService.searchDefault(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
@@ -521,8 +521,8 @@ public class ProductPlanResource {
 
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取计划（代码表）", tags = {"产品计划" } ,notes = "获取计划（代码表）")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/fetchplancodelist")
-	public ResponseEntity<List<ProductPlanDTO>> fetchPlanCodeList(ProductPlanSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchplancodelist")
+	public ResponseEntity<List<ProductPlanDTO>> fetchPlanCodeList(@RequestBody ProductPlanSearchContext context) {
         productplanRuntime.addAuthorityConditions(context,"READ");
         Page<ProductPlan> domains = productplanService.searchPlanCodeList(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
@@ -545,8 +545,8 @@ public class ProductPlanResource {
 
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目计划任务（项目管理-项目计划）", tags = {"产品计划" } ,notes = "获取项目计划任务（项目管理-项目计划）")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/fetchplantasks")
-	public ResponseEntity<List<ProductPlanDTO>> fetchPlanTasks(ProductPlanSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchplantasks")
+	public ResponseEntity<List<ProductPlanDTO>> fetchPlanTasks(@RequestBody ProductPlanSearchContext context) {
         productplanRuntime.addAuthorityConditions(context,"READ");
         Page<ProductPlan> domains = productplanService.searchPlanTasks(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
@@ -569,8 +569,8 @@ public class ProductPlanResource {
 
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目立项", tags = {"产品计划" } ,notes = "获取项目立项")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/fetchprojectapp")
-	public ResponseEntity<List<ProductPlanDTO>> fetchProjectApp(ProductPlanSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchprojectapp")
+	public ResponseEntity<List<ProductPlanDTO>> fetchProjectApp(@RequestBody ProductPlanSearchContext context) {
         productplanRuntime.addAuthorityConditions(context,"READ");
         Page<ProductPlan> domains = productplanService.searchProjectApp(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
@@ -593,8 +593,8 @@ public class ProductPlanResource {
 
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目计划列表", tags = {"产品计划" } ,notes = "获取项目计划列表")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/fetchprojectplan")
-	public ResponseEntity<List<ProductPlanDTO>> fetchProjectPlan(ProductPlanSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchprojectplan")
+	public ResponseEntity<List<ProductPlanDTO>> fetchProjectPlan(@RequestBody ProductPlanSearchContext context) {
         productplanRuntime.addAuthorityConditions(context,"READ");
         Page<ProductPlan> domains = productplanService.searchProjectPlan(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
@@ -617,8 +617,8 @@ public class ProductPlanResource {
 
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取跟计划", tags = {"产品计划" } ,notes = "获取跟计划")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/fetchrootplan")
-	public ResponseEntity<List<ProductPlanDTO>> fetchRootPlan(ProductPlanSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchrootplan")
+	public ResponseEntity<List<ProductPlanDTO>> fetchRootPlan(@RequestBody ProductPlanSearchContext context) {
         productplanRuntime.addAuthorityConditions(context,"READ");
         Page<ProductPlan> domains = productplanService.searchRootPlan(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
@@ -641,8 +641,8 @@ public class ProductPlanResource {
 
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取任务计划", tags = {"产品计划" } ,notes = "获取任务计划")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/fetchtaskplan")
-	public ResponseEntity<List<ProductPlanDTO>> fetchTaskPlan(ProductPlanSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchtaskplan")
+	public ResponseEntity<List<ProductPlanDTO>> fetchTaskPlan(@RequestBody ProductPlanSearchContext context) {
         productplanRuntime.addAuthorityConditions(context,"READ");
         Page<ProductPlan> domains = productplanService.searchTaskPlan(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
@@ -1028,8 +1028,8 @@ public class ProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 	@ApiOperation(value = "根据产品获取子计划", tags = {"产品计划" } ,notes = "根据产品获取子计划")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/fetchchildplan")
-	public ResponseEntity<List<ProductPlanDTO>> fetchProductPlanChildPlanByProduct(@PathVariable("product_id") Long product_id,ProductPlanSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/fetchchildplan")
+	public ResponseEntity<List<ProductPlanDTO>> fetchProductPlanChildPlanByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProductPlanSearchContext context) {
         context.setN_product_eq(product_id);
         Page<ProductPlan> domains = productplanService.searchChildPlan(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
@@ -1049,8 +1049,8 @@ public class ProductPlanResource {
                 .body(new PageImpl(productplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品获取CurProductPlan", tags = {"产品计划" } ,notes = "根据产品获取CurProductPlan")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/fetchcurproductplan")
-	public ResponseEntity<List<ProductPlanDTO>> fetchProductPlanCurProductPlanByProduct(@PathVariable("product_id") Long product_id,ProductPlanSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/fetchcurproductplan")
+	public ResponseEntity<List<ProductPlanDTO>> fetchProductPlanCurProductPlanByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProductPlanSearchContext context) {
         context.setN_product_eq(product_id);
         Page<ProductPlan> domains = productplanService.searchCurProductPlan(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
@@ -1070,8 +1070,8 @@ public class ProductPlanResource {
                 .body(new PageImpl(productplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"产品计划" } ,notes = "根据产品获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/fetchdefault")
-	public ResponseEntity<List<ProductPlanDTO>> fetchProductPlanDefaultByProduct(@PathVariable("product_id") Long product_id,ProductPlanSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/fetchdefault")
+	public ResponseEntity<List<ProductPlanDTO>> fetchProductPlanDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProductPlanSearchContext context) {
         context.setN_product_eq(product_id);
         Page<ProductPlan> domains = productplanService.searchDefault(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
@@ -1112,8 +1112,8 @@ public class ProductPlanResource {
                 .body(new PageImpl(productplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品获取计划（代码表）", tags = {"产品计划" } ,notes = "根据产品获取计划（代码表）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/fetchplancodelist")
-	public ResponseEntity<List<ProductPlanDTO>> fetchProductPlanPlanCodeListByProduct(@PathVariable("product_id") Long product_id,ProductPlanSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/fetchplancodelist")
+	public ResponseEntity<List<ProductPlanDTO>> fetchProductPlanPlanCodeListByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProductPlanSearchContext context) {
         context.setN_product_eq(product_id);
         Page<ProductPlan> domains = productplanService.searchPlanCodeList(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
@@ -1133,8 +1133,8 @@ public class ProductPlanResource {
                 .body(new PageImpl(productplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品获取项目计划任务（项目管理-项目计划）", tags = {"产品计划" } ,notes = "根据产品获取项目计划任务（项目管理-项目计划）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/fetchplantasks")
-	public ResponseEntity<List<ProductPlanDTO>> fetchProductPlanPlanTasksByProduct(@PathVariable("product_id") Long product_id,ProductPlanSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/fetchplantasks")
+	public ResponseEntity<List<ProductPlanDTO>> fetchProductPlanPlanTasksByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProductPlanSearchContext context) {
         context.setN_product_eq(product_id);
         Page<ProductPlan> domains = productplanService.searchPlanTasks(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
@@ -1154,8 +1154,8 @@ public class ProductPlanResource {
                 .body(new PageImpl(productplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品获取项目立项", tags = {"产品计划" } ,notes = "根据产品获取项目立项")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/fetchprojectapp")
-	public ResponseEntity<List<ProductPlanDTO>> fetchProductPlanProjectAppByProduct(@PathVariable("product_id") Long product_id,ProductPlanSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/fetchprojectapp")
+	public ResponseEntity<List<ProductPlanDTO>> fetchProductPlanProjectAppByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProductPlanSearchContext context) {
         context.setN_product_eq(product_id);
         Page<ProductPlan> domains = productplanService.searchProjectApp(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
@@ -1175,8 +1175,8 @@ public class ProductPlanResource {
                 .body(new PageImpl(productplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品获取项目计划列表", tags = {"产品计划" } ,notes = "根据产品获取项目计划列表")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/fetchprojectplan")
-	public ResponseEntity<List<ProductPlanDTO>> fetchProductPlanProjectPlanByProduct(@PathVariable("product_id") Long product_id,ProductPlanSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/fetchprojectplan")
+	public ResponseEntity<List<ProductPlanDTO>> fetchProductPlanProjectPlanByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProductPlanSearchContext context) {
         context.setN_product_eq(product_id);
         Page<ProductPlan> domains = productplanService.searchProjectPlan(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
@@ -1196,8 +1196,8 @@ public class ProductPlanResource {
                 .body(new PageImpl(productplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品获取跟计划", tags = {"产品计划" } ,notes = "根据产品获取跟计划")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/fetchrootplan")
-	public ResponseEntity<List<ProductPlanDTO>> fetchProductPlanRootPlanByProduct(@PathVariable("product_id") Long product_id,ProductPlanSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/fetchrootplan")
+	public ResponseEntity<List<ProductPlanDTO>> fetchProductPlanRootPlanByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProductPlanSearchContext context) {
         context.setN_product_eq(product_id);
         Page<ProductPlan> domains = productplanService.searchRootPlan(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
@@ -1217,8 +1217,8 @@ public class ProductPlanResource {
                 .body(new PageImpl(productplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品获取任务计划", tags = {"产品计划" } ,notes = "根据产品获取任务计划")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/fetchtaskplan")
-	public ResponseEntity<List<ProductPlanDTO>> fetchProductPlanTaskPlanByProduct(@PathVariable("product_id") Long product_id,ProductPlanSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/fetchtaskplan")
+	public ResponseEntity<List<ProductPlanDTO>> fetchProductPlanTaskPlanByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProductPlanSearchContext context) {
         context.setN_product_eq(product_id);
         Page<ProductPlan> domains = productplanService.searchTaskPlan(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());

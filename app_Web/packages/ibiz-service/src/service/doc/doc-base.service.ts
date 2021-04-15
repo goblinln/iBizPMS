@@ -298,7 +298,7 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async FetchDocLibAndDoc(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/docs/fetchdoclibanddoc`, _data);
+        return this.http.post(`/docs/fetchdoclibanddoc`, _data);
     }
     /**
      * FetchDocLibDoc
@@ -331,7 +331,7 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async FetchDocStatus(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/docs/fetchdocstatus`, _data);
+        return this.http.post(`/docs/fetchdocstatus`, _data);
     }
     /**
      * FetchModuleDocChild
@@ -342,7 +342,7 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async FetchModuleDocChild(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/docs/fetchmoduledocchild`, _data);
+        return this.http.post(`/docs/fetchmoduledocchild`, _data);
     }
     /**
      * FetchMyFavourite
@@ -364,7 +364,7 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async FetchMyFavouritesOnlyDoc(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/docs/fetchmyfavouritesonlydoc`, _data);
+        return this.http.post(`/docs/fetchmyfavouritesonlydoc`, _data);
     }
     /**
      * FetchNotRootDoc
@@ -375,7 +375,7 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async FetchNotRootDoc(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/docs/fetchnotrootdoc`, _data);
+        return this.http.post(`/docs/fetchnotrootdoc`, _data);
     }
     /**
      * FetchRootDoc
@@ -386,6 +386,6 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async FetchRootDoc(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/docs/fetchrootdoc`, _data);
+        return this.http.post(`/docs/fetchrootdoc`, _data);
     }
 }

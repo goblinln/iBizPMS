@@ -150,8 +150,8 @@ public class DynaDashboardResource {
 
     @PreAuthorize("@DynaDashboardRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"动态数据看板" } ,notes = "获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/dynadashboards/fetchdefault")
-	public ResponseEntity<List<DynaDashboardDTO>> fetchDefault(DynaDashboardSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/dynadashboards/fetchdefault")
+	public ResponseEntity<List<DynaDashboardDTO>> fetchDefault(@RequestBody DynaDashboardSearchContext context) {
         dynadashboardRuntime.addAuthorityConditions(context,"READ");
         Page<DynaDashboard> domains = dynadashboardService.searchDefault(context) ;
         List<DynaDashboardDTO> list = dynadashboardMapping.toDto(domains.getContent());

@@ -152,7 +152,7 @@ export class AccountTaskestimateBaseService extends EntityBaseService<IAccountTa
      * @memberof AccountTaskestimateService
      */
     async FetchAllAccountEstimate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/accounttaskestimates/fetchallaccountestimate`, _data);
+        return this.http.post(`/accounttaskestimates/fetchallaccountestimate`, _data);
     }
     /**
      * FetchDefault
@@ -163,6 +163,6 @@ export class AccountTaskestimateBaseService extends EntityBaseService<IAccountTa
      * @memberof AccountTaskestimateService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/accounttaskestimates/fetchdefault`, _data);
+        return this.http.post(`/accounttaskestimates/fetchdefault`, _data);
     }
 }

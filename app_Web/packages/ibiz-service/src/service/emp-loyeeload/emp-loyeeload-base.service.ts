@@ -152,7 +152,7 @@ export class EmpLoyeeloadBaseService extends EntityBaseService<IEmpLoyeeload> {
      * @memberof EmpLoyeeloadService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/employeeloads/fetchdefault`, _data);
+        return this.http.post(`/employeeloads/fetchdefault`, _data);
     }
     /**
      * FetchGETWOERKLOAD
@@ -163,6 +163,6 @@ export class EmpLoyeeloadBaseService extends EntityBaseService<IEmpLoyeeload> {
      * @memberof EmpLoyeeloadService
      */
     async FetchGETWOERKLOAD(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/employeeloads/fetchgetwoerkload`, _data);
+        return this.http.post(`/employeeloads/fetchgetwoerkload`, _data);
     }
 }

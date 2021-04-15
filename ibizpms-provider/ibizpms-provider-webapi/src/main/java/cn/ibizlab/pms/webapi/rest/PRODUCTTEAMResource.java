@@ -166,8 +166,8 @@ public class PRODUCTTEAMResource {
 
     @PreAuthorize("@PRODUCTTEAMRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"产品团队" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/productteams/fetchdefault")
-	public ResponseEntity<List<PRODUCTTEAMDTO>> fetchDefault(PRODUCTTEAMSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productteams/fetchdefault")
+	public ResponseEntity<List<PRODUCTTEAMDTO>> fetchDefault(@RequestBody PRODUCTTEAMSearchContext context) {
         productteamRuntime.addAuthorityConditions(context,"READ");
         Page<PRODUCTTEAM> domains = productteamService.searchDefault(context) ;
         List<PRODUCTTEAMDTO> list = productteamMapping.toDto(domains.getContent());
@@ -190,8 +190,8 @@ public class PRODUCTTEAMResource {
 
     @PreAuthorize("@PRODUCTTEAMRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品团队成员信息", tags = {"产品团队" } ,notes = "获取产品团队成员信息")
-    @RequestMapping(method= RequestMethod.GET , value="/productteams/fetchproductteaminfo")
-	public ResponseEntity<List<PRODUCTTEAMDTO>> fetchProductTeamInfo(PRODUCTTEAMSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productteams/fetchproductteaminfo")
+	public ResponseEntity<List<PRODUCTTEAMDTO>> fetchProductTeamInfo(@RequestBody PRODUCTTEAMSearchContext context) {
         productteamRuntime.addAuthorityConditions(context,"READ");
         Page<PRODUCTTEAM> domains = productteamService.searchProductTeamInfo(context) ;
         List<PRODUCTTEAMDTO> list = productteamMapping.toDto(domains.getContent());
@@ -214,8 +214,8 @@ public class PRODUCTTEAMResource {
 
     @PreAuthorize("@PRODUCTTEAMRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目立项", tags = {"产品团队" } ,notes = "获取项目立项")
-    @RequestMapping(method= RequestMethod.GET , value="/productteams/fetchprojectapp")
-	public ResponseEntity<List<PRODUCTTEAMDTO>> fetchProjectApp(PRODUCTTEAMSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productteams/fetchprojectapp")
+	public ResponseEntity<List<PRODUCTTEAMDTO>> fetchProjectApp(@RequestBody PRODUCTTEAMSearchContext context) {
         productteamRuntime.addAuthorityConditions(context,"READ");
         Page<PRODUCTTEAM> domains = productteamService.searchProjectApp(context) ;
         List<PRODUCTTEAMDTO> list = productteamMapping.toDto(domains.getContent());
@@ -238,8 +238,8 @@ public class PRODUCTTEAMResource {
 
     @PreAuthorize("@PRODUCTTEAMRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品团队管理", tags = {"产品团队" } ,notes = "获取产品团队管理")
-    @RequestMapping(method= RequestMethod.GET , value="/productteams/fetchroweditdefaultproductteam")
-	public ResponseEntity<List<PRODUCTTEAMDTO>> fetchRowEditDefaultProductTeam(PRODUCTTEAMSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productteams/fetchroweditdefaultproductteam")
+	public ResponseEntity<List<PRODUCTTEAMDTO>> fetchRowEditDefaultProductTeam(@RequestBody PRODUCTTEAMSearchContext context) {
         productteamRuntime.addAuthorityConditions(context,"READ");
         Page<PRODUCTTEAM> domains = productteamService.searchRowEditDefaultProductTeam(context) ;
         List<PRODUCTTEAMDTO> list = productteamMapping.toDto(domains.getContent());
@@ -383,8 +383,8 @@ public class PRODUCTTEAMResource {
     }
 
 	@ApiOperation(value = "根据产品获取数据集", tags = {"产品团队" } ,notes = "根据产品获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productteams/fetchdefault")
-	public ResponseEntity<List<PRODUCTTEAMDTO>> fetchPRODUCTTEAMDefaultByProduct(@PathVariable("product_id") Long product_id,PRODUCTTEAMSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productteams/fetchdefault")
+	public ResponseEntity<List<PRODUCTTEAMDTO>> fetchPRODUCTTEAMDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody PRODUCTTEAMSearchContext context) {
         context.setN_root_eq(product_id);
         Page<PRODUCTTEAM> domains = productteamService.searchDefault(context) ;
         List<PRODUCTTEAMDTO> list = productteamMapping.toDto(domains.getContent());
@@ -404,8 +404,8 @@ public class PRODUCTTEAMResource {
                 .body(new PageImpl(productteamMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品获取产品团队成员信息", tags = {"产品团队" } ,notes = "根据产品获取产品团队成员信息")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productteams/fetchproductteaminfo")
-	public ResponseEntity<List<PRODUCTTEAMDTO>> fetchPRODUCTTEAMProductTeamInfoByProduct(@PathVariable("product_id") Long product_id,PRODUCTTEAMSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productteams/fetchproductteaminfo")
+	public ResponseEntity<List<PRODUCTTEAMDTO>> fetchPRODUCTTEAMProductTeamInfoByProduct(@PathVariable("product_id") Long product_id,@RequestBody PRODUCTTEAMSearchContext context) {
         context.setN_root_eq(product_id);
         Page<PRODUCTTEAM> domains = productteamService.searchProductTeamInfo(context) ;
         List<PRODUCTTEAMDTO> list = productteamMapping.toDto(domains.getContent());
@@ -425,8 +425,8 @@ public class PRODUCTTEAMResource {
                 .body(new PageImpl(productteamMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品获取项目立项", tags = {"产品团队" } ,notes = "根据产品获取项目立项")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productteams/fetchprojectapp")
-	public ResponseEntity<List<PRODUCTTEAMDTO>> fetchPRODUCTTEAMProjectAppByProduct(@PathVariable("product_id") Long product_id,PRODUCTTEAMSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productteams/fetchprojectapp")
+	public ResponseEntity<List<PRODUCTTEAMDTO>> fetchPRODUCTTEAMProjectAppByProduct(@PathVariable("product_id") Long product_id,@RequestBody PRODUCTTEAMSearchContext context) {
         context.setN_root_eq(product_id);
         Page<PRODUCTTEAM> domains = productteamService.searchProjectApp(context) ;
         List<PRODUCTTEAMDTO> list = productteamMapping.toDto(domains.getContent());
@@ -446,8 +446,8 @@ public class PRODUCTTEAMResource {
                 .body(new PageImpl(productteamMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品获取产品团队管理", tags = {"产品团队" } ,notes = "根据产品获取产品团队管理")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productteams/fetchroweditdefaultproductteam")
-	public ResponseEntity<List<PRODUCTTEAMDTO>> fetchPRODUCTTEAMRowEditDefaultProductTeamByProduct(@PathVariable("product_id") Long product_id,PRODUCTTEAMSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productteams/fetchroweditdefaultproductteam")
+	public ResponseEntity<List<PRODUCTTEAMDTO>> fetchPRODUCTTEAMRowEditDefaultProductTeamByProduct(@PathVariable("product_id") Long product_id,@RequestBody PRODUCTTEAMSearchContext context) {
         context.setN_root_eq(product_id);
         Page<PRODUCTTEAM> domains = productteamService.searchRowEditDefaultProductTeam(context) ;
         List<PRODUCTTEAMDTO> list = productteamMapping.toDto(domains.getContent());

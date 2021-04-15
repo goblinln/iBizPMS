@@ -160,8 +160,8 @@ public class TestSuiteResource {
 
     @PreAuthorize("@TestSuiteRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试套件" } ,notes = "获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/testsuites/fetchdefault")
-	public ResponseEntity<List<TestSuiteDTO>> fetchDefault(TestSuiteSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/testsuites/fetchdefault")
+	public ResponseEntity<List<TestSuiteDTO>> fetchDefault(@RequestBody TestSuiteSearchContext context) {
         testsuiteRuntime.addAuthorityConditions(context,"READ");
         Page<TestSuite> domains = testsuiteService.searchDefault(context) ;
         List<TestSuiteDTO> list = testsuiteMapping.toDto(domains.getContent());
@@ -323,8 +323,8 @@ public class TestSuiteResource {
     }
 
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"测试套件" } ,notes = "根据产品获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/testsuites/fetchdefault")
-	public ResponseEntity<List<TestSuiteDTO>> fetchTestSuiteDefaultByProduct(@PathVariable("product_id") Long product_id,TestSuiteSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/fetchdefault")
+	public ResponseEntity<List<TestSuiteDTO>> fetchTestSuiteDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestSuiteSearchContext context) {
         context.setN_product_eq(product_id);
         Page<TestSuite> domains = testsuiteService.searchDefault(context) ;
         List<TestSuiteDTO> list = testsuiteMapping.toDto(domains.getContent());

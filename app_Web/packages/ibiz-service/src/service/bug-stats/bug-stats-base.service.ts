@@ -152,7 +152,7 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
      * @memberof BugStatsService
      */
     async FetchBugCountInResolution(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/bugstats/fetchbugcountinresolution`, _data);
+        return this.http.post(`/bugstats/fetchbugcountinresolution`, _data);
     }
     /**
      * FetchBugResolvedBy
@@ -163,7 +163,7 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
      * @memberof BugStatsService
      */
     async FetchBugResolvedBy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/bugstats/fetchbugresolvedby`, _data);
+        return this.http.post(`/bugstats/fetchbugresolvedby`, _data);
     }
     /**
      * FetchBugResolvedGird
@@ -174,7 +174,7 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
      * @memberof BugStatsService
      */
     async FetchBugResolvedGird(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/bugstats/fetchbugresolvedgird`, _data);
+        return this.http.post(`/bugstats/fetchbugresolvedgird`, _data);
     }
     /**
      * FetchBugassignedTo
@@ -185,7 +185,7 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
      * @memberof BugStatsService
      */
     async FetchBugassignedTo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/bugstats/fetchbugassignedto`, _data);
+        return this.http.post(`/bugstats/fetchbugassignedto`, _data);
     }
     /**
      * FetchDefault
@@ -196,7 +196,7 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
      * @memberof BugStatsService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/bugstats/fetchdefault`, _data);
+        return this.http.post(`/bugstats/fetchdefault`, _data);
     }
     /**
      * FetchProductBugResolutionStats
@@ -207,7 +207,7 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
      * @memberof BugStatsService
      */
     async FetchProductBugResolutionStats(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/bugstats/fetchproductbugresolutionstats`, _data);
+        return this.http.post(`/bugstats/fetchproductbugresolutionstats`, _data);
     }
     /**
      * FetchProductBugStatusSum
@@ -218,7 +218,7 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
      * @memberof BugStatsService
      */
     async FetchProductBugStatusSum(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/bugstats/fetchproductbugstatussum`, _data);
+        return this.http.post(`/bugstats/fetchproductbugstatussum`, _data);
     }
     /**
      * FetchProductCreateBug
@@ -229,7 +229,7 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
      * @memberof BugStatsService
      */
     async FetchProductCreateBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/bugstats/fetchproductcreatebug`, _data);
+        return this.http.post(`/bugstats/fetchproductcreatebug`, _data);
     }
     /**
      * FetchProjectBugStatusCount
@@ -240,6 +240,6 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
      * @memberof BugStatsService
      */
     async FetchProjectBugStatusCount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/bugstats/fetchprojectbugstatuscount`, _data);
+        return this.http.post(`/bugstats/fetchprojectbugstatuscount`, _data);
     }
 }

@@ -228,9 +228,9 @@ export class IbzLibModuleBaseService extends EntityBaseService<IIbzLibModule> {
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.ibzlib && true) {
-            return this.http.get(`/ibzlibs/${_context.ibzlib}/ibzlibmodules/fetchdefault`, _data);
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/ibzlibmodules/fetchdefault`, _data);
         }
-        return this.http.get(`/ibzlibmodules/fetchdefault`, _data);
+        return this.http.post(`/ibzlibmodules/fetchdefault`, _data);
     }
     /**
      * FetchRoot_NoBranch
@@ -242,8 +242,8 @@ export class IbzLibModuleBaseService extends EntityBaseService<IIbzLibModule> {
      */
     async FetchRoot_NoBranch(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.ibzlib && true) {
-            return this.http.get(`/ibzlibs/${_context.ibzlib}/ibzlibmodules/fetchroot_nobranch`, _data);
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/ibzlibmodules/fetchroot_nobranch`, _data);
         }
-        return this.http.get(`/ibzlibmodules/fetchroot_nobranch`, _data);
+        return this.http.post(`/ibzlibmodules/fetchroot_nobranch`, _data);
     }
 }

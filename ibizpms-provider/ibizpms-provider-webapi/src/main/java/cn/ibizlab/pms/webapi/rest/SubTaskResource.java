@@ -557,8 +557,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取指派给我任务", tags = {"任务" } ,notes = "获取指派给我任务")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchassignedtomytask")
-	public ResponseEntity<List<SubTaskDTO>> fetchAssignedToMyTask(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchassignedtomytask")
+	public ResponseEntity<List<SubTaskDTO>> fetchAssignedToMyTask(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -581,8 +581,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取指派给我任务（PC）", tags = {"任务" } ,notes = "获取指派给我任务（PC）")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchassignedtomytaskpc")
-	public ResponseEntity<List<SubTaskDTO>> fetchAssignedToMyTaskPc(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchassignedtomytaskpc")
+	public ResponseEntity<List<SubTaskDTO>> fetchAssignedToMyTaskPc(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -605,8 +605,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Bug相关任务", tags = {"任务" } ,notes = "获取Bug相关任务")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchbugtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchBugTask(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchbugtask")
+	public ResponseEntity<List<SubTaskDTO>> fetchBugTask(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchBugTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -653,8 +653,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据查询（子任务）", tags = {"任务" } ,notes = "获取数据查询（子任务）")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchchilddefault")
-	public ResponseEntity<List<SubTaskDTO>> fetchChildDefault(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchchilddefault")
+	public ResponseEntity<List<SubTaskDTO>> fetchChildDefault(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildDefault(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -677,8 +677,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取子任务", tags = {"任务" } ,notes = "获取子任务")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchchildtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchChildTask(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchchildtask")
+	public ResponseEntity<List<SubTaskDTO>> fetchChildTask(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -701,8 +701,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取子任务（树）", tags = {"任务" } ,notes = "获取子任务（树）")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchchildtasktree")
-	public ResponseEntity<List<SubTaskDTO>> fetchChildTaskTree(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchchildtasktree")
+	public ResponseEntity<List<SubTaskDTO>> fetchChildTaskTree(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTaskTree(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -725,8 +725,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取用户年度完成任务", tags = {"任务" } ,notes = "获取用户年度完成任务")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchcurfinishtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchCurFinishTask(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchcurfinishtask")
+	public ResponseEntity<List<SubTaskDTO>> fetchCurFinishTask(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchCurFinishTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -773,8 +773,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DefaultRow", tags = {"任务" } ,notes = "获取DefaultRow")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchdefaultrow")
-	public ResponseEntity<List<SubTaskDTO>> fetchDefaultRow(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchdefaultrow")
+	public ResponseEntity<List<SubTaskDTO>> fetchDefaultRow(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefaultRow(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -797,8 +797,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取ES批量的导入", tags = {"任务" } ,notes = "获取ES批量的导入")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchesbulk")
-	public ResponseEntity<List<SubTaskDTO>> fetchESBulk(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchesbulk")
+	public ResponseEntity<List<SubTaskDTO>> fetchESBulk(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchESBulk(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -821,8 +821,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我代理的任务", tags = {"任务" } ,notes = "获取我代理的任务")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchmyagenttask")
-	public ResponseEntity<List<SubTaskDTO>> fetchMyAgentTask(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchmyagenttask")
+	public ResponseEntity<List<SubTaskDTO>> fetchMyAgentTask(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAgentTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -869,8 +869,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我完成的任务（汇报）", tags = {"任务" } ,notes = "获取我完成的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchmycompletetask")
-	public ResponseEntity<List<SubTaskDTO>> fetchMyCompleteTask(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchmycompletetask")
+	public ResponseEntity<List<SubTaskDTO>> fetchMyCompleteTask(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -893,8 +893,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我完成的任务（移动端日报）", tags = {"任务" } ,notes = "获取我完成的任务（移动端日报）")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchmycompletetaskmobdaily")
-	public ResponseEntity<List<SubTaskDTO>> fetchMyCompleteTaskMobDaily(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchmycompletetaskmobdaily")
+	public ResponseEntity<List<SubTaskDTO>> fetchMyCompleteTaskMobDaily(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -917,8 +917,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我完成的任务（移动端月报）", tags = {"任务" } ,notes = "获取我完成的任务（移动端月报）")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchmycompletetaskmobmonthly")
-	public ResponseEntity<List<SubTaskDTO>> fetchMyCompleteTaskMobMonthly(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchmycompletetaskmobmonthly")
+	public ResponseEntity<List<SubTaskDTO>> fetchMyCompleteTaskMobMonthly(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -941,8 +941,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我完成的任务（月报展示）", tags = {"任务" } ,notes = "获取我完成的任务（月报展示）")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchmycompletetaskmonthlyzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchMyCompleteTaskMonthlyZS(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchmycompletetaskmonthlyzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchMyCompleteTaskMonthlyZS(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -965,8 +965,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我完成的任务（汇报）", tags = {"任务" } ,notes = "获取我完成的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchmycompletetaskzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchMyCompleteTaskZS(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchmycompletetaskzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchMyCompleteTaskZS(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -1013,8 +1013,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "获取我计划参与的任务（移动端月报）")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchmyplanstaskmobmonthly")
-	public ResponseEntity<List<SubTaskDTO>> fetchMyPlansTaskMobMonthly(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchmyplanstaskmobmonthly")
+	public ResponseEntity<List<SubTaskDTO>> fetchMyPlansTaskMobMonthly(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -1037,8 +1037,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "获取我计划参与的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchmytomorrowplantask")
-	public ResponseEntity<List<SubTaskDTO>> fetchMyTomorrowPlanTask(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchmytomorrowplantask")
+	public ResponseEntity<List<SubTaskDTO>> fetchMyTomorrowPlanTask(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -1061,8 +1061,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "获取我计划参与的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchmytomorrowplantaskmobdaily")
-	public ResponseEntity<List<SubTaskDTO>> fetchMyTomorrowPlanTaskMobDaily(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchmytomorrowplantaskmobdaily")
+	public ResponseEntity<List<SubTaskDTO>> fetchMyTomorrowPlanTaskMobDaily(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -1085,8 +1085,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "获取移动端下周计划参与(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchnextweekcompletetaskmobzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchNextWeekCompleteTaskMobZS(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchnextweekcompletetaskmobzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchNextWeekCompleteTaskMobZS(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -1109,8 +1109,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "获取本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchnextweekcompletetaskzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchNextWeekCompleteTaskZS(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchnextweekcompletetaskzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchNextWeekCompleteTaskZS(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -1133,8 +1133,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取下周计划完成任务(汇报)", tags = {"任务" } ,notes = "获取下周计划完成任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchnextweekplancompletetask")
-	public ResponseEntity<List<SubTaskDTO>> fetchNextWeekPlanCompleteTask(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchnextweekplancompletetask")
+	public ResponseEntity<List<SubTaskDTO>> fetchNextWeekPlanCompleteTask(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -1229,8 +1229,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根任务", tags = {"任务" } ,notes = "获取根任务")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchroottask")
-	public ResponseEntity<List<SubTaskDTO>> fetchRootTask(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchroottask")
+	public ResponseEntity<List<SubTaskDTO>> fetchRootTask(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchRootTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -1253,8 +1253,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取关联计划（当前项目未关联）", tags = {"任务" } ,notes = "获取关联计划（当前项目未关联）")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchtasklinkplan")
-	public ResponseEntity<List<SubTaskDTO>> fetchTaskLinkPlan(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchtasklinkplan")
+	public ResponseEntity<List<SubTaskDTO>> fetchTaskLinkPlan(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -1277,8 +1277,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "获取我本月完成的任务（下拉列表框）")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchthismonthcompletetaskchoice")
-	public ResponseEntity<List<SubTaskDTO>> fetchThisMonthCompleteTaskChoice(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchthismonthcompletetaskchoice")
+	public ResponseEntity<List<SubTaskDTO>> fetchThisMonthCompleteTaskChoice(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -1301,8 +1301,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "获取本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchthisweekcompletetask")
-	public ResponseEntity<List<SubTaskDTO>> fetchThisWeekCompleteTask(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchthisweekcompletetask")
+	public ResponseEntity<List<SubTaskDTO>> fetchThisWeekCompleteTask(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -1325,8 +1325,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "获取本周已完成任务(下拉框选择)")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchthisweekcompletetaskchoice")
-	public ResponseEntity<List<SubTaskDTO>> fetchThisWeekCompleteTaskChoice(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchthisweekcompletetaskchoice")
+	public ResponseEntity<List<SubTaskDTO>> fetchThisWeekCompleteTaskChoice(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -1349,8 +1349,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "获取移动端本周已完成任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchthisweekcompletetaskmobzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchThisWeekCompleteTaskMobZS(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchthisweekcompletetaskmobzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchThisWeekCompleteTaskMobZS(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -1373,8 +1373,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "获取本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchthisweekcompletetaskzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchThisWeekCompleteTaskZS(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchthisweekcompletetaskzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchThisWeekCompleteTaskZS(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -1397,8 +1397,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取todo列表查询", tags = {"任务" } ,notes = "获取todo列表查询")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchtodolisttask")
-	public ResponseEntity<List<SubTaskDTO>> fetchTodoListTask(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchtodolisttask")
+	public ResponseEntity<List<SubTaskDTO>> fetchTodoListTask(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTodoListTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -1421,8 +1421,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取任务类型分组", tags = {"任务" } ,notes = "获取任务类型分组")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchtypegroup")
-	public ResponseEntity<List<Map>> fetchTypeGroup(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchtypegroup")
+	public ResponseEntity<List<Map>> fetchTypeGroup(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroup(context) ;
         return ResponseEntity.status(HttpStatus.OK)
@@ -1444,8 +1444,8 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取任务类型分组（计划）", tags = {"任务" } ,notes = "获取任务类型分组（计划）")
-    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchtypegroupplan")
-	public ResponseEntity<List<Map>> fetchTypeGroupPlan(TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchtypegroupplan")
+	public ResponseEntity<List<Map>> fetchTypeGroupPlan(@RequestBody TaskSearchContext context) {
         taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
         return ResponseEntity.status(HttpStatus.OK)
@@ -1945,8 +1945,8 @@ public class SubTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
     }
 	@ApiOperation(value = "根据任务获取指派给我任务", tags = {"任务" } ,notes = "根据任务获取指派给我任务")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchassignedtomytask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchassignedtomytask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -1966,8 +1966,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取指派给我任务（PC）", tags = {"任务" } ,notes = "根据任务获取指派给我任务（PC）")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchassignedtomytaskpc")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskPcByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchassignedtomytaskpc")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskPcByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -1987,8 +1987,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取Bug相关任务", tags = {"任务" } ,notes = "根据任务获取Bug相关任务")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchbugtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskBugTaskByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchbugtask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskBugTaskByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchBugTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -2029,8 +2029,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取数据查询（子任务）", tags = {"任务" } ,notes = "根据任务获取数据查询（子任务）")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchchilddefault")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildDefaultByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchchilddefault")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildDefaultByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchChildDefault(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -2050,8 +2050,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取子任务", tags = {"任务" } ,notes = "根据任务获取子任务")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchchildtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchchildtask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchChildTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -2071,8 +2071,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取子任务（树）", tags = {"任务" } ,notes = "根据任务获取子任务（树）")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchchildtasktree")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskTreeByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchchildtasktree")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskTreeByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchChildTaskTree(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -2092,8 +2092,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取用户年度完成任务", tags = {"任务" } ,notes = "根据任务获取用户年度完成任务")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchcurfinishtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskCurFinishTaskByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchcurfinishtask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskCurFinishTaskByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchCurFinishTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -2134,8 +2134,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取DefaultRow", tags = {"任务" } ,notes = "根据任务获取DefaultRow")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchdefaultrow")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskDefaultRowByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchdefaultrow")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskDefaultRowByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchDefaultRow(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -2155,8 +2155,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取ES批量的导入", tags = {"任务" } ,notes = "根据任务获取ES批量的导入")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchesbulk")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskESBulkByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchesbulk")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskESBulkByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchESBulk(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -2176,8 +2176,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取我代理的任务", tags = {"任务" } ,notes = "根据任务获取我代理的任务")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchmyagenttask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyAgentTaskByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchmyagenttask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyAgentTaskByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyAgentTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -2218,8 +2218,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据任务获取我完成的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchmycompletetask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchmycompletetask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -2239,8 +2239,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取我完成的任务（移动端日报）", tags = {"任务" } ,notes = "根据任务获取我完成的任务（移动端日报）")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchmycompletetaskmobdaily")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobDailyByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchmycompletetaskmobdaily")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobDailyByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -2260,8 +2260,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取我完成的任务（移动端月报）", tags = {"任务" } ,notes = "根据任务获取我完成的任务（移动端月报）")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchmycompletetaskmobmonthly")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobMonthlyByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchmycompletetaskmobmonthly")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobMonthlyByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -2281,8 +2281,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取我完成的任务（月报展示）", tags = {"任务" } ,notes = "根据任务获取我完成的任务（月报展示）")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchmycompletetaskmonthlyzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMonthlyZSByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchmycompletetaskmonthlyzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMonthlyZSByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -2302,8 +2302,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据任务获取我完成的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchmycompletetaskzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskZSByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchmycompletetaskzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskZSByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -2344,8 +2344,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "根据任务获取我计划参与的任务（移动端月报）")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchmyplanstaskmobmonthly")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyPlansTaskMobMonthlyByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchmyplanstaskmobmonthly")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyPlansTaskMobMonthlyByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -2365,8 +2365,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据任务获取我计划参与的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchmytomorrowplantask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchmytomorrowplantask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -2386,8 +2386,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据任务获取我计划参与的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchmytomorrowplantaskmobdaily")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskMobDailyByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchmytomorrowplantaskmobdaily")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskMobDailyByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -2407,8 +2407,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "根据任务获取移动端下周计划参与(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchnextweekcompletetaskmobzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskMobZSByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchnextweekcompletetaskmobzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskMobZSByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -2428,8 +2428,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据任务获取本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchnextweekcompletetaskzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskZSByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchnextweekcompletetaskzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskZSByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -2449,8 +2449,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取下周计划完成任务(汇报)", tags = {"任务" } ,notes = "根据任务获取下周计划完成任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchnextweekplancompletetask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekPlanCompleteTaskByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchnextweekplancompletetask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekPlanCompleteTaskByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -2533,8 +2533,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取根任务", tags = {"任务" } ,notes = "根据任务获取根任务")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchroottask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskRootTaskByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchroottask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskRootTaskByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchRootTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -2554,8 +2554,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取关联计划（当前项目未关联）", tags = {"任务" } ,notes = "根据任务获取关联计划（当前项目未关联）")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchtasklinkplan")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTaskLinkPlanByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchtasklinkplan")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTaskLinkPlanByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -2575,8 +2575,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "根据任务获取我本月完成的任务（下拉列表框）")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchthismonthcompletetaskchoice")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisMonthCompleteTaskChoiceByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchthismonthcompletetaskchoice")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisMonthCompleteTaskChoiceByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -2596,8 +2596,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据任务获取本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchthisweekcompletetask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchthisweekcompletetask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -2617,8 +2617,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "根据任务获取本周已完成任务(下拉框选择)")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchthisweekcompletetaskchoice")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskChoiceByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchthisweekcompletetaskchoice")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskChoiceByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -2638,8 +2638,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "根据任务获取移动端本周已完成任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchthisweekcompletetaskmobzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskMobZSByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchthisweekcompletetaskmobzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskMobZSByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -2659,8 +2659,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据任务获取本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchthisweekcompletetaskzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskZSByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchthisweekcompletetaskzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskZSByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -2680,8 +2680,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取todo列表查询", tags = {"任务" } ,notes = "根据任务获取todo列表查询")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchtodolisttask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTodoListTaskByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchtodolisttask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTodoListTaskByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchTodoListTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -2701,8 +2701,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取任务类型分组", tags = {"任务" } ,notes = "根据任务获取任务类型分组")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchtypegroup")
-	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchtypegroup")
+	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Map> domains = taskService.searchTypeGroup(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2721,8 +2721,8 @@ public class SubTaskResource {
                 .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取任务类型分组（计划）", tags = {"任务" } ,notes = "根据任务获取任务类型分组（计划）")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchtypegroupplan")
-	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupPlanByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchtypegroupplan")
+	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupPlanByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -3212,8 +3212,8 @@ public class SubTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
     }
 	@ApiOperation(value = "根据任务模块任务获取指派给我任务", tags = {"任务" } ,notes = "根据任务模块任务获取指派给我任务")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchassignedtomytask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchassignedtomytask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3233,8 +3233,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取指派给我任务（PC）", tags = {"任务" } ,notes = "根据任务模块任务获取指派给我任务（PC）")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchassignedtomytaskpc")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskPcByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchassignedtomytaskpc")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskPcByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3254,8 +3254,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取Bug相关任务", tags = {"任务" } ,notes = "根据任务模块任务获取Bug相关任务")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchbugtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskBugTaskByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchbugtask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskBugTaskByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchBugTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3296,8 +3296,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取数据查询（子任务）", tags = {"任务" } ,notes = "根据任务模块任务获取数据查询（子任务）")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchchilddefault")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildDefaultByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchchilddefault")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildDefaultByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchChildDefault(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3317,8 +3317,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取子任务", tags = {"任务" } ,notes = "根据任务模块任务获取子任务")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchchildtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchchildtask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchChildTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3338,8 +3338,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取子任务（树）", tags = {"任务" } ,notes = "根据任务模块任务获取子任务（树）")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchchildtasktree")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskTreeByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchchildtasktree")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskTreeByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchChildTaskTree(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3359,8 +3359,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取用户年度完成任务", tags = {"任务" } ,notes = "根据任务模块任务获取用户年度完成任务")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchcurfinishtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskCurFinishTaskByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchcurfinishtask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskCurFinishTaskByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchCurFinishTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3401,8 +3401,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取DefaultRow", tags = {"任务" } ,notes = "根据任务模块任务获取DefaultRow")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchdefaultrow")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskDefaultRowByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchdefaultrow")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskDefaultRowByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchDefaultRow(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3422,8 +3422,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取ES批量的导入", tags = {"任务" } ,notes = "根据任务模块任务获取ES批量的导入")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchesbulk")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskESBulkByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchesbulk")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskESBulkByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchESBulk(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3443,8 +3443,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取我代理的任务", tags = {"任务" } ,notes = "根据任务模块任务获取我代理的任务")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmyagenttask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyAgentTaskByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmyagenttask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyAgentTaskByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyAgentTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3485,8 +3485,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据任务模块任务获取我完成的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmycompletetask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmycompletetask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3506,8 +3506,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取我完成的任务（移动端日报）", tags = {"任务" } ,notes = "根据任务模块任务获取我完成的任务（移动端日报）")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobdaily")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobDailyByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobdaily")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobDailyByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3527,8 +3527,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取我完成的任务（移动端月报）", tags = {"任务" } ,notes = "根据任务模块任务获取我完成的任务（移动端月报）")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobmonthly")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobMonthlyByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobmonthly")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobMonthlyByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3548,8 +3548,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取我完成的任务（月报展示）", tags = {"任务" } ,notes = "根据任务模块任务获取我完成的任务（月报展示）")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmonthlyzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMonthlyZSByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmonthlyzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMonthlyZSByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3569,8 +3569,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据任务模块任务获取我完成的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmycompletetaskzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskZSByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmycompletetaskzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskZSByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3611,8 +3611,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "根据任务模块任务获取我计划参与的任务（移动端月报）")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmyplanstaskmobmonthly")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyPlansTaskMobMonthlyByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmyplanstaskmobmonthly")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyPlansTaskMobMonthlyByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3632,8 +3632,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据任务模块任务获取我计划参与的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3653,8 +3653,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据任务模块任务获取我计划参与的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantaskmobdaily")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskMobDailyByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantaskmobdaily")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskMobDailyByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3674,8 +3674,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "根据任务模块任务获取移动端下周计划参与(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskmobzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskMobZSByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskmobzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskMobZSByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3695,8 +3695,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据任务模块任务获取本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskZSByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskZSByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3716,8 +3716,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取下周计划完成任务(汇报)", tags = {"任务" } ,notes = "根据任务模块任务获取下周计划完成任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchnextweekplancompletetask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekPlanCompleteTaskByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchnextweekplancompletetask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekPlanCompleteTaskByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3800,8 +3800,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取根任务", tags = {"任务" } ,notes = "根据任务模块任务获取根任务")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchroottask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskRootTaskByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchroottask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskRootTaskByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchRootTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3821,8 +3821,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取关联计划（当前项目未关联）", tags = {"任务" } ,notes = "根据任务模块任务获取关联计划（当前项目未关联）")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchtasklinkplan")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTaskLinkPlanByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchtasklinkplan")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTaskLinkPlanByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3842,8 +3842,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "根据任务模块任务获取我本月完成的任务（下拉列表框）")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchthismonthcompletetaskchoice")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisMonthCompleteTaskChoiceByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchthismonthcompletetaskchoice")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisMonthCompleteTaskChoiceByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3863,8 +3863,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据任务模块任务获取本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3884,8 +3884,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "根据任务模块任务获取本周已完成任务(下拉框选择)")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskchoice")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskChoiceByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskchoice")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskChoiceByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3905,8 +3905,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "根据任务模块任务获取移动端本周已完成任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskmobzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskMobZSByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskmobzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskMobZSByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3926,8 +3926,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据任务模块任务获取本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskZSByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskZSByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3947,8 +3947,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取todo列表查询", tags = {"任务" } ,notes = "根据任务模块任务获取todo列表查询")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchtodolisttask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTodoListTaskByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchtodolisttask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTodoListTaskByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchTodoListTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -3968,8 +3968,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取任务类型分组", tags = {"任务" } ,notes = "根据任务模块任务获取任务类型分组")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchtypegroup")
-	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchtypegroup")
+	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Map> domains = taskService.searchTypeGroup(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -3988,8 +3988,8 @@ public class SubTaskResource {
                 .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取任务类型分组（计划）", tags = {"任务" } ,notes = "根据任务模块任务获取任务类型分组（计划）")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchtypegroupplan")
-	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupPlanByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchtypegroupplan")
+	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupPlanByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -4479,8 +4479,8 @@ public class SubTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
     }
 	@ApiOperation(value = "根据产品计划任务获取指派给我任务", tags = {"任务" } ,notes = "根据产品计划任务获取指派给我任务")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchassignedtomytask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchassignedtomytask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -4500,8 +4500,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取指派给我任务（PC）", tags = {"任务" } ,notes = "根据产品计划任务获取指派给我任务（PC）")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchassignedtomytaskpc")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskPcByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchassignedtomytaskpc")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskPcByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -4521,8 +4521,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取Bug相关任务", tags = {"任务" } ,notes = "根据产品计划任务获取Bug相关任务")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchbugtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskBugTaskByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchbugtask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskBugTaskByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchBugTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -4563,8 +4563,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取数据查询（子任务）", tags = {"任务" } ,notes = "根据产品计划任务获取数据查询（子任务）")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchchilddefault")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildDefaultByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchchilddefault")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildDefaultByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchChildDefault(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -4584,8 +4584,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取子任务", tags = {"任务" } ,notes = "根据产品计划任务获取子任务")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchchildtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchchildtask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchChildTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -4605,8 +4605,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取子任务（树）", tags = {"任务" } ,notes = "根据产品计划任务获取子任务（树）")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchchildtasktree")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskTreeByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchchildtasktree")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskTreeByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchChildTaskTree(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -4626,8 +4626,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取用户年度完成任务", tags = {"任务" } ,notes = "根据产品计划任务获取用户年度完成任务")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchcurfinishtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskCurFinishTaskByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchcurfinishtask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskCurFinishTaskByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchCurFinishTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -4668,8 +4668,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取DefaultRow", tags = {"任务" } ,notes = "根据产品计划任务获取DefaultRow")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchdefaultrow")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskDefaultRowByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchdefaultrow")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskDefaultRowByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchDefaultRow(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -4689,8 +4689,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取ES批量的导入", tags = {"任务" } ,notes = "根据产品计划任务获取ES批量的导入")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchesbulk")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskESBulkByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchesbulk")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskESBulkByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchESBulk(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -4710,8 +4710,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取我代理的任务", tags = {"任务" } ,notes = "根据产品计划任务获取我代理的任务")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmyagenttask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyAgentTaskByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmyagenttask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyAgentTaskByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyAgentTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -4752,8 +4752,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据产品计划任务获取我完成的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmycompletetask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmycompletetask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -4773,8 +4773,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取我完成的任务（移动端日报）", tags = {"任务" } ,notes = "根据产品计划任务获取我完成的任务（移动端日报）")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobdaily")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobDailyByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobdaily")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobDailyByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -4794,8 +4794,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取我完成的任务（移动端月报）", tags = {"任务" } ,notes = "根据产品计划任务获取我完成的任务（移动端月报）")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobmonthly")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobMonthlyByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobmonthly")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobMonthlyByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -4815,8 +4815,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取我完成的任务（月报展示）", tags = {"任务" } ,notes = "根据产品计划任务获取我完成的任务（月报展示）")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmonthlyzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMonthlyZSByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmonthlyzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMonthlyZSByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -4836,8 +4836,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据产品计划任务获取我完成的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmycompletetaskzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskZSByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmycompletetaskzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskZSByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -4878,8 +4878,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "根据产品计划任务获取我计划参与的任务（移动端月报）")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmyplanstaskmobmonthly")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyPlansTaskMobMonthlyByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmyplanstaskmobmonthly")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyPlansTaskMobMonthlyByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -4899,8 +4899,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据产品计划任务获取我计划参与的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -4920,8 +4920,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据产品计划任务获取我计划参与的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantaskmobdaily")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskMobDailyByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantaskmobdaily")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskMobDailyByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -4941,8 +4941,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "根据产品计划任务获取移动端下周计划参与(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskmobzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskMobZSByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskmobzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskMobZSByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -4962,8 +4962,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据产品计划任务获取本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskZSByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskZSByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -4983,8 +4983,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取下周计划完成任务(汇报)", tags = {"任务" } ,notes = "根据产品计划任务获取下周计划完成任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchnextweekplancompletetask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekPlanCompleteTaskByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchnextweekplancompletetask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekPlanCompleteTaskByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -5067,8 +5067,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取根任务", tags = {"任务" } ,notes = "根据产品计划任务获取根任务")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchroottask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskRootTaskByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchroottask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskRootTaskByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchRootTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -5088,8 +5088,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取关联计划（当前项目未关联）", tags = {"任务" } ,notes = "根据产品计划任务获取关联计划（当前项目未关联）")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchtasklinkplan")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTaskLinkPlanByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchtasklinkplan")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTaskLinkPlanByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -5109,8 +5109,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "根据产品计划任务获取我本月完成的任务（下拉列表框）")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchthismonthcompletetaskchoice")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisMonthCompleteTaskChoiceByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchthismonthcompletetaskchoice")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisMonthCompleteTaskChoiceByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -5130,8 +5130,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据产品计划任务获取本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -5151,8 +5151,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "根据产品计划任务获取本周已完成任务(下拉框选择)")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskchoice")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskChoiceByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskchoice")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskChoiceByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -5172,8 +5172,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "根据产品计划任务获取移动端本周已完成任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskmobzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskMobZSByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskmobzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskMobZSByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -5193,8 +5193,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据产品计划任务获取本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskZSByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskZSByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -5214,8 +5214,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取todo列表查询", tags = {"任务" } ,notes = "根据产品计划任务获取todo列表查询")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchtodolisttask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTodoListTaskByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchtodolisttask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTodoListTaskByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchTodoListTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -5235,8 +5235,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取任务类型分组", tags = {"任务" } ,notes = "根据产品计划任务获取任务类型分组")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchtypegroup")
-	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchtypegroup")
+	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Map> domains = taskService.searchTypeGroup(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5255,8 +5255,8 @@ public class SubTaskResource {
                 .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取任务类型分组（计划）", tags = {"任务" } ,notes = "根据产品计划任务获取任务类型分组（计划）")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchtypegroupplan")
-	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupPlanByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchtypegroupplan")
+	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupPlanByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5746,8 +5746,8 @@ public class SubTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
     }
 	@ApiOperation(value = "根据需求任务获取指派给我任务", tags = {"任务" } ,notes = "根据需求任务获取指派给我任务")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchassignedtomytask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchassignedtomytask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -5767,8 +5767,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取指派给我任务（PC）", tags = {"任务" } ,notes = "根据需求任务获取指派给我任务（PC）")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchassignedtomytaskpc")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskPcByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchassignedtomytaskpc")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskPcByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -5788,8 +5788,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取Bug相关任务", tags = {"任务" } ,notes = "根据需求任务获取Bug相关任务")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchbugtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskBugTaskByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchbugtask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskBugTaskByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchBugTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -5830,8 +5830,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取数据查询（子任务）", tags = {"任务" } ,notes = "根据需求任务获取数据查询（子任务）")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchchilddefault")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildDefaultByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchchilddefault")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildDefaultByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchChildDefault(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -5851,8 +5851,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取子任务", tags = {"任务" } ,notes = "根据需求任务获取子任务")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchchildtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchchildtask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchChildTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -5872,8 +5872,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取子任务（树）", tags = {"任务" } ,notes = "根据需求任务获取子任务（树）")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchchildtasktree")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskTreeByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchchildtasktree")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskTreeByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchChildTaskTree(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -5893,8 +5893,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取用户年度完成任务", tags = {"任务" } ,notes = "根据需求任务获取用户年度完成任务")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchcurfinishtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskCurFinishTaskByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchcurfinishtask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskCurFinishTaskByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchCurFinishTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -5935,8 +5935,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取DefaultRow", tags = {"任务" } ,notes = "根据需求任务获取DefaultRow")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchdefaultrow")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskDefaultRowByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchdefaultrow")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskDefaultRowByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchDefaultRow(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -5956,8 +5956,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取ES批量的导入", tags = {"任务" } ,notes = "根据需求任务获取ES批量的导入")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchesbulk")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskESBulkByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchesbulk")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskESBulkByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchESBulk(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -5977,8 +5977,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取我代理的任务", tags = {"任务" } ,notes = "根据需求任务获取我代理的任务")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchmyagenttask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyAgentTaskByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchmyagenttask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyAgentTaskByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyAgentTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -6019,8 +6019,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据需求任务获取我完成的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchmycompletetask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchmycompletetask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -6040,8 +6040,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取我完成的任务（移动端日报）", tags = {"任务" } ,notes = "根据需求任务获取我完成的任务（移动端日报）")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobdaily")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobDailyByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobdaily")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobDailyByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -6061,8 +6061,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取我完成的任务（移动端月报）", tags = {"任务" } ,notes = "根据需求任务获取我完成的任务（移动端月报）")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobmonthly")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobMonthlyByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobmonthly")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobMonthlyByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -6082,8 +6082,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取我完成的任务（月报展示）", tags = {"任务" } ,notes = "根据需求任务获取我完成的任务（月报展示）")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmonthlyzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMonthlyZSByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmonthlyzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMonthlyZSByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -6103,8 +6103,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据需求任务获取我完成的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchmycompletetaskzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskZSByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchmycompletetaskzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskZSByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -6145,8 +6145,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "根据需求任务获取我计划参与的任务（移动端月报）")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchmyplanstaskmobmonthly")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyPlansTaskMobMonthlyByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchmyplanstaskmobmonthly")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyPlansTaskMobMonthlyByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -6166,8 +6166,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据需求任务获取我计划参与的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -6187,8 +6187,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据需求任务获取我计划参与的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantaskmobdaily")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskMobDailyByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantaskmobdaily")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskMobDailyByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -6208,8 +6208,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "根据需求任务获取移动端下周计划参与(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskmobzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskMobZSByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskmobzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskMobZSByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -6229,8 +6229,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据需求任务获取本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskZSByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskZSByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -6250,8 +6250,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取下周计划完成任务(汇报)", tags = {"任务" } ,notes = "根据需求任务获取下周计划完成任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchnextweekplancompletetask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekPlanCompleteTaskByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchnextweekplancompletetask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekPlanCompleteTaskByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -6334,8 +6334,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取根任务", tags = {"任务" } ,notes = "根据需求任务获取根任务")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchroottask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskRootTaskByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchroottask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskRootTaskByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchRootTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -6355,8 +6355,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取关联计划（当前项目未关联）", tags = {"任务" } ,notes = "根据需求任务获取关联计划（当前项目未关联）")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchtasklinkplan")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTaskLinkPlanByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchtasklinkplan")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTaskLinkPlanByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -6376,8 +6376,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "根据需求任务获取我本月完成的任务（下拉列表框）")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchthismonthcompletetaskchoice")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisMonthCompleteTaskChoiceByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchthismonthcompletetaskchoice")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisMonthCompleteTaskChoiceByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -6397,8 +6397,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据需求任务获取本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -6418,8 +6418,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "根据需求任务获取本周已完成任务(下拉框选择)")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskchoice")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskChoiceByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskchoice")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskChoiceByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -6439,8 +6439,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "根据需求任务获取移动端本周已完成任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskmobzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskMobZSByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskmobzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskMobZSByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -6460,8 +6460,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据需求任务获取本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskZSByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskZSByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -6481,8 +6481,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取todo列表查询", tags = {"任务" } ,notes = "根据需求任务获取todo列表查询")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchtodolisttask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTodoListTaskByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchtodolisttask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTodoListTaskByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchTodoListTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -6502,8 +6502,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取任务类型分组", tags = {"任务" } ,notes = "根据需求任务获取任务类型分组")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchtypegroup")
-	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchtypegroup")
+	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Map> domains = taskService.searchTypeGroup(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6522,8 +6522,8 @@ public class SubTaskResource {
                 .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取任务类型分组（计划）", tags = {"任务" } ,notes = "根据需求任务获取任务类型分组（计划）")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchtypegroupplan")
-	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupPlanByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchtypegroupplan")
+	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupPlanByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7013,8 +7013,8 @@ public class SubTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
     }
 	@ApiOperation(value = "根据项目任务获取指派给我任务", tags = {"任务" } ,notes = "根据项目任务获取指派给我任务")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchassignedtomytask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchassignedtomytask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7034,8 +7034,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取指派给我任务（PC）", tags = {"任务" } ,notes = "根据项目任务获取指派给我任务（PC）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchassignedtomytaskpc")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskPcByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchassignedtomytaskpc")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskPcByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7055,8 +7055,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取Bug相关任务", tags = {"任务" } ,notes = "根据项目任务获取Bug相关任务")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchbugtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskBugTaskByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchbugtask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskBugTaskByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchBugTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7097,8 +7097,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取数据查询（子任务）", tags = {"任务" } ,notes = "根据项目任务获取数据查询（子任务）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchchilddefault")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildDefaultByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchchilddefault")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildDefaultByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchChildDefault(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7118,8 +7118,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取子任务", tags = {"任务" } ,notes = "根据项目任务获取子任务")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchchildtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchchildtask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchChildTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7139,8 +7139,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取子任务（树）", tags = {"任务" } ,notes = "根据项目任务获取子任务（树）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchchildtasktree")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskTreeByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchchildtasktree")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskTreeByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchChildTaskTree(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7160,8 +7160,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取用户年度完成任务", tags = {"任务" } ,notes = "根据项目任务获取用户年度完成任务")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchcurfinishtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskCurFinishTaskByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchcurfinishtask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskCurFinishTaskByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchCurFinishTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7202,8 +7202,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取DefaultRow", tags = {"任务" } ,notes = "根据项目任务获取DefaultRow")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchdefaultrow")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskDefaultRowByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchdefaultrow")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskDefaultRowByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchDefaultRow(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7223,8 +7223,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取ES批量的导入", tags = {"任务" } ,notes = "根据项目任务获取ES批量的导入")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchesbulk")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskESBulkByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchesbulk")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskESBulkByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchESBulk(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7244,8 +7244,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取我代理的任务", tags = {"任务" } ,notes = "根据项目任务获取我代理的任务")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchmyagenttask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyAgentTaskByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchmyagenttask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyAgentTaskByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyAgentTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7286,8 +7286,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据项目任务获取我完成的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchmycompletetask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchmycompletetask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7307,8 +7307,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取我完成的任务（移动端日报）", tags = {"任务" } ,notes = "根据项目任务获取我完成的任务（移动端日报）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobdaily")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobDailyByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobdaily")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobDailyByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7328,8 +7328,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取我完成的任务（移动端月报）", tags = {"任务" } ,notes = "根据项目任务获取我完成的任务（移动端月报）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobmonthly")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobMonthlyByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobmonthly")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobMonthlyByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7349,8 +7349,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取我完成的任务（月报展示）", tags = {"任务" } ,notes = "根据项目任务获取我完成的任务（月报展示）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmonthlyzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMonthlyZSByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmonthlyzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMonthlyZSByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7370,8 +7370,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据项目任务获取我完成的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchmycompletetaskzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskZSByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchmycompletetaskzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskZSByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7412,8 +7412,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "根据项目任务获取我计划参与的任务（移动端月报）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchmyplanstaskmobmonthly")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyPlansTaskMobMonthlyByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchmyplanstaskmobmonthly")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyPlansTaskMobMonthlyByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7433,8 +7433,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据项目任务获取我计划参与的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7454,8 +7454,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据项目任务获取我计划参与的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantaskmobdaily")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskMobDailyByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantaskmobdaily")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskMobDailyByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7475,8 +7475,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "根据项目任务获取移动端下周计划参与(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskmobzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskMobZSByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskmobzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskMobZSByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7496,8 +7496,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据项目任务获取本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskZSByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskZSByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7517,8 +7517,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取下周计划完成任务(汇报)", tags = {"任务" } ,notes = "根据项目任务获取下周计划完成任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchnextweekplancompletetask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekPlanCompleteTaskByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchnextweekplancompletetask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekPlanCompleteTaskByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7601,8 +7601,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取根任务", tags = {"任务" } ,notes = "根据项目任务获取根任务")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchroottask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskRootTaskByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchroottask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskRootTaskByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchRootTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7622,8 +7622,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取关联计划（当前项目未关联）", tags = {"任务" } ,notes = "根据项目任务获取关联计划（当前项目未关联）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchtasklinkplan")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTaskLinkPlanByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchtasklinkplan")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTaskLinkPlanByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7643,8 +7643,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "根据项目任务获取我本月完成的任务（下拉列表框）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchthismonthcompletetaskchoice")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisMonthCompleteTaskChoiceByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchthismonthcompletetaskchoice")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisMonthCompleteTaskChoiceByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7664,8 +7664,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据项目任务获取本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7685,8 +7685,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "根据项目任务获取本周已完成任务(下拉框选择)")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskchoice")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskChoiceByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskchoice")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskChoiceByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7706,8 +7706,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "根据项目任务获取移动端本周已完成任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskmobzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskMobZSByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskmobzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskMobZSByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7727,8 +7727,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据项目任务获取本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskZSByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskZSByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7748,8 +7748,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取todo列表查询", tags = {"任务" } ,notes = "根据项目任务获取todo列表查询")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchtodolisttask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTodoListTaskByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchtodolisttask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTodoListTaskByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchTodoListTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -7769,8 +7769,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取任务类型分组", tags = {"任务" } ,notes = "根据项目任务获取任务类型分组")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchtypegroup")
-	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchtypegroup")
+	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Map> domains = taskService.searchTypeGroup(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7789,8 +7789,8 @@ public class SubTaskResource {
                 .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取任务类型分组（计划）", tags = {"任务" } ,notes = "根据项目任务获取任务类型分组（计划）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchtypegroupplan")
-	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupPlanByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchtypegroupplan")
+	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupPlanByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -8280,8 +8280,8 @@ public class SubTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
     }
 	@ApiOperation(value = "根据产品产品计划任务获取指派给我任务", tags = {"任务" } ,notes = "根据产品产品计划任务获取指派给我任务")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchassignedtomytask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchassignedtomytask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -8301,8 +8301,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取指派给我任务（PC）", tags = {"任务" } ,notes = "根据产品产品计划任务获取指派给我任务（PC）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchassignedtomytaskpc")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskPcByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchassignedtomytaskpc")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskPcByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -8322,8 +8322,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取Bug相关任务", tags = {"任务" } ,notes = "根据产品产品计划任务获取Bug相关任务")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchbugtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskBugTaskByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchbugtask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskBugTaskByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchBugTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -8364,8 +8364,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取数据查询（子任务）", tags = {"任务" } ,notes = "根据产品产品计划任务获取数据查询（子任务）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchchilddefault")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildDefaultByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchchilddefault")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildDefaultByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchChildDefault(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -8385,8 +8385,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取子任务", tags = {"任务" } ,notes = "根据产品产品计划任务获取子任务")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchchildtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchchildtask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchChildTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -8406,8 +8406,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取子任务（树）", tags = {"任务" } ,notes = "根据产品产品计划任务获取子任务（树）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchchildtasktree")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskTreeByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchchildtasktree")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskTreeByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchChildTaskTree(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -8427,8 +8427,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取用户年度完成任务", tags = {"任务" } ,notes = "根据产品产品计划任务获取用户年度完成任务")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchcurfinishtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskCurFinishTaskByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchcurfinishtask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskCurFinishTaskByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchCurFinishTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -8469,8 +8469,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取DefaultRow", tags = {"任务" } ,notes = "根据产品产品计划任务获取DefaultRow")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchdefaultrow")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskDefaultRowByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchdefaultrow")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskDefaultRowByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchDefaultRow(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -8490,8 +8490,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取ES批量的导入", tags = {"任务" } ,notes = "根据产品产品计划任务获取ES批量的导入")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchesbulk")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskESBulkByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchesbulk")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskESBulkByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchESBulk(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -8511,8 +8511,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取我代理的任务", tags = {"任务" } ,notes = "根据产品产品计划任务获取我代理的任务")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmyagenttask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyAgentTaskByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmyagenttask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyAgentTaskByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyAgentTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -8553,8 +8553,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据产品产品计划任务获取我完成的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmycompletetask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmycompletetask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -8574,8 +8574,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取我完成的任务（移动端日报）", tags = {"任务" } ,notes = "根据产品产品计划任务获取我完成的任务（移动端日报）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobdaily")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobDailyByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobdaily")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobDailyByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -8595,8 +8595,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取我完成的任务（移动端月报）", tags = {"任务" } ,notes = "根据产品产品计划任务获取我完成的任务（移动端月报）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobmonthly")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobMonthlyByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobmonthly")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobMonthlyByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -8616,8 +8616,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取我完成的任务（月报展示）", tags = {"任务" } ,notes = "根据产品产品计划任务获取我完成的任务（月报展示）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmonthlyzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMonthlyZSByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmonthlyzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMonthlyZSByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -8637,8 +8637,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据产品产品计划任务获取我完成的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmycompletetaskzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskZSByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmycompletetaskzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskZSByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -8679,8 +8679,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "根据产品产品计划任务获取我计划参与的任务（移动端月报）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmyplanstaskmobmonthly")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyPlansTaskMobMonthlyByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmyplanstaskmobmonthly")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyPlansTaskMobMonthlyByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -8700,8 +8700,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据产品产品计划任务获取我计划参与的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -8721,8 +8721,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据产品产品计划任务获取我计划参与的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantaskmobdaily")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskMobDailyByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantaskmobdaily")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskMobDailyByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -8742,8 +8742,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "根据产品产品计划任务获取移动端下周计划参与(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskmobzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskMobZSByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskmobzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskMobZSByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -8763,8 +8763,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据产品产品计划任务获取本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskZSByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskZSByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -8784,8 +8784,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取下周计划完成任务(汇报)", tags = {"任务" } ,notes = "根据产品产品计划任务获取下周计划完成任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchnextweekplancompletetask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekPlanCompleteTaskByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchnextweekplancompletetask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekPlanCompleteTaskByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -8868,8 +8868,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取根任务", tags = {"任务" } ,notes = "根据产品产品计划任务获取根任务")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchroottask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskRootTaskByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchroottask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskRootTaskByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchRootTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -8889,8 +8889,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取关联计划（当前项目未关联）", tags = {"任务" } ,notes = "根据产品产品计划任务获取关联计划（当前项目未关联）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchtasklinkplan")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTaskLinkPlanByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchtasklinkplan")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTaskLinkPlanByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -8910,8 +8910,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "根据产品产品计划任务获取我本月完成的任务（下拉列表框）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchthismonthcompletetaskchoice")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisMonthCompleteTaskChoiceByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchthismonthcompletetaskchoice")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisMonthCompleteTaskChoiceByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -8931,8 +8931,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据产品产品计划任务获取本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -8952,8 +8952,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "根据产品产品计划任务获取本周已完成任务(下拉框选择)")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskchoice")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskChoiceByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskchoice")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskChoiceByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -8973,8 +8973,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "根据产品产品计划任务获取移动端本周已完成任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskmobzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskMobZSByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskmobzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskMobZSByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -8994,8 +8994,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据产品产品计划任务获取本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskZSByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskZSByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -9015,8 +9015,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取todo列表查询", tags = {"任务" } ,notes = "根据产品产品计划任务获取todo列表查询")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchtodolisttask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTodoListTaskByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchtodolisttask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTodoListTaskByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchTodoListTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -9036,8 +9036,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取任务类型分组", tags = {"任务" } ,notes = "根据产品产品计划任务获取任务类型分组")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchtypegroup")
-	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchtypegroup")
+	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Map> domains = taskService.searchTypeGroup(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9056,8 +9056,8 @@ public class SubTaskResource {
                 .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取任务类型分组（计划）", tags = {"任务" } ,notes = "根据产品产品计划任务获取任务类型分组（计划）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchtypegroupplan")
-	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupPlanByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchtypegroupplan")
+	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupPlanByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9547,8 +9547,8 @@ public class SubTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
     }
 	@ApiOperation(value = "根据产品需求任务获取指派给我任务", tags = {"任务" } ,notes = "根据产品需求任务获取指派给我任务")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchassignedtomytask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchassignedtomytask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -9568,8 +9568,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取指派给我任务（PC）", tags = {"任务" } ,notes = "根据产品需求任务获取指派给我任务（PC）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchassignedtomytaskpc")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskPcByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchassignedtomytaskpc")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskPcByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -9589,8 +9589,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取Bug相关任务", tags = {"任务" } ,notes = "根据产品需求任务获取Bug相关任务")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchbugtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskBugTaskByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchbugtask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskBugTaskByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchBugTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -9631,8 +9631,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取数据查询（子任务）", tags = {"任务" } ,notes = "根据产品需求任务获取数据查询（子任务）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchchilddefault")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildDefaultByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchchilddefault")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildDefaultByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchChildDefault(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -9652,8 +9652,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取子任务", tags = {"任务" } ,notes = "根据产品需求任务获取子任务")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchchildtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchchildtask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchChildTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -9673,8 +9673,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取子任务（树）", tags = {"任务" } ,notes = "根据产品需求任务获取子任务（树）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchchildtasktree")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskTreeByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchchildtasktree")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskTreeByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchChildTaskTree(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -9694,8 +9694,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取用户年度完成任务", tags = {"任务" } ,notes = "根据产品需求任务获取用户年度完成任务")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchcurfinishtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskCurFinishTaskByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchcurfinishtask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskCurFinishTaskByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchCurFinishTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -9736,8 +9736,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取DefaultRow", tags = {"任务" } ,notes = "根据产品需求任务获取DefaultRow")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchdefaultrow")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskDefaultRowByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchdefaultrow")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskDefaultRowByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchDefaultRow(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -9757,8 +9757,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取ES批量的导入", tags = {"任务" } ,notes = "根据产品需求任务获取ES批量的导入")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchesbulk")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskESBulkByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchesbulk")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskESBulkByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchESBulk(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -9778,8 +9778,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取我代理的任务", tags = {"任务" } ,notes = "根据产品需求任务获取我代理的任务")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchmyagenttask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyAgentTaskByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchmyagenttask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyAgentTaskByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyAgentTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -9820,8 +9820,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据产品需求任务获取我完成的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchmycompletetask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchmycompletetask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -9841,8 +9841,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取我完成的任务（移动端日报）", tags = {"任务" } ,notes = "根据产品需求任务获取我完成的任务（移动端日报）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobdaily")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobDailyByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobdaily")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobDailyByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -9862,8 +9862,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取我完成的任务（移动端月报）", tags = {"任务" } ,notes = "根据产品需求任务获取我完成的任务（移动端月报）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobmonthly")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobMonthlyByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobmonthly")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobMonthlyByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -9883,8 +9883,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取我完成的任务（月报展示）", tags = {"任务" } ,notes = "根据产品需求任务获取我完成的任务（月报展示）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmonthlyzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMonthlyZSByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmonthlyzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMonthlyZSByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -9904,8 +9904,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据产品需求任务获取我完成的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchmycompletetaskzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskZSByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchmycompletetaskzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskZSByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -9946,8 +9946,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "根据产品需求任务获取我计划参与的任务（移动端月报）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchmyplanstaskmobmonthly")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyPlansTaskMobMonthlyByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchmyplanstaskmobmonthly")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyPlansTaskMobMonthlyByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -9967,8 +9967,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据产品需求任务获取我计划参与的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -9988,8 +9988,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据产品需求任务获取我计划参与的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantaskmobdaily")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskMobDailyByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantaskmobdaily")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskMobDailyByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -10009,8 +10009,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "根据产品需求任务获取移动端下周计划参与(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskmobzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskMobZSByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskmobzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskMobZSByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -10030,8 +10030,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据产品需求任务获取本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskZSByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskZSByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -10051,8 +10051,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取下周计划完成任务(汇报)", tags = {"任务" } ,notes = "根据产品需求任务获取下周计划完成任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchnextweekplancompletetask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekPlanCompleteTaskByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchnextweekplancompletetask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekPlanCompleteTaskByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -10135,8 +10135,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取根任务", tags = {"任务" } ,notes = "根据产品需求任务获取根任务")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchroottask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskRootTaskByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchroottask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskRootTaskByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchRootTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -10156,8 +10156,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取关联计划（当前项目未关联）", tags = {"任务" } ,notes = "根据产品需求任务获取关联计划（当前项目未关联）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchtasklinkplan")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTaskLinkPlanByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchtasklinkplan")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTaskLinkPlanByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -10177,8 +10177,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "根据产品需求任务获取我本月完成的任务（下拉列表框）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchthismonthcompletetaskchoice")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisMonthCompleteTaskChoiceByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchthismonthcompletetaskchoice")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisMonthCompleteTaskChoiceByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -10198,8 +10198,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据产品需求任务获取本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -10219,8 +10219,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "根据产品需求任务获取本周已完成任务(下拉框选择)")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskchoice")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskChoiceByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskchoice")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskChoiceByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -10240,8 +10240,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "根据产品需求任务获取移动端本周已完成任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskmobzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskMobZSByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskmobzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskMobZSByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -10261,8 +10261,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据产品需求任务获取本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskZSByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskZSByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -10282,8 +10282,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取todo列表查询", tags = {"任务" } ,notes = "根据产品需求任务获取todo列表查询")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchtodolisttask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTodoListTaskByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchtodolisttask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTodoListTaskByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchTodoListTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -10303,8 +10303,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取任务类型分组", tags = {"任务" } ,notes = "根据产品需求任务获取任务类型分组")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchtypegroup")
-	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchtypegroup")
+	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Map> domains = taskService.searchTypeGroup(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -10323,8 +10323,8 @@ public class SubTaskResource {
                 .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取任务类型分组（计划）", tags = {"任务" } ,notes = "根据产品需求任务获取任务类型分组（计划）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchtypegroupplan")
-	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupPlanByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchtypegroupplan")
+	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupPlanByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -10814,8 +10814,8 @@ public class SubTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
     }
 	@ApiOperation(value = "根据项目任务模块任务获取指派给我任务", tags = {"任务" } ,notes = "根据项目任务模块任务获取指派给我任务")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchassignedtomytask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchassignedtomytask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -10835,8 +10835,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取指派给我任务（PC）", tags = {"任务" } ,notes = "根据项目任务模块任务获取指派给我任务（PC）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchassignedtomytaskpc")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskPcByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchassignedtomytaskpc")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskAssignedToMyTaskPcByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -10856,8 +10856,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取Bug相关任务", tags = {"任务" } ,notes = "根据项目任务模块任务获取Bug相关任务")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchbugtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskBugTaskByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchbugtask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskBugTaskByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchBugTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -10898,8 +10898,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取数据查询（子任务）", tags = {"任务" } ,notes = "根据项目任务模块任务获取数据查询（子任务）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchchilddefault")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildDefaultByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchchilddefault")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildDefaultByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchChildDefault(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -10919,8 +10919,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取子任务", tags = {"任务" } ,notes = "根据项目任务模块任务获取子任务")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchchildtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchchildtask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchChildTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -10940,8 +10940,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取子任务（树）", tags = {"任务" } ,notes = "根据项目任务模块任务获取子任务（树）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchchildtasktree")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskTreeByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchchildtasktree")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskChildTaskTreeByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchChildTaskTree(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -10961,8 +10961,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取用户年度完成任务", tags = {"任务" } ,notes = "根据项目任务模块任务获取用户年度完成任务")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchcurfinishtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskCurFinishTaskByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchcurfinishtask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskCurFinishTaskByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchCurFinishTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -11003,8 +11003,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取DefaultRow", tags = {"任务" } ,notes = "根据项目任务模块任务获取DefaultRow")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchdefaultrow")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskDefaultRowByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchdefaultrow")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskDefaultRowByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchDefaultRow(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -11024,8 +11024,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取ES批量的导入", tags = {"任务" } ,notes = "根据项目任务模块任务获取ES批量的导入")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchesbulk")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskESBulkByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchesbulk")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskESBulkByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchESBulk(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -11045,8 +11045,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取我代理的任务", tags = {"任务" } ,notes = "根据项目任务模块任务获取我代理的任务")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmyagenttask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyAgentTaskByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmyagenttask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyAgentTaskByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyAgentTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -11087,8 +11087,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据项目任务模块任务获取我完成的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmycompletetask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmycompletetask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -11108,8 +11108,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取我完成的任务（移动端日报）", tags = {"任务" } ,notes = "根据项目任务模块任务获取我完成的任务（移动端日报）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobdaily")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobDailyByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobdaily")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobDailyByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -11129,8 +11129,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取我完成的任务（移动端月报）", tags = {"任务" } ,notes = "根据项目任务模块任务获取我完成的任务（移动端月报）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobmonthly")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobMonthlyByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmobmonthly")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMobMonthlyByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -11150,8 +11150,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取我完成的任务（月报展示）", tags = {"任务" } ,notes = "根据项目任务模块任务获取我完成的任务（月报展示）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmonthlyzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMonthlyZSByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmycompletetaskmonthlyzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskMonthlyZSByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -11171,8 +11171,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据项目任务模块任务获取我完成的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmycompletetaskzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskZSByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmycompletetaskzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyCompleteTaskZSByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -11213,8 +11213,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "根据项目任务模块任务获取我计划参与的任务（移动端月报）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmyplanstaskmobmonthly")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyPlansTaskMobMonthlyByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmyplanstaskmobmonthly")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyPlansTaskMobMonthlyByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -11234,8 +11234,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据项目任务模块任务获取我计划参与的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -11255,8 +11255,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据项目任务模块任务获取我计划参与的任务（汇报）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantaskmobdaily")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskMobDailyByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchmytomorrowplantaskmobdaily")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskMyTomorrowPlanTaskMobDailyByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -11276,8 +11276,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "根据项目任务模块任务获取移动端下周计划参与(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskmobzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskMobZSByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskmobzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskMobZSByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -11297,8 +11297,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据项目任务模块任务获取本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskZSByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchnextweekcompletetaskzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekCompleteTaskZSByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -11318,8 +11318,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取下周计划完成任务(汇报)", tags = {"任务" } ,notes = "根据项目任务模块任务获取下周计划完成任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchnextweekplancompletetask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekPlanCompleteTaskByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchnextweekplancompletetask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskNextWeekPlanCompleteTaskByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -11402,8 +11402,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取根任务", tags = {"任务" } ,notes = "根据项目任务模块任务获取根任务")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchroottask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskRootTaskByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchroottask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskRootTaskByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchRootTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -11423,8 +11423,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取关联计划（当前项目未关联）", tags = {"任务" } ,notes = "根据项目任务模块任务获取关联计划（当前项目未关联）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchtasklinkplan")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTaskLinkPlanByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchtasklinkplan")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTaskLinkPlanByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -11444,8 +11444,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "根据项目任务模块任务获取我本月完成的任务（下拉列表框）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchthismonthcompletetaskchoice")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisMonthCompleteTaskChoiceByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchthismonthcompletetaskchoice")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisMonthCompleteTaskChoiceByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -11465,8 +11465,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据项目任务模块任务获取本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -11486,8 +11486,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "根据项目任务模块任务获取本周已完成任务(下拉框选择)")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskchoice")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskChoiceByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskchoice")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskChoiceByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -11507,8 +11507,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "根据项目任务模块任务获取移动端本周已完成任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskmobzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskMobZSByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskmobzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskMobZSByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -11528,8 +11528,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据项目任务模块任务获取本周完成的任务(汇报)")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskzs")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskZSByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchthisweekcompletetaskzs")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskThisWeekCompleteTaskZSByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -11549,8 +11549,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取todo列表查询", tags = {"任务" } ,notes = "根据项目任务模块任务获取todo列表查询")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchtodolisttask")
-	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTodoListTaskByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchtodolisttask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskTodoListTaskByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchTodoListTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
@@ -11570,8 +11570,8 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取任务类型分组", tags = {"任务" } ,notes = "根据项目任务模块任务获取任务类型分组")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchtypegroup")
-	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchtypegroup")
+	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Map> domains = taskService.searchTypeGroup(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -11590,8 +11590,8 @@ public class SubTaskResource {
                 .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取任务类型分组（计划）", tags = {"任务" } ,notes = "根据项目任务模块任务获取任务类型分组（计划）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchtypegroupplan")
-	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupPlanByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchtypegroupplan")
+	public ResponseEntity<List<Map>> fetchSubTaskTypeGroupPlanByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)

@@ -184,8 +184,8 @@ public class IbizproProductDailyResource {
 
     @PreAuthorize("@IbizproProductDailyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"产品日报" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/ibizproproductdailies/fetchdefault")
-	public ResponseEntity<List<IbizproProductDailyDTO>> fetchDefault(IbizproProductDailySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibizproproductdailies/fetchdefault")
+	public ResponseEntity<List<IbizproProductDailyDTO>> fetchDefault(@RequestBody IbizproProductDailySearchContext context) {
         ibizproproductdailyRuntime.addAuthorityConditions(context,"READ");
         Page<IbizproProductDaily> domains = ibizproproductdailyService.searchDefault(context) ;
         List<IbizproProductDailyDTO> list = ibizproproductdailyMapping.toDto(domains.getContent());
@@ -208,8 +208,8 @@ public class IbizproProductDailyResource {
 
     @PreAuthorize("@IbizproProductDailyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品日报", tags = {"产品日报" } ,notes = "获取产品日报")
-    @RequestMapping(method= RequestMethod.GET , value="/ibizproproductdailies/fetchproductdaily")
-	public ResponseEntity<List<IbizproProductDailyDTO>> fetchProductDaily(IbizproProductDailySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibizproproductdailies/fetchproductdaily")
+	public ResponseEntity<List<IbizproProductDailyDTO>> fetchProductDaily(@RequestBody IbizproProductDailySearchContext context) {
         ibizproproductdailyRuntime.addAuthorityConditions(context,"READ");
         Page<IbizproProductDaily> domains = ibizproproductdailyService.searchProductDaily(context) ;
         List<IbizproProductDailyDTO> list = ibizproproductdailyMapping.toDto(domains.getContent());

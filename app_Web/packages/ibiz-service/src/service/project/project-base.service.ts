@@ -414,7 +414,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @memberof ProjectService
      */
     async FetchBugProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/projects/fetchbugproject`, _data);
+        return this.http.post(`/projects/fetchbugproject`, _data);
     }
     /**
      * FetchCurPlanProject
@@ -425,7 +425,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @memberof ProjectService
      */
     async FetchCurPlanProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/projects/fetchcurplanproject`, _data);
+        return this.http.post(`/projects/fetchcurplanproject`, _data);
     }
     /**
      * FetchCurProduct
@@ -469,7 +469,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @memberof ProjectService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/projects/fetchdefault`, _data);
+        return this.http.post(`/projects/fetchdefault`, _data);
     }
     /**
      * FetchESBulk
@@ -480,7 +480,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @memberof ProjectService
      */
     async FetchESBulk(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/projects/fetchesbulk`, _data);
+        return this.http.post(`/projects/fetchesbulk`, _data);
     }
     /**
      * FetchInvolvedProject
@@ -491,7 +491,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @memberof ProjectService
      */
     async FetchInvolvedProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/projects/fetchinvolvedproject`, _data);
+        return this.http.post(`/projects/fetchinvolvedproject`, _data);
     }
     /**
      * FetchInvolvedProject_StoryTaskBug
@@ -524,7 +524,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @memberof ProjectService
      */
     async FetchProjectTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/projects/fetchprojectteam`, _data);
+        return this.http.post(`/projects/fetchprojectteam`, _data);
     }
     /**
      * FetchStoryProject
@@ -535,7 +535,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @memberof ProjectService
      */
     async FetchStoryProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/projects/fetchstoryproject`, _data);
+        return this.http.post(`/projects/fetchstoryproject`, _data);
     }
     /**
      * FetchUnDoneProject
@@ -546,6 +546,6 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @memberof ProjectService
      */
     async FetchUnDoneProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/projects/fetchundoneproject`, _data);
+        return this.http.post(`/projects/fetchundoneproject`, _data);
     }
 }

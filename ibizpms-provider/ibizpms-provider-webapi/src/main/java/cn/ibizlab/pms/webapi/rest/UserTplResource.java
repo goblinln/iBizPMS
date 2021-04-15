@@ -149,8 +149,8 @@ public class UserTplResource {
 
     @PreAuthorize("@UserTplRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"用户模板" } ,notes = "获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/usertpls/fetchdefault")
-	public ResponseEntity<List<UserTplDTO>> fetchDefault(UserTplSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/usertpls/fetchdefault")
+	public ResponseEntity<List<UserTplDTO>> fetchDefault(@RequestBody UserTplSearchContext context) {
         usertplRuntime.addAuthorityConditions(context,"READ");
         Page<UserTpl> domains = usertplService.searchDefault(context) ;
         List<UserTplDTO> list = usertplMapping.toDto(domains.getContent());
@@ -173,8 +173,8 @@ public class UserTplResource {
 
     @PreAuthorize("@UserTplRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的模板", tags = {"用户模板" } ,notes = "获取我的模板")
-    @RequestMapping(method= RequestMethod.GET , value="/usertpls/fetchmyusertpl")
-	public ResponseEntity<List<UserTplDTO>> fetchMyUserTpl(UserTplSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/usertpls/fetchmyusertpl")
+	public ResponseEntity<List<UserTplDTO>> fetchMyUserTpl(@RequestBody UserTplSearchContext context) {
         usertplRuntime.addAuthorityConditions(context,"READ");
         Page<UserTpl> domains = usertplService.searchMyUserTpl(context) ;
         List<UserTplDTO> list = usertplMapping.toDto(domains.getContent());

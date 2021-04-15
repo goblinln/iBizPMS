@@ -149,8 +149,8 @@ public class TestResultResource {
 
     @PreAuthorize("@TestResultRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取CurTestRun", tags = {"测试结果" } ,notes = "获取CurTestRun")
-    @RequestMapping(method= RequestMethod.GET , value="/testresults/fetchcurtestrun")
-	public ResponseEntity<List<TestResultDTO>> fetchCurTestRun(TestResultSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/testresults/fetchcurtestrun")
+	public ResponseEntity<List<TestResultDTO>> fetchCurTestRun(@RequestBody TestResultSearchContext context) {
         testresultRuntime.addAuthorityConditions(context,"READ");
         Page<TestResult> domains = testresultService.searchCurTestRun(context) ;
         List<TestResultDTO> list = testresultMapping.toDto(domains.getContent());
@@ -173,8 +173,8 @@ public class TestResultResource {
 
     @PreAuthorize("@TestResultRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试结果" } ,notes = "获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/testresults/fetchdefault")
-	public ResponseEntity<List<TestResultDTO>> fetchDefault(TestResultSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/testresults/fetchdefault")
+	public ResponseEntity<List<TestResultDTO>> fetchDefault(@RequestBody TestResultSearchContext context) {
         testresultRuntime.addAuthorityConditions(context,"READ");
         Page<TestResult> domains = testresultService.searchDefault(context) ;
         List<TestResultDTO> list = testresultMapping.toDto(domains.getContent());
@@ -302,8 +302,8 @@ public class TestResultResource {
     }
 
 	@ApiOperation(value = "根据测试用例获取CurTestRun", tags = {"测试结果" } ,notes = "根据测试用例获取CurTestRun")
-    @RequestMapping(method= RequestMethod.GET , value="/cases/{case_id}/testresults/fetchcurtestrun")
-	public ResponseEntity<List<TestResultDTO>> fetchTestResultCurTestRunByCase(@PathVariable("case_id") Long case_id,TestResultSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/testresults/fetchcurtestrun")
+	public ResponseEntity<List<TestResultDTO>> fetchTestResultCurTestRunByCase(@PathVariable("case_id") Long case_id,@RequestBody TestResultSearchContext context) {
         context.setN_case_eq(case_id);
         Page<TestResult> domains = testresultService.searchCurTestRun(context) ;
         List<TestResultDTO> list = testresultMapping.toDto(domains.getContent());
@@ -323,8 +323,8 @@ public class TestResultResource {
                 .body(new PageImpl(testresultMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据测试用例获取DEFAULT", tags = {"测试结果" } ,notes = "根据测试用例获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/cases/{case_id}/testresults/fetchdefault")
-	public ResponseEntity<List<TestResultDTO>> fetchTestResultDefaultByCase(@PathVariable("case_id") Long case_id,TestResultSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/testresults/fetchdefault")
+	public ResponseEntity<List<TestResultDTO>> fetchTestResultDefaultByCase(@PathVariable("case_id") Long case_id,@RequestBody TestResultSearchContext context) {
         context.setN_case_eq(case_id);
         Page<TestResult> domains = testresultService.searchDefault(context) ;
         List<TestResultDTO> list = testresultMapping.toDto(domains.getContent());
@@ -442,8 +442,8 @@ public class TestResultResource {
     }
 
 	@ApiOperation(value = "根据产品测试用例获取CurTestRun", tags = {"测试结果" } ,notes = "根据产品测试用例获取CurTestRun")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/cases/{case_id}/testresults/fetchcurtestrun")
-	public ResponseEntity<List<TestResultDTO>> fetchTestResultCurTestRunByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id,TestResultSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/testresults/fetchcurtestrun")
+	public ResponseEntity<List<TestResultDTO>> fetchTestResultCurTestRunByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id,@RequestBody TestResultSearchContext context) {
         context.setN_case_eq(case_id);
         Page<TestResult> domains = testresultService.searchCurTestRun(context) ;
         List<TestResultDTO> list = testresultMapping.toDto(domains.getContent());
@@ -463,8 +463,8 @@ public class TestResultResource {
                 .body(new PageImpl(testresultMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品测试用例获取DEFAULT", tags = {"测试结果" } ,notes = "根据产品测试用例获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/cases/{case_id}/testresults/fetchdefault")
-	public ResponseEntity<List<TestResultDTO>> fetchTestResultDefaultByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id,TestResultSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/testresults/fetchdefault")
+	public ResponseEntity<List<TestResultDTO>> fetchTestResultDefaultByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id,@RequestBody TestResultSearchContext context) {
         context.setN_case_eq(case_id);
         Page<TestResult> domains = testresultService.searchDefault(context) ;
         List<TestResultDTO> list = testresultMapping.toDto(domains.getContent());
@@ -582,8 +582,8 @@ public class TestResultResource {
     }
 
 	@ApiOperation(value = "根据需求测试用例获取CurTestRun", tags = {"测试结果" } ,notes = "根据需求测试用例获取CurTestRun")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/cases/{case_id}/testresults/fetchcurtestrun")
-	public ResponseEntity<List<TestResultDTO>> fetchTestResultCurTestRunByStoryCase(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,TestResultSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/cases/{case_id}/testresults/fetchcurtestrun")
+	public ResponseEntity<List<TestResultDTO>> fetchTestResultCurTestRunByStoryCase(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,@RequestBody TestResultSearchContext context) {
         context.setN_case_eq(case_id);
         Page<TestResult> domains = testresultService.searchCurTestRun(context) ;
         List<TestResultDTO> list = testresultMapping.toDto(domains.getContent());
@@ -603,8 +603,8 @@ public class TestResultResource {
                 .body(new PageImpl(testresultMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求测试用例获取DEFAULT", tags = {"测试结果" } ,notes = "根据需求测试用例获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/cases/{case_id}/testresults/fetchdefault")
-	public ResponseEntity<List<TestResultDTO>> fetchTestResultDefaultByStoryCase(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,TestResultSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/cases/{case_id}/testresults/fetchdefault")
+	public ResponseEntity<List<TestResultDTO>> fetchTestResultDefaultByStoryCase(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,@RequestBody TestResultSearchContext context) {
         context.setN_case_eq(case_id);
         Page<TestResult> domains = testresultService.searchDefault(context) ;
         List<TestResultDTO> list = testresultMapping.toDto(domains.getContent());
@@ -722,8 +722,8 @@ public class TestResultResource {
     }
 
 	@ApiOperation(value = "根据产品需求测试用例获取CurTestRun", tags = {"测试结果" } ,notes = "根据产品需求测试用例获取CurTestRun")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/cases/{case_id}/testresults/fetchcurtestrun")
-	public ResponseEntity<List<TestResultDTO>> fetchTestResultCurTestRunByProductStoryCase(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,TestResultSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/cases/{case_id}/testresults/fetchcurtestrun")
+	public ResponseEntity<List<TestResultDTO>> fetchTestResultCurTestRunByProductStoryCase(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,@RequestBody TestResultSearchContext context) {
         context.setN_case_eq(case_id);
         Page<TestResult> domains = testresultService.searchCurTestRun(context) ;
         List<TestResultDTO> list = testresultMapping.toDto(domains.getContent());
@@ -743,8 +743,8 @@ public class TestResultResource {
                 .body(new PageImpl(testresultMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求测试用例获取DEFAULT", tags = {"测试结果" } ,notes = "根据产品需求测试用例获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/cases/{case_id}/testresults/fetchdefault")
-	public ResponseEntity<List<TestResultDTO>> fetchTestResultDefaultByProductStoryCase(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,TestResultSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/cases/{case_id}/testresults/fetchdefault")
+	public ResponseEntity<List<TestResultDTO>> fetchTestResultDefaultByProductStoryCase(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id,@RequestBody TestResultSearchContext context) {
         context.setN_case_eq(case_id);
         Page<TestResult> domains = testresultService.searchDefault(context) ;
         List<TestResultDTO> list = testresultMapping.toDto(domains.getContent());

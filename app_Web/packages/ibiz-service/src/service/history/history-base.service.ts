@@ -216,8 +216,8 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.action && true) {
-            return this.http.get(`/actions/${_context.action}/histories/fetchdefault`, _data);
+            return this.http.post(`/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        return this.http.get(`/histories/fetchdefault`, _data);
+        return this.http.post(`/histories/fetchdefault`, _data);
     }
 }

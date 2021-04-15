@@ -174,7 +174,7 @@ export class IbzReportBaseService extends EntityBaseService<IIbzReport> {
      * @memberof IbzReportService
      */
     async FetchAllReport(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzreports/fetchallreport`, _data);
+        return this.http.post(`/ibzreports/fetchallreport`, _data);
     }
     /**
      * FetchDefault
@@ -185,7 +185,7 @@ export class IbzReportBaseService extends EntityBaseService<IIbzReport> {
      * @memberof IbzReportService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzreports/fetchdefault`, _data);
+        return this.http.post(`/ibzreports/fetchdefault`, _data);
     }
     /**
      * FetchMyReAllReport
@@ -196,6 +196,6 @@ export class IbzReportBaseService extends EntityBaseService<IIbzReport> {
      * @memberof IbzReportService
      */
     async FetchMyReAllReport(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzreports/fetchmyreallreport`, _data);
+        return this.http.post(`/ibzreports/fetchmyreallreport`, _data);
     }
 }

@@ -195,7 +195,7 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
      * @memberof IbzPlanTempletService
      */
     async FetchCurUserTemplet(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzplantemplets/fetchcurusertemplet`, _data);
+        return this.http.post(`/ibzplantemplets/fetchcurusertemplet`, _data);
     }
     /**
      * FetchDefault
@@ -206,6 +206,6 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
      * @memberof IbzPlanTempletService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzplantemplets/fetchdefault`, _data);
+        return this.http.post(`/ibzplantemplets/fetchdefault`, _data);
     }
 }

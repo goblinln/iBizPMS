@@ -207,7 +207,7 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
      * @memberof DocLibModuleService
      */
     async FetchAllDocLibModule_Custom(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/doclibmodules/fetchalldoclibmodule_custom`, _data);
+        return this.http.post(`/doclibmodules/fetchalldoclibmodule_custom`, _data);
     }
     /**
      * FetchAllDoclibModule
@@ -218,7 +218,7 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
      * @memberof DocLibModuleService
      */
     async FetchAllDoclibModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/doclibmodules/fetchalldoclibmodule`, _data);
+        return this.http.post(`/doclibmodules/fetchalldoclibmodule`, _data);
     }
     /**
      * FetchChildModuleByParent
@@ -229,7 +229,7 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
      * @memberof DocLibModuleService
      */
     async FetchChildModuleByParent(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/doclibmodules/fetchchildmodulebyparent`, _data);
+        return this.http.post(`/doclibmodules/fetchchildmodulebyparent`, _data);
     }
     /**
      * FetchChildModuleByRealParent
@@ -240,7 +240,7 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
      * @memberof DocLibModuleService
      */
     async FetchChildModuleByRealParent(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/doclibmodules/fetchchildmodulebyrealparent`, _data);
+        return this.http.post(`/doclibmodules/fetchchildmodulebyrealparent`, _data);
     }
     /**
      * FetchDefault
@@ -251,7 +251,7 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
      * @memberof DocLibModuleService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/doclibmodules/fetchdefault`, _data);
+        return this.http.post(`/doclibmodules/fetchdefault`, _data);
     }
     /**
      * FetchMyFavourites
@@ -262,7 +262,7 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
      * @memberof DocLibModuleService
      */
     async FetchMyFavourites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/doclibmodules/fetchmyfavourites`, _data);
+        return this.http.post(`/doclibmodules/fetchmyfavourites`, _data);
     }
     /**
      * FetchParentModule
@@ -273,7 +273,7 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
      * @memberof DocLibModuleService
      */
     async FetchParentModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/doclibmodules/fetchparentmodule`, _data);
+        return this.http.post(`/doclibmodules/fetchparentmodule`, _data);
     }
     /**
      * FetchRootModuleMuLu
@@ -284,7 +284,7 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
      * @memberof DocLibModuleService
      */
     async FetchRootModuleMuLu(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/doclibmodules/fetchrootmodulemulu`, _data);
+        return this.http.post(`/doclibmodules/fetchrootmodulemulu`, _data);
     }
     /**
      * FetchRootModuleMuLuByRoot
@@ -295,7 +295,7 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
      * @memberof DocLibModuleService
      */
     async FetchRootModuleMuLuByRoot(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/doclibmodules/fetchrootmodulemulubyroot`, _data);
+        return this.http.post(`/doclibmodules/fetchrootmodulemulubyroot`, _data);
     }
     /**
      * FetchRootModuleMuLuBysrfparentkey
@@ -306,6 +306,6 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
      * @memberof DocLibModuleService
      */
     async FetchRootModuleMuLuBysrfparentkey(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/doclibmodules/fetchrootmodulemulubysrfparentkey`, _data);
+        return this.http.post(`/doclibmodules/fetchrootmodulemulubysrfparentkey`, _data);
     }
 }

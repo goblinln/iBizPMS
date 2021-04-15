@@ -248,7 +248,7 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
      * @memberof DocLibService
      */
     async FetchByCustom(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/doclibs/fetchbycustom`, _data);
+        return this.http.post(`/doclibs/fetchbycustom`, _data);
     }
     /**
      * FetchByProduct
@@ -270,7 +270,7 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
      * @memberof DocLibService
      */
     async FetchByProductNotFiles(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/doclibs/fetchbyproductnotfiles`, _data);
+        return this.http.post(`/doclibs/fetchbyproductnotfiles`, _data);
     }
     /**
      * FetchByProject
@@ -292,7 +292,7 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
      * @memberof DocLibService
      */
     async FetchByProjectNotFiles(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/doclibs/fetchbyprojectnotfiles`, _data);
+        return this.http.post(`/doclibs/fetchbyprojectnotfiles`, _data);
     }
     /**
      * FetchCurDocLib
@@ -303,7 +303,7 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
      * @memberof DocLibService
      */
     async FetchCurDocLib(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/doclibs/fetchcurdoclib`, _data);
+        return this.http.post(`/doclibs/fetchcurdoclib`, _data);
     }
     /**
      * FetchDefault
@@ -314,7 +314,7 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
      * @memberof DocLibService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/doclibs/fetchdefault`, _data);
+        return this.http.post(`/doclibs/fetchdefault`, _data);
     }
     /**
      * FetchMyFavourites
@@ -325,7 +325,7 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
      * @memberof DocLibService
      */
     async FetchMyFavourites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/doclibs/fetchmyfavourites`, _data);
+        return this.http.post(`/doclibs/fetchmyfavourites`, _data);
     }
     /**
      * FetchRootModuleMuLu
@@ -336,6 +336,6 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
      * @memberof DocLibService
      */
     async FetchRootModuleMuLu(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/doclibs/fetchrootmodulemulu`, _data);
+        return this.http.post(`/doclibs/fetchrootmodulemulu`, _data);
     }
 }

@@ -152,7 +152,7 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
      * @memberof TaskStatsService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/taskstats/fetchdefault`, _data);
+        return this.http.post(`/taskstats/fetchdefault`, _data);
     }
     /**
      * FetchTaskFinishHuiZong
@@ -163,7 +163,7 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
      * @memberof TaskStatsService
      */
     async FetchTaskFinishHuiZong(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/taskstats/fetchtaskfinishhuizong`, _data);
+        return this.http.post(`/taskstats/fetchtaskfinishhuizong`, _data);
     }
     /**
      * FetchUserFinishTaskSum
@@ -174,6 +174,6 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
      * @memberof TaskStatsService
      */
     async FetchUserFinishTaskSum(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/taskstats/fetchuserfinishtasksum`, _data);
+        return this.http.post(`/taskstats/fetchuserfinishtasksum`, _data);
     }
 }

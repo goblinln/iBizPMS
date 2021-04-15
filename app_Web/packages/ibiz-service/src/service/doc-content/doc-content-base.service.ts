@@ -198,9 +198,9 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
      */
     async FetchCurVersion(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.doc && true) {
-            return this.http.get(`/docs/${_context.doc}/doccontents/fetchcurversion`, _data);
+            return this.http.post(`/docs/${_context.doc}/doccontents/fetchcurversion`, _data);
         }
-        return this.http.get(`/doccontents/fetchcurversion`, _data);
+        return this.http.post(`/doccontents/fetchcurversion`, _data);
     }
     /**
      * FetchDefault
@@ -212,8 +212,8 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.doc && true) {
-            return this.http.get(`/docs/${_context.doc}/doccontents/fetchdefault`, _data);
+            return this.http.post(`/docs/${_context.doc}/doccontents/fetchdefault`, _data);
         }
-        return this.http.get(`/doccontents/fetchdefault`, _data);
+        return this.http.post(`/doccontents/fetchdefault`, _data);
     }
 }

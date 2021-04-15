@@ -152,7 +152,7 @@ export class PSSysSFPubBaseService extends EntityBaseService<IPSSysSFPub> {
      * @memberof PSSysSFPubService
      */
     async FetchBuild(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/pssyssfpubs/fetchbuild`, _data);
+        return this.http.post(`/pssyssfpubs/fetchbuild`, _data);
     }
     /**
      * FetchDefault
@@ -163,6 +163,6 @@ export class PSSysSFPubBaseService extends EntityBaseService<IPSSysSFPub> {
      * @memberof PSSysSFPubService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/pssyssfpubs/fetchdefault`, _data);
+        return this.http.post(`/pssyssfpubs/fetchdefault`, _data);
     }
 }

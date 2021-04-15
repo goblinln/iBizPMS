@@ -220,8 +220,8 @@ public class UserYearWorkStatsResource {
 
     @PreAuthorize("@UserYearWorkStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"用户年度工作内容统计" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/useryearworkstats/fetchdefault")
-	public ResponseEntity<List<UserYearWorkStatsDTO>> fetchDefault(UserYearWorkStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/useryearworkstats/fetchdefault")
+	public ResponseEntity<List<UserYearWorkStatsDTO>> fetchDefault(@RequestBody UserYearWorkStatsSearchContext context) {
         useryearworkstatsRuntime.addAuthorityConditions(context,"READ");
         Page<UserYearWorkStats> domains = useryearworkstatsService.searchDefault(context) ;
         List<UserYearWorkStatsDTO> list = useryearworkstatsMapping.toDto(domains.getContent());
@@ -244,8 +244,8 @@ public class UserYearWorkStatsResource {
 
     @PreAuthorize("@UserYearWorkStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取月完成任务数及累计工时和解决Bug数", tags = {"用户年度工作内容统计" } ,notes = "获取月完成任务数及累计工时和解决Bug数")
-    @RequestMapping(method= RequestMethod.GET , value="/useryearworkstats/fetchmonthfinishtaskandbug")
-	public ResponseEntity<List<UserYearWorkStatsDTO>> fetchMonthFinishTaskAndBug(UserYearWorkStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/useryearworkstats/fetchmonthfinishtaskandbug")
+	public ResponseEntity<List<UserYearWorkStatsDTO>> fetchMonthFinishTaskAndBug(@RequestBody UserYearWorkStatsSearchContext context) {
         useryearworkstatsRuntime.addAuthorityConditions(context,"READ");
         Page<UserYearWorkStats> domains = useryearworkstatsService.searchMonthFinishTaskAndBug(context) ;
         List<UserYearWorkStatsDTO> list = useryearworkstatsMapping.toDto(domains.getContent());
@@ -268,8 +268,8 @@ public class UserYearWorkStatsResource {
 
     @PreAuthorize("@UserYearWorkStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取月创建Bug数和创建用例数", tags = {"用户年度工作内容统计" } ,notes = "获取月创建Bug数和创建用例数")
-    @RequestMapping(method= RequestMethod.GET , value="/useryearworkstats/fetchmonthopenedbugandcase")
-	public ResponseEntity<List<UserYearWorkStatsDTO>> fetchMonthOpenedBugAndCase(UserYearWorkStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/useryearworkstats/fetchmonthopenedbugandcase")
+	public ResponseEntity<List<UserYearWorkStatsDTO>> fetchMonthOpenedBugAndCase(@RequestBody UserYearWorkStatsSearchContext context) {
         useryearworkstatsRuntime.addAuthorityConditions(context,"READ");
         Page<UserYearWorkStats> domains = useryearworkstatsService.searchMonthOpenedBugAndCase(context) ;
         List<UserYearWorkStatsDTO> list = useryearworkstatsMapping.toDto(domains.getContent());
@@ -292,8 +292,8 @@ public class UserYearWorkStatsResource {
 
     @PreAuthorize("@UserYearWorkStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取月创建需求数", tags = {"用户年度工作内容统计" } ,notes = "获取月创建需求数")
-    @RequestMapping(method= RequestMethod.GET , value="/useryearworkstats/fetchmonthopenedstory")
-	public ResponseEntity<List<UserYearWorkStatsDTO>> fetchMonthOpenedStory(UserYearWorkStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/useryearworkstats/fetchmonthopenedstory")
+	public ResponseEntity<List<UserYearWorkStatsDTO>> fetchMonthOpenedStory(@RequestBody UserYearWorkStatsSearchContext context) {
         useryearworkstatsRuntime.addAuthorityConditions(context,"READ");
         Page<UserYearWorkStats> domains = useryearworkstatsService.searchMonthOpenedStory(context) ;
         List<UserYearWorkStatsDTO> list = useryearworkstatsMapping.toDto(domains.getContent());

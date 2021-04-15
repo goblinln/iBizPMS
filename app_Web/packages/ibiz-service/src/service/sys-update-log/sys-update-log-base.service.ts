@@ -163,6 +163,6 @@ export class SysUpdateLogBaseService extends EntityBaseService<ISysUpdateLog> {
      * @memberof SysUpdateLogService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysupdatelogs/fetchdefault`, _data);
+        return this.http.post(`/sysupdatelogs/fetchdefault`, _data);
     }
 }

@@ -418,8 +418,8 @@ public class ProjectResource {
 
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取BugProject", tags = {"项目" } ,notes = "获取BugProject")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/fetchbugproject")
-	public ResponseEntity<List<ProjectDTO>> fetchBugProject(ProjectSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchbugproject")
+	public ResponseEntity<List<ProjectDTO>> fetchBugProject(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchBugProject(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
@@ -442,8 +442,8 @@ public class ProjectResource {
 
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前计划项目", tags = {"项目" } ,notes = "获取当前计划项目")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/fetchcurplanproject")
-	public ResponseEntity<List<ProjectDTO>> fetchCurPlanProject(ProjectSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcurplanproject")
+	public ResponseEntity<List<ProjectDTO>> fetchCurPlanProject(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchCurPlanProject(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
@@ -538,8 +538,8 @@ public class ProjectResource {
 
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"项目" } ,notes = "获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/fetchdefault")
-	public ResponseEntity<List<ProjectDTO>> fetchDefault(ProjectSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchdefault")
+	public ResponseEntity<List<ProjectDTO>> fetchDefault(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchDefault(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
@@ -562,8 +562,8 @@ public class ProjectResource {
 
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取ES批量的导入", tags = {"项目" } ,notes = "获取ES批量的导入")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/fetchesbulk")
-	public ResponseEntity<List<ProjectDTO>> fetchESBulk(ProjectSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchesbulk")
+	public ResponseEntity<List<ProjectDTO>> fetchESBulk(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchESBulk(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
@@ -586,8 +586,8 @@ public class ProjectResource {
 
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取参与项目(年度总结)", tags = {"项目" } ,notes = "获取参与项目(年度总结)")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/fetchinvolvedproject")
-	public ResponseEntity<List<ProjectDTO>> fetchInvolvedProject(ProjectSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchinvolvedproject")
+	public ResponseEntity<List<ProjectDTO>> fetchInvolvedProject(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchInvolvedProject(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
@@ -658,8 +658,8 @@ public class ProjectResource {
 
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目团队", tags = {"项目" } ,notes = "获取项目团队")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/fetchprojectteam")
-	public ResponseEntity<List<ProjectDTO>> fetchProjectTeam(ProjectSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchprojectteam")
+	public ResponseEntity<List<ProjectDTO>> fetchProjectTeam(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchProjectTeam(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
@@ -682,8 +682,8 @@ public class ProjectResource {
 
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取需求影响项目", tags = {"项目" } ,notes = "获取需求影响项目")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/fetchstoryproject")
-	public ResponseEntity<List<ProjectDTO>> fetchStoryProject(ProjectSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchstoryproject")
+	public ResponseEntity<List<ProjectDTO>> fetchStoryProject(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchStoryProject(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
@@ -706,8 +706,8 @@ public class ProjectResource {
 
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取未完成项目", tags = {"项目" } ,notes = "获取未完成项目")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/fetchundoneproject")
-	public ResponseEntity<List<ProjectDTO>> fetchUnDoneProject(ProjectSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchundoneproject")
+	public ResponseEntity<List<ProjectDTO>> fetchUnDoneProject(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchUnDoneProject(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());

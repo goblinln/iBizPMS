@@ -255,9 +255,9 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/projectteams/fetchdefault`, _data);
+            return this.http.post(`/projects/${_context.project}/projectteams/fetchdefault`, _data);
         }
-        return this.http.get(`/projectteams/fetchdefault`, _data);
+        return this.http.post(`/projectteams/fetchdefault`, _data);
     }
     /**
      * FetchProjectTeamPm
@@ -269,9 +269,9 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
      */
     async FetchProjectTeamPm(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/projectteams/fetchprojectteampm`, _data);
+            return this.http.post(`/projects/${_context.project}/projectteams/fetchprojectteampm`, _data);
         }
-        return this.http.get(`/projectteams/fetchprojectteampm`, _data);
+        return this.http.post(`/projectteams/fetchprojectteampm`, _data);
     }
     /**
      * FetchRowEditDefault
@@ -283,9 +283,9 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
      */
     async FetchRowEditDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/projectteams/fetchroweditdefault`, _data);
+            return this.http.post(`/projects/${_context.project}/projectteams/fetchroweditdefault`, _data);
         }
-        return this.http.get(`/projectteams/fetchroweditdefault`, _data);
+        return this.http.post(`/projectteams/fetchroweditdefault`, _data);
     }
     /**
      * FetchTaskCntEstimateConsumedLeft
@@ -297,8 +297,8 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
      */
     async FetchTaskCntEstimateConsumedLeft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/projectteams/fetchtaskcntestimateconsumedleft`, _data);
+            return this.http.post(`/projects/${_context.project}/projectteams/fetchtaskcntestimateconsumedleft`, _data);
         }
-        return this.http.get(`/projectteams/fetchtaskcntestimateconsumedleft`, _data);
+        return this.http.post(`/projectteams/fetchtaskcntestimateconsumedleft`, _data);
     }
 }

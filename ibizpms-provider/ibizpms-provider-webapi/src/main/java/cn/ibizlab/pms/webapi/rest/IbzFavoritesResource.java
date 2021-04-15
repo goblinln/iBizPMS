@@ -150,8 +150,8 @@ public class IbzFavoritesResource {
 
     @PreAuthorize("@IbzFavoritesRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"收藏" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzfavorites/fetchdefault")
-	public ResponseEntity<List<IbzFavoritesDTO>> fetchDefault(IbzFavoritesSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzfavorites/fetchdefault")
+	public ResponseEntity<List<IbzFavoritesDTO>> fetchDefault(@RequestBody IbzFavoritesSearchContext context) {
         ibzfavoritesRuntime.addAuthorityConditions(context,"READ");
         Page<IbzFavorites> domains = ibzfavoritesService.searchDefault(context) ;
         List<IbzFavoritesDTO> list = ibzfavoritesMapping.toDto(domains.getContent());

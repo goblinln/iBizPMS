@@ -210,7 +210,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @memberof UserYearWorkStatsService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/useryearworkstats/fetchdefault`, _data);
+        return this.http.post(`/useryearworkstats/fetchdefault`, _data);
     }
     /**
      * FetchMonthFinishTaskAndBug
@@ -221,7 +221,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @memberof UserYearWorkStatsService
      */
     async FetchMonthFinishTaskAndBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/useryearworkstats/fetchmonthfinishtaskandbug`, _data);
+        return this.http.post(`/useryearworkstats/fetchmonthfinishtaskandbug`, _data);
     }
     /**
      * FetchMonthOpenedBugAndCase
@@ -232,7 +232,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @memberof UserYearWorkStatsService
      */
     async FetchMonthOpenedBugAndCase(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/useryearworkstats/fetchmonthopenedbugandcase`, _data);
+        return this.http.post(`/useryearworkstats/fetchmonthopenedbugandcase`, _data);
     }
     /**
      * FetchMonthOpenedStory
@@ -243,6 +243,6 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @memberof UserYearWorkStatsService
      */
     async FetchMonthOpenedStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/useryearworkstats/fetchmonthopenedstory`, _data);
+        return this.http.post(`/useryearworkstats/fetchmonthopenedstory`, _data);
     }
 }

@@ -150,8 +150,8 @@ public class IbzReportRoleConfigResource {
 
     @PreAuthorize("@IbzReportRoleConfigRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"汇报角色配置" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzreportroleconfigs/fetchdefault")
-	public ResponseEntity<List<IbzReportRoleConfigDTO>> fetchDefault(IbzReportRoleConfigSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzreportroleconfigs/fetchdefault")
+	public ResponseEntity<List<IbzReportRoleConfigDTO>> fetchDefault(@RequestBody IbzReportRoleConfigSearchContext context) {
         ibzreportroleconfigRuntime.addAuthorityConditions(context,"READ");
         Page<IbzReportRoleConfig> domains = ibzreportroleconfigService.searchDefault(context) ;
         List<IbzReportRoleConfigDTO> list = ibzreportroleconfigMapping.toDto(domains.getContent());

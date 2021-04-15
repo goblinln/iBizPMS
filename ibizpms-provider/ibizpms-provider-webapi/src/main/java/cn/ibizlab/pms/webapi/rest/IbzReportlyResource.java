@@ -184,8 +184,8 @@ public class IbzReportlyResource {
 
     @PreAuthorize("@IbzReportlyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"汇报" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzreportlies/fetchdefault")
-	public ResponseEntity<List<IbzReportlyDTO>> fetchDefault(IbzReportlySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/fetchdefault")
+	public ResponseEntity<List<IbzReportlyDTO>> fetchDefault(@RequestBody IbzReportlySearchContext context) {
         ibzreportlyRuntime.addAuthorityConditions(context,"READ");
         Page<IbzReportly> domains = ibzreportlyService.searchDefault(context) ;
         List<IbzReportlyDTO> list = ibzreportlyMapping.toDto(domains.getContent());
@@ -208,8 +208,8 @@ public class IbzReportlyResource {
 
     @PreAuthorize("@IbzReportlyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我所有的汇报", tags = {"汇报" } ,notes = "获取我所有的汇报")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzreportlies/fetchmyallreportly")
-	public ResponseEntity<List<IbzReportlyDTO>> fetchMyAllReportly(IbzReportlySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/fetchmyallreportly")
+	public ResponseEntity<List<IbzReportlyDTO>> fetchMyAllReportly(@RequestBody IbzReportlySearchContext context) {
         ibzreportlyRuntime.addAuthorityConditions(context,"READ");
         Page<IbzReportly> domains = ibzreportlyService.searchMyAllReportly(context) ;
         List<IbzReportlyDTO> list = ibzreportlyMapping.toDto(domains.getContent());
@@ -232,8 +232,8 @@ public class IbzReportlyResource {
 
     @PreAuthorize("@IbzReportlyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我收到的汇报", tags = {"汇报" } ,notes = "获取我收到的汇报")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzreportlies/fetchmyreceived")
-	public ResponseEntity<List<IbzReportlyDTO>> fetchMyReceived(IbzReportlySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/fetchmyreceived")
+	public ResponseEntity<List<IbzReportlyDTO>> fetchMyReceived(@RequestBody IbzReportlySearchContext context) {
         ibzreportlyRuntime.addAuthorityConditions(context,"READ");
         Page<IbzReportly> domains = ibzreportlyService.searchMyReceived(context) ;
         List<IbzReportlyDTO> list = ibzreportlyMapping.toDto(domains.getContent());
@@ -256,8 +256,8 @@ public class IbzReportlyResource {
 
     @PreAuthorize("@IbzReportlyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的未提交汇报", tags = {"汇报" } ,notes = "获取我的未提交汇报")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzreportlies/fetchmyreportlymob")
-	public ResponseEntity<List<IbzReportlyDTO>> fetchMyReportlyMob(IbzReportlySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/fetchmyreportlymob")
+	public ResponseEntity<List<IbzReportlyDTO>> fetchMyReportlyMob(@RequestBody IbzReportlySearchContext context) {
         ibzreportlyRuntime.addAuthorityConditions(context,"READ");
         Page<IbzReportly> domains = ibzreportlyService.searchMyReportlyMob(context) ;
         List<IbzReportlyDTO> list = ibzreportlyMapping.toDto(domains.getContent());

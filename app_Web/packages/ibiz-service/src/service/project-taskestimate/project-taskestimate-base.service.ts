@@ -152,7 +152,7 @@ export class ProjectTaskestimateBaseService extends EntityBaseService<IProjectTa
      * @memberof ProjectTaskestimateService
      */
     async FetchAccountDetail(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/projecttaskestimates/fetchaccountdetail`, _data);
+        return this.http.post(`/projecttaskestimates/fetchaccountdetail`, _data);
     }
     /**
      * FetchDefault
@@ -163,6 +163,6 @@ export class ProjectTaskestimateBaseService extends EntityBaseService<IProjectTa
      * @memberof ProjectTaskestimateService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/projecttaskestimates/fetchdefault`, _data);
+        return this.http.post(`/projecttaskestimates/fetchdefault`, _data);
     }
 }

@@ -152,6 +152,6 @@ export class CompanyBaseService extends EntityBaseService<ICompany> {
      * @memberof CompanyService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/companies/fetchdefault`, _data);
+        return this.http.post(`/companies/fetchdefault`, _data);
     }
 }

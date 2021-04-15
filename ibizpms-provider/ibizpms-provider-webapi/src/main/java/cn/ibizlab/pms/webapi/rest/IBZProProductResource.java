@@ -149,8 +149,8 @@ public class IBZProProductResource {
 
     @PreAuthorize("@IBZProProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"平台产品" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzproproducts/fetchdefault")
-	public ResponseEntity<List<IBZProProductDTO>> fetchDefault(IBZProProductSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzproproducts/fetchdefault")
+	public ResponseEntity<List<IBZProProductDTO>> fetchDefault(@RequestBody IBZProProductSearchContext context) {
         ibzproproductRuntime.addAuthorityConditions(context,"READ");
         Page<IBZProProduct> domains = ibzproproductService.searchDefault(context) ;
         List<IBZProProductDTO> list = ibzproproductMapping.toDto(domains.getContent());

@@ -149,8 +149,8 @@ public class BugStatsResource {
 
     @PreAuthorize("@BugStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Bug在每个解决方案的Bug数", tags = {"Bug统计" } ,notes = "获取Bug在每个解决方案的Bug数")
-    @RequestMapping(method= RequestMethod.GET , value="/bugstats/fetchbugcountinresolution")
-	public ResponseEntity<List<BugStatsDTO>> fetchBugCountInResolution(BugStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/bugstats/fetchbugcountinresolution")
+	public ResponseEntity<List<BugStatsDTO>> fetchBugCountInResolution(@RequestBody BugStatsSearchContext context) {
         bugstatsRuntime.addAuthorityConditions(context,"READ");
         Page<BugStats> domains = bugstatsService.searchBugCountInResolution(context) ;
         List<BugStatsDTO> list = bugstatsMapping.toDto(domains.getContent());
@@ -173,8 +173,8 @@ public class BugStatsResource {
 
     @PreAuthorize("@BugStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Bug完成表", tags = {"Bug统计" } ,notes = "获取Bug完成表")
-    @RequestMapping(method= RequestMethod.GET , value="/bugstats/fetchbugresolvedby")
-	public ResponseEntity<List<BugStatsDTO>> fetchBugResolvedBy(BugStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/bugstats/fetchbugresolvedby")
+	public ResponseEntity<List<BugStatsDTO>> fetchBugResolvedBy(@RequestBody BugStatsSearchContext context) {
         bugstatsRuntime.addAuthorityConditions(context,"READ");
         Page<BugStats> domains = bugstatsService.searchBugResolvedBy(context) ;
         List<BugStatsDTO> list = bugstatsMapping.toDto(domains.getContent());
@@ -197,8 +197,8 @@ public class BugStatsResource {
 
     @PreAuthorize("@BugStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取bug解决汇总表", tags = {"Bug统计" } ,notes = "获取bug解决汇总表")
-    @RequestMapping(method= RequestMethod.GET , value="/bugstats/fetchbugresolvedgird")
-	public ResponseEntity<List<BugStatsDTO>> fetchBugResolvedGird(BugStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/bugstats/fetchbugresolvedgird")
+	public ResponseEntity<List<BugStatsDTO>> fetchBugResolvedGird(@RequestBody BugStatsSearchContext context) {
         bugstatsRuntime.addAuthorityConditions(context,"READ");
         Page<BugStats> domains = bugstatsService.searchBugResolvedGird(context) ;
         List<BugStatsDTO> list = bugstatsMapping.toDto(domains.getContent());
@@ -221,8 +221,8 @@ public class BugStatsResource {
 
     @PreAuthorize("@BugStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Bug指派表", tags = {"Bug统计" } ,notes = "获取Bug指派表")
-    @RequestMapping(method= RequestMethod.GET , value="/bugstats/fetchbugassignedto")
-	public ResponseEntity<List<BugStatsDTO>> fetchBugassignedTo(BugStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/bugstats/fetchbugassignedto")
+	public ResponseEntity<List<BugStatsDTO>> fetchBugassignedTo(@RequestBody BugStatsSearchContext context) {
         bugstatsRuntime.addAuthorityConditions(context,"READ");
         Page<BugStats> domains = bugstatsService.searchBugassignedTo(context) ;
         List<BugStatsDTO> list = bugstatsMapping.toDto(domains.getContent());
@@ -245,8 +245,8 @@ public class BugStatsResource {
 
     @PreAuthorize("@BugStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"Bug统计" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/bugstats/fetchdefault")
-	public ResponseEntity<List<BugStatsDTO>> fetchDefault(BugStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/bugstats/fetchdefault")
+	public ResponseEntity<List<BugStatsDTO>> fetchDefault(@RequestBody BugStatsSearchContext context) {
         bugstatsRuntime.addAuthorityConditions(context,"READ");
         Page<BugStats> domains = bugstatsService.searchDefault(context) ;
         List<BugStatsDTO> list = bugstatsMapping.toDto(domains.getContent());
@@ -269,8 +269,8 @@ public class BugStatsResource {
 
     @PreAuthorize("@BugStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品Bug解决方案汇总", tags = {"Bug统计" } ,notes = "获取产品Bug解决方案汇总")
-    @RequestMapping(method= RequestMethod.GET , value="/bugstats/fetchproductbugresolutionstats")
-	public ResponseEntity<List<BugStatsDTO>> fetchProductBugResolutionStats(BugStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/bugstats/fetchproductbugresolutionstats")
+	public ResponseEntity<List<BugStatsDTO>> fetchProductBugResolutionStats(@RequestBody BugStatsSearchContext context) {
         bugstatsRuntime.addAuthorityConditions(context,"READ");
         Page<BugStats> domains = bugstatsService.searchProductBugResolutionStats(context) ;
         List<BugStatsDTO> list = bugstatsMapping.toDto(domains.getContent());
@@ -293,8 +293,8 @@ public class BugStatsResource {
 
     @PreAuthorize("@BugStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品Bug状态汇总", tags = {"Bug统计" } ,notes = "获取产品Bug状态汇总")
-    @RequestMapping(method= RequestMethod.GET , value="/bugstats/fetchproductbugstatussum")
-	public ResponseEntity<List<BugStatsDTO>> fetchProductBugStatusSum(BugStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/bugstats/fetchproductbugstatussum")
+	public ResponseEntity<List<BugStatsDTO>> fetchProductBugStatusSum(@RequestBody BugStatsSearchContext context) {
         bugstatsRuntime.addAuthorityConditions(context,"READ");
         Page<BugStats> domains = bugstatsService.searchProductBugStatusSum(context) ;
         List<BugStatsDTO> list = bugstatsMapping.toDto(domains.getContent());
@@ -317,8 +317,8 @@ public class BugStatsResource {
 
     @PreAuthorize("@BugStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品创建bug占比", tags = {"Bug统计" } ,notes = "获取产品创建bug占比")
-    @RequestMapping(method= RequestMethod.GET , value="/bugstats/fetchproductcreatebug")
-	public ResponseEntity<List<BugStatsDTO>> fetchProductCreateBug(BugStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/bugstats/fetchproductcreatebug")
+	public ResponseEntity<List<BugStatsDTO>> fetchProductCreateBug(@RequestBody BugStatsSearchContext context) {
         bugstatsRuntime.addAuthorityConditions(context,"READ");
         Page<BugStats> domains = bugstatsService.searchProductCreateBug(context) ;
         List<BugStatsDTO> list = bugstatsMapping.toDto(domains.getContent());
@@ -341,8 +341,8 @@ public class BugStatsResource {
 
     @PreAuthorize("@BugStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目bug状态统计", tags = {"Bug统计" } ,notes = "获取项目bug状态统计")
-    @RequestMapping(method= RequestMethod.GET , value="/bugstats/fetchprojectbugstatuscount")
-	public ResponseEntity<List<BugStatsDTO>> fetchProjectBugStatusCount(BugStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/bugstats/fetchprojectbugstatuscount")
+	public ResponseEntity<List<BugStatsDTO>> fetchProjectBugStatusCount(@RequestBody BugStatsSearchContext context) {
         bugstatsRuntime.addAuthorityConditions(context,"READ");
         Page<BugStats> domains = bugstatsService.searchProjectBugStatusCount(context) ;
         List<BugStatsDTO> list = bugstatsMapping.toDto(domains.getContent());

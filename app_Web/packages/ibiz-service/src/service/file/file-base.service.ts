@@ -197,7 +197,7 @@ export class FileBaseService extends EntityBaseService<IFile> {
      * @memberof FileService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/files/fetchdefault`, _data);
+        return this.http.post(`/files/fetchdefault`, _data);
     }
     /**
      * FetchDocLibFile
@@ -208,7 +208,7 @@ export class FileBaseService extends EntityBaseService<IFile> {
      * @memberof FileService
      */
     async FetchDocLibFile(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/files/fetchdoclibfile`, _data);
+        return this.http.post(`/files/fetchdoclibfile`, _data);
     }
     /**
      * FetchProductDocLibFile
@@ -219,7 +219,7 @@ export class FileBaseService extends EntityBaseService<IFile> {
      * @memberof FileService
      */
     async FetchProductDocLibFile(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/files/fetchproductdoclibfile`, _data);
+        return this.http.post(`/files/fetchproductdoclibfile`, _data);
     }
     /**
      * FetchType
@@ -230,7 +230,7 @@ export class FileBaseService extends EntityBaseService<IFile> {
      * @memberof FileService
      */
     async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/files/fetchtype`, _data);
+        return this.http.post(`/files/fetchtype`, _data);
     }
     /**
      * FetchTypeNotBySrfparentkey
@@ -241,6 +241,6 @@ export class FileBaseService extends EntityBaseService<IFile> {
      * @memberof FileService
      */
     async FetchTypeNotBySrfparentkey(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/files/fetchtypenotbysrfparentkey`, _data);
+        return this.http.post(`/files/fetchtypenotbysrfparentkey`, _data);
     }
 }

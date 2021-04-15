@@ -239,7 +239,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/actions/fetchdefault`, _data);
+        return this.http.post(`/actions/fetchdefault`, _data);
     }
     /**
      * FetchMobType
@@ -250,7 +250,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async FetchMobType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/actions/fetchmobtype`, _data);
+        return this.http.post(`/actions/fetchmobtype`, _data);
     }
     /**
      * FetchMyTrends
@@ -261,7 +261,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async FetchMyTrends(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/actions/fetchmytrends`, _data);
+        return this.http.post(`/actions/fetchmytrends`, _data);
     }
     /**
      * FetchProductTrends
@@ -272,7 +272,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async FetchProductTrends(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/actions/fetchproducttrends`, _data);
+        return this.http.post(`/actions/fetchproducttrends`, _data);
     }
     /**
      * FetchProjectTrends
@@ -283,7 +283,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async FetchProjectTrends(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/actions/fetchprojecttrends`, _data);
+        return this.http.post(`/actions/fetchprojecttrends`, _data);
     }
     /**
      * FetchQueryUserYEAR
@@ -294,7 +294,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async FetchQueryUserYEAR(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/actions/fetchqueryuseryear`, _data);
+        return this.http.post(`/actions/fetchqueryuseryear`, _data);
     }
     /**
      * FetchType
@@ -305,6 +305,6 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/actions/fetchtype`, _data);
+        return this.http.post(`/actions/fetchtype`, _data);
     }
 }

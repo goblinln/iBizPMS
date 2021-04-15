@@ -407,8 +407,8 @@ public class CaseResource {
 
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取批量新建用例", tags = {"测试用例" } ,notes = "获取批量新建用例")
-    @RequestMapping(method= RequestMethod.GET , value="/cases/fetchbatchnew")
-	public ResponseEntity<List<CaseDTO>> fetchBatchNew(CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/cases/fetchbatchnew")
+	public ResponseEntity<List<CaseDTO>> fetchBatchNew(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchBatchNew(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -431,8 +431,8 @@ public class CaseResource {
 
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取累计创建的用例", tags = {"测试用例" } ,notes = "获取累计创建的用例")
-    @RequestMapping(method= RequestMethod.GET , value="/cases/fetchcuropenedcase")
-	public ResponseEntity<List<CaseDTO>> fetchCurOpenedCase(CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/cases/fetchcuropenedcase")
+	public ResponseEntity<List<CaseDTO>> fetchCurOpenedCase(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchCurOpenedCase(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -527,8 +527,8 @@ public class CaseResource {
 
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取ES批量的导入", tags = {"测试用例" } ,notes = "获取ES批量的导入")
-    @RequestMapping(method= RequestMethod.GET , value="/cases/fetchesbulk")
-	public ResponseEntity<List<CaseDTO>> fetchESBulk(CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/cases/fetchesbulk")
+	public ResponseEntity<List<CaseDTO>> fetchESBulk(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchESBulk(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -551,8 +551,8 @@ public class CaseResource {
 
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试报告关联用例", tags = {"测试用例" } ,notes = "获取测试报告关联用例")
-    @RequestMapping(method= RequestMethod.GET , value="/cases/fetchmodulereportcase")
-	public ResponseEntity<List<CaseDTO>> fetchModuleRePortCase(CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/cases/fetchmodulereportcase")
+	public ResponseEntity<List<CaseDTO>> fetchModuleRePortCase(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchModuleRePortCase(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -575,8 +575,8 @@ public class CaseResource {
 
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试报告关联-按模块-条目", tags = {"测试用例" } ,notes = "获取测试报告关联-按模块-条目")
-    @RequestMapping(method= RequestMethod.GET , value="/cases/fetchmodulereportcaseentry")
-	public ResponseEntity<List<CaseDTO>> fetchModuleRePortCaseEntry(CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/cases/fetchmodulereportcaseentry")
+	public ResponseEntity<List<CaseDTO>> fetchModuleRePortCaseEntry(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchModuleRePortCaseEntry(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -599,8 +599,8 @@ public class CaseResource {
 
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目报告关联-按模块", tags = {"测试用例" } ,notes = "获取项目报告关联-按模块")
-    @RequestMapping(method= RequestMethod.GET , value="/cases/fetchmodulereportcase_project")
-	public ResponseEntity<List<CaseDTO>> fetchModuleRePortCase_Project(CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/cases/fetchmodulereportcase_project")
+	public ResponseEntity<List<CaseDTO>> fetchModuleRePortCase_Project(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchModuleRePortCase_Project(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -695,8 +695,8 @@ public class CaseResource {
 
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试单关联用例（项目关联）", tags = {"测试用例" } ,notes = "获取测试单关联用例（项目关联）")
-    @RequestMapping(method= RequestMethod.GET , value="/cases/fetchnotcurtesttaskproject")
-	public ResponseEntity<List<CaseDTO>> fetchNotCurTestTaskProject(CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/cases/fetchnotcurtesttaskproject")
+	public ResponseEntity<List<CaseDTO>> fetchNotCurTestTaskProject(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchNotCurTestTaskProject(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -743,8 +743,8 @@ public class CaseResource {
 
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试报告关联用例-条目", tags = {"测试用例" } ,notes = "获取测试报告关联用例-条目")
-    @RequestMapping(method= RequestMethod.GET , value="/cases/fetchreportcaseentry")
-	public ResponseEntity<List<CaseDTO>> fetchRePortCaseEntry(CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/cases/fetchreportcaseentry")
+	public ResponseEntity<List<CaseDTO>> fetchRePortCaseEntry(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchRePortCaseEntry(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -791,8 +791,8 @@ public class CaseResource {
 
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试报告关联-执行人", tags = {"测试用例" } ,notes = "获取测试报告关联-执行人")
-    @RequestMapping(method= RequestMethod.GET , value="/cases/fetchrunerreportcase")
-	public ResponseEntity<List<CaseDTO>> fetchRunERRePortCase(CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/cases/fetchrunerreportcase")
+	public ResponseEntity<List<CaseDTO>> fetchRunERRePortCase(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchRunERRePortCase(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -815,8 +815,8 @@ public class CaseResource {
 
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试报告关联-执行人-条目", tags = {"测试用例" } ,notes = "获取测试报告关联-执行人-条目")
-    @RequestMapping(method= RequestMethod.GET , value="/cases/fetchrunerreportcaseentry")
-	public ResponseEntity<List<CaseDTO>> fetchRunERRePortCaseEntry(CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/cases/fetchrunerreportcaseentry")
+	public ResponseEntity<List<CaseDTO>> fetchRunERRePortCaseEntry(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchRunERRePortCaseEntry(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -839,8 +839,8 @@ public class CaseResource {
 
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目报告关联-执行人", tags = {"测试用例" } ,notes = "获取项目报告关联-执行人")
-    @RequestMapping(method= RequestMethod.GET , value="/cases/fetchrunerreportcase_project")
-	public ResponseEntity<List<CaseDTO>> fetchRunERRePortCase_Project(CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/cases/fetchrunerreportcase_project")
+	public ResponseEntity<List<CaseDTO>> fetchRunERRePortCase_Project(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchRunERRePortCase_Project(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -863,8 +863,8 @@ public class CaseResource {
 
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试报告关联用例", tags = {"测试用例" } ,notes = "获取测试报告关联用例")
-    @RequestMapping(method= RequestMethod.GET , value="/cases/fetchrunreportcase")
-	public ResponseEntity<List<CaseDTO>> fetchRunRePortCase(CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/cases/fetchrunreportcase")
+	public ResponseEntity<List<CaseDTO>> fetchRunRePortCase(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchRunRePortCase(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -887,8 +887,8 @@ public class CaseResource {
 
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试报告关联--执行结果条目", tags = {"测试用例" } ,notes = "获取测试报告关联--执行结果条目")
-    @RequestMapping(method= RequestMethod.GET , value="/cases/fetchrunreportcaseentry")
-	public ResponseEntity<List<CaseDTO>> fetchRunRePortCaseEntry(CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/cases/fetchrunreportcaseentry")
+	public ResponseEntity<List<CaseDTO>> fetchRunRePortCaseEntry(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchRunRePortCaseEntry(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -911,8 +911,8 @@ public class CaseResource {
 
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目报告关联-执行结果", tags = {"测试用例" } ,notes = "获取项目报告关联-执行结果")
-    @RequestMapping(method= RequestMethod.GET , value="/cases/fetchrunreportcase_project")
-	public ResponseEntity<List<CaseDTO>> fetchRunRePortCase_Project(CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/cases/fetchrunreportcase_project")
+	public ResponseEntity<List<CaseDTO>> fetchRunRePortCase_Project(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchRunRePortCase_Project(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -1271,8 +1271,8 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 	@ApiOperation(value = "根据产品获取批量新建用例", tags = {"测试用例" } ,notes = "根据产品获取批量新建用例")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/cases/fetchbatchnew")
-	public ResponseEntity<List<CaseDTO>> fetchCaseBatchNewByProduct(@PathVariable("product_id") Long product_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchbatchnew")
+	public ResponseEntity<List<CaseDTO>> fetchCaseBatchNewByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Case> domains = caseService.searchBatchNew(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -1292,8 +1292,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品获取累计创建的用例", tags = {"测试用例" } ,notes = "根据产品获取累计创建的用例")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/cases/fetchcuropenedcase")
-	public ResponseEntity<List<CaseDTO>> fetchCaseCurOpenedCaseByProduct(@PathVariable("product_id") Long product_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchcuropenedcase")
+	public ResponseEntity<List<CaseDTO>> fetchCaseCurOpenedCaseByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Case> domains = caseService.searchCurOpenedCase(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -1376,8 +1376,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品获取ES批量的导入", tags = {"测试用例" } ,notes = "根据产品获取ES批量的导入")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/cases/fetchesbulk")
-	public ResponseEntity<List<CaseDTO>> fetchCaseESBulkByProduct(@PathVariable("product_id") Long product_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchesbulk")
+	public ResponseEntity<List<CaseDTO>> fetchCaseESBulkByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Case> domains = caseService.searchESBulk(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -1397,8 +1397,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品获取测试报告关联用例", tags = {"测试用例" } ,notes = "根据产品获取测试报告关联用例")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/cases/fetchmodulereportcase")
-	public ResponseEntity<List<CaseDTO>> fetchCaseModuleRePortCaseByProduct(@PathVariable("product_id") Long product_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchmodulereportcase")
+	public ResponseEntity<List<CaseDTO>> fetchCaseModuleRePortCaseByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Case> domains = caseService.searchModuleRePortCase(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -1418,8 +1418,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品获取测试报告关联-按模块-条目", tags = {"测试用例" } ,notes = "根据产品获取测试报告关联-按模块-条目")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/cases/fetchmodulereportcaseentry")
-	public ResponseEntity<List<CaseDTO>> fetchCaseModuleRePortCaseEntryByProduct(@PathVariable("product_id") Long product_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchmodulereportcaseentry")
+	public ResponseEntity<List<CaseDTO>> fetchCaseModuleRePortCaseEntryByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Case> domains = caseService.searchModuleRePortCaseEntry(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -1439,8 +1439,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品获取项目报告关联-按模块", tags = {"测试用例" } ,notes = "根据产品获取项目报告关联-按模块")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/cases/fetchmodulereportcase_project")
-	public ResponseEntity<List<CaseDTO>> fetchCaseModuleRePortCase_ProjectByProduct(@PathVariable("product_id") Long product_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchmodulereportcase_project")
+	public ResponseEntity<List<CaseDTO>> fetchCaseModuleRePortCase_ProjectByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Case> domains = caseService.searchModuleRePortCase_Project(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -1523,8 +1523,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品获取测试单关联用例（项目关联）", tags = {"测试用例" } ,notes = "根据产品获取测试单关联用例（项目关联）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/cases/fetchnotcurtesttaskproject")
-	public ResponseEntity<List<CaseDTO>> fetchCaseNotCurTestTaskProjectByProduct(@PathVariable("product_id") Long product_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchnotcurtesttaskproject")
+	public ResponseEntity<List<CaseDTO>> fetchCaseNotCurTestTaskProjectByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Case> domains = caseService.searchNotCurTestTaskProject(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -1565,8 +1565,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品获取测试报告关联用例-条目", tags = {"测试用例" } ,notes = "根据产品获取测试报告关联用例-条目")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/cases/fetchreportcaseentry")
-	public ResponseEntity<List<CaseDTO>> fetchCaseRePortCaseEntryByProduct(@PathVariable("product_id") Long product_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchreportcaseentry")
+	public ResponseEntity<List<CaseDTO>> fetchCaseRePortCaseEntryByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Case> domains = caseService.searchRePortCaseEntry(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -1607,8 +1607,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品获取测试报告关联-执行人", tags = {"测试用例" } ,notes = "根据产品获取测试报告关联-执行人")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/cases/fetchrunerreportcase")
-	public ResponseEntity<List<CaseDTO>> fetchCaseRunERRePortCaseByProduct(@PathVariable("product_id") Long product_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchrunerreportcase")
+	public ResponseEntity<List<CaseDTO>> fetchCaseRunERRePortCaseByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Case> domains = caseService.searchRunERRePortCase(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -1628,8 +1628,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品获取测试报告关联-执行人-条目", tags = {"测试用例" } ,notes = "根据产品获取测试报告关联-执行人-条目")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/cases/fetchrunerreportcaseentry")
-	public ResponseEntity<List<CaseDTO>> fetchCaseRunERRePortCaseEntryByProduct(@PathVariable("product_id") Long product_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchrunerreportcaseentry")
+	public ResponseEntity<List<CaseDTO>> fetchCaseRunERRePortCaseEntryByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Case> domains = caseService.searchRunERRePortCaseEntry(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -1649,8 +1649,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品获取项目报告关联-执行人", tags = {"测试用例" } ,notes = "根据产品获取项目报告关联-执行人")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/cases/fetchrunerreportcase_project")
-	public ResponseEntity<List<CaseDTO>> fetchCaseRunERRePortCase_ProjectByProduct(@PathVariable("product_id") Long product_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchrunerreportcase_project")
+	public ResponseEntity<List<CaseDTO>> fetchCaseRunERRePortCase_ProjectByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Case> domains = caseService.searchRunERRePortCase_Project(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -1670,8 +1670,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品获取测试报告关联用例", tags = {"测试用例" } ,notes = "根据产品获取测试报告关联用例")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/cases/fetchrunreportcase")
-	public ResponseEntity<List<CaseDTO>> fetchCaseRunRePortCaseByProduct(@PathVariable("product_id") Long product_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchrunreportcase")
+	public ResponseEntity<List<CaseDTO>> fetchCaseRunRePortCaseByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Case> domains = caseService.searchRunRePortCase(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -1691,8 +1691,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品获取测试报告关联--执行结果条目", tags = {"测试用例" } ,notes = "根据产品获取测试报告关联--执行结果条目")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/cases/fetchrunreportcaseentry")
-	public ResponseEntity<List<CaseDTO>> fetchCaseRunRePortCaseEntryByProduct(@PathVariable("product_id") Long product_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchrunreportcaseentry")
+	public ResponseEntity<List<CaseDTO>> fetchCaseRunRePortCaseEntryByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Case> domains = caseService.searchRunRePortCaseEntry(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -1712,8 +1712,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品获取项目报告关联-执行结果", tags = {"测试用例" } ,notes = "根据产品获取项目报告关联-执行结果")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/cases/fetchrunreportcase_project")
-	public ResponseEntity<List<CaseDTO>> fetchCaseRunRePortCase_ProjectByProduct(@PathVariable("product_id") Long product_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchrunreportcase_project")
+	public ResponseEntity<List<CaseDTO>> fetchCaseRunRePortCase_ProjectByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Case> domains = caseService.searchRunRePortCase_Project(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -2062,8 +2062,8 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 	@ApiOperation(value = "根据需求获取批量新建用例", tags = {"测试用例" } ,notes = "根据需求获取批量新建用例")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/cases/fetchbatchnew")
-	public ResponseEntity<List<CaseDTO>> fetchCaseBatchNewByStory(@PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/cases/fetchbatchnew")
+	public ResponseEntity<List<CaseDTO>> fetchCaseBatchNewByStory(@PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchBatchNew(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -2083,8 +2083,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取累计创建的用例", tags = {"测试用例" } ,notes = "根据需求获取累计创建的用例")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/cases/fetchcuropenedcase")
-	public ResponseEntity<List<CaseDTO>> fetchCaseCurOpenedCaseByStory(@PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/cases/fetchcuropenedcase")
+	public ResponseEntity<List<CaseDTO>> fetchCaseCurOpenedCaseByStory(@PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchCurOpenedCase(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -2167,8 +2167,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取ES批量的导入", tags = {"测试用例" } ,notes = "根据需求获取ES批量的导入")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/cases/fetchesbulk")
-	public ResponseEntity<List<CaseDTO>> fetchCaseESBulkByStory(@PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/cases/fetchesbulk")
+	public ResponseEntity<List<CaseDTO>> fetchCaseESBulkByStory(@PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchESBulk(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -2188,8 +2188,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取测试报告关联用例", tags = {"测试用例" } ,notes = "根据需求获取测试报告关联用例")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/cases/fetchmodulereportcase")
-	public ResponseEntity<List<CaseDTO>> fetchCaseModuleRePortCaseByStory(@PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/cases/fetchmodulereportcase")
+	public ResponseEntity<List<CaseDTO>> fetchCaseModuleRePortCaseByStory(@PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchModuleRePortCase(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -2209,8 +2209,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取测试报告关联-按模块-条目", tags = {"测试用例" } ,notes = "根据需求获取测试报告关联-按模块-条目")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/cases/fetchmodulereportcaseentry")
-	public ResponseEntity<List<CaseDTO>> fetchCaseModuleRePortCaseEntryByStory(@PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/cases/fetchmodulereportcaseentry")
+	public ResponseEntity<List<CaseDTO>> fetchCaseModuleRePortCaseEntryByStory(@PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchModuleRePortCaseEntry(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -2230,8 +2230,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取项目报告关联-按模块", tags = {"测试用例" } ,notes = "根据需求获取项目报告关联-按模块")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/cases/fetchmodulereportcase_project")
-	public ResponseEntity<List<CaseDTO>> fetchCaseModuleRePortCase_ProjectByStory(@PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/cases/fetchmodulereportcase_project")
+	public ResponseEntity<List<CaseDTO>> fetchCaseModuleRePortCase_ProjectByStory(@PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchModuleRePortCase_Project(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -2314,8 +2314,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取测试单关联用例（项目关联）", tags = {"测试用例" } ,notes = "根据需求获取测试单关联用例（项目关联）")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/cases/fetchnotcurtesttaskproject")
-	public ResponseEntity<List<CaseDTO>> fetchCaseNotCurTestTaskProjectByStory(@PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/cases/fetchnotcurtesttaskproject")
+	public ResponseEntity<List<CaseDTO>> fetchCaseNotCurTestTaskProjectByStory(@PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchNotCurTestTaskProject(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -2356,8 +2356,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取测试报告关联用例-条目", tags = {"测试用例" } ,notes = "根据需求获取测试报告关联用例-条目")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/cases/fetchreportcaseentry")
-	public ResponseEntity<List<CaseDTO>> fetchCaseRePortCaseEntryByStory(@PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/cases/fetchreportcaseentry")
+	public ResponseEntity<List<CaseDTO>> fetchCaseRePortCaseEntryByStory(@PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchRePortCaseEntry(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -2398,8 +2398,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取测试报告关联-执行人", tags = {"测试用例" } ,notes = "根据需求获取测试报告关联-执行人")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/cases/fetchrunerreportcase")
-	public ResponseEntity<List<CaseDTO>> fetchCaseRunERRePortCaseByStory(@PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/cases/fetchrunerreportcase")
+	public ResponseEntity<List<CaseDTO>> fetchCaseRunERRePortCaseByStory(@PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchRunERRePortCase(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -2419,8 +2419,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取测试报告关联-执行人-条目", tags = {"测试用例" } ,notes = "根据需求获取测试报告关联-执行人-条目")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/cases/fetchrunerreportcaseentry")
-	public ResponseEntity<List<CaseDTO>> fetchCaseRunERRePortCaseEntryByStory(@PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/cases/fetchrunerreportcaseentry")
+	public ResponseEntity<List<CaseDTO>> fetchCaseRunERRePortCaseEntryByStory(@PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchRunERRePortCaseEntry(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -2440,8 +2440,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取项目报告关联-执行人", tags = {"测试用例" } ,notes = "根据需求获取项目报告关联-执行人")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/cases/fetchrunerreportcase_project")
-	public ResponseEntity<List<CaseDTO>> fetchCaseRunERRePortCase_ProjectByStory(@PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/cases/fetchrunerreportcase_project")
+	public ResponseEntity<List<CaseDTO>> fetchCaseRunERRePortCase_ProjectByStory(@PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchRunERRePortCase_Project(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -2461,8 +2461,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取测试报告关联用例", tags = {"测试用例" } ,notes = "根据需求获取测试报告关联用例")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/cases/fetchrunreportcase")
-	public ResponseEntity<List<CaseDTO>> fetchCaseRunRePortCaseByStory(@PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/cases/fetchrunreportcase")
+	public ResponseEntity<List<CaseDTO>> fetchCaseRunRePortCaseByStory(@PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchRunRePortCase(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -2482,8 +2482,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取测试报告关联--执行结果条目", tags = {"测试用例" } ,notes = "根据需求获取测试报告关联--执行结果条目")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/cases/fetchrunreportcaseentry")
-	public ResponseEntity<List<CaseDTO>> fetchCaseRunRePortCaseEntryByStory(@PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/cases/fetchrunreportcaseentry")
+	public ResponseEntity<List<CaseDTO>> fetchCaseRunRePortCaseEntryByStory(@PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchRunRePortCaseEntry(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -2503,8 +2503,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取项目报告关联-执行结果", tags = {"测试用例" } ,notes = "根据需求获取项目报告关联-执行结果")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/cases/fetchrunreportcase_project")
-	public ResponseEntity<List<CaseDTO>> fetchCaseRunRePortCase_ProjectByStory(@PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/cases/fetchrunreportcase_project")
+	public ResponseEntity<List<CaseDTO>> fetchCaseRunRePortCase_ProjectByStory(@PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchRunRePortCase_Project(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -2853,8 +2853,8 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 	@ApiOperation(value = "根据产品需求获取批量新建用例", tags = {"测试用例" } ,notes = "根据产品需求获取批量新建用例")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/cases/fetchbatchnew")
-	public ResponseEntity<List<CaseDTO>> fetchCaseBatchNewByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/cases/fetchbatchnew")
+	public ResponseEntity<List<CaseDTO>> fetchCaseBatchNewByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchBatchNew(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -2874,8 +2874,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取累计创建的用例", tags = {"测试用例" } ,notes = "根据产品需求获取累计创建的用例")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/cases/fetchcuropenedcase")
-	public ResponseEntity<List<CaseDTO>> fetchCaseCurOpenedCaseByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/cases/fetchcuropenedcase")
+	public ResponseEntity<List<CaseDTO>> fetchCaseCurOpenedCaseByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchCurOpenedCase(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -2958,8 +2958,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取ES批量的导入", tags = {"测试用例" } ,notes = "根据产品需求获取ES批量的导入")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/cases/fetchesbulk")
-	public ResponseEntity<List<CaseDTO>> fetchCaseESBulkByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/cases/fetchesbulk")
+	public ResponseEntity<List<CaseDTO>> fetchCaseESBulkByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchESBulk(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -2979,8 +2979,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取测试报告关联用例", tags = {"测试用例" } ,notes = "根据产品需求获取测试报告关联用例")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/cases/fetchmodulereportcase")
-	public ResponseEntity<List<CaseDTO>> fetchCaseModuleRePortCaseByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/cases/fetchmodulereportcase")
+	public ResponseEntity<List<CaseDTO>> fetchCaseModuleRePortCaseByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchModuleRePortCase(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -3000,8 +3000,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取测试报告关联-按模块-条目", tags = {"测试用例" } ,notes = "根据产品需求获取测试报告关联-按模块-条目")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/cases/fetchmodulereportcaseentry")
-	public ResponseEntity<List<CaseDTO>> fetchCaseModuleRePortCaseEntryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/cases/fetchmodulereportcaseentry")
+	public ResponseEntity<List<CaseDTO>> fetchCaseModuleRePortCaseEntryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchModuleRePortCaseEntry(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -3021,8 +3021,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取项目报告关联-按模块", tags = {"测试用例" } ,notes = "根据产品需求获取项目报告关联-按模块")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/cases/fetchmodulereportcase_project")
-	public ResponseEntity<List<CaseDTO>> fetchCaseModuleRePortCase_ProjectByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/cases/fetchmodulereportcase_project")
+	public ResponseEntity<List<CaseDTO>> fetchCaseModuleRePortCase_ProjectByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchModuleRePortCase_Project(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -3105,8 +3105,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取测试单关联用例（项目关联）", tags = {"测试用例" } ,notes = "根据产品需求获取测试单关联用例（项目关联）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/cases/fetchnotcurtesttaskproject")
-	public ResponseEntity<List<CaseDTO>> fetchCaseNotCurTestTaskProjectByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/cases/fetchnotcurtesttaskproject")
+	public ResponseEntity<List<CaseDTO>> fetchCaseNotCurTestTaskProjectByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchNotCurTestTaskProject(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -3147,8 +3147,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取测试报告关联用例-条目", tags = {"测试用例" } ,notes = "根据产品需求获取测试报告关联用例-条目")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/cases/fetchreportcaseentry")
-	public ResponseEntity<List<CaseDTO>> fetchCaseRePortCaseEntryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/cases/fetchreportcaseentry")
+	public ResponseEntity<List<CaseDTO>> fetchCaseRePortCaseEntryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchRePortCaseEntry(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -3189,8 +3189,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取测试报告关联-执行人", tags = {"测试用例" } ,notes = "根据产品需求获取测试报告关联-执行人")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/cases/fetchrunerreportcase")
-	public ResponseEntity<List<CaseDTO>> fetchCaseRunERRePortCaseByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/cases/fetchrunerreportcase")
+	public ResponseEntity<List<CaseDTO>> fetchCaseRunERRePortCaseByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchRunERRePortCase(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -3210,8 +3210,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取测试报告关联-执行人-条目", tags = {"测试用例" } ,notes = "根据产品需求获取测试报告关联-执行人-条目")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/cases/fetchrunerreportcaseentry")
-	public ResponseEntity<List<CaseDTO>> fetchCaseRunERRePortCaseEntryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/cases/fetchrunerreportcaseentry")
+	public ResponseEntity<List<CaseDTO>> fetchCaseRunERRePortCaseEntryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchRunERRePortCaseEntry(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -3231,8 +3231,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取项目报告关联-执行人", tags = {"测试用例" } ,notes = "根据产品需求获取项目报告关联-执行人")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/cases/fetchrunerreportcase_project")
-	public ResponseEntity<List<CaseDTO>> fetchCaseRunERRePortCase_ProjectByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/cases/fetchrunerreportcase_project")
+	public ResponseEntity<List<CaseDTO>> fetchCaseRunERRePortCase_ProjectByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchRunERRePortCase_Project(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -3252,8 +3252,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取测试报告关联用例", tags = {"测试用例" } ,notes = "根据产品需求获取测试报告关联用例")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/cases/fetchrunreportcase")
-	public ResponseEntity<List<CaseDTO>> fetchCaseRunRePortCaseByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/cases/fetchrunreportcase")
+	public ResponseEntity<List<CaseDTO>> fetchCaseRunRePortCaseByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchRunRePortCase(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -3273,8 +3273,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取测试报告关联--执行结果条目", tags = {"测试用例" } ,notes = "根据产品需求获取测试报告关联--执行结果条目")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/cases/fetchrunreportcaseentry")
-	public ResponseEntity<List<CaseDTO>> fetchCaseRunRePortCaseEntryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/cases/fetchrunreportcaseentry")
+	public ResponseEntity<List<CaseDTO>> fetchCaseRunRePortCaseEntryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchRunRePortCaseEntry(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -3294,8 +3294,8 @@ public class CaseResource {
                 .body(new PageImpl(caseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取项目报告关联-执行结果", tags = {"测试用例" } ,notes = "根据产品需求获取项目报告关联-执行结果")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/cases/fetchrunreportcase_project")
-	public ResponseEntity<List<CaseDTO>> fetchCaseRunRePortCase_ProjectByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,CaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/cases/fetchrunreportcase_project")
+	public ResponseEntity<List<CaseDTO>> fetchCaseRunRePortCase_ProjectByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody CaseSearchContext context) {
         context.setN_story_eq(story_id);
         Page<Case> domains = caseService.searchRunRePortCase_Project(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());

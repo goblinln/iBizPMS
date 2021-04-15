@@ -155,8 +155,8 @@ public class IbzCaseResource {
 
     @PreAuthorize("@IbzCaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试用例" } ,notes = "获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzcases/fetchdefault")
-	public ResponseEntity<List<IbzCaseDTO>> fetchDefault(IbzCaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzcases/fetchdefault")
+	public ResponseEntity<List<IbzCaseDTO>> fetchDefault(@RequestBody IbzCaseSearchContext context) {
         ibzcaseRuntime.addAuthorityConditions(context,"READ");
         Page<IbzCase> domains = ibzcaseService.searchDefault(context) ;
         List<IbzCaseDTO> list = ibzcaseMapping.toDto(domains.getContent());
@@ -284,8 +284,8 @@ public class IbzCaseResource {
     }
 
 	@ApiOperation(value = "根据用例库获取DEFAULT", tags = {"测试用例" } ,notes = "根据用例库获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzlibs/{ibzlib_id}/ibzcases/fetchdefault")
-	public ResponseEntity<List<IbzCaseDTO>> fetchIbzCaseDefaultByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id,IbzCaseSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/ibzcases/fetchdefault")
+	public ResponseEntity<List<IbzCaseDTO>> fetchIbzCaseDefaultByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id,@RequestBody IbzCaseSearchContext context) {
         context.setN_lib_eq(ibzlib_id);
         Page<IbzCase> domains = ibzcaseService.searchDefault(context) ;
         List<IbzCaseDTO> list = ibzcaseMapping.toDto(domains.getContent());

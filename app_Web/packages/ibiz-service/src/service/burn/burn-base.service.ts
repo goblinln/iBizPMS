@@ -213,9 +213,9 @@ export class BurnBaseService extends EntityBaseService<IBurn> {
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/burns/fetchdefault`, _data);
+            return this.http.post(`/projects/${_context.project}/burns/fetchdefault`, _data);
         }
-        return this.http.get(`/burns/fetchdefault`, _data);
+        return this.http.post(`/burns/fetchdefault`, _data);
     }
     /**
      * FetchESTIMATEANDLEFT
@@ -227,8 +227,8 @@ export class BurnBaseService extends EntityBaseService<IBurn> {
      */
     async FetchESTIMATEANDLEFT(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/burns/fetchestimateandleft`, _data);
+            return this.http.post(`/projects/${_context.project}/burns/fetchestimateandleft`, _data);
         }
-        return this.http.get(`/burns/fetchestimateandleft`, _data);
+        return this.http.post(`/burns/fetchestimateandleft`, _data);
     }
 }

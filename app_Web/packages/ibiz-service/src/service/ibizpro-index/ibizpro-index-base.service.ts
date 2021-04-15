@@ -152,7 +152,7 @@ export class IbizproIndexBaseService extends EntityBaseService<IIbizproIndex> {
      * @memberof IbizproIndexService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibizproindices/fetchdefault`, _data);
+        return this.http.post(`/ibizproindices/fetchdefault`, _data);
     }
     /**
      * FetchESquery
@@ -163,7 +163,7 @@ export class IbizproIndexBaseService extends EntityBaseService<IIbizproIndex> {
      * @memberof IbizproIndexService
      */
     async FetchESquery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibizproindices/fetchesquery`, _data);
+        return this.http.post(`/ibizproindices/fetchesquery`, _data);
     }
     /**
      * FetchIndexDER
@@ -174,6 +174,6 @@ export class IbizproIndexBaseService extends EntityBaseService<IIbizproIndex> {
      * @memberof IbizproIndexService
      */
     async FetchIndexDER(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibizproindices/fetchindexder`, _data);
+        return this.http.post(`/ibizproindices/fetchindexder`, _data);
     }
 }

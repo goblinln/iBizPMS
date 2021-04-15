@@ -152,6 +152,6 @@ export class IbzReportRoleConfigBaseService extends EntityBaseService<IIbzReport
      * @memberof IbzReportRoleConfigService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzreportroleconfigs/fetchdefault`, _data);
+        return this.http.post(`/ibzreportroleconfigs/fetchdefault`, _data);
     }
 }

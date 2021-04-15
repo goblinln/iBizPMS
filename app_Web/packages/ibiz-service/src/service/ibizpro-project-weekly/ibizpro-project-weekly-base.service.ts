@@ -163,6 +163,6 @@ export class IbizproProjectWeeklyBaseService extends EntityBaseService<IIbizproP
      * @memberof IbizproProjectWeeklyService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibizproprojectweeklies/fetchdefault`, _data);
+        return this.http.post(`/ibizproprojectweeklies/fetchdefault`, _data);
     }
 }

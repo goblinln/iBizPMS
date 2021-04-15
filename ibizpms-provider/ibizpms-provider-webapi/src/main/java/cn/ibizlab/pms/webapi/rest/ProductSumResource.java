@@ -149,8 +149,8 @@ public class ProductSumResource {
 
     @PreAuthorize("@ProductSumRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"产品汇总表" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/productsums/fetchdefault")
-	public ResponseEntity<List<ProductSumDTO>> fetchDefault(ProductSumSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productsums/fetchdefault")
+	public ResponseEntity<List<ProductSumDTO>> fetchDefault(@RequestBody ProductSumSearchContext context) {
         productsumRuntime.addAuthorityConditions(context,"READ");
         Page<ProductSum> domains = productsumService.searchDefault(context) ;
         List<ProductSumDTO> list = productsumMapping.toDto(domains.getContent());
@@ -173,8 +173,8 @@ public class ProductSumResource {
 
     @PreAuthorize("@ProductSumRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品创建bug数及占比", tags = {"产品汇总表" } ,notes = "获取产品创建bug数及占比")
-    @RequestMapping(method= RequestMethod.GET , value="/productsums/fetchproductbugcnt_qa")
-	public ResponseEntity<List<ProductSumDTO>> fetchProductBugcnt_QA(ProductSumSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productsums/fetchproductbugcnt_qa")
+	public ResponseEntity<List<ProductSumDTO>> fetchProductBugcnt_QA(@RequestBody ProductSumSearchContext context) {
         productsumRuntime.addAuthorityConditions(context,"READ");
         Page<ProductSum> domains = productsumService.searchProductBugcnt_QA(context) ;
         List<ProductSumDTO> list = productsumMapping.toDto(domains.getContent());
@@ -197,8 +197,8 @@ public class ProductSumResource {
 
     @PreAuthorize("@ProductSumRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品创建需求占比", tags = {"产品汇总表" } ,notes = "获取产品创建需求占比")
-    @RequestMapping(method= RequestMethod.GET , value="/productsums/fetchproductcreatestory")
-	public ResponseEntity<List<ProductSumDTO>> fetchProductCreateStory(ProductSumSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productsums/fetchproductcreatestory")
+	public ResponseEntity<List<ProductSumDTO>> fetchProductCreateStory(@RequestBody ProductSumSearchContext context) {
         productsumRuntime.addAuthorityConditions(context,"READ");
         Page<ProductSum> domains = productsumService.searchProductCreateStory(context) ;
         List<ProductSumDTO> list = productsumMapping.toDto(domains.getContent());
@@ -221,8 +221,8 @@ public class ProductSumResource {
 
     @PreAuthorize("@ProductSumRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品需求工时汇总", tags = {"产品汇总表" } ,notes = "获取产品需求工时汇总")
-    @RequestMapping(method= RequestMethod.GET , value="/productsums/fetchproductstoryhourssum")
-	public ResponseEntity<List<ProductSumDTO>> fetchProductStoryHoursSum(ProductSumSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productsums/fetchproductstoryhourssum")
+	public ResponseEntity<List<ProductSumDTO>> fetchProductStoryHoursSum(@RequestBody ProductSumSearchContext context) {
         productsumRuntime.addAuthorityConditions(context,"READ");
         Page<ProductSum> domains = productsumService.searchProductStoryHoursSum(context) ;
         List<ProductSumDTO> list = productsumMapping.toDto(domains.getContent());
@@ -245,8 +245,8 @@ public class ProductSumResource {
 
     @PreAuthorize("@ProductSumRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品需求汇总查询", tags = {"产品汇总表" } ,notes = "获取产品需求汇总查询")
-    @RequestMapping(method= RequestMethod.GET , value="/productsums/fetchproductstorysum")
-	public ResponseEntity<List<ProductSumDTO>> fetchProductStorySum(ProductSumSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productsums/fetchproductstorysum")
+	public ResponseEntity<List<ProductSumDTO>> fetchProductStorySum(@RequestBody ProductSumSearchContext context) {
         productsumRuntime.addAuthorityConditions(context,"READ");
         Page<ProductSum> domains = productsumService.searchProductStorySum(context) ;
         List<ProductSumDTO> list = productsumMapping.toDto(domains.getContent());
@@ -269,8 +269,8 @@ public class ProductSumResource {
 
     @PreAuthorize("@ProductSumRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品计划数和需求数", tags = {"产品汇总表" } ,notes = "获取产品计划数和需求数")
-    @RequestMapping(method= RequestMethod.GET , value="/productsums/fetchproductstorycntandplancnt")
-	public ResponseEntity<List<ProductSumDTO>> fetchProductStorycntAndPlancnt(ProductSumSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productsums/fetchproductstorycntandplancnt")
+	public ResponseEntity<List<ProductSumDTO>> fetchProductStorycntAndPlancnt(@RequestBody ProductSumSearchContext context) {
         productsumRuntime.addAuthorityConditions(context,"READ");
         Page<ProductSum> domains = productsumService.searchProductStorycntAndPlancnt(context) ;
         List<ProductSumDTO> list = productsumMapping.toDto(domains.getContent());
@@ -293,8 +293,8 @@ public class ProductSumResource {
 
     @PreAuthorize("@ProductSumRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品Bug类型统计", tags = {"产品汇总表" } ,notes = "获取产品Bug类型统计")
-    @RequestMapping(method= RequestMethod.GET , value="/productsums/fetchproductsumbugtype")
-	public ResponseEntity<List<ProductSumDTO>> fetchProductSumBugType(ProductSumSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productsums/fetchproductsumbugtype")
+	public ResponseEntity<List<ProductSumDTO>> fetchProductSumBugType(@RequestBody ProductSumSearchContext context) {
         productsumRuntime.addAuthorityConditions(context,"READ");
         Page<ProductSum> domains = productsumService.searchProductSumBugType(context) ;
         List<ProductSumDTO> list = productsumMapping.toDto(domains.getContent());

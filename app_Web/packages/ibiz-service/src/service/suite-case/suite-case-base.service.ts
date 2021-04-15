@@ -152,6 +152,6 @@ export class SuiteCaseBaseService extends EntityBaseService<ISuiteCase> {
      * @memberof SuiteCaseService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/suitecases/fetchdefault`, _data);
+        return this.http.post(`/suitecases/fetchdefault`, _data);
     }
 }

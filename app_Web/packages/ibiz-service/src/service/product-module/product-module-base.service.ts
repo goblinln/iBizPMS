@@ -323,9 +323,9 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
      */
     async FetchByPath(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/productmodules/fetchbypath`, _data);
+            return this.http.post(`/products/${_context.product}/productmodules/fetchbypath`, _data);
         }
-        return this.http.get(`/productmodules/fetchbypath`, _data);
+        return this.http.post(`/productmodules/fetchbypath`, _data);
     }
     /**
      * FetchDefault
@@ -337,9 +337,9 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/productmodules/fetchdefault`, _data);
+            return this.http.post(`/products/${_context.product}/productmodules/fetchdefault`, _data);
         }
-        return this.http.get(`/productmodules/fetchdefault`, _data);
+        return this.http.post(`/productmodules/fetchdefault`, _data);
     }
     /**
      * FetchParentModule
@@ -351,9 +351,9 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
      */
     async FetchParentModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/productmodules/fetchparentmodule`, _data);
+            return this.http.post(`/products/${_context.product}/productmodules/fetchparentmodule`, _data);
         }
-        return this.http.get(`/productmodules/fetchparentmodule`, _data);
+        return this.http.post(`/productmodules/fetchparentmodule`, _data);
     }
     /**
      * FetchRoot
@@ -365,9 +365,9 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
      */
     async FetchRoot(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/productmodules/fetchroot`, _data);
+            return this.http.post(`/products/${_context.product}/productmodules/fetchroot`, _data);
         }
-        return this.http.get(`/productmodules/fetchroot`, _data);
+        return this.http.post(`/productmodules/fetchroot`, _data);
     }
     /**
      * FetchRoot_NoBranch
@@ -379,9 +379,9 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
      */
     async FetchRoot_NoBranch(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/productmodules/fetchroot_nobranch`, _data);
+            return this.http.post(`/products/${_context.product}/productmodules/fetchroot_nobranch`, _data);
         }
-        return this.http.get(`/productmodules/fetchroot_nobranch`, _data);
+        return this.http.post(`/productmodules/fetchroot_nobranch`, _data);
     }
     /**
      * FetchStoryModule
@@ -393,8 +393,8 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
      */
     async FetchStoryModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/productmodules/fetchstorymodule`, _data);
+            return this.http.post(`/products/${_context.product}/productmodules/fetchstorymodule`, _data);
         }
-        return this.http.get(`/productmodules/fetchstorymodule`, _data);
+        return this.http.post(`/productmodules/fetchstorymodule`, _data);
     }
 }

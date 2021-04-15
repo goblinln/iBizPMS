@@ -152,6 +152,6 @@ export class IbzAgentBaseService extends EntityBaseService<IIbzAgent> {
      * @memberof IbzAgentService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzagents/fetchdefault`, _data);
+        return this.http.post(`/ibzagents/fetchdefault`, _data);
     }
 }

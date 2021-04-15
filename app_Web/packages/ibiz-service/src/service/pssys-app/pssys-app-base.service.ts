@@ -152,7 +152,7 @@ export class PSSysAppBaseService extends EntityBaseService<IPSSysApp> {
      * @memberof PSSysAppService
      */
     async FetchBuild(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/pssysapps/fetchbuild`, _data);
+        return this.http.post(`/pssysapps/fetchbuild`, _data);
     }
     /**
      * FetchDefault
@@ -163,6 +163,6 @@ export class PSSysAppBaseService extends EntityBaseService<IPSSysApp> {
      * @memberof PSSysAppService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/pssysapps/fetchdefault`, _data);
+        return this.http.post(`/pssysapps/fetchdefault`, _data);
     }
 }

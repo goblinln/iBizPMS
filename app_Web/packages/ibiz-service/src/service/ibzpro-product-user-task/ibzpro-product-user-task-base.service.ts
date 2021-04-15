@@ -152,7 +152,7 @@ export class IbzproProductUserTaskBaseService extends EntityBaseService<IIbzproP
      * @memberof IbzproProductUserTaskService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzproproductusertasks/fetchdefault`, _data);
+        return this.http.post(`/ibzproproductusertasks/fetchdefault`, _data);
     }
     /**
      * FetchProductDailyUserTaskStats
@@ -163,7 +163,7 @@ export class IbzproProductUserTaskBaseService extends EntityBaseService<IIbzproP
      * @memberof IbzproProductUserTaskService
      */
     async FetchProductDailyUserTaskStats(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzproproductusertasks/fetchproductdailyusertaskstats`, _data);
+        return this.http.post(`/ibzproproductusertasks/fetchproductdailyusertaskstats`, _data);
     }
     /**
      * FetchProductMonthlyUserTaskStats
@@ -174,7 +174,7 @@ export class IbzproProductUserTaskBaseService extends EntityBaseService<IIbzproP
      * @memberof IbzproProductUserTaskService
      */
     async FetchProductMonthlyUserTaskStats(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzproproductusertasks/fetchproductmonthlyusertaskstats`, _data);
+        return this.http.post(`/ibzproproductusertasks/fetchproductmonthlyusertaskstats`, _data);
     }
     /**
      * FetchProductWeeklyUserTaskStats
@@ -185,6 +185,6 @@ export class IbzproProductUserTaskBaseService extends EntityBaseService<IIbzproP
      * @memberof IbzproProductUserTaskService
      */
     async FetchProductWeeklyUserTaskStats(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzproproductusertasks/fetchproductweeklyusertaskstats`, _data);
+        return this.http.post(`/ibzproproductusertasks/fetchproductweeklyusertaskstats`, _data);
     }
 }

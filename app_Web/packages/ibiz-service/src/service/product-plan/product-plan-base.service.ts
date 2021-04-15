@@ -531,9 +531,9 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      */
     async FetchChildPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/productplans/fetchchildplan`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/fetchchildplan`, _data);
         }
-        return this.http.get(`/productplans/fetchchildplan`, _data);
+        return this.http.post(`/productplans/fetchchildplan`, _data);
     }
     /**
      * FetchCurProductPlan
@@ -545,9 +545,9 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      */
     async FetchCurProductPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/productplans/fetchcurproductplan`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/fetchcurproductplan`, _data);
         }
-        return this.http.get(`/productplans/fetchcurproductplan`, _data);
+        return this.http.post(`/productplans/fetchcurproductplan`, _data);
     }
     /**
      * FetchDefault
@@ -559,9 +559,9 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/productplans/fetchdefault`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/fetchdefault`, _data);
         }
-        return this.http.get(`/productplans/fetchdefault`, _data);
+        return this.http.post(`/productplans/fetchdefault`, _data);
     }
     /**
      * FetchDefaultParent
@@ -587,9 +587,9 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      */
     async FetchPlanCodeList(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/productplans/fetchplancodelist`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/fetchplancodelist`, _data);
         }
-        return this.http.get(`/productplans/fetchplancodelist`, _data);
+        return this.http.post(`/productplans/fetchplancodelist`, _data);
     }
     /**
      * FetchPlanTasks
@@ -601,9 +601,9 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      */
     async FetchPlanTasks(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/productplans/fetchplantasks`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/fetchplantasks`, _data);
         }
-        return this.http.get(`/productplans/fetchplantasks`, _data);
+        return this.http.post(`/productplans/fetchplantasks`, _data);
     }
     /**
      * FetchProjectApp
@@ -615,9 +615,9 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      */
     async FetchProjectApp(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/productplans/fetchprojectapp`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/fetchprojectapp`, _data);
         }
-        return this.http.get(`/productplans/fetchprojectapp`, _data);
+        return this.http.post(`/productplans/fetchprojectapp`, _data);
     }
     /**
      * FetchProjectPlan
@@ -629,9 +629,9 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      */
     async FetchProjectPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/productplans/fetchprojectplan`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/fetchprojectplan`, _data);
         }
-        return this.http.get(`/productplans/fetchprojectplan`, _data);
+        return this.http.post(`/productplans/fetchprojectplan`, _data);
     }
     /**
      * FetchRootPlan
@@ -643,9 +643,9 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      */
     async FetchRootPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/productplans/fetchrootplan`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/fetchrootplan`, _data);
         }
-        return this.http.get(`/productplans/fetchrootplan`, _data);
+        return this.http.post(`/productplans/fetchrootplan`, _data);
     }
     /**
      * FetchTaskPlan
@@ -657,8 +657,8 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      */
     async FetchTaskPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/productplans/fetchtaskplan`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/fetchtaskplan`, _data);
         }
-        return this.http.get(`/productplans/fetchtaskplan`, _data);
+        return this.http.post(`/productplans/fetchtaskplan`, _data);
     }
 }

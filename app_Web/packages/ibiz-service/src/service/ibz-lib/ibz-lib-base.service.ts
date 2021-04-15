@@ -170,6 +170,6 @@ export class IbzLibBaseService extends EntityBaseService<IIbzLib> {
      * @memberof IbzLibService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzlibs/fetchdefault`, _data);
+        return this.http.post(`/ibzlibs/fetchdefault`, _data);
     }
 }

@@ -149,8 +149,8 @@ public class GroupResource {
 
     @PreAuthorize("@GroupRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"群组" } ,notes = "获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/groups/fetchdefault")
-	public ResponseEntity<List<GroupDTO>> fetchDefault(GroupSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/groups/fetchdefault")
+	public ResponseEntity<List<GroupDTO>> fetchDefault(@RequestBody GroupSearchContext context) {
         groupRuntime.addAuthorityConditions(context,"READ");
         Page<Group> domains = groupService.searchDefault(context) ;
         List<GroupDTO> list = groupMapping.toDto(domains.getContent());

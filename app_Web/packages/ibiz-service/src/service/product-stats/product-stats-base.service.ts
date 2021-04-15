@@ -198,7 +198,7 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      * @memberof ProductStatsService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/productstats/fetchdefault`, _data);
+        return this.http.post(`/productstats/fetchdefault`, _data);
     }
     /**
      * FetchNoOpenProduct
@@ -209,7 +209,7 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      * @memberof ProductStatsService
      */
     async FetchNoOpenProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/productstats/fetchnoopenproduct`, _data);
+        return this.http.post(`/productstats/fetchnoopenproduct`, _data);
     }
     /**
      * FetchProdctQuantiGird
@@ -220,7 +220,7 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      * @memberof ProductStatsService
      */
     async FetchProdctQuantiGird(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/productstats/fetchprodctquantigird`, _data);
+        return this.http.post(`/productstats/fetchprodctquantigird`, _data);
     }
     /**
      * FetchProductInputTable
@@ -231,7 +231,7 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      * @memberof ProductStatsService
      */
     async FetchProductInputTable(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/productstats/fetchproductinputtable`, _data);
+        return this.http.post(`/productstats/fetchproductinputtable`, _data);
     }
     /**
      * FetchProductcompletionstatistics
@@ -242,6 +242,6 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      * @memberof ProductStatsService
      */
     async FetchProductcompletionstatistics(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/productstats/fetchproductcompletionstatistics`, _data);
+        return this.http.post(`/productstats/fetchproductcompletionstatistics`, _data);
     }
 }

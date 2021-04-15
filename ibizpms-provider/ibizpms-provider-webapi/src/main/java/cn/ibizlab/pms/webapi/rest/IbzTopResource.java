@@ -150,8 +150,8 @@ public class IbzTopResource {
 
     @PreAuthorize("@IbzTopRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"置顶" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/ibztops/fetchdefault")
-	public ResponseEntity<List<IbzTopDTO>> fetchDefault(IbzTopSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibztops/fetchdefault")
+	public ResponseEntity<List<IbzTopDTO>> fetchDefault(@RequestBody IbzTopSearchContext context) {
         ibztopRuntime.addAuthorityConditions(context,"READ");
         Page<IbzTop> domains = ibztopService.searchDefault(context) ;
         List<IbzTopDTO> list = ibztopMapping.toDto(domains.getContent());

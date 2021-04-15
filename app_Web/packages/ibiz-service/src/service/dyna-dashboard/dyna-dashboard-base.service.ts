@@ -152,6 +152,6 @@ export class DynaDashboardBaseService extends EntityBaseService<IDynaDashboard> 
      * @memberof DynaDashboardService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/dynadashboards/fetchdefault`, _data);
+        return this.http.post(`/dynadashboards/fetchdefault`, _data);
     }
 }

@@ -134,8 +134,8 @@ public class SysPostResource {
     }
 
 	@ApiOperation(value = "获取数据集", tags = {"岗位" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/sysposts/fetchdefault")
-	public ResponseEntity<List<SysPostDTO>> fetchDefault(SysPostSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/sysposts/fetchdefault")
+	public ResponseEntity<List<SysPostDTO>> fetchDefault(@RequestBody SysPostSearchContext context) {
         Page<SysPost> domains = syspostService.searchDefault(context) ;
         List<SysPostDTO> list = syspostMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

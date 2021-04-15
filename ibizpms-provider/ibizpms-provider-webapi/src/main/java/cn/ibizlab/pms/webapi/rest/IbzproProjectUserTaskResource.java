@@ -149,8 +149,8 @@ public class IbzproProjectUserTaskResource {
 
     @PreAuthorize("@IbzproProjectUserTaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"项目汇报用户任务" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzproprojectusertasks/fetchdefault")
-	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchDefault(IbzproProjectUserTaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/fetchdefault")
+	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchDefault(@RequestBody IbzproProjectUserTaskSearchContext context) {
         ibzproprojectusertaskRuntime.addAuthorityConditions(context,"READ");
         Page<IbzproProjectUserTask> domains = ibzproprojectusertaskService.searchDefault(context) ;
         List<IbzproProjectUserTaskDTO> list = ibzproprojectusertaskMapping.toDto(domains.getContent());
@@ -173,8 +173,8 @@ public class IbzproProjectUserTaskResource {
 
     @PreAuthorize("@IbzproProjectUserTaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目日报任务", tags = {"项目汇报用户任务" } ,notes = "获取项目日报任务")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzproprojectusertasks/fetchprojectdailytask")
-	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchProjectDailyTask(IbzproProjectUserTaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/fetchprojectdailytask")
+	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchProjectDailyTask(@RequestBody IbzproProjectUserTaskSearchContext context) {
         ibzproprojectusertaskRuntime.addAuthorityConditions(context,"READ");
         Page<IbzproProjectUserTask> domains = ibzproprojectusertaskService.searchProjectDailyTask(context) ;
         List<IbzproProjectUserTaskDTO> list = ibzproprojectusertaskMapping.toDto(domains.getContent());
@@ -197,8 +197,8 @@ public class IbzproProjectUserTaskResource {
 
     @PreAuthorize("@IbzproProjectUserTaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目日报任务", tags = {"项目汇报用户任务" } ,notes = "获取项目日报任务")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzproprojectusertasks/fetchprojectmonthlytask")
-	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchProjectMonthlyTask(IbzproProjectUserTaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/fetchprojectmonthlytask")
+	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchProjectMonthlyTask(@RequestBody IbzproProjectUserTaskSearchContext context) {
         ibzproprojectusertaskRuntime.addAuthorityConditions(context,"READ");
         Page<IbzproProjectUserTask> domains = ibzproprojectusertaskService.searchProjectMonthlyTask(context) ;
         List<IbzproProjectUserTaskDTO> list = ibzproprojectusertaskMapping.toDto(domains.getContent());
@@ -221,8 +221,8 @@ public class IbzproProjectUserTaskResource {
 
     @PreAuthorize("@IbzproProjectUserTaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目周报任务", tags = {"项目汇报用户任务" } ,notes = "获取项目周报任务")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzproprojectusertasks/fetchprojectweeklytask")
-	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchProjectWeeklyTask(IbzproProjectUserTaskSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/fetchprojectweeklytask")
+	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchProjectWeeklyTask(@RequestBody IbzproProjectUserTaskSearchContext context) {
         ibzproprojectusertaskRuntime.addAuthorityConditions(context,"READ");
         Page<IbzproProjectUserTask> domains = ibzproprojectusertaskService.searchProjectWeeklyTask(context) ;
         List<IbzproProjectUserTaskDTO> list = ibzproprojectusertaskMapping.toDto(domains.getContent());

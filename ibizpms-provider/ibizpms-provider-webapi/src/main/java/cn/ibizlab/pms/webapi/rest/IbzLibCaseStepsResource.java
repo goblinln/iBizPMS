@@ -151,8 +151,8 @@ public class IbzLibCaseStepsResource {
     }
 
 	@ApiOperation(value = "根据测试用例获取DEFAULT", tags = {"用例库用例步骤" } ,notes = "根据测试用例获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzcases/{ibzcase_id}/ibzlibcasesteps/fetchdefault")
-	public ResponseEntity<List<IbzLibCaseStepsDTO>> fetchIbzLibCaseStepsDefaultByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id,IbzLibCaseStepsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzcases/{ibzcase_id}/ibzlibcasesteps/fetchdefault")
+	public ResponseEntity<List<IbzLibCaseStepsDTO>> fetchIbzLibCaseStepsDefaultByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id,@RequestBody IbzLibCaseStepsSearchContext context) {
         context.setN_case_eq(ibzcase_id);
         Page<IbzLibCaseSteps> domains = ibzlibcasestepsService.searchDefault(context) ;
         List<IbzLibCaseStepsDTO> list = ibzlibcasestepsMapping.toDto(domains.getContent());
@@ -270,8 +270,8 @@ public class IbzLibCaseStepsResource {
     }
 
 	@ApiOperation(value = "根据用例库测试用例获取DEFAULT", tags = {"用例库用例步骤" } ,notes = "根据用例库测试用例获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/fetchdefault")
-	public ResponseEntity<List<IbzLibCaseStepsDTO>> fetchIbzLibCaseStepsDefaultByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id,IbzLibCaseStepsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/fetchdefault")
+	public ResponseEntity<List<IbzLibCaseStepsDTO>> fetchIbzLibCaseStepsDefaultByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id,@RequestBody IbzLibCaseStepsSearchContext context) {
         context.setN_case_eq(ibzcase_id);
         Page<IbzLibCaseSteps> domains = ibzlibcasestepsService.searchDefault(context) ;
         List<IbzLibCaseStepsDTO> list = ibzlibcasestepsMapping.toDto(domains.getContent());

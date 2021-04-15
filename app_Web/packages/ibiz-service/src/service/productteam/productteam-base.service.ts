@@ -251,9 +251,9 @@ export class PRODUCTTEAMBaseService extends EntityBaseService<IPRODUCTTEAM> {
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/productteams/fetchdefault`, _data);
+            return this.http.post(`/products/${_context.product}/productteams/fetchdefault`, _data);
         }
-        return this.http.get(`/productteams/fetchdefault`, _data);
+        return this.http.post(`/productteams/fetchdefault`, _data);
     }
     /**
      * FetchProductTeamInfo
@@ -265,9 +265,9 @@ export class PRODUCTTEAMBaseService extends EntityBaseService<IPRODUCTTEAM> {
      */
     async FetchProductTeamInfo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/productteams/fetchproductteaminfo`, _data);
+            return this.http.post(`/products/${_context.product}/productteams/fetchproductteaminfo`, _data);
         }
-        return this.http.get(`/productteams/fetchproductteaminfo`, _data);
+        return this.http.post(`/productteams/fetchproductteaminfo`, _data);
     }
     /**
      * FetchProjectApp
@@ -279,9 +279,9 @@ export class PRODUCTTEAMBaseService extends EntityBaseService<IPRODUCTTEAM> {
      */
     async FetchProjectApp(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/productteams/fetchprojectapp`, _data);
+            return this.http.post(`/products/${_context.product}/productteams/fetchprojectapp`, _data);
         }
-        return this.http.get(`/productteams/fetchprojectapp`, _data);
+        return this.http.post(`/productteams/fetchprojectapp`, _data);
     }
     /**
      * FetchRowEditDefaultProductTeam
@@ -293,8 +293,8 @@ export class PRODUCTTEAMBaseService extends EntityBaseService<IPRODUCTTEAM> {
      */
     async FetchRowEditDefaultProductTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/productteams/fetchroweditdefaultproductteam`, _data);
+            return this.http.post(`/products/${_context.product}/productteams/fetchroweditdefaultproductteam`, _data);
         }
-        return this.http.get(`/productteams/fetchroweditdefaultproductteam`, _data);
+        return this.http.post(`/productteams/fetchroweditdefaultproductteam`, _data);
     }
 }

@@ -149,8 +149,8 @@ public class TestRunResource {
 
     @PreAuthorize("@TestRunRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试运行" } ,notes = "获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/testruns/fetchdefault")
-	public ResponseEntity<List<TestRunDTO>> fetchDefault(TestRunSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/testruns/fetchdefault")
+	public ResponseEntity<List<TestRunDTO>> fetchDefault(@RequestBody TestRunSearchContext context) {
         testrunRuntime.addAuthorityConditions(context,"READ");
         Page<TestRun> domains = testrunService.searchDefault(context) ;
         List<TestRunDTO> list = testrunMapping.toDto(domains.getContent());
@@ -278,8 +278,8 @@ public class TestRunResource {
     }
 
 	@ApiOperation(value = "根据测试版本获取DEFAULT", tags = {"测试运行" } ,notes = "根据测试版本获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/testtasks/{testtask_id}/testruns/fetchdefault")
-	public ResponseEntity<List<TestRunDTO>> fetchTestRunDefaultByTestTask(@PathVariable("testtask_id") Long testtask_id,TestRunSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/testtasks/{testtask_id}/testruns/fetchdefault")
+	public ResponseEntity<List<TestRunDTO>> fetchTestRunDefaultByTestTask(@PathVariable("testtask_id") Long testtask_id,@RequestBody TestRunSearchContext context) {
         context.setN_task_eq(testtask_id);
         Page<TestRun> domains = testrunService.searchDefault(context) ;
         List<TestRunDTO> list = testrunMapping.toDto(domains.getContent());
@@ -397,8 +397,8 @@ public class TestRunResource {
     }
 
 	@ApiOperation(value = "根据产品测试版本获取DEFAULT", tags = {"测试运行" } ,notes = "根据产品测试版本获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/testtasks/{testtask_id}/testruns/fetchdefault")
-	public ResponseEntity<List<TestRunDTO>> fetchTestRunDefaultByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id,TestRunSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/{testtask_id}/testruns/fetchdefault")
+	public ResponseEntity<List<TestRunDTO>> fetchTestRunDefaultByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id,@RequestBody TestRunSearchContext context) {
         context.setN_task_eq(testtask_id);
         Page<TestRun> domains = testrunService.searchDefault(context) ;
         List<TestRunDTO> list = testrunMapping.toDto(domains.getContent());
@@ -516,8 +516,8 @@ public class TestRunResource {
     }
 
 	@ApiOperation(value = "根据项目测试版本获取DEFAULT", tags = {"测试运行" } ,notes = "根据项目测试版本获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/testtasks/{testtask_id}/testruns/fetchdefault")
-	public ResponseEntity<List<TestRunDTO>> fetchTestRunDefaultByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id,TestRunSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/testruns/fetchdefault")
+	public ResponseEntity<List<TestRunDTO>> fetchTestRunDefaultByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id,@RequestBody TestRunSearchContext context) {
         context.setN_task_eq(testtask_id);
         Page<TestRun> domains = testrunService.searchDefault(context) ;
         List<TestRunDTO> list = testrunMapping.toDto(domains.getContent());

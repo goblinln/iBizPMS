@@ -185,8 +185,8 @@ public class IBIZProMessageResource {
     }
 
 	@ApiOperation(value = "获取数据集", tags = {"消息" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/ibizpromessages/fetchdefault")
-	public ResponseEntity<List<IBIZProMessageDTO>> fetchDefault(IBIZProMessageSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibizpromessages/fetchdefault")
+	public ResponseEntity<List<IBIZProMessageDTO>> fetchDefault(@RequestBody IBIZProMessageSearchContext context) {
         Page<IBIZProMessage> domains = ibizpromessageService.searchDefault(context) ;
         List<IBIZProMessageDTO> list = ibizpromessageMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -205,8 +205,8 @@ public class IBIZProMessageResource {
 	}
 
 	@ApiOperation(value = "获取用户全部消息", tags = {"消息" } ,notes = "获取用户全部消息")
-    @RequestMapping(method= RequestMethod.GET , value="/ibizpromessages/fetchuserallmessages")
-	public ResponseEntity<List<IBIZProMessageDTO>> fetchUserAllMessages(IBIZProMessageSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibizpromessages/fetchuserallmessages")
+	public ResponseEntity<List<IBIZProMessageDTO>> fetchUserAllMessages(@RequestBody IBIZProMessageSearchContext context) {
         Page<IBIZProMessage> domains = ibizpromessageService.searchUserAllMessages(context) ;
         List<IBIZProMessageDTO> list = ibizpromessageMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -225,8 +225,8 @@ public class IBIZProMessageResource {
 	}
 
 	@ApiOperation(value = "获取用户未读信息", tags = {"消息" } ,notes = "获取用户未读信息")
-    @RequestMapping(method= RequestMethod.GET , value="/ibizpromessages/fetchuserunreadmessages")
-	public ResponseEntity<List<IBIZProMessageDTO>> fetchUserUnreadMessages(IBIZProMessageSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibizpromessages/fetchuserunreadmessages")
+	public ResponseEntity<List<IBIZProMessageDTO>> fetchUserUnreadMessages(@RequestBody IBIZProMessageSearchContext context) {
         Page<IBIZProMessage> domains = ibizpromessageService.searchUserUnreadMessages(context) ;
         List<IBIZProMessageDTO> list = ibizpromessageMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

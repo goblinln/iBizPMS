@@ -167,8 +167,8 @@ public class IbizproProjectDailyResource {
 
     @PreAuthorize("@IbizproProjectDailyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"项目日报" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/ibizproprojectdailies/fetchdefault")
-	public ResponseEntity<List<IbizproProjectDailyDTO>> fetchDefault(IbizproProjectDailySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibizproprojectdailies/fetchdefault")
+	public ResponseEntity<List<IbizproProjectDailyDTO>> fetchDefault(@RequestBody IbizproProjectDailySearchContext context) {
         ibizproprojectdailyRuntime.addAuthorityConditions(context,"READ");
         Page<IbizproProjectDaily> domains = ibizproprojectdailyService.searchDefault(context) ;
         List<IbizproProjectDailyDTO> list = ibizproprojectdailyMapping.toDto(domains.getContent());

@@ -152,6 +152,6 @@ export class SysUserRoleBaseService extends EntityBaseService<ISysUserRole> {
      * @memberof SysUserRoleService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysuserroles/fetchdefault`, _data);
+        return this.http.post(`/sysuserroles/fetchdefault`, _data);
     }
 }

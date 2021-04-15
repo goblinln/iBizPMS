@@ -166,8 +166,8 @@ public class TaskEstimateResource {
 
     @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取日志月", tags = {"任务预计" } ,notes = "获取日志月")
-    @RequestMapping(method= RequestMethod.GET , value="/taskestimates/fetchactionmonth")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchActionMonth(TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/taskestimates/fetchactionmonth")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchActionMonth(@RequestBody TaskEstimateSearchContext context) {
         taskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchActionMonth(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -190,8 +190,8 @@ public class TaskEstimateResource {
 
     @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取日志年", tags = {"任务预计" } ,notes = "获取日志年")
-    @RequestMapping(method= RequestMethod.GET , value="/taskestimates/fetchactionyear")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchActionYear(TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/taskestimates/fetchactionyear")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchActionYear(@RequestBody TaskEstimateSearchContext context) {
         taskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchActionYear(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -214,8 +214,8 @@ public class TaskEstimateResource {
 
     @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"任务预计" } ,notes = "获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/taskestimates/fetchdefault")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchDefault(TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/taskestimates/fetchdefault")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchDefault(@RequestBody TaskEstimateSearchContext context) {
         taskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchDefault(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -238,8 +238,8 @@ public class TaskEstimateResource {
 
     @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT1", tags = {"任务预计" } ,notes = "获取DEFAULT1")
-    @RequestMapping(method= RequestMethod.GET , value="/taskestimates/fetchdefaults")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchDefaults(TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/taskestimates/fetchdefaults")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchDefaults(@RequestBody TaskEstimateSearchContext context) {
         taskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchDefaults(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -262,8 +262,8 @@ public class TaskEstimateResource {
 
     @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取日志月（项目）", tags = {"任务预计" } ,notes = "获取日志月（项目）")
-    @RequestMapping(method= RequestMethod.GET , value="/taskestimates/fetchprojectactionmonth")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchProjectActionMonth(TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/taskestimates/fetchprojectactionmonth")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchProjectActionMonth(@RequestBody TaskEstimateSearchContext context) {
         taskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionMonth(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -286,8 +286,8 @@ public class TaskEstimateResource {
 
     @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取日志年（项目）", tags = {"任务预计" } ,notes = "获取日志年（项目）")
-    @RequestMapping(method= RequestMethod.GET , value="/taskestimates/fetchprojectactionyear")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchProjectActionYear(TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/taskestimates/fetchprojectactionyear")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchProjectActionYear(@RequestBody TaskEstimateSearchContext context) {
         taskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionYear(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -310,8 +310,8 @@ public class TaskEstimateResource {
 
     @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目日志", tags = {"任务预计" } ,notes = "获取项目日志")
-    @RequestMapping(method= RequestMethod.GET , value="/taskestimates/fetchprojecttaskestimate")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchProjectTaskEstimate(TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/taskestimates/fetchprojecttaskestimate")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchProjectTaskEstimate(@RequestBody TaskEstimateSearchContext context) {
         taskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimate> domains = taskestimateService.searchProjectTaskEstimate(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -455,8 +455,8 @@ public class TaskEstimateResource {
     }
 
 	@ApiOperation(value = "根据任务获取日志月", tags = {"任务预计" } ,notes = "根据任务获取日志月")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/taskestimates/fetchactionmonth")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionMonthByTask(@PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/taskestimates/fetchactionmonth")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionMonthByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchActionMonth(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -476,8 +476,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取日志年", tags = {"任务预计" } ,notes = "根据任务获取日志年")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/taskestimates/fetchactionyear")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionYearByTask(@PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/taskestimates/fetchactionyear")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionYearByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchActionYear(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -497,8 +497,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取DEFAULT", tags = {"任务预计" } ,notes = "根据任务获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/taskestimates/fetchdefault")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultByTask(@PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/taskestimates/fetchdefault")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchDefault(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -518,8 +518,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取DEFAULT1", tags = {"任务预计" } ,notes = "根据任务获取DEFAULT1")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/taskestimates/fetchdefaults")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultsByTask(@PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/taskestimates/fetchdefaults")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultsByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchDefaults(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -539,8 +539,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取日志月（项目）", tags = {"任务预计" } ,notes = "根据任务获取日志月（项目）")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/taskestimates/fetchprojectactionmonth")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionMonthByTask(@PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/taskestimates/fetchprojectactionmonth")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionMonthByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionMonth(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -560,8 +560,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取日志年（项目）", tags = {"任务预计" } ,notes = "根据任务获取日志年（项目）")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/taskestimates/fetchprojectactionyear")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionYearByTask(@PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/taskestimates/fetchprojectactionyear")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionYearByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionYear(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -581,8 +581,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务获取项目日志", tags = {"任务预计" } ,notes = "根据任务获取项目日志")
-    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/taskestimates/fetchprojecttaskestimate")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectTaskEstimateByTask(@PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/taskestimates/fetchprojecttaskestimate")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectTaskEstimateByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchProjectTaskEstimate(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -716,8 +716,8 @@ public class TaskEstimateResource {
     }
 
 	@ApiOperation(value = "根据任务模块任务获取日志月", tags = {"任务预计" } ,notes = "根据任务模块任务获取日志月")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchactionmonth")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionMonthByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchactionmonth")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionMonthByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchActionMonth(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -737,8 +737,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取日志年", tags = {"任务预计" } ,notes = "根据任务模块任务获取日志年")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchactionyear")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionYearByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchactionyear")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionYearByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchActionYear(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -758,8 +758,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取DEFAULT", tags = {"任务预计" } ,notes = "根据任务模块任务获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchdefault")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchdefault")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchDefault(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -779,8 +779,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取DEFAULT1", tags = {"任务预计" } ,notes = "根据任务模块任务获取DEFAULT1")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchdefaults")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultsByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchdefaults")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultsByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchDefaults(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -800,8 +800,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取日志月（项目）", tags = {"任务预计" } ,notes = "根据任务模块任务获取日志月（项目）")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchprojectactionmonth")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionMonthByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchprojectactionmonth")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionMonthByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionMonth(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -821,8 +821,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取日志年（项目）", tags = {"任务预计" } ,notes = "根据任务模块任务获取日志年（项目）")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchprojectactionyear")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionYearByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchprojectactionyear")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionYearByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionYear(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -842,8 +842,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据任务模块任务获取项目日志", tags = {"任务预计" } ,notes = "根据任务模块任务获取项目日志")
-    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchprojecttaskestimate")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectTaskEstimateByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchprojecttaskestimate")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectTaskEstimateByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchProjectTaskEstimate(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -977,8 +977,8 @@ public class TaskEstimateResource {
     }
 
 	@ApiOperation(value = "根据产品计划任务获取日志月", tags = {"任务预计" } ,notes = "根据产品计划任务获取日志月")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchactionmonth")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionMonthByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchactionmonth")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionMonthByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchActionMonth(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -998,8 +998,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取日志年", tags = {"任务预计" } ,notes = "根据产品计划任务获取日志年")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchactionyear")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionYearByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchactionyear")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionYearByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchActionYear(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -1019,8 +1019,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取DEFAULT", tags = {"任务预计" } ,notes = "根据产品计划任务获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchdefault")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchdefault")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchDefault(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -1040,8 +1040,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取DEFAULT1", tags = {"任务预计" } ,notes = "根据产品计划任务获取DEFAULT1")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchdefaults")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultsByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchdefaults")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultsByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchDefaults(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -1061,8 +1061,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取日志月（项目）", tags = {"任务预计" } ,notes = "根据产品计划任务获取日志月（项目）")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchprojectactionmonth")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionMonthByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchprojectactionmonth")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionMonthByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionMonth(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -1082,8 +1082,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取日志年（项目）", tags = {"任务预计" } ,notes = "根据产品计划任务获取日志年（项目）")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchprojectactionyear")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionYearByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchprojectactionyear")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionYearByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionYear(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -1103,8 +1103,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品计划任务获取项目日志", tags = {"任务预计" } ,notes = "根据产品计划任务获取项目日志")
-    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchprojecttaskestimate")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectTaskEstimateByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchprojecttaskestimate")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectTaskEstimateByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchProjectTaskEstimate(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -1238,8 +1238,8 @@ public class TaskEstimateResource {
     }
 
 	@ApiOperation(value = "根据需求任务获取日志月", tags = {"任务预计" } ,notes = "根据需求任务获取日志月")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/taskestimates/fetchactionmonth")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionMonthByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/taskestimates/fetchactionmonth")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionMonthByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchActionMonth(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -1259,8 +1259,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取日志年", tags = {"任务预计" } ,notes = "根据需求任务获取日志年")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/taskestimates/fetchactionyear")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionYearByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/taskestimates/fetchactionyear")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionYearByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchActionYear(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -1280,8 +1280,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取DEFAULT", tags = {"任务预计" } ,notes = "根据需求任务获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/taskestimates/fetchdefault")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/taskestimates/fetchdefault")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchDefault(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -1301,8 +1301,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取DEFAULT1", tags = {"任务预计" } ,notes = "根据需求任务获取DEFAULT1")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/taskestimates/fetchdefaults")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultsByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/taskestimates/fetchdefaults")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultsByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchDefaults(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -1322,8 +1322,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取日志月（项目）", tags = {"任务预计" } ,notes = "根据需求任务获取日志月（项目）")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/taskestimates/fetchprojectactionmonth")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionMonthByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/taskestimates/fetchprojectactionmonth")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionMonthByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionMonth(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -1343,8 +1343,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取日志年（项目）", tags = {"任务预计" } ,notes = "根据需求任务获取日志年（项目）")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/taskestimates/fetchprojectactionyear")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionYearByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/taskestimates/fetchprojectactionyear")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionYearByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionYear(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -1364,8 +1364,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求任务获取项目日志", tags = {"任务预计" } ,notes = "根据需求任务获取项目日志")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/taskestimates/fetchprojecttaskestimate")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectTaskEstimateByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/taskestimates/fetchprojecttaskestimate")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectTaskEstimateByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchProjectTaskEstimate(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -1499,8 +1499,8 @@ public class TaskEstimateResource {
     }
 
 	@ApiOperation(value = "根据项目任务获取日志月", tags = {"任务预计" } ,notes = "根据项目任务获取日志月")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/taskestimates/fetchactionmonth")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionMonthByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/taskestimates/fetchactionmonth")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionMonthByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchActionMonth(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -1520,8 +1520,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取日志年", tags = {"任务预计" } ,notes = "根据项目任务获取日志年")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/taskestimates/fetchactionyear")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionYearByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/taskestimates/fetchactionyear")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionYearByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchActionYear(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -1541,8 +1541,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取DEFAULT", tags = {"任务预计" } ,notes = "根据项目任务获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/taskestimates/fetchdefault")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/taskestimates/fetchdefault")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchDefault(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -1562,8 +1562,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取DEFAULT1", tags = {"任务预计" } ,notes = "根据项目任务获取DEFAULT1")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/taskestimates/fetchdefaults")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultsByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/taskestimates/fetchdefaults")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultsByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchDefaults(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -1583,8 +1583,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取日志月（项目）", tags = {"任务预计" } ,notes = "根据项目任务获取日志月（项目）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/taskestimates/fetchprojectactionmonth")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionMonthByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/taskestimates/fetchprojectactionmonth")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionMonthByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionMonth(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -1604,8 +1604,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取日志年（项目）", tags = {"任务预计" } ,notes = "根据项目任务获取日志年（项目）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/taskestimates/fetchprojectactionyear")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionYearByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/taskestimates/fetchprojectactionyear")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionYearByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionYear(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -1625,8 +1625,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务获取项目日志", tags = {"任务预计" } ,notes = "根据项目任务获取项目日志")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/taskestimates/fetchprojecttaskestimate")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectTaskEstimateByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/taskestimates/fetchprojecttaskestimate")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectTaskEstimateByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchProjectTaskEstimate(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -1760,8 +1760,8 @@ public class TaskEstimateResource {
     }
 
 	@ApiOperation(value = "根据产品产品计划任务获取日志月", tags = {"任务预计" } ,notes = "根据产品产品计划任务获取日志月")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchactionmonth")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionMonthByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchactionmonth")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionMonthByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchActionMonth(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -1781,8 +1781,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取日志年", tags = {"任务预计" } ,notes = "根据产品产品计划任务获取日志年")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchactionyear")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionYearByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchactionyear")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionYearByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchActionYear(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -1802,8 +1802,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取DEFAULT", tags = {"任务预计" } ,notes = "根据产品产品计划任务获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchdefault")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchdefault")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchDefault(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -1823,8 +1823,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取DEFAULT1", tags = {"任务预计" } ,notes = "根据产品产品计划任务获取DEFAULT1")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchdefaults")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultsByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchdefaults")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultsByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchDefaults(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -1844,8 +1844,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取日志月（项目）", tags = {"任务预计" } ,notes = "根据产品产品计划任务获取日志月（项目）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchprojectactionmonth")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionMonthByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchprojectactionmonth")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionMonthByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionMonth(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -1865,8 +1865,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取日志年（项目）", tags = {"任务预计" } ,notes = "根据产品产品计划任务获取日志年（项目）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchprojectactionyear")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionYearByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchprojectactionyear")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionYearByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionYear(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -1886,8 +1886,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品产品计划任务获取项目日志", tags = {"任务预计" } ,notes = "根据产品产品计划任务获取项目日志")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchprojecttaskestimate")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectTaskEstimateByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchprojecttaskestimate")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectTaskEstimateByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchProjectTaskEstimate(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -2021,8 +2021,8 @@ public class TaskEstimateResource {
     }
 
 	@ApiOperation(value = "根据产品需求任务获取日志月", tags = {"任务预计" } ,notes = "根据产品需求任务获取日志月")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/fetchactionmonth")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionMonthByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/fetchactionmonth")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionMonthByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchActionMonth(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -2042,8 +2042,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取日志年", tags = {"任务预计" } ,notes = "根据产品需求任务获取日志年")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/fetchactionyear")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionYearByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/fetchactionyear")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionYearByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchActionYear(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -2063,8 +2063,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取DEFAULT", tags = {"任务预计" } ,notes = "根据产品需求任务获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/fetchdefault")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/fetchdefault")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchDefault(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -2084,8 +2084,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取DEFAULT1", tags = {"任务预计" } ,notes = "根据产品需求任务获取DEFAULT1")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/fetchdefaults")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultsByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/fetchdefaults")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultsByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchDefaults(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -2105,8 +2105,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取日志月（项目）", tags = {"任务预计" } ,notes = "根据产品需求任务获取日志月（项目）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/fetchprojectactionmonth")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionMonthByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/fetchprojectactionmonth")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionMonthByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionMonth(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -2126,8 +2126,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取日志年（项目）", tags = {"任务预计" } ,notes = "根据产品需求任务获取日志年（项目）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/fetchprojectactionyear")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionYearByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/fetchprojectactionyear")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionYearByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionYear(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -2147,8 +2147,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求任务获取项目日志", tags = {"任务预计" } ,notes = "根据产品需求任务获取项目日志")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/fetchprojecttaskestimate")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectTaskEstimateByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/fetchprojecttaskestimate")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectTaskEstimateByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchProjectTaskEstimate(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -2282,8 +2282,8 @@ public class TaskEstimateResource {
     }
 
 	@ApiOperation(value = "根据项目任务模块任务获取日志月", tags = {"任务预计" } ,notes = "根据项目任务模块任务获取日志月")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchactionmonth")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionMonthByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchactionmonth")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionMonthByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchActionMonth(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -2303,8 +2303,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取日志年", tags = {"任务预计" } ,notes = "根据项目任务模块任务获取日志年")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchactionyear")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionYearByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchactionyear")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateActionYearByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchActionYear(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -2324,8 +2324,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取DEFAULT", tags = {"任务预计" } ,notes = "根据项目任务模块任务获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchdefault")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchdefault")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchDefault(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -2345,8 +2345,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取DEFAULT1", tags = {"任务预计" } ,notes = "根据项目任务模块任务获取DEFAULT1")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchdefaults")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultsByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchdefaults")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateDefaultsByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchDefaults(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -2366,8 +2366,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取日志月（项目）", tags = {"任务预计" } ,notes = "根据项目任务模块任务获取日志月（项目）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchprojectactionmonth")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionMonthByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchprojectactionmonth")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionMonthByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionMonth(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -2387,8 +2387,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取日志年（项目）", tags = {"任务预计" } ,notes = "根据项目任务模块任务获取日志年（项目）")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchprojectactionyear")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionYearByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchprojectactionyear")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectActionYearByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionYear(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
@@ -2408,8 +2408,8 @@ public class TaskEstimateResource {
                 .body(new PageImpl(taskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据项目任务模块任务获取项目日志", tags = {"任务预计" } ,notes = "根据项目任务模块任务获取项目日志")
-    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchprojecttaskestimate")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectTaskEstimateByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskEstimateSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchprojecttaskestimate")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchTaskEstimateProjectTaskEstimateByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
         context.setN_task_eq(task_id);
         Page<TaskEstimate> domains = taskestimateService.searchProjectTaskEstimate(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());

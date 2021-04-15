@@ -269,12 +269,12 @@ export class ProjectProductBaseService extends EntityBaseService<IProjectProduct
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/projectproducts/fetchdefault`, _data);
+            return this.http.post(`/projects/${_context.project}/projectproducts/fetchdefault`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/projectproducts/fetchdefault`, _data);
+            return this.http.post(`/products/${_context.product}/projectproducts/fetchdefault`, _data);
         }
-        return this.http.get(`/projectproducts/fetchdefault`, _data);
+        return this.http.post(`/projectproducts/fetchdefault`, _data);
     }
     /**
      * FetchRelationPlan
@@ -286,11 +286,11 @@ export class ProjectProductBaseService extends EntityBaseService<IProjectProduct
      */
     async FetchRelationPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/projectproducts/fetchrelationplan`, _data);
+            return this.http.post(`/projects/${_context.project}/projectproducts/fetchrelationplan`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/projectproducts/fetchrelationplan`, _data);
+            return this.http.post(`/products/${_context.product}/projectproducts/fetchrelationplan`, _data);
         }
-        return this.http.get(`/projectproducts/fetchrelationplan`, _data);
+        return this.http.post(`/projectproducts/fetchrelationplan`, _data);
     }
 }

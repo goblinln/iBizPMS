@@ -135,8 +135,8 @@ public class PSSysSFPubResource {
     }
 
 	@ApiOperation(value = "获取版本", tags = {"后台服务架构" } ,notes = "获取版本")
-    @RequestMapping(method= RequestMethod.GET , value="/pssyssfpubs/fetchbuild")
-	public ResponseEntity<List<PSSysSFPubDTO>> fetchBuild(PSSysSFPubSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/pssyssfpubs/fetchbuild")
+	public ResponseEntity<List<PSSysSFPubDTO>> fetchBuild(@RequestBody PSSysSFPubSearchContext context) {
         Page<PSSysSFPub> domains = pssyssfpubService.searchBuild(context) ;
         List<PSSysSFPubDTO> list = pssyssfpubMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -155,8 +155,8 @@ public class PSSysSFPubResource {
 	}
 
 	@ApiOperation(value = "获取数据集", tags = {"后台服务架构" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/pssyssfpubs/fetchdefault")
-	public ResponseEntity<List<PSSysSFPubDTO>> fetchDefault(PSSysSFPubSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/pssyssfpubs/fetchdefault")
+	public ResponseEntity<List<PSSysSFPubDTO>> fetchDefault(@RequestBody PSSysSFPubSearchContext context) {
         Page<PSSysSFPub> domains = pssyssfpubService.searchDefault(context) ;
         List<PSSysSFPubDTO> list = pssyssfpubMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

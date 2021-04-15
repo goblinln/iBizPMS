@@ -160,8 +160,8 @@ public class ProductStatsResource {
 
     @PreAuthorize("@ProductStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"产品统计" } ,notes = "获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/productstats/fetchdefault")
-	public ResponseEntity<List<ProductStatsDTO>> fetchDefault(ProductStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productstats/fetchdefault")
+	public ResponseEntity<List<ProductStatsDTO>> fetchDefault(@RequestBody ProductStatsSearchContext context) {
         productstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProductStats> domains = productstatsService.searchDefault(context) ;
         List<ProductStatsDTO> list = productstatsMapping.toDto(domains.getContent());
@@ -184,8 +184,8 @@ public class ProductStatsResource {
 
     @PreAuthorize("@ProductStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取未关闭产品", tags = {"产品统计" } ,notes = "获取未关闭产品")
-    @RequestMapping(method= RequestMethod.GET , value="/productstats/fetchnoopenproduct")
-	public ResponseEntity<List<ProductStatsDTO>> fetchNoOpenProduct(ProductStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productstats/fetchnoopenproduct")
+	public ResponseEntity<List<ProductStatsDTO>> fetchNoOpenProduct(@RequestBody ProductStatsSearchContext context) {
         productstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProductStats> domains = productstatsService.searchNoOpenProduct(context) ;
         List<ProductStatsDTO> list = productstatsMapping.toDto(domains.getContent());
@@ -208,8 +208,8 @@ public class ProductStatsResource {
 
     @PreAuthorize("@ProductStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品质量表", tags = {"产品统计" } ,notes = "获取产品质量表")
-    @RequestMapping(method= RequestMethod.GET , value="/productstats/fetchprodctquantigird")
-	public ResponseEntity<List<ProductStatsDTO>> fetchProdctQuantiGird(ProductStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productstats/fetchprodctquantigird")
+	public ResponseEntity<List<ProductStatsDTO>> fetchProdctQuantiGird(@RequestBody ProductStatsSearchContext context) {
         productstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProductStats> domains = productstatsService.searchProdctQuantiGird(context) ;
         List<ProductStatsDTO> list = productstatsMapping.toDto(domains.getContent());
@@ -232,8 +232,8 @@ public class ProductStatsResource {
 
     @PreAuthorize("@ProductStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品投入表", tags = {"产品统计" } ,notes = "获取产品投入表")
-    @RequestMapping(method= RequestMethod.GET , value="/productstats/fetchproductinputtable")
-	public ResponseEntity<List<ProductStatsDTO>> fetchProductInputTable(ProductStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productstats/fetchproductinputtable")
+	public ResponseEntity<List<ProductStatsDTO>> fetchProductInputTable(@RequestBody ProductStatsSearchContext context) {
         productstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProductStats> domains = productstatsService.searchProductInputTable(context) ;
         List<ProductStatsDTO> list = productstatsMapping.toDto(domains.getContent());
@@ -256,8 +256,8 @@ public class ProductStatsResource {
 
     @PreAuthorize("@ProductStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品完成统计表", tags = {"产品统计" } ,notes = "获取产品完成统计表")
-    @RequestMapping(method= RequestMethod.GET , value="/productstats/fetchproductcompletionstatistics")
-	public ResponseEntity<List<ProductStatsDTO>> fetchProductcompletionstatistics(ProductStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/productstats/fetchproductcompletionstatistics")
+	public ResponseEntity<List<ProductStatsDTO>> fetchProductcompletionstatistics(@RequestBody ProductStatsSearchContext context) {
         productstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProductStats> domains = productstatsService.searchProductcompletionstatistics(context) ;
         List<ProductStatsDTO> list = productstatsMapping.toDto(domains.getContent());

@@ -221,7 +221,7 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/projectstats/fetchdefault`, _data);
+        return this.http.post(`/projectstats/fetchdefault`, _data);
     }
     /**
      * FetchNoOpenProduct
@@ -232,7 +232,7 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchNoOpenProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/projectstats/fetchnoopenproduct`, _data);
+        return this.http.post(`/projectstats/fetchnoopenproduct`, _data);
     }
     /**
      * FetchProjectBugType
@@ -243,7 +243,7 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchProjectBugType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/projectstats/fetchprojectbugtype`, _data);
+        return this.http.post(`/projectstats/fetchprojectbugtype`, _data);
     }
     /**
      * FetchProjectInputStats
@@ -254,7 +254,7 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchProjectInputStats(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/projectstats/fetchprojectinputstats`, _data);
+        return this.http.post(`/projectstats/fetchprojectinputstats`, _data);
     }
     /**
      * FetchProjectProgress
@@ -265,7 +265,7 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchProjectProgress(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/projectstats/fetchprojectprogress`, _data);
+        return this.http.post(`/projectstats/fetchprojectprogress`, _data);
     }
     /**
      * FetchProjectQuality
@@ -276,7 +276,7 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchProjectQuality(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/projectstats/fetchprojectquality`, _data);
+        return this.http.post(`/projectstats/fetchprojectquality`, _data);
     }
     /**
      * FetchProjectStoryStageStats
@@ -287,7 +287,7 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchProjectStoryStageStats(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/projectstats/fetchprojectstorystagestats`, _data);
+        return this.http.post(`/projectstats/fetchprojectstorystagestats`, _data);
     }
     /**
      * FetchProjectStoryStatusStats
@@ -298,7 +298,7 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchProjectStoryStatusStats(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/projectstats/fetchprojectstorystatusstats`, _data);
+        return this.http.post(`/projectstats/fetchprojectstorystatusstats`, _data);
     }
     /**
      * FetchProjectTaskCountByTaskStatus
@@ -309,7 +309,7 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchProjectTaskCountByTaskStatus(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/projectstats/fetchprojecttaskcountbytaskstatus`, _data);
+        return this.http.post(`/projectstats/fetchprojecttaskcountbytaskstatus`, _data);
     }
     /**
      * FetchProjectTaskCountByType
@@ -320,7 +320,7 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchProjectTaskCountByType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/projectstats/fetchprojecttaskcountbytype`, _data);
+        return this.http.post(`/projectstats/fetchprojecttaskcountbytype`, _data);
     }
     /**
      * FetchTaskTime
@@ -331,6 +331,6 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchTaskTime(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/projectstats/fetchtasktime`, _data);
+        return this.http.post(`/projectstats/fetchtasktime`, _data);
     }
 }

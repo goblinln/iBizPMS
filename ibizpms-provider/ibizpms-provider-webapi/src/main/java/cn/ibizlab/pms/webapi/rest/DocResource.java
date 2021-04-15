@@ -301,8 +301,8 @@ public class DocResource {
 
     @PreAuthorize("@DocRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取文档库文档", tags = {"文档" } ,notes = "获取文档库文档")
-    @RequestMapping(method= RequestMethod.GET , value="/docs/fetchdoclibanddoc")
-	public ResponseEntity<List<DocDTO>> fetchDocLibAndDoc(DocSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/docs/fetchdoclibanddoc")
+	public ResponseEntity<List<DocDTO>> fetchDocLibAndDoc(@RequestBody DocSearchContext context) {
         docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchDocLibAndDoc(context) ;
         List<DocDTO> list = docMapping.toDto(domains.getContent());
@@ -373,8 +373,8 @@ public class DocResource {
 
     @PreAuthorize("@DocRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取文档统计", tags = {"文档" } ,notes = "获取文档统计")
-    @RequestMapping(method= RequestMethod.GET , value="/docs/fetchdocstatus")
-	public ResponseEntity<List<DocDTO>> fetchDocStatus(DocSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/docs/fetchdocstatus")
+	public ResponseEntity<List<DocDTO>> fetchDocStatus(@RequestBody DocSearchContext context) {
         docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchDocStatus(context) ;
         List<DocDTO> list = docMapping.toDto(domains.getContent());
@@ -397,8 +397,8 @@ public class DocResource {
 
     @PreAuthorize("@DocRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取文件夹文档（子目录）", tags = {"文档" } ,notes = "获取文件夹文档（子目录）")
-    @RequestMapping(method= RequestMethod.GET , value="/docs/fetchmoduledocchild")
-	public ResponseEntity<List<DocDTO>> fetchModuleDocChild(DocSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/docs/fetchmoduledocchild")
+	public ResponseEntity<List<DocDTO>> fetchModuleDocChild(@RequestBody DocSearchContext context) {
         docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchModuleDocChild(context) ;
         List<DocDTO> list = docMapping.toDto(domains.getContent());
@@ -445,8 +445,8 @@ public class DocResource {
 
     @PreAuthorize("@DocRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的收藏", tags = {"文档" } ,notes = "获取我的收藏")
-    @RequestMapping(method= RequestMethod.GET , value="/docs/fetchmyfavouritesonlydoc")
-	public ResponseEntity<List<DocDTO>> fetchMyFavouritesOnlyDoc(DocSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/docs/fetchmyfavouritesonlydoc")
+	public ResponseEntity<List<DocDTO>> fetchMyFavouritesOnlyDoc(@RequestBody DocSearchContext context) {
         docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchMyFavouritesOnlyDoc(context) ;
         List<DocDTO> list = docMapping.toDto(domains.getContent());
@@ -469,8 +469,8 @@ public class DocResource {
 
     @PreAuthorize("@DocRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取子目录文档", tags = {"文档" } ,notes = "获取子目录文档")
-    @RequestMapping(method= RequestMethod.GET , value="/docs/fetchnotrootdoc")
-	public ResponseEntity<List<DocDTO>> fetchNotRootDoc(DocSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/docs/fetchnotrootdoc")
+	public ResponseEntity<List<DocDTO>> fetchNotRootDoc(@RequestBody DocSearchContext context) {
         docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchNotRootDoc(context) ;
         List<DocDTO> list = docMapping.toDto(domains.getContent());
@@ -493,8 +493,8 @@ public class DocResource {
 
     @PreAuthorize("@DocRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根目录文档", tags = {"文档" } ,notes = "获取根目录文档")
-    @RequestMapping(method= RequestMethod.GET , value="/docs/fetchrootdoc")
-	public ResponseEntity<List<DocDTO>> fetchRootDoc(DocSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/docs/fetchrootdoc")
+	public ResponseEntity<List<DocDTO>> fetchRootDoc(@RequestBody DocSearchContext context) {
         docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchRootDoc(context) ;
         List<DocDTO> list = docMapping.toDto(domains.getContent());

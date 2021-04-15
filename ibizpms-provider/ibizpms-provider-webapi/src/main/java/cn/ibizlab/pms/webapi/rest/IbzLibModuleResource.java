@@ -149,8 +149,8 @@ public class IbzLibModuleResource {
 
     @PreAuthorize("@IbzLibModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"用例库模块" } ,notes = "获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzlibmodules/fetchdefault")
-	public ResponseEntity<List<IbzLibModuleDTO>> fetchDefault(IbzLibModuleSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzlibmodules/fetchdefault")
+	public ResponseEntity<List<IbzLibModuleDTO>> fetchDefault(@RequestBody IbzLibModuleSearchContext context) {
         ibzlibmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<IbzLibModule> domains = ibzlibmoduleService.searchDefault(context) ;
         List<IbzLibModuleDTO> list = ibzlibmoduleMapping.toDto(domains.getContent());
@@ -173,8 +173,8 @@ public class IbzLibModuleResource {
 
     @PreAuthorize("@IbzLibModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取无枝叶", tags = {"用例库模块" } ,notes = "获取无枝叶")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzlibmodules/fetchroot_nobranch")
-	public ResponseEntity<List<IbzLibModuleDTO>> fetchRoot_NoBranch(IbzLibModuleSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzlibmodules/fetchroot_nobranch")
+	public ResponseEntity<List<IbzLibModuleDTO>> fetchRoot_NoBranch(@RequestBody IbzLibModuleSearchContext context) {
         ibzlibmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<IbzLibModule> domains = ibzlibmoduleService.searchRoot_NoBranch(context) ;
         List<IbzLibModuleDTO> list = ibzlibmoduleMapping.toDto(domains.getContent());
@@ -302,8 +302,8 @@ public class IbzLibModuleResource {
     }
 
 	@ApiOperation(value = "根据用例库获取DEFAULT", tags = {"用例库模块" } ,notes = "根据用例库获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzlibs/{ibzlib_id}/ibzlibmodules/fetchdefault")
-	public ResponseEntity<List<IbzLibModuleDTO>> fetchIbzLibModuleDefaultByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id,IbzLibModuleSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/ibzlibmodules/fetchdefault")
+	public ResponseEntity<List<IbzLibModuleDTO>> fetchIbzLibModuleDefaultByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id,@RequestBody IbzLibModuleSearchContext context) {
         context.setN_root_eq(ibzlib_id);
         Page<IbzLibModule> domains = ibzlibmoduleService.searchDefault(context) ;
         List<IbzLibModuleDTO> list = ibzlibmoduleMapping.toDto(domains.getContent());
@@ -323,8 +323,8 @@ public class IbzLibModuleResource {
                 .body(new PageImpl(ibzlibmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据用例库获取无枝叶", tags = {"用例库模块" } ,notes = "根据用例库获取无枝叶")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzlibs/{ibzlib_id}/ibzlibmodules/fetchroot_nobranch")
-	public ResponseEntity<List<IbzLibModuleDTO>> fetchIbzLibModuleRoot_NoBranchByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id,IbzLibModuleSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/ibzlibmodules/fetchroot_nobranch")
+	public ResponseEntity<List<IbzLibModuleDTO>> fetchIbzLibModuleRoot_NoBranchByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id,@RequestBody IbzLibModuleSearchContext context) {
         context.setN_root_eq(ibzlib_id);
         Page<IbzLibModule> domains = ibzlibmoduleService.searchRoot_NoBranch(context) ;
         List<IbzLibModuleDTO> list = ibzlibmoduleMapping.toDto(domains.getContent());

@@ -348,12 +348,12 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
      */
     async FetchBugProductBuild(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/builds/fetchbugproductbuild`, _data);
+            return this.http.post(`/projects/${_context.project}/builds/fetchbugproductbuild`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/builds/fetchbugproductbuild`, _data);
+            return this.http.post(`/products/${_context.product}/builds/fetchbugproductbuild`, _data);
         }
-        return this.http.get(`/builds/fetchbugproductbuild`, _data);
+        return this.http.post(`/builds/fetchbugproductbuild`, _data);
     }
     /**
      * FetchCurProduct
@@ -365,12 +365,12 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
      */
     async FetchCurProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/builds/fetchcurproduct`, _data);
+            return this.http.post(`/projects/${_context.project}/builds/fetchcurproduct`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/builds/fetchcurproduct`, _data);
+            return this.http.post(`/products/${_context.product}/builds/fetchcurproduct`, _data);
         }
-        return this.http.get(`/builds/fetchcurproduct`, _data);
+        return this.http.post(`/builds/fetchcurproduct`, _data);
     }
     /**
      * FetchDefault
@@ -399,12 +399,12 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
      */
     async FetchTestBuild(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/builds/fetchtestbuild`, _data);
+            return this.http.post(`/projects/${_context.project}/builds/fetchtestbuild`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/builds/fetchtestbuild`, _data);
+            return this.http.post(`/products/${_context.product}/builds/fetchtestbuild`, _data);
         }
-        return this.http.get(`/builds/fetchtestbuild`, _data);
+        return this.http.post(`/builds/fetchtestbuild`, _data);
     }
     /**
      * FetchTestRounds
@@ -433,11 +433,11 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
      */
     async FetchUpdateLog(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && true) {
-            return this.http.get(`/projects/${_context.project}/builds/fetchupdatelog`, _data);
+            return this.http.post(`/projects/${_context.project}/builds/fetchupdatelog`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/builds/fetchupdatelog`, _data);
+            return this.http.post(`/products/${_context.product}/builds/fetchupdatelog`, _data);
         }
-        return this.http.get(`/builds/fetchupdatelog`, _data);
+        return this.http.post(`/builds/fetchupdatelog`, _data);
     }
 }

@@ -229,7 +229,7 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
      * @memberof ModuleService
      */
     async FetchBugModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/modules/fetchbugmodule`, _data);
+        return this.http.post(`/modules/fetchbugmodule`, _data);
     }
     /**
      * FetchBugModuleCodeList
@@ -240,7 +240,7 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
      * @memberof ModuleService
      */
     async FetchBugModuleCodeList(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/modules/fetchbugmodulecodelist`, _data);
+        return this.http.post(`/modules/fetchbugmodulecodelist`, _data);
     }
     /**
      * FetchDefault
@@ -251,7 +251,7 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
      * @memberof ModuleService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/modules/fetchdefault`, _data);
+        return this.http.post(`/modules/fetchdefault`, _data);
     }
     /**
      * FetchDocModule
@@ -262,7 +262,7 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
      * @memberof ModuleService
      */
     async FetchDocModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/modules/fetchdocmodule`, _data);
+        return this.http.post(`/modules/fetchdocmodule`, _data);
     }
     /**
      * FetchLine
@@ -273,7 +273,7 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
      * @memberof ModuleService
      */
     async FetchLine(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/modules/fetchline`, _data);
+        return this.http.post(`/modules/fetchline`, _data);
     }
     /**
      * FetchStoryModule
@@ -284,7 +284,7 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
      * @memberof ModuleService
      */
     async FetchStoryModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/modules/fetchstorymodule`, _data);
+        return this.http.post(`/modules/fetchstorymodule`, _data);
     }
     /**
      * FetchTaskModule
@@ -295,6 +295,6 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
      * @memberof ModuleService
      */
     async FetchTaskModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/modules/fetchtaskmodule`, _data);
+        return this.http.post(`/modules/fetchtaskmodule`, _data);
     }
 }

@@ -151,6 +151,6 @@ export class SysTeamMemberBaseService extends EntityBaseService<ISysTeamMember> 
      * @memberof SysTeamMemberService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/systeammembers/fetchdefault`, _data);
+        return this.http.post(`/systeammembers/fetchdefault`, _data);
     }
 }

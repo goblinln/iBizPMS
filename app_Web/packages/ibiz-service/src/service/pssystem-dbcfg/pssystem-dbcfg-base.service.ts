@@ -152,7 +152,7 @@ export class PSSystemDBCfgBaseService extends EntityBaseService<IPSSystemDBCfg> 
      * @memberof PSSystemDBCfgService
      */
     async FetchBuild(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/pssystemdbcfgs/fetchbuild`, _data);
+        return this.http.post(`/pssystemdbcfgs/fetchbuild`, _data);
     }
     /**
      * FetchDefault
@@ -163,6 +163,6 @@ export class PSSystemDBCfgBaseService extends EntityBaseService<IPSSystemDBCfg> 
      * @memberof PSSystemDBCfgService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/pssystemdbcfgs/fetchdefault`, _data);
+        return this.http.post(`/pssystemdbcfgs/fetchdefault`, _data);
     }
 }

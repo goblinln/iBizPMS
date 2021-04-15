@@ -23,4 +23,5 @@ export default [
     'projectname',
     'project',
     'product',
+    'updatemanname',
 ];

@@ -186,7 +186,7 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
      * @memberof UserContactService
      */
     async FetchCurUSERCONTACT(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/usercontacts/fetchcurusercontact`, _data);
+        return this.http.post(`/usercontacts/fetchcurusercontact`, _data);
     }
     /**
      * FetchDefault
@@ -197,7 +197,7 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
      * @memberof UserContactService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/usercontacts/fetchdefault`, _data);
+        return this.http.post(`/usercontacts/fetchdefault`, _data);
     }
     /**
      * FetchMyUSERCONTACT
@@ -208,6 +208,6 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
      * @memberof UserContactService
      */
     async FetchMyUSERCONTACT(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/usercontacts/fetchmyusercontact`, _data);
+        return this.http.post(`/usercontacts/fetchmyusercontact`, _data);
     }
 }

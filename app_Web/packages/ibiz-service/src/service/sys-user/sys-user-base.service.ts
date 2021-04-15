@@ -163,6 +163,6 @@ export class SysUserBaseService extends EntityBaseService<ISysUser> {
      * @memberof SysUserService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysusers/fetchdefault`, _data);
+        return this.http.post(`/sysusers/fetchdefault`, _data);
     }
 }

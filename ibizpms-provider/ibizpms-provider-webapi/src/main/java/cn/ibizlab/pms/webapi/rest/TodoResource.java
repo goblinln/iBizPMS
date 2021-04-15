@@ -294,8 +294,8 @@ public class TodoResource {
 
     @PreAuthorize("@TodoRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的待办", tags = {"待办" } ,notes = "获取我的待办")
-    @RequestMapping(method= RequestMethod.GET , value="/todos/fetchmytodo")
-	public ResponseEntity<List<TodoDTO>> fetchMyTodo(TodoSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/todos/fetchmytodo")
+	public ResponseEntity<List<TodoDTO>> fetchMyTodo(@RequestBody TodoSearchContext context) {
         todoRuntime.addAuthorityConditions(context,"READ");
         Page<Todo> domains = todoService.searchMyTodo(context) ;
         List<TodoDTO> list = todoMapping.toDto(domains.getContent());
@@ -318,8 +318,8 @@ public class TodoResource {
 
     @PreAuthorize("@TodoRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的待办", tags = {"待办" } ,notes = "获取我的待办")
-    @RequestMapping(method= RequestMethod.GET , value="/todos/fetchmytodopc")
-	public ResponseEntity<List<TodoDTO>> fetchMyTodoPc(TodoSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/todos/fetchmytodopc")
+	public ResponseEntity<List<TodoDTO>> fetchMyTodoPc(@RequestBody TodoSearchContext context) {
         todoRuntime.addAuthorityConditions(context,"READ");
         Page<Todo> domains = todoService.searchMyTodoPc(context) ;
         List<TodoDTO> list = todoMapping.toDto(domains.getContent());
@@ -342,8 +342,8 @@ public class TodoResource {
 
     @PreAuthorize("@TodoRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取MyUpcoming", tags = {"待办" } ,notes = "获取MyUpcoming")
-    @RequestMapping(method= RequestMethod.GET , value="/todos/fetchmyupcoming")
-	public ResponseEntity<List<TodoDTO>> fetchMyUpcoming(TodoSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/todos/fetchmyupcoming")
+	public ResponseEntity<List<TodoDTO>> fetchMyUpcoming(@RequestBody TodoSearchContext context) {
         todoRuntime.addAuthorityConditions(context,"READ");
         Page<Todo> domains = todoService.searchMyUpcoming(context) ;
         List<TodoDTO> list = todoMapping.toDto(domains.getContent());

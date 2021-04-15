@@ -292,18 +292,18 @@ export class TestResultBaseService extends EntityBaseService<ITestResult> {
      */
     async FetchCurTestRun(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && _context.case && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/cases/${_context.case}/testresults/fetchcurtestrun`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/${_context.case}/testresults/fetchcurtestrun`, _data);
         }
         if (_context.story && _context.case && true) {
-            return this.http.get(`/stories/${_context.story}/cases/${_context.case}/testresults/fetchcurtestrun`, _data);
+            return this.http.post(`/stories/${_context.story}/cases/${_context.case}/testresults/fetchcurtestrun`, _data);
         }
         if (_context.product && _context.case && true) {
-            return this.http.get(`/products/${_context.product}/cases/${_context.case}/testresults/fetchcurtestrun`, _data);
+            return this.http.post(`/products/${_context.product}/cases/${_context.case}/testresults/fetchcurtestrun`, _data);
         }
         if (_context.case && true) {
-            return this.http.get(`/cases/${_context.case}/testresults/fetchcurtestrun`, _data);
+            return this.http.post(`/cases/${_context.case}/testresults/fetchcurtestrun`, _data);
         }
-        return this.http.get(`/testresults/fetchcurtestrun`, _data);
+        return this.http.post(`/testresults/fetchcurtestrun`, _data);
     }
     /**
      * FetchDefault
@@ -315,17 +315,17 @@ export class TestResultBaseService extends EntityBaseService<ITestResult> {
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && _context.case && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/cases/${_context.case}/testresults/fetchdefault`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/${_context.case}/testresults/fetchdefault`, _data);
         }
         if (_context.story && _context.case && true) {
-            return this.http.get(`/stories/${_context.story}/cases/${_context.case}/testresults/fetchdefault`, _data);
+            return this.http.post(`/stories/${_context.story}/cases/${_context.case}/testresults/fetchdefault`, _data);
         }
         if (_context.product && _context.case && true) {
-            return this.http.get(`/products/${_context.product}/cases/${_context.case}/testresults/fetchdefault`, _data);
+            return this.http.post(`/products/${_context.product}/cases/${_context.case}/testresults/fetchdefault`, _data);
         }
         if (_context.case && true) {
-            return this.http.get(`/cases/${_context.case}/testresults/fetchdefault`, _data);
+            return this.http.post(`/cases/${_context.case}/testresults/fetchdefault`, _data);
         }
-        return this.http.get(`/testresults/fetchdefault`, _data);
+        return this.http.post(`/testresults/fetchdefault`, _data);
     }
 }

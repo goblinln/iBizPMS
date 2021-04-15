@@ -234,7 +234,7 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
      * @memberof SysEmployeeService
      */
     async FetchBugUser(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysemployees/fetchbuguser`, _data);
+        return this.http.post(`/sysemployees/fetchbuguser`, _data);
     }
     /**
      * FetchContActList
@@ -245,7 +245,7 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
      * @memberof SysEmployeeService
      */
     async FetchContActList(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysemployees/fetchcontactlist`, _data);
+        return this.http.post(`/sysemployees/fetchcontactlist`, _data);
     }
     /**
      * FetchDefault
@@ -256,7 +256,7 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
      * @memberof SysEmployeeService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysemployees/fetchdefault`, _data);
+        return this.http.post(`/sysemployees/fetchdefault`, _data);
     }
     /**
      * FetchProductTeamM
@@ -267,7 +267,7 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
      * @memberof SysEmployeeService
      */
     async FetchProductTeamM(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysemployees/fetchproductteamm`, _data);
+        return this.http.post(`/sysemployees/fetchproductteamm`, _data);
     }
     /**
      * FetchProjectTeamM
@@ -278,7 +278,7 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
      * @memberof SysEmployeeService
      */
     async FetchProjectTeamM(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysemployees/fetchprojectteamm`, _data);
+        return this.http.post(`/sysemployees/fetchprojectteamm`, _data);
     }
     /**
      * FetchProjectTeamMProduct
@@ -289,7 +289,7 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
      * @memberof SysEmployeeService
      */
     async FetchProjectTeamMProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysemployees/fetchprojectteammproduct`, _data);
+        return this.http.post(`/sysemployees/fetchprojectteammproduct`, _data);
     }
     /**
      * FetchProjectTeamTaskUserTemp
@@ -300,7 +300,7 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
      * @memberof SysEmployeeService
      */
     async FetchProjectTeamTaskUserTemp(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysemployees/fetchprojectteamtaskusertemp`, _data);
+        return this.http.post(`/sysemployees/fetchprojectteamtaskusertemp`, _data);
     }
     /**
      * FetchProjectTeamUser
@@ -311,7 +311,7 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
      * @memberof SysEmployeeService
      */
     async FetchProjectTeamUser(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysemployees/fetchprojectteamuser`, _data);
+        return this.http.post(`/sysemployees/fetchprojectteamuser`, _data);
     }
     /**
      * FetchProjectTeamUserTask
@@ -322,7 +322,7 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
      * @memberof SysEmployeeService
      */
     async FetchProjectTeamUserTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysemployees/fetchprojectteamusertask`, _data);
+        return this.http.post(`/sysemployees/fetchprojectteamusertask`, _data);
     }
     /**
      * FetchProjectteamPk
@@ -333,7 +333,7 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
      * @memberof SysEmployeeService
      */
     async FetchProjectteamPk(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysemployees/fetchprojectteampk`, _data);
+        return this.http.post(`/sysemployees/fetchprojectteampk`, _data);
     }
     /**
      * FetchStoryProductTeamPK
@@ -344,7 +344,7 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
      * @memberof SysEmployeeService
      */
     async FetchStoryProductTeamPK(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysemployees/fetchstoryproductteampk`, _data);
+        return this.http.post(`/sysemployees/fetchstoryproductteampk`, _data);
     }
     /**
      * FetchTaskMTeam
@@ -355,7 +355,7 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
      * @memberof SysEmployeeService
      */
     async FetchTaskMTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysemployees/fetchtaskmteam`, _data);
+        return this.http.post(`/sysemployees/fetchtaskmteam`, _data);
     }
     /**
      * FetchTaskTeam
@@ -366,6 +366,6 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
      * @memberof SysEmployeeService
      */
     async FetchTaskTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysemployees/fetchtaskteam`, _data);
+        return this.http.post(`/sysemployees/fetchtaskteam`, _data);
     }
 }

@@ -149,8 +149,8 @@ public class IbizproIndexResource {
 
     @PreAuthorize("@IbizproIndexRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"索引检索" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/ibizproindices/fetchdefault")
-	public ResponseEntity<List<IbizproIndexDTO>> fetchDefault(IbizproIndexSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibizproindices/fetchdefault")
+	public ResponseEntity<List<IbizproIndexDTO>> fetchDefault(@RequestBody IbizproIndexSearchContext context) {
         ibizproindexRuntime.addAuthorityConditions(context,"READ");
         Page<IbizproIndex> domains = ibizproindexService.searchDefault(context) ;
         List<IbizproIndexDTO> list = ibizproindexMapping.toDto(domains.getContent());
@@ -173,8 +173,8 @@ public class IbizproIndexResource {
 
     @PreAuthorize("@IbizproIndexRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取全文检索", tags = {"索引检索" } ,notes = "获取全文检索")
-    @RequestMapping(method= RequestMethod.GET , value="/ibizproindices/fetchesquery")
-	public ResponseEntity<List<IbizproIndexDTO>> fetchESquery(IbizproIndexSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibizproindices/fetchesquery")
+	public ResponseEntity<List<IbizproIndexDTO>> fetchESquery(@RequestBody IbizproIndexSearchContext context) {
         ibizproindexRuntime.addAuthorityConditions(context,"READ");
         Page<IbizproIndex> domains = ibizproindexService.searchESquery(context) ;
         List<IbizproIndexDTO> list = ibizproindexMapping.toDto(domains.getContent());
@@ -197,8 +197,8 @@ public class IbizproIndexResource {
 
     @PreAuthorize("@IbizproIndexRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集2", tags = {"索引检索" } ,notes = "获取数据集2")
-    @RequestMapping(method= RequestMethod.GET , value="/ibizproindices/fetchindexder")
-	public ResponseEntity<List<IbizproIndexDTO>> fetchIndexDER(IbizproIndexSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibizproindices/fetchindexder")
+	public ResponseEntity<List<IbizproIndexDTO>> fetchIndexDER(@RequestBody IbizproIndexSearchContext context) {
         ibizproindexRuntime.addAuthorityConditions(context,"READ");
         Page<IbizproIndex> domains = ibizproindexService.searchIndexDER(context) ;
         List<IbizproIndexDTO> list = ibizproindexMapping.toDto(domains.getContent());

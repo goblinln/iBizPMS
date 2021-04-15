@@ -151,6 +151,6 @@ export class IBIZProKeywordBaseService extends EntityBaseService<IIBIZProKeyword
      * @memberof IBIZProKeywordService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibizprokeywords/fetchdefault`, _data);
+        return this.http.post(`/ibizprokeywords/fetchdefault`, _data);
     }
 }

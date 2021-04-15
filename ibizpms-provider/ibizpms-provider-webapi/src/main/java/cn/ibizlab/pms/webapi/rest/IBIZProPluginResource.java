@@ -135,8 +135,8 @@ public class IBIZProPluginResource {
     }
 
 	@ApiOperation(value = "获取数据集", tags = {"系统插件" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/ibizproplugins/fetchdefault")
-	public ResponseEntity<List<IBIZProPluginDTO>> fetchDefault(IBIZProPluginSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibizproplugins/fetchdefault")
+	public ResponseEntity<List<IBIZProPluginDTO>> fetchDefault(@RequestBody IBIZProPluginSearchContext context) {
         Page<IBIZProPlugin> domains = ibizpropluginService.searchDefault(context) ;
         List<IBIZProPluginDTO> list = ibizpropluginMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

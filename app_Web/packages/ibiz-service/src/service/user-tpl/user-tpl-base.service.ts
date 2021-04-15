@@ -182,7 +182,7 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
      * @memberof UserTplService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/usertpls/fetchdefault`, _data);
+        return this.http.post(`/usertpls/fetchdefault`, _data);
     }
     /**
      * FetchMyUserTpl
@@ -193,6 +193,6 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
      * @memberof UserTplService
      */
     async FetchMyUserTpl(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/usertpls/fetchmyusertpl`, _data);
+        return this.http.post(`/usertpls/fetchmyusertpl`, _data);
     }
 }

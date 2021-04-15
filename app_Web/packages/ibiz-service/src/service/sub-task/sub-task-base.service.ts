@@ -1652,30 +1652,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchAssignedToMyTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchassignedtomytask`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchassignedtomytask`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchassignedtomytask`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchassignedtomytask`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchassignedtomytask`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchassignedtomytask`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchassignedtomytask`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchassignedtomytask`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchassignedtomytask`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchassignedtomytask`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchassignedtomytask`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchassignedtomytask`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchassignedtomytask`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchassignedtomytask`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchassignedtomytask`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchassignedtomytask`, _data);
         }
-        return this.http.get(`/subtasks/fetchassignedtomytask`, _data);
+        return this.http.post(`/subtasks/fetchassignedtomytask`, _data);
     }
     /**
      * FetchAssignedToMyTaskPc
@@ -1687,30 +1687,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchAssignedToMyTaskPc(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchassignedtomytaskpc`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchassignedtomytaskpc`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchassignedtomytaskpc`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchassignedtomytaskpc`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchassignedtomytaskpc`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchassignedtomytaskpc`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchassignedtomytaskpc`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchassignedtomytaskpc`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchassignedtomytaskpc`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchassignedtomytaskpc`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchassignedtomytaskpc`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchassignedtomytaskpc`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchassignedtomytaskpc`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchassignedtomytaskpc`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchassignedtomytaskpc`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchassignedtomytaskpc`, _data);
         }
-        return this.http.get(`/subtasks/fetchassignedtomytaskpc`, _data);
+        return this.http.post(`/subtasks/fetchassignedtomytaskpc`, _data);
     }
     /**
      * FetchBugTask
@@ -1722,30 +1722,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchBugTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchbugtask`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchbugtask`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchbugtask`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchbugtask`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchbugtask`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchbugtask`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchbugtask`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchbugtask`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchbugtask`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchbugtask`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchbugtask`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchbugtask`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchbugtask`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchbugtask`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchbugtask`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchbugtask`, _data);
         }
-        return this.http.get(`/subtasks/fetchbugtask`, _data);
+        return this.http.post(`/subtasks/fetchbugtask`, _data);
     }
     /**
      * FetchByModule
@@ -1792,30 +1792,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchChildDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchchilddefault`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchchilddefault`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchchilddefault`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchchilddefault`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchchilddefault`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchchilddefault`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchchilddefault`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchchilddefault`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchchilddefault`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchchilddefault`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchchilddefault`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchchilddefault`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchchilddefault`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchchilddefault`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchchilddefault`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchchilddefault`, _data);
         }
-        return this.http.get(`/subtasks/fetchchilddefault`, _data);
+        return this.http.post(`/subtasks/fetchchilddefault`, _data);
     }
     /**
      * FetchChildTask
@@ -1827,30 +1827,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchChildTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchchildtask`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchchildtask`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchchildtask`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchchildtask`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchchildtask`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchchildtask`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchchildtask`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchchildtask`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchchildtask`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchchildtask`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchchildtask`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchchildtask`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchchildtask`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchchildtask`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchchildtask`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchchildtask`, _data);
         }
-        return this.http.get(`/subtasks/fetchchildtask`, _data);
+        return this.http.post(`/subtasks/fetchchildtask`, _data);
     }
     /**
      * FetchChildTaskTree
@@ -1862,30 +1862,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchChildTaskTree(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchchildtasktree`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchchildtasktree`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchchildtasktree`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchchildtasktree`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchchildtasktree`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchchildtasktree`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchchildtasktree`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchchildtasktree`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchchildtasktree`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchchildtasktree`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchchildtasktree`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchchildtasktree`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchchildtasktree`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchchildtasktree`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchchildtasktree`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchchildtasktree`, _data);
         }
-        return this.http.get(`/subtasks/fetchchildtasktree`, _data);
+        return this.http.post(`/subtasks/fetchchildtasktree`, _data);
     }
     /**
      * FetchCurFinishTask
@@ -1897,30 +1897,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchCurFinishTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchcurfinishtask`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchcurfinishtask`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchcurfinishtask`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchcurfinishtask`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchcurfinishtask`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchcurfinishtask`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchcurfinishtask`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchcurfinishtask`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchcurfinishtask`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchcurfinishtask`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchcurfinishtask`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchcurfinishtask`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchcurfinishtask`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchcurfinishtask`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchcurfinishtask`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchcurfinishtask`, _data);
         }
-        return this.http.get(`/subtasks/fetchcurfinishtask`, _data);
+        return this.http.post(`/subtasks/fetchcurfinishtask`, _data);
     }
     /**
      * FetchDefault
@@ -1967,30 +1967,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchDefaultRow(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchdefaultrow`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchdefaultrow`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchdefaultrow`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchdefaultrow`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchdefaultrow`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchdefaultrow`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchdefaultrow`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchdefaultrow`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchdefaultrow`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchdefaultrow`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchdefaultrow`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchdefaultrow`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchdefaultrow`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchdefaultrow`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchdefaultrow`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchdefaultrow`, _data);
         }
-        return this.http.get(`/subtasks/fetchdefaultrow`, _data);
+        return this.http.post(`/subtasks/fetchdefaultrow`, _data);
     }
     /**
      * FetchESBulk
@@ -2002,30 +2002,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchESBulk(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchesbulk`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchesbulk`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchesbulk`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchesbulk`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchesbulk`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchesbulk`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchesbulk`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchesbulk`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchesbulk`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchesbulk`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchesbulk`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchesbulk`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchesbulk`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchesbulk`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchesbulk`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchesbulk`, _data);
         }
-        return this.http.get(`/subtasks/fetchesbulk`, _data);
+        return this.http.post(`/subtasks/fetchesbulk`, _data);
     }
     /**
      * FetchMyAgentTask
@@ -2037,30 +2037,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchMyAgentTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmyagenttask`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmyagenttask`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmyagenttask`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmyagenttask`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmyagenttask`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmyagenttask`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchmyagenttask`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchmyagenttask`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmyagenttask`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmyagenttask`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmyagenttask`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmyagenttask`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmyagenttask`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmyagenttask`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchmyagenttask`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchmyagenttask`, _data);
         }
-        return this.http.get(`/subtasks/fetchmyagenttask`, _data);
+        return this.http.post(`/subtasks/fetchmyagenttask`, _data);
     }
     /**
      * FetchMyAllTask
@@ -2107,30 +2107,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchMyCompleteTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmycompletetask`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmycompletetask`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmycompletetask`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmycompletetask`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmycompletetask`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmycompletetask`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchmycompletetask`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchmycompletetask`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmycompletetask`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmycompletetask`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmycompletetask`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmycompletetask`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmycompletetask`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmycompletetask`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchmycompletetask`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchmycompletetask`, _data);
         }
-        return this.http.get(`/subtasks/fetchmycompletetask`, _data);
+        return this.http.post(`/subtasks/fetchmycompletetask`, _data);
     }
     /**
      * FetchMyCompleteTaskMobDaily
@@ -2142,30 +2142,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchMyCompleteTaskMobDaily(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobdaily`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobdaily`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobdaily`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobdaily`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobdaily`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobdaily`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobdaily`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobdaily`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobdaily`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobdaily`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobdaily`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobdaily`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobdaily`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobdaily`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchmycompletetaskmobdaily`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchmycompletetaskmobdaily`, _data);
         }
-        return this.http.get(`/subtasks/fetchmycompletetaskmobdaily`, _data);
+        return this.http.post(`/subtasks/fetchmycompletetaskmobdaily`, _data);
     }
     /**
      * FetchMyCompleteTaskMobMonthly
@@ -2177,30 +2177,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchMyCompleteTaskMobMonthly(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobmonthly`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobmonthly`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobmonthly`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobmonthly`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobmonthly`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobmonthly`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobmonthly`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobmonthly`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobmonthly`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobmonthly`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobmonthly`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobmonthly`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobmonthly`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmycompletetaskmobmonthly`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchmycompletetaskmobmonthly`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchmycompletetaskmobmonthly`, _data);
         }
-        return this.http.get(`/subtasks/fetchmycompletetaskmobmonthly`, _data);
+        return this.http.post(`/subtasks/fetchmycompletetaskmobmonthly`, _data);
     }
     /**
      * FetchMyCompleteTaskMonthlyZS
@@ -2212,30 +2212,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchMyCompleteTaskMonthlyZS(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmycompletetaskmonthlyzs`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmycompletetaskmonthlyzs`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmycompletetaskmonthlyzs`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmycompletetaskmonthlyzs`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmycompletetaskmonthlyzs`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmycompletetaskmonthlyzs`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchmycompletetaskmonthlyzs`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchmycompletetaskmonthlyzs`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmycompletetaskmonthlyzs`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmycompletetaskmonthlyzs`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmycompletetaskmonthlyzs`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmycompletetaskmonthlyzs`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmycompletetaskmonthlyzs`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmycompletetaskmonthlyzs`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchmycompletetaskmonthlyzs`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchmycompletetaskmonthlyzs`, _data);
         }
-        return this.http.get(`/subtasks/fetchmycompletetaskmonthlyzs`, _data);
+        return this.http.post(`/subtasks/fetchmycompletetaskmonthlyzs`, _data);
     }
     /**
      * FetchMyCompleteTaskZS
@@ -2247,30 +2247,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchMyCompleteTaskZS(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmycompletetaskzs`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmycompletetaskzs`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmycompletetaskzs`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmycompletetaskzs`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmycompletetaskzs`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmycompletetaskzs`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchmycompletetaskzs`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchmycompletetaskzs`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmycompletetaskzs`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmycompletetaskzs`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmycompletetaskzs`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmycompletetaskzs`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmycompletetaskzs`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmycompletetaskzs`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchmycompletetaskzs`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchmycompletetaskzs`, _data);
         }
-        return this.http.get(`/subtasks/fetchmycompletetaskzs`, _data);
+        return this.http.post(`/subtasks/fetchmycompletetaskzs`, _data);
     }
     /**
      * FetchMyFavorites
@@ -2317,30 +2317,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchMyPlansTaskMobMonthly(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmyplanstaskmobmonthly`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmyplanstaskmobmonthly`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmyplanstaskmobmonthly`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmyplanstaskmobmonthly`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmyplanstaskmobmonthly`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmyplanstaskmobmonthly`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchmyplanstaskmobmonthly`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchmyplanstaskmobmonthly`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmyplanstaskmobmonthly`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmyplanstaskmobmonthly`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmyplanstaskmobmonthly`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmyplanstaskmobmonthly`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmyplanstaskmobmonthly`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmyplanstaskmobmonthly`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchmyplanstaskmobmonthly`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchmyplanstaskmobmonthly`, _data);
         }
-        return this.http.get(`/subtasks/fetchmyplanstaskmobmonthly`, _data);
+        return this.http.post(`/subtasks/fetchmyplanstaskmobmonthly`, _data);
     }
     /**
      * FetchMyTomorrowPlanTask
@@ -2352,30 +2352,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchMyTomorrowPlanTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmytomorrowplantask`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmytomorrowplantask`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmytomorrowplantask`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmytomorrowplantask`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmytomorrowplantask`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmytomorrowplantask`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchmytomorrowplantask`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchmytomorrowplantask`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmytomorrowplantask`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmytomorrowplantask`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmytomorrowplantask`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmytomorrowplantask`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmytomorrowplantask`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmytomorrowplantask`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchmytomorrowplantask`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchmytomorrowplantask`, _data);
         }
-        return this.http.get(`/subtasks/fetchmytomorrowplantask`, _data);
+        return this.http.post(`/subtasks/fetchmytomorrowplantask`, _data);
     }
     /**
      * FetchMyTomorrowPlanTaskMobDaily
@@ -2387,30 +2387,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchMyTomorrowPlanTaskMobDaily(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmytomorrowplantaskmobdaily`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmytomorrowplantaskmobdaily`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmytomorrowplantaskmobdaily`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmytomorrowplantaskmobdaily`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmytomorrowplantaskmobdaily`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmytomorrowplantaskmobdaily`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchmytomorrowplantaskmobdaily`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchmytomorrowplantaskmobdaily`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmytomorrowplantaskmobdaily`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchmytomorrowplantaskmobdaily`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmytomorrowplantaskmobdaily`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchmytomorrowplantaskmobdaily`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmytomorrowplantaskmobdaily`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchmytomorrowplantaskmobdaily`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchmytomorrowplantaskmobdaily`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchmytomorrowplantaskmobdaily`, _data);
         }
-        return this.http.get(`/subtasks/fetchmytomorrowplantaskmobdaily`, _data);
+        return this.http.post(`/subtasks/fetchmytomorrowplantaskmobdaily`, _data);
     }
     /**
      * FetchNextWeekCompleteTaskMobZS
@@ -2422,30 +2422,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchNextWeekCompleteTaskMobZS(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskmobzs`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskmobzs`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskmobzs`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskmobzs`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskmobzs`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskmobzs`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskmobzs`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskmobzs`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskmobzs`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskmobzs`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskmobzs`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskmobzs`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskmobzs`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskmobzs`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskmobzs`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskmobzs`, _data);
         }
-        return this.http.get(`/subtasks/fetchnextweekcompletetaskmobzs`, _data);
+        return this.http.post(`/subtasks/fetchnextweekcompletetaskmobzs`, _data);
     }
     /**
      * FetchNextWeekCompleteTaskZS
@@ -2457,30 +2457,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchNextWeekCompleteTaskZS(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskzs`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskzs`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskzs`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskzs`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskzs`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskzs`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskzs`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskzs`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskzs`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskzs`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskzs`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskzs`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskzs`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskzs`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskzs`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchnextweekcompletetaskzs`, _data);
         }
-        return this.http.get(`/subtasks/fetchnextweekcompletetaskzs`, _data);
+        return this.http.post(`/subtasks/fetchnextweekcompletetaskzs`, _data);
     }
     /**
      * FetchNextWeekPlanCompleteTask
@@ -2492,30 +2492,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchNextWeekPlanCompleteTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchnextweekplancompletetask`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchnextweekplancompletetask`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchnextweekplancompletetask`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchnextweekplancompletetask`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchnextweekplancompletetask`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchnextweekplancompletetask`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchnextweekplancompletetask`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchnextweekplancompletetask`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchnextweekplancompletetask`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchnextweekplancompletetask`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchnextweekplancompletetask`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchnextweekplancompletetask`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchnextweekplancompletetask`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchnextweekplancompletetask`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchnextweekplancompletetask`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchnextweekplancompletetask`, _data);
         }
-        return this.http.get(`/subtasks/fetchnextweekplancompletetask`, _data);
+        return this.http.post(`/subtasks/fetchnextweekplancompletetask`, _data);
     }
     /**
      * FetchPlanTask
@@ -2632,30 +2632,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchRootTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchroottask`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchroottask`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchroottask`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchroottask`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchroottask`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchroottask`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchroottask`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchroottask`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchroottask`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchroottask`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchroottask`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchroottask`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchroottask`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchroottask`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchroottask`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchroottask`, _data);
         }
-        return this.http.get(`/subtasks/fetchroottask`, _data);
+        return this.http.post(`/subtasks/fetchroottask`, _data);
     }
     /**
      * FetchTaskLinkPlan
@@ -2667,30 +2667,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchTaskLinkPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchtasklinkplan`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchtasklinkplan`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchtasklinkplan`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchtasklinkplan`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchtasklinkplan`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchtasklinkplan`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchtasklinkplan`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchtasklinkplan`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchtasklinkplan`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchtasklinkplan`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchtasklinkplan`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchtasklinkplan`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchtasklinkplan`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchtasklinkplan`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchtasklinkplan`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchtasklinkplan`, _data);
         }
-        return this.http.get(`/subtasks/fetchtasklinkplan`, _data);
+        return this.http.post(`/subtasks/fetchtasklinkplan`, _data);
     }
     /**
      * FetchThisMonthCompleteTaskChoice
@@ -2702,30 +2702,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchThisMonthCompleteTaskChoice(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchthismonthcompletetaskchoice`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchthismonthcompletetaskchoice`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchthismonthcompletetaskchoice`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchthismonthcompletetaskchoice`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchthismonthcompletetaskchoice`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchthismonthcompletetaskchoice`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchthismonthcompletetaskchoice`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchthismonthcompletetaskchoice`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchthismonthcompletetaskchoice`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchthismonthcompletetaskchoice`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchthismonthcompletetaskchoice`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchthismonthcompletetaskchoice`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchthismonthcompletetaskchoice`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchthismonthcompletetaskchoice`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchthismonthcompletetaskchoice`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchthismonthcompletetaskchoice`, _data);
         }
-        return this.http.get(`/subtasks/fetchthismonthcompletetaskchoice`, _data);
+        return this.http.post(`/subtasks/fetchthismonthcompletetaskchoice`, _data);
     }
     /**
      * FetchThisWeekCompleteTask
@@ -2737,30 +2737,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchThisWeekCompleteTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchthisweekcompletetask`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchthisweekcompletetask`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchthisweekcompletetask`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchthisweekcompletetask`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchthisweekcompletetask`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchthisweekcompletetask`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchthisweekcompletetask`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchthisweekcompletetask`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchthisweekcompletetask`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchthisweekcompletetask`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchthisweekcompletetask`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchthisweekcompletetask`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchthisweekcompletetask`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchthisweekcompletetask`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchthisweekcompletetask`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchthisweekcompletetask`, _data);
         }
-        return this.http.get(`/subtasks/fetchthisweekcompletetask`, _data);
+        return this.http.post(`/subtasks/fetchthisweekcompletetask`, _data);
     }
     /**
      * FetchThisWeekCompleteTaskChoice
@@ -2772,30 +2772,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchThisWeekCompleteTaskChoice(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskchoice`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskchoice`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskchoice`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskchoice`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskchoice`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskchoice`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskchoice`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskchoice`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskchoice`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskchoice`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskchoice`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskchoice`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskchoice`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskchoice`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskchoice`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskchoice`, _data);
         }
-        return this.http.get(`/subtasks/fetchthisweekcompletetaskchoice`, _data);
+        return this.http.post(`/subtasks/fetchthisweekcompletetaskchoice`, _data);
     }
     /**
      * FetchThisWeekCompleteTaskMobZS
@@ -2807,30 +2807,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchThisWeekCompleteTaskMobZS(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskmobzs`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskmobzs`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskmobzs`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskmobzs`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskmobzs`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskmobzs`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskmobzs`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskmobzs`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskmobzs`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskmobzs`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskmobzs`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskmobzs`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskmobzs`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskmobzs`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskmobzs`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskmobzs`, _data);
         }
-        return this.http.get(`/subtasks/fetchthisweekcompletetaskmobzs`, _data);
+        return this.http.post(`/subtasks/fetchthisweekcompletetaskmobzs`, _data);
     }
     /**
      * FetchThisWeekCompleteTaskZS
@@ -2842,30 +2842,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchThisWeekCompleteTaskZS(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskzs`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskzs`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskzs`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskzs`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskzs`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskzs`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskzs`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskzs`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskzs`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskzs`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskzs`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskzs`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskzs`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskzs`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskzs`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchthisweekcompletetaskzs`, _data);
         }
-        return this.http.get(`/subtasks/fetchthisweekcompletetaskzs`, _data);
+        return this.http.post(`/subtasks/fetchthisweekcompletetaskzs`, _data);
     }
     /**
      * FetchTodoListTask
@@ -2877,30 +2877,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchTodoListTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchtodolisttask`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchtodolisttask`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchtodolisttask`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchtodolisttask`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchtodolisttask`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchtodolisttask`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchtodolisttask`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchtodolisttask`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchtodolisttask`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchtodolisttask`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchtodolisttask`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchtodolisttask`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchtodolisttask`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchtodolisttask`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchtodolisttask`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchtodolisttask`, _data);
         }
-        return this.http.get(`/subtasks/fetchtodolisttask`, _data);
+        return this.http.post(`/subtasks/fetchtodolisttask`, _data);
     }
     /**
      * FetchTypeGroup
@@ -2912,30 +2912,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchTypeGroup(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchtypegroup`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchtypegroup`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchtypegroup`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchtypegroup`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchtypegroup`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchtypegroup`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchtypegroup`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchtypegroup`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchtypegroup`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchtypegroup`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchtypegroup`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchtypegroup`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchtypegroup`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchtypegroup`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchtypegroup`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchtypegroup`, _data);
         }
-        return this.http.get(`/subtasks/fetchtypegroup`, _data);
+        return this.http.post(`/subtasks/fetchtypegroup`, _data);
     }
     /**
      * FetchTypeGroupPlan
@@ -2947,30 +2947,30 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      */
     async FetchTypeGroupPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchtypegroupplan`, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchtypegroupplan`, _data);
         }
         if (_context.product && _context.story && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchtypegroupplan`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchtypegroupplan`, _data);
         }
         if (_context.product && _context.productplan && _context.task && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchtypegroupplan`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchtypegroupplan`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchtypegroupplan`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/fetchtypegroupplan`, _data);
         }
         if (_context.story && _context.task && true) {
-            return this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchtypegroupplan`, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/fetchtypegroupplan`, _data);
         }
         if (_context.productplan && _context.task && true) {
-            return this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchtypegroupplan`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/fetchtypegroupplan`, _data);
         }
         if (_context.projectmodule && _context.task && true) {
-            return this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchtypegroupplan`, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/fetchtypegroupplan`, _data);
         }
         if (_context.task && true) {
-            return this.http.get(`/tasks/${_context.task}/subtasks/fetchtypegroupplan`, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/fetchtypegroupplan`, _data);
         }
-        return this.http.get(`/subtasks/fetchtypegroupplan`, _data);
+        return this.http.post(`/subtasks/fetchtypegroupplan`, _data);
     }
     /**
      * GetUserConcat

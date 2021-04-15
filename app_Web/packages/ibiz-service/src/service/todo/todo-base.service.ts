@@ -240,7 +240,7 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
      * @memberof TodoService
      */
     async FetchMyTodo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/todos/fetchmytodo`, _data);
+        return this.http.post(`/todos/fetchmytodo`, _data);
     }
     /**
      * FetchMyTodoPc
@@ -251,7 +251,7 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
      * @memberof TodoService
      */
     async FetchMyTodoPc(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/todos/fetchmytodopc`, _data);
+        return this.http.post(`/todos/fetchmytodopc`, _data);
     }
     /**
      * FetchMyUpcoming
@@ -262,6 +262,6 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
      * @memberof TodoService
      */
     async FetchMyUpcoming(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/todos/fetchmyupcoming`, _data);
+        return this.http.post(`/todos/fetchmyupcoming`, _data);
     }
 }

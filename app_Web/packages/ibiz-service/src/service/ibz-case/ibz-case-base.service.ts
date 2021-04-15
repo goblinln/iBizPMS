@@ -212,8 +212,8 @@ export class IbzCaseBaseService extends EntityBaseService<IIbzCase> {
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.ibzlib && true) {
-            return this.http.get(`/ibzlibs/${_context.ibzlib}/ibzcases/fetchdefault`, _data);
+            return this.http.post(`/ibzlibs/${_context.ibzlib}/ibzcases/fetchdefault`, _data);
         }
-        return this.http.get(`/ibzcases/fetchdefault`, _data);
+        return this.http.post(`/ibzcases/fetchdefault`, _data);
     }
 }

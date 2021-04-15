@@ -177,8 +177,8 @@ public class UserResource {
 
     @PreAuthorize("@UserRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Bug用户", tags = {"用户" } ,notes = "获取Bug用户")
-    @RequestMapping(method= RequestMethod.GET , value="/users/fetchbuguser")
-	public ResponseEntity<List<UserDTO>> fetchBugUser(UserSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/users/fetchbuguser")
+	public ResponseEntity<List<UserDTO>> fetchBugUser(@RequestBody UserSearchContext context) {
         userRuntime.addAuthorityConditions(context,"READ");
         Page<User> domains = userService.searchBugUser(context) ;
         List<UserDTO> list = userMapping.toDto(domains.getContent());
@@ -201,8 +201,8 @@ public class UserResource {
 
     @PreAuthorize("@UserRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"用户" } ,notes = "获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/users/fetchdefault")
-	public ResponseEntity<List<UserDTO>> fetchDefault(UserSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/users/fetchdefault")
+	public ResponseEntity<List<UserDTO>> fetchDefault(@RequestBody UserSearchContext context) {
         userRuntime.addAuthorityConditions(context,"READ");
         Page<User> domains = userService.searchDefault(context) ;
         List<UserDTO> list = userMapping.toDto(domains.getContent());
@@ -225,8 +225,8 @@ public class UserResource {
 
     @PreAuthorize("@UserRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根据源代码账户获取登录名", tags = {"用户" } ,notes = "获取根据源代码账户获取登录名")
-    @RequestMapping(method= RequestMethod.GET , value="/users/fetchgetbycommiter")
-	public ResponseEntity<List<UserDTO>> fetchGetByCommiter(UserSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/users/fetchgetbycommiter")
+	public ResponseEntity<List<UserDTO>> fetchGetByCommiter(@RequestBody UserSearchContext context) {
         userRuntime.addAuthorityConditions(context,"READ");
         Page<User> domains = userService.searchGetByCommiter(context) ;
         List<UserDTO> list = userMapping.toDto(domains.getContent());
@@ -249,8 +249,8 @@ public class UserResource {
 
     @PreAuthorize("@UserRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目团队管理", tags = {"用户" } ,notes = "获取项目团队管理")
-    @RequestMapping(method= RequestMethod.GET , value="/users/fetchprojectteamm")
-	public ResponseEntity<List<UserDTO>> fetchProjectTeamM(UserSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/users/fetchprojectteamm")
+	public ResponseEntity<List<UserDTO>> fetchProjectTeamM(@RequestBody UserSearchContext context) {
         userRuntime.addAuthorityConditions(context,"READ");
         Page<User> domains = userService.searchProjectTeamM(context) ;
         List<UserDTO> list = userMapping.toDto(domains.getContent());
@@ -273,8 +273,8 @@ public class UserResource {
 
     @PreAuthorize("@UserRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目团队成员", tags = {"用户" } ,notes = "获取项目团队成员")
-    @RequestMapping(method= RequestMethod.GET , value="/users/fetchprojectteamuser")
-	public ResponseEntity<List<UserDTO>> fetchProjectTeamUser(UserSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/users/fetchprojectteamuser")
+	public ResponseEntity<List<UserDTO>> fetchProjectTeamUser(@RequestBody UserSearchContext context) {
         userRuntime.addAuthorityConditions(context,"READ");
         Page<User> domains = userService.searchProjectTeamUser(context) ;
         List<UserDTO> list = userMapping.toDto(domains.getContent());
@@ -297,8 +297,8 @@ public class UserResource {
 
     @PreAuthorize("@UserRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目团队成员", tags = {"用户" } ,notes = "获取项目团队成员")
-    @RequestMapping(method= RequestMethod.GET , value="/users/fetchprojectteamusertask")
-	public ResponseEntity<List<UserDTO>> fetchProjectTeamUserTask(UserSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/users/fetchprojectteamusertask")
+	public ResponseEntity<List<UserDTO>> fetchProjectTeamUserTask(@RequestBody UserSearchContext context) {
         userRuntime.addAuthorityConditions(context,"READ");
         Page<User> domains = userService.searchProjectTeamUserTask(context) ;
         List<UserDTO> list = userMapping.toDto(domains.getContent());
@@ -321,8 +321,8 @@ public class UserResource {
 
     @PreAuthorize("@UserRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取TASKTEAM", tags = {"用户" } ,notes = "获取TASKTEAM")
-    @RequestMapping(method= RequestMethod.GET , value="/users/fetchtaskteam")
-	public ResponseEntity<List<UserDTO>> fetchTaskTeam(UserSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/users/fetchtaskteam")
+	public ResponseEntity<List<UserDTO>> fetchTaskTeam(@RequestBody UserSearchContext context) {
         userRuntime.addAuthorityConditions(context,"READ");
         Page<User> domains = userService.searchTaskTeam(context) ;
         List<UserDTO> list = userMapping.toDto(domains.getContent());

@@ -184,8 +184,8 @@ public class IbizproProductMonthlyResource {
 
     @PreAuthorize("@IbizproProductMonthlyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"产品月报" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/ibizproproductmonthlies/fetchdefault")
-	public ResponseEntity<List<IbizproProductMonthlyDTO>> fetchDefault(IbizproProductMonthlySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibizproproductmonthlies/fetchdefault")
+	public ResponseEntity<List<IbizproProductMonthlyDTO>> fetchDefault(@RequestBody IbizproProductMonthlySearchContext context) {
         ibizproproductmonthlyRuntime.addAuthorityConditions(context,"READ");
         Page<IbizproProductMonthly> domains = ibizproproductmonthlyService.searchDefault(context) ;
         List<IbizproProductMonthlyDTO> list = ibizproproductmonthlyMapping.toDto(domains.getContent());

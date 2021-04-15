@@ -783,8 +783,8 @@ public class SubStoryResource {
 
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取指派给我的需求", tags = {"需求" } ,notes = "获取指派给我的需求")
-    @RequestMapping(method= RequestMethod.GET , value="/substories/fetchassignedtomystory")
-	public ResponseEntity<List<SubStoryDTO>> fetchAssignedToMyStory(StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/substories/fetchassignedtomystory")
+	public ResponseEntity<List<SubStoryDTO>> fetchAssignedToMyStory(@RequestBody StorySearchContext context) {
         storyRuntime.addAuthorityConditions(context,"READ");
         Page<Story> domains = storyService.searchAssignedToMyStory(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -807,8 +807,8 @@ public class SubStoryResource {
 
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取指派给我的需求（日历）", tags = {"需求" } ,notes = "获取指派给我的需求（日历）")
-    @RequestMapping(method= RequestMethod.GET , value="/substories/fetchassignedtomystorycalendar")
-	public ResponseEntity<List<SubStoryDTO>> fetchAssignedToMyStoryCalendar(StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/substories/fetchassignedtomystorycalendar")
+	public ResponseEntity<List<SubStoryDTO>> fetchAssignedToMyStoryCalendar(@RequestBody StorySearchContext context) {
         storyRuntime.addAuthorityConditions(context,"READ");
         Page<Story> domains = storyService.searchAssignedToMyStoryCalendar(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -831,8 +831,8 @@ public class SubStoryResource {
 
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Bug相关需求", tags = {"需求" } ,notes = "获取Bug相关需求")
-    @RequestMapping(method= RequestMethod.GET , value="/substories/fetchbugstory")
-	public ResponseEntity<List<SubStoryDTO>> fetchBugStory(StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/substories/fetchbugstory")
+	public ResponseEntity<List<SubStoryDTO>> fetchBugStory(@RequestBody StorySearchContext context) {
         storyRuntime.addAuthorityConditions(context,"READ");
         Page<Story> domains = storyService.searchBugStory(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -855,8 +855,8 @@ public class SubStoryResource {
 
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本关联已完成的需求（选择数据源）", tags = {"需求" } ,notes = "获取版本关联已完成的需求（选择数据源）")
-    @RequestMapping(method= RequestMethod.GET , value="/substories/fetchbuildlinkcompletedstories")
-	public ResponseEntity<List<SubStoryDTO>> fetchBuildLinkCompletedStories(StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/substories/fetchbuildlinkcompletedstories")
+	public ResponseEntity<List<SubStoryDTO>> fetchBuildLinkCompletedStories(@RequestBody StorySearchContext context) {
         storyRuntime.addAuthorityConditions(context,"READ");
         Page<Story> domains = storyService.searchBuildLinkCompletedStories(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -879,8 +879,8 @@ public class SubStoryResource {
 
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本可关联的需求（产品内）", tags = {"需求" } ,notes = "获取版本可关联的需求（产品内）")
-    @RequestMapping(method= RequestMethod.GET , value="/substories/fetchbuildlinkablestories")
-	public ResponseEntity<List<SubStoryDTO>> fetchBuildLinkableStories(StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/substories/fetchbuildlinkablestories")
+	public ResponseEntity<List<SubStoryDTO>> fetchBuildLinkableStories(@RequestBody StorySearchContext context) {
         storyRuntime.addAuthorityConditions(context,"READ");
         Page<Story> domains = storyService.searchBuildLinkableStories(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -951,8 +951,8 @@ public class SubStoryResource {
 
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取相关用例需求", tags = {"需求" } ,notes = "获取相关用例需求")
-    @RequestMapping(method= RequestMethod.GET , value="/substories/fetchcasestory")
-	public ResponseEntity<List<SubStoryDTO>> fetchCaseStory(StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/substories/fetchcasestory")
+	public ResponseEntity<List<SubStoryDTO>> fetchCaseStory(@RequestBody StorySearchContext context) {
         storyRuntime.addAuthorityConditions(context,"READ");
         Page<Story> domains = storyService.searchCaseStory(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -999,8 +999,8 @@ public class SubStoryResource {
 
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取ES批量的导入", tags = {"需求" } ,notes = "获取ES批量的导入")
-    @RequestMapping(method= RequestMethod.GET , value="/substories/fetchesbulk")
-	public ResponseEntity<List<SubStoryDTO>> fetchESBulk(StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/substories/fetchesbulk")
+	public ResponseEntity<List<SubStoryDTO>> fetchESBulk(@RequestBody StorySearchContext context) {
         storyRuntime.addAuthorityConditions(context,"READ");
         Page<Story> domains = storyService.searchESBulk(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -1023,8 +1023,8 @@ public class SubStoryResource {
 
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取获取产品需求", tags = {"需求" } ,notes = "获取获取产品需求")
-    @RequestMapping(method= RequestMethod.GET , value="/substories/fetchgetproductstories")
-	public ResponseEntity<List<SubStoryDTO>> fetchGetProductStories(StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/substories/fetchgetproductstories")
+	public ResponseEntity<List<SubStoryDTO>> fetchGetProductStories(@RequestBody StorySearchContext context) {
         storyRuntime.addAuthorityConditions(context,"READ");
         Page<Story> domains = storyService.searchGetProductStories(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -1047,8 +1047,8 @@ public class SubStoryResource {
 
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我代理的需求", tags = {"需求" } ,notes = "获取我代理的需求")
-    @RequestMapping(method= RequestMethod.GET , value="/substories/fetchmyagentstory")
-	public ResponseEntity<List<SubStoryDTO>> fetchMyAgentStory(StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/substories/fetchmyagentstory")
+	public ResponseEntity<List<SubStoryDTO>> fetchMyAgentStory(@RequestBody StorySearchContext context) {
         storyRuntime.addAuthorityConditions(context,"READ");
         Page<Story> domains = storyService.searchMyAgentStory(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -1071,8 +1071,8 @@ public class SubStoryResource {
 
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取所创建需求数和对应的优先级及状态", tags = {"需求" } ,notes = "获取所创建需求数和对应的优先级及状态")
-    @RequestMapping(method= RequestMethod.GET , value="/substories/fetchmycuropenedstory")
-	public ResponseEntity<List<SubStoryDTO>> fetchMyCurOpenedStory(StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/substories/fetchmycuropenedstory")
+	public ResponseEntity<List<SubStoryDTO>> fetchMyCurOpenedStory(@RequestBody StorySearchContext context) {
         storyRuntime.addAuthorityConditions(context,"READ");
         Page<Story> domains = storyService.searchMyCurOpenedStory(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -1119,8 +1119,8 @@ public class SubStoryResource {
 
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取计划关联需求(去除已关联)", tags = {"需求" } ,notes = "获取计划关联需求(去除已关联)")
-    @RequestMapping(method= RequestMethod.GET , value="/substories/fetchnotcurplanlinkstory")
-	public ResponseEntity<List<SubStoryDTO>> fetchNotCurPlanLinkStory(StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/substories/fetchnotcurplanlinkstory")
+	public ResponseEntity<List<SubStoryDTO>> fetchNotCurPlanLinkStory(@RequestBody StorySearchContext context) {
         storyRuntime.addAuthorityConditions(context,"READ");
         Page<Story> domains = storyService.searchNotCurPlanLinkStory(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -1167,8 +1167,8 @@ public class SubStoryResource {
 
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据查询", tags = {"需求" } ,notes = "获取数据查询")
-    @RequestMapping(method= RequestMethod.GET , value="/substories/fetchparentdefaultq")
-	public ResponseEntity<List<SubStoryDTO>> fetchParentDefaultQ(StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/substories/fetchparentdefaultq")
+	public ResponseEntity<List<SubStoryDTO>> fetchParentDefaultQ(@RequestBody StorySearchContext context) {
         storyRuntime.addAuthorityConditions(context,"READ");
         Page<Story> domains = storyService.searchParentDefaultQ(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -1191,8 +1191,8 @@ public class SubStoryResource {
 
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目关联需求", tags = {"需求" } ,notes = "获取项目关联需求")
-    @RequestMapping(method= RequestMethod.GET , value="/substories/fetchprojectlinkstory")
-	public ResponseEntity<List<SubStoryDTO>> fetchProjectLinkStory(StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/substories/fetchprojectlinkstory")
+	public ResponseEntity<List<SubStoryDTO>> fetchProjectLinkStory(@RequestBody StorySearchContext context) {
         storyRuntime.addAuthorityConditions(context,"READ");
         Page<Story> domains = storyService.searchProjectLinkStory(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -1239,8 +1239,8 @@ public class SubStoryResource {
 
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本可关联的完成的需求", tags = {"需求" } ,notes = "获取版本可关联的完成的需求")
-    @RequestMapping(method= RequestMethod.GET , value="/substories/fetchreleaselinkablestories")
-	public ResponseEntity<List<SubStoryDTO>> fetchReleaseLinkableStories(StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/substories/fetchreleaselinkablestories")
+	public ResponseEntity<List<SubStoryDTO>> fetchReleaseLinkableStories(@RequestBody StorySearchContext context) {
         storyRuntime.addAuthorityConditions(context,"READ");
         Page<Story> domains = storyService.searchReleaseLinkableStories(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -1311,8 +1311,8 @@ public class SubStoryResource {
 
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取获取产品发布相关需求", tags = {"需求" } ,notes = "获取获取产品发布相关需求")
-    @RequestMapping(method= RequestMethod.GET , value="/substories/fetchstorychild")
-	public ResponseEntity<List<SubStoryDTO>> fetchStoryChild(StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/substories/fetchstorychild")
+	public ResponseEntity<List<SubStoryDTO>> fetchStoryChild(@RequestBody StorySearchContext context) {
         storyRuntime.addAuthorityConditions(context,"READ");
         Page<Story> domains = storyService.searchStoryChild(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -1335,8 +1335,8 @@ public class SubStoryResource {
 
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取获取产品发布相关需求", tags = {"需求" } ,notes = "获取获取产品发布相关需求")
-    @RequestMapping(method= RequestMethod.GET , value="/substories/fetchstoryrelated")
-	public ResponseEntity<List<SubStoryDTO>> fetchStoryRelated(StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/substories/fetchstoryrelated")
+	public ResponseEntity<List<SubStoryDTO>> fetchStoryRelated(@RequestBody StorySearchContext context) {
         storyRuntime.addAuthorityConditions(context,"READ");
         Page<Story> domains = storyService.searchStoryRelated(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -1359,8 +1359,8 @@ public class SubStoryResource {
 
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取需求细分", tags = {"需求" } ,notes = "获取需求细分")
-    @RequestMapping(method= RequestMethod.GET , value="/substories/fetchsubstory")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStory(StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/substories/fetchsubstory")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStory(@RequestBody StorySearchContext context) {
         storyRuntime.addAuthorityConditions(context,"READ");
         Page<Story> domains = storyService.searchSubStory(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -1383,8 +1383,8 @@ public class SubStoryResource {
 
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取任务相关需求", tags = {"需求" } ,notes = "获取任务相关需求")
-    @RequestMapping(method= RequestMethod.GET , value="/substories/fetchtaskrelatedstory")
-	public ResponseEntity<List<SubStoryDTO>> fetchTaskRelatedStory(StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/substories/fetchtaskrelatedstory")
+	public ResponseEntity<List<SubStoryDTO>> fetchTaskRelatedStory(@RequestBody StorySearchContext context) {
         storyRuntime.addAuthorityConditions(context,"READ");
         Page<Story> domains = storyService.searchTaskRelatedStory(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -1407,8 +1407,8 @@ public class SubStoryResource {
 
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取默认（全部数据）", tags = {"需求" } ,notes = "获取默认（全部数据）")
-    @RequestMapping(method= RequestMethod.GET , value="/substories/fetchview")
-	public ResponseEntity<List<SubStoryDTO>> fetchView(StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/substories/fetchview")
+	public ResponseEntity<List<SubStoryDTO>> fetchView(@RequestBody StorySearchContext context) {
         storyRuntime.addAuthorityConditions(context,"READ");
         Page<Story> domains = storyService.searchView(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -2126,8 +2126,8 @@ public class SubStoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 	@ApiOperation(value = "根据需求获取指派给我的需求", tags = {"需求" } ,notes = "根据需求获取指派给我的需求")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/substories/fetchassignedtomystory")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryAssignedToMyStoryByStory(@PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/substories/fetchassignedtomystory")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryAssignedToMyStoryByStory(@PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchAssignedToMyStory(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -2147,8 +2147,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取指派给我的需求（日历）", tags = {"需求" } ,notes = "根据需求获取指派给我的需求（日历）")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/substories/fetchassignedtomystorycalendar")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryAssignedToMyStoryCalendarByStory(@PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/substories/fetchassignedtomystorycalendar")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryAssignedToMyStoryCalendarByStory(@PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchAssignedToMyStoryCalendar(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -2168,8 +2168,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取Bug相关需求", tags = {"需求" } ,notes = "根据需求获取Bug相关需求")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/substories/fetchbugstory")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryBugStoryByStory(@PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/substories/fetchbugstory")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryBugStoryByStory(@PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchBugStory(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -2189,8 +2189,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取版本关联已完成的需求（选择数据源）", tags = {"需求" } ,notes = "根据需求获取版本关联已完成的需求（选择数据源）")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/substories/fetchbuildlinkcompletedstories")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryBuildLinkCompletedStoriesByStory(@PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/substories/fetchbuildlinkcompletedstories")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryBuildLinkCompletedStoriesByStory(@PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchBuildLinkCompletedStories(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -2210,8 +2210,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取版本可关联的需求（产品内）", tags = {"需求" } ,notes = "根据需求获取版本可关联的需求（产品内）")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/substories/fetchbuildlinkablestories")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryBuildLinkableStoriesByStory(@PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/substories/fetchbuildlinkablestories")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryBuildLinkableStoriesByStory(@PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchBuildLinkableStories(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -2273,8 +2273,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取相关用例需求", tags = {"需求" } ,notes = "根据需求获取相关用例需求")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/substories/fetchcasestory")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryCaseStoryByStory(@PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/substories/fetchcasestory")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryCaseStoryByStory(@PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchCaseStory(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -2315,8 +2315,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取ES批量的导入", tags = {"需求" } ,notes = "根据需求获取ES批量的导入")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/substories/fetchesbulk")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryESBulkByStory(@PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/substories/fetchesbulk")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryESBulkByStory(@PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchESBulk(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -2336,8 +2336,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取获取产品需求", tags = {"需求" } ,notes = "根据需求获取获取产品需求")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/substories/fetchgetproductstories")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryGetProductStoriesByStory(@PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/substories/fetchgetproductstories")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryGetProductStoriesByStory(@PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchGetProductStories(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -2357,8 +2357,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取我代理的需求", tags = {"需求" } ,notes = "根据需求获取我代理的需求")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/substories/fetchmyagentstory")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryMyAgentStoryByStory(@PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/substories/fetchmyagentstory")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryMyAgentStoryByStory(@PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchMyAgentStory(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -2378,8 +2378,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取所创建需求数和对应的优先级及状态", tags = {"需求" } ,notes = "根据需求获取所创建需求数和对应的优先级及状态")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/substories/fetchmycuropenedstory")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryMyCurOpenedStoryByStory(@PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/substories/fetchmycuropenedstory")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryMyCurOpenedStoryByStory(@PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchMyCurOpenedStory(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -2420,8 +2420,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取计划关联需求(去除已关联)", tags = {"需求" } ,notes = "根据需求获取计划关联需求(去除已关联)")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/substories/fetchnotcurplanlinkstory")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryNotCurPlanLinkStoryByStory(@PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/substories/fetchnotcurplanlinkstory")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryNotCurPlanLinkStoryByStory(@PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchNotCurPlanLinkStory(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -2462,8 +2462,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取数据查询", tags = {"需求" } ,notes = "根据需求获取数据查询")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/substories/fetchparentdefaultq")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryParentDefaultQByStory(@PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/substories/fetchparentdefaultq")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryParentDefaultQByStory(@PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchParentDefaultQ(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -2483,8 +2483,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取项目关联需求", tags = {"需求" } ,notes = "根据需求获取项目关联需求")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/substories/fetchprojectlinkstory")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryProjectLinkStoryByStory(@PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/substories/fetchprojectlinkstory")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryProjectLinkStoryByStory(@PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchProjectLinkStory(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -2525,8 +2525,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取版本可关联的完成的需求", tags = {"需求" } ,notes = "根据需求获取版本可关联的完成的需求")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/substories/fetchreleaselinkablestories")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryReleaseLinkableStoriesByStory(@PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/substories/fetchreleaselinkablestories")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryReleaseLinkableStoriesByStory(@PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchReleaseLinkableStories(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -2588,8 +2588,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取获取产品发布相关需求", tags = {"需求" } ,notes = "根据需求获取获取产品发布相关需求")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/substories/fetchstorychild")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryStoryChildByStory(@PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/substories/fetchstorychild")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryStoryChildByStory(@PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchStoryChild(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -2609,8 +2609,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取获取产品发布相关需求", tags = {"需求" } ,notes = "根据需求获取获取产品发布相关需求")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/substories/fetchstoryrelated")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryStoryRelatedByStory(@PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/substories/fetchstoryrelated")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryStoryRelatedByStory(@PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchStoryRelated(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -2630,8 +2630,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取需求细分", tags = {"需求" } ,notes = "根据需求获取需求细分")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/substories/fetchsubstory")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStorySubStoryByStory(@PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/substories/fetchsubstory")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStorySubStoryByStory(@PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchSubStory(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -2651,8 +2651,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取任务相关需求", tags = {"需求" } ,notes = "根据需求获取任务相关需求")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/substories/fetchtaskrelatedstory")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryTaskRelatedStoryByStory(@PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/substories/fetchtaskrelatedstory")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryTaskRelatedStoryByStory(@PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchTaskRelatedStory(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -2672,8 +2672,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据需求获取默认（全部数据）", tags = {"需求" } ,notes = "根据需求获取默认（全部数据）")
-    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/substories/fetchview")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryViewByStory(@PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/substories/fetchview")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryViewByStory(@PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchView(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -3381,8 +3381,8 @@ public class SubStoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 	@ApiOperation(value = "根据产品需求获取指派给我的需求", tags = {"需求" } ,notes = "根据产品需求获取指派给我的需求")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/substories/fetchassignedtomystory")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryAssignedToMyStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/substories/fetchassignedtomystory")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryAssignedToMyStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchAssignedToMyStory(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -3402,8 +3402,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取指派给我的需求（日历）", tags = {"需求" } ,notes = "根据产品需求获取指派给我的需求（日历）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/substories/fetchassignedtomystorycalendar")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryAssignedToMyStoryCalendarByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/substories/fetchassignedtomystorycalendar")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryAssignedToMyStoryCalendarByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchAssignedToMyStoryCalendar(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -3423,8 +3423,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取Bug相关需求", tags = {"需求" } ,notes = "根据产品需求获取Bug相关需求")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/substories/fetchbugstory")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryBugStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/substories/fetchbugstory")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryBugStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchBugStory(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -3444,8 +3444,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取版本关联已完成的需求（选择数据源）", tags = {"需求" } ,notes = "根据产品需求获取版本关联已完成的需求（选择数据源）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/substories/fetchbuildlinkcompletedstories")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryBuildLinkCompletedStoriesByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/substories/fetchbuildlinkcompletedstories")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryBuildLinkCompletedStoriesByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchBuildLinkCompletedStories(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -3465,8 +3465,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取版本可关联的需求（产品内）", tags = {"需求" } ,notes = "根据产品需求获取版本可关联的需求（产品内）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/substories/fetchbuildlinkablestories")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryBuildLinkableStoriesByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/substories/fetchbuildlinkablestories")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryBuildLinkableStoriesByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchBuildLinkableStories(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -3528,8 +3528,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取相关用例需求", tags = {"需求" } ,notes = "根据产品需求获取相关用例需求")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/substories/fetchcasestory")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryCaseStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/substories/fetchcasestory")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryCaseStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchCaseStory(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -3570,8 +3570,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取ES批量的导入", tags = {"需求" } ,notes = "根据产品需求获取ES批量的导入")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/substories/fetchesbulk")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryESBulkByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/substories/fetchesbulk")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryESBulkByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchESBulk(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -3591,8 +3591,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取获取产品需求", tags = {"需求" } ,notes = "根据产品需求获取获取产品需求")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/substories/fetchgetproductstories")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryGetProductStoriesByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/substories/fetchgetproductstories")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryGetProductStoriesByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchGetProductStories(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -3612,8 +3612,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取我代理的需求", tags = {"需求" } ,notes = "根据产品需求获取我代理的需求")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/substories/fetchmyagentstory")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryMyAgentStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/substories/fetchmyagentstory")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryMyAgentStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchMyAgentStory(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -3633,8 +3633,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取所创建需求数和对应的优先级及状态", tags = {"需求" } ,notes = "根据产品需求获取所创建需求数和对应的优先级及状态")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/substories/fetchmycuropenedstory")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryMyCurOpenedStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/substories/fetchmycuropenedstory")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryMyCurOpenedStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchMyCurOpenedStory(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -3675,8 +3675,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取计划关联需求(去除已关联)", tags = {"需求" } ,notes = "根据产品需求获取计划关联需求(去除已关联)")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/substories/fetchnotcurplanlinkstory")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryNotCurPlanLinkStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/substories/fetchnotcurplanlinkstory")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryNotCurPlanLinkStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchNotCurPlanLinkStory(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -3717,8 +3717,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取数据查询", tags = {"需求" } ,notes = "根据产品需求获取数据查询")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/substories/fetchparentdefaultq")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryParentDefaultQByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/substories/fetchparentdefaultq")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryParentDefaultQByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchParentDefaultQ(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -3738,8 +3738,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取项目关联需求", tags = {"需求" } ,notes = "根据产品需求获取项目关联需求")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/substories/fetchprojectlinkstory")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryProjectLinkStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/substories/fetchprojectlinkstory")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryProjectLinkStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchProjectLinkStory(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -3780,8 +3780,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取版本可关联的完成的需求", tags = {"需求" } ,notes = "根据产品需求获取版本可关联的完成的需求")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/substories/fetchreleaselinkablestories")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryReleaseLinkableStoriesByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/substories/fetchreleaselinkablestories")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryReleaseLinkableStoriesByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchReleaseLinkableStories(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -3843,8 +3843,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取获取产品发布相关需求", tags = {"需求" } ,notes = "根据产品需求获取获取产品发布相关需求")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/substories/fetchstorychild")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryStoryChildByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/substories/fetchstorychild")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryStoryChildByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchStoryChild(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -3864,8 +3864,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取获取产品发布相关需求", tags = {"需求" } ,notes = "根据产品需求获取获取产品发布相关需求")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/substories/fetchstoryrelated")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryStoryRelatedByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/substories/fetchstoryrelated")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryStoryRelatedByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchStoryRelated(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -3885,8 +3885,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取需求细分", tags = {"需求" } ,notes = "根据产品需求获取需求细分")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/substories/fetchsubstory")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStorySubStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/substories/fetchsubstory")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStorySubStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchSubStory(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -3906,8 +3906,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取任务相关需求", tags = {"需求" } ,notes = "根据产品需求获取任务相关需求")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/substories/fetchtaskrelatedstory")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryTaskRelatedStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/substories/fetchtaskrelatedstory")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryTaskRelatedStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchTaskRelatedStory(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
@@ -3927,8 +3927,8 @@ public class SubStoryResource {
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 	@ApiOperation(value = "根据产品需求获取默认（全部数据）", tags = {"需求" } ,notes = "根据产品需求获取默认（全部数据）")
-    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/substories/fetchview")
-	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryViewByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,StorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/substories/fetchview")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryViewByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchView(context) ;
         List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());

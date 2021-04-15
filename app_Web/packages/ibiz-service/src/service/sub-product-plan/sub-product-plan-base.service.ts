@@ -619,10 +619,10 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      */
     async FetchChildPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.productplan && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/fetchchildplan`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/fetchchildplan`, _data);
         }
         if (_context.productplan && true) {
-            return this.http.get(`/productplans/${_context.productplan}/subproductplans/fetchchildplan`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/subproductplans/fetchchildplan`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -636,10 +636,10 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      */
     async FetchCurProductPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.productplan && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/fetchcurproductplan`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/fetchcurproductplan`, _data);
         }
         if (_context.productplan && true) {
-            return this.http.get(`/productplans/${_context.productplan}/subproductplans/fetchcurproductplan`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/subproductplans/fetchcurproductplan`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -653,10 +653,10 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.productplan && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/fetchdefault`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/fetchdefault`, _data);
         }
         if (_context.productplan && true) {
-            return this.http.get(`/productplans/${_context.productplan}/subproductplans/fetchdefault`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/subproductplans/fetchdefault`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -687,10 +687,10 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      */
     async FetchPlanCodeList(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.productplan && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/fetchplancodelist`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/fetchplancodelist`, _data);
         }
         if (_context.productplan && true) {
-            return this.http.get(`/productplans/${_context.productplan}/subproductplans/fetchplancodelist`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/subproductplans/fetchplancodelist`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -704,10 +704,10 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      */
     async FetchPlanTasks(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.productplan && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/fetchplantasks`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/fetchplantasks`, _data);
         }
         if (_context.productplan && true) {
-            return this.http.get(`/productplans/${_context.productplan}/subproductplans/fetchplantasks`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/subproductplans/fetchplantasks`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -721,10 +721,10 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      */
     async FetchProjectApp(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.productplan && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/fetchprojectapp`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/fetchprojectapp`, _data);
         }
         if (_context.productplan && true) {
-            return this.http.get(`/productplans/${_context.productplan}/subproductplans/fetchprojectapp`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/subproductplans/fetchprojectapp`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -738,10 +738,10 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      */
     async FetchProjectPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.productplan && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/fetchprojectplan`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/fetchprojectplan`, _data);
         }
         if (_context.productplan && true) {
-            return this.http.get(`/productplans/${_context.productplan}/subproductplans/fetchprojectplan`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/subproductplans/fetchprojectplan`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -755,10 +755,10 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      */
     async FetchRootPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.productplan && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/fetchrootplan`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/fetchrootplan`, _data);
         }
         if (_context.productplan && true) {
-            return this.http.get(`/productplans/${_context.productplan}/subproductplans/fetchrootplan`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/subproductplans/fetchrootplan`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -772,10 +772,10 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      */
     async FetchTaskPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.productplan && true) {
-            return this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/fetchtaskplan`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/fetchtaskplan`, _data);
         }
         if (_context.productplan && true) {
-            return this.http.get(`/productplans/${_context.productplan}/subproductplans/fetchtaskplan`, _data);
+            return this.http.post(`/productplans/${_context.productplan}/subproductplans/fetchtaskplan`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

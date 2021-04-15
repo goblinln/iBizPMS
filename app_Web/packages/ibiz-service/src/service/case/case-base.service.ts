@@ -961,15 +961,15 @@ export class CaseBaseService extends EntityBaseService<ICase> {
      */
     async FetchBatchNew(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/cases/fetchbatchnew`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/fetchbatchnew`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/cases/fetchbatchnew`, _data);
+            return this.http.post(`/stories/${_context.story}/cases/fetchbatchnew`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/cases/fetchbatchnew`, _data);
+            return this.http.post(`/products/${_context.product}/cases/fetchbatchnew`, _data);
         }
-        return this.http.get(`/cases/fetchbatchnew`, _data);
+        return this.http.post(`/cases/fetchbatchnew`, _data);
     }
     /**
      * FetchCurOpenedCase
@@ -981,15 +981,15 @@ export class CaseBaseService extends EntityBaseService<ICase> {
      */
     async FetchCurOpenedCase(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/cases/fetchcuropenedcase`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/fetchcuropenedcase`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/cases/fetchcuropenedcase`, _data);
+            return this.http.post(`/stories/${_context.story}/cases/fetchcuropenedcase`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/cases/fetchcuropenedcase`, _data);
+            return this.http.post(`/products/${_context.product}/cases/fetchcuropenedcase`, _data);
         }
-        return this.http.get(`/cases/fetchcuropenedcase`, _data);
+        return this.http.post(`/cases/fetchcuropenedcase`, _data);
     }
     /**
      * FetchCurSuite
@@ -1061,15 +1061,15 @@ export class CaseBaseService extends EntityBaseService<ICase> {
      */
     async FetchESBulk(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/cases/fetchesbulk`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/fetchesbulk`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/cases/fetchesbulk`, _data);
+            return this.http.post(`/stories/${_context.story}/cases/fetchesbulk`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/cases/fetchesbulk`, _data);
+            return this.http.post(`/products/${_context.product}/cases/fetchesbulk`, _data);
         }
-        return this.http.get(`/cases/fetchesbulk`, _data);
+        return this.http.post(`/cases/fetchesbulk`, _data);
     }
     /**
      * FetchModuleRePortCase
@@ -1081,15 +1081,15 @@ export class CaseBaseService extends EntityBaseService<ICase> {
      */
     async FetchModuleRePortCase(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/cases/fetchmodulereportcase`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/fetchmodulereportcase`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/cases/fetchmodulereportcase`, _data);
+            return this.http.post(`/stories/${_context.story}/cases/fetchmodulereportcase`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/cases/fetchmodulereportcase`, _data);
+            return this.http.post(`/products/${_context.product}/cases/fetchmodulereportcase`, _data);
         }
-        return this.http.get(`/cases/fetchmodulereportcase`, _data);
+        return this.http.post(`/cases/fetchmodulereportcase`, _data);
     }
     /**
      * FetchModuleRePortCaseEntry
@@ -1101,15 +1101,15 @@ export class CaseBaseService extends EntityBaseService<ICase> {
      */
     async FetchModuleRePortCaseEntry(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/cases/fetchmodulereportcaseentry`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/fetchmodulereportcaseentry`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/cases/fetchmodulereportcaseentry`, _data);
+            return this.http.post(`/stories/${_context.story}/cases/fetchmodulereportcaseentry`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/cases/fetchmodulereportcaseentry`, _data);
+            return this.http.post(`/products/${_context.product}/cases/fetchmodulereportcaseentry`, _data);
         }
-        return this.http.get(`/cases/fetchmodulereportcaseentry`, _data);
+        return this.http.post(`/cases/fetchmodulereportcaseentry`, _data);
     }
     /**
      * FetchModuleRePortCase_Project
@@ -1121,15 +1121,15 @@ export class CaseBaseService extends EntityBaseService<ICase> {
      */
     async FetchModuleRePortCase_Project(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/cases/fetchmodulereportcase_project`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/fetchmodulereportcase_project`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/cases/fetchmodulereportcase_project`, _data);
+            return this.http.post(`/stories/${_context.story}/cases/fetchmodulereportcase_project`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/cases/fetchmodulereportcase_project`, _data);
+            return this.http.post(`/products/${_context.product}/cases/fetchmodulereportcase_project`, _data);
         }
-        return this.http.get(`/cases/fetchmodulereportcase_project`, _data);
+        return this.http.post(`/cases/fetchmodulereportcase_project`, _data);
     }
     /**
      * FetchMyFavorites
@@ -1201,15 +1201,15 @@ export class CaseBaseService extends EntityBaseService<ICase> {
      */
     async FetchNotCurTestTaskProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/cases/fetchnotcurtesttaskproject`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/fetchnotcurtesttaskproject`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/cases/fetchnotcurtesttaskproject`, _data);
+            return this.http.post(`/stories/${_context.story}/cases/fetchnotcurtesttaskproject`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/cases/fetchnotcurtesttaskproject`, _data);
+            return this.http.post(`/products/${_context.product}/cases/fetchnotcurtesttaskproject`, _data);
         }
-        return this.http.get(`/cases/fetchnotcurtesttaskproject`, _data);
+        return this.http.post(`/cases/fetchnotcurtesttaskproject`, _data);
     }
     /**
      * FetchRePortCase
@@ -1241,15 +1241,15 @@ export class CaseBaseService extends EntityBaseService<ICase> {
      */
     async FetchRePortCaseEntry(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/cases/fetchreportcaseentry`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/fetchreportcaseentry`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/cases/fetchreportcaseentry`, _data);
+            return this.http.post(`/stories/${_context.story}/cases/fetchreportcaseentry`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/cases/fetchreportcaseentry`, _data);
+            return this.http.post(`/products/${_context.product}/cases/fetchreportcaseentry`, _data);
         }
-        return this.http.get(`/cases/fetchreportcaseentry`, _data);
+        return this.http.post(`/cases/fetchreportcaseentry`, _data);
     }
     /**
      * FetchRePortCase_Project
@@ -1281,15 +1281,15 @@ export class CaseBaseService extends EntityBaseService<ICase> {
      */
     async FetchRunERRePortCase(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/cases/fetchrunerreportcase`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/fetchrunerreportcase`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/cases/fetchrunerreportcase`, _data);
+            return this.http.post(`/stories/${_context.story}/cases/fetchrunerreportcase`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/cases/fetchrunerreportcase`, _data);
+            return this.http.post(`/products/${_context.product}/cases/fetchrunerreportcase`, _data);
         }
-        return this.http.get(`/cases/fetchrunerreportcase`, _data);
+        return this.http.post(`/cases/fetchrunerreportcase`, _data);
     }
     /**
      * FetchRunERRePortCaseEntry
@@ -1301,15 +1301,15 @@ export class CaseBaseService extends EntityBaseService<ICase> {
      */
     async FetchRunERRePortCaseEntry(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/cases/fetchrunerreportcaseentry`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/fetchrunerreportcaseentry`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/cases/fetchrunerreportcaseentry`, _data);
+            return this.http.post(`/stories/${_context.story}/cases/fetchrunerreportcaseentry`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/cases/fetchrunerreportcaseentry`, _data);
+            return this.http.post(`/products/${_context.product}/cases/fetchrunerreportcaseentry`, _data);
         }
-        return this.http.get(`/cases/fetchrunerreportcaseentry`, _data);
+        return this.http.post(`/cases/fetchrunerreportcaseentry`, _data);
     }
     /**
      * FetchRunERRePortCase_Project
@@ -1321,15 +1321,15 @@ export class CaseBaseService extends EntityBaseService<ICase> {
      */
     async FetchRunERRePortCase_Project(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/cases/fetchrunerreportcase_project`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/fetchrunerreportcase_project`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/cases/fetchrunerreportcase_project`, _data);
+            return this.http.post(`/stories/${_context.story}/cases/fetchrunerreportcase_project`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/cases/fetchrunerreportcase_project`, _data);
+            return this.http.post(`/products/${_context.product}/cases/fetchrunerreportcase_project`, _data);
         }
-        return this.http.get(`/cases/fetchrunerreportcase_project`, _data);
+        return this.http.post(`/cases/fetchrunerreportcase_project`, _data);
     }
     /**
      * FetchRunRePortCase
@@ -1341,15 +1341,15 @@ export class CaseBaseService extends EntityBaseService<ICase> {
      */
     async FetchRunRePortCase(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/cases/fetchrunreportcase`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/fetchrunreportcase`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/cases/fetchrunreportcase`, _data);
+            return this.http.post(`/stories/${_context.story}/cases/fetchrunreportcase`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/cases/fetchrunreportcase`, _data);
+            return this.http.post(`/products/${_context.product}/cases/fetchrunreportcase`, _data);
         }
-        return this.http.get(`/cases/fetchrunreportcase`, _data);
+        return this.http.post(`/cases/fetchrunreportcase`, _data);
     }
     /**
      * FetchRunRePortCaseEntry
@@ -1361,15 +1361,15 @@ export class CaseBaseService extends EntityBaseService<ICase> {
      */
     async FetchRunRePortCaseEntry(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/cases/fetchrunreportcaseentry`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/fetchrunreportcaseentry`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/cases/fetchrunreportcaseentry`, _data);
+            return this.http.post(`/stories/${_context.story}/cases/fetchrunreportcaseentry`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/cases/fetchrunreportcaseentry`, _data);
+            return this.http.post(`/products/${_context.product}/cases/fetchrunreportcaseentry`, _data);
         }
-        return this.http.get(`/cases/fetchrunreportcaseentry`, _data);
+        return this.http.post(`/cases/fetchrunreportcaseentry`, _data);
     }
     /**
      * FetchRunRePortCase_Project
@@ -1381,14 +1381,14 @@ export class CaseBaseService extends EntityBaseService<ICase> {
      */
     async FetchRunRePortCase_Project(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/cases/fetchrunreportcase_project`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/fetchrunreportcase_project`, _data);
         }
         if (_context.story && true) {
-            return this.http.get(`/stories/${_context.story}/cases/fetchrunreportcase_project`, _data);
+            return this.http.post(`/stories/${_context.story}/cases/fetchrunreportcase_project`, _data);
         }
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/cases/fetchrunreportcase_project`, _data);
+            return this.http.post(`/products/${_context.product}/cases/fetchrunreportcase_project`, _data);
         }
-        return this.http.get(`/cases/fetchrunreportcase_project`, _data);
+        return this.http.post(`/cases/fetchrunreportcase_project`, _data);
     }
 }

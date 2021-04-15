@@ -27,6 +27,7 @@ function getLocaleResourceBase(){
 		'projectname': commonLogic.appcommonhandle("所属项目",null),
 		'project': commonLogic.appcommonhandle("项目库",null),
 		'product': commonLogic.appcommonhandle("产品库",null),
+		'updatemanname': commonLogic.appcommonhandle("由谁更新",null),
 	},
 		views: {
 			'usr2treeview': {

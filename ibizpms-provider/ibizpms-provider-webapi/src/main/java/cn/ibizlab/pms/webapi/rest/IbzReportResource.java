@@ -170,8 +170,8 @@ public class IbzReportResource {
 
     @PreAuthorize("@IbzReportRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取汇报汇总", tags = {"汇报汇总" } ,notes = "获取汇报汇总")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzreports/fetchallreport")
-	public ResponseEntity<List<IbzReportDTO>> fetchAllReport(IbzReportSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzreports/fetchallreport")
+	public ResponseEntity<List<IbzReportDTO>> fetchAllReport(@RequestBody IbzReportSearchContext context) {
         ibzreportRuntime.addAuthorityConditions(context,"READ");
         Page<IbzReport> domains = ibzreportService.searchAllReport(context) ;
         List<IbzReportDTO> list = ibzreportMapping.toDto(domains.getContent());
@@ -194,8 +194,8 @@ public class IbzReportResource {
 
     @PreAuthorize("@IbzReportRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"汇报汇总" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzreports/fetchdefault")
-	public ResponseEntity<List<IbzReportDTO>> fetchDefault(IbzReportSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzreports/fetchdefault")
+	public ResponseEntity<List<IbzReportDTO>> fetchDefault(@RequestBody IbzReportSearchContext context) {
         ibzreportRuntime.addAuthorityConditions(context,"READ");
         Page<IbzReport> domains = ibzreportService.searchDefault(context) ;
         List<IbzReportDTO> list = ibzreportMapping.toDto(domains.getContent());
@@ -218,8 +218,8 @@ public class IbzReportResource {
 
     @PreAuthorize("@IbzReportRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取汇报汇总（我收到的）", tags = {"汇报汇总" } ,notes = "获取汇报汇总（我收到的）")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzreports/fetchmyreallreport")
-	public ResponseEntity<List<IbzReportDTO>> fetchMyReAllReport(IbzReportSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzreports/fetchmyreallreport")
+	public ResponseEntity<List<IbzReportDTO>> fetchMyReAllReport(@RequestBody IbzReportSearchContext context) {
         ibzreportRuntime.addAuthorityConditions(context,"READ");
         Page<IbzReport> domains = ibzreportService.searchMyReAllReport(context) ;
         List<IbzReportDTO> list = ibzreportMapping.toDto(domains.getContent());

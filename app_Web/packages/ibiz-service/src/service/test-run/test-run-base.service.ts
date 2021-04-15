@@ -258,14 +258,14 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.testtask && true) {
-            return this.http.get(`/projects/${_context.project}/testtasks/${_context.testtask}/testruns/fetchdefault`, _data);
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/testruns/fetchdefault`, _data);
         }
         if (_context.product && _context.testtask && true) {
-            return this.http.get(`/products/${_context.product}/testtasks/${_context.testtask}/testruns/fetchdefault`, _data);
+            return this.http.post(`/products/${_context.product}/testtasks/${_context.testtask}/testruns/fetchdefault`, _data);
         }
         if (_context.testtask && true) {
-            return this.http.get(`/testtasks/${_context.testtask}/testruns/fetchdefault`, _data);
+            return this.http.post(`/testtasks/${_context.testtask}/testruns/fetchdefault`, _data);
         }
-        return this.http.get(`/testruns/fetchdefault`, _data);
+        return this.http.post(`/testruns/fetchdefault`, _data);
     }
 }

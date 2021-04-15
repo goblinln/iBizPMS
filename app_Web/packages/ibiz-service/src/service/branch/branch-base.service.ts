@@ -247,9 +247,9 @@ export class BranchBaseService extends EntityBaseService<IBranch> {
      */
     async FetchCurProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.get(`/products/${_context.product}/branches/fetchcurproduct`, _data);
+            return this.http.post(`/products/${_context.product}/branches/fetchcurproduct`, _data);
         }
-        return this.http.get(`/branches/fetchcurproduct`, _data);
+        return this.http.post(`/branches/fetchcurproduct`, _data);
     }
     /**
      * FetchDefault

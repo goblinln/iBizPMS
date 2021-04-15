@@ -149,8 +149,8 @@ public class HistoryResource {
 
     @PreAuthorize("@HistoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"操作历史" } ,notes = "获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/histories/fetchdefault")
-	public ResponseEntity<List<HistoryDTO>> fetchDefault(HistorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/histories/fetchdefault")
+	public ResponseEntity<List<HistoryDTO>> fetchDefault(@RequestBody HistorySearchContext context) {
         historyRuntime.addAuthorityConditions(context,"READ");
         Page<History> domains = historyService.searchDefault(context) ;
         List<HistoryDTO> list = historyMapping.toDto(domains.getContent());
@@ -278,8 +278,8 @@ public class HistoryResource {
     }
 
 	@ApiOperation(value = "根据系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据系统日志获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/actions/{action_id}/histories/fetchdefault")
-	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByAction(@PathVariable("action_id") Long action_id,HistorySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/actions/{action_id}/histories/fetchdefault")
+	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByAction(@PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
         context.setN_action_eq(action_id);
         Page<History> domains = historyService.searchDefault(context) ;
         List<HistoryDTO> list = historyMapping.toDto(domains.getContent());

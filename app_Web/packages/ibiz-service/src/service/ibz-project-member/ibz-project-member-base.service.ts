@@ -152,6 +152,6 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
      * @memberof IbzProjectMemberService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzprojectmembers/fetchdefault`, _data);
+        return this.http.post(`/ibzprojectmembers/fetchdefault`, _data);
     }
 }

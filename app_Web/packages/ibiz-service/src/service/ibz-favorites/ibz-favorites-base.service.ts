@@ -152,6 +152,6 @@ export class IbzFavoritesBaseService extends EntityBaseService<IIbzFavorites> {
      * @memberof IbzFavoritesService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzfavorites/fetchdefault`, _data);
+        return this.http.post(`/ibzfavorites/fetchdefault`, _data);
     }
 }

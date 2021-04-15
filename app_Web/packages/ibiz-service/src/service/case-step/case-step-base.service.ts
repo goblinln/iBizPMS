@@ -290,18 +290,18 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      */
     async FetchCurTest(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && _context.case && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/cases/${_context.case}/casesteps/fetchcurtest`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/${_context.case}/casesteps/fetchcurtest`, _data);
         }
         if (_context.story && _context.case && true) {
-            return this.http.get(`/stories/${_context.story}/cases/${_context.case}/casesteps/fetchcurtest`, _data);
+            return this.http.post(`/stories/${_context.story}/cases/${_context.case}/casesteps/fetchcurtest`, _data);
         }
         if (_context.product && _context.case && true) {
-            return this.http.get(`/products/${_context.product}/cases/${_context.case}/casesteps/fetchcurtest`, _data);
+            return this.http.post(`/products/${_context.product}/cases/${_context.case}/casesteps/fetchcurtest`, _data);
         }
         if (_context.case && true) {
-            return this.http.get(`/cases/${_context.case}/casesteps/fetchcurtest`, _data);
+            return this.http.post(`/cases/${_context.case}/casesteps/fetchcurtest`, _data);
         }
-        return this.http.get(`/casesteps/fetchcurtest`, _data);
+        return this.http.post(`/casesteps/fetchcurtest`, _data);
     }
     /**
      * FetchDefault
@@ -313,18 +313,18 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && _context.case && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/cases/${_context.case}/casesteps/fetchdefault`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/${_context.case}/casesteps/fetchdefault`, _data);
         }
         if (_context.story && _context.case && true) {
-            return this.http.get(`/stories/${_context.story}/cases/${_context.case}/casesteps/fetchdefault`, _data);
+            return this.http.post(`/stories/${_context.story}/cases/${_context.case}/casesteps/fetchdefault`, _data);
         }
         if (_context.product && _context.case && true) {
-            return this.http.get(`/products/${_context.product}/cases/${_context.case}/casesteps/fetchdefault`, _data);
+            return this.http.post(`/products/${_context.product}/cases/${_context.case}/casesteps/fetchdefault`, _data);
         }
         if (_context.case && true) {
-            return this.http.get(`/cases/${_context.case}/casesteps/fetchdefault`, _data);
+            return this.http.post(`/cases/${_context.case}/casesteps/fetchdefault`, _data);
         }
-        return this.http.get(`/casesteps/fetchdefault`, _data);
+        return this.http.post(`/casesteps/fetchdefault`, _data);
     }
     /**
      * FetchDefault1
@@ -336,18 +336,18 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      */
     async FetchDefault1(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && _context.case && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/cases/${_context.case}/casesteps/fetchdefault1`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/${_context.case}/casesteps/fetchdefault1`, _data);
         }
         if (_context.story && _context.case && true) {
-            return this.http.get(`/stories/${_context.story}/cases/${_context.case}/casesteps/fetchdefault1`, _data);
+            return this.http.post(`/stories/${_context.story}/cases/${_context.case}/casesteps/fetchdefault1`, _data);
         }
         if (_context.product && _context.case && true) {
-            return this.http.get(`/products/${_context.product}/cases/${_context.case}/casesteps/fetchdefault1`, _data);
+            return this.http.post(`/products/${_context.product}/cases/${_context.case}/casesteps/fetchdefault1`, _data);
         }
         if (_context.case && true) {
-            return this.http.get(`/cases/${_context.case}/casesteps/fetchdefault1`, _data);
+            return this.http.post(`/cases/${_context.case}/casesteps/fetchdefault1`, _data);
         }
-        return this.http.get(`/casesteps/fetchdefault1`, _data);
+        return this.http.post(`/casesteps/fetchdefault1`, _data);
     }
     /**
      * FetchMob
@@ -359,18 +359,18 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      */
     async FetchMob(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && _context.case && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/cases/${_context.case}/casesteps/fetchmob`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/${_context.case}/casesteps/fetchmob`, _data);
         }
         if (_context.story && _context.case && true) {
-            return this.http.get(`/stories/${_context.story}/cases/${_context.case}/casesteps/fetchmob`, _data);
+            return this.http.post(`/stories/${_context.story}/cases/${_context.case}/casesteps/fetchmob`, _data);
         }
         if (_context.product && _context.case && true) {
-            return this.http.get(`/products/${_context.product}/cases/${_context.case}/casesteps/fetchmob`, _data);
+            return this.http.post(`/products/${_context.product}/cases/${_context.case}/casesteps/fetchmob`, _data);
         }
         if (_context.case && true) {
-            return this.http.get(`/cases/${_context.case}/casesteps/fetchmob`, _data);
+            return this.http.post(`/cases/${_context.case}/casesteps/fetchmob`, _data);
         }
-        return this.http.get(`/casesteps/fetchmob`, _data);
+        return this.http.post(`/casesteps/fetchmob`, _data);
     }
     /**
      * FetchVersion
@@ -382,18 +382,18 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      */
     async FetchVersion(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && _context.case && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/cases/${_context.case}/casesteps/fetchversion`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/${_context.case}/casesteps/fetchversion`, _data);
         }
         if (_context.story && _context.case && true) {
-            return this.http.get(`/stories/${_context.story}/cases/${_context.case}/casesteps/fetchversion`, _data);
+            return this.http.post(`/stories/${_context.story}/cases/${_context.case}/casesteps/fetchversion`, _data);
         }
         if (_context.product && _context.case && true) {
-            return this.http.get(`/products/${_context.product}/cases/${_context.case}/casesteps/fetchversion`, _data);
+            return this.http.post(`/products/${_context.product}/cases/${_context.case}/casesteps/fetchversion`, _data);
         }
         if (_context.case && true) {
-            return this.http.get(`/cases/${_context.case}/casesteps/fetchversion`, _data);
+            return this.http.post(`/cases/${_context.case}/casesteps/fetchversion`, _data);
         }
-        return this.http.get(`/casesteps/fetchversion`, _data);
+        return this.http.post(`/casesteps/fetchversion`, _data);
     }
     /**
      * FetchVersions
@@ -405,17 +405,17 @@ export class CaseStepBaseService extends EntityBaseService<ICaseStep> {
      */
     async FetchVersions(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.story && _context.case && true) {
-            return this.http.get(`/products/${_context.product}/stories/${_context.story}/cases/${_context.case}/casesteps/fetchversions`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/${_context.case}/casesteps/fetchversions`, _data);
         }
         if (_context.story && _context.case && true) {
-            return this.http.get(`/stories/${_context.story}/cases/${_context.case}/casesteps/fetchversions`, _data);
+            return this.http.post(`/stories/${_context.story}/cases/${_context.case}/casesteps/fetchversions`, _data);
         }
         if (_context.product && _context.case && true) {
-            return this.http.get(`/products/${_context.product}/cases/${_context.case}/casesteps/fetchversions`, _data);
+            return this.http.post(`/products/${_context.product}/cases/${_context.case}/casesteps/fetchversions`, _data);
         }
         if (_context.case && true) {
-            return this.http.get(`/cases/${_context.case}/casesteps/fetchversions`, _data);
+            return this.http.post(`/cases/${_context.case}/casesteps/fetchversions`, _data);
         }
-        return this.http.get(`/casesteps/fetchversions`, _data);
+        return this.http.post(`/casesteps/fetchversions`, _data);
     }
 }

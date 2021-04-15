@@ -152,7 +152,7 @@ export class TaskestimatestatsBaseService extends EntityBaseService<ITaskestimat
      * @memberof TaskestimatestatsService
      */
     async FetchActionMonth(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/taskestimatestats/fetchactionmonth`, _data);
+        return this.http.post(`/taskestimatestats/fetchactionmonth`, _data);
     }
     /**
      * FetchActionYear
@@ -163,7 +163,7 @@ export class TaskestimatestatsBaseService extends EntityBaseService<ITaskestimat
      * @memberof TaskestimatestatsService
      */
     async FetchActionYear(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/taskestimatestats/fetchactionyear`, _data);
+        return this.http.post(`/taskestimatestats/fetchactionyear`, _data);
     }
     /**
      * FetchDefault
@@ -174,6 +174,6 @@ export class TaskestimatestatsBaseService extends EntityBaseService<ITaskestimat
      * @memberof TaskestimatestatsService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/taskestimatestats/fetchdefault`, _data);
+        return this.http.post(`/taskestimatestats/fetchdefault`, _data);
     }
 }

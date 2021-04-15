@@ -275,8 +275,8 @@ public class IbzDailyResource {
 
     @PreAuthorize("@IbzDailyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"日报" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzdailies/fetchdefault")
-	public ResponseEntity<List<IbzDailyDTO>> fetchDefault(IbzDailySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/fetchdefault")
+	public ResponseEntity<List<IbzDailyDTO>> fetchDefault(@RequestBody IbzDailySearchContext context) {
         ibzdailyRuntime.addAuthorityConditions(context,"READ");
         Page<IbzDaily> domains = ibzdailyService.searchDefault(context) ;
         List<IbzDailyDTO> list = ibzdailyMapping.toDto(domains.getContent());
@@ -299,8 +299,8 @@ public class IbzDailyResource {
 
     @PreAuthorize("@IbzDailyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的日报（已提交和未提交）", tags = {"日报" } ,notes = "获取我的日报（已提交和未提交）")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzdailies/fetchmyalldaily")
-	public ResponseEntity<List<IbzDailyDTO>> fetchMyAllDaily(IbzDailySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/fetchmyalldaily")
+	public ResponseEntity<List<IbzDailyDTO>> fetchMyAllDaily(@RequestBody IbzDailySearchContext context) {
         ibzdailyRuntime.addAuthorityConditions(context,"READ");
         Page<IbzDaily> domains = ibzdailyService.searchMyAllDaily(context) ;
         List<IbzDailyDTO> list = ibzdailyMapping.toDto(domains.getContent());
@@ -323,8 +323,8 @@ public class IbzDailyResource {
 
     @PreAuthorize("@IbzDailyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我收到的日报", tags = {"日报" } ,notes = "获取我收到的日报")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzdailies/fetchmydaily")
-	public ResponseEntity<List<IbzDailyDTO>> fetchMyDaily(IbzDailySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/fetchmydaily")
+	public ResponseEntity<List<IbzDailyDTO>> fetchMyDaily(@RequestBody IbzDailySearchContext context) {
         ibzdailyRuntime.addAuthorityConditions(context,"READ");
         Page<IbzDaily> domains = ibzdailyService.searchMyDaily(context) ;
         List<IbzDailyDTO> list = ibzdailyMapping.toDto(domains.getContent());
@@ -347,8 +347,8 @@ public class IbzDailyResource {
 
     @PreAuthorize("@IbzDailyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的日报", tags = {"日报" } ,notes = "获取我的日报")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzdailies/fetchmynotsubmit")
-	public ResponseEntity<List<IbzDailyDTO>> fetchMyNotSubmit(IbzDailySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/fetchmynotsubmit")
+	public ResponseEntity<List<IbzDailyDTO>> fetchMyNotSubmit(@RequestBody IbzDailySearchContext context) {
         ibzdailyRuntime.addAuthorityConditions(context,"READ");
         Page<IbzDaily> domains = ibzdailyService.searchMyNotSubmit(context) ;
         List<IbzDailyDTO> list = ibzdailyMapping.toDto(domains.getContent());
@@ -371,8 +371,8 @@ public class IbzDailyResource {
 
     @PreAuthorize("@IbzDailyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我提交的日报", tags = {"日报" } ,notes = "获取我提交的日报")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzdailies/fetchmysubmitdaily")
-	public ResponseEntity<List<IbzDailyDTO>> fetchMySubmitDaily(IbzDailySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/fetchmysubmitdaily")
+	public ResponseEntity<List<IbzDailyDTO>> fetchMySubmitDaily(@RequestBody IbzDailySearchContext context) {
         ibzdailyRuntime.addAuthorityConditions(context,"READ");
         Page<IbzDaily> domains = ibzdailyService.searchMySubmitDaily(context) ;
         List<IbzDailyDTO> list = ibzdailyMapping.toDto(domains.getContent());
@@ -395,8 +395,8 @@ public class IbzDailyResource {
 
     @PreAuthorize("@IbzDailyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品日报", tags = {"日报" } ,notes = "获取产品日报")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzdailies/fetchproductdaily")
-	public ResponseEntity<List<IbzDailyDTO>> fetchProductDaily(IbzDailySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/fetchproductdaily")
+	public ResponseEntity<List<IbzDailyDTO>> fetchProductDaily(@RequestBody IbzDailySearchContext context) {
         ibzdailyRuntime.addAuthorityConditions(context,"READ");
         Page<IbzDaily> domains = ibzdailyService.searchProductDaily(context) ;
         List<IbzDailyDTO> list = ibzdailyMapping.toDto(domains.getContent());
@@ -419,8 +419,8 @@ public class IbzDailyResource {
 
     @PreAuthorize("@IbzDailyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目日报", tags = {"日报" } ,notes = "获取项目日报")
-    @RequestMapping(method= RequestMethod.GET , value="/ibzdailies/fetchprojectdaily")
-	public ResponseEntity<List<IbzDailyDTO>> fetchProjectDaily(IbzDailySearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/fetchprojectdaily")
+	public ResponseEntity<List<IbzDailyDTO>> fetchProjectDaily(@RequestBody IbzDailySearchContext context) {
         ibzdailyRuntime.addAuthorityConditions(context,"READ");
         Page<IbzDaily> domains = ibzdailyService.searchProjectDaily(context) ;
         List<IbzDailyDTO> list = ibzdailyMapping.toDto(domains.getContent());

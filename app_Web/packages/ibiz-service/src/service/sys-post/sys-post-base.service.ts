@@ -152,6 +152,6 @@ export class SysPostBaseService extends EntityBaseService<ISysPost> {
      * @memberof SysPostService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysposts/fetchdefault`, _data);
+        return this.http.post(`/sysposts/fetchdefault`, _data);
     }
 }

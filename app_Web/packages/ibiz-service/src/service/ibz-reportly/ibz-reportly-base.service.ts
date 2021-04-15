@@ -174,7 +174,7 @@ export class IbzReportlyBaseService extends EntityBaseService<IIbzReportly> {
      * @memberof IbzReportlyService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzreportlies/fetchdefault`, _data);
+        return this.http.post(`/ibzreportlies/fetchdefault`, _data);
     }
     /**
      * FetchMyAllReportly
@@ -185,7 +185,7 @@ export class IbzReportlyBaseService extends EntityBaseService<IIbzReportly> {
      * @memberof IbzReportlyService
      */
     async FetchMyAllReportly(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzreportlies/fetchmyallreportly`, _data);
+        return this.http.post(`/ibzreportlies/fetchmyallreportly`, _data);
     }
     /**
      * FetchMyReceived
@@ -196,7 +196,7 @@ export class IbzReportlyBaseService extends EntityBaseService<IIbzReportly> {
      * @memberof IbzReportlyService
      */
     async FetchMyReceived(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzreportlies/fetchmyreceived`, _data);
+        return this.http.post(`/ibzreportlies/fetchmyreceived`, _data);
     }
     /**
      * FetchMyReportlyMob
@@ -207,6 +207,6 @@ export class IbzReportlyBaseService extends EntityBaseService<IIbzReportly> {
      * @memberof IbzReportlyService
      */
     async FetchMyReportlyMob(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzreportlies/fetchmyreportlymob`, _data);
+        return this.http.post(`/ibzreportlies/fetchmyreportlymob`, _data);
     }
 }

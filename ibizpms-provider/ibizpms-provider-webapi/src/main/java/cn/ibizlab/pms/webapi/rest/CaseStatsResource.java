@@ -149,8 +149,8 @@ public class CaseStatsResource {
 
     @PreAuthorize("@CaseStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"测试用例统计" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.GET , value="/casestats/fetchdefault")
-	public ResponseEntity<List<CaseStatsDTO>> fetchDefault(CaseStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/casestats/fetchdefault")
+	public ResponseEntity<List<CaseStatsDTO>> fetchDefault(@RequestBody CaseStatsSearchContext context) {
         casestatsRuntime.addAuthorityConditions(context,"READ");
         Page<CaseStats> domains = casestatsService.searchDefault(context) ;
         List<CaseStatsDTO> list = casestatsMapping.toDto(domains.getContent());
@@ -173,8 +173,8 @@ public class CaseStatsResource {
 
     @PreAuthorize("@CaseStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试用例统计", tags = {"测试用例统计" } ,notes = "获取测试用例统计")
-    @RequestMapping(method= RequestMethod.GET , value="/casestats/fetchtestcasestats")
-	public ResponseEntity<List<CaseStatsDTO>> fetchTestCaseStats(CaseStatsSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/casestats/fetchtestcasestats")
+	public ResponseEntity<List<CaseStatsDTO>> fetchTestCaseStats(@RequestBody CaseStatsSearchContext context) {
         casestatsRuntime.addAuthorityConditions(context,"READ");
         Page<CaseStats> domains = casestatsService.searchTestCaseStats(context) ;
         List<CaseStatsDTO> list = casestatsMapping.toDto(domains.getContent());

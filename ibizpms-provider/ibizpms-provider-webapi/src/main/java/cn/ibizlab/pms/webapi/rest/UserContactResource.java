@@ -149,8 +149,8 @@ public class UserContactResource {
 
     @PreAuthorize("@UserContactRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取抄送联系人", tags = {"用户联系方式" } ,notes = "获取抄送联系人")
-    @RequestMapping(method= RequestMethod.GET , value="/usercontacts/fetchcurusercontact")
-	public ResponseEntity<List<UserContactDTO>> fetchCurUSERCONTACT(UserContactSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/usercontacts/fetchcurusercontact")
+	public ResponseEntity<List<UserContactDTO>> fetchCurUSERCONTACT(@RequestBody UserContactSearchContext context) {
         usercontactRuntime.addAuthorityConditions(context,"READ");
         Page<UserContact> domains = usercontactService.searchCurUSERCONTACT(context) ;
         List<UserContactDTO> list = usercontactMapping.toDto(domains.getContent());
@@ -173,8 +173,8 @@ public class UserContactResource {
 
     @PreAuthorize("@UserContactRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"用户联系方式" } ,notes = "获取DEFAULT")
-    @RequestMapping(method= RequestMethod.GET , value="/usercontacts/fetchdefault")
-	public ResponseEntity<List<UserContactDTO>> fetchDefault(UserContactSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/usercontacts/fetchdefault")
+	public ResponseEntity<List<UserContactDTO>> fetchDefault(@RequestBody UserContactSearchContext context) {
         usercontactRuntime.addAuthorityConditions(context,"READ");
         Page<UserContact> domains = usercontactService.searchDefault(context) ;
         List<UserContactDTO> list = usercontactMapping.toDto(domains.getContent());
@@ -197,8 +197,8 @@ public class UserContactResource {
 
     @PreAuthorize("@UserContactRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的联系人", tags = {"用户联系方式" } ,notes = "获取我的联系人")
-    @RequestMapping(method= RequestMethod.GET , value="/usercontacts/fetchmyusercontact")
-	public ResponseEntity<List<UserContactDTO>> fetchMyUSERCONTACT(UserContactSearchContext context) {
+    @RequestMapping(method= RequestMethod.POST , value="/usercontacts/fetchmyusercontact")
+	public ResponseEntity<List<UserContactDTO>> fetchMyUSERCONTACT(@RequestBody UserContactSearchContext context) {
         usercontactRuntime.addAuthorityConditions(context,"READ");
         Page<UserContact> domains = usercontactService.searchMyUSERCONTACT(context) ;
         List<UserContactDTO> list = usercontactMapping.toDto(domains.getContent());

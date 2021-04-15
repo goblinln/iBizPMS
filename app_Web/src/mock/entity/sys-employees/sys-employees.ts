@@ -842,13 +842,272 @@ mock.onGet(new RegExp(/^\/sysemployees\/fetchtaskteam(\?[\w-./?%&=,]*)*$/)).repl
     console.groupEnd();
     return [status, records ?  records : []];
 });
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
+        
+// FilterUpdate
+mock.onPost(new RegExp(/^\/sysemployees\/?([a-zA-Z0-9\-\;]{0,35})\/fetchtaskteam$/)).reply((config: any) => {
+    console.groupCollapsed("实体:sysemployee 方法: FilterUpdate");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['userid'];
+    const matchArray:any = new RegExp(/^\/sysemployees\/([a-zA-Z0-9\-\;]{1,35})\/fetchtaskteam$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.userid, tempValue.userid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['userid'] == tempValue['userid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(data);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, data];
+});
+        
+// FilterSearch
+mock.onPost(new RegExp(/^\/sysemployees\/?([a-zA-Z0-9\-\;]{0,35})\/fetchtaskteam$/)).reply((config: any) => {
+    console.groupCollapsed("实体:sysemployee 方法: FilterSearch");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['userid'];
+    const matchArray:any = new RegExp(/^\/sysemployees\/([a-zA-Z0-9\-\;]{1,35})\/fetchtaskteam$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.userid, tempValue.userid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['userid'] == tempValue['userid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(data);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, data];
+});
+        
+// FilterGet
+mock.onPost(new RegExp(/^\/sysemployees\/?([a-zA-Z0-9\-\;]{0,35})\/fetchtaskteam$/)).reply((config: any) => {
+    console.groupCollapsed("实体:sysemployee 方法: FilterGet");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['userid'];
+    const matchArray:any = new RegExp(/^\/sysemployees\/([a-zA-Z0-9\-\;]{1,35})\/fetchtaskteam$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.userid, tempValue.userid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['userid'] == tempValue['userid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(data);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, data];
+});
+        
+// FilterCreate
+mock.onPost(new RegExp(/^\/sysemployees\/?([a-zA-Z0-9\-\;]{0,35})\/fetchtaskteam$/)).reply((config: any) => {
+    console.groupCollapsed("实体:sysemployee 方法: FilterCreate");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['userid'];
+    const matchArray:any = new RegExp(/^\/sysemployees\/([a-zA-Z0-9\-\;]{1,35})\/fetchtaskteam$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.userid, tempValue.userid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['userid'] == tempValue['userid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(data);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, data];
+});
+        
+// FilterGetDraft
+mock.onPost(new RegExp(/^\/sysemployees\/?([a-zA-Z0-9\-\;]{0,35})\/fetchtaskteam$/)).reply((config: any) => {
+    console.groupCollapsed("实体:sysemployee 方法: FilterGetDraft");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['userid'];
+    const matchArray:any = new RegExp(/^\/sysemployees\/([a-zA-Z0-9\-\;]{1,35})\/fetchtaskteam$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.userid, tempValue.userid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['userid'] == tempValue['userid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(data);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, data];
+});
+        
+// FilterRemove
+mock.onPost(new RegExp(/^\/sysemployees\/?([a-zA-Z0-9\-\;]{0,35})\/fetchtaskteam$/)).reply((config: any) => {
+    console.groupCollapsed("实体:sysemployee 方法: FilterRemove");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['userid'];
+    const matchArray:any = new RegExp(/^\/sysemployees\/([a-zA-Z0-9\-\;]{1,35})\/fetchtaskteam$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.userid, tempValue.userid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['userid'] == tempValue['userid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(data);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, data];
+});
+        
+// FilterFetch
+mock.onPost(new RegExp(/^\/sysemployees\/?([a-zA-Z0-9\-\;]{0,35})\/fetchtaskteam$/)).reply((config: any) => {
+    console.groupCollapsed("实体:sysemployee 方法: FilterFetch");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['userid'];
+    const matchArray:any = new RegExp(/^\/sysemployees\/([a-zA-Z0-9\-\;]{1,35})\/fetchtaskteam$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.userid, tempValue.userid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['userid'] == tempValue['userid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(data);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, data];
+});
 
 
 // Remove

@@ -110,4 +110,8 @@ export interface IDocLib extends IEntityBase {
      * 产品库
      */
     product?: any;
+    /**
+     * 由谁更新
+     */
+    updatemanname?: any;
 }
