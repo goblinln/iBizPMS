@@ -2283,7 +2283,7 @@
 
 
     <!--输出实体[PROJECTTODO]数据结构 -->
-    <changeSet author="zentao" id="tab-projecttodo-50-93">
+    <changeSet author="zentao" id="tab-projecttodo-52-93">
         <createTable tableName="zt_todo">
                 <column name="`ID`" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_PROJECTTODO_ID"/>
@@ -3285,7 +3285,7 @@
        <addForeignKeyConstraint baseColumnNames="ROOT" baseTableName="zt_team" constraintName="DER1N_IBZ_PROJECTTEAM_ZT_PROJE" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_project" validate="true"/>
     </changeSet>
         <!--输出实体[PROJECTTODO]外键关系 -->
-    <changeSet author="zentao" id="fk-projecttodo-50-212">
+    <changeSet author="zentao" id="fk-projecttodo-52-212">
        <addForeignKeyConstraint baseColumnNames="IDVALUE" baseTableName="zt_todo" constraintName="DER1N_PROJECTTODO_ZT_PROJECT_I" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_project" validate="true"/>
     </changeSet>
         <!--输出实体[ZT_RELATION]外键关系 -->

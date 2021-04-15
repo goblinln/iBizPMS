@@ -3,6 +3,725 @@
 项目其他活动
 
 ## 接口清单
+### 新建项目其他活动
+#### 访问路径
+/projecttodos
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projecttododto | [ProjectTodoDTO](#ProjectTodoDTO) | 项目其他活动实体传输对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | [ProjectTodoDTO](#ProjectTodoDTO)：项目其他活动实体传输对象 |
+
+### 批量新建项目其他活动
+#### 访问路径
+/projecttodos/batch
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projecttododtos | List<[ProjectTodoDTO](#ProjectTodoDTO)> | 项目其他活动实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
+
+### 更新项目其他活动
+#### 访问路径
+/projecttodos/{projecttodo_id}
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projecttodo_id | Long | 项目其他活动主键ID |
+| 2 | projecttododto | [ProjectTodoDTO](#ProjectTodoDTO) | 项目其他活动实体传输对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | [ProjectTodoDTO](#ProjectTodoDTO)：项目其他活动实体传输对象 |
+
+### 批量更新项目其他活动
+#### 访问路径
+/projecttodos/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projecttododtos | List<[ProjectTodoDTO](#ProjectTodoDTO)> | 项目其他活动实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
+
+### 删除项目其他活动
+#### 访问路径
+/projecttodos/{projecttodo_id}
+
+#### 请求方法
+DELETE
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projecttodo_id | Long | 项目其他活动主键ID |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
+
+### 批量删除项目其他活动
+#### 访问路径
+/projecttodos/batch
+
+#### 请求方法
+DELETE
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | ids | List<Long> | 项目其他活动主键ID列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
+
+### 获取项目其他活动
+#### 访问路径
+/projecttodos/{projecttodo_id}
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projecttodo_id | Long | 项目其他活动主键ID |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | [ProjectTodoDTO](#ProjectTodoDTO)：项目其他活动实体传输对象 |
+
+### Activate
+#### 访问路径
+/projecttodos/{projecttodo_id}/activate
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projecttodo_id | Long | 项目其他活动主键ID |
+| 2 | projecttododto | [ProjectTodoDTO](#ProjectTodoDTO) | 项目其他活动实体传输对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | [ProjectTodoDTO](#ProjectTodoDTO)：项目其他活动实体传输对象 |
+
+### AssignTo
+#### 访问路径
+/projecttodos/{projecttodo_id}/assignto
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projecttodo_id | Long | 项目其他活动主键ID |
+| 2 | projecttododto | [ProjectTodoDTO](#ProjectTodoDTO) | 项目其他活动实体传输对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | [ProjectTodoDTO](#ProjectTodoDTO)：项目其他活动实体传输对象 |
+
+### 检查项目其他活动
+#### 访问路径
+/projecttodos/checkkey
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projecttododto | [ProjectTodoDTO](#ProjectTodoDTO) | 项目其他活动实体传输对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
+
+### Close
+#### 访问路径
+/projecttodos/{projecttodo_id}/close
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projecttodo_id | Long | 项目其他活动主键ID |
+| 2 | projecttododto | [ProjectTodoDTO](#ProjectTodoDTO) | 项目其他活动实体传输对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | [ProjectTodoDTO](#ProjectTodoDTO)：项目其他活动实体传输对象 |
+
+### 定时创建周期
+#### 访问路径
+/projecttodos/{projecttodo_id}/createcycle
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projecttodo_id | Long | 项目其他活动主键ID |
+| 2 | projecttododto | [ProjectTodoDTO](#ProjectTodoDTO) | 项目其他活动实体传输对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | [ProjectTodoDTO](#ProjectTodoDTO)：项目其他活动实体传输对象 |
+
+### Finish
+#### 访问路径
+/projecttodos/{projecttodo_id}/finish
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projecttodo_id | Long | 项目其他活动主键ID |
+| 2 | projecttododto | [ProjectTodoDTO](#ProjectTodoDTO) | 项目其他活动实体传输对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | [ProjectTodoDTO](#ProjectTodoDTO)：项目其他活动实体传输对象 |
+
+### 保存项目其他活动
+#### 访问路径
+/projecttodos/save
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projecttododto | [ProjectTodoDTO](#ProjectTodoDTO) | 项目其他活动实体传输对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
+
+### 批量保存项目其他活动
+#### 访问路径
+/projecttodos/savebatch
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projecttododtos | List<[ProjectTodoDTO](#ProjectTodoDTO)> | 项目其他活动实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
+
+### 行为
+#### 访问路径
+/projecttodos/{projecttodo_id}/sendmessage
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projecttodo_id | Long | 项目其他活动主键ID |
+| 2 | projecttododto | [ProjectTodoDTO](#ProjectTodoDTO) | 项目其他活动实体传输对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | [ProjectTodoDTO](#ProjectTodoDTO)：项目其他活动实体传输对象 |
+
+### 发送消息前置处理
+#### 访问路径
+/projecttodos/{projecttodo_id}/sendmsgpreprocess
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projecttodo_id | Long | 项目其他活动主键ID |
+| 2 | projecttododto | [ProjectTodoDTO](#ProjectTodoDTO) | 项目其他活动实体传输对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | [ProjectTodoDTO](#ProjectTodoDTO)：项目其他活动实体传输对象 |
+
+### 获取数据集
+#### 访问路径
+/projecttodos/fetchdefault
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | context | [ProjectTodoSearchContext](#ProjectTodoSearchContext) | 项目其他活动查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[ProjectTodoDTO](#ProjectTodoDTO)>：项目其他活动实体传输对象列表 |
+
+### 查询数据集
+#### 访问路径
+/projecttodos/searchdefault
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | context | [ProjectTodoSearchContext](#ProjectTodoSearchContext) | 项目其他活动查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[ProjectTodoDTO](#ProjectTodoDTO)>：项目其他活动实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据建立项目其他活动
+#### 访问路径
+/projects/{project_id}/projecttodos
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | projecttododto | [ProjectTodoDTO](#ProjectTodoDTO) | 项目其他活动实体传输对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | [ProjectTodoDTO](#ProjectTodoDTO)：项目其他活动实体传输对象 |
+
+### 根据批量建立项目其他活动
+#### 访问路径
+/projects/{project_id}/projecttodos/batch
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | projecttododtos | List<[ProjectTodoDTO](#ProjectTodoDTO)> | 项目其他活动实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
+
+### 根据更新项目其他活动
+#### 访问路径
+/projects/{project_id}/projecttodos/{projecttodo_id}
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | projecttodo_id | Long | 项目其他活动主键ID |
+| 3 | projecttododto | [ProjectTodoDTO](#ProjectTodoDTO) | 项目其他活动实体传输对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | [ProjectTodoDTO](#ProjectTodoDTO)：项目其他活动实体传输对象 |
+
+### 根据批量更新项目其他活动
+#### 访问路径
+/projects/{project_id}/projecttodos/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | projecttododtos | List<[ProjectTodoDTO](#ProjectTodoDTO)> | 项目其他活动实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
+
+### 根据删除项目其他活动
+#### 访问路径
+/projects/{project_id}/projecttodos/{projecttodo_id}
+
+#### 请求方法
+DELETE
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | projecttodo_id | Long | 项目其他活动主键ID |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
+
+### 根据批量删除项目其他活动
+#### 访问路径
+/projects/{project_id}/projecttodos/batch
+
+#### 请求方法
+DELETE
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | ids | List<Long> | 项目其他活动主键ID列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
+
+### 根据获取项目其他活动
+#### 访问路径
+/projects/{project_id}/projecttodos/{projecttodo_id}
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | projecttodo_id | Long | 项目其他活动主键ID |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | [ProjectTodoDTO](#ProjectTodoDTO)：项目其他活动实体传输对象 |
+
+### Activate
+#### 访问路径
+/projects/{project_id}/projecttodos/{projecttodo_id}/activate
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | projecttodo_id | Long | 项目其他活动主键ID |
+| 3 | projecttododto | [ProjectTodoDTO](#ProjectTodoDTO) | 项目其他活动实体传输对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | [ProjectTodoDTO](#ProjectTodoDTO)：项目其他活动实体传输对象 |
+
+### AssignTo
+#### 访问路径
+/projects/{project_id}/projecttodos/{projecttodo_id}/assignto
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | projecttodo_id | Long | 项目其他活动主键ID |
+| 3 | projecttododto | [ProjectTodoDTO](#ProjectTodoDTO) | 项目其他活动实体传输对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | [ProjectTodoDTO](#ProjectTodoDTO)：项目其他活动实体传输对象 |
+
+### 根据检查项目其他活动
+#### 访问路径
+/projects/{project_id}/projecttodos/checkkey
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | projecttododto | [ProjectTodoDTO](#ProjectTodoDTO) | 项目其他活动实体传输对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
+
+### Close
+#### 访问路径
+/projects/{project_id}/projecttodos/{projecttodo_id}/close
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | projecttodo_id | Long | 项目其他活动主键ID |
+| 3 | projecttododto | [ProjectTodoDTO](#ProjectTodoDTO) | 项目其他活动实体传输对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | [ProjectTodoDTO](#ProjectTodoDTO)：项目其他活动实体传输对象 |
+
+### 定时创建周期
+#### 访问路径
+/projects/{project_id}/projecttodos/{projecttodo_id}/createcycle
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | projecttodo_id | Long | 项目其他活动主键ID |
+| 3 | projecttododto | [ProjectTodoDTO](#ProjectTodoDTO) | 项目其他活动实体传输对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | [ProjectTodoDTO](#ProjectTodoDTO)：项目其他活动实体传输对象 |
+
+### Finish
+#### 访问路径
+/projects/{project_id}/projecttodos/{projecttodo_id}/finish
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | projecttodo_id | Long | 项目其他活动主键ID |
+| 3 | projecttododto | [ProjectTodoDTO](#ProjectTodoDTO) | 项目其他活动实体传输对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | [ProjectTodoDTO](#ProjectTodoDTO)：项目其他活动实体传输对象 |
+
+### 根据保存项目其他活动
+#### 访问路径
+/projects/{project_id}/projecttodos/save
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | projecttododto | [ProjectTodoDTO](#ProjectTodoDTO) | 项目其他活动实体传输对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
+
+### 根据批量保存项目其他活动
+#### 访问路径
+/projects/{project_id}/projecttodos/savebatch
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | projecttododtos | List<[ProjectTodoDTO](#ProjectTodoDTO)> | 项目其他活动实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
+
+### 行为
+#### 访问路径
+/projects/{project_id}/projecttodos/{projecttodo_id}/sendmessage
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | projecttodo_id | Long | 项目其他活动主键ID |
+| 3 | projecttododto | [ProjectTodoDTO](#ProjectTodoDTO) | 项目其他活动实体传输对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | [ProjectTodoDTO](#ProjectTodoDTO)：项目其他活动实体传输对象 |
+
+### 发送消息前置处理
+#### 访问路径
+/projects/{project_id}/projecttodos/{projecttodo_id}/sendmsgpreprocess
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | projecttodo_id | Long | 项目其他活动主键ID |
+| 3 | projecttododto | [ProjectTodoDTO](#ProjectTodoDTO) | 项目其他活动实体传输对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | [ProjectTodoDTO](#ProjectTodoDTO)：项目其他活动实体传输对象 |
+
+### 根据获取数据集
+#### 访问路径
+/projects/{project_id}/projecttodos/fetchdefault
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | context | [ProjectTodoSearchContext](#ProjectTodoSearchContext) | 项目其他活动查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[ProjectTodoDTO](#ProjectTodoDTO)>：项目其他活动实体传输对象列表 |
+
+### 根据查询数据集
+#### 访问路径
+/projects/{project_id}/projecttodos/searchdefault
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | context | [ProjectTodoSearchContext](#ProjectTodoSearchContext) | 项目其他活动查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[ProjectTodoDTO](#ProjectTodoDTO)>：项目其他活动实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
 ## 附录
 ### 数据类型说明
 #### ProjectTodoDTO
