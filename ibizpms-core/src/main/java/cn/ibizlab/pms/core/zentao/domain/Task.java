@@ -760,6 +760,14 @@ public class Task extends EntityMP implements Serializable {
     @JsonProperty("frombug")
     @ApiModelProperty("来源Bug")
     private Long frombug;
+    /**
+     * 排序
+     */
+    @TableField(value = "`ordernum`")
+    @JSONField(name = "ordernum")
+    @JsonProperty("ordernum")
+    @ApiModelProperty("排序")
+    private Integer ordernum;
 
     /**
      * 
@@ -1259,6 +1267,14 @@ public class Task extends EntityMP implements Serializable {
     public void setFrombug(Long frombug) {
         this.frombug = frombug;
         this.modify("frombug", frombug);
+    }
+
+    /**
+     * 设置 [排序]
+     */
+    public void setOrdernum(Integer ordernum) {
+        this.ordernum = ordernum;
+        this.modify("ordernum", ordernum);
     }
 
 

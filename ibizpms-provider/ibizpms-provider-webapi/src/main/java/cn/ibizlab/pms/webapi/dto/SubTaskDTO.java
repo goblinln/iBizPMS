@@ -848,6 +848,15 @@ public class SubTaskDTO extends DTOBase implements Serializable {
     @ApiModelProperty("来源Bug")
     private Long frombug;
 
+    /**
+     * 属性 [ORDERNUM]
+     *
+     */
+    @JSONField(name = "ordernum")
+    @JsonProperty("ordernum")
+    @ApiModelProperty("排序")
+    private Integer ordernum;
+
 
     /**
      * 设置 [CANCELEDBY]
@@ -1191,6 +1200,14 @@ public class SubTaskDTO extends DTOBase implements Serializable {
     public void setFrombug(Long  frombug){
         this.frombug = frombug ;
         this.modify("frombug",frombug);
+    }
+
+    /**
+     * 设置 [ORDERNUM]
+     */
+    public void setOrdernum(Integer  ordernum){
+        this.ordernum = ordernum ;
+        this.modify("ordernum",ordernum);
     }
 
 

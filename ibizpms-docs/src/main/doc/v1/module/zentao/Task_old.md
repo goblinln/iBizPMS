@@ -109,6 +109,7 @@ hide members
 |相关需求|STORY|PICKUP|&nbsp;|
 |父任务|PARENT|PICKUP|&nbsp;|
 |来源Bug|FROMBUG|PICKUP|&nbsp;|
+|排序|ORDERNUM|INT|&nbsp;|
 
 ## 值规则
 | 属性名称    | 规则    |  说明  |
@@ -206,6 +207,7 @@ hide members
 |相关需求|默认规则|默认规则|
 |父任务|默认规则|默认规则|
 |来源Bug|默认规则|默认规则|
+|排序|默认规则|默认规则|
 
 ## 状态控制
 

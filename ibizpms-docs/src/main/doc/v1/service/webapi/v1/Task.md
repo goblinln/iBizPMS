@@ -18729,9 +18729,10 @@ POST
 | 81 | story | Long | 允许 | 相关需求 |
 | 82 | parent | Long | 允许 | 父任务 |
 | 83 | frombug | Long | 允许 | 来源Bug |
-| 84 | ibztaskestimates | List<[IBZTaskEstimateDTO}](#IBZTaskEstimateDTO})> | 允许 | 任务预计 |
-| 85 | ibztaskteams | List<[IBZTaskTeamDTO}](#IBZTaskTeamDTO})> | 允许 | 任务团队 |
-| 86 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 84 | ordernum | Integer | 允许 | 排序 |
+| 85 | ibztaskestimates | List<[IBZTaskEstimateDTO}](#IBZTaskEstimateDTO})> | 允许 | 任务预计 |
+| 86 | ibztaskteams | List<[IBZTaskTeamDTO}](#IBZTaskTeamDTO})> | 允许 | 任务团队 |
+| 87 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### IBZTaskEstimateDTO
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |
