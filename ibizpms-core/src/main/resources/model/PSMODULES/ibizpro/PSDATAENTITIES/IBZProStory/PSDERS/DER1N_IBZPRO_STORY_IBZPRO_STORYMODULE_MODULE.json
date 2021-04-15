@@ -1,0 +1,25 @@
+{
+  "codeName" : "IbzProStoryModule",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory/PSDERS/DER1N_IBZPRO_STORY_IBZPRO_STORYMODULE_MODULE.json",
+  "logicName" : "需求模块",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStoryModule.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 0,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory.json"
+  },
+  "name" : "DER1N_IBZPRO_STORY_IBZPRO_STORYMODULE_MODULE",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "MODULE",
+    "codeName" : "Module"
+  },
+  "pickupDEFName" : "MODULE",
+  "removeActionType" : -1,
+  "removeOrder" : 0
+}

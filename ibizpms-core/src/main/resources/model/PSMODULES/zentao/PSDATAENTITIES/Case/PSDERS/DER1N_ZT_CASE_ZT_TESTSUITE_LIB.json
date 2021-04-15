@@ -1,0 +1,28 @@
+{
+  "codeName" : "ZTTestsuite",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_TESTSUITE_LIB.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 0,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+  },
+  "name" : "DER1N_ZT_CASE_ZT_TESTSUITE_LIB",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "LIB",
+    "codeName" : "Lib"
+  },
+  "getPSPickupTextDEField" : {
+    "name" : "LIBNAME",
+    "codeName" : "Libname"
+  },
+  "pickupDEFName" : "LIB",
+  "removeActionType" : -1,
+  "removeOrder" : 0
+}

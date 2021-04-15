@@ -1,0 +1,52 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "Story__pri",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__pri.json",
+  "emptyText" : "未定义",
+  "name" : "需求优先级",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+  },
+  "getPSCodeItems" : [ {
+    "codeName" : "Item_1",
+    "color" : "rgba(230, 43, 43, 1)",
+    "getPSSysCss" : {
+      "cssName" : "text-red-border-color"
+    },
+    "text" : "1",
+    "textCls" : "text-red-border-color",
+    "value" : "1"
+  }, {
+    "codeName" : "Item_2",
+    "color" : "rgba(225, 228, 33, 1)",
+    "getPSSysCss" : {
+      "cssName" : "text-pink-border-color"
+    },
+    "text" : "2",
+    "textCls" : "text-pink-border-color",
+    "value" : "2"
+  }, {
+    "codeName" : "Item_3",
+    "color" : "rgba(52, 8, 248, 1)",
+    "getPSSysCss" : {
+      "cssName" : "text-blue-border-color"
+    },
+    "text" : "3",
+    "textCls" : "text-blue-border-color",
+    "value" : "3",
+    "default" : true
+  }, {
+    "codeName" : "Item_4",
+    "color" : "rgba(80, 133, 63, 1)",
+    "getPSSysCss" : {
+      "cssName" : "text-green-border-color"
+    },
+    "text" : "4",
+    "textCls" : "text-green-border-color",
+    "value" : "4"
+  } ],
+  "codeItemValueNumber" : true,
+  "enableCache" : true
+}

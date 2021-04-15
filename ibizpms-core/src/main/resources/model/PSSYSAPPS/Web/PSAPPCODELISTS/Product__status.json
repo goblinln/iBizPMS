@@ -1,0 +1,23 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "Product__status",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product__status.json",
+  "emptyText" : "未定义",
+  "name" : "产品状态",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+  },
+  "getPSCodeItems" : [ {
+    "codeName" : "Normal",
+    "color" : "rgba(13, 255, 0, 1)",
+    "text" : "正常",
+    "value" : "normal"
+  }, {
+    "codeName" : "Closed",
+    "text" : "结束",
+    "value" : "closed"
+  } ],
+  "enableCache" : true
+}

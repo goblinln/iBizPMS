@@ -1,0 +1,30 @@
+{
+  "actionMode" : "DELETE",
+  "actionType" : "BUILTIN",
+  "getCheckPSDEActionLogics" : [ {
+    "name" : "行为[RemoveTemp]主状态拒绝逻辑",
+    "id" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDELOGICS/RemoveTemp__MSDeny.json"
+  } ],
+  "codeName" : "RemoveTemp",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/RemoveTemp.json",
+  "extendMode" : 0,
+  "logicName" : "RemoveTemp",
+  "name" : "RemoveTemp",
+  "orderValue" : 22,
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "DELETE"
+  },
+  "paramMode" : 1,
+  "requestField" : "ID",
+  "requestParamType" : "FIELD",
+  "tempDataMode" : 2,
+  "testActionMode" : 0,
+  "timeOut" : -1,
+  "transactionMode" : "DEFAULT",
+  "builtinAction" : true,
+  "customParam" : false,
+  "enableTempData" : true,
+  "generateTestUnit" : false,
+  "pubServiceDefault" : true
+}

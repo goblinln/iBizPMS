@@ -1,0 +1,28 @@
+{
+  "codeName" : "ZTProduct",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDERS/DER1N_ZT_TESTTASK_ZT_PRODUCT_PRODUCT.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 0,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
+  },
+  "name" : "DER1N_ZT_TESTTASK_ZT_PRODUCT_PRODUCT",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "PRODUCT",
+    "codeName" : "Product"
+  },
+  "getPSPickupTextDEField" : {
+    "name" : "PRODUCTNAME",
+    "codeName" : "ProductName"
+  },
+  "pickupDEFName" : "PRODUCT",
+  "removeActionType" : -1,
+  "removeOrder" : 0
+}

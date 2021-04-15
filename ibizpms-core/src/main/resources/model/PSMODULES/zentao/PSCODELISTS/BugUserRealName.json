@@ -1,0 +1,18 @@
+{
+  "cacheTimeout" : 600,
+  "codeListType" : "DYNAMIC",
+  "codeName" : "BugUserRealName",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/BugUserRealName.json",
+  "emptyText" : "未定义",
+  "orMode" : "STR",
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "textSeparator" : ",",
+  "valueSeparator" : ",",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
+}

@@ -1,0 +1,51 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "ProductActionQuickpacket",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/ProductActionQuickpacket.json",
+  "emptyText" : "未定义",
+  "getPSCodeItems" : [ {
+    "codeName" : "All",
+    "data" : "{}",
+    "text" : "所有",
+    "value" : "All"
+  }, {
+    "codeName" : "Today",
+    "data" : "{\"n_today_eq\":1}",
+    "text" : "今天",
+    "value" : "today",
+    "default" : true
+  }, {
+    "codeName" : "Yesterday",
+    "data" : "{\"n_yesterday_eq\":1}",
+    "text" : "昨天",
+    "value" : "yesterday"
+  }, {
+    "codeName" : "Thisweek",
+    "data" : "{\"n_thisweek_eq\":1}",
+    "text" : "本周",
+    "value" : "thisweek"
+  }, {
+    "codeName" : "Lastweek",
+    "data" : "{\"n_lastweek_eq\":1}",
+    "text" : "上周",
+    "value" : "lastweek"
+  }, {
+    "codeName" : "Thismonth",
+    "data" : "{\"n_thismonth_eq\":1}",
+    "text" : "本月",
+    "value" : "thismonth"
+  }, {
+    "codeName" : "Lastmonth",
+    "data" : "{\"n_lastmonth_eq\":1}",
+    "text" : "上月",
+    "value" : "lastmonth"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
+}

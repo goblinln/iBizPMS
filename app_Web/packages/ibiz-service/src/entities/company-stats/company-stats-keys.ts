@@ -1,0 +1,15 @@
+export default [
+    'logincnt',
+    'openedstorycnt',
+    'ztdate',
+    'date',
+    'closedstorycnt',
+    'openedbugcnt',
+    'loghours',
+    'dynamiccnt',
+    'finishedtaskcnt',
+    'resolvedbugcnt',
+    'comment',
+    'openedtaskcnt',
+    'id',
+];

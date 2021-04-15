@@ -1,0 +1,121 @@
+{
+  "codeName" : "Custom",
+  "controlType" : "SEARCHBAR",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestSuite/PSSEARCHBARS/Custom.json",
+  "logicName" : "测试套件自定义搜索栏",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestSuite.json"
+  },
+  "getPSSearchBarFilters" : [ {
+    "caption" : "名称(%)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
+    "itemWidth" : 100.0,
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "name" : "namelike",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_NAME_LIKE",
+      "name" : "N_NAME_LIKE",
+      "getPSDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "valueOP" : "LIKE",
+      "default" : false
+    },
+    "getPSEditor" : {
+      "editorType" : "TEXTBOX",
+      "editorWidth" : 100.0,
+      "name" : "namelike"
+    },
+    "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "showCaption" : false
+  }, {
+    "caption" : "所属产品(=)",
+    "dataType" : 1,
+    "itemType" : "FILTER",
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "name" : "producteq",
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_PRODUCT_EQ",
+      "name" : "N_PRODUCT_EQ",
+      "getPSDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      },
+      "valueOP" : "EQ",
+      "default" : false
+    },
+    "getPSEditor" : {
+      "editorType" : "DROPDOWNLIST",
+      "name" : "producteq",
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product.json"
+      },
+      "singleSelect" : true
+    },
+    "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "needCodeListConfig" : true,
+    "showCaption" : false
+  }, {
+    "caption" : "类型(=)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
+    "itemWidth" : 100.0,
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "name" : "typeeq",
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    },
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_TYPE_EQ",
+      "name" : "N_TYPE_EQ",
+      "getPSDEField" : {
+        "name" : "TYPE",
+        "codeName" : "Type"
+      },
+      "valueOP" : "EQ",
+      "default" : false
+    },
+    "getPSEditor" : {
+      "editorType" : "DROPDOWNLIST",
+      "editorWidth" : 100.0,
+      "name" : "typeeq",
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testsuite__type.json"
+      },
+      "singleSelect" : true
+    },
+    "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "needCodeListConfig" : true,
+    "showCaption" : false
+  } ],
+  "quickSearchMode" : 1,
+  "quickSearchWidth" : 0,
+  "enableFilter" : true,
+  "enableGroup" : false,
+  "enableQuickSearch" : true,
+  "mobileSearchBar" : false,
+  "modelid" : "7975fc98154b7398cf5930243bb20d7a"
+}

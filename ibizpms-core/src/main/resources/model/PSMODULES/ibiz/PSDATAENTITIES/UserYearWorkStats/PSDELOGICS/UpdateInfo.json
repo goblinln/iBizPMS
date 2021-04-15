@@ -1,0 +1,223 @@
+{
+  "codeName" : "UpdateInfo",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/UpdateInfo.json",
+  "logicHolder" : 1,
+  "logicName" : "更新相关信息",
+  "logicSubType" : "NONE",
+  "name" : "更新相关信息",
+  "getPSDELogicLinks" : [ {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Deaction3"
+    },
+    "name" : "连接7399",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "JUDGEROLE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "logicType" : "SINGLE",
+        "name" : "Default[JUDGEROLE] 等于(=) (qa)",
+        "paramValue" : "qa"
+      } ],
+      "notMode" : false,
+      "id" : "2b277c10b0a061af3fafce140e6cc77b"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Deaction4"
+    },
+    "name" : "连接5802",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "JUDGEROLE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "logicType" : "SINGLE",
+        "name" : "Default[JUDGEROLE] 等于(=) (po)",
+        "paramValue" : "po"
+      } ],
+      "notMode" : false,
+      "id" : "3034df19631b58166b71850e7b582355"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Deaction2"
+    },
+    "name" : "连接3680",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "JUDGEROLE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "logicType" : "SINGLE",
+        "name" : "Default[JUDGEROLE] 等于(=) (dev)",
+        "paramValue" : "dev"
+      } ],
+      "notMode" : false,
+      "id" : "c37133b6b0dd61291c661df8d7c9c030"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "name" : "连接6657",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "defaultLink" : false
+  } ],
+  "getPSDELogicNodes" : [ {
+    "codeName" : "Deaction3",
+    "getDstPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetQaInfomation.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
+    },
+    "logicHolder" : 3,
+    "logicNodeType" : "DEACTION",
+    "name" : "获取测试用户信息",
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Begin",
+    "logicHolder" : 3,
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接6657"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Deaction2",
+    "getDstPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetDevInfomation.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
+    },
+    "logicHolder" : 3,
+    "logicNodeType" : "DEACTION",
+    "name" : "获取研发用户信息",
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Deaction4",
+    "getDstPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetPoInfomation.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
+    },
+    "logicHolder" : 3,
+    "logicNodeType" : "DEACTION",
+    "name" : "获取产品经理信息",
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall1",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicHolder" : 1,
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取标题",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接7399"
+    }, {
+      "modelref" : true,
+      "id" : "连接5802"
+    }, {
+      "modelref" : true,
+      "id" : "连接3680"
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "Default[CURYEAR]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "CURYEAR",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[REALNAME]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "REALNAME",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "parallelOutput" : true
+  } ],
+  "getPSDELogicParams" : [ {
+    "codeName" : "Default",
+    "name" : "传入变量",
+    "default" : true,
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
+  } ],
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : true,
+  "enableFront" : false
+}

@@ -1,0 +1,46 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "Project_quickpacket",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Project_quickpacket.json",
+  "emptyText" : "未定义",
+  "getPSCodeItems" : [ {
+    "codeName" : "All",
+    "data" : "{}",
+    "text" : "所有",
+    "value" : "All"
+  }, {
+    "codeName" : "Wait",
+    "data" : "{\"n_status_eq\":\"wait\"}",
+    "text" : "未开始",
+    "value" : "wait",
+    "default" : true
+  }, {
+    "codeName" : "More",
+    "getPSCodeItems" : [ {
+      "codeName" : "Doing",
+      "data" : "{\"n_status_eq\":\"doing\"}",
+      "text" : "进行中",
+      "value" : "doing"
+    }, {
+      "codeName" : "Suspended",
+      "data" : "{\"n_status_eq\":\"suspended\"}",
+      "text" : "已挂起",
+      "value" : "suspended"
+    }, {
+      "codeName" : "Closed",
+      "data" : "{\"n_status_eq\":\"closed\"}",
+      "text" : "已关闭",
+      "value" : "closed"
+    } ],
+    "text" : "更多",
+    "value" : "MORE"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
+}

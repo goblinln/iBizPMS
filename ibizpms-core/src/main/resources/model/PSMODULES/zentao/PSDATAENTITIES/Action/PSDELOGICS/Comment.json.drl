@@ -1,0 +1,34 @@
+package cn.ibizlab.pms.zentao.logic.actionlogic.comment;
+        import java.util.Map;
+        import java.util.HashMap;
+        import com.alibaba.fastjson.JSONObject;
+        import org.springframework.util.StringUtils;
+        import org.springframework.util.ObjectUtils;
+        import cn.ibizlab.pms.util.errors.BadRequestAlertException;
+                global cn.ibizlab.pms.core.zentao.domain.Action actioncommentdefault;
+        global cn.ibizlab.pms.core.zentao.service.IActionService iBzSysActionDefaultService;
+        global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
+
+
+    no-loop
+
+            //逻辑处理节点[设置默认参数]
+            rule "prepareparam1"
+            ruleflow-group "actioncommentprepareparam1"
+            when
+            then
+                                actioncommentdefault.set("actor",curuser.getSessionParams().get("srfloginname"));
+                            actioncommentdefault.set("product","0");
+                            actioncommentdefault.set("project","0");
+                            actioncommentdefault.set("read","0");
+                            actioncommentdefault.set("action","commented");
+                            actioncommentdefault.set("extra","");
+                        update(actioncommentdefault);//更新fact中变量值
+            end
+
+            //逻辑处理节点[开始]
+            rule "begin"
+            ruleflow-group "actioncommentbegin"
+            when
+            then
+            end

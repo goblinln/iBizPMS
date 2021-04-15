@@ -1,0 +1,23 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "TestsuiteTypeNew",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/TestsuiteTypeNew.json",
+  "emptyText" : "未定义",
+  "getPSCodeItems" : [ {
+    "codeName" : "Private",
+    "text" : "私有",
+    "value" : "private"
+  }, {
+    "codeName" : "Public",
+    "text" : "公开",
+    "value" : "public"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
+}

@@ -1,0 +1,255 @@
+{
+  "aggMode" : "PAGE",
+  "codeName" : "ProductBugStatusCount",
+  "columnEnableLink" : 2,
+  "controlType" : "GRID",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats/PSGRIDS/ProductBugStatusCount.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "产品bug状态统计",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats.json"
+  },
+  "getPSDEGridColumns" : [ {
+    "align" : "CENTER",
+    "cLConvertMode" : "NONE",
+    "caption" : "产品名称",
+    "codeName" : "productname",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "productname",
+    "excelCaption" : "产品名称",
+    "getLinkPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
+      "viewType" : "DETABEXPVIEW"
+    },
+    "linkValueItem" : "product",
+    "name" : "productname",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "PRODUCTNAME",
+      "codeName" : "ProductName"
+    },
+    "width" : 180,
+    "widthUnit" : "STAR",
+    "enableLinkView" : true,
+    "enableSort" : false
+  }, {
+    "aggMode" : "SUM",
+    "align" : "CENTER",
+    "cLConvertMode" : "NONE",
+    "caption" : "已解决",
+    "codeName" : "bugresolved",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "bugresolved",
+    "excelCaption" : "已解决",
+    "name" : "bugresolved",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "BUGRESOLVED",
+      "codeName" : "Bugresolved"
+    },
+    "width" : 120,
+    "widthUnit" : "PX",
+    "enableSort" : false
+  }, {
+    "aggMode" : "SUM",
+    "align" : "CENTER",
+    "cLConvertMode" : "NONE",
+    "caption" : "已关闭",
+    "codeName" : "bugclosed",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "bugclosed",
+    "excelCaption" : "已关闭",
+    "name" : "bugclosed",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "BUGCLOSED",
+      "codeName" : "Bugclosed"
+    },
+    "width" : 120,
+    "widthUnit" : "PX",
+    "enableSort" : false
+  }, {
+    "aggMode" : "SUM",
+    "align" : "CENTER",
+    "cLConvertMode" : "NONE",
+    "caption" : "已激活",
+    "codeName" : "bugactive",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "bugactive",
+    "excelCaption" : "已激活",
+    "name" : "bugactive",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "BUGACTIVE",
+      "codeName" : "Bugactive"
+    },
+    "width" : 120,
+    "widthUnit" : "PX",
+    "enableSort" : false
+  }, {
+    "align" : "CENTER",
+    "cLConvertMode" : "NONE",
+    "caption" : "有效率",
+    "codeName" : "bugefficient",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "bugefficient",
+    "excelCaption" : "有效率",
+    "name" : "bugefficient",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "BUGEFFICIENT",
+      "codeName" : "Bugefficient"
+    },
+    "width" : 120,
+    "widthUnit" : "PX",
+    "enableSort" : false
+  }, {
+    "aggMode" : "SUM",
+    "align" : "CENTER",
+    "cLConvertMode" : "NONE",
+    "caption" : "总计",
+    "codeName" : "bugtotal",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "bugtotal",
+    "excelCaption" : "总计",
+    "name" : "bugtotal",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "BUGTOTAL",
+      "codeName" : "Bugtotal"
+    },
+    "width" : 120,
+    "widthUnit" : "PX",
+    "enableSort" : false
+  } ],
+  "getPSDEGridDataItems" : [ {
+    "dataType" : 1,
+    "name" : "product",
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "bugefficient",
+    "getPSAppDEField" : {
+      "name" : "BUGEFFICIENT",
+      "codeName" : "Bugefficient"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "bugactive",
+    "getPSAppDEField" : {
+      "name" : "BUGACTIVE",
+      "codeName" : "Bugactive"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "project",
+    "getPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "bugresolved",
+    "getPSAppDEField" : {
+      "name" : "BUGRESOLVED",
+      "codeName" : "Bugresolved"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "bugclosed",
+    "getPSAppDEField" : {
+      "name" : "BUGCLOSED",
+      "codeName" : "Bugclosed"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "bugtotal",
+    "getPSAppDEField" : {
+      "name" : "BUGTOTAL",
+      "codeName" : "Bugtotal"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "productname",
+    "getPSAppDEField" : {
+      "name" : "PRODUCTNAME",
+      "codeName" : "ProductName"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "标识",
+    "codeName" : "srfkey",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
+  "pagingSize" : 100,
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats.json"
+    }
+  },
+  "sortMode" : "REMOTE",
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableGroup" : false,
+  "enablePagingBar" : false,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : true,
+  "singleSelect" : true,
+  "modelid" : "f9b65f90d58437a346628ea9131df854"
+}
