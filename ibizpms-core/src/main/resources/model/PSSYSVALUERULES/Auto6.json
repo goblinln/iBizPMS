@@ -1,0 +1,11 @@
+{
+  "codeName" : "Auto6",
+  "dynaModelFilePath" : "PSSYSVALUERULES/Auto6.json",
+  "name" : "由26个英文字母的大写组成的字符串",
+  "regExCode" : "[A-Z]+",
+  "ruleHolder" : 3,
+  "ruleInfo" : "内容必须由26个英文字母的大写组成的字符串",
+  "ruleType" : "REG",
+  "enableBackend" : true,
+  "enableFront" : true
+}

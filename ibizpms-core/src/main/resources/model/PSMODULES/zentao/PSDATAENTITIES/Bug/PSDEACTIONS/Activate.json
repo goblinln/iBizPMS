@@ -18,10 +18,6 @@
   "logicName" : "激活",
   "name" : "Activate",
   "orderValue" : 99999,
-  "getPSSysSFPlugin" : {
-    "pluginType" : "DEACTION",
-    "pluginCode" : "ZTCommon"
-  },
   "paramMode" : 1,
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,

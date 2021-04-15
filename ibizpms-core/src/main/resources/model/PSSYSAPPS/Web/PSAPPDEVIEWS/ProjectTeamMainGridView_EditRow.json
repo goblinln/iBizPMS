@@ -659,11 +659,9 @@
             "name" : "[数值范围] 大于等于 0.0 且  小于等于 24.0",
             "ruleInfo" : "数值必须大于等于[0.0]且小于等于[24.0]",
             "includeMaxValue" : true,
-            "includeMinValue" : true,
-            "tryMode" : false
+            "includeMinValue" : true
           } ],
-          "ruleInfo" : "数值必须大于等于[0.0]且小于等于[24.0]",
-          "tryMode" : false
+          "ruleInfo" : "数值必须大于等于[0.0]且小于等于[24.0]"
         },
         "getPSDEField" : {
           "name" : "HOURS",

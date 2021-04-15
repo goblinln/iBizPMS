@@ -80,40 +80,65 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
 
     protected int batchSize = 500;
 
-        @Override
+    @Override
     @Transactional
     public boolean create(Story et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.StoryHelper.class).create(et);
+        fillParentData(et);
+        if(!this.retBool(this.baseMapper.insert(et))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
+    @Transactional
     public void createBatch(List<Story> list) {
-
+        list.forEach(item->fillParentData(item));
+        this.saveBatch(list, batchSize);
     }
-        @Override
+
+    @Override
     @Transactional
     public boolean update(Story et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.StoryHelper.class).edit(et);
+        fillParentData(et);
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
+    @Transactional
     public void updateBatch(List<Story> list) {
-
+        list.forEach(item->fillParentData(item));
+        updateBatchById(list, batchSize);
     }
-        @Override
+
+    @Override
+    @Transactional
+    public boolean sysUpdate(Story et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
+    @Override
     @Transactional
     public boolean remove(Long key) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.StoryHelper.class).delete(key);
+        boolean result = removeById(key);
+        return result ;
     }
 
     @Override
-    public void removeBatch(Collection<Long> idList){
-        if (idList != null && !idList.isEmpty()) {
-            for (Long id : idList) {
-                this.remove(id);
-            }
-        }
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        removeByIds(idList);
     }
+
     @Override
     @Transactional
     public Story get(Long key) {
@@ -146,19 +171,19 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         return et;
     }
 
-       @Override
+    @Override
     @Transactional
     public Story activate(Story et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.StoryHelper.class).activate(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean activateBatch (List<Story> etList) {
-		 for(Story et : etList) {
-		   activate(et);
-		 }
-	 	 return true;
+    public boolean activateBatch(List<Story> etList) {
+        for(Story et : etList) {
+            activate(et);
+        }
+        return true;
     }
 
     @Override
@@ -176,19 +201,19 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Story assignTo(Story et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.StoryHelper.class).assignTo(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean assignToBatch (List<Story> etList) {
-		 for(Story et : etList) {
-		   assignTo(et);
-		 }
-	 	 return true;
+    public boolean assignToBatch(List<Story> etList) {
+        for(Story et : etList) {
+            assignTo(et);
+        }
+        return true;
     }
 
     @Override
@@ -296,19 +321,19 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Story batchUnlinkStory(Story et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.StoryHelper.class).batchUnlinkStory(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean batchUnlinkStoryBatch (List<Story> etList) {
-		 for(Story et : etList) {
-		   batchUnlinkStory(et);
-		 }
-	 	 return true;
+    public boolean batchUnlinkStoryBatch(List<Story> etList) {
+        for(Story et : etList) {
+            batchUnlinkStory(et);
+        }
+        return true;
     }
 
     @Override
@@ -326,49 +351,49 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Story buildBatchUnlinkStory(Story et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.StoryHelper.class).buildBatchUnlinkStory(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean buildBatchUnlinkStoryBatch (List<Story> etList) {
-		 for(Story et : etList) {
-		   buildBatchUnlinkStory(et);
-		 }
-	 	 return true;
+    public boolean buildBatchUnlinkStoryBatch(List<Story> etList) {
+        for(Story et : etList) {
+            buildBatchUnlinkStory(et);
+        }
+        return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Story buildLinkStory(Story et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.StoryHelper.class).buildLinkStory(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean buildLinkStoryBatch (List<Story> etList) {
-		 for(Story et : etList) {
-		   buildLinkStory(et);
-		 }
-	 	 return true;
+    public boolean buildLinkStoryBatch(List<Story> etList) {
+        for(Story et : etList) {
+            buildLinkStory(et);
+        }
+        return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Story buildUnlinkStory(Story et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.StoryHelper.class).buildUnlinkStory(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean buildUnlinkStoryBatch (List<Story> etList) {
-		 for(Story et : etList) {
-		   buildUnlinkStory(et);
-		 }
-	 	 return true;
+    public boolean buildUnlinkStoryBatch(List<Story> etList) {
+        for(Story et : etList) {
+            buildUnlinkStory(et);
+        }
+        return true;
     }
 
     @Override
@@ -386,38 +411,38 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Story change(Story et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.StoryHelper.class).change(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean changeBatch (List<Story> etList) {
-		 for(Story et : etList) {
-		   change(et);
-		 }
-	 	 return true;
+    public boolean changeBatch(List<Story> etList) {
+        for(Story et : etList) {
+            change(et);
+        }
+        return true;
     }
 
     @Override
     public boolean checkKey(Story et) {
         return (!ObjectUtils.isEmpty(et.getId())) && (!Objects.isNull(this.getById(et.getId())));
     }
-       @Override
+    @Override
     @Transactional
     public Story close(Story et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.StoryHelper.class).close(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean closeBatch (List<Story> etList) {
-		 for(Story et : etList) {
-		   close(et);
-		 }
-	 	 return true;
+    public boolean closeBatch(List<Story> etList) {
+        for(Story et : etList) {
+            close(et);
+        }
+        return true;
     }
 
     @Override
@@ -465,79 +490,79 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Story importPlanStories(Story et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.StoryHelper.class).importPlanStories(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean importPlanStoriesBatch (List<Story> etList) {
-		 for(Story et : etList) {
-		   importPlanStories(et);
-		 }
-	 	 return true;
+    public boolean importPlanStoriesBatch(List<Story> etList) {
+        for(Story et : etList) {
+            importPlanStories(et);
+        }
+        return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Story linkStory(Story et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.StoryHelper.class).linkStory(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean linkStoryBatch (List<Story> etList) {
-		 for(Story et : etList) {
-		   linkStory(et);
-		 }
-	 	 return true;
+    public boolean linkStoryBatch(List<Story> etList) {
+        for(Story et : etList) {
+            linkStory(et);
+        }
+        return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Story projectBatchUnlinkStory(Story et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.StoryHelper.class).projectBatchUnlinkStory(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean projectBatchUnlinkStoryBatch (List<Story> etList) {
-		 for(Story et : etList) {
-		   projectBatchUnlinkStory(et);
-		 }
-	 	 return true;
+    public boolean projectBatchUnlinkStoryBatch(List<Story> etList) {
+        for(Story et : etList) {
+            projectBatchUnlinkStory(et);
+        }
+        return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Story projectLinkStory(Story et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.StoryHelper.class).projectLinkStory(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean projectLinkStoryBatch (List<Story> etList) {
-		 for(Story et : etList) {
-		   projectLinkStory(et);
-		 }
-	 	 return true;
+    public boolean projectLinkStoryBatch(List<Story> etList) {
+        for(Story et : etList) {
+            projectLinkStory(et);
+        }
+        return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Story projectUnlinkStory(Story et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.StoryHelper.class).projectUnlinkStory(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean projectUnlinkStoryBatch (List<Story> etList) {
-		 for(Story et : etList) {
-		   projectUnlinkStory(et);
-		 }
-	 	 return true;
+    public boolean projectUnlinkStoryBatch(List<Story> etList) {
+        for(Story et : etList) {
+            projectUnlinkStory(et);
+        }
+        return true;
     }
 
     @Override
@@ -570,49 +595,49 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Story releaseBatchUnlinkStory(Story et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.StoryHelper.class).releaseBatchUnlinkStory(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean releaseBatchUnlinkStoryBatch (List<Story> etList) {
-		 for(Story et : etList) {
-		   releaseBatchUnlinkStory(et);
-		 }
-	 	 return true;
+    public boolean releaseBatchUnlinkStoryBatch(List<Story> etList) {
+        for(Story et : etList) {
+            releaseBatchUnlinkStory(et);
+        }
+        return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Story releaseLinkStory(Story et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.StoryHelper.class).releaseLinkStory(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean releaseLinkStoryBatch (List<Story> etList) {
-		 for(Story et : etList) {
-		   releaseLinkStory(et);
-		 }
-	 	 return true;
+    public boolean releaseLinkStoryBatch(List<Story> etList) {
+        for(Story et : etList) {
+            releaseLinkStory(et);
+        }
+        return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Story releaseUnlinkStory(Story et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.StoryHelper.class).releaseUnlinkStory(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean releaseUnlinkStoryBatch (List<Story> etList) {
-		 for(Story et : etList) {
-		   releaseUnlinkStory(et);
-		 }
-	 	 return true;
+    public boolean releaseUnlinkStoryBatch(List<Story> etList) {
+        for(Story et : etList) {
+            releaseUnlinkStory(et);
+        }
+        return true;
     }
 
     @Override
@@ -630,19 +655,19 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Story review(Story et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.StoryHelper.class).review(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean reviewBatch (List<Story> etList) {
-		 for(Story et : etList) {
-		   review(et);
-		 }
-	 	 return true;
+    public boolean reviewBatch(List<Story> etList) {
+        for(Story et : etList) {
+            review(et);
+        }
+        return true;
     }
 
     @Override
@@ -707,60 +732,36 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         }
     }
 
-      /**
-   * 发送消息通知。
-   */
-	@Override
-	public Story sendMessage(Story et) {
- 		String pcLinkView = "mainview_link";
-  		String mobLinkView = "mobeditview";
-  	
-  		cn.ibizlab.pms.core.util.message.IMsgService dingTalkMsgService = cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.message.IMsgService.class);
-  		if(dingTalkMsgService!=null){
-        	dingTalkMsgService.send(et, "需求", pcLinkView, mobLinkView);
-		}
-	  	return et;
-	}
-
-	@Override
+    @Override
     @Transactional
-    public boolean sendMessageBatch (List<Story> etList) {
-		 for(Story et : etList) {
-		   sendMessage(et);
-		 }
-	 	 return true;
+    public Story sendMessage(Story et) {
+        //自定义代码
+        return et;
     }
-      /**
-   * 发送消息前置处理逻辑。
-   */
-	@Override
-	public Story sendMsgPreProcess(Story et) {
-	  	Story dbet = this.get(et.getId());
-        Map<String,Object> params = et.getExtensionparams();
-
-  		//assignedto has changed
-  		if(!cn.ibizlab.pms.core.util.message.MsgDestParser.equalsInValue(dbet.get("assignedto"),et.get("assignedto"))) {
-            params.put("assignedToChanged", true);
-        }
-  		params.put("preassignedto",dbet.get("assignedto"));
-
-        if(!cn.ibizlab.pms.core.util.message.MsgDestParser.equalsInValue(dbet.get("status"),et.get("status"))){
-            params.put("prestatus",dbet.get("status"));
-        }
-
-	  	//mailto filter duplicated
-	  	
-	  	return et;
-	}
-
-	@Override
+    @Override
     @Transactional
-    public boolean sendMsgPreProcessBatch (List<Story> etList) {
-		 for(Story et : etList) {
-		   sendMsgPreProcess(et);
-		 }
-	 	 return true;
+    public boolean sendMessageBatch(List<Story> etList) {
+        for(Story et : etList) {
+            sendMessage(et);
+        }
+        return true;
     }
+
+    @Override
+    @Transactional
+    public Story sendMsgPreProcess(Story et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendMsgPreProcessBatch(List<Story> etList) {
+        for(Story et : etList) {
+            sendMsgPreProcess(et);
+        }
+        return true;
+    }
+
     @Override
     @Transactional
     public Story storyFavorites(Story et) {
@@ -806,19 +807,19 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Story unlinkStory(Story et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.StoryHelper.class).unlinkStory(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean unlinkStoryBatch (List<Story> etList) {
-		 for(Story et : etList) {
-		   unlinkStory(et);
-		 }
-	 	 return true;
+    public boolean unlinkStoryBatch(List<Story> etList) {
+        for(Story et : etList) {
+            unlinkStory(et);
+        }
+        return true;
     }
 
 

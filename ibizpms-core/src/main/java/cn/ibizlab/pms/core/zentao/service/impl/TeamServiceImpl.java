@@ -141,19 +141,19 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team> implements IT
     public boolean checkKey(Team et) {
         return (!ObjectUtils.isEmpty(et.getId())) && (!Objects.isNull(this.getById(et.getId())));
     }
-       @Override
+    @Override
     @Transactional
     public Team managePorjectMembers(Team et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TeamHelper.class).managePorjectMembers(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean managePorjectMembersBatch (List<Team> etList) {
-		 for(Team et : etList) {
-		   managePorjectMembers(et);
-		 }
-	 	 return true;
+    public boolean managePorjectMembersBatch(List<Team> etList) {
+        for(Team et : etList) {
+            managePorjectMembers(et);
+        }
+        return true;
     }
 
     @Override
@@ -216,19 +216,19 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team> implements IT
         }
     }
 
-       @Override
+    @Override
     @Transactional
     public Team unlinkPorjectMember(Team et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TeamHelper.class).unlinkPorjectMember(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean unlinkPorjectMemberBatch (List<Team> etList) {
-		 for(Team et : etList) {
-		   unlinkPorjectMember(et);
-		 }
-	 	 return true;
+    public boolean unlinkPorjectMemberBatch(List<Team> etList) {
+        for(Team et : etList) {
+            unlinkPorjectMember(et);
+        }
+        return true;
     }
 
 

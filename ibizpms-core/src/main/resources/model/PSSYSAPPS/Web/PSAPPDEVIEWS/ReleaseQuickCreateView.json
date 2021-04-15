@@ -230,11 +230,9 @@
             "dEFName" : "DATE",
             "name" : "[常规条件] 小于等于(<=) 当前时间",
             "paramType" : "CURTIME",
-            "ruleInfo" : "发布日期不能大于当前日期",
-            "tryMode" : false
+            "ruleInfo" : "发布日期不能大于当前日期"
           } ],
-          "ruleInfo" : "发布日期不能大于当前日期",
-          "tryMode" : false
+          "ruleInfo" : "发布日期不能大于当前日期"
         },
         "getPSDEField" : {
           "name" : "DATE",

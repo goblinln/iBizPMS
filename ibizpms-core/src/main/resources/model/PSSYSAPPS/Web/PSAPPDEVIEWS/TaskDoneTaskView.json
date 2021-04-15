@@ -174,11 +174,9 @@
             "name" : "[数值范围] 大于 0.0",
             "ruleInfo" : "本次消耗必须大于0",
             "includeMaxValue" : false,
-            "includeMinValue" : false,
-            "tryMode" : false
+            "includeMinValue" : false
           } ],
-          "ruleInfo" : "本次消耗必须大于0",
-          "tryMode" : false
+          "ruleInfo" : "本次消耗必须大于0"
         },
         "getPSDEField" : {
           "name" : "CURRENTCONSUMED",

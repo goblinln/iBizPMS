@@ -176,10 +176,8 @@
           "condType" : "SIMPLE",
           "dEFName" : "ESTIMATE",
           "name" : "[常规条件] 大于(>) (0)",
-          "paramValue" : "0",
-          "tryMode" : false
-        } ],
-        "tryMode" : false
+          "paramValue" : "0"
+        } ]
       },
       "getPSDEField" : {
         "name" : "ESTIMATE",

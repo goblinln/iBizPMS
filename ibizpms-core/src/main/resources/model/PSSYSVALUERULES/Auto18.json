@@ -1,0 +1,11 @@
+{
+  "codeName" : "Auto18",
+  "dynaModelFilePath" : "PSSYSVALUERULES/Auto18.json",
+  "name" : "非负浮点数（正浮点数 + 0）",
+  "regExCode" : "\\d+(\\.\\d+)?",
+  "ruleHolder" : 3,
+  "ruleInfo" : "内容必须为非负浮点数（正浮点数 + 0）",
+  "ruleType" : "REG",
+  "enableBackend" : true,
+  "enableFront" : true
+}

@@ -88,11 +88,9 @@
           "ruleInfo" : "内容长度必须小于等于[24]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[24]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[24]"
       },
       "getPSDEField" : {
         "name" : "RID",
@@ -140,11 +138,9 @@
           "ruleInfo" : "内容长度必须小于等于[6]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
-          "keyCond" : true,
-          "tryMode" : false
+          "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[6]",
-        "tryMode" : false
+        "ruleInfo" : "内容长度必须小于等于[6]"
       },
       "getPSDEField" : {
         "name" : "TYPE",
@@ -187,8 +183,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "USER",
@@ -226,8 +221,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "DATE",
@@ -265,8 +259,7 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "tryMode" : false
+        "name" : "默认组"
       },
       "getPSDEField" : {
         "name" : "ID",

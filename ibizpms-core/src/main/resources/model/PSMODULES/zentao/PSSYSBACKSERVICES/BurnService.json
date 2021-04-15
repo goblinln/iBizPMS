@@ -2,6 +2,14 @@
   "codeName" : "BurnService",
   "dynaModelFilePath" : "PSMODULES/zentao/PSSYSBACKSERVICES/BurnService.json",
   "name" : "定时更新燃尽图服务",
+  "getPSDEAction" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEACTIONS/ComputeBurn.json"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn.json"
+  },
   "serviceContainer" : "SC01",
   "serviceHandler" : "BurnService",
   "serviceOrder" : 0,
