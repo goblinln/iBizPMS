@@ -31,7 +31,7 @@ public class ProjectTodoExService extends ProjectTodoServiceImpl {
     @Override
     public boolean create(ProjectTodo et) {
         Todo todo = new Todo();
-        CachedBeanCopier.copy(get(et.getId()), todo);
+        CachedBeanCopier.copy(et, todo);
         boolean flag = iTodoService.create(todo);
         CachedBeanCopier.copy(todo, et);
         return flag;
@@ -40,7 +40,7 @@ public class ProjectTodoExService extends ProjectTodoServiceImpl {
     @Override
     public boolean update(ProjectTodo et) {
         Todo todo = new Todo();
-        CachedBeanCopier.copy(get(et.getId()), todo);
+        CachedBeanCopier.copy(et, todo);
         boolean flag = iTodoService.update(todo);
         CachedBeanCopier.copy(todo, et);
         return flag;
@@ -60,7 +60,7 @@ public class ProjectTodoExService extends ProjectTodoServiceImpl {
     @Transactional
     public ProjectTodo activate(ProjectTodo et) {
         Todo todo = new Todo();
-        CachedBeanCopier.copy(get(et.getId()), todo);
+        CachedBeanCopier.copy(et, todo);
         iTodoService.activate(todo);
         CachedBeanCopier.copy(todo, et);
         return et;
@@ -74,7 +74,7 @@ public class ProjectTodoExService extends ProjectTodoServiceImpl {
     @Transactional
     public ProjectTodo assignTo(ProjectTodo et) {
         Todo todo = new Todo();
-        CachedBeanCopier.copy(get(et.getId()), todo);
+        CachedBeanCopier.copy(et, todo);
         iTodoService.assignTo(todo);
         CachedBeanCopier.copy(todo, et);
         return et;
@@ -102,7 +102,7 @@ public class ProjectTodoExService extends ProjectTodoServiceImpl {
     @Transactional
     public ProjectTodo createCycle(ProjectTodo et) {
         Todo todo = new Todo();
-        CachedBeanCopier.copy(get(et.getId()), todo);
+        CachedBeanCopier.copy(et, todo);
         iTodoService.createCycle(todo);
         CachedBeanCopier.copy(todo, et);
         return et;
@@ -116,7 +116,7 @@ public class ProjectTodoExService extends ProjectTodoServiceImpl {
     @Transactional
     public ProjectTodo finish(ProjectTodo et) {
         Todo todo = new Todo();
-        CachedBeanCopier.copy(get(et.getId()), todo);
+        CachedBeanCopier.copy(et, todo);
         iTodoService.finish(todo);
         CachedBeanCopier.copy(todo, et);
         return et;
@@ -130,7 +130,7 @@ public class ProjectTodoExService extends ProjectTodoServiceImpl {
     @Transactional
     public ProjectTodo sendMessage(ProjectTodo et) {
         Todo todo = new Todo();
-        CachedBeanCopier.copy(get(et.getId()), todo);
+        CachedBeanCopier.copy(et, todo);
         iTodoService.sendMessage(todo);
         CachedBeanCopier.copy(todo, et);
         return et;
@@ -144,7 +144,7 @@ public class ProjectTodoExService extends ProjectTodoServiceImpl {
     @Transactional
     public ProjectTodo sendMsgPreProcess(ProjectTodo et) {
         Todo todo = new Todo();
-        CachedBeanCopier.copy(get(et.getId()), todo);
+        CachedBeanCopier.copy(et, todo);
         iTodoService.sendMsgPreProcess(todo);
         CachedBeanCopier.copy(todo, et);
         return et;
