@@ -121,6 +121,22 @@ WHERE
 GROUP BY
 	t1.account,
 	t1.date 
+union
+select 
+YEAR( t1.date ) AS `year`,
+	Right(100 + MONTH ( t1.date ), 2) AS `month`,
+	Right(100 + day ( t1.date ), 2) AS `day`,
+	t1.account,
+	t1.date,
+	ROUND( sum( t1.consumed ), 2 ) AS consumed,
+	0.00 AS EVALUATIONCOST,
+	0.00 AS INPUTCOST,
+	0.00 AS EVALUATIONTIME
+	from zt_todo t1 left join zt_project t11 on t11.id = t1.idvalue 
+	where t1.type = 'custom' and t1.idvalue > 0
+GROUP BY
+	t1.account,
+	t1.date 
 	) t1 GROUP BY t1.account, t1.`YEAR`,t1.`MONTH`) T1
 ```
 ### 数据查询(DEFAULT)<div id="AccountTaskestimate_Default"></div>
@@ -240,6 +256,22 @@ WHERE
 	t11.project IS NOT NULL 
 	AND t11.project <> '0' 
 	AND t1.date <> '0000-00-00'  and t11.deleted = '0'
+GROUP BY
+	t1.account,
+	t1.date 
+union
+select 
+YEAR( t1.date ) AS `year`,
+	Right(100 + MONTH ( t1.date ), 2) AS `month`,
+	Right(100 + day ( t1.date ), 2) AS `day`,
+	t1.account,
+	t1.date,
+	ROUND( sum( t1.consumed ), 2 ) AS consumed,
+	0.00 AS EVALUATIONCOST,
+	0.00 AS INPUTCOST,
+	0.00 AS EVALUATIONTIME
+	from zt_todo t1 left join zt_project t11 on t11.id = t1.idvalue 
+	where t1.type = 'custom' and t1.idvalue > 0
 GROUP BY
 	t1.account,
 	t1.date 
@@ -16490,6 +16522,26 @@ GROUP BY
 	t21.`name`,
 	t1.account,
 	t1.date 
+union 
+select 
+  YEAR( t1.date ) AS `year`,
+	Right(100 + MONTH ( t1.date ), 2) AS `month`,
+	Right(100 + day ( t1.date ), 2) AS `day`,
+	t1.idvalue as project,
+	t11.`name` AS projectname,
+	t1.account,
+	t1.date,
+	ROUND( sum( t1.consumed ), 2 ) AS consumed,
+	0.00 AS EVALUATIONCOST,
+	0.00 AS INPUTCOST,
+	0.00 AS EVALUATIONTIME
+	from zt_todo t1 left join zt_project t11 on t11.id = t1.idvalue 
+	where t1.type = 'custom' and t1.idvalue > 0
+GROUP BY
+	t1.idvalue,
+	t11.`name`,
+	t1.account,
+	t1.date 
 	) t1 GROUP BY t1.account, t1.project,t1.projectname,t1.`YEAR`,t1.`MONTH`) T1
 WHERE t1.account =#{srf.webcontext.account} 
 t1.`MONTH`=#{srf.webcontext.month} 
@@ -16620,6 +16672,26 @@ WHERE
 GROUP BY
 	t11.project,
 	t21.`name`,
+	t1.account,
+	t1.date 
+union 
+select 
+  YEAR( t1.date ) AS `year`,
+	Right(100 + MONTH ( t1.date ), 2) AS `month`,
+	Right(100 + day ( t1.date ), 2) AS `day`,
+	t1.idvalue as project,
+	t11.`name` AS projectname,
+	t1.account,
+	t1.date,
+	ROUND( sum( t1.consumed ), 2 ) AS consumed,
+	0.00 AS EVALUATIONCOST,
+	0.00 AS INPUTCOST,
+	0.00 AS EVALUATIONTIME
+	from zt_todo t1 left join zt_project t11 on t11.id = t1.idvalue 
+	where t1.type = 'custom' and t1.idvalue > 0
+GROUP BY
+	t1.idvalue,
+	t11.`name`,
 	t1.account,
 	t1.date 
 	) t1 GROUP BY t1.account, t1.project,t1.projectname,t1.`YEAR`,t1.`MONTH`) T1
