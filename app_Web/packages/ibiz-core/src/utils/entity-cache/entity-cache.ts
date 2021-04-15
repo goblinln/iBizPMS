@@ -82,7 +82,7 @@ export class EntityCache<T extends IEntityBase> {
             const map = this.getCacheByTag(context.srfsessionkey!);
             const data = map.get(entity.srfkey!);
             if (data) {
-                data.assign!(entity);
+                data._assign!(entity);
                 map.set(entity.srfkey!, data);
                 LogUtil.warn('update', entity.srfkey, entity);
                 return entity;

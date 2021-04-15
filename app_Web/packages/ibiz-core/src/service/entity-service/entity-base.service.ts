@@ -855,7 +855,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
         if (result.ok) {
             this.disableAcc();
             const entity: T = result.data;
-            entity.assign!(data);
+            entity._assign!(data);
             entity.srfkey = createUUID();
             entity.srfmajortext = `${entity.srfmajortext} copy`;
             const draftRes = await this.GetDraftTemp(

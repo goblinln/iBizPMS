@@ -83,7 +83,7 @@ export interface IEntityBase {
      * @param {*} [data={}]
      * @memberof IEntityBase
      */
-    assign?(data?: any): void;
+    _assign?(data?: any): void;
 }
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface IEntity extends IEntityBase {}
