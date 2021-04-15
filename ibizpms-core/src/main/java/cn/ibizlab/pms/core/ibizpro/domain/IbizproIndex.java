@@ -28,149 +28,155 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.baomidou.mybatisplus.annotation.*;
-import cn.ibizlab.pms.util.domain.EntityMP;
-import com.baomidou.mybatisplus.core.toolkit.IdWorker;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.data.mongodb.core.mapping.FieldType;
+import cn.ibizlab.pms.util.domain.EntityMongo;
 
 /**
- * 实体[索引检索]
+ * 大数据 [索引检索] 对象
  */
-@Getter
-@Setter
-@NoArgsConstructor
-@JsonIgnoreProperties(value = "handler")
-@TableName(value = "", resultMap = "IbizproIndexResultMap")
+@Data
+@Document(collection = "ibizproindex")
 @ApiModel("索引检索")
-public class IbizproIndex extends EntityMP implements Serializable {
+public class IbizproIndex extends EntityMongo implements Serializable {
 
-    private static final long serialVersionUID = 1L;
 
     /**
      * 主键
      */
-    @DEField(isKeyField = true)
-    @TableField(exist = false)
+    @Id()
     @JSONField(name = "indexid")
     @JsonProperty("indexid")
     @ApiModelProperty("主键")
     private Long indexid;
+
+
     /**
      * 权限
      */
-    @TableField(exist = false)
     @JSONField(name = "acl")
     @JsonProperty("acl")
+    @Field(name = "acl")
     @ApiModelProperty("权限")
     private String acl;
+
+
     /**
      * docid
      */
-    @TableField(exist = false)
     @JSONField(name = "docid")
     @JsonProperty("docid")
+    @Field(name = "docid")
     @ApiModelProperty("docid")
     private String docid;
+
+
     /**
      * 标题[需求、任务等]
      */
-    @TableField(exist = false)
     @JSONField(name = "indexname")
     @JsonProperty("indexname")
+    @Field(name = "indexname")
     @ApiModelProperty("标题[需求、任务等]")
     private String indexname;
+
+
     /**
      * 颜色
      */
-    @TableField(exist = false)
     @JSONField(name = "color")
     @JsonProperty("color")
+    @Field(name = "color")
     @ApiModelProperty("颜色")
     private String color;
+
+
     /**
      * 逻辑标识
      */
-    @TableField(exist = false)
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
+    @Field(name = "deleted")
     @ApiModelProperty("逻辑标识")
     private String deleted;
+
+
     /**
      * 权限列表
      */
-    @TableField(exist = false)
     @JSONField(name = "acllist")
     @JsonProperty("acllist")
+    @Field(name = "acllist")
     @ApiModelProperty("权限列表")
     private String acllist;
+
+
     /**
      * 内容[需求、任务等]
      */
-    @TableField(exist = false)
     @JSONField(name = "indexdesc")
     @JsonProperty("indexdesc")
+    @Field(name = "indexdesc")
     @ApiModelProperty("内容[需求、任务等]")
     private String indexdesc;
+
+
     /**
      * 产品
      */
-    @TableField(exist = false)
     @JSONField(name = "product")
     @JsonProperty("product")
+    @Field(name = "product")
     @ApiModelProperty("产品")
     private Long product;
+
+
     /**
      * 类型
      */
-    @TableField(exist = false)
     @JSONField(name = "indextype")
     @JsonProperty("indextype")
+    @Field(name = "index_type")
     @ApiModelProperty("类型")
     private String indextype;
+
+
     /**
      * 部门标识
      */
-    @TableField(exist = false)
     @JSONField(name = "mdeptid")
     @JsonProperty("mdeptid")
+    @Field(name = "mdeptid")
     @ApiModelProperty("部门标识")
     private String mdeptid;
+
+
     /**
      * 项目
      */
-    @TableField(exist = false)
     @JSONField(name = "project")
     @JsonProperty("project")
+    @Field(name = "project")
     @ApiModelProperty("项目")
     private Long project;
+
+
     /**
      * 组织标识
      */
-    @TableField(exist = false)
     @JSONField(name = "orgid")
     @JsonProperty("orgid")
+    @Field(name = "orgid")
     @ApiModelProperty("组织标识")
     private String orgid;
 
 
 
 
-    @Override
-    public Serializable getDefaultKey(boolean gen) {
-        return IdWorker.getId();
-    }
-    /**
-     * 复制当前对象数据到目标对象(粘贴重置)
-     * @param targetEntity 目标数据对象
-     * @param bIncEmpty  是否包括空值
-     * @param <T>
-     * @return
-     */
-    @Override
-    public <T> T copyTo(T targetEntity, boolean bIncEmpty) {
-        this.reset("indexid");
-        return super.copyTo(targetEntity, bIncEmpty);
-    }
+
 }
 
 
