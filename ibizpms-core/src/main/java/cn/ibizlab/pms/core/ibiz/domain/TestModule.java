@@ -50,7 +50,7 @@ public class TestModule extends EntityMP implements Serializable {
      * 类型（story）
      */
     @DEField(defaultValue = "story")
-    @TableField(value = "type")
+    @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("类型（story）")
@@ -59,7 +59,7 @@ public class TestModule extends EntityMP implements Serializable {
      * path
      */
     @DEField(defaultValue = ",")
-    @TableField(value = "path")
+    @TableField(value = "`PATH`")
     @JSONField(name = "path")
     @JsonProperty("path")
     @ApiModelProperty("path")
@@ -68,7 +68,7 @@ public class TestModule extends EntityMP implements Serializable {
      * owner
      */
     @DEField(defaultValue = "/")
-    @TableField(value = "owner")
+    @TableField(value = "`OWNER`")
     @JSONField(name = "owner")
     @JsonProperty("owner")
     @ApiModelProperty("owner")
@@ -77,7 +77,7 @@ public class TestModule extends EntityMP implements Serializable {
      * 排序值
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "order")
+    @TableField(value = "`ORDER`")
     @JSONField(name = "order")
     @JsonProperty("order")
     @ApiModelProperty("排序值")
@@ -87,7 +87,7 @@ public class TestModule extends EntityMP implements Serializable {
      */
     @DEField(defaultValue = "0", preType = DEPredefinedFieldType.LOGICVALID, logicval = "0", logicdelval = "1")
     @TableLogic(value = "0", delval = "1")
-    @TableField(value = "deleted")
+    @TableField(value = "`DELETED`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
     @ApiModelProperty("逻辑删除标志")
@@ -96,7 +96,7 @@ public class TestModule extends EntityMP implements Serializable {
      * branch
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "branch")
+    @TableField(value = "`BRANCH`")
     @JSONField(name = "branch")
     @JsonProperty("branch")
     @ApiModelProperty("branch")
@@ -105,7 +105,7 @@ public class TestModule extends EntityMP implements Serializable {
      * collector
      */
     @DEField(defaultValue = "/")
-    @TableField(value = "collector")
+    @TableField(value = "`COLLECTOR`")
     @JSONField(name = "collector")
     @JsonProperty("collector")
     @ApiModelProperty("collector")
@@ -114,7 +114,7 @@ public class TestModule extends EntityMP implements Serializable {
      * id
      */
     @DEField(isKeyField = true)
-    @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "`ID`", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("id")
@@ -130,7 +130,7 @@ public class TestModule extends EntityMP implements Serializable {
     /**
      * 名称
      */
-    @TableField(value = "name")
+    @TableField(value = "`NAME`")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("名称")
@@ -139,7 +139,7 @@ public class TestModule extends EntityMP implements Serializable {
      * 简称
      */
     @DEField(defaultValue = "/")
-    @TableField(value = "short")
+    @TableField(value = "`SHORT`")
     @JSONField(name = "ibizshort")
     @JsonProperty("ibizshort")
     @ApiModelProperty("简称")
@@ -148,7 +148,7 @@ public class TestModule extends EntityMP implements Serializable {
      * grade
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "grade")
+    @TableField(value = "`GRADE`")
     @JSONField(name = "grade")
     @JsonProperty("grade")
     @ApiModelProperty("grade")
@@ -173,7 +173,7 @@ public class TestModule extends EntityMP implements Serializable {
      * 编号
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "root")
+    @TableField(value = "`ROOT`")
     @JSONField(name = "root")
     @JsonProperty("root")
     @ApiModelProperty("编号")
@@ -182,7 +182,7 @@ public class TestModule extends EntityMP implements Serializable {
      * id
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "parent")
+    @TableField(value = "`PARENT`")
     @JSONField(name = "parent")
     @JsonProperty("parent")
     @ApiModelProperty("id")

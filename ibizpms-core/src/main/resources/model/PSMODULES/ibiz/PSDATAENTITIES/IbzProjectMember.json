@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "SECONDMEMBER",
       "queryCodeExp" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 1,1)",
+      "standardColumnName" : "`SECONDMEMBER`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -126,6 +127,7 @@
       "dBType" : "MYSQL5",
       "name" : "RD",
       "queryCodeExp" : "t1.RD",
+      "standardColumnName" : "`RD`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -182,6 +184,7 @@
       "dBType" : "MYSQL5",
       "name" : "QD",
       "queryCodeExp" : "t1.QD",
+      "standardColumnName" : "`QD`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -238,6 +241,7 @@
       "dBType" : "MYSQL5",
       "name" : "TEAMEMBERS",
       "queryCodeExp" : "(select GROUP_CONCAT(t.account order by t.`order` asc) from zt_team t where t.type = 'project' and t.root = t1.id GROUP BY t.root)",
+      "standardColumnName" : "`TEAMEMBERS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -294,6 +298,7 @@
       "dBType" : "MYSQL5",
       "name" : "THIRDMEMBER",
       "queryCodeExp" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 2,1)",
+      "standardColumnName" : "`THIRDMEMBER`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -350,6 +355,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -391,6 +397,7 @@
       "dBType" : "MYSQL5",
       "name" : "FRISTMEMBER",
       "queryCodeExp" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 0,1)",
+      "standardColumnName" : "`FRISTMEMBER`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -447,6 +454,7 @@
       "dBType" : "MYSQL5",
       "name" : "PO",
       "queryCodeExp" : "t1.PO",
+      "standardColumnName" : "`PO`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -503,6 +511,7 @@
       "dBType" : "MYSQL5",
       "name" : "FOURTHMEMBER",
       "queryCodeExp" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 3,1)",
+      "standardColumnName" : "`FOURTHMEMBER`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -559,6 +568,7 @@
       "dBType" : "MYSQL5",
       "name" : "PM",
       "queryCodeExp" : "t1.PM",
+      "standardColumnName" : "`PM`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -615,6 +625,7 @@
       "dBType" : "MYSQL5",
       "name" : "FIFTHMEMBER",
       "queryCodeExp" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 4,1)",
+      "standardColumnName" : "`FIFTHMEMBER`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -671,6 +682,7 @@
       "dBType" : "MYSQL5",
       "name" : "SIXTHMEMBER",
       "queryCodeExp" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 5,1)",
+      "standardColumnName" : "`SIXTHMEMBER`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -727,6 +739,7 @@
       "dBType" : "MYSQL5",
       "name" : "NAME",
       "queryCodeExp" : "t1.`NAME`",
+      "standardColumnName" : "`NAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

@@ -41,7 +41,7 @@ public class ImMessagestatusSearchContext extends QueryWrapperContext<ImMessages
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("user", query)
+                     wrapper.like("t1.`USER`", query)
             );
 		 }
 	}

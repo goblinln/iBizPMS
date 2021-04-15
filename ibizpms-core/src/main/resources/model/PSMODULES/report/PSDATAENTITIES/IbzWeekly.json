@@ -211,6 +211,7 @@
       "dBType" : "MYSQL5",
       "name" : "ISSUBMIT",
       "queryCodeExp" : "t1.`ISSUBMIT`",
+      "standardColumnName" : "`ISSUBMIT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -266,6 +267,7 @@
       "dBType" : "MYSQL5",
       "name" : "PLANNEXTWEEK",
       "queryCodeExp" : "t1.`PLANNEXTWEEK`",
+      "standardColumnName" : "`PLANNEXTWEEK`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -317,6 +319,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZ_WEEKLYNAME",
       "queryCodeExp" : "t1.`IBZ_WEEKLYNAME`",
+      "standardColumnName" : "`IBZ_WEEKLYNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -369,6 +372,7 @@
       "dBType" : "MYSQL5",
       "name" : "MAILTO",
       "queryCodeExp" : "t1.`MAILTO`",
+      "standardColumnName" : "`MAILTO`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -423,6 +427,7 @@
       "dBType" : "MYSQL5",
       "name" : "REPORTTOPK",
       "queryCodeExp" : "t1.reportto",
+      "standardColumnName" : "`REPORTTOPK`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -475,6 +480,7 @@
       "dBType" : "MYSQL5",
       "name" : "NEXTWEEKTASK",
       "queryCodeExp" : "t1.`NEXTWEEKTASK`",
+      "standardColumnName" : "`NEXTWEEKTASK`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -529,6 +535,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZ_WEEKLYID",
       "queryCodeExp" : "t1.`IBZ_WEEKLYID`",
+      "standardColumnName" : "`IBZ_WEEKLYID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -571,6 +578,7 @@
       "dBType" : "MYSQL5",
       "name" : "SUBMITTIME",
       "queryCodeExp" : "t1.`SUBMITTIME`",
+      "standardColumnName" : "`SUBMITTIME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -608,6 +616,7 @@
       "dBType" : "MYSQL5",
       "name" : "MAILTOPK",
       "queryCodeExp" : "t1.mailto",
+      "standardColumnName" : "`MAILTOPK`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -660,6 +669,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -717,6 +727,7 @@
       "dBType" : "MYSQL5",
       "name" : "REPORTSTATUS",
       "queryCodeExp" : "t1.`REPORTSTATUS`",
+      "standardColumnName" : "`REPORTSTATUS`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -816,6 +827,7 @@
       "dBType" : "MYSQL5",
       "name" : "WORKTHISWEEK",
       "queryCodeExp" : "t1.`WORKTHISWEEK`",
+      "standardColumnName" : "`WORKTHISWEEK`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -867,6 +879,7 @@
       "dBType" : "MYSQL5",
       "name" : "REPORTTO",
       "queryCodeExp" : "t1.`REPORTTO`",
+      "standardColumnName" : "`REPORTTO`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -921,6 +934,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMANNAME",
       "queryCodeExp" : "t1.`UPDATEMANNAME`",
+      "standardColumnName" : "`UPDATEMANNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -974,6 +988,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACCOUNT",
       "queryCodeExp" : "t1.`ACCOUNT`",
+      "standardColumnName" : "`ACCOUNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1028,6 +1043,7 @@
       "dBType" : "MYSQL5",
       "name" : "THISWEEKTASK",
       "queryCodeExp" : "t1.`THISWEEKTASK`",
+      "standardColumnName" : "`THISWEEKTASK`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1082,6 +1098,7 @@
       "dBType" : "MYSQL5",
       "name" : "COMMENT",
       "queryCodeExp" : "t1.`COMMENT`",
+      "standardColumnName" : "`COMMENT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1133,6 +1150,7 @@
       "dBType" : "MYSQL5",
       "name" : "DATE",
       "queryCodeExp" : "t1.`DATE`",
+      "standardColumnName" : "`DATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1170,6 +1188,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1227,6 +1246,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMANNAME",
       "queryCodeExp" : "t1.`CREATEMANNAME`",
+      "standardColumnName" : "`CREATEMANNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1280,6 +1300,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1321,6 +1342,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

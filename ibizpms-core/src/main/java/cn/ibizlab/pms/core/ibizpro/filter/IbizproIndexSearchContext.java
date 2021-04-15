@@ -45,7 +45,7 @@ public class IbizproIndexSearchContext extends QueryWrapperContext<IbizproIndex>
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("indexname", query)
+                     wrapper.like("t1.`INDEXNAME`", query)
                         .or().like("indexdesc", query)
             );
 		 }

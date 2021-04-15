@@ -263,6 +263,7 @@
       "dBType" : "MYSQL5",
       "name" : "ROOT",
       "queryCodeExp" : "t1.`ROOT`",
+      "standardColumnName" : "`ROOT`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -314,6 +315,7 @@
       "dBType" : "MYSQL5",
       "name" : "GRADE",
       "queryCodeExp" : "t1.`GRADE`",
+      "standardColumnName" : "`GRADE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -353,6 +355,7 @@
       "dBType" : "MYSQL5",
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
+      "standardColumnName" : "`TYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -407,6 +410,7 @@
       "dBType" : "MYSQL5",
       "name" : "NAME",
       "queryCodeExp" : "t1.`NAME`",
+      "standardColumnName" : "`NAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -460,6 +464,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORDER",
       "queryCodeExp" : "t1.`ORDER`",
+      "standardColumnName" : "`ORDER`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -498,6 +503,7 @@
       "dBType" : "MYSQL5",
       "name" : "OWNER",
       "queryCodeExp" : "t1.`OWNER`",
+      "standardColumnName" : "`OWNER`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -549,6 +555,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -636,6 +643,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEBY",
       "queryCodeExp" : "t1.`CREATEBY`",
+      "standardColumnName" : "`CREATEBY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -692,6 +700,7 @@
       "dBType" : "MYSQL5",
       "name" : "COLLECTOR",
       "queryCodeExp" : "t1.`COLLECTOR`",
+      "standardColumnName" : "`COLLECTOR`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -744,6 +753,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEBY",
       "queryCodeExp" : "t1.`UPDATEBY`",
+      "standardColumnName" : "`UPDATEBY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -800,6 +810,7 @@
       "dBType" : "MYSQL5",
       "name" : "SHORT",
       "queryCodeExp" : "t1.`SHORT`",
+      "standardColumnName" : "`SHORT`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -851,6 +862,7 @@
       "dBType" : "MYSQL5",
       "name" : "PATH",
       "queryCodeExp" : "t1.`PATH`",
+      "standardColumnName" : "`PATH`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -902,6 +914,7 @@
       "dBType" : "MYSQL5",
       "name" : "MDEPTID",
       "queryCodeExp" : "t1.`MDEPTID`",
+      "standardColumnName" : "`MDEPTID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -953,6 +966,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORGID",
       "queryCodeExp" : "t1.`ORGID`",
+      "standardColumnName" : "`ORGID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1004,6 +1018,7 @@
       "dBType" : "MYSQL5",
       "name" : "DELETED",
       "queryCodeExp" : "t1.`DELETED`",
+      "standardColumnName" : "`DELETED`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1058,6 +1073,7 @@
       "dBType" : "MYSQL5",
       "name" : "PARENTNAME",
       "queryCodeExp" : "t11.`NAME`",
+      "standardColumnName" : "`PARENTNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1118,6 +1134,7 @@
       "dBType" : "MYSQL5",
       "name" : "BRANCH",
       "queryCodeExp" : "t1.`BRANCH`",
+      "standardColumnName" : "`BRANCH`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1166,6 +1183,7 @@
       "dBType" : "MYSQL5",
       "name" : "PARENT",
       "queryCodeExp" : "t1.`PARENT`",
+      "standardColumnName" : "`PARENT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

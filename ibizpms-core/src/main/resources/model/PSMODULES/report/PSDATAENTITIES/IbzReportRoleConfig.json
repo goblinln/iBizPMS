@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZ_REPORT_ROLE_CONFIGNAME",
       "queryCodeExp" : "t1.`IBZ_REPORT_ROLE_CONFIGNAME`",
+      "standardColumnName" : "`IBZ_REPORT_ROLE_CONFIGNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -122,6 +123,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZ_REPORT_ROLE_CONFIGID",
       "queryCodeExp" : "t1.`IBZ_REPORT_ROLE_CONFIGID`",
+      "standardColumnName" : "`IBZ_REPORT_ROLE_CONFIGID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -175,6 +177,7 @@
       "dBType" : "MYSQL5",
       "name" : "REPORT_ROLE",
       "queryCodeExp" : "t1.`REPORT_ROLE`",
+      "standardColumnName" : "`REPORT_ROLE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -229,6 +232,7 @@
       "dBType" : "MYSQL5",
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
+      "standardColumnName" : "`TYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -283,6 +287,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -324,6 +329,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -365,6 +371,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -422,6 +429,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

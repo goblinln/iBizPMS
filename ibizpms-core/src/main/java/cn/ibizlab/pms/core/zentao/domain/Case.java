@@ -50,7 +50,7 @@ public class Case extends EntityMP implements Serializable {
      * 修改日期
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
-    @TableField(value = "lastediteddate")
+    @TableField(value = "`LASTEDITEDDATE`")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "lastediteddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("lastediteddate")
@@ -59,7 +59,7 @@ public class Case extends EntityMP implements Serializable {
     /**
      * scriptedDate
      */
-    @TableField(value = "scripteddate")
+    @TableField(value = "`SCRIPTEDDATE`")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "scripteddate", format = "yyyy-MM-dd")
     @JsonProperty("scripteddate")
@@ -69,7 +69,7 @@ public class Case extends EntityMP implements Serializable {
      * 标题颜色
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "color")
+    @TableField(value = "`COLOR`")
     @JSONField(name = "color")
     @JsonProperty("color")
     @ApiModelProperty("标题颜色")
@@ -78,7 +78,7 @@ public class Case extends EntityMP implements Serializable {
      * path
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "path")
+    @TableField(value = "`PATH`")
     @JSONField(name = "path")
     @JsonProperty("path")
     @ApiModelProperty("path")
@@ -87,7 +87,7 @@ public class Case extends EntityMP implements Serializable {
      * 创建日期
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "openeddate", fill = FieldFill.INSERT)
+    @TableField(value = "`OPENEDDATE`", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "openeddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("openeddate")
@@ -97,7 +97,7 @@ public class Case extends EntityMP implements Serializable {
      * 结果
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "lastrunresult")
+    @TableField(value = "`LASTRUNRESULT`")
     @JSONField(name = "lastrunresult")
     @JsonProperty("lastrunresult")
     @ApiModelProperty("结果")
@@ -114,7 +114,7 @@ public class Case extends EntityMP implements Serializable {
      * 相关用例
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "linkcase")
+    @TableField(value = "`LINKCASE`")
     @JSONField(name = "linkcase")
     @JsonProperty("linkcase")
     @ApiModelProperty("相关用例")
@@ -131,7 +131,7 @@ public class Case extends EntityMP implements Serializable {
      * 排序
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "order")
+    @TableField(value = "`ORDER`")
     @JSONField(name = "order")
     @JsonProperty("order")
     @ApiModelProperty("排序")
@@ -140,7 +140,7 @@ public class Case extends EntityMP implements Serializable {
      * howRun
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "howrun")
+    @TableField(value = "`HOWRUN`")
     @JSONField(name = "howrun")
     @JsonProperty("howrun")
     @ApiModelProperty("howRun")
@@ -165,7 +165,7 @@ public class Case extends EntityMP implements Serializable {
      * 用例版本
      */
     @DEField(defaultValue = "1")
-    @TableField(value = "version")
+    @TableField(value = "`VERSION`")
     @JSONField(name = "version")
     @JsonProperty("version")
     @ApiModelProperty("用例版本")
@@ -174,7 +174,7 @@ public class Case extends EntityMP implements Serializable {
      * scriptedBy
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "scriptedby")
+    @TableField(value = "`SCRIPTEDBY`")
     @JSONField(name = "scriptedby")
     @JsonProperty("scriptedby")
     @ApiModelProperty("scriptedBy")
@@ -183,7 +183,7 @@ public class Case extends EntityMP implements Serializable {
      * 由谁创建
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "openedby")
+    @TableField(value = "`OPENEDBY`")
     @JSONField(name = "openedby")
     @JsonProperty("openedby")
     @ApiModelProperty("由谁创建")
@@ -192,7 +192,7 @@ public class Case extends EntityMP implements Serializable {
      * 用例类型
      */
     @DEField(defaultValue = "feature")
-    @TableField(value = "type")
+    @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("用例类型")
@@ -209,7 +209,7 @@ public class Case extends EntityMP implements Serializable {
      * 用例状态
      */
     @DEField(defaultValue = "normal")
-    @TableField(value = "status")
+    @TableField(value = "`STATUS`")
     @JSONField(name = "status")
     @JsonProperty("status")
     @ApiModelProperty("用例状态")
@@ -226,7 +226,7 @@ public class Case extends EntityMP implements Serializable {
      * auto
      */
     @DEField(defaultValue = "no")
-    @TableField(value = "auto")
+    @TableField(value = "`AUTO`")
     @JSONField(name = "auto")
     @JsonProperty("auto")
     @ApiModelProperty("auto")
@@ -243,7 +243,7 @@ public class Case extends EntityMP implements Serializable {
      * 归属部门
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "dept")
+    @TableField(value = "`DEPT`")
     @JSONField(name = "dept")
     @JsonProperty("dept")
     @ApiModelProperty("归属部门")
@@ -252,7 +252,7 @@ public class Case extends EntityMP implements Serializable {
      * frequency
      */
     @DEField(defaultValue = "1")
-    @TableField(value = "frequency")
+    @TableField(value = "`FREQUENCY`")
     @JSONField(name = "frequency")
     @JsonProperty("frequency")
     @ApiModelProperty("frequency")
@@ -260,7 +260,7 @@ public class Case extends EntityMP implements Serializable {
     /**
      * 用例标题
      */
-    @TableField(value = "title")
+    @TableField(value = "`TITLE`")
     @JSONField(name = "title")
     @JsonProperty("title")
     @ApiModelProperty("用例标题")
@@ -269,7 +269,7 @@ public class Case extends EntityMP implements Serializable {
      * 最后修改者
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "lasteditedby")
+    @TableField(value = "`LASTEDITEDBY`")
     @JSONField(name = "lasteditedby")
     @JsonProperty("lasteditedby")
     @ApiModelProperty("最后修改者")
@@ -278,7 +278,7 @@ public class Case extends EntityMP implements Serializable {
      * 归属组织
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "org")
+    @TableField(value = "`ORG`")
     @JSONField(name = "org")
     @JsonProperty("org")
     @ApiModelProperty("归属组织")
@@ -287,7 +287,7 @@ public class Case extends EntityMP implements Serializable {
      * 由谁评审
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "reviewedby")
+    @TableField(value = "`REVIEWEDBY`")
     @JSONField(name = "reviewedby")
     @JsonProperty("reviewedby")
     @ApiModelProperty("由谁评审")
@@ -321,7 +321,7 @@ public class Case extends EntityMP implements Serializable {
      */
     @DEField(defaultValue = "0", preType = DEPredefinedFieldType.LOGICVALID, logicval = "0", logicdelval = "1")
     @TableLogic(value = "0", delval = "1")
-    @TableField(value = "deleted")
+    @TableField(value = "`DELETED`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
     @ApiModelProperty("已删除")
@@ -329,7 +329,7 @@ public class Case extends EntityMP implements Serializable {
     /**
      * 评审时间
      */
-    @TableField(value = "revieweddate")
+    @TableField(value = "`REVIEWEDDATE`")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "revieweddate", format = "yyyy-MM-dd")
     @JsonProperty("revieweddate")
@@ -339,7 +339,7 @@ public class Case extends EntityMP implements Serializable {
      * 优先级
      */
     @DEField(defaultValue = "3")
-    @TableField(value = "pri")
+    @TableField(value = "`PRI`")
     @JSONField(name = "pri")
     @JsonProperty("pri")
     @ApiModelProperty("优先级")
@@ -348,7 +348,7 @@ public class Case extends EntityMP implements Serializable {
      * 适用阶段
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "stage")
+    @TableField(value = "`STAGE`")
     @JSONField(name = "stage")
     @JsonProperty("stage")
     @ApiModelProperty("适用阶段")
@@ -357,7 +357,7 @@ public class Case extends EntityMP implements Serializable {
      * scriptLocation
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "scriptlocation")
+    @TableField(value = "`SCRIPTLOCATION`")
     @JSONField(name = "scriptlocation")
     @JsonProperty("scriptlocation")
     @ApiModelProperty("scriptLocation")
@@ -373,7 +373,7 @@ public class Case extends EntityMP implements Serializable {
     /**
      * 执行时间
      */
-    @TableField(value = "lastrundate")
+    @TableField(value = "`LASTRUNDATE`")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "lastrundate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("lastrundate")
@@ -383,7 +383,7 @@ public class Case extends EntityMP implements Serializable {
      * 关键词
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "keywords")
+    @TableField(value = "`KEYWORDS`")
     @JSONField(name = "keywords")
     @JsonProperty("keywords")
     @ApiModelProperty("关键词")
@@ -392,7 +392,7 @@ public class Case extends EntityMP implements Serializable {
      * scriptStatus
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "scriptstatus")
+    @TableField(value = "`SCRIPTSTATUS`")
     @JSONField(name = "scriptstatus")
     @JsonProperty("scriptstatus")
     @ApiModelProperty("scriptStatus")
@@ -401,7 +401,7 @@ public class Case extends EntityMP implements Serializable {
      * 工具/框架
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "frame")
+    @TableField(value = "`FRAME`")
     @JSONField(name = "frame")
     @JsonProperty("frame")
     @ApiModelProperty("工具/框架")
@@ -426,7 +426,7 @@ public class Case extends EntityMP implements Serializable {
      * 子状态
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "substatus")
+    @TableField(value = "`SUBSTATUS`")
     @JSONField(name = "substatus")
     @JsonProperty("substatus")
     @ApiModelProperty("子状态")
@@ -435,7 +435,7 @@ public class Case extends EntityMP implements Serializable {
      * 用例编号
      */
     @DEField(isKeyField = true)
-    @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "`ID`", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("用例编号")
@@ -444,7 +444,7 @@ public class Case extends EntityMP implements Serializable {
      * 前置条件
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "precondition")
+    @TableField(value = "`PRECONDITION`")
     @JSONField(name = "precondition")
     @JsonProperty("precondition")
     @ApiModelProperty("前置条件")
@@ -453,7 +453,7 @@ public class Case extends EntityMP implements Serializable {
      * 执行人
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "lastrunner")
+    @TableField(value = "`LASTRUNNER`")
     @JSONField(name = "lastrunner")
     @JsonProperty("lastrunner")
     @ApiModelProperty("执行人")
@@ -470,7 +470,7 @@ public class Case extends EntityMP implements Serializable {
      * 来源用例版本
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "fromcaseversion")
+    @TableField(value = "`FROMCASEVERSION`")
     @JSONField(name = "fromcaseversion")
     @JsonProperty("fromcaseversion")
     @ApiModelProperty("来源用例版本")
@@ -495,7 +495,7 @@ public class Case extends EntityMP implements Serializable {
      * 需求版本
      */
     @DEField(defaultValue = "1")
-    @TableField(value = "storyversion")
+    @TableField(value = "`STORYVERSION`")
     @JSONField(name = "storyversion")
     @JsonProperty("storyversion")
     @ApiModelProperty("需求版本")
@@ -512,7 +512,7 @@ public class Case extends EntityMP implements Serializable {
      * 来源用例
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "fromcaseid")
+    @TableField(value = "`FROMCASEID`")
     @JSONField(name = "fromcaseid")
     @JsonProperty("fromcaseid")
     @ApiModelProperty("来源用例")
@@ -521,7 +521,7 @@ public class Case extends EntityMP implements Serializable {
      * 平台/分支
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "branch")
+    @TableField(value = "`BRANCH`")
     @JSONField(name = "branch")
     @JsonProperty("branch")
     @ApiModelProperty("平台/分支")
@@ -530,7 +530,7 @@ public class Case extends EntityMP implements Serializable {
      * 来源Bug
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "frombug")
+    @TableField(value = "`FROMBUG`")
     @JSONField(name = "frombug")
     @JsonProperty("frombug")
     @ApiModelProperty("来源Bug")
@@ -539,7 +539,7 @@ public class Case extends EntityMP implements Serializable {
      * 相关需求
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "story")
+    @TableField(value = "`STORY`")
     @JSONField(name = "story")
     @JsonProperty("story")
     @ApiModelProperty("相关需求")
@@ -548,7 +548,7 @@ public class Case extends EntityMP implements Serializable {
      * 所属产品
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "product")
+    @TableField(value = "`PRODUCT`")
     @JSONField(name = "product")
     @JsonProperty("product")
     @ApiModelProperty("所属产品")
@@ -557,7 +557,7 @@ public class Case extends EntityMP implements Serializable {
      * 所属库
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "lib")
+    @TableField(value = "`LIB`")
     @JSONField(name = "lib")
     @JsonProperty("lib")
     @ApiModelProperty("所属库")
@@ -566,7 +566,7 @@ public class Case extends EntityMP implements Serializable {
      * 所属模块
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "module")
+    @TableField(value = "`MODULE`")
     @JSONField(name = "module")
     @JsonProperty("module")
     @ApiModelProperty("所属模块")

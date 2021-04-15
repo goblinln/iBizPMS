@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "SCM",
       "queryCodeExp" : "t1.`SCM`",
+      "standardColumnName" : "`SCM`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -120,6 +121,7 @@
       "dBType" : "MYSQL5",
       "name" : "PREFIX",
       "queryCodeExp" : "t1.`PREFIX`",
+      "standardColumnName" : "`PREFIX`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -170,6 +172,7 @@
       "dBType" : "MYSQL5",
       "name" : "PASSWORD",
       "queryCodeExp" : "t1.`PASSWORD`",
+      "standardColumnName" : "`PASSWORD`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -220,6 +223,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -263,6 +267,7 @@
       "dBType" : "MYSQL5",
       "name" : "ENCODING",
       "queryCodeExp" : "t1.`ENCODING`",
+      "standardColumnName" : "`ENCODING`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -313,6 +318,7 @@
       "dBType" : "MYSQL5",
       "name" : "COMMITS",
       "queryCodeExp" : "t1.`COMMITS`",
+      "standardColumnName" : "`COMMITS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -350,6 +356,7 @@
       "dBType" : "MYSQL5",
       "name" : "SYNCED",
       "queryCodeExp" : "t1.`SYNCED`",
+      "standardColumnName" : "`SYNCED`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -388,6 +395,7 @@
       "dBType" : "MYSQL5",
       "name" : "LASTSYNC",
       "queryCodeExp" : "t1.`LASTSYNC`",
+      "standardColumnName" : "`LASTSYNC`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -425,6 +433,7 @@
       "dBType" : "MYSQL5",
       "name" : "CLIENT",
       "queryCodeExp" : "t1.`CLIENT`",
+      "standardColumnName" : "`CLIENT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -475,6 +484,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACL",
       "queryCodeExp" : "t1.`ACL`",
+      "standardColumnName" : "`ACL`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -526,6 +536,7 @@
       "dBType" : "MYSQL5",
       "name" : "ENCRYPT",
       "queryCodeExp" : "t1.`ENCRYPT`",
+      "standardColumnName" : "`ENCRYPT`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -577,6 +588,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACCOUNT",
       "queryCodeExp" : "t1.`ACCOUNT`",
+      "standardColumnName" : "`ACCOUNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -627,6 +639,7 @@
       "dBType" : "MYSQL5",
       "name" : "DESC",
       "queryCodeExp" : "t1.`DESC`",
+      "standardColumnName" : "`DESC`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -678,6 +691,7 @@
       "dBType" : "MYSQL5",
       "name" : "NAME",
       "queryCodeExp" : "t1.`NAME`",
+      "standardColumnName" : "`NAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -731,6 +745,7 @@
       "dBType" : "MYSQL5",
       "name" : "DELETED",
       "queryCodeExp" : "t1.`DELETED`",
+      "standardColumnName" : "`DELETED`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -785,6 +800,7 @@
       "dBType" : "MYSQL5",
       "name" : "PATH",
       "queryCodeExp" : "t1.`PATH`",
+      "standardColumnName" : "`PATH`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

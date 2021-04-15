@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "SYS_USER_ROLEID",
       "queryCodeExp" : "t1.`SYS_USER_ROLEID`",
+      "standardColumnName" : "`SYS_USER_ROLEID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -127,6 +128,7 @@
       "dBType" : "MYSQL5",
       "name" : "SYS_ROLEID",
       "queryCodeExp" : "t1.`SYS_ROLEID`",
+      "standardColumnName" : "`SYS_ROLEID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -187,6 +189,7 @@
       "dBType" : "MYSQL5",
       "name" : "SYS_ROLENAME",
       "queryCodeExp" : "t11.`SYS_ROLENAME`",
+      "standardColumnName" : "`SYS_ROLENAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -247,6 +250,7 @@
       "dBType" : "MYSQL5",
       "name" : "SYS_USERID",
       "queryCodeExp" : "t1.`SYS_USERID`",
+      "standardColumnName" : "`SYS_USERID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -309,6 +313,7 @@
       "dBType" : "MYSQL5",
       "name" : "SYS_USERNAME",
       "queryCodeExp" : "t21.`PERSONNAME`",
+      "standardColumnName" : "`SYS_USERNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -369,6 +374,7 @@
       "dBType" : "MYSQL5",
       "name" : "LOGINNAME",
       "queryCodeExp" : "t21.`LOGINNAME`",
+      "standardColumnName" : "`LOGINNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -429,6 +435,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORGNAME",
       "queryCodeExp" : "t21.`ORGNAME`",
+      "standardColumnName" : "`ORGNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -490,6 +497,7 @@
       "dBType" : "MYSQL5",
       "name" : "MDEPTNAME",
       "queryCodeExp" : "t21.`MDEPTNAME`",
+      "standardColumnName" : "`MDEPTNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -550,6 +558,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -595,6 +604,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

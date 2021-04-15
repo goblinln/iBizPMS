@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "concat(t1.`STORY`,'__',t1.`BRANCH`)",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -125,6 +126,7 @@
       "dBType" : "MYSQL5",
       "name" : "DEPT",
       "queryCodeExp" : "t1.`DEPT`",
+      "standardColumnName" : "`DEPT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -176,6 +178,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEBY",
       "queryCodeExp" : "t1.`UPDATEBY`",
+      "standardColumnName" : "`UPDATEBY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -232,6 +235,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORG",
       "queryCodeExp" : "t1.`ORG`",
+      "standardColumnName" : "`ORG`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -283,6 +287,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEBY",
       "queryCodeExp" : "t1.`CREATEBY`",
+      "standardColumnName" : "`CREATEBY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -339,6 +344,7 @@
       "dBType" : "MYSQL5",
       "name" : "STAGEDBY",
       "queryCodeExp" : "t1.`STAGEDBY`",
+      "standardColumnName" : "`STAGEDBY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -402,6 +408,7 @@
       "dBType" : "MYSQL5",
       "name" : "STAGE",
       "queryCodeExp" : "t1.`STAGE`",
+      "standardColumnName" : "`STAGE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -465,6 +472,7 @@
       "dBType" : "MYSQL5",
       "name" : "STORY",
       "queryCodeExp" : "t1.`STORY`",
+      "standardColumnName" : "`STORY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -514,6 +522,7 @@
       "dBType" : "MYSQL5",
       "name" : "BRANCH",
       "queryCodeExp" : "t1.`BRANCH`",
+      "standardColumnName" : "`BRANCH`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
+      "standardColumnName" : "`TYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -120,6 +121,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -177,6 +179,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZ_FAVORITESID",
       "queryCodeExp" : "t1.`IBZ_FAVORITESID`",
+      "standardColumnName" : "`IBZ_FAVORITESID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -230,6 +233,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -271,6 +275,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -328,6 +333,7 @@
       "dBType" : "MYSQL5",
       "name" : "OBJECTID",
       "queryCodeExp" : "t1.`OBJECTID`",
+      "standardColumnName" : "`OBJECTID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -365,6 +371,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACCOUNT",
       "queryCodeExp" : "t1.`ACCOUNT`",
+      "standardColumnName" : "`ACCOUNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -419,6 +426,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZ_FAVORITESNAME",
       "queryCodeExp" : "t1.`IBZ_FAVORITESNAME`",
+      "standardColumnName" : "`IBZ_FAVORITESNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -471,6 +479,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

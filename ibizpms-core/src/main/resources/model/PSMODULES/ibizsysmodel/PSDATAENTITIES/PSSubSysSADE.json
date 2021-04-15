@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "SYNCMODELMODE",
       "queryCodeExp" : "t1.`SYNCMODELMODE`",
+      "standardColumnName" : "`SYNCMODELMODE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -121,6 +122,7 @@
       "dBType" : "MYSQL5",
       "name" : "CODENAME2",
       "queryCodeExp" : "t1.`CODENAME2`",
+      "standardColumnName" : "`CODENAME2`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -171,6 +173,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -228,6 +231,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSUBSYSSADEID",
       "queryCodeExp" : "t1.`PSSUBSYSSADEID`",
+      "standardColumnName" : "`PSSUBSYSSADEID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -281,6 +285,7 @@
       "dBType" : "MYSQL5",
       "name" : "USERTAG",
       "queryCodeExp" : "t1.`USERTAG`",
+      "standardColumnName" : "`USERTAG`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -331,6 +336,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -388,6 +394,7 @@
       "dBType" : "MYSQL5",
       "name" : "MEMO",
       "queryCodeExp" : "t1.`MEMO`",
+      "standardColumnName" : "`MEMO`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -438,6 +445,7 @@
       "dBType" : "MYSQL5",
       "name" : "MAJORFLAG",
       "queryCodeExp" : "t1.`MAJORFLAG`",
+      "standardColumnName" : "`MAJORFLAG`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -476,6 +484,7 @@
       "dBType" : "MYSQL5",
       "name" : "DETAG",
       "queryCodeExp" : "t1.`DETAG`",
+      "standardColumnName" : "`DETAG`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -526,6 +535,7 @@
       "dBType" : "MYSQL5",
       "name" : "USERTAG4",
       "queryCodeExp" : "t1.`USERTAG4`",
+      "standardColumnName" : "`USERTAG4`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -576,6 +586,7 @@
       "dBType" : "MYSQL5",
       "name" : "USERTAG2",
       "queryCodeExp" : "t1.`USERTAG2`",
+      "standardColumnName" : "`USERTAG2`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -626,6 +637,7 @@
       "dBType" : "MYSQL5",
       "name" : "USERCAT",
       "queryCodeExp" : "t1.`USERCAT`",
+      "standardColumnName" : "`USERCAT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -676,6 +688,7 @@
       "dBType" : "MYSQL5",
       "name" : "VALIDFLAG",
       "queryCodeExp" : "t1.`VALIDFLAG`",
+      "standardColumnName" : "`VALIDFLAG`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -719,6 +732,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSUBSYSSADENAME",
       "queryCodeExp" : "t1.`PSSUBSYSSADENAME`",
+      "standardColumnName" : "`PSSUBSYSSADENAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -771,6 +785,7 @@
       "dBType" : "MYSQL5",
       "name" : "USERTAG3",
       "queryCodeExp" : "t1.`USERTAG3`",
+      "standardColumnName" : "`USERTAG3`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -821,6 +836,7 @@
       "dBType" : "MYSQL5",
       "name" : "DETAG2",
       "queryCodeExp" : "t1.`DETAG2`",
+      "standardColumnName" : "`DETAG2`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -871,6 +887,7 @@
       "dBType" : "MYSQL5",
       "name" : "LOGICNAME",
       "queryCodeExp" : "t1.`LOGICNAME`",
+      "standardColumnName" : "`LOGICNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -921,6 +938,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -962,6 +980,7 @@
       "dBType" : "MYSQL5",
       "name" : "CODENAME",
       "queryCodeExp" : "t1.`CODENAME`",
+      "standardColumnName" : "`CODENAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1013,6 +1032,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1054,6 +1074,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSUBSYSSERVICEAPINAME",
       "queryCodeExp" : "t11.`PSSUBSYSSERVICEAPINAME`",
+      "standardColumnName" : "`PSSUBSYSSERVICEAPINAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1116,6 +1137,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSUBSYSSERVICEAPIID",
       "queryCodeExp" : "t1.`PSSUBSYSSERVICEAPIID`",
+      "standardColumnName" : "`PSSUBSYSSERVICEAPIID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

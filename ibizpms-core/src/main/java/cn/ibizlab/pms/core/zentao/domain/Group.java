@@ -49,7 +49,7 @@ public class Group extends EntityMP implements Serializable {
     /**
      * acl
      */
-    @TableField(value = "acl")
+    @TableField(value = "`ACL`")
     @JSONField(name = "acl")
     @JsonProperty("acl")
     @ApiModelProperty("acl")
@@ -57,7 +57,7 @@ public class Group extends EntityMP implements Serializable {
     /**
      * 分组描述
      */
-    @TableField(value = "desc")
+    @TableField(value = "`DESC`")
     @JSONField(name = "desc")
     @JsonProperty("desc")
     @ApiModelProperty("分组描述")
@@ -66,7 +66,7 @@ public class Group extends EntityMP implements Serializable {
      * ID
      */
     @DEField(isKeyField = true)
-    @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "`ID`", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("ID")
@@ -74,7 +74,7 @@ public class Group extends EntityMP implements Serializable {
     /**
      * 分组名称
      */
-    @TableField(value = "name")
+    @TableField(value = "`NAME`")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("分组名称")
@@ -82,7 +82,7 @@ public class Group extends EntityMP implements Serializable {
     /**
      * role
      */
-    @TableField(value = "role")
+    @TableField(value = "`ROLE`")
     @JSONField(name = "role")
     @JsonProperty("role")
     @ApiModelProperty("role")

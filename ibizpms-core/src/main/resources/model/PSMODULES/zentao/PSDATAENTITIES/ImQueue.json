@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "PROCESSDATE",
       "queryCodeExp" : "t1.`PROCESSDATE`",
+      "standardColumnName" : "`PROCESSDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -107,6 +108,7 @@
       "dBType" : "MYSQL5",
       "name" : "ADDDATE",
       "queryCodeExp" : "t1.`ADDDATE`",
+      "standardColumnName" : "`ADDDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -144,6 +146,7 @@
       "dBType" : "MYSQL5",
       "name" : "CONTENT",
       "queryCodeExp" : "t1.`CONTENT`",
+      "standardColumnName" : "`CONTENT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -195,6 +198,7 @@
       "dBType" : "MYSQL5",
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
+      "standardColumnName" : "`TYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -245,6 +249,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -290,6 +295,7 @@
       "dBType" : "MYSQL5",
       "name" : "STATUS",
       "queryCodeExp" : "t1.`STATUS`",
+      "standardColumnName" : "`STATUS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -340,6 +346,7 @@
       "dBType" : "MYSQL5",
       "name" : "RESULT",
       "queryCodeExp" : "t1.`RESULT`",
+      "standardColumnName" : "`RESULT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

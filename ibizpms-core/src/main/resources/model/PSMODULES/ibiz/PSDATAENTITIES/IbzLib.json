@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "DESC",
       "queryCodeExp" : "t1.`DESC`",
+      "standardColumnName" : "`DESC`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -121,6 +122,7 @@
       "dBType" : "MYSQL5",
       "name" : "PRODUCT",
       "queryCodeExp" : "t1.`PRODUCT`",
+      "standardColumnName" : "`PRODUCT`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -160,6 +162,7 @@
       "dBType" : "MYSQL5",
       "name" : "ADDEDDATE",
       "queryCodeExp" : "t1.`ADDEDDATE`",
+      "standardColumnName" : "`ADDEDDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -199,6 +202,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -243,6 +247,7 @@
       "dBType" : "MYSQL5",
       "name" : "LASTEDITEDDATE",
       "queryCodeExp" : "t1.`LASTEDITEDDATE`",
+      "standardColumnName" : "`LASTEDITEDDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -284,6 +289,7 @@
       "dBType" : "MYSQL5",
       "name" : "ADDEDBY",
       "queryCodeExp" : "t1.`ADDEDBY`",
+      "standardColumnName" : "`ADDEDBY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -340,6 +346,7 @@
       "dBType" : "MYSQL5",
       "name" : "DELETED",
       "queryCodeExp" : "t1.`DELETED`",
+      "standardColumnName" : "`DELETED`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -394,6 +401,7 @@
       "dBType" : "MYSQL5",
       "name" : "NAME",
       "queryCodeExp" : "t1.`NAME`",
+      "standardColumnName" : "`NAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -447,6 +455,7 @@
       "dBType" : "MYSQL5",
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
+      "standardColumnName" : "`TYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -502,6 +511,7 @@
       "dBType" : "MYSQL5",
       "name" : "LASTEDITEDBY",
       "queryCodeExp" : "t1.`LASTEDITEDBY`",
+      "standardColumnName" : "`LASTEDITEDBY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

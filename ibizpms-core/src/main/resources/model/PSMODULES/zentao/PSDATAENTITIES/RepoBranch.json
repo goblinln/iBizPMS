@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "REVISION",
       "queryCodeExp" : "t1.`REVISION`",
+      "standardColumnName" : "`REVISION`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -107,6 +108,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "concat(t1.`REPO`,'__',t1.`REVISION`,'__',t1.`BRANCH`)",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -162,6 +164,7 @@
       "dBType" : "MYSQL5",
       "name" : "REPO",
       "queryCodeExp" : "t1.`REPO`",
+      "standardColumnName" : "`REPO`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -199,6 +202,7 @@
       "dBType" : "MYSQL5",
       "name" : "BRANCH",
       "queryCodeExp" : "t1.`BRANCH`",
+      "standardColumnName" : "`BRANCH`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

@@ -53,7 +53,7 @@ public class IbzproConfigSearchContext extends QueryWrapperContext<IbzproConfig>
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("ibzpro_configname", query)
+                     wrapper.like("t1.`IBZPRO_CONFIGNAME`", query)
             );
 		 }
 	}

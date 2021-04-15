@@ -340,6 +340,7 @@
       "columnName" : "BUGWILLNOTFIX",
       "dBType" : "MYSQL5",
       "name" : "BUGWILLNOTFIX",
+      "standardColumnName" : "`BUGWILLNOTFIX`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -378,6 +379,7 @@
       "columnName" : "RESOLVEDBY",
       "dBType" : "MYSQL5",
       "name" : "RESOLVEDBY",
+      "standardColumnName" : "`RESOLVEDBY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -527,6 +529,7 @@
       "columnName" : "BUGBYDESIGN",
       "dBType" : "MYSQL5",
       "name" : "BUGBYDESIGN",
+      "standardColumnName" : "`BUGBYDESIGN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -692,6 +695,7 @@
       "columnName" : "ASSIGNEDTO",
       "dBType" : "MYSQL5",
       "name" : "ASSIGNEDTO",
+      "standardColumnName" : "`ASSIGNEDTO`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -745,6 +749,7 @@
       "columnName" : "BUGEXTERNAL",
       "dBType" : "MYSQL5",
       "name" : "BUGEXTERNAL",
+      "standardColumnName" : "`BUGEXTERNAL`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -907,6 +912,7 @@
       "columnName" : "PROJECTNAME",
       "dBType" : "MYSQL5",
       "name" : "PROJECTNAME",
+      "standardColumnName" : "`PROJECTNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -956,6 +962,7 @@
       "columnName" : "BUGFIXED",
       "dBType" : "MYSQL5",
       "name" : "BUGFIXED",
+      "standardColumnName" : "`BUGFIXED`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -994,6 +1001,7 @@
       "columnName" : "ID",
       "dBType" : "MYSQL5",
       "name" : "ID",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -1034,6 +1042,7 @@
       "columnName" : "BUGPOSTPONED",
       "dBType" : "MYSQL5",
       "name" : "BUGPOSTPONED",
+      "standardColumnName" : "`BUGPOSTPONED`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1116,6 +1125,7 @@
       "columnName" : "BUGCNT",
       "dBType" : "MYSQL5",
       "name" : "BUGCNT",
+      "standardColumnName" : "`BUGCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1185,6 +1195,7 @@
       "columnName" : "BUGWJJ",
       "dBType" : "MYSQL5",
       "name" : "BUGWJJ",
+      "standardColumnName" : "`BUGWJJ`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1223,6 +1234,7 @@
       "columnName" : "TITLE",
       "dBType" : "MYSQL5",
       "name" : "TITLE",
+      "standardColumnName" : "`TITLE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1309,6 +1321,7 @@
       "columnName" : "BUGNOTREPRO",
       "dBType" : "MYSQL5",
       "name" : "BUGNOTREPRO",
+      "standardColumnName" : "`BUGNOTREPRO`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1422,6 +1435,7 @@
       "columnName" : "BUGDUPLICATE",
       "dBType" : "MYSQL5",
       "name" : "BUGDUPLICATE",
+      "standardColumnName" : "`BUGDUPLICATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1460,6 +1474,7 @@
       "columnName" : "OPENEDBY",
       "dBType" : "MYSQL5",
       "name" : "OPENEDBY",
+      "standardColumnName" : "`OPENEDBY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1513,6 +1528,7 @@
       "columnName" : "BUGEFFICIENT",
       "dBType" : "MYSQL5",
       "name" : "BUGEFFICIENT",
+      "standardColumnName" : "`BUGEFFICIENT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1564,6 +1580,7 @@
       "columnName" : "BUGTOSTORY",
       "dBType" : "MYSQL5",
       "name" : "BUGTOSTORY",
+      "standardColumnName" : "`BUGTOSTORY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1637,6 +1654,7 @@
       "columnName" : "BUGTOTAL",
       "dBType" : "MYSQL5",
       "name" : "BUGTOTAL",
+      "standardColumnName" : "`BUGTOTAL`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1675,6 +1693,7 @@
       "columnName" : "PRODUCTNAME",
       "dBType" : "MYSQL5",
       "name" : "PRODUCTNAME",
+      "standardColumnName" : "`PRODUCTNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1734,6 +1753,7 @@
       "columnName" : "PRODUCT",
       "dBType" : "MYSQL5",
       "name" : "PRODUCT",
+      "standardColumnName" : "`PRODUCT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1780,6 +1800,7 @@
       "columnName" : "PROJECT",
       "dBType" : "MYSQL5",
       "name" : "PROJECT",
+      "standardColumnName" : "`PROJECT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

@@ -426,6 +426,7 @@
       "dBType" : "MYSQL5",
       "name" : "ESTIMATECNT",
       "queryCodeExp" : "(select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )",
+      "standardColumnName" : "`ESTIMATECNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -510,6 +511,7 @@
       "dBType" : "MYSQL5",
       "name" : "TITLE",
       "queryCodeExp" : "t1.`TITLE`",
+      "standardColumnName" : "`TITLE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -638,6 +640,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -682,6 +685,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORG",
       "queryCodeExp" : "t1.`ORG`",
+      "standardColumnName" : "`ORG`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -733,6 +737,7 @@
       "dBType" : "MYSQL5",
       "name" : "BEGIN",
       "queryCodeExp" : "t1.`BEGIN`",
+      "standardColumnName" : "`BEGIN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -770,6 +775,7 @@
       "dBType" : "MYSQL5",
       "name" : "STATUSS",
       "queryCodeExp" : "(case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end)",
+      "standardColumnName" : "`STATUSS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -823,6 +829,7 @@
       "dBType" : "MYSQL5",
       "name" : "DESC",
       "queryCodeExp" : "t1.`DESC`",
+      "standardColumnName" : "`DESC`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -875,6 +882,7 @@
       "dBType" : "MYSQL5",
       "name" : "END",
       "queryCodeExp" : "t1.`END`",
+      "standardColumnName" : "`END`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -912,6 +920,7 @@
       "dBType" : "MYSQL5",
       "name" : "DELAY",
       "queryCodeExp" : "case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end",
+      "standardColumnName" : "`DELAY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -964,6 +973,7 @@
       "dBType" : "MYSQL5",
       "name" : "DURATION",
       "queryCodeExp" : "(to_Days(t1.`END`) - to_Days(t1.`BEGIN`))",
+      "standardColumnName" : "`DURATION`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1016,6 +1026,7 @@
       "dBType" : "MYSQL5",
       "name" : "BEGINSTR",
       "queryCodeExp" : "(case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end)",
+      "standardColumnName" : "`BEGINSTR`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1179,6 +1190,7 @@
       "dBType" : "MYSQL5",
       "name" : "ENDSTR",
       "queryCodeExp" : "(case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end)",
+      "standardColumnName" : "`ENDSTR`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1231,6 +1243,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEBY",
       "queryCodeExp" : "t1.`CREATEBY`",
+      "standardColumnName" : "`CREATEBY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1287,6 +1300,7 @@
       "dBType" : "MYSQL5",
       "name" : "STATUS",
       "queryCodeExp" : "t1.`STATUS`",
+      "standardColumnName" : "`STATUS`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1342,6 +1356,7 @@
       "dBType" : "MYSQL5",
       "name" : "ISEXPIRED",
       "queryCodeExp" : "(case when t1.`end` > now() then '0' else '1' end)",
+      "standardColumnName" : "`ISEXPIRED`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1394,6 +1409,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEBY",
       "queryCodeExp" : "t1.`UPDATEBY`",
+      "standardColumnName" : "`UPDATEBY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1450,6 +1466,7 @@
       "dBType" : "MYSQL5",
       "name" : "DELETED",
       "queryCodeExp" : "t1.`DELETED`",
+      "standardColumnName" : "`DELETED`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1537,6 +1554,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORDER",
       "queryCodeExp" : "t1.`ORDER`",
+      "standardColumnName" : "`ORDER`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1620,6 +1638,7 @@
       "dBType" : "MYSQL5",
       "name" : "FUTURE",
       "queryCodeExp" : "(case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end)",
+      "standardColumnName" : "`FUTURE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1676,6 +1695,7 @@
       "dBType" : "MYSQL5",
       "name" : "DEPT",
       "queryCodeExp" : "t1.`DEPT`",
+      "standardColumnName" : "`DEPT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1727,6 +1747,7 @@
       "dBType" : "MYSQL5",
       "name" : "STORYCNT",
       "queryCodeExp" : "((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ))",
+      "standardColumnName" : "`STORYCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1845,6 +1866,7 @@
       "dBType" : "MYSQL5",
       "name" : "BUGCNT",
       "queryCodeExp" : "((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0'))",
+      "standardColumnName" : "`BUGCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1884,6 +1906,7 @@
       "dBType" : "MYSQL5",
       "name" : "PARENTNAME",
       "queryCodeExp" : "t11.`TITLE`",
+      "standardColumnName" : "`PARENTNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1944,6 +1967,7 @@
       "dBType" : "MYSQL5",
       "name" : "BRANCH",
       "queryCodeExp" : "t1.`BRANCH`",
+      "standardColumnName" : "`BRANCH`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1992,6 +2016,7 @@
       "dBType" : "MYSQL5",
       "name" : "PARENT",
       "queryCodeExp" : "t1.`PARENT`",
+      "standardColumnName" : "`PARENT`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -2040,6 +2065,7 @@
       "dBType" : "MYSQL5",
       "name" : "PRODUCT",
       "queryCodeExp" : "t1.`PRODUCT`",
+      "standardColumnName" : "`PRODUCT`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],

@@ -322,6 +322,7 @@
       "columnName" : "EVALUATIONCOST",
       "dBType" : "MYSQL5",
       "name" : "EVALUATIONCOST",
+      "standardColumnName" : "`EVALUATIONCOST`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2367,6 +2368,7 @@
       "columnName" : "DATE",
       "dBType" : "MYSQL5",
       "name" : "DATE",
+      "standardColumnName" : "`DATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -3531,6 +3533,7 @@
       "columnName" : "INPUTCOST",
       "dBType" : "MYSQL5",
       "name" : "INPUTCOST",
+      "standardColumnName" : "`INPUTCOST`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

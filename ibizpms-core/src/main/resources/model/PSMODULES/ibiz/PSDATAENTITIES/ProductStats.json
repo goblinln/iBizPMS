@@ -197,6 +197,7 @@
       "dBType" : "MYSQL5",
       "name" : "CODE",
       "queryCodeExp" : "t1.`CODE`",
+      "standardColumnName" : "`CODE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -247,6 +248,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -322,6 +324,7 @@
       "dBType" : "MYSQL5",
       "name" : "RELEASEDSTORYCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND STAGE = 'released' AND DELETED = '0')",
+      "standardColumnName" : "`RELEASEDSTORYCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -405,6 +408,7 @@
       "dBType" : "MYSQL5",
       "name" : "UNDONERESPROJECTCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_PROJECT LEFT JOIN ZT_PROJECTPRODUCT ON  ZT_PROJECT.ID = ZT_PROJECTPRODUCT.project WHERE PRODUCT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0')",
+      "standardColumnName" : "`UNDONERESPROJECTCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -444,6 +448,7 @@
       "dBType" : "MYSQL5",
       "name" : "ASSIGNTOMEBUGCNT",
       "queryCodeExp" : "1",
+      "standardColumnName" : "`ASSIGNTOMEBUGCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -483,6 +488,7 @@
       "dBType" : "MYSQL5",
       "name" : "DELETED",
       "queryCodeExp" : "t1.`DELETED`",
+      "standardColumnName" : "`DELETED`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -568,6 +574,7 @@
       "dBType" : "MYSQL5",
       "name" : "RESPROJECTCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_PROJECT LEFT JOIN ZT_PROJECTPRODUCT ON  ZT_PROJECT.ID = ZT_PROJECTPRODUCT.project WHERE PRODUCT = t1.`ID` AND DELETED = '0')",
+      "standardColumnName" : "`RESPROJECTCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -607,6 +614,7 @@
       "dBType" : "MYSQL5",
       "name" : "BUGCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND DELETED = '0')",
+      "standardColumnName" : "`BUGCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -677,6 +685,7 @@
       "dBType" : "MYSQL5",
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
+      "standardColumnName" : "`TYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -731,6 +740,7 @@
       "dBType" : "MYSQL5",
       "name" : "WAITSTORYCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND STAGE = 'wait' AND DELETED = '0')",
+      "standardColumnName" : "`WAITSTORYCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -801,6 +811,7 @@
       "dBType" : "MYSQL5",
       "name" : "STORYCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND DELETED = '0')",
+      "standardColumnName" : "`STORYCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -840,6 +851,7 @@
       "dBType" : "MYSQL5",
       "name" : "NAME",
       "queryCodeExp" : "t1.`NAME`",
+      "standardColumnName" : "`NAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -924,6 +936,7 @@
       "dBType" : "MYSQL5",
       "name" : "YESTERDAYCLOSEDBUGCNT",
       "queryCodeExp" : "(SELECT COUNT( 1 ) FROM ZT_BUG WHERE PRODUCT = t1.`ID`  AND DELETED = '0' and resolvedDate BETWEEN CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 00:00:00') and CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 23:59:59'))",
+      "standardColumnName" : "`YESTERDAYCLOSEDBUGCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -963,6 +976,7 @@
       "dBType" : "MYSQL5",
       "name" : "STATUS",
       "queryCodeExp" : "t1.`STATUS`",
+      "standardColumnName" : "`STATUS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1017,6 +1031,7 @@
       "dBType" : "MYSQL5",
       "name" : "YESTERDAYRESOLVEDBUGCNT",
       "queryCodeExp" : "(SELECT COUNT( 1 ) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'closed' AND DELETED = '0' and CLOSEDDATE BETWEEN CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 00:00:00') and CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 23:59:59'))",
+      "standardColumnName" : "`YESTERDAYRESOLVEDBUGCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1056,6 +1071,7 @@
       "dBType" : "MYSQL5",
       "name" : "DEVELOPINGSTORYCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND STAGE = 'developing' AND DELETED = '0')",
+      "standardColumnName" : "`DEVELOPINGSTORYCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1095,6 +1111,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACTIVESTORYCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='active' AND DELETED = '0')",
+      "standardColumnName" : "`ACTIVESTORYCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1134,6 +1151,7 @@
       "dBType" : "MYSQL5",
       "name" : "NOTCLOSEDBUGCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0')",
+      "standardColumnName" : "`NOTCLOSEDBUGCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1173,6 +1191,7 @@
       "dBType" : "MYSQL5",
       "name" : "NORMALRELEASECNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`ID` AND  `STATUS`= 'normal' AND DELETED = '0')",
+      "standardColumnName" : "`NORMALRELEASECNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1211,6 +1230,7 @@
       "columnName" : "ORDER1",
       "dBType" : "MYSQL5",
       "name" : "ORDER1",
+      "standardColumnName" : "`ORDER1`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1251,6 +1271,7 @@
       "dBType" : "MYSQL5",
       "name" : "CURRPROJECT",
       "queryCodeExp" : "(SELECT t.name FROM zt_project t,zt_projectproduct t2 WHERE t.id=t2.project and t2.product = t1.id limit 1)",
+      "standardColumnName" : "`CURRPROJECT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1303,6 +1324,7 @@
       "dBType" : "MYSQL5",
       "name" : "TESTINGSTORYCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND STAGE = 'testing' AND DELETED = '0')",
+      "standardColumnName" : "`TESTINGSTORYCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1342,6 +1364,7 @@
       "dBType" : "MYSQL5",
       "name" : "PRODUCTPLANCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`ID` AND DELETED = '0')",
+      "standardColumnName" : "`PRODUCTPLANCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1381,6 +1404,7 @@
       "dBType" : "MYSQL5",
       "name" : "RELEASECNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`ID` AND DELETED = '0')",
+      "standardColumnName" : "`RELEASECNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1420,6 +1444,7 @@
       "dBType" : "MYSQL5",
       "name" : "YESTERDAYCONFIRMBUGCNT",
       "queryCodeExp" : "5",
+      "standardColumnName" : "`YESTERDAYCONFIRMBUGCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1459,6 +1484,7 @@
       "dBType" : "MYSQL5",
       "name" : "POSTPONEDPROJECTCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_PROJECT t2 LEFT JOIN ZT_PROJECTPRODUCT t ON t2.ID = t.project WHERE t.PRODUCT = t1.id AND t2.DELETED = '0' and t2.`status` in( 'wait','doing') and t2.`END` < now() )",
+      "standardColumnName" : "`POSTPONEDPROJECTCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1498,6 +1524,7 @@
       "dBType" : "MYSQL5",
       "name" : "UNENDPRODUCTPLANCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`ID`  AND `END` > CURDATE() AND DELETED = '0')",
+      "standardColumnName" : "`UNENDPRODUCTPLANCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1568,6 +1595,7 @@
       "dBType" : "MYSQL5",
       "name" : "PLANNEDSTORYCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND STAGE = 'planned' AND DELETED ='0')",
+      "standardColumnName" : "`PLANNEDSTORYCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1607,6 +1635,7 @@
       "dBType" : "MYSQL5",
       "name" : "UNCONFIRMBUGCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0')",
+      "standardColumnName" : "`UNCONFIRMBUGCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1646,6 +1675,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACTIVEBUGCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED ='0')",
+      "standardColumnName" : "`ACTIVEBUGCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

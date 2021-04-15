@@ -45,7 +45,7 @@ public class IbzReportRoleConfigSearchContext extends QueryWrapperContext<IbzRep
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("ibz_report_role_configname", query)
+                     wrapper.like("t1.`IBZ_REPORT_ROLE_CONFIGNAME`", query)
             );
 		 }
 	}

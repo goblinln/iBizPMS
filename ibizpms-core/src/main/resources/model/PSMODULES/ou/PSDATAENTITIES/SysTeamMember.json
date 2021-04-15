@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "TEAMMEMBERID",
       "queryCodeExp" : "t1.`TEAMMEMBERID`",
+      "standardColumnName" : "`TEAMMEMBERID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -122,6 +123,7 @@
       "dBType" : "MYSQL5",
       "name" : "TEAMNAME",
       "queryCodeExp" : "t11.`TEAMNAME`",
+      "standardColumnName" : "`TEAMNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -183,6 +185,7 @@
       "dBType" : "MYSQL5",
       "name" : "POSTNAME",
       "queryCodeExp" : "t21.`POSTNAME`",
+      "standardColumnName" : "`POSTNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -243,6 +246,7 @@
       "dBType" : "MYSQL5",
       "name" : "DOMAINS",
       "queryCodeExp" : "t1.`DOMAINS`",
+      "standardColumnName" : "`DOMAINS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -293,6 +297,7 @@
       "dBType" : "MYSQL5",
       "name" : "USERICON",
       "queryCodeExp" : "t31.`USERICON`",
+      "standardColumnName" : "`USERICON`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -353,6 +358,7 @@
       "dBType" : "MYSQL5",
       "name" : "PERSONNAME",
       "queryCodeExp" : "t31.`PERSONNAME`",
+      "standardColumnName" : "`PERSONNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -413,6 +419,7 @@
       "dBType" : "MYSQL5",
       "name" : "USERNAME",
       "queryCodeExp" : "t31.`USERNAME`",
+      "standardColumnName" : "`USERNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -473,6 +480,7 @@
       "dBType" : "MYSQL5",
       "name" : "POSTID",
       "queryCodeExp" : "t1.`POSTID`",
+      "standardColumnName" : "`POSTID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -532,6 +540,7 @@
       "dBType" : "MYSQL5",
       "name" : "TEAMID",
       "queryCodeExp" : "t1.`TEAMID`",
+      "standardColumnName" : "`TEAMID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -591,6 +600,7 @@
       "dBType" : "MYSQL5",
       "name" : "USERID",
       "queryCodeExp" : "t1.`USERID`",
+      "standardColumnName" : "`USERID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

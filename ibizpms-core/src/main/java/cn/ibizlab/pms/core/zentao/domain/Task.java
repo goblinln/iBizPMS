@@ -50,7 +50,7 @@ public class Task extends EntityMP implements Serializable {
      * 由谁取消
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "canceledby")
+    @TableField(value = "`CANCELEDBY`")
     @JSONField(name = "canceledby")
     @JsonProperty("canceledby")
     @ApiModelProperty("由谁取消")
@@ -59,7 +59,7 @@ public class Task extends EntityMP implements Serializable {
      * 周期类型
      */
     @DEField(name = "config_type")
-    @TableField(value = "config_type")
+    @TableField(value = "`CONFIG_TYPE`")
     @JSONField(name = "configtype")
     @JsonProperty("configtype")
     @ApiModelProperty("周期类型")
@@ -68,7 +68,7 @@ public class Task extends EntityMP implements Serializable {
      * 预计剩余
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "left")
+    @TableField(value = "`LEFT`")
     @JSONField(name = "left")
     @JsonProperty("left")
     @ApiModelProperty("预计剩余")
@@ -85,7 +85,7 @@ public class Task extends EntityMP implements Serializable {
      * 过期日期
      */
     @DEField(name = "config_end")
-    @TableField(value = "config_end")
+    @TableField(value = "`CONFIG_END`")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "configend", format = "yyyy-MM-dd")
     @JsonProperty("configend")
@@ -103,7 +103,7 @@ public class Task extends EntityMP implements Serializable {
      * 创建日期
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "openeddate", fill = FieldFill.INSERT)
+    @TableField(value = "`OPENEDDATE`", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "openeddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("openeddate")
@@ -112,7 +112,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 是否指派
      */
-    @TableField(value = "assign")
+    @TableField(value = "`ASSIGN`")
     @JSONField(name = "assign")
     @JsonProperty("assign")
     @ApiModelProperty("是否指派")
@@ -121,7 +121,7 @@ public class Task extends EntityMP implements Serializable {
      * 标题颜色
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "color")
+    @TableField(value = "`COLOR`")
     @JSONField(name = "color")
     @JsonProperty("color")
     @ApiModelProperty("标题颜色")
@@ -130,7 +130,7 @@ public class Task extends EntityMP implements Serializable {
      * 编号
      */
     @DEField(isKeyField = true)
-    @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "`ID`", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("编号")
@@ -139,7 +139,7 @@ public class Task extends EntityMP implements Serializable {
      * 由谁完成
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "finishedby")
+    @TableField(value = "`FINISHEDBY`")
     @JSONField(name = "finishedby")
     @JsonProperty("finishedby")
     @ApiModelProperty("由谁完成")
@@ -164,7 +164,7 @@ public class Task extends EntityMP implements Serializable {
      * 完成者列表
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "finishedlist")
+    @TableField(value = "`FINISHEDLIST`")
     @JSONField(name = "finishedlist")
     @JsonProperty("finishedlist")
     @ApiModelProperty("完成者列表")
@@ -188,7 +188,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 实际开始
      */
-    @TableField(value = "realstarted")
+    @TableField(value = "`REALSTARTED`")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "realstarted", format = "yyyy-MM-dd")
     @JsonProperty("realstarted")
@@ -206,7 +206,7 @@ public class Task extends EntityMP implements Serializable {
      * 归属组织
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "org")
+    @TableField(value = "`ORG`")
     @JSONField(name = "org")
     @JsonProperty("org")
     @ApiModelProperty("归属组织")
@@ -223,7 +223,7 @@ public class Task extends EntityMP implements Serializable {
      * 开始日期
      */
     @DEField(name = "config_begin")
-    @TableField(value = "config_begin")
+    @TableField(value = "`CONFIG_BEGIN`")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "configbegin", format = "yyyy-MM-dd")
     @JsonProperty("configbegin")
@@ -250,7 +250,7 @@ public class Task extends EntityMP implements Serializable {
      * 由谁关闭
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "closedby")
+    @TableField(value = "`CLOSEDBY`")
     @JSONField(name = "closedby")
     @JsonProperty("closedby")
     @ApiModelProperty("由谁关闭")
@@ -275,7 +275,7 @@ public class Task extends EntityMP implements Serializable {
      * 子状态
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "substatus")
+    @TableField(value = "`SUBSTATUS`")
     @JSONField(name = "substatus")
     @JsonProperty("substatus")
     @ApiModelProperty("子状态")
@@ -284,7 +284,7 @@ public class Task extends EntityMP implements Serializable {
      * 归属部门
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "dept")
+    @TableField(value = "`DEPT`")
     @JSONField(name = "dept")
     @JsonProperty("dept")
     @ApiModelProperty("归属部门")
@@ -293,7 +293,7 @@ public class Task extends EntityMP implements Serializable {
      * 关闭原因
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "closedreason")
+    @TableField(value = "`CLOSEDREASON`")
     @JSONField(name = "closedreason")
     @JsonProperty("closedreason")
     @ApiModelProperty("关闭原因")
@@ -301,7 +301,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 任务种别
      */
-    @TableField(value = "taskspecies")
+    @TableField(value = "`TASKSPECIES`")
     @JSONField(name = "taskspecies")
     @JsonProperty("taskspecies")
     @ApiModelProperty("任务种别")
@@ -310,7 +310,7 @@ public class Task extends EntityMP implements Serializable {
      * 最后修改日期
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
-    @TableField(value = "lastediteddate")
+    @TableField(value = "`LASTEDITEDDATE`")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "lastediteddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("lastediteddate")
@@ -320,7 +320,7 @@ public class Task extends EntityMP implements Serializable {
      * 间隔天数
      */
     @DEField(name = "config_day")
-    @TableField(value = "config_day")
+    @TableField(value = "`CONFIG_DAY`")
     @JSONField(name = "configday")
     @JsonProperty("configday")
     @ApiModelProperty("间隔天数")
@@ -328,7 +328,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 指派日期
      */
-    @TableField(value = "assigneddate")
+    @TableField(value = "`ASSIGNEDDATE`")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "assigneddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("assigneddate")
@@ -338,7 +338,7 @@ public class Task extends EntityMP implements Serializable {
      * 优先级
      */
     @DEField(defaultValue = "3")
-    @TableField(value = "pri")
+    @TableField(value = "`PRI`")
     @JSONField(name = "pri")
     @JsonProperty("pri")
     @ApiModelProperty("优先级")
@@ -347,7 +347,7 @@ public class Task extends EntityMP implements Serializable {
      * 最后修改
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "lasteditedby")
+    @TableField(value = "`LASTEDITEDBY`")
     @JSONField(name = "lasteditedby")
     @JsonProperty("lasteditedby")
     @ApiModelProperty("最后修改")
@@ -356,7 +356,7 @@ public class Task extends EntityMP implements Serializable {
      * 关联编号
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "idvalue")
+    @TableField(value = "`IDVALUE`")
     @JSONField(name = "idvalue")
     @JsonProperty("idvalue")
     @ApiModelProperty("关联编号")
@@ -365,7 +365,7 @@ public class Task extends EntityMP implements Serializable {
      * 任务状态
      */
     @DEField(defaultValue = "wait")
-    @TableField(value = "status")
+    @TableField(value = "`STATUS`")
     @JSONField(name = "status")
     @JsonProperty("status")
     @ApiModelProperty("任务状态")
@@ -381,7 +381,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 任务名称
      */
-    @TableField(value = "name")
+    @TableField(value = "`NAME`")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("任务名称")
@@ -389,7 +389,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 关闭时间
      */
-    @TableField(value = "closeddate")
+    @TableField(value = "`CLOSEDDATE`")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "closeddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("closeddate")
@@ -398,7 +398,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 投入成本
      */
-    @TableField(value = "inputcost")
+    @TableField(value = "`INPUTCOST`")
     @JSONField(name = "inputcost")
     @JsonProperty("inputcost")
     @ApiModelProperty("投入成本")
@@ -415,7 +415,7 @@ public class Task extends EntityMP implements Serializable {
      * 任务类型
      */
     @DEField(defaultValue = "devel")
-    @TableField(value = "type")
+    @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("任务类型")
@@ -424,7 +424,7 @@ public class Task extends EntityMP implements Serializable {
      * 指派给
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "assignedto")
+    @TableField(value = "`ASSIGNEDTO`")
     @JSONField(name = "assignedto")
     @JsonProperty("assignedto")
     @ApiModelProperty("指派给")
@@ -441,7 +441,7 @@ public class Task extends EntityMP implements Serializable {
      * 任务描述
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "desc")
+    @TableField(value = "`DESC`")
     @JSONField(name = "desc")
     @JsonProperty("desc")
     @ApiModelProperty("任务描述")
@@ -449,7 +449,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 预计开始
      */
-    @TableField(value = "eststarted")
+    @TableField(value = "`ESTSTARTED`")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "eststarted", format = "yyyy-MM-dd")
     @JsonProperty("eststarted")
@@ -458,7 +458,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 截止日期
      */
-    @TableField(value = "deadline")
+    @TableField(value = "`DEADLINE`")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "deadline", format = "yyyy-MM-dd")
     @JsonProperty("deadline")
@@ -485,7 +485,7 @@ public class Task extends EntityMP implements Serializable {
      */
     @DEField(defaultValue = "0", preType = DEPredefinedFieldType.LOGICVALID, logicval = "0", logicdelval = "1")
     @TableLogic(value = "0", delval = "1")
-    @TableField(value = "deleted")
+    @TableField(value = "`DELETED`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
     @ApiModelProperty("已删除")
@@ -494,7 +494,7 @@ public class Task extends EntityMP implements Serializable {
      * 周期
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "cycle")
+    @TableField(value = "`CYCLE`")
     @JSONField(name = "cycle")
     @JsonProperty("cycle")
     @ApiModelProperty("周期")
@@ -503,7 +503,7 @@ public class Task extends EntityMP implements Serializable {
      * 抄送给
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "mailto")
+    @TableField(value = "`MAILTO`")
     @JSONField(name = "mailto")
     @JsonProperty("mailto")
     @ApiModelProperty("抄送给")
@@ -512,7 +512,7 @@ public class Task extends EntityMP implements Serializable {
      * 总计消耗
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "consumed")
+    @TableField(value = "`CONSUMED`")
     @JSONField(name = "consumed")
     @JsonProperty("consumed")
     @ApiModelProperty("总计消耗")
@@ -521,7 +521,7 @@ public class Task extends EntityMP implements Serializable {
      * 最初预计
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "estimate")
+    @TableField(value = "`ESTIMATE`")
     @JSONField(name = "estimate")
     @JsonProperty("estimate")
     @ApiModelProperty("最初预计")
@@ -530,7 +530,7 @@ public class Task extends EntityMP implements Serializable {
      * 由谁创建
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "openedby")
+    @TableField(value = "`OPENEDBY`")
     @JSONField(name = "openedby")
     @JsonProperty("openedby")
     @ApiModelProperty("由谁创建")
@@ -546,7 +546,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 取消时间
      */
-    @TableField(value = "canceleddate")
+    @TableField(value = "`CANCELEDDATE`")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "canceleddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("canceleddate")
@@ -556,7 +556,7 @@ public class Task extends EntityMP implements Serializable {
      * 周期设置月
      */
     @DEField(name = "config_month")
-    @TableField(value = "config_month")
+    @TableField(value = "`CONFIG_MONTH`")
     @JSONField(name = "configmonth")
     @JsonProperty("configmonth")
     @ApiModelProperty("周期设置月")
@@ -605,7 +605,7 @@ public class Task extends EntityMP implements Serializable {
      * 周期设置周几
      */
     @DEField(name = "config_week")
-    @TableField(value = "config_week")
+    @TableField(value = "`CONFIG_WEEK`")
     @JSONField(name = "configweek")
     @JsonProperty("configweek")
     @ApiModelProperty("周期设置周几")
@@ -630,7 +630,7 @@ public class Task extends EntityMP implements Serializable {
      * 提前天数
      */
     @DEField(name = "config_beforedays")
-    @TableField(value = "config_beforedays")
+    @TableField(value = "`CONFIG_BEFOREDAYS`")
     @JSONField(name = "configbeforedays")
     @JsonProperty("configbeforedays")
     @ApiModelProperty("提前天数")
@@ -638,7 +638,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 实际完成
      */
-    @TableField(value = "finisheddate")
+    @TableField(value = "`FINISHEDDATE`")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "finisheddate", format = "yyyy-MM-dd")
     @JsonProperty("finisheddate")
@@ -704,7 +704,7 @@ public class Task extends EntityMP implements Serializable {
      * 需求版本
      */
     @DEField(defaultValue = "1")
-    @TableField(value = "storyversion")
+    @TableField(value = "`STORYVERSION`")
     @JSONField(name = "storyversion")
     @JsonProperty("storyversion")
     @ApiModelProperty("需求版本")
@@ -729,7 +729,7 @@ public class Task extends EntityMP implements Serializable {
      * 所属项目
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "project")
+    @TableField(value = "`PROJECT`")
     @JSONField(name = "project")
     @JsonProperty("project")
     @ApiModelProperty("所属项目")
@@ -737,7 +737,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 编号
      */
-    @TableField(value = "plan")
+    @TableField(value = "`PLAN`")
     @JSONField(name = "plan")
     @JsonProperty("plan")
     @ApiModelProperty("编号")
@@ -746,7 +746,7 @@ public class Task extends EntityMP implements Serializable {
      * 模块
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "module")
+    @TableField(value = "`MODULE`")
     @JSONField(name = "module")
     @JsonProperty("module")
     @ApiModelProperty("模块")
@@ -755,7 +755,7 @@ public class Task extends EntityMP implements Serializable {
      * 相关需求
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "story")
+    @TableField(value = "`STORY`")
     @JSONField(name = "story")
     @JsonProperty("story")
     @ApiModelProperty("相关需求")
@@ -764,7 +764,7 @@ public class Task extends EntityMP implements Serializable {
      * 父任务
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "parent")
+    @TableField(value = "`PARENT`")
     @JSONField(name = "parent")
     @JsonProperty("parent")
     @ApiModelProperty("父任务")
@@ -773,7 +773,7 @@ public class Task extends EntityMP implements Serializable {
      * 来源Bug
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "frombug")
+    @TableField(value = "`FROMBUG`")
     @JSONField(name = "frombug")
     @JsonProperty("frombug")
     @ApiModelProperty("来源Bug")

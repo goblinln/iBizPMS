@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "DELETED",
       "queryCodeExp" : "t1.`DELETED`",
+      "standardColumnName" : "`DELETED`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -124,6 +125,7 @@
       "dBType" : "MYSQL5",
       "name" : "EDITEDDATE",
       "queryCodeExp" : "t1.`EDITEDDATE`",
+      "standardColumnName" : "`EDITEDDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -161,6 +163,7 @@
       "dBType" : "MYSQL5",
       "name" : "PRODUCT",
       "queryCodeExp" : "t1.`PRODUCT`",
+      "standardColumnName" : "`PRODUCT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -198,6 +201,7 @@
       "dBType" : "MYSQL5",
       "name" : "LASTSTATUS",
       "queryCodeExp" : "t1.`LASTSTATUS`",
+      "standardColumnName" : "`LASTSTATUS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -248,6 +252,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDDATE",
       "queryCodeExp" : "t1.`CREATEDDATE`",
+      "standardColumnName" : "`CREATEDDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -285,6 +290,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDBY",
       "queryCodeExp" : "t1.`CREATEDBY`",
+      "standardColumnName" : "`CREATEDBY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -335,6 +341,7 @@
       "dBType" : "MYSQL5",
       "name" : "TRIGGERTYPE",
       "queryCodeExp" : "t1.`TRIGGERTYPE`",
+      "standardColumnName" : "`TRIGGERTYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -385,6 +392,7 @@
       "dBType" : "MYSQL5",
       "name" : "COMMENT",
       "queryCodeExp" : "t1.`COMMENT`",
+      "standardColumnName" : "`COMMENT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -435,6 +443,7 @@
       "dBType" : "MYSQL5",
       "name" : "LASTEXEC",
       "queryCodeExp" : "t1.`LASTEXEC`",
+      "standardColumnName" : "`LASTEXEC`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -472,6 +481,7 @@
       "dBType" : "MYSQL5",
       "name" : "JKHOST",
       "queryCodeExp" : "t1.`JKHOST`",
+      "standardColumnName" : "`JKHOST`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -509,6 +519,7 @@
       "dBType" : "MYSQL5",
       "name" : "FRAME",
       "queryCodeExp" : "t1.`FRAME`",
+      "standardColumnName" : "`FRAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -559,6 +570,7 @@
       "dBType" : "MYSQL5",
       "name" : "ATDAY",
       "queryCodeExp" : "t1.`ATDAY`",
+      "standardColumnName" : "`ATDAY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -609,6 +621,7 @@
       "dBType" : "MYSQL5",
       "name" : "JKJOB",
       "queryCodeExp" : "t1.`JKJOB`",
+      "standardColumnName" : "`JKJOB`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -659,6 +672,7 @@
       "dBType" : "MYSQL5",
       "name" : "SVNDIR",
       "queryCodeExp" : "t1.`SVNDIR`",
+      "standardColumnName" : "`SVNDIR`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -709,6 +723,7 @@
       "dBType" : "MYSQL5",
       "name" : "REPO",
       "queryCodeExp" : "t1.`REPO`",
+      "standardColumnName" : "`REPO`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -746,6 +761,7 @@
       "dBType" : "MYSQL5",
       "name" : "NAME",
       "queryCodeExp" : "t1.`NAME`",
+      "standardColumnName" : "`NAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -799,6 +815,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -842,6 +859,7 @@
       "dBType" : "MYSQL5",
       "name" : "LASTTAG",
       "queryCodeExp" : "t1.`LASTTAG`",
+      "standardColumnName" : "`LASTTAG`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -892,6 +910,7 @@
       "dBType" : "MYSQL5",
       "name" : "ATTIME",
       "queryCodeExp" : "t1.`ATTIME`",
+      "standardColumnName" : "`ATTIME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -942,6 +961,7 @@
       "dBType" : "MYSQL5",
       "name" : "EDITEDBY",
       "queryCodeExp" : "t1.`EDITEDBY`",
+      "standardColumnName" : "`EDITEDBY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

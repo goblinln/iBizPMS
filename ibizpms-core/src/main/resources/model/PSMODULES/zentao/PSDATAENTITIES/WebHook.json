@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "SECRET",
       "queryCodeExp" : "t1.`SECRET`",
+      "standardColumnName" : "`SECRET`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -120,6 +121,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDDATE",
       "queryCodeExp" : "t1.`CREATEDDATE`",
+      "standardColumnName" : "`CREATEDDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -157,6 +159,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACTIONS",
       "queryCodeExp" : "t1.`ACTIONS`",
+      "standardColumnName" : "`ACTIONS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -208,6 +211,7 @@
       "dBType" : "MYSQL5",
       "name" : "DESC",
       "queryCodeExp" : "t1.`DESC`",
+      "standardColumnName" : "`DESC`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -259,6 +263,7 @@
       "dBType" : "MYSQL5",
       "name" : "CONTENTTYPE",
       "queryCodeExp" : "t1.`CONTENTTYPE`",
+      "standardColumnName" : "`CONTENTTYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -310,6 +315,7 @@
       "dBType" : "MYSQL5",
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
+      "standardColumnName" : "`TYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -361,6 +367,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -404,6 +411,7 @@
       "dBType" : "MYSQL5",
       "name" : "EDITEDBY",
       "queryCodeExp" : "t1.`EDITEDBY`",
+      "standardColumnName" : "`EDITEDBY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -454,6 +462,7 @@
       "dBType" : "MYSQL5",
       "name" : "DELETED",
       "queryCodeExp" : "t1.`DELETED`",
+      "standardColumnName" : "`DELETED`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -508,6 +517,7 @@
       "dBType" : "MYSQL5",
       "name" : "NAME",
       "queryCodeExp" : "t1.`NAME`",
+      "standardColumnName" : "`NAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -561,6 +571,7 @@
       "dBType" : "MYSQL5",
       "name" : "URL",
       "queryCodeExp" : "t1.`URL`",
+      "standardColumnName" : "`URL`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -611,6 +622,7 @@
       "dBType" : "MYSQL5",
       "name" : "DOMAIN",
       "queryCodeExp" : "t1.`DOMAIN`",
+      "standardColumnName" : "`DOMAIN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -661,6 +673,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDBY",
       "queryCodeExp" : "t1.`CREATEDBY`",
+      "standardColumnName" : "`CREATEDBY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -711,6 +724,7 @@
       "dBType" : "MYSQL5",
       "name" : "PARAMS",
       "queryCodeExp" : "t1.`PARAMS`",
+      "standardColumnName" : "`PARAMS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -761,6 +775,7 @@
       "dBType" : "MYSQL5",
       "name" : "SENDTYPE",
       "queryCodeExp" : "t1.`SENDTYPE`",
+      "standardColumnName" : "`SENDTYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -815,6 +830,7 @@
       "dBType" : "MYSQL5",
       "name" : "PRODUCTS",
       "queryCodeExp" : "t1.`PRODUCTS`",
+      "standardColumnName" : "`PRODUCTS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -866,6 +882,7 @@
       "dBType" : "MYSQL5",
       "name" : "EDITEDDATE",
       "queryCodeExp" : "t1.`EDITEDDATE`",
+      "standardColumnName" : "`EDITEDDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -903,6 +920,7 @@
       "dBType" : "MYSQL5",
       "name" : "PROJECTS",
       "queryCodeExp" : "t1.`PROJECTS`",
+      "standardColumnName" : "`PROJECTS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

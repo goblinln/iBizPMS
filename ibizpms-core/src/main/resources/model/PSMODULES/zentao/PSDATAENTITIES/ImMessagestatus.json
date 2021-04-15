@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "MESSAGE",
       "queryCodeExp" : "t1.`MESSAGE`",
+      "standardColumnName" : "`MESSAGE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -107,6 +108,7 @@
       "dBType" : "MYSQL5",
       "name" : "STATUS",
       "queryCodeExp" : "t1.`STATUS`",
+      "standardColumnName" : "`STATUS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -161,6 +163,7 @@
       "dBType" : "MYSQL5",
       "name" : "USER",
       "queryCodeExp" : "t1.`USER`",
+      "standardColumnName" : "`USER`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -201,6 +204,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "concat(t1.`USER`,'__',t1.`MESSAGE`)",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

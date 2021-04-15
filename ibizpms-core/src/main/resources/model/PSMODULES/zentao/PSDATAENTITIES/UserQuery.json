@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -113,6 +114,7 @@
       "dBType" : "MYSQL5",
       "name" : "SHORTCUT",
       "queryCodeExp" : "t1.`SHORTCUT`",
+      "standardColumnName" : "`SHORTCUT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -167,6 +169,7 @@
       "dBType" : "MYSQL5",
       "name" : "SQL",
       "queryCodeExp" : "t1.`SQL`",
+      "standardColumnName" : "`SQL`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -218,6 +221,7 @@
       "dBType" : "MYSQL5",
       "name" : "TITLE",
       "queryCodeExp" : "t1.`TITLE`",
+      "standardColumnName" : "`TITLE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -271,6 +275,7 @@
       "dBType" : "MYSQL5",
       "name" : "MODULE",
       "queryCodeExp" : "t1.`MODULE`",
+      "standardColumnName" : "`MODULE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -321,6 +326,7 @@
       "dBType" : "MYSQL5",
       "name" : "FORM",
       "queryCodeExp" : "t1.`FORM`",
+      "standardColumnName" : "`FORM`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -372,6 +378,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACCOUNT",
       "queryCodeExp" : "t1.`ACCOUNT`",
+      "standardColumnName" : "`ACCOUNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

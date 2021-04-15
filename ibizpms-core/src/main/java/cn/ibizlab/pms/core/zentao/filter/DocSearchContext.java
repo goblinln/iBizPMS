@@ -105,7 +105,7 @@ public class DocSearchContext extends QueryWrapperContext<Doc> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("title", query)
+                     wrapper.like("t1.`TITLE`", query)
             );
 		 }
 	}

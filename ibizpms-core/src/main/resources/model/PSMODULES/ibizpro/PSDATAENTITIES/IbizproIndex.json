@@ -109,6 +109,7 @@
       "dBType" : "MYSQL5",
       "name" : "INDEXID",
       "queryCodeExp" : "t1.`INDEXID`",
+      "standardColumnName" : "`INDEXID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -149,6 +150,7 @@
       "columnName" : "ACL",
       "dBType" : "MYSQL5",
       "name" : "ACL",
+      "standardColumnName" : "`ACL`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -246,6 +248,7 @@
       "dBType" : "MYSQL5",
       "name" : "INDEXNAME",
       "queryCodeExp" : "t1.`INDEXNAME`",
+      "standardColumnName" : "`INDEXNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -299,6 +302,7 @@
       "columnName" : "COLOR",
       "dBType" : "MYSQL5",
       "name" : "COLOR",
+      "standardColumnName" : "`COLOR`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -351,6 +355,7 @@
       "dBType" : "MYSQL5",
       "name" : "DELETED",
       "queryCodeExp" : "t1.`DELETED`",
+      "standardColumnName" : "`DELETED`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -403,6 +408,7 @@
       "columnName" : "ACLLIST",
       "dBType" : "MYSQL5",
       "name" : "ACLLIST",
+      "standardColumnName" : "`ACLLIST`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -454,6 +460,7 @@
       "columnName" : "INDEXDESC",
       "dBType" : "MYSQL5",
       "name" : "INDEXDESC",
+      "standardColumnName" : "`INDEXDESC`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -538,6 +545,7 @@
       "dBType" : "MYSQL5",
       "name" : "INDEX_TYPE",
       "queryCodeExp" : "t1.`INDEX_TYPE`",
+      "standardColumnName" : "`INDEX_TYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -596,6 +604,7 @@
       "dBType" : "MYSQL5",
       "name" : "MDEPTID",
       "queryCodeExp" : "t1.`MDEPTID`",
+      "standardColumnName" : "`MDEPTID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -647,6 +656,7 @@
       "columnName" : "PROJECT",
       "dBType" : "MYSQL5",
       "name" : "PROJECT",
+      "standardColumnName" : "`PROJECT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -686,6 +696,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORGID",
       "queryCodeExp" : "t1.`ORGID`",
+      "standardColumnName" : "`ORGID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

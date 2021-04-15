@@ -73,6 +73,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -114,6 +115,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -171,6 +173,7 @@
       "dBType" : "MYSQL5",
       "name" : "YEAR",
       "queryCodeExp" : "t1.`YEAR`",
+      "standardColumnName" : "`YEAR`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -221,6 +224,7 @@
       "dBType" : "MYSQL5",
       "name" : "ENDDATESTATS",
       "queryCodeExp" : "t1.`ENDDATESTATS`",
+      "standardColumnName" : "`ENDDATESTATS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -271,6 +275,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -328,6 +333,7 @@
       "dBType" : "MYSQL5",
       "name" : "TASKS",
       "queryCodeExp" : "t1.`TASKS`",
+      "standardColumnName" : "`TASKS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -378,6 +384,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZPRO_PROJECTWEEKLYNAME",
       "queryCodeExp" : "t1.`IBZPRO_PROJECTWEEKLYNAME`",
+      "standardColumnName" : "`IBZPRO_PROJECTWEEKLYNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -430,6 +437,7 @@
       "dBType" : "MYSQL5",
       "name" : "WEEK",
       "queryCodeExp" : "t1.`WEEK`",
+      "standardColumnName" : "`WEEK`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -480,6 +488,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZPRO_PROJECTWEEKLYID",
       "queryCodeExp" : "t1.`IBZPRO_PROJECTWEEKLYID`",
+      "standardColumnName" : "`IBZPRO_PROJECTWEEKLYID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -534,6 +543,7 @@
       "dBType" : "MYSQL5",
       "name" : "PM",
       "queryCodeExp" : "t1.`PM`",
+      "standardColumnName" : "`PM`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -588,6 +598,7 @@
       "dBType" : "MYSQL5",
       "name" : "DATE",
       "queryCodeExp" : "t1.`DATE`",
+      "standardColumnName" : "`DATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -625,6 +636,7 @@
       "dBType" : "MYSQL5",
       "name" : "TOTALESTIMATES",
       "queryCodeExp" : "t1.`TOTALESTIMATES`",
+      "standardColumnName" : "`TOTALESTIMATES`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -663,6 +675,7 @@
       "dBType" : "MYSQL5",
       "name" : "BEGINDATESTATS",
       "queryCodeExp" : "t1.`BEGINDATESTATS`",
+      "standardColumnName" : "`BEGINDATESTATS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -713,6 +726,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -754,6 +768,7 @@
       "dBType" : "MYSQL5",
       "name" : "MONTH",
       "queryCodeExp" : "t1.`MONTH`",
+      "standardColumnName" : "`MONTH`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -804,6 +819,7 @@
       "dBType" : "MYSQL5",
       "name" : "PROJECTNAME",
       "queryCodeExp" : "t11.`NAME`",
+      "standardColumnName" : "`PROJECTNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -864,6 +880,7 @@
       "dBType" : "MYSQL5",
       "name" : "PROJECT",
       "queryCodeExp" : "t1.`PROJECT`",
+      "standardColumnName" : "`PROJECT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

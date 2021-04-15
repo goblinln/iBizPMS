@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "CONTENT",
       "queryCodeExp" : "t1.`CONTENT`",
+      "standardColumnName" : "`CONTENT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -121,6 +122,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -178,6 +180,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZPRO_SYSTPLID",
       "queryCodeExp" : "t1.`IBZPRO_SYSTPLID`",
+      "standardColumnName" : "`IBZPRO_SYSTPLID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -231,6 +234,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -272,6 +276,7 @@
       "dBType" : "MYSQL5",
       "name" : "PUBLIC",
       "queryCodeExp" : "t1.`PUBLIC`",
+      "standardColumnName" : "`PUBLIC`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -327,6 +332,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -384,6 +390,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -425,6 +432,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZPRO_SYSTPLNAME",
       "queryCodeExp" : "t1.`IBZPRO_SYSTPLNAME`",
+      "standardColumnName" : "`IBZPRO_SYSTPLNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -477,6 +485,7 @@
       "dBType" : "MYSQL5",
       "name" : "TPLTYPE",
       "queryCodeExp" : "t1.`TPLTYPE`",
+      "standardColumnName" : "`TPLTYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -532,6 +541,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBIZ_SOURCEOBJECT",
       "queryCodeExp" : "t1.`IBIZ_SOURCEOBJECT`",
+      "standardColumnName" : "`IBIZ_SOURCEOBJECT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -586,6 +596,7 @@
       "dBType" : "MYSQL5",
       "name" : "FILE",
       "queryCodeExp" : "t1.`FILE`",
+      "standardColumnName" : "`FILE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

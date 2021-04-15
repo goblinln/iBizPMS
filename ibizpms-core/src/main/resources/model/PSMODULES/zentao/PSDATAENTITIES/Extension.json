@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "DIRS",
       "queryCodeExp" : "t1.`DIRS`",
+      "standardColumnName" : "`DIRS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -121,6 +122,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -164,6 +166,7 @@
       "dBType" : "MYSQL5",
       "name" : "STATUS",
       "queryCodeExp" : "t1.`STATUS`",
+      "standardColumnName" : "`STATUS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -214,6 +217,7 @@
       "dBType" : "MYSQL5",
       "name" : "CODE",
       "queryCodeExp" : "t1.`CODE`",
+      "standardColumnName" : "`CODE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -264,6 +268,7 @@
       "dBType" : "MYSQL5",
       "name" : "DEPENDS",
       "queryCodeExp" : "t1.`DEPENDS`",
+      "standardColumnName" : "`DEPENDS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -314,6 +319,7 @@
       "dBType" : "MYSQL5",
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
+      "standardColumnName" : "`TYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -365,6 +371,7 @@
       "dBType" : "MYSQL5",
       "name" : "FILES",
       "queryCodeExp" : "t1.`FILES`",
+      "standardColumnName" : "`FILES`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -416,6 +423,7 @@
       "dBType" : "MYSQL5",
       "name" : "ZENTAOCOMPATIBLE",
       "queryCodeExp" : "t1.`ZENTAOCOMPATIBLE`",
+      "standardColumnName" : "`ZENTAOCOMPATIBLE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -466,6 +474,7 @@
       "dBType" : "MYSQL5",
       "name" : "LICENSE",
       "queryCodeExp" : "t1.`LICENSE`",
+      "standardColumnName" : "`LICENSE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -517,6 +526,7 @@
       "dBType" : "MYSQL5",
       "name" : "NAME",
       "queryCodeExp" : "t1.`NAME`",
+      "standardColumnName" : "`NAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -570,6 +580,7 @@
       "dBType" : "MYSQL5",
       "name" : "INSTALLEDTIME",
       "queryCodeExp" : "t1.`INSTALLEDTIME`",
+      "standardColumnName" : "`INSTALLEDTIME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -607,6 +618,7 @@
       "dBType" : "MYSQL5",
       "name" : "SITE",
       "queryCodeExp" : "t1.`SITE`",
+      "standardColumnName" : "`SITE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -657,6 +669,7 @@
       "dBType" : "MYSQL5",
       "name" : "AUTHOR",
       "queryCodeExp" : "t1.`AUTHOR`",
+      "standardColumnName" : "`AUTHOR`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -707,6 +720,7 @@
       "dBType" : "MYSQL5",
       "name" : "DESC",
       "queryCodeExp" : "t1.`DESC`",
+      "standardColumnName" : "`DESC`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -758,6 +772,7 @@
       "dBType" : "MYSQL5",
       "name" : "VERSION",
       "queryCodeExp" : "t1.`VERSION`",
+      "standardColumnName" : "`VERSION`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

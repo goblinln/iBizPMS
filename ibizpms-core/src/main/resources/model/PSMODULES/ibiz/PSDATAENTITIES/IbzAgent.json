@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -127,6 +128,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMANNAME",
       "queryCodeExp" : "t1.`CREATEMANNAME`",
+      "standardColumnName" : "`CREATEMANNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -179,6 +181,7 @@
       "dBType" : "MYSQL5",
       "name" : "AGENTEND",
       "queryCodeExp" : "t1.`AGENTEND`",
+      "standardColumnName" : "`AGENTEND`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -216,6 +219,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZ_AGENTID",
       "queryCodeExp" : "t1.`IBZ_AGENTID`",
+      "standardColumnName" : "`IBZ_AGENTID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -258,6 +262,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -315,6 +320,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -356,6 +362,7 @@
       "dBType" : "MYSQL5",
       "name" : "AGENTUSER",
       "queryCodeExp" : "t1.`AGENTUSER`",
+      "standardColumnName" : "`AGENTUSER`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -406,6 +413,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -447,6 +455,7 @@
       "dBType" : "MYSQL5",
       "name" : "AGENTBEGIN",
       "queryCodeExp" : "t1.`AGENTBEGIN`",
+      "standardColumnName" : "`AGENTBEGIN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -484,6 +493,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZ_AGENTNAME",
       "queryCodeExp" : "t1.`IBZ_AGENTNAME`",
+      "standardColumnName" : "`IBZ_AGENTNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

@@ -73,6 +73,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -130,6 +131,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZPRO_CONFIGNAME",
       "queryCodeExp" : "t1.`IBZPRO_CONFIGNAME`",
+      "standardColumnName" : "`IBZPRO_CONFIGNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -182,6 +184,7 @@
       "dBType" : "MYSQL5",
       "name" : "MEMO",
       "queryCodeExp" : "t1.`MEMO`",
+      "standardColumnName" : "`MEMO`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -232,6 +235,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -273,6 +277,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -314,6 +319,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZPRO_CONFIGID",
       "queryCodeExp" : "t1.`IBZPRO_CONFIGID`",
+      "standardColumnName" : "`IBZPRO_CONFIGID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -367,6 +373,7 @@
       "dBType" : "MYSQL5",
       "name" : "SCOPE",
       "queryCodeExp" : "t1.`SCOPE`",
+      "standardColumnName" : "`SCOPE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -421,6 +428,7 @@
       "dBType" : "MYSQL5",
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
+      "standardColumnName" : "`TYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -475,6 +483,7 @@
       "dBType" : "MYSQL5",
       "name" : "MANAGEMENTSTATUS",
       "queryCodeExp" : "t1.`MANAGEMENTSTATUS`",
+      "standardColumnName" : "`MANAGEMENTSTATUS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -529,6 +538,7 @@
       "dBType" : "MYSQL5",
       "name" : "VAILD",
       "queryCodeExp" : "t1.`VAILD`",
+      "standardColumnName" : "`VAILD`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -583,6 +593,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

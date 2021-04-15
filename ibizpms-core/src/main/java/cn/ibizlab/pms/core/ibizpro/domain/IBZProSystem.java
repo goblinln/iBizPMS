@@ -50,7 +50,7 @@ public class IBZProSystem extends EntityMP implements Serializable {
      * 运行生产系统标识
      */
     @DEField(name = "ibzpro_systemid", isKeyField = true)
-    @TableId(value = "ibzpro_systemid", type = IdType.ASSIGN_UUID)
+    @TableId(value = "`IBZPRO_SYSTEMID`", type = IdType.ASSIGN_UUID)
     @JSONField(name = "ibzprosystemid")
     @JsonProperty("ibzprosystemid")
     @ApiModelProperty("运行生产系统标识")
@@ -59,7 +59,7 @@ public class IBZProSystem extends EntityMP implements Serializable {
      * 运行生产系统名称
      */
     @DEField(name = "ibzpro_systemname")
-    @TableField(value = "ibzpro_systemname")
+    @TableField(value = "`IBZPRO_SYSTEMNAME`")
     @JSONField(name = "ibzprosystemname")
     @JsonProperty("ibzprosystemname")
     @ApiModelProperty("运行生产系统名称")
@@ -68,7 +68,7 @@ public class IBZProSystem extends EntityMP implements Serializable {
      * 更新人
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
-    @TableField(value = "updateman")
+    @TableField(value = "`UPDATEMAN`")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
     @ApiModelProperty("更新人")
@@ -77,7 +77,7 @@ public class IBZProSystem extends EntityMP implements Serializable {
      * 建立人
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMAN)
-    @TableField(value = "createman", fill = FieldFill.INSERT)
+    @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
     @ApiModelProperty("建立人")
@@ -86,7 +86,7 @@ public class IBZProSystem extends EntityMP implements Serializable {
      * 建立时间
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "createdate", fill = FieldFill.INSERT)
+    @TableField(value = "`CREATEDATE`", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
@@ -96,7 +96,7 @@ public class IBZProSystem extends EntityMP implements Serializable {
      * 更新时间
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
-    @TableField(value = "updatedate")
+    @TableField(value = "`UPDATEDATE`")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")

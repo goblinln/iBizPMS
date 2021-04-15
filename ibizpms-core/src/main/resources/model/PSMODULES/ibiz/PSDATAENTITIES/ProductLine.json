@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZ_PRODUCTLINENAME",
       "queryCodeExp" : "t1.`IBZ_PRODUCTLINENAME`",
+      "standardColumnName" : "`IBZ_PRODUCTLINENAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -122,6 +123,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZ_PRODUCTLINEID",
       "queryCodeExp" : "t1.`IBZ_PRODUCTLINEID`",
+      "standardColumnName" : "`IBZ_PRODUCTLINEID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -175,6 +177,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -232,6 +235,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -273,6 +277,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -314,6 +319,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

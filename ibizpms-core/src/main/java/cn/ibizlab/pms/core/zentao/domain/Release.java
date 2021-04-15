@@ -50,7 +50,7 @@ public class Release extends EntityMP implements Serializable {
      * 完成的需求
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "stories")
+    @TableField(value = "`STORIES`")
     @JSONField(name = "stories")
     @JsonProperty("stories")
     @ApiModelProperty("完成的需求")
@@ -59,7 +59,7 @@ public class Release extends EntityMP implements Serializable {
      * 里程碑
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "marker")
+    @TableField(value = "`MARKER`")
     @JSONField(name = "marker")
     @JsonProperty("marker")
     @ApiModelProperty("里程碑")
@@ -68,7 +68,7 @@ public class Release extends EntityMP implements Serializable {
      * 归属组织
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "org")
+    @TableField(value = "`ORG`")
     @JSONField(name = "org")
     @JsonProperty("org")
     @ApiModelProperty("归属组织")
@@ -77,7 +77,7 @@ public class Release extends EntityMP implements Serializable {
      * ID
      */
     @DEField(isKeyField = true)
-    @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "`ID`", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("ID")
@@ -94,7 +94,7 @@ public class Release extends EntityMP implements Serializable {
      * 遗留的Bug
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "leftbugs")
+    @TableField(value = "`LEFTBUGS`")
     @JSONField(name = "leftbugs")
     @JsonProperty("leftbugs")
     @ApiModelProperty("遗留的Bug")
@@ -103,7 +103,7 @@ public class Release extends EntityMP implements Serializable {
      * 解决的Bug
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "bugs")
+    @TableField(value = "`BUGS`")
     @JSONField(name = "bugs")
     @JsonProperty("bugs")
     @ApiModelProperty("解决的Bug")
@@ -113,7 +113,7 @@ public class Release extends EntityMP implements Serializable {
      */
     @DEField(defaultValue = "0", preType = DEPredefinedFieldType.LOGICVALID, logicval = "0", logicdelval = "1")
     @TableLogic(value = "0", delval = "1")
-    @TableField(value = "deleted")
+    @TableField(value = "`DELETED`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
     @ApiModelProperty("已删除")
@@ -137,7 +137,7 @@ public class Release extends EntityMP implements Serializable {
     /**
      * 发布名称
      */
-    @TableField(value = "name")
+    @TableField(value = "`NAME`")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("发布名称")
@@ -145,7 +145,7 @@ public class Release extends EntityMP implements Serializable {
     /**
      * 发布日期
      */
-    @TableField(value = "date")
+    @TableField(value = "`DATE`")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "date", format = "yyyy-MM-dd")
     @JsonProperty("date")
@@ -155,7 +155,7 @@ public class Release extends EntityMP implements Serializable {
      * 状态
      */
     @DEField(defaultValue = "normal")
-    @TableField(value = "status")
+    @TableField(value = "`STATUS`")
     @JSONField(name = "status")
     @JsonProperty("status")
     @ApiModelProperty("状态")
@@ -172,7 +172,7 @@ public class Release extends EntityMP implements Serializable {
      * 子状态
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "substatus")
+    @TableField(value = "`SUBSTATUS`")
     @JSONField(name = "substatus")
     @JsonProperty("substatus")
     @ApiModelProperty("子状态")
@@ -189,7 +189,7 @@ public class Release extends EntityMP implements Serializable {
      * 描述
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "desc")
+    @TableField(value = "`DESC`")
     @JSONField(name = "desc")
     @JsonProperty("desc")
     @ApiModelProperty("描述")
@@ -206,7 +206,7 @@ public class Release extends EntityMP implements Serializable {
      * 由谁更新
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "updateby")
+    @TableField(value = "`UPDATEBY`")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")
     @ApiModelProperty("由谁更新")
@@ -223,7 +223,7 @@ public class Release extends EntityMP implements Serializable {
      * 归属部门
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "dept")
+    @TableField(value = "`DEPT`")
     @JSONField(name = "dept")
     @JsonProperty("dept")
     @ApiModelProperty("归属部门")
@@ -232,7 +232,7 @@ public class Release extends EntityMP implements Serializable {
      * 由谁创建
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "createby")
+    @TableField(value = "`CREATEBY`")
     @JSONField(name = "createby")
     @JsonProperty("createby")
     @ApiModelProperty("由谁创建")
@@ -274,7 +274,7 @@ public class Release extends EntityMP implements Serializable {
      * 产品
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "product")
+    @TableField(value = "`PRODUCT`")
     @JSONField(name = "product")
     @JsonProperty("product")
     @ApiModelProperty("产品")
@@ -283,7 +283,7 @@ public class Release extends EntityMP implements Serializable {
      * 版本
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "build")
+    @TableField(value = "`BUILD`")
     @JSONField(name = "build")
     @JsonProperty("build")
     @ApiModelProperty("版本")
@@ -292,7 +292,7 @@ public class Release extends EntityMP implements Serializable {
      * 平台/分支
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "branch")
+    @TableField(value = "`BRANCH`")
     @JSONField(name = "branch")
     @JsonProperty("branch")
     @ApiModelProperty("平台/分支")

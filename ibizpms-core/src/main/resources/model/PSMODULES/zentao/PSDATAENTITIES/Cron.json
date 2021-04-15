@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -115,6 +116,7 @@
       "dBType" : "MYSQL5",
       "name" : "STATUS",
       "queryCodeExp" : "t1.`STATUS`",
+      "standardColumnName" : "`STATUS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -165,6 +167,7 @@
       "dBType" : "MYSQL5",
       "name" : "BUILDIN",
       "queryCodeExp" : "t1.`BUILDIN`",
+      "standardColumnName" : "`BUILDIN`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -203,6 +206,7 @@
       "dBType" : "MYSQL5",
       "name" : "M",
       "queryCodeExp" : "t1.`M`",
+      "standardColumnName" : "`M`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -253,6 +257,7 @@
       "dBType" : "MYSQL5",
       "name" : "LASTTIME",
       "queryCodeExp" : "t1.`LASTTIME`",
+      "standardColumnName" : "`LASTTIME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -290,6 +295,7 @@
       "dBType" : "MYSQL5",
       "name" : "COMMAND",
       "queryCodeExp" : "t1.`COMMAND`",
+      "standardColumnName" : "`COMMAND`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -341,6 +347,7 @@
       "dBType" : "MYSQL5",
       "name" : "DOM",
       "queryCodeExp" : "t1.`DOM`",
+      "standardColumnName" : "`DOM`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -391,6 +398,7 @@
       "dBType" : "MYSQL5",
       "name" : "MON",
       "queryCodeExp" : "t1.`MON`",
+      "standardColumnName" : "`MON`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -441,6 +449,7 @@
       "dBType" : "MYSQL5",
       "name" : "REMARK",
       "queryCodeExp" : "t1.`REMARK`",
+      "standardColumnName" : "`REMARK`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -491,6 +500,7 @@
       "dBType" : "MYSQL5",
       "name" : "H",
       "queryCodeExp" : "t1.`H`",
+      "standardColumnName" : "`H`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -541,6 +551,7 @@
       "dBType" : "MYSQL5",
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
+      "standardColumnName" : "`TYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -591,6 +602,7 @@
       "dBType" : "MYSQL5",
       "name" : "DOW",
       "queryCodeExp" : "t1.`DOW`",
+      "standardColumnName" : "`DOW`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

@@ -451,6 +451,7 @@
       "columnName" : "EMPTYSTORY",
       "dBType" : "MYSQL5",
       "name" : "EMPTYSTORY",
+      "standardColumnName" : "`EMPTYSTORY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -489,6 +490,7 @@
       "columnName" : "DRAFTSTORY",
       "dBType" : "MYSQL5",
       "name" : "DRAFTSTORY",
+      "standardColumnName" : "`DRAFTSTORY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -528,6 +530,7 @@
       "dBType" : "MYSQL5",
       "name" : "END",
       "queryCodeExp" : "t1.`END`",
+      "standardColumnName" : "`END`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -564,6 +567,7 @@
       "columnName" : "RELEASEDSTAGESTORYCNT",
       "dBType" : "MYSQL5",
       "name" : "RELEASEDSTAGESTORYCNT",
+      "standardColumnName" : "`RELEASEDSTAGESTORYCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -664,6 +668,7 @@
       "columnName" : "BEGIN",
       "dBType" : "MYSQL5",
       "name" : "BEGIN",
+      "standardColumnName" : "`BEGIN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -701,6 +706,7 @@
       "dBType" : "MYSQL5",
       "name" : "STATUS",
       "queryCodeExp" : "t1.`STATUS`",
+      "standardColumnName" : "`STATUS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -754,6 +760,7 @@
       "columnName" : "SERIOUSBUGPROPORTION",
       "dBType" : "MYSQL5",
       "name" : "SERIOUSBUGPROPORTION",
+      "standardColumnName" : "`SERIOUSBUGPROPORTION`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -837,6 +844,7 @@
       "dBType" : "MYSQL5",
       "name" : "UNDONETASKCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND `STATUS` NOT IN ('done','cancel','closed') AND DELETED =  '0')",
+      "standardColumnName" : "`UNDONETASKCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -938,6 +946,7 @@
       "dBType" : "MYSQL5",
       "name" : "TOTALWH",
       "queryCodeExp" : "((SELECT round(SUM( `LEFT` ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) ) + (SELECT round(SUM( CONSUMED ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) ))",
+      "standardColumnName" : "`TOTALWH`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -977,6 +986,7 @@
       "dBType" : "MYSQL5",
       "name" : "UNCLOSEDSTORYCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY WHERE `STATUS` <>  'closed' AND PROJECT = t1.`ID` AND DELETED = '0')",
+      "standardColumnName" : "`UNCLOSEDSTORYCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1108,6 +1118,7 @@
       "columnName" : "EMPTYSTAGESTORYCNT",
       "dBType" : "MYSQL5",
       "name" : "EMPTYSTAGESTORYCNT",
+      "standardColumnName" : "`EMPTYSTAGESTORYCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1146,6 +1157,7 @@
       "columnName" : "WAITSTAGESTORYCNT",
       "dBType" : "MYSQL5",
       "name" : "WAITSTAGESTORYCNT",
+      "standardColumnName" : "`WAITSTAGESTORYCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1184,6 +1196,7 @@
       "columnName" : "DEVELOPINGSTAGESTORYCNT",
       "dBType" : "MYSQL5",
       "name" : "DEVELOPINGSTAGESTORYCNT",
+      "standardColumnName" : "`DEVELOPINGSTAGESTORYCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1316,6 +1329,7 @@
       "dBType" : "MYSQL5",
       "name" : "DELETED",
       "queryCodeExp" : "t1.`DELETED`",
+      "standardColumnName" : "`DELETED`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1370,6 +1384,7 @@
       "dBType" : "MYSQL5",
       "name" : "STORYCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY WHERE PROJECT = t1.`ID` AND DELETED = '0')",
+      "standardColumnName" : "`STORYCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1408,6 +1423,7 @@
       "columnName" : "PROJECTEDSTAGESTORYCNT",
       "dBType" : "MYSQL5",
       "name" : "PROJECTEDSTAGESTORYCNT",
+      "standardColumnName" : "`PROJECTEDSTAGESTORYCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1508,6 +1524,7 @@
       "columnName" : "PLANNEDSTAGESTORYCNT",
       "dBType" : "MYSQL5",
       "name" : "PLANNEDSTAGESTORYCNT",
+      "standardColumnName" : "`PLANNEDSTAGESTORYCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1546,6 +1563,7 @@
       "columnName" : "TESTEDSTAGESTORYCNT",
       "dBType" : "MYSQL5",
       "name" : "TESTEDSTAGESTORYCNT",
+      "standardColumnName" : "`TESTEDSTAGESTORYCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1585,6 +1603,7 @@
       "dBType" : "MYSQL5",
       "name" : "NAME",
       "queryCodeExp" : "t1.`NAME`",
+      "standardColumnName" : "`NAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1638,6 +1657,7 @@
       "dBType" : "MYSQL5",
       "name" : "TASKCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0')",
+      "standardColumnName" : "`TASKCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1677,6 +1697,7 @@
       "dBType" : "MYSQL5",
       "name" : "TOTALLEFT",
       "queryCodeExp" : "(SELECT round(SUM(`LEFT`),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' or `parent` = '0' or `parent` = '-1'))",
+      "standardColumnName" : "`TOTALLEFT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1759,6 +1780,7 @@
       "columnName" : "ACTIVESTORY",
       "dBType" : "MYSQL5",
       "name" : "ACTIVESTORY",
+      "standardColumnName" : "`ACTIVESTORY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1797,6 +1819,7 @@
       "columnName" : "ORDER1",
       "dBType" : "MYSQL5",
       "name" : "ORDER1",
+      "standardColumnName" : "`ORDER1`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1837,6 +1860,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACTIVEBUGCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0')",
+      "standardColumnName" : "`ACTIVEBUGCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1968,6 +1992,7 @@
       "columnName" : "CLOSEDSTAGESTORYCNT",
       "dBType" : "MYSQL5",
       "name" : "CLOSEDSTAGESTORYCNT",
+      "standardColumnName" : "`CLOSEDSTAGESTORYCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2007,6 +2032,7 @@
       "dBType" : "MYSQL5",
       "name" : "TOTALESTIMATE",
       "queryCodeExp" : "(SELECT round(SUM(ESTIMATE),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED =  '0' AND ( `parent` = '' or `parent` = '0' or `parent` = '-1'))",
+      "standardColumnName" : "`TOTALESTIMATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2046,6 +2072,7 @@
       "columnName" : "VERIFIEDSTAGESTORYCNT",
       "dBType" : "MYSQL5",
       "name" : "VERIFIEDSTAGESTORYCNT",
+      "standardColumnName" : "`VERIFIEDSTAGESTORYCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2116,6 +2143,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -2253,6 +2281,7 @@
       "dBType" : "MYSQL5",
       "name" : "BUGCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND DELETED = '0')",
+      "standardColumnName" : "`BUGCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2292,6 +2321,7 @@
       "dBType" : "MYSQL5",
       "name" : "UNCLOSEDBUGCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0')",
+      "standardColumnName" : "`UNCLOSEDBUGCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2331,6 +2361,7 @@
       "dBType" : "MYSQL5",
       "name" : "YESTERDAYCTASKCNT",
       "queryCodeExp" : "(select COUNT(1) from zt_task t where t.deleted = '0' and t.project = t1.id and t.`status` = 'closed' and t.closedDate BETWEEN CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 00:00:00') and CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 23:59:59') )",
+      "standardColumnName" : "`YESTERDAYCTASKCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2432,6 +2463,7 @@
       "dBType" : "MYSQL5",
       "name" : "UNCONFIRMEDBUGCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0')",
+      "standardColumnName" : "`UNCONFIRMEDBUGCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2470,6 +2502,7 @@
       "columnName" : "DEVELOPEDSTAGESTORYCNT",
       "dBType" : "MYSQL5",
       "name" : "DEVELOPEDSTAGESTORYCNT",
+      "standardColumnName" : "`DEVELOPEDSTAGESTORYCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2508,6 +2541,7 @@
       "columnName" : "TESTINGSTAGESTORYCNT",
       "dBType" : "MYSQL5",
       "name" : "TESTINGSTAGESTORYCNT",
+      "standardColumnName" : "`TESTINGSTAGESTORYCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2547,6 +2581,7 @@
       "dBType" : "MYSQL5",
       "name" : "FINISHTASKCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND `STATUS` IN ('done','cancel','closed') AND DELETED = '0')",
+      "standardColumnName" : "`FINISHTASKCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2617,6 +2652,7 @@
       "dBType" : "MYSQL5",
       "name" : "TOTALCONSUMED",
       "queryCodeExp" : "(SELECT round(SUM(CONSUMED),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' or `parent` = '0' or `parent` = '-1'))",
+      "standardColumnName" : "`TOTALCONSUMED`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2686,6 +2722,7 @@
       "columnName" : "PROJECTTOTALCONSUMED",
       "dBType" : "MYSQL5",
       "name" : "PROJECTTOTALCONSUMED",
+      "standardColumnName" : "`PROJECTTOTALCONSUMED`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2786,6 +2823,7 @@
       "columnName" : "CLOSEDSTORY",
       "dBType" : "MYSQL5",
       "name" : "CLOSEDSTORY",
+      "standardColumnName" : "`CLOSEDSTORY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2856,6 +2894,7 @@
       "dBType" : "MYSQL5",
       "name" : "RELEASEDSTORYCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY WHERE stage = 'released' AND PROJECT = t1.id AND DELETED = '0')",
+      "standardColumnName" : "`RELEASEDSTORYCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2988,6 +3027,7 @@
       "dBType" : "MYSQL5",
       "name" : "CLOSEDSTORYCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE `STATUS` =  'closed' AND FIND_IN_SET (PRODUCT, (SELECT GROUP_CONCAT(PRODUCT) FROM ZT_PROJECTPRODUCT WHERE PROJECT= t1.`ID`)) AND DELETED = '0' )",
+      "standardColumnName" : "`CLOSEDSTORYCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -3027,6 +3067,7 @@
       "dBType" : "MYSQL5",
       "name" : "FINISHBUGCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND `STATUS` <> 'active' AND DELETED = '0')",
+      "standardColumnName" : "`FINISHBUGCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -3065,6 +3106,7 @@
       "columnName" : "CHANGEDSTORY",
       "dBType" : "MYSQL5",
       "name" : "CHANGEDSTORY",
+      "standardColumnName" : "`CHANGEDSTORY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -3134,6 +3176,7 @@
       "columnName" : "MEMBERCNT",
       "dBType" : "MYSQL5",
       "name" : "MEMBERCNT",
+      "standardColumnName" : "`MEMBERCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -3217,6 +3260,7 @@
       "dBType" : "MYSQL5",
       "name" : "YESTERDAYRBUGCNT",
       "queryCodeExp" : "(SELECT COUNT( 1 ) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND `STATUS` = 'resolved' AND DELETED = '0' and RESOLVEDDATE BETWEEN CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 00:00:00') and CONCAT(YEAR(DATE_ADD(now(),INTERVAL -1 day)),'-',month(DATE_ADD(now(),INTERVAL -1 day)),'-',day(DATE_ADD(now(),INTERVAL -1 day)),' 23:59:59'))",
+      "standardColumnName" : "`YESTERDAYRBUGCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

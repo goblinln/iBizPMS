@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "USER",
       "queryCodeExp" : "t1.`USER`",
+      "standardColumnName" : "`USER`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -120,6 +121,7 @@
       "dBType" : "MYSQL5",
       "name" : "GID",
       "queryCodeExp" : "t1.`GID`",
+      "standardColumnName" : "`GID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -170,6 +172,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -215,6 +218,7 @@
       "dBType" : "MYSQL5",
       "name" : "DATE",
       "queryCodeExp" : "t1.`DATE`",
+      "standardColumnName" : "`DATE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -253,6 +257,7 @@
       "dBType" : "MYSQL5",
       "name" : "DELETED",
       "queryCodeExp" : "t1.`DELETED`",
+      "standardColumnName" : "`DELETED`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -307,6 +312,7 @@
       "dBType" : "MYSQL5",
       "name" : "DATA",
       "queryCodeExp" : "t1.`DATA`",
+      "standardColumnName" : "`DATA`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -358,6 +364,7 @@
       "dBType" : "MYSQL5",
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
+      "standardColumnName" : "`TYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -412,6 +419,7 @@
       "dBType" : "MYSQL5",
       "name" : "CONTENT",
       "queryCodeExp" : "t1.`CONTENT`",
+      "standardColumnName" : "`CONTENT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -463,6 +471,7 @@
       "dBType" : "MYSQL5",
       "name" : "CGID",
       "queryCodeExp" : "t1.`CGID`",
+      "standardColumnName" : "`CGID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -513,6 +522,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORDER",
       "queryCodeExp" : "t1.`ORDER`",
+      "standardColumnName" : "`ORDER`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -550,6 +560,7 @@
       "dBType" : "MYSQL5",
       "name" : "CONTENTTYPE",
       "queryCodeExp" : "t1.`CONTENTTYPE`",
+      "standardColumnName" : "`CONTENTTYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

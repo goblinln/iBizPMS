@@ -49,7 +49,7 @@ public class IbzLib extends EntityMP implements Serializable {
     /**
      * 描述
      */
-    @TableField(value = "desc")
+    @TableField(value = "`DESC`")
     @JSONField(name = "desc")
     @JsonProperty("desc")
     @ApiModelProperty("描述")
@@ -58,7 +58,7 @@ public class IbzLib extends EntityMP implements Serializable {
      * 产品
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "product")
+    @TableField(value = "`PRODUCT`")
     @JSONField(name = "product")
     @JsonProperty("product")
     @ApiModelProperty("产品")
@@ -67,7 +67,7 @@ public class IbzLib extends EntityMP implements Serializable {
      * 创建时间
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "addeddate", fill = FieldFill.INSERT)
+    @TableField(value = "`ADDEDDATE`", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "addeddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("addeddate")
@@ -77,7 +77,7 @@ public class IbzLib extends EntityMP implements Serializable {
      * 编号
      */
     @DEField(isKeyField = true)
-    @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "`ID`", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("编号")
@@ -86,7 +86,7 @@ public class IbzLib extends EntityMP implements Serializable {
      * 最后编辑时间
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
-    @TableField(value = "lastediteddate")
+    @TableField(value = "`LASTEDITEDDATE`")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "lastediteddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("lastediteddate")
@@ -96,7 +96,7 @@ public class IbzLib extends EntityMP implements Serializable {
      * 由谁创建
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "addedby")
+    @TableField(value = "`ADDEDBY`")
     @JSONField(name = "addedby")
     @JsonProperty("addedby")
     @ApiModelProperty("由谁创建")
@@ -105,7 +105,7 @@ public class IbzLib extends EntityMP implements Serializable {
      * 已删除
      */
     @DEField(defaultValue = "0", preType = DEPredefinedFieldType.LOGICVALID)
-    @TableField(value = "deleted")
+    @TableField(value = "`DELETED`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
     @ApiModelProperty("已删除")
@@ -113,7 +113,7 @@ public class IbzLib extends EntityMP implements Serializable {
     /**
      * 名称
      */
-    @TableField(value = "name")
+    @TableField(value = "`NAME`")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("名称")
@@ -122,7 +122,7 @@ public class IbzLib extends EntityMP implements Serializable {
      * 类型
      */
     @DEField(defaultValue = "library")
-    @TableField(value = "type")
+    @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("类型")
@@ -131,7 +131,7 @@ public class IbzLib extends EntityMP implements Serializable {
      * 最后编辑人
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "lasteditedby")
+    @TableField(value = "`LASTEDITEDBY`")
     @JSONField(name = "lasteditedby")
     @JsonProperty("lasteditedby")
     @ApiModelProperty("最后编辑人")

@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSUBSYSSERVICEAPINAME",
       "queryCodeExp" : "t1.`PSSUBSYSSERVICEAPINAME`",
+      "standardColumnName" : "`PSSUBSYSSERVICEAPINAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -122,6 +123,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -179,6 +181,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -220,6 +223,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSTEMID",
       "queryCodeExp" : "t1.`PSSYSTEMID`",
+      "standardColumnName" : "`PSSYSTEMID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -270,6 +274,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSUBSYSSERVICEAPIID",
       "queryCodeExp" : "t1.`PSSUBSYSSERVICEAPIID`",
+      "standardColumnName" : "`PSSUBSYSSERVICEAPIID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -323,6 +328,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -364,6 +370,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -421,6 +428,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSTEMNAME",
       "queryCodeExp" : "t1.`PSSYSTEMNAME`",
+      "standardColumnName" : "`PSSYSTEMNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -471,6 +479,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSSERVICEAPINAME",
       "queryCodeExp" : "t11.`PSSYSSERVICEAPINAME`",
+      "standardColumnName" : "`PSSYSSERVICEAPINAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -531,6 +540,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSMODULENAME",
       "queryCodeExp" : "t21.`PSMODULENAME`",
+      "standardColumnName" : "`PSMODULENAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -591,6 +601,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSMODULEID",
       "queryCodeExp" : "t1.`PSMODULEID`",
+      "standardColumnName" : "`PSMODULEID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -650,6 +661,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSSERVICEAPIID",
       "queryCodeExp" : "t1.`PSSYSSERVICEAPIID`",
+      "standardColumnName" : "`PSSYSSERVICEAPIID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

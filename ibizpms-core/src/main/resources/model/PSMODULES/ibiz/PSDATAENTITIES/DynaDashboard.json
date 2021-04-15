@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "USERID",
       "queryCodeExp" : "t1.`USERID`",
+      "standardColumnName" : "`USERID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -120,6 +121,7 @@
       "dBType" : "MYSQL5",
       "name" : "DYNADASHBOARDID",
       "queryCodeExp" : "t1.`DYNADASHBOARDID`",
+      "standardColumnName" : "`DYNADASHBOARDID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -173,6 +175,7 @@
       "dBType" : "MYSQL5",
       "name" : "DYNADASHBOARDNAME",
       "queryCodeExp" : "t1.`DYNADASHBOARDNAME`",
+      "standardColumnName" : "`DYNADASHBOARDNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -225,6 +228,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -282,6 +286,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -339,6 +344,7 @@
       "dBType" : "MYSQL5",
       "name" : "MODELID",
       "queryCodeExp" : "t1.`MODELID`",
+      "standardColumnName" : "`MODELID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -389,6 +395,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -430,6 +437,7 @@
       "dBType" : "MYSQL5",
       "name" : "APPID",
       "queryCodeExp" : "t1.`APPID`",
+      "standardColumnName" : "`APPID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -480,6 +488,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -521,6 +530,7 @@
       "dBType" : "MYSQL5",
       "name" : "MODEL",
       "queryCodeExp" : "t1.`MODEL`",
+      "standardColumnName" : "`MODEL`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

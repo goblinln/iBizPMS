@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "concat(t1.`ACCOUNT`)",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -125,6 +126,7 @@
       "dBType" : "MYSQL5",
       "name" : "PRODUCTS",
       "queryCodeExp" : "t1.`PRODUCTS`",
+      "standardColumnName" : "`PRODUCTS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -176,6 +178,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACCOUNT",
       "queryCodeExp" : "t1.`ACCOUNT`",
+      "standardColumnName" : "`ACCOUNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -228,6 +231,7 @@
       "dBType" : "MYSQL5",
       "name" : "PROJECTS",
       "queryCodeExp" : "t1.`PROJECTS`",
+      "standardColumnName" : "`PROJECTS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

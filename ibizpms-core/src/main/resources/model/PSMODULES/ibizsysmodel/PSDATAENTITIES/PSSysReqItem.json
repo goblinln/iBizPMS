@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "ITEMSN",
       "queryCodeExp" : "t1.`ITEMSN`",
+      "standardColumnName" : "`ITEMSN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -120,6 +121,7 @@
       "dBType" : "MYSQL5",
       "name" : "ITEMTYPE",
       "queryCodeExp" : "t1.`ITEMTYPE`",
+      "standardColumnName" : "`ITEMTYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -171,6 +173,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSUSERCASEID",
       "queryCodeExp" : "t1.`PSSYSUSERCASEID`",
+      "standardColumnName" : "`PSSYSUSERCASEID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -221,6 +224,7 @@
       "dBType" : "MYSQL5",
       "name" : "USERTAG2",
       "queryCodeExp" : "t1.`USERTAG2`",
+      "standardColumnName" : "`USERTAG2`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -271,6 +275,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -312,6 +317,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORDERVALUE",
       "queryCodeExp" : "t1.`ORDERVALUE`",
+      "standardColumnName" : "`ORDERVALUE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -350,6 +356,7 @@
       "dBType" : "MYSQL5",
       "name" : "VER",
       "queryCodeExp" : "t1.`VER`",
+      "standardColumnName" : "`VER`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -388,6 +395,7 @@
       "dBType" : "MYSQL5",
       "name" : "USERTAG3",
       "queryCodeExp" : "t1.`USERTAG3`",
+      "standardColumnName" : "`USERTAG3`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -438,6 +446,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSTEMNAME",
       "queryCodeExp" : "t1.`PSSYSTEMNAME`",
+      "standardColumnName" : "`PSSYSTEMNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -488,6 +497,7 @@
       "dBType" : "MYSQL5",
       "name" : "ITEMTAG",
       "queryCodeExp" : "t1.`ITEMTAG`",
+      "standardColumnName" : "`ITEMTAG`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -538,6 +548,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSREQITEMID",
       "queryCodeExp" : "t1.`PSSYSREQITEMID`",
+      "standardColumnName" : "`PSSYSREQITEMID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -591,6 +602,7 @@
       "dBType" : "MYSQL5",
       "name" : "ITEMTAG2",
       "queryCodeExp" : "t1.`ITEMTAG2`",
+      "standardColumnName" : "`ITEMTAG2`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -641,6 +653,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -682,6 +695,7 @@
       "dBType" : "MYSQL5",
       "name" : "REQCONTENT",
       "queryCodeExp" : "t1.`REQCONTENT`",
+      "standardColumnName" : "`REQCONTENT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -733,6 +747,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -790,6 +805,7 @@
       "dBType" : "MYSQL5",
       "name" : "USERTAG",
       "queryCodeExp" : "t1.`USERTAG`",
+      "standardColumnName" : "`USERTAG`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -840,6 +856,7 @@
       "dBType" : "MYSQL5",
       "name" : "VALIDFLAG",
       "queryCodeExp" : "t1.`VALIDFLAG`",
+      "standardColumnName" : "`VALIDFLAG`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -883,6 +900,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSUSERCASENAME",
       "queryCodeExp" : "t1.`PSSYSUSERCASENAME`",
+      "standardColumnName" : "`PSSYSUSERCASENAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -933,6 +951,7 @@
       "dBType" : "MYSQL5",
       "name" : "USERCAT",
       "queryCodeExp" : "t1.`USERCAT`",
+      "standardColumnName" : "`USERCAT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -983,6 +1002,7 @@
       "dBType" : "MYSQL5",
       "name" : "CODENAME",
       "queryCodeExp" : "t1.`CODENAME`",
+      "standardColumnName" : "`CODENAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1033,6 +1053,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1090,6 +1111,7 @@
       "dBType" : "MYSQL5",
       "name" : "MEMO",
       "queryCodeExp" : "t1.`MEMO`",
+      "standardColumnName" : "`MEMO`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1140,6 +1162,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSREQITEMNAME",
       "queryCodeExp" : "t1.`PSSYSREQITEMNAME`",
+      "standardColumnName" : "`PSSYSREQITEMNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1192,6 +1215,7 @@
       "dBType" : "MYSQL5",
       "name" : "USERTAG4",
       "queryCodeExp" : "t1.`USERTAG4`",
+      "standardColumnName" : "`USERTAG4`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1242,6 +1266,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSTEMID",
       "queryCodeExp" : "t1.`PSSYSTEMID`",
+      "standardColumnName" : "`PSSYSTEMID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1292,6 +1317,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSREQMODULENAME",
       "queryCodeExp" : "t11.`PSSYSREQMODULENAME`",
+      "standardColumnName" : "`PSSYSREQMODULENAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1352,6 +1378,7 @@
       "dBType" : "MYSQL5",
       "name" : "PPSSYSREQITEMNAME",
       "queryCodeExp" : "t21.`PSSYSREQITEMNAME`",
+      "standardColumnName" : "`PPSSYSREQITEMNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1412,6 +1439,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSREQMODULEID",
       "queryCodeExp" : "t1.`PSSYSREQMODULEID`",
+      "standardColumnName" : "`PSSYSREQMODULEID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1471,6 +1499,7 @@
       "dBType" : "MYSQL5",
       "name" : "PPSSYSREQITEMID",
       "queryCodeExp" : "t1.`PPSSYSREQITEMID`",
+      "standardColumnName" : "`PPSSYSREQITEMID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

@@ -90,7 +90,7 @@ public class IbzProjectMember extends EntityMP implements Serializable {
      * 编号
      */
     @DEField(isKeyField = true)
-    @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "`ID`", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("编号")
@@ -146,7 +146,7 @@ public class IbzProjectMember extends EntityMP implements Serializable {
     /**
      * 项目名称
      */
-    @TableField(value = "name")
+    @TableField(value = "`NAME`")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("项目名称")

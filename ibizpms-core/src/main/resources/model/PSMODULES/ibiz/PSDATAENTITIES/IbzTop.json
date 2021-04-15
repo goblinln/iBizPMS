@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -111,6 +112,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -168,6 +170,7 @@
       "dBType" : "MYSQL5",
       "name" : "OBJECTORDER",
       "queryCodeExp" : "t1.`OBJECTORDER`",
+      "standardColumnName" : "`OBJECTORDER`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -206,6 +209,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZ_TOPID",
       "queryCodeExp" : "t1.`IBZ_TOPID`",
+      "standardColumnName" : "`IBZ_TOPID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -259,6 +263,7 @@
       "dBType" : "MYSQL5",
       "name" : "OBJECTID",
       "queryCodeExp" : "t1.`OBJECTID`",
+      "standardColumnName" : "`OBJECTID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -296,6 +301,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZ_TOPNAME",
       "queryCodeExp" : "t1.`IBZ_TOPNAME`",
+      "standardColumnName" : "`IBZ_TOPNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -348,6 +354,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -389,6 +396,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -446,6 +454,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACCOUNT",
       "queryCodeExp" : "t1.`ACCOUNT`",
+      "standardColumnName" : "`ACCOUNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -500,6 +509,7 @@
       "dBType" : "MYSQL5",
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
+      "standardColumnName" : "`TYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

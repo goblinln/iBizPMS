@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBIZ_ID",
       "queryCodeExp" : "t1.`IBIZ_ID`",
+      "standardColumnName" : "`IBIZ_ID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -120,6 +121,7 @@
       "dBType" : "MYSQL5",
       "name" : "CODE",
       "queryCodeExp" : "t1.`CODE`",
+      "standardColumnName" : "`CODE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -170,6 +172,7 @@
       "dBType" : "MYSQL5",
       "name" : "NAME",
       "queryCodeExp" : "t1.`NAME`",
+      "standardColumnName" : "`NAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -223,6 +226,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],

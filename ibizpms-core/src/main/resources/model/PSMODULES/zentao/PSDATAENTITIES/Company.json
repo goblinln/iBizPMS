@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "ADMINS",
       "queryCodeExp" : "t1.`ADMINS`",
+      "standardColumnName" : "`ADMINS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -120,6 +121,7 @@
       "dBType" : "MYSQL5",
       "name" : "FAX",
       "queryCodeExp" : "t1.`FAX`",
+      "standardColumnName" : "`FAX`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -170,6 +172,7 @@
       "dBType" : "MYSQL5",
       "name" : "DELETED",
       "queryCodeExp" : "t1.`DELETED`",
+      "standardColumnName" : "`DELETED`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -224,6 +227,7 @@
       "dBType" : "MYSQL5",
       "name" : "WEBSITE",
       "queryCodeExp" : "t1.`WEBSITE`",
+      "standardColumnName" : "`WEBSITE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -274,6 +278,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -317,6 +322,7 @@
       "dBType" : "MYSQL5",
       "name" : "ZIPCODE",
       "queryCodeExp" : "t1.`ZIPCODE`",
+      "standardColumnName" : "`ZIPCODE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -367,6 +373,7 @@
       "dBType" : "MYSQL5",
       "name" : "ADDRESS",
       "queryCodeExp" : "t1.`ADDRESS`",
+      "standardColumnName" : "`ADDRESS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -417,6 +424,7 @@
       "dBType" : "MYSQL5",
       "name" : "BACKYARD",
       "queryCodeExp" : "t1.`BACKYARD`",
+      "standardColumnName" : "`BACKYARD`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -467,6 +475,7 @@
       "dBType" : "MYSQL5",
       "name" : "NAME",
       "queryCodeExp" : "t1.`NAME`",
+      "standardColumnName" : "`NAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -520,6 +529,7 @@
       "dBType" : "MYSQL5",
       "name" : "GUEST",
       "queryCodeExp" : "t1.`GUEST`",
+      "standardColumnName" : "`GUEST`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -574,6 +584,7 @@
       "dBType" : "MYSQL5",
       "name" : "PHONE",
       "queryCodeExp" : "t1.`PHONE`",
+      "standardColumnName" : "`PHONE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

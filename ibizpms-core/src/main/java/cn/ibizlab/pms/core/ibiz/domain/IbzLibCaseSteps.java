@@ -57,7 +57,7 @@ public class IbzLibCaseSteps extends EntityMP implements Serializable {
     /**
      * 预期
      */
-    @TableField(value = "expect")
+    @TableField(value = "`EXPECT`")
     @JSONField(name = "expect")
     @JsonProperty("expect")
     @ApiModelProperty("预期")
@@ -65,7 +65,7 @@ public class IbzLibCaseSteps extends EntityMP implements Serializable {
     /**
      * 步骤
      */
-    @TableField(value = "desc")
+    @TableField(value = "`DESC`")
     @JSONField(name = "desc")
     @JsonProperty("desc")
     @ApiModelProperty("步骤")
@@ -82,7 +82,7 @@ public class IbzLibCaseSteps extends EntityMP implements Serializable {
      * 编号
      */
     @DEField(isKeyField = true)
-    @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "`ID`", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("编号")
@@ -90,7 +90,7 @@ public class IbzLibCaseSteps extends EntityMP implements Serializable {
     /**
      * 类型
      */
-    @TableField(value = "type")
+    @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("类型")
@@ -106,7 +106,7 @@ public class IbzLibCaseSteps extends EntityMP implements Serializable {
     /**
      * 编号
      */
-    @TableField(value = "parent")
+    @TableField(value = "`PARENT`")
     @JSONField(name = "parent")
     @JsonProperty("parent")
     @ApiModelProperty("编号")
@@ -115,7 +115,7 @@ public class IbzLibCaseSteps extends EntityMP implements Serializable {
      * 用例编号
      */
     @DEField(name = "case")
-    @TableField(value = "case")
+    @TableField(value = "`CASE`")
     @JSONField(name = "ibizcase")
     @JsonProperty("ibizcase")
     @ApiModelProperty("用例编号")

@@ -100,6 +100,7 @@
       "dBType" : "MYSQL5",
       "name" : "MANAGER",
       "queryCodeExp" : "t1.`MANAGER`",
+      "standardColumnName" : "`MANAGER`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -154,6 +155,7 @@
       "dBType" : "MYSQL5",
       "name" : "ISLEAF",
       "queryCodeExp" : "(CASE WHEN EXISTS (SELECT 1 FROM ZT_DEPT WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END )",
+      "standardColumnName" : "`ISLEAF`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -206,6 +208,7 @@
       "dBType" : "MYSQL5",
       "name" : "GRADE",
       "queryCodeExp" : "t1.`GRADE`",
+      "standardColumnName" : "`GRADE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -244,6 +247,7 @@
       "dBType" : "MYSQL5",
       "name" : "FUNCTION",
       "queryCodeExp" : "t1.`FUNCTION`",
+      "standardColumnName" : "`FUNCTION`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -294,6 +298,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORDER",
       "queryCodeExp" : "t1.`ORDER`",
+      "standardColumnName" : "`ORDER`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -332,6 +337,7 @@
       "dBType" : "MYSQL5",
       "name" : "PATH",
       "queryCodeExp" : "t1.`PATH`",
+      "standardColumnName" : "`PATH`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -382,6 +388,7 @@
       "dBType" : "MYSQL5",
       "name" : "POSITION",
       "queryCodeExp" : "t1.`POSITION`",
+      "standardColumnName" : "`POSITION`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -432,6 +439,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -475,6 +483,7 @@
       "dBType" : "MYSQL5",
       "name" : "NAME",
       "queryCodeExp" : "t1.`NAME`",
+      "standardColumnName" : "`NAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -528,6 +537,7 @@
       "dBType" : "MYSQL5",
       "name" : "PARENTNAME",
       "queryCodeExp" : "t11.`NAME`",
+      "standardColumnName" : "`PARENTNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -588,6 +598,7 @@
       "dBType" : "MYSQL5",
       "name" : "PARENT",
       "queryCodeExp" : "t1.`PARENT`",
+      "standardColumnName" : "`PARENT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

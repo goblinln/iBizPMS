@@ -270,6 +270,7 @@
       "columnName" : "THISMONTH",
       "dBType" : "MYSQL5",
       "name" : "THISMONTH",
+      "standardColumnName" : "`THISMONTH`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -321,6 +322,7 @@
       "columnName" : "YESTERDAY",
       "dBType" : "MYSQL5",
       "name" : "YESTERDAY",
+      "standardColumnName" : "`YESTERDAY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -373,6 +375,7 @@
       "dBType" : "MYSQL5",
       "name" : "EXTRA",
       "queryCodeExp" : "t1.`EXTRA`",
+      "standardColumnName" : "`EXTRA`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -468,6 +471,7 @@
       "columnName" : "LASTMONTH",
       "dBType" : "MYSQL5",
       "name" : "LASTMONTH",
+      "standardColumnName" : "`LASTMONTH`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -520,6 +524,7 @@
       "dBType" : "MYSQL5",
       "name" : "ISACTORSS",
       "queryCodeExp" : "0",
+      "standardColumnName" : "`ISACTORSS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -558,6 +563,7 @@
       "columnName" : "THISWEEK",
       "dBType" : "MYSQL5",
       "name" : "THISWEEK",
+      "standardColumnName" : "`THISWEEK`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -609,6 +615,7 @@
       "columnName" : "TODAY",
       "dBType" : "MYSQL5",
       "name" : "TODAY",
+      "standardColumnName" : "`TODAY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -660,6 +667,7 @@
       "columnName" : "DATE1",
       "dBType" : "MYSQL5",
       "name" : "DATE1",
+      "standardColumnName" : "`DATE1`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -712,6 +720,7 @@
       "dBType" : "MYSQL5",
       "name" : "OBJECTTYPE",
       "queryCodeExp" : "t1.`OBJECTTYPE`",
+      "standardColumnName" : "`OBJECTTYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -766,6 +775,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -853,6 +863,7 @@
       "dBType" : "MYSQL5",
       "name" : "COMMENT",
       "queryCodeExp" : "t1.`COMMENT`",
+      "standardColumnName" : "`COMMENT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -904,6 +915,7 @@
       "dBType" : "MYSQL5",
       "name" : "READ",
       "queryCodeExp" : "t1.`READ`",
+      "standardColumnName" : "`READ`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -959,6 +971,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACTION",
       "queryCodeExp" : "t1.`ACTION`",
+      "standardColumnName" : "`ACTION`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1013,6 +1026,7 @@
       "dBType" : "MYSQL5",
       "name" : "DATE",
       "queryCodeExp" : "t1.`DATE`",
+      "standardColumnName" : "`DATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1052,6 +1066,7 @@
       "dBType" : "MYSQL5",
       "name" : "PRODUCT",
       "queryCodeExp" : "t1.`PRODUCT`",
+      "standardColumnName" : "`PRODUCT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1102,6 +1117,7 @@
       "dBType" : "MYSQL5",
       "name" : "LASTCOMMENT",
       "queryCodeExp" : "t1.`comment`",
+      "standardColumnName" : "`LASTCOMMENT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1153,6 +1169,7 @@
       "columnName" : "SRFKEY",
       "dBType" : "MYSQL5",
       "name" : "SRFKEY",
+      "standardColumnName" : "`SRFKEY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1192,6 +1209,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACTIONMANNER",
       "queryCodeExp" : "(case when t1.objectType in ('bug','story','release') and t1.action in ('changestatus','resolved','closed', 'reviewed') and t1.extra <> '' then CONCAT_WS('_',t1.objectType,t1.action,t1.extra) else '' end)",
+      "standardColumnName" : "`ACTIONMANNER`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1247,6 +1265,7 @@
       "columnName" : "LASTWEEK",
       "dBType" : "MYSQL5",
       "name" : "LASTWEEK",
+      "standardColumnName" : "`LASTWEEK`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1299,6 +1318,7 @@
       "dBType" : "MYSQL5",
       "name" : "OBJECTID",
       "queryCodeExp" : "t1.`OBJECTID`",
+      "standardColumnName" : "`OBJECTID`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1337,6 +1357,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACTOR",
       "queryCodeExp" : "t1.`ACTOR`",
+      "standardColumnName" : "`ACTOR`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1392,6 +1413,7 @@
       "dBType" : "MYSQL5",
       "name" : "PROJECT",
       "queryCodeExp" : "t1.`PROJECT`",
+      "standardColumnName" : "`PROJECT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

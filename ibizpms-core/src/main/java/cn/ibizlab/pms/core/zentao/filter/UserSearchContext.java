@@ -65,7 +65,7 @@ public class UserSearchContext extends QueryWrapperContext<User> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("realname", query)
+                     wrapper.like("t1.`REALNAME`", query)
             );
 		 }
 	}

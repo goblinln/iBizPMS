@@ -161,7 +161,7 @@ public class ProductSum extends EntityMP implements Serializable {
     /**
      * 产品负责人
      */
-    @TableField(value = "po")
+    @TableField(value = "`PO`")
     @JSONField(name = "po")
     @JsonProperty("po")
     @ApiModelProperty("产品负责人")
@@ -202,7 +202,7 @@ public class ProductSum extends EntityMP implements Serializable {
      * 主键标识
      */
     @DEField(isKeyField = true)
-    @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "`ID`", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("主键标识")
@@ -314,7 +314,7 @@ public class ProductSum extends EntityMP implements Serializable {
     /**
      * 产品名称
      */
-    @TableField(value = "name")
+    @TableField(value = "`NAME`")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("产品名称")

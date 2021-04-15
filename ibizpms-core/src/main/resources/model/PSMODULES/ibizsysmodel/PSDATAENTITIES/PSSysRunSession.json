@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "RUNPARAM4",
       "queryCodeExp" : "t1.`RUNPARAM4`",
+      "standardColumnName" : "`RUNPARAM4`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -120,6 +121,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSRUNSESSIONNAME",
       "queryCodeExp" : "t1.`PSSYSRUNSESSIONNAME`",
+      "standardColumnName" : "`PSSYSRUNSESSIONNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -172,6 +174,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -213,6 +216,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -254,6 +258,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSRUNSESSIONID",
       "queryCodeExp" : "t1.`PSSYSRUNSESSIONID`",
+      "standardColumnName" : "`PSSYSRUNSESSIONID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -307,6 +312,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSSFPUBID",
       "queryCodeExp" : "t1.`PSSYSSFPUBID`",
+      "standardColumnName" : "`PSSYSSFPUBID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -357,6 +363,7 @@
       "dBType" : "MYSQL5",
       "name" : "PACKMODE",
       "queryCodeExp" : "t1.`PACKMODE`",
+      "standardColumnName" : "`PACKMODE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -407,6 +414,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSTEMDBCFGNAME",
       "queryCodeExp" : "t1.`PSSYSTEMDBCFGNAME`",
+      "standardColumnName" : "`PSSYSTEMDBCFGNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -457,6 +465,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSTEMID",
       "queryCodeExp" : "t1.`PSSYSTEMID`",
+      "standardColumnName" : "`PSSYSTEMID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -507,6 +516,7 @@
       "dBType" : "MYSQL5",
       "name" : "RUNPARAM5",
       "queryCodeExp" : "t1.`RUNPARAM5`",
+      "standardColumnName" : "`RUNPARAM5`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -544,6 +554,7 @@
       "dBType" : "MYSQL5",
       "name" : "STARTTIME",
       "queryCodeExp" : "t1.`STARTTIME`",
+      "standardColumnName" : "`STARTTIME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -581,6 +592,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSTEMDBCFGID",
       "queryCodeExp" : "t1.`PSSYSTEMDBCFGID`",
+      "standardColumnName" : "`PSSYSTEMDBCFGID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -631,6 +643,7 @@
       "dBType" : "MYSQL5",
       "name" : "RUNMODE",
       "queryCodeExp" : "t1.`RUNMODE`",
+      "standardColumnName" : "`RUNMODE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -681,6 +694,7 @@
       "dBType" : "MYSQL5",
       "name" : "STOPWHENTEMPLERROR",
       "queryCodeExp" : "t1.`STOPWHENTEMPLERROR`",
+      "standardColumnName" : "`STOPWHENTEMPLERROR`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -722,6 +736,7 @@
       "dBType" : "MYSQL5",
       "name" : "RUNPARAM",
       "queryCodeExp" : "t1.`RUNPARAM`",
+      "standardColumnName" : "`RUNPARAM`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -772,6 +787,7 @@
       "dBType" : "MYSQL5",
       "name" : "RUNSTATE",
       "queryCodeExp" : "t1.`RUNSTATE`",
+      "standardColumnName" : "`RUNSTATE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -811,6 +827,7 @@
       "dBType" : "MYSQL5",
       "name" : "DEBUGMODE",
       "queryCodeExp" : "t1.`DEBUGMODE`",
+      "standardColumnName" : "`DEBUGMODE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -853,6 +870,7 @@
       "dBType" : "MYSQL5",
       "name" : "ENDTIME",
       "queryCodeExp" : "t1.`ENDTIME`",
+      "standardColumnName" : "`ENDTIME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -890,6 +908,7 @@
       "dBType" : "MYSQL5",
       "name" : "RUNPARAM6",
       "queryCodeExp" : "t1.`RUNPARAM6`",
+      "standardColumnName" : "`RUNPARAM6`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -927,6 +946,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSSFPUBNAME",
       "queryCodeExp" : "t1.`PSSYSSFPUBNAME`",
+      "standardColumnName" : "`PSSYSSFPUBNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -977,6 +997,7 @@
       "dBType" : "MYSQL5",
       "name" : "MEMO",
       "queryCodeExp" : "t1.`MEMO`",
+      "standardColumnName" : "`MEMO`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1027,6 +1048,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1084,6 +1106,7 @@
       "dBType" : "MYSQL5",
       "name" : "FIXDBMODEL",
       "queryCodeExp" : "t1.`FIXDBMODEL`",
+      "standardColumnName" : "`FIXDBMODEL`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1125,6 +1148,7 @@
       "dBType" : "MYSQL5",
       "name" : "REBUILDMODE",
       "queryCodeExp" : "t1.`REBUILDMODE`",
+      "standardColumnName" : "`REBUILDMODE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1162,6 +1186,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSTEMNAME",
       "queryCodeExp" : "t1.`PSSYSTEMNAME`",
+      "standardColumnName" : "`PSSYSTEMNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1212,6 +1237,7 @@
       "dBType" : "MYSQL5",
       "name" : "RUNPARAM3",
       "queryCodeExp" : "t1.`RUNPARAM3`",
+      "standardColumnName" : "`RUNPARAM3`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1262,6 +1288,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1319,6 +1346,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSDSCONSOLEID",
       "queryCodeExp" : "t1.`PSDSCONSOLEID`",
+      "standardColumnName" : "`PSDSCONSOLEID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1369,6 +1397,7 @@
       "dBType" : "MYSQL5",
       "name" : "ENABLEVC",
       "queryCodeExp" : "t1.`ENABLEVC`",
+      "standardColumnName" : "`ENABLEVC`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1410,6 +1439,7 @@
       "dBType" : "MYSQL5",
       "name" : "RUNPARAM2",
       "queryCodeExp" : "t1.`RUNPARAM2`",
+      "standardColumnName" : "`RUNPARAM2`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1460,6 +1490,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSAPPNAME2",
       "queryCodeExp" : "t1.`PSSYSAPPNAME2`",
+      "standardColumnName" : "`PSSYSAPPNAME2`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1519,6 +1550,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSSERVICEAPINAME",
       "queryCodeExp" : "t1.`PSSYSSERVICEAPINAME`",
+      "standardColumnName" : "`PSSYSSERVICEAPINAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1578,6 +1610,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSAPPNAME",
       "queryCodeExp" : "t1.`PSSYSAPPNAME`",
+      "standardColumnName" : "`PSSYSAPPNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1637,6 +1670,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSAPPID2",
       "queryCodeExp" : "t1.`PSSYSAPPID2`",
+      "standardColumnName" : "`PSSYSAPPID2`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1696,6 +1730,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSSERVICEAPIID",
       "queryCodeExp" : "t1.`PSSYSSERVICEAPIID`",
+      "standardColumnName" : "`PSSYSSERVICEAPIID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1755,6 +1790,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSAPPID",
       "queryCodeExp" : "t1.`PSSYSAPPID`",
+      "standardColumnName" : "`PSSYSAPPID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

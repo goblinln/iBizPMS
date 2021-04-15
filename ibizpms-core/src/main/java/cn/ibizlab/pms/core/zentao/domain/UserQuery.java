@@ -50,7 +50,7 @@ public class UserQuery extends EntityMP implements Serializable {
      * id
      */
     @DEField(isKeyField = true)
-    @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "`ID`", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("id")
@@ -58,7 +58,7 @@ public class UserQuery extends EntityMP implements Serializable {
     /**
      * shortcut
      */
-    @TableField(value = "shortcut")
+    @TableField(value = "`SHORTCUT`")
     @JSONField(name = "shortcut")
     @JsonProperty("shortcut")
     @ApiModelProperty("shortcut")
@@ -66,7 +66,7 @@ public class UserQuery extends EntityMP implements Serializable {
     /**
      * sql
      */
-    @TableField(value = "sql")
+    @TableField(value = "`SQL`")
     @JSONField(name = "sql")
     @JsonProperty("sql")
     @ApiModelProperty("sql")
@@ -74,7 +74,7 @@ public class UserQuery extends EntityMP implements Serializable {
     /**
      * title
      */
-    @TableField(value = "title")
+    @TableField(value = "`TITLE`")
     @JSONField(name = "title")
     @JsonProperty("title")
     @ApiModelProperty("title")
@@ -82,7 +82,7 @@ public class UserQuery extends EntityMP implements Serializable {
     /**
      * module
      */
-    @TableField(value = "module")
+    @TableField(value = "`MODULE`")
     @JSONField(name = "module")
     @JsonProperty("module")
     @ApiModelProperty("module")
@@ -90,7 +90,7 @@ public class UserQuery extends EntityMP implements Serializable {
     /**
      * form
      */
-    @TableField(value = "form")
+    @TableField(value = "`FORM`")
     @JSONField(name = "form")
     @JsonProperty("form")
     @ApiModelProperty("form")
@@ -98,7 +98,7 @@ public class UserQuery extends EntityMP implements Serializable {
     /**
      * account
      */
-    @TableField(value = "account")
+    @TableField(value = "`ACCOUNT`")
     @JSONField(name = "account")
     @JsonProperty("account")
     @ApiModelProperty("account")

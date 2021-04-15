@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "COMMITTER",
       "queryCodeExp" : "t1.`COMMITTER`",
+      "standardColumnName" : "`COMMITTER`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -120,6 +121,7 @@
       "dBType" : "MYSQL5",
       "name" : "REVISION",
       "queryCodeExp" : "t1.`REVISION`",
+      "standardColumnName" : "`REVISION`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -170,6 +172,7 @@
       "dBType" : "MYSQL5",
       "name" : "TIME",
       "queryCodeExp" : "t1.`TIME`",
+      "standardColumnName" : "`TIME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -207,6 +210,7 @@
       "dBType" : "MYSQL5",
       "name" : "REPO",
       "queryCodeExp" : "t1.`REPO`",
+      "standardColumnName" : "`REPO`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -244,6 +248,7 @@
       "dBType" : "MYSQL5",
       "name" : "COMMENT",
       "queryCodeExp" : "t1.`COMMENT`",
+      "standardColumnName" : "`COMMENT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -295,6 +300,7 @@
       "dBType" : "MYSQL5",
       "name" : "COMMIT",
       "queryCodeExp" : "t1.`COMMIT`",
+      "standardColumnName" : "`COMMIT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -332,6 +338,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],

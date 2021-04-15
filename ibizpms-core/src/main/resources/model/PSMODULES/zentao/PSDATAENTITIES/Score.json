@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "METHOD",
       "queryCodeExp" : "t1.`METHOD`",
+      "standardColumnName" : "`METHOD`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -120,6 +121,7 @@
       "dBType" : "MYSQL5",
       "name" : "SCORE",
       "queryCodeExp" : "t1.`SCORE`",
+      "standardColumnName" : "`SCORE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -158,6 +160,7 @@
       "dBType" : "MYSQL5",
       "name" : "TIME",
       "queryCodeExp" : "t1.`TIME`",
+      "standardColumnName" : "`TIME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -195,6 +198,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACCOUNT",
       "queryCodeExp" : "t1.`ACCOUNT`",
+      "standardColumnName" : "`ACCOUNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -245,6 +249,7 @@
       "dBType" : "MYSQL5",
       "name" : "BEFORE",
       "queryCodeExp" : "t1.`BEFORE`",
+      "standardColumnName" : "`BEFORE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -283,6 +288,7 @@
       "dBType" : "MYSQL5",
       "name" : "DESC",
       "queryCodeExp" : "t1.`DESC`",
+      "standardColumnName" : "`DESC`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -333,6 +339,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -378,6 +385,7 @@
       "dBType" : "MYSQL5",
       "name" : "AFTER",
       "queryCodeExp" : "t1.`AFTER`",
+      "standardColumnName" : "`AFTER`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -416,6 +424,7 @@
       "dBType" : "MYSQL5",
       "name" : "MODULE",
       "queryCodeExp" : "t1.`MODULE`",
+      "standardColumnName" : "`MODULE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

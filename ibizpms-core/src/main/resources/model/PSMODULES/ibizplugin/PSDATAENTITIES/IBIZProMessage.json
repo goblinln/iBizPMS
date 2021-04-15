@@ -183,6 +183,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBIZPRO_MESSAGENAME",
       "queryCodeExp" : "t1.`IBIZPRO_MESSAGENAME`",
+      "standardColumnName" : "`IBIZPRO_MESSAGENAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -235,6 +236,7 @@
       "dBType" : "MYSQL5",
       "name" : "ISLINK",
       "queryCodeExp" : "t1.`ISLINK`",
+      "standardColumnName" : "`ISLINK`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -276,6 +278,7 @@
       "dBType" : "MYSQL5",
       "name" : "SUBJECT",
       "queryCodeExp" : "t1.`SUBJECT`",
+      "standardColumnName" : "`SUBJECT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -326,6 +329,7 @@
       "dBType" : "MYSQL5",
       "name" : "RETRYINTERVALTIME",
       "queryCodeExp" : "t1.`RETRYINTERVALTIME`",
+      "standardColumnName" : "`RETRYINTERVALTIME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -363,6 +367,7 @@
       "dBType" : "MYSQL5",
       "name" : "BCC",
       "queryCodeExp" : "t1.`BCC`",
+      "standardColumnName" : "`BCC`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -449,6 +454,7 @@
       "dBType" : "MYSQL5",
       "name" : "PARAM",
       "queryCodeExp" : "t1.`PARAM`",
+      "standardColumnName" : "`PARAM`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -500,6 +506,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBIZPRO_MESSAGEID",
       "queryCodeExp" : "t1.`IBIZPRO_MESSAGEID`",
+      "standardColumnName" : "`IBIZPRO_MESSAGEID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -552,6 +559,7 @@
       "dBType" : "MYSQL5",
       "name" : "RETRYTIMES",
       "queryCodeExp" : "t1.`RETRYTIMES`",
+      "standardColumnName" : "`RETRYTIMES`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -589,6 +597,7 @@
       "dBType" : "MYSQL5",
       "name" : "ISSYNC",
       "queryCodeExp" : "t1.`ISSYNC`",
+      "standardColumnName" : "`ISSYNC`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -630,6 +639,7 @@
       "dBType" : "MYSQL5",
       "name" : "FROM",
       "queryCodeExp" : "t1.`FROM`",
+      "standardColumnName" : "`FROM`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -681,6 +691,7 @@
       "dBType" : "MYSQL5",
       "name" : "CC",
       "queryCodeExp" : "t1.`CC`",
+      "standardColumnName" : "`CC`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -763,6 +774,7 @@
       "dBType" : "MYSQL5",
       "name" : "CONTENT",
       "queryCodeExp" : "t1.`CONTENT`",
+      "standardColumnName" : "`CONTENT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -814,6 +826,7 @@
       "dBType" : "MYSQL5",
       "name" : "LINKURL",
       "queryCodeExp" : "t1.`LINKURL`",
+      "standardColumnName" : "`LINKURL`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -899,6 +912,7 @@
       "dBType" : "MYSQL5",
       "name" : "ISRETRY",
       "queryCodeExp" : "t1.`ISRETRY`",
+      "standardColumnName" : "`ISRETRY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -940,6 +954,7 @@
       "dBType" : "MYSQL5",
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
+      "standardColumnName" : "`TYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -994,6 +1009,7 @@
       "dBType" : "MYSQL5",
       "name" : "TO",
       "queryCodeExp" : "t1.`TO`",
+      "standardColumnName" : "`TO`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

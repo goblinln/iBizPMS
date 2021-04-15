@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "SYS_UPDATE_FEATURESNAME",
       "queryCodeExp" : "t1.`SYS_UPDATE_FEATURESNAME`",
+      "standardColumnName" : "`SYS_UPDATE_FEATURESNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -122,6 +123,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -163,6 +165,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -220,6 +223,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -277,6 +281,7 @@
       "dBType" : "MYSQL5",
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
+      "standardColumnName" : "`TYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -331,6 +336,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -372,6 +378,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPFEATURES",
       "queryCodeExp" : "t1.`UPFEATURES`",
+      "standardColumnName" : "`UPFEATURES`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -422,6 +429,7 @@
       "dBType" : "MYSQL5",
       "name" : "SYS_UPDATE_FEATURESID",
       "queryCodeExp" : "t1.`SYS_UPDATE_FEATURESID`",
+      "standardColumnName" : "`SYS_UPDATE_FEATURESID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -475,6 +483,7 @@
       "dBType" : "MYSQL5",
       "name" : "DISPLAYORDER",
       "queryCodeExp" : "t1.`DISPLAYORDER`",
+      "standardColumnName" : "`DISPLAYORDER`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -512,6 +521,7 @@
       "dBType" : "MYSQL5",
       "name" : "FEATURESDESC",
       "queryCodeExp" : "t1.`FEATURESDESC`",
+      "standardColumnName" : "`FEATURESDESC`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -563,6 +573,7 @@
       "dBType" : "MYSQL5",
       "name" : "SYS_UPDATE_LOGNAME",
       "queryCodeExp" : "t11.`SYS_UPDATE_LOGNAME`",
+      "standardColumnName" : "`SYS_UPDATE_LOGNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -623,6 +634,7 @@
       "dBType" : "MYSQL5",
       "name" : "SYS_UPDATE_LOGID",
       "queryCodeExp" : "t1.`SYS_UPDATE_LOGID`",
+      "standardColumnName" : "`SYS_UPDATE_LOGID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

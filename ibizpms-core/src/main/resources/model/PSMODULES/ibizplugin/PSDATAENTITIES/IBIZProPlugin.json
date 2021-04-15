@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "VERSION",
       "queryCodeExp" : "t1.`VERSION`",
+      "standardColumnName" : "`VERSION`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -108,6 +109,7 @@
       "dBType" : "MYSQL5",
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
+      "standardColumnName" : "`TYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -158,6 +160,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -215,6 +218,7 @@
       "dBType" : "MYSQL5",
       "name" : "DOWNLOADCOUNT",
       "queryCodeExp" : "0",
+      "standardColumnName" : "`DOWNLOADCOUNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -254,6 +258,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -295,6 +300,7 @@
       "dBType" : "MYSQL5",
       "name" : "DOWNLOADURL",
       "queryCodeExp" : "t1.`DOWNLOADURL`",
+      "standardColumnName" : "`DOWNLOADURL`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -345,6 +351,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -386,6 +393,7 @@
       "dBType" : "MYSQL5",
       "name" : "TAG",
       "queryCodeExp" : "t1.`TAG`",
+      "standardColumnName" : "`TAG`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -436,6 +444,7 @@
       "dBType" : "MYSQL5",
       "name" : "SCORE",
       "queryCodeExp" : "0",
+      "standardColumnName" : "`SCORE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -475,6 +484,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBIZPRO_PLUGINNAME",
       "queryCodeExp" : "t1.`IBIZPRO_PLUGINNAME`",
+      "standardColumnName" : "`IBIZPRO_PLUGINNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -527,6 +537,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBIZPRO_PLUGINID",
       "queryCodeExp" : "t1.`IBIZPRO_PLUGINID`",
+      "standardColumnName" : "`IBIZPRO_PLUGINID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -580,6 +591,7 @@
       "dBType" : "MYSQL5",
       "name" : "KEYWORD",
       "queryCodeExp" : "t1.`KEYWORD`",
+      "standardColumnName" : "`KEYWORD`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -630,6 +642,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -687,6 +700,7 @@
       "dBType" : "MYSQL5",
       "name" : "COMMENTCOUNT",
       "queryCodeExp" : "0",
+      "standardColumnName" : "`COMMENTCOUNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

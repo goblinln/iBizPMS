@@ -76,6 +76,7 @@
       "dBType" : "MYSQL5",
       "name" : "TASKS",
       "queryCodeExp" : "t1.`TASKS`",
+      "standardColumnName" : "`TASKS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -126,6 +127,7 @@
       "dBType" : "MYSQL5",
       "name" : "DATE",
       "queryCodeExp" : "t1.`DATE`",
+      "standardColumnName" : "`DATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -163,6 +165,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -220,6 +223,7 @@
       "dBType" : "MYSQL5",
       "name" : "TOTALESTIMATES",
       "queryCodeExp" : "t1.`TOTALESTIMATES`",
+      "standardColumnName" : "`TOTALESTIMATES`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -258,6 +262,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -299,6 +304,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -340,6 +346,7 @@
       "dBType" : "MYSQL5",
       "name" : "YEAR_MONTH",
       "queryCodeExp" : "t1.`YEAR_MONTH`",
+      "standardColumnName" : "`YEAR_MONTH`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -390,6 +397,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBIZPRO_PRODUCTMONTHLYID",
       "queryCodeExp" : "t1.`IBIZPRO_PRODUCTMONTHLYID`",
+      "standardColumnName" : "`IBIZPRO_PRODUCTMONTHLYID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -433,6 +441,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBIZPRO_PRODUCTMONTHLYNAME",
       "queryCodeExp" : "t1.`IBIZPRO_PRODUCTMONTHLYNAME`",
+      "standardColumnName" : "`IBIZPRO_PRODUCTMONTHLYNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -485,6 +494,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -542,6 +552,7 @@
       "dBType" : "MYSQL5",
       "name" : "PO",
       "queryCodeExp" : "t11.`PO`",
+      "standardColumnName" : "`PO`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -606,6 +617,7 @@
       "dBType" : "MYSQL5",
       "name" : "PRODUCTNAME",
       "queryCodeExp" : "t11.`NAME`",
+      "standardColumnName" : "`PRODUCTNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -666,6 +678,7 @@
       "dBType" : "MYSQL5",
       "name" : "PRODUCT",
       "queryCodeExp" : "t1.`PRODUCT`",
+      "standardColumnName" : "`PRODUCT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

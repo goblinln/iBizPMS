@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACL",
       "queryCodeExp" : "t1.`ACL`",
+      "standardColumnName" : "`ACL`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -125,6 +126,7 @@
       "dBType" : "MYSQL5",
       "name" : "DESC",
       "queryCodeExp" : "t1.`DESC`",
+      "standardColumnName" : "`DESC`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -175,6 +177,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -218,6 +221,7 @@
       "dBType" : "MYSQL5",
       "name" : "NAME",
       "queryCodeExp" : "t1.`NAME`",
+      "standardColumnName" : "`NAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -271,6 +275,7 @@
       "dBType" : "MYSQL5",
       "name" : "ROLE",
       "queryCodeExp" : "t1.`ROLE`",
+      "standardColumnName" : "`ROLE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

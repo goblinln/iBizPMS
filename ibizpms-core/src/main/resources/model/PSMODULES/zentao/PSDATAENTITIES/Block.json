@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "HEIGHT",
       "queryCodeExp" : "t1.`HEIGHT`",
+      "standardColumnName" : "`HEIGHT`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -109,6 +110,7 @@
       "dBType" : "MYSQL5",
       "name" : "PARAMS",
       "queryCodeExp" : "t1.`PARAMS`",
+      "standardColumnName" : "`PARAMS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -160,6 +162,7 @@
       "dBType" : "MYSQL5",
       "name" : "TITLE",
       "queryCodeExp" : "t1.`TITLE`",
+      "standardColumnName" : "`TITLE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -213,6 +216,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORDER",
       "queryCodeExp" : "t1.`ORDER`",
+      "standardColumnName" : "`ORDER`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -252,6 +256,7 @@
       "dBType" : "MYSQL5",
       "name" : "BLOCK",
       "queryCodeExp" : "t1.`BLOCK`",
+      "standardColumnName" : "`BLOCK`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -306,6 +311,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACCOUNT",
       "queryCodeExp" : "t1.`ACCOUNT`",
+      "standardColumnName" : "`ACCOUNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -356,6 +362,7 @@
       "dBType" : "MYSQL5",
       "name" : "GRID",
       "queryCodeExp" : "t1.`GRID`",
+      "standardColumnName" : "`GRID`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -395,6 +402,7 @@
       "dBType" : "MYSQL5",
       "name" : "MODULE",
       "queryCodeExp" : "t1.`MODULE`",
+      "standardColumnName" : "`MODULE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -449,6 +457,7 @@
       "dBType" : "MYSQL5",
       "name" : "HIDDEN",
       "queryCodeExp" : "t1.`HIDDEN`",
+      "standardColumnName" : "`HIDDEN`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -491,6 +500,7 @@
       "dBType" : "MYSQL5",
       "name" : "SOURCE",
       "queryCodeExp" : "t1.`SOURCE`",
+      "standardColumnName" : "`SOURCE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -545,6 +555,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],

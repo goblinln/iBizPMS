@@ -49,7 +49,7 @@ public class RepoHistory extends EntityMP implements Serializable {
     /**
      * committer
      */
-    @TableField(value = "committer")
+    @TableField(value = "`COMMITTER`")
     @JSONField(name = "committer")
     @JsonProperty("committer")
     @ApiModelProperty("committer")
@@ -57,7 +57,7 @@ public class RepoHistory extends EntityMP implements Serializable {
     /**
      * revision
      */
-    @TableField(value = "revision")
+    @TableField(value = "`REVISION`")
     @JSONField(name = "revision")
     @JsonProperty("revision")
     @ApiModelProperty("revision")
@@ -65,7 +65,7 @@ public class RepoHistory extends EntityMP implements Serializable {
     /**
      * time
      */
-    @TableField(value = "time")
+    @TableField(value = "`TIME`")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "time", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("time")
@@ -74,7 +74,7 @@ public class RepoHistory extends EntityMP implements Serializable {
     /**
      * repo
      */
-    @TableField(value = "repo")
+    @TableField(value = "`REPO`")
     @JSONField(name = "repo")
     @JsonProperty("repo")
     @ApiModelProperty("repo")
@@ -82,7 +82,7 @@ public class RepoHistory extends EntityMP implements Serializable {
     /**
      * comment
      */
-    @TableField(value = "comment")
+    @TableField(value = "`COMMENT`")
     @JSONField(name = "comment")
     @JsonProperty("comment")
     @ApiModelProperty("comment")
@@ -90,7 +90,7 @@ public class RepoHistory extends EntityMP implements Serializable {
     /**
      * commit
      */
-    @TableField(value = "commit")
+    @TableField(value = "`COMMIT`")
     @JSONField(name = "commit")
     @JsonProperty("commit")
     @ApiModelProperty("commit")
@@ -99,7 +99,7 @@ public class RepoHistory extends EntityMP implements Serializable {
      * id
      */
     @DEField(isKeyField = true)
-    @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "`ID`", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("id")

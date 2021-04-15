@@ -100,6 +100,7 @@
       "dBType" : "MYSQL5",
       "name" : "LOGINCNT",
       "queryCodeExp" : "0",
+      "standardColumnName" : "`LOGINCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -139,6 +140,7 @@
       "dBType" : "MYSQL5",
       "name" : "OPENEDSTORYCNT",
       "queryCodeExp" : "0",
+      "standardColumnName" : "`OPENEDSTORYCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -209,6 +211,7 @@
       "dBType" : "MYSQL5",
       "name" : "DATE",
       "queryCodeExp" : "t1.`DATE`",
+      "standardColumnName" : "`DATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -246,6 +249,7 @@
       "dBType" : "MYSQL5",
       "name" : "CLOSEDSTORYCNT",
       "queryCodeExp" : "0",
+      "standardColumnName" : "`CLOSEDSTORYCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -285,6 +289,7 @@
       "dBType" : "MYSQL5",
       "name" : "OPENEDBUGCNT",
       "queryCodeExp" : "0",
+      "standardColumnName" : "`OPENEDBUGCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -324,6 +329,7 @@
       "dBType" : "MYSQL5",
       "name" : "LOGHOURS",
       "queryCodeExp" : "0",
+      "standardColumnName" : "`LOGHOURS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -363,6 +369,7 @@
       "dBType" : "MYSQL5",
       "name" : "DYNAMICCNT",
       "queryCodeExp" : "0",
+      "standardColumnName" : "`DYNAMICCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -402,6 +409,7 @@
       "dBType" : "MYSQL5",
       "name" : "FINISHEDTASKCNT",
       "queryCodeExp" : "0",
+      "standardColumnName" : "`FINISHEDTASKCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -441,6 +449,7 @@
       "dBType" : "MYSQL5",
       "name" : "RESOLVEDBUGCNT",
       "queryCodeExp" : "0",
+      "standardColumnName" : "`RESOLVEDBUGCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -480,6 +489,7 @@
       "dBType" : "MYSQL5",
       "name" : "COMMENT",
       "queryCodeExp" : "t1.`COMMENT`",
+      "standardColumnName" : "`COMMENT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -533,6 +543,7 @@
       "dBType" : "MYSQL5",
       "name" : "OPENEDTASKCNT",
       "queryCodeExp" : "0",
+      "standardColumnName" : "`OPENEDTASKCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -572,6 +583,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],

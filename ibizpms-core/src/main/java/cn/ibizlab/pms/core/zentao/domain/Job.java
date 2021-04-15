@@ -51,7 +51,7 @@ public class Job extends EntityMP implements Serializable {
      */
     @DEField(defaultValue = "0", preType = DEPredefinedFieldType.LOGICVALID, logicval = "0", logicdelval = "1")
     @TableLogic(value = "0", delval = "1")
-    @TableField(value = "deleted")
+    @TableField(value = "`DELETED`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
     @ApiModelProperty("逻辑删除标志")
@@ -59,7 +59,7 @@ public class Job extends EntityMP implements Serializable {
     /**
      * editedDate
      */
-    @TableField(value = "editeddate")
+    @TableField(value = "`EDITEDDATE`")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "editeddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("editeddate")
@@ -68,7 +68,7 @@ public class Job extends EntityMP implements Serializable {
     /**
      * product
      */
-    @TableField(value = "product")
+    @TableField(value = "`PRODUCT`")
     @JSONField(name = "product")
     @JsonProperty("product")
     @ApiModelProperty("product")
@@ -76,7 +76,7 @@ public class Job extends EntityMP implements Serializable {
     /**
      * lastStatus
      */
-    @TableField(value = "laststatus")
+    @TableField(value = "`LASTSTATUS`")
     @JSONField(name = "laststatus")
     @JsonProperty("laststatus")
     @ApiModelProperty("lastStatus")
@@ -84,7 +84,7 @@ public class Job extends EntityMP implements Serializable {
     /**
      * createdDate
      */
-    @TableField(value = "createddate")
+    @TableField(value = "`CREATEDDATE`")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createddate")
@@ -93,7 +93,7 @@ public class Job extends EntityMP implements Serializable {
     /**
      * createdBy
      */
-    @TableField(value = "createdby")
+    @TableField(value = "`CREATEDBY`")
     @JSONField(name = "createdby")
     @JsonProperty("createdby")
     @ApiModelProperty("createdBy")
@@ -101,7 +101,7 @@ public class Job extends EntityMP implements Serializable {
     /**
      * triggerType
      */
-    @TableField(value = "triggertype")
+    @TableField(value = "`TRIGGERTYPE`")
     @JSONField(name = "triggertype")
     @JsonProperty("triggertype")
     @ApiModelProperty("triggerType")
@@ -109,7 +109,7 @@ public class Job extends EntityMP implements Serializable {
     /**
      * comment
      */
-    @TableField(value = "comment")
+    @TableField(value = "`COMMENT`")
     @JSONField(name = "comment")
     @JsonProperty("comment")
     @ApiModelProperty("comment")
@@ -117,7 +117,7 @@ public class Job extends EntityMP implements Serializable {
     /**
      * lastExec
      */
-    @TableField(value = "lastexec")
+    @TableField(value = "`LASTEXEC`")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "lastexec", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("lastexec")
@@ -126,7 +126,7 @@ public class Job extends EntityMP implements Serializable {
     /**
      * jkHost
      */
-    @TableField(value = "jkhost")
+    @TableField(value = "`JKHOST`")
     @JSONField(name = "jkhost")
     @JsonProperty("jkhost")
     @ApiModelProperty("jkHost")
@@ -134,7 +134,7 @@ public class Job extends EntityMP implements Serializable {
     /**
      * frame
      */
-    @TableField(value = "frame")
+    @TableField(value = "`FRAME`")
     @JSONField(name = "frame")
     @JsonProperty("frame")
     @ApiModelProperty("frame")
@@ -142,7 +142,7 @@ public class Job extends EntityMP implements Serializable {
     /**
      * atDay
      */
-    @TableField(value = "atday")
+    @TableField(value = "`ATDAY`")
     @JSONField(name = "atday")
     @JsonProperty("atday")
     @ApiModelProperty("atDay")
@@ -150,7 +150,7 @@ public class Job extends EntityMP implements Serializable {
     /**
      * jkJob
      */
-    @TableField(value = "jkjob")
+    @TableField(value = "`JKJOB`")
     @JSONField(name = "jkjob")
     @JsonProperty("jkjob")
     @ApiModelProperty("jkJob")
@@ -158,7 +158,7 @@ public class Job extends EntityMP implements Serializable {
     /**
      * svnDir
      */
-    @TableField(value = "svndir")
+    @TableField(value = "`SVNDIR`")
     @JSONField(name = "svndir")
     @JsonProperty("svndir")
     @ApiModelProperty("svnDir")
@@ -166,7 +166,7 @@ public class Job extends EntityMP implements Serializable {
     /**
      * repo
      */
-    @TableField(value = "repo")
+    @TableField(value = "`REPO`")
     @JSONField(name = "repo")
     @JsonProperty("repo")
     @ApiModelProperty("repo")
@@ -174,7 +174,7 @@ public class Job extends EntityMP implements Serializable {
     /**
      * name
      */
-    @TableField(value = "name")
+    @TableField(value = "`NAME`")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("name")
@@ -183,7 +183,7 @@ public class Job extends EntityMP implements Serializable {
      * id
      */
     @DEField(isKeyField = true)
-    @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "`ID`", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("id")
@@ -191,7 +191,7 @@ public class Job extends EntityMP implements Serializable {
     /**
      * lastTag
      */
-    @TableField(value = "lasttag")
+    @TableField(value = "`LASTTAG`")
     @JSONField(name = "lasttag")
     @JsonProperty("lasttag")
     @ApiModelProperty("lastTag")
@@ -199,7 +199,7 @@ public class Job extends EntityMP implements Serializable {
     /**
      * atTime
      */
-    @TableField(value = "attime")
+    @TableField(value = "`ATTIME`")
     @JSONField(name = "attime")
     @JsonProperty("attime")
     @ApiModelProperty("atTime")
@@ -207,7 +207,7 @@ public class Job extends EntityMP implements Serializable {
     /**
      * editedBy
      */
-    @TableField(value = "editedby")
+    @TableField(value = "`EDITEDBY`")
     @JSONField(name = "editedby")
     @JsonProperty("editedby")
     @ApiModelProperty("editedBy")

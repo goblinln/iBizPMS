@@ -160,6 +160,7 @@
       "dBType" : "MYSQL5",
       "name" : "BRANCH",
       "queryCodeExp" : "t1.`BRANCH`",
+      "standardColumnName" : "`BRANCH`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -210,6 +211,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -267,6 +269,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -308,6 +311,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZ_PRODUCTLIFENAME",
       "queryCodeExp" : "t1.`IBZ_PRODUCTLIFENAME`",
+      "standardColumnName" : "`IBZ_PRODUCTLIFENAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -360,6 +364,7 @@
       "dBType" : "MYSQL5",
       "name" : "PRODUCT",
       "queryCodeExp" : "t1.`PRODUCT`",
+      "standardColumnName" : "`PRODUCT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -398,6 +403,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -439,6 +445,7 @@
       "dBType" : "MYSQL5",
       "name" : "PARENT",
       "queryCodeExp" : "t1.`PARENT`",
+      "standardColumnName" : "`PARENT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -489,6 +496,7 @@
       "dBType" : "MYSQL5",
       "name" : "YEAR",
       "queryCodeExp" : "t1.`YEAR`",
+      "standardColumnName" : "`YEAR`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -539,6 +547,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -596,6 +605,7 @@
       "dBType" : "MYSQL5",
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
+      "standardColumnName" : "`TYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -646,6 +656,7 @@
       "dBType" : "MYSQL5",
       "name" : "MARKER",
       "queryCodeExp" : "t1.`MARKER`",
+      "standardColumnName" : "`MARKER`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -687,6 +698,7 @@
       "dBType" : "MYSQL5",
       "name" : "BEGIN",
       "queryCodeExp" : "t1.`BEGIN`",
+      "standardColumnName" : "`BEGIN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -724,6 +736,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZ_PRODUCTLIFEID",
       "queryCodeExp" : "t1.`IBZ_PRODUCTLIFEID`",
+      "standardColumnName" : "`IBZ_PRODUCTLIFEID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -777,6 +790,7 @@
       "dBType" : "MYSQL5",
       "name" : "END",
       "queryCodeExp" : "t1.`END`",
+      "standardColumnName" : "`END`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

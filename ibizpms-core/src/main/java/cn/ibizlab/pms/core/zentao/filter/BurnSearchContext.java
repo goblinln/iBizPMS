@@ -53,7 +53,7 @@ public class BurnSearchContext extends QueryWrapperContext<Burn> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("date", query)
+                     wrapper.like("t1.`DATE`", query)
             );
 		 }
 	}

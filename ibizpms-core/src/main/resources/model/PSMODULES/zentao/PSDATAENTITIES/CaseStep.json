@@ -256,6 +256,7 @@
       "columnName" : "CASESTEPID",
       "dBType" : "MYSQL5",
       "name" : "CASESTEPID",
+      "standardColumnName" : "`CASESTEPID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -294,6 +295,7 @@
       "columnName" : "DEPT",
       "dBType" : "MYSQL5",
       "name" : "DEPT",
+      "standardColumnName" : "`DEPT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -437,6 +439,7 @@
       "dBType" : "MYSQL5",
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
+      "standardColumnName" : "`TYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -491,6 +494,7 @@
       "columnName" : "CREATEBY",
       "dBType" : "MYSQL5",
       "name" : "CREATEBY",
+      "standardColumnName" : "`CREATEBY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -547,6 +551,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -591,6 +596,7 @@
       "dBType" : "MYSQL5",
       "name" : "DESC",
       "queryCodeExp" : "t1.`DESC`",
+      "standardColumnName" : "`DESC`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -642,6 +648,7 @@
       "dBType" : "MYSQL5",
       "name" : "EXPECT",
       "queryCodeExp" : "t1.`EXPECT`",
+      "standardColumnName" : "`EXPECT`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -738,6 +745,7 @@
       "columnName" : "UPDATEBY",
       "dBType" : "MYSQL5",
       "name" : "UPDATEBY",
+      "standardColumnName" : "`UPDATEBY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -824,6 +832,7 @@
       "columnName" : "ORG",
       "dBType" : "MYSQL5",
       "name" : "ORG",
+      "standardColumnName" : "`ORG`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -875,6 +884,7 @@
       "dBType" : "MYSQL5",
       "name" : "VERSION",
       "queryCodeExp" : "t1.`VERSION`",
+      "standardColumnName" : "`VERSION`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -927,6 +937,7 @@
       "dBType" : "MYSQL5",
       "name" : "CASE",
       "queryCodeExp" : "t1.`CASE`",
+      "standardColumnName" : "`CASE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -975,6 +986,7 @@
       "dBType" : "MYSQL5",
       "name" : "PARENT",
       "queryCodeExp" : "t1.`PARENT`",
+      "standardColumnName" : "`PARENT`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],

@@ -49,7 +49,7 @@ public class SuiteCaseSearchContext extends QueryWrapperContext<SuiteCase> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("case", query)
+                     wrapper.like("t1.`CASE`", query)
             );
 		 }
 	}

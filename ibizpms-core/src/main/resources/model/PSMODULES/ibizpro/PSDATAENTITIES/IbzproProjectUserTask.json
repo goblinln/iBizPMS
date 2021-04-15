@@ -160,6 +160,7 @@
       "dBType" : "MYSQL5",
       "name" : "WORK",
       "queryCodeExp" : "t1.`WORK`",
+      "standardColumnName" : "`WORK`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -260,6 +261,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACCOUNT",
       "queryCodeExp" : "t1.`ACCOUNT`",
+      "standardColumnName" : "`ACCOUNT`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -311,6 +313,7 @@
       "dBType" : "MYSQL5",
       "name" : "CONSUMED",
       "queryCodeExp" : "t1.`CONSUMED`",
+      "standardColumnName" : "`CONSUMED`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -350,6 +353,7 @@
       "dBType" : "MYSQL5",
       "name" : "DATE",
       "queryCodeExp" : "t1.`DATE`",
+      "standardColumnName" : "`DATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -431,6 +435,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -583,6 +588,7 @@
       "dBType" : "MYSQL5",
       "name" : "TASK",
       "queryCodeExp" : "t1.`TASK`",
+      "standardColumnName" : "`TASK`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -621,6 +627,7 @@
       "dBType" : "MYSQL5",
       "name" : "LEFT",
       "queryCodeExp" : "t1.`LEFT`",
+      "standardColumnName" : "`LEFT`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],

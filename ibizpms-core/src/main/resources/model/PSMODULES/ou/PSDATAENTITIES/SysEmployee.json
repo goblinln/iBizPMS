@@ -430,6 +430,7 @@
       "dBType" : "MYSQL5",
       "name" : "USERID",
       "queryCodeExp" : "t1.`USERID`",
+      "standardColumnName" : "`USERID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -482,6 +483,7 @@
       "dBType" : "MYSQL5",
       "name" : "USERNAME",
       "queryCodeExp" : "t1.`USERNAME`",
+      "standardColumnName" : "`USERNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -532,6 +534,7 @@
       "dBType" : "MYSQL5",
       "name" : "PERSONNAME",
       "queryCodeExp" : "t1.`PERSONNAME`",
+      "standardColumnName" : "`PERSONNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -585,6 +588,7 @@
       "dBType" : "MYSQL5",
       "name" : "USERCODE",
       "queryCodeExp" : "t1.`USERCODE`",
+      "standardColumnName" : "`USERCODE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -637,6 +641,7 @@
       "dBType" : "MYSQL5",
       "name" : "LOGINNAME",
       "queryCodeExp" : "t1.`LOGINNAME`",
+      "standardColumnName" : "`LOGINNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -689,6 +694,7 @@
       "dBType" : "MYSQL5",
       "name" : "PASSWORD",
       "queryCodeExp" : "t1.`PASSWORD`",
+      "standardColumnName" : "`PASSWORD`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -740,6 +746,7 @@
       "dBType" : "MYSQL5",
       "name" : "DOMAINS",
       "queryCodeExp" : "t1.`DOMAINS`",
+      "standardColumnName" : "`DOMAINS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -790,6 +797,7 @@
       "dBType" : "MYSQL5",
       "name" : "MDEPTID",
       "queryCodeExp" : "t1.`MDEPTID`",
+      "standardColumnName" : "`MDEPTID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -849,6 +857,7 @@
       "dBType" : "MYSQL5",
       "name" : "MDEPTCODE",
       "queryCodeExp" : "t1.`MDEPTCODE`",
+      "standardColumnName" : "`MDEPTCODE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -908,6 +917,7 @@
       "dBType" : "MYSQL5",
       "name" : "MDEPTNAME",
       "queryCodeExp" : "t1.`MDEPTNAME`",
+      "standardColumnName" : "`MDEPTNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -967,6 +977,7 @@
       "dBType" : "MYSQL5",
       "name" : "BCODE",
       "queryCodeExp" : "t1.`BCODE`",
+      "standardColumnName" : "`BCODE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1017,6 +1028,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORGID",
       "queryCodeExp" : "t1.`ORGID`",
+      "standardColumnName" : "`ORGID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1077,6 +1089,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORGCODE",
       "queryCodeExp" : "t1.`ORGCODE`",
+      "standardColumnName" : "`ORGCODE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1136,6 +1149,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORGNAME",
       "queryCodeExp" : "t1.`ORGNAME`",
+      "standardColumnName" : "`ORGNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1196,6 +1210,7 @@
       "dBType" : "MYSQL5",
       "name" : "NICKNAME",
       "queryCodeExp" : "t1.`NICKNAME`",
+      "standardColumnName" : "`NICKNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1246,6 +1261,7 @@
       "dBType" : "MYSQL5",
       "name" : "SEX",
       "queryCodeExp" : "t1.`SEX`",
+      "standardColumnName" : "`SEX`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1296,6 +1312,7 @@
       "dBType" : "MYSQL5",
       "name" : "PHONE",
       "queryCodeExp" : "t1.`PHONE`",
+      "standardColumnName" : "`PHONE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1346,6 +1363,7 @@
       "dBType" : "MYSQL5",
       "name" : "EMAIL",
       "queryCodeExp" : "t1.`EMAIL`",
+      "standardColumnName" : "`EMAIL`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1396,6 +1414,7 @@
       "dBType" : "MYSQL5",
       "name" : "AVATAR",
       "queryCodeExp" : "t1.`AVATAR`",
+      "standardColumnName" : "`AVATAR`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1446,6 +1465,7 @@
       "dBType" : "MYSQL5",
       "name" : "ADDR",
       "queryCodeExp" : "t1.`ADDR`",
+      "standardColumnName" : "`ADDR`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1496,6 +1516,7 @@
       "dBType" : "MYSQL5",
       "name" : "USERICON",
       "queryCodeExp" : "t1.`USERICON`",
+      "standardColumnName" : "`USERICON`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1546,6 +1567,7 @@
       "dBType" : "MYSQL5",
       "name" : "IPADDR",
       "queryCodeExp" : "t1.`IPADDR`",
+      "standardColumnName" : "`IPADDR`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1596,6 +1618,7 @@
       "dBType" : "MYSQL5",
       "name" : "LANG",
       "queryCodeExp" : "t1.`LANG`",
+      "standardColumnName" : "`LANG`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1646,6 +1669,7 @@
       "dBType" : "MYSQL5",
       "name" : "MEMO",
       "queryCodeExp" : "t1.`MEMO`",
+      "standardColumnName" : "`MEMO`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1696,6 +1720,7 @@
       "dBType" : "MYSQL5",
       "name" : "RESERVER",
       "queryCodeExp" : "t1.`RESERVER`",
+      "standardColumnName" : "`RESERVER`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1746,6 +1771,7 @@
       "dBType" : "MYSQL5",
       "name" : "SHOWORDER",
       "queryCodeExp" : "t1.`SHOWORDER`",
+      "standardColumnName" : "`SHOWORDER`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1783,6 +1809,7 @@
       "dBType" : "MYSQL5",
       "name" : "ENABLE",
       "queryCodeExp" : "t1.`ENABLE`",
+      "standardColumnName" : "`ENABLE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1825,6 +1852,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1868,6 +1896,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1909,6 +1938,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1966,6 +1996,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

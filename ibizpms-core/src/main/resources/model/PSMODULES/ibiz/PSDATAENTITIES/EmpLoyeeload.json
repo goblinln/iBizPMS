@@ -103,6 +103,7 @@
       "dBType" : "MYSQL5",
       "name" : "NAME",
       "queryCodeExp" : "t1.`NAME`",
+      "standardColumnName" : "`NAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -155,6 +156,7 @@
       "dBType" : "MYSQL5",
       "name" : "TASKCNT",
       "queryCodeExp" : "０",
+      "standardColumnName" : "`TASKCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -242,6 +244,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -314,6 +317,7 @@
       "dBType" : "MYSQL5",
       "name" : "TOTALTASKCNT",
       "queryCodeExp" : "０",
+      "standardColumnName" : "`TOTALTASKCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -353,6 +357,7 @@
       "dBType" : "MYSQL5",
       "name" : "ASSIGNEDTO",
       "queryCodeExp" : "t1.`ASSIGNEDTO`",
+      "standardColumnName" : "`ASSIGNEDTO`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -407,6 +412,7 @@
       "dBType" : "MYSQL5",
       "name" : "LEFT",
       "queryCodeExp" : "０",
+      "standardColumnName" : "`LEFT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -446,6 +452,7 @@
       "dBType" : "MYSQL5",
       "name" : "ASSIGN",
       "queryCodeExp" : "t1.`ASSIGN`",
+      "standardColumnName" : "`ASSIGN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -527,6 +534,7 @@
       "dBType" : "MYSQL5",
       "name" : "TOTALLEFT",
       "queryCodeExp" : "０",
+      "standardColumnName" : "`TOTALLEFT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -566,6 +574,7 @@
       "dBType" : "MYSQL5",
       "name" : "WORKLOAD",
       "queryCodeExp" : "０",
+      "standardColumnName" : "`WORKLOAD`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -649,6 +658,7 @@
       "dBType" : "MYSQL5",
       "name" : "PROJECTNAME",
       "queryCodeExp" : "t11.`NAME`",
+      "standardColumnName" : "`PROJECTNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -709,6 +719,7 @@
       "dBType" : "MYSQL5",
       "name" : "PROJECT",
       "queryCodeExp" : "t1.`PROJECT`",
+      "standardColumnName" : "`PROJECT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

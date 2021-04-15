@@ -135,6 +135,7 @@
       "columnName" : "UPDATEMANNAME",
       "dBType" : "MYSQL5",
       "name" : "UPDATEMANNAME",
+      "standardColumnName" : "`UPDATEMANNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -187,6 +188,7 @@
       "columnName" : "MAILTO",
       "dBType" : "MYSQL5",
       "name" : "MAILTO",
+      "standardColumnName" : "`MAILTO`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -240,6 +242,7 @@
       "columnName" : "IBZ_DAILYID",
       "dBType" : "MYSQL5",
       "name" : "IBZ_DAILYID",
+      "standardColumnName" : "`IBZ_DAILYID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -312,6 +315,7 @@
       "columnName" : "UPDATEDATE",
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
+      "standardColumnName" : "`UPDATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -352,6 +356,7 @@
       "columnName" : "WORKTODAY",
       "dBType" : "MYSQL5",
       "name" : "WORKTODAY",
+      "standardColumnName" : "`WORKTODAY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -464,6 +469,7 @@
       "columnName" : "CREATEDATE",
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
+      "standardColumnName" : "`CREATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -504,6 +510,7 @@
       "columnName" : "TODAYTASK",
       "dBType" : "MYSQL5",
       "name" : "TODAYTASK",
+      "standardColumnName" : "`TODAYTASK`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -557,6 +564,7 @@
       "columnName" : "ACCOUNT",
       "dBType" : "MYSQL5",
       "name" : "ACCOUNT",
+      "standardColumnName" : "`ACCOUNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -659,6 +667,7 @@
       "columnName" : "CREATEMAN",
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
+      "standardColumnName" : "`CREATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -715,6 +724,7 @@
       "columnName" : "UPDATEMAN",
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
+      "standardColumnName" : "`UPDATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -771,6 +781,7 @@
       "columnName" : "IBZ_DAILYNAME",
       "dBType" : "MYSQL5",
       "name" : "IBZ_DAILYNAME",
+      "standardColumnName" : "`IBZ_DAILYNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -822,6 +833,7 @@
       "columnName" : "REPORTTO",
       "dBType" : "MYSQL5",
       "name" : "REPORTTO",
+      "standardColumnName" : "`REPORTTO`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -963,6 +975,7 @@
       "columnName" : "CREATEMANNAME",
       "dBType" : "MYSQL5",
       "name" : "CREATEMANNAME",
+      "standardColumnName" : "`CREATEMANNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1015,6 +1028,7 @@
       "columnName" : "PLANSTOMORROW",
       "dBType" : "MYSQL5",
       "name" : "PLANSTOMORROW",
+      "standardColumnName" : "`PLANSTOMORROW`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1065,6 +1079,7 @@
       "columnName" : "REPORTSTATUS",
       "dBType" : "MYSQL5",
       "name" : "REPORTSTATUS",
+      "standardColumnName" : "`REPORTSTATUS`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1119,6 +1134,7 @@
       "columnName" : "DATE",
       "dBType" : "MYSQL5",
       "name" : "DATE",
+      "standardColumnName" : "`DATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1155,6 +1171,7 @@
       "columnName" : "ISSUBMIT",
       "dBType" : "MYSQL5",
       "name" : "ISSUBMIT",
+      "standardColumnName" : "`ISSUBMIT`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1209,6 +1226,7 @@
       "columnName" : "COMMENT",
       "dBType" : "MYSQL5",
       "name" : "COMMENT",
+      "standardColumnName" : "`COMMENT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1259,6 +1277,7 @@
       "columnName" : "TOMORROWPLANSTASK",
       "dBType" : "MYSQL5",
       "name" : "TOMORROWPLANSTASK",
+      "standardColumnName" : "`TOMORROWPLANSTASK`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

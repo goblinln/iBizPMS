@@ -235,6 +235,7 @@
       "dBType" : "MYSQL5",
       "name" : "DEPT",
       "queryCodeExp" : "t1.`DEPT`",
+      "standardColumnName" : "`DEPT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -330,6 +331,7 @@
       "dBType" : "MYSQL5",
       "name" : "NAME",
       "queryCodeExp" : "t1.`NAME`",
+      "standardColumnName" : "`NAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -431,6 +433,7 @@
       "dBType" : "MYSQL5",
       "name" : "BUILDER",
       "queryCodeExp" : "t1.`BUILDER`",
+      "standardColumnName" : "`BUILDER`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -486,6 +489,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEBY",
       "queryCodeExp" : "t1.`CREATEBY`",
+      "standardColumnName" : "`CREATEBY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -634,6 +638,7 @@
       "dBType" : "MYSQL5",
       "name" : "BUILDERPK",
       "queryCodeExp" : "t1.BUILDER",
+      "standardColumnName" : "`BUILDERPK`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -721,6 +726,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORG",
       "queryCodeExp" : "t1.`ORG`",
+      "standardColumnName" : "`ORG`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -772,6 +778,7 @@
       "dBType" : "MYSQL5",
       "name" : "DESC",
       "queryCodeExp" : "t1.`DESC`",
+      "standardColumnName" : "`DESC`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -824,6 +831,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -867,6 +875,7 @@
       "dBType" : "MYSQL5",
       "name" : "DELETED",
       "queryCodeExp" : "t1.`DELETED`",
+      "standardColumnName" : "`DELETED`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -969,6 +978,7 @@
       "dBType" : "MYSQL5",
       "name" : "SCMPATH",
       "queryCodeExp" : "t1.`SCMPATH`",
+      "standardColumnName" : "`SCMPATH`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1020,6 +1030,7 @@
       "dBType" : "MYSQL5",
       "name" : "FILEPATH",
       "queryCodeExp" : "t1.`FILEPATH`",
+      "standardColumnName" : "`FILEPATH`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1116,6 +1127,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEBY",
       "queryCodeExp" : "t1.`UPDATEBY`",
+      "standardColumnName" : "`UPDATEBY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1172,6 +1184,7 @@
       "dBType" : "MYSQL5",
       "name" : "STORIES",
       "queryCodeExp" : "t1.`STORIES`",
+      "standardColumnName" : "`STORIES`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1224,6 +1237,7 @@
       "dBType" : "MYSQL5",
       "name" : "BUGS",
       "queryCodeExp" : "t1.`BUGS`",
+      "standardColumnName" : "`BUGS`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1368,6 +1382,7 @@
       "dBType" : "MYSQL5",
       "name" : "DATE",
       "queryCodeExp" : "t1.`DATE`",
+      "standardColumnName" : "`DATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1405,6 +1420,7 @@
       "dBType" : "MYSQL5",
       "name" : "PRODUCTNAME",
       "queryCodeExp" : "t11.`NAME`",
+      "standardColumnName" : "`PRODUCTNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1465,6 +1481,7 @@
       "dBType" : "MYSQL5",
       "name" : "PRODUCT",
       "queryCodeExp" : "t1.`PRODUCT`",
+      "standardColumnName" : "`PRODUCT`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1513,6 +1530,7 @@
       "dBType" : "MYSQL5",
       "name" : "BRANCH",
       "queryCodeExp" : "t1.`BRANCH`",
+      "standardColumnName" : "`BRANCH`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1561,6 +1579,7 @@
       "dBType" : "MYSQL5",
       "name" : "PROJECT",
       "queryCodeExp" : "t1.`PROJECT`",
+      "standardColumnName" : "`PROJECT`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],

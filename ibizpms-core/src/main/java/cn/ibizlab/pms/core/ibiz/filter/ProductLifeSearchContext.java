@@ -45,7 +45,7 @@ public class ProductLifeSearchContext extends QueryWrapperContext<ProductLife> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("ibz_productlifename", query)
+                     wrapper.like("t1.`IBZ_PRODUCTLIFENAME`", query)
             );
 		 }
 	}

@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "POSTID",
       "queryCodeExp" : "t1.`POSTID`",
+      "standardColumnName" : "`POSTID`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -124,6 +125,7 @@
       "dBType" : "MYSQL5",
       "name" : "POSTCODE",
       "queryCodeExp" : "t1.`POSTCODE`",
+      "standardColumnName" : "`POSTCODE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -175,6 +177,7 @@
       "dBType" : "MYSQL5",
       "name" : "POSTNAME",
       "queryCodeExp" : "t1.`POSTNAME`",
+      "standardColumnName" : "`POSTNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -228,6 +231,7 @@
       "dBType" : "MYSQL5",
       "name" : "DOMAINS",
       "queryCodeExp" : "t1.`DOMAINS`",
+      "standardColumnName" : "`DOMAINS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -278,6 +282,7 @@
       "dBType" : "MYSQL5",
       "name" : "MEMO",
       "queryCodeExp" : "t1.`MEMO`",
+      "standardColumnName" : "`MEMO`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

@@ -49,7 +49,7 @@ public class UserContact extends EntityMP implements Serializable {
     /**
      * userList
      */
-    @TableField(value = "userlist")
+    @TableField(value = "`USERLIST`")
     @JSONField(name = "userlist")
     @JsonProperty("userlist")
     @ApiModelProperty("userList")
@@ -58,7 +58,7 @@ public class UserContact extends EntityMP implements Serializable {
      * 归属组织
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "org")
+    @TableField(value = "`ORG`")
     @JSONField(name = "org")
     @JsonProperty("org")
     @ApiModelProperty("归属组织")
@@ -66,7 +66,7 @@ public class UserContact extends EntityMP implements Serializable {
     /**
      * 标题
      */
-    @TableField(value = "listname")
+    @TableField(value = "`LISTNAME`")
     @JSONField(name = "listname")
     @JsonProperty("listname")
     @ApiModelProperty("标题")
@@ -75,7 +75,7 @@ public class UserContact extends EntityMP implements Serializable {
      * id
      */
     @DEField(isKeyField = true)
-    @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "`ID`", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("id")
@@ -84,7 +84,7 @@ public class UserContact extends EntityMP implements Serializable {
      * 由谁更新
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "updateby")
+    @TableField(value = "`UPDATEBY`")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")
     @ApiModelProperty("由谁更新")
@@ -93,7 +93,7 @@ public class UserContact extends EntityMP implements Serializable {
      * 归属部门
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "dept")
+    @TableField(value = "`DEPT`")
     @JSONField(name = "dept")
     @JsonProperty("dept")
     @ApiModelProperty("归属部门")
@@ -102,7 +102,7 @@ public class UserContact extends EntityMP implements Serializable {
      * account
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "account")
+    @TableField(value = "`ACCOUNT`")
     @JSONField(name = "account")
     @JsonProperty("account")
     @ApiModelProperty("account")

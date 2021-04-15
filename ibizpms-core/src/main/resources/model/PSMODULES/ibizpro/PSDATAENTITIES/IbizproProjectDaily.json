@@ -73,6 +73,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBIZPRO_PROJECTDAILYNAME",
       "queryCodeExp" : "t1.`IBIZPRO_PROJECTDAILYNAME`",
+      "standardColumnName" : "`IBIZPRO_PROJECTDAILYNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -125,6 +126,7 @@
       "dBType" : "MYSQL5",
       "name" : "TASKS",
       "queryCodeExp" : "t1.`TASKS`",
+      "standardColumnName" : "`TASKS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -175,6 +177,7 @@
       "dBType" : "MYSQL5",
       "name" : "BEGIN",
       "queryCodeExp" : "t1.`BEGIN`",
+      "standardColumnName" : "`BEGIN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -212,6 +215,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -253,6 +257,7 @@
       "dBType" : "MYSQL5",
       "name" : "END",
       "queryCodeExp" : "t1.`END`",
+      "standardColumnName" : "`END`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -290,6 +295,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -347,6 +353,7 @@
       "dBType" : "MYSQL5",
       "name" : "DATE",
       "queryCodeExp" : "t1.`DATE`",
+      "standardColumnName" : "`DATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -384,6 +391,7 @@
       "dBType" : "MYSQL5",
       "name" : "TOTALESTIMATES",
       "queryCodeExp" : "t1.`TOTALESTIMATES`",
+      "standardColumnName" : "`TOTALESTIMATES`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -422,6 +430,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -479,6 +488,7 @@
       "dBType" : "MYSQL5",
       "name" : "PM",
       "queryCodeExp" : "t1.`PM`",
+      "standardColumnName" : "`PM`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -533,6 +543,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -574,6 +585,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBIZPRO_PROJECTDAILYID",
       "queryCodeExp" : "t1.`IBIZPRO_PROJECTDAILYID`",
+      "standardColumnName" : "`IBIZPRO_PROJECTDAILYID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -628,6 +640,7 @@
       "dBType" : "MYSQL5",
       "name" : "PROJECTNAME",
       "queryCodeExp" : "t11.`NAME`",
+      "standardColumnName" : "`PROJECTNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -688,6 +701,7 @@
       "dBType" : "MYSQL5",
       "name" : "PROJECT",
       "queryCodeExp" : "t1.`PROJECT`",
+      "standardColumnName" : "`PROJECT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

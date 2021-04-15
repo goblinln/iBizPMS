@@ -74,6 +74,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -115,6 +116,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -172,6 +174,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -229,6 +232,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -270,6 +274,7 @@
       "dBType" : "MYSQL5",
       "name" : "SYS_UPDATE_LOGID",
       "queryCodeExp" : "t1.`SYS_UPDATE_LOGID`",
+      "standardColumnName" : "`SYS_UPDATE_LOGID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -323,6 +328,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEBRANCH",
       "queryCodeExp" : "t1.`UPDATEBRANCH`",
+      "standardColumnName" : "`UPDATEBRANCH`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -427,6 +433,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDESC",
       "queryCodeExp" : "t1.`UPDESC`",
+      "standardColumnName" : "`UPDESC`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -478,6 +485,7 @@
       "dBType" : "MYSQL5",
       "name" : "SYS_UPDATE_LOGNAME",
       "queryCodeExp" : "t1.`SYS_UPDATE_LOGNAME`",
+      "standardColumnName" : "`SYS_UPDATE_LOGNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -530,6 +538,7 @@
       "dBType" : "MYSQL5",
       "name" : "LATESTUPDATE",
       "queryCodeExp" : "t1.`LATESTUPDATE`",
+      "standardColumnName" : "`LATESTUPDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -572,6 +581,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATE",
       "queryCodeExp" : "t1.`UPDATE`",
+      "standardColumnName" : "`UPDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

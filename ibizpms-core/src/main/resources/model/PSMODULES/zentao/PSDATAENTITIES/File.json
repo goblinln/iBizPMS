@@ -199,6 +199,7 @@
       "dBType" : "MYSQL5",
       "name" : "PATHNAME",
       "queryCodeExp" : "t1.`PATHNAME`",
+      "standardColumnName" : "`PATHNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -249,6 +250,7 @@
       "dBType" : "MYSQL5",
       "name" : "OBJECTID",
       "queryCodeExp" : "t1.`OBJECTID`",
+      "standardColumnName" : "`OBJECTID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -286,6 +288,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORG",
       "queryCodeExp" : "t1.`ORG`",
+      "standardColumnName" : "`ORG`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -337,6 +340,7 @@
       "dBType" : "MYSQL5",
       "name" : "STRSIZE",
       "queryCodeExp" : "CONCAT_WS('',case when (t1.size/1024) > 1024 then ROUND(t1.size/(1024 * 1024), 1) when (t1.size/1024) > 1 then ROUND(t1.size/1024, 1) else ROUND(t1.size, 1) end, case when (t1.size/1024) > 1024 then 'MB' when (t1.size/1024) > 1 then 'KB' else 'B' end)",
+      "standardColumnName" : "`STRSIZE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -433,6 +437,7 @@
       "dBType" : "MYSQL5",
       "name" : "DELETED",
       "queryCodeExp" : "t1.`DELETED`",
+      "standardColumnName" : "`DELETED`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -487,6 +492,7 @@
       "dBType" : "MYSQL5",
       "name" : "EXTENSION",
       "queryCodeExp" : "t1.`EXTENSION`",
+      "standardColumnName" : "`EXTENSION`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -537,6 +543,7 @@
       "dBType" : "MYSQL5",
       "name" : "OBJECTTYPE",
       "queryCodeExp" : "t1.`OBJECTTYPE`",
+      "standardColumnName" : "`OBJECTTYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -591,6 +598,7 @@
       "dBType" : "MYSQL5",
       "name" : "ADDEDBY",
       "queryCodeExp" : "t1.`ADDEDBY`",
+      "standardColumnName" : "`ADDEDBY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -647,6 +655,7 @@
       "dBType" : "MYSQL5",
       "name" : "TITLE",
       "queryCodeExp" : "t1.`TITLE`",
+      "standardColumnName" : "`TITLE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -700,6 +709,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEBY",
       "queryCodeExp" : "t1.`UPDATEBY`",
+      "standardColumnName" : "`UPDATEBY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -756,6 +766,7 @@
       "dBType" : "MYSQL5",
       "name" : "ADDEDDATE",
       "queryCodeExp" : "t1.`ADDEDDATE`",
+      "standardColumnName" : "`ADDEDDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -795,6 +806,7 @@
       "dBType" : "MYSQL5",
       "name" : "DOWNLOADS",
       "queryCodeExp" : "t1.`DOWNLOADS`",
+      "standardColumnName" : "`DOWNLOADS`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -833,6 +845,7 @@
       "dBType" : "MYSQL5",
       "name" : "DEPT",
       "queryCodeExp" : "t1.`DEPT`",
+      "standardColumnName" : "`DEPT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -884,6 +897,7 @@
       "dBType" : "MYSQL5",
       "name" : "SIZE",
       "queryCodeExp" : "t1.`SIZE`",
+      "standardColumnName" : "`SIZE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -922,6 +936,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -965,6 +980,7 @@
       "dBType" : "MYSQL5",
       "name" : "EXTRA",
       "queryCodeExp" : "t1.`EXTRA`",
+      "standardColumnName" : "`EXTRA`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

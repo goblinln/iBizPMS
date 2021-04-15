@@ -141,6 +141,7 @@
       "dBType" : "MYSQL5",
       "name" : "DATE",
       "queryCodeExp" : "t1.`DATE`",
+      "standardColumnName" : "`DATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -267,6 +268,7 @@
       "dBType" : "MYSQL5",
       "name" : "EVALUATIONSTATUS",
       "queryCodeExp" : "t1.`EVALUATIONSTATUS`",
+      "standardColumnName" : "`EVALUATIONSTATUS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -317,6 +319,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACCOUNT",
       "queryCodeExp" : "t1.`ACCOUNT`",
+      "standardColumnName" : "`ACCOUNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -369,6 +372,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -410,6 +414,7 @@
       "dBType" : "MYSQL5",
       "name" : "MONTHNAME",
       "queryCodeExp" : "t1.`MONTHNAME`",
+      "standardColumnName" : "`MONTHNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -548,6 +553,7 @@
       "dBType" : "MYSQL5",
       "name" : "EVALUATIONTIME",
       "queryCodeExp" : "t1.`EVALUATIONTIME`",
+      "standardColumnName" : "`EVALUATIONTIME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -586,6 +592,7 @@
       "dBType" : "MYSQL5",
       "name" : "EVALUATIONCOST",
       "queryCodeExp" : "t1.`EVALUATIONCOST`",
+      "standardColumnName" : "`EVALUATIONCOST`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -624,6 +631,7 @@
       "dBType" : "MYSQL5",
       "name" : "INPUTCOST",
       "queryCodeExp" : "t1.`INPUTCOST`",
+      "standardColumnName" : "`INPUTCOST`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

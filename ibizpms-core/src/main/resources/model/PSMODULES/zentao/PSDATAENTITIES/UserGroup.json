@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACCOUNT",
       "queryCodeExp" : "t1.`ACCOUNT`",
+      "standardColumnName" : "`ACCOUNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -120,6 +121,7 @@
       "dBType" : "MYSQL5",
       "name" : "GROUP",
       "queryCodeExp" : "t1.`GROUP`",
+      "standardColumnName" : "`GROUP`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -160,6 +162,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "concat(t1.`ACCOUNT`,'__',t1.`GROUP`)",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

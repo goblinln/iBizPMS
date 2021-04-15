@@ -163,6 +163,7 @@
       "dBType" : "MYSQL5",
       "name" : "TEAMSTATUS",
       "queryCodeExp" : "t1.`TEAMSTATUS`",
+      "standardColumnName" : "`TEAMSTATUS`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -214,6 +215,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACCOUNT",
       "queryCodeExp" : "t1.`ACCOUNT`",
+      "standardColumnName" : "`ACCOUNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -270,6 +272,7 @@
       "dBType" : "MYSQL5",
       "name" : "JOIN",
       "queryCodeExp" : "t1.`JOIN`",
+      "standardColumnName" : "`JOIN`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -308,6 +311,7 @@
       "dBType" : "MYSQL5",
       "name" : "LEFT",
       "queryCodeExp" : "t1.`LEFT`",
+      "standardColumnName" : "`LEFT`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -346,6 +350,7 @@
       "dBType" : "MYSQL5",
       "name" : "TOTAL",
       "queryCodeExp" : "(t1.`DAYS` * t1.`HOURS`)",
+      "standardColumnName" : "`TOTAL`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -385,6 +390,7 @@
       "dBType" : "MYSQL5",
       "name" : "END",
       "queryCodeExp" : "t1.`END`",
+      "standardColumnName" : "`END`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -422,6 +428,7 @@
       "dBType" : "MYSQL5",
       "name" : "USERNAME",
       "queryCodeExp" : "(select t.realname from zt_user t where t.account = t1.account)",
+      "standardColumnName" : "`USERNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -474,6 +481,7 @@
       "dBType" : "MYSQL5",
       "name" : "ESTIMATE",
       "queryCodeExp" : "t1.`ESTIMATE`",
+      "standardColumnName" : "`ESTIMATE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -512,6 +520,7 @@
       "dBType" : "MYSQL5",
       "name" : "HOURS",
       "queryCodeExp" : "t1.`HOURS`",
+      "standardColumnName" : "`HOURS`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -581,6 +590,7 @@
       "dBType" : "MYSQL5",
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
+      "standardColumnName" : "`TYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -636,6 +646,7 @@
       "dBType" : "MYSQL5",
       "name" : "CONSUMED",
       "queryCodeExp" : "t1.`CONSUMED`",
+      "standardColumnName" : "`CONSUMED`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -674,6 +685,7 @@
       "dBType" : "MYSQL5",
       "name" : "DAYS",
       "queryCodeExp" : "t1.`DAYS`",
+      "standardColumnName" : "`DAYS`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -713,6 +725,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -757,6 +770,7 @@
       "dBType" : "MYSQL5",
       "name" : "LEADINGCADRE",
       "queryCodeExp" : "t1.`LEADINGCADRE`",
+      "standardColumnName" : "`LEADINGCADRE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -811,6 +825,7 @@
       "dBType" : "MYSQL5",
       "name" : "LIMITED",
       "queryCodeExp" : "t1.`LIMITED`",
+      "standardColumnName" : "`LIMITED`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -866,6 +881,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORDER",
       "queryCodeExp" : "t1.`ORDER`",
+      "standardColumnName" : "`ORDER`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -905,6 +921,7 @@
       "dBType" : "MYSQL5",
       "name" : "ROLE",
       "queryCodeExp" : "t1.`ROLE`",
+      "standardColumnName" : "`ROLE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -955,6 +972,7 @@
       "dBType" : "MYSQL5",
       "name" : "ROOT",
       "queryCodeExp" : "t1.`ROOT`",
+      "standardColumnName" : "`ROOT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

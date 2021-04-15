@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "APPTASKID",
       "queryCodeExp" : "t1.`APPTASKID`",
+      "standardColumnName" : "`APPTASKID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -120,6 +121,7 @@
       "dBType" : "MYSQL5",
       "name" : "DATAID",
       "queryCodeExp" : "t1.`DATAID`",
+      "standardColumnName" : "`DATAID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -170,6 +172,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -211,6 +214,7 @@
       "dBType" : "MYSQL5",
       "name" : "TITLE",
       "queryCodeExp" : "t1.`TITLE`",
+      "standardColumnName" : "`TITLE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -261,6 +265,7 @@
       "dBType" : "MYSQL5",
       "name" : "MEMO",
       "queryCodeExp" : "t1.`MEMO`",
+      "standardColumnName" : "`MEMO`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -311,6 +316,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -368,6 +374,7 @@
       "dBType" : "MYSQL5",
       "name" : "TASKUSERID",
       "queryCodeExp" : "t1.`TASKUSERID`",
+      "standardColumnName" : "`TASKUSERID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -418,6 +425,7 @@
       "dBType" : "MYSQL5",
       "name" : "TASKTYPE",
       "queryCodeExp" : "t1.`TASKTYPE`",
+      "standardColumnName" : "`TASKTYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -468,6 +476,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -525,6 +534,7 @@
       "dBType" : "MYSQL5",
       "name" : "TASKMSGRECORDNAME",
       "queryCodeExp" : "t1.`TASKMSGRECORDNAME`",
+      "standardColumnName" : "`TASKMSGRECORDNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -577,6 +587,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -618,6 +629,7 @@
       "dBType" : "MYSQL5",
       "name" : "TASKMSGRECORDID",
       "queryCodeExp" : "t1.`TASKMSGRECORDID`",
+      "standardColumnName" : "`TASKMSGRECORDID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -671,6 +683,7 @@
       "dBType" : "MYSQL5",
       "name" : "ENABLE",
       "queryCodeExp" : "t1.`ENABLE`",
+      "standardColumnName" : "`ENABLE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

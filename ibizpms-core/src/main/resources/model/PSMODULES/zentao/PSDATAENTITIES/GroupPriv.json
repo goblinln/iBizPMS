@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "GROUP",
       "queryCodeExp" : "t1.`GROUP`",
+      "standardColumnName" : "`GROUP`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -110,6 +111,7 @@
       "dBType" : "MYSQL5",
       "name" : "METHOD",
       "queryCodeExp" : "t1.`METHOD`",
+      "standardColumnName" : "`METHOD`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -160,6 +162,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "concat(t1.`GROUP`,'__',t1.`MODULE`,'__',t1.`METHOD`)",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -215,6 +218,7 @@
       "dBType" : "MYSQL5",
       "name" : "MODULE",
       "queryCodeExp" : "t1.`MODULE`",
+      "standardColumnName" : "`MODULE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

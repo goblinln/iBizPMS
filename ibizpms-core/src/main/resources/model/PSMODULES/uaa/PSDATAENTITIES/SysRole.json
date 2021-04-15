@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "SYS_ROLEID",
       "queryCodeExp" : "t1.`SYS_ROLEID`",
+      "standardColumnName" : "`SYS_ROLEID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -127,6 +128,7 @@
       "dBType" : "MYSQL5",
       "name" : "SYS_ROLENAME",
       "queryCodeExp" : "t1.`SYS_ROLENAME`",
+      "standardColumnName" : "`SYS_ROLENAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -183,6 +185,7 @@
       "dBType" : "MYSQL5",
       "name" : "MEMO",
       "queryCodeExp" : "t1.`MEMO`",
+      "standardColumnName" : "`MEMO`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -233,6 +236,7 @@
       "dBType" : "MYSQL5",
       "name" : "PROLEID",
       "queryCodeExp" : "t1.`PROLEID`",
+      "standardColumnName" : "`PROLEID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -292,6 +296,7 @@
       "dBType" : "MYSQL5",
       "name" : "PROLENAME",
       "queryCodeExp" : "t11.`SYS_ROLENAME`",
+      "standardColumnName" : "`PROLENAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -352,6 +357,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -397,6 +403,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -442,6 +449,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -499,6 +507,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

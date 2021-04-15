@@ -49,7 +49,7 @@ public class UserTpl extends EntityMP implements Serializable {
     /**
      * 模板标题
      */
-    @TableField(value = "title")
+    @TableField(value = "`TITLE`")
     @JSONField(name = "title")
     @JsonProperty("title")
     @ApiModelProperty("模板标题")
@@ -58,7 +58,7 @@ public class UserTpl extends EntityMP implements Serializable {
      * id
      */
     @DEField(isKeyField = true)
-    @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "`ID`", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("id")
@@ -67,7 +67,7 @@ public class UserTpl extends EntityMP implements Serializable {
      * 归属组织
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "org")
+    @TableField(value = "`ORG`")
     @JSONField(name = "org")
     @JsonProperty("org")
     @ApiModelProperty("归属组织")
@@ -75,7 +75,7 @@ public class UserTpl extends EntityMP implements Serializable {
     /**
      * content
      */
-    @TableField(value = "content")
+    @TableField(value = "`CONTENT`")
     @JSONField(name = "content")
     @JsonProperty("content")
     @ApiModelProperty("content")
@@ -83,7 +83,7 @@ public class UserTpl extends EntityMP implements Serializable {
     /**
      * type
      */
-    @TableField(value = "type")
+    @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("type")
@@ -92,7 +92,7 @@ public class UserTpl extends EntityMP implements Serializable {
      * account
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "account")
+    @TableField(value = "`ACCOUNT`")
     @JSONField(name = "account")
     @JsonProperty("account")
     @ApiModelProperty("account")
@@ -101,7 +101,7 @@ public class UserTpl extends EntityMP implements Serializable {
      * 公开
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "public")
+    @TableField(value = "`PUBLIC`")
     @JSONField(name = "ibizpublic")
     @JsonProperty("ibizpublic")
     @ApiModelProperty("公开")
@@ -110,7 +110,7 @@ public class UserTpl extends EntityMP implements Serializable {
      * 由谁更新
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "updateby")
+    @TableField(value = "`UPDATEBY`")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")
     @ApiModelProperty("由谁更新")
@@ -119,7 +119,7 @@ public class UserTpl extends EntityMP implements Serializable {
      * 归属部门
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "dept")
+    @TableField(value = "`DEPT`")
     @JSONField(name = "dept")
     @JsonProperty("dept")
     @ApiModelProperty("归属部门")

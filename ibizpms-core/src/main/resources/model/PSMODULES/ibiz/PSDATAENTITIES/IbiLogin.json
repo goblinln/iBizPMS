@@ -67,6 +67,7 @@
       "dBType" : "MYSQL5",
       "name" : "REALNAME",
       "queryCodeExp" : "t1.`REALNAME`",
+      "standardColumnName" : "`REALNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -119,6 +120,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -163,6 +165,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACCOUNT",
       "queryCodeExp" : "t1.`ACCOUNT`",
+      "standardColumnName" : "`ACCOUNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -257,6 +260,7 @@
       "dBType" : "MYSQL5",
       "name" : "COMMITER",
       "queryCodeExp" : "t1.`COMMITER`",
+      "standardColumnName" : "`COMMITER`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

@@ -1071,6 +1071,7 @@
       "dBType" : "MYSQL5",
       "name" : "SEVERITY",
       "queryCodeExp" : "t1.`SEVERITY`",
+      "standardColumnName" : "`SEVERITY`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1113,6 +1114,7 @@
       "columnName" : "DEPT",
       "dBType" : "MYSQL5",
       "name" : "DEPT",
+      "standardColumnName" : "`DEPT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1164,6 +1166,7 @@
       "dBType" : "MYSQL5",
       "name" : "STORYVERSION",
       "queryCodeExp" : "t1.`STORYVERSION`",
+      "standardColumnName" : "`STORYVERSION`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1247,6 +1250,7 @@
       "dBType" : "MYSQL5",
       "name" : "LINKBUG",
       "queryCodeExp" : "t1.`LINKBUG`",
+      "standardColumnName" : "`LINKBUG`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1298,6 +1302,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACTIVATEDDATE",
       "queryCodeExp" : "t1.`ACTIVATEDDATE`",
+      "standardColumnName" : "`ACTIVATEDDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1335,6 +1340,7 @@
       "dBType" : "MYSQL5",
       "name" : "OVERDUEBUGS",
       "queryCodeExp" : "(case when t1.DEADLINE = '0000-00-00' then 0 else datediff(t1.deadline, now() ) end)",
+      "standardColumnName" : "`OVERDUEBUGS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1409,6 +1415,7 @@
       "dBType" : "MYSQL5",
       "name" : "ASSIGNEDTO",
       "queryCodeExp" : "t1.`ASSIGNEDTO`",
+      "standardColumnName" : "`ASSIGNEDTO`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1464,6 +1471,7 @@
       "dBType" : "MYSQL5",
       "name" : "RESOLUTION",
       "queryCodeExp" : "t1.`RESOLUTION`",
+      "standardColumnName" : "`RESOLUTION`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1519,6 +1527,7 @@
       "dBType" : "MYSQL5",
       "name" : "LASTEDITEDDATE",
       "queryCodeExp" : "t1.`LASTEDITEDDATE`",
+      "standardColumnName" : "`LASTEDITEDDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1604,6 +1613,7 @@
       "dBType" : "MYSQL5",
       "name" : "RESULT",
       "queryCodeExp" : "t1.`RESULT`",
+      "standardColumnName" : "`RESULT`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1642,6 +1652,7 @@
       "dBType" : "MYSQL5",
       "name" : "KEYWORDS",
       "queryCodeExp" : "t1.`KEYWORDS`",
+      "standardColumnName" : "`KEYWORDS`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1693,6 +1704,7 @@
       "dBType" : "MYSQL5",
       "name" : "ISFAVORITES",
       "queryCodeExp" : "0",
+      "standardColumnName" : "`ISFAVORITES`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1746,6 +1758,7 @@
       "dBType" : "MYSQL5",
       "name" : "MODULENAME1",
       "queryCodeExp" : "(case when t1.module = '0' then '/' else (SELECT GROUP_CONCAT( tt.NAME SEPARATOR '>' )  FROM zt_module tt WHERE FIND_IN_SET( tt.id, t51.path ) AND tt.type = 'story'  GROUP BY tt.root limit 0,1) end)",
+      "standardColumnName" : "`MODULENAME1`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1801,6 +1814,7 @@
       "dBType" : "MYSQL5",
       "name" : "CLOSEDBY",
       "queryCodeExp" : "t1.`CLOSEDBY`",
+      "standardColumnName" : "`CLOSEDBY`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1856,6 +1870,7 @@
       "dBType" : "MYSQL5",
       "name" : "BROWSER",
       "queryCodeExp" : "t1.`BROWSER`",
+      "standardColumnName" : "`BROWSER`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1955,6 +1970,7 @@
       "dBType" : "MYSQL5",
       "name" : "STEPS",
       "queryCodeExp" : "t1.`STEPS`",
+      "standardColumnName" : "`STEPS`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -2007,6 +2023,7 @@
       "dBType" : "MYSQL5",
       "name" : "V2",
       "queryCodeExp" : "t1.`V2`",
+      "standardColumnName" : "`V2`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -2058,6 +2075,7 @@
       "dBType" : "MYSQL5",
       "name" : "CONFIRMED",
       "queryCodeExp" : "t1.`CONFIRMED`",
+      "standardColumnName" : "`CONFIRMED`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -2145,6 +2163,7 @@
       "dBType" : "MYSQL5",
       "name" : "OPENEDBY",
       "queryCodeExp" : "t1.`OPENEDBY`",
+      "standardColumnName" : "`OPENEDBY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2201,6 +2220,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACTIVATEDCOUNT",
       "queryCodeExp" : "t1.`ACTIVATEDCOUNT`",
+      "standardColumnName" : "`ACTIVATEDCOUNT`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -2240,6 +2260,7 @@
       "dBType" : "MYSQL5",
       "name" : "OPENEDDATE",
       "queryCodeExp" : "t1.`OPENEDDATE`",
+      "standardColumnName" : "`OPENEDDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2279,6 +2300,7 @@
       "dBType" : "MYSQL5",
       "name" : "CLOSEDDATE",
       "queryCodeExp" : "t1.`CLOSEDDATE`",
+      "standardColumnName" : "`CLOSEDDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2316,6 +2338,7 @@
       "dBType" : "MYSQL5",
       "name" : "MAILTO",
       "queryCodeExp" : "t1.`MAILTO`",
+      "standardColumnName" : "`MAILTO`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -2367,6 +2390,7 @@
       "dBType" : "MYSQL5",
       "name" : "ASSIGNEDDATE",
       "queryCodeExp" : "t1.`ASSIGNEDDATE`",
+      "standardColumnName" : "`ASSIGNEDDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2404,6 +2428,7 @@
       "dBType" : "MYSQL5",
       "name" : "DEADLINE",
       "queryCodeExp" : "t1.`DEADLINE`",
+      "standardColumnName" : "`DEADLINE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2441,6 +2466,7 @@
       "dBType" : "MYSQL5",
       "name" : "COLOR",
       "queryCodeExp" : "t1.`COLOR`",
+      "standardColumnName" : "`COLOR`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -2541,6 +2567,7 @@
       "dBType" : "MYSQL5",
       "name" : "RESOLVEDDATE",
       "queryCodeExp" : "t1.`RESOLVEDDATE`",
+      "standardColumnName" : "`RESOLVEDDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2578,6 +2605,7 @@
       "dBType" : "MYSQL5",
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
+      "standardColumnName" : "`TYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -2633,6 +2661,7 @@
       "dBType" : "MYSQL5",
       "name" : "STATUS",
       "queryCodeExp" : "t1.`STATUS`",
+      "standardColumnName" : "`STATUS`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -2689,6 +2718,7 @@
       "dBType" : "MYSQL5",
       "name" : "OPENEDBUILD",
       "queryCodeExp" : "t1.`OPENEDBUILD`",
+      "standardColumnName" : "`OPENEDBUILD`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -2744,6 +2774,7 @@
       "dBType" : "MYSQL5",
       "name" : "DELAYRESOLVE",
       "queryCodeExp" : "( CASE WHEN t1.deadline IS NULL  OR t1.deadline = '0000-00-00'  OR t1.deadline = '1970-01-01' THEN ''  WHEN t1.`status` = 'resolved'  AND t1.deadline < DATE_FORMAT( t1.resolvedDate, '%y-%m-%d' ) THEN CONCAT_WS( '', '延期', TIMESTAMPDIFF( DAY, t1.deadline, t1.resolvedDate ), '天' ) ELSE ''  END )",
+      "standardColumnName" : "`DELAYRESOLVE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2840,6 +2871,7 @@
       "dBType" : "MYSQL5",
       "name" : "MAILTOPK",
       "queryCodeExp" : "''",
+      "standardColumnName" : "`MAILTOPK`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2892,6 +2924,7 @@
       "dBType" : "MYSQL5",
       "name" : "V1",
       "queryCodeExp" : "t1.`V1`",
+      "standardColumnName" : "`V1`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -2943,6 +2976,7 @@
       "dBType" : "MYSQL5",
       "name" : "DELETED",
       "queryCodeExp" : "t1.`DELETED`",
+      "standardColumnName" : "`DELETED`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -2997,6 +3031,7 @@
       "dBType" : "MYSQL5",
       "name" : "LINES",
       "queryCodeExp" : "t1.`LINES`",
+      "standardColumnName" : "`LINES`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3048,6 +3083,7 @@
       "dBType" : "MYSQL5",
       "name" : "SUBSTATUS",
       "queryCodeExp" : "t1.`SUBSTATUS`",
+      "standardColumnName" : "`SUBSTATUS`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3098,6 +3134,7 @@
       "columnName" : "ORG",
       "dBType" : "MYSQL5",
       "name" : "ORG",
+      "standardColumnName" : "`ORG`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -3197,6 +3234,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -3242,6 +3280,7 @@
       "dBType" : "MYSQL5",
       "name" : "DELAY",
       "queryCodeExp" : "(case when t1.deadline is null or t1.deadline = '0000-00-00' or t1.deadline = '1970-01-01' then '' when t1.`status` ='active' and t1.deadline <DATE_FORMAT(now(),'%y-%m-%d')  then CONCAT_WS('','延期',TIMESTAMPDIFF(DAY, t1.deadline, now()),'天') else '' end)",
+      "standardColumnName" : "`DELAY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -3294,6 +3333,7 @@
       "dBType" : "MYSQL5",
       "name" : "FOUND",
       "queryCodeExp" : "t1.`FOUND`",
+      "standardColumnName" : "`FOUND`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3345,6 +3385,7 @@
       "dBType" : "MYSQL5",
       "name" : "RESOLVEDBY",
       "queryCodeExp" : "t1.`RESOLVEDBY`",
+      "standardColumnName" : "`RESOLVEDBY`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3400,6 +3441,7 @@
       "dBType" : "MYSQL5",
       "name" : "RESOLVEDBUILD",
       "queryCodeExp" : "t1.`RESOLVEDBUILD`",
+      "standardColumnName" : "`RESOLVEDBUILD`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3455,6 +3497,7 @@
       "dBType" : "MYSQL5",
       "name" : "PRI",
       "queryCodeExp" : "t1.`PRI`",
+      "standardColumnName" : "`PRI`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3498,6 +3541,7 @@
       "dBType" : "MYSQL5",
       "name" : "OS",
       "queryCodeExp" : "t1.`OS`",
+      "standardColumnName" : "`OS`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3553,6 +3597,7 @@
       "dBType" : "MYSQL5",
       "name" : "HARDWARE",
       "queryCodeExp" : "t1.`HARDWARE`",
+      "standardColumnName" : "`HARDWARE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3604,6 +3649,7 @@
       "dBType" : "MYSQL5",
       "name" : "LASTEDITEDBY",
       "queryCodeExp" : "t1.`LASTEDITEDBY`",
+      "standardColumnName" : "`LASTEDITEDBY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -3662,6 +3708,7 @@
       "dBType" : "MYSQL5",
       "name" : "TITLE",
       "queryCodeExp" : "t1.`TITLE`",
+      "standardColumnName" : "`TITLE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -3715,6 +3762,7 @@
       "dBType" : "MYSQL5",
       "name" : "PRODUCTNAME",
       "queryCodeExp" : "t11.`NAME`",
+      "standardColumnName" : "`PRODUCTNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -3775,6 +3823,7 @@
       "dBType" : "MYSQL5",
       "name" : "BRANCHNAME",
       "queryCodeExp" : "t61.`NAME`",
+      "standardColumnName" : "`BRANCHNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -3835,6 +3884,7 @@
       "dBType" : "MYSQL5",
       "name" : "TASKNAME",
       "queryCodeExp" : "t41.`NAME`",
+      "standardColumnName" : "`TASKNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -3895,6 +3945,7 @@
       "dBType" : "MYSQL5",
       "name" : "CASENAME",
       "queryCodeExp" : "t71.`TITLE`",
+      "standardColumnName" : "`CASENAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -3955,6 +4006,7 @@
       "dBType" : "MYSQL5",
       "name" : "PROJECTNAME",
       "queryCodeExp" : "t21.`NAME`",
+      "standardColumnName" : "`PROJECTNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -4015,6 +4067,7 @@
       "dBType" : "MYSQL5",
       "name" : "STORYNAME",
       "queryCodeExp" : "t31.`TITLE`",
+      "standardColumnName" : "`STORYNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -4075,6 +4128,7 @@
       "dBType" : "MYSQL5",
       "name" : "CASEVERSION",
       "queryCodeExp" : "t1.`CASEVERSION`",
+      "standardColumnName" : "`CASEVERSION`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -4127,6 +4181,7 @@
       "dBType" : "MYSQL5",
       "name" : "REPOTYPE",
       "queryCodeExp" : "t1.`REPOTYPE`",
+      "standardColumnName" : "`REPOTYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -4186,6 +4241,7 @@
       "dBType" : "MYSQL5",
       "name" : "MODULENAME",
       "queryCodeExp" : "t51.`NAME`",
+      "standardColumnName" : "`MODULENAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -4246,6 +4302,7 @@
       "dBType" : "MYSQL5",
       "name" : "TOSTORY",
       "queryCodeExp" : "t1.`TOSTORY`",
+      "standardColumnName" : "`TOSTORY`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -4294,6 +4351,7 @@
       "dBType" : "MYSQL5",
       "name" : "ENTRY",
       "queryCodeExp" : "t1.`ENTRY`",
+      "standardColumnName" : "`ENTRY`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -4342,6 +4400,7 @@
       "dBType" : "MYSQL5",
       "name" : "PRODUCT",
       "queryCodeExp" : "t1.`PRODUCT`",
+      "standardColumnName" : "`PRODUCT`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -4390,6 +4449,7 @@
       "dBType" : "MYSQL5",
       "name" : "TOTASK",
       "queryCodeExp" : "t1.`TOTASK`",
+      "standardColumnName" : "`TOTASK`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -4438,6 +4498,7 @@
       "dBType" : "MYSQL5",
       "name" : "PLAN",
       "queryCodeExp" : "t1.`PLAN`",
+      "standardColumnName" : "`PLAN`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -4486,6 +4547,7 @@
       "dBType" : "MYSQL5",
       "name" : "MODULE",
       "queryCodeExp" : "t1.`MODULE`",
+      "standardColumnName" : "`MODULE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -4538,6 +4600,7 @@
       "dBType" : "MYSQL5",
       "name" : "BRANCH",
       "queryCodeExp" : "t1.`BRANCH`",
+      "standardColumnName" : "`BRANCH`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -4590,6 +4653,7 @@
       "dBType" : "MYSQL5",
       "name" : "DUPLICATEBUG",
       "queryCodeExp" : "t1.`DUPLICATEBUG`",
+      "standardColumnName" : "`DUPLICATEBUG`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -4638,6 +4702,7 @@
       "dBType" : "MYSQL5",
       "name" : "REPO",
       "queryCodeExp" : "t1.`REPO`",
+      "standardColumnName" : "`REPO`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -4685,6 +4750,7 @@
       "dBType" : "MYSQL5",
       "name" : "STORY",
       "queryCodeExp" : "t1.`STORY`",
+      "standardColumnName" : "`STORY`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -4737,6 +4803,7 @@
       "dBType" : "MYSQL5",
       "name" : "CASE",
       "queryCodeExp" : "t1.`CASE`",
+      "standardColumnName" : "`CASE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -4785,6 +4852,7 @@
       "dBType" : "MYSQL5",
       "name" : "PROJECT",
       "queryCodeExp" : "t1.`PROJECT`",
+      "standardColumnName" : "`PROJECT`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -4833,6 +4901,7 @@
       "dBType" : "MYSQL5",
       "name" : "TASK",
       "queryCodeExp" : "t1.`TASK`",
+      "standardColumnName" : "`TASK`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -4881,6 +4950,7 @@
       "dBType" : "MYSQL5",
       "name" : "TESTTASK",
       "queryCodeExp" : "t1.`TESTTASK`",
+      "standardColumnName" : "`TESTTASK`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],

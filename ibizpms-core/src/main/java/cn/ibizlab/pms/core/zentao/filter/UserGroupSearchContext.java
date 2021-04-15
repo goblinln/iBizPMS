@@ -37,7 +37,7 @@ public class UserGroupSearchContext extends QueryWrapperContext<UserGroup> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("group", query)
+                     wrapper.like("t1.`GROUP`", query)
             );
 		 }
 	}

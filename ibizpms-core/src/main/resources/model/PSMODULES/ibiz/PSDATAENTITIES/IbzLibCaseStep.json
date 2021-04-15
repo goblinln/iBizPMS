@@ -101,6 +101,7 @@
       "dBType" : "MYSQL5",
       "name" : "EXPECT",
       "queryCodeExp" : "t1.`EXPECT`",
+      "standardColumnName" : "`EXPECT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -153,6 +154,7 @@
       "dBType" : "MYSQL5",
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
+      "standardColumnName" : "`TYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -251,6 +253,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -295,6 +298,7 @@
       "dBType" : "MYSQL5",
       "name" : "DESC",
       "queryCodeExp" : "t1.`DESC`",
+      "standardColumnName" : "`DESC`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "STATUS",
       "queryCodeExp" : "t1.`STATUS`",
+      "standardColumnName" : "`STATUS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -124,6 +125,7 @@
       "dBType" : "MYSQL5",
       "name" : "CGID",
       "queryCodeExp" : "t1.`CGID`",
+      "standardColumnName" : "`CGID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -174,6 +176,7 @@
       "dBType" : "MYSQL5",
       "name" : "OPENEDBY",
       "queryCodeExp" : "t1.`OPENEDBY`",
+      "standardColumnName" : "`OPENEDBY`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -212,6 +215,7 @@
       "dBType" : "MYSQL5",
       "name" : "OPENEDDATE",
       "queryCodeExp" : "t1.`OPENEDDATE`",
+      "standardColumnName" : "`OPENEDDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -250,6 +254,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -295,6 +300,7 @@
       "dBType" : "MYSQL5",
       "name" : "RID",
       "queryCodeExp" : "t1.`RID`",
+      "standardColumnName" : "`RID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -345,6 +351,7 @@
       "dBType" : "MYSQL5",
       "name" : "PARTICIPANTS",
       "queryCodeExp" : "t1.`PARTICIPANTS`",
+      "standardColumnName" : "`PARTICIPANTS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

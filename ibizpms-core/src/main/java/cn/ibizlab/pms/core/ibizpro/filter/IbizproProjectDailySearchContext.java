@@ -57,7 +57,7 @@ public class IbizproProjectDailySearchContext extends QueryWrapperContext<Ibizpr
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("ibizpro_projectdailyname", query)
+                     wrapper.like("t1.`IBIZPRO_PROJECTDAILYNAME`", query)
             );
 		 }
 	}

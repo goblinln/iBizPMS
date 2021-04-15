@@ -101,6 +101,7 @@
       "dBType" : "MYSQL5",
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
+      "standardColumnName" : "`TYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -155,6 +156,7 @@
       "dBType" : "MYSQL5",
       "name" : "PLANCODE",
       "queryCodeExp" : "t1.`PLANCODE`",
+      "standardColumnName" : "`PLANCODE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -205,6 +207,7 @@
       "dBType" : "MYSQL5",
       "name" : "DESC",
       "queryCodeExp" : "t1.`DESC`",
+      "standardColumnName" : "`DESC`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -256,6 +259,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORDER",
       "queryCodeExp" : "t1.`ORDER`",
+      "standardColumnName" : "`ORDER`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -294,6 +298,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZ_PLANTEMPLETDETAILID",
       "queryCodeExp" : "t1.`IBZ_PLANTEMPLETDETAILID`",
+      "standardColumnName" : "`IBZ_PLANTEMPLETDETAILID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -347,6 +352,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZ_PLANTEMPLETDETAILNAME",
       "queryCodeExp" : "t1.`IBZ_PLANTEMPLETDETAILNAME`",
+      "standardColumnName" : "`IBZ_PLANTEMPLETDETAILNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -399,6 +405,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -456,6 +463,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -497,6 +505,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -554,6 +563,7 @@
       "dBType" : "MYSQL5",
       "name" : "EXPECT",
       "queryCodeExp" : "t1.`EXPECT`",
+      "standardColumnName" : "`EXPECT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -605,6 +615,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -646,6 +657,7 @@
       "dBType" : "MYSQL5",
       "name" : "PLANTEMPLETID",
       "queryCodeExp" : "t1.`PLANTEMPLETID`",
+      "standardColumnName" : "`PLANTEMPLETID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

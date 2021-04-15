@@ -133,9 +133,9 @@ public class ProjectSearchContext extends QueryWrapperContext<Project> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("id", query)
-                        .or().like("name", query)
-                        .or().like("code", query)
+                     wrapper.like("t1.`ID`", query)
+                        .or().like("t1.`NAME`", query)
+                        .or().like("t1.`CODE`", query)
             );
 		 }
 	}

@@ -537,6 +537,7 @@
       "dBType" : "MYSQL5",
       "name" : "OPENEDVERSION",
       "queryCodeExp" : "t1.`OPENEDVERSION`",
+      "standardColumnName" : "`OPENEDVERSION`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -588,6 +589,7 @@
       "dBType" : "MYSQL5",
       "name" : "BEGIN",
       "queryCodeExp" : "t1.`BEGIN`",
+      "standardColumnName" : "`BEGIN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -683,6 +685,7 @@
       "dBType" : "MYSQL5",
       "name" : "PMSEEPROJECTINFO",
       "queryCodeExp" : "t1.`PMSEEPROJECTINFO`",
+      "standardColumnName" : "`PMSEEPROJECTINFO`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -734,6 +737,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACL",
       "queryCodeExp" : "t1.`ACL`",
+      "standardColumnName" : "`ACL`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -789,6 +793,7 @@
       "dBType" : "MYSQL5",
       "name" : "DELETED",
       "queryCodeExp" : "t1.`DELETED`",
+      "standardColumnName" : "`DELETED`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -843,6 +848,7 @@
       "dBType" : "MYSQL5",
       "name" : "TOTALCONSUMED",
       "queryCodeExp" : "(SELECT round(SUM(CONSUMED),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' or `parent` = '0' or `parent` = '-1'))",
+      "standardColumnName" : "`TOTALCONSUMED`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1009,6 +1015,7 @@
       "dBType" : "MYSQL5",
       "name" : "DESC",
       "queryCodeExp" : "t1.`DESC`",
+      "standardColumnName" : "`DESC`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1154,6 +1161,7 @@
       "dBType" : "MYSQL5",
       "name" : "ISTOP",
       "queryCodeExp" : "'0'",
+      "standardColumnName" : "`ISTOP`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1256,6 +1264,7 @@
       "dBType" : "MYSQL5",
       "name" : "PM",
       "queryCodeExp" : "t1.`PM`",
+      "standardColumnName" : "`PM`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1359,6 +1368,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -1404,6 +1414,7 @@
       "dBType" : "MYSQL5",
       "name" : "NAME",
       "queryCodeExp" : "t1.`NAME`",
+      "standardColumnName" : "`NAME`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1458,6 +1469,7 @@
       "dBType" : "MYSQL5",
       "name" : "SUBSTATUS",
       "queryCodeExp" : "t1.`SUBSTATUS`",
+      "standardColumnName" : "`SUBSTATUS`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1553,6 +1565,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORDER",
       "queryCodeExp" : "t1.`ORDER`",
+      "standardColumnName" : "`ORDER`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1592,6 +1605,7 @@
       "dBType" : "MYSQL5",
       "name" : "BUGCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND DELETED = '0')",
+      "standardColumnName" : "`BUGCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1631,6 +1645,7 @@
       "dBType" : "MYSQL5",
       "name" : "RD",
       "queryCodeExp" : "t1.`RD`",
+      "standardColumnName" : "`RD`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1761,6 +1776,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEBY",
       "queryCodeExp" : "t1.`UPDATEBY`",
+      "standardColumnName" : "`UPDATEBY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1817,6 +1833,7 @@
       "dBType" : "MYSQL5",
       "name" : "WHITELIST",
       "queryCodeExp" : "t1.`WHITELIST`",
+      "standardColumnName" : "`WHITELIST`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1913,6 +1930,7 @@
       "dBType" : "MYSQL5",
       "name" : "TOTALWH",
       "queryCodeExp" : "((SELECT round(SUM( `LEFT` ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) AND `status` in ('doing','wait','pause')) + (SELECT round(SUM( CONSUMED ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' )))",
+      "standardColumnName" : "`TOTALWH`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2001,6 +2019,7 @@
       "dBType" : "MYSQL5",
       "name" : "TOTALHOURS",
       "queryCodeExp" : "(select sum(days * hours)  from zt_team tt where type = 'project' and root = t1.id)",
+      "standardColumnName" : "`TOTALHOURS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2040,6 +2059,7 @@
       "dBType" : "MYSQL5",
       "name" : "PRI",
       "queryCodeExp" : "t1.`PRI`",
+      "standardColumnName" : "`PRI`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -2095,6 +2115,7 @@
       "dBType" : "MYSQL5",
       "name" : "END",
       "queryCodeExp" : "t1.`END`",
+      "standardColumnName" : "`END`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2167,6 +2188,7 @@
       "dBType" : "MYSQL5",
       "name" : "CANCELEDDATE",
       "queryCodeExp" : "t1.`CANCELEDDATE`",
+      "standardColumnName" : "`CANCELEDDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2266,6 +2288,7 @@
       "dBType" : "MYSQL5",
       "name" : "TOTALESTIMATE",
       "queryCodeExp" : "(SELECT round(SUM(ESTIMATE),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED =  '0' AND ( `parent` = '' or `parent` = '0' or `parent` = '-1'))",
+      "standardColumnName" : "`TOTALESTIMATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2306,6 +2329,7 @@
       "dBType" : "MYSQL5",
       "name" : "MDEPTID",
       "queryCodeExp" : "t1.`MDEPTID`",
+      "standardColumnName" : "`MDEPTID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2357,6 +2381,7 @@
       "dBType" : "MYSQL5",
       "name" : "TOTALLEFT",
       "queryCodeExp" : "(SELECT round(SUM(`LEFT`),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' and `status` in ('doing','wait','pause') AND ( `parent` = '' or `parent` = '0' or `parent` = '-1'))",
+      "standardColumnName" : "`TOTALLEFT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2440,6 +2465,7 @@
       "dBType" : "MYSQL5",
       "name" : "CODE",
       "queryCodeExp" : "t1.`CODE`",
+      "standardColumnName" : "`CODE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -2619,6 +2645,7 @@
       "dBType" : "MYSQL5",
       "name" : "CATID",
       "queryCodeExp" : "t1.`CATID`",
+      "standardColumnName" : "`CATID`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -2658,6 +2685,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORGID",
       "queryCodeExp" : "t1.`ORGID`",
+      "standardColumnName" : "`ORGID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2828,6 +2856,7 @@
       "dBType" : "MYSQL5",
       "name" : "STATGE",
       "queryCodeExp" : "t1.`STATGE`",
+      "standardColumnName" : "`STATGE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -2914,6 +2943,7 @@
       "dBType" : "MYSQL5",
       "name" : "TASKCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0')",
+      "standardColumnName" : "`TASKCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2984,6 +3014,7 @@
       "dBType" : "MYSQL5",
       "name" : "SUPPROREPORT",
       "queryCodeExp" : "t1.`SUPPROREPORT`",
+      "standardColumnName" : "`SUPPROREPORT`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3039,6 +3070,7 @@
       "dBType" : "MYSQL5",
       "name" : "CANCELEDBY",
       "queryCodeExp" : "t1.`CANCELEDBY`",
+      "standardColumnName" : "`CANCELEDBY`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3090,6 +3122,7 @@
       "dBType" : "MYSQL5",
       "name" : "ISCAT",
       "queryCodeExp" : "t1.`ISCAT`",
+      "standardColumnName" : "`ISCAT`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3145,6 +3178,7 @@
       "dBType" : "MYSQL5",
       "name" : "OPENEDDATE",
       "queryCodeExp" : "t1.`OPENEDDATE`",
+      "standardColumnName" : "`OPENEDDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -3246,6 +3280,7 @@
       "dBType" : "MYSQL5",
       "name" : "CLOSEDBY",
       "queryCodeExp" : "t1.`CLOSEDBY`",
+      "standardColumnName" : "`CLOSEDBY`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3297,6 +3332,7 @@
       "dBType" : "MYSQL5",
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
+      "standardColumnName" : "`TYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3431,6 +3467,7 @@
       "dBType" : "MYSQL5",
       "name" : "PO",
       "queryCodeExp" : "t1.`PO`",
+      "standardColumnName" : "`PO`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3517,6 +3554,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORDER1",
       "queryCodeExp" : "t1.`order`",
+      "standardColumnName" : "`ORDER1`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -3557,6 +3595,7 @@
       "dBType" : "MYSQL5",
       "name" : "STATUS",
       "queryCodeExp" : "t1.`STATUS`",
+      "standardColumnName" : "`STATUS`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3644,6 +3683,7 @@
       "dBType" : "MYSQL5",
       "name" : "DAYS",
       "queryCodeExp" : "t1.`DAYS`",
+      "standardColumnName" : "`DAYS`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3714,6 +3754,7 @@
       "dBType" : "MYSQL5",
       "name" : "TEAM",
       "queryCodeExp" : "t1.`TEAM`",
+      "standardColumnName" : "`TEAM`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3765,6 +3806,7 @@
       "dBType" : "MYSQL5",
       "name" : "CLOSEDDATE",
       "queryCodeExp" : "t1.`CLOSEDDATE`",
+      "standardColumnName" : "`CLOSEDDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -3847,6 +3889,7 @@
       "dBType" : "MYSQL5",
       "name" : "OPENEDBY",
       "queryCodeExp" : "t1.`OPENEDBY`",
+      "standardColumnName" : "`OPENEDBY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -3903,6 +3946,7 @@
       "dBType" : "MYSQL5",
       "name" : "STORYCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY WHERE PROJECT = t1.`ID` AND DELETED = '0')",
+      "standardColumnName" : "`STORYCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -3942,6 +3986,7 @@
       "dBType" : "MYSQL5",
       "name" : "QD",
       "queryCodeExp" : "t1.`QD`",
+      "standardColumnName" : "`QD`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3997,6 +4042,7 @@
       "dBType" : "MYSQL5",
       "name" : "PARENTNAME",
       "queryCodeExp" : "t11.`NAME`",
+      "standardColumnName" : "`PARENTNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -4057,6 +4103,7 @@
       "dBType" : "MYSQL5",
       "name" : "PARENT",
       "queryCodeExp" : "t1.`PARENT`",
+      "standardColumnName" : "`PARENT`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],

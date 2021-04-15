@@ -223,6 +223,7 @@
       "dBType" : "MYSQL5",
       "name" : "TASKEFFICIENT",
       "queryCodeExp" : "0",
+      "standardColumnName" : "`TASKEFFICIENT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -368,6 +369,7 @@
       "dBType" : "MYSQL5",
       "name" : "TOTALLEFT",
       "queryCodeExp" : "0",
+      "standardColumnName" : "`TOTALLEFT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -469,6 +471,7 @@
       "dBType" : "MYSQL5",
       "name" : "TOTALCONSUMED",
       "queryCodeExp" : "0",
+      "standardColumnName" : "`TOTALCONSUMED`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -508,6 +511,7 @@
       "dBType" : "MYSQL5",
       "name" : "TOTALESTIMATE",
       "queryCodeExp" : "0",
+      "standardColumnName" : "`TOTALESTIMATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -578,6 +582,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -667,6 +672,7 @@
       "dBType" : "MYSQL5",
       "name" : "NAME",
       "queryCodeExp" : "t1.`NAME`",
+      "standardColumnName" : "`NAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

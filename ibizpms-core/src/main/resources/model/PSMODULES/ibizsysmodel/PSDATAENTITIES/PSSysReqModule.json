@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "MODULETAG2",
       "queryCodeExp" : "t1.`MODULETAG2`",
+      "standardColumnName" : "`MODULETAG2`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -120,6 +121,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSREQMODULENAME",
       "queryCodeExp" : "t1.`PSSYSREQMODULENAME`",
+      "standardColumnName" : "`PSSYSREQMODULENAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -172,6 +174,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -213,6 +216,7 @@
       "dBType" : "MYSQL5",
       "name" : "USERTAG2",
       "queryCodeExp" : "t1.`USERTAG2`",
+      "standardColumnName" : "`USERTAG2`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -263,6 +267,7 @@
       "dBType" : "MYSQL5",
       "name" : "MODULETAG4",
       "queryCodeExp" : "t1.`MODULETAG4`",
+      "standardColumnName" : "`MODULETAG4`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -313,6 +318,7 @@
       "dBType" : "MYSQL5",
       "name" : "MEMO",
       "queryCodeExp" : "t1.`MEMO`",
+      "standardColumnName" : "`MEMO`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -363,6 +369,7 @@
       "dBType" : "MYSQL5",
       "name" : "MODULETAG3",
       "queryCodeExp" : "t1.`MODULETAG3`",
+      "standardColumnName" : "`MODULETAG3`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -413,6 +420,7 @@
       "dBType" : "MYSQL5",
       "name" : "USERCAT",
       "queryCodeExp" : "t1.`USERCAT`",
+      "standardColumnName" : "`USERCAT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -463,6 +471,7 @@
       "dBType" : "MYSQL5",
       "name" : "MODULETAG",
       "queryCodeExp" : "t1.`MODULETAG`",
+      "standardColumnName" : "`MODULETAG`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -513,6 +522,7 @@
       "dBType" : "MYSQL5",
       "name" : "MODULESN",
       "queryCodeExp" : "t1.`MODULESN`",
+      "standardColumnName" : "`MODULESN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -564,6 +574,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSTEMID",
       "queryCodeExp" : "t1.`PSSYSTEMID`",
+      "standardColumnName" : "`PSSYSTEMID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -614,6 +625,7 @@
       "dBType" : "MYSQL5",
       "name" : "USERTAG3",
       "queryCodeExp" : "t1.`USERTAG3`",
+      "standardColumnName" : "`USERTAG3`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -664,6 +676,7 @@
       "dBType" : "MYSQL5",
       "name" : "USERTAG",
       "queryCodeExp" : "t1.`USERTAG`",
+      "standardColumnName" : "`USERTAG`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -714,6 +727,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORDERVALUE",
       "queryCodeExp" : "t1.`ORDERVALUE`",
+      "standardColumnName" : "`ORDERVALUE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -752,6 +766,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSTEMNAME",
       "queryCodeExp" : "t1.`PSSYSTEMNAME`",
+      "standardColumnName" : "`PSSYSTEMNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -802,6 +817,7 @@
       "dBType" : "MYSQL5",
       "name" : "USERTAG4",
       "queryCodeExp" : "t1.`USERTAG4`",
+      "standardColumnName" : "`USERTAG4`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -852,6 +868,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSSYSREQMODULEID",
       "queryCodeExp" : "t1.`PSSYSREQMODULEID`",
+      "standardColumnName" : "`PSSYSREQMODULEID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -905,6 +922,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -962,6 +980,7 @@
       "dBType" : "MYSQL5",
       "name" : "CONTENT",
       "queryCodeExp" : "t1.`CONTENT`",
+      "standardColumnName" : "`CONTENT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1013,6 +1032,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1054,6 +1074,7 @@
       "dBType" : "MYSQL5",
       "name" : "CODENAME",
       "queryCodeExp" : "t1.`CODENAME`",
+      "standardColumnName" : "`CODENAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1104,6 +1125,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1161,6 +1183,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSMODULENAME",
       "queryCodeExp" : "t11.`PSMODULENAME`",
+      "standardColumnName" : "`PSMODULENAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1221,6 +1244,7 @@
       "dBType" : "MYSQL5",
       "name" : "PPSSYSREQMODULENAME",
       "queryCodeExp" : "t21.`PSSYSREQMODULENAME`",
+      "standardColumnName" : "`PPSSYSREQMODULENAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1281,6 +1305,7 @@
       "dBType" : "MYSQL5",
       "name" : "PPSSYSREQMODULEID",
       "queryCodeExp" : "t1.`PPSSYSREQMODULEID`",
+      "standardColumnName" : "`PPSSYSREQMODULEID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1340,6 +1365,7 @@
       "dBType" : "MYSQL5",
       "name" : "PSMODULEID",
       "queryCodeExp" : "t1.`PSMODULEID`",
+      "standardColumnName" : "`PSMODULEID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

@@ -50,7 +50,7 @@ public class TestTask extends EntityMP implements Serializable {
      * 归属部门
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "dept")
+    @TableField(value = "`DEPT`")
     @JSONField(name = "dept")
     @JsonProperty("dept")
     @ApiModelProperty("归属部门")
@@ -58,7 +58,7 @@ public class TestTask extends EntityMP implements Serializable {
     /**
      * 结束日期
      */
-    @TableField(value = "end")
+    @TableField(value = "`END`")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "end", format = "yyyy-MM-dd")
     @JsonProperty("end")
@@ -67,7 +67,7 @@ public class TestTask extends EntityMP implements Serializable {
     /**
      * 开始日期
      */
-    @TableField(value = "begin")
+    @TableField(value = "`BEGIN`")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "begin", format = "yyyy-MM-dd")
     @JsonProperty("begin")
@@ -85,7 +85,7 @@ public class TestTask extends EntityMP implements Serializable {
      * 抄送给
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "mailto")
+    @TableField(value = "`MAILTO`")
     @JSONField(name = "mailto")
     @JsonProperty("mailto")
     @ApiModelProperty("抄送给")
@@ -110,7 +110,7 @@ public class TestTask extends EntityMP implements Serializable {
      * 由谁更新
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "updateby")
+    @TableField(value = "`UPDATEBY`")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")
     @ApiModelProperty("由谁更新")
@@ -119,7 +119,7 @@ public class TestTask extends EntityMP implements Serializable {
      * 归属组织
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "org")
+    @TableField(value = "`ORG`")
     @JSONField(name = "org")
     @JsonProperty("org")
     @ApiModelProperty("归属组织")
@@ -128,7 +128,7 @@ public class TestTask extends EntityMP implements Serializable {
      * 优先级
      */
     @DEField(defaultValue = "3")
-    @TableField(value = "pri")
+    @TableField(value = "`PRI`")
     @JSONField(name = "pri")
     @JsonProperty("pri")
     @ApiModelProperty("优先级")
@@ -145,7 +145,7 @@ public class TestTask extends EntityMP implements Serializable {
      * 由谁创建
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "createby")
+    @TableField(value = "`CREATEBY`")
     @JSONField(name = "createby")
     @JsonProperty("createby")
     @ApiModelProperty("由谁创建")
@@ -154,7 +154,7 @@ public class TestTask extends EntityMP implements Serializable {
      * 子状态
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "substatus")
+    @TableField(value = "`SUBSTATUS`")
     @JSONField(name = "substatus")
     @JsonProperty("substatus")
     @ApiModelProperty("子状态")
@@ -163,7 +163,7 @@ public class TestTask extends EntityMP implements Serializable {
      * report
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "report")
+    @TableField(value = "`REPORT`")
     @JSONField(name = "report")
     @JsonProperty("report")
     @ApiModelProperty("report")
@@ -172,7 +172,7 @@ public class TestTask extends EntityMP implements Serializable {
      * 描述
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "desc")
+    @TableField(value = "`DESC`")
     @JSONField(name = "desc")
     @JsonProperty("desc")
     @ApiModelProperty("描述")
@@ -181,7 +181,7 @@ public class TestTask extends EntityMP implements Serializable {
      * 编号
      */
     @DEField(isKeyField = true)
-    @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "`ID`", type = IdType.AUTO)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("编号")
@@ -190,7 +190,7 @@ public class TestTask extends EntityMP implements Serializable {
      * 当前状态
      */
     @DEField(defaultValue = "wait")
-    @TableField(value = "status")
+    @TableField(value = "`STATUS`")
     @JSONField(name = "status")
     @JsonProperty("status")
     @ApiModelProperty("当前状态")
@@ -207,7 +207,7 @@ public class TestTask extends EntityMP implements Serializable {
      * 负责人
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "owner")
+    @TableField(value = "`OWNER`")
     @JSONField(name = "owner")
     @JsonProperty("owner")
     @ApiModelProperty("负责人")
@@ -217,7 +217,7 @@ public class TestTask extends EntityMP implements Serializable {
      */
     @DEField(defaultValue = "0", preType = DEPredefinedFieldType.LOGICVALID, logicval = "0", logicdelval = "1")
     @TableLogic(value = "0", delval = "1")
-    @TableField(value = "deleted")
+    @TableField(value = "`DELETED`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
     @ApiModelProperty("已删除")
@@ -226,7 +226,7 @@ public class TestTask extends EntityMP implements Serializable {
      * auto
      */
     @DEField(defaultValue = "no")
-    @TableField(value = "auto")
+    @TableField(value = "`AUTO`")
     @JSONField(name = "auto")
     @JsonProperty("auto")
     @ApiModelProperty("auto")
@@ -234,7 +234,7 @@ public class TestTask extends EntityMP implements Serializable {
     /**
      * 名称
      */
-    @TableField(value = "name")
+    @TableField(value = "`NAME`")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("名称")
@@ -267,7 +267,7 @@ public class TestTask extends EntityMP implements Serializable {
      * 所属产品
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "product")
+    @TableField(value = "`PRODUCT`")
     @JSONField(name = "product")
     @JsonProperty("product")
     @ApiModelProperty("所属产品")
@@ -276,7 +276,7 @@ public class TestTask extends EntityMP implements Serializable {
      * 版本
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "build")
+    @TableField(value = "`BUILD`")
     @JSONField(name = "build")
     @JsonProperty("build")
     @ApiModelProperty("版本")
@@ -285,7 +285,7 @@ public class TestTask extends EntityMP implements Serializable {
      * 所属项目
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "project")
+    @TableField(value = "`PROJECT`")
     @JSONField(name = "project")
     @JsonProperty("project")
     @ApiModelProperty("所属项目")

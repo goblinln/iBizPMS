@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "TEAMID",
       "queryCodeExp" : "t1.`TEAMID`",
+      "standardColumnName" : "`TEAMID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -122,6 +123,7 @@
       "dBType" : "MYSQL5",
       "name" : "TEAMNAME",
       "queryCodeExp" : "t1.`TEAMNAME`",
+      "standardColumnName" : "`TEAMNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -175,6 +177,7 @@
       "dBType" : "MYSQL5",
       "name" : "MEMO",
       "queryCodeExp" : "t1.`MEMO`",
+      "standardColumnName" : "`MEMO`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -225,6 +228,7 @@
       "dBType" : "MYSQL5",
       "name" : "DOMAINS",
       "queryCodeExp" : "t1.`DOMAINS`",
+      "standardColumnName" : "`DOMAINS`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],

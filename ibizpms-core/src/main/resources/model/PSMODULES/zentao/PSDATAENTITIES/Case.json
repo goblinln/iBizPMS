@@ -806,6 +806,7 @@
       "dBType" : "MYSQL5",
       "name" : "LASTEDITEDDATE",
       "queryCodeExp" : "t1.`LASTEDITEDDATE`",
+      "standardColumnName" : "`LASTEDITEDDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -847,6 +848,7 @@
       "dBType" : "MYSQL5",
       "name" : "SCRIPTEDDATE",
       "queryCodeExp" : "t1.`SCRIPTEDDATE`",
+      "standardColumnName" : "`SCRIPTEDDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -884,6 +886,7 @@
       "dBType" : "MYSQL5",
       "name" : "COLOR",
       "queryCodeExp" : "t1.`COLOR`",
+      "standardColumnName" : "`COLOR`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -939,6 +942,7 @@
       "dBType" : "MYSQL5",
       "name" : "PATH",
       "queryCodeExp" : "t1.`PATH`",
+      "standardColumnName" : "`PATH`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -977,6 +981,7 @@
       "dBType" : "MYSQL5",
       "name" : "OPENEDDATE",
       "queryCodeExp" : "t1.`OPENEDDATE`",
+      "standardColumnName" : "`OPENEDDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1016,6 +1021,7 @@
       "dBType" : "MYSQL5",
       "name" : "LASTRUNRESULT",
       "queryCodeExp" : "t1.`LASTRUNRESULT`",
+      "standardColumnName" : "`LASTRUNRESULT`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1070,6 +1076,7 @@
       "columnName" : "MODULENAME1",
       "dBType" : "MYSQL5",
       "name" : "MODULENAME1",
+      "standardColumnName" : "`MODULENAME1`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1122,6 +1129,7 @@
       "dBType" : "MYSQL5",
       "name" : "LINKCASE",
       "queryCodeExp" : "t1.`LINKCASE`",
+      "standardColumnName" : "`LINKCASE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1266,6 +1274,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORDER",
       "queryCodeExp" : "t1.`ORDER`",
+      "standardColumnName" : "`ORDER`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1305,6 +1314,7 @@
       "dBType" : "MYSQL5",
       "name" : "HOWRUN",
       "queryCodeExp" : "t1.`HOWRUN`",
+      "standardColumnName" : "`HOWRUN`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1356,6 +1366,7 @@
       "dBType" : "MYSQL5",
       "name" : "RESULTCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM zt_testresult WHERE `case` = t1.`ID` )",
+      "standardColumnName" : "`RESULTCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1439,6 +1450,7 @@
       "dBType" : "MYSQL5",
       "name" : "VERSION",
       "queryCodeExp" : "t1.`VERSION`",
+      "standardColumnName" : "`VERSION`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1482,6 +1494,7 @@
       "dBType" : "MYSQL5",
       "name" : "SCRIPTEDBY",
       "queryCodeExp" : "t1.`SCRIPTEDBY`",
+      "standardColumnName" : "`SCRIPTEDBY`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1537,6 +1550,7 @@
       "dBType" : "MYSQL5",
       "name" : "OPENEDBY",
       "queryCodeExp" : "t1.`OPENEDBY`",
+      "standardColumnName" : "`OPENEDBY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1593,6 +1607,7 @@
       "dBType" : "MYSQL5",
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
+      "standardColumnName" : "`TYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1648,6 +1663,7 @@
       "dBType" : "MYSQL5",
       "name" : "RESULTFALICNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM zt_testresult WHERE `case` = t1.`ID`  and caseResult in('fail','blocked') )",
+      "standardColumnName" : "`RESULTFALICNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1687,6 +1703,7 @@
       "dBType" : "MYSQL5",
       "name" : "STATUS",
       "queryCodeExp" : "t1.`STATUS`",
+      "standardColumnName" : "`STATUS`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1787,6 +1804,7 @@
       "dBType" : "MYSQL5",
       "name" : "AUTO",
       "queryCodeExp" : "t1.`AUTO`",
+      "standardColumnName" : "`AUTO`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1838,6 +1856,7 @@
       "dBType" : "MYSQL5",
       "name" : "ISFAVORITES",
       "queryCodeExp" : "0",
+      "standardColumnName" : "`ISFAVORITES`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1890,6 +1909,7 @@
       "columnName" : "DEPT",
       "dBType" : "MYSQL5",
       "name" : "DEPT",
+      "standardColumnName" : "`DEPT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1941,6 +1961,7 @@
       "dBType" : "MYSQL5",
       "name" : "FREQUENCY",
       "queryCodeExp" : "t1.`FREQUENCY`",
+      "standardColumnName" : "`FREQUENCY`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1996,6 +2017,7 @@
       "dBType" : "MYSQL5",
       "name" : "TITLE",
       "queryCodeExp" : "t1.`TITLE`",
+      "standardColumnName" : "`TITLE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2049,6 +2071,7 @@
       "dBType" : "MYSQL5",
       "name" : "LASTEDITEDBY",
       "queryCodeExp" : "t1.`LASTEDITEDBY`",
+      "standardColumnName" : "`LASTEDITEDBY`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2106,6 +2129,7 @@
       "columnName" : "ORG",
       "dBType" : "MYSQL5",
       "name" : "ORG",
+      "standardColumnName" : "`ORG`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2157,6 +2181,7 @@
       "dBType" : "MYSQL5",
       "name" : "REVIEWEDBY",
       "queryCodeExp" : "t1.`REVIEWEDBY`",
+      "standardColumnName" : "`REVIEWEDBY`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -2256,6 +2281,7 @@
       "dBType" : "MYSQL5",
       "name" : "TOBUGCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM zt_bug WHERE `case` = t1.`ID` )",
+      "standardColumnName" : "`TOBUGCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2343,6 +2369,7 @@
       "dBType" : "MYSQL5",
       "name" : "DELETED",
       "queryCodeExp" : "t1.`DELETED`",
+      "standardColumnName" : "`DELETED`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -2397,6 +2424,7 @@
       "dBType" : "MYSQL5",
       "name" : "REVIEWEDDATE",
       "queryCodeExp" : "t1.`REVIEWEDDATE`",
+      "standardColumnName" : "`REVIEWEDDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2434,6 +2462,7 @@
       "dBType" : "MYSQL5",
       "name" : "PRI",
       "queryCodeExp" : "t1.`PRI`",
+      "standardColumnName" : "`PRI`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -2476,6 +2505,7 @@
       "dBType" : "MYSQL5",
       "name" : "STAGE",
       "queryCodeExp" : "t1.`STAGE`",
+      "standardColumnName" : "`STAGE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -2531,6 +2561,7 @@
       "dBType" : "MYSQL5",
       "name" : "SCRIPTLOCATION",
       "queryCodeExp" : "t1.`SCRIPTLOCATION`",
+      "standardColumnName" : "`SCRIPTLOCATION`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -2582,6 +2613,7 @@
       "dBType" : "MYSQL5",
       "name" : "STATUS1",
       "queryCodeExp" : "(case when t1.storyVersion < t21.version and t21.`status` <> 'changed' then 'storychange'  else t1.`status` end )",
+      "standardColumnName" : "`STATUS1`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2639,6 +2671,7 @@
       "dBType" : "MYSQL5",
       "name" : "LASTRUNDATE",
       "queryCodeExp" : "t1.`LASTRUNDATE`",
+      "standardColumnName" : "`LASTRUNDATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2676,6 +2709,7 @@
       "dBType" : "MYSQL5",
       "name" : "KEYWORDS",
       "queryCodeExp" : "t1.`KEYWORDS`",
+      "standardColumnName" : "`KEYWORDS`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -2727,6 +2761,7 @@
       "dBType" : "MYSQL5",
       "name" : "SCRIPTSTATUS",
       "queryCodeExp" : "t1.`SCRIPTSTATUS`",
+      "standardColumnName" : "`SCRIPTSTATUS`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -2778,6 +2813,7 @@
       "dBType" : "MYSQL5",
       "name" : "FRAME",
       "queryCodeExp" : "t1.`FRAME`",
+      "standardColumnName" : "`FRAME`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -2833,6 +2869,7 @@
       "dBType" : "MYSQL5",
       "name" : "LASTRUNRESULT1",
       "queryCodeExp" : "(case when t1.`LASTRUNRESULT` = '' or t1.`LASTRUNRESULT` is null then 'no' else t1.`LASTRUNRESULT` end)",
+      "standardColumnName" : "`LASTRUNRESULT1`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2890,6 +2927,7 @@
       "dBType" : "MYSQL5",
       "name" : "STEPCNT",
       "queryCodeExp" : "(SELECT COUNT(1) FROM zt_casestep WHERE `case` = t1.`ID` AND version = t1.`VERSION` )",
+      "standardColumnName" : "`STEPCNT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2929,6 +2967,7 @@
       "dBType" : "MYSQL5",
       "name" : "SUBSTATUS",
       "queryCodeExp" : "t1.`SUBSTATUS`",
+      "standardColumnName" : "`SUBSTATUS`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -2980,6 +3019,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -3024,6 +3064,7 @@
       "dBType" : "MYSQL5",
       "name" : "PRECONDITION",
       "queryCodeExp" : "t1.`PRECONDITION`",
+      "standardColumnName" : "`PRECONDITION`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3076,6 +3117,7 @@
       "dBType" : "MYSQL5",
       "name" : "LASTRUNNER",
       "queryCodeExp" : "t1.`LASTRUNNER`",
+      "standardColumnName" : "`LASTRUNNER`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3131,6 +3173,7 @@
       "dBType" : "MYSQL5",
       "name" : "LIBNAME",
       "queryCodeExp" : "t41.`NAME`",
+      "standardColumnName" : "`LIBNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -3191,6 +3234,7 @@
       "dBType" : "MYSQL5",
       "name" : "FROMCASEVERSION",
       "queryCodeExp" : "t1.`FROMCASEVERSION`",
+      "standardColumnName" : "`FROMCASEVERSION`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3243,6 +3287,7 @@
       "dBType" : "MYSQL5",
       "name" : "STORYNAME",
       "queryCodeExp" : "t21.`TITLE`",
+      "standardColumnName" : "`STORYNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -3303,6 +3348,7 @@
       "dBType" : "MYSQL5",
       "name" : "MODULENAME",
       "queryCodeExp" : "t11.`NAME`",
+      "standardColumnName" : "`MODULENAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -3363,6 +3409,7 @@
       "dBType" : "MYSQL5",
       "name" : "STORYVERSION",
       "queryCodeExp" : "t1.`STORYVERSION`",
+      "standardColumnName" : "`STORYVERSION`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3411,6 +3458,7 @@
       "dBType" : "MYSQL5",
       "name" : "PRODUCTNAME",
       "queryCodeExp" : "t31.`NAME`",
+      "standardColumnName" : "`PRODUCTNAME`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -3471,6 +3519,7 @@
       "dBType" : "MYSQL5",
       "name" : "FROMCASEID",
       "queryCodeExp" : "t1.`FROMCASEID`",
+      "standardColumnName" : "`FROMCASEID`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3519,6 +3568,7 @@
       "dBType" : "MYSQL5",
       "name" : "BRANCH",
       "queryCodeExp" : "t1.`BRANCH`",
+      "standardColumnName" : "`BRANCH`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3567,6 +3617,7 @@
       "dBType" : "MYSQL5",
       "name" : "FROMBUG",
       "queryCodeExp" : "t1.`FROMBUG`",
+      "standardColumnName" : "`FROMBUG`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3615,6 +3666,7 @@
       "dBType" : "MYSQL5",
       "name" : "STORY",
       "queryCodeExp" : "t1.`STORY`",
+      "standardColumnName" : "`STORY`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3663,6 +3715,7 @@
       "dBType" : "MYSQL5",
       "name" : "PRODUCT",
       "queryCodeExp" : "t1.`PRODUCT`",
+      "standardColumnName" : "`PRODUCT`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3711,6 +3764,7 @@
       "dBType" : "MYSQL5",
       "name" : "LIB",
       "queryCodeExp" : "t1.`LIB`",
+      "standardColumnName" : "`LIB`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -3759,6 +3813,7 @@
       "dBType" : "MYSQL5",
       "name" : "MODULE",
       "queryCodeExp" : "t1.`MODULE`",
+      "standardColumnName" : "`MODULE`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],

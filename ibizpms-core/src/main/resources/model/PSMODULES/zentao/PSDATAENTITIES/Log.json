@@ -70,6 +70,7 @@
       "dBType" : "MYSQL5",
       "name" : "URL",
       "queryCodeExp" : "t1.`URL`",
+      "standardColumnName" : "`URL`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -120,6 +121,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACTION",
       "queryCodeExp" : "t1.`ACTION`",
+      "standardColumnName" : "`ACTION`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -157,6 +159,7 @@
       "dBType" : "MYSQL5",
       "name" : "CONTENTTYPE",
       "queryCodeExp" : "t1.`CONTENTTYPE`",
+      "standardColumnName" : "`CONTENTTYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -207,6 +210,7 @@
       "dBType" : "MYSQL5",
       "name" : "OBJECTID",
       "queryCodeExp" : "t1.`OBJECTID`",
+      "standardColumnName" : "`OBJECTID`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -244,6 +248,7 @@
       "dBType" : "MYSQL5",
       "name" : "DATE",
       "queryCodeExp" : "t1.`DATE`",
+      "standardColumnName" : "`DATE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -281,6 +286,7 @@
       "dBType" : "MYSQL5",
       "name" : "RESULT",
       "queryCodeExp" : "t1.`RESULT`",
+      "standardColumnName" : "`RESULT`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -332,6 +338,7 @@
       "dBType" : "MYSQL5",
       "name" : "OBJECTTYPE",
       "queryCodeExp" : "t1.`OBJECTTYPE`",
+      "standardColumnName" : "`OBJECTTYPE`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -382,6 +389,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
+      "standardColumnName" : "`ID`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -427,6 +435,7 @@
       "dBType" : "MYSQL5",
       "name" : "DATA",
       "queryCodeExp" : "t1.`DATA`",
+      "standardColumnName" : "`DATA`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
