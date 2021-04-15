@@ -64,6 +64,9 @@ class 项目汇报用户任务 {
 class 项目工时统计 {
 }
 
+class 项目其他活动 {
+}
+
 
 平台产品 *-- 需求模块 
 
@@ -111,3 +114,4 @@ hide members
 |IBIZPRO_PRODUCTUSERTASK|[产品汇报用户任务](ibizpro/IbzproProductUserTask.md)|主实体|&nbsp;|
 |IBIZPRO_PROJECTUSERTASK|[项目汇报用户任务](ibizpro/IbzproProjectUserTask.md)|主实体|&nbsp;|
 |PROJECTTASKESTIMATE|[项目工时统计](ibizpro/ProjectTaskestimate.md)|主实体|&nbsp;|
+|PROJECTTODO|[项目其他活动](ibizpro/ProjectTodo.md)|主实体|&nbsp;|

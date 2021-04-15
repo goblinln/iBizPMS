@@ -71,6 +71,9 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
     protected cn.ibizlab.pms.core.ibiz.service.IProjectTeamService projectteamService;
     @Autowired
     @Lazy
+    protected cn.ibizlab.pms.core.ibizpro.service.IProjectTodoService projecttodoService;
+    @Autowired
+    @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IActionService actionService;
     @Autowired
     @Lazy

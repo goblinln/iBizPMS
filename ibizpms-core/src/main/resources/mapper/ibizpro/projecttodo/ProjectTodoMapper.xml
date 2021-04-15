@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="cn.ibizlab.pms.core.ibizpro.mapper.ProjectTodoMapper">
+
+    <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
+	<select id="selectById"  resultMap="ProjectTodoResultMap" databaseId="mysql">
+        <![CDATA[select t1.* from (SELECT t1.`ACCOUNT`, t1.`ASSIGNEDBY`, t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CONFIG`, t1.`CONSUMED`, t1.`COST`, t1.`DATE`, t1.`DESC`, t1.`FINISHEDBY`, t1.`FINISHEDDATE`, t1.`ID`, t1.`IDVALUE`, t1.`NAME`, t1.`PRI`, t1.`PRIVATE`, t1.`STATUS`, t1.`TYPE` FROM `zt_todo` t1  ) t1 where id=#{id}]]>
+    </select>
+
+    <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="ProjectTodoResultMap" type="cn.ibizlab.pms.core.ibizpro.domain.ProjectTodo" autoMapping="true">
+		<id property="id" column="id" /><!--主键字段映射-->
+		<result property="ibizprivate" column="private" />
+		<result property="idvalue" column="idvalue" />
+
+
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="project" javaType="cn.ibizlab.pms.core.zentao.domain.Project" column="idvalue" select="cn.ibizlab.pms.core.zentao.mapper.ProjectMapper.selectById" fetchType="lazy"></association>
+    </resultMap>
+
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_PROJECTTODO_ZT_PROJECT_IDVALUE] -->
+	 <select id="selectByIdvalue" resultMap="ProjectTodoResultMap">
+         select t1.* from (
+                <include refid="Default" />
+			 ) t1
+			 where  idvalue=#{id}
+     </select>
+
+    <!--数据集合[Default]-->
+	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.ProjectTodoSearchContext"  resultMap="ProjectTodoResultMap">
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
+    <!--数据查询[Default]-->
+    <sql id="Default" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ASSIGNEDBY`, t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CONFIG`, t1.`CONSUMED`, t1.`COST`, t1.`DATE`, t1.`FINISHEDBY`, t1.`FINISHEDDATE`, t1.`ID`, t1.`IDVALUE`, t1.`NAME`, t1.`PRI`, t1.`PRIVATE`, t1.`STATUS`, t1.`TYPE` FROM `zt_todo` t1  
+			]]>
+    </sql>
+    <!--数据查询[View]-->
+    <sql id="View" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ASSIGNEDBY`, t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CONFIG`, t1.`CONSUMED`, t1.`COST`, t1.`DATE`, t1.`DESC`, t1.`FINISHEDBY`, t1.`FINISHEDDATE`, t1.`ID`, t1.`IDVALUE`, t1.`NAME`, t1.`PRI`, t1.`PRIVATE`, t1.`STATUS`, t1.`TYPE` FROM `zt_todo` t1  
+			]]>
+    </sql>
+</mapper>
+

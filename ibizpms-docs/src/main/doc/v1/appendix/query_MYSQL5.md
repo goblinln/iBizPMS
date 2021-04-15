@@ -16919,6 +16919,60 @@ WHERE ( t1.`TYPE` = 'project' )
 
 ```
 
+# **项目其他活动**(PROJECTTODO)
+
+### 数据查询(DEFAULT)<div id="ProjectTodo_Default"></div>
+```sql
+SELECT
+t1.`ACCOUNT`,
+t1.`ASSIGNEDBY`,
+t1.`ASSIGNEDDATE`,
+t1.`ASSIGNEDTO`,
+t1.`CLOSEDBY`,
+t1.`CLOSEDDATE`,
+t1.`CONFIG`,
+t1.`CONSUMED`,
+t1.`COST`,
+t1.`DATE`,
+t1.`FINISHEDBY`,
+t1.`FINISHEDDATE`,
+t1.`ID`,
+t1.`IDVALUE`,
+t1.`NAME`,
+t1.`PRI`,
+t1.`PRIVATE`,
+t1.`STATUS`,
+t1.`TYPE`
+FROM `zt_todo` t1 
+
+```
+### 默认（全部数据）(VIEW)<div id="ProjectTodo_View"></div>
+```sql
+SELECT
+t1.`ACCOUNT`,
+t1.`ASSIGNEDBY`,
+t1.`ASSIGNEDDATE`,
+t1.`ASSIGNEDTO`,
+t1.`CLOSEDBY`,
+t1.`CLOSEDDATE`,
+t1.`CONFIG`,
+t1.`CONSUMED`,
+t1.`COST`,
+t1.`DATE`,
+t1.`DESC`,
+t1.`FINISHEDBY`,
+t1.`FINISHEDDATE`,
+t1.`ID`,
+t1.`IDVALUE`,
+t1.`NAME`,
+t1.`PRI`,
+t1.`PRIVATE`,
+t1.`STATUS`,
+t1.`TYPE`
+FROM `zt_todo` t1 
+
+```
+
 # **relation**(ZT_RELATION)
 
 ### DEFAULT(DEFAULT)<div id="Relation_Default"></div>
