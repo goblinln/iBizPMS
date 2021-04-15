@@ -254,6 +254,14 @@ public class DocLib extends EntityMP implements Serializable {
     @JsonProperty("product")
     @ApiModelProperty("产品库")
     private Long product;
+    /**
+     * 由谁更新
+     */
+    @TableField(value = "updatemanname")
+    @JSONField(name = "updatemanname")
+    @JsonProperty("updatemanname")
+    @ApiModelProperty("由谁更新")
+    private String updatemanname;
 
     /**
      * 
@@ -351,6 +359,14 @@ public class DocLib extends EntityMP implements Serializable {
     public void setProduct(Long product) {
         this.product = product;
         this.modify("product", product);
+    }
+
+    /**
+     * 设置 [由谁更新]
+     */
+    public void setUpdatemanname(String updatemanname) {
+        this.updatemanname = updatemanname;
+        this.modify("updatemanname", updatemanname);
     }
 
 

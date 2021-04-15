@@ -8561,6 +8561,21 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"UPDATEMANNAME" ,
+    "codename":"UpdateManName",
+    "field_logic_name":"由谁更新",
+    "entity_name":"ZT_DOCLIB",
+    "field_type":"TEXT",
+    "dict":"UserRealName",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"VARCHAR",
+    "data_length":60,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[

@@ -1508,6 +1508,60 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "linkDEField" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "UPDATEMANNAME",
+      "dBType" : "MYSQL5",
+      "name" : "UPDATEMANNAME",
+      "queryCodeExp" : "t1.`UPDATEMANNAME`",
+      "autoIncrement" : false,
+      "valueAutoGen" : false
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "UPDATEMANNAME",
+          "maxValue" : 60,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[60]"
+      },
+      "getPSDEField" : {
+        "name" : "UPDATEMANNAME",
+        "codeName" : "UpdateManName"
+      },
+      "ruleHolder" : 3,
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "UpdateManName",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "deployId" : "4cd5ccb8a3dc9672ce4f5ea9c82248c2",
+    "importOrder" : 1000,
+    "length" : 60,
+    "logicName" : "由谁更新",
+    "name" : "UPDATEMANNAME",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+    },
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "valueFormat" : "%1$s"
   } ],
   "getAllPSDELogics" : [ {
     "modelref" : true,

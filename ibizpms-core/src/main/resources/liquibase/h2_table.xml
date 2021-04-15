@@ -653,7 +653,7 @@
 
 
     <!--输出实体[ZT_DOCLIB]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_doclib-1-20">
+    <changeSet author="zentao" id="tab-zt_doclib-5-20">
         <createTable tableName="zt_doclib">
                 <column name="TYPE" remarks="" type="VARCHAR(30)">
                 </column>
@@ -687,6 +687,8 @@
                 <column name="PROJECT" remarks="" type="BIGINT">
                 </column>
                 <column name="PRODUCT" remarks="" type="BIGINT">
+                </column>
+                <column name="UPDATEMANNAME" remarks="" type="VARCHAR(60)">
                 </column>
         </createTable>
     </changeSet>

@@ -270,6 +270,16 @@ public class DocLibDTO extends DTOBase implements Serializable {
     @ApiModelProperty("产品库")
     private Long product;
 
+    /**
+     * 属性 [UPDATEMANNAME]
+     *
+     */
+    @JSONField(name = "updatemanname")
+    @JsonProperty("updatemanname")
+    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
+    @ApiModelProperty("由谁更新")
+    private String updatemanname;
+
 
     /**
      * 设置 [TYPE]
@@ -349,6 +359,14 @@ public class DocLibDTO extends DTOBase implements Serializable {
     public void setProduct(Long  product){
         this.product = product ;
         this.modify("product",product);
+    }
+
+    /**
+     * 设置 [UPDATEMANNAME]
+     */
+    public void setUpdatemanname(String  updatemanname){
+        this.updatemanname = updatemanname ;
+        this.modify("updatemanname",updatemanname);
     }
 
 

@@ -445,6 +445,12 @@
     "logicName" : "产品库",
     "name" : "PRODUCT",
     "stdDataType" : 1
+  }, {
+    "codeName" : "UpdateManName",
+    "logicName" : "由谁更新",
+    "name" : "UPDATEMANNAME",
+    "stdDataType" : 25,
+    "stringLength" : 60
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",
