@@ -331,7 +331,7 @@
     "data_type":"DATETIME",
     "key_field":0,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     },
     {
     "fieldname":"TWENTYNINECONSUMED" ,
@@ -6925,7 +6925,7 @@
     "data_type":"BIGINT",
     "key_field":1,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     },
     {
     "fieldname":"MODULE" ,
@@ -7025,7 +7025,7 @@
     "data_type":"BIGINT",
     "key_field":1,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     },
     {
     "fieldname":"STATUS" ,
@@ -10300,7 +10300,7 @@
     "data_type":"INT",
     "key_field":0,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     },
     {
     "fieldname":"METHOD" ,
@@ -19959,7 +19959,7 @@
     "data_type":"BIGINT",
     "key_field":1,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     },
     {
     "fieldname":"ORDER" ,
@@ -20240,7 +20240,7 @@
     "data_type":"BIGINT",
     "key_field":1,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     },
     {
     "fieldname":"CREATEDBY" ,
@@ -20353,7 +20353,7 @@
     "data_type":"BIGINT",
     "key_field":1,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     },
     {
     "fieldname":"RID" ,
@@ -20466,7 +20466,7 @@
     "data_type":"BIGINT",
     "key_field":1,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     }
     ],
     "subEntitys":[
@@ -20524,7 +20524,7 @@
     "data_type":"BIGINT",
     "key_field":1,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     },
     {
     "fieldname":"DATE" ,
@@ -20695,7 +20695,7 @@
     "data_type":"INT",
     "key_field":0,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     },
     {
     "fieldname":"ID" ,
@@ -20794,7 +20794,7 @@
     "data_type":"BIGINT",
     "key_field":1,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     },
     {
     "fieldname":"STATUS" ,
@@ -21332,7 +21332,7 @@
     "data_type":"BIGINT",
     "key_field":1,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     },
     {
     "fieldname":"KEY" ,
@@ -21528,7 +21528,7 @@
     "data_type":"BIGINT",
     "key_field":1,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     },
     {
     "fieldname":"DATA" ,
@@ -21974,7 +21974,7 @@
     "data_type":"BIGINT",
     "key_field":1,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     },
     {
     "fieldname":"CREATEDBY" ,
@@ -36488,7 +36488,7 @@
     "predefined":"ORGID",
     "key_field":0,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     },
     {
     "fieldname":"CREATEBY" ,
@@ -37603,7 +37603,7 @@
     "data_type":"DATETIME",
     "key_field":0,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     },
     {
     "fieldname":"SIXTEENCONSUMED" ,
@@ -38505,7 +38505,7 @@
     "data_type":"BIGINT",
     "key_field":1,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     },
     {
     "fieldname":"PROGRAM" ,
@@ -39369,7 +39369,7 @@
     "data_length":255,
     "key_field":0,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     }
     ],
     "subEntitys":[
@@ -39441,7 +39441,7 @@
     "data_length":1,
     "key_field":0,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     },
     {
     "fieldname":"REPO" ,
@@ -39608,7 +39608,7 @@
     "data_type":"BIGINT",
     "key_field":1,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     }
     ],
     "subEntitys":[
@@ -39719,7 +39719,7 @@
     "data_type":"BIGINT",
     "key_field":1,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     },
     {
     "fieldname":"AFTER" ,
@@ -41348,7 +41348,7 @@
     "data_length":8,
     "key_field":0,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     },
     {
     "fieldname":"BRANCH" ,
@@ -41527,7 +41527,7 @@
     "data_length":8,
     "key_field":0,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     },
     {
     "fieldname":"PRODUCT" ,
@@ -46207,7 +46207,7 @@
     "data_length":100,
     "key_field":0,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     },
     {
     "fieldname":"ID" ,
@@ -47246,7 +47246,7 @@
     "data_length":8,
     "key_field":1,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     },
     {
     "fieldname":"LEFT" ,
@@ -48654,7 +48654,7 @@
     "data_length":8,
     "key_field":1,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     },
     {
     "fieldname":"CREATEBY" ,
@@ -50609,7 +50609,7 @@
     "data_type":"INT",
     "key_field":0,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     },
     {
     "fieldname":"ID" ,
@@ -50949,7 +50949,7 @@
     "data_length":30,
     "key_field":0,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     },
     {
     "fieldname":"PROJECTS" ,

@@ -27,7 +27,12 @@ export abstract class TestRunBase extends EntityBase implements ITestRun {
     set srfkey(val: any) {
         this.id = val;
     }
-    // TestRun 实体未设置主文本属性
+    get srfmajortext() {
+        return this.id;
+    }
+    set srfmajortext(val: any) {
+        this.id = val;
+    }
     /**
      * 结果
      *
@@ -95,6 +100,6 @@ export abstract class TestRunBase extends EntityBase implements ITestRun {
     reset(data: any = {}): void {
         super.reset(data);
         this.id = data.id || data.srfkey;
-        // TestRun 实体未设置主文本属性
+        this.id = data.id || data.srfmajortext;
     }
 }

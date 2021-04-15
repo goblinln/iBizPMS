@@ -27,7 +27,12 @@ export abstract class SuiteCaseBase extends EntityBase implements ISuiteCase {
     set srfkey(val: any) {
         this.id = val;
     }
-    // SuiteCase 实体未设置主文本属性
+    get srfmajortext() {
+        return this.ibizcase;
+    }
+    set srfmajortext(val: any) {
+        this.ibizcase = val;
+    }
     /**
      * 归属部门
      */
@@ -75,6 +80,6 @@ export abstract class SuiteCaseBase extends EntityBase implements ISuiteCase {
     reset(data: any = {}): void {
         super.reset(data);
         this.id = data.id || data.srfkey;
-        // SuiteCase 实体未设置主文本属性
+        this.ibizcase = data.ibizcase || data.srfmajortext;
     }
 }

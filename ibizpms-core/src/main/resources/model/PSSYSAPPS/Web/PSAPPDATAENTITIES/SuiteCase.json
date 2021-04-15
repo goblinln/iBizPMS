@@ -10,8 +10,19 @@
         "name" : "ID",
         "codeName" : "Id"
       }
+    }, {
+      "dataType" : 25,
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "CASE",
+        "codeName" : "IBizCase"
+      }
     } ],
     "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "CASE",
+      "codeName" : "IBizCase"
+    },
     "getValuePSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
@@ -186,7 +197,9 @@
     "codeName" : "IBizCase",
     "logicName" : "用例",
     "name" : "CASE",
-    "stdDataType" : 1
+    "stdDataType" : 1,
+    "enableQuickSearch" : true,
+    "majorField" : true
   }, {
     "codeName" : "Product",
     "logicName" : "所属产品",
@@ -385,6 +398,10 @@
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDESERVICEAPIS/SuiteCase.json"
   },
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "CASE",
+    "codeName" : "IBizCase"
+  } ],
   "storageMode" : 0,
   "defaultMode" : true,
   "enableFilterActions" : true,

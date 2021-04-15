@@ -10,8 +10,19 @@
         "name" : "ID",
         "codeName" : "Id"
       }
+    }, {
+      "dataType" : 25,
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "ACCOUNT",
+        "codeName" : "Account"
+      }
     } ],
     "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
+    },
     "getValuePSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
@@ -202,7 +213,9 @@
     "logicName" : "用户",
     "name" : "ACCOUNT",
     "stdDataType" : 25,
-    "stringLength" : 100
+    "stringLength" : 100,
+    "enableQuickSearch" : true,
+    "majorField" : true
   }, {
     "codeName" : "Id",
     "logicName" : "编号",
@@ -478,6 +491,10 @@
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimateStats/PSDESERVICEAPIS/taskestimatestats.json"
   },
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "ACCOUNT",
+    "codeName" : "Account"
+  } ],
   "storageMode" : 0,
   "defaultMode" : true,
   "enableFilterActions" : true,

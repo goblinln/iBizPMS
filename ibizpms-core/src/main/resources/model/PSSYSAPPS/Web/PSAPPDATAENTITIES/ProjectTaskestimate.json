@@ -10,8 +10,19 @@
         "name" : "ID",
         "codeName" : "Id"
       }
+    }, {
+      "dataType" : 25,
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "DATE",
+        "codeName" : "Date"
+      }
     } ],
     "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    },
     "getValuePSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
@@ -514,7 +525,9 @@
     "logicName" : "日期",
     "name" : "DATE",
     "stdDataType" : 5,
-    "valueFormat" : "YYYY-MM-DD"
+    "valueFormat" : "YYYY-MM-DD",
+    "enableQuickSearch" : true,
+    "majorField" : true
   }, {
     "codeName" : "Sixteenconsumed",
     "logicName" : "十六号工时",
@@ -903,6 +916,10 @@
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate/PSDESERVICEAPIS/ProjectTaskestimate.json"
   },
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "DATE",
+    "codeName" : "Date"
+  } ],
   "storageMode" : 0,
   "defaultMode" : true,
   "enableFilterActions" : true,

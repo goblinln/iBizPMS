@@ -2397,7 +2397,9 @@
     "logicName" : "日期",
     "name" : "DATE",
     "stdDataType" : 5,
-    "valueFormat" : "%1$tY-%1$tm-%1$td"
+    "valueFormat" : "%1$tY-%1$tm-%1$td",
+    "enableQuickSearch" : true,
+    "majorDEField" : true
   }, {
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

@@ -44,6 +44,9 @@ public class TestRunSearchContext extends QueryWrapperContext<TestRun> {
 	{
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
+            this.getSearchCond().and( wrapper ->
+                     wrapper.like("id", query)
+            );
 		 }
 	}
 }

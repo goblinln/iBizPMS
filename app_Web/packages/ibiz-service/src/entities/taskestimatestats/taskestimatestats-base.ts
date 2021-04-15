@@ -27,7 +27,12 @@ export abstract class TaskestimatestatsBase extends EntityBase implements ITaske
     set srfkey(val: any) {
         this.id = val;
     }
-    // taskestimatestats 实体未设置主文本属性
+    get srfmajortext() {
+        return this.account;
+    }
+    set srfmajortext(val: any) {
+        this.account = val;
+    }
     /**
      * 日期
      */
@@ -95,6 +100,6 @@ export abstract class TaskestimatestatsBase extends EntityBase implements ITaske
     reset(data: any = {}): void {
         super.reset(data);
         this.id = data.id || data.srfkey;
-        // taskestimatestats 实体未设置主文本属性
+        this.account = data.account || data.srfmajortext;
     }
 }

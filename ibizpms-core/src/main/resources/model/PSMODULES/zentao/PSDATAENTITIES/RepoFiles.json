@@ -250,7 +250,9 @@
     "name" : "ACTION",
     "stdDataType" : 25,
     "stringLength" : 1,
-    "valueFormat" : "%1$s"
+    "valueFormat" : "%1$s",
+    "enableQuickSearch" : true,
+    "majorDEField" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "REPO",

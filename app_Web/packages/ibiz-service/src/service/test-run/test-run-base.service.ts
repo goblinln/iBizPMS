@@ -19,7 +19,8 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
     protected APPDENAME = 'TestRun';
     protected APPDENAMEPLURAL = 'TestRuns';
     protected APPDEKEY = 'id';
-    // TestRun 实体未设置主文本属性
+    protected APPDETEXT = 'id';
+    protected quickSearchFields = ['id',];
     protected selectContextParam = {
         testtask: 'task',
     };

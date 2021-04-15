@@ -27,7 +27,12 @@ export abstract class ProjectTaskestimateBase extends EntityBase implements IPro
     set srfkey(val: any) {
         this.id = val;
     }
-    // ProjectTaskestimate 实体未设置主文本属性
+    get srfmajortext() {
+        return this.date;
+    }
+    set srfmajortext(val: any) {
+        this.date = val;
+    }
     /**
      * 二十五号评估工时
      */
@@ -463,6 +468,6 @@ export abstract class ProjectTaskestimateBase extends EntityBase implements IPro
     reset(data: any = {}): void {
         super.reset(data);
         this.id = data.id || data.srfkey;
-        // ProjectTaskestimate 实体未设置主文本属性
+        this.date = data.date || data.srfmajortext;
     }
 }

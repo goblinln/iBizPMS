@@ -10,8 +10,19 @@
         "name" : "ID",
         "codeName" : "Id"
       }
+    }, {
+      "dataType" : 25,
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
     } ],
     "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "getValuePSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
@@ -194,7 +205,9 @@
     "logicName" : "编号",
     "name" : "ID",
     "stdDataType" : 1,
-    "keyField" : true
+    "enableQuickSearch" : true,
+    "keyField" : true,
+    "majorField" : true
   }, {
     "codeName" : "CreateBy",
     "logicName" : "由谁创建",
@@ -435,6 +448,10 @@
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDESERVICEAPIS/TestRun.json"
   },
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "ID",
+    "codeName" : "Id"
+  } ],
   "storageMode" : 0,
   "defaultMode" : true,
   "enableFilterActions" : true,

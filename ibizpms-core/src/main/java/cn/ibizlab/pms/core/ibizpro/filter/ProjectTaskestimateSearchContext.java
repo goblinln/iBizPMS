@@ -58,6 +58,9 @@ public class ProjectTaskestimateSearchContext extends QueryWrapperContext<Projec
 	{
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
+            this.getSearchCond().and( wrapper ->
+                     wrapper.like("date", query)
+            );
 		 }
 	}
 }

@@ -19,7 +19,8 @@ export class AccountTaskestimateBaseService extends EntityBaseService<IAccountTa
     protected APPDENAME = 'AccountTaskestimate';
     protected APPDENAMEPLURAL = 'AccountTaskestimates';
     protected APPDEKEY = 'id';
-    // AccountTaskestimate 实体未设置主文本属性
+    protected APPDETEXT = 'date';
+    protected quickSearchFields = ['date',];
     protected selectContextParam = {
     };
 

@@ -36,6 +36,9 @@ public class RepoBranchSearchContext extends QueryWrapperContext<RepoBranch> {
 	{
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
+            this.getSearchCond().and( wrapper ->
+                     wrapper.like("branch", query)
+            );
 		 }
 	}
 }

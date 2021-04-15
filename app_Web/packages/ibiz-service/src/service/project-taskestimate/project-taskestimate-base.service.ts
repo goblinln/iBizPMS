@@ -19,7 +19,8 @@ export class ProjectTaskestimateBaseService extends EntityBaseService<IProjectTa
     protected APPDENAME = 'ProjectTaskestimate';
     protected APPDENAMEPLURAL = 'ProjectTaskestimates';
     protected APPDEKEY = 'id';
-    // ProjectTaskestimate 实体未设置主文本属性
+    protected APPDETEXT = 'date';
+    protected quickSearchFields = ['date',];
     protected selectContextParam = {
     };
 

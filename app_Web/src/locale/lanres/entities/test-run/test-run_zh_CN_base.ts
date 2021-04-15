@@ -34,6 +34,7 @@ function getLocaleResourceBase(){
 				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
 				'srforikey': commonLogic.appcommonhandle("",null), 
 				'srfkey': commonLogic.appcommonhandle("编号",null), 
+				'srfmajortext': commonLogic.appcommonhandle("编号",null), 
 				'srftempmode': commonLogic.appcommonhandle("",null), 
 				'srfuf': commonLogic.appcommonhandle("",null), 
 				'srfdeid': commonLogic.appcommonhandle("",null), 

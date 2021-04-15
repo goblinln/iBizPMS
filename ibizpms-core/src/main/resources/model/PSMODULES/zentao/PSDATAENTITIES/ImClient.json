@@ -483,9 +483,11 @@
     "valueFormat" : "%1$s",
     "allowEmpty" : false,
     "enableDBAutoValue" : true,
+    "enableQuickSearch" : true,
     "enableUICreate" : false,
     "enableUIModify" : false,
     "keyDEField" : true,
+    "majorDEField" : true,
     "pasteReset" : true
   }, {
     "getAllPSDEFDTColumns" : [ {

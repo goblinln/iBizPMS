@@ -19,7 +19,8 @@ export class SuiteCaseBaseService extends EntityBaseService<ISuiteCase> {
     protected APPDENAME = 'SuiteCase';
     protected APPDENAMEPLURAL = 'SuiteCases';
     protected APPDEKEY = 'id';
-    // SuiteCase 实体未设置主文本属性
+    protected APPDETEXT = 'ibizcase';
+    protected quickSearchFields = ['ibizcase',];
     protected selectContextParam = {
     };
 

@@ -19,7 +19,8 @@ export class TaskestimatestatsBaseService extends EntityBaseService<ITaskestimat
     protected APPDENAME = 'Taskestimatestats';
     protected APPDENAMEPLURAL = 'taskestimatestats';
     protected APPDEKEY = 'id';
-    // taskestimatestats 实体未设置主文本属性
+    protected APPDETEXT = 'account';
+    protected quickSearchFields = ['account',];
     protected selectContextParam = {
     };
 
