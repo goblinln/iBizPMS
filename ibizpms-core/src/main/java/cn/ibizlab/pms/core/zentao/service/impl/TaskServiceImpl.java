@@ -385,6 +385,22 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
 	 	 return true;
     }
 
+    @Override
+    @Transactional
+    public Task recordTimateZeroLeft(Task et) {
+        //自定义代码
+        return et;
+    }
+
+    @Override
+    @Transactional
+    public boolean recordTimateZeroLeftBatch(List<Task> etList) {
+        for(Task et : etList) {
+            recordTimateZeroLeft(et);
+        }
+        return true;
+    }
+
        @Override
     @Transactional
     public Task restart(Task et) {
