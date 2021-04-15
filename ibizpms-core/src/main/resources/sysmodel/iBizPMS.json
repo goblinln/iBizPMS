@@ -8344,7 +8344,6 @@
     "physical_field":1,
     "data_type":"VARCHAR",
     "data_length":100,
-    "predefined":"UPDATEMANNAME",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -8569,10 +8568,11 @@
     "entity_name":"ZT_DOCLIB",
     "field_type":"TEXT",
     "dict":"UserRealName",
-    "nullable":1,
+    "nullable":0,
     "physical_field":1,
     "data_type":"VARCHAR",
     "data_length":60,
+    "predefined":"UPDATEMANNAME",
     "key_field":0,
     "show_order":1000,
     "major_field":0

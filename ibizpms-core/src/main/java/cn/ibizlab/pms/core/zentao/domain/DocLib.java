@@ -127,7 +127,6 @@ public class DocLib extends EntityMP implements Serializable {
     /**
      * 由谁更新
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
     @TableField(value = "updateby")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")
@@ -257,6 +256,7 @@ public class DocLib extends EntityMP implements Serializable {
     /**
      * 由谁更新
      */
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
     @TableField(value = "updatemanname")
     @JSONField(name = "updatemanname")
     @JsonProperty("updatemanname")
@@ -303,6 +303,14 @@ public class DocLib extends EntityMP implements Serializable {
     public void setAcl(String acl) {
         this.acl = acl;
         this.modify("acl", acl);
+    }
+
+    /**
+     * 设置 [由谁更新]
+     */
+    public void setUpdateby(String updateby) {
+        this.updateby = updateby;
+        this.modify("updateby", updateby);
     }
 
     /**
@@ -359,14 +367,6 @@ public class DocLib extends EntityMP implements Serializable {
     public void setProduct(Long product) {
         this.product = product;
         this.modify("product", product);
-    }
-
-    /**
-     * 设置 [由谁更新]
-     */
-    public void setUpdatemanname(String updatemanname) {
-        this.updatemanname = updatemanname;
-        this.modify("updatemanname", updatemanname);
     }
 
 

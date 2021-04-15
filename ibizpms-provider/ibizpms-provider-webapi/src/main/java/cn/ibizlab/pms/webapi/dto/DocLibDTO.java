@@ -306,6 +306,14 @@ public class DocLibDTO extends DTOBase implements Serializable {
     }
 
     /**
+     * 设置 [UPDATEBY]
+     */
+    public void setUpdateby(String  updateby){
+        this.updateby = updateby ;
+        this.modify("updateby",updateby);
+    }
+
+    /**
      * 设置 [GROUPS]
      */
     public void setGroups(String  groups){
@@ -359,14 +367,6 @@ public class DocLibDTO extends DTOBase implements Serializable {
     public void setProduct(Long  product){
         this.product = product ;
         this.modify("product",product);
-    }
-
-    /**
-     * 设置 [UPDATEMANNAME]
-     */
-    public void setUpdatemanname(String  updatemanname){
-        this.updatemanname = updatemanname ;
-        this.modify("updatemanname",updatemanname);
     }
 
 

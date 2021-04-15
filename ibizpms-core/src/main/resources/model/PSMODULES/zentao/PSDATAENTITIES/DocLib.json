@@ -832,11 +832,9 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
     },
-    "predefinedType" : "UPDATEMANNAME",
     "stdDataType" : 25,
     "stringLength" : 100,
-    "valueFormat" : "%1$s",
-    "systemReserver" : true
+    "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "GROUPS",
@@ -1559,9 +1557,12 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
     },
+    "predefinedType" : "UPDATEMANNAME",
     "stdDataType" : 25,
     "stringLength" : 60,
-    "valueFormat" : "%1$s"
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false,
+    "systemReserver" : true
   } ],
   "getAllPSDELogics" : [ {
     "modelref" : true,
