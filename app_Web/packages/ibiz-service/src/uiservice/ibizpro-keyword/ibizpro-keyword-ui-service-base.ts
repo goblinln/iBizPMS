@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { IBIZProKeywordService } from '../../service/ibizpro-keyword/ibizpro-keyword.service';
+import { IBIZProKeywordService } from '../../service';
 import IBIZProKeywordAuthService from '../../authservice/ibizpro-keyword/ibizpro-keyword-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class IBIZProKeywordUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

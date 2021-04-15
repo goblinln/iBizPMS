@@ -602,6 +602,7 @@ export class EditFormControlBase extends FormControlBase {
             const _this: any = this;
             const formData: any = this.getData();
             const copyData: any = Util.deepCopy(data[0]);
+            Object.assign(formData, { viewparams: copyData });
             const post: Promise<any> = Object.is(formData.srfuf, '1') ? this.service.update(this.updateAction, JSON.parse(JSON.stringify(this.context)), formData, this.showBusyIndicator, true) : this.service.add(this.createAction, JSON.parse(JSON.stringify(this.context)), formData, this.showBusyIndicator, true);
             this.ctrlBeginLoading();
             post.then((response: any) => {
@@ -702,6 +703,7 @@ export class EditFormControlBase extends FormControlBase {
             const _this: any = this;
             const arg: any = data[0];
             const copyData: any = Util.deepCopy(arg);
+            Object.assign(this.viewparams, copyData);
             Object.assign(arg, { viewparams: this.viewparams });
             if (!arg[this.controlInstance?.appDataEntity?.keyField?.codeName?.toLowerCase()] || Object.is(arg[this.controlInstance?.appDataEntity?.keyField?.codeName?.toLowerCase()], '')) {
                 return;

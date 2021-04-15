@@ -8,25 +8,6 @@ export const getDepartmentPersonnel = (state: any) => () => {
 }
 
 /**
- * 获取组织数据
- * 
- * @param state 
- */
- export const getOrgsData = (state: any) => () => {
-    return state.orgdata;
-}
-
-/**
- * 获取激活组织数据
- * 
- * @param state 
- * @param localdata 
- */
- export const getActiveOrgData = (state: any) => () => {
-    return state.activeorgdata;
-}
-
-/**
  * 获取代码表对象
  * 
  * @param state 

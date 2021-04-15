@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { SuiteCaseService } from '../../service/suite-case/suite-case.service';
+import { SuiteCaseService } from '../../service';
 import SuiteCaseAuthService from '../../authservice/suite-case/suite-case-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class SuiteCaseUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField ="org";
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

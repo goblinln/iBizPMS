@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { StoryService } from '../../service/story/story.service';
+import { StoryService } from '../../service';
 import StoryAuthService from '../../authservice/story/story-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class StoryUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = true;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField ="org";
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

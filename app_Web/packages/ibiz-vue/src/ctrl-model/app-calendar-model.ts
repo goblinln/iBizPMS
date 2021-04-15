@@ -66,7 +66,8 @@ export class AppCalendarModel {
                 getBeginTimePSAppDEField: beginField,
                 getEndTimePSAppDEField: endField,
                 getBkColorPSAppDEField: bkColorField,
-                getColorPSAppDEField: colorField
+                getColorPSAppDEField: colorField,
+                getContentPSAppDEField: contentField,
             } = item;
             let tempArr: any[] = [{
                 name: entity?.codeName?.toLowerCase(),
@@ -87,6 +88,12 @@ export class AppCalendarModel {
                 name: 'color',
                 prop: colorField?.codeName ? colorField.codeName.toLowerCase() : colorField?.name?.toLowerCase()
             }];
+            if (contentField) {
+                tempArr.push({
+                    name: 'content',
+                    prop: contentField?.codeName ? contentField.codeName.toLowerCase() : contentField?.name?.toLowerCase()
+                })
+            }
             modelArray = [...modelArray, ...tempArr];
         }
         return modelArray;

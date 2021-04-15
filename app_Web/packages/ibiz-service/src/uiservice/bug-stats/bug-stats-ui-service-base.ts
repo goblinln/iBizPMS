@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { BugStatsService } from '../../service/bug-stats/bug-stats.service';
+import { BugStatsService } from '../../service';
 import BugStatsAuthService from '../../authservice/bug-stats/bug-stats-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class BugStatsUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

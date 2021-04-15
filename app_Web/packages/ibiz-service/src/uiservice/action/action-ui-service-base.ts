@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { ActionService } from '../../service/action/action.service';
+import { ActionService } from '../../service';
 import ActionAuthService from '../../authservice/action/action-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class ActionUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

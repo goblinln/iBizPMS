@@ -1,4 +1,4 @@
-import { DynamicService, Util } from "ibiz-core";
+import { AppServiceBase, DynamicService, Util } from "ibiz-core";
 
 /**
  * 全局界面行为服务
@@ -506,59 +506,69 @@ export class AppGlobalService {
                 startWorkFlow(args, localdata);
             }
         }
-        if (_this.appEntityService.getDynaWorkflow && (_this.appEntityService.getDynaWorkflow instanceof Function)) {
-            let localdata: any;
-            _this.appEntityService.getDynaWorkflow(_this.context).then((response: any) => {
-                const { data: targetData, status: status } = response;
-                if ((status !== 200) || (targetData.length === 0)) {
-                    return;
-                }
-                if (targetData && targetData.length > 1) {
-                    targetData.forEach((element: any) => {
-                        Object.assign(element, { value: element.definitionkey, label: element.definitionname });
-                    })
-                    const h = _this.$createElement;
-                    _this.$msgbox({
-                        title: '请选择流程版本',
-                        message: h('i-select', {
-                            key: Util.createUUID(),
-                            props: {
-                                value: localdata,
-                                placeholder: "请选择流程版本..."
-                            },
-                            on: {
-                                'on-change': ($event: any) => {
-                                    localdata = { processDefinitionKey: $event };
-                                }
-                            }
-                        }, targetData.map((item: any) => {
-                            return h('i-option', {
-                                key: item.value,
-                                props: {
-                                    value: item.value,
-                                    label: item.label
-                                }
-                            })
-                        })),
-                        showCancelButton: true,
-                        confirmButtonText: '确定',
-                        cancelButtonText: '取消'
-                    }).then((action: string) => {
-                        if (Object.is(action, 'confirm') && localdata && Object.keys(localdata).length > 0) {
-                            let targetItem: any = targetData.find((item: any) => {
-                                return item.value === localdata;
-                            })
-                            openStartView(targetItem, localdata);
-                        }
-                    })
-                } else {
-                    localdata = { processDefinitionKey: targetData[0]['definitionkey'] };
-                    // todo 模拟
-                    targetData[0]['process-view'] = "WFSTART@1";
-                    openStartView(targetData[0], localdata);
-                }
+        let localdata: any;
+        let requestResult: Promise<any>;
+        let copyContext: any = Util.deepCopy(_this.context);
+        if (copyContext.srfdynainstid) {
+            let appModelObj: any = AppServiceBase.getInstance().getAppModelDataObject();
+            let dynainstParam: any = appModelObj.getPSDynaInsts.find((item: any) => {
+                return item.id === copyContext.srfdynainstid;
             })
+            Object.assign(copyContext, dynainstParam ? dynainstParam : {});
+            requestResult = _this.appEntityService.getCopyWorkflow(copyContext);
+        }else{
+            requestResult = _this.appEntityService.getStandWorkflow(copyContext);
         }
+        requestResult.then((response: any) => {
+            const { data: targetData, status: status } = response;
+            if ((status !== 200) || (targetData.length === 0)) {
+                return;
+            }
+            if (targetData && targetData.length > 1) {
+                targetData.forEach((element: any) => {
+                    Object.assign(element, { value: element.definitionkey, label: element.definitionname });
+                })
+                const h = _this.$createElement;
+                _this.$msgbox({
+                    title: '请选择流程版本',
+                    message: h('i-select', {
+                        key: Util.createUUID(),
+                        props: {
+                            value: localdata,
+                            placeholder: "请选择流程版本..."
+                        },
+                        on: {
+                            'on-change': ($event: any) => {
+                                localdata = { processDefinitionKey: $event };
+                            }
+                        }
+                    }, targetData.map((item: any) => {
+                        return h('i-option', {
+                            key: item.value,
+                            props: {
+                                value: item.value,
+                                label: item.label
+                            }
+                        })
+                    })),
+                    showCancelButton: true,
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消'
+                }).then((action: string) => {
+                    if (Object.is(action, 'confirm') && localdata && Object.keys(localdata).length > 0) {
+                        let targetItem: any = targetData.find((item: any) => {
+                            return item.value === localdata;
+                        })
+                        openStartView(targetItem, localdata);
+                    }
+                })
+            } else {
+                localdata = { processDefinitionKey: targetData[0]['definitionkey'] };
+                // todo 模拟
+                targetData[0]['process-view'] = "WFSTART@1";
+                openStartView(targetData[0], localdata);
+            }
+        })
     }
 
     /**

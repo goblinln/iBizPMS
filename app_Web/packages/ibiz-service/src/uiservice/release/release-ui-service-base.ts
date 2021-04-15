@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { ReleaseService } from '../../service/release/release.service';
+import { ReleaseService } from '../../service';
 import ReleaseAuthService from '../../authservice/release/release-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class ReleaseUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = true;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField ="org";
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

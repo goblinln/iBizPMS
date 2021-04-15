@@ -5054,6 +5054,21 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'ibizproindices/:ibizproindex?/views/redirectview',
+                    meta: {
+                        caption: 'entities.ibizproindex.views.redirectview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibizproindices', parameterName: 'ibizproindex' },
+                            { pathName: 'views', parameterName: 'redirectview' },
+                        ],
+                        resource:'ibizproindex',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'ibizproindices/:ibizproindex?/views/indexpickupdataview',
                     meta: {
                         caption: 'entities.ibizproindex.views.indexpickupdataview.caption',
@@ -10526,6 +10541,21 @@ const router = new Router({
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
                             { pathName: 'views', parameterName: 'editviewmain' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'doclibmodules/:doclibmodule?/views/redirectview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.redirectview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'redirectview' },
                         ],
                         resource:'doclibmodule',
                         requireAuth: true,

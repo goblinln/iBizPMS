@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { IBZProStoryModuleService } from '../../service/ibzpro-story-module/ibzpro-story-module.service';
+import { IBZProStoryModuleService } from '../../service';
 import IBZProStoryModuleAuthService from '../../authservice/ibzpro-story-module/ibzpro-story-module-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class IBZProStoryModuleUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

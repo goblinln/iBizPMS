@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { SysDepartmentService } from '../../service/sys-department/sys-department.service';
+import { SysDepartmentService } from '../../service';
 import SysDepartmentAuthService from '../../authservice/sys-department/sys-department-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class SysDepartmentUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField ="orgid";
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

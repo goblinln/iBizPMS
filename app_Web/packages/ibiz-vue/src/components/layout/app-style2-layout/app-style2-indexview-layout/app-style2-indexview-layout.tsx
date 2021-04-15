@@ -113,7 +113,7 @@ export class AppStyle2IndexViewLayout extends AppStyle2DefaultLayout {
      */
     public render(h: any): any {
         const viewClassNames = this.initRenderClassNames();
-        if (this.viewInstance && this.viewInstance.mode && Object.is(this.viewInstance.mode, "MIDDLE")) {
+        if (this.viewInstance && this.viewInstance.mode && Object.is(this.viewInstance.mode, "CENTER")) {
             const { codeName, title } = this.viewInstance;
             return (<studio-view
                 viewName={codeName?.toLowerCase()}

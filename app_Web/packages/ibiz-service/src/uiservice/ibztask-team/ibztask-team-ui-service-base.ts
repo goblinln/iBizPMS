@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { IBZTaskTeamService } from '../../service/ibztask-team/ibztask-team.service';
+import { IBZTaskTeamService } from '../../service';
 import IBZTaskTeamAuthService from '../../authservice/ibztask-team/ibztask-team-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class IBZTaskTeamUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

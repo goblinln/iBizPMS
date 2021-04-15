@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { UserContactService } from '../../service/user-contact/user-contact.service';
+import { UserContactService } from '../../service';
 import UserContactAuthService from '../../authservice/user-contact/user-contact-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class UserContactUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField ="org";
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { IbzReportlyService } from '../../service/ibz-reportly/ibz-reportly.service';
+import { IbzReportlyService } from '../../service';
 import IbzReportlyAuthService from '../../authservice/ibz-reportly/ibz-reportly-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class IbzReportlyUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = true;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

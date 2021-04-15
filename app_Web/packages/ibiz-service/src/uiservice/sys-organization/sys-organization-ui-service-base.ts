@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { SysOrganizationService } from '../../service/sys-organization/sys-organization.service';
+import { SysOrganizationService } from '../../service';
 import SysOrganizationAuthService from '../../authservice/sys-organization/sys-organization-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class SysOrganizationUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField ="orgid";
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

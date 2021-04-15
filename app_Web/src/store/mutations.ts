@@ -12,26 +12,6 @@ export const addDepartmentPersonnel = (state: any, departmentPersonnel: Array<an
 }
 
 /**
- * 添加组织数据
- * 
- * @param state 
- * @param localdata 
- */
- export const addOrgsData = (state: any, orgdata: any) => {
-    state.orgdata = orgdata;
-}
-
-/**
- * 设置激活组织数据
- * 
- * @param state 
- * @param localdata 
- */
- export const setActiveOrgData = (state: any, orgdata: any) => {
-    state.activeorgdata = orgdata;
-}
-
-/**
  * 添加代码表
  * 
  * @param state 

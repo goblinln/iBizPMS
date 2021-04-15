@@ -319,7 +319,7 @@ export class MainViewBase extends ViewBase {
                         return;
                     }
                     let targetOpenViewRef: any = openView.getRedirectPSAppViewRefs.find((item: any) => {
-                        return item.name === result;
+                        return item.name === result.split(":")[0];
                     })
                     if (targetOpenViewRef && targetOpenViewRef.getPSNavigateContexts && targetOpenViewRef.getPSNavigateContexts.length > 0) {
                         let localContextRef: any = Util.formatNavParam(targetOpenViewRef.getPSNavigateContexts, true);
@@ -450,21 +450,22 @@ export class MainViewBase extends ViewBase {
                     return;
                 }
                 let openViewModel: any = batchAddPSAppViews.find((item: any) => {
-                    return (item.refMode && (item.refMode !== this.context.srfparentdename));
+                    return (item.refMode && (item.refMode !== this.context.srfparentdename?.toUpperCase()));
                 })
                 let otherViewModel: any = batchAddPSAppViews.find((item: any) => {
-                    return (item.refMode && (item.refMode == this.context.srfparentdename));
+                    return (item.refMode && (item.refMode == this.context.srfparentdename?.toUpperCase()));
                 })
                 await viewNewAppUIlogic.loadedBatchAddPSAppViews();
+                let openView:any = openViewModel?.view;
                 let view: any = {
                     viewname: 'app-view-shell',
-                    height: openViewModel.view.height,
-                    width: openViewModel.view.width,
-                    title: openViewModel.view.title
+                    height: openView.height,
+                    width: openView.width,
+                    title: openView.title
                 };
                 let tempContext:any = Util.deepCopy(this.context)
-                if (openViewModel && openViewModel.dynaModelFilePath) {
-                    Object.assign(tempContext, { viewpath: openViewModel.dynaModelFilePath });
+                if (openView && openView.dynaModelFilePath) {
+                    Object.assign(tempContext, { viewpath: openView.dynaModelFilePath });
                 }
                 let container: Subject<any> = this.$appmodal.openModal(view, tempContext, args[0]);
                 container.subscribe((result: any) => {

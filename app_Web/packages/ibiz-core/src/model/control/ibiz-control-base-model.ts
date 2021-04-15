@@ -301,4 +301,14 @@ export class IBizControlBaseModel {
     get getPSSysCounterRef() {
         return this.controlModelData.getPSSysCounterRef;
     }
+    
+    /**
+     * 获取部件动态参数
+     * 
+     * @readonly
+     * @memberof IBizControlBaseModel 
+     */
+    get ctrlParams(){
+        return this.controlModelData.getPSControlParam?.ctrlParams;
+    }
 }

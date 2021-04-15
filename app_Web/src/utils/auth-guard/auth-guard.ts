@@ -1,7 +1,7 @@
 import { Environment } from '@/environments/environment';
 import i18n from '@/locale';
-import { AppServiceBase, DynamicService, Http, IBizAppModel } from 'ibiz-core';
-import { AppCenterService, AppNavHistory } from 'ibiz-vue';
+import { AppServiceBase, DynamicService, getSessionStorage, Http, IBizAppModel, setSessionStorage } from 'ibiz-core';
+import { AppCenterService } from 'ibiz-vue';
 import qs from 'qs';
 
 /**
@@ -56,14 +56,20 @@ export class AuthGuard {
     public authGuard(url: string, params: any = {}, router: any): any {
         return new Promise((resolve: any, reject: any) => {
             if (Environment && Environment.SaaSMode) {
-                this.getOrgsByDcsystem(router).then((result: boolean) => {
-                    if (!result) {
-                        reject(false);
-                    }
+                if (getSessionStorage("activeOrgData")) {
                     this.getAppData(url, params, router).then((result: any) => {
                         result ? resolve(true) : reject(false);
                     });
-                })
+                } else {
+                    this.getOrgsByDcsystem(router).then((result: boolean) => {
+                        if (!result) {
+                            reject(false);
+                        }
+                        this.getAppData(url, params, router).then((result: any) => {
+                            result ? resolve(true) : reject(false);
+                        });
+                    })
+                }
             } else {
                 this.getAppData(url, params, router).then((result: any) => {
                     result ? resolve(true) : reject(false);
@@ -80,22 +86,28 @@ export class AuthGuard {
     public getOrgsByDcsystem(router: any): Promise<boolean> {
         return new Promise((resolve: any, reject: any) => {
             let tempViewParam = this.hanldeViewParam(window.location.href);
-            if(!tempViewParam.srfdcsystem){
-                if(!tempViewParam.redirect){
+            if (!tempViewParam.srfdcsystem) {
+                if (!tempViewParam.redirect) {
+                    if (getSessionStorage('dcsystem')) {
+                        tempViewParam = getSessionStorage('dcsystem');
+                    }
                     console.error("未获取到租户数据标识");
                     resolve(false);
-                }else{
+                } else {
                     tempViewParam = this.hanldeViewParam(tempViewParam.redirect);
                 }
+            }
+            if (tempViewParam.srfdcsystem) {
+                setSessionStorage('dcsystem', tempViewParam);
             }
             let requestUrl: string = `/uaa/getbydcsystem/${tempViewParam.srfdcsystem}`;
             const get: Promise<any> = Http.getInstance().get(requestUrl);
             get.then((response: any) => {
                 if (response && response.status === 200) {
                     let { data }: { data: any } = response;
-                    if(data && data.length >0){
-                        router.app.$store.commit('addOrgsData', data);
-                        router.app.$store.commit('setActiveOrgData', data[0]);
+                    if (data && data.length > 0) {
+                        setSessionStorage('orgsData', data);
+                        setSessionStorage('activeOrgData', data[0]);
                     }
                     resolve(true);
                 } else {
@@ -146,10 +158,8 @@ export class AuthGuard {
                     resolve(true);
                 })
             }).catch((error: any) => {
-                this.initAppService(router).then(() => {
-                    resolve(false);
-                    console.error("获取应用数据出现异常");
-                })
+                resolve(false);
+                console.error("获取应用数据出现异常");
             });
         });
     }
@@ -179,7 +189,7 @@ export class AuthGuard {
      * 
      * @memberof AuthGuard
      */
-    public hanldeViewParam(urlStr:string){
+    public hanldeViewParam(urlStr: string) {
         let tempViewParam: any = {};
         const tempViewparam: any = urlStr.slice(urlStr.indexOf('?') + 1);
         const viewparamArray: Array<string> = decodeURIComponent(tempViewparam).split(';');

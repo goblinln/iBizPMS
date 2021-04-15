@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { IbzFavoritesService } from '../../service/ibz-favorites/ibz-favorites.service';
+import { IbzFavoritesService } from '../../service';
 import IbzFavoritesAuthService from '../../authservice/ibz-favorites/ibz-favorites-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class IbzFavoritesUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

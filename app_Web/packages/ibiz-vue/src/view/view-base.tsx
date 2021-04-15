@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { Subject, Subscription } from 'rxjs';
-import { Util, ViewTool, AppServiceBase, ViewContext, ViewState } from 'ibiz-core';
+import { Util, ViewTool, AppServiceBase, ViewContext, ViewState, removeSessionStorage } from 'ibiz-core';
 import { CounterServiceRegister, UIServiceRegister } from 'ibiz-service';
 import { AppNavHistory, ViewLoadingService } from '../app-service';
 /**
@@ -632,6 +632,7 @@ export class ViewBase extends Vue {
             Object.assign(_this.context, { srfdynainstid: this.viewparams.srfdynainstid });
         }
         _this.handleCustomViewData();
+        _this.handleOtherViewData();
         //初始化导航数据
         _this.initNavDataWithRoute();
     }
@@ -660,6 +661,25 @@ export class ViewBase extends Vue {
             })
         }
     }
+
+    /**
+     * 处理其他数据(多实例)
+     *
+     * @memberof ViewBase
+     */
+     public handleOtherViewData() {
+        let appEnvironment = AppServiceBase.getInstance().getAppEnvironment();
+        let appModelObject = AppServiceBase.getInstance().getAppModelDataObject();
+        if (appEnvironment.bDynamic) {
+            if (this.context && this.context.srfdynainstid) {
+                let dynainstParam: any = appModelObject.getPSDynaInsts.find((item: any) => {
+                    return item.id === this.context.srfdynainstid;
+                })
+                Object.assign(this.viewparams, { srfinsttag: dynainstParam.instTag, srfinsttag2: dynainstParam.instTag2 });
+            }
+        }
+    }
+
 
     /**
      * 处理指定视图控制关系将父键转为父实体上下文
@@ -848,6 +868,7 @@ export class ViewBase extends Vue {
                 this.closeViewWithDefault(view);
             }
         }
+        removeSessionStorage("tempOrgId");
     }
 
     /**

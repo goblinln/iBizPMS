@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { TestTaskService } from '../../service/test-task/test-task.service';
+import { TestTaskService } from '../../service';
 import TestTaskAuthService from '../../authservice/test-task/test-task-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class TestTaskUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = true;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField ="org";
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

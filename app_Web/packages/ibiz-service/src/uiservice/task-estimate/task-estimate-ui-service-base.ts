@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { TaskEstimateService } from '../../service/task-estimate/task-estimate.service';
+import { TaskEstimateService } from '../../service';
 import TaskEstimateAuthService from '../../authservice/task-estimate/task-estimate-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class TaskEstimateUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField ="org";
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { IbzproProductUserTaskService } from '../../service/ibzpro-product-user-task/ibzpro-product-user-task.service';
+import { IbzproProductUserTaskService } from '../../service';
 import IbzproProductUserTaskAuthService from '../../authservice/ibzpro-product-user-task/ibzpro-product-user-task-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class IbzproProductUserTaskUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

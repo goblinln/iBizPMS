@@ -77,6 +77,11 @@ export class PluralizeRule{
      * @memberof PluralizeRule
      */
     public irregularChange(word: string){
+        for(let item of this.irregular.entries()){
+            if(word && (word.indexOf(item[0]) !== -1)){
+                return word.replace(new RegExp(item[0],'g'),item[1]);
+            }
+        }
         return this.irregular.get(word);
     }
 

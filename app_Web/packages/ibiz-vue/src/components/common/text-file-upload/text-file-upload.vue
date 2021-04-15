@@ -234,8 +234,11 @@ export default class TextFileUpload extends Vue {
      * @memberof DiskFileUpload
      */
     public uploadFile() {
-      let queryParam = this.$util.computedNavData(JSON.parse(this.data),this.context,this.viewparams,JSON.parse(this.queryParam));
-      let file = new File(["default.doc"],"default.doc",{type: 'application/msword'})
+      let queryParam: any = {};
+      if(this.queryParam) {
+        queryParam = this.$util.computedNavData(JSON.parse(this.data),this.context,this.viewparams,JSON.parse(this.queryParam));
+      }
+      let file = new File(["default.docx"],"default.docx",{type: 'application/msword'})
       if (this.url) {
         this.$http.get(this.url,queryParam).then((response: any) => {
             if (response && response.status !== 200) {
@@ -470,7 +473,7 @@ export default class TextFileUpload extends Vue {
         let fileParam = JSON.parse(this.fileParam)
         // 上传的文件
         let _this: any = this;
-        let fileName = param[fileParam.name]?param[fileParam.name] + ".doc":"模板文件.doc";
+        let fileName = param[fileParam.name]?param[fileParam.name] + ".docx":"模板文件.docx";
         let file = new File([param[fileParam.id]],fileName,{type: 'application/msword'})
         // formData传参
         let formData = new FormData();

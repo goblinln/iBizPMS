@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { HistoryService } from '../../service/history/history.service';
+import { HistoryService } from '../../service';
 import HistoryAuthService from '../../authservice/history/history-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class HistoryUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField ="org";
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

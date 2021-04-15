@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { UserTplService } from '../../service/user-tpl/user-tpl.service';
+import { UserTplService } from '../../service';
 import UserTplAuthService from '../../authservice/user-tpl/user-tpl-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class UserTplUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField ="org";
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

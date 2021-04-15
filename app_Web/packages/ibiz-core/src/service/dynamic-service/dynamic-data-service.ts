@@ -138,7 +138,7 @@ export class DynamicDataService {
      */
     public async getRemoteModelData(path: string) {
         const appEnvironment: any = AppServiceBase.getInstance().getAppEnvironment();
-        let url: string = "";
+        let url: any = "";
         if (Object.is(appEnvironment.dynaMode, "RT")) {
             if (this.context && this.context.srfdynainstid) {
                 url = `/net-disk/${appEnvironment.SysName}/${this.context.srfdynainstid}/${path}`;
@@ -148,14 +148,29 @@ export class DynamicDataService {
                 url = `/net-disk/${appEnvironment.SysName}/${standDynaInstId}/${path}`;
             }
         } else {
-            url = `${appEnvironment.remoteDynaPath}${path}`;
-            if (this.context && this.context.srfdynainstid) {
-                let tempUrl: string = `${appEnvironment.remoteDynaPath}`;
-                tempUrl = tempUrl.substring(0, tempUrl.indexOf("dynamic") + 7);
-                url = `${tempUrl}/${this.context.srfdynainstid}/${path}`;
-            }
+            url = this.computedPath(this.context.srfdynainstid,path);
         }
         return this.http.get(url);
+    }
+
+    /**
+     * 计算远端路径
+     * 
+     * @param path 路径
+     * 
+     * @memberof DynamicDataService
+     */
+    public computedPath(dynainstid:string,path:string):any{
+        const appModelObj: any = AppServiceBase.getInstance().getAppModelDataObject();
+        const appEnvironment: any = AppServiceBase.getInstance().getAppEnvironment();
+        if(!dynainstid){
+            return `${appEnvironment.remoteDynaPath}${path}`;
+        }else{
+            let dynainstParam:any = appModelObj.getPSDynaInsts.find((item:any) =>{
+              return item.id === dynainstid;
+            })
+            return `${appEnvironment.remoteDynaPath2}${dynainstParam.instTag}/${dynainstParam.instTag2}/${path}`;
+        }
     }
 
     /**

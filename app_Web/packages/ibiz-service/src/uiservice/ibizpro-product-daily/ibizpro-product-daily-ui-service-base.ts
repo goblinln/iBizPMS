@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { IbizproProductDailyService } from '../../service/ibizpro-product-daily/ibizpro-product-daily.service';
+import { IbizproProductDailyService } from '../../service';
 import IbizproProductDailyAuthService from '../../authservice/ibizpro-product-daily/ibizpro-product-daily-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class IbizproProductDailyUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = true;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

@@ -1055,6 +1055,40 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
     }
 
     /**
+     * 获取标准工作流版本信息
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @param {*} [localdata]
+     * @returns {Promise<any>}
+     * @memberof EntityService
+     */
+     public async getStandWorkflow(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
+        return Http.getInstance().get(
+            `/wfcore/${this.SYSTEMNAME.toLowerCase()}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAMEPLURAL.toLowerCase()}/process-definitions2`,
+            isloading,
+        );
+    }
+
+    /**
+     * 获取副本工作流版本信息
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @param {*} [localdata]
+     * @returns {Promise<any>}
+     * @memberof EntityService
+     */
+     public async getCopyWorkflow(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
+        return Http.getInstance().get(
+            `/wfcore/${this.SYSTEMNAME.toLowerCase()}-app-${this.APPNAME.toLowerCase()}/${context.instTag}/${context.instTag2}/${this.APPDENAMEPLURAL.toLowerCase()}/process-definitions`,
+            isloading,
+        );
+    }
+
+    /**
      * WFStart接口方法
      *
      * @param {*} [context={}]

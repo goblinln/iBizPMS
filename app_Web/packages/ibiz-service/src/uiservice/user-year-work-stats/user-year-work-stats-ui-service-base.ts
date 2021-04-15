@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { UserYearWorkStatsService } from '../../service/user-year-work-stats/user-year-work-stats.service';
+import { UserYearWorkStatsService } from '../../service';
 import UserYearWorkStatsAuthService from '../../authservice/user-year-work-stats/user-year-work-stats-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class UserYearWorkStatsUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

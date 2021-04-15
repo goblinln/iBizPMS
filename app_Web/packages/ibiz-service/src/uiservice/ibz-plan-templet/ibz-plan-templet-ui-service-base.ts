@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { IbzPlanTempletService } from '../../service/ibz-plan-templet/ibz-plan-templet.service';
+import { IbzPlanTempletService } from '../../service';
 import IbzPlanTempletAuthService from '../../authservice/ibz-plan-templet/ibz-plan-templet-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class IbzPlanTempletUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

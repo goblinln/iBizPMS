@@ -385,6 +385,10 @@ export class AppMenuControlBase extends ControlBase {
         if(item.getPSNavigateContexts){
             const localContext = Util.formatNavParam(item.getPSNavigateContexts);
             Object.assign(tempContext,localContext);
+        } else {
+            if (tempContext.hasOwnProperty("srfdynainstid")) {
+                delete tempContext.srfdynainstid;
+            }
         }
         if (item.getPSAppFunc && item.getPSAppFunc.modelref) {
             const appFunc = this.controlInstance.getAppFunc(item.getPSAppFunc.id);

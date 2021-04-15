@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { SysUpdateFeaturesService } from '../../service/sys-update-features/sys-update-features.service';
+import { SysUpdateFeaturesService } from '../../service';
 import SysUpdateFeaturesAuthService from '../../authservice/sys-update-features/sys-update-features-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class SysUpdateFeaturesUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

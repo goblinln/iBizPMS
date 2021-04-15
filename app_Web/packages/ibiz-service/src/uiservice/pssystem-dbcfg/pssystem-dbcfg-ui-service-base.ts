@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { PSSystemDBCfgService } from '../../service/pssystem-dbcfg/pssystem-dbcfg.service';
+import { PSSystemDBCfgService } from '../../service';
 import PSSystemDBCfgAuthService from '../../authservice/pssystem-dbcfg/pssystem-dbcfg-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class PSSystemDBCfgUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

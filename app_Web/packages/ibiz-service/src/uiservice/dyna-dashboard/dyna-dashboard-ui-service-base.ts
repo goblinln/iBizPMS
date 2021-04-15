@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { DynaDashboardService } from '../../service/dyna-dashboard/dyna-dashboard.service';
+import { DynaDashboardService } from '../../service';
 import DynaDashboardAuthService from '../../authservice/dyna-dashboard/dyna-dashboard-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class DynaDashboardUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

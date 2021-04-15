@@ -1,5 +1,5 @@
 import { Subject } from 'rxjs';
-import { ViewTool, IBizGridModel, FormItemModel, Util, Verify } from 'ibiz-core';
+import { ViewTool, IBizGridModel, FormItemModel, Util, Verify, AppServiceBase } from 'ibiz-core';
 import { MDControlBase } from './md-control-base';
 import { AppGridService } from '../ctrl-service/app-grid-service';
 import { AppViewLogicService } from 'ibiz-vue';
@@ -684,6 +684,24 @@ export class GridControlBase extends MDControlBase {
         Object.assign(arg, parentdata);
         let tempViewParams: any = parentdata.viewparams ? parentdata.viewparams : {};
         Object.assign(tempViewParams, JSON.parse(JSON.stringify(this.viewparams)));
+        // 多实例查询数据处理
+        let appModelObj = AppServiceBase.getInstance().getAppModelDataObject();
+        let appEnvironment = AppServiceBase.getInstance().getAppEnvironment();
+        if(appEnvironment.bDynamic){
+            if(tempViewParams.hasOwnProperty("srfdynainstid")){
+                let dynainstParam:any = appModelObj.getPSDynaInsts.find((item:any) =>{
+                    return item.id === tempViewParams['srfdynainstid'];
+                })
+                Object.assign(tempViewParams,{srfinsttag:dynainstParam.instTag,srfinsttag2:dynainstParam.instTag2});
+                delete tempViewParams.srfdynainstid;
+            }else{
+                Object.assign(tempViewParams,{srfinsttag:"__srfstdinst__"});
+            }
+        }else{
+            if(tempViewParams.hasOwnProperty("srfwf")){
+                Object.assign(tempViewParams,{srfinsttag:"__srfstdinst__"});  
+            }
+        }
         Object.assign(arg, { viewparams: tempViewParams });
         this.ctrlBeginLoading();
         const post: Promise<any> = this.service.search(this.fetchAction, JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator);
@@ -982,6 +1000,27 @@ export class GridControlBase extends MDControlBase {
         const parentdata: any = {};
         this.ctrlEvent({ controlname: this.controlInstance.name, action: "beforeload", data: parentdata });
         Object.assign(arg, parentdata);
+        let tempViewParams: any = parentdata.viewparams ? parentdata.viewparams : {};
+        Object.assign(tempViewParams, JSON.parse(JSON.stringify(this.viewparams)));
+        // 多实例查询数据处理
+        let appModelObj = AppServiceBase.getInstance().getAppModelDataObject();
+        let appEnvironment = AppServiceBase.getInstance().getAppEnvironment();
+        if(appEnvironment.bDynamic){
+            if(tempViewParams.hasOwnProperty("srfdynainstid")){
+                let dynainstParam:any = appModelObj.getPSDynaInsts.find((item:any) =>{
+                    return item.id === tempViewParams['srfdynainstid'];
+                })
+                Object.assign(tempViewParams,{srfinsttag:dynainstParam.instTag,srfinsttag2:dynainstParam.instTag2});
+                delete tempViewParams.srfdynainstid;
+            }else{
+                Object.assign(tempViewParams,{srfinsttag:"__srfstdinst__"});
+            }
+        }else{
+            if(tempViewParams.hasOwnProperty("srfwf")){
+                Object.assign(tempViewParams,{srfinsttag:"__srfstdinst__"});  
+            }
+        }
+        Object.assign(arg, { viewparams: tempViewParams });
         const post: Promise<any> = this.allExportColumns?.length > 0 ?
             this.service.searchDEExportData(this.fetchAction, JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator) :
             this.service.search(this.fetchAction, JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator);

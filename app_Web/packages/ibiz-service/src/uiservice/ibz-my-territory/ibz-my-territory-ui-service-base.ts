@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { IbzMyTerritoryService } from '../../service/ibz-my-territory/ibz-my-territory.service';
+import { IbzMyTerritoryService } from '../../service';
 import IbzMyTerritoryAuthService from '../../authservice/ibz-my-territory/ibz-my-territory-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class IbzMyTerritoryUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

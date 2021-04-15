@@ -1,5 +1,5 @@
 import { Emit, Prop, Watch } from 'vue-property-decorator';
-import { Util } from 'ibiz-core';
+import { IBizAppFuncModel, Util } from 'ibiz-core';
 import { AppMenuControlBase } from '../../../widgets';
 
 /**
@@ -66,6 +66,98 @@ export class AppmenuBase extends AppMenuControlBase {
         this.ctrlDestroyed();
     }
 
+    /**
+     * 左侧应用菜单的右侧视图组件
+     *
+     * @type {*} 
+     * @memberof AppmenuBase
+     */
+    public renderRightView: any;
+
+    /**
+     * 左侧应用菜单分割面板比例
+     *
+     * @type {number}
+     * @memberof AppmenuBase
+     */
+    public split: number = 0.15
+
+    /**
+     * 左侧应用菜单树属性
+     *
+     * @type {*} **对象
+     * @memberof AppmenuBase
+     */
+    public defaultProps: any = {
+        children: 'getPSAppMenuItems',
+        label: 'caption'
+    }
+
+    /**
+     * 加载菜单的默认点击
+     *
+     * @memberof AppmenuBase
+     */
+    public defaultMenuSelect(): void {
+        if (this.menus && this.menus[0].getPSAppMenuItems && this.menuTreeClick) {
+            this.menuTreeClick(this.menus[0].getPSAppMenuItems[0]);
+        }
+    }
+
+    /**
+     * 左侧菜单点击
+     *
+     * @param {*} item ***对象
+     * @memberof AppmenuBase
+     */
+    public menuTreeClick(item: any) {
+        let tempContext: any = Util.deepCopy(this.context);
+        if (item.getPSNavigateContexts) {
+            const localContext = Util.formatNavParam(item.getPSNavigateContexts);
+            Object.assign(tempContext, localContext);
+        } else {
+            if (tempContext.hasOwnProperty("srfdynainstid")) {
+                delete tempContext.srfdynainstid;
+            }
+        }
+        if (item.getPSAppFunc && item.getPSAppFunc.modelref) {
+            const appFunc = this.controlInstance.getAppFunc(item.getPSAppFunc.id);
+            if (appFunc) {
+                let targetCtrlParam: any = {
+                    staticProps: {
+                        viewDefaultUsage: false,
+                    },
+                    dynamicProps: {
+                        viewparam: {},
+                        viewdata: JSON.stringify({ viewpath: appFunc.getPSAppView.path }),
+                    }
+                };
+                this.renderRightView = this.$createElement('app-view-shell', {
+                    key: Util.createUUID(),
+                    class: "viewcontainer2",
+                    props: targetCtrlParam,
+                });
+                this.$forceUpdate();
+            }
+        } else {
+            console.warn('未指定应用功能');
+        }
+    }
+
+    /**
+     * 左侧应用菜单树绘制事件
+     *
+     * @param {*} h
+     * @param {*} { node, data }
+     * @return {*} **node
+     * @memberof AppmenuBase
+     */
+    public menuTreeload(h: any, { node, data }: any) {
+        return (
+            <span title={node.data.caption}>{node.data.caption}</span>
+        )
+
+    }
     /**
      * 部件事件
      *
@@ -218,6 +310,66 @@ export class AppmenuBase extends AppMenuControlBase {
         )
     }
 
+
+    /**
+     * 左侧应用菜单的左侧树绘制
+     *
+     * @return {*} 
+     * @memberof AppmenuBase
+     */
+    public renderMenuTree() {
+        return this.$createElement('el-tree', {
+            props: {
+                'current-node-key': "menuitem6__srf1",
+                data: this.menus,
+                props: this.defaultProps,
+                ref: 'eltree',
+                'default-expand-all': true,
+                'render-content': this.menuTreeload,
+                'node-key': 'name'
+            },
+            on: {
+                'node-click': ((e: any) => this.menuTreeClick(e))
+            }
+        })
+    }
+
+    /**
+     * 左侧应用菜单内容
+     *
+     * @memberof AppmenuBase
+     */
+    public renderLeftContent() {
+        return [
+            <div slot="left" style={{ height: '100%', padding: '6px 0' }}>
+                <div style={{ height: '100%' }}>
+                    {this.renderMenuTree()}
+                </div>
+            </div>,
+            <div slot="right">
+                {this.renderRightView ? this.renderRightView : null}
+            </div>
+        ];
+    }
+
+    /**
+     * 绘制左侧应用菜单
+     *
+     * @return {*} 
+     * @memberof AppmenuBase
+     */
+    public renderTableLeftMenu() {
+        return (
+            <split
+                class={[`app-tree-exp-bar`, this.renderOptions?.controlClassNames]}
+                v-model={this.split}
+                style={{ height: 'calc(100vh - 115px)' }}>
+                {this.renderLeftContent()}
+
+            </split>
+        )
+    }
+
     /**
      * 绘制应用菜单
      *
@@ -226,9 +378,13 @@ export class AppmenuBase extends AppMenuControlBase {
      */
     public render() {
         const { controlClassNames } = this.renderOptions;
-        if (this.staticProps && this.staticProps.mode && Object.is(this.staticProps.mode, "MIDDLE")) {
+        if (this.staticProps && this.staticProps.mode && Object.is(this.staticProps.mode, "CENTER")) {
             return (<div>
                 {this.renderMiddleMenu()}
+            </div>)
+        } else if (this.staticProps && this.staticProps.mode && Object.is(this.staticProps.mode, "TABEXP_LEFT")) {
+            return (<div>
+                {this.renderTableLeftMenu()}
             </div>)
         } else {
             return (

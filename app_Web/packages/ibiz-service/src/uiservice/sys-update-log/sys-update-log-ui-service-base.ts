@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { SysUpdateLogService } from '../../service/sys-update-log/sys-update-log.service';
+import { SysUpdateLogService } from '../../service';
 import SysUpdateLogAuthService from '../../authservice/sys-update-log/sys-update-log-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class SysUpdateLogUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

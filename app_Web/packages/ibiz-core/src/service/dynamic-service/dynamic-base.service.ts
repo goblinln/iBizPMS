@@ -254,10 +254,10 @@ export class DynamicService {
      */
     private async getBasicServiceModelData(path: string, type: string, param?: any): Promise<any> {
         try {
-            if (!this.context.srfdynainstid) {
+            let dynamicBasicService: DynamicService = DynamicService.dynamicBasicService;
+            if (!this.context.srfdynainstid || (this.context.srfdynainstid === dynamicBasicService.context.srfdynainstid)) {
                 throw new Error("获取标准模型异常");
             }
-            let dynamicBasicService: DynamicService = DynamicService.dynamicBasicService;
             switch (type) {
                 case "APP":
                     return await dynamicBasicService.getAppMpdeJsonData(path, param);

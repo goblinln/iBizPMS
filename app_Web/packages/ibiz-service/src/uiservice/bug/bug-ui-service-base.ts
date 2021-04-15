@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { BugService } from '../../service/bug/bug.service';
+import { BugService } from '../../service';
 import BugAuthService from '../../authservice/bug/bug-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class BugUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = true;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField ="org";
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

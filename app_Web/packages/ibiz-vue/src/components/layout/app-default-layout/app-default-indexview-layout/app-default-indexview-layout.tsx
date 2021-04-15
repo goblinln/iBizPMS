@@ -11,8 +11,8 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
      *
      * @memberof AppLayout
      */
-     public appLoadingService = AppLoadingService.getInstance();
-     
+    public appLoadingService = AppLoadingService.getInstance();
+
     /**
      * 导航模式
      * 
@@ -283,14 +283,28 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
     }
 
     /**
+     * 渲染左侧布局菜单样式
+     *
+     * @return {*} 
+     * @memberof AppDefaultIndexViewLayout
+     */
+    public renderContentTabexpLeft() {
+        return (
+            <div class='view-container' style={{ margin: '0 12px' }}>
+                {this.$slots.default}
+            </div>
+        );
+    }
+
+    /**
      * 绘制布局
      * 
      * @memberof AppDefaultIndexViewLayout
      */
     public render(h: any) {
         let viewClass = {
-            'view-container': Object.is(this.viewInstance.mode, "MIDDLE") ? true : false,
-            'inner_indexview': Object.is(this.viewInstance.mode, "MIDDLE") ? true : false,
+            'view-container': Object.is(this.viewInstance.mode, "CENTER") ? true : false,
+            'inner_indexview': Object.is(this.viewInstance.mode, "CENTER") ? true : false,
             [this.viewInstance.viewType.toLowerCase()]: true,
             [Util.srfFilePath2(this.viewInstance.codeName)]: true
         };
@@ -305,7 +319,8 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
                     viewTitle={this.viewInstance.title} />
                 { Object.is(this.viewInstance.mode, "LEFT") ? this.renderContentLeft() : null}
                 { Object.is(this.viewInstance.mode, "TOP") ? this.renderContentTop() : null}
-                { Object.is(this.viewInstance.mode, "MIDDLE") ? this.renderContentMiddle() : null}
+                { Object.is(this.viewInstance.mode, "CENTER") ? this.renderContentMiddle() : null}
+                { Object.is(this.viewInstance.mode, "TABEXP_LEFT") ? this.renderContentTabexpLeft() : null}
             </div>
         );
     }

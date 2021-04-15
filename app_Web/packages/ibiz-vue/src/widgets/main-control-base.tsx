@@ -107,7 +107,8 @@ export class MainControlBase extends ControlBase {
         this.initCtrlActionModel();
         this.appUIService = await UIServiceRegister.getInstance().getService(this.context, this.controlInstance.appDeCodeName);
         if (this.appUIService) {
-            await this.appUIService.loaded();
+            // await this.appUIService.loaded();
+            this.appUIService.loaded();
         }
     }
 

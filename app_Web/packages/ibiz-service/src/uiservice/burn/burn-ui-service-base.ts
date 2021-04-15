@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { BurnService } from '../../service/burn/burn.service';
+import { BurnService } from '../../service';
 import BurnAuthService from '../../authservice/burn/burn-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class BurnUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField ="org";
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

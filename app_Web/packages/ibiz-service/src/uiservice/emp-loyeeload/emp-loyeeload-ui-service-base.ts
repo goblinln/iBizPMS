@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { EmpLoyeeloadService } from '../../service/emp-loyeeload/emp-loyeeload.service';
+import { EmpLoyeeloadService } from '../../service';
 import EmpLoyeeloadAuthService from '../../authservice/emp-loyeeload/emp-loyeeload-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class EmpLoyeeloadUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

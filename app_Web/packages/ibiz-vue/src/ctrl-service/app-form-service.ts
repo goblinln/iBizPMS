@@ -191,7 +191,7 @@ export class AppFormService extends ControlServiceBase {
      * @memberof AppFormService
      */
     public add(action: string, context: any = {}, data: any = {}, isloading?: boolean, isWorkflow?: boolean): Promise<any> {
-        const { data: Data, context: Context } = this.handleRequestData(action, context, data);
+        const { data: Data, context: Context } = this.handleRequestData(action, context, data,isWorkflow);
         // 手动修改数据主键的情况
         this.controlInstance.formItems.find((item: IBizFormItemModel) => {
             if (!item.hidden && item.appDeField?.keyField) {
@@ -263,7 +263,7 @@ export class AppFormService extends ControlServiceBase {
      * @memberof AppFormService
      */
     public update(action: string, context: any = {}, data: any = {}, isloading?: boolean, isWorkflow?: boolean): Promise<any> {
-        const { data: Data, context: Context } = this.handleRequestData(action, context, data);
+        const { data: Data, context: Context } = this.handleRequestData(action, context, data,isWorkflow);
         return new Promise((resolve: any, reject: any) => {
             let result: Promise<any>;
             const _appEntityService: any = this.appEntityService;

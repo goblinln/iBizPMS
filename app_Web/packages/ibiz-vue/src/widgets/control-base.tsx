@@ -315,7 +315,8 @@ export class ControlBase extends Vue implements ControlInterface {
         this.name = this.controlInstance.name ? this.controlInstance.name : this.controlInstance.codeName;
         this.showBusyIndicator = this.controlInstance.showBusyIndicator;
         this.initRenderOptions();
-        await this.initCounterService(this.controlInstance);
+        // await this.initCounterService(this.controlInstance);
+        this.initCounterService(this.controlInstance);
     }
 
     /**

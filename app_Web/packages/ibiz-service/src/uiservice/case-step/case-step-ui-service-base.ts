@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { CaseStepService } from '../../service/case-step/case-step.service';
+import { CaseStepService } from '../../service';
 import CaseStepAuthService from '../../authservice/case-step/case-step-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class CaseStepUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField ="org";
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

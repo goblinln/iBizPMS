@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { IBIZProTagService } from '../../service/ibizpro-tag/ibizpro-tag.service';
+import { IBIZProTagService } from '../../service';
 import IBIZProTagAuthService from '../../authservice/ibizpro-tag/ibizpro-tag-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class IBIZProTagUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

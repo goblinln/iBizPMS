@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { IbzLibCaseStepTmpService } from '../../service/ibz-lib-case-step-tmp/ibz-lib-case-step-tmp.service';
+import { IbzLibCaseStepTmpService } from '../../service';
 import IbzLibCaseStepTmpAuthService from '../../authservice/ibz-lib-case-step-tmp/ibz-lib-case-step-tmp-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class IbzLibCaseStepTmpUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

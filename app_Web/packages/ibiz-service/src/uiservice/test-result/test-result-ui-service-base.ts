@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { TestResultService } from '../../service/test-result/test-result.service';
+import { TestResultService } from '../../service';
 import TestResultAuthService from '../../authservice/test-result/test-result-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class TestResultUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField ="org";
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

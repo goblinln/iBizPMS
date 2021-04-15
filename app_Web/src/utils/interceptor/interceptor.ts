@@ -2,7 +2,7 @@ import { Store } from 'vuex';
 import Router from 'vue-router';
 import i18n from '@/locale';
 import { Environment } from '@/environments/environment';
-import { Util, Http } from 'ibiz-core';
+import { Util, Http, getSessionStorage } from 'ibiz-core';
 import { AppLoadingService, nsc } from 'ibiz-vue';
 
 /**
@@ -86,9 +86,10 @@ export class Interceptors {
                 config.headers['srforgsectorid'] = appdata.context.srforgsectorid;
             }
             if(Environment.SaaSMode){
-                let activeOrgData:any = this.store.getters.getActiveOrgData();
-                config.headers['srforgid'] =  activeOrgData.orgid;
-                config.headers['srfsystemid'] =  activeOrgData.systemid;
+                let activeOrgData = getSessionStorage('activeOrgData');
+                let tempOrgId = getSessionStorage("tempOrgId");
+                config.headers['srforgid'] = tempOrgId ? tempOrgId : activeOrgData?.orgid;
+                config.headers['srfsystemid'] =  activeOrgData?.systemid;
             }
             if (!window.localStorage.getItem('token')) {
                 let arr;

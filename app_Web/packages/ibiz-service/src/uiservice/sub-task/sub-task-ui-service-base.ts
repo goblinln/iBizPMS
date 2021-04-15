@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { SubTaskService } from '../../service/sub-task/sub-task.service';
+import { SubTaskService } from '../../service';
 import SubTaskAuthService from '../../authservice/sub-task/sub-task-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class SubTaskUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = true;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField ="org";
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

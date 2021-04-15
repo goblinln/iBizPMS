@@ -1,6 +1,6 @@
 <template>
     <span v-if="textOnly"> {{text}} </span>
-    <span v-else="!textOnly" class='codelist'> 
+    <span v-else class='codelist'> 
         <span v-if="isEmpty">{{$t('codelist.'+codeList.codeName+'.empty')}}</span>
         <template v-if="!isEmpty">
           <template v-for="(item, index) in items">

@@ -1,4 +1,4 @@
-import { DynamicService } from "../..";
+import { DynamicService, setSessionStorage } from "../..";
 import { IBizEntityModel } from "../../model/entity";
 import { AppServiceBase } from "../app-service/app-base.service";
 import { AuthServiceBase } from "../auth-service/auth-base.service";
@@ -109,6 +109,20 @@ export class UIServiceBase {
      * @memberof  UIServiceBase
      */
     protected indexTypeDEField: string | null = null;
+
+    /**
+     * 临时组织标识属性
+     * 
+     * @memberof  UIServiceBase
+     */
+    protected tempOrgIdDEField: string | null = null;
+
+    /**
+     * 动态实例标记
+     * 
+     * @memberof  UIServiceBase
+     */
+    protected dynaInstTag: string | null = null;
 
     /**
      * 主状态属性集合
@@ -288,6 +302,10 @@ export class UIServiceBase {
         // 进行数据查询
         let result: any = await this.dataService.Get({ [this.entityModel.codeName.toLowerCase()]: srfkey });
         const curData: any = result.data;
+        // 设置临时组织标识（用于获取多实例）
+        if(this.tempOrgIdDEField && curData && curData[this.tempOrgIdDEField]){
+            setSessionStorage("tempOrgId",curData[this.tempOrgIdDEField]);
+        }
         //判断当前数据模式,默认为true，todo
         const iRealDEModel: boolean = true;
 
@@ -295,19 +313,13 @@ export class UIServiceBase {
         let bWFMode: any = false;
         // 计算数据模式
         if (isEnableWorkflow) {
-            // TODO
-            // bDataInWF = await this.dataService.testDataInWF({ stateValue: this.stateValue, stateField: this.stateField }, curData);
-            // if (bDataInWF) {
-            //     bDataInWF = true;
-            //     bWFMode = await this.dataService.testUserExistWorklist(null, curData);
-            // }
             bDataInWF = true;
         }
         let strPDTViewParam: string = await this.getDESDDEViewPDTParam(curData, bDataInWF, bWFMode);
         //若不是当前数据模式，处理strPDTViewParam，todo
 
-        if(isEnableWorkflow){
-            return `${this.allViewFuncMap.get(strPDTViewParam) ? this.allViewFuncMap.get(strPDTViewParam) : ""}`;
+        if (isEnableWorkflow) {
+            return strPDTViewParam;
         }
         if (this.multiFormDEField || this.indexTypeDEField) {
             return strPDTViewParam;
@@ -336,8 +348,32 @@ export class UIServiceBase {
         let strPDTParam: string = '';
         const Environment = AppServiceBase.getInstance().getAppEnvironment();
         if (bDataInWF) {
-            // 判断数据是否在流程中 todo
-            return 'WFEDITVIEW:';
+            // 存在多表单属性
+            if (this.multiFormDEField) {
+                strPDTParam = "";
+                const formFieldValue: string = curData[this.multiFormDEField] ? curData[this.multiFormDEField] : "";
+                if (formFieldValue) {
+                    if (!Environment.isAppMode) {
+                        strPDTParam += 'MOBWFEDITVIEW:' + formFieldValue;
+                    }
+                    strPDTParam += 'WFEDITVIEW:' + formFieldValue;
+                }
+            }
+            // 存在索引类型属性
+            if (this.indexTypeDEField) {
+                strPDTParam = "";
+                const indexTypeValue: string = curData[this.indexTypeDEField] ? curData[this.indexTypeDEField] : "";
+                if (indexTypeValue) {
+                    if (!Environment.isAppMode) {
+                        strPDTParam += 'MOBWFEDITVIEW:' + indexTypeValue;
+                    }
+                    strPDTParam += 'WFEDITVIEW:' + indexTypeValue;
+                }
+            }
+            if (strPDTParam && this.dynaInstTag) {
+                strPDTParam += `:${this.dynaInstTag}`;
+            }
+            return strPDTParam ? strPDTParam : 'WFEDITVIEW';
         }
         // 存在多表单属性
         if (this.multiFormDEField) {

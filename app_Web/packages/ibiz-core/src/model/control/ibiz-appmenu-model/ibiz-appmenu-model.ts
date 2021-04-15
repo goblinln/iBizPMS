@@ -70,6 +70,9 @@ export class IBizAppMenuModel extends IBizControlBaseModel{
     public async loaded() {
         await super.loaded();
         let appModelData: any = AppServiceBase.getInstance().getAppModelDataObject();
+        if(!appModelData){
+            return;
+        }
         this.$appCodeName = appModelData.codeName;
         if (appModelData.getAllPSAppFuncs?.length>0) {
             for(const funcItem of appModelData.getAllPSAppFuncs) {

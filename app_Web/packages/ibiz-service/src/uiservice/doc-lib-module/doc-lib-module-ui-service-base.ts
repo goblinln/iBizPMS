@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { DocLibModuleService } from '../../service/doc-lib-module/doc-lib-module.service';
+import { DocLibModuleService } from '../../service';
 import DocLibModuleAuthService from '../../authservice/doc-lib-module/doc-lib-module-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class DocLibModuleUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = true;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

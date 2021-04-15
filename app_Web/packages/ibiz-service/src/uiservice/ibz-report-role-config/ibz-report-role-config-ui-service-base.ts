@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { IbzReportRoleConfigService } from '../../service/ibz-report-role-config/ibz-report-role-config.service';
+import { IbzReportRoleConfigService } from '../../service';
 import IbzReportRoleConfigAuthService from '../../authservice/ibz-report-role-config/ibz-report-role-config-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class IbzReportRoleConfigUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

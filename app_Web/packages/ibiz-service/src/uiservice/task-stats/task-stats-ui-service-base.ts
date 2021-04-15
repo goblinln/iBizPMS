@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { TaskStatsService } from '../../service/task-stats/task-stats.service';
+import { TaskStatsService } from '../../service';
 import TaskStatsAuthService from '../../authservice/task-stats/task-stats-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class TaskStatsUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

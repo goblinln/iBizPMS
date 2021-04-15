@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { BranchService } from '../../service/branch/branch.service';
+import { BranchService } from '../../service';
 import BranchAuthService from '../../authservice/branch/branch-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class BranchUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField ="org";
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

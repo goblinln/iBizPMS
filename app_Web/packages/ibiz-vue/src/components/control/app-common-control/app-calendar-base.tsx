@@ -100,6 +100,18 @@ export class AppCalendarBase extends CalendarControlBase{
      */
     public renderContent() {
         let _this: any = this;
+        if(this.ctrlParams){
+            return (
+                <app-calendar-timeline
+                    ref="appCalendarTimeline"
+                    ctrlParams={this.ctrlParams}
+                    on-eventClick={(tempEvent: any) => {
+                        this.onEventClick(tempEvent,true);
+                    }}
+                    events={this.searchEvents}>
+                </app-calendar-timeline>
+            )
+        }
         return ([
             <FullCalendar
                 ref={_this.controlInstance?.codeName}

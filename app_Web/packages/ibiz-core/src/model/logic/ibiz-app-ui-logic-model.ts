@@ -106,7 +106,6 @@ export class IBizAppUILogicModel {
                     let targetAppView: any = ViewFactory.getInstance(targetBatchAddPSAppView, this.context);
                     await targetAppView.loaded();
                     Object.assign(batchAddPSAppView, { view: targetAppView });
-                    delete batchAddPSAppView.getRefPSAppView;
                 }
             }
         }

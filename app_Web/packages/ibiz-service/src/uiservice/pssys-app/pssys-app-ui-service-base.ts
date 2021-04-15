@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { PSSysAppService } from '../../service/pssys-app/pssys-app.service';
+import { PSSysAppService } from '../../service';
 import PSSysAppAuthService from '../../authservice/pssys-app/pssys-app-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class PSSysAppUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

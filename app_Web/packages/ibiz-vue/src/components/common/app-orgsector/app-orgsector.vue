@@ -22,7 +22,7 @@
   </div>
 </template>
 <script lang = 'ts'>
-import { AppServiceBase, Http } from 'ibiz-core';
+import { AppServiceBase, getSessionStorage, Http, setSessionStorage } from 'ibiz-core';
 import { Vue, Component, Inject } from "vue-property-decorator";
 
 @Component({})
@@ -110,18 +110,13 @@ export default class AppOrgSector extends Vue {
       let beforeActiveOrgData:any = this.selectedOrgArray.find((_item: any) => {
       return _item.srforgsectorid === this.selectedOrgId;
       });
-      this.$store.commit('setActiveOrgData', item);
-      this.resetAppData().then((result:boolean) =>{
-        if(!result){
-          this.$store.commit('setActiveOrgData', beforeActiveOrgData);
-          return;
-        }
-        if (item.srforgsectorid && item.srforgsectorname) {
-              this.selectedOrgId = item.srforgsectorid;
-              this.selectedOrgName = item.srforgsectorname;
-        }
-        this.reload();
-      })
+      setSessionStorage('activeOrgData',item);
+      if (item.srforgsectorid && item.srforgsectorname) {
+            this.selectedOrgId = item.srforgsectorid;
+            this.selectedOrgName = item.srforgsectorname;
+      }
+      window.location.href = window.location.origin;
+      window.location.reload();
     }
   }
 
@@ -154,12 +149,12 @@ export default class AppOrgSector extends Vue {
         }
       }
     }else{
-      if(storeGetter.getActiveOrgData()){
-        this.selectedOrgName = storeGetter.getActiveOrgData()?.orgname;
-        this.selectedOrgId = storeGetter.getActiveOrgData()?.orgid;
+      if(getSessionStorage("activeOrgData")){
+        this.selectedOrgName = getSessionStorage("activeOrgData")?.orgname;
+        this.selectedOrgId = getSessionStorage("activeOrgData")?.orgid;
       }
-      if(storeGetter.getOrgsData()){
-        this.selectedOrgArray = storeGetter.getOrgsData();
+      if(getSessionStorage("orgsData")){
+        this.selectedOrgArray = getSessionStorage("orgsData");
         if(this.selectedOrgArray?.length >0){
           this.selectedOrgArray.forEach((item:any) =>{
             Object.assign(item,{srforgsectorid:item.orgid,srforgsectorname:item.orgname});

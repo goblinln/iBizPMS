@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { DeptService } from '../../service/dept/dept.service';
+import { DeptService } from '../../service';
 import DeptAuthService from '../../authservice/dept/dept-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class DeptUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

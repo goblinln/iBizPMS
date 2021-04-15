@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { ProductSumService } from '../../service/product-sum/product-sum.service';
+import { ProductSumService } from '../../service';
 import ProductSumAuthService from '../../authservice/product-sum/product-sum-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class ProductSumUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

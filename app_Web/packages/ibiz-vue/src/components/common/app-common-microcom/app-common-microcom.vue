@@ -106,6 +106,15 @@ export default class AppCommonMicrocom extends Vue {
     public multiple?: boolean;
 
     /**
+     * 地址过滤参数
+     *
+     * @type {boolean}
+     * @memberof AppCommonMicrocom
+     */ 
+    @Prop()
+    public filter!: string;
+
+    /**
      * 选中项集合
      *
      * @type {*}
@@ -187,12 +196,16 @@ export default class AppCommonMicrocom extends Vue {
             urlParm.forEach((item: string) => {
                 const key = item.substring(2, item.length - 1).toLowerCase();
                 let value = null;
-                if (this.data && this.data.hasOwnProperty(key)) {
-                    value = this.data[key];
-                } else if (this.context && this.context[key]) {
-                    value = this.context[key];
-                } else if (this.viewparams && this.viewparams[key]) {
-                    value = this.viewparams[key];
+                if (key == 'filter') {
+                    value = this.filter;
+                } else {
+                    if (this.data && this.data.hasOwnProperty(key)) {
+                        value = this.data[key];
+                    } else if (this.context && this.context[key]) {
+                        value = this.context[key];
+                    } else if (this.viewparams && this.viewparams[key]) {
+                        value = this.viewparams[key];
+                    }
                 }
                 url = url.replace(/\${(.+?)\}/, value);
             })

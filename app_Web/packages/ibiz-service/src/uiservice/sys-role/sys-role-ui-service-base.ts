@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { SysRoleService } from '../../service/sys-role/sys-role.service';
+import { SysRoleService } from '../../service';
 import SysRoleAuthService from '../../authservice/sys-role/sys-role-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class SysRoleUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

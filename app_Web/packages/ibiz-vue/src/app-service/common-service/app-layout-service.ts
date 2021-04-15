@@ -30,6 +30,7 @@ import { AppDefaultWFDynaEditViewLayout } from "../../components/layout/app-defa
 import { AppDefaultFormPickupDataViewLayout } from '../../components/layout/app-default-layout/app-default-formpickupdataview-layout/app-default-formpickupdataview-layout';
 import { AppDefaultWizardViewLayout } from '../../components/layout/app-default-layout/app-default-wizardview-layout/app-default-wizardview-layout';
 import { AppDefaultWFActionViewLayout } from '../../components/layout/app-default-layout/app-default-wfactionview-layout/app-default-wfactionview-layout';
+import { AppDefaultDeRedirectViewLayout } from '../../components/layout/app-default-layout/app-default-deredirectview-layout/app-default-deredirectview-layout';
 import { AppStyle2IndexViewLayout } from '../../components/layout/app-style2-layout/app-style2-indexview-layout/app-style2-indexview-layout';
 import { AppStyle2GridViewLayout } from '../../components/layout/app-style2-layout/app-style2-gridview-layout/app-style2-gridview-layout';
 import { AppStyle2GridExpViewLayout } from '../../components/layout/app-style2-layout/app-style2-gridexpview-layout/app-style2-gridexpview-layout';
@@ -68,6 +69,7 @@ import { AppStyle2WFDynaStartViewLayout } from "../../components/layout/app-styl
 import { AppStyle3IndexViewLayout } from '../../components/layout/app-style3-layout/app-style3-indexview-layout/app-style3-indexview-layout';
 import { AppStyle2WFActionViewLayout } from '../../components/layout/app-style2-layout/app-style2-wfactionview-layout/app-style2-wfactionview-layout';
 import { AppStyle2WizardViewLayout } from '../../components/layout/app-style2-layout/app-style2-wizardview-layout/app-style2-wizardview-layout';
+import { AppStyle2DeRedirectViewLayout } from "../../components/layout/app-style2-layout/app-style2-deredirectview-layout/app-style2-deredirectview-layout";
 
 /**
  * 应用组件服务
@@ -123,6 +125,7 @@ export class AppLayoutService {
         this.layoutMap.set("DEWFDYNASTARTVIEW-DEFAULT", AppDefaultWFDynaStartViewLayout);
         this.layoutMap.set("DEWIZARDVIEW-DEFAULT", AppDefaultWizardViewLayout);
         this.layoutMap.set("DEWFACTIONVIEW-DEFAULT", AppDefaultWFActionViewLayout);
+        this.layoutMap.set("DEREDIRECTVIEW-DEFAULT",AppDefaultDeRedirectViewLayout);
         // todo 部件视图布局
         this.layoutMap.set("DEEDITVIEW9-DEFAULT", AppDefaultEditViewLayout);
         this.layoutMap.set("DEGRIDVIEW9-DEFAULT", AppDefaultGridViewLayout);
@@ -166,6 +169,7 @@ export class AppLayoutService {
         this.layoutMap.set("DEWFDYNASTARTVIEW-STYLE2", AppStyle2WFDynaStartViewLayout);
         this.layoutMap.set("DEWFACTIONVIEW-STYLE2", AppStyle2WFActionViewLayout);
         this.layoutMap.set("DEWIZARDVIEW-STYLE2", AppStyle2WizardViewLayout);
+        this.layoutMap.set("DEREDIRECTVIEW-STYLE2",AppStyle2DeRedirectViewLayout);
         //  STYLE2部件视图
         this.layoutMap.set("DEEDITVIEW9-STYLE2", AppStyle2EditViewLayout);
         this.layoutMap.set("DEGRIDVIEW9-STYLE2", AppStyle2GridViewLayout);

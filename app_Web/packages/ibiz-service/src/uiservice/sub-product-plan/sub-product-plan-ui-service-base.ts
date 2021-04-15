@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { SubProductPlanService } from '../../service/sub-product-plan/sub-product-plan.service';
+import { SubProductPlanService } from '../../service';
 import SubProductPlanAuthService from '../../authservice/sub-product-plan/sub-product-plan-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class SubProductPlanUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = true;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField ="org";
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

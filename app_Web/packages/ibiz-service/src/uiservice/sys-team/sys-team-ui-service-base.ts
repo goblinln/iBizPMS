@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { SysTeamService } from '../../service/sys-team/sys-team.service';
+import { SysTeamService } from '../../service';
 import SysTeamAuthService from '../../authservice/sys-team/sys-team-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class SysTeamUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { ProjectTeamService } from '../../service/project-team/project-team.service';
+import { ProjectTeamService } from '../../service';
 import ProjectTeamAuthService from '../../authservice/project-team/project-team-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class ProjectTeamUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

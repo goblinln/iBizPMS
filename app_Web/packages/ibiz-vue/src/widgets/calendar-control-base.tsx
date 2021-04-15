@@ -150,7 +150,7 @@ export class CalendarControlBase extends MDControlBase{
      */
     public modalVisible: boolean = false;
 
-        /**
+    /**
      * 跳转日期
      *
      * @public
@@ -158,6 +158,14 @@ export class CalendarControlBase extends MDControlBase{
      * @memberof CalendarControlBase
      */
     public selectedGotoDate: Date = new Date();
+
+    /**
+     * 日历部件动态参数
+     * 
+     * @type {any}
+     * @memberof CalendarControlBase
+     */
+    public ctrlParams: any;
 
     /**
      * 打开时间选择模态
@@ -284,6 +292,7 @@ export class CalendarControlBase extends MDControlBase{
         this.initActionModel();
         this.initQuickToolbar();
         this.calendarType = this.controlInstance?.calendarStyle;
+        this.ctrlParams = this.controlInstance?.ctrlParams;
         if(Object.is(this.calendarType,'WEEK')){
             this.defaultView = 'timeGridWeek';
         } else if (Object.is(this.calendarType,'DAY')) {
@@ -486,7 +495,7 @@ export class CalendarControlBase extends MDControlBase{
                 successCallback(filterEvents);
             }
             // 刷新日历的大小（仅fullcalendar组件使用）
-            if(!Object.is(_this.calendarType,"TIMELINE")){
+            if(!Object.is(_this.calendarType,"TIMELINE") && !this.ctrlParams){
                 let appCalendar: any = _this.$refs[this.controlInstance?.codeName];
                 let api = appCalendar.getApi();
                 if (api) {
@@ -623,13 +632,18 @@ export class CalendarControlBase extends MDControlBase{
      * @memberof CalendarControlBase
      */
     public refresh(args?:any) {
-        if(Object.is(this.calendarType,"TIMELINE")){
+        if(Object.is(this.calendarType, "TIMELINE")){
             this.searchEvents();
+        } else if (this.ctrlParams) {
+	        let calendarTimeLine: any = this.$refs['appCalendarTimeline'];
+            if(calendarTimeLine){
+                calendarTimeLine.refetchEvents();
+            }
         } else {
             let calendarApi = (this.$refs[this.controlInstance?.codeName] as any).getApi();
             calendarApi.refetchEvents();
-            this.$forceUpdate();
         }
+        this.$forceUpdate();
     }
 
     /**

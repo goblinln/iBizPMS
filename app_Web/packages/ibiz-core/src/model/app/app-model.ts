@@ -264,4 +264,23 @@ export class IBizAppModel {
         return this.appData.getAllPSAppViews;
     }
 
+    /**
+     * 获取实例集合
+     * 
+     * @memberof IBizAppModel
+     */
+    get getPSDynaInsts(){
+        return this.appData.getPSDynaInsts;
+    }
+
+    /**
+     * 获取实例标识
+     * 
+     * @memberof IBizAppModel
+     */
+    get getPSDynaInstId(){
+        return this.appData.getPSDynaInstId;
+    }
+
+
 }

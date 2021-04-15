@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { TodoService } from '../../service/todo/todo.service';
+import { TodoService } from '../../service';
 import TodoAuthService from '../../authservice/todo/todo-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class TodoUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = true;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

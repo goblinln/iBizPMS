@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { IbizproIndexService } from '../../service/ibizpro-index/ibizpro-index.service';
+import { IbizproIndexService } from '../../service';
 import IbizproIndexAuthService from '../../authservice/ibizpro-index/ibizpro-index-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class IbizproIndexUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField ="orgid";
         this.stateValue = 0;
         this.multiFormDEField = "indextype";
         this.indexTypeDEField = "indextype";

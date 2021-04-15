@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { SysPostService } from '../../service/sys-post/sys-post.service';
+import { SysPostService } from '../../service';
 import SysPostAuthService from '../../authservice/sys-post/sys-post-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class SysPostUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

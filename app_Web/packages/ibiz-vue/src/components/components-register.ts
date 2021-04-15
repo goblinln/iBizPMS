@@ -110,6 +110,7 @@ import AppFileUploadCamera from './common/app-file-upload-camera/app-file-upload
 import AppFormGroupDataPanel from './common/app-form-group-data-panel/app-form-group-data-panel';
 import TextFileUpload from './common/text-file-upload/text-file-upload.vue';
 import AppCommonMicrocom from './common/app-common-microcom/app-common-microcom.vue';
+import AppCalendarTimeline from './common/app-calendar-timeline/app-calendar-timeline.vue';
 
 // 视图组件
 import { AppViewShell } from '../view-container/app-view-shell';
@@ -148,6 +149,7 @@ import { AppDefaultIndexPickupDataView } from './view/app-default-view/app-defau
 import { AppDefaultWFDynaStartView } from './view/app-default-view/app-default-wfdynastartview';
 import { AppDefaultWizardView } from './view/app-default-view/app-default-wizardview';
 import { AppDefaultWFActionView } from './view/app-default-view/app-default-wfactionview';
+import { AppDefaultDeRedirectView } from './view/app-default-view/app-default-deredirectview';
 import { AppStyle2IndexView } from './view/app-style2-view/app-style2-indexview';
 import { AppStyle2EditView } from './view/app-style2-view/app-style2-editview';
 import { AppStyle2ListView } from './view/app-style2-view/app-style2-listview';
@@ -183,6 +185,7 @@ import { AppStyle2IndexPickupDataView } from './view/app-style2-view/app-style2-
 import { AppStyle2WFDynaStartView } from './view/app-style2-view/app-style2-wfdynastartview';
 import { AppStyle2WizardView } from './view/app-style2-view/app-style2-wizardview';
 import { AppStyle2WFActionView } from './view/app-style2-view/app-style2-wfactionview';
+import { AppStyle2DeRedirectView } from './view/app-style2-view/app-style2-deredirectview';
 // 部件组件
 import { ViewToolbar } from './control/view-toolbar/view-toolbar';
 import { AppDefaultGrid } from './control/app-default-grid/app-default-grid';
@@ -222,6 +225,7 @@ import { AppDefaultStateWizardPanel } from './control/app-default-statewizard-pa
 import { NotificationSignal } from '../directives';
 export const ComponentsRegister = {
     install(v: any, opt: any) {
+        v.component('app-calendar-timeline', AppCalendarTimeline);
         v.component('app-common-microcom', AppCommonMicrocom);
         v.component('dropdown-list-hidden', DropdownListHidden);
         v.component('tab-page-exp-style2', TabPageExpStyle2);
@@ -370,6 +374,7 @@ export const ComponentsRegister = {
         v.component('app-default-wfdynastartview', AppDefaultWFDynaStartView);
         v.component('app-default-wizardview', AppDefaultWizardView);
         v.component('app-default-wfactionview', AppDefaultWFActionView);
+        v.component("app-default-deredirectview",AppDefaultDeRedirectView);
         v.component('app-style2-indexview', AppStyle2IndexView);
         v.component('app-style2-editview', AppStyle2EditView);
         v.component('app-style2-listview', AppStyle2ListView);
@@ -405,6 +410,7 @@ export const ComponentsRegister = {
         v.component('app-style2-wfdynastartview', AppStyle2WFDynaStartView);
         v.component('app-style2-wizardview', AppStyle2WizardView);
         v.component('app-style2-wfactionview', AppStyle2WFActionView);
+        v.component("app-style2-deredirectview",AppStyle2DeRedirectView);
         // 部件组件
         v.component('app-default-form', AppDefaultForm);
         v.component('app-default-searchform', AppDefaultSearchForm);

@@ -34,11 +34,15 @@ module.exports = {
             // 在这个页面中包含的块，默认情况下会包含
             // 提取出来的通用 chunk 和 vendor chunk。
             // chunks: ['chunk-vendors', 'chunk-common', 'index']
-        },
+        }
     },
     // 多核打包
     parallel: os.cpus().length > 1,
     chainWebpack: (config) => {
+        // 删除自动计算预加载资源
+        config.plugins.delete('preload')
+        // 删除预加载资源
+        config.plugins.delete('prefetch-ibizpms')
         config.resolve.alias
             .set('@ibizsys', resolve('src/ibizsys'))
             .set('@pages', resolve('src/pages'))

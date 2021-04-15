@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { ProjectProductService } from '../../service/project-product/project-product.service';
+import { ProjectProductService } from '../../service';
 import ProjectProductAuthService from '../../authservice/project-product/project-product-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class ProjectProductUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField ="org";
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

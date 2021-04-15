@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { IbzMonthlyService } from '../../service/ibz-monthly/ibz-monthly.service';
+import { IbzMonthlyService } from '../../service';
 import IbzMonthlyAuthService from '../../authservice/ibz-monthly/ibz-monthly-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class IbzMonthlyUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = true;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

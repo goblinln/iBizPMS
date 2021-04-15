@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { SubStoryService } from '../../service/sub-story/sub-story.service';
+import { SubStoryService } from '../../service';
 import SubStoryAuthService from '../../authservice/sub-story/sub-story-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class SubStoryUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = true;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField ="org";
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

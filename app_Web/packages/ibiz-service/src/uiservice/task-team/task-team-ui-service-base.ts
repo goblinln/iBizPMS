@@ -1,6 +1,6 @@
 import { AppServiceBase, UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { TaskTeamService } from '../../service/task-team/task-team.service';
+import { TaskTeamService } from '../../service';
 import TaskTeamAuthService from '../../authservice/task-team/task-team-auth-service';
 
 /**
@@ -37,6 +37,8 @@ export class TaskTeamUIServiceBase extends UIServiceBase {
      */
     protected initBasicData(){
         this.isEnableDEMainState = false;
+        this.dynaInstTag = "";
+        this.tempOrgIdDEField =null;
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

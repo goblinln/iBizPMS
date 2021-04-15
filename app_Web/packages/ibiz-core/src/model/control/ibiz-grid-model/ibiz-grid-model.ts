@@ -437,8 +437,8 @@ export class IBizGridModel extends IBizMainControlModel {
         //列代码表
         if(this.allColumns?.length > 0) {
             for(let column of this.allColumns){
-                if(column.getPSCodeList?.path) {
-                    let targetAppCodeList = await DynamicService.getInstance(this.context).getAppCodeListJsonData(column.getPSCodeList.path);
+                if(column.getPSAppCodeList?.path) {
+                    let targetAppCodeList = await DynamicService.getInstance(this.context).getAppCodeListJsonData(column.getPSAppCodeList.path);
                     Object.assign(column, { codeList: targetAppCodeList})
                 }
             }

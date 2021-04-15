@@ -1,5 +1,6 @@
 
 
+
 export const Environment = {
     // 原型示例数模式
     SampleMode: false,
@@ -51,6 +52,8 @@ export const Environment = {
     appDynaModelFilePath: "PSSYSAPPS/Web/PSSYSAPP.json",
     // 远端动态基础路径
     remoteDynaPath: "",
+    // 远端动态副本路径
+    remoteDynaPath2: "",
     // 预览动态基础路径
     previewDynaPath: "http://172.16.170.145",
     // 实例配置地址
