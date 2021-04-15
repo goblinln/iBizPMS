@@ -26,10 +26,6 @@ spring:
       cluster-nodes: 127.0.0.1:9300
       repositories:
         enabled: true
-management:
-  health:
-    elasticsearch:
-      enabled: false
   datasource:
     username: zentao
     password: '123456'
