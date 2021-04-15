@@ -1285,7 +1285,7 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
         newTask.setAssigneddate(ZTDateUtil.now());
         newTask.setLastediteddate(ZTDateUtil.now());
         newTask.setLasteditedby(AuthenticationUser.getAuthenticationUser().getUsername());
-        newTask.setConsumed(et.getTotaltime() != null ? et.getTotaltime() : (et.getConsumed() + et.getCurrentconsumed()));
+        newTask.setConsumed(et.getTotaltime() != null ? et.getTotaltime() : (et.getConsumed() + (et.getCurrentconsumed()== null ?0:et.getCurrentconsumed()) ));
         newTask.setCurrentconsumed(et.getCurrentconsumed());
         newTask.setFiles(et.getFiles());
 
@@ -1327,7 +1327,7 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
         taskEstimate.setAccount(AuthenticationUser.getAuthenticationUser().getUsername());
         taskEstimate.setDate(et.getFinisheddate() == null ? ZTDateUtil.now() : et.getFinisheddate());
         taskEstimate.setLeft(0.0);
-        taskEstimate.setConsumed(consumed == 0 ? et.getCurrentconsumed() : consumed);
+        taskEstimate.setConsumed(consumed == 0 ? (et.getCurrentconsumed()==null?0:et.getCurrentconsumed()) : consumed);
 
         if (teams.size() > 0) {
             for (Team team : teams) {
@@ -1336,7 +1336,9 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
                 }
             }
         }
-        taskEstimateHelper.create(taskEstimate);
+        if (null != et.getCurrentconsumed()){
+            taskEstimateHelper.create(taskEstimate);
+        }
 
         if (teams.size() > 0) {
             for (Team team : teams) {
@@ -1906,6 +1908,17 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
 
 
 
+    }
+
+    @Transactional
+    public Task recordTimateZeroLeft(Task et) {
+        et = this.get(et.getId());
+        if ( et.getLeft() == 0){
+            et.setStatus(StaticDict.Task__status.DOING.getValue());
+            et.setStatus1(StaticDict.Task__status.DOING.getValue());
+            super.internalUpdate(et);
+        }
+        return et;
     }
 
 }

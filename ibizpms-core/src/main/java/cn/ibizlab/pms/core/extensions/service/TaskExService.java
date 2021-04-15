@@ -415,5 +415,11 @@ public class TaskExService extends TaskServiceImpl {
         //自定义代码
         return  super.createCycleTasks(et);
     }
+
+    @Override
+    @Transactional
+    public Task recordTimateZeroLeft(Task et) {
+      return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskHelper.class).recordTimateZeroLeft(et);
+    }
 }
 
