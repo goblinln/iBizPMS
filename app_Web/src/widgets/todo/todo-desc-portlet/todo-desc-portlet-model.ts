@@ -120,6 +120,9 @@ export default class TodoDescModel {
       {
         name: 'config',
       },
+      {
+        name: 'consumed',
+      },
     ]
   }
 

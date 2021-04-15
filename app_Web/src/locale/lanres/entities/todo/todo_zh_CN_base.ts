@@ -38,6 +38,7 @@ function getLocaleResourceBase(){
 			story: commonLogic.appcommonhandle("待办名称",null),
 			ibizprivate: commonLogic.appcommonhandle("私人事务",null),
 			config: commonLogic.appcommonhandle("config",null),
+			consumed: commonLogic.appcommonhandle("工时",null),
 		},
 			views: {
 				closeview: {

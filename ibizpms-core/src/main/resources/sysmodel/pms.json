@@ -48784,6 +48784,21 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"CONSUMED" ,
+    "codename":"Consumed",
+    "field_logic_name":"工时",
+    "entity_name":"ZT_TODO",
+    "field_type":"FLOAT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"FLOAT",
+    "data_length":4,
+    "data_preci":2,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[

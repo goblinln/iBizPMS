@@ -120,6 +120,9 @@ export default class TodoactionModel {
       {
         name: 'config',
       },
+      {
+        name: 'consumed',
+      },
     ]
   }
 

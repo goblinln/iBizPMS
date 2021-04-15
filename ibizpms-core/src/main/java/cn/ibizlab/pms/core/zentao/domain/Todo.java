@@ -345,6 +345,14 @@ public class Todo extends EntityMP implements Serializable {
     @JsonProperty("config")
     @ApiModelProperty("config")
     private String config;
+    /**
+     * 工时
+     */
+    @TableField(value = "`consumed`")
+    @JSONField(name = "consumed")
+    @JsonProperty("consumed")
+    @ApiModelProperty("工时")
+    private Double consumed;
 
 
 
@@ -546,6 +554,14 @@ public class Todo extends EntityMP implements Serializable {
     public void setConfig(String config) {
         this.config = config;
         this.modify("config", config);
+    }
+
+    /**
+     * 设置 [工时]
+     */
+    public void setConsumed(Double consumed) {
+        this.consumed = consumed;
+        this.modify("consumed", consumed);
     }
 
 

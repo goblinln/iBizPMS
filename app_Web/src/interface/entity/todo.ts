@@ -285,4 +285,12 @@ export interface Todo {
      * @memberof Todo
      */
     config?: any;
+
+    /**
+     * 工时
+     *
+     * @returns {*}
+     * @memberof Todo
+     */
+    consumed?: any;
 }

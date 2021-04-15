@@ -501,7 +501,8 @@ POST
 | 33 | story | String | 允许 | 待办名称 |
 | 34 | ibizprivate | String | 允许 | 私人事务 |
 | 35 | config | String | 允许 | config |
-| 36 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 36 | consumed | Double | 允许 | 工时 |
+| 37 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### TodoSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

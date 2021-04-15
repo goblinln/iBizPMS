@@ -375,6 +375,15 @@ public class TodoDTO extends DTOBase implements Serializable {
     @ApiModelProperty("config")
     private String config;
 
+    /**
+     * 属性 [CONSUMED]
+     *
+     */
+    @JSONField(name = "consumed")
+    @JsonProperty("consumed")
+    @ApiModelProperty("工时")
+    private Double consumed;
+
 
     /**
      * 设置 [CLOSEDDATE]
@@ -534,6 +543,14 @@ public class TodoDTO extends DTOBase implements Serializable {
     public void setConfig(String  config){
         this.config = config ;
         this.modify("config",config);
+    }
+
+    /**
+     * 设置 [CONSUMED]
+     */
+    public void setConsumed(Double  consumed){
+        this.consumed = consumed ;
+        this.modify("consumed",consumed);
     }
 
 
