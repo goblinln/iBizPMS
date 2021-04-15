@@ -13400,6 +13400,7 @@ t1.`BRANCH`,
 t1.`DELETED`,
 t1.`END`,
 t1.`ORDER`,
+t1.`ORDER` AS `ORDERNUM`,
 (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`,
 (select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`,
 (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`,
@@ -13660,6 +13661,7 @@ WHERE
 	) AS `DELAYTASKSCNT`,
 	t1.`TITLE`,
 t1.`ORDER`,
+t1.`ORDER` AS `ORDERNUM`,
 	IFNULL(t2.LeftEstimate,0) as leftestimate,
 	IFNULL(t2.ConsumedEstimate,0) as consumedestimate  ,
         t1.`STATUS`
@@ -13728,7 +13730,8 @@ WHERE t1.DELETED = '0'
 ```
 ### 项目计划列表(ProjectPlan)<div id="ProductPlan_ProjectPlan"></div>
 ```sql
-SELECT 	t1.`BEGIN`, (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`, 	t1.`BRANCH`, 	t1.`DELETED`, 	t1.`END`, (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`, 	t1.`ORDER`,t1.`ID`, 	t1.`PARENT`, 	t11.`TITLE` AS `PARENTNAME`, 	t1.`PRODUCT`, 	(CONCAT(t31.`name`,'/',t1.title,'[',case when t1.`begin` is not null then t1.`begin` else '' end,'~',case when t1.`end` is not null then t1.`end` else '' end,']')) as `TITLE`  FROM 	`zt_productplan` t1 	LEFT JOIN zt_productplan t11 ON t1.PARENT = t11.ID 	LEFT JOIN zt_product t31 ON t1.product = t31.id  	LEFT JOIN zt_projectproduct t21 ON t31.id = t21.product and t1.id = t21.plan
+SELECT 	t1.`BEGIN`, (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`, 	t1.`BRANCH`, 	t1.`DELETED`, 	t1.`END`, (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`, 	t1.`ORDER`,
+t1.`ORDER` AS `ORDERNUM`,t1.`ID`, 	t1.`PARENT`, 	t11.`TITLE` AS `PARENTNAME`, 	t1.`PRODUCT`, 	(CONCAT(t31.`name`,'/',t1.title,'[',case when t1.`begin` is not null then t1.`begin` else '' end,'~',case when t1.`end` is not null then t1.`end` else '' end,']')) as `TITLE`  FROM 	`zt_productplan` t1 	LEFT JOIN zt_productplan t11 ON t1.PARENT = t11.ID 	LEFT JOIN zt_product t31 ON t1.product = t31.id  	LEFT JOIN zt_projectproduct t21 ON t31.id = t21.product and t1.id = t21.plan
 WHERE ( t21.`PROJECT` = 	${srfdatacontext('srfparentkey','{"defname":"PROJECT","dename":"ZT_PROJECTPRODUCT"}')}
  or t1.parent in (	SELECT GROUP_CONCAT(t1.id)
 FROM
@@ -13753,6 +13756,7 @@ t1.`BRANCH`,
 t1.`DELETED`,
 t1.`END`,
 t1.`ORDER`,
+t1.`ORDER` AS `ORDERNUM`,
 (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`,
 (select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`,
 (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`,
@@ -13790,6 +13794,7 @@ t1.`ID`,
 (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`,
 t1.`PARENT`,
 t1.`ORDER`,
+t1.`ORDER` AS `ORDERNUM`,
 t11.`TITLE` AS `PARENTNAME`,
 t1.`PRODUCT`,
 t1.`STATUS`,
