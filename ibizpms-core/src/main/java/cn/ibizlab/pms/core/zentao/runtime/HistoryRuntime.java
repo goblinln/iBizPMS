@@ -8,12 +8,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
 import net.ibizsys.model.dataentity.der.IPSDERBase;
+import net.ibizsys.model.dataentity.ds.IPSDEDataQuery;
+import net.ibizsys.model.dataentity.ds.IPSDEDataSet;
 import net.ibizsys.model.dataentity.logic.IPSDELogic;
 import net.ibizsys.model.dataentity.wf.IPSDEWF;
 import net.ibizsys.runtime.IDynaInstRuntime;
 import cn.ibizlab.pms.util.domain.EntityBase;
 import cn.ibizlab.pms.util.errors.BadRequestAlertException;
 import cn.ibizlab.pms.util.helper.DELogicExecutor;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -66,7 +69,7 @@ public class HistoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     }
 
     @Override
-    public HistorySearchContext() createSearchContext() {
+    public HistorySearchContext createSearchContext() {
         return new HistorySearchContext();
     }
 
