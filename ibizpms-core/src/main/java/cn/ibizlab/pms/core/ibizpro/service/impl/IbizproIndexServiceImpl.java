@@ -33,92 +33,103 @@ import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import cn.ibizlab.pms.util.helper.DEFieldCacheMap;
 
 
-import cn.ibizlab.pms.core.ibizpro.repository.IbizproIndexRepository;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.BasicQuery;
-import org.springframework.data.mongodb.core.query.Query;
-import javax.annotation.Resource;
-import com.mongodb.QueryBuilder;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import cn.ibizlab.pms.core.ibizpro.mapper.IbizproIndexMapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.alibaba.fastjson.JSONObject;
+import org.springframework.util.StringUtils;
+
 /**
  * 实体[索引检索] 服务对象接口实现
  */
 @Slf4j
-@Service
-public class IbizproIndexServiceImpl implements IIbizproIndexService {
+@Service("IbizproIndexServiceImpl")
+public class IbizproIndexServiceImpl extends ServiceImpl<IbizproIndexMapper, IbizproIndex> implements IIbizproIndexService {
 
-    @Autowired
-    protected IbizproIndexRepository repository;
+
+    protected int batchSize = 500;
 
     @Override
     @Transactional
     public boolean create(IbizproIndex et) {
-        repository.insert(et);
+        if(!this.retBool(this.baseMapper.insert(et))) {
+            return false;
+        }
         CachedBeanCopier.copy(get(et.getIndexid()), et);
-        return true ;
+        return true;
     }
 
     @Override
+    @Transactional
     public void createBatch(List<IbizproIndex> list) {
-        repository.insert(list);
+        this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(IbizproIndex et) {
-        repository.save(et);
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("indexid", et.getIndexid()))) {
+            return false;
+        }
         CachedBeanCopier.copy(get(et.getIndexid()), et);
-        return true ;
+        return true;
     }
 
     @Override
+    @Transactional
     public void updateBatch(List<IbizproIndex> list) {
-        repository.saveAll(list);
+        updateBatchById(list, batchSize);
     }
 
-     @Override
+    @Override
     @Transactional
     public boolean sysUpdate(IbizproIndex et) {
-        repository.save(et);
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("indexid", et.getIndexid()))) {
+            return false;
+        }
         CachedBeanCopier.copy(get(et.getIndexid()), et);
-        return true ;
+        return true;
     }
 
     @Override
     @Transactional
     public boolean remove(Long key) {
-        repository.deleteById(key);
-        return true ;
+        boolean result = removeById(key);
+        return result ;
     }
 
     @Override
+    @Transactional
     public void removeBatch(Collection<Long> idList) {
-        repository.deleteAll(repository.findAllById(idList));
+        removeByIds(idList);
     }
 
     @Override
     @Transactional
     public IbizproIndex get(Long key) {
-        Optional<IbizproIndex> result = repository.findById(key);
-        if(!result.isPresent()) {
+        IbizproIndex et = getById(key);
+        if (et == null) {
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
-        else{
-            IbizproIndex et=result.get();
-            return et;
+        else {
         }
+        return et;
     }
 
+     /**
+     *  系统获取
+     *  @return
+     */
     @Override
     @Transactional
     public IbizproIndex sysGet(Long key) {
-        Optional<IbizproIndex> result = repository.findById(key);
-        if(!result.isPresent()) {
+        IbizproIndex et = getById(key);
+        if (et == null) {
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
-        else{
-            IbizproIndex et=result.get();
-            return et;
-        }
+        return et;
     }
 
     @Override
@@ -128,39 +139,77 @@ public class IbizproIndexServiceImpl implements IIbizproIndexService {
 
     @Override
     public boolean checkKey(IbizproIndex et) {
-        return repository.findById(et.getIndexid()).isPresent();
+        return (!ObjectUtils.isEmpty(et.getIndexid())) && (!Objects.isNull(this.getById(et.getIndexid())));
+    }
+    @Override
+    @Transactional
+    public boolean save(IbizproIndex et) {
+        if(!saveOrUpdate(et)) {
+            return false;
+        }
+        return true;
     }
 
     @Override
     @Transactional
-    public boolean save(IbizproIndex et) {
-        repository.save(et);
-        CachedBeanCopier.copy(get(et.getIndexid()), et);
-        return true ;
+    public boolean saveOrUpdate(IbizproIndex et) {
+        if (null == et) {
+            return false;
+        } else {
+            return checkKey(et) ? getProxyService().update(et) : getProxyService().create(et);
+        }
     }
-
 
     @Override
+    @Transactional
+    public boolean saveBatch(Collection<IbizproIndex> list) {
+        List<IbizproIndex> create = new ArrayList<>();
+        List<IbizproIndex> update = new ArrayList<>();
+        for (IbizproIndex et : list) {
+            if (ObjectUtils.isEmpty(et.getIndexid()) || ObjectUtils.isEmpty(getById(et.getIndexid()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public void saveBatch(List<IbizproIndex> list) {
-        repository.saveAll(list);
+        List<IbizproIndex> create = new ArrayList<>();
+        List<IbizproIndex> update = new ArrayList<>();
+        for (IbizproIndex et : list) {
+            if (ObjectUtils.isEmpty(et.getIndexid()) || ObjectUtils.isEmpty(getById(et.getIndexid()))) {
+                create.add(et);
+            } else {
+                update.add(et);
+            }
+        }
+        if (create.size() > 0) {
+            getProxyService().createBatch(create);
+        }
+        if (update.size() > 0) {
+            getProxyService().updateBatch(update);
+        }
     }
 
 
-
-
-
-    @Resource
-    protected MongoTemplate mongoTemplate;
 
     /**
      * 查询集合 数据集
      */
     @Override
     public Page<IbizproIndex> searchDefault(IbizproIndexSearchContext context) {
-        Query query = new BasicQuery(context.getSelectCond().get().toString());
-        long total = mongoTemplate.count(query, IbizproIndex.class);
-        List<IbizproIndex> list=mongoTemplate.find(query.with(context.getPageable()),IbizproIndex.class);
-        return new PageImpl<IbizproIndex>(list,context.getPageable(),total);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbizproIndex> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<IbizproIndex>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
     /**
@@ -168,10 +217,8 @@ public class IbizproIndexServiceImpl implements IIbizproIndexService {
      */
     @Override
     public Page<IbizproIndex> searchESquery(IbizproIndexSearchContext context) {
-        Query query = new BasicQuery(context.getSelectCond().get().toString());
-        long total = mongoTemplate.count(query, IbizproIndex.class);
-        List<IbizproIndex> list=mongoTemplate.find(query.with(context.getPageable()),IbizproIndex.class);
-        return new PageImpl<IbizproIndex>(list,context.getPageable(),total);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbizproIndex> pages=baseMapper.searchESquery(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<IbizproIndex>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
     /**
@@ -179,24 +226,47 @@ public class IbizproIndexServiceImpl implements IIbizproIndexService {
      */
     @Override
     public Page<IbizproIndex> searchIndexDER(IbizproIndexSearchContext context) {
-        Query query = new BasicQuery(context.getSelectCond().get().toString());
-        long total = mongoTemplate.count(query, IbizproIndex.class);
-        List<IbizproIndex> list=mongoTemplate.find(query.with(context.getPageable()),IbizproIndex.class);
-        return new PageImpl<IbizproIndex>(list,context.getPageable(),total);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbizproIndex> pages=baseMapper.searchIndexDER(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<IbizproIndex>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
 
+
+
+
+
+
+    @Override
+    public List<JSONObject> select(String sql, Map param){
+        return this.baseMapper.selectBySQL(sql,param);
+    }
+
+    @Override
+    @Transactional
+    public boolean execute(String sql , Map param){
+        if (sql == null || sql.isEmpty()) {
+            return false;
+        }
+        if (sql.toLowerCase().trim().startsWith("insert")) {
+            return this.baseMapper.insertBySQL(sql,param);
+        }
+        if (sql.toLowerCase().trim().startsWith("update")) {
+            return this.baseMapper.updateBySQL(sql,param);
+        }
+        if (sql.toLowerCase().trim().startsWith("delete")) {
+            return this.baseMapper.deleteBySQL(sql,param);
+        }
+        log.warn("暂未支持的SQL语法");
+        return true;
+    }
+
     @Override
     public List<IbizproIndex> getIbizproindexByIds(List<Long> ids) {
-        QueryBuilder permissionCond=new QueryBuilder();
-        permissionCond.and("indexid").in(ids);
-        Query query = new BasicQuery(permissionCond.get().toString());
-        return mongoTemplate.find(query,IbizproIndex.class);
+         return this.listByIds(ids);
     }
 
     @Override
     public List<IbizproIndex> getIbizproindexByEntities(List<IbizproIndex> entities) {
-
         List ids =new ArrayList();
         for(IbizproIndex entity : entities){
             Serializable id=entity.getIndexid();
@@ -204,37 +274,17 @@ public class IbizproIndexServiceImpl implements IIbizproIndexService {
                 ids.add(id);
             }
         }
-        if(ids.size()>0){
-            QueryBuilder permissionCond=new QueryBuilder();
-            permissionCond.and("indexid").in(ids);
-            Query query = new BasicQuery(permissionCond.get().toString());
-            return mongoTemplate.find(query,IbizproIndex.class);
+        if(ids.size()>0) {
+            return this.listByIds(ids);
         }
-        else
+        else {
             return entities;
-    }
-    @Autowired
-    @Lazy
-    cn.ibizlab.pms.core.es.service.IIbizproIndexESService esService;
-
-    @Autowired
-    @Lazy
-    cn.ibizlab.pms.core.ibizpro.mapping.IbizproIndexESMapping esMapping;
-
-    /**
-     * 获取es service
-     * @return
-     */
-    public cn.ibizlab.pms.core.es.service.IIbizproIndexESService getESService(){
-        return esService;
+        }
     }
 
-    /**
-     * 获取es mapping
-     * @return
-     */
-    public cn.ibizlab.pms.core.ibizpro.mapping.IbizproIndexESMapping getESMapping(){
-        return esMapping;
+
+    public IIbizproIndexService getProxyService() {
+        return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
     @Override
     @Transactional
@@ -242,7 +292,6 @@ public class IbizproIndexServiceImpl implements IIbizproIndexService {
         return et;
     }
 }
-
 
 
 

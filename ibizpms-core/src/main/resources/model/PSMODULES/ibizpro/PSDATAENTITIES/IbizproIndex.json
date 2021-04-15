@@ -807,9 +807,8 @@
   "saaSMode" : 4,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "IbizproIndex",
-  "storageMode" : 2,
+  "storageMode" : 1,
   "systemTag" : "iBizPMS",
-  "userTag" : "elasticsearch",
   "userTag4" : "ESshortcut",
   "virtualMode" : 3,
   "enableAPIStorage" : false,
@@ -820,11 +819,14 @@
   "enableMultiDS" : false,
   "enableMultiForm" : false,
   "enableMultiStorage" : false,
-  "enableNoSQLStorage" : true,
+  "enableNoSQLStorage" : false,
   "enableRemove" : true,
-  "enableSQLStorage" : false,
+  "enableSQLStorage" : true,
   "logicValid" : false,
   "subSysAsCloud" : false,
   "subSysDE" : false,
-  "virtual" : true
+  "virtual" : true,
+  "getUserParam" : {
+    "elasticsearch" : ""
+  }
 }

@@ -13,7 +13,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.util.StringUtils;
 import org.springframework.util.ObjectUtils;
 import java.util.*;
-import org.elasticsearch.index.query.BoolQueryBuilder;
 
 @Slf4j
 @Data
@@ -68,10 +67,6 @@ public class SearchContextBase implements ISearchContext{
      * 工作流流程标识
      */
     public String processDefinitionKey;
-    /**
-     * es查询条件
-     */
-    public BoolQueryBuilder esCond=new BoolQueryBuilder();
 
     /**
      * 动态实例标识

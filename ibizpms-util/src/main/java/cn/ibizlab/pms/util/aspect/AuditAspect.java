@@ -41,7 +41,7 @@ public class AuditAspect
      * 实体数据建立切面，在成功创建数据后将新增数据内容记录审计日志内（审计明细【AuditInfo】中只记录审计属性变化情况，审计属性在平台属性中配置）
      * @param point
      */
-    @AfterReturning(value = "execution(* cn.ibizlab.pms.core.*.service.*.create(..))&& !execution(* cn.ibizlab.pms.core.es.service.*.create*(..))")
+    @AfterReturning(value = "execution(* cn.ibizlab.pms.core.*.service.*.create(..))")
     @SneakyThrows
     public void create(JoinPoint point) {
         HttpServletRequest request = null;
@@ -76,7 +76,7 @@ public class AuditAspect
      * 使用环切【@Around】获取到更新前后的实体数据并进行差异比较，并将差异内容记入审计日志内
      * @param point
      */
-    @Around("execution(* cn.ibizlab.pms.core.*.service.*.update(..))&& !execution(* cn.ibizlab.pms.core.es.service.*.update*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.*.service.*.update(..))")
     public Object update(ProceedingJoinPoint point) throws Throwable {
         HttpServletRequest request = null;
         RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
@@ -122,7 +122,7 @@ public class AuditAspect
      * @return
      * @throws Throwable
      */
-    @Around("execution(* cn.ibizlab.pms.core.*.service.*.remove(..))&& !execution(* cn.ibizlab.pms.core.es.service.*.remove*(..))")
+    @Around("execution(* cn.ibizlab.pms.core.*.service.*.remove(..))")
     public Object remove(ProceedingJoinPoint point) throws Throwable {
         HttpServletRequest request = null;
         RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
