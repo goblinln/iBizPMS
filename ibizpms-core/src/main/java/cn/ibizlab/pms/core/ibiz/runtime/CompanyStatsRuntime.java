@@ -66,8 +66,43 @@ public class CompanyStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     }
 
     @Override
-    protected QueryWrapperContext createSearchContext() {
+    public CompanyStatsSearchContext() createSearchContext() {
         return new CompanyStatsSearchContext();
+    }
+
+    @Override
+    public void setSearchCondition(Object searchContext, IPSDEField iPSDEField, String strCondition, Object objValue) {
+        //设置查询条件 net.ibizsys.runtime.util.Conditions
+    }
+
+    @Override
+    public boolean existsData(Object searchContext) {
+        //判断数据是否存在
+        return false;
+    }
+
+    @Override
+    public Page<?> searchDataSet(IPSDEDataSet iPSDEDataSet, Object searchContext) {
+        //查询数据集合
+        return null;
+    }
+
+    @Override
+    public Page<?> searchDataQuery(IPSDEDataQuery iPSDataQuery, Object searchContext) {
+        //暂未实现
+        return null;
+    }
+
+    @Override
+    public Object selectOne(Object searchContext) {
+        //单条数据查询，多条数数据时 返回第一条
+        return null;
+    }
+
+    @Override
+    public List<?> select(Object searchContext) {
+        //list
+        return null;
     }
 
     @Override

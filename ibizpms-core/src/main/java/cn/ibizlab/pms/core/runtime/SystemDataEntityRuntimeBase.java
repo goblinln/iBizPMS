@@ -127,7 +127,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
 
     abstract protected IService getService();
 
-    abstract protected QueryWrapperContext createSearchContext();
+    abstract public QueryWrapperContext createSearchContext();
 
     public List query(IService service , QueryWrapperContext queryWrapperContext){
         EvaluationContext elContext = new StandardEvaluationContext();
