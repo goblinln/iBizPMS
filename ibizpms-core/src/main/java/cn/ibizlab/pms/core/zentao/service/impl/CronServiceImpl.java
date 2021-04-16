@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class CronServiceImpl extends ServiceImpl<CronMapper, Cron> implements ICronService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.CronRuntime cronRuntime;
 
 

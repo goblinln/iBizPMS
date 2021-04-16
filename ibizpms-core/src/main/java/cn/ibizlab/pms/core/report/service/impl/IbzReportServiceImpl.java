@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbzReportServiceImpl extends ServiceImpl<IbzReportMapper, IbzReport> implements IIbzReportService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.report.runtime.IbzReportRuntime ibzreportRuntime;
 
 

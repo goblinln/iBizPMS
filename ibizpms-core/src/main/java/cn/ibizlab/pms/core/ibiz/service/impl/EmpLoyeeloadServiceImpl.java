@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, EmpLoyeeload> implements IEmpLoyeeloadService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.EmpLoyeeloadRuntime employeeloadRuntime;
 
     @Autowired

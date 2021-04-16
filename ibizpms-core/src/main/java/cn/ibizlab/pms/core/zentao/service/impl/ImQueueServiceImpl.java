@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class ImQueueServiceImpl extends ServiceImpl<ImQueueMapper, ImQueue> implements IImQueueService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.ImQueueRuntime imqueueRuntime;
 
 

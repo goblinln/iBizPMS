@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class PRODUCTTEAMServiceImpl extends ServiceImpl<PRODUCTTEAMMapper, PRODUCTTEAM> implements IPRODUCTTEAMService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.PRODUCTTEAMRuntime productteamRuntime;
 
     @Autowired

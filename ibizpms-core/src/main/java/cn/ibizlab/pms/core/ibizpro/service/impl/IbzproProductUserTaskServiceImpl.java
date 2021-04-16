@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbzproProductUserTaskServiceImpl extends ServiceImpl<IbzproProductUserTaskMapper, IbzproProductUserTask> implements IIbzproProductUserTaskService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.ibizpro.runtime.IbzproProductUserTaskRuntime ibzproproductusertaskRuntime;
 
 

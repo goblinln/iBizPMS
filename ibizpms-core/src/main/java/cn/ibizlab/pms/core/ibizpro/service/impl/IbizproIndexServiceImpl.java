@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbizproIndexServiceImpl extends ServiceImpl<IbizproIndexMapper, IbizproIndex> implements IIbizproIndexService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.ibizpro.runtime.IbizproIndexRuntime ibizproindexRuntime;
 
 

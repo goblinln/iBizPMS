@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class GroupServiceImpl extends ServiceImpl<GroupMapper, Group> implements IGroupService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.GroupRuntime groupRuntime;
 
 

@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbzMonthlyServiceImpl extends ServiceImpl<IbzMonthlyMapper, IbzMonthly> implements IIbzMonthlyService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.report.runtime.IbzMonthlyRuntime ibzmonthlyRuntime;
 
 

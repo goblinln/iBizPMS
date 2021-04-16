@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbzTopServiceImpl extends ServiceImpl<IbzTopMapper, IbzTop> implements IIbzTopService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.IbzTopRuntime ibztopRuntime;
 
 

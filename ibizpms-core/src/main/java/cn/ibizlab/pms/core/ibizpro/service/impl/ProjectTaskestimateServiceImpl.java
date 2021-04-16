@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class ProjectTaskestimateServiceImpl extends ServiceImpl<ProjectTaskestimateMapper, ProjectTaskestimate> implements IProjectTaskestimateService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.ibizpro.runtime.ProjectTaskestimateRuntime projecttaskestimateRuntime;
 
 

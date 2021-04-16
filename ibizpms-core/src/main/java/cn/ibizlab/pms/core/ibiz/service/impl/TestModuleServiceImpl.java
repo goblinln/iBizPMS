@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestModule> implements ITestModuleService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.TestModuleRuntime testmoduleRuntime;
 
 

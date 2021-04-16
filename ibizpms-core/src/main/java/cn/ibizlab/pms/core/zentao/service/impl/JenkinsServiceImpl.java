@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class JenkinsServiceImpl extends ServiceImpl<JenkinsMapper, Jenkins> implements IJenkinsService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.JenkinsRuntime jenkinsRuntime;
 
 

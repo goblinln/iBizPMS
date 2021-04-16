@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements IDeptService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.DeptRuntime deptRuntime;
 
 

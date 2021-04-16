@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements ITodoService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.TodoRuntime todoRuntime;
 
 

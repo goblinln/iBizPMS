@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbzProjectMemberServiceImpl extends ServiceImpl<IbzProjectMemberMapper, IbzProjectMember> implements IIbzProjectMemberService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.IbzProjectMemberRuntime ibzprojectmemberRuntime;
 
 

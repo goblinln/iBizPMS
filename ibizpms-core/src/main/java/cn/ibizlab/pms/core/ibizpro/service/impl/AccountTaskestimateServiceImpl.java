@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class AccountTaskestimateServiceImpl extends ServiceImpl<AccountTaskestimateMapper, AccountTaskestimate> implements IAccountTaskestimateService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.ibizpro.runtime.AccountTaskestimateRuntime accounttaskestimateRuntime;
 
 

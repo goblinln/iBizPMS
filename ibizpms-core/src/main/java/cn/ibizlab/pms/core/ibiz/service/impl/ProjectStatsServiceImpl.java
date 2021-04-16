@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class ProjectStatsServiceImpl extends ServiceImpl<ProjectStatsMapper, ProjectStats> implements IProjectStatsService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.ProjectStatsRuntime projectstatsRuntime;
 
 

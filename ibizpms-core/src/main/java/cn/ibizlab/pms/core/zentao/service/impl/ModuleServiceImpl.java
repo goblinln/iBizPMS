@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class ModuleServiceImpl extends ServiceImpl<ModuleMapper, Module> implements IModuleService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.ModuleRuntime moduleRuntime;
 
     @Autowired

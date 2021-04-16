@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class IBZProStoryServiceImpl extends ServiceImpl<IBZProStoryMapper, IBZProStory> implements IIBZProStoryService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.ibizpro.runtime.IBZProStoryRuntime ibzprostoryRuntime;
 
     @Autowired

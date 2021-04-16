@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class CompileServiceImpl extends ServiceImpl<CompileMapper, Compile> implements ICompileService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.CompileRuntime compileRuntime;
 
     @Autowired

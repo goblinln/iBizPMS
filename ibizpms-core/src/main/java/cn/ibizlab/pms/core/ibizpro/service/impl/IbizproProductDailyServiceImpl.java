@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDailyMapper, IbizproProductDaily> implements IIbizproProductDailyService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.ibizpro.runtime.IbizproProductDailyRuntime ibizproproductdailyRuntime;
 
     @Autowired

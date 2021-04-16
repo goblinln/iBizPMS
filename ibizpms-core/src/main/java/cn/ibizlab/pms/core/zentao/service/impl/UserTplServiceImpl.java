@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class UserTplServiceImpl extends ServiceImpl<UserTplMapper, UserTpl> implements IUserTplService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.UserTplRuntime usertplRuntime;
 
 

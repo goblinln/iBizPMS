@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbiLoginServiceImpl extends ServiceImpl<IbiLoginMapper, IbiLogin> implements IIbiLoginService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.IbiLoginRuntime ibiloginRuntime;
 
 

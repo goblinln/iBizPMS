@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbzReportRoleConfigServiceImpl extends ServiceImpl<IbzReportRoleConfigMapper, IbzReportRoleConfig> implements IIbzReportRoleConfigService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.report.runtime.IbzReportRoleConfigRuntime ibzreportroleconfigRuntime;
 
 

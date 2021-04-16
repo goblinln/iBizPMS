@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class BlockServiceImpl extends ServiceImpl<BlockMapper, Block> implements IBlockService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.BlockRuntime blockRuntime;
 
 

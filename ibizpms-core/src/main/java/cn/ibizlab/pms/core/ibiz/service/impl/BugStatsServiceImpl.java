@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class BugStatsServiceImpl extends ServiceImpl<BugStatsMapper, BugStats> implements IBugStatsService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.BugStatsRuntime bugstatsRuntime;
 
     @Autowired

@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class SysUpdateFeaturesServiceImpl extends ServiceImpl<SysUpdateFeaturesMapper, SysUpdateFeatures> implements ISysUpdateFeaturesService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.SysUpdateFeaturesRuntime sysupdatefeaturesRuntime;
 
     @Autowired

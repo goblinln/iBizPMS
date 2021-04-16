@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class ImClientServiceImpl extends ServiceImpl<ImClientMapper, ImClient> implements IImClientService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.ImClientRuntime imclientRuntime;
 
 

@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class JobServiceImpl extends ServiceImpl<JobMapper, Job> implements IJobService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.JobRuntime jobRuntime;
 
     @Autowired

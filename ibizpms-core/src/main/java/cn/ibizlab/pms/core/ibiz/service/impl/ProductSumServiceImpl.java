@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class ProductSumServiceImpl extends ServiceImpl<ProductSumMapper, ProductSum> implements IProductSumService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.ProductSumRuntime productsumRuntime;
 
 

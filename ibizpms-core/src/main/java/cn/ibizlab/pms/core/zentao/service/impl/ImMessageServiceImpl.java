@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class ImMessageServiceImpl extends ServiceImpl<ImMessageMapper, ImMessage> implements IImMessageService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.ImMessageRuntime immessageRuntime;
 
 

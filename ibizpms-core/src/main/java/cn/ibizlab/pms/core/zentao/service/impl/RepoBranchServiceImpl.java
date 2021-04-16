@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class RepoBranchServiceImpl extends ServiceImpl<RepoBranchMapper, RepoBranch> implements IRepoBranchService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.RepoBranchRuntime repobranchRuntime;
 
 

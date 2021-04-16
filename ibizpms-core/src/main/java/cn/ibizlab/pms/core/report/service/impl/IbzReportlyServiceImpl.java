@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbzReportlyServiceImpl extends ServiceImpl<IbzReportlyMapper, IbzReportly> implements IIbzReportlyService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.report.runtime.IbzReportlyRuntime ibzreportlyRuntime;
 
 

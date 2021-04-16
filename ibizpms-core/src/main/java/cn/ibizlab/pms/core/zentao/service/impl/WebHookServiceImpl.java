@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class WebHookServiceImpl extends ServiceImpl<WebHookMapper, WebHook> implements IWebHookService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.WebHookRuntime webhookRuntime;
 
 

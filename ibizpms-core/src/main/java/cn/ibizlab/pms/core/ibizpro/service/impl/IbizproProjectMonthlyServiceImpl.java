@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbizproProjectMonthlyServiceImpl extends ServiceImpl<IbizproProjectMonthlyMapper, IbizproProjectMonthly> implements IIbizproProjectMonthlyService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.ibizpro.runtime.IbizproProjectMonthlyRuntime ibizproprojectmonthlyRuntime;
 
     @Autowired

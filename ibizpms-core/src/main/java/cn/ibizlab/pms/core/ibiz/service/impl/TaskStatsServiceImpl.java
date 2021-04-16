@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class TaskStatsServiceImpl extends ServiceImpl<TaskStatsMapper, TaskStats> implements ITaskStatsService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.TaskStatsRuntime taskstatsRuntime;
 
 

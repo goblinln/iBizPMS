@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class UserViewServiceImpl extends ServiceImpl<UserViewMapper, UserView> implements IUserViewService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.UserViewRuntime userviewRuntime;
 
 

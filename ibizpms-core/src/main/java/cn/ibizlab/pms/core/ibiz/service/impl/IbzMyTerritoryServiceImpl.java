@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbzMyTerritoryServiceImpl extends ServiceImpl<IbzMyTerritoryMapper, IbzMyTerritory> implements IIbzMyTerritoryService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.IbzMyTerritoryRuntime ibzmyterritoryRuntime;
 
 

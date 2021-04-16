@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class BranchServiceImpl extends ServiceImpl<BranchMapper, Branch> implements IBranchService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.BranchRuntime branchRuntime;
 
     @Autowired

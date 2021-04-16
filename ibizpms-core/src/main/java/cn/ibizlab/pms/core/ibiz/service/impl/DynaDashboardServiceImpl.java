@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class DynaDashboardServiceImpl extends ServiceImpl<DynaDashboardMapper, DynaDashboard> implements IDynaDashboardService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.DynaDashboardRuntime dynadashboardRuntime;
 
 

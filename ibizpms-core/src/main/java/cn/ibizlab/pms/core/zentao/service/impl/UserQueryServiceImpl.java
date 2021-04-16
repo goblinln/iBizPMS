@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class UserQueryServiceImpl extends ServiceImpl<UserQueryMapper, UserQuery> implements IUserQueryService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.UserQueryRuntime userqueryRuntime;
 
 

@@ -36,7 +36,7 @@
         <dependency>
             <groupId>net.ibizsys.model</groupId>
             <artifactId>ibizlab-model</artifactId>
-            <version>1.0.35</version>
+            <version>1.0.37</version>
         </dependency>
     </dependencies>
 

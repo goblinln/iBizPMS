@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class RepoServiceImpl extends ServiceImpl<RepoMapper, Repo> implements IRepoService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.RepoRuntime repoRuntime;
 
     @Autowired

@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class ExtensionServiceImpl extends ServiceImpl<ExtensionMapper, Extension> implements IExtensionService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.ExtensionRuntime extensionRuntime;
 
 

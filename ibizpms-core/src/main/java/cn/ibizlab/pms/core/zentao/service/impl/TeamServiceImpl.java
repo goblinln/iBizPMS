@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team> implements ITeamService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.TeamRuntime teamRuntime;
 
 

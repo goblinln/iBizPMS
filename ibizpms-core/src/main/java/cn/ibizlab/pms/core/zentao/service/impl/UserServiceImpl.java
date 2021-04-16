@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.UserRuntime userRuntime;
 
 

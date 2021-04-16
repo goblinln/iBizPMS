@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbzproConfigServiceImpl extends ServiceImpl<IbzproConfigMapper, IbzproConfig> implements IIbzproConfigService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.ibizpro.runtime.IbzproConfigRuntime ibzproconfigRuntime;
 
 

@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.BugRuntime bugRuntime;
 
 

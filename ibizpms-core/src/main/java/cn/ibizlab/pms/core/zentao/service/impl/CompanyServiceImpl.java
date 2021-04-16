@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class CompanyServiceImpl extends ServiceImpl<CompanyMapper, Company> implements ICompanyService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.CompanyRuntime companyRuntime;
 
 

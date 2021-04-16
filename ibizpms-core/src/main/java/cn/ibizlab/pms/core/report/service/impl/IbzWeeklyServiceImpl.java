@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly> implements IIbzWeeklyService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.report.runtime.IbzWeeklyRuntime ibzweeklyRuntime;
 
 

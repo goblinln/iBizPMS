@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class CompanyStatsServiceImpl extends ServiceImpl<CompanyStatsMapper, CompanyStats> implements ICompanyStatsService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.CompanyStatsRuntime companystatsRuntime;
 
 

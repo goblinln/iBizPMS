@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class ConfigServiceImpl extends ServiceImpl<ConfigMapper, Config> implements IConfigService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.ConfigRuntime configRuntime;
 
 

@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class ScoreServiceImpl extends ServiceImpl<ScoreMapper, Score> implements IScoreService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.ScoreRuntime scoreRuntime;
 
 

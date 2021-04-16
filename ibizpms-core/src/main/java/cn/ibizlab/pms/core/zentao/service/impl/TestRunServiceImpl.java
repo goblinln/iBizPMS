@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class TestRunServiceImpl extends ServiceImpl<TestRunMapper, TestRun> implements ITestRunService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.TestRunRuntime testrunRuntime;
 
     @Autowired

@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class LogServiceImpl extends ServiceImpl<LogMapper, Log> implements ILogService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.LogRuntime logRuntime;
 
 

@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class ImChatuserServiceImpl extends ServiceImpl<ImChatuserMapper, ImChatuser> implements IImChatuserService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.ImChatuserRuntime imchatuserRuntime;
 
 

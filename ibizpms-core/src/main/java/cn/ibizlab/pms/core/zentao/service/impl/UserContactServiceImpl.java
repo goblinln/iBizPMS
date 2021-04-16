@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class UserContactServiceImpl extends ServiceImpl<UserContactMapper, UserContact> implements IUserContactService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.UserContactRuntime usercontactRuntime;
 
 

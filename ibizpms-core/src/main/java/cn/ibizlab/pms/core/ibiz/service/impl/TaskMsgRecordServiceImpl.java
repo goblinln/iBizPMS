@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class TaskMsgRecordServiceImpl extends ServiceImpl<TaskMsgRecordMapper, TaskMsgRecord> implements ITaskMsgRecordService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.TaskMsgRecordRuntime taskmsgrecordRuntime;
 
 

@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class UserGroupServiceImpl extends ServiceImpl<UserGroupMapper, UserGroup> implements IUserGroupService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.UserGroupRuntime usergroupRuntime;
 
 

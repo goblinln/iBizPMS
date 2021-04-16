@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbzAgentServiceImpl extends ServiceImpl<IbzAgentMapper, IbzAgent> implements IIbzAgentService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.IbzAgentRuntime ibzagentRuntime;
 
 

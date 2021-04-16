@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> implements ITestTaskService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.TestTaskRuntime testtaskRuntime;
 
     @Autowired

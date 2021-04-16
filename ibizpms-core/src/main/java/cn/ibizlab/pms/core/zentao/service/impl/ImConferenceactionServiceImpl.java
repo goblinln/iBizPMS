@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class ImConferenceactionServiceImpl extends ServiceImpl<ImConferenceactionMapper, ImConferenceaction> implements IImConferenceactionService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.ImConferenceactionRuntime imconferenceactionRuntime;
 
 

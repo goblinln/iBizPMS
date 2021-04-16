@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class UserYearWorkStatsServiceImpl extends ServiceImpl<UserYearWorkStatsMapper, UserYearWorkStats> implements IUserYearWorkStatsService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.UserYearWorkStatsRuntime useryearworkstatsRuntime;
 
 

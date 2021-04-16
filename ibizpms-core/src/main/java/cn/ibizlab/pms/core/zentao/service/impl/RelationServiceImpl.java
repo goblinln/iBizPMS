@@ -49,6 +49,7 @@ import org.springframework.util.StringUtils;
 public class RelationServiceImpl extends ServiceImpl<RelationMapper, Relation> implements IRelationService {
 
     @Autowired
+    @Lazy
     cn.ibizlab.pms.core.zentao.runtime.RelationRuntime relationRuntime;
 
 
