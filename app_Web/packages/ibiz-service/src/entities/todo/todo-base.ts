@@ -191,6 +191,18 @@ export abstract class TodoBase extends EntityBase implements ITodo {
      * config
      */
     config?: any;
+    /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
 
     /**
      * 重置实体数据

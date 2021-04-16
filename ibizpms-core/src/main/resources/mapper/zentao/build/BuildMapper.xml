@@ -106,7 +106,6 @@
                 <include refid="BugProductBuild" />
          )t1
 		 )t1
-		 order by id  desc  
      </select>
 
     <!--数据集合[CurProduct]-->
@@ -144,7 +143,6 @@
                 <include refid="UpdateLog" />
          )t1
 		 )t1
-		 order by date  desc , id   desc
      </select>
 
     <!--数据查询[BugProductBuild]-->

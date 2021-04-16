@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("IbzWeeklyServiceImpl")
 public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly> implements IIbzWeeklyService {
 
-    //@Autowired
-    //cn.ibizlab.pms.core.report.runtime.IbzWeeklyRuntime ibzweeklyRuntime;
+    @Autowired
+    cn.ibizlab.pms.core.report.runtime.IbzWeeklyRuntime ibzweeklyRuntime;
 
 
     protected int batchSize = 500;

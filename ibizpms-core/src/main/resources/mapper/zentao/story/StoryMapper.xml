@@ -281,7 +281,6 @@
                 <include refid="BugStory" />
          )t1
 		 )t1
-		 order by id  desc  
      </select>
 
     <!--数据集合[BuildLinkCompletedStories]-->
@@ -305,7 +304,6 @@
                 <include refid="BuildStories" />
          )t1
 		 )t1
-		 order by id  desc  
      </select>
 
     <!--数据集合[ByModule]-->
@@ -322,7 +320,6 @@
                 <include refid="CaseStory" />
          )t1
 		 )t1
-		 order by id  desc  
      </select>
 
     <!--数据集合[Default]-->
@@ -374,7 +371,6 @@
                 <include refid="NotCurPlanLinkStory" />
          )t1
 		 )t1
-		 order by id  desc  
      </select>
 
     <!--数据集合[ParentDefault]-->
@@ -405,7 +401,6 @@
                 <include refid="ProjectStories" />
          )t1
 		 )t1
-		 order by id  desc  
      </select>
 
     <!--数据集合[ReleaseLinkableStories]-->
@@ -415,7 +410,6 @@
                 <include refid="ReleaseLinkableStories" />
          )t1
 		 )t1
-		 order by id  desc  
      </select>
 
     <!--数据集合[ReleaseStories]-->
@@ -425,7 +419,6 @@
                 <include refid="ReleaseStories" />
          )t1
 		 )t1
-		 order by id  desc  
      </select>
 
     <!--数据集合[ReportStories]-->
@@ -442,7 +435,6 @@
                 <include refid="StoryChild" />
          )t1
 		 )t1
-		 order by id  desc  
      </select>
 
     <!--数据集合[StoryRelated]-->
@@ -452,7 +444,6 @@
                 <include refid="StoryRelated" />
          )t1
 		 )t1
-		 order by id  desc  
      </select>
 
     <!--数据集合[SubStory]-->
@@ -469,7 +460,6 @@
                 <include refid="TaskRelatedStory" />
          )t1
 		 )t1
-		 order by id  desc  
      </select>
 
     <!--数据集合[View]-->

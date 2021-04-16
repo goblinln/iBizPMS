@@ -278,7 +278,6 @@
                 <include refid="BugTask" />
          )t1
 		 )t1
-		 order by id  desc  
      </select>
 
     <!--数据集合[ByModule]-->

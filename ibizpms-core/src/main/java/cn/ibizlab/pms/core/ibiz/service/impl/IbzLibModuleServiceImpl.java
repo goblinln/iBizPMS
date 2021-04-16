@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("IbzLibModuleServiceImpl")
 public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, IbzLibModule> implements IIbzLibModuleService {
 
-    //@Autowired
-    //cn.ibizlab.pms.core.ibiz.runtime.IbzLibModuleRuntime ibzlibmoduleRuntime;
+    @Autowired
+    cn.ibizlab.pms.core.ibiz.runtime.IbzLibModuleRuntime ibzlibmoduleRuntime;
 
     @Autowired
     @Lazy

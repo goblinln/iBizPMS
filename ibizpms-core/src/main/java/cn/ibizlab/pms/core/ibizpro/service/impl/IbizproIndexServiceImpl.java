@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("IbizproIndexServiceImpl")
 public class IbizproIndexServiceImpl extends ServiceImpl<IbizproIndexMapper, IbizproIndex> implements IIbizproIndexService {
 
-    //@Autowired
-    //cn.ibizlab.pms.core.ibizpro.runtime.IbizproIndexRuntime ibizproindexRuntime;
+    @Autowired
+    cn.ibizlab.pms.core.ibizpro.runtime.IbizproIndexRuntime ibizproindexRuntime;
 
 
     protected int batchSize = 500;

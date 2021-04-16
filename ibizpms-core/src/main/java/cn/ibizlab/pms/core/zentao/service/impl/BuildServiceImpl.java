@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("BuildServiceImpl")
 public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements IBuildService {
 
-    //@Autowired
-    //cn.ibizlab.pms.core.zentao.runtime.BuildRuntime buildRuntime;
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime.BuildRuntime buildRuntime;
 
     @Autowired
     @Lazy

@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("NotifyServiceImpl")
 public class NotifyServiceImpl extends ServiceImpl<NotifyMapper, Notify> implements INotifyService {
 
-    //@Autowired
-    //cn.ibizlab.pms.core.zentao.runtime.NotifyRuntime notifyRuntime;
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime.NotifyRuntime notifyRuntime;
 
 
     protected int batchSize = 500;

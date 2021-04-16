@@ -77,7 +77,6 @@
                 <include refid="CurTest" />
          )t1
 		 )t1
-		 order by id  asc  
      </select>
 
     <!--数据集合[Default]-->

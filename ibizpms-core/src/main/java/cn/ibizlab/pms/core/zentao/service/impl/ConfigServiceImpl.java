@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("ConfigServiceImpl")
 public class ConfigServiceImpl extends ServiceImpl<ConfigMapper, Config> implements IConfigService {
 
-    //@Autowired
-    //cn.ibizlab.pms.core.zentao.runtime.ConfigRuntime configRuntime;
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime.ConfigRuntime configRuntime;
 
 
     protected int batchSize = 500;

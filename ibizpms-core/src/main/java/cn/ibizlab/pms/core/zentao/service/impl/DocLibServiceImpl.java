@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("DocLibServiceImpl")
 public class DocLibServiceImpl extends ServiceImpl<DocLibMapper, DocLib> implements IDocLibService {
 
-    //@Autowired
-    //cn.ibizlab.pms.core.zentao.runtime.DocLibRuntime doclibRuntime;
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime.DocLibRuntime doclibRuntime;
 
     @Autowired
     @Lazy

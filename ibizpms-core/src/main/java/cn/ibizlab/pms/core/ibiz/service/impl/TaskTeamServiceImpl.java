@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("TaskTeamServiceImpl")
 public class TaskTeamServiceImpl extends ServiceImpl<TaskTeamMapper, TaskTeam> implements ITaskTeamService {
 
-    //@Autowired
-    //cn.ibizlab.pms.core.ibiz.runtime.TaskTeamRuntime taskteamRuntime;
+    @Autowired
+    cn.ibizlab.pms.core.ibiz.runtime.TaskTeamRuntime taskteamRuntime;
 
     @Autowired
     @Lazy

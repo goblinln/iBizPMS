@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("IbzCaseServiceImpl")
 public class IbzCaseServiceImpl extends ServiceImpl<IbzCaseMapper, IbzCase> implements IIbzCaseService {
 
-    //@Autowired
-    //cn.ibizlab.pms.core.ibiz.runtime.IbzCaseRuntime ibzcaseRuntime;
+    @Autowired
+    cn.ibizlab.pms.core.ibiz.runtime.IbzCaseRuntime ibzcaseRuntime;
 
     @Autowired
     @Lazy

@@ -3,6 +3,7 @@ package cn.ibizlab.pms.util.filter;
 import cn.ibizlab.pms.util.helper.DEFieldCacheMap;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
@@ -64,19 +65,11 @@ public class QueryWrapperContext<T> extends SearchContextBase implements ISearch
         Class<T> type = (Class<T>)parameterizedType.getActualTypeArguments()[0];
         while (it_sort.hasNext()) {
             Sort.Order sort_order = it_sort.next();
-            if(sort_order.getDirection()== Sort.Direction.ASC){
-                asc_fieldList.add(DEFieldCacheMap.getFieldColumnName(type,sort_order.getProperty()));
+            if(sort_order.getDirection()== Sort.Direction.ASC) {
+                page.addOrder(OrderItem.asc(sort_order.getProperty()));
+            }else if(sort_order.getDirection()== Sort.Direction.DESC) {
+                page.addOrder(OrderItem.desc(sort_order.getProperty()));
             }
-            else if(sort_order.getDirection()== Sort.Direction.DESC){
-                desc_fieldList.add(DEFieldCacheMap.getFieldColumnName(type,sort_order.getProperty()));
-            }
-        }
-
-        if(asc_fieldList.size()>0){
-            page.setAscs(asc_fieldList);
-        }
-        if(desc_fieldList.size()>0){
-            page.setDescs(desc_fieldList);
         }
 
         return page;

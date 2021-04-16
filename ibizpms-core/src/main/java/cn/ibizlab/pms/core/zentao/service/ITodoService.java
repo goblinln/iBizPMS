@@ -72,6 +72,8 @@ public interface ITodoService extends IService<Todo> {
      */
     boolean execute(String sql, Map param);
 
+    List<Todo> getTodoByIds(List<Long> ids);
+    List<Todo> getTodoByEntities(List<Todo> entities);
 }
 
 

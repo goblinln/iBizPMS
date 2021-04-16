@@ -5,6 +5,7 @@ import cn.ibizlab.pms.core.zentao.service.IImMessagestatusService;
 import cn.ibizlab.pms.core.zentao.filter.ImMessagestatusSearchContext;
 import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
 import com.baomidou.mybatisplus.extension.service.IService;
+import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
@@ -39,6 +40,7 @@ import java.util.List;
 @Aspect
 @Order(100)
 @Component("ImMessagestatusRuntime")
+@Slf4j
 public class ImMessagestatusRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime {
 
     @Autowired
@@ -79,19 +81,17 @@ public class ImMessagestatusRuntime extends cn.ibizlab.pms.core.runtime.SystemDa
     }
 
     @Override
-    public void setSearchCondition(ISearchContextBase iSearchContextBase, IPSDEField iPSDEField, String strCondition, Object objValue) {
-        //设置查询条件 net.ibizsys.runtime.util.Conditions
-    }
-
-    @Override
     public boolean existsData(ISearchContextBase iSearchContextBase) {
-        //判断数据是否存在
-        return false;
+        Page<ImMessagestatus> domains = immessagestatusService.searchDefault((ImMessagestatusSearchContext) iSearchContextBase);
+        if (domains.getSize() == 0)
+            return false;
+        return true;
     }
 
     @Override
     public Page<ImMessagestatus> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
-        //查询数据集合
+        if (iPSDEDataSet.getName().equals("DEFAULT"))
+            return immessagestatusService.searchDefault((ImMessagestatusSearchContext) iSearchContextBase);
         return null;
     }
 
@@ -104,13 +104,15 @@ public class ImMessagestatusRuntime extends cn.ibizlab.pms.core.runtime.SystemDa
     @Override
     public ImMessagestatus selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        return null;
+        Page<ImMessagestatus> domains = immessagestatusService.searchDefault((ImMessagestatusSearchContext) iSearchContextBase);
+        if (domains.getSize() == 0)
+            return null;
+        return domains.getContent().get(0);
     }
 
     @Override
     public List<ImMessagestatus> select(ISearchContextBase iSearchContextBase) {
-        //list
-        return null;
+        return immessagestatusService.searchDefault((ImMessagestatusSearchContext) iSearchContextBase).getContent();
     }
 
     @Override

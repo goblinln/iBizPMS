@@ -57,7 +57,6 @@
                 <include refid="Default" />
          )t1
 		 )t1
-		 order by order1  desc , id   desc
      </select>
 
     <!--数据集合[NoOpenProduct]-->
@@ -67,7 +66,6 @@
                 <include refid="NoOpenProduct" />
          )t1
 		 )t1
-		 order by order1  desc , id   desc
      </select>
 
     <!--数据集合[ProjectBugType]-->

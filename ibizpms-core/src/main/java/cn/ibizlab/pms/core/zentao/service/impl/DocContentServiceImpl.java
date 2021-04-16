@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("DocContentServiceImpl")
 public class DocContentServiceImpl extends ServiceImpl<DocContentMapper, DocContent> implements IDocContentService {
 
-    //@Autowired
-    //cn.ibizlab.pms.core.zentao.runtime.DocContentRuntime doccontentRuntime;
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime.DocContentRuntime doccontentRuntime;
 
     @Autowired
     @Lazy

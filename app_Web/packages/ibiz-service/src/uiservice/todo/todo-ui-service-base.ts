@@ -38,7 +38,7 @@ export class TodoUIServiceBase extends UIServiceBase {
     protected initBasicData(){
         this.isEnableDEMainState = true;
         this.dynaInstTag = "";
-        this.tempOrgIdDEField =null;
+        this.tempOrgIdDEField ="org";
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

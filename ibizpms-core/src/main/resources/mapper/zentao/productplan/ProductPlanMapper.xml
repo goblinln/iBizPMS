@@ -138,7 +138,6 @@
                 <include refid="Default" />
          )t1
 		 )t1
-		 order by begin  desc  
      </select>
 
     <!--数据集合[DefaultParent]-->

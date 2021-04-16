@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("TaskEstimateServiceImpl")
 public class TaskEstimateServiceImpl extends ServiceImpl<TaskEstimateMapper, TaskEstimate> implements ITaskEstimateService {
 
-    //@Autowired
-    //cn.ibizlab.pms.core.zentao.runtime.TaskEstimateRuntime taskestimateRuntime;
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime.TaskEstimateRuntime taskestimateRuntime;
 
     @Autowired
     @Lazy

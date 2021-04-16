@@ -100,7 +100,6 @@
                 <include refid="BugModule" />
          )t1
 		 )t1
-		 order by orderpk  asc , id   desc
      </select>
 
     <!--数据集合[BugModuleCodeList]-->
@@ -110,7 +109,6 @@
                 <include refid="BugModuleCodeList" />
          )t1
 		 )t1
-		 order by order  asc , id   desc
      </select>
 
     <!--数据集合[Default]-->
@@ -120,7 +118,6 @@
                 <include refid="Default" />
          )t1
 		 )t1
-		 order by order  asc , id   desc
      </select>
 
     <!--数据集合[DocModule]-->
@@ -130,7 +127,6 @@
                 <include refid="DocModule" />
          )t1
 		 )t1
-		 order by order  asc , id   desc
      </select>
 
     <!--数据集合[Line]-->
@@ -140,7 +136,6 @@
                 <include refid="Line" />
          )t1
 		 )t1
-		 order by order  asc , id   desc
      </select>
 
     <!--数据集合[StoryModule]-->

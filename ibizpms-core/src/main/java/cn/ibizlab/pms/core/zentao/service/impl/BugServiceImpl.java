@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("BugServiceImpl")
 public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugService {
 
-    //@Autowired
-    //cn.ibizlab.pms.core.zentao.runtime.BugRuntime bugRuntime;
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime.BugRuntime bugRuntime;
 
 
     protected cn.ibizlab.pms.core.zentao.service.IBugService bugService = this;

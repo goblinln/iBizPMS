@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("ImMessagestatusServiceImpl")
 public class ImMessagestatusServiceImpl extends ServiceImpl<ImMessagestatusMapper, ImMessagestatus> implements IImMessagestatusService {
 
-    //@Autowired
-    //cn.ibizlab.pms.core.zentao.runtime.ImMessagestatusRuntime immessagestatusRuntime;
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime.ImMessagestatusRuntime immessagestatusRuntime;
 
 
     protected int batchSize = 500;

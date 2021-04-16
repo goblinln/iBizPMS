@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("ProductStatsServiceImpl")
 public class ProductStatsServiceImpl extends ServiceImpl<ProductStatsMapper, ProductStats> implements IProductStatsService {
 
-    //@Autowired
-    //cn.ibizlab.pms.core.ibiz.runtime.ProductStatsRuntime productstatsRuntime;
+    @Autowired
+    cn.ibizlab.pms.core.ibiz.runtime.ProductStatsRuntime productstatsRuntime;
 
 
     protected int batchSize = 500;

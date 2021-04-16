@@ -5,7 +5,7 @@
 	
 	<!-- 无视图模式 -->
 	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`ACCOUNT`, t1.`ASSIGNEDBY`, t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.ASSIGNEDTO AS `ASSIGNEDTOPK`, t1.`BEGIN`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CONFIG`, t1.`COST`, t1.`CYCLE`, t1.`DATE`, (case when t1.`DATE` = '2030-01-01' then '待定' else t1.`DATE` end) AS `DATE1`, t1.`DESC`, t1.`END`, t1.`FINISHEDBY`, t1.`FINISHEDDATE`, t1.`ID`, t1.`IDVALUE`, t1.`NAME`, t1.`PRI`, t1.`PRIVATE`, t1.`STATUS`, t1.`TYPE` FROM `zt_todo` t1   ]]>
+        <![CDATA[ SELECT t1.`ACCOUNT`, t1.`ASSIGNEDBY`, t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.ASSIGNEDTO AS `ASSIGNEDTOPK`, t1.`BEGIN`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CONFIG`, t1.`COST`, t1.`CYCLE`, t1.`DATE`, (case when t1.`DATE` = '2030-01-01' then '待定' else t1.`DATE` end) AS `DATE1`, t1.`DEPT`, t1.`DESC`, t1.`END`, t1.`FINISHEDBY`, t1.`FINISHEDDATE`, t1.`ID`, t1.`IDVALUE`, t1.`NAME`, t1.`ORG`, t1.`PRI`, t1.`PRIVATE`, t1.`STATUS`, t1.`TYPE`, t1.`UPDATEBY` FROM `zt_todo` t1   ]]>
     </sql>
 
 	
@@ -171,7 +171,7 @@
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ASSIGNEDBY`, t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.ASSIGNEDTO AS `ASSIGNEDTOPK`, t1.`BEGIN`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CONFIG`, t1.`COST`, t1.`CYCLE`, t1.`DATE`, (case when t1.`DATE` = '2030-01-01' then '待定' else t1.`DATE` end) AS `DATE1`, t1.`DESC`, t1.`END`, t1.`FINISHEDBY`, t1.`FINISHEDDATE`, t1.`ID`, t1.`IDVALUE`, t1.`NAME`, t1.`PRI`, t1.`PRIVATE`, t1.`STATUS`, t1.`TYPE` FROM `zt_todo` t1   ]]>
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ASSIGNEDBY`, t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.ASSIGNEDTO AS `ASSIGNEDTOPK`, t1.`BEGIN`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CONFIG`, t1.`COST`, t1.`CYCLE`, t1.`DATE`, (case when t1.`DATE` = '2030-01-01' then '待定' else t1.`DATE` end) AS `DATE1`, t1.`DEPT`, t1.`DESC`, t1.`END`, t1.`FINISHEDBY`, t1.`FINISHEDDATE`, t1.`ID`, t1.`IDVALUE`, t1.`NAME`, t1.`ORG`, t1.`PRI`, t1.`PRIVATE`, t1.`STATUS`, t1.`TYPE`, t1.`UPDATEBY` FROM `zt_todo` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>

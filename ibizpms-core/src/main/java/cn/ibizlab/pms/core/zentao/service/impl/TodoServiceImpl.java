@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("TodoServiceImpl")
 public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements ITodoService {
 
-    //@Autowired
-    //cn.ibizlab.pms.core.zentao.runtime.TodoRuntime todoRuntime;
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime.TodoRuntime todoRuntime;
 
 
     protected int batchSize = 500;
@@ -377,6 +377,27 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
         return true;
     }
 
+    @Override
+    public List<Todo> getTodoByIds(List<Long> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<Todo> getTodoByEntities(List<Todo> entities) {
+        List ids =new ArrayList();
+        for(Todo entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     public ITodoService getProxyService() {

@@ -140,7 +140,6 @@
                 <include refid="TaskModules" />
          )t1
 		 )t1
-		 order by orderpk  asc , id   desc
      </select>
 
     <!--数据查询[ByPath]-->

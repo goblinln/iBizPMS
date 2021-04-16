@@ -411,7 +411,6 @@
                 <include refid="BuildLinkResolvedBugs" />
          )t1
 		 )t1
-		 order by v2  asc  
      </select>
 
     <!--数据集合[BuildOpenBugs]-->
@@ -554,7 +553,6 @@
                 <include refid="NotCurPlanLinkBug" />
          )t1
 		 )t1
-		 order by id  desc  
      </select>
 
     <!--数据集合[ProjectBugs]-->

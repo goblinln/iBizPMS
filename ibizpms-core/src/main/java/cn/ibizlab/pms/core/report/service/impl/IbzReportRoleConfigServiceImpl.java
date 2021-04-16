@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("IbzReportRoleConfigServiceImpl")
 public class IbzReportRoleConfigServiceImpl extends ServiceImpl<IbzReportRoleConfigMapper, IbzReportRoleConfig> implements IIbzReportRoleConfigService {
 
-    //@Autowired
-    //cn.ibizlab.pms.core.report.runtime.IbzReportRoleConfigRuntime ibzreportroleconfigRuntime;
+    @Autowired
+    cn.ibizlab.pms.core.report.runtime.IbzReportRoleConfigRuntime ibzreportroleconfigRuntime;
 
 
     protected int batchSize = 500;

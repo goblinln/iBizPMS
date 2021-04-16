@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("EntryServiceImpl")
 public class EntryServiceImpl extends ServiceImpl<EntryMapper, Entry> implements IEntryService {
 
-    //@Autowired
-    //cn.ibizlab.pms.core.zentao.runtime.EntryRuntime entryRuntime;
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime.EntryRuntime entryRuntime;
 
     @Autowired
     @Lazy

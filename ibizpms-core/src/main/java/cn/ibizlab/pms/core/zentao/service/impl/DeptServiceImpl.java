@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("DeptServiceImpl")
 public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements IDeptService {
 
-    //@Autowired
-    //cn.ibizlab.pms.core.zentao.runtime.DeptRuntime deptRuntime;
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime.DeptRuntime deptRuntime;
 
 
     protected cn.ibizlab.pms.core.zentao.service.IDeptService deptService = this;

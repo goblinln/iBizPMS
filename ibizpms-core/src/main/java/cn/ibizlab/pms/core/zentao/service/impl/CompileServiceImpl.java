@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("CompileServiceImpl")
 public class CompileServiceImpl extends ServiceImpl<CompileMapper, Compile> implements ICompileService {
 
-    //@Autowired
-    //cn.ibizlab.pms.core.zentao.runtime.CompileRuntime compileRuntime;
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime.CompileRuntime compileRuntime;
 
     @Autowired
     @Lazy

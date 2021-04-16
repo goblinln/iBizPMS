@@ -5,6 +5,7 @@ import cn.ibizlab.pms.core.ibizpro.service.IIBZProStoryService;
 import cn.ibizlab.pms.core.ibizpro.filter.IBZProStorySearchContext;
 import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
 import com.baomidou.mybatisplus.extension.service.IService;
+import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
@@ -39,6 +40,7 @@ import java.util.List;
 @Aspect
 @Order(100)
 @Component("IBZProStoryRuntime")
+@Slf4j
 public class IBZProStoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime {
 
     @Autowired
@@ -79,19 +81,17 @@ public class IBZProStoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
     }
 
     @Override
-    public void setSearchCondition(ISearchContextBase iSearchContextBase, IPSDEField iPSDEField, String strCondition, Object objValue) {
-        //设置查询条件 net.ibizsys.runtime.util.Conditions
-    }
-
-    @Override
     public boolean existsData(ISearchContextBase iSearchContextBase) {
-        //判断数据是否存在
-        return false;
+        Page<IBZProStory> domains = ibzprostoryService.searchDefault((IBZProStorySearchContext) iSearchContextBase);
+        if (domains.getSize() == 0)
+            return false;
+        return true;
     }
 
     @Override
     public Page<IBZProStory> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
-        //查询数据集合
+        if (iPSDEDataSet.getName().equals("DEFAULT"))
+            return ibzprostoryService.searchDefault((IBZProStorySearchContext) iSearchContextBase);
         return null;
     }
 
@@ -104,13 +104,15 @@ public class IBZProStoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
     @Override
     public IBZProStory selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        return null;
+        Page<IBZProStory> domains = ibzprostoryService.searchDefault((IBZProStorySearchContext) iSearchContextBase);
+        if (domains.getSize() == 0)
+            return null;
+        return domains.getContent().get(0);
     }
 
     @Override
     public List<IBZProStory> select(ISearchContextBase iSearchContextBase) {
-        //list
-        return null;
+        return ibzprostoryService.searchDefault((IBZProStorySearchContext) iSearchContextBase).getContent();
     }
 
     @Override

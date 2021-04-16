@@ -34,4 +34,7 @@ export default [
     'story',
     'ibizprivate',
     'config',
+    'updateby',
+    'org',
+    'dept',
 ];

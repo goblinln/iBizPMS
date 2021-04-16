@@ -119,7 +119,6 @@
                 <include refid="ByPath" />
          )t1
 		 )t1
-		 order by order  asc , id   desc
      </select>
 
     <!--数据集合[Default]-->
@@ -129,7 +128,6 @@
                 <include refid="Default" />
          )t1
 		 )t1
-		 order by order  asc , id   desc
      </select>
 
     <!--数据集合[ParentModule]-->
@@ -139,7 +137,6 @@
                 <include refid="ParentModule" />
          )t1
 		 )t1
-		 order by order  asc , id   desc
      </select>
 
     <!--数据集合[Root]-->
@@ -149,7 +146,6 @@
                 <include refid="Root" />
          )t1
 		 )t1
-		 order by order  asc , id   desc
      </select>
 
     <!--数据集合[Root_NoBranch]-->
@@ -159,7 +155,6 @@
                 <include refid="Root_NoBranch" />
          )t1
 		 )t1
-		 order by order  asc , id   desc
      </select>
 
     <!--数据集合[StoryModule]-->
@@ -169,7 +164,6 @@
                 <include refid="StoryModule" />
          )t1
 		 )t1
-		 order by orderpk  asc , id   desc
      </select>
 
     <!--数据查询[ByPath]-->

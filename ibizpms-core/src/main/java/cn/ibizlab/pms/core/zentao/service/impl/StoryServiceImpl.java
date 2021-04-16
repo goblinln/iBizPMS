@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("StoryServiceImpl")
 public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements IStoryService {
 
-    //@Autowired
-    //cn.ibizlab.pms.core.zentao.runtime.StoryRuntime storyRuntime;
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime.StoryRuntime storyRuntime;
 
     @Autowired
     @Lazy

@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("CaseStatsServiceImpl")
 public class CaseStatsServiceImpl extends ServiceImpl<CaseStatsMapper, CaseStats> implements ICaseStatsService {
 
-    //@Autowired
-    //cn.ibizlab.pms.core.ibiz.runtime.CaseStatsRuntime casestatsRuntime;
+    @Autowired
+    cn.ibizlab.pms.core.ibiz.runtime.CaseStatsRuntime casestatsRuntime;
 
     @Autowired
     @Lazy

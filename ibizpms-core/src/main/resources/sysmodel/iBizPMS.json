@@ -49975,6 +49975,52 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"UPDATEBY" ,
+    "codename":"UpdateBy",
+    "field_logic_name":"由谁更新",
+    "entity_name":"ZT_TODO",
+    "field_type":"TEXT",
+    "dict":"UserRealName",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"VARCHAR",
+    "data_length":100,
+    "predefined":"UPDATEMANNAME",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"ORG" ,
+    "codename":"Org",
+    "field_logic_name":"归属组织",
+    "entity_name":"ZT_TODO",
+    "field_type":"TEXT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"VARCHAR",
+    "data_length":100,
+    "predefined":"ORGID",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"DEPT" ,
+    "codename":"Dept",
+    "field_logic_name":"归属部门",
+    "entity_name":"ZT_TODO",
+    "field_type":"TEXT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"VARCHAR",
+    "data_length":100,
+    "predefined":"ORGSECTORID",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[

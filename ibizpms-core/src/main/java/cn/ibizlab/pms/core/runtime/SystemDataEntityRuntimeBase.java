@@ -4,6 +4,7 @@ import cn.ibizlab.pms.util.filter.QueryWrapperContext;
 import cn.ibizlab.pms.util.filter.ScopeUtils;
 
 import java.io.Serializable;
+import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -24,8 +25,10 @@ import net.ibizsys.runtime.ISystemRuntime;
 import net.ibizsys.runtime.dataentity.IDataEntityRuntime;
 import net.ibizsys.runtime.security.DataRanges;
 import net.ibizsys.runtime.security.IUserContext;
+import net.ibizsys.runtime.util.Conditions;
 import net.ibizsys.runtime.util.IEntity;
 import net.ibizsys.runtime.util.IEntityBase;
+import net.ibizsys.runtime.util.ISearchContextBase;
 import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -117,6 +120,24 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     }
 
     @Override
+    public void setSearchCondition(ISearchContextBase iSearchContextBase, IPSDEField iPSDEField, String strCondition, Object objValue) {
+        try {
+            String strSearchField = String.format("n_%s_%s", iPSDEField.getName().toLowerCase(), strCondition.toLowerCase());
+            Field searchField = iSearchContextBase.getClass().getField(strSearchField);
+            searchField.setAccessible(true);
+            if(strCondition.equals(Conditions.ISNULL) || strCondition.equals(Conditions.ISNULL)){
+                searchField.set(iSearchContextBase, "true");
+            }else{
+                searchField.set(iSearchContextBase, objValue);
+            }
+        } catch (NoSuchFieldException e) {
+            log.warn(String.format("不存在属性[%s]的查询条件[%s]。", iPSDEField.getLogicName(), strCondition));
+        } catch (IllegalAccessException e) {
+            log.warn(String.format("设置属性[%s]的查询条件[%s]值[%s]发生错误：%s", iPSDEField.getLogicName(), strCondition, objValue, e.getMessage()));
+        }
+    }
+
+    @Override
     public int checkKeyState(Object objKey) {
         return CheckKeyStates.OK;
     }
@@ -134,7 +155,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         EvaluationContext elContext = new StandardEvaluationContext();
         elContext.setVariable("service", service);
         elContext.setVariable("queryWrapperContext", queryWrapperContext);
-        Expression expression = parser.parseExpression("#service.get(#id)");
+        Expression expression = parser.parseExpression("#service.searchDefault(#queryWrapperContext)");
         Page data = expression.getValue(elContext, Page.class);
         return data.getContent() ;
     }

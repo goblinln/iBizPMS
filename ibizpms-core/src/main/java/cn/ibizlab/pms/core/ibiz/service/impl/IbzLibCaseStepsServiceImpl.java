@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("IbzLibCaseStepsServiceImpl")
 public class IbzLibCaseStepsServiceImpl extends ServiceImpl<IbzLibCaseStepsMapper, IbzLibCaseSteps> implements IIbzLibCaseStepsService {
 
-    //@Autowired
-    //cn.ibizlab.pms.core.ibiz.runtime.IbzLibCaseStepsRuntime ibzlibcasestepsRuntime;
+    @Autowired
+    cn.ibizlab.pms.core.ibiz.runtime.IbzLibCaseStepsRuntime ibzlibcasestepsRuntime;
 
 
     protected cn.ibizlab.pms.core.ibiz.service.IIbzLibCaseStepsService ibzlibcasestepsService = this;

@@ -147,7 +147,6 @@
                 <include refid="CurUser" />
          )t1
 		 )t1
-		 order by order1  desc , id   desc
      </select>
 
     <!--数据集合[CurUserSa]-->
@@ -157,7 +156,6 @@
                 <include refid="CurUserSa" />
          )t1
 		 )t1
-		 order by order1  desc  
      </select>
 
     <!--数据集合[Default]-->
@@ -167,7 +165,6 @@
                 <include refid="Default" />
          )t1
 		 )t1
-		 order by id  desc  
      </select>
 
     <!--数据集合[ESBulk]-->
