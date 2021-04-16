@@ -45,4 +45,9 @@ public interface IBZWFFeignClient
 	Map<String,Map<String,Object>> getAllTaskByUserId(@PathVariable("system") String system,@PathVariable("userId")String userId,
 													  @PathVariable("entity") String entity,@PathVariable("insttag")String instTag,
 													  @PathVariable("insttag2") String instTag2);
+
+	@RequestMapping(method = RequestMethod.POST, value = "/{system}-user-{userId}/{insttag}/{insttag2}/{entity}/tasks/sendcopy")
+	Map<String,Map<String,Object>> getSendCopyTask(@PathVariable("system") String system,@PathVariable("userId")String userId,
+													  @PathVariable("entity") String entity,@PathVariable("insttag")String instTag,
+													  @PathVariable("insttag2") String instTag2);
 }

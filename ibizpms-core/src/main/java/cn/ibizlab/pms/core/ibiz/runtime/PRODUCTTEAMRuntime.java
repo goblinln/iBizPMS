@@ -5,8 +5,10 @@ import cn.ibizlab.pms.core.ibiz.service.IPRODUCTTEAMService;
 import cn.ibizlab.pms.core.ibiz.filter.PRODUCTTEAMSearchContext;
 import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
 import com.baomidou.mybatisplus.extension.service.IService;
+import net.ibizsys.model.dataentity.IPSDataEntity;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
+import net.ibizsys.model.dataentity.der.IPSDER1N;
 import net.ibizsys.model.dataentity.der.IPSDERBase;
 import net.ibizsys.model.dataentity.ds.IPSDEDataQuery;
 import net.ibizsys.model.dataentity.ds.IPSDEDataSet;
@@ -25,6 +27,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import net.ibizsys.runtime.dataentity.DEActions;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 import org.springframework.util.ObjectUtils;
 import java.io.Serializable;
 import java.util.List;
@@ -44,7 +47,7 @@ public class PRODUCTTEAMRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return productteamService.sysGet((Long)o);
+            return productteamService.sysGet((Long) o);
         }
     }
 
@@ -109,6 +112,14 @@ public class PRODUCTTEAMRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
     }
 
     @Override
+    protected void fillEntityFullInfo(Object arg0, String strActionName, IPSDEAction iPSDEAction, IPSDER1N iPSDER1N, IPSDataEntity iPSDataEntity, ProceedingJoinPoint joinPoint) throws Throwable {
+        Object objPickupValue = this.getFieldValue(arg0, iPSDER1N.getPSPickupDEField());
+        if (ObjectUtils.isEmpty(objPickupValue) || NumberUtils.toLong(String.valueOf(objPickupValue), 0L) == 0L)
+            return;
+        super.fillEntityFullInfo(arg0, strActionName, iPSDEAction, iPSDER1N, iPSDataEntity, joinPoint);
+    }
+
+    @Override
     public Object executeAction(String strActionName, IPSDEAction iPSDEAction, Object[] args) throws Throwable {
         if (iPSDEAction != null) {
             if (iPSDEAction.getName().equals("Create")) {
@@ -121,7 +132,13 @@ public class PRODUCTTEAMRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
                 return productteamService.remove((Long) args[0]);
             }
             else if (iPSDEAction.getName().equals("Get")) {
-                return productteamService.get((Long) args[0]);
+                if(args[0] instanceof PRODUCTTEAM){
+                    PRODUCTTEAM arg = (PRODUCTTEAM) args[0] ;
+                    arg = productteamService.get(arg.getId()) ;
+                    return arg;
+                }else{
+                    return productteamService.get((Long) args[0]);
+                }
             }
             else if (iPSDEAction.getName().equals("GetDraft")) {
                 return productteamService.getDraft((PRODUCTTEAM) args[0]);
@@ -141,7 +158,13 @@ public class PRODUCTTEAMRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
             } else if (strActionName.equals(DEActions.UPDATE)) {
                 return productteamService.update((PRODUCTTEAM) args[0]);
             } else if (strActionName.equals(DEActions.GET)) {
-                return productteamService.get((Long) args[0]);
+                if(args[0] instanceof PRODUCTTEAM){
+                    PRODUCTTEAM arg = (PRODUCTTEAM) args[0] ;
+                    arg = productteamService.get(arg.getId()) ;
+                    return arg;
+                }else{
+                    return productteamService.get((Long) args[0]);
+                }
             } else if (strActionName.equals(DEActions.REMOVE)) {
                 return productteamService.remove((Long) args[0]);
             } else if (strActionName.equals(DEActions.SYSGET)) {

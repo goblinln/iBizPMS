@@ -5,8 +5,10 @@ import cn.ibizlab.pms.core.zentao.service.IImConferenceactionService;
 import cn.ibizlab.pms.core.zentao.filter.ImConferenceactionSearchContext;
 import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
 import com.baomidou.mybatisplus.extension.service.IService;
+import net.ibizsys.model.dataentity.IPSDataEntity;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
+import net.ibizsys.model.dataentity.der.IPSDER1N;
 import net.ibizsys.model.dataentity.der.IPSDERBase;
 import net.ibizsys.model.dataentity.ds.IPSDEDataQuery;
 import net.ibizsys.model.dataentity.ds.IPSDEDataSet;
@@ -25,6 +27,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import net.ibizsys.runtime.dataentity.DEActions;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 import org.springframework.util.ObjectUtils;
 import java.io.Serializable;
 import java.util.List;
@@ -44,7 +47,7 @@ public class ImConferenceactionRuntime extends cn.ibizlab.pms.core.runtime.Syste
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return imconferenceactionService.sysGet((Long)o);
+            return imconferenceactionService.sysGet((Long) o);
         }
     }
 
@@ -109,6 +112,14 @@ public class ImConferenceactionRuntime extends cn.ibizlab.pms.core.runtime.Syste
     }
 
     @Override
+    protected void fillEntityFullInfo(Object arg0, String strActionName, IPSDEAction iPSDEAction, IPSDER1N iPSDER1N, IPSDataEntity iPSDataEntity, ProceedingJoinPoint joinPoint) throws Throwable {
+        Object objPickupValue = this.getFieldValue(arg0, iPSDER1N.getPSPickupDEField());
+        if (ObjectUtils.isEmpty(objPickupValue) || NumberUtils.toLong(String.valueOf(objPickupValue), 0L) == 0L)
+            return;
+        super.fillEntityFullInfo(arg0, strActionName, iPSDEAction, iPSDER1N, iPSDataEntity, joinPoint);
+    }
+
+    @Override
     public Object executeAction(String strActionName, IPSDEAction iPSDEAction, Object[] args) throws Throwable {
         if (iPSDEAction != null) {
             if (iPSDEAction.getName().equals("Create")) {
@@ -121,7 +132,13 @@ public class ImConferenceactionRuntime extends cn.ibizlab.pms.core.runtime.Syste
                 return imconferenceactionService.remove((Long) args[0]);
             }
             else if (iPSDEAction.getName().equals("Get")) {
-                return imconferenceactionService.get((Long) args[0]);
+                if(args[0] instanceof ImConferenceaction){
+                    ImConferenceaction arg = (ImConferenceaction) args[0] ;
+                    arg = imconferenceactionService.get(arg.getId()) ;
+                    return arg;
+                }else{
+                    return imconferenceactionService.get((Long) args[0]);
+                }
             }
             else if (iPSDEAction.getName().equals("GetDraft")) {
                 return imconferenceactionService.getDraft((ImConferenceaction) args[0]);
@@ -138,7 +155,13 @@ public class ImConferenceactionRuntime extends cn.ibizlab.pms.core.runtime.Syste
             } else if (strActionName.equals(DEActions.UPDATE)) {
                 return imconferenceactionService.update((ImConferenceaction) args[0]);
             } else if (strActionName.equals(DEActions.GET)) {
-                return imconferenceactionService.get((Long) args[0]);
+                if(args[0] instanceof ImConferenceaction){
+                    ImConferenceaction arg = (ImConferenceaction) args[0] ;
+                    arg = imconferenceactionService.get(arg.getId()) ;
+                    return arg;
+                }else{
+                    return imconferenceactionService.get((Long) args[0]);
+                }
             } else if (strActionName.equals(DEActions.REMOVE)) {
                 return imconferenceactionService.remove((Long) args[0]);
             } else if (strActionName.equals(DEActions.SYSGET)) {

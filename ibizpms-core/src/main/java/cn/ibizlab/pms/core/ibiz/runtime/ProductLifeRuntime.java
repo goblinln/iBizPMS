@@ -5,8 +5,10 @@ import cn.ibizlab.pms.core.ibiz.service.IProductLifeService;
 import cn.ibizlab.pms.core.ibiz.filter.ProductLifeSearchContext;
 import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
 import com.baomidou.mybatisplus.extension.service.IService;
+import net.ibizsys.model.dataentity.IPSDataEntity;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
+import net.ibizsys.model.dataentity.der.IPSDER1N;
 import net.ibizsys.model.dataentity.der.IPSDERBase;
 import net.ibizsys.model.dataentity.ds.IPSDEDataQuery;
 import net.ibizsys.model.dataentity.ds.IPSDEDataSet;
@@ -25,6 +27,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import net.ibizsys.runtime.dataentity.DEActions;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 import org.springframework.util.ObjectUtils;
 import java.io.Serializable;
 import java.util.List;
@@ -44,7 +47,7 @@ public class ProductLifeRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return productlifeService.sysGet((String)o);
+            return productlifeService.sysGet((String) o);
         }
     }
 
@@ -109,6 +112,14 @@ public class ProductLifeRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
     }
 
     @Override
+    protected void fillEntityFullInfo(Object arg0, String strActionName, IPSDEAction iPSDEAction, IPSDER1N iPSDER1N, IPSDataEntity iPSDataEntity, ProceedingJoinPoint joinPoint) throws Throwable {
+        Object objPickupValue = this.getFieldValue(arg0, iPSDER1N.getPSPickupDEField());
+        if (ObjectUtils.isEmpty(objPickupValue))
+            return;
+        super.fillEntityFullInfo(arg0, strActionName, iPSDEAction, iPSDER1N, iPSDataEntity, joinPoint);
+    }
+
+    @Override
     public Object executeAction(String strActionName, IPSDEAction iPSDEAction, Object[] args) throws Throwable {
         if (iPSDEAction != null) {
             if (iPSDEAction.getName().equals("Create")) {
@@ -121,7 +132,13 @@ public class ProductLifeRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
                 return productlifeService.remove((String) args[0]);
             }
             else if (iPSDEAction.getName().equals("Get")) {
-                return productlifeService.get((String) args[0]);
+                if(args[0] instanceof ProductLife){
+                    ProductLife arg = (ProductLife) args[0] ;
+                    arg = productlifeService.get(arg.getProductLifeId()) ;
+                    return arg;
+                }else{
+                    return productlifeService.get((String) args[0]);
+                }
             }
             else if (iPSDEAction.getName().equals("GetDraft")) {
                 return productlifeService.getDraft((ProductLife) args[0]);
@@ -138,7 +155,13 @@ public class ProductLifeRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
             } else if (strActionName.equals(DEActions.UPDATE)) {
                 return productlifeService.update((ProductLife) args[0]);
             } else if (strActionName.equals(DEActions.GET)) {
-                return productlifeService.get((String) args[0]);
+                if(args[0] instanceof ProductLife){
+                    ProductLife arg = (ProductLife) args[0] ;
+                    arg = productlifeService.get(arg.getProductLifeId()) ;
+                    return arg;
+                }else{
+                    return productlifeService.get((String) args[0]);
+                }
             } else if (strActionName.equals(DEActions.REMOVE)) {
                 return productlifeService.remove((String) args[0]);
             } else if (strActionName.equals(DEActions.SYSGET)) {

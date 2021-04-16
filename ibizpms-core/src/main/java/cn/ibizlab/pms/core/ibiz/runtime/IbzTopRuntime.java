@@ -5,8 +5,10 @@ import cn.ibizlab.pms.core.ibiz.service.IIbzTopService;
 import cn.ibizlab.pms.core.ibiz.filter.IbzTopSearchContext;
 import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
 import com.baomidou.mybatisplus.extension.service.IService;
+import net.ibizsys.model.dataentity.IPSDataEntity;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
+import net.ibizsys.model.dataentity.der.IPSDER1N;
 import net.ibizsys.model.dataentity.der.IPSDERBase;
 import net.ibizsys.model.dataentity.ds.IPSDEDataQuery;
 import net.ibizsys.model.dataentity.ds.IPSDEDataSet;
@@ -25,6 +27,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import net.ibizsys.runtime.dataentity.DEActions;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 import org.springframework.util.ObjectUtils;
 import java.io.Serializable;
 import java.util.List;
@@ -44,7 +47,7 @@ public class IbzTopRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return ibztopService.sysGet((String)o);
+            return ibztopService.sysGet((String) o);
         }
     }
 
@@ -109,6 +112,14 @@ public class IbzTopRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     }
 
     @Override
+    protected void fillEntityFullInfo(Object arg0, String strActionName, IPSDEAction iPSDEAction, IPSDER1N iPSDER1N, IPSDataEntity iPSDataEntity, ProceedingJoinPoint joinPoint) throws Throwable {
+        Object objPickupValue = this.getFieldValue(arg0, iPSDER1N.getPSPickupDEField());
+        if (ObjectUtils.isEmpty(objPickupValue))
+            return;
+        super.fillEntityFullInfo(arg0, strActionName, iPSDEAction, iPSDER1N, iPSDataEntity, joinPoint);
+    }
+
+    @Override
     public Object executeAction(String strActionName, IPSDEAction iPSDEAction, Object[] args) throws Throwable {
         if (iPSDEAction != null) {
             if (iPSDEAction.getName().equals("Create")) {
@@ -121,7 +132,13 @@ public class IbzTopRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
                 return ibztopService.remove((String) args[0]);
             }
             else if (iPSDEAction.getName().equals("Get")) {
-                return ibztopService.get((String) args[0]);
+                if(args[0] instanceof IbzTop){
+                    IbzTop arg = (IbzTop) args[0] ;
+                    arg = ibztopService.get(arg.getIbzTopId()) ;
+                    return arg;
+                }else{
+                    return ibztopService.get((String) args[0]);
+                }
             }
             else if (iPSDEAction.getName().equals("GetDraft")) {
                 return ibztopService.getDraft((IbzTop) args[0]);
@@ -138,7 +155,13 @@ public class IbzTopRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
             } else if (strActionName.equals(DEActions.UPDATE)) {
                 return ibztopService.update((IbzTop) args[0]);
             } else if (strActionName.equals(DEActions.GET)) {
-                return ibztopService.get((String) args[0]);
+                if(args[0] instanceof IbzTop){
+                    IbzTop arg = (IbzTop) args[0] ;
+                    arg = ibztopService.get(arg.getIbzTopId()) ;
+                    return arg;
+                }else{
+                    return ibztopService.get((String) args[0]);
+                }
             } else if (strActionName.equals(DEActions.REMOVE)) {
                 return ibztopService.remove((String) args[0]);
             } else if (strActionName.equals(DEActions.SYSGET)) {

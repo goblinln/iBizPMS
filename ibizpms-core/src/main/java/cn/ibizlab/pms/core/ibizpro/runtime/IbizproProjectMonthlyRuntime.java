@@ -5,8 +5,10 @@ import cn.ibizlab.pms.core.ibizpro.service.IIbizproProjectMonthlyService;
 import cn.ibizlab.pms.core.ibizpro.filter.IbizproProjectMonthlySearchContext;
 import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
 import com.baomidou.mybatisplus.extension.service.IService;
+import net.ibizsys.model.dataentity.IPSDataEntity;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
+import net.ibizsys.model.dataentity.der.IPSDER1N;
 import net.ibizsys.model.dataentity.der.IPSDERBase;
 import net.ibizsys.model.dataentity.ds.IPSDEDataQuery;
 import net.ibizsys.model.dataentity.ds.IPSDEDataSet;
@@ -25,6 +27,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import net.ibizsys.runtime.dataentity.DEActions;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 import org.springframework.util.ObjectUtils;
 import java.io.Serializable;
 import java.util.List;
@@ -44,7 +47,7 @@ public class IbizproProjectMonthlyRuntime extends cn.ibizlab.pms.core.runtime.Sy
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return ibizproprojectmonthlyService.sysGet((String)o);
+            return ibizproprojectmonthlyService.sysGet((String) o);
         }
     }
 
@@ -109,6 +112,14 @@ public class IbizproProjectMonthlyRuntime extends cn.ibizlab.pms.core.runtime.Sy
     }
 
     @Override
+    protected void fillEntityFullInfo(Object arg0, String strActionName, IPSDEAction iPSDEAction, IPSDER1N iPSDER1N, IPSDataEntity iPSDataEntity, ProceedingJoinPoint joinPoint) throws Throwable {
+        Object objPickupValue = this.getFieldValue(arg0, iPSDER1N.getPSPickupDEField());
+        if (ObjectUtils.isEmpty(objPickupValue))
+            return;
+        super.fillEntityFullInfo(arg0, strActionName, iPSDEAction, iPSDER1N, iPSDataEntity, joinPoint);
+    }
+
+    @Override
     public Object executeAction(String strActionName, IPSDEAction iPSDEAction, Object[] args) throws Throwable {
         if (iPSDEAction != null) {
             if (iPSDEAction.getName().equals("Create")) {
@@ -121,7 +132,13 @@ public class IbizproProjectMonthlyRuntime extends cn.ibizlab.pms.core.runtime.Sy
                 return ibizproprojectmonthlyService.remove((String) args[0]);
             }
             else if (iPSDEAction.getName().equals("Get")) {
-                return ibizproprojectmonthlyService.get((String) args[0]);
+                if(args[0] instanceof IbizproProjectMonthly){
+                    IbizproProjectMonthly arg = (IbizproProjectMonthly) args[0] ;
+                    arg = ibizproprojectmonthlyService.get(arg.getIbizproProjectMonthlyId()) ;
+                    return arg;
+                }else{
+                    return ibizproprojectmonthlyService.get((String) args[0]);
+                }
             }
             else if (iPSDEAction.getName().equals("GetDraft")) {
                 return ibizproprojectmonthlyService.getDraft((IbizproProjectMonthly) args[0]);
@@ -144,7 +161,13 @@ public class IbizproProjectMonthlyRuntime extends cn.ibizlab.pms.core.runtime.Sy
             } else if (strActionName.equals(DEActions.UPDATE)) {
                 return ibizproprojectmonthlyService.update((IbizproProjectMonthly) args[0]);
             } else if (strActionName.equals(DEActions.GET)) {
-                return ibizproprojectmonthlyService.get((String) args[0]);
+                if(args[0] instanceof IbizproProjectMonthly){
+                    IbizproProjectMonthly arg = (IbizproProjectMonthly) args[0] ;
+                    arg = ibizproprojectmonthlyService.get(arg.getIbizproProjectMonthlyId()) ;
+                    return arg;
+                }else{
+                    return ibizproprojectmonthlyService.get((String) args[0]);
+                }
             } else if (strActionName.equals(DEActions.REMOVE)) {
                 return ibizproprojectmonthlyService.remove((String) args[0]);
             } else if (strActionName.equals(DEActions.SYSGET)) {

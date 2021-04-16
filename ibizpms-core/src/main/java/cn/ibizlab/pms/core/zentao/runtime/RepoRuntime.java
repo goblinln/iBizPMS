@@ -5,8 +5,10 @@ import cn.ibizlab.pms.core.zentao.service.IRepoService;
 import cn.ibizlab.pms.core.zentao.filter.RepoSearchContext;
 import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
 import com.baomidou.mybatisplus.extension.service.IService;
+import net.ibizsys.model.dataentity.IPSDataEntity;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
+import net.ibizsys.model.dataentity.der.IPSDER1N;
 import net.ibizsys.model.dataentity.der.IPSDERBase;
 import net.ibizsys.model.dataentity.ds.IPSDEDataQuery;
 import net.ibizsys.model.dataentity.ds.IPSDEDataSet;
@@ -25,6 +27,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import net.ibizsys.runtime.dataentity.DEActions;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 import org.springframework.util.ObjectUtils;
 import java.io.Serializable;
 import java.util.List;
@@ -44,7 +47,7 @@ public class RepoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return repoService.sysGet((Long)o);
+            return repoService.sysGet((Long) o);
         }
     }
 
@@ -109,6 +112,14 @@ public class RepoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     }
 
     @Override
+    protected void fillEntityFullInfo(Object arg0, String strActionName, IPSDEAction iPSDEAction, IPSDER1N iPSDER1N, IPSDataEntity iPSDataEntity, ProceedingJoinPoint joinPoint) throws Throwable {
+        Object objPickupValue = this.getFieldValue(arg0, iPSDER1N.getPSPickupDEField());
+        if (ObjectUtils.isEmpty(objPickupValue) || NumberUtils.toLong(String.valueOf(objPickupValue), 0L) == 0L)
+            return;
+        super.fillEntityFullInfo(arg0, strActionName, iPSDEAction, iPSDER1N, iPSDataEntity, joinPoint);
+    }
+
+    @Override
     public Object executeAction(String strActionName, IPSDEAction iPSDEAction, Object[] args) throws Throwable {
         if (iPSDEAction != null) {
             if (iPSDEAction.getName().equals("Create")) {
@@ -121,7 +132,13 @@ public class RepoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
                 return repoService.remove((Long) args[0]);
             }
             else if (iPSDEAction.getName().equals("Get")) {
-                return repoService.get((Long) args[0]);
+                if(args[0] instanceof Repo){
+                    Repo arg = (Repo) args[0] ;
+                    arg = repoService.get(arg.getId()) ;
+                    return arg;
+                }else{
+                    return repoService.get((Long) args[0]);
+                }
             }
             else if (iPSDEAction.getName().equals("GetDraft")) {
                 return repoService.getDraft((Repo) args[0]);
@@ -138,7 +155,13 @@ public class RepoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             } else if (strActionName.equals(DEActions.UPDATE)) {
                 return repoService.update((Repo) args[0]);
             } else if (strActionName.equals(DEActions.GET)) {
-                return repoService.get((Long) args[0]);
+                if(args[0] instanceof Repo){
+                    Repo arg = (Repo) args[0] ;
+                    arg = repoService.get(arg.getId()) ;
+                    return arg;
+                }else{
+                    return repoService.get((Long) args[0]);
+                }
             } else if (strActionName.equals(DEActions.REMOVE)) {
                 return repoService.remove((Long) args[0]);
             } else if (strActionName.equals(DEActions.SYSGET)) {
