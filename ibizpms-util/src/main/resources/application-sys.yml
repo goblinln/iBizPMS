@@ -95,6 +95,7 @@ ribbon:
 #系统是否开启权限验证、是否开启缓存
 #缓存级别：无缓存(无配置项)、一级缓存(L1)、二级缓存(L2)
 ibiz:
+  rtmodel: true
   enablePermissionValid: true
   cacheLevel: L2 #(L1)一级本地caffeine缓存;(L2)caffeine缓存+Redis缓存
   ref:
