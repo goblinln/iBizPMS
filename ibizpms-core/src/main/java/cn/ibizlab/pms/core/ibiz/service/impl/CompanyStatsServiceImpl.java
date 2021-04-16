@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("CompanyStatsServiceImpl")
 public class CompanyStatsServiceImpl extends ServiceImpl<CompanyStatsMapper, CompanyStats> implements ICompanyStatsService {
 
-    @Autowired
-    cn.ibizlab.pms.core.ibiz.runtime.CompanyStatsRuntime companystatsRuntime;
+    //@Autowired
+    //cn.ibizlab.pms.core.ibiz.runtime.CompanyStatsRuntime companystatsRuntime;
 
 
     protected int batchSize = 500;

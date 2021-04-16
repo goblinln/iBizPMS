@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("RepoFilesServiceImpl")
 public class RepoFilesServiceImpl extends ServiceImpl<RepoFilesMapper, RepoFiles> implements IRepoFilesService {
 
-    @Autowired
-    cn.ibizlab.pms.core.zentao.runtime.RepoFilesRuntime repofilesRuntime;
+    //@Autowired
+    //cn.ibizlab.pms.core.zentao.runtime.RepoFilesRuntime repofilesRuntime;
 
 
     protected cn.ibizlab.pms.core.zentao.service.IRepoFilesService repofilesService = this;

@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("FileServiceImpl")
 public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IFileService {
 
-    @Autowired
-    cn.ibizlab.pms.core.zentao.runtime.FileRuntime fileRuntime;
+    //@Autowired
+    //cn.ibizlab.pms.core.zentao.runtime.FileRuntime fileRuntime;
 
     @Autowired
     @Lazy

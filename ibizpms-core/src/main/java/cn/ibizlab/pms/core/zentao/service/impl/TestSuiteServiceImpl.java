@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("TestSuiteServiceImpl")
 public class TestSuiteServiceImpl extends ServiceImpl<TestSuiteMapper, TestSuite> implements ITestSuiteService {
 
-    @Autowired
-    cn.ibizlab.pms.core.zentao.runtime.TestSuiteRuntime testsuiteRuntime;
+    //@Autowired
+    //cn.ibizlab.pms.core.zentao.runtime.TestSuiteRuntime testsuiteRuntime;
 
     @Autowired
     @Lazy

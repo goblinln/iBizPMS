@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("ScoreServiceImpl")
 public class ScoreServiceImpl extends ServiceImpl<ScoreMapper, Score> implements IScoreService {
 
-    @Autowired
-    cn.ibizlab.pms.core.zentao.runtime.ScoreRuntime scoreRuntime;
+    //@Autowired
+    //cn.ibizlab.pms.core.zentao.runtime.ScoreRuntime scoreRuntime;
 
 
     protected int batchSize = 500;

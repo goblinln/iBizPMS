@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("TeamServiceImpl")
 public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team> implements ITeamService {
 
-    @Autowired
-    cn.ibizlab.pms.core.zentao.runtime.TeamRuntime teamRuntime;
+    //@Autowired
+    //cn.ibizlab.pms.core.zentao.runtime.TeamRuntime teamRuntime;
 
 
     protected int batchSize = 500;

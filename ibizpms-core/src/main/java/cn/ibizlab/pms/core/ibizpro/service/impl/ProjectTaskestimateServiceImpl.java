@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("ProjectTaskestimateServiceImpl")
 public class ProjectTaskestimateServiceImpl extends ServiceImpl<ProjectTaskestimateMapper, ProjectTaskestimate> implements IProjectTaskestimateService {
 
-    @Autowired
-    cn.ibizlab.pms.core.ibizpro.runtime.ProjectTaskestimateRuntime projecttaskestimateRuntime;
+    //@Autowired
+    //cn.ibizlab.pms.core.ibizpro.runtime.ProjectTaskestimateRuntime projecttaskestimateRuntime;
 
 
     protected int batchSize = 500;

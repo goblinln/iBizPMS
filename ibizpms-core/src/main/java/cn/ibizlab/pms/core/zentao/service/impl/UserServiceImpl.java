@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("UserServiceImpl")
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
 
-    @Autowired
-    cn.ibizlab.pms.core.zentao.runtime.UserRuntime userRuntime;
+    //@Autowired
+    //cn.ibizlab.pms.core.zentao.runtime.UserRuntime userRuntime;
 
 
     protected int batchSize = 500;

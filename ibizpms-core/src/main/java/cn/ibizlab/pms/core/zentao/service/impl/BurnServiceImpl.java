@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("BurnServiceImpl")
 public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IBurnService {
 
-    @Autowired
-    cn.ibizlab.pms.core.zentao.runtime.BurnRuntime burnRuntime;
+    //@Autowired
+    //cn.ibizlab.pms.core.zentao.runtime.BurnRuntime burnRuntime;
 
     @Autowired
     @Lazy

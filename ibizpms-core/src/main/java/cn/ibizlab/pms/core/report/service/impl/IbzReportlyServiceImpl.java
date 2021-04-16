@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("IbzReportlyServiceImpl")
 public class IbzReportlyServiceImpl extends ServiceImpl<IbzReportlyMapper, IbzReportly> implements IIbzReportlyService {
 
-    @Autowired
-    cn.ibizlab.pms.core.report.runtime.IbzReportlyRuntime ibzreportlyRuntime;
+    //@Autowired
+    //cn.ibizlab.pms.core.report.runtime.IbzReportlyRuntime ibzreportlyRuntime;
 
 
     protected int batchSize = 500;

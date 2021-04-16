@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("TaskServiceImpl")
 public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements ITaskService {
 
-    @Autowired
-    cn.ibizlab.pms.core.zentao.runtime.TaskRuntime taskRuntime;
+    //@Autowired
+    //cn.ibizlab.pms.core.zentao.runtime.TaskRuntime taskRuntime;
 
     @Autowired
     @Lazy

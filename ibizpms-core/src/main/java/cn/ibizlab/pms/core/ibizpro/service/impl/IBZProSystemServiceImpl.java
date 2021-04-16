@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("IBZProSystemServiceImpl")
 public class IBZProSystemServiceImpl extends ServiceImpl<IBZProSystemMapper, IBZProSystem> implements IIBZProSystemService {
 
-    @Autowired
-    cn.ibizlab.pms.core.ibizpro.runtime.IBZProSystemRuntime ibzprosystemRuntime;
+    //@Autowired
+    //cn.ibizlab.pms.core.ibizpro.runtime.IBZProSystemRuntime ibzprosystemRuntime;
 
 
     protected int batchSize = 500;

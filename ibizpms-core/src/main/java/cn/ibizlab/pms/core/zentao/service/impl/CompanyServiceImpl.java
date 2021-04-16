@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("CompanyServiceImpl")
 public class CompanyServiceImpl extends ServiceImpl<CompanyMapper, Company> implements ICompanyService {
 
-    @Autowired
-    cn.ibizlab.pms.core.zentao.runtime.CompanyRuntime companyRuntime;
+    //@Autowired
+    //cn.ibizlab.pms.core.zentao.runtime.CompanyRuntime companyRuntime;
 
 
     protected int batchSize = 500;

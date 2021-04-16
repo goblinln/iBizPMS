@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("ActionServiceImpl")
 public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> implements IActionService {
 
-    @Autowired
-    cn.ibizlab.pms.core.zentao.runtime.ActionRuntime actionRuntime;
+    //@Autowired
+    //cn.ibizlab.pms.core.zentao.runtime.ActionRuntime actionRuntime;
 
     @Autowired
     @Lazy

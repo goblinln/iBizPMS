@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("TaskEstimateStatsServiceImpl")
 public class TaskEstimateStatsServiceImpl extends ServiceImpl<TaskEstimateStatsMapper, TaskEstimateStats> implements ITaskEstimateStatsService {
 
-    @Autowired
-    cn.ibizlab.pms.core.zentao.runtime.TaskEstimateStatsRuntime taskestimatestatsRuntime;
+    //@Autowired
+    //cn.ibizlab.pms.core.zentao.runtime.TaskEstimateStatsRuntime taskestimatestatsRuntime;
 
 
     protected int batchSize = 500;

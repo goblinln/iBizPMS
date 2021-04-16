@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("LangServiceImpl")
 public class LangServiceImpl extends ServiceImpl<LangMapper, Lang> implements ILangService {
 
-    @Autowired
-    cn.ibizlab.pms.core.zentao.runtime.LangRuntime langRuntime;
+    //@Autowired
+    //cn.ibizlab.pms.core.zentao.runtime.LangRuntime langRuntime;
 
 
     protected int batchSize = 500;

@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("IBZProSysTplServiceImpl")
 public class IBZProSysTplServiceImpl extends ServiceImpl<IBZProSysTplMapper, IBZProSysTpl> implements IIBZProSysTplService {
 
-    @Autowired
-    cn.ibizlab.pms.core.ibizpro.runtime.IBZProSysTplRuntime ibzprosystplRuntime;
+    //@Autowired
+    //cn.ibizlab.pms.core.ibizpro.runtime.IBZProSysTplRuntime ibzprosystplRuntime;
 
     @Autowired
     @Lazy

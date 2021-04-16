@@ -48,8 +48,8 @@ import org.springframework.util.StringUtils;
 @Service("IbzproProjectUserTaskServiceImpl")
 public class IbzproProjectUserTaskServiceImpl extends ServiceImpl<IbzproProjectUserTaskMapper, IbzproProjectUserTask> implements IIbzproProjectUserTaskService {
 
-    @Autowired
-    cn.ibizlab.pms.core.ibizpro.runtime.IbzproProjectUserTaskRuntime ibzproprojectusertaskRuntime;
+    //@Autowired
+    //cn.ibizlab.pms.core.ibizpro.runtime.IbzproProjectUserTaskRuntime ibzproprojectusertaskRuntime;
 
 
     protected int batchSize = 500;
