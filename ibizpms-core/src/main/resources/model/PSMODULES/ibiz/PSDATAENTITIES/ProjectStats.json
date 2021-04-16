@@ -163,7 +163,15 @@
     "extendMode" : 0,
     "logicName" : "DEFAULT",
     "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "ORDER1",
+      "codeName" : "Order1"
+    },
     "minorSortDir" : "DESC",
+    "getMinorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "DEFAULT",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -184,7 +192,15 @@
     "extendMode" : 0,
     "logicName" : "未关闭产品",
     "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "ORDER1",
+      "codeName" : "Order1"
+    },
     "minorSortDir" : "DESC",
+    "getMinorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "NOOpenProduct",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {

@@ -66,7 +66,9 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
     @Override
     @Transactional
     public boolean create(SuiteCase et) {
-        fillParentData(et);
+        if(!suitecaseRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -77,14 +79,18 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
     @Override
     @Transactional
     public void createBatch(List<SuiteCase> list) {
-        list.forEach(item->fillParentData(item));
+        if(!suitecaseRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(SuiteCase et) {
-        fillParentData(et);
+        if(!suitecaseRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -95,7 +101,9 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
     @Override
     @Transactional
     public void updateBatch(List<SuiteCase> list) {
-        list.forEach(item->fillParentData(item));
+        if(!suitecaseRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         updateBatchById(list, batchSize);
     }
 
@@ -150,7 +158,9 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
 
     @Override
     public SuiteCase getDraft(SuiteCase et) {
-        fillParentData(et);
+        if(!suitecaseRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -180,7 +190,9 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
     @Override
     @Transactional
     public boolean saveBatch(Collection<SuiteCase> list) {
-        list.forEach(item->fillParentData(item));
+        if(!suitecaseRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<SuiteCase> create = new ArrayList<>();
         List<SuiteCase> update = new ArrayList<>();
         for (SuiteCase et : list) {
@@ -202,7 +214,9 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
     @Override
     @Transactional
     public void saveBatch(List<SuiteCase> list) {
-        list.forEach(item->fillParentData(item));
+        if(!suitecaseRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<SuiteCase> create = new ArrayList<>();
         List<SuiteCase> update = new ArrayList<>();
         for (SuiteCase et : list) {

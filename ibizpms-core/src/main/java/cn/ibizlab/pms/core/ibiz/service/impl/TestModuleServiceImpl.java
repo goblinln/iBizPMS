@@ -62,7 +62,9 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
     @Override
     @Transactional
     public boolean create(TestModule et) {
-        fillParentData(et);
+        if(!testmoduleRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -73,7 +75,9 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
     @Override
     @Transactional
     public void createBatch(List<TestModule> list) {
-        list.forEach(item->fillParentData(item));
+        if(!testmoduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         for (TestModule et : list) {
             getProxyService().save(et);
         }
@@ -82,7 +86,9 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
     @Override
     @Transactional
     public boolean update(TestModule et) {
-        fillParentData(et);
+        if(!testmoduleRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -93,7 +99,9 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
     @Override
     @Transactional
     public void updateBatch(List<TestModule> list) {
-        list.forEach(item->fillParentData(item));
+        if(!testmoduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         for (TestModule et : list) {
             getProxyService().update(et);
         }
@@ -150,7 +158,9 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
 
     @Override
     public TestModule getDraft(TestModule et) {
-        fillParentData(et);
+        if(!testmoduleRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -210,7 +220,9 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
     @Override
     @Transactional
     public boolean saveBatch(Collection<TestModule> list) {
-        list.forEach(item->fillParentData(item));
+        if(!testmoduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<TestModule> create = new ArrayList<>();
         List<TestModule> update = new ArrayList<>();
         for (TestModule et : list) {
@@ -232,7 +244,9 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
     @Override
     @Transactional
     public void saveBatch(List<TestModule> list) {
-        list.forEach(item->fillParentData(item));
+        if(!testmoduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<TestModule> create = new ArrayList<>();
         List<TestModule> update = new ArrayList<>();
         for (TestModule et : list) {

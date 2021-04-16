@@ -60,7 +60,9 @@ public class SysUpdateFeaturesServiceImpl extends ServiceImpl<SysUpdateFeaturesM
     @Override
     @Transactional
     public boolean create(SysUpdateFeatures et) {
-        fillParentData(et);
+        if(!sysupdatefeaturesRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -71,14 +73,18 @@ public class SysUpdateFeaturesServiceImpl extends ServiceImpl<SysUpdateFeaturesM
     @Override
     @Transactional
     public void createBatch(List<SysUpdateFeatures> list) {
-        list.forEach(item->fillParentData(item));
+        if(!sysupdatefeaturesRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(SysUpdateFeatures et) {
-        fillParentData(et);
+        if(!sysupdatefeaturesRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("sys_update_featuresid", et.getSysupdatefeaturesid()))) {
             return false;
         }
@@ -89,7 +95,9 @@ public class SysUpdateFeaturesServiceImpl extends ServiceImpl<SysUpdateFeaturesM
     @Override
     @Transactional
     public void updateBatch(List<SysUpdateFeatures> list) {
-        list.forEach(item->fillParentData(item));
+        if(!sysupdatefeaturesRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         updateBatchById(list, batchSize);
     }
 
@@ -144,7 +152,9 @@ public class SysUpdateFeaturesServiceImpl extends ServiceImpl<SysUpdateFeaturesM
 
     @Override
     public SysUpdateFeatures getDraft(SysUpdateFeatures et) {
-        fillParentData(et);
+        if(!sysupdatefeaturesRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -174,7 +184,9 @@ public class SysUpdateFeaturesServiceImpl extends ServiceImpl<SysUpdateFeaturesM
     @Override
     @Transactional
     public boolean saveBatch(Collection<SysUpdateFeatures> list) {
-        list.forEach(item->fillParentData(item));
+        if(!sysupdatefeaturesRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<SysUpdateFeatures> create = new ArrayList<>();
         List<SysUpdateFeatures> update = new ArrayList<>();
         for (SysUpdateFeatures et : list) {
@@ -196,7 +208,9 @@ public class SysUpdateFeaturesServiceImpl extends ServiceImpl<SysUpdateFeaturesM
     @Override
     @Transactional
     public void saveBatch(List<SysUpdateFeatures> list) {
-        list.forEach(item->fillParentData(item));
+        if(!sysupdatefeaturesRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<SysUpdateFeatures> create = new ArrayList<>();
         List<SysUpdateFeatures> update = new ArrayList<>();
         for (SysUpdateFeatures et : list) {

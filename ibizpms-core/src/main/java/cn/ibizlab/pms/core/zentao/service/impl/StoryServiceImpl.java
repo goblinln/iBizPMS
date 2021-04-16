@@ -86,7 +86,9 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     @Override
     @Transactional
     public boolean create(Story et) {
-        fillParentData(et);
+        if(!storyRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -97,14 +99,18 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     @Override
     @Transactional
     public void createBatch(List<Story> list) {
-        list.forEach(item->fillParentData(item));
+        if(!storyRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(Story et) {
-        fillParentData(et);
+        if(!storyRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -115,7 +121,9 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     @Override
     @Transactional
     public void updateBatch(List<Story> list) {
-        list.forEach(item->fillParentData(item));
+        if(!storyRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         updateBatchById(list, batchSize);
     }
 
@@ -170,7 +178,9 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
 
     @Override
     public Story getDraft(Story et) {
-        fillParentData(et);
+        if(!storyRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -695,7 +705,9 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     @Override
     @Transactional
     public boolean saveBatch(Collection<Story> list) {
-        list.forEach(item->fillParentData(item));
+        if(!storyRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<Story> create = new ArrayList<>();
         List<Story> update = new ArrayList<>();
         for (Story et : list) {
@@ -717,7 +729,9 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     @Override
     @Transactional
     public void saveBatch(List<Story> list) {
-        list.forEach(item->fillParentData(item));
+        if(!storyRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<Story> create = new ArrayList<>();
         List<Story> update = new ArrayList<>();
         for (Story et : list) {

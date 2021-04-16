@@ -60,7 +60,9 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
     @Override
     @Transactional
     public boolean create(EmpLoyeeload et) {
-        fillParentData(et);
+        if(!employeeloadRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -71,14 +73,18 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
     @Override
     @Transactional
     public void createBatch(List<EmpLoyeeload> list) {
-        list.forEach(item->fillParentData(item));
+        if(!employeeloadRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(EmpLoyeeload et) {
-        fillParentData(et);
+        if(!employeeloadRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -89,7 +95,9 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
     @Override
     @Transactional
     public void updateBatch(List<EmpLoyeeload> list) {
-        list.forEach(item->fillParentData(item));
+        if(!employeeloadRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         updateBatchById(list, batchSize);
     }
 
@@ -144,7 +152,9 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
 
     @Override
     public EmpLoyeeload getDraft(EmpLoyeeload et) {
-        fillParentData(et);
+        if(!employeeloadRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -174,7 +184,9 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
     @Override
     @Transactional
     public boolean saveBatch(Collection<EmpLoyeeload> list) {
-        list.forEach(item->fillParentData(item));
+        if(!employeeloadRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<EmpLoyeeload> create = new ArrayList<>();
         List<EmpLoyeeload> update = new ArrayList<>();
         for (EmpLoyeeload et : list) {
@@ -196,7 +208,9 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
     @Override
     @Transactional
     public void saveBatch(List<EmpLoyeeload> list) {
-        list.forEach(item->fillParentData(item));
+        if(!employeeloadRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<EmpLoyeeload> create = new ArrayList<>();
         List<EmpLoyeeload> update = new ArrayList<>();
         for (EmpLoyeeload et : list) {

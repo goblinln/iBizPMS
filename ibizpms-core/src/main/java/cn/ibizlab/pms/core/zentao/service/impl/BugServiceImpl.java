@@ -92,7 +92,9 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Override
     @Transactional
     public boolean create(Bug et) {
-        fillParentData(et);
+        if(!bugRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -103,7 +105,9 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Override
     @Transactional
     public void createBatch(List<Bug> list) {
-        list.forEach(item->fillParentData(item));
+        if(!bugRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         for (Bug et : list) {
             getProxyService().save(et);
         }
@@ -112,7 +116,9 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Override
     @Transactional
     public boolean update(Bug et) {
-        fillParentData(et);
+        if(!bugRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -123,7 +129,9 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Override
     @Transactional
     public void updateBatch(List<Bug> list) {
-        list.forEach(item->fillParentData(item));
+        if(!bugRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         updateBatchById(list, batchSize);
     }
 
@@ -180,7 +188,9 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
 
     @Override
     public Bug getDraft(Bug et) {
-        fillParentData(et);
+        if(!bugRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -465,7 +475,9 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Override
     @Transactional
     public boolean saveBatch(Collection<Bug> list) {
-        list.forEach(item->fillParentData(item));
+        if(!bugRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<Bug> create = new ArrayList<>();
         List<Bug> update = new ArrayList<>();
         for (Bug et : list) {
@@ -487,7 +499,9 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Override
     @Transactional
     public void saveBatch(List<Bug> list) {
-        list.forEach(item->fillParentData(item));
+        if(!bugRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<Bug> create = new ArrayList<>();
         List<Bug> update = new ArrayList<>();
         for (Bug et : list) {

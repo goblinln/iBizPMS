@@ -77,7 +77,9 @@ public class ModuleServiceImpl extends ServiceImpl<ModuleMapper, Module> impleme
     @Override
     @Transactional
     public boolean create(Module et) {
-        fillParentData(et);
+        if(!moduleRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -88,14 +90,18 @@ public class ModuleServiceImpl extends ServiceImpl<ModuleMapper, Module> impleme
     @Override
     @Transactional
     public void createBatch(List<Module> list) {
-        list.forEach(item->fillParentData(item));
+        if(!moduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(Module et) {
-        fillParentData(et);
+        if(!moduleRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -106,7 +112,9 @@ public class ModuleServiceImpl extends ServiceImpl<ModuleMapper, Module> impleme
     @Override
     @Transactional
     public void updateBatch(List<Module> list) {
-        list.forEach(item->fillParentData(item));
+        if(!moduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         updateBatchById(list, batchSize);
     }
 
@@ -161,7 +169,9 @@ public class ModuleServiceImpl extends ServiceImpl<ModuleMapper, Module> impleme
 
     @Override
     public Module getDraft(Module et) {
-        fillParentData(et);
+        if(!moduleRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -206,7 +216,9 @@ public class ModuleServiceImpl extends ServiceImpl<ModuleMapper, Module> impleme
     @Override
     @Transactional
     public boolean saveBatch(Collection<Module> list) {
-        list.forEach(item->fillParentData(item));
+        if(!moduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<Module> create = new ArrayList<>();
         List<Module> update = new ArrayList<>();
         for (Module et : list) {
@@ -228,7 +240,9 @@ public class ModuleServiceImpl extends ServiceImpl<ModuleMapper, Module> impleme
     @Override
     @Transactional
     public void saveBatch(List<Module> list) {
-        list.forEach(item->fillParentData(item));
+        if(!moduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<Module> create = new ArrayList<>();
         List<Module> update = new ArrayList<>();
         for (Module et : list) {

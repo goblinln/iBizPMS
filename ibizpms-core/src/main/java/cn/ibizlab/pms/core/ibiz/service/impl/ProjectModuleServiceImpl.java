@@ -65,7 +65,9 @@ public class ProjectModuleServiceImpl extends ServiceImpl<ProjectModuleMapper, P
     @Override
     @Transactional
     public boolean create(ProjectModule et) {
-        fillParentData(et);
+        if(!projectmoduleRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -76,7 +78,9 @@ public class ProjectModuleServiceImpl extends ServiceImpl<ProjectModuleMapper, P
     @Override
     @Transactional
     public void createBatch(List<ProjectModule> list) {
-        list.forEach(item->fillParentData(item));
+        if(!projectmoduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         for (ProjectModule et : list) {
             getProxyService().save(et);
         }
@@ -85,7 +89,9 @@ public class ProjectModuleServiceImpl extends ServiceImpl<ProjectModuleMapper, P
     @Override
     @Transactional
     public boolean update(ProjectModule et) {
-        fillParentData(et);
+        if(!projectmoduleRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -96,7 +102,9 @@ public class ProjectModuleServiceImpl extends ServiceImpl<ProjectModuleMapper, P
     @Override
     @Transactional
     public void updateBatch(List<ProjectModule> list) {
-        list.forEach(item->fillParentData(item));
+        if(!projectmoduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         for (ProjectModule et : list) {
             getProxyService().update(et);
         }
@@ -153,7 +161,9 @@ public class ProjectModuleServiceImpl extends ServiceImpl<ProjectModuleMapper, P
 
     @Override
     public ProjectModule getDraft(ProjectModule et) {
-        fillParentData(et);
+        if(!projectmoduleRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -213,7 +223,9 @@ public class ProjectModuleServiceImpl extends ServiceImpl<ProjectModuleMapper, P
     @Override
     @Transactional
     public boolean saveBatch(Collection<ProjectModule> list) {
-        list.forEach(item->fillParentData(item));
+        if(!projectmoduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<ProjectModule> create = new ArrayList<>();
         List<ProjectModule> update = new ArrayList<>();
         for (ProjectModule et : list) {
@@ -235,7 +247,9 @@ public class ProjectModuleServiceImpl extends ServiceImpl<ProjectModuleMapper, P
     @Override
     @Transactional
     public void saveBatch(List<ProjectModule> list) {
-        list.forEach(item->fillParentData(item));
+        if(!projectmoduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<ProjectModule> create = new ArrayList<>();
         List<ProjectModule> update = new ArrayList<>();
         for (ProjectModule et : list) {

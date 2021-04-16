@@ -53,6 +53,10 @@
     "extendMode" : 0,
     "logicName" : "数据集",
     "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    },
     "name" : "DEFAULT",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {

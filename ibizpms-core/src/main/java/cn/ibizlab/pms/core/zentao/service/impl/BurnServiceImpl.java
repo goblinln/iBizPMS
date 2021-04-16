@@ -63,7 +63,9 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
     @Override
     @Transactional
     public boolean create(Burn et) {
-        fillParentData(et);
+        if(!burnRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -74,14 +76,18 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
     @Override
     @Transactional
     public void createBatch(List<Burn> list) {
-        list.forEach(item->fillParentData(item));
+        if(!burnRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(Burn et) {
-        fillParentData(et);
+        if(!burnRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -92,7 +98,9 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
     @Override
     @Transactional
     public void updateBatch(List<Burn> list) {
-        list.forEach(item->fillParentData(item));
+        if(!burnRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         updateBatchById(list, batchSize);
     }
 
@@ -147,7 +155,9 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
 
     @Override
     public Burn getDraft(Burn et) {
-        fillParentData(et);
+        if(!burnRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -192,7 +202,9 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
     @Override
     @Transactional
     public boolean saveBatch(Collection<Burn> list) {
-        list.forEach(item->fillParentData(item));
+        if(!burnRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<Burn> create = new ArrayList<>();
         List<Burn> update = new ArrayList<>();
         for (Burn et : list) {
@@ -214,7 +226,9 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
     @Override
     @Transactional
     public void saveBatch(List<Burn> list) {
-        list.forEach(item->fillParentData(item));
+        if(!burnRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<Burn> create = new ArrayList<>();
         List<Burn> update = new ArrayList<>();
         for (Burn et : list) {

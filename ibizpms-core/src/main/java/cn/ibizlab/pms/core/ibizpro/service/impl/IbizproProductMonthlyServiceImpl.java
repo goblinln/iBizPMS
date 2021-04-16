@@ -60,7 +60,9 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
     @Override
     @Transactional
     public boolean create(IbizproProductMonthly et) {
-        fillParentData(et);
+        if(!ibizproproductmonthlyRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -71,14 +73,18 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
     @Override
     @Transactional
     public void createBatch(List<IbizproProductMonthly> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibizproproductmonthlyRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(IbizproProductMonthly et) {
-        fillParentData(et);
+        if(!ibizproproductmonthlyRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibizpro_productmonthlyid", et.getIbizproproductmonthlyid()))) {
             return false;
         }
@@ -89,7 +95,9 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
     @Override
     @Transactional
     public void updateBatch(List<IbizproProductMonthly> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibizproproductmonthlyRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         updateBatchById(list, batchSize);
     }
 
@@ -144,7 +152,9 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
 
     @Override
     public IbizproProductMonthly getDraft(IbizproProductMonthly et) {
-        fillParentData(et);
+        if(!ibizproproductmonthlyRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -189,7 +199,9 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
     @Override
     @Transactional
     public boolean saveBatch(Collection<IbizproProductMonthly> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibizproproductmonthlyRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<IbizproProductMonthly> create = new ArrayList<>();
         List<IbizproProductMonthly> update = new ArrayList<>();
         for (IbizproProductMonthly et : list) {
@@ -211,7 +223,9 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
     @Override
     @Transactional
     public void saveBatch(List<IbizproProductMonthly> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibizproproductmonthlyRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<IbizproProductMonthly> create = new ArrayList<>();
         List<IbizproProductMonthly> update = new ArrayList<>();
         for (IbizproProductMonthly et : list) {

@@ -74,7 +74,9 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
     @Override
     @Transactional
     public boolean create(ProductPlan et) {
-        fillParentData(et);
+        if(!productplanRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -85,14 +87,18 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
     @Override
     @Transactional
     public void createBatch(List<ProductPlan> list) {
-        list.forEach(item->fillParentData(item));
+        if(!productplanRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(ProductPlan et) {
-        fillParentData(et);
+        if(!productplanRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -103,7 +109,9 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
     @Override
     @Transactional
     public void updateBatch(List<ProductPlan> list) {
-        list.forEach(item->fillParentData(item));
+        if(!productplanRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         updateBatchById(list, batchSize);
     }
 
@@ -158,7 +166,9 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
 
     @Override
     public ProductPlan getDraft(ProductPlan et) {
-        fillParentData(et);
+        if(!productplanRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -413,7 +423,9 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
     @Override
     @Transactional
     public boolean saveBatch(Collection<ProductPlan> list) {
-        list.forEach(item->fillParentData(item));
+        if(!productplanRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<ProductPlan> create = new ArrayList<>();
         List<ProductPlan> update = new ArrayList<>();
         for (ProductPlan et : list) {
@@ -435,7 +447,9 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
     @Override
     @Transactional
     public void saveBatch(List<ProductPlan> list) {
-        list.forEach(item->fillParentData(item));
+        if(!productplanRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<ProductPlan> create = new ArrayList<>();
         List<ProductPlan> update = new ArrayList<>();
         for (ProductPlan et : list) {

@@ -66,7 +66,9 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
     @Override
     @Transactional
     public boolean create(ProjectStory et) {
-        fillParentData(et);
+        if(!projectstoryRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -77,14 +79,18 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
     @Override
     @Transactional
     public void createBatch(List<ProjectStory> list) {
-        list.forEach(item->fillParentData(item));
+        if(!projectstoryRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(ProjectStory et) {
-        fillParentData(et);
+        if(!projectstoryRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -95,7 +101,9 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
     @Override
     @Transactional
     public void updateBatch(List<ProjectStory> list) {
-        list.forEach(item->fillParentData(item));
+        if(!projectstoryRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         updateBatchById(list, batchSize);
     }
 
@@ -150,7 +158,9 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
 
     @Override
     public ProjectStory getDraft(ProjectStory et) {
-        fillParentData(et);
+        if(!projectstoryRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -180,7 +190,9 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
     @Override
     @Transactional
     public boolean saveBatch(Collection<ProjectStory> list) {
-        list.forEach(item->fillParentData(item));
+        if(!projectstoryRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<ProjectStory> create = new ArrayList<>();
         List<ProjectStory> update = new ArrayList<>();
         for (ProjectStory et : list) {
@@ -202,7 +214,9 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
     @Override
     @Transactional
     public void saveBatch(List<ProjectStory> list) {
-        list.forEach(item->fillParentData(item));
+        if(!projectstoryRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<ProjectStory> create = new ArrayList<>();
         List<ProjectStory> update = new ArrayList<>();
         for (ProjectStory et : list) {

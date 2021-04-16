@@ -117,6 +117,10 @@
     "extendMode" : 0,
     "logicName" : "Bug产品版本",
     "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "BugProductBuild",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -213,7 +217,15 @@
     "extendMode" : 0,
     "logicName" : "更新日志",
     "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    },
     "minorSortDir" : "DESC",
+    "getMinorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "UpdateLog",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {

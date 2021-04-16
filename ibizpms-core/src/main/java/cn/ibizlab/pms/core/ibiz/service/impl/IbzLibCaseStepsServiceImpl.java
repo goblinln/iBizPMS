@@ -62,7 +62,9 @@ public class IbzLibCaseStepsServiceImpl extends ServiceImpl<IbzLibCaseStepsMappe
     @Override
     @Transactional
     public boolean create(IbzLibCaseSteps et) {
-        fillParentData(et);
+        if(!ibzlibcasestepsRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -74,14 +76,18 @@ public class IbzLibCaseStepsServiceImpl extends ServiceImpl<IbzLibCaseStepsMappe
     @Override
     @Transactional
     public void createBatch(List<IbzLibCaseSteps> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibzlibcasestepsRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(IbzLibCaseSteps et) {
-        fillParentData(et);
+        if(!ibzlibcasestepsRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -93,7 +99,9 @@ public class IbzLibCaseStepsServiceImpl extends ServiceImpl<IbzLibCaseStepsMappe
     @Override
     @Transactional
     public void updateBatch(List<IbzLibCaseSteps> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibzlibcasestepsRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         updateBatchById(list, batchSize);
     }
 
@@ -149,7 +157,9 @@ public class IbzLibCaseStepsServiceImpl extends ServiceImpl<IbzLibCaseStepsMappe
 
     @Override
     public IbzLibCaseSteps getDraft(IbzLibCaseSteps et) {
-        fillParentData(et);
+        if(!ibzlibcasestepsRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -179,7 +189,9 @@ public class IbzLibCaseStepsServiceImpl extends ServiceImpl<IbzLibCaseStepsMappe
     @Override
     @Transactional
     public boolean saveBatch(Collection<IbzLibCaseSteps> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibzlibcasestepsRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<IbzLibCaseSteps> create = new ArrayList<>();
         List<IbzLibCaseSteps> update = new ArrayList<>();
         for (IbzLibCaseSteps et : list) {
@@ -201,7 +213,9 @@ public class IbzLibCaseStepsServiceImpl extends ServiceImpl<IbzLibCaseStepsMappe
     @Override
     @Transactional
     public void saveBatch(List<IbzLibCaseSteps> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibzlibcasestepsRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<IbzLibCaseSteps> create = new ArrayList<>();
         List<IbzLibCaseSteps> update = new ArrayList<>();
         for (IbzLibCaseSteps et : list) {

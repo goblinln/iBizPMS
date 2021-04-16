@@ -241,6 +241,10 @@
     "extendMode" : 0,
     "logicName" : "DEFAULT",
     "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "BEGIN",
+      "codeName" : "Begin"
+    },
     "name" : "DEFAULT",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {

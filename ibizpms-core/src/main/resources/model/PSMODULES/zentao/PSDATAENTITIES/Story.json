@@ -489,6 +489,10 @@
     "extendMode" : 0,
     "logicName" : "Bug相关需求",
     "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "BugStory",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -547,6 +551,10 @@
     "extendMode" : 0,
     "logicName" : "获取版本相关需求",
     "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "BuildStories",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -586,6 +594,10 @@
     "extendMode" : 0,
     "logicName" : "相关用例需求",
     "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "CaseStory",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -720,6 +732,10 @@
     "extendMode" : 0,
     "logicName" : "计划关联需求(去除已关联)",
     "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "NotCurPlanLinkStory",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -797,6 +813,10 @@
     "extendMode" : 0,
     "logicName" : "项目相关需求",
     "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "ProjectStories",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -817,6 +837,10 @@
     "extendMode" : 0,
     "logicName" : "版本可关联的完成的需求",
     "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "ReleaseLinkableStories",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -837,6 +861,10 @@
     "extendMode" : 0,
     "logicName" : "获取产品发布相关需求",
     "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "ReleaseStories",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -876,6 +904,10 @@
     "extendMode" : 0,
     "logicName" : "获取产品发布相关需求",
     "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "StoryChild",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -896,6 +928,10 @@
     "extendMode" : 0,
     "logicName" : "获取产品发布相关需求",
     "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "StoryRelated",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -935,6 +971,10 @@
     "extendMode" : 0,
     "logicName" : "任务相关需求",
     "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "TaskRelatedStory",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {

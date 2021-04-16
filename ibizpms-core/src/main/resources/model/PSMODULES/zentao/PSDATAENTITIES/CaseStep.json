@@ -135,6 +135,10 @@
     "extendMode" : 0,
     "logicName" : "当前测试步骤",
     "majorSortDir" : "ASC",
+    "getMajorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "CurTest",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {

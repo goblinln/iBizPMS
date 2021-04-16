@@ -83,7 +83,9 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     @Override
     @Transactional
     public boolean create(Task et) {
-        fillParentData(et);
+        if(!taskRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -96,14 +98,18 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     @Override
     @Transactional
     public void createBatch(List<Task> list) {
-        list.forEach(item->fillParentData(item));
+        if(!taskRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(Task et) {
-        fillParentData(et);
+        if(!taskRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -116,7 +122,9 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     @Override
     @Transactional
     public void updateBatch(List<Task> list) {
-        list.forEach(item->fillParentData(item));
+        if(!taskRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         for (Task et : list) {
             getProxyService().update(et);
         }
@@ -179,7 +187,9 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
 
     @Override
     public Task getDraft(Task et) {
-        fillParentData(et);
+        if(!taskRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -479,7 +489,9 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     @Override
     @Transactional
     public boolean saveBatch(Collection<Task> list) {
-        list.forEach(item->fillParentData(item));
+        if(!taskRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<Task> create = new ArrayList<>();
         List<Task> update = new ArrayList<>();
         for (Task et : list) {
@@ -501,7 +513,9 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     @Override
     @Transactional
     public void saveBatch(List<Task> list) {
-        list.forEach(item->fillParentData(item));
+        if(!taskRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<Task> create = new ArrayList<>();
         List<Task> update = new ArrayList<>();
         for (Task et : list) {

@@ -119,7 +119,15 @@
     "extendMode" : 0,
     "logicName" : "BugModule",
     "majorSortDir" : "ASC",
+    "getMajorSortPSDEField" : {
+      "name" : "ORDERPK",
+      "codeName" : "Orderpk"
+    },
     "minorSortDir" : "DESC",
+    "getMinorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "BugModule",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -140,7 +148,15 @@
     "extendMode" : 0,
     "logicName" : "数据集",
     "majorSortDir" : "ASC",
+    "getMajorSortPSDEField" : {
+      "name" : "ORDER",
+      "codeName" : "Order"
+    },
     "minorSortDir" : "DESC",
+    "getMinorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "BugModuleCodeList",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -161,7 +177,15 @@
     "extendMode" : 0,
     "logicName" : "DEFAULT",
     "majorSortDir" : "ASC",
+    "getMajorSortPSDEField" : {
+      "name" : "ORDER",
+      "codeName" : "Order"
+    },
     "minorSortDir" : "DESC",
+    "getMinorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "DEFAULT",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -182,7 +206,15 @@
     "extendMode" : 0,
     "logicName" : "文档目录",
     "majorSortDir" : "ASC",
+    "getMajorSortPSDEField" : {
+      "name" : "ORDER",
+      "codeName" : "Order"
+    },
     "minorSortDir" : "DESC",
+    "getMinorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "DocModule",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -203,7 +235,15 @@
     "extendMode" : 0,
     "logicName" : "产品线",
     "majorSortDir" : "ASC",
+    "getMajorSortPSDEField" : {
+      "name" : "ORDER",
+      "codeName" : "Order"
+    },
     "minorSortDir" : "DESC",
+    "getMinorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "Line",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {

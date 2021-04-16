@@ -227,6 +227,10 @@
     "extendMode" : 0,
     "logicName" : "当前项目",
     "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "CURPROJECT",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -247,7 +251,15 @@
     "extendMode" : 0,
     "logicName" : "当前用户",
     "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "ORDER1",
+      "codeName" : "Order1"
+    },
     "minorSortDir" : "DESC",
+    "getMinorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "CurUer",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -268,6 +280,10 @@
     "extendMode" : 0,
     "logicName" : "DEFAULT",
     "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "DEFAULT",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -3000,6 +3016,9 @@
   }, {
     "logicName" : "删除",
     "name" : "DELETE"
+  }, {
+    "logicName" : "管理",
+    "name" : "MANAGE"
   }, {
     "logicName" : "读取",
     "name" : "READ"

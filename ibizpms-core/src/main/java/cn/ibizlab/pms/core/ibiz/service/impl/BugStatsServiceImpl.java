@@ -63,7 +63,9 @@ public class BugStatsServiceImpl extends ServiceImpl<BugStatsMapper, BugStats> i
     @Override
     @Transactional
     public boolean create(BugStats et) {
-        fillParentData(et);
+        if(!bugstatsRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -74,14 +76,18 @@ public class BugStatsServiceImpl extends ServiceImpl<BugStatsMapper, BugStats> i
     @Override
     @Transactional
     public void createBatch(List<BugStats> list) {
-        list.forEach(item->fillParentData(item));
+        if(!bugstatsRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(BugStats et) {
-        fillParentData(et);
+        if(!bugstatsRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -92,7 +98,9 @@ public class BugStatsServiceImpl extends ServiceImpl<BugStatsMapper, BugStats> i
     @Override
     @Transactional
     public void updateBatch(List<BugStats> list) {
-        list.forEach(item->fillParentData(item));
+        if(!bugstatsRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         updateBatchById(list, batchSize);
     }
 
@@ -147,7 +155,9 @@ public class BugStatsServiceImpl extends ServiceImpl<BugStatsMapper, BugStats> i
 
     @Override
     public BugStats getDraft(BugStats et) {
-        fillParentData(et);
+        if(!bugstatsRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -177,7 +187,9 @@ public class BugStatsServiceImpl extends ServiceImpl<BugStatsMapper, BugStats> i
     @Override
     @Transactional
     public boolean saveBatch(Collection<BugStats> list) {
-        list.forEach(item->fillParentData(item));
+        if(!bugstatsRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<BugStats> create = new ArrayList<>();
         List<BugStats> update = new ArrayList<>();
         for (BugStats et : list) {
@@ -199,7 +211,9 @@ public class BugStatsServiceImpl extends ServiceImpl<BugStatsMapper, BugStats> i
     @Override
     @Transactional
     public void saveBatch(List<BugStats> list) {
-        list.forEach(item->fillParentData(item));
+        if(!bugstatsRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<BugStats> create = new ArrayList<>();
         List<BugStats> update = new ArrayList<>();
         for (BugStats et : list) {

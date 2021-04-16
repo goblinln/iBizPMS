@@ -72,7 +72,9 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
     @Override
     @Transactional
     public boolean create(Doc et) {
-        fillParentData(et);
+        if(!docRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -83,14 +85,18 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
     @Override
     @Transactional
     public void createBatch(List<Doc> list) {
-        list.forEach(item->fillParentData(item));
+        if(!docRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(Doc et) {
-        fillParentData(et);
+        if(!docRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -101,7 +107,9 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
     @Override
     @Transactional
     public void updateBatch(List<Doc> list) {
-        list.forEach(item->fillParentData(item));
+        if(!docRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         updateBatchById(list, batchSize);
     }
 
@@ -156,7 +164,9 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
 
     @Override
     public Doc getDraft(Doc et) {
-        fillParentData(et);
+        if(!docRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -261,7 +271,9 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
     @Override
     @Transactional
     public boolean saveBatch(Collection<Doc> list) {
-        list.forEach(item->fillParentData(item));
+        if(!docRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<Doc> create = new ArrayList<>();
         List<Doc> update = new ArrayList<>();
         for (Doc et : list) {
@@ -283,7 +295,9 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
     @Override
     @Transactional
     public void saveBatch(List<Doc> list) {
-        list.forEach(item->fillParentData(item));
+        if(!docRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<Doc> create = new ArrayList<>();
         List<Doc> update = new ArrayList<>();
         for (Doc et : list) {

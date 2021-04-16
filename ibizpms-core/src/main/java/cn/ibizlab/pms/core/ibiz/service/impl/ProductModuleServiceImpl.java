@@ -65,7 +65,9 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
     @Override
     @Transactional
     public boolean create(ProductModule et) {
-        fillParentData(et);
+        if(!productmoduleRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -76,7 +78,9 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
     @Override
     @Transactional
     public void createBatch(List<ProductModule> list) {
-        list.forEach(item->fillParentData(item));
+        if(!productmoduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         for (ProductModule et : list) {
             getProxyService().save(et);
         }
@@ -85,7 +89,9 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
     @Override
     @Transactional
     public boolean update(ProductModule et) {
-        fillParentData(et);
+        if(!productmoduleRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -96,7 +102,9 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
     @Override
     @Transactional
     public void updateBatch(List<ProductModule> list) {
-        list.forEach(item->fillParentData(item));
+        if(!productmoduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         for (ProductModule et : list) {
             getProxyService().update(et);
         }
@@ -153,7 +161,9 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
 
     @Override
     public ProductModule getDraft(ProductModule et) {
-        fillParentData(et);
+        if(!productmoduleRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -213,7 +223,9 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
     @Override
     @Transactional
     public boolean saveBatch(Collection<ProductModule> list) {
-        list.forEach(item->fillParentData(item));
+        if(!productmoduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<ProductModule> create = new ArrayList<>();
         List<ProductModule> update = new ArrayList<>();
         for (ProductModule et : list) {
@@ -235,7 +247,9 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
     @Override
     @Transactional
     public void saveBatch(List<ProductModule> list) {
-        list.forEach(item->fillParentData(item));
+        if(!productmoduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<ProductModule> create = new ArrayList<>();
         List<ProductModule> update = new ArrayList<>();
         for (ProductModule et : list) {

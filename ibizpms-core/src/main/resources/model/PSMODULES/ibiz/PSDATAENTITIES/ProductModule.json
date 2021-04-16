@@ -114,7 +114,15 @@
     "extendMode" : 0,
     "logicName" : "BYPATH",
     "majorSortDir" : "ASC",
+    "getMajorSortPSDEField" : {
+      "name" : "ORDER",
+      "codeName" : "Order"
+    },
     "minorSortDir" : "DESC",
+    "getMinorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "BYPATH",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -135,7 +143,15 @@
     "extendMode" : 0,
     "logicName" : "DEFAULT",
     "majorSortDir" : "ASC",
+    "getMajorSortPSDEField" : {
+      "name" : "ORDER",
+      "codeName" : "Order"
+    },
     "minorSortDir" : "DESC",
+    "getMinorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "DEFAULT",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -156,7 +172,15 @@
     "extendMode" : 0,
     "logicName" : "父模块",
     "majorSortDir" : "ASC",
+    "getMajorSortPSDEField" : {
+      "name" : "ORDER",
+      "codeName" : "Order"
+    },
     "minorSortDir" : "DESC",
+    "getMinorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "ParentModule",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -177,7 +201,15 @@
     "extendMode" : 0,
     "logicName" : "根模块",
     "majorSortDir" : "ASC",
+    "getMajorSortPSDEField" : {
+      "name" : "ORDER",
+      "codeName" : "Order"
+    },
     "minorSortDir" : "DESC",
+    "getMinorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "ROOT",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -198,7 +230,15 @@
     "extendMode" : 0,
     "logicName" : "根模块_无分支",
     "majorSortDir" : "ASC",
+    "getMajorSortPSDEField" : {
+      "name" : "ORDER",
+      "codeName" : "Order"
+    },
     "minorSortDir" : "DESC",
+    "getMinorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "Root_NoBranch",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -219,7 +259,15 @@
     "extendMode" : 0,
     "logicName" : "StoryModule",
     "majorSortDir" : "ASC",
+    "getMajorSortPSDEField" : {
+      "name" : "ORDERPK",
+      "codeName" : "Orderpk"
+    },
     "minorSortDir" : "DESC",
+    "getMinorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "StoryModule",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {

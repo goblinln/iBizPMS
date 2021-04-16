@@ -62,7 +62,9 @@ public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> i
     @Override
     @Transactional
     public boolean create(CaseStep et) {
-        fillParentData(et);
+        if(!casestepRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -74,14 +76,18 @@ public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> i
     @Override
     @Transactional
     public void createBatch(List<CaseStep> list) {
-        list.forEach(item->fillParentData(item));
+        if(!casestepRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(CaseStep et) {
-        fillParentData(et);
+        if(!casestepRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -93,7 +99,9 @@ public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> i
     @Override
     @Transactional
     public void updateBatch(List<CaseStep> list) {
-        list.forEach(item->fillParentData(item));
+        if(!casestepRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         updateBatchById(list, batchSize);
     }
 
@@ -149,7 +157,9 @@ public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> i
 
     @Override
     public CaseStep getDraft(CaseStep et) {
-        fillParentData(et);
+        if(!casestepRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -179,7 +189,9 @@ public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> i
     @Override
     @Transactional
     public boolean saveBatch(Collection<CaseStep> list) {
-        list.forEach(item->fillParentData(item));
+        if(!casestepRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<CaseStep> create = new ArrayList<>();
         List<CaseStep> update = new ArrayList<>();
         for (CaseStep et : list) {
@@ -201,7 +213,9 @@ public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> i
     @Override
     @Transactional
     public void saveBatch(List<CaseStep> list) {
-        list.forEach(item->fillParentData(item));
+        if(!casestepRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<CaseStep> create = new ArrayList<>();
         List<CaseStep> update = new ArrayList<>();
         for (CaseStep et : list) {

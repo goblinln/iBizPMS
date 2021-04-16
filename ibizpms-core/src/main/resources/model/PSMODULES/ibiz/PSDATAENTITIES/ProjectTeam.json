@@ -116,6 +116,10 @@
     "extendMode" : 0,
     "logicName" : "DEFAULT",
     "majorSortDir" : "ASC",
+    "getMajorSortPSDEField" : {
+      "name" : "ORDER",
+      "codeName" : "Order"
+    },
     "name" : "DEFAULT",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -157,6 +161,10 @@
     "extendMode" : 0,
     "logicName" : "行编辑查询",
     "majorSortDir" : "ASC",
+    "getMajorSortPSDEField" : {
+      "name" : "ORDER",
+      "codeName" : "Order"
+    },
     "name" : "RowEditDefault",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -178,6 +186,10 @@
     "extendMode" : 0,
     "logicName" : "数据查询",
     "majorSortDir" : "ASC",
+    "getMajorSortPSDEField" : {
+      "name" : "ORDER",
+      "codeName" : "Order"
+    },
     "name" : "TaskCntEstimateConsumedLeft",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {

@@ -236,7 +236,15 @@
     "extendMode" : 0,
     "logicName" : "任务模块",
     "majorSortDir" : "ASC",
+    "getMajorSortPSDEField" : {
+      "name" : "ORDERPK",
+      "codeName" : "Orderpk"
+    },
     "minorSortDir" : "DESC",
+    "getMinorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "TaskModules",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {

@@ -65,7 +65,9 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
     @Override
     @Transactional
     public boolean create(IbzLibModule et) {
-        fillParentData(et);
+        if(!ibzlibmoduleRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -76,7 +78,9 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
     @Override
     @Transactional
     public void createBatch(List<IbzLibModule> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibzlibmoduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         for (IbzLibModule et : list) {
             getProxyService().save(et);
         }
@@ -85,7 +89,9 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
     @Override
     @Transactional
     public boolean update(IbzLibModule et) {
-        fillParentData(et);
+        if(!ibzlibmoduleRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -96,7 +102,9 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
     @Override
     @Transactional
     public void updateBatch(List<IbzLibModule> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibzlibmoduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         for (IbzLibModule et : list) {
             getProxyService().update(et);
         }
@@ -153,7 +161,9 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
 
     @Override
     public IbzLibModule getDraft(IbzLibModule et) {
-        fillParentData(et);
+        if(!ibzlibmoduleRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -183,7 +193,9 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
     @Override
     @Transactional
     public boolean saveBatch(Collection<IbzLibModule> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibzlibmoduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<IbzLibModule> create = new ArrayList<>();
         List<IbzLibModule> update = new ArrayList<>();
         for (IbzLibModule et : list) {
@@ -205,7 +217,9 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
     @Override
     @Transactional
     public void saveBatch(List<IbzLibModule> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibzlibmoduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<IbzLibModule> create = new ArrayList<>();
         List<IbzLibModule> update = new ArrayList<>();
         for (IbzLibModule et : list) {

@@ -62,7 +62,9 @@ public class DocLibModuleServiceImpl extends ServiceImpl<DocLibModuleMapper, Doc
     @Override
     @Transactional
     public boolean create(DocLibModule et) {
-        fillParentData(et);
+        if(!doclibmoduleRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -73,7 +75,9 @@ public class DocLibModuleServiceImpl extends ServiceImpl<DocLibModuleMapper, Doc
     @Override
     @Transactional
     public void createBatch(List<DocLibModule> list) {
-        list.forEach(item->fillParentData(item));
+        if(!doclibmoduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         for (DocLibModule et : list) {
             getProxyService().save(et);
         }
@@ -82,7 +86,9 @@ public class DocLibModuleServiceImpl extends ServiceImpl<DocLibModuleMapper, Doc
     @Override
     @Transactional
     public boolean update(DocLibModule et) {
-        fillParentData(et);
+        if(!doclibmoduleRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -93,7 +99,9 @@ public class DocLibModuleServiceImpl extends ServiceImpl<DocLibModuleMapper, Doc
     @Override
     @Transactional
     public void updateBatch(List<DocLibModule> list) {
-        list.forEach(item->fillParentData(item));
+        if(!doclibmoduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         for (DocLibModule et : list) {
             getProxyService().update(et);
         }
@@ -152,7 +160,9 @@ public class DocLibModuleServiceImpl extends ServiceImpl<DocLibModuleMapper, Doc
 
     @Override
     public DocLibModule getDraft(DocLibModule et) {
-        fillParentData(et);
+        if(!doclibmoduleRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -242,7 +252,9 @@ public class DocLibModuleServiceImpl extends ServiceImpl<DocLibModuleMapper, Doc
     @Override
     @Transactional
     public boolean saveBatch(Collection<DocLibModule> list) {
-        list.forEach(item->fillParentData(item));
+        if(!doclibmoduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<DocLibModule> create = new ArrayList<>();
         List<DocLibModule> update = new ArrayList<>();
         for (DocLibModule et : list) {
@@ -264,7 +276,9 @@ public class DocLibModuleServiceImpl extends ServiceImpl<DocLibModuleMapper, Doc
     @Override
     @Transactional
     public void saveBatch(List<DocLibModule> list) {
-        list.forEach(item->fillParentData(item));
+        if(!doclibmoduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<DocLibModule> create = new ArrayList<>();
         List<DocLibModule> update = new ArrayList<>();
         for (DocLibModule et : list) {

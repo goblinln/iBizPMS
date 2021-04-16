@@ -536,6 +536,10 @@
     "extendMode" : 0,
     "logicName" : "版本可关联的已解决的Bugs集合",
     "majorSortDir" : "ASC",
+    "getMajorSortPSDEField" : {
+      "name" : "V2",
+      "codeName" : "V2"
+    },
     "name" : "buildLinkResolvedBugs",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -917,6 +921,10 @@
     "extendMode" : 0,
     "logicName" : "计划关联bug（去除已关联）",
     "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "NotCurPlanLinkBug",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {

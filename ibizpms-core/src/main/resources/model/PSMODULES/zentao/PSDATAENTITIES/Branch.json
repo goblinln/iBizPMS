@@ -94,6 +94,10 @@
     "extendMode" : 0,
     "logicName" : "DEFAULT",
     "majorSortDir" : "ASC",
+    "getMajorSortPSDEField" : {
+      "name" : "ORDER",
+      "codeName" : "Order"
+    },
     "name" : "DEFAULT",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {

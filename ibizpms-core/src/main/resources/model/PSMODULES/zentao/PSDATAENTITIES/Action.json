@@ -193,6 +193,10 @@
     "extendMode" : 0,
     "logicName" : "ProductTrends",
     "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    },
     "name" : "ProductTrends",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {

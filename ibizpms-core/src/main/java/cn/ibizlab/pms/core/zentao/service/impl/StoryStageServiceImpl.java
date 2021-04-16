@@ -63,7 +63,9 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
     @Override
     @Transactional
     public boolean create(StoryStage et) {
-        fillParentData(et);
+        if(!storystageRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -74,14 +76,18 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
     @Override
     @Transactional
     public void createBatch(List<StoryStage> list) {
-        list.forEach(item->fillParentData(item));
+        if(!storystageRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(StoryStage et) {
-        fillParentData(et);
+        if(!storystageRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -92,7 +98,9 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
     @Override
     @Transactional
     public void updateBatch(List<StoryStage> list) {
-        list.forEach(item->fillParentData(item));
+        if(!storystageRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         updateBatchById(list, batchSize);
     }
 
@@ -147,7 +155,9 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
 
     @Override
     public StoryStage getDraft(StoryStage et) {
-        fillParentData(et);
+        if(!storystageRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -177,7 +187,9 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
     @Override
     @Transactional
     public boolean saveBatch(Collection<StoryStage> list) {
-        list.forEach(item->fillParentData(item));
+        if(!storystageRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<StoryStage> create = new ArrayList<>();
         List<StoryStage> update = new ArrayList<>();
         for (StoryStage et : list) {
@@ -199,7 +211,9 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
     @Override
     @Transactional
     public void saveBatch(List<StoryStage> list) {
-        list.forEach(item->fillParentData(item));
+        if(!storystageRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<StoryStage> create = new ArrayList<>();
         List<StoryStage> update = new ArrayList<>();
         for (StoryStage et : list) {

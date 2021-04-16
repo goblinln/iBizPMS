@@ -60,7 +60,9 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
     @Override
     @Transactional
     public boolean create(IbizproProductDaily et) {
-        fillParentData(et);
+        if(!ibizproproductdailyRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -71,14 +73,18 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
     @Override
     @Transactional
     public void createBatch(List<IbizproProductDaily> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibizproproductdailyRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(IbizproProductDaily et) {
-        fillParentData(et);
+        if(!ibizproproductdailyRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibizpro_productdailyid", et.getIbizproproductdailyid()))) {
             return false;
         }
@@ -89,7 +95,9 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
     @Override
     @Transactional
     public void updateBatch(List<IbizproProductDaily> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibizproproductdailyRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         updateBatchById(list, batchSize);
     }
 
@@ -144,7 +152,9 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
 
     @Override
     public IbizproProductDaily getDraft(IbizproProductDaily et) {
-        fillParentData(et);
+        if(!ibizproproductdailyRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -189,7 +199,9 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
     @Override
     @Transactional
     public boolean saveBatch(Collection<IbizproProductDaily> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibizproproductdailyRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<IbizproProductDaily> create = new ArrayList<>();
         List<IbizproProductDaily> update = new ArrayList<>();
         for (IbizproProductDaily et : list) {
@@ -211,7 +223,9 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
     @Override
     @Transactional
     public void saveBatch(List<IbizproProductDaily> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibizproproductdailyRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<IbizproProductDaily> create = new ArrayList<>();
         List<IbizproProductDaily> update = new ArrayList<>();
         for (IbizproProductDaily et : list) {

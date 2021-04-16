@@ -608,6 +608,10 @@
     "extendMode" : 0,
     "logicName" : "Bug相关任务",
     "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "BugTask",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {

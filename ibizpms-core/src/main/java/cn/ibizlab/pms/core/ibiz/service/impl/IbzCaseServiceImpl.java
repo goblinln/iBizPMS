@@ -66,7 +66,9 @@ public class IbzCaseServiceImpl extends ServiceImpl<IbzCaseMapper, IbzCase> impl
     @Override
     @Transactional
     public boolean create(IbzCase et) {
-        fillParentData(et);
+        if(!ibzcaseRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -78,14 +80,18 @@ public class IbzCaseServiceImpl extends ServiceImpl<IbzCaseMapper, IbzCase> impl
     @Override
     @Transactional
     public void createBatch(List<IbzCase> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibzcaseRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(IbzCase et) {
-        fillParentData(et);
+        if(!ibzcaseRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -97,7 +103,9 @@ public class IbzCaseServiceImpl extends ServiceImpl<IbzCaseMapper, IbzCase> impl
     @Override
     @Transactional
     public void updateBatch(List<IbzCase> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibzcaseRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         updateBatchById(list, batchSize);
     }
 
@@ -154,7 +162,9 @@ public class IbzCaseServiceImpl extends ServiceImpl<IbzCaseMapper, IbzCase> impl
 
     @Override
     public IbzCase getDraft(IbzCase et) {
-        fillParentData(et);
+        if(!ibzcaseRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -184,7 +194,9 @@ public class IbzCaseServiceImpl extends ServiceImpl<IbzCaseMapper, IbzCase> impl
     @Override
     @Transactional
     public boolean saveBatch(Collection<IbzCase> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibzcaseRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<IbzCase> create = new ArrayList<>();
         List<IbzCase> update = new ArrayList<>();
         for (IbzCase et : list) {
@@ -206,7 +218,9 @@ public class IbzCaseServiceImpl extends ServiceImpl<IbzCaseMapper, IbzCase> impl
     @Override
     @Transactional
     public void saveBatch(List<IbzCase> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibzcaseRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<IbzCase> create = new ArrayList<>();
         List<IbzCase> update = new ArrayList<>();
         for (IbzCase et : list) {

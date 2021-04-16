@@ -332,7 +332,15 @@
     "extendMode" : 0,
     "logicName" : "当前用户项目",
     "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "ORDER1",
+      "codeName" : "Order1"
+    },
     "minorSortDir" : "DESC",
+    "getMinorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "CurUser",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -354,6 +362,10 @@
     "extendMode" : 0,
     "logicName" : "当前用户项目（企业版）",
     "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "ORDER1",
+      "codeName" : "Order1"
+    },
     "name" : "CurUserSa",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {
@@ -375,6 +387,10 @@
     "extendMode" : 0,
     "logicName" : "DEFAULT",
     "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "DEFAULT",
     "orderValue" : 99999,
     "getPSDEOPPriv" : {

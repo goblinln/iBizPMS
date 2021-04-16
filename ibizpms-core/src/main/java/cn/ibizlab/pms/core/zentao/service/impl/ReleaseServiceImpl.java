@@ -66,7 +66,9 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
     @Override
     @Transactional
     public boolean create(Release et) {
-        fillParentData(et);
+        if(!releaseRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -77,14 +79,18 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
     @Override
     @Transactional
     public void createBatch(List<Release> list) {
-        list.forEach(item->fillParentData(item));
+        if(!releaseRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(Release et) {
-        fillParentData(et);
+        if(!releaseRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -95,7 +101,9 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
     @Override
     @Transactional
     public void updateBatch(List<Release> list) {
-        list.forEach(item->fillParentData(item));
+        if(!releaseRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         for (Release et : list) {
             getProxyService().update(et);
         }
@@ -154,7 +162,9 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
 
     @Override
     public Release getDraft(Release et) {
-        fillParentData(et);
+        if(!releaseRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -319,7 +329,9 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
     @Override
     @Transactional
     public boolean saveBatch(Collection<Release> list) {
-        list.forEach(item->fillParentData(item));
+        if(!releaseRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<Release> create = new ArrayList<>();
         List<Release> update = new ArrayList<>();
         for (Release et : list) {
@@ -341,7 +353,9 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
     @Override
     @Transactional
     public void saveBatch(List<Release> list) {
-        list.forEach(item->fillParentData(item));
+        if(!releaseRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<Release> create = new ArrayList<>();
         List<Release> update = new ArrayList<>();
         for (Release et : list) {

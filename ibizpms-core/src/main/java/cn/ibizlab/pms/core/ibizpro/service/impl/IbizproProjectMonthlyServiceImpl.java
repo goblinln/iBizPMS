@@ -60,7 +60,9 @@ public class IbizproProjectMonthlyServiceImpl extends ServiceImpl<IbizproProject
     @Override
     @Transactional
     public boolean create(IbizproProjectMonthly et) {
-        fillParentData(et);
+        if(!ibizproprojectmonthlyRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -71,14 +73,18 @@ public class IbizproProjectMonthlyServiceImpl extends ServiceImpl<IbizproProject
     @Override
     @Transactional
     public void createBatch(List<IbizproProjectMonthly> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibizproprojectmonthlyRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(IbizproProjectMonthly et) {
-        fillParentData(et);
+        if(!ibizproprojectmonthlyRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibizpro_projectmonthlyid", et.getIbizproprojectmonthlyid()))) {
             return false;
         }
@@ -89,7 +95,9 @@ public class IbizproProjectMonthlyServiceImpl extends ServiceImpl<IbizproProject
     @Override
     @Transactional
     public void updateBatch(List<IbizproProjectMonthly> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibizproprojectmonthlyRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         updateBatchById(list, batchSize);
     }
 
@@ -144,7 +152,9 @@ public class IbizproProjectMonthlyServiceImpl extends ServiceImpl<IbizproProject
 
     @Override
     public IbizproProjectMonthly getDraft(IbizproProjectMonthly et) {
-        fillParentData(et);
+        if(!ibizproprojectmonthlyRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -189,7 +199,9 @@ public class IbizproProjectMonthlyServiceImpl extends ServiceImpl<IbizproProject
     @Override
     @Transactional
     public boolean saveBatch(Collection<IbizproProjectMonthly> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibizproprojectmonthlyRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<IbizproProjectMonthly> create = new ArrayList<>();
         List<IbizproProjectMonthly> update = new ArrayList<>();
         for (IbizproProjectMonthly et : list) {
@@ -211,7 +223,9 @@ public class IbizproProjectMonthlyServiceImpl extends ServiceImpl<IbizproProject
     @Override
     @Transactional
     public void saveBatch(List<IbizproProjectMonthly> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibizproprojectmonthlyRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<IbizproProjectMonthly> create = new ArrayList<>();
         List<IbizproProjectMonthly> update = new ArrayList<>();
         for (IbizproProjectMonthly et : list) {

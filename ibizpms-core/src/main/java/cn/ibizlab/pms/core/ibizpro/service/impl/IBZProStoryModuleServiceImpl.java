@@ -65,7 +65,9 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Override
     @Transactional
     public boolean create(IBZProStoryModule et) {
-        fillParentData(et);
+        if(!ibzprostorymoduleRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -76,7 +78,9 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Override
     @Transactional
     public void createBatch(List<IBZProStoryModule> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibzprostorymoduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         for (IBZProStoryModule et : list) {
             getProxyService().save(et);
         }
@@ -85,7 +89,9 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Override
     @Transactional
     public boolean update(IBZProStoryModule et) {
-        fillParentData(et);
+        if(!ibzprostorymoduleRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -96,7 +102,9 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Override
     @Transactional
     public void updateBatch(List<IBZProStoryModule> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibzprostorymoduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         for (IBZProStoryModule et : list) {
             getProxyService().update(et);
         }
@@ -153,7 +161,9 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
 
     @Override
     public IBZProStoryModule getDraft(IBZProStoryModule et) {
-        fillParentData(et);
+        if(!ibzprostorymoduleRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -183,7 +193,9 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Override
     @Transactional
     public boolean saveBatch(Collection<IBZProStoryModule> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibzprostorymoduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<IBZProStoryModule> create = new ArrayList<>();
         List<IBZProStoryModule> update = new ArrayList<>();
         for (IBZProStoryModule et : list) {
@@ -205,7 +217,9 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Override
     @Transactional
     public void saveBatch(List<IBZProStoryModule> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibzprostorymoduleRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<IBZProStoryModule> create = new ArrayList<>();
         List<IBZProStoryModule> update = new ArrayList<>();
         for (IBZProStoryModule et : list) {

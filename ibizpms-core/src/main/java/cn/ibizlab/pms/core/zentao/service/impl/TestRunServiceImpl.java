@@ -66,7 +66,9 @@ public class TestRunServiceImpl extends ServiceImpl<TestRunMapper, TestRun> impl
     @Override
     @Transactional
     public boolean create(TestRun et) {
-        fillParentData(et);
+        if(!testrunRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -77,14 +79,18 @@ public class TestRunServiceImpl extends ServiceImpl<TestRunMapper, TestRun> impl
     @Override
     @Transactional
     public void createBatch(List<TestRun> list) {
-        list.forEach(item->fillParentData(item));
+        if(!testrunRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(TestRun et) {
-        fillParentData(et);
+        if(!testrunRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -95,7 +101,9 @@ public class TestRunServiceImpl extends ServiceImpl<TestRunMapper, TestRun> impl
     @Override
     @Transactional
     public void updateBatch(List<TestRun> list) {
-        list.forEach(item->fillParentData(item));
+        if(!testrunRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         updateBatchById(list, batchSize);
     }
 
@@ -150,7 +158,9 @@ public class TestRunServiceImpl extends ServiceImpl<TestRunMapper, TestRun> impl
 
     @Override
     public TestRun getDraft(TestRun et) {
-        fillParentData(et);
+        if(!testrunRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -180,7 +190,9 @@ public class TestRunServiceImpl extends ServiceImpl<TestRunMapper, TestRun> impl
     @Override
     @Transactional
     public boolean saveBatch(Collection<TestRun> list) {
-        list.forEach(item->fillParentData(item));
+        if(!testrunRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<TestRun> create = new ArrayList<>();
         List<TestRun> update = new ArrayList<>();
         for (TestRun et : list) {
@@ -202,7 +214,9 @@ public class TestRunServiceImpl extends ServiceImpl<TestRunMapper, TestRun> impl
     @Override
     @Transactional
     public void saveBatch(List<TestRun> list) {
-        list.forEach(item->fillParentData(item));
+        if(!testrunRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<TestRun> create = new ArrayList<>();
         List<TestRun> update = new ArrayList<>();
         for (TestRun et : list) {

@@ -59,7 +59,9 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     @Override
     @Transactional
     public boolean create(Dept et) {
-        fillParentData(et);
+        if(!deptRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -70,14 +72,18 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     @Override
     @Transactional
     public void createBatch(List<Dept> list) {
-        list.forEach(item->fillParentData(item));
+        if(!deptRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(Dept et) {
-        fillParentData(et);
+        if(!deptRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -88,7 +94,9 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     @Override
     @Transactional
     public void updateBatch(List<Dept> list) {
-        list.forEach(item->fillParentData(item));
+        if(!deptRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         updateBatchById(list, batchSize);
     }
 
@@ -143,7 +151,9 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
 
     @Override
     public Dept getDraft(Dept et) {
-        fillParentData(et);
+        if(!deptRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -173,7 +183,9 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     @Override
     @Transactional
     public boolean saveBatch(Collection<Dept> list) {
-        list.forEach(item->fillParentData(item));
+        if(!deptRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<Dept> create = new ArrayList<>();
         List<Dept> update = new ArrayList<>();
         for (Dept et : list) {
@@ -195,7 +207,9 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     @Override
     @Transactional
     public void saveBatch(List<Dept> list) {
-        list.forEach(item->fillParentData(item));
+        if(!deptRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<Dept> create = new ArrayList<>();
         List<Dept> update = new ArrayList<>();
         for (Dept et : list) {

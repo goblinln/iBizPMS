@@ -89,7 +89,9 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
     @Override
     @Transactional
     public boolean create(Case et) {
-        fillParentData(et);
+        if(!caseRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -101,14 +103,18 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
     @Override
     @Transactional
     public void createBatch(List<Case> list) {
-        list.forEach(item->fillParentData(item));
+        if(!caseRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(Case et) {
-        fillParentData(et);
+        if(!caseRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -120,7 +126,9 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
     @Override
     @Transactional
     public void updateBatch(List<Case> list) {
-        list.forEach(item->fillParentData(item));
+        if(!caseRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         updateBatchById(list, batchSize);
     }
 
@@ -177,7 +185,9 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
 
     @Override
     public Case getDraft(Case et) {
-        fillParentData(et);
+        if(!caseRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -357,7 +367,9 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
     @Override
     @Transactional
     public boolean saveBatch(Collection<Case> list) {
-        list.forEach(item->fillParentData(item));
+        if(!caseRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<Case> create = new ArrayList<>();
         List<Case> update = new ArrayList<>();
         for (Case et : list) {
@@ -379,7 +391,9 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
     @Override
     @Transactional
     public void saveBatch(List<Case> list) {
-        list.forEach(item->fillParentData(item));
+        if(!caseRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<Case> create = new ArrayList<>();
         List<Case> update = new ArrayList<>();
         for (Case et : list) {

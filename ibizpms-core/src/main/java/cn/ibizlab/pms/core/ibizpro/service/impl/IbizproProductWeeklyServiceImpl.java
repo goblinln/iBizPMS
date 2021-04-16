@@ -60,7 +60,9 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
     @Override
     @Transactional
     public boolean create(IbizproProductWeekly et) {
-        fillParentData(et);
+        if(!ibizproproductweeklyRuntime){
+            fillParentData(et);
+        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -71,14 +73,18 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
     @Override
     @Transactional
     public void createBatch(List<IbizproProductWeekly> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibizproproductweeklyRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(IbizproProductWeekly et) {
-        fillParentData(et);
+        if(!ibizproproductweeklyRuntime){
+            fillParentData(et);
+        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibizpro_productweeklyid", et.getIbizproProductweeklyid()))) {
             return false;
         }
@@ -89,7 +95,9 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
     @Override
     @Transactional
     public void updateBatch(List<IbizproProductWeekly> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibizproproductweeklyRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         updateBatchById(list, batchSize);
     }
 
@@ -144,7 +152,9 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
 
     @Override
     public IbizproProductWeekly getDraft(IbizproProductWeekly et) {
-        fillParentData(et);
+        if(!ibizproproductweeklyRuntime){
+            fillParentData(et);
+        }
         return et;
     }
 
@@ -174,7 +184,9 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
     @Override
     @Transactional
     public boolean saveBatch(Collection<IbizproProductWeekly> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibizproproductweeklyRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<IbizproProductWeekly> create = new ArrayList<>();
         List<IbizproProductWeekly> update = new ArrayList<>();
         for (IbizproProductWeekly et : list) {
@@ -196,7 +208,9 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
     @Override
     @Transactional
     public void saveBatch(List<IbizproProductWeekly> list) {
-        list.forEach(item->fillParentData(item));
+        if(!ibizproproductweeklyRuntime){
+            list.forEach(item->fillParentData(item));
+        }
         List<IbizproProductWeekly> create = new ArrayList<>();
         List<IbizproProductWeekly> update = new ArrayList<>();
         for (IbizproProductWeekly et : list) {
