@@ -747,7 +747,8 @@ POST
 | 18 | desc | String | 允许 | 描述 |
 | 19 | idvalue | Long | 允许 | 项目编号 |
 | 20 | consumed | Double | 允许 | 工时 |
-| 21 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 21 | files | String | 允许 | 附件 |
+| 22 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### ProjectTodoSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |
