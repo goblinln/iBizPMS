@@ -9,6 +9,7 @@ import cn.ibizlab.pms.core.zentao.domain.*;
 import cn.ibizlab.pms.core.zentao.mapper.TaskMapper;
 import cn.ibizlab.pms.core.zentao.service.*;
 import cn.ibizlab.pms.util.dict.StaticDict;
+import cn.ibizlab.pms.util.errors.BadRequestAlertException;
 import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import cn.ibizlab.pms.util.helper.DataObject;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
@@ -282,6 +283,12 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
     @Transactional(rollbackFor = Exception.class)
     public boolean edit(Task et) {
         jugEststartedAndDeadline(et);
+        if (null != et.getConfigbegin()){
+            et.setEststarted(et.getConfigbegin());
+        }
+        if (null != et.getConfigend()){
+            et.setDeadline(et.getConfigend());
+        }
         String multiple = et.getMultiple();
         List<TaskTeam> teams = et.getTaskteam();
         String comment = StringUtils.isNotBlank(et.getComment()) ? et.getComment() : "";
@@ -1690,12 +1697,14 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
         Integer beforeDays = et.getConfigbeforedays();
         //设置提醒时间
         Calendar calendar = Calendar.getInstance();
-        if (beforeDays != null && beforeDays > 0) {
+        if (beforeDays != null && beforeDays >= 0) {
             if (begin != null) {
                 calendar.setTime(begin);
             }
             calendar.add(Calendar.DATE, -beforeDays);
             begin = calendar.getTime();
+        }else {
+            throw new BadRequestAlertException("提前生成待办的天数不能为负！","task","");
         }
         //如果还未开始或者已经结束
         if (today.before(begin) || today.after(end)) {
@@ -1720,10 +1729,10 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             calendar.add(Calendar.DATE, beforeDays);
         }
         Date finish = calendar.getTime();
-        for (long time = begin.getTime(); time <= finish.getTime(); time += (86400000*beforeDays)) {
+        for (long time = begin.getTime(); time <= finish.getTime() ; time += 86400000) {
 
             Date today1 = new Date(time);
-            List<Task> lastCycleList = this.list(new QueryWrapper<Task>().eq("idvalue", et.getId()).orderByDesc("config_begin"));
+            List<Task> lastCycleList = this.list(new QueryWrapper<Task>().eq("idvalue", et.getId()).last(" order by eststarted desc"));
 
             Task lastCycleJson = null;
             if (lastCycleList.size() > 0) {
@@ -1735,7 +1744,8 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             if (StaticDict.CycleType.DAY.getValue().equals(et.getConfigtype())) {
                 Integer day = et.getConfigday();
                 if (day <= 0) {
-                    continue;
+//                    continue;
+                    throw new BadRequestAlertException("间隔天数要大于0！","task","");
                 }
                 if (lastCycleJson == null) {
                     calendar.setTime(today1);
@@ -1749,23 +1759,31 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             } else if (StaticDict.CycleType.WEEK.getValue().equals(et.getConfigtype())) {
                 calendar.setTime(today1);
                 int week = calendar.get(Calendar.DAY_OF_WEEK);
-                if (et.getConfigweek().equals(String.valueOf(week))) {
-                    if (lastCycleJson == null) {
-                        date = today1;
-                    } else if (lastCycleJson.getConfigbegin() != null && lastCycleJson.getConfigbegin().before(today1)) {
-                        date = today1;
+                String[] weeks = et.getConfigweek().split(",");
+                for (String someWeek : weeks) {
+                    if (someWeek.equals(String.valueOf(week))) {
+                        if (lastCycleJson == null) {
+                            date = today1;
+                        } else if (lastCycleJson.getConfigbegin() != null && lastCycleJson.getConfigbegin().before(today1)) {
+                            date = today1;
+                        }
                     }
                 }
+
             } else if (StaticDict.CycleType.MONTH.getValue().equals(et.getConfigtype())) {
                 calendar.setTime(today1);
                 int day = calendar.get(Calendar.DAY_OF_MONTH);
-                if (et.getConfigmonth().equals(String.valueOf(day))) {
-                    if (lastCycleJson == null) {
-                        date = today1;
-                    } else if (lastCycleJson.getConfigbegin() != null && lastCycleJson.getConfigbegin().before(today1)) {
-                        date = today1;
+                String[] months = et.getConfigmonth().split(",");
+                for (String someMonth: months) {
+                    if (someMonth.equals(String.valueOf(day))) {
+                        if (lastCycleJson == null) {
+                            date = today1;
+                        } else if (lastCycleJson.getConfigbegin() != null && lastCycleJson.getConfigbegin().before(today1)) {
+                            date = today1;
+                        }
                     }
                 }
+
             }
 
             if (date == null) {
@@ -1787,10 +1805,11 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             if (end != null && date.after(end)) {
                 continue;
             }
-            calendar.setTimeInMillis(time);
+            calendar.setTimeInMillis(date.getTime());
             String name = sdf.format(calendar.getTime());
             newTask.setName(et.getName() + "-" + name + "-" + et.getAssignedto());
-            newTask.setEststarted(et.getConfigbegin());
+            newTask.setEststarted(new Timestamp(time));
+            newTask.setConfigbegin(new Timestamp(time));
             this.baseMapper.insert(newTask);
             actionHelper.create(StaticDict.Action__object_type.TASK.getValue(), newTask.getId(), StaticDict.Action__type.OPENED.getValue(),
                     "", "", newTask.getOpenedby(), true);
