@@ -63,7 +63,7 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
     @Override
     @Transactional
     public boolean create(StoryStage et) {
-        if(!storystageRuntime){
+        if(!storystageRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!this.retBool(this.baseMapper.insert(et))) {
@@ -76,7 +76,7 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
     @Override
     @Transactional
     public void createBatch(List<StoryStage> list) {
-        if(!storystageRuntime){
+        if(!storystageRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         this.saveBatch(list, batchSize);
@@ -85,7 +85,7 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
     @Override
     @Transactional
     public boolean update(StoryStage et) {
-        if(!storystageRuntime){
+        if(!storystageRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
@@ -98,7 +98,7 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
     @Override
     @Transactional
     public void updateBatch(List<StoryStage> list) {
-        if(!storystageRuntime){
+        if(!storystageRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         updateBatchById(list, batchSize);
@@ -155,7 +155,7 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
 
     @Override
     public StoryStage getDraft(StoryStage et) {
-        if(!storystageRuntime){
+        if(!storystageRuntime.isRtmodel()){
             fillParentData(et);
         }
         return et;
@@ -187,7 +187,7 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
     @Override
     @Transactional
     public boolean saveBatch(Collection<StoryStage> list) {
-        if(!storystageRuntime){
+        if(!storystageRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<StoryStage> create = new ArrayList<>();
@@ -211,7 +211,7 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
     @Override
     @Transactional
     public void saveBatch(List<StoryStage> list) {
-        if(!storystageRuntime){
+        if(!storystageRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<StoryStage> create = new ArrayList<>();

@@ -60,7 +60,7 @@ public class ProjectTeamServiceImpl extends ServiceImpl<ProjectTeamMapper, Proje
     @Override
     @Transactional
     public boolean create(ProjectTeam et) {
-        if(!projectteamRuntime){
+        if(!projectteamRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!this.retBool(this.baseMapper.insert(et))) {
@@ -73,7 +73,7 @@ public class ProjectTeamServiceImpl extends ServiceImpl<ProjectTeamMapper, Proje
     @Override
     @Transactional
     public void createBatch(List<ProjectTeam> list) {
-        if(!projectteamRuntime){
+        if(!projectteamRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         this.saveBatch(list, batchSize);
@@ -82,7 +82,7 @@ public class ProjectTeamServiceImpl extends ServiceImpl<ProjectTeamMapper, Proje
     @Override
     @Transactional
     public boolean update(ProjectTeam et) {
-        if(!projectteamRuntime){
+        if(!projectteamRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
@@ -95,7 +95,7 @@ public class ProjectTeamServiceImpl extends ServiceImpl<ProjectTeamMapper, Proje
     @Override
     @Transactional
     public void updateBatch(List<ProjectTeam> list) {
-        if(!projectteamRuntime){
+        if(!projectteamRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         updateBatchById(list, batchSize);
@@ -152,7 +152,7 @@ public class ProjectTeamServiceImpl extends ServiceImpl<ProjectTeamMapper, Proje
 
     @Override
     public ProjectTeam getDraft(ProjectTeam et) {
-        if(!projectteamRuntime){
+        if(!projectteamRuntime.isRtmodel()){
             fillParentData(et);
         }
         return et;
@@ -199,7 +199,7 @@ public class ProjectTeamServiceImpl extends ServiceImpl<ProjectTeamMapper, Proje
     @Override
     @Transactional
     public boolean saveBatch(Collection<ProjectTeam> list) {
-        if(!projectteamRuntime){
+        if(!projectteamRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<ProjectTeam> create = new ArrayList<>();
@@ -223,7 +223,7 @@ public class ProjectTeamServiceImpl extends ServiceImpl<ProjectTeamMapper, Proje
     @Override
     @Transactional
     public void saveBatch(List<ProjectTeam> list) {
-        if(!projectteamRuntime){
+        if(!projectteamRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<ProjectTeam> create = new ArrayList<>();

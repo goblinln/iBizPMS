@@ -72,7 +72,7 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
     @Override
     @Transactional
     public boolean create(Doc et) {
-        if(!docRuntime){
+        if(!docRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!this.retBool(this.baseMapper.insert(et))) {
@@ -85,7 +85,7 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
     @Override
     @Transactional
     public void createBatch(List<Doc> list) {
-        if(!docRuntime){
+        if(!docRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         this.saveBatch(list, batchSize);
@@ -94,7 +94,7 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
     @Override
     @Transactional
     public boolean update(Doc et) {
-        if(!docRuntime){
+        if(!docRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
@@ -107,7 +107,7 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
     @Override
     @Transactional
     public void updateBatch(List<Doc> list) {
-        if(!docRuntime){
+        if(!docRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         updateBatchById(list, batchSize);
@@ -164,7 +164,7 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
 
     @Override
     public Doc getDraft(Doc et) {
-        if(!docRuntime){
+        if(!docRuntime.isRtmodel()){
             fillParentData(et);
         }
         return et;
@@ -271,7 +271,7 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
     @Override
     @Transactional
     public boolean saveBatch(Collection<Doc> list) {
-        if(!docRuntime){
+        if(!docRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<Doc> create = new ArrayList<>();
@@ -295,7 +295,7 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
     @Override
     @Transactional
     public void saveBatch(List<Doc> list) {
-        if(!docRuntime){
+        if(!docRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<Doc> create = new ArrayList<>();

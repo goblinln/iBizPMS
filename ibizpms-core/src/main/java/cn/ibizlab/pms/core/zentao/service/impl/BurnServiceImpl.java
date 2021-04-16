@@ -63,7 +63,7 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
     @Override
     @Transactional
     public boolean create(Burn et) {
-        if(!burnRuntime){
+        if(!burnRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!this.retBool(this.baseMapper.insert(et))) {
@@ -76,7 +76,7 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
     @Override
     @Transactional
     public void createBatch(List<Burn> list) {
-        if(!burnRuntime){
+        if(!burnRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         this.saveBatch(list, batchSize);
@@ -85,7 +85,7 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
     @Override
     @Transactional
     public boolean update(Burn et) {
-        if(!burnRuntime){
+        if(!burnRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
@@ -98,7 +98,7 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
     @Override
     @Transactional
     public void updateBatch(List<Burn> list) {
-        if(!burnRuntime){
+        if(!burnRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         updateBatchById(list, batchSize);
@@ -155,7 +155,7 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
 
     @Override
     public Burn getDraft(Burn et) {
-        if(!burnRuntime){
+        if(!burnRuntime.isRtmodel()){
             fillParentData(et);
         }
         return et;
@@ -202,7 +202,7 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
     @Override
     @Transactional
     public boolean saveBatch(Collection<Burn> list) {
-        if(!burnRuntime){
+        if(!burnRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<Burn> create = new ArrayList<>();
@@ -226,7 +226,7 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
     @Override
     @Transactional
     public void saveBatch(List<Burn> list) {
-        if(!burnRuntime){
+        if(!burnRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<Burn> create = new ArrayList<>();

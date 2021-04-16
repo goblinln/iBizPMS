@@ -66,7 +66,7 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
     @Override
     @Transactional
     public boolean create(ProjectStory et) {
-        if(!projectstoryRuntime){
+        if(!projectstoryRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!this.retBool(this.baseMapper.insert(et))) {
@@ -79,7 +79,7 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
     @Override
     @Transactional
     public void createBatch(List<ProjectStory> list) {
-        if(!projectstoryRuntime){
+        if(!projectstoryRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         this.saveBatch(list, batchSize);
@@ -88,7 +88,7 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
     @Override
     @Transactional
     public boolean update(ProjectStory et) {
-        if(!projectstoryRuntime){
+        if(!projectstoryRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
@@ -101,7 +101,7 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
     @Override
     @Transactional
     public void updateBatch(List<ProjectStory> list) {
-        if(!projectstoryRuntime){
+        if(!projectstoryRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         updateBatchById(list, batchSize);
@@ -158,7 +158,7 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
 
     @Override
     public ProjectStory getDraft(ProjectStory et) {
-        if(!projectstoryRuntime){
+        if(!projectstoryRuntime.isRtmodel()){
             fillParentData(et);
         }
         return et;
@@ -190,7 +190,7 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
     @Override
     @Transactional
     public boolean saveBatch(Collection<ProjectStory> list) {
-        if(!projectstoryRuntime){
+        if(!projectstoryRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<ProjectStory> create = new ArrayList<>();
@@ -214,7 +214,7 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
     @Override
     @Transactional
     public void saveBatch(List<ProjectStory> list) {
-        if(!projectstoryRuntime){
+        if(!projectstoryRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<ProjectStory> create = new ArrayList<>();

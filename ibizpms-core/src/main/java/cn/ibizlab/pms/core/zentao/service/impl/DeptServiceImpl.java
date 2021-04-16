@@ -59,7 +59,7 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     @Override
     @Transactional
     public boolean create(Dept et) {
-        if(!deptRuntime){
+        if(!deptRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!this.retBool(this.baseMapper.insert(et))) {
@@ -72,7 +72,7 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     @Override
     @Transactional
     public void createBatch(List<Dept> list) {
-        if(!deptRuntime){
+        if(!deptRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         this.saveBatch(list, batchSize);
@@ -81,7 +81,7 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     @Override
     @Transactional
     public boolean update(Dept et) {
-        if(!deptRuntime){
+        if(!deptRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
@@ -94,7 +94,7 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     @Override
     @Transactional
     public void updateBatch(List<Dept> list) {
-        if(!deptRuntime){
+        if(!deptRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         updateBatchById(list, batchSize);
@@ -151,7 +151,7 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
 
     @Override
     public Dept getDraft(Dept et) {
-        if(!deptRuntime){
+        if(!deptRuntime.isRtmodel()){
             fillParentData(et);
         }
         return et;
@@ -183,7 +183,7 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     @Override
     @Transactional
     public boolean saveBatch(Collection<Dept> list) {
-        if(!deptRuntime){
+        if(!deptRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<Dept> create = new ArrayList<>();
@@ -207,7 +207,7 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     @Override
     @Transactional
     public void saveBatch(List<Dept> list) {
-        if(!deptRuntime){
+        if(!deptRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<Dept> create = new ArrayList<>();

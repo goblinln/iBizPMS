@@ -69,7 +69,7 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
     @Override
     @Transactional
     public boolean create(TestResult et) {
-        if(!testresultRuntime){
+        if(!testresultRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!this.retBool(this.baseMapper.insert(et))) {
@@ -82,7 +82,7 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
     @Override
     @Transactional
     public void createBatch(List<TestResult> list) {
-        if(!testresultRuntime){
+        if(!testresultRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         this.saveBatch(list, batchSize);
@@ -91,7 +91,7 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
     @Override
     @Transactional
     public boolean update(TestResult et) {
-        if(!testresultRuntime){
+        if(!testresultRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
@@ -104,7 +104,7 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
     @Override
     @Transactional
     public void updateBatch(List<TestResult> list) {
-        if(!testresultRuntime){
+        if(!testresultRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         updateBatchById(list, batchSize);
@@ -161,7 +161,7 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
 
     @Override
     public TestResult getDraft(TestResult et) {
-        if(!testresultRuntime){
+        if(!testresultRuntime.isRtmodel()){
             fillParentData(et);
         }
         return et;
@@ -193,7 +193,7 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
     @Override
     @Transactional
     public boolean saveBatch(Collection<TestResult> list) {
-        if(!testresultRuntime){
+        if(!testresultRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<TestResult> create = new ArrayList<>();
@@ -217,7 +217,7 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
     @Override
     @Transactional
     public void saveBatch(List<TestResult> list) {
-        if(!testresultRuntime){
+        if(!testresultRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<TestResult> create = new ArrayList<>();

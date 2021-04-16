@@ -62,7 +62,7 @@ public class IbzLibCaseStepsServiceImpl extends ServiceImpl<IbzLibCaseStepsMappe
     @Override
     @Transactional
     public boolean create(IbzLibCaseSteps et) {
-        if(!ibzlibcasestepsRuntime){
+        if(!ibzlibcasestepsRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!this.retBool(this.baseMapper.insert(et))) {
@@ -76,7 +76,7 @@ public class IbzLibCaseStepsServiceImpl extends ServiceImpl<IbzLibCaseStepsMappe
     @Override
     @Transactional
     public void createBatch(List<IbzLibCaseSteps> list) {
-        if(!ibzlibcasestepsRuntime){
+        if(!ibzlibcasestepsRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         this.saveBatch(list, batchSize);
@@ -85,7 +85,7 @@ public class IbzLibCaseStepsServiceImpl extends ServiceImpl<IbzLibCaseStepsMappe
     @Override
     @Transactional
     public boolean update(IbzLibCaseSteps et) {
-        if(!ibzlibcasestepsRuntime){
+        if(!ibzlibcasestepsRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
@@ -99,7 +99,7 @@ public class IbzLibCaseStepsServiceImpl extends ServiceImpl<IbzLibCaseStepsMappe
     @Override
     @Transactional
     public void updateBatch(List<IbzLibCaseSteps> list) {
-        if(!ibzlibcasestepsRuntime){
+        if(!ibzlibcasestepsRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         updateBatchById(list, batchSize);
@@ -157,7 +157,7 @@ public class IbzLibCaseStepsServiceImpl extends ServiceImpl<IbzLibCaseStepsMappe
 
     @Override
     public IbzLibCaseSteps getDraft(IbzLibCaseSteps et) {
-        if(!ibzlibcasestepsRuntime){
+        if(!ibzlibcasestepsRuntime.isRtmodel()){
             fillParentData(et);
         }
         return et;
@@ -189,7 +189,7 @@ public class IbzLibCaseStepsServiceImpl extends ServiceImpl<IbzLibCaseStepsMappe
     @Override
     @Transactional
     public boolean saveBatch(Collection<IbzLibCaseSteps> list) {
-        if(!ibzlibcasestepsRuntime){
+        if(!ibzlibcasestepsRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<IbzLibCaseSteps> create = new ArrayList<>();
@@ -213,7 +213,7 @@ public class IbzLibCaseStepsServiceImpl extends ServiceImpl<IbzLibCaseStepsMappe
     @Override
     @Transactional
     public void saveBatch(List<IbzLibCaseSteps> list) {
-        if(!ibzlibcasestepsRuntime){
+        if(!ibzlibcasestepsRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<IbzLibCaseSteps> create = new ArrayList<>();

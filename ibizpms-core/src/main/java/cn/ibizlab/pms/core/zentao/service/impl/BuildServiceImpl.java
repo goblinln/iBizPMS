@@ -72,7 +72,7 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
     @Override
     @Transactional
     public boolean create(Build et) {
-        if(!buildRuntime){
+        if(!buildRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!this.retBool(this.baseMapper.insert(et))) {
@@ -85,7 +85,7 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
     @Override
     @Transactional
     public void createBatch(List<Build> list) {
-        if(!buildRuntime){
+        if(!buildRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         this.saveBatch(list, batchSize);
@@ -94,7 +94,7 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
     @Override
     @Transactional
     public boolean update(Build et) {
-        if(!buildRuntime){
+        if(!buildRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
@@ -107,7 +107,7 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
     @Override
     @Transactional
     public void updateBatch(List<Build> list) {
-        if(!buildRuntime){
+        if(!buildRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         updateBatchById(list, batchSize);
@@ -164,7 +164,7 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
 
     @Override
     public Build getDraft(Build et) {
-        if(!buildRuntime){
+        if(!buildRuntime.isRtmodel()){
             fillParentData(et);
         }
         return et;
@@ -241,7 +241,7 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
     @Override
     @Transactional
     public boolean saveBatch(Collection<Build> list) {
-        if(!buildRuntime){
+        if(!buildRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<Build> create = new ArrayList<>();
@@ -265,7 +265,7 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
     @Override
     @Transactional
     public void saveBatch(List<Build> list) {
-        if(!buildRuntime){
+        if(!buildRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<Build> create = new ArrayList<>();

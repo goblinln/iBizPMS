@@ -62,7 +62,7 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
     @Override
     @Transactional
     public boolean create(TestModule et) {
-        if(!testmoduleRuntime){
+        if(!testmoduleRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!this.retBool(this.baseMapper.insert(et))) {
@@ -75,7 +75,7 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
     @Override
     @Transactional
     public void createBatch(List<TestModule> list) {
-        if(!testmoduleRuntime){
+        if(!testmoduleRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         for (TestModule et : list) {
@@ -86,7 +86,7 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
     @Override
     @Transactional
     public boolean update(TestModule et) {
-        if(!testmoduleRuntime){
+        if(!testmoduleRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
@@ -99,7 +99,7 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
     @Override
     @Transactional
     public void updateBatch(List<TestModule> list) {
-        if(!testmoduleRuntime){
+        if(!testmoduleRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         for (TestModule et : list) {
@@ -158,7 +158,7 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
 
     @Override
     public TestModule getDraft(TestModule et) {
-        if(!testmoduleRuntime){
+        if(!testmoduleRuntime.isRtmodel()){
             fillParentData(et);
         }
         return et;
@@ -220,7 +220,7 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
     @Override
     @Transactional
     public boolean saveBatch(Collection<TestModule> list) {
-        if(!testmoduleRuntime){
+        if(!testmoduleRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<TestModule> create = new ArrayList<>();
@@ -244,7 +244,7 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
     @Override
     @Transactional
     public void saveBatch(List<TestModule> list) {
-        if(!testmoduleRuntime){
+        if(!testmoduleRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<TestModule> create = new ArrayList<>();

@@ -60,7 +60,7 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
     @Override
     @Transactional
     public boolean create(EmpLoyeeload et) {
-        if(!employeeloadRuntime){
+        if(!employeeloadRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!this.retBool(this.baseMapper.insert(et))) {
@@ -73,7 +73,7 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
     @Override
     @Transactional
     public void createBatch(List<EmpLoyeeload> list) {
-        if(!employeeloadRuntime){
+        if(!employeeloadRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         this.saveBatch(list, batchSize);
@@ -82,7 +82,7 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
     @Override
     @Transactional
     public boolean update(EmpLoyeeload et) {
-        if(!employeeloadRuntime){
+        if(!employeeloadRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
@@ -95,7 +95,7 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
     @Override
     @Transactional
     public void updateBatch(List<EmpLoyeeload> list) {
-        if(!employeeloadRuntime){
+        if(!employeeloadRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         updateBatchById(list, batchSize);
@@ -152,7 +152,7 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
 
     @Override
     public EmpLoyeeload getDraft(EmpLoyeeload et) {
-        if(!employeeloadRuntime){
+        if(!employeeloadRuntime.isRtmodel()){
             fillParentData(et);
         }
         return et;
@@ -184,7 +184,7 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
     @Override
     @Transactional
     public boolean saveBatch(Collection<EmpLoyeeload> list) {
-        if(!employeeloadRuntime){
+        if(!employeeloadRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<EmpLoyeeload> create = new ArrayList<>();
@@ -208,7 +208,7 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
     @Override
     @Transactional
     public void saveBatch(List<EmpLoyeeload> list) {
-        if(!employeeloadRuntime){
+        if(!employeeloadRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<EmpLoyeeload> create = new ArrayList<>();

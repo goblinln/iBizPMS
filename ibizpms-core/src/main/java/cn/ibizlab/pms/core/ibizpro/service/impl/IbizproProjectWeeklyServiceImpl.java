@@ -60,7 +60,7 @@ public class IbizproProjectWeeklyServiceImpl extends ServiceImpl<IbizproProjectW
     @Override
     @Transactional
     public boolean create(IbizproProjectWeekly et) {
-        if(!ibizproprojectweeklyRuntime){
+        if(!ibizproprojectweeklyRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!this.retBool(this.baseMapper.insert(et))) {
@@ -73,7 +73,7 @@ public class IbizproProjectWeeklyServiceImpl extends ServiceImpl<IbizproProjectW
     @Override
     @Transactional
     public void createBatch(List<IbizproProjectWeekly> list) {
-        if(!ibizproprojectweeklyRuntime){
+        if(!ibizproprojectweeklyRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         this.saveBatch(list, batchSize);
@@ -82,7 +82,7 @@ public class IbizproProjectWeeklyServiceImpl extends ServiceImpl<IbizproProjectW
     @Override
     @Transactional
     public boolean update(IbizproProjectWeekly et) {
-        if(!ibizproprojectweeklyRuntime){
+        if(!ibizproprojectweeklyRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibzpro_projectweeklyid", et.getProjectweeklyid()))) {
@@ -95,7 +95,7 @@ public class IbizproProjectWeeklyServiceImpl extends ServiceImpl<IbizproProjectW
     @Override
     @Transactional
     public void updateBatch(List<IbizproProjectWeekly> list) {
-        if(!ibizproprojectweeklyRuntime){
+        if(!ibizproprojectweeklyRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         updateBatchById(list, batchSize);
@@ -152,7 +152,7 @@ public class IbizproProjectWeeklyServiceImpl extends ServiceImpl<IbizproProjectW
 
     @Override
     public IbizproProjectWeekly getDraft(IbizproProjectWeekly et) {
-        if(!ibizproprojectweeklyRuntime){
+        if(!ibizproprojectweeklyRuntime.isRtmodel()){
             fillParentData(et);
         }
         return et;
@@ -199,7 +199,7 @@ public class IbizproProjectWeeklyServiceImpl extends ServiceImpl<IbizproProjectW
     @Override
     @Transactional
     public boolean saveBatch(Collection<IbizproProjectWeekly> list) {
-        if(!ibizproprojectweeklyRuntime){
+        if(!ibizproprojectweeklyRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<IbizproProjectWeekly> create = new ArrayList<>();
@@ -223,7 +223,7 @@ public class IbizproProjectWeeklyServiceImpl extends ServiceImpl<IbizproProjectW
     @Override
     @Transactional
     public void saveBatch(List<IbizproProjectWeekly> list) {
-        if(!ibizproprojectweeklyRuntime){
+        if(!ibizproprojectweeklyRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<IbizproProjectWeekly> create = new ArrayList<>();

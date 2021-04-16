@@ -83,7 +83,7 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     @Override
     @Transactional
     public boolean create(Task et) {
-        if(!taskRuntime){
+        if(!taskRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!this.retBool(this.baseMapper.insert(et))) {
@@ -98,7 +98,7 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     @Override
     @Transactional
     public void createBatch(List<Task> list) {
-        if(!taskRuntime){
+        if(!taskRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         this.saveBatch(list, batchSize);
@@ -107,7 +107,7 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     @Override
     @Transactional
     public boolean update(Task et) {
-        if(!taskRuntime){
+        if(!taskRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
@@ -122,7 +122,7 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     @Override
     @Transactional
     public void updateBatch(List<Task> list) {
-        if(!taskRuntime){
+        if(!taskRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         for (Task et : list) {
@@ -187,7 +187,7 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
 
     @Override
     public Task getDraft(Task et) {
-        if(!taskRuntime){
+        if(!taskRuntime.isRtmodel()){
             fillParentData(et);
         }
         return et;
@@ -489,7 +489,7 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     @Override
     @Transactional
     public boolean saveBatch(Collection<Task> list) {
-        if(!taskRuntime){
+        if(!taskRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<Task> create = new ArrayList<>();
@@ -513,7 +513,7 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     @Override
     @Transactional
     public void saveBatch(List<Task> list) {
-        if(!taskRuntime){
+        if(!taskRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<Task> create = new ArrayList<>();

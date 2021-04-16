@@ -63,7 +63,7 @@ public class BugStatsServiceImpl extends ServiceImpl<BugStatsMapper, BugStats> i
     @Override
     @Transactional
     public boolean create(BugStats et) {
-        if(!bugstatsRuntime){
+        if(!bugstatsRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!this.retBool(this.baseMapper.insert(et))) {
@@ -76,7 +76,7 @@ public class BugStatsServiceImpl extends ServiceImpl<BugStatsMapper, BugStats> i
     @Override
     @Transactional
     public void createBatch(List<BugStats> list) {
-        if(!bugstatsRuntime){
+        if(!bugstatsRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         this.saveBatch(list, batchSize);
@@ -85,7 +85,7 @@ public class BugStatsServiceImpl extends ServiceImpl<BugStatsMapper, BugStats> i
     @Override
     @Transactional
     public boolean update(BugStats et) {
-        if(!bugstatsRuntime){
+        if(!bugstatsRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
@@ -98,7 +98,7 @@ public class BugStatsServiceImpl extends ServiceImpl<BugStatsMapper, BugStats> i
     @Override
     @Transactional
     public void updateBatch(List<BugStats> list) {
-        if(!bugstatsRuntime){
+        if(!bugstatsRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         updateBatchById(list, batchSize);
@@ -155,7 +155,7 @@ public class BugStatsServiceImpl extends ServiceImpl<BugStatsMapper, BugStats> i
 
     @Override
     public BugStats getDraft(BugStats et) {
-        if(!bugstatsRuntime){
+        if(!bugstatsRuntime.isRtmodel()){
             fillParentData(et);
         }
         return et;
@@ -187,7 +187,7 @@ public class BugStatsServiceImpl extends ServiceImpl<BugStatsMapper, BugStats> i
     @Override
     @Transactional
     public boolean saveBatch(Collection<BugStats> list) {
-        if(!bugstatsRuntime){
+        if(!bugstatsRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<BugStats> create = new ArrayList<>();
@@ -211,7 +211,7 @@ public class BugStatsServiceImpl extends ServiceImpl<BugStatsMapper, BugStats> i
     @Override
     @Transactional
     public void saveBatch(List<BugStats> list) {
-        if(!bugstatsRuntime){
+        if(!bugstatsRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<BugStats> create = new ArrayList<>();

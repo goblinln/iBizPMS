@@ -65,7 +65,7 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
     @Override
     @Transactional
     public boolean create(IbzLibModule et) {
-        if(!ibzlibmoduleRuntime){
+        if(!ibzlibmoduleRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!this.retBool(this.baseMapper.insert(et))) {
@@ -78,7 +78,7 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
     @Override
     @Transactional
     public void createBatch(List<IbzLibModule> list) {
-        if(!ibzlibmoduleRuntime){
+        if(!ibzlibmoduleRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         for (IbzLibModule et : list) {
@@ -89,7 +89,7 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
     @Override
     @Transactional
     public boolean update(IbzLibModule et) {
-        if(!ibzlibmoduleRuntime){
+        if(!ibzlibmoduleRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
@@ -102,7 +102,7 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
     @Override
     @Transactional
     public void updateBatch(List<IbzLibModule> list) {
-        if(!ibzlibmoduleRuntime){
+        if(!ibzlibmoduleRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         for (IbzLibModule et : list) {
@@ -161,7 +161,7 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
 
     @Override
     public IbzLibModule getDraft(IbzLibModule et) {
-        if(!ibzlibmoduleRuntime){
+        if(!ibzlibmoduleRuntime.isRtmodel()){
             fillParentData(et);
         }
         return et;
@@ -193,7 +193,7 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
     @Override
     @Transactional
     public boolean saveBatch(Collection<IbzLibModule> list) {
-        if(!ibzlibmoduleRuntime){
+        if(!ibzlibmoduleRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<IbzLibModule> create = new ArrayList<>();
@@ -217,7 +217,7 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
     @Override
     @Transactional
     public void saveBatch(List<IbzLibModule> list) {
-        if(!ibzlibmoduleRuntime){
+        if(!ibzlibmoduleRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<IbzLibModule> create = new ArrayList<>();

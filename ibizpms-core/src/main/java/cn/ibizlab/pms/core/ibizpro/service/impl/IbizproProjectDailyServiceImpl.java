@@ -60,7 +60,7 @@ public class IbizproProjectDailyServiceImpl extends ServiceImpl<IbizproProjectDa
     @Override
     @Transactional
     public boolean create(IbizproProjectDaily et) {
-        if(!ibizproprojectdailyRuntime){
+        if(!ibizproprojectdailyRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!this.retBool(this.baseMapper.insert(et))) {
@@ -73,7 +73,7 @@ public class IbizproProjectDailyServiceImpl extends ServiceImpl<IbizproProjectDa
     @Override
     @Transactional
     public void createBatch(List<IbizproProjectDaily> list) {
-        if(!ibizproprojectdailyRuntime){
+        if(!ibizproprojectdailyRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         this.saveBatch(list, batchSize);
@@ -82,7 +82,7 @@ public class IbizproProjectDailyServiceImpl extends ServiceImpl<IbizproProjectDa
     @Override
     @Transactional
     public boolean update(IbizproProjectDaily et) {
-        if(!ibizproprojectdailyRuntime){
+        if(!ibizproprojectdailyRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibizpro_projectdailyid", et.getIbizproprojectdailyid()))) {
@@ -95,7 +95,7 @@ public class IbizproProjectDailyServiceImpl extends ServiceImpl<IbizproProjectDa
     @Override
     @Transactional
     public void updateBatch(List<IbizproProjectDaily> list) {
-        if(!ibizproprojectdailyRuntime){
+        if(!ibizproprojectdailyRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         updateBatchById(list, batchSize);
@@ -152,7 +152,7 @@ public class IbizproProjectDailyServiceImpl extends ServiceImpl<IbizproProjectDa
 
     @Override
     public IbizproProjectDaily getDraft(IbizproProjectDaily et) {
-        if(!ibizproprojectdailyRuntime){
+        if(!ibizproprojectdailyRuntime.isRtmodel()){
             fillParentData(et);
         }
         return et;
@@ -184,7 +184,7 @@ public class IbizproProjectDailyServiceImpl extends ServiceImpl<IbizproProjectDa
     @Override
     @Transactional
     public boolean saveBatch(Collection<IbizproProjectDaily> list) {
-        if(!ibizproprojectdailyRuntime){
+        if(!ibizproprojectdailyRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<IbizproProjectDaily> create = new ArrayList<>();
@@ -208,7 +208,7 @@ public class IbizproProjectDailyServiceImpl extends ServiceImpl<IbizproProjectDa
     @Override
     @Transactional
     public void saveBatch(List<IbizproProjectDaily> list) {
-        if(!ibizproprojectdailyRuntime){
+        if(!ibizproprojectdailyRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<IbizproProjectDaily> create = new ArrayList<>();

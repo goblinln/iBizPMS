@@ -60,7 +60,7 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
     @Override
     @Transactional
     public boolean create(StorySpec et) {
-        if(!storyspecRuntime){
+        if(!storyspecRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!this.retBool(this.baseMapper.insert(et))) {
@@ -73,7 +73,7 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
     @Override
     @Transactional
     public void createBatch(List<StorySpec> list) {
-        if(!storyspecRuntime){
+        if(!storyspecRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         this.saveBatch(list, batchSize);
@@ -82,7 +82,7 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
     @Override
     @Transactional
     public boolean update(StorySpec et) {
-        if(!storyspecRuntime){
+        if(!storyspecRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
@@ -95,7 +95,7 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
     @Override
     @Transactional
     public void updateBatch(List<StorySpec> list) {
-        if(!storyspecRuntime){
+        if(!storyspecRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         updateBatchById(list, batchSize);
@@ -152,7 +152,7 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
 
     @Override
     public StorySpec getDraft(StorySpec et) {
-        if(!storyspecRuntime){
+        if(!storyspecRuntime.isRtmodel()){
             fillParentData(et);
         }
         return et;
@@ -184,7 +184,7 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
     @Override
     @Transactional
     public boolean saveBatch(Collection<StorySpec> list) {
-        if(!storyspecRuntime){
+        if(!storyspecRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<StorySpec> create = new ArrayList<>();
@@ -208,7 +208,7 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
     @Override
     @Transactional
     public void saveBatch(List<StorySpec> list) {
-        if(!storyspecRuntime){
+        if(!storyspecRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<StorySpec> create = new ArrayList<>();

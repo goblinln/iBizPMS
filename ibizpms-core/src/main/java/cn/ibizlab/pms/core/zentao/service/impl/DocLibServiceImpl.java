@@ -69,7 +69,7 @@ public class DocLibServiceImpl extends ServiceImpl<DocLibMapper, DocLib> impleme
     @Override
     @Transactional
     public boolean create(DocLib et) {
-        if(!doclibRuntime){
+        if(!doclibRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!this.retBool(this.baseMapper.insert(et))) {
@@ -82,7 +82,7 @@ public class DocLibServiceImpl extends ServiceImpl<DocLibMapper, DocLib> impleme
     @Override
     @Transactional
     public void createBatch(List<DocLib> list) {
-        if(!doclibRuntime){
+        if(!doclibRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         this.saveBatch(list, batchSize);
@@ -91,7 +91,7 @@ public class DocLibServiceImpl extends ServiceImpl<DocLibMapper, DocLib> impleme
     @Override
     @Transactional
     public boolean update(DocLib et) {
-        if(!doclibRuntime){
+        if(!doclibRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
@@ -104,7 +104,7 @@ public class DocLibServiceImpl extends ServiceImpl<DocLibMapper, DocLib> impleme
     @Override
     @Transactional
     public void updateBatch(List<DocLib> list) {
-        if(!doclibRuntime){
+        if(!doclibRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         updateBatchById(list, batchSize);
@@ -161,7 +161,7 @@ public class DocLibServiceImpl extends ServiceImpl<DocLibMapper, DocLib> impleme
 
     @Override
     public DocLib getDraft(DocLib et) {
-        if(!doclibRuntime){
+        if(!doclibRuntime.isRtmodel()){
             fillParentData(et);
         }
         return et;
@@ -208,7 +208,7 @@ public class DocLibServiceImpl extends ServiceImpl<DocLibMapper, DocLib> impleme
     @Override
     @Transactional
     public boolean saveBatch(Collection<DocLib> list) {
-        if(!doclibRuntime){
+        if(!doclibRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<DocLib> create = new ArrayList<>();
@@ -232,7 +232,7 @@ public class DocLibServiceImpl extends ServiceImpl<DocLibMapper, DocLib> impleme
     @Override
     @Transactional
     public void saveBatch(List<DocLib> list) {
-        if(!doclibRuntime){
+        if(!doclibRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<DocLib> create = new ArrayList<>();

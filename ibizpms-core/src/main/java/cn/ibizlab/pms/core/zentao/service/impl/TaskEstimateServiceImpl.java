@@ -60,7 +60,7 @@ public class TaskEstimateServiceImpl extends ServiceImpl<TaskEstimateMapper, Tas
     @Override
     @Transactional
     public boolean create(TaskEstimate et) {
-        if(!taskestimateRuntime){
+        if(!taskestimateRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!this.retBool(this.baseMapper.insert(et))) {
@@ -73,7 +73,7 @@ public class TaskEstimateServiceImpl extends ServiceImpl<TaskEstimateMapper, Tas
     @Override
     @Transactional
     public void createBatch(List<TaskEstimate> list) {
-        if(!taskestimateRuntime){
+        if(!taskestimateRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         this.saveBatch(list, batchSize);
@@ -82,7 +82,7 @@ public class TaskEstimateServiceImpl extends ServiceImpl<TaskEstimateMapper, Tas
     @Override
     @Transactional
     public boolean update(TaskEstimate et) {
-        if(!taskestimateRuntime){
+        if(!taskestimateRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
@@ -95,7 +95,7 @@ public class TaskEstimateServiceImpl extends ServiceImpl<TaskEstimateMapper, Tas
     @Override
     @Transactional
     public void updateBatch(List<TaskEstimate> list) {
-        if(!taskestimateRuntime){
+        if(!taskestimateRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         updateBatchById(list, batchSize);
@@ -152,7 +152,7 @@ public class TaskEstimateServiceImpl extends ServiceImpl<TaskEstimateMapper, Tas
 
     @Override
     public TaskEstimate getDraft(TaskEstimate et) {
-        if(!taskestimateRuntime){
+        if(!taskestimateRuntime.isRtmodel()){
             fillParentData(et);
         }
         return et;
@@ -199,7 +199,7 @@ public class TaskEstimateServiceImpl extends ServiceImpl<TaskEstimateMapper, Tas
     @Override
     @Transactional
     public boolean saveBatch(Collection<TaskEstimate> list) {
-        if(!taskestimateRuntime){
+        if(!taskestimateRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<TaskEstimate> create = new ArrayList<>();
@@ -223,7 +223,7 @@ public class TaskEstimateServiceImpl extends ServiceImpl<TaskEstimateMapper, Tas
     @Override
     @Transactional
     public void saveBatch(List<TaskEstimate> list) {
-        if(!taskestimateRuntime){
+        if(!taskestimateRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<TaskEstimate> create = new ArrayList<>();

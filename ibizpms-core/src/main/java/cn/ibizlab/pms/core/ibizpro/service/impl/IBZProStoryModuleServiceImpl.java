@@ -65,7 +65,7 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Override
     @Transactional
     public boolean create(IBZProStoryModule et) {
-        if(!ibzprostorymoduleRuntime){
+        if(!ibzprostorymoduleRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!this.retBool(this.baseMapper.insert(et))) {
@@ -78,7 +78,7 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Override
     @Transactional
     public void createBatch(List<IBZProStoryModule> list) {
-        if(!ibzprostorymoduleRuntime){
+        if(!ibzprostorymoduleRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         for (IBZProStoryModule et : list) {
@@ -89,7 +89,7 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Override
     @Transactional
     public boolean update(IBZProStoryModule et) {
-        if(!ibzprostorymoduleRuntime){
+        if(!ibzprostorymoduleRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
@@ -102,7 +102,7 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Override
     @Transactional
     public void updateBatch(List<IBZProStoryModule> list) {
-        if(!ibzprostorymoduleRuntime){
+        if(!ibzprostorymoduleRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         for (IBZProStoryModule et : list) {
@@ -161,7 +161,7 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
 
     @Override
     public IBZProStoryModule getDraft(IBZProStoryModule et) {
-        if(!ibzprostorymoduleRuntime){
+        if(!ibzprostorymoduleRuntime.isRtmodel()){
             fillParentData(et);
         }
         return et;
@@ -193,7 +193,7 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Override
     @Transactional
     public boolean saveBatch(Collection<IBZProStoryModule> list) {
-        if(!ibzprostorymoduleRuntime){
+        if(!ibzprostorymoduleRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<IBZProStoryModule> create = new ArrayList<>();
@@ -217,7 +217,7 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Override
     @Transactional
     public void saveBatch(List<IBZProStoryModule> list) {
-        if(!ibzprostorymoduleRuntime){
+        if(!ibzprostorymoduleRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<IBZProStoryModule> create = new ArrayList<>();

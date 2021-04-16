@@ -92,7 +92,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Override
     @Transactional
     public boolean create(Bug et) {
-        if(!bugRuntime){
+        if(!bugRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!this.retBool(this.baseMapper.insert(et))) {
@@ -105,7 +105,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Override
     @Transactional
     public void createBatch(List<Bug> list) {
-        if(!bugRuntime){
+        if(!bugRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         for (Bug et : list) {
@@ -116,7 +116,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Override
     @Transactional
     public boolean update(Bug et) {
-        if(!bugRuntime){
+        if(!bugRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
@@ -129,7 +129,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Override
     @Transactional
     public void updateBatch(List<Bug> list) {
-        if(!bugRuntime){
+        if(!bugRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         updateBatchById(list, batchSize);
@@ -188,7 +188,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
 
     @Override
     public Bug getDraft(Bug et) {
-        if(!bugRuntime){
+        if(!bugRuntime.isRtmodel()){
             fillParentData(et);
         }
         return et;
@@ -475,7 +475,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Override
     @Transactional
     public boolean saveBatch(Collection<Bug> list) {
-        if(!bugRuntime){
+        if(!bugRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<Bug> create = new ArrayList<>();
@@ -499,7 +499,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Override
     @Transactional
     public void saveBatch(List<Bug> list) {
-        if(!bugRuntime){
+        if(!bugRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<Bug> create = new ArrayList<>();

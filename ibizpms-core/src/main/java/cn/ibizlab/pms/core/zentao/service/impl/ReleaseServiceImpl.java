@@ -66,7 +66,7 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
     @Override
     @Transactional
     public boolean create(Release et) {
-        if(!releaseRuntime){
+        if(!releaseRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!this.retBool(this.baseMapper.insert(et))) {
@@ -79,7 +79,7 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
     @Override
     @Transactional
     public void createBatch(List<Release> list) {
-        if(!releaseRuntime){
+        if(!releaseRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         this.saveBatch(list, batchSize);
@@ -88,7 +88,7 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
     @Override
     @Transactional
     public boolean update(Release et) {
-        if(!releaseRuntime){
+        if(!releaseRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
@@ -101,7 +101,7 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
     @Override
     @Transactional
     public void updateBatch(List<Release> list) {
-        if(!releaseRuntime){
+        if(!releaseRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         for (Release et : list) {
@@ -162,7 +162,7 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
 
     @Override
     public Release getDraft(Release et) {
-        if(!releaseRuntime){
+        if(!releaseRuntime.isRtmodel()){
             fillParentData(et);
         }
         return et;
@@ -329,7 +329,7 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
     @Override
     @Transactional
     public boolean saveBatch(Collection<Release> list) {
-        if(!releaseRuntime){
+        if(!releaseRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<Release> create = new ArrayList<>();
@@ -353,7 +353,7 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
     @Override
     @Transactional
     public void saveBatch(List<Release> list) {
-        if(!releaseRuntime){
+        if(!releaseRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<Release> create = new ArrayList<>();

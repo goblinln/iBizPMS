@@ -60,7 +60,7 @@ public class SysUpdateFeaturesServiceImpl extends ServiceImpl<SysUpdateFeaturesM
     @Override
     @Transactional
     public boolean create(SysUpdateFeatures et) {
-        if(!sysupdatefeaturesRuntime){
+        if(!sysupdatefeaturesRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!this.retBool(this.baseMapper.insert(et))) {
@@ -73,7 +73,7 @@ public class SysUpdateFeaturesServiceImpl extends ServiceImpl<SysUpdateFeaturesM
     @Override
     @Transactional
     public void createBatch(List<SysUpdateFeatures> list) {
-        if(!sysupdatefeaturesRuntime){
+        if(!sysupdatefeaturesRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         this.saveBatch(list, batchSize);
@@ -82,7 +82,7 @@ public class SysUpdateFeaturesServiceImpl extends ServiceImpl<SysUpdateFeaturesM
     @Override
     @Transactional
     public boolean update(SysUpdateFeatures et) {
-        if(!sysupdatefeaturesRuntime){
+        if(!sysupdatefeaturesRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("sys_update_featuresid", et.getSysupdatefeaturesid()))) {
@@ -95,7 +95,7 @@ public class SysUpdateFeaturesServiceImpl extends ServiceImpl<SysUpdateFeaturesM
     @Override
     @Transactional
     public void updateBatch(List<SysUpdateFeatures> list) {
-        if(!sysupdatefeaturesRuntime){
+        if(!sysupdatefeaturesRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         updateBatchById(list, batchSize);
@@ -152,7 +152,7 @@ public class SysUpdateFeaturesServiceImpl extends ServiceImpl<SysUpdateFeaturesM
 
     @Override
     public SysUpdateFeatures getDraft(SysUpdateFeatures et) {
-        if(!sysupdatefeaturesRuntime){
+        if(!sysupdatefeaturesRuntime.isRtmodel()){
             fillParentData(et);
         }
         return et;
@@ -184,7 +184,7 @@ public class SysUpdateFeaturesServiceImpl extends ServiceImpl<SysUpdateFeaturesM
     @Override
     @Transactional
     public boolean saveBatch(Collection<SysUpdateFeatures> list) {
-        if(!sysupdatefeaturesRuntime){
+        if(!sysupdatefeaturesRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<SysUpdateFeatures> create = new ArrayList<>();
@@ -208,7 +208,7 @@ public class SysUpdateFeaturesServiceImpl extends ServiceImpl<SysUpdateFeaturesM
     @Override
     @Transactional
     public void saveBatch(List<SysUpdateFeatures> list) {
-        if(!sysupdatefeaturesRuntime){
+        if(!sysupdatefeaturesRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<SysUpdateFeatures> create = new ArrayList<>();

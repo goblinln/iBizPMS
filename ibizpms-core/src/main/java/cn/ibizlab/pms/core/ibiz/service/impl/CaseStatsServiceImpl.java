@@ -63,7 +63,7 @@ public class CaseStatsServiceImpl extends ServiceImpl<CaseStatsMapper, CaseStats
     @Override
     @Transactional
     public boolean create(CaseStats et) {
-        if(!casestatsRuntime){
+        if(!casestatsRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!this.retBool(this.baseMapper.insert(et))) {
@@ -76,7 +76,7 @@ public class CaseStatsServiceImpl extends ServiceImpl<CaseStatsMapper, CaseStats
     @Override
     @Transactional
     public void createBatch(List<CaseStats> list) {
-        if(!casestatsRuntime){
+        if(!casestatsRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         this.saveBatch(list, batchSize);
@@ -85,7 +85,7 @@ public class CaseStatsServiceImpl extends ServiceImpl<CaseStatsMapper, CaseStats
     @Override
     @Transactional
     public boolean update(CaseStats et) {
-        if(!casestatsRuntime){
+        if(!casestatsRuntime.isRtmodel()){
             fillParentData(et);
         }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
@@ -98,7 +98,7 @@ public class CaseStatsServiceImpl extends ServiceImpl<CaseStatsMapper, CaseStats
     @Override
     @Transactional
     public void updateBatch(List<CaseStats> list) {
-        if(!casestatsRuntime){
+        if(!casestatsRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         updateBatchById(list, batchSize);
@@ -155,7 +155,7 @@ public class CaseStatsServiceImpl extends ServiceImpl<CaseStatsMapper, CaseStats
 
     @Override
     public CaseStats getDraft(CaseStats et) {
-        if(!casestatsRuntime){
+        if(!casestatsRuntime.isRtmodel()){
             fillParentData(et);
         }
         return et;
@@ -187,7 +187,7 @@ public class CaseStatsServiceImpl extends ServiceImpl<CaseStatsMapper, CaseStats
     @Override
     @Transactional
     public boolean saveBatch(Collection<CaseStats> list) {
-        if(!casestatsRuntime){
+        if(!casestatsRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<CaseStats> create = new ArrayList<>();
@@ -211,7 +211,7 @@ public class CaseStatsServiceImpl extends ServiceImpl<CaseStatsMapper, CaseStats
     @Override
     @Transactional
     public void saveBatch(List<CaseStats> list) {
-        if(!casestatsRuntime){
+        if(!casestatsRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
         List<CaseStats> create = new ArrayList<>();
