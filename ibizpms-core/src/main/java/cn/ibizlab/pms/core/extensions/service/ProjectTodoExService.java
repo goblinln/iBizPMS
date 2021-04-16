@@ -1,8 +1,10 @@
 package cn.ibizlab.pms.core.extensions.service;
 
 import cn.ibizlab.pms.core.ibizpro.service.impl.ProjectTodoServiceImpl;
+import cn.ibizlab.pms.core.util.ibizzentao.helper.FileHelper;
 import cn.ibizlab.pms.core.zentao.domain.Todo;
 import cn.ibizlab.pms.core.zentao.service.ITodoService;
+import cn.ibizlab.pms.util.dict.StaticDict;
 import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import lombok.extern.slf4j.Slf4j;
 import cn.ibizlab.pms.core.ibizpro.domain.ProjectTodo;
@@ -28,21 +30,28 @@ public class ProjectTodoExService extends ProjectTodoServiceImpl {
     @Autowired
     ITodoService iTodoService;
 
+    @Autowired
+    FileHelper fileHelper;
+
     @Override
     public boolean create(ProjectTodo et) {
         Todo todo = new Todo();
+        String files = et.getFiles();
         CachedBeanCopier.copy(et, todo);
         boolean flag = iTodoService.create(todo);
         CachedBeanCopier.copy(todo, et);
+        fileHelper.updateObjectID(et.getId(), StaticDict.File__object_type.TODO.getValue(), files, "");
         return flag;
     }
 
     @Override
     public boolean update(ProjectTodo et) {
         Todo todo = new Todo();
+        String files = et.getFiles();
         CachedBeanCopier.copy(et, todo);
         boolean flag = iTodoService.update(todo);
         CachedBeanCopier.copy(todo, et);
+        fileHelper.updateObjectID(et.getId(), StaticDict.File__object_type.TODO.getValue(), files, "");
         return flag;
     }
 
