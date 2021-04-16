@@ -257,7 +257,10 @@ public class TodoHelper extends ZTBaseHelper<TodoMapper, Todo> {
         if (!super.edit(et)) {
             return false;
         }
-
+        //周期循环处理
+        if (et.getCycle() != null && et.getCycle() == 1) {
+            createByCycle(et);
+        }
         List<History> changes = ChangeUtil.diff(old, et);
         if (changes.size() > 0) {
             Action action = actionHelper.create(StaticDict.Action__object_type.TODO.getValue(), et.getId(), StaticDict.Action__type.EDITED.getValue(), "", "", null, true);
