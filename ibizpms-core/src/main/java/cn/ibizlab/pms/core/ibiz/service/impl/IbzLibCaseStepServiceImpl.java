@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbzLibCaseStepServiceImpl extends ServiceImpl<IbzLibCaseStepMapper, IbzLibCaseStep> implements IIbzLibCaseStepService {
 
     @Autowired
-    cn.ibizlab.pms.core.ibiz.runtime IbzLibCaseStepRuntime;
+    cn.ibizlab.pms.core.ibiz.runtime.IbzLibCaseStepRuntime ibzlibcasestepRuntime;
 
 
     protected int batchSize = 500;

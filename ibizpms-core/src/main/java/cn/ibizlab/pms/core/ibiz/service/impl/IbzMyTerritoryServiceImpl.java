@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbzMyTerritoryServiceImpl extends ServiceImpl<IbzMyTerritoryMapper, IbzMyTerritory> implements IIbzMyTerritoryService {
 
     @Autowired
-    cn.ibizlab.pms.core.ibiz.runtime IbzMyTerritoryRuntime;
+    cn.ibizlab.pms.core.ibiz.runtime.IbzMyTerritoryRuntime ibzmyterritoryRuntime;
 
 
     protected int batchSize = 500;

@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase> implements ISuiteCaseService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime SuiteCaseRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.SuiteCaseRuntime suitecaseRuntime;
 
     @Autowired
     @Lazy

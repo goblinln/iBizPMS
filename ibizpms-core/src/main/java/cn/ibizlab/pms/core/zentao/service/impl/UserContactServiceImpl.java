@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class UserContactServiceImpl extends ServiceImpl<UserContactMapper, UserContact> implements IUserContactService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime UserContactRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.UserContactRuntime usercontactRuntime;
 
 
     protected int batchSize = 500;

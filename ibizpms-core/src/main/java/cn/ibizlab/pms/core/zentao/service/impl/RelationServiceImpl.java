@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class RelationServiceImpl extends ServiceImpl<RelationMapper, Relation> implements IRelationService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime RelationRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.RelationRuntime relationRuntime;
 
 
     protected int batchSize = 500;

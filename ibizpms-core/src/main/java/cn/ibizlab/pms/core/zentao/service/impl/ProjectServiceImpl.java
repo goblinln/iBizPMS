@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> implements IProjectService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime ProjectRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.ProjectRuntime projectRuntime;
 
     @Autowired
     @Lazy

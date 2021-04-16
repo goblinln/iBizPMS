@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class ImMessageServiceImpl extends ServiceImpl<ImMessageMapper, ImMessage> implements IImMessageService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime ImMessageRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.ImMessageRuntime immessageRuntime;
 
 
     protected int batchSize = 500;

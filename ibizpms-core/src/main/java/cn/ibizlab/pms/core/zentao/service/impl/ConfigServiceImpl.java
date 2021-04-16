@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class ConfigServiceImpl extends ServiceImpl<ConfigMapper, Config> implements IConfigService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime ConfigRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.ConfigRuntime configRuntime;
 
 
     protected int batchSize = 500;

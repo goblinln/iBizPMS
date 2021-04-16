@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbzproProductUserTaskServiceImpl extends ServiceImpl<IbzproProductUserTaskMapper, IbzproProductUserTask> implements IIbzproProductUserTaskService {
 
     @Autowired
-    cn.ibizlab.pms.core.ibizpro.runtime IbzproProductUserTaskRuntime;
+    cn.ibizlab.pms.core.ibizpro.runtime.IbzproProductUserTaskRuntime ibzproproductusertaskRuntime;
 
 
     protected int batchSize = 500;

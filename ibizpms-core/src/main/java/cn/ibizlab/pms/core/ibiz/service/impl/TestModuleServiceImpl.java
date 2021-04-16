@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestModule> implements ITestModuleService {
 
     @Autowired
-    cn.ibizlab.pms.core.ibiz.runtime TestModuleRuntime;
+    cn.ibizlab.pms.core.ibiz.runtime.TestModuleRuntime testmoduleRuntime;
 
 
     protected cn.ibizlab.pms.core.ibiz.service.ITestModuleService testmoduleService = this;

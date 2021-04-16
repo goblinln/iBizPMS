@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbzAgentServiceImpl extends ServiceImpl<IbzAgentMapper, IbzAgent> implements IIbzAgentService {
 
     @Autowired
-    cn.ibizlab.pms.core.ibiz.runtime IbzAgentRuntime;
+    cn.ibizlab.pms.core.ibiz.runtime.IbzAgentRuntime ibzagentRuntime;
 
 
     protected int batchSize = 500;

@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class ImChatuserServiceImpl extends ServiceImpl<ImChatuserMapper, ImChatuser> implements IImChatuserService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime ImChatuserRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.ImChatuserRuntime imchatuserRuntime;
 
 
     protected int batchSize = 500;

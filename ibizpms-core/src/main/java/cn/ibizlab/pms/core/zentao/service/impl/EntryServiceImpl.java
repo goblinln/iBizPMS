@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class EntryServiceImpl extends ServiceImpl<EntryMapper, Entry> implements IEntryService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime EntryRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.EntryRuntime entryRuntime;
 
     @Autowired
     @Lazy

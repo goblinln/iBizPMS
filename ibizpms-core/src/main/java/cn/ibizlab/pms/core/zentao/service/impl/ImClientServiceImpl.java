@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class ImClientServiceImpl extends ServiceImpl<ImClientMapper, ImClient> implements IImClientService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime ImClientRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.ImClientRuntime imclientRuntime;
 
 
     protected int batchSize = 500;

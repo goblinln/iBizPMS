@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class UserQueryServiceImpl extends ServiceImpl<UserQueryMapper, UserQuery> implements IUserQueryService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime UserQueryRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.UserQueryRuntime userqueryRuntime;
 
 
     protected int batchSize = 500;

@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbzTopServiceImpl extends ServiceImpl<IbzTopMapper, IbzTop> implements IIbzTopService {
 
     @Autowired
-    cn.ibizlab.pms.core.ibiz.runtime IbzTopRuntime;
+    cn.ibizlab.pms.core.ibiz.runtime.IbzTopRuntime ibztopRuntime;
 
 
     protected int batchSize = 500;

@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class ProjectStatsServiceImpl extends ServiceImpl<ProjectStatsMapper, ProjectStats> implements IProjectStatsService {
 
     @Autowired
-    cn.ibizlab.pms.core.ibiz.runtime ProjectStatsRuntime;
+    cn.ibizlab.pms.core.ibiz.runtime.ProjectStatsRuntime projectstatsRuntime;
 
 
     protected int batchSize = 500;

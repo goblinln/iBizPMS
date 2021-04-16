@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team> implements ITeamService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime TeamRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.TeamRuntime teamRuntime;
 
 
     protected int batchSize = 500;

@@ -46,10 +46,10 @@ public class IbzTopRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
 
     @Override
     protected IEntityBase getSimpleEntity(Object o) {
-        if (o instanceof net.ibizsys.runtime.util.IEntity) {
-            return o;
+        if (o instanceof net.ibizsys.runtime.util.IEntityBase) {
+            return (IEntityBase) o;
         } else {
-            return (IEntityBase) ibztopService.sysGet((String) o);
+            return ibztopService.sysGet((String) o);
         }
     }
 
@@ -111,14 +111,6 @@ public class IbzTopRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     public List<IbzTop> select(ISearchContextBase iSearchContextBase) {
         //list
         return null;
-    }
-
-    @Override
-    protected void fillEntityFullInfo(IEntityBase entityBase, String strActionName, IPSDEAction iPSDEAction, IPSDER1N iPSDER1N, IPSDataEntity iPSDataEntity, ProceedingJoinPoint joinPoint) throws Throwable {
-        Object objPickupValue = this.getFieldValue(entityBase, iPSDER1N.getPSPickupDEField());
-        if (ObjectUtils.isEmpty(objPickupValue))
-            return;
-        super.fillEntityFullInfo(entityBase, strActionName, iPSDEAction, iPSDER1N, iPSDataEntity, joinPoint);
     }
 
     @Override

@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class ScoreServiceImpl extends ServiceImpl<ScoreMapper, Score> implements IScoreService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime ScoreRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.ScoreRuntime scoreRuntime;
 
 
     protected int batchSize = 500;

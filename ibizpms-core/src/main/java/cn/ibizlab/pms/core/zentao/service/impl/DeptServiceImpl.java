@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements IDeptService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime DeptRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.DeptRuntime deptRuntime;
 
 
     protected cn.ibizlab.pms.core.zentao.service.IDeptService deptService = this;

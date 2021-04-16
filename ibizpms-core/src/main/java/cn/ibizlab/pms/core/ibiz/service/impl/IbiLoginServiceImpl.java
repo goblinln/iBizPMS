@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbiLoginServiceImpl extends ServiceImpl<IbiLoginMapper, IbiLogin> implements IIbiLoginService {
 
     @Autowired
-    cn.ibizlab.pms.core.ibiz.runtime IbiLoginRuntime;
+    cn.ibizlab.pms.core.ibiz.runtime.IbiLoginRuntime ibiloginRuntime;
 
 
     protected int batchSize = 500;

@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class ProductStatsServiceImpl extends ServiceImpl<ProductStatsMapper, ProductStats> implements IProductStatsService {
 
     @Autowired
-    cn.ibizlab.pms.core.ibiz.runtime ProductStatsRuntime;
+    cn.ibizlab.pms.core.ibiz.runtime.ProductStatsRuntime productstatsRuntime;
 
 
     protected int batchSize = 500;

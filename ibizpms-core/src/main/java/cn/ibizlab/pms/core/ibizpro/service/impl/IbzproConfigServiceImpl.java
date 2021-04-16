@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbzproConfigServiceImpl extends ServiceImpl<IbzproConfigMapper, IbzproConfig> implements IIbzproConfigService {
 
     @Autowired
-    cn.ibizlab.pms.core.ibizpro.runtime IbzproConfigRuntime;
+    cn.ibizlab.pms.core.ibizpro.runtime.IbzproConfigRuntime ibzproconfigRuntime;
 
 
     protected int batchSize = 500;

@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbzMonthlyServiceImpl extends ServiceImpl<IbzMonthlyMapper, IbzMonthly> implements IIbzMonthlyService {
 
     @Autowired
-    cn.ibizlab.pms.core.report.runtime IbzMonthlyRuntime;
+    cn.ibizlab.pms.core.report.runtime.IbzMonthlyRuntime ibzmonthlyRuntime;
 
 
     protected int batchSize = 500;

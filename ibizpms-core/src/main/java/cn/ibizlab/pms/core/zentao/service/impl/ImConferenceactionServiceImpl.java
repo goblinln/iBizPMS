@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class ImConferenceactionServiceImpl extends ServiceImpl<ImConferenceactionMapper, ImConferenceaction> implements IImConferenceactionService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime ImConferenceactionRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.ImConferenceactionRuntime imconferenceactionRuntime;
 
 
     protected int batchSize = 500;

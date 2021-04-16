@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class CaseStatsServiceImpl extends ServiceImpl<CaseStatsMapper, CaseStats> implements ICaseStatsService {
 
     @Autowired
-    cn.ibizlab.pms.core.ibiz.runtime CaseStatsRuntime;
+    cn.ibizlab.pms.core.ibiz.runtime.CaseStatsRuntime casestatsRuntime;
 
     @Autowired
     @Lazy

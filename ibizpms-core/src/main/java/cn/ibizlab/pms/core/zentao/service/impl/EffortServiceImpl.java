@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class EffortServiceImpl extends ServiceImpl<EffortMapper, Effort> implements IEffortService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime EffortRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.EffortRuntime effortRuntime;
 
 
     protected int batchSize = 500;

@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, ProductModule> implements IProductModuleService {
 
     @Autowired
-    cn.ibizlab.pms.core.ibiz.runtime ProductModuleRuntime;
+    cn.ibizlab.pms.core.ibiz.runtime.ProductModuleRuntime productmoduleRuntime;
 
 
     protected cn.ibizlab.pms.core.ibiz.service.IProductModuleService productmoduleService = this;

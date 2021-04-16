@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements ITodoService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime TodoRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.TodoRuntime todoRuntime;
 
 
     protected int batchSize = 500;

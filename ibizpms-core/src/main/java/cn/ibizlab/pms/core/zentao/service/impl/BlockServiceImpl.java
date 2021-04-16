@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class BlockServiceImpl extends ServiceImpl<BlockMapper, Block> implements IBlockService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime BlockRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.BlockRuntime blockRuntime;
 
 
     protected int batchSize = 500;

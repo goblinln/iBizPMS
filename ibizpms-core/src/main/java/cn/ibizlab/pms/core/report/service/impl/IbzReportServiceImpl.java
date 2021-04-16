@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbzReportServiceImpl extends ServiceImpl<IbzReportMapper, IbzReport> implements IIbzReportService {
 
     @Autowired
-    cn.ibizlab.pms.core.report.runtime IbzReportRuntime;
+    cn.ibizlab.pms.core.report.runtime.IbzReportRuntime ibzreportRuntime;
 
 
     protected int batchSize = 500;

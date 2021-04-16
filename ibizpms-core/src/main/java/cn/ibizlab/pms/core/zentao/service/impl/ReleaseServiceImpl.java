@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> implements IReleaseService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime ReleaseRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.ReleaseRuntime releaseRuntime;
 
     @Autowired
     @Lazy

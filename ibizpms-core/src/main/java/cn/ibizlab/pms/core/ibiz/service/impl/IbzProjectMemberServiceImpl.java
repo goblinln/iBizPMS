@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbzProjectMemberServiceImpl extends ServiceImpl<IbzProjectMemberMapper, IbzProjectMember> implements IIbzProjectMemberService {
 
     @Autowired
-    cn.ibizlab.pms.core.ibiz.runtime IbzProjectMemberRuntime;
+    cn.ibizlab.pms.core.ibiz.runtime.IbzProjectMemberRuntime ibzprojectmemberRuntime;
 
 
     protected int batchSize = 500;

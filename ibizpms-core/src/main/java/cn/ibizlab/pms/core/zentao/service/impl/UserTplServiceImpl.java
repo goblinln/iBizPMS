@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class UserTplServiceImpl extends ServiceImpl<UserTplMapper, UserTpl> implements IUserTplService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime UserTplRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.UserTplRuntime usertplRuntime;
 
 
     protected int batchSize = 500;

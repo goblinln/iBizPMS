@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class LangServiceImpl extends ServiceImpl<LangMapper, Lang> implements ILangService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime LangRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.LangRuntime langRuntime;
 
 
     protected int batchSize = 500;

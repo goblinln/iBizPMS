@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbzFavoritesServiceImpl extends ServiceImpl<IbzFavoritesMapper, IbzFavorites> implements IIbzFavoritesService {
 
     @Autowired
-    cn.ibizlab.pms.core.ibiz.runtime IbzFavoritesRuntime;
+    cn.ibizlab.pms.core.ibiz.runtime.IbzFavoritesRuntime ibzfavoritesRuntime;
 
 
     protected int batchSize = 500;

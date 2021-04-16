@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class UserGroupServiceImpl extends ServiceImpl<UserGroupMapper, UserGroup> implements IUserGroupService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime UserGroupRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.UserGroupRuntime usergroupRuntime;
 
 
     protected int batchSize = 500;

@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestReport> implements ITestReportService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime TestReportRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.TestReportRuntime testreportRuntime;
 
     @Autowired
     @Lazy

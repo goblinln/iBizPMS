@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class ProductLifeServiceImpl extends ServiceImpl<ProductLifeMapper, ProductLife> implements IProductLifeService {
 
     @Autowired
-    cn.ibizlab.pms.core.ibiz.runtime ProductLifeRuntime;
+    cn.ibizlab.pms.core.ibiz.runtime.ProductLifeRuntime productlifeRuntime;
 
 
     protected int batchSize = 500;

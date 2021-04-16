@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class ImQueueServiceImpl extends ServiceImpl<ImQueueMapper, ImQueue> implements IImQueueService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime ImQueueRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.ImQueueRuntime imqueueRuntime;
 
 
     protected int batchSize = 500;

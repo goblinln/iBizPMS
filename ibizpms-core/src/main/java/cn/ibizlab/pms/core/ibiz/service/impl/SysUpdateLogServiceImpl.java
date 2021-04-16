@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class SysUpdateLogServiceImpl extends ServiceImpl<SysUpdateLogMapper, SysUpdateLog> implements ISysUpdateLogService {
 
     @Autowired
-    cn.ibizlab.pms.core.ibiz.runtime SysUpdateLogRuntime;
+    cn.ibizlab.pms.core.ibiz.runtime.SysUpdateLogRuntime sysupdatelogRuntime;
 
     @Autowired
     @Lazy

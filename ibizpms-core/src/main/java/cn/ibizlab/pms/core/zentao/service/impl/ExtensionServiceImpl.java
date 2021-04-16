@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class ExtensionServiceImpl extends ServiceImpl<ExtensionMapper, Extension> implements IExtensionService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime ExtensionRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.ExtensionRuntime extensionRuntime;
 
 
     protected int batchSize = 500;

@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper, IbzPlanTemplet> implements IIbzPlanTempletService {
 
     @Autowired
-    cn.ibizlab.pms.core.ibizpro.runtime IbzPlanTempletRuntime;
+    cn.ibizlab.pms.core.ibizpro.runtime.IbzPlanTempletRuntime ibzplantempletRuntime;
 
     @Autowired
     @Lazy

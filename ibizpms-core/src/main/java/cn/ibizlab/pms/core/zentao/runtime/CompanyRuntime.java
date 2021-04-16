@@ -46,10 +46,10 @@ public class CompanyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
 
     @Override
     protected IEntityBase getSimpleEntity(Object o) {
-        if (o instanceof net.ibizsys.runtime.util.IEntity) {
-            return o;
+        if (o instanceof net.ibizsys.runtime.util.IEntityBase) {
+            return (IEntityBase) o;
         } else {
-            return (IEntityBase) companyService.sysGet((Long) o);
+            return companyService.sysGet((Long) o);
         }
     }
 
@@ -111,14 +111,6 @@ public class CompanyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     public List<Company> select(ISearchContextBase iSearchContextBase) {
         //list
         return null;
-    }
-
-    @Override
-    protected void fillEntityFullInfo(IEntityBase entityBase, String strActionName, IPSDEAction iPSDEAction, IPSDER1N iPSDER1N, IPSDataEntity iPSDataEntity, ProceedingJoinPoint joinPoint) throws Throwable {
-        Object objPickupValue = this.getFieldValue(entityBase, iPSDER1N.getPSPickupDEField());
-        if (ObjectUtils.isEmpty(objPickupValue) || NumberUtils.toLong(String.valueOf(objPickupValue), 0L) == 0L)
-            return;
-        super.fillEntityFullInfo(entityBase, strActionName, iPSDEAction, iPSDER1N, iPSDataEntity, joinPoint);
     }
 
     @Override

@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class RepoBranchServiceImpl extends ServiceImpl<RepoBranchMapper, RepoBranch> implements IRepoBranchService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime RepoBranchRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.RepoBranchRuntime repobranchRuntime;
 
 
     protected int batchSize = 500;

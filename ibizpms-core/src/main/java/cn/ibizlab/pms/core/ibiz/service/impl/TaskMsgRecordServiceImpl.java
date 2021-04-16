@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class TaskMsgRecordServiceImpl extends ServiceImpl<TaskMsgRecordMapper, TaskMsgRecord> implements ITaskMsgRecordService {
 
     @Autowired
-    cn.ibizlab.pms.core.ibiz.runtime TaskMsgRecordRuntime;
+    cn.ibizlab.pms.core.ibiz.runtime.TaskMsgRecordRuntime taskmsgrecordRuntime;
 
 
     protected int batchSize = 500;

@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class CronServiceImpl extends ServiceImpl<CronMapper, Cron> implements ICronService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime CronRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.CronRuntime cronRuntime;
 
 
     protected int batchSize = 500;

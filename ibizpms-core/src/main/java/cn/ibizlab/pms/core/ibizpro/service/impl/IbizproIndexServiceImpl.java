@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class IbizproIndexServiceImpl extends ServiceImpl<IbizproIndexMapper, IbizproIndex> implements IIbizproIndexService {
 
     @Autowired
-    cn.ibizlab.pms.core.ibizpro.runtime IbizproIndexRuntime;
+    cn.ibizlab.pms.core.ibizpro.runtime.IbizproIndexRuntime ibizproindexRuntime;
 
 
     protected int batchSize = 500;

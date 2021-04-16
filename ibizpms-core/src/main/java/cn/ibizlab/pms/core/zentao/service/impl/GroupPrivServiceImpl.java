@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class GroupPrivServiceImpl extends ServiceImpl<GroupPrivMapper, GroupPriv> implements IGroupPrivService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime GroupPrivRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.GroupPrivRuntime groupprivRuntime;
 
 
     protected int batchSize = 500;

@@ -49,7 +49,7 @@ import org.springframework.util.StringUtils;
 public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements ICaseService {
 
     @Autowired
-    cn.ibizlab.pms.core.zentao.runtime CaseRuntime;
+    cn.ibizlab.pms.core.zentao.runtime.CaseRuntime caseRuntime;
 
     @Autowired
     @Lazy
