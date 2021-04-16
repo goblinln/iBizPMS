@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("IbzMyTerritoryServiceImpl")
 public class IbzMyTerritoryServiceImpl extends ServiceImpl<IbzMyTerritoryMapper, IbzMyTerritory> implements IIbzMyTerritoryService {
 
+    @Autowired
+    cn.ibizlab.pms.core.ibiz.runtime IbzMyTerritoryRuntime;
+
 
     protected int batchSize = 500;
 

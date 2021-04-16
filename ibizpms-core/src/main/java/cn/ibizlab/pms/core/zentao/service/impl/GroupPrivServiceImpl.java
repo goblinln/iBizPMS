@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("GroupPrivServiceImpl")
 public class GroupPrivServiceImpl extends ServiceImpl<GroupPrivMapper, GroupPriv> implements IGroupPrivService {
 
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime GroupPrivRuntime;
+
 
     protected int batchSize = 500;
 

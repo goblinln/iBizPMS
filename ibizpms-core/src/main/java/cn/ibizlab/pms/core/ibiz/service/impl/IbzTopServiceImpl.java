@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("IbzTopServiceImpl")
 public class IbzTopServiceImpl extends ServiceImpl<IbzTopMapper, IbzTop> implements IIbzTopService {
 
+    @Autowired
+    cn.ibizlab.pms.core.ibiz.runtime IbzTopRuntime;
+
 
     protected int batchSize = 500;
 

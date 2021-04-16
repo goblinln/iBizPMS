@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("IbzAgentServiceImpl")
 public class IbzAgentServiceImpl extends ServiceImpl<IbzAgentMapper, IbzAgent> implements IIbzAgentService {
 
+    @Autowired
+    cn.ibizlab.pms.core.ibiz.runtime IbzAgentRuntime;
+
 
     protected int batchSize = 500;
 

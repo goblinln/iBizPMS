@@ -49,6 +49,9 @@ import org.springframework.util.StringUtils;
 public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> implements IActionService {
 
     @Autowired
+    cn.ibizlab.pms.core.zentao.runtime ActionRuntime;
+
+    @Autowired
     @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IHistoryService historyService;
     @Autowired

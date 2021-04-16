@@ -18,6 +18,8 @@ import net.ibizsys.runtime.IDynaInstRuntime;
 import cn.ibizlab.pms.util.domain.EntityBase;
 import cn.ibizlab.pms.util.errors.BadRequestAlertException;
 import cn.ibizlab.pms.util.helper.DELogicExecutor;
+import net.ibizsys.runtime.util.IEntityBase;
+import net.ibizsys.runtime.util.ISearchContextBase;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -43,11 +45,11 @@ public class IbizproProductDailyRuntime extends cn.ibizlab.pms.core.runtime.Syst
     IIbizproProductDailyService ibizproproductdailyService;
 
     @Override
-    protected Object getSimpleEntity(Object o) {
+    protected IEntityBase getSimpleEntity(Object o) {
         if (o instanceof net.ibizsys.runtime.util.IEntity) {
             return o;
         } else {
-            return ibizproproductdailyService.sysGet((Long) o);
+            return (IEntityBase) ibizproproductdailyService.sysGet((Long) o);
         }
     }
 
@@ -62,7 +64,7 @@ public class IbizproProductDailyRuntime extends cn.ibizlab.pms.core.runtime.Syst
     }
 
     @Override
-    public Object createEntity() {
+    public IEntityBase createEntity() {
         return new IbizproProductDaily();
     }
 
@@ -77,46 +79,46 @@ public class IbizproProductDailyRuntime extends cn.ibizlab.pms.core.runtime.Syst
     }
 
     @Override
-    public void setSearchCondition(Object searchContext, IPSDEField iPSDEField, String strCondition, Object objValue) {
+    public void setSearchCondition(ISearchContextBase iSearchContextBase, IPSDEField iPSDEField, String strCondition, Object objValue) {
         //设置查询条件 net.ibizsys.runtime.util.Conditions
     }
 
     @Override
-    public boolean existsData(Object searchContext) {
+    public boolean existsData(ISearchContextBase iSearchContextBase) {
         //判断数据是否存在
         return false;
     }
 
     @Override
-    public Page<?> searchDataSet(IPSDEDataSet iPSDEDataSet, Object searchContext) {
+    public Page<IbizproProductDaily> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         //查询数据集合
         return null;
     }
 
     @Override
-    public Page<?> searchDataQuery(IPSDEDataQuery iPSDataQuery, Object searchContext) {
+    public Page<IbizproProductDaily> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
 
     @Override
-    public Object selectOne(Object searchContext) {
+    public IbizproProductDaily selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
         return null;
     }
 
     @Override
-    public List<?> select(Object searchContext) {
+    public List<IbizproProductDaily> select(ISearchContextBase iSearchContextBase) {
         //list
         return null;
     }
 
     @Override
-    protected void fillEntityFullInfo(Object arg0, String strActionName, IPSDEAction iPSDEAction, IPSDER1N iPSDER1N, IPSDataEntity iPSDataEntity, ProceedingJoinPoint joinPoint) throws Throwable {
-        Object objPickupValue = this.getFieldValue(arg0, iPSDER1N.getPSPickupDEField());
+    protected void fillEntityFullInfo(IEntityBase entityBase, String strActionName, IPSDEAction iPSDEAction, IPSDER1N iPSDER1N, IPSDataEntity iPSDataEntity, ProceedingJoinPoint joinPoint) throws Throwable {
+        Object objPickupValue = this.getFieldValue(entityBase, iPSDER1N.getPSPickupDEField());
         if (ObjectUtils.isEmpty(objPickupValue) || NumberUtils.toLong(String.valueOf(objPickupValue), 0L) == 0L)
             return;
-        super.fillEntityFullInfo(arg0, strActionName, iPSDEAction, iPSDER1N, iPSDataEntity, joinPoint);
+        super.fillEntityFullInfo(entityBase, strActionName, iPSDEAction, iPSDER1N, iPSDataEntity, joinPoint);
     }
 
     @Override

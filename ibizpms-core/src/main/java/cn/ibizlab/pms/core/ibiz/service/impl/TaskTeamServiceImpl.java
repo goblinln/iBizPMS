@@ -49,6 +49,9 @@ import org.springframework.util.StringUtils;
 public class TaskTeamServiceImpl extends ServiceImpl<TaskTeamMapper, TaskTeam> implements ITaskTeamService {
 
     @Autowired
+    cn.ibizlab.pms.core.ibiz.runtime TaskTeamRuntime;
+
+    @Autowired
     @Lazy
     protected cn.ibizlab.pms.core.zentao.service.ITaskService taskService;
 

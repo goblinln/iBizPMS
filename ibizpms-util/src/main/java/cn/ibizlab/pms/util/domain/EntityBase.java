@@ -15,7 +15,7 @@ import java.lang.reflect.Field;
 import org.springframework.util.StringUtils;
 import java.util.*;
 
-public class EntityBase implements Serializable,net.ibizsys.runtime.util.IEntity {
+public class EntityBase implements Serializable,net.ibizsys.runtime.util.IEntity, net.ibizsys.runtime.util.IEntityBase {
 
     @JsonIgnore
     @JSONField(serialize = false)

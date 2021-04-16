@@ -49,6 +49,9 @@ import org.springframework.util.StringUtils;
 public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestResult> implements ITestResultService {
 
     @Autowired
+    cn.ibizlab.pms.core.zentao.runtime TestResultRuntime;
+
+    @Autowired
     @Lazy
     protected cn.ibizlab.pms.core.zentao.service.ICaseService caseService;
     @Autowired

@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("ImChatServiceImpl")
 public class ImChatServiceImpl extends ServiceImpl<ImChatMapper, ImChat> implements IImChatService {
 
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime ImChatRuntime;
+
 
     protected int batchSize = 500;
 

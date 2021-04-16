@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("TestModuleServiceImpl")
 public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestModule> implements ITestModuleService {
 
+    @Autowired
+    cn.ibizlab.pms.core.ibiz.runtime TestModuleRuntime;
+
 
     protected cn.ibizlab.pms.core.ibiz.service.ITestModuleService testmoduleService = this;
     @Autowired

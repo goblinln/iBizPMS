@@ -49,6 +49,9 @@ import org.springframework.util.StringUtils;
 public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper, IbzPlanTemplet> implements IIbzPlanTempletService {
 
     @Autowired
+    cn.ibizlab.pms.core.ibizpro.runtime IbzPlanTempletRuntime;
+
+    @Autowired
     @Lazy
     protected cn.ibizlab.pms.core.ibizpro.service.IIbzPlanTempletDetailService ibzplantempletdetailService;
 

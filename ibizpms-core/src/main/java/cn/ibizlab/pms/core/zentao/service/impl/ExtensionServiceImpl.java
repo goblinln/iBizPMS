@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("ExtensionServiceImpl")
 public class ExtensionServiceImpl extends ServiceImpl<ExtensionMapper, Extension> implements IExtensionService {
 
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime ExtensionRuntime;
+
 
     protected int batchSize = 500;
 

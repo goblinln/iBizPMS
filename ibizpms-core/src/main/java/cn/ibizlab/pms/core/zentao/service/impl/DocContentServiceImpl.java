@@ -49,6 +49,9 @@ import org.springframework.util.StringUtils;
 public class DocContentServiceImpl extends ServiceImpl<DocContentMapper, DocContent> implements IDocContentService {
 
     @Autowired
+    cn.ibizlab.pms.core.zentao.runtime DocContentRuntime;
+
+    @Autowired
     @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IDocService docService;
 

@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("JenkinsServiceImpl")
 public class JenkinsServiceImpl extends ServiceImpl<JenkinsMapper, Jenkins> implements IJenkinsService {
 
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime JenkinsRuntime;
+
 
     protected int batchSize = 500;
 

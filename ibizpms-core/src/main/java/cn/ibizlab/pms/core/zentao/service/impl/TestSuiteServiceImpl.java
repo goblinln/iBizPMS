@@ -49,6 +49,9 @@ import org.springframework.util.StringUtils;
 public class TestSuiteServiceImpl extends ServiceImpl<TestSuiteMapper, TestSuite> implements ITestSuiteService {
 
     @Autowired
+    cn.ibizlab.pms.core.zentao.runtime TestSuiteRuntime;
+
+    @Autowired
     @Lazy
     protected cn.ibizlab.pms.core.zentao.service.ICaseService caseService;
     @Autowired

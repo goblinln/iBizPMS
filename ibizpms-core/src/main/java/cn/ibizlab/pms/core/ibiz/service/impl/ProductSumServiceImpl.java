@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("ProductSumServiceImpl")
 public class ProductSumServiceImpl extends ServiceImpl<ProductSumMapper, ProductSum> implements IProductSumService {
 
+    @Autowired
+    cn.ibizlab.pms.core.ibiz.runtime ProductSumRuntime;
+
 
     protected int batchSize = 500;
 

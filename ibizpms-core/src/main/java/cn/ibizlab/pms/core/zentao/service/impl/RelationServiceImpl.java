@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("RelationServiceImpl")
 public class RelationServiceImpl extends ServiceImpl<RelationMapper, Relation> implements IRelationService {
 
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime RelationRuntime;
+
 
     protected int batchSize = 500;
 

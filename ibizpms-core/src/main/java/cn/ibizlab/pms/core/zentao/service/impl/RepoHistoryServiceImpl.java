@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("RepoHistoryServiceImpl")
 public class RepoHistoryServiceImpl extends ServiceImpl<RepoHistoryMapper, RepoHistory> implements IRepoHistoryService {
 
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime RepoHistoryRuntime;
+
 
     protected int batchSize = 500;
 

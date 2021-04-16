@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("IbzLibCaseStepServiceImpl")
 public class IbzLibCaseStepServiceImpl extends ServiceImpl<IbzLibCaseStepMapper, IbzLibCaseStep> implements IIbzLibCaseStepService {
 
+    @Autowired
+    cn.ibizlab.pms.core.ibiz.runtime IbzLibCaseStepRuntime;
+
 
     protected int batchSize = 500;
 

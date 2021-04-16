@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("UserYearWorkStatsServiceImpl")
 public class UserYearWorkStatsServiceImpl extends ServiceImpl<UserYearWorkStatsMapper, UserYearWorkStats> implements IUserYearWorkStatsService {
 
+    @Autowired
+    cn.ibizlab.pms.core.ibiz.runtime UserYearWorkStatsRuntime;
+
 
     protected int batchSize = 500;
 

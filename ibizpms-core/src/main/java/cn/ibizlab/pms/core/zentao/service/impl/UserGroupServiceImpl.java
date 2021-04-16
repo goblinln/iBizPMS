@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("UserGroupServiceImpl")
 public class UserGroupServiceImpl extends ServiceImpl<UserGroupMapper, UserGroup> implements IUserGroupService {
 
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime UserGroupRuntime;
+
 
     protected int batchSize = 500;
 

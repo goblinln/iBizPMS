@@ -49,6 +49,9 @@ import org.springframework.util.StringUtils;
 public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements IBuildService {
 
     @Autowired
+    cn.ibizlab.pms.core.zentao.runtime BuildRuntime;
+
+    @Autowired
     @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IReleaseService releaseService;
     @Autowired

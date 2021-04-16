@@ -49,6 +49,9 @@ import org.springframework.util.StringUtils;
 public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, ProductPlan> implements IProductPlanService {
 
     @Autowired
+    cn.ibizlab.pms.core.zentao.runtime ProductPlanRuntime;
+
+    @Autowired
     @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IBugService bugService;
     @Autowired

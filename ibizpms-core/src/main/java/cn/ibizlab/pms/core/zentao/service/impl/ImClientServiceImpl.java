@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("ImClientServiceImpl")
 public class ImClientServiceImpl extends ServiceImpl<ImClientMapper, ImClient> implements IImClientService {
 
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime ImClientRuntime;
+
 
     protected int batchSize = 500;
 

@@ -49,6 +49,9 @@ import org.springframework.util.StringUtils;
 public class IbizproProjectDailyServiceImpl extends ServiceImpl<IbizproProjectDailyMapper, IbizproProjectDaily> implements IIbizproProjectDailyService {
 
     @Autowired
+    cn.ibizlab.pms.core.ibizpro.runtime IbizproProjectDailyRuntime;
+
+    @Autowired
     @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IProjectService projectService;
 

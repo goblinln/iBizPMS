@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("WebHookServiceImpl")
 public class WebHookServiceImpl extends ServiceImpl<WebHookMapper, WebHook> implements IWebHookService {
 
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime WebHookRuntime;
+
 
     protected int batchSize = 500;
 

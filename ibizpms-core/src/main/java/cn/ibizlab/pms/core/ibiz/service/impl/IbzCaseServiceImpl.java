@@ -49,6 +49,9 @@ import org.springframework.util.StringUtils;
 public class IbzCaseServiceImpl extends ServiceImpl<IbzCaseMapper, IbzCase> implements IIbzCaseService {
 
     @Autowired
+    cn.ibizlab.pms.core.ibiz.runtime IbzCaseRuntime;
+
+    @Autowired
     @Lazy
     protected cn.ibizlab.pms.core.ibiz.service.IIbzLibCaseStepsService ibzlibcasestepsService;
     @Autowired

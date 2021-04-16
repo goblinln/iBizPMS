@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("CaseStepServiceImpl")
 public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> implements ICaseStepService {
 
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime CaseStepRuntime;
+
 
     protected cn.ibizlab.pms.core.zentao.service.ICaseStepService casestepService = this;
     @Autowired

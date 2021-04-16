@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("ImQueueServiceImpl")
 public class ImQueueServiceImpl extends ServiceImpl<ImQueueMapper, ImQueue> implements IImQueueService {
 
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime ImQueueRuntime;
+
 
     protected int batchSize = 500;
 

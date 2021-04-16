@@ -49,6 +49,9 @@ import org.springframework.util.StringUtils;
 public class CaseStatsServiceImpl extends ServiceImpl<CaseStatsMapper, CaseStats> implements ICaseStatsService {
 
     @Autowired
+    cn.ibizlab.pms.core.ibiz.runtime CaseStatsRuntime;
+
+    @Autowired
     @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IModuleService moduleService;
     @Autowired

@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("EffortServiceImpl")
 public class EffortServiceImpl extends ServiceImpl<EffortMapper, Effort> implements IEffortService {
 
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime EffortRuntime;
+
 
     protected int batchSize = 500;
 

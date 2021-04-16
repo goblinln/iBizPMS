@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("UserContactServiceImpl")
 public class UserContactServiceImpl extends ServiceImpl<UserContactMapper, UserContact> implements IUserContactService {
 
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime UserContactRuntime;
+
 
     protected int batchSize = 500;
 

@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("DynaDashboardServiceImpl")
 public class DynaDashboardServiceImpl extends ServiceImpl<DynaDashboardMapper, DynaDashboard> implements IDynaDashboardService {
 
+    @Autowired
+    cn.ibizlab.pms.core.ibiz.runtime DynaDashboardRuntime;
+
 
     protected int batchSize = 500;
 

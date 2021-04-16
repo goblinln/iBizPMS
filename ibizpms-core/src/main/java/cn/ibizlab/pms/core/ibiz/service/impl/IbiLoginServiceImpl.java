@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("IbiLoginServiceImpl")
 public class IbiLoginServiceImpl extends ServiceImpl<IbiLoginMapper, IbiLogin> implements IIbiLoginService {
 
+    @Autowired
+    cn.ibizlab.pms.core.ibiz.runtime IbiLoginRuntime;
+
 
     protected int batchSize = 500;
 

@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("IbzReportServiceImpl")
 public class IbzReportServiceImpl extends ServiceImpl<IbzReportMapper, IbzReport> implements IIbzReportService {
 
+    @Autowired
+    cn.ibizlab.pms.core.report.runtime IbzReportRuntime;
+
 
     protected int batchSize = 500;
 

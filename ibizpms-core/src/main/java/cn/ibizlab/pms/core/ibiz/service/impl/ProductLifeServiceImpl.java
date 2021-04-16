@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("ProductLifeServiceImpl")
 public class ProductLifeServiceImpl extends ServiceImpl<ProductLifeMapper, ProductLife> implements IProductLifeService {
 
+    @Autowired
+    cn.ibizlab.pms.core.ibiz.runtime ProductLifeRuntime;
+
 
     protected int batchSize = 500;
 

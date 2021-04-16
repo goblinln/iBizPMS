@@ -49,6 +49,9 @@ import org.springframework.util.StringUtils;
 public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StoryStage> implements IStoryStageService {
 
     @Autowired
+    cn.ibizlab.pms.core.zentao.runtime StoryStageRuntime;
+
+    @Autowired
     @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IBranchService branchService;
     @Autowired

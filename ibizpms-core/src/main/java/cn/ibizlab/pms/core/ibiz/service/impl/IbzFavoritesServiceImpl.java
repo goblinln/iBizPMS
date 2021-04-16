@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("IbzFavoritesServiceImpl")
 public class IbzFavoritesServiceImpl extends ServiceImpl<IbzFavoritesMapper, IbzFavorites> implements IIbzFavoritesService {
 
+    @Autowired
+    cn.ibizlab.pms.core.ibiz.runtime IbzFavoritesRuntime;
+
 
     protected int batchSize = 500;
 

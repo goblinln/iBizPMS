@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("RepoBranchServiceImpl")
 public class RepoBranchServiceImpl extends ServiceImpl<RepoBranchMapper, RepoBranch> implements IRepoBranchService {
 
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime RepoBranchRuntime;
+
 
     protected int batchSize = 500;
 

@@ -49,6 +49,9 @@ import org.springframework.util.StringUtils;
 public class BugStatsServiceImpl extends ServiceImpl<BugStatsMapper, BugStats> implements IBugStatsService {
 
     @Autowired
+    cn.ibizlab.pms.core.ibiz.runtime BugStatsRuntime;
+
+    @Autowired
     @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IProductService productService;
     @Autowired

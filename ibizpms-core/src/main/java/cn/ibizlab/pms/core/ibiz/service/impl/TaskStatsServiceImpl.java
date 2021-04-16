@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("TaskStatsServiceImpl")
 public class TaskStatsServiceImpl extends ServiceImpl<TaskStatsMapper, TaskStats> implements ITaskStatsService {
 
+    @Autowired
+    cn.ibizlab.pms.core.ibiz.runtime TaskStatsRuntime;
+
 
     protected int batchSize = 500;
 

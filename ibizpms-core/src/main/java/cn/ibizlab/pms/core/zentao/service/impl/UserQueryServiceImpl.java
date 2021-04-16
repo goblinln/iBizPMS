@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("UserQueryServiceImpl")
 public class UserQueryServiceImpl extends ServiceImpl<UserQueryMapper, UserQuery> implements IUserQueryService {
 
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime UserQueryRuntime;
+
 
     protected int batchSize = 500;
 

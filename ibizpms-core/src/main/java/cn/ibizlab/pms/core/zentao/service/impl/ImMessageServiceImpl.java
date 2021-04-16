@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("ImMessageServiceImpl")
 public class ImMessageServiceImpl extends ServiceImpl<ImMessageMapper, ImMessage> implements IImMessageService {
 
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime ImMessageRuntime;
+
 
     protected int batchSize = 500;
 

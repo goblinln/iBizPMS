@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("TodoServiceImpl")
 public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements ITodoService {
 
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime TodoRuntime;
+
 
     protected int batchSize = 500;
 

@@ -49,6 +49,9 @@ import org.springframework.util.StringUtils;
 public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec> implements IStorySpecService {
 
     @Autowired
+    cn.ibizlab.pms.core.zentao.runtime StorySpecRuntime;
+
+    @Autowired
     @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IStoryService storyService;
 

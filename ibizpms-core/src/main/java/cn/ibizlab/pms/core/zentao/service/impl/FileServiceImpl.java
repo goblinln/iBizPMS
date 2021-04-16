@@ -49,6 +49,9 @@ import org.springframework.util.StringUtils;
 public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IFileService {
 
     @Autowired
+    cn.ibizlab.pms.core.zentao.runtime FileRuntime;
+
+    @Autowired
     @Lazy
     protected cn.ibizlab.pms.core.ibizpro.service.IIBZProSysTplService ibzprosystplService;
 

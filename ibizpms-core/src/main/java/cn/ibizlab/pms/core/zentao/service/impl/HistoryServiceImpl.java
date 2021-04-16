@@ -49,6 +49,9 @@ import org.springframework.util.StringUtils;
 public class HistoryServiceImpl extends ServiceImpl<HistoryMapper, History> implements IHistoryService {
 
     @Autowired
+    cn.ibizlab.pms.core.zentao.runtime HistoryRuntime;
+
+    @Autowired
     @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IActionService actionService;
 

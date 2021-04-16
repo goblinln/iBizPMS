@@ -49,6 +49,9 @@ import org.springframework.util.StringUtils;
 public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestReport> implements ITestReportService {
 
     @Autowired
+    cn.ibizlab.pms.core.zentao.runtime TestReportRuntime;
+
+    @Autowired
     @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IProductService productService;
     @Autowired

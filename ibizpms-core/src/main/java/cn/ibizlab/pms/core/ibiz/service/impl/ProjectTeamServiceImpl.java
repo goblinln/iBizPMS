@@ -49,6 +49,9 @@ import org.springframework.util.StringUtils;
 public class ProjectTeamServiceImpl extends ServiceImpl<ProjectTeamMapper, ProjectTeam> implements IProjectTeamService {
 
     @Autowired
+    cn.ibizlab.pms.core.ibiz.runtime ProjectTeamRuntime;
+
+    @Autowired
     @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IProjectService projectService;
 

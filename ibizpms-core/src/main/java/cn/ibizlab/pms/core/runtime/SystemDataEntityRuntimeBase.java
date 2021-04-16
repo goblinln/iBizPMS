@@ -25,6 +25,7 @@ import net.ibizsys.runtime.dataentity.IDataEntityRuntime;
 import net.ibizsys.runtime.security.DataRanges;
 import net.ibizsys.runtime.security.IUserContext;
 import net.ibizsys.runtime.util.IEntity;
+import net.ibizsys.runtime.util.IEntityBase;
 import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -84,32 +85,32 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     }
 
     @Override
-    public Object getFieldValue(Object o, IPSDEField ipsdeField) {
-        IEntity entity = (IEntity) o;
+    public Object getFieldValue(IEntityBase entityBase, IPSDEField ipsdeField) {
+        IEntity entity = (IEntity) entityBase;
         if (entity == null)
             return null;
         return entity.get(ipsdeField.getCodeName());
     }
 
     @Override
-    public void setFieldValue(Object o, IPSDEField ipsdeField, Object o1) {
-        IEntity entity = (IEntity) o;
+    public void setFieldValue(IEntityBase entityBase, IPSDEField ipsdeField, Object o1) {
+        IEntity entity = (IEntity) entityBase;
         if (entity == null)
             return;
         entity.set(ipsdeField.getCodeName(), o1);
     }
 
     @Override
-    public boolean containsFieldValue(Object o, IPSDEField ipsdeField) {
-        IEntity entity = (IEntity) o;
+    public boolean containsFieldValue(IEntityBase entityBase, IPSDEField ipsdeField) {
+        IEntity entity = (IEntity) entityBase;
         if (entity == null)
             return false;
         return entity.contains(ipsdeField.getCodeName());
     }
 
     @Override
-    public void resetFieldValue(Object o, IPSDEField ipsdeField) {
-        IEntity entity = (IEntity) o;
+    public void resetFieldValue(IEntityBase entityBase, IPSDEField ipsdeField) {
+        IEntity entity = (IEntity) entityBase;
         if (entity == null)
             return;
         entity.reset(ipsdeField.getCodeName());
@@ -435,7 +436,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         return orgConditions;
     }
 
-    protected boolean isRtmodel() {
+    public boolean isRtmodel() {
         return rtmodel;
     }
 

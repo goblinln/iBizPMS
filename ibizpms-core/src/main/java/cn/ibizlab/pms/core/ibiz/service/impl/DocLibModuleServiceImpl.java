@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("DocLibModuleServiceImpl")
 public class DocLibModuleServiceImpl extends ServiceImpl<DocLibModuleMapper, DocLibModule> implements IDocLibModuleService {
 
+    @Autowired
+    cn.ibizlab.pms.core.ibiz.runtime DocLibModuleRuntime;
+
 
     protected cn.ibizlab.pms.core.ibiz.service.IDocLibModuleService doclibmoduleService = this;
     @Autowired

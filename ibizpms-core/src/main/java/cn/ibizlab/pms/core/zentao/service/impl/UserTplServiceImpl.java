@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("UserTplServiceImpl")
 public class UserTplServiceImpl extends ServiceImpl<UserTplMapper, UserTpl> implements IUserTplService {
 
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime UserTplRuntime;
+
 
     protected int batchSize = 500;
 

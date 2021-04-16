@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("GroupServiceImpl")
 public class GroupServiceImpl extends ServiceImpl<GroupMapper, Group> implements IGroupService {
 
+    @Autowired
+    cn.ibizlab.pms.core.zentao.runtime GroupRuntime;
+
 
     protected int batchSize = 500;
 

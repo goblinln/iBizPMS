@@ -48,6 +48,9 @@ import org.springframework.util.StringUtils;
 @Service("IbzProjectMemberServiceImpl")
 public class IbzProjectMemberServiceImpl extends ServiceImpl<IbzProjectMemberMapper, IbzProjectMember> implements IIbzProjectMemberService {
 
+    @Autowired
+    cn.ibizlab.pms.core.ibiz.runtime IbzProjectMemberRuntime;
+
 
     protected int batchSize = 500;
 
