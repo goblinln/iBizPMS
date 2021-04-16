@@ -7675,7 +7675,7 @@
   } ],
   "getAllPSDEUserRoles" : [ {
     "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain_CO.json"
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Read.json"
