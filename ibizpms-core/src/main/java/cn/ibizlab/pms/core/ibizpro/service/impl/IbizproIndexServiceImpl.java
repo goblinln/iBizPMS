@@ -212,8 +212,8 @@ public class IbizproIndexServiceImpl extends ServiceImpl<IbizproIndexMapper, Ibi
      */
     @Override
     public Page<IbizproIndex> searchDefault(IbizproIndexSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbizproIndex> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<IbizproIndex>(pages.getRecords(), context.getPageable(), pages.getTotal());
+//        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbizproIndex> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<IbizproIndex>(new ArrayList<>(), context.getPageable(), 10);
     }
 
     /**
