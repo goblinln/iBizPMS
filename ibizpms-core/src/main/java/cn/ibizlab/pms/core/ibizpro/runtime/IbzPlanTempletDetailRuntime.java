@@ -128,7 +128,7 @@ public class IbzPlanTempletDetailRuntime extends cn.ibizlab.pms.core.runtime.Sys
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IbzPlanTempletDetail){
                     IbzPlanTempletDetail arg = (IbzPlanTempletDetail) args[0] ;
-                    arg = ibzplantempletdetailService.get(arg.getIbzPlanTempletDetailId()) ;
+                    arg = ibzplantempletdetailService.get(arg.getIbzplantempletdetailid()) ;
                     return arg;
                 }else{
                     return ibzplantempletdetailService.get((String) args[0]);
@@ -151,7 +151,7 @@ public class IbzPlanTempletDetailRuntime extends cn.ibizlab.pms.core.runtime.Sys
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IbzPlanTempletDetail){
                     IbzPlanTempletDetail arg = (IbzPlanTempletDetail) args[0] ;
-                    arg = ibzplantempletdetailService.get(arg.getIbzPlanTempletDetailId()) ;
+                    arg = ibzplantempletdetailService.get(arg.getIbzplantempletdetailid()) ;
                     return arg;
                 }else{
                     return ibzplantempletdetailService.get((String) args[0]);

@@ -128,7 +128,7 @@ public class IbzTopRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IbzTop){
                     IbzTop arg = (IbzTop) args[0] ;
-                    arg = ibztopService.get(arg.getIbzTopId()) ;
+                    arg = ibztopService.get(arg.getIbztopid()) ;
                     return arg;
                 }else{
                     return ibztopService.get((String) args[0]);
@@ -151,7 +151,7 @@ public class IbzTopRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IbzTop){
                     IbzTop arg = (IbzTop) args[0] ;
-                    arg = ibztopService.get(arg.getIbzTopId()) ;
+                    arg = ibztopService.get(arg.getIbztopid()) ;
                     return arg;
                 }else{
                     return ibztopService.get((String) args[0]);

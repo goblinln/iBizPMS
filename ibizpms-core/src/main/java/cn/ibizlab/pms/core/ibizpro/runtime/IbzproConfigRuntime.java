@@ -128,7 +128,7 @@ public class IbzproConfigRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IbzproConfig){
                     IbzproConfig arg = (IbzproConfig) args[0] ;
-                    arg = ibzproconfigService.get(arg.getIbzproConfigId()) ;
+                    arg = ibzproconfigService.get(arg.getIbzproconfigid()) ;
                     return arg;
                 }else{
                     return ibzproconfigService.get((String) args[0]);
@@ -154,7 +154,7 @@ public class IbzproConfigRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IbzproConfig){
                     IbzproConfig arg = (IbzproConfig) args[0] ;
-                    arg = ibzproconfigService.get(arg.getIbzproConfigId()) ;
+                    arg = ibzproconfigService.get(arg.getIbzproconfigid()) ;
                     return arg;
                 }else{
                     return ibzproconfigService.get((String) args[0]);

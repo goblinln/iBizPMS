@@ -128,7 +128,7 @@ public class IbzFavoritesRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IbzFavorites){
                     IbzFavorites arg = (IbzFavorites) args[0] ;
-                    arg = ibzfavoritesService.get(arg.getIbzFavoritesId()) ;
+                    arg = ibzfavoritesService.get(arg.getIbzfavoritesid()) ;
                     return arg;
                 }else{
                     return ibzfavoritesService.get((String) args[0]);
@@ -151,7 +151,7 @@ public class IbzFavoritesRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IbzFavorites){
                     IbzFavorites arg = (IbzFavorites) args[0] ;
-                    arg = ibzfavoritesService.get(arg.getIbzFavoritesId()) ;
+                    arg = ibzfavoritesService.get(arg.getIbzfavoritesid()) ;
                     return arg;
                 }else{
                     return ibzfavoritesService.get((String) args[0]);

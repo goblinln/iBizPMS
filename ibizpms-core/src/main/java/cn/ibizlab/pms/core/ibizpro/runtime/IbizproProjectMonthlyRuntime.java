@@ -128,7 +128,7 @@ public class IbizproProjectMonthlyRuntime extends cn.ibizlab.pms.core.runtime.Sy
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IbizproProjectMonthly){
                     IbizproProjectMonthly arg = (IbizproProjectMonthly) args[0] ;
-                    arg = ibizproprojectmonthlyService.get(arg.getIbizproProjectMonthlyId()) ;
+                    arg = ibizproprojectmonthlyService.get(arg.getIbizproprojectmonthlyid()) ;
                     return arg;
                 }else{
                     return ibizproprojectmonthlyService.get((String) args[0]);
@@ -157,7 +157,7 @@ public class IbizproProjectMonthlyRuntime extends cn.ibizlab.pms.core.runtime.Sy
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IbizproProjectMonthly){
                     IbizproProjectMonthly arg = (IbizproProjectMonthly) args[0] ;
-                    arg = ibizproprojectmonthlyService.get(arg.getIbizproProjectMonthlyId()) ;
+                    arg = ibizproprojectmonthlyService.get(arg.getIbizproprojectmonthlyid()) ;
                     return arg;
                 }else{
                     return ibizproprojectmonthlyService.get((String) args[0]);

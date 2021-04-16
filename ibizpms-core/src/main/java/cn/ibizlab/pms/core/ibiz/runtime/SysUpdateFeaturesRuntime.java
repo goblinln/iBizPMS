@@ -128,7 +128,7 @@ public class SysUpdateFeaturesRuntime extends cn.ibizlab.pms.core.runtime.System
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof SysUpdateFeatures){
                     SysUpdateFeatures arg = (SysUpdateFeatures) args[0] ;
-                    arg = sysupdatefeaturesService.get(arg.getSysUpdateFeaturesId()) ;
+                    arg = sysupdatefeaturesService.get(arg.getSysupdatefeaturesid()) ;
                     return arg;
                 }else{
                     return sysupdatefeaturesService.get((String) args[0]);
@@ -151,7 +151,7 @@ public class SysUpdateFeaturesRuntime extends cn.ibizlab.pms.core.runtime.System
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof SysUpdateFeatures){
                     SysUpdateFeatures arg = (SysUpdateFeatures) args[0] ;
-                    arg = sysupdatefeaturesService.get(arg.getSysUpdateFeaturesId()) ;
+                    arg = sysupdatefeaturesService.get(arg.getSysupdatefeaturesid()) ;
                     return arg;
                 }else{
                     return sysupdatefeaturesService.get((String) args[0]);

@@ -128,7 +128,7 @@ public class DynaDashboardRuntime extends cn.ibizlab.pms.core.runtime.SystemData
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof DynaDashboard){
                     DynaDashboard arg = (DynaDashboard) args[0] ;
-                    arg = dynadashboardService.get(arg.getDynaDashboardId()) ;
+                    arg = dynadashboardService.get(arg.getDynadashboardid()) ;
                     return arg;
                 }else{
                     return dynadashboardService.get((String) args[0]);
@@ -151,7 +151,7 @@ public class DynaDashboardRuntime extends cn.ibizlab.pms.core.runtime.SystemData
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof DynaDashboard){
                     DynaDashboard arg = (DynaDashboard) args[0] ;
-                    arg = dynadashboardService.get(arg.getDynaDashboardId()) ;
+                    arg = dynadashboardService.get(arg.getDynadashboardid()) ;
                     return arg;
                 }else{
                     return dynadashboardService.get((String) args[0]);

@@ -128,7 +128,7 @@ public class IbzReportRoleConfigRuntime extends cn.ibizlab.pms.core.runtime.Syst
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IbzReportRoleConfig){
                     IbzReportRoleConfig arg = (IbzReportRoleConfig) args[0] ;
-                    arg = ibzreportroleconfigService.get(arg.getIbzReportRoleConfigId()) ;
+                    arg = ibzreportroleconfigService.get(arg.getIbzreportroleconfigid()) ;
                     return arg;
                 }else{
                     return ibzreportroleconfigService.get((String) args[0]);
@@ -151,7 +151,7 @@ public class IbzReportRoleConfigRuntime extends cn.ibizlab.pms.core.runtime.Syst
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IbzReportRoleConfig){
                     IbzReportRoleConfig arg = (IbzReportRoleConfig) args[0] ;
-                    arg = ibzreportroleconfigService.get(arg.getIbzReportRoleConfigId()) ;
+                    arg = ibzreportroleconfigService.get(arg.getIbzreportroleconfigid()) ;
                     return arg;
                 }else{
                     return ibzreportroleconfigService.get((String) args[0]);

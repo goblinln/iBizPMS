@@ -128,7 +128,7 @@ public class IbizproProductDailyRuntime extends cn.ibizlab.pms.core.runtime.Syst
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IbizproProductDaily){
                     IbizproProductDaily arg = (IbizproProductDaily) args[0] ;
-                    arg = ibizproproductdailyService.get(arg.getIbizproProductDailyId()) ;
+                    arg = ibizproproductdailyService.get(arg.getIbizproproductdailyid()) ;
                     return arg;
                 }else{
                     return ibizproproductdailyService.get((Long) args[0]);
@@ -157,7 +157,7 @@ public class IbizproProductDailyRuntime extends cn.ibizlab.pms.core.runtime.Syst
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IbizproProductDaily){
                     IbizproProductDaily arg = (IbizproProductDaily) args[0] ;
-                    arg = ibizproproductdailyService.get(arg.getIbizproProductDailyId()) ;
+                    arg = ibizproproductdailyService.get(arg.getIbizproproductdailyid()) ;
                     return arg;
                 }else{
                     return ibizproproductdailyService.get((Long) args[0]);

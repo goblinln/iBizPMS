@@ -128,7 +128,7 @@ public class IbzMonthlyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IbzMonthly){
                     IbzMonthly arg = (IbzMonthly) args[0] ;
-                    arg = ibzmonthlyService.get(arg.getIbzMonthlyId()) ;
+                    arg = ibzmonthlyService.get(arg.getIbzmonthlyid()) ;
                     return arg;
                 }else{
                     return ibzmonthlyService.get((Long) args[0]);
@@ -169,7 +169,7 @@ public class IbzMonthlyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IbzMonthly){
                     IbzMonthly arg = (IbzMonthly) args[0] ;
-                    arg = ibzmonthlyService.get(arg.getIbzMonthlyId()) ;
+                    arg = ibzmonthlyService.get(arg.getIbzmonthlyid()) ;
                     return arg;
                 }else{
                     return ibzmonthlyService.get((Long) args[0]);

@@ -128,7 +128,7 @@ public class SysUpdateLogRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof SysUpdateLog){
                     SysUpdateLog arg = (SysUpdateLog) args[0] ;
-                    arg = sysupdatelogService.get(arg.getSysUpdateLogId()) ;
+                    arg = sysupdatelogService.get(arg.getSysupdatelogid()) ;
                     return arg;
                 }else{
                     return sysupdatelogService.get((String) args[0]);
@@ -154,7 +154,7 @@ public class SysUpdateLogRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof SysUpdateLog){
                     SysUpdateLog arg = (SysUpdateLog) args[0] ;
-                    arg = sysupdatelogService.get(arg.getSysUpdateLogId()) ;
+                    arg = sysupdatelogService.get(arg.getSysupdatelogid()) ;
                     return arg;
                 }else{
                     return sysupdatelogService.get((String) args[0]);

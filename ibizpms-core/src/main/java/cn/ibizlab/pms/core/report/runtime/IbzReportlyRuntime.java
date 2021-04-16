@@ -128,7 +128,7 @@ public class IbzReportlyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IbzReportly){
                     IbzReportly arg = (IbzReportly) args[0] ;
-                    arg = ibzreportlyService.get(arg.getIbzReportlyId()) ;
+                    arg = ibzreportlyService.get(arg.getIbzreportlyid()) ;
                     return arg;
                 }else{
                     return ibzreportlyService.get((Long) args[0]);
@@ -157,7 +157,7 @@ public class IbzReportlyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IbzReportly){
                     IbzReportly arg = (IbzReportly) args[0] ;
-                    arg = ibzreportlyService.get(arg.getIbzReportlyId()) ;
+                    arg = ibzreportlyService.get(arg.getIbzreportlyid()) ;
                     return arg;
                 }else{
                     return ibzreportlyService.get((Long) args[0]);

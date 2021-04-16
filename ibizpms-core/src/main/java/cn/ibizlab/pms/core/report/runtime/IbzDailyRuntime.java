@@ -128,7 +128,7 @@ public class IbzDailyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IbzDaily){
                     IbzDaily arg = (IbzDaily) args[0] ;
-                    arg = ibzdailyService.get(arg.getIbzDailyId()) ;
+                    arg = ibzdailyService.get(arg.getIbzdailyid()) ;
                     return arg;
                 }else{
                     return ibzdailyService.get((Long) args[0]);
@@ -172,7 +172,7 @@ public class IbzDailyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IbzDaily){
                     IbzDaily arg = (IbzDaily) args[0] ;
-                    arg = ibzdailyService.get(arg.getIbzDailyId()) ;
+                    arg = ibzdailyService.get(arg.getIbzdailyid()) ;
                     return arg;
                 }else{
                     return ibzdailyService.get((Long) args[0]);

@@ -128,7 +128,7 @@ public class IBZProSysTplRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IBZProSysTpl){
                     IBZProSysTpl arg = (IBZProSysTpl) args[0] ;
-                    arg = ibzprosystplService.get(arg.getIBZProSysTplId()) ;
+                    arg = ibzprosystplService.get(arg.getIbzprosystplid()) ;
                     return arg;
                 }else{
                     return ibzprosystplService.get((String) args[0]);
@@ -151,7 +151,7 @@ public class IBZProSysTplRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IBZProSysTpl){
                     IBZProSysTpl arg = (IBZProSysTpl) args[0] ;
-                    arg = ibzprosystplService.get(arg.getIBZProSysTplId()) ;
+                    arg = ibzprosystplService.get(arg.getIbzprosystplid()) ;
                     return arg;
                 }else{
                     return ibzprosystplService.get((String) args[0]);

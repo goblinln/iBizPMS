@@ -128,7 +128,7 @@ public class IbzWeeklyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IbzWeekly){
                     IbzWeekly arg = (IbzWeekly) args[0] ;
-                    arg = ibzweeklyService.get(arg.getIbzWeeklyId()) ;
+                    arg = ibzweeklyService.get(arg.getIbzweeklyid()) ;
                     return arg;
                 }else{
                     return ibzweeklyService.get((Long) args[0]);
@@ -172,7 +172,7 @@ public class IbzWeeklyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IbzWeekly){
                     IbzWeekly arg = (IbzWeekly) args[0] ;
-                    arg = ibzweeklyService.get(arg.getIbzWeeklyId()) ;
+                    arg = ibzweeklyService.get(arg.getIbzweeklyid()) ;
                     return arg;
                 }else{
                     return ibzweeklyService.get((Long) args[0]);

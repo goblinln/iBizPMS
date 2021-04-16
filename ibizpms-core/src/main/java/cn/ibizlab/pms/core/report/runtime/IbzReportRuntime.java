@@ -128,7 +128,7 @@ public class IbzReportRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IbzReport){
                     IbzReport arg = (IbzReport) args[0] ;
-                    arg = ibzreportService.get(arg.getIbzDailyId()) ;
+                    arg = ibzreportService.get(arg.getIbzdailyid()) ;
                     return arg;
                 }else{
                     return ibzreportService.get((Long) args[0]);
@@ -157,7 +157,7 @@ public class IbzReportRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IbzReport){
                     IbzReport arg = (IbzReport) args[0] ;
-                    arg = ibzreportService.get(arg.getIbzDailyId()) ;
+                    arg = ibzreportService.get(arg.getIbzdailyid()) ;
                     return arg;
                 }else{
                     return ibzreportService.get((Long) args[0]);

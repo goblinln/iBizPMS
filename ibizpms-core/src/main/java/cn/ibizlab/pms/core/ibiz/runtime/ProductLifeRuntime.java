@@ -128,7 +128,7 @@ public class ProductLifeRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof ProductLife){
                     ProductLife arg = (ProductLife) args[0] ;
-                    arg = productlifeService.get(arg.getProductLifeId()) ;
+                    arg = productlifeService.get(arg.getProductlifeid()) ;
                     return arg;
                 }else{
                     return productlifeService.get((String) args[0]);
@@ -151,7 +151,7 @@ public class ProductLifeRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof ProductLife){
                     ProductLife arg = (ProductLife) args[0] ;
-                    arg = productlifeService.get(arg.getProductLifeId()) ;
+                    arg = productlifeService.get(arg.getProductlifeid()) ;
                     return arg;
                 }else{
                     return productlifeService.get((String) args[0]);

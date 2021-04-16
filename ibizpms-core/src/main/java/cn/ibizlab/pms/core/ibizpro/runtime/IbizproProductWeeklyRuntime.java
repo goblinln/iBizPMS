@@ -128,7 +128,7 @@ public class IbizproProductWeeklyRuntime extends cn.ibizlab.pms.core.runtime.Sys
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IbizproProductWeekly){
                     IbizproProductWeekly arg = (IbizproProductWeekly) args[0] ;
-                    arg = ibizproproductweeklyService.get(arg.getIbizpro_productweeklyid()) ;
+                    arg = ibizproproductweeklyService.get(arg.getIbizproProductweeklyid()) ;
                     return arg;
                 }else{
                     return ibizproproductweeklyService.get((Long) args[0]);
@@ -154,7 +154,7 @@ public class IbizproProductWeeklyRuntime extends cn.ibizlab.pms.core.runtime.Sys
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IbizproProductWeekly){
                     IbizproProductWeekly arg = (IbizproProductWeekly) args[0] ;
-                    arg = ibizproproductweeklyService.get(arg.getIbizpro_productweeklyid()) ;
+                    arg = ibizproproductweeklyService.get(arg.getIbizproProductweeklyid()) ;
                     return arg;
                 }else{
                     return ibizproproductweeklyService.get((Long) args[0]);

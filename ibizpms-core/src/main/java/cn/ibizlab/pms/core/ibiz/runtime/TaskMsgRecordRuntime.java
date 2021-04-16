@@ -128,7 +128,7 @@ public class TaskMsgRecordRuntime extends cn.ibizlab.pms.core.runtime.SystemData
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof TaskMsgRecord){
                     TaskMsgRecord arg = (TaskMsgRecord) args[0] ;
-                    arg = taskmsgrecordService.get(arg.getTaskMsgRecordId()) ;
+                    arg = taskmsgrecordService.get(arg.getTaskmsgrecordid()) ;
                     return arg;
                 }else{
                     return taskmsgrecordService.get((String) args[0]);
@@ -151,7 +151,7 @@ public class TaskMsgRecordRuntime extends cn.ibizlab.pms.core.runtime.SystemData
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof TaskMsgRecord){
                     TaskMsgRecord arg = (TaskMsgRecord) args[0] ;
-                    arg = taskmsgrecordService.get(arg.getTaskMsgRecordId()) ;
+                    arg = taskmsgrecordService.get(arg.getTaskmsgrecordid()) ;
                     return arg;
                 }else{
                     return taskmsgrecordService.get((String) args[0]);
