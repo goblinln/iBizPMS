@@ -289,6 +289,9 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
         if (null != et.getConfigend()){
             et.setDeadline(et.getConfigend());
         }
+        if (StaticDict.TaskSpecies.CYCLE.getValue().equals(et.getTaskspecies())){
+            createByCycle(et);
+        }
         String multiple = et.getMultiple();
         List<TaskTeam> teams = et.getTaskteam();
         String comment = StringUtils.isNotBlank(et.getComment()) ? et.getComment() : "";
@@ -1807,9 +1810,14 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             }
             calendar.setTimeInMillis(date.getTime());
             String name = sdf.format(calendar.getTime());
-            newTask.setName(et.getName() + "-" + name + "-" + et.getAssignedto());
-            newTask.setEststarted(new Timestamp(time));
-            newTask.setConfigbegin(new Timestamp(time));
+            String title = et.getName() + "-" + name + "-" + et.getAssignedto();
+            newTask.setName(title);
+            List<Task> taskList = this.list(new QueryWrapper<Task>().eq("name", title));
+            if (taskList.size() > 0){
+                continue;
+            }
+            newTask.setEststarted(new Timestamp(date.getTime()));
+            newTask.setConfigbegin(new Timestamp(date.getTime()));
             this.baseMapper.insert(newTask);
             actionHelper.create(StaticDict.Action__object_type.TASK.getValue(), newTask.getId(), StaticDict.Action__type.OPENED.getValue(),
                     "", "", newTask.getOpenedby(), true);
