@@ -1,0 +1,7 @@
+{
+  "codeName" : "Developer",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/Developer.json",
+  "name" : "研发人员",
+  "roleTag" : "Developer",
+  "roleType" : "CUSTOM"
+}

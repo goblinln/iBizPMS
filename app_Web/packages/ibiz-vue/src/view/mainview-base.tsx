@@ -1,6 +1,6 @@
 import { Subject } from 'rxjs';
 import { GlobalService } from 'ibiz-service';
-import { IBizAppUILogicModel, IBizToolBarItemModel, Util, ViewFactory, ViewTool } from 'ibiz-core';
+import { DynamicService, IBizAppUILogicModel, IBizEntityModel, IBizToolBarItemModel, Util, ViewFactory, ViewTool } from 'ibiz-core';
 import { AppViewLogicService } from '../app-service/logic-service/app-viewlogic-service';
 import { ViewBase } from './view-base';
 
@@ -61,7 +61,7 @@ export class MainViewBase extends ViewBase {
         const initToolBarItems = (item: IBizToolBarItemModel) => {
             if (item.items?.length > 0) {
                 let models: Array<any> = [];
-                let tempModel: any = { name: item.name, showCaption: item.showCaption, caption: item.caption, disabled: false, visabled: true, itemType: item.itemType, dataaccaction: ''  };
+                let tempModel: any = { name: item.name, showCaption: item.showCaption, caption: item.caption, disabled: false, visabled: true, itemType: item.itemType, dataaccaction: '' };
                 item.items.forEach((_item: any) => {
                     models.push(initToolBarItems(_item));
                 })
@@ -120,8 +120,8 @@ export class MainViewBase extends ViewBase {
         if (!(this.toolbarModels && this.toolbarModels.length > 0)) {
             return null;
         }
-        return (<view-toolbar slot='toolbar' mode={this.viewInstance?.viewStyle || "DEFAULT"} 
-        counterServiceArray={this.counterServiceArray} isViewLoading={this.viewLoadingService?.isLoading} toolbarModels={this.toolbarModels} on-item-click={(data: any, $event: any) => { this.handleItemClick(data, $event) }}></view-toolbar>);
+        return (<view-toolbar slot='toolbar' mode={this.viewInstance?.viewStyle || "DEFAULT"}
+            counterServiceArray={this.counterServiceArray} isViewLoading={this.viewLoadingService?.isLoading} toolbarModels={this.toolbarModels} on-item-click={(data: any, $event: any) => { this.handleItemClick(data, $event) }}></view-toolbar>);
     }
 
     /**
@@ -264,7 +264,7 @@ export class MainViewBase extends ViewBase {
                 Object.assign(data, { 'processDefinitionKey': fullargs[0]['srfprocessdefinitionkey'] });
                 Object.assign(data, { 'taskDefinitionKey': fullargs[0]['srftaskdefinitionkey'] });
                 // 将待办任务标记为已读准备参数
-                const that:any = this;
+                const that: any = this;
                 if (that.quickGroupData && that.quickGroupData.hasOwnProperty("srfwf") && fullargs[0]['srftaskid']) {
                     Object.assign(data, { 'srfwf': that.quickGroupData['srfwf'] });
                     Object.assign(data, { 'srftaskid': fullargs[0]['srftaskid'] });
@@ -314,7 +314,7 @@ export class MainViewBase extends ViewBase {
                 if (openView.getRedirectPSAppViewRefs && (openView.getRedirectPSAppViewRefs?.length === 0)) {
                     return;
                 }
-                this.appUIService.getRDAppView(args[0][this.viewInstance?.appDeCodeName?.toLowerCase()], openView.enableWorkflow).then(async (result: any) => {
+                this.appUIService.getRDAppView(args[0][this.viewInstance?.appDeCodeName?.toLowerCase()], params).then(async (result: any) => {
                     if (!result) {
                         return;
                     }
@@ -442,10 +442,11 @@ export class MainViewBase extends ViewBase {
                 });
             } else if (viewNewAppUIlogic.enableBatchAdd) {
                 let batchAddPSAppViews: Array<any> = [];
+                const minorPSAppDERSs:Array<any> = this.viewInstance.appDataEntity.getMinorPSAppDERSs;
                 if (viewNewAppUIlogic.getBatchAddPSAppViews && viewNewAppUIlogic.getBatchAddPSAppViews.length > 0) {
                     batchAddPSAppViews = viewNewAppUIlogic.getBatchAddPSAppViews;
                 }
-                if (batchAddPSAppViews.length == 0 || !this.context.srfparentdename) {
+                if (batchAddPSAppViews.length == 0 || !this.context.srfparentdename || !minorPSAppDERSs || (minorPSAppDERSs.length !== 2)) {
                     this.$Notice.warning({ title: '错误', desc: '批量添加需添加N:N关系' });
                     return;
                 }
@@ -456,14 +457,14 @@ export class MainViewBase extends ViewBase {
                     return (item.refMode && (item.refMode == this.context.srfparentdename?.toUpperCase()));
                 })
                 await viewNewAppUIlogic.loadedBatchAddPSAppViews();
-                let openView:any = openViewModel?.view;
+                let openView: any = openViewModel?.view;
                 let view: any = {
                     viewname: 'app-view-shell',
                     height: openView.height,
                     width: openView.width,
                     title: openView.title
                 };
-                let tempContext:any = Util.deepCopy(this.context)
+                let tempContext: any = Util.deepCopy(this.context)
                 if (openView && openView.dynaModelFilePath) {
                     Object.assign(tempContext, { viewpath: openView.dynaModelFilePath });
                 }
@@ -476,22 +477,30 @@ export class MainViewBase extends ViewBase {
                         return;
                     }
                     let requestParam: Array<any> = [];
-                    result.datas.forEach((record: any) => {
-                        let tempParam: any = {};
-                        tempParam[otherViewModel?.view?.appDataEntity?.keyField?.codeName?.toLowerCase()] = this.context['srfparentkey'];
-                        tempParam[openViewModel?.view?.appDataEntity?.keyField?.codeName?.toLowerCase()] = record.srfkey;
-                        requestParam.push(tempParam);
-                    });
-                    this.appEntityService.createBatch(JSON.parse(JSON.stringify(this.context)), requestParam, true).then((response: any) => {
-                        if (!response || response.status !== 200) {
-                            this.$Notice.error({ title: '错误', desc: '批处理操作失败' });
-                            return;
-                        }
-                        if (!xData || !(xData.refresh instanceof Function)) {
-                            return;
-                        }
-                        xData.refresh(result.datas);
-                    });
+                    DynamicService.getInstance(this.context).getAppEntityModelJsonData(minorPSAppDERSs[0].getMajorPSAppDataEntity.path).then((model:any) =>{
+                        let tempEntity:IBizEntityModel = new IBizEntityModel(model);
+                        result.datas.forEach((record: any) => {
+                            let tempParam: any = {};
+                            if(tempEntity.codeName == this.context.srfparentdename){
+                                tempParam[minorPSAppDERSs[0].getParentPSAppDEField.codeName.toLowerCase()] = this.context['srfparentkey'];
+                                tempParam[minorPSAppDERSs[1].getParentPSAppDEField.codeName.toLowerCase()] = record.srfkey;
+                            }else{
+                                tempParam[minorPSAppDERSs[1].getParentPSAppDEField.codeName.toLowerCase()] = this.context['srfparentkey'];
+                                tempParam[minorPSAppDERSs[0].getParentPSAppDEField.codeName.toLowerCase()] = record.srfkey;
+                            }
+                            requestParam.push(tempParam);
+                        });
+                        this.appEntityService.createBatch(JSON.parse(JSON.stringify(this.context)), requestParam, true).then((response: any) => {
+                            if (!response || response.status !== 200) {
+                                this.$Notice.error({ title: '错误', desc: '批处理操作失败' });
+                                return;
+                            }
+                            if (!xData || !(xData.refresh instanceof Function)) {
+                                return;
+                            }
+                            xData.refresh(result.datas);
+                        });
+                    })
                 });
             } else if (viewNewAppUIlogic.batchAddOnly) {
                 console.warn("只支持批添加未实现");

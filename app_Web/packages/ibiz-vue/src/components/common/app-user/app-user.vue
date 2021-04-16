@@ -21,6 +21,8 @@
 <script lang = 'ts'>
 import { Vue, Component } from 'vue-property-decorator';
 import { Subject } from 'rxjs';
+import { Environment } from '@/environments/environment';
+import { removeSessionStorage } from 'ibiz-core';
 @Component({
 })
 export default class AppUser extends Vue {
@@ -100,7 +102,15 @@ export default class AppUser extends Vue {
                 let leftTime = new Date();
                 leftTime.setTime(leftTime.getSeconds() - 1);
                 document.cookie = "ibzuaa-token=;expires=" + leftTime.toUTCString();
-                this.$router.push({ name: 'login' });
+                removeSessionStorage("activeOrgData");
+                removeSessionStorage("tempOrgId");
+                removeSessionStorage("dcsystem");
+                removeSessionStorage("orgsData");
+                if (Environment.loginUrl) {
+                    window.location.href = `${Environment.loginUrl}`;
+                } else {
+                    this.$router.push({ name: 'login' });
+                }
             }
         }).catch((error: any) =>{
             console.error(error);

@@ -73,7 +73,9 @@ export const Environment = {
     // 钉钉登录应用标识，用于网页扫码登录
     dingTalkAccAppId:"",
     // 企业微信登录应用标识,用于网页扫码登录和企业微信内部免登
-    wxWorkAppId:""
+    wxWorkAppId:"",
+    // 登录地址
+    loginUrl:""
 };
 // 挂载外部配置文件
 if ((window as any).Environment) {

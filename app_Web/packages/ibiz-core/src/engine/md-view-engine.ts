@@ -292,13 +292,16 @@ export class MDViewEngine extends ViewEngine {
      */
     public onEditData(arg: any): void {
         const loadParam: any = {};
+        const otherParam: any = {};
         const { data }: { data: any } = arg;
         if (this.keyPSDEField && data[this.keyPSDEField] && !Object.is(data[this.keyPSDEField], '')) {
             Object.assign(loadParam, { [this.keyPSDEField]: data[this.keyPSDEField] });
         }
-
+        if (this.view && this.view.quickGroupData) {
+            Object.assign(otherParam, this.view.quickGroupData);
+        }
         if (this.openData && this.isFunc(this.openData)) {
-            this.openData([loadParam], [data], null, null, this.getMDCtrl());
+            this.openData([loadParam], [data], otherParam, null, this.getMDCtrl());
         }
     }
 

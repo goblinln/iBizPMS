@@ -292,6 +292,18 @@ export class IBizMEditViewPanelModel extends IBizMainControlModel {
         if (this.$embeddedPSAppView?.appDataEntity?.modelref && this.$embeddedPSAppView?.appDataEntity?.path) {
             this.$embeddedPSAppViewEntity = await DynamicService.getInstance(this.context).getAppEntityModelJsonData( this.$embeddedPSAppView.appDataEntity.path);
         }
+        if (this.appDataEntity) {
+            const appDataEntity = this.appDataEntity;
+            if (appDataEntity.major == false && appDataEntity.getMinorPSAppDERSs) {
+                appDataEntity.getMinorPSAppDERSs.forEach(async (minorAppDERSs: any) => {
+                    if (minorAppDERSs.getMajorPSAppDataEntity?.modelref && minorAppDERSs.getMajorPSAppDataEntity?.path) {
+                        const res = await DynamicService.getInstance(this.context).getAppEntityModelJsonData(minorAppDERSs.getMajorPSAppDataEntity.path);
+                        Object.assign(minorAppDERSs.getMajorPSAppDataEntity, res);
+                        delete minorAppDERSs.getMajorPSAppDataEntity.modelref;
+                    }
+                });
+            }
+        }
     }
 
     /**

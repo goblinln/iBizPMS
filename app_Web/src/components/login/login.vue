@@ -83,7 +83,7 @@
 <script lang="ts">
 import {Vue, Component, Watch} from 'vue-property-decorator';
 import {Environment} from '@/environments/environment';
-import { Util } from 'ibiz-core';
+import { removeSessionStorage, Util } from 'ibiz-core';
 import { AppThirdService } from 'ibiz-vue';
 
 @Component({
@@ -228,6 +228,10 @@ export default class Login extends Vue {
         }
         const loginname: any = this.form.loginname;
         const password: any = this.form.password;
+        removeSessionStorage("activeOrgData");
+        removeSessionStorage("tempOrgId");
+        removeSessionStorage("dcsystem");
+        removeSessionStorage("orgsData");
         const post: Promise<any> = this.$http.post('/v7/login', this.form, true);
         post.then((response: any) => {
             if (response && response.status === 200) {

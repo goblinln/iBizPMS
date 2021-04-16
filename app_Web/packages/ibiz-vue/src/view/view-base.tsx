@@ -594,7 +594,7 @@ export class ViewBase extends Vue {
     public parseViewParam(inputvalue: any = null): void {
         let _this: any = this;
         this.context = {};
-        if (AppServiceBase.getInstance()) {
+        if (AppServiceBase.getInstance() && AppServiceBase.getInstance().getAppStore()) {
             this.mergeAppData(AppServiceBase.getInstance().getAppStore().getters.getAppData());
         }
         if (!_this.viewDefaultUsage && _this.viewdata && !Object.is(_this.viewdata, '')) {
@@ -627,6 +627,13 @@ export class ViewBase extends Vue {
         }
         if (_this.viewInstance && _this.viewInstance.appDeCodeName) {
             Object.assign(_this.context, { srfsessionid: Util.createUUID() });
+        }
+        if (_this.viewparams.srfinsttag && _this.viewparams.srfinsttag2) {
+            let appModelObject = AppServiceBase.getInstance().getAppModelDataObject();
+            let dynainstParam: any = appModelObject.getPSDynaInsts.find((item: any) => {
+                return (item.instTag === _this.viewparams.srfinsttag) && (item.instTag2 === _this.viewparams.srfinsttag2);
+            })
+            Object.assign(_this.context, { srfdynainstid: dynainstParam.id });
         }
         if (_this.viewparams && _this.viewparams.srfdynainstid) {
             Object.assign(_this.context, { srfdynainstid: this.viewparams.srfdynainstid });

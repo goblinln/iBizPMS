@@ -2141,16 +2141,52 @@
   } ],
   "getAllPSSysUserRoles" : [ {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/GeneralManager.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProductManger.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/Agent.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/MaintenanceSupervisor.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProductSupervisor.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/VisitorC.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/VisitorB.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/Presenter.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/Maintainer.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/Proxy.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/TestSupervisor.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProjectManger.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/Tester.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/VicePresident.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProjectMember.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/Developer.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/ResearchDirector.json"

@@ -628,20 +628,20 @@ export default class AppClaendarTimeline extends Vue{
         let data: any[] = [];
         if (Object.is(this.groupMode, 'AUTO')) {
             schedule.forEach((item: any) => {
-                let groupFieldValue: any;
+                let groupField: any;
                 if (item.hasOwnProperty(this.groupField)) {
-                    groupFieldValue = item[this.groupField];
+                    groupField = this.groupField;
                 } else if (item.hasOwnProperty('content')) {
-                    groupFieldValue = item.content;
+                    groupField = 'content';
                 }
-                if (groupFieldValue) {
-                    let group: any = data.find((group: any) => Object.is(group.name, groupFieldValue));
+                if (groupField) {
+                    let group: any = data.find((group: any) => Object.is(group.name, item[groupField]));
                     if (!group) {
                         data.push({
-                            name: groupFieldValue,
-                            value: groupFieldValue,
+                            name: item[groupField],
+                            value: item[groupField],
                             style: {},
-                            items: this.getGroupItems(groupFieldValue, schedule),
+                            items: this.getGroupItems(item[groupField], schedule),
                         })
                     }
                 }

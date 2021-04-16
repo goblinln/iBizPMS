@@ -361,11 +361,11 @@
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "ORGID",
+      "columnName" : "orgid",
       "dBType" : "MYSQL5",
       "name" : "ORGID",
-      "queryCodeExp" : "t1.`ORGID`",
-      "standardColumnName" : "`ORGID`",
+      "queryCodeExp" : "t1.`orgid`",
+      "standardColumnName" : "`orgid`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -413,11 +413,11 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "ISTOP",
+      "columnName" : "istop",
       "dBType" : "MYSQL5",
       "name" : "ISTOP",
       "queryCodeExp" : "'0'",
-      "standardColumnName" : "`ISTOP`",
+      "standardColumnName" : "`istop`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -499,11 +499,11 @@
     "uIAssistDEField" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "QD",
+      "columnName" : "qd",
       "dBType" : "MYSQL5",
       "name" : "QD",
-      "queryCodeExp" : "t1.`QD`",
-      "standardColumnName" : "`QD`",
+      "queryCodeExp" : "t1.`qd`",
+      "standardColumnName" : "`qd`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -555,11 +555,11 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "PRODUCTCLASS",
+      "columnName" : "productclass",
       "dBType" : "MYSQL5",
       "name" : "PRODUCTCLASS",
-      "queryCodeExp" : "t1.`PRODUCTCLASS`",
-      "standardColumnName" : "`PRODUCTCLASS`",
+      "queryCodeExp" : "t1.`productclass`",
+      "standardColumnName" : "`productclass`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -606,11 +606,11 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "UNCONFIRMBUGCNT",
+      "columnName" : "unconfirmbugcnt",
       "dBType" : "MYSQL5",
       "name" : "UNCONFIRMBUGCNT",
-      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `CONFIRMED` = 0 AND DELETED = '0')",
-      "standardColumnName" : "`UNCONFIRMBUGCNT`",
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND `CONFIRMED` = 0 AND DELETED = '0')",
+      "standardColumnName" : "`unconfirmbugcnt`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -646,11 +646,11 @@
     "phisicalDEField" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "ACL",
+      "columnName" : "acl",
       "dBType" : "MYSQL5",
       "name" : "ACL",
-      "queryCodeExp" : "t1.`ACL`",
-      "standardColumnName" : "`ACL`",
+      "queryCodeExp" : "t1.`acl`",
+      "standardColumnName" : "`acl`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -702,11 +702,11 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "NAME",
+      "columnName" : "name",
       "dBType" : "MYSQL5",
       "name" : "NAME",
-      "queryCodeExp" : "t1.`NAME`",
-      "standardColumnName" : "`NAME`",
+      "queryCodeExp" : "t1.`name`",
+      "standardColumnName" : "`name`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -905,11 +905,11 @@
     "uIAssistDEField" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "PRODUCTPLANCNT",
+      "columnName" : "productplancnt",
       "dBType" : "MYSQL5",
       "name" : "PRODUCTPLANCNT",
-      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`ID` AND DELETED = '0')",
-      "standardColumnName" : "`PRODUCTPLANCNT`",
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`id` AND DELETED = '0')",
+      "standardColumnName" : "`productplancnt`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -945,11 +945,11 @@
     "phisicalDEField" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "ID",
+      "columnName" : "id",
       "dBType" : "MYSQL5",
       "name" : "ID",
-      "queryCodeExp" : "t1.`ID`",
-      "standardColumnName" : "`ID`",
+      "queryCodeExp" : "t1.`id`",
+      "standardColumnName" : "`id`",
       "autoIncrement" : true,
       "valueAutoGen" : false
     } ],
@@ -991,11 +991,11 @@
     "pasteReset" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "DELETED",
+      "columnName" : "deleted",
       "dBType" : "MYSQL5",
       "name" : "DELETED",
-      "queryCodeExp" : "t1.`DELETED`",
-      "standardColumnName" : "`DELETED`",
+      "queryCodeExp" : "t1.`deleted`",
+      "standardColumnName" : "`deleted`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1046,11 +1046,11 @@
     "enableUIModify" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "CLOSEDSTORYCNT",
+      "columnName" : "closedstorycnt",
       "dBType" : "MYSQL5",
       "name" : "CLOSEDSTORYCNT",
-      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='closed' AND DELETED = '0')",
-      "standardColumnName" : "`CLOSEDSTORYCNT`",
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='closed' AND DELETED = '0')",
+      "standardColumnName" : "`closedstorycnt`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1086,11 +1086,11 @@
     "phisicalDEField" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "RELATEDBUGCNT",
+      "columnName" : "relatedbugcnt",
       "dBType" : "MYSQL5",
       "name" : "RELATEDBUGCNT",
-      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND DELETED = '0')",
-      "standardColumnName" : "`RELATEDBUGCNT`",
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND DELETED = '0')",
+      "standardColumnName" : "`relatedbugcnt`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1126,11 +1126,11 @@
     "phisicalDEField" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "WHITELIST",
+      "columnName" : "whitelist",
       "dBType" : "MYSQL5",
       "name" : "WHITELIST",
-      "queryCodeExp" : "t1.`WHITELIST`",
-      "standardColumnName" : "`WHITELIST`",
+      "queryCodeExp" : "t1.`whitelist`",
+      "standardColumnName" : "`whitelist`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1179,11 +1179,11 @@
     "queryColumn" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "MDEPTID",
+      "columnName" : "mdeptid",
       "dBType" : "MYSQL5",
       "name" : "MDEPTID",
-      "queryCodeExp" : "t1.`MDEPTID`",
-      "standardColumnName" : "`MDEPTID`",
+      "queryCodeExp" : "t1.`mdeptid`",
+      "standardColumnName" : "`mdeptid`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1231,11 +1231,11 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "RELEASECNT",
+      "columnName" : "releasecnt",
       "dBType" : "MYSQL5",
       "name" : "RELEASECNT",
-      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`ID` AND DELETED = '0')",
-      "standardColumnName" : "`RELEASECNT`",
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`id` AND DELETED = '0')",
+      "standardColumnName" : "`releasecnt`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1271,11 +1271,11 @@
     "phisicalDEField" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "RD",
+      "columnName" : "rd",
       "dBType" : "MYSQL5",
       "name" : "RD",
-      "queryCodeExp" : "t1.`RD`",
-      "standardColumnName" : "`RD`",
+      "queryCodeExp" : "t1.`rd`",
+      "standardColumnName" : "`rd`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1327,11 +1327,11 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "POPK",
+      "columnName" : "popk",
       "dBType" : "MYSQL5",
       "name" : "POPK",
       "queryCodeExp" : "t1.PO",
-      "standardColumnName" : "`POPK`",
+      "standardColumnName" : "`popk`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1380,11 +1380,11 @@
     "phisicalDEField" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "NOTCLOSEDBUGCNT",
+      "columnName" : "notclosedbugcnt",
       "dBType" : "MYSQL5",
       "name" : "NOTCLOSEDBUGCNT",
-      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` <> 'closed' AND DELETED = '0')",
-      "standardColumnName" : "`NOTCLOSEDBUGCNT`",
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND `STATUS` <> 'closed' AND DELETED = '0')",
+      "standardColumnName" : "`notclosedbugcnt`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1420,11 +1420,11 @@
     "phisicalDEField" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "SUPPROREPORT",
+      "columnName" : "supproreport",
       "dBType" : "MYSQL5",
       "name" : "SUPPROREPORT",
-      "queryCodeExp" : "t1.`SUPPROREPORT`",
-      "standardColumnName" : "`SUPPROREPORT`",
+      "queryCodeExp" : "t1.`supproreport`",
+      "standardColumnName" : "`supproreport`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1475,11 +1475,11 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "ORDER",
+      "columnName" : "order",
       "dBType" : "MYSQL5",
       "name" : "ORDER",
-      "queryCodeExp" : "t1.`ORDER`",
-      "standardColumnName" : "`ORDER`",
+      "queryCodeExp" : "t1.`order`",
+      "standardColumnName" : "`order`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1514,11 +1514,11 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "TYPE",
+      "columnName" : "type",
       "dBType" : "MYSQL5",
       "name" : "TYPE",
-      "queryCodeExp" : "t1.`TYPE`",
-      "standardColumnName" : "`TYPE`",
+      "queryCodeExp" : "t1.`type`",
+      "standardColumnName" : "`type`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1570,11 +1570,11 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "PO",
+      "columnName" : "po",
       "dBType" : "MYSQL5",
       "name" : "PO",
-      "queryCodeExp" : "t1.`PO`",
-      "standardColumnName" : "`PO`",
+      "queryCodeExp" : "t1.`po`",
+      "standardColumnName" : "`po`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1626,11 +1626,11 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "QDPK",
+      "columnName" : "qdpk",
       "dBType" : "MYSQL5",
       "name" : "QDPK",
       "queryCodeExp" : "t1.QD",
-      "standardColumnName" : "`QDPK`",
+      "standardColumnName" : "`qdpk`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1679,11 +1679,11 @@
     "phisicalDEField" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "DESC",
+      "columnName" : "desc",
       "dBType" : "MYSQL5",
       "name" : "DESC",
-      "queryCodeExp" : "t1.`DESC`",
-      "standardColumnName" : "`DESC`",
+      "queryCodeExp" : "t1.`desc`",
+      "standardColumnName" : "`desc`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1732,11 +1732,11 @@
     "queryColumn" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "STATUS",
+      "columnName" : "status",
       "dBType" : "MYSQL5",
       "name" : "STATUS",
-      "queryCodeExp" : "t1.`STATUS`",
-      "standardColumnName" : "`STATUS`",
+      "queryCodeExp" : "t1.`status`",
+      "standardColumnName" : "`status`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -1789,11 +1789,11 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "CHANGEDSTORYCNT",
+      "columnName" : "changedstorycnt",
       "dBType" : "MYSQL5",
       "name" : "CHANGEDSTORYCNT",
-      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='changed' AND DELETED = '0')",
-      "standardColumnName" : "`CHANGEDSTORYCNT`",
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='changed' AND DELETED = '0')",
+      "standardColumnName" : "`changedstorycnt`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1829,11 +1829,11 @@
     "phisicalDEField" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "ACTIVEBUGCNT",
+      "columnName" : "activebugcnt",
       "dBType" : "MYSQL5",
       "name" : "ACTIVEBUGCNT",
-      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`ID` AND `STATUS` = 'active' AND DELETED = '0')",
-      "standardColumnName" : "`ACTIVEBUGCNT`",
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND `STATUS` = 'active' AND DELETED = '0')",
+      "standardColumnName" : "`activebugcnt`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1869,11 +1869,11 @@
     "phisicalDEField" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "CREATEDBY",
+      "columnName" : "createdby",
       "dBType" : "MYSQL5",
       "name" : "CREATEDBY",
-      "queryCodeExp" : "t1.`CREATEDBY`",
-      "standardColumnName" : "`CREATEDBY`",
+      "queryCodeExp" : "t1.`createdby`",
+      "standardColumnName" : "`createdby`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1926,11 +1926,11 @@
     "systemReserver" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "RDPK",
+      "columnName" : "rdpk",
       "dBType" : "MYSQL5",
       "name" : "RDPK",
       "queryCodeExp" : "t1.RD",
-      "standardColumnName" : "`RDPK`",
+      "standardColumnName" : "`rdpk`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -1979,11 +1979,11 @@
     "phisicalDEField" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "CREATEDVERSION",
+      "columnName" : "createdversion",
       "dBType" : "MYSQL5",
       "name" : "CREATEDVERSION",
-      "queryCodeExp" : "t1.`CREATEDVERSION`",
-      "standardColumnName" : "`CREATEDVERSION`",
+      "queryCodeExp" : "t1.`createdversion`",
+      "standardColumnName" : "`createdversion`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
@@ -2031,11 +2031,11 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "DRAFTSTORYCNT",
+      "columnName" : "draftstorycnt",
       "dBType" : "MYSQL5",
       "name" : "DRAFTSTORYCNT",
-      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='draft' AND DELETED = '0')",
-      "standardColumnName" : "`DRAFTSTORYCNT`",
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='draft' AND DELETED = '0')",
+      "standardColumnName" : "`draftstorycnt`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2071,11 +2071,11 @@
     "phisicalDEField" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "DOCCNT",
+      "columnName" : "doccnt",
       "dBType" : "MYSQL5",
       "name" : "DOCCNT",
       "queryCodeExp" : "(select count(1) from zt_doc t where t.product = t1.id and t.deleted = '0')",
-      "standardColumnName" : "`DOCCNT`",
+      "standardColumnName" : "`doccnt`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2111,11 +2111,11 @@
     "phisicalDEField" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "CASECNT",
+      "columnName" : "casecnt",
       "dBType" : "MYSQL5",
       "name" : "CASECNT",
       "queryCodeExp" : "(select count(1) from zt_case t where t.product = t1.id and t.deleted = '0')",
-      "standardColumnName" : "`CASECNT`",
+      "standardColumnName" : "`casecnt`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2151,11 +2151,11 @@
     "phisicalDEField" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "RELATEDPROJECTS",
+      "columnName" : "relatedprojects",
       "dBType" : "MYSQL5",
       "name" : "RELATEDPROJECTS",
       "queryCodeExp" : "(select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project where t.product = t1.id and t2.deleted = '0')",
-      "standardColumnName" : "`RELATEDPROJECTS`",
+      "standardColumnName" : "`relatedprojects`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2191,11 +2191,11 @@
     "phisicalDEField" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "IBIZ_ID",
+      "columnName" : "ibiz_id",
       "dBType" : "MYSQL5",
       "name" : "IBIZ_ID",
-      "queryCodeExp" : "t1.`IBIZ_ID`",
-      "standardColumnName" : "`IBIZ_ID`",
+      "queryCodeExp" : "t1.`ibiz_id`",
+      "standardColumnName" : "`ibiz_id`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2242,11 +2242,11 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "SUBSTATUS",
+      "columnName" : "substatus",
       "dBType" : "MYSQL5",
       "name" : "SUBSTATUS",
-      "queryCodeExp" : "t1.`SUBSTATUS`",
-      "standardColumnName" : "`SUBSTATUS`",
+      "queryCodeExp" : "t1.`substatus`",
+      "standardColumnName" : "`substatus`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2293,11 +2293,11 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "CODE",
+      "columnName" : "code",
       "dBType" : "MYSQL5",
       "name" : "CODE",
-      "queryCodeExp" : "t1.`CODE`",
-      "standardColumnName" : "`CODE`",
+      "queryCodeExp" : "t1.`code`",
+      "standardColumnName" : "`code`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2419,11 +2419,11 @@
     "uIAssistDEField" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "ORDER1",
+      "columnName" : "order1",
       "dBType" : "MYSQL5",
       "name" : "ORDER1",
       "queryCodeExp" : "t1.`order`",
-      "standardColumnName" : "`ORDER1`",
+      "standardColumnName" : "`order1`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2459,11 +2459,11 @@
     "phisicalDEField" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "UPDATEBY",
+      "columnName" : "updateby",
       "dBType" : "MYSQL5",
       "name" : "UPDATEBY",
-      "queryCodeExp" : "t1.`UPDATEBY`",
-      "standardColumnName" : "`UPDATEBY`",
+      "queryCodeExp" : "t1.`updateby`",
+      "standardColumnName" : "`updateby`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2516,11 +2516,11 @@
     "systemReserver" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "BUILDCNT",
+      "columnName" : "buildcnt",
       "dBType" : "MYSQL5",
       "name" : "BUILDCNT",
       "queryCodeExp" : "(select count(1) from zt_build t where t.product = t1.id and t.deleted = '0')",
-      "standardColumnName" : "`BUILDCNT`",
+      "standardColumnName" : "`buildcnt`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2556,11 +2556,11 @@
     "phisicalDEField" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "CREATEDDATE",
+      "columnName" : "createddate",
       "dBType" : "MYSQL5",
       "name" : "CREATEDDATE",
-      "queryCodeExp" : "t1.`CREATEDDATE`",
-      "standardColumnName" : "`CREATEDDATE`",
+      "queryCodeExp" : "t1.`createddate`",
+      "standardColumnName" : "`createddate`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2640,11 +2640,11 @@
     "uIAssistDEField" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "ACTIVESTORYCNT",
+      "columnName" : "activestorycnt",
       "dBType" : "MYSQL5",
       "name" : "ACTIVESTORYCNT",
-      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`ID` AND `STATUS`='active' AND DELETED = '0')",
-      "standardColumnName" : "`ACTIVESTORYCNT`",
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='active' AND DELETED = '0')",
+      "standardColumnName" : "`activestorycnt`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2680,11 +2680,11 @@
     "phisicalDEField" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "LINENAME",
+      "columnName" : "linename",
       "dBType" : "MYSQL5",
       "name" : "LINENAME",
       "queryCodeExp" : "t11.`NAME`",
-      "standardColumnName" : "`LINENAME`",
+      "standardColumnName" : "`linename`",
       "autoIncrement" : false,
       "valueAutoGen" : false
     } ],
@@ -2741,11 +2741,11 @@
     "phisicalDEField" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "LINE",
+      "columnName" : "line",
       "dBType" : "MYSQL5",
       "name" : "LINE",
-      "queryCodeExp" : "t1.`LINE`",
-      "standardColumnName" : "`LINE`",
+      "queryCodeExp" : "t1.`line`",
+      "standardColumnName" : "`line`",
       "autoIncrement" : false,
       "valueAutoGen" : true
     } ],

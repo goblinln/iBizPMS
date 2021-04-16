@@ -1124,7 +1124,7 @@ export class EditFormControlBase extends FormControlBase {
      * @memberof EditFormControlBase
      */
     public onFormItemActionClick({ tag, event }: any) {
-        AppViewLogicService.getInstance().executeViewLogic(`${this.controlInstance.name}_${tag}_click`, event, this, tag, this.controlInstance.getPSAppViewLogics);
+        AppViewLogicService.getInstance().executeViewLogic(`${this.controlInstance.name}_${tag}_click`, event, this, null, this.controlInstance.getPSAppViewLogics);
     }
 
     /**
@@ -1693,6 +1693,6 @@ export class EditFormControlBase extends FormControlBase {
      * @memberof EditFormControlBase
      */
     public handleActionClick(event: any, formDetail: any, actionDetal: any) {
-        AppViewLogicService.getInstance().executeViewLogic(this.getViewLogicTag('form', formDetail.codeName, actionDetal.name), event, this, undefined, this.controlInstance.getPSAppViewLogics);
+        AppViewLogicService.getInstance().executeViewLogic(this.getViewLogicTag(this.controlInstance.name, formDetail.codeName, actionDetal.name), event, this, undefined, this.controlInstance.getPSAppViewLogics);
     }
 }

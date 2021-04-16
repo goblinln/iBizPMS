@@ -108,6 +108,13 @@ export class ViewContainerBase extends Vue {
                     Object.assign(tempViewParam, qs.parse(item));
                 })
             }
+            if (tempViewParam.srfinsttag && tempViewParam.srfinsttag2) {
+                let appModelObject = AppServiceBase.getInstance().getAppModelDataObject();
+                let dynainstParam: any = appModelObject.getPSDynaInsts.find((item: any) => {
+                    return (item.instTag === tempViewParam.srfinsttag) && (item.instTag2 === tempViewParam.srfinsttag2);
+                })
+                this.context = { srfdynainstid: dynainstParam.id };
+            }
             if (tempViewParam.srfdynainstid) {
                 this.context = { srfdynainstid: tempViewParam.srfdynainstid };
             }
@@ -121,14 +128,14 @@ export class ViewContainerBase extends Vue {
      * @type {Array<*>}
      * @memberof ViewContainerBase
      */
-     public async loadPreViewDynamicModelData() {
-        window.addEventListener('message', async (e:MessageEvent) => {
+    public async loadPreViewDynamicModelData() {
+        window.addEventListener('message', async (e: MessageEvent) => {
             const appEnvironment: any = AppServiceBase.getInstance().getAppEnvironment();
-            if((e.origin !== appEnvironment.previewDynaPath) || (e.data.modelrestag !== this.dynaModelFilePath)){
+            if (!appEnvironment || (e.origin !== appEnvironment.previewDynaPath) || (e.data.modelrestag !== this.dynaModelFilePath)) {
                 return;
             }
-            let previewUrl:string = e.data.modelrestag2 + e.data.modelrestag;
-            let modelData:any = (await axios.get(previewUrl) as any)?.['data'];
+            let previewUrl: string = e.data.modelrestag2 + e.data.modelrestag;
+            let modelData: any = (await axios.get(previewUrl) as any)?.['data'];
             this.initViewContext({ modeldata: modelData });
             this.viewContainerName = AppComponentService.getViewComponents(modelData?.viewType, modelData?.viewStyle, modelData?.getPSSysPFPlugin?.pluginCode);
             this.$forceUpdate();
@@ -162,7 +169,7 @@ export class ViewContainerBase extends Vue {
      * @memberof ViewContainerBase
      */
     public initViewContext(opts: any) {
-        Object.assign(this.tempViewContext, opts, { viewtag: this.viewtag,viewcontainer:this.context, ...this.staticProps });
+        Object.assign(this.tempViewContext, opts, { viewtag: this.viewtag, viewcontainer: this.context, ...this.staticProps });
         this.viewContext = { ...this.tempViewContext };
     }
 

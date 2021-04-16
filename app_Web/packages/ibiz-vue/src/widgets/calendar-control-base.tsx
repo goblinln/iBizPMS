@@ -428,6 +428,10 @@ export class CalendarControlBase extends MDControlBase{
      * @memberof CalendarControlBase
      */
     legendTrigger(itemType:string){
+        const eventDisabled = this.$el.getElementsByClassName('event-disabled').length;
+        if(eventDisabled == Object.keys(this.isShowlegend).length -1 && this.isShowlegend[itemType]){
+            return;
+        }
         this.isShowlegend[itemType] = !this.isShowlegend[itemType];
         this.refresh();
     }

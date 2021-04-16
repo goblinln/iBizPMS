@@ -21,6 +21,15 @@ export class UIServiceBase {
     protected $store: any;
 
     /**
+     * 流程状态数组
+     *
+     * @protected
+     * @type {Array<string>}
+     * @memberof UIServiceBase
+     */
+     protected InWorkflowArray: Array<string> = ["todo","toread","done"];
+
+    /**
      * 应用上下文
      * 
      * @protected
@@ -295,10 +304,10 @@ export class UIServiceBase {
      * 获取指定数据的重定向页面
      * 
      * @param srfkey 数据主键
-     * @param isEnableWorkflow  重定向视图是否需要处理流程中的数据
+     * @param enableWorkflowParam  重定向视图需要处理流程中的数据
      * @memberof  UIServiceBase
      */
-    protected async getRDAppView(srfkey: string, isEnableWorkflow: boolean) {
+    protected async getRDAppView(srfkey: string, enableWorkflowParam: any) {
         // 进行数据查询
         let result: any = await this.dataService.Get({ [this.entityModel.codeName.toLowerCase()]: srfkey });
         const curData: any = result.data;
@@ -312,13 +321,13 @@ export class UIServiceBase {
         let bDataInWF: boolean = false;
         let bWFMode: any = false;
         // 计算数据模式
-        if (isEnableWorkflow) {
+        if (enableWorkflowParam && enableWorkflowParam.srfwf && (this.InWorkflowArray.indexOf(enableWorkflowParam.srfwf) !== -1)) {
             bDataInWF = true;
         }
         let strPDTViewParam: string = await this.getDESDDEViewPDTParam(curData, bDataInWF, bWFMode);
         //若不是当前数据模式，处理strPDTViewParam，todo
 
-        if (isEnableWorkflow) {
+        if (bDataInWF) {
             return strPDTViewParam;
         }
         if (this.multiFormDEField || this.indexTypeDEField) {
