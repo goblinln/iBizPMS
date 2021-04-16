@@ -220,6 +220,14 @@ public class ProjectTodo extends EntityMP implements Serializable {
     @JsonProperty("consumed")
     @ApiModelProperty("工时")
     private Double consumed;
+    /**
+     * 附件
+     */
+    @TableField(exist = false)
+    @JSONField(name = "files")
+    @JsonProperty("files")
+    @ApiModelProperty("附件")
+    private String files;
 
     /**
      * 项目

@@ -229,6 +229,16 @@ public class ProjectTodoDTO extends DTOBase implements Serializable {
     @ApiModelProperty("工时")
     private Double consumed;
 
+    /**
+     * 属性 [FILES]
+     *
+     */
+    @JSONField(name = "files")
+    @JsonProperty("files")
+    @Size(min = 0, max = 2000, message = "内容长度必须小于等于[2000]")
+    @ApiModelProperty("附件")
+    private String files;
+
 
     /**
      * 设置 [PRIVATE]

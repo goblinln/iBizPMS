@@ -32,6 +32,7 @@ hide members
 |描述|DESC|LONGTEXT|&nbsp;|
 |项目编号|IDVALUE|PICKUP|&nbsp;|
 |工时|CONSUMED|FLOAT|&nbsp;|
+|附件|FILES|TEXT|&nbsp;|
 
 ## 值规则
 | 属性名称    | 规则    |  说明  |
@@ -56,6 +57,7 @@ hide members
 |描述|默认规则|内容长度必须小于等于[65535]|
 |项目编号|默认规则|默认规则|
 |工时|默认规则|默认规则|
+|附件|默认规则|内容长度必须小于等于[2000]|
 
 ## 状态控制
 
