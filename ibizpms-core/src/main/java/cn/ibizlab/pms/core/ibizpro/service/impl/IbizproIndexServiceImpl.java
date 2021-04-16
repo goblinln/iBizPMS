@@ -58,10 +58,10 @@ public class IbizproIndexServiceImpl extends ServiceImpl<IbizproIndexMapper, Ibi
     @Override
     @Transactional
     public boolean create(IbizproIndex et) {
-        if(!this.retBool(this.baseMapper.insert(et))) {
-            return false;
-        }
-        CachedBeanCopier.copy(get(et.getIndexid()), et);
+//        if(!this.retBool(this.baseMapper.insert(et))) {
+//            return false;
+//        }
+//        CachedBeanCopier.copy(get(et.getIndexid()), et);
         return true;
     }
 
@@ -74,10 +74,10 @@ public class IbizproIndexServiceImpl extends ServiceImpl<IbizproIndexMapper, Ibi
     @Override
     @Transactional
     public boolean update(IbizproIndex et) {
-        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("indexid", et.getIndexid()))) {
-            return false;
-        }
-        CachedBeanCopier.copy(get(et.getIndexid()), et);
+//        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("indexid", et.getIndexid()))) {
+//            return false;
+//        }
+//        CachedBeanCopier.copy(get(et.getIndexid()), et);
         return true;
     }
 
@@ -100,8 +100,8 @@ public class IbizproIndexServiceImpl extends ServiceImpl<IbizproIndexMapper, Ibi
     @Override
     @Transactional
     public boolean remove(Long key) {
-        boolean result = removeById(key);
-        return result ;
+//        boolean result = removeById(key);
+        return true ;
     }
 
     @Override
