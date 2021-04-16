@@ -139,7 +139,12 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
 
     @Override
     public int checkKeyState(Object objKey) {
-        return CheckKeyStates.OK;
+        QueryWrapperContext context = this.createSearchContext();
+        context.getSelectCond().eq(this.getKey(), objKey);
+        List domains =this.query(this.getService(), context);
+        if(domains.size()>0)
+            return CheckKeyStates.EXIST ;
+        return CheckKeyStates.NOTEXIST;
     }
 
     @Override
