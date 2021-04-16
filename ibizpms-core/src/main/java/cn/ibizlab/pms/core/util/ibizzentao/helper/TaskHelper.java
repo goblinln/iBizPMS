@@ -141,6 +141,8 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
         if (et.getTaskspecies() != null && et.getTaskspecies().equals(StaticDict.TaskSpecies.CYCLE.getValue())) {
             et.setCycle(1);
             et.setParent(-1L);
+            et.setEststarted(et.getConfigbegin());
+            et.setDeadline(et.getConfigend());
         }
 
         fileHelper.processImgURL(et, null, null);
@@ -1695,7 +1697,7 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             calendar.add(Calendar.DATE, -beforeDays);
             begin = calendar.getTime();
         }
-        //如果已经开始或者已经结束
+        //如果还未开始或者已经结束
         if (today.before(begin) || today.after(end)) {
             return et;
         }
@@ -1707,7 +1709,7 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
         newTask.setParent(et.getId());
         newTask.setIdvalue(et.getId());
         newTask.setCycle(0);
-        newTask.setName(et.getName() + "-" + curToday + "-" + et.getAssignedto());
+        newTask.setTaskspecies(StaticDict.TaskSpecies.TEMP.getValue());//子任务设为临时任务
 
         newTask.setStatus(StaticDict.Task__status.WAIT.getValue());
         if (newTask.getAssignedto() != null) {
@@ -1718,7 +1720,7 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             calendar.add(Calendar.DATE, beforeDays);
         }
         Date finish = calendar.getTime();
-        for (long time = begin.getTime(); time <= finish.getTime(); time += 86400000) {
+        for (long time = begin.getTime(); time <= finish.getTime(); time += (86400000*beforeDays)) {
 
             Date today1 = new Date(time);
             List<Task> lastCycleList = this.list(new QueryWrapper<Task>().eq("idvalue", et.getId()).orderByDesc("config_begin"));
@@ -1785,6 +1787,10 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             if (end != null && date.after(end)) {
                 continue;
             }
+            calendar.setTimeInMillis(time);
+            String name = sdf.format(calendar.getTime());
+            newTask.setName(et.getName() + "-" + name + "-" + et.getAssignedto());
+            newTask.setEststarted(et.getConfigbegin());
             this.baseMapper.insert(newTask);
             actionHelper.create(StaticDict.Action__object_type.TASK.getValue(), newTask.getId(), StaticDict.Action__type.OPENED.getValue(),
                     "", "", newTask.getOpenedby(), true);
