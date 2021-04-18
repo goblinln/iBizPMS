@@ -46,6 +46,9 @@ public class ProjectModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemData
     @Autowired
     IProjectModuleService projectmoduleService;
 
+    @Autowired
+    DELogicExecutor logicExecutor;
+
     @Override
     protected IEntityBase getSimpleEntity(Object o) {
         if (o instanceof net.ibizsys.runtime.util.IEntityBase) {
@@ -188,7 +191,7 @@ public class ProjectModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemData
     @Override
     protected void onExecuteDELogic(Object arg0, IPSDEAction iPSDEAction, IPSDELogic iPSDELogic, IDynaInstRuntime iDynaInstRuntime, ProceedingJoinPoint joinPoint) throws Throwable {
         if (arg0 instanceof EntityBase)
-            DELogicExecutor.getInstance().executeLogic((EntityBase) arg0, iPSDEAction, iPSDELogic, iDynaInstRuntime);
+            logicExecutor.executeLogic((EntityBase) arg0, iPSDEAction, iPSDELogic, iDynaInstRuntime);
         else
             throw new BadRequestAlertException(String.format("执行实体逻辑异常，不支持参数[%s]", arg0.toString()), "", "");
     }
@@ -217,7 +220,7 @@ public class ProjectModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemData
             }
         }
         if (entity != null) {
-            DELogicExecutor.getInstance().executeAttachLogic(entity, iPSDEAction, strAttachMode, iDynaInstRuntime);
+            logicExecutor.executeAttachLogic(entity, iPSDEAction, strAttachMode, iDynaInstRuntime);
         } else
             throw new BadRequestAlertException(String.format("执行实体行为附加逻辑[%s:%s]发生异常，无法获取传入参数", action, strAttachMode), "", "onExecuteActionLogics");
     }

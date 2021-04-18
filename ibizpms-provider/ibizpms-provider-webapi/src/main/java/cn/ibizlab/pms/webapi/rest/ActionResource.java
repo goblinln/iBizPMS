@@ -132,6 +132,7 @@ public class ActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(actionService.checkKey(actionMapping.toDomain(actiondto)));
     }
 
+    @PreAuthorize("@ActionRuntime.test(#action_id,'MANAGE')")
     @ApiOperation(value = "添加备注", tags = {"系统日志" },  notes = "添加备注")
 	@RequestMapping(method = RequestMethod.POST, value = "/actions/{action_id}/comment")
     public ResponseEntity<ActionDTO> comment(@PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
@@ -142,6 +143,7 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actiondto);
     }
 
+    @PreAuthorize("@ActionRuntime.test(#action_id,'MANAGE')")
     @ApiOperation(value = "编辑备注信息", tags = {"系统日志" },  notes = "编辑备注信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/actions/{action_id}/editcomment")
     public ResponseEntity<ActionDTO> editComment(@PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
@@ -151,6 +153,7 @@ public class ActionResource {
         actiondto = actionMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(actiondto);
     }
+    @PreAuthorize("@ActionRuntime.test('MANAGE')")
     @ApiOperation(value = "批量处理[编辑备注信息]", tags = {"系统日志" },  notes = "批量处理[编辑备注信息]")
 	@RequestMapping(method = RequestMethod.POST, value = "/actions/editcommentbatch")
     public ResponseEntity<Boolean> editCommentBatch(@RequestBody List<ActionDTO> actiondtos) {

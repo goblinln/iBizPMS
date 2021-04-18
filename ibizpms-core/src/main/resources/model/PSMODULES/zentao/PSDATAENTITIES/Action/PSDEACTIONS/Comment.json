@@ -11,6 +11,10 @@
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDELOGICS/Comment.json"
   },
+  "getPSDEOPPriv" : {
+    "modelref" : true,
+    "id" : "MANAGE"
+  },
   "paramMode" : 1,
   "requestParamType" : "ENTITY",
   "testActionMode" : 0,

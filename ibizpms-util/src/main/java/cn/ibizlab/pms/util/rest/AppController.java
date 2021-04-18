@@ -1,6 +1,7 @@
 package cn.ibizlab.pms.util.rest;
 
 import cn.ibizlab.pms.util.errors.BadRequestAlertException;
+import cn.ibizlab.pms.util.security.UAAGrantedAuthority;
 import cn.ibizlab.pms.util.security.UAAMenuAuthority;
 import cn.ibizlab.pms.util.security.UAAUniResAuthority;
 import cn.ibizlab.pms.util.service.IBZConfigService;
@@ -42,13 +43,23 @@ public class AppController {
 			Collection<GrantedAuthority> authorities=curUser.getAuthorities();
 				if(authorities!=null) {
 					Iterator it = authorities.iterator();
+					String curSystemId = curUser.getSrfsystemid();
 					while (it.hasNext()) {
 						GrantedAuthority authority = (GrantedAuthority) it.next();
 						String strAuthority = authority.getAuthority();
-						if (authority instanceof UAAUniResAuthority) {
-							uniRes.add(strAuthority);
-						} else if (authority instanceof UAAMenuAuthority) {
-							appMenu.add(strAuthority);
+						if(StringUtils.isEmpty(curSystemId))
+						{
+							if (authority instanceof UAAUniResAuthority) {
+								uniRes.add(strAuthority);
+							} else if (authority instanceof UAAMenuAuthority) {
+								appMenu.add(strAuthority);
+							}
+						}else if (curSystemId.equalsIgnoreCase(((UAAGrantedAuthority)authority).getSystemid())){
+							if (authority instanceof UAAUniResAuthority) {
+								uniRes.add(strAuthority);
+							} else if (authority instanceof UAAMenuAuthority) {
+								appMenu.add(strAuthority);
+							}
 						}
 					}
 				}

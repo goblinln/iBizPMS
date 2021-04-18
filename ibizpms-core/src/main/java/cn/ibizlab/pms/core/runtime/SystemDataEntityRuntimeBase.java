@@ -189,9 +189,17 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
             return true;
         if(testUnires(action))
             return true ;
-        List<GrantedAuthority> authorities = curUser.getAuthorities().stream()
+        String curSystemId = curUser.getSrfsystemid();
+        List<GrantedAuthority> authorities;
+        if(StringUtils.isEmpty(curSystemId)){
+            authorities= curUser.getAuthorities().stream()
                 .filter(f -> f instanceof UAADEAuthority && ((UAADEAuthority) f).getEntity().equals(this.getName()))
                 .collect(Collectors.toList());
+        }else {
+            authorities= curUser.getAuthorities().stream()
+                    .filter(f -> f instanceof UAADEAuthority && curSystemId.equalsIgnoreCase(((UAADEAuthority) f).getSystemid()) &&((UAADEAuthority) f).getEntity().equals(this.getName()))
+                    .collect(Collectors.toList());
+        }
 
         if (authorities.size() == 0)
             return false;
@@ -328,9 +336,17 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
             return;
         if(testUnires(action))
             return ;
-        List<GrantedAuthority> authorities = curUser.getAuthorities().stream()
+        String curSystemId = curUser.getSrfsystemid();
+        List<GrantedAuthority> authorities;
+        if(StringUtils.isEmpty(curSystemId)){
+            authorities= curUser.getAuthorities().stream()
                 .filter(f -> f instanceof UAADEAuthority && ((UAADEAuthority) f).getEntity().equals(this.getName()))
                 .collect(Collectors.toList());
+        }else {
+            authorities= curUser.getAuthorities().stream()
+                    .filter(f -> f instanceof UAADEAuthority && curSystemId.equalsIgnoreCase(((UAADEAuthority) f).getSystemid()) &&((UAADEAuthority) f).getEntity().equals(this.getName()))
+                    .collect(Collectors.toList());
+        }
         boolean hasCondition = false;
         for (GrantedAuthority authority : authorities) {
             UAADEAuthority uaadeAuthority = (UAADEAuthority) authority;
