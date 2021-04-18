@@ -1477,6 +1477,10 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "getAllPSDEUserRoles" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEUSERROLES/Action_READ_ALL.json"
+  } ],
   "auditMode" : 0,
   "codeName" : "Action",
   "dEType" : 1,
