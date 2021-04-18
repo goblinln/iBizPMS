@@ -77,7 +77,7 @@
 
 
     <!--输出实体[ZT_BRANCH]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_branch-1-4">
+    <changeSet author="zentao" id="tab-zt_branch-11-4">
         <createTable tableName="zt_branch">
                 <column name="NAME" remarks="" type="VARCHAR(255)">
                 </column>
@@ -2274,7 +2274,7 @@
 
 
     <!--输出实体[ZT_PRODUCTPLAN]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_productplan-9-83">
+    <changeSet author="zentao" id="tab-zt_productplan-16-83">
         <createTable tableName="zt_productplan">
                 <column name="TITLE" remarks="" type="VARCHAR(90)">
                 </column>
@@ -2350,7 +2350,7 @@
 
 
     <!--输出实体[ZT_PROJECTSTORY]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_projectstory-2-90">
+    <changeSet author="zentao" id="tab-zt_projectstory-4-90">
         <createTable tableName="zt_projectstory">
                 <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2413,7 +2413,7 @@
 
 
     <!--输出实体[ZT_RELEASE]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_release-1-94">
+    <changeSet author="zentao" id="tab-zt_release-11-94">
         <createTable tableName="zt_release">
                 <column name="STORIES" remarks="" type="TEXT(65535)">
                 </column>
@@ -2583,7 +2583,7 @@
 
 
     <!--输出实体[ZT_STORYSPEC]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_storyspec-1-101">
+    <changeSet author="zentao" id="tab-zt_storyspec-8-101">
         <createTable tableName="zt_storyspec">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2608,7 +2608,7 @@
 
 
     <!--输出实体[ZT_STORYSTAGE]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_storystage-2-102">
+    <changeSet author="zentao" id="tab-zt_storystage-9-102">
         <createTable tableName="zt_storystage">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>

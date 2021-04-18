@@ -578,6 +578,13 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "getAllPSDEUserRoles" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/StoryStage/PSDEUSERROLES/StoryStage_Maintain.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/StoryStage/PSDEUSERROLES/StoryStage_Read.json"
+  } ],
   "auditMode" : 0,
   "codeName" : "StoryStage",
   "dEType" : 1,

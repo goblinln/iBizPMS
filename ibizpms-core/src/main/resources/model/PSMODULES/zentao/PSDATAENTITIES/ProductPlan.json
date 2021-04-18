@@ -2229,10 +2229,10 @@
   } ],
   "getAllPSDEUserRoles" : [ {
     "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEUSERROLES/ProductPlan_Maintain_CO.json"
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEUSERROLES/ProductPlan_Maintain.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEUSERROLES/ProductPlan_Read_CO.json"
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEUSERROLES/ProductPlan_Read.json"
   } ],
   "auditMode" : 0,
   "codeName" : "ProductPlan",

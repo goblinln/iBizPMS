@@ -3031,6 +3031,9 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Maintain_CO.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Manage_CO.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Read_CO.json"
   } ],
   "auditMode" : 0,

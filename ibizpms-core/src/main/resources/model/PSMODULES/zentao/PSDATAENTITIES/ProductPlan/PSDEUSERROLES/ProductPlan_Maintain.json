@@ -1,0 +1,42 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEUSERROLES/ProductPlan_Maintain.json",
+  "name" : "产品计划维护",
+  "orgDR" : 0,
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "READ",
+    "name" : "ProductPlan_Maintain_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "dataAccessAction" : "UPDATE",
+    "name" : "ProductPlan_Maintain_UPDATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  }, {
+    "dataAccessAction" : "DELETE",
+    "name" : "ProductPlan_Maintain_DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  }, {
+    "dataAccessAction" : "CREATE",
+    "name" : "ProductPlan_Maintain_CREATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  } ],
+  "roleTag" : "ProductPlan_Maintain",
+  "secDR" : 0,
+  "userDRAction" : "READ",
+  "defaultMode" : false,
+  "enableOrgDR" : false,
+  "enableSecBC" : false,
+  "enableSecDR" : false,
+  "enableUserDR" : false
+}

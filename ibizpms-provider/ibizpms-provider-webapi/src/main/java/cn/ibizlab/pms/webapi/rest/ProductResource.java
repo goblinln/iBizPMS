@@ -142,6 +142,7 @@ public class ProductResource {
         return  ResponseEntity.status(HttpStatus.OK).body(productService.checkKey(productMapping.toDomain(productdto)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
     @ApiOperation(value = "关闭", tags = {"产品" },  notes = "关闭")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/close")
     public ResponseEntity<ProductDTO> close(@PathVariable("product_id") Long product_id, @RequestBody ProductDTO productdto) {
@@ -151,6 +152,7 @@ public class ProductResource {
         productdto = productMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(productdto);
     }
+    @PreAuthorize("@ProductRuntime.test('MANAGE')")
     @ApiOperation(value = "批量处理[关闭]", tags = {"产品" },  notes = "批量处理[关闭]")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/closebatch")
     public ResponseEntity<Boolean> closeBatch(@RequestBody List<ProductDTO> productdtos) {

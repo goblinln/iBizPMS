@@ -1,0 +1,13 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Manage_CO.json",
+  "name" : "产品管理（当前机构）",
+  "orgDR" : 1,
+  "roleTag" : "Product_Manage_CO",
+  "secDR" : 0,
+  "userDRAction" : "READ",
+  "defaultMode" : false,
+  "enableOrgDR" : true,
+  "enableSecBC" : false,
+  "enableSecDR" : false,
+  "enableUserDR" : false
+}

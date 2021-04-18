@@ -645,6 +645,13 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "getAllPSDEUserRoles" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEUSERROLES/StorySpec_Maintain.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEUSERROLES/StorySpec_Read.json"
+  } ],
   "auditMode" : 0,
   "codeName" : "StorySpec",
   "dEType" : 1,
