@@ -69,6 +69,42 @@ public class SearchContextBase implements ISearchContext{
      * 工作流流程标识
      */
     public String processDefinitionKey;
+
+    /**
+     * 动态实例标识
+     */
+    @JsonProperty("srfinsttag")
+    public String srfInstTag;
+
+    /**
+     * 动态实例标识2
+     */
+    @JsonProperty("srfinsttag2")
+    public String srfInstTag2;
+
+    public String getSrfInstTag() {
+        if (StringUtils.isEmpty(srfInstTag)) {
+            Object instTag = params.get("srfinsttag");
+            return ObjectUtils.isEmpty(instTag) ? null : String.valueOf(instTag);
+        } else {
+            return srfInstTag;
+        }
+    }
+
+    public String getSrfInstTag2() {
+        if (StringUtils.isEmpty(srfInstTag2)) {
+            Object instTag2 = params.get("srfinsttag2");
+            return ObjectUtils.isEmpty(instTag2) ? null : String.valueOf(instTag2);
+        } else {
+            return srfInstTag2;
+        }
+    }
+
+    /**
+     * 工作流待办/待阅标识
+     */
+    @JsonProperty("srfwf")
+    public String srfWF;
     /**
      * 获取工作流步骤标识
      */

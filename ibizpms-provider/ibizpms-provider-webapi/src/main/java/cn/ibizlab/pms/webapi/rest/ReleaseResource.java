@@ -383,6 +383,7 @@ public class ReleaseResource {
         releasedto = releaseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
+    @PreAuthorize("@ReleaseRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据产品建立发布", tags = {"发布" },  notes = "根据产品建立发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/releases")
     public ResponseEntity<ReleaseDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody ReleaseDTO releasedto) {
@@ -393,6 +394,7 @@ public class ReleaseResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ReleaseRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据产品批量建立发布", tags = {"发布" },  notes = "根据产品批量建立发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/releases/batch")
     public ResponseEntity<Boolean> createBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ReleaseDTO> releasedtos) {
@@ -404,6 +406,7 @@ public class ReleaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@ReleaseRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "根据产品更新发布", tags = {"发布" },  notes = "根据产品更新发布")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/releases/{release_id}")
     public ResponseEntity<ReleaseDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
@@ -415,6 +418,7 @@ public class ReleaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ReleaseRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "根据产品批量更新发布", tags = {"发布" },  notes = "根据产品批量更新发布")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/releases/batch")
     public ResponseEntity<Boolean> updateBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ReleaseDTO> releasedtos) {
@@ -426,12 +430,14 @@ public class ReleaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@ReleaseRuntime.quickTest('DELETE')")
     @ApiOperation(value = "根据产品删除发布", tags = {"发布" },  notes = "根据产品删除发布")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/releases/{release_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(releaseService.remove(release_id));
     }
 
+    @PreAuthorize("@ReleaseRuntime.quickTest('DELETE')")
     @ApiOperation(value = "根据产品批量删除发布", tags = {"发布" },  notes = "根据产品批量删除发布")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/releases/batch")
     public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
@@ -439,6 +445,7 @@ public class ReleaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@ReleaseRuntime.quickTest('READ')")
     @ApiOperation(value = "根据产品获取发布", tags = {"发布" },  notes = "根据产品获取发布")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/releases/{release_id}")
     public ResponseEntity<ReleaseDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id) {
@@ -650,10 +657,12 @@ public class ReleaseResource {
         boolean result = releaseService.unlinkBugBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ReleaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"发布" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/releases/fetchdefault")
 	public ResponseEntity<List<ReleaseDTO>> fetchReleaseDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody ReleaseSearchContext context) {
         context.setN_product_eq(product_id);
+        releaseRuntime.addAuthorityConditions(context,"READ");
         Page<Release> domains = releaseService.searchDefault(context) ;
         List<ReleaseDTO> list = releaseMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -663,18 +672,22 @@ public class ReleaseResource {
                 .body(list);
 	}
 
+    @PreAuthorize("@ReleaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"发布" } ,notes = "根据产品查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/releases/searchdefault")
 	public ResponseEntity<Page<ReleaseDTO>> searchReleaseDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody ReleaseSearchContext context) {
         context.setN_product_eq(product_id);
+        releaseRuntime.addAuthorityConditions(context,"READ");
         Page<Release> domains = releaseService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(releaseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
+    @PreAuthorize("@ReleaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品获取测试报告关联发布", tags = {"发布" } ,notes = "根据产品获取测试报告关联发布")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/releases/fetchreportrelease")
 	public ResponseEntity<List<ReleaseDTO>> fetchReleaseReportReleaseByProduct(@PathVariable("product_id") Long product_id,@RequestBody ReleaseSearchContext context) {
         context.setN_product_eq(product_id);
+        releaseRuntime.addAuthorityConditions(context,"READ");
         Page<Release> domains = releaseService.searchReportRelease(context) ;
         List<ReleaseDTO> list = releaseMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -684,10 +697,12 @@ public class ReleaseResource {
                 .body(list);
 	}
 
+    @PreAuthorize("@ReleaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品查询测试报告关联发布", tags = {"发布" } ,notes = "根据产品查询测试报告关联发布")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/releases/searchreportrelease")
 	public ResponseEntity<Page<ReleaseDTO>> searchReleaseReportReleaseByProduct(@PathVariable("product_id") Long product_id, @RequestBody ReleaseSearchContext context) {
         context.setN_product_eq(product_id);
+        releaseRuntime.addAuthorityConditions(context,"READ");
         Page<Release> domains = releaseService.searchReportRelease(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(releaseMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

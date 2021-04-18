@@ -17,4 +17,5 @@ public class DELogic implements Serializable {
     List<DELogic> refLogic;
     List<Resource> refRuleFiles;
     String md5;
+    int logicMode;
 }

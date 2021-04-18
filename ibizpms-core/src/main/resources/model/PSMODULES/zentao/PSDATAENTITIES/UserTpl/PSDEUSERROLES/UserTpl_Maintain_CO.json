@@ -1,0 +1,42 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEUSERROLES/UserTpl_Maintain_CO.json",
+  "name" : "模板维护（当前机构）",
+  "orgDR" : 1,
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "CREATE",
+    "name" : "UserTpl_Maintain_CO_CREATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "dataAccessAction" : "DELETE",
+    "name" : "UserTpl_Maintain_CO_DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  }, {
+    "dataAccessAction" : "READ",
+    "name" : "UserTpl_Maintain_CO_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "dataAccessAction" : "UPDATE",
+    "name" : "UserTpl_Maintain_CO_UPDATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  } ],
+  "roleTag" : "UserTpl_Maintain_CO",
+  "secDR" : 0,
+  "userDRAction" : "READ",
+  "defaultMode" : false,
+  "enableOrgDR" : true,
+  "enableSecBC" : false,
+  "enableSecDR" : false,
+  "enableUserDR" : false
+}

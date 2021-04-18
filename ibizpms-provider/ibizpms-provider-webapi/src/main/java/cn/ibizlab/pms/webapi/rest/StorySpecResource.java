@@ -203,6 +203,7 @@ public class StorySpecResource {
         storyspecdto = storyspecMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storyspecdto);
     }
+    @PreAuthorize("@StorySpecRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据需求建立需求描述", tags = {"需求描述" },  notes = "根据需求建立需求描述")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/storyspecs")
     public ResponseEntity<StorySpecDTO> createByStory(@PathVariable("story_id") Long story_id, @RequestBody StorySpecDTO storyspecdto) {
@@ -213,6 +214,7 @@ public class StorySpecResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@StorySpecRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据需求批量建立需求描述", tags = {"需求描述" },  notes = "根据需求批量建立需求描述")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/storyspecs/batch")
     public ResponseEntity<Boolean> createBatchByStory(@PathVariable("story_id") Long story_id, @RequestBody List<StorySpecDTO> storyspecdtos) {
@@ -224,6 +226,7 @@ public class StorySpecResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@StorySpecRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "根据需求更新需求描述", tags = {"需求描述" },  notes = "根据需求更新需求描述")
 	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/storyspecs/{storyspec_id}")
     public ResponseEntity<StorySpecDTO> updateByStory(@PathVariable("story_id") Long story_id, @PathVariable("storyspec_id") String storyspec_id, @RequestBody StorySpecDTO storyspecdto) {
@@ -235,6 +238,7 @@ public class StorySpecResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@StorySpecRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "根据需求批量更新需求描述", tags = {"需求描述" },  notes = "根据需求批量更新需求描述")
 	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/storyspecs/batch")
     public ResponseEntity<Boolean> updateBatchByStory(@PathVariable("story_id") Long story_id, @RequestBody List<StorySpecDTO> storyspecdtos) {
@@ -246,12 +250,14 @@ public class StorySpecResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@StorySpecRuntime.quickTest('DELETE')")
     @ApiOperation(value = "根据需求删除需求描述", tags = {"需求描述" },  notes = "根据需求删除需求描述")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}/storyspecs/{storyspec_id}")
     public ResponseEntity<Boolean> removeByStory(@PathVariable("story_id") Long story_id, @PathVariable("storyspec_id") String storyspec_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(storyspecService.remove(storyspec_id));
     }
 
+    @PreAuthorize("@StorySpecRuntime.quickTest('DELETE')")
     @ApiOperation(value = "根据需求批量删除需求描述", tags = {"需求描述" },  notes = "根据需求批量删除需求描述")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}/storyspecs/batch")
     public ResponseEntity<Boolean> removeBatchByStory(@RequestBody List<String> ids) {
@@ -259,6 +265,7 @@ public class StorySpecResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@StorySpecRuntime.quickTest('READ')")
     @ApiOperation(value = "根据需求获取需求描述", tags = {"需求描述" },  notes = "根据需求获取需求描述")
 	@RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/storyspecs/{storyspec_id}")
     public ResponseEntity<StorySpecDTO> getByStory(@PathVariable("story_id") Long story_id, @PathVariable("storyspec_id") String storyspec_id) {
@@ -301,10 +308,12 @@ public class StorySpecResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@StorySpecRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据需求获取DEFAULT", tags = {"需求描述" } ,notes = "根据需求获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/storyspecs/fetchdefault")
 	public ResponseEntity<List<StorySpecDTO>> fetchStorySpecDefaultByStory(@PathVariable("story_id") Long story_id,@RequestBody StorySpecSearchContext context) {
         context.setN_story_eq(story_id);
+        storyspecRuntime.addAuthorityConditions(context,"READ");
         Page<StorySpec> domains = storyspecService.searchDefault(context) ;
         List<StorySpecDTO> list = storyspecMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -314,18 +323,22 @@ public class StorySpecResource {
                 .body(list);
 	}
 
+    @PreAuthorize("@StorySpecRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据需求查询DEFAULT", tags = {"需求描述" } ,notes = "根据需求查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/storyspecs/searchdefault")
 	public ResponseEntity<Page<StorySpecDTO>> searchStorySpecDefaultByStory(@PathVariable("story_id") Long story_id, @RequestBody StorySpecSearchContext context) {
         context.setN_story_eq(story_id);
+        storyspecRuntime.addAuthorityConditions(context,"READ");
         Page<StorySpec> domains = storyspecService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(storyspecMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
+    @PreAuthorize("@StorySpecRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据需求获取版本", tags = {"需求描述" } ,notes = "根据需求获取版本")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/storyspecs/fetchversion")
 	public ResponseEntity<List<StorySpecDTO>> fetchStorySpecVersionByStory(@PathVariable("story_id") Long story_id,@RequestBody StorySpecSearchContext context) {
         context.setN_story_eq(story_id);
+        storyspecRuntime.addAuthorityConditions(context,"READ");
         Page<StorySpec> domains = storyspecService.searchVersion(context) ;
         List<StorySpecDTO> list = storyspecMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -335,14 +348,17 @@ public class StorySpecResource {
                 .body(list);
 	}
 
+    @PreAuthorize("@StorySpecRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据需求查询版本", tags = {"需求描述" } ,notes = "根据需求查询版本")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/storyspecs/searchversion")
 	public ResponseEntity<Page<StorySpecDTO>> searchStorySpecVersionByStory(@PathVariable("story_id") Long story_id, @RequestBody StorySpecSearchContext context) {
         context.setN_story_eq(story_id);
+        storyspecRuntime.addAuthorityConditions(context,"READ");
         Page<StorySpec> domains = storyspecService.searchVersion(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(storyspecMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
+    @PreAuthorize("@StorySpecRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据产品需求建立需求描述", tags = {"需求描述" },  notes = "根据产品需求建立需求描述")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/storyspecs")
     public ResponseEntity<StorySpecDTO> createByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StorySpecDTO storyspecdto) {
@@ -353,6 +369,7 @@ public class StorySpecResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@StorySpecRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据产品需求批量建立需求描述", tags = {"需求描述" },  notes = "根据产品需求批量建立需求描述")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/storyspecs/batch")
     public ResponseEntity<Boolean> createBatchByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody List<StorySpecDTO> storyspecdtos) {
@@ -364,6 +381,7 @@ public class StorySpecResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@StorySpecRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "根据产品需求更新需求描述", tags = {"需求描述" },  notes = "根据产品需求更新需求描述")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/storyspecs/{storyspec_id}")
     public ResponseEntity<StorySpecDTO> updateByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("storyspec_id") String storyspec_id, @RequestBody StorySpecDTO storyspecdto) {
@@ -375,6 +393,7 @@ public class StorySpecResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@StorySpecRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "根据产品需求批量更新需求描述", tags = {"需求描述" },  notes = "根据产品需求批量更新需求描述")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/storyspecs/batch")
     public ResponseEntity<Boolean> updateBatchByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody List<StorySpecDTO> storyspecdtos) {
@@ -386,12 +405,14 @@ public class StorySpecResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@StorySpecRuntime.quickTest('DELETE')")
     @ApiOperation(value = "根据产品需求删除需求描述", tags = {"需求描述" },  notes = "根据产品需求删除需求描述")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}/storyspecs/{storyspec_id}")
     public ResponseEntity<Boolean> removeByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("storyspec_id") String storyspec_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(storyspecService.remove(storyspec_id));
     }
 
+    @PreAuthorize("@StorySpecRuntime.quickTest('DELETE')")
     @ApiOperation(value = "根据产品需求批量删除需求描述", tags = {"需求描述" },  notes = "根据产品需求批量删除需求描述")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}/storyspecs/batch")
     public ResponseEntity<Boolean> removeBatchByProductStory(@RequestBody List<String> ids) {
@@ -399,6 +420,7 @@ public class StorySpecResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@StorySpecRuntime.quickTest('READ')")
     @ApiOperation(value = "根据产品需求获取需求描述", tags = {"需求描述" },  notes = "根据产品需求获取需求描述")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/storyspecs/{storyspec_id}")
     public ResponseEntity<StorySpecDTO> getByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("storyspec_id") String storyspec_id) {
@@ -441,10 +463,12 @@ public class StorySpecResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@StorySpecRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品需求获取DEFAULT", tags = {"需求描述" } ,notes = "根据产品需求获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/storyspecs/fetchdefault")
 	public ResponseEntity<List<StorySpecDTO>> fetchStorySpecDefaultByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySpecSearchContext context) {
         context.setN_story_eq(story_id);
+        storyspecRuntime.addAuthorityConditions(context,"READ");
         Page<StorySpec> domains = storyspecService.searchDefault(context) ;
         List<StorySpecDTO> list = storyspecMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -454,18 +478,22 @@ public class StorySpecResource {
                 .body(list);
 	}
 
+    @PreAuthorize("@StorySpecRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品需求查询DEFAULT", tags = {"需求描述" } ,notes = "根据产品需求查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/storyspecs/searchdefault")
 	public ResponseEntity<Page<StorySpecDTO>> searchStorySpecDefaultByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StorySpecSearchContext context) {
         context.setN_story_eq(story_id);
+        storyspecRuntime.addAuthorityConditions(context,"READ");
         Page<StorySpec> domains = storyspecService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(storyspecMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
+    @PreAuthorize("@StorySpecRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品需求获取版本", tags = {"需求描述" } ,notes = "根据产品需求获取版本")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/storyspecs/fetchversion")
 	public ResponseEntity<List<StorySpecDTO>> fetchStorySpecVersionByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySpecSearchContext context) {
         context.setN_story_eq(story_id);
+        storyspecRuntime.addAuthorityConditions(context,"READ");
         Page<StorySpec> domains = storyspecService.searchVersion(context) ;
         List<StorySpecDTO> list = storyspecMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -475,10 +503,12 @@ public class StorySpecResource {
                 .body(list);
 	}
 
+    @PreAuthorize("@StorySpecRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品需求查询版本", tags = {"需求描述" } ,notes = "根据产品需求查询版本")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/storyspecs/searchversion")
 	public ResponseEntity<Page<StorySpecDTO>> searchStorySpecVersionByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StorySpecSearchContext context) {
         context.setN_story_eq(story_id);
+        storyspecRuntime.addAuthorityConditions(context,"READ");
         Page<StorySpec> domains = storyspecService.searchVersion(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(storyspecMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

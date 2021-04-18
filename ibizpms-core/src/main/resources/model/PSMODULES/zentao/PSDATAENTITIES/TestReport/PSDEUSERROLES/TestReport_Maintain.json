@@ -1,0 +1,42 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEUSERROLES/TestReport_Maintain.json",
+  "name" : "测试报告维护",
+  "orgDR" : 0,
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "DELETE",
+    "name" : "TestReport_Maintain_DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  }, {
+    "dataAccessAction" : "CREATE",
+    "name" : "TestReport_Maintain_CREATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "dataAccessAction" : "READ",
+    "name" : "TestReport_Maintain_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "dataAccessAction" : "UPDATE",
+    "name" : "TestReport_Maintain_UPDATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  } ],
+  "roleTag" : "TestReport_Maintain",
+  "secDR" : 0,
+  "userDRAction" : "READ",
+  "defaultMode" : false,
+  "enableOrgDR" : false,
+  "enableSecBC" : false,
+  "enableSecDR" : false,
+  "enableUserDR" : false
+}

@@ -1778,6 +1778,13 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "getAllPSDEUserRoles" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEUSERROLES/Taskestimate_Maintain.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEUSERROLES/Taskestimate_Read.json"
+  } ],
   "auditMode" : 0,
   "codeName" : "TaskEstimate",
   "dEType" : 1,

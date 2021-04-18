@@ -9950,47 +9950,27 @@
     "oPPrivAllowMode" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
-    "logicName" : "用例确认",
-    "name" : "CASECOF"
-  }, {
-    "logicName" : "用例结果",
-    "name" : "CASERESULT"
-  }, {
-    "logicName" : "用例执行",
-    "name" : "CASERUN"
-  }, {
-    "logicName" : "用例转bug",
-    "name" : "CASETOBUG"
-  }, {
-    "logicName" : "确认",
-    "name" : "CONFIRM"
-  }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
-    "logicName" : "编辑",
-    "name" : "EDIT"
+    "logicName" : "管理",
+    "name" : "MANAGE"
   }, {
     "logicName" : "读取",
     "name" : "READ"
   }, {
-    "logicName" : "结果",
-    "name" : "RESULT"
-  }, {
-    "logicName" : "执行",
-    "name" : "RUN"
-  }, {
-    "logicName" : "转bug",
-    "name" : "TOBUG"
-  }, {
-    "logicName" : "移除",
-    "name" : "UNLINK"
-  }, {
     "logicName" : "更新",
     "name" : "UPDATE"
+  } ],
+  "getAllPSDEUserRoles" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEUSERROLES/Case_Maintain.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEUSERROLES/Case_Read.json"
   } ],
   "auditMode" : 0,
   "codeName" : "Case",
