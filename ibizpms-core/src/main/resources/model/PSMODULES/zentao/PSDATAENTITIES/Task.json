@@ -14411,18 +14411,43 @@
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
+    },
     "name" : "CREATE"
   }, {
     "logicName" : "删除",
+    "mapPSDEOPPrivName" : "DELETE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
+    },
     "name" : "DELETE"
   }, {
     "logicName" : "管理",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
+    },
     "name" : "MANAGE"
   }, {
     "logicName" : "读取",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
+    },
     "name" : "READ"
   }, {
     "logicName" : "更新",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
+    },
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
@@ -14478,7 +14503,7 @@
   "dEType" : 1,
   "dSLink" : "DEFAULT",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dataChangeLogMode" : 0,
   "dataImpExpMode" : 3,
   "getDefaultPSDEDataSet" : {
@@ -14762,7 +14787,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"

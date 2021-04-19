@@ -240,7 +240,6 @@ public class TaskResource {
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
-    @PreAuthorize("@TaskRuntime.test('CREATE')")
     @ApiOperation(value = "批量处理[创建周期任务]", tags = {"任务" },  notes = "批量处理[创建周期任务]")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/createcycletasksbatch")
     public ResponseEntity<Boolean> createCycleTasksBatch(@RequestBody List<TaskDTO> taskdtos) {
@@ -310,7 +309,6 @@ public class TaskResource {
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
-    @PreAuthorize("@TaskRuntime.test('READ')")
     @ApiOperation(value = "批量处理[获取下一个团队成员(完成)]", tags = {"任务" },  notes = "批量处理[获取下一个团队成员(完成)]")
 	@RequestMapping(method = RequestMethod.PUT, value = "/tasks/getnextteamuserbatch")
     public ResponseEntity<Boolean> getNextTeamUserBatch(@RequestBody List<TaskDTO> taskdtos) {
@@ -329,7 +327,6 @@ public class TaskResource {
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
-    @PreAuthorize("@TaskRuntime.test('READ')")
     @ApiOperation(value = "批量处理[获取团队成员剩余工时（激活）]", tags = {"任务" },  notes = "批量处理[获取团队成员剩余工时（激活）]")
 	@RequestMapping(method = RequestMethod.PUT, value = "/tasks/getteamuserleftactivitybatch")
     public ResponseEntity<Boolean> getTeamUserLeftActivityBatch(@RequestBody List<TaskDTO> taskdtos) {
@@ -348,7 +345,6 @@ public class TaskResource {
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
-    @PreAuthorize("@TaskRuntime.test('READ')")
     @ApiOperation(value = "批量处理[获取团队成员剩余工时（开始或继续）]", tags = {"任务" },  notes = "批量处理[获取团队成员剩余工时（开始或继续）]")
 	@RequestMapping(method = RequestMethod.PUT, value = "/tasks/getteamuserleftstartbatch")
     public ResponseEntity<Boolean> getTeamUserLeftStartBatch(@RequestBody List<TaskDTO> taskdtos) {
@@ -571,7 +567,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取指派给我任务", tags = {"任务" } ,notes = "获取指派给我任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchassignedtomytask")
 	public ResponseEntity<List<TaskDTO>> fetchAssignedToMyTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -585,7 +580,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询指派给我任务", tags = {"任务" } ,notes = "查询指派给我任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchassignedtomytask")
 	public ResponseEntity<Page<TaskDTO>> searchAssignedToMyTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -595,7 +589,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取指派给我任务（PC）", tags = {"任务" } ,notes = "获取指派给我任务（PC）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchassignedtomytaskpc")
 	public ResponseEntity<List<TaskDTO>> fetchAssignedToMyTaskPc(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -609,7 +602,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询指派给我任务（PC）", tags = {"任务" } ,notes = "查询指派给我任务（PC）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchassignedtomytaskpc")
 	public ResponseEntity<Page<TaskDTO>> searchAssignedToMyTaskPc(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -619,7 +611,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取Bug相关任务", tags = {"任务" } ,notes = "获取Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchbugtask")
 	public ResponseEntity<List<TaskDTO>> fetchBugTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchBugTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -633,7 +624,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询Bug相关任务", tags = {"任务" } ,notes = "查询Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchbugtask")
 	public ResponseEntity<Page<TaskDTO>> searchBugTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchBugTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -643,7 +633,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取通过模块查询", tags = {"任务" } ,notes = "获取通过模块查询")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchbymodule")
 	public ResponseEntity<List<TaskDTO>> fetchByModule(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchByModule(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -657,7 +646,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询通过模块查询", tags = {"任务" } ,notes = "查询通过模块查询")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchbymodule")
 	public ResponseEntity<Page<TaskDTO>> searchByModule(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchByModule(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -667,7 +655,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取数据查询（子任务）", tags = {"任务" } ,notes = "获取数据查询（子任务）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchchilddefault")
 	public ResponseEntity<List<TaskDTO>> fetchChildDefault(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildDefault(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -681,7 +668,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询数据查询（子任务）", tags = {"任务" } ,notes = "查询数据查询（子任务）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchchilddefault")
 	public ResponseEntity<Page<TaskDTO>> searchChildDefault(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -691,7 +677,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取子任务", tags = {"任务" } ,notes = "获取子任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchchildtask")
 	public ResponseEntity<List<TaskDTO>> fetchChildTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -705,7 +690,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询子任务", tags = {"任务" } ,notes = "查询子任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchchildtask")
 	public ResponseEntity<Page<TaskDTO>> searchChildTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -715,7 +699,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取子任务（树）", tags = {"任务" } ,notes = "获取子任务（树）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchchildtasktree")
 	public ResponseEntity<List<TaskDTO>> fetchChildTaskTree(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTaskTree(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -729,7 +712,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询子任务（树）", tags = {"任务" } ,notes = "查询子任务（树）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchchildtasktree")
 	public ResponseEntity<Page<TaskDTO>> searchChildTaskTree(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTaskTree(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -739,7 +721,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取用户年度完成任务", tags = {"任务" } ,notes = "获取用户年度完成任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchcurfinishtask")
 	public ResponseEntity<List<TaskDTO>> fetchCurFinishTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchCurFinishTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -753,7 +734,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询用户年度完成任务", tags = {"任务" } ,notes = "查询用户年度完成任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchcurfinishtask")
 	public ResponseEntity<Page<TaskDTO>> searchCurFinishTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchCurFinishTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -763,7 +743,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"任务" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchdefault")
 	public ResponseEntity<List<TaskDTO>> fetchDefault(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefault(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -777,7 +756,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"任务" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchdefault")
 	public ResponseEntity<Page<TaskDTO>> searchDefault(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -787,7 +765,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取DefaultRow", tags = {"任务" } ,notes = "获取DefaultRow")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchdefaultrow")
 	public ResponseEntity<List<TaskDTO>> fetchDefaultRow(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefaultRow(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -801,7 +778,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询DefaultRow", tags = {"任务" } ,notes = "查询DefaultRow")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchdefaultrow")
 	public ResponseEntity<Page<TaskDTO>> searchDefaultRow(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefaultRow(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -811,7 +787,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取ES批量的导入", tags = {"任务" } ,notes = "获取ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchesbulk")
 	public ResponseEntity<List<TaskDTO>> fetchESBulk(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchESBulk(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -825,7 +800,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询ES批量的导入", tags = {"任务" } ,notes = "查询ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchesbulk")
 	public ResponseEntity<Page<TaskDTO>> searchESBulk(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchESBulk(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -835,7 +809,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取我代理的任务", tags = {"任务" } ,notes = "获取我代理的任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchmyagenttask")
 	public ResponseEntity<List<TaskDTO>> fetchMyAgentTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAgentTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -849,7 +822,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询我代理的任务", tags = {"任务" } ,notes = "查询我代理的任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchmyagenttask")
 	public ResponseEntity<Page<TaskDTO>> searchMyAgentTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAgentTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -859,7 +831,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取我相关的任务", tags = {"任务" } ,notes = "获取我相关的任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchmyalltask")
 	public ResponseEntity<List<TaskDTO>> fetchMyAllTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAllTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -873,7 +844,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询我相关的任务", tags = {"任务" } ,notes = "查询我相关的任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchmyalltask")
 	public ResponseEntity<Page<TaskDTO>> searchMyAllTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAllTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -883,7 +853,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取我完成的任务（汇报）", tags = {"任务" } ,notes = "获取我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchmycompletetask")
 	public ResponseEntity<List<TaskDTO>> fetchMyCompleteTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -897,7 +866,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询我完成的任务（汇报）", tags = {"任务" } ,notes = "查询我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchmycompletetask")
 	public ResponseEntity<Page<TaskDTO>> searchMyCompleteTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -907,7 +875,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取我完成的任务（移动端日报）", tags = {"任务" } ,notes = "获取我完成的任务（移动端日报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchmycompletetaskmobdaily")
 	public ResponseEntity<List<TaskDTO>> fetchMyCompleteTaskMobDaily(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -921,7 +888,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询我完成的任务（移动端日报）", tags = {"任务" } ,notes = "查询我完成的任务（移动端日报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchmycompletetaskmobdaily")
 	public ResponseEntity<Page<TaskDTO>> searchMyCompleteTaskMobDaily(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -931,7 +897,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取我完成的任务（移动端月报）", tags = {"任务" } ,notes = "获取我完成的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchmycompletetaskmobmonthly")
 	public ResponseEntity<List<TaskDTO>> fetchMyCompleteTaskMobMonthly(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -945,7 +910,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询我完成的任务（移动端月报）", tags = {"任务" } ,notes = "查询我完成的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchmycompletetaskmobmonthly")
 	public ResponseEntity<Page<TaskDTO>> searchMyCompleteTaskMobMonthly(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -955,7 +919,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取我完成的任务（月报展示）", tags = {"任务" } ,notes = "获取我完成的任务（月报展示）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchmycompletetaskmonthlyzs")
 	public ResponseEntity<List<TaskDTO>> fetchMyCompleteTaskMonthlyZS(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -969,7 +932,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询我完成的任务（月报展示）", tags = {"任务" } ,notes = "查询我完成的任务（月报展示）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchmycompletetaskmonthlyzs")
 	public ResponseEntity<Page<TaskDTO>> searchMyCompleteTaskMonthlyZS(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -979,7 +941,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取我完成的任务（汇报）", tags = {"任务" } ,notes = "获取我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchmycompletetaskzs")
 	public ResponseEntity<List<TaskDTO>> fetchMyCompleteTaskZS(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -993,7 +954,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询我完成的任务（汇报）", tags = {"任务" } ,notes = "查询我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchmycompletetaskzs")
 	public ResponseEntity<Page<TaskDTO>> searchMyCompleteTaskZS(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1003,7 +963,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取我的收藏", tags = {"任务" } ,notes = "获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchmyfavorites")
 	public ResponseEntity<List<TaskDTO>> fetchMyFavorites(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyFavorites(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1017,7 +976,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询我的收藏", tags = {"任务" } ,notes = "查询我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchmyfavorites")
 	public ResponseEntity<Page<TaskDTO>> searchMyFavorites(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyFavorites(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1027,7 +985,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "获取我计划参与的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchmyplanstaskmobmonthly")
 	public ResponseEntity<List<TaskDTO>> fetchMyPlansTaskMobMonthly(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1041,7 +998,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "查询我计划参与的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchmyplanstaskmobmonthly")
 	public ResponseEntity<Page<TaskDTO>> searchMyPlansTaskMobMonthly(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1051,7 +1007,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "获取我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchmytomorrowplantask")
 	public ResponseEntity<List<TaskDTO>> fetchMyTomorrowPlanTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1065,7 +1020,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询我计划参与的任务（汇报）", tags = {"任务" } ,notes = "查询我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchmytomorrowplantask")
 	public ResponseEntity<Page<TaskDTO>> searchMyTomorrowPlanTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1075,7 +1029,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "获取我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchmytomorrowplantaskmobdaily")
 	public ResponseEntity<List<TaskDTO>> fetchMyTomorrowPlanTaskMobDaily(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1089,7 +1042,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询我计划参与的任务（汇报）", tags = {"任务" } ,notes = "查询我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchmytomorrowplantaskmobdaily")
 	public ResponseEntity<Page<TaskDTO>> searchMyTomorrowPlanTaskMobDaily(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1099,7 +1051,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "获取移动端下周计划参与(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchnextweekcompletetaskmobzs")
 	public ResponseEntity<List<TaskDTO>> fetchNextWeekCompleteTaskMobZS(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1113,7 +1064,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "查询移动端下周计划参与(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchnextweekcompletetaskmobzs")
 	public ResponseEntity<Page<TaskDTO>> searchNextWeekCompleteTaskMobZS(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1123,7 +1073,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchnextweekcompletetaskzs")
 	public ResponseEntity<List<TaskDTO>> fetchNextWeekCompleteTaskZS(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1137,7 +1086,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "查询本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchnextweekcompletetaskzs")
 	public ResponseEntity<Page<TaskDTO>> searchNextWeekCompleteTaskZS(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1147,7 +1095,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取下周计划完成任务(汇报)", tags = {"任务" } ,notes = "获取下周计划完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchnextweekplancompletetask")
 	public ResponseEntity<List<TaskDTO>> fetchNextWeekPlanCompleteTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1161,7 +1108,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询下周计划完成任务(汇报)", tags = {"任务" } ,notes = "查询下周计划完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchnextweekplancompletetask")
 	public ResponseEntity<Page<TaskDTO>> searchNextWeekPlanCompleteTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1171,7 +1117,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取相关任务（计划）", tags = {"任务" } ,notes = "获取相关任务（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchplantask")
 	public ResponseEntity<List<TaskDTO>> fetchPlanTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchPlanTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1185,7 +1130,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询相关任务（计划）", tags = {"任务" } ,notes = "查询相关任务（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchplantask")
 	public ResponseEntity<Page<TaskDTO>> searchPlanTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchPlanTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1195,7 +1139,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取项目任务（项目立项）", tags = {"任务" } ,notes = "获取项目任务（项目立项）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchprojectapptask")
 	public ResponseEntity<List<TaskDTO>> fetchProjectAppTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectAppTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1209,7 +1152,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询项目任务（项目立项）", tags = {"任务" } ,notes = "查询项目任务（项目立项）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchprojectapptask")
 	public ResponseEntity<Page<TaskDTO>> searchProjectAppTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectAppTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1219,7 +1161,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取项目任务", tags = {"任务" } ,notes = "获取项目任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchprojecttask")
 	public ResponseEntity<List<TaskDTO>> fetchProjectTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1233,7 +1174,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询项目任务", tags = {"任务" } ,notes = "查询项目任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchprojecttask")
 	public ResponseEntity<Page<TaskDTO>> searchProjectTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1243,7 +1183,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取根任务", tags = {"任务" } ,notes = "获取根任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchroottask")
 	public ResponseEntity<List<TaskDTO>> fetchRootTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchRootTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1257,7 +1196,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询根任务", tags = {"任务" } ,notes = "查询根任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchroottask")
 	public ResponseEntity<Page<TaskDTO>> searchRootTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchRootTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1267,7 +1205,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取关联计划（当前项目未关联）", tags = {"任务" } ,notes = "获取关联计划（当前项目未关联）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchtasklinkplan")
 	public ResponseEntity<List<TaskDTO>> fetchTaskLinkPlan(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1281,7 +1218,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询关联计划（当前项目未关联）", tags = {"任务" } ,notes = "查询关联计划（当前项目未关联）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchtasklinkplan")
 	public ResponseEntity<Page<TaskDTO>> searchTaskLinkPlan(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1291,7 +1227,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "获取我本月完成的任务（下拉列表框）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchthismonthcompletetaskchoice")
 	public ResponseEntity<List<TaskDTO>> fetchThisMonthCompleteTaskChoice(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1305,7 +1240,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "查询我本月完成的任务（下拉列表框）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchthismonthcompletetaskchoice")
 	public ResponseEntity<Page<TaskDTO>> searchThisMonthCompleteTaskChoice(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1315,7 +1249,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchthisweekcompletetask")
 	public ResponseEntity<List<TaskDTO>> fetchThisWeekCompleteTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1329,7 +1262,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "查询本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchthisweekcompletetask")
 	public ResponseEntity<Page<TaskDTO>> searchThisWeekCompleteTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1339,7 +1271,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "获取本周已完成任务(下拉框选择)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchthisweekcompletetaskchoice")
 	public ResponseEntity<List<TaskDTO>> fetchThisWeekCompleteTaskChoice(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1353,7 +1284,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "查询本周已完成任务(下拉框选择)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchthisweekcompletetaskchoice")
 	public ResponseEntity<Page<TaskDTO>> searchThisWeekCompleteTaskChoice(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1363,7 +1293,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "获取移动端本周已完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchthisweekcompletetaskmobzs")
 	public ResponseEntity<List<TaskDTO>> fetchThisWeekCompleteTaskMobZS(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1377,7 +1306,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "查询移动端本周已完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchthisweekcompletetaskmobzs")
 	public ResponseEntity<Page<TaskDTO>> searchThisWeekCompleteTaskMobZS(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1387,7 +1315,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchthisweekcompletetaskzs")
 	public ResponseEntity<List<TaskDTO>> fetchThisWeekCompleteTaskZS(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1401,7 +1328,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "查询本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchthisweekcompletetaskzs")
 	public ResponseEntity<Page<TaskDTO>> searchThisWeekCompleteTaskZS(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1411,7 +1337,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取todo列表查询", tags = {"任务" } ,notes = "获取todo列表查询")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchtodolisttask")
 	public ResponseEntity<List<TaskDTO>> fetchTodoListTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTodoListTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1425,7 +1350,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询todo列表查询", tags = {"任务" } ,notes = "查询todo列表查询")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchtodolisttask")
 	public ResponseEntity<Page<TaskDTO>> searchTodoListTask(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTodoListTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -1435,7 +1359,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取任务类型分组", tags = {"任务" } ,notes = "获取任务类型分组")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchtypegroup")
 	public ResponseEntity<List<Map>> fetchTypeGroup(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroup(context) ;
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -1448,7 +1371,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询任务类型分组", tags = {"任务" } ,notes = "查询任务类型分组")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchtypegroup")
 	public ResponseEntity<Page<Map>> searchTypeGroup(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroup(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
@@ -1458,7 +1380,6 @@ public class TaskResource {
 	@ApiOperation(value = "获取任务类型分组（计划）", tags = {"任务" } ,notes = "获取任务类型分组（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchtypegroupplan")
 	public ResponseEntity<List<Map>> fetchTypeGroupPlan(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -1471,7 +1392,6 @@ public class TaskResource {
 	@ApiOperation(value = "查询任务类型分组（计划）", tags = {"任务" } ,notes = "查询任务类型分组（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/searchtypegroupplan")
 	public ResponseEntity<Page<Map>> searchTypeGroupPlan(@RequestBody TaskSearchContext context) {
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
@@ -1485,7 +1405,7 @@ public class TaskResource {
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'CREATE')")
     @ApiOperation(value = "根据任务模块建立任务", tags = {"任务" },  notes = "根据任务模块建立任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/tasks")
     public ResponseEntity<TaskDTO> createByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskDTO taskdto) {
@@ -1496,7 +1416,7 @@ public class TaskResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'CREATE')")
     @ApiOperation(value = "根据任务模块批量建立任务", tags = {"任务" },  notes = "根据任务模块批量建立任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/tasks/batch")
     public ResponseEntity<Boolean> createBatchByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody List<TaskDTO> taskdtos) {
@@ -1509,7 +1429,7 @@ public class TaskResource {
     }
 
     @VersionCheck(entity = "task" , versionfield = "lastediteddate")
-    @PreAuthorize("@TaskRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'UPDATE')")
     @ApiOperation(value = "根据任务模块更新任务", tags = {"任务" },  notes = "根据任务模块更新任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}")
     public ResponseEntity<TaskDTO> updateByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1521,7 +1441,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'UPDATE')")
     @ApiOperation(value = "根据任务模块批量更新任务", tags = {"任务" },  notes = "根据任务模块批量更新任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projectmodules/{projectmodule_id}/tasks/batch")
     public ResponseEntity<Boolean> updateBatchByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody List<TaskDTO> taskdtos) {
@@ -1533,14 +1453,14 @@ public class TaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DELETE')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'DELETE')")
     @ApiOperation(value = "根据任务模块删除任务", tags = {"任务" },  notes = "根据任务模块删除任务")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}")
     public ResponseEntity<Boolean> removeByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DELETE')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'DELETE')")
     @ApiOperation(value = "根据任务模块批量删除任务", tags = {"任务" },  notes = "根据任务模块批量删除任务")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projectmodules/{projectmodule_id}/tasks/batch")
     public ResponseEntity<Boolean> removeBatchByProjectModule(@RequestBody List<Long> ids) {
@@ -1548,7 +1468,7 @@ public class TaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
     @ApiOperation(value = "根据任务模块获取任务", tags = {"任务" },  notes = "根据任务模块获取任务")
 	@RequestMapping(method = RequestMethod.GET, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}")
     public ResponseEntity<TaskDTO> getByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id) {
@@ -1651,7 +1571,7 @@ public class TaskResource {
         boolean result = taskService.confirmStoryChangeBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'CREATE')")
     @ApiOperation(value = "根据任务模块任务", tags = {"任务" },  notes = "根据任务模块任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/createcycletasks")
     public ResponseEntity<TaskDTO> createCycleTasksByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1716,7 +1636,7 @@ public class TaskResource {
         boolean result = taskService.finishBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
     @ApiOperation(value = "根据任务模块任务", tags = {"任务" },  notes = "根据任务模块任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/getnextteamuser")
     public ResponseEntity<TaskDTO> getNextTeamUserByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1733,7 +1653,7 @@ public class TaskResource {
         boolean result = taskService.getNextTeamUserBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
     @ApiOperation(value = "根据任务模块任务", tags = {"任务" },  notes = "根据任务模块任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/getteamuserleftactivity")
     public ResponseEntity<TaskDTO> getTeamUserLeftActivityByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1750,7 +1670,7 @@ public class TaskResource {
         boolean result = taskService.getTeamUserLeftActivityBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
     @ApiOperation(value = "根据任务模块任务", tags = {"任务" },  notes = "根据任务模块任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/getteamuserleftstart")
     public ResponseEntity<TaskDTO> getTeamUserLeftStartByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1767,7 +1687,7 @@ public class TaskResource {
         boolean result = taskService.getTeamUserLeftStartBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
     @ApiOperation(value = "根据任务模块任务", tags = {"任务" },  notes = "根据任务模块任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/getusernames")
     public ResponseEntity<TaskDTO> getUsernamesByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1959,7 +1879,7 @@ public class TaskResource {
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'UPDATE')")
     @ApiOperation(value = "根据任务模块任务", tags = {"任务" },  notes = "根据任务模块任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/updatestoryversion")
     public ResponseEntity<TaskDTO> updateStoryVersionByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1969,12 +1889,11 @@ public class TaskResource {
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取指派给我任务", tags = {"任务" } ,notes = "根据任务模块获取指派给我任务")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchassignedtomytask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskAssignedToMyTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -1984,22 +1903,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询指派给我任务", tags = {"任务" } ,notes = "根据任务模块查询指派给我任务")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchassignedtomytask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskAssignedToMyTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取指派给我任务（PC）", tags = {"任务" } ,notes = "根据任务模块获取指派给我任务（PC）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchassignedtomytaskpc")
 	public ResponseEntity<List<TaskDTO>> fetchTaskAssignedToMyTaskPcByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2009,22 +1926,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询指派给我任务（PC）", tags = {"任务" } ,notes = "根据任务模块查询指派给我任务（PC）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchassignedtomytaskpc")
 	public ResponseEntity<Page<TaskDTO>> searchTaskAssignedToMyTaskPcByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取Bug相关任务", tags = {"任务" } ,notes = "根据任务模块获取Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchbugtask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskBugTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchBugTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2034,22 +1949,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询Bug相关任务", tags = {"任务" } ,notes = "根据任务模块查询Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchbugtask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskBugTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchBugTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取通过模块查询", tags = {"任务" } ,notes = "根据任务模块获取通过模块查询")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchbymodule")
 	public ResponseEntity<List<TaskDTO>> fetchTaskByModuleByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchByModule(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2059,22 +1972,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询通过模块查询", tags = {"任务" } ,notes = "根据任务模块查询通过模块查询")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchbymodule")
 	public ResponseEntity<Page<TaskDTO>> searchTaskByModuleByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchByModule(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取数据查询（子任务）", tags = {"任务" } ,notes = "根据任务模块获取数据查询（子任务）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchchilddefault")
 	public ResponseEntity<List<TaskDTO>> fetchTaskChildDefaultByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildDefault(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2084,22 +1995,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询数据查询（子任务）", tags = {"任务" } ,notes = "根据任务模块查询数据查询（子任务）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchchilddefault")
 	public ResponseEntity<Page<TaskDTO>> searchTaskChildDefaultByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取子任务", tags = {"任务" } ,notes = "根据任务模块获取子任务")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchchildtask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskChildTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2109,22 +2018,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询子任务", tags = {"任务" } ,notes = "根据任务模块查询子任务")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchchildtask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskChildTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取子任务（树）", tags = {"任务" } ,notes = "根据任务模块获取子任务（树）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchchildtasktree")
 	public ResponseEntity<List<TaskDTO>> fetchTaskChildTaskTreeByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTaskTree(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2134,22 +2041,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询子任务（树）", tags = {"任务" } ,notes = "根据任务模块查询子任务（树）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchchildtasktree")
 	public ResponseEntity<Page<TaskDTO>> searchTaskChildTaskTreeByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTaskTree(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取用户年度完成任务", tags = {"任务" } ,notes = "根据任务模块获取用户年度完成任务")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchcurfinishtask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskCurFinishTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchCurFinishTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2159,22 +2064,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询用户年度完成任务", tags = {"任务" } ,notes = "根据任务模块查询用户年度完成任务")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchcurfinishtask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskCurFinishTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchCurFinishTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取DEFAULT", tags = {"任务" } ,notes = "根据任务模块获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchdefault")
 	public ResponseEntity<List<TaskDTO>> fetchTaskDefaultByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefault(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2184,22 +2087,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询DEFAULT", tags = {"任务" } ,notes = "根据任务模块查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchdefault")
 	public ResponseEntity<Page<TaskDTO>> searchTaskDefaultByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取DefaultRow", tags = {"任务" } ,notes = "根据任务模块获取DefaultRow")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchdefaultrow")
 	public ResponseEntity<List<TaskDTO>> fetchTaskDefaultRowByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefaultRow(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2209,22 +2110,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询DefaultRow", tags = {"任务" } ,notes = "根据任务模块查询DefaultRow")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchdefaultrow")
 	public ResponseEntity<Page<TaskDTO>> searchTaskDefaultRowByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefaultRow(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取ES批量的导入", tags = {"任务" } ,notes = "根据任务模块获取ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchesbulk")
 	public ResponseEntity<List<TaskDTO>> fetchTaskESBulkByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchESBulk(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2234,22 +2133,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询ES批量的导入", tags = {"任务" } ,notes = "根据任务模块查询ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchesbulk")
 	public ResponseEntity<Page<TaskDTO>> searchTaskESBulkByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchESBulk(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取我代理的任务", tags = {"任务" } ,notes = "根据任务模块获取我代理的任务")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchmyagenttask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyAgentTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAgentTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2259,22 +2156,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询我代理的任务", tags = {"任务" } ,notes = "根据任务模块查询我代理的任务")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchmyagenttask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyAgentTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAgentTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取我相关的任务", tags = {"任务" } ,notes = "根据任务模块获取我相关的任务")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchmyalltask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyAllTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAllTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2284,22 +2179,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询我相关的任务", tags = {"任务" } ,notes = "根据任务模块查询我相关的任务")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchmyalltask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyAllTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAllTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据任务模块获取我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchmycompletetask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2309,22 +2202,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询我完成的任务（汇报）", tags = {"任务" } ,notes = "根据任务模块查询我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchmycompletetask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取我完成的任务（移动端日报）", tags = {"任务" } ,notes = "根据任务模块获取我完成的任务（移动端日报）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchmycompletetaskmobdaily")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskMobDailyByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2334,22 +2225,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询我完成的任务（移动端日报）", tags = {"任务" } ,notes = "根据任务模块查询我完成的任务（移动端日报）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchmycompletetaskmobdaily")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskMobDailyByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取我完成的任务（移动端月报）", tags = {"任务" } ,notes = "根据任务模块获取我完成的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchmycompletetaskmobmonthly")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskMobMonthlyByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2359,22 +2248,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询我完成的任务（移动端月报）", tags = {"任务" } ,notes = "根据任务模块查询我完成的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchmycompletetaskmobmonthly")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskMobMonthlyByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取我完成的任务（月报展示）", tags = {"任务" } ,notes = "根据任务模块获取我完成的任务（月报展示）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchmycompletetaskmonthlyzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskMonthlyZSByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2384,22 +2271,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询我完成的任务（月报展示）", tags = {"任务" } ,notes = "根据任务模块查询我完成的任务（月报展示）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchmycompletetaskmonthlyzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskMonthlyZSByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据任务模块获取我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchmycompletetaskzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskZSByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2409,22 +2294,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询我完成的任务（汇报）", tags = {"任务" } ,notes = "根据任务模块查询我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchmycompletetaskzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskZSByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取我的收藏", tags = {"任务" } ,notes = "根据任务模块获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchmyfavorites")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyFavoritesByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyFavorites(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2434,22 +2317,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询我的收藏", tags = {"任务" } ,notes = "根据任务模块查询我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchmyfavorites")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyFavoritesByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyFavorites(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "根据任务模块获取我计划参与的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchmyplanstaskmobmonthly")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyPlansTaskMobMonthlyByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2459,22 +2340,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "根据任务模块查询我计划参与的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchmyplanstaskmobmonthly")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyPlansTaskMobMonthlyByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据任务模块获取我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchmytomorrowplantask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyTomorrowPlanTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2484,22 +2363,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据任务模块查询我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchmytomorrowplantask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyTomorrowPlanTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据任务模块获取我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchmytomorrowplantaskmobdaily")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyTomorrowPlanTaskMobDailyByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2509,22 +2386,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据任务模块查询我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchmytomorrowplantaskmobdaily")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyTomorrowPlanTaskMobDailyByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "根据任务模块获取移动端下周计划参与(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchnextweekcompletetaskmobzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskNextWeekCompleteTaskMobZSByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2534,22 +2409,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "根据任务模块查询移动端下周计划参与(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchnextweekcompletetaskmobzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskNextWeekCompleteTaskMobZSByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据任务模块获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchnextweekcompletetaskzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskNextWeekCompleteTaskZSByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2559,22 +2432,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据任务模块查询本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchnextweekcompletetaskzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskNextWeekCompleteTaskZSByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取下周计划完成任务(汇报)", tags = {"任务" } ,notes = "根据任务模块获取下周计划完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchnextweekplancompletetask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskNextWeekPlanCompleteTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2584,22 +2455,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询下周计划完成任务(汇报)", tags = {"任务" } ,notes = "根据任务模块查询下周计划完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchnextweekplancompletetask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskNextWeekPlanCompleteTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取相关任务（计划）", tags = {"任务" } ,notes = "根据任务模块获取相关任务（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchplantask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskPlanTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchPlanTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2609,22 +2478,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询相关任务（计划）", tags = {"任务" } ,notes = "根据任务模块查询相关任务（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchplantask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskPlanTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchPlanTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取项目任务（项目立项）", tags = {"任务" } ,notes = "根据任务模块获取项目任务（项目立项）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchprojectapptask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskProjectAppTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectAppTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2634,22 +2501,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询项目任务（项目立项）", tags = {"任务" } ,notes = "根据任务模块查询项目任务（项目立项）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchprojectapptask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskProjectAppTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectAppTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取项目任务", tags = {"任务" } ,notes = "根据任务模块获取项目任务")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchprojecttask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskProjectTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2659,22 +2524,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询项目任务", tags = {"任务" } ,notes = "根据任务模块查询项目任务")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchprojecttask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskProjectTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取根任务", tags = {"任务" } ,notes = "根据任务模块获取根任务")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchroottask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskRootTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchRootTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2684,22 +2547,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询根任务", tags = {"任务" } ,notes = "根据任务模块查询根任务")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchroottask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskRootTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchRootTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取关联计划（当前项目未关联）", tags = {"任务" } ,notes = "根据任务模块获取关联计划（当前项目未关联）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchtasklinkplan")
 	public ResponseEntity<List<TaskDTO>> fetchTaskTaskLinkPlanByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2709,22 +2570,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询关联计划（当前项目未关联）", tags = {"任务" } ,notes = "根据任务模块查询关联计划（当前项目未关联）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchtasklinkplan")
 	public ResponseEntity<Page<TaskDTO>> searchTaskTaskLinkPlanByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "根据任务模块获取我本月完成的任务（下拉列表框）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchthismonthcompletetaskchoice")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisMonthCompleteTaskChoiceByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2734,22 +2593,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "根据任务模块查询我本月完成的任务（下拉列表框）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchthismonthcompletetaskchoice")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisMonthCompleteTaskChoiceByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据任务模块获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchthisweekcompletetask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2759,22 +2616,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据任务模块查询本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchthisweekcompletetask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "根据任务模块获取本周已完成任务(下拉框选择)")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchthisweekcompletetaskchoice")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskChoiceByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2784,22 +2639,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "根据任务模块查询本周已完成任务(下拉框选择)")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchthisweekcompletetaskchoice")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskChoiceByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "根据任务模块获取移动端本周已完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchthisweekcompletetaskmobzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskMobZSByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2809,22 +2662,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "根据任务模块查询移动端本周已完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchthisweekcompletetaskmobzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskMobZSByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据任务模块获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchthisweekcompletetaskzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskZSByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2834,22 +2685,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据任务模块查询本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchthisweekcompletetaskzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskZSByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取todo列表查询", tags = {"任务" } ,notes = "根据任务模块获取todo列表查询")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchtodolisttask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskTodoListTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTodoListTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -2859,22 +2708,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询todo列表查询", tags = {"任务" } ,notes = "根据任务模块查询todo列表查询")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchtodolisttask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskTodoListTaskByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTodoListTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取任务类型分组", tags = {"任务" } ,notes = "根据任务模块获取任务类型分组")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchtypegroup")
 	public ResponseEntity<List<Map>> fetchTaskTypeGroupByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroup(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -2883,22 +2730,20 @@ public class TaskResource {
                 .body(domains.getContent());
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询任务类型分组", tags = {"任务" } ,notes = "根据任务模块查询任务类型分组")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchtypegroup")
 	public ResponseEntity<Page<Map>> searchTaskTypeGroupByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroup(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块获取任务类型分组（计划）", tags = {"任务" } ,notes = "根据任务模块获取任务类型分组（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/fetchtypegroupplan")
 	public ResponseEntity<List<Map>> fetchTaskTypeGroupPlanByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -2907,17 +2752,16 @@ public class TaskResource {
                 .body(domains.getContent());
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块查询任务类型分组（计划）", tags = {"任务" } ,notes = "根据任务模块查询任务类型分组（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/searchtypegroupplan")
 	public ResponseEntity<Page<Map>> searchTaskTypeGroupPlanByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'CREATE')")
     @ApiOperation(value = "根据产品计划建立任务", tags = {"任务" },  notes = "根据产品计划建立任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/tasks")
     public ResponseEntity<TaskDTO> createByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskDTO taskdto) {
@@ -2928,7 +2772,7 @@ public class TaskResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'CREATE')")
     @ApiOperation(value = "根据产品计划批量建立任务", tags = {"任务" },  notes = "根据产品计划批量建立任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/tasks/batch")
     public ResponseEntity<Boolean> createBatchByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody List<TaskDTO> taskdtos) {
@@ -2941,7 +2785,7 @@ public class TaskResource {
     }
 
     @VersionCheck(entity = "task" , versionfield = "lastediteddate")
-    @PreAuthorize("@TaskRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'UPDATE')")
     @ApiOperation(value = "根据产品计划更新任务", tags = {"任务" },  notes = "根据产品计划更新任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}/tasks/{task_id}")
     public ResponseEntity<TaskDTO> updateByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -2953,7 +2797,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'UPDATE')")
     @ApiOperation(value = "根据产品计划批量更新任务", tags = {"任务" },  notes = "根据产品计划批量更新任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}/tasks/batch")
     public ResponseEntity<Boolean> updateBatchByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody List<TaskDTO> taskdtos) {
@@ -2965,14 +2809,14 @@ public class TaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DELETE')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'DELETE')")
     @ApiOperation(value = "根据产品计划删除任务", tags = {"任务" },  notes = "根据产品计划删除任务")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/productplans/{productplan_id}/tasks/{task_id}")
     public ResponseEntity<Boolean> removeByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DELETE')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'DELETE')")
     @ApiOperation(value = "根据产品计划批量删除任务", tags = {"任务" },  notes = "根据产品计划批量删除任务")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/productplans/{productplan_id}/tasks/batch")
     public ResponseEntity<Boolean> removeBatchByProductPlan(@RequestBody List<Long> ids) {
@@ -2980,7 +2824,7 @@ public class TaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
     @ApiOperation(value = "根据产品计划获取任务", tags = {"任务" },  notes = "根据产品计划获取任务")
 	@RequestMapping(method = RequestMethod.GET, value = "/productplans/{productplan_id}/tasks/{task_id}")
     public ResponseEntity<TaskDTO> getByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id) {
@@ -3083,7 +2927,7 @@ public class TaskResource {
         boolean result = taskService.confirmStoryChangeBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'CREATE')")
     @ApiOperation(value = "根据产品计划任务", tags = {"任务" },  notes = "根据产品计划任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/tasks/{task_id}/createcycletasks")
     public ResponseEntity<TaskDTO> createCycleTasksByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -3148,7 +2992,7 @@ public class TaskResource {
         boolean result = taskService.finishBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
     @ApiOperation(value = "根据产品计划任务", tags = {"任务" },  notes = "根据产品计划任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}/tasks/{task_id}/getnextteamuser")
     public ResponseEntity<TaskDTO> getNextTeamUserByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -3165,7 +3009,7 @@ public class TaskResource {
         boolean result = taskService.getNextTeamUserBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
     @ApiOperation(value = "根据产品计划任务", tags = {"任务" },  notes = "根据产品计划任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}/tasks/{task_id}/getteamuserleftactivity")
     public ResponseEntity<TaskDTO> getTeamUserLeftActivityByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -3182,7 +3026,7 @@ public class TaskResource {
         boolean result = taskService.getTeamUserLeftActivityBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
     @ApiOperation(value = "根据产品计划任务", tags = {"任务" },  notes = "根据产品计划任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}/tasks/{task_id}/getteamuserleftstart")
     public ResponseEntity<TaskDTO> getTeamUserLeftStartByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -3199,7 +3043,7 @@ public class TaskResource {
         boolean result = taskService.getTeamUserLeftStartBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
     @ApiOperation(value = "根据产品计划任务", tags = {"任务" },  notes = "根据产品计划任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}/tasks/{task_id}/getusernames")
     public ResponseEntity<TaskDTO> getUsernamesByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -3391,7 +3235,7 @@ public class TaskResource {
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'UPDATE')")
     @ApiOperation(value = "根据产品计划任务", tags = {"任务" },  notes = "根据产品计划任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}/tasks/{task_id}/updatestoryversion")
     public ResponseEntity<TaskDTO> updateStoryVersionByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -3401,12 +3245,11 @@ public class TaskResource {
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取指派给我任务", tags = {"任务" } ,notes = "根据产品计划获取指派给我任务")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchassignedtomytask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskAssignedToMyTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -3416,22 +3259,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询指派给我任务", tags = {"任务" } ,notes = "根据产品计划查询指派给我任务")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchassignedtomytask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskAssignedToMyTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取指派给我任务（PC）", tags = {"任务" } ,notes = "根据产品计划获取指派给我任务（PC）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchassignedtomytaskpc")
 	public ResponseEntity<List<TaskDTO>> fetchTaskAssignedToMyTaskPcByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -3441,22 +3282,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询指派给我任务（PC）", tags = {"任务" } ,notes = "根据产品计划查询指派给我任务（PC）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchassignedtomytaskpc")
 	public ResponseEntity<Page<TaskDTO>> searchTaskAssignedToMyTaskPcByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取Bug相关任务", tags = {"任务" } ,notes = "根据产品计划获取Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchbugtask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskBugTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchBugTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -3466,22 +3305,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询Bug相关任务", tags = {"任务" } ,notes = "根据产品计划查询Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchbugtask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskBugTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchBugTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取通过模块查询", tags = {"任务" } ,notes = "根据产品计划获取通过模块查询")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchbymodule")
 	public ResponseEntity<List<TaskDTO>> fetchTaskByModuleByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchByModule(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -3491,22 +3328,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询通过模块查询", tags = {"任务" } ,notes = "根据产品计划查询通过模块查询")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchbymodule")
 	public ResponseEntity<Page<TaskDTO>> searchTaskByModuleByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchByModule(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取数据查询（子任务）", tags = {"任务" } ,notes = "根据产品计划获取数据查询（子任务）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchchilddefault")
 	public ResponseEntity<List<TaskDTO>> fetchTaskChildDefaultByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildDefault(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -3516,22 +3351,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询数据查询（子任务）", tags = {"任务" } ,notes = "根据产品计划查询数据查询（子任务）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchchilddefault")
 	public ResponseEntity<Page<TaskDTO>> searchTaskChildDefaultByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取子任务", tags = {"任务" } ,notes = "根据产品计划获取子任务")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchchildtask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskChildTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -3541,22 +3374,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询子任务", tags = {"任务" } ,notes = "根据产品计划查询子任务")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchchildtask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskChildTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取子任务（树）", tags = {"任务" } ,notes = "根据产品计划获取子任务（树）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchchildtasktree")
 	public ResponseEntity<List<TaskDTO>> fetchTaskChildTaskTreeByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTaskTree(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -3566,22 +3397,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询子任务（树）", tags = {"任务" } ,notes = "根据产品计划查询子任务（树）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchchildtasktree")
 	public ResponseEntity<Page<TaskDTO>> searchTaskChildTaskTreeByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTaskTree(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取用户年度完成任务", tags = {"任务" } ,notes = "根据产品计划获取用户年度完成任务")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchcurfinishtask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskCurFinishTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchCurFinishTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -3591,22 +3420,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询用户年度完成任务", tags = {"任务" } ,notes = "根据产品计划查询用户年度完成任务")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchcurfinishtask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskCurFinishTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchCurFinishTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取DEFAULT", tags = {"任务" } ,notes = "根据产品计划获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchdefault")
 	public ResponseEntity<List<TaskDTO>> fetchTaskDefaultByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefault(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -3616,22 +3443,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询DEFAULT", tags = {"任务" } ,notes = "根据产品计划查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchdefault")
 	public ResponseEntity<Page<TaskDTO>> searchTaskDefaultByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取DefaultRow", tags = {"任务" } ,notes = "根据产品计划获取DefaultRow")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchdefaultrow")
 	public ResponseEntity<List<TaskDTO>> fetchTaskDefaultRowByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefaultRow(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -3641,22 +3466,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询DefaultRow", tags = {"任务" } ,notes = "根据产品计划查询DefaultRow")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchdefaultrow")
 	public ResponseEntity<Page<TaskDTO>> searchTaskDefaultRowByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefaultRow(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取ES批量的导入", tags = {"任务" } ,notes = "根据产品计划获取ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchesbulk")
 	public ResponseEntity<List<TaskDTO>> fetchTaskESBulkByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchESBulk(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -3666,22 +3489,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询ES批量的导入", tags = {"任务" } ,notes = "根据产品计划查询ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchesbulk")
 	public ResponseEntity<Page<TaskDTO>> searchTaskESBulkByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchESBulk(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取我代理的任务", tags = {"任务" } ,notes = "根据产品计划获取我代理的任务")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchmyagenttask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyAgentTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAgentTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -3691,22 +3512,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询我代理的任务", tags = {"任务" } ,notes = "根据产品计划查询我代理的任务")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchmyagenttask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyAgentTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAgentTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取我相关的任务", tags = {"任务" } ,notes = "根据产品计划获取我相关的任务")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchmyalltask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyAllTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAllTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -3716,22 +3535,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询我相关的任务", tags = {"任务" } ,notes = "根据产品计划查询我相关的任务")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchmyalltask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyAllTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAllTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据产品计划获取我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchmycompletetask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -3741,22 +3558,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询我完成的任务（汇报）", tags = {"任务" } ,notes = "根据产品计划查询我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchmycompletetask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取我完成的任务（移动端日报）", tags = {"任务" } ,notes = "根据产品计划获取我完成的任务（移动端日报）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchmycompletetaskmobdaily")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskMobDailyByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -3766,22 +3581,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询我完成的任务（移动端日报）", tags = {"任务" } ,notes = "根据产品计划查询我完成的任务（移动端日报）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchmycompletetaskmobdaily")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskMobDailyByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取我完成的任务（移动端月报）", tags = {"任务" } ,notes = "根据产品计划获取我完成的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchmycompletetaskmobmonthly")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskMobMonthlyByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -3791,22 +3604,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询我完成的任务（移动端月报）", tags = {"任务" } ,notes = "根据产品计划查询我完成的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchmycompletetaskmobmonthly")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskMobMonthlyByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取我完成的任务（月报展示）", tags = {"任务" } ,notes = "根据产品计划获取我完成的任务（月报展示）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchmycompletetaskmonthlyzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskMonthlyZSByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -3816,22 +3627,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询我完成的任务（月报展示）", tags = {"任务" } ,notes = "根据产品计划查询我完成的任务（月报展示）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchmycompletetaskmonthlyzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskMonthlyZSByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据产品计划获取我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchmycompletetaskzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskZSByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -3841,22 +3650,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询我完成的任务（汇报）", tags = {"任务" } ,notes = "根据产品计划查询我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchmycompletetaskzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskZSByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取我的收藏", tags = {"任务" } ,notes = "根据产品计划获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchmyfavorites")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyFavoritesByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyFavorites(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -3866,22 +3673,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询我的收藏", tags = {"任务" } ,notes = "根据产品计划查询我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchmyfavorites")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyFavoritesByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyFavorites(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "根据产品计划获取我计划参与的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchmyplanstaskmobmonthly")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyPlansTaskMobMonthlyByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -3891,22 +3696,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "根据产品计划查询我计划参与的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchmyplanstaskmobmonthly")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyPlansTaskMobMonthlyByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据产品计划获取我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchmytomorrowplantask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyTomorrowPlanTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -3916,22 +3719,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据产品计划查询我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchmytomorrowplantask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyTomorrowPlanTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据产品计划获取我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchmytomorrowplantaskmobdaily")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyTomorrowPlanTaskMobDailyByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -3941,22 +3742,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据产品计划查询我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchmytomorrowplantaskmobdaily")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyTomorrowPlanTaskMobDailyByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "根据产品计划获取移动端下周计划参与(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchnextweekcompletetaskmobzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskNextWeekCompleteTaskMobZSByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -3966,22 +3765,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "根据产品计划查询移动端下周计划参与(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchnextweekcompletetaskmobzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskNextWeekCompleteTaskMobZSByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据产品计划获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchnextweekcompletetaskzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskNextWeekCompleteTaskZSByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -3991,22 +3788,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据产品计划查询本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchnextweekcompletetaskzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskNextWeekCompleteTaskZSByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取下周计划完成任务(汇报)", tags = {"任务" } ,notes = "根据产品计划获取下周计划完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchnextweekplancompletetask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskNextWeekPlanCompleteTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -4016,22 +3811,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询下周计划完成任务(汇报)", tags = {"任务" } ,notes = "根据产品计划查询下周计划完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchnextweekplancompletetask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskNextWeekPlanCompleteTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取相关任务（计划）", tags = {"任务" } ,notes = "根据产品计划获取相关任务（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchplantask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskPlanTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchPlanTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -4041,22 +3834,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询相关任务（计划）", tags = {"任务" } ,notes = "根据产品计划查询相关任务（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchplantask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskPlanTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchPlanTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取项目任务（项目立项）", tags = {"任务" } ,notes = "根据产品计划获取项目任务（项目立项）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchprojectapptask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskProjectAppTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectAppTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -4066,22 +3857,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询项目任务（项目立项）", tags = {"任务" } ,notes = "根据产品计划查询项目任务（项目立项）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchprojectapptask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskProjectAppTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectAppTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取项目任务", tags = {"任务" } ,notes = "根据产品计划获取项目任务")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchprojecttask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskProjectTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -4091,22 +3880,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询项目任务", tags = {"任务" } ,notes = "根据产品计划查询项目任务")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchprojecttask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskProjectTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取根任务", tags = {"任务" } ,notes = "根据产品计划获取根任务")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchroottask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskRootTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchRootTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -4116,22 +3903,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询根任务", tags = {"任务" } ,notes = "根据产品计划查询根任务")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchroottask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskRootTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchRootTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取关联计划（当前项目未关联）", tags = {"任务" } ,notes = "根据产品计划获取关联计划（当前项目未关联）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchtasklinkplan")
 	public ResponseEntity<List<TaskDTO>> fetchTaskTaskLinkPlanByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -4141,22 +3926,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询关联计划（当前项目未关联）", tags = {"任务" } ,notes = "根据产品计划查询关联计划（当前项目未关联）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchtasklinkplan")
 	public ResponseEntity<Page<TaskDTO>> searchTaskTaskLinkPlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "根据产品计划获取我本月完成的任务（下拉列表框）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchthismonthcompletetaskchoice")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisMonthCompleteTaskChoiceByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -4166,22 +3949,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "根据产品计划查询我本月完成的任务（下拉列表框）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchthismonthcompletetaskchoice")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisMonthCompleteTaskChoiceByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据产品计划获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchthisweekcompletetask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -4191,22 +3972,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据产品计划查询本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchthisweekcompletetask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "根据产品计划获取本周已完成任务(下拉框选择)")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchthisweekcompletetaskchoice")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskChoiceByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -4216,22 +3995,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "根据产品计划查询本周已完成任务(下拉框选择)")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchthisweekcompletetaskchoice")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskChoiceByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "根据产品计划获取移动端本周已完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchthisweekcompletetaskmobzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskMobZSByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -4241,22 +4018,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "根据产品计划查询移动端本周已完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchthisweekcompletetaskmobzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskMobZSByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据产品计划获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchthisweekcompletetaskzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskZSByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -4266,22 +4041,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据产品计划查询本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchthisweekcompletetaskzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskZSByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取todo列表查询", tags = {"任务" } ,notes = "根据产品计划获取todo列表查询")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchtodolisttask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskTodoListTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTodoListTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -4291,22 +4064,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询todo列表查询", tags = {"任务" } ,notes = "根据产品计划查询todo列表查询")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchtodolisttask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskTodoListTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTodoListTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取任务类型分组", tags = {"任务" } ,notes = "根据产品计划获取任务类型分组")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchtypegroup")
 	public ResponseEntity<List<Map>> fetchTaskTypeGroupByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroup(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -4315,22 +4086,20 @@ public class TaskResource {
                 .body(domains.getContent());
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询任务类型分组", tags = {"任务" } ,notes = "根据产品计划查询任务类型分组")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchtypegroup")
 	public ResponseEntity<Page<Map>> searchTaskTypeGroupByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroup(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划获取任务类型分组（计划）", tags = {"任务" } ,notes = "根据产品计划获取任务类型分组（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/fetchtypegroupplan")
 	public ResponseEntity<List<Map>> fetchTaskTypeGroupPlanByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -4339,17 +4108,16 @@ public class TaskResource {
                 .body(domains.getContent());
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划查询任务类型分组（计划）", tags = {"任务" } ,notes = "根据产品计划查询任务类型分组（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/searchtypegroupplan")
 	public ResponseEntity<Page<Map>> searchTaskTypeGroupPlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'CREATE')")
     @ApiOperation(value = "根据需求建立任务", tags = {"任务" },  notes = "根据需求建立任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/tasks")
     public ResponseEntity<TaskDTO> createByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskDTO taskdto) {
@@ -4360,7 +4128,7 @@ public class TaskResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'CREATE')")
     @ApiOperation(value = "根据需求批量建立任务", tags = {"任务" },  notes = "根据需求批量建立任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/tasks/batch")
     public ResponseEntity<Boolean> createBatchByStory(@PathVariable("story_id") Long story_id, @RequestBody List<TaskDTO> taskdtos) {
@@ -4373,7 +4141,7 @@ public class TaskResource {
     }
 
     @VersionCheck(entity = "task" , versionfield = "lastediteddate")
-    @PreAuthorize("@TaskRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'UPDATE')")
     @ApiOperation(value = "根据需求更新任务", tags = {"任务" },  notes = "根据需求更新任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/tasks/{task_id}")
     public ResponseEntity<TaskDTO> updateByStory(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -4385,7 +4153,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'UPDATE')")
     @ApiOperation(value = "根据需求批量更新任务", tags = {"任务" },  notes = "根据需求批量更新任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/tasks/batch")
     public ResponseEntity<Boolean> updateBatchByStory(@PathVariable("story_id") Long story_id, @RequestBody List<TaskDTO> taskdtos) {
@@ -4397,14 +4165,14 @@ public class TaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DELETE')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'DELETE')")
     @ApiOperation(value = "根据需求删除任务", tags = {"任务" },  notes = "根据需求删除任务")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}/tasks/{task_id}")
     public ResponseEntity<Boolean> removeByStory(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DELETE')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'DELETE')")
     @ApiOperation(value = "根据需求批量删除任务", tags = {"任务" },  notes = "根据需求批量删除任务")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}/tasks/batch")
     public ResponseEntity<Boolean> removeBatchByStory(@RequestBody List<Long> ids) {
@@ -4412,7 +4180,7 @@ public class TaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
     @ApiOperation(value = "根据需求获取任务", tags = {"任务" },  notes = "根据需求获取任务")
 	@RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/tasks/{task_id}")
     public ResponseEntity<TaskDTO> getByStory(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id) {
@@ -4515,7 +4283,7 @@ public class TaskResource {
         boolean result = taskService.confirmStoryChangeBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'CREATE')")
     @ApiOperation(value = "根据需求任务", tags = {"任务" },  notes = "根据需求任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/tasks/{task_id}/createcycletasks")
     public ResponseEntity<TaskDTO> createCycleTasksByStory(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -4580,7 +4348,7 @@ public class TaskResource {
         boolean result = taskService.finishBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
     @ApiOperation(value = "根据需求任务", tags = {"任务" },  notes = "根据需求任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/tasks/{task_id}/getnextteamuser")
     public ResponseEntity<TaskDTO> getNextTeamUserByStory(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -4597,7 +4365,7 @@ public class TaskResource {
         boolean result = taskService.getNextTeamUserBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
     @ApiOperation(value = "根据需求任务", tags = {"任务" },  notes = "根据需求任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/tasks/{task_id}/getteamuserleftactivity")
     public ResponseEntity<TaskDTO> getTeamUserLeftActivityByStory(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -4614,7 +4382,7 @@ public class TaskResource {
         boolean result = taskService.getTeamUserLeftActivityBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
     @ApiOperation(value = "根据需求任务", tags = {"任务" },  notes = "根据需求任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/tasks/{task_id}/getteamuserleftstart")
     public ResponseEntity<TaskDTO> getTeamUserLeftStartByStory(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -4631,7 +4399,7 @@ public class TaskResource {
         boolean result = taskService.getTeamUserLeftStartBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
     @ApiOperation(value = "根据需求任务", tags = {"任务" },  notes = "根据需求任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/tasks/{task_id}/getusernames")
     public ResponseEntity<TaskDTO> getUsernamesByStory(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -4823,7 +4591,7 @@ public class TaskResource {
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'UPDATE')")
     @ApiOperation(value = "根据需求任务", tags = {"任务" },  notes = "根据需求任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/tasks/{task_id}/updatestoryversion")
     public ResponseEntity<TaskDTO> updateStoryVersionByStory(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -4833,12 +4601,11 @@ public class TaskResource {
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取指派给我任务", tags = {"任务" } ,notes = "根据需求获取指派给我任务")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchassignedtomytask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskAssignedToMyTaskByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -4848,22 +4615,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询指派给我任务", tags = {"任务" } ,notes = "根据需求查询指派给我任务")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchassignedtomytask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskAssignedToMyTaskByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取指派给我任务（PC）", tags = {"任务" } ,notes = "根据需求获取指派给我任务（PC）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchassignedtomytaskpc")
 	public ResponseEntity<List<TaskDTO>> fetchTaskAssignedToMyTaskPcByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -4873,22 +4638,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询指派给我任务（PC）", tags = {"任务" } ,notes = "根据需求查询指派给我任务（PC）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchassignedtomytaskpc")
 	public ResponseEntity<Page<TaskDTO>> searchTaskAssignedToMyTaskPcByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取Bug相关任务", tags = {"任务" } ,notes = "根据需求获取Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchbugtask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskBugTaskByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchBugTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -4898,22 +4661,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询Bug相关任务", tags = {"任务" } ,notes = "根据需求查询Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchbugtask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskBugTaskByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchBugTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取通过模块查询", tags = {"任务" } ,notes = "根据需求获取通过模块查询")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchbymodule")
 	public ResponseEntity<List<TaskDTO>> fetchTaskByModuleByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchByModule(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -4923,22 +4684,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询通过模块查询", tags = {"任务" } ,notes = "根据需求查询通过模块查询")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchbymodule")
 	public ResponseEntity<Page<TaskDTO>> searchTaskByModuleByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchByModule(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取数据查询（子任务）", tags = {"任务" } ,notes = "根据需求获取数据查询（子任务）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchchilddefault")
 	public ResponseEntity<List<TaskDTO>> fetchTaskChildDefaultByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildDefault(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -4948,22 +4707,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询数据查询（子任务）", tags = {"任务" } ,notes = "根据需求查询数据查询（子任务）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchchilddefault")
 	public ResponseEntity<Page<TaskDTO>> searchTaskChildDefaultByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取子任务", tags = {"任务" } ,notes = "根据需求获取子任务")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchchildtask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskChildTaskByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -4973,22 +4730,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询子任务", tags = {"任务" } ,notes = "根据需求查询子任务")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchchildtask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskChildTaskByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取子任务（树）", tags = {"任务" } ,notes = "根据需求获取子任务（树）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchchildtasktree")
 	public ResponseEntity<List<TaskDTO>> fetchTaskChildTaskTreeByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTaskTree(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -4998,22 +4753,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询子任务（树）", tags = {"任务" } ,notes = "根据需求查询子任务（树）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchchildtasktree")
 	public ResponseEntity<Page<TaskDTO>> searchTaskChildTaskTreeByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTaskTree(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取用户年度完成任务", tags = {"任务" } ,notes = "根据需求获取用户年度完成任务")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchcurfinishtask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskCurFinishTaskByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchCurFinishTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5023,22 +4776,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询用户年度完成任务", tags = {"任务" } ,notes = "根据需求查询用户年度完成任务")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchcurfinishtask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskCurFinishTaskByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchCurFinishTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取DEFAULT", tags = {"任务" } ,notes = "根据需求获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchdefault")
 	public ResponseEntity<List<TaskDTO>> fetchTaskDefaultByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefault(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5048,22 +4799,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询DEFAULT", tags = {"任务" } ,notes = "根据需求查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchdefault")
 	public ResponseEntity<Page<TaskDTO>> searchTaskDefaultByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取DefaultRow", tags = {"任务" } ,notes = "根据需求获取DefaultRow")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchdefaultrow")
 	public ResponseEntity<List<TaskDTO>> fetchTaskDefaultRowByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefaultRow(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5073,22 +4822,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询DefaultRow", tags = {"任务" } ,notes = "根据需求查询DefaultRow")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchdefaultrow")
 	public ResponseEntity<Page<TaskDTO>> searchTaskDefaultRowByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefaultRow(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取ES批量的导入", tags = {"任务" } ,notes = "根据需求获取ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchesbulk")
 	public ResponseEntity<List<TaskDTO>> fetchTaskESBulkByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchESBulk(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5098,22 +4845,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询ES批量的导入", tags = {"任务" } ,notes = "根据需求查询ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchesbulk")
 	public ResponseEntity<Page<TaskDTO>> searchTaskESBulkByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchESBulk(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取我代理的任务", tags = {"任务" } ,notes = "根据需求获取我代理的任务")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchmyagenttask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyAgentTaskByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAgentTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5123,22 +4868,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询我代理的任务", tags = {"任务" } ,notes = "根据需求查询我代理的任务")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchmyagenttask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyAgentTaskByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAgentTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取我相关的任务", tags = {"任务" } ,notes = "根据需求获取我相关的任务")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchmyalltask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyAllTaskByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAllTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5148,22 +4891,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询我相关的任务", tags = {"任务" } ,notes = "根据需求查询我相关的任务")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchmyalltask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyAllTaskByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAllTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据需求获取我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchmycompletetask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5173,22 +4914,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询我完成的任务（汇报）", tags = {"任务" } ,notes = "根据需求查询我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchmycompletetask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取我完成的任务（移动端日报）", tags = {"任务" } ,notes = "根据需求获取我完成的任务（移动端日报）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchmycompletetaskmobdaily")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskMobDailyByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5198,22 +4937,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询我完成的任务（移动端日报）", tags = {"任务" } ,notes = "根据需求查询我完成的任务（移动端日报）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchmycompletetaskmobdaily")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskMobDailyByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取我完成的任务（移动端月报）", tags = {"任务" } ,notes = "根据需求获取我完成的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchmycompletetaskmobmonthly")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskMobMonthlyByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5223,22 +4960,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询我完成的任务（移动端月报）", tags = {"任务" } ,notes = "根据需求查询我完成的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchmycompletetaskmobmonthly")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskMobMonthlyByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取我完成的任务（月报展示）", tags = {"任务" } ,notes = "根据需求获取我完成的任务（月报展示）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchmycompletetaskmonthlyzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskMonthlyZSByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5248,22 +4983,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询我完成的任务（月报展示）", tags = {"任务" } ,notes = "根据需求查询我完成的任务（月报展示）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchmycompletetaskmonthlyzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskMonthlyZSByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据需求获取我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchmycompletetaskzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskZSByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5273,22 +5006,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询我完成的任务（汇报）", tags = {"任务" } ,notes = "根据需求查询我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchmycompletetaskzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskZSByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取我的收藏", tags = {"任务" } ,notes = "根据需求获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchmyfavorites")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyFavoritesByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyFavorites(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5298,22 +5029,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询我的收藏", tags = {"任务" } ,notes = "根据需求查询我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchmyfavorites")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyFavoritesByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyFavorites(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "根据需求获取我计划参与的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchmyplanstaskmobmonthly")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyPlansTaskMobMonthlyByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5323,22 +5052,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "根据需求查询我计划参与的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchmyplanstaskmobmonthly")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyPlansTaskMobMonthlyByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据需求获取我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchmytomorrowplantask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyTomorrowPlanTaskByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5348,22 +5075,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据需求查询我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchmytomorrowplantask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyTomorrowPlanTaskByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据需求获取我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchmytomorrowplantaskmobdaily")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyTomorrowPlanTaskMobDailyByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5373,22 +5098,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据需求查询我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchmytomorrowplantaskmobdaily")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyTomorrowPlanTaskMobDailyByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "根据需求获取移动端下周计划参与(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchnextweekcompletetaskmobzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskNextWeekCompleteTaskMobZSByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5398,22 +5121,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "根据需求查询移动端下周计划参与(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchnextweekcompletetaskmobzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskNextWeekCompleteTaskMobZSByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据需求获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchnextweekcompletetaskzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskNextWeekCompleteTaskZSByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5423,22 +5144,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据需求查询本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchnextweekcompletetaskzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskNextWeekCompleteTaskZSByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取下周计划完成任务(汇报)", tags = {"任务" } ,notes = "根据需求获取下周计划完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchnextweekplancompletetask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskNextWeekPlanCompleteTaskByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5448,22 +5167,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询下周计划完成任务(汇报)", tags = {"任务" } ,notes = "根据需求查询下周计划完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchnextweekplancompletetask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskNextWeekPlanCompleteTaskByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取相关任务（计划）", tags = {"任务" } ,notes = "根据需求获取相关任务（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchplantask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskPlanTaskByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchPlanTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5473,22 +5190,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询相关任务（计划）", tags = {"任务" } ,notes = "根据需求查询相关任务（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchplantask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskPlanTaskByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchPlanTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取项目任务（项目立项）", tags = {"任务" } ,notes = "根据需求获取项目任务（项目立项）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchprojectapptask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskProjectAppTaskByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectAppTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5498,22 +5213,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询项目任务（项目立项）", tags = {"任务" } ,notes = "根据需求查询项目任务（项目立项）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchprojectapptask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskProjectAppTaskByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectAppTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取项目任务", tags = {"任务" } ,notes = "根据需求获取项目任务")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchprojecttask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskProjectTaskByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5523,22 +5236,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询项目任务", tags = {"任务" } ,notes = "根据需求查询项目任务")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchprojecttask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskProjectTaskByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取根任务", tags = {"任务" } ,notes = "根据需求获取根任务")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchroottask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskRootTaskByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchRootTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5548,22 +5259,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询根任务", tags = {"任务" } ,notes = "根据需求查询根任务")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchroottask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskRootTaskByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchRootTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取关联计划（当前项目未关联）", tags = {"任务" } ,notes = "根据需求获取关联计划（当前项目未关联）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchtasklinkplan")
 	public ResponseEntity<List<TaskDTO>> fetchTaskTaskLinkPlanByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5573,22 +5282,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询关联计划（当前项目未关联）", tags = {"任务" } ,notes = "根据需求查询关联计划（当前项目未关联）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchtasklinkplan")
 	public ResponseEntity<Page<TaskDTO>> searchTaskTaskLinkPlanByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "根据需求获取我本月完成的任务（下拉列表框）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchthismonthcompletetaskchoice")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisMonthCompleteTaskChoiceByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5598,22 +5305,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "根据需求查询我本月完成的任务（下拉列表框）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchthismonthcompletetaskchoice")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisMonthCompleteTaskChoiceByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据需求获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchthisweekcompletetask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5623,22 +5328,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据需求查询本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchthisweekcompletetask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "根据需求获取本周已完成任务(下拉框选择)")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchthisweekcompletetaskchoice")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskChoiceByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5648,22 +5351,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "根据需求查询本周已完成任务(下拉框选择)")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchthisweekcompletetaskchoice")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskChoiceByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "根据需求获取移动端本周已完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchthisweekcompletetaskmobzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskMobZSByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5673,22 +5374,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "根据需求查询移动端本周已完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchthisweekcompletetaskmobzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskMobZSByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据需求获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchthisweekcompletetaskzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskZSByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5698,22 +5397,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据需求查询本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchthisweekcompletetaskzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskZSByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取todo列表查询", tags = {"任务" } ,notes = "根据需求获取todo列表查询")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchtodolisttask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskTodoListTaskByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTodoListTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -5723,22 +5420,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询todo列表查询", tags = {"任务" } ,notes = "根据需求查询todo列表查询")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchtodolisttask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskTodoListTaskByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTodoListTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取任务类型分组", tags = {"任务" } ,notes = "根据需求获取任务类型分组")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchtypegroup")
 	public ResponseEntity<List<Map>> fetchTaskTypeGroupByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroup(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -5747,22 +5442,20 @@ public class TaskResource {
                 .body(domains.getContent());
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询任务类型分组", tags = {"任务" } ,notes = "根据需求查询任务类型分组")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchtypegroup")
 	public ResponseEntity<Page<Map>> searchTaskTypeGroupByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroup(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求获取任务类型分组（计划）", tags = {"任务" } ,notes = "根据需求获取任务类型分组（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/fetchtypegroupplan")
 	public ResponseEntity<List<Map>> fetchTaskTypeGroupPlanByStory(@PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -5771,17 +5464,16 @@ public class TaskResource {
                 .body(domains.getContent());
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求查询任务类型分组（计划）", tags = {"任务" } ,notes = "根据需求查询任务类型分组（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/searchtypegroupplan")
 	public ResponseEntity<Page<Map>> searchTaskTypeGroupPlanByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目建立任务", tags = {"任务" },  notes = "根据项目建立任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks")
     public ResponseEntity<TaskDTO> createByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskDTO taskdto) {
@@ -5792,7 +5484,7 @@ public class TaskResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目批量建立任务", tags = {"任务" },  notes = "根据项目批量建立任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/batch")
     public ResponseEntity<Boolean> createBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<TaskDTO> taskdtos) {
@@ -5805,7 +5497,7 @@ public class TaskResource {
     }
 
     @VersionCheck(entity = "task" , versionfield = "lastediteddate")
-    @PreAuthorize("@TaskRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目更新任务", tags = {"任务" },  notes = "根据项目更新任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}")
     public ResponseEntity<TaskDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -5817,7 +5509,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目批量更新任务", tags = {"任务" },  notes = "根据项目批量更新任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/batch")
     public ResponseEntity<Boolean> updateBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<TaskDTO> taskdtos) {
@@ -5829,14 +5521,14 @@ public class TaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DELETE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
     @ApiOperation(value = "根据项目删除任务", tags = {"任务" },  notes = "根据项目删除任务")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/tasks/{task_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DELETE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
     @ApiOperation(value = "根据项目批量删除任务", tags = {"任务" },  notes = "根据项目批量删除任务")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/tasks/batch")
     public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
@@ -5844,7 +5536,7 @@ public class TaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目获取任务", tags = {"任务" },  notes = "根据项目获取任务")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}")
     public ResponseEntity<TaskDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id) {
@@ -5947,7 +5639,7 @@ public class TaskResource {
         boolean result = taskService.confirmStoryChangeBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目任务", tags = {"任务" },  notes = "根据项目任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/createcycletasks")
     public ResponseEntity<TaskDTO> createCycleTasksByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -6012,7 +5704,7 @@ public class TaskResource {
         boolean result = taskService.finishBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目任务", tags = {"任务" },  notes = "根据项目任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}/getnextteamuser")
     public ResponseEntity<TaskDTO> getNextTeamUserByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -6029,7 +5721,7 @@ public class TaskResource {
         boolean result = taskService.getNextTeamUserBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目任务", tags = {"任务" },  notes = "根据项目任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}/getteamuserleftactivity")
     public ResponseEntity<TaskDTO> getTeamUserLeftActivityByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -6046,7 +5738,7 @@ public class TaskResource {
         boolean result = taskService.getTeamUserLeftActivityBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目任务", tags = {"任务" },  notes = "根据项目任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}/getteamuserleftstart")
     public ResponseEntity<TaskDTO> getTeamUserLeftStartByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -6063,7 +5755,7 @@ public class TaskResource {
         boolean result = taskService.getTeamUserLeftStartBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目任务", tags = {"任务" },  notes = "根据项目任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}/getusernames")
     public ResponseEntity<TaskDTO> getUsernamesByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -6255,7 +5947,7 @@ public class TaskResource {
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目任务", tags = {"任务" },  notes = "根据项目任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}/updatestoryversion")
     public ResponseEntity<TaskDTO> updateStoryVersionByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -6265,12 +5957,11 @@ public class TaskResource {
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取指派给我任务", tags = {"任务" } ,notes = "根据项目获取指派给我任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchassignedtomytask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskAssignedToMyTaskByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6280,22 +5971,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询指派给我任务", tags = {"任务" } ,notes = "根据项目查询指派给我任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchassignedtomytask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskAssignedToMyTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取指派给我任务（PC）", tags = {"任务" } ,notes = "根据项目获取指派给我任务（PC）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchassignedtomytaskpc")
 	public ResponseEntity<List<TaskDTO>> fetchTaskAssignedToMyTaskPcByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6305,22 +5994,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询指派给我任务（PC）", tags = {"任务" } ,notes = "根据项目查询指派给我任务（PC）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchassignedtomytaskpc")
 	public ResponseEntity<Page<TaskDTO>> searchTaskAssignedToMyTaskPcByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取Bug相关任务", tags = {"任务" } ,notes = "根据项目获取Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchbugtask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskBugTaskByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchBugTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6330,22 +6017,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询Bug相关任务", tags = {"任务" } ,notes = "根据项目查询Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchbugtask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskBugTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchBugTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取通过模块查询", tags = {"任务" } ,notes = "根据项目获取通过模块查询")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchbymodule")
 	public ResponseEntity<List<TaskDTO>> fetchTaskByModuleByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchByModule(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6355,22 +6040,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询通过模块查询", tags = {"任务" } ,notes = "根据项目查询通过模块查询")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchbymodule")
 	public ResponseEntity<Page<TaskDTO>> searchTaskByModuleByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchByModule(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取数据查询（子任务）", tags = {"任务" } ,notes = "根据项目获取数据查询（子任务）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchchilddefault")
 	public ResponseEntity<List<TaskDTO>> fetchTaskChildDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildDefault(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6380,22 +6063,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询数据查询（子任务）", tags = {"任务" } ,notes = "根据项目查询数据查询（子任务）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchchilddefault")
 	public ResponseEntity<Page<TaskDTO>> searchTaskChildDefaultByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取子任务", tags = {"任务" } ,notes = "根据项目获取子任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchchildtask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskChildTaskByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6405,22 +6086,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询子任务", tags = {"任务" } ,notes = "根据项目查询子任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchchildtask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskChildTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取子任务（树）", tags = {"任务" } ,notes = "根据项目获取子任务（树）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchchildtasktree")
 	public ResponseEntity<List<TaskDTO>> fetchTaskChildTaskTreeByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTaskTree(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6430,22 +6109,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询子任务（树）", tags = {"任务" } ,notes = "根据项目查询子任务（树）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchchildtasktree")
 	public ResponseEntity<Page<TaskDTO>> searchTaskChildTaskTreeByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTaskTree(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取用户年度完成任务", tags = {"任务" } ,notes = "根据项目获取用户年度完成任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchcurfinishtask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskCurFinishTaskByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchCurFinishTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6455,22 +6132,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询用户年度完成任务", tags = {"任务" } ,notes = "根据项目查询用户年度完成任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchcurfinishtask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskCurFinishTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchCurFinishTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"任务" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchdefault")
 	public ResponseEntity<List<TaskDTO>> fetchTaskDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefault(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6480,22 +6155,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询DEFAULT", tags = {"任务" } ,notes = "根据项目查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchdefault")
 	public ResponseEntity<Page<TaskDTO>> searchTaskDefaultByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取DefaultRow", tags = {"任务" } ,notes = "根据项目获取DefaultRow")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchdefaultrow")
 	public ResponseEntity<List<TaskDTO>> fetchTaskDefaultRowByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefaultRow(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6505,22 +6178,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询DefaultRow", tags = {"任务" } ,notes = "根据项目查询DefaultRow")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchdefaultrow")
 	public ResponseEntity<Page<TaskDTO>> searchTaskDefaultRowByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefaultRow(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取ES批量的导入", tags = {"任务" } ,notes = "根据项目获取ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchesbulk")
 	public ResponseEntity<List<TaskDTO>> fetchTaskESBulkByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchESBulk(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6530,22 +6201,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询ES批量的导入", tags = {"任务" } ,notes = "根据项目查询ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchesbulk")
 	public ResponseEntity<Page<TaskDTO>> searchTaskESBulkByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchESBulk(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我代理的任务", tags = {"任务" } ,notes = "根据项目获取我代理的任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchmyagenttask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyAgentTaskByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAgentTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6555,22 +6224,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询我代理的任务", tags = {"任务" } ,notes = "根据项目查询我代理的任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchmyagenttask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyAgentTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAgentTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我相关的任务", tags = {"任务" } ,notes = "根据项目获取我相关的任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchmyalltask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyAllTaskByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAllTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6580,22 +6247,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询我相关的任务", tags = {"任务" } ,notes = "根据项目查询我相关的任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchmyalltask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyAllTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAllTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据项目获取我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchmycompletetask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6605,22 +6270,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询我完成的任务（汇报）", tags = {"任务" } ,notes = "根据项目查询我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchmycompletetask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我完成的任务（移动端日报）", tags = {"任务" } ,notes = "根据项目获取我完成的任务（移动端日报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchmycompletetaskmobdaily")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskMobDailyByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6630,22 +6293,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询我完成的任务（移动端日报）", tags = {"任务" } ,notes = "根据项目查询我完成的任务（移动端日报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchmycompletetaskmobdaily")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskMobDailyByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我完成的任务（移动端月报）", tags = {"任务" } ,notes = "根据项目获取我完成的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchmycompletetaskmobmonthly")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskMobMonthlyByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6655,22 +6316,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询我完成的任务（移动端月报）", tags = {"任务" } ,notes = "根据项目查询我完成的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchmycompletetaskmobmonthly")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskMobMonthlyByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我完成的任务（月报展示）", tags = {"任务" } ,notes = "根据项目获取我完成的任务（月报展示）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchmycompletetaskmonthlyzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskMonthlyZSByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6680,22 +6339,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询我完成的任务（月报展示）", tags = {"任务" } ,notes = "根据项目查询我完成的任务（月报展示）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchmycompletetaskmonthlyzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskMonthlyZSByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据项目获取我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchmycompletetaskzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskZSByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6705,22 +6362,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询我完成的任务（汇报）", tags = {"任务" } ,notes = "根据项目查询我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchmycompletetaskzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskZSByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我的收藏", tags = {"任务" } ,notes = "根据项目获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchmyfavorites")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyFavoritesByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyFavorites(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6730,22 +6385,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询我的收藏", tags = {"任务" } ,notes = "根据项目查询我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchmyfavorites")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyFavoritesByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyFavorites(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "根据项目获取我计划参与的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchmyplanstaskmobmonthly")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyPlansTaskMobMonthlyByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6755,22 +6408,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "根据项目查询我计划参与的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchmyplanstaskmobmonthly")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyPlansTaskMobMonthlyByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据项目获取我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchmytomorrowplantask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyTomorrowPlanTaskByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6780,22 +6431,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据项目查询我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchmytomorrowplantask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyTomorrowPlanTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据项目获取我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchmytomorrowplantaskmobdaily")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyTomorrowPlanTaskMobDailyByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6805,22 +6454,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据项目查询我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchmytomorrowplantaskmobdaily")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyTomorrowPlanTaskMobDailyByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "根据项目获取移动端下周计划参与(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchnextweekcompletetaskmobzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskNextWeekCompleteTaskMobZSByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6830,22 +6477,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "根据项目查询移动端下周计划参与(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchnextweekcompletetaskmobzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskNextWeekCompleteTaskMobZSByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据项目获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchnextweekcompletetaskzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskNextWeekCompleteTaskZSByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6855,22 +6500,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据项目查询本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchnextweekcompletetaskzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskNextWeekCompleteTaskZSByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取下周计划完成任务(汇报)", tags = {"任务" } ,notes = "根据项目获取下周计划完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchnextweekplancompletetask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskNextWeekPlanCompleteTaskByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6880,22 +6523,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询下周计划完成任务(汇报)", tags = {"任务" } ,notes = "根据项目查询下周计划完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchnextweekplancompletetask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskNextWeekPlanCompleteTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取相关任务（计划）", tags = {"任务" } ,notes = "根据项目获取相关任务（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchplantask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskPlanTaskByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchPlanTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6905,22 +6546,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询相关任务（计划）", tags = {"任务" } ,notes = "根据项目查询相关任务（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchplantask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskPlanTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchPlanTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取项目任务（项目立项）", tags = {"任务" } ,notes = "根据项目获取项目任务（项目立项）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchprojectapptask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskProjectAppTaskByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectAppTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6930,22 +6569,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询项目任务（项目立项）", tags = {"任务" } ,notes = "根据项目查询项目任务（项目立项）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchprojectapptask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskProjectAppTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectAppTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取项目任务", tags = {"任务" } ,notes = "根据项目获取项目任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchprojecttask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskProjectTaskByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6955,22 +6592,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询项目任务", tags = {"任务" } ,notes = "根据项目查询项目任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchprojecttask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskProjectTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取根任务", tags = {"任务" } ,notes = "根据项目获取根任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchroottask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskRootTaskByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchRootTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -6980,22 +6615,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询根任务", tags = {"任务" } ,notes = "根据项目查询根任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchroottask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskRootTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchRootTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取关联计划（当前项目未关联）", tags = {"任务" } ,notes = "根据项目获取关联计划（当前项目未关联）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchtasklinkplan")
 	public ResponseEntity<List<TaskDTO>> fetchTaskTaskLinkPlanByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7005,22 +6638,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询关联计划（当前项目未关联）", tags = {"任务" } ,notes = "根据项目查询关联计划（当前项目未关联）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchtasklinkplan")
 	public ResponseEntity<Page<TaskDTO>> searchTaskTaskLinkPlanByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "根据项目获取我本月完成的任务（下拉列表框）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchthismonthcompletetaskchoice")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisMonthCompleteTaskChoiceByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7030,22 +6661,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "根据项目查询我本月完成的任务（下拉列表框）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchthismonthcompletetaskchoice")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisMonthCompleteTaskChoiceByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据项目获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchthisweekcompletetask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7055,22 +6684,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据项目查询本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchthisweekcompletetask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "根据项目获取本周已完成任务(下拉框选择)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchthisweekcompletetaskchoice")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskChoiceByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7080,22 +6707,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "根据项目查询本周已完成任务(下拉框选择)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchthisweekcompletetaskchoice")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskChoiceByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "根据项目获取移动端本周已完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchthisweekcompletetaskmobzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskMobZSByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7105,22 +6730,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "根据项目查询移动端本周已完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchthisweekcompletetaskmobzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskMobZSByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据项目获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchthisweekcompletetaskzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskZSByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7130,22 +6753,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据项目查询本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchthisweekcompletetaskzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskZSByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取todo列表查询", tags = {"任务" } ,notes = "根据项目获取todo列表查询")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchtodolisttask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskTodoListTaskByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTodoListTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7155,22 +6776,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询todo列表查询", tags = {"任务" } ,notes = "根据项目查询todo列表查询")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchtodolisttask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskTodoListTaskByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTodoListTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取任务类型分组", tags = {"任务" } ,notes = "根据项目获取任务类型分组")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchtypegroup")
 	public ResponseEntity<List<Map>> fetchTaskTypeGroupByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroup(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -7179,22 +6798,20 @@ public class TaskResource {
                 .body(domains.getContent());
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询任务类型分组", tags = {"任务" } ,notes = "根据项目查询任务类型分组")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchtypegroup")
 	public ResponseEntity<Page<Map>> searchTaskTypeGroupByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroup(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取任务类型分组（计划）", tags = {"任务" } ,notes = "根据项目获取任务类型分组（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchtypegroupplan")
 	public ResponseEntity<List<Map>> fetchTaskTypeGroupPlanByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -7203,17 +6820,16 @@ public class TaskResource {
                 .body(domains.getContent());
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询任务类型分组（计划）", tags = {"任务" } ,notes = "根据项目查询任务类型分组（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/searchtypegroupplan")
 	public ResponseEntity<Page<Map>> searchTaskTypeGroupPlanByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品产品计划建立任务", tags = {"任务" },  notes = "根据产品产品计划建立任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/tasks")
     public ResponseEntity<TaskDTO> createByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskDTO taskdto) {
@@ -7224,7 +6840,7 @@ public class TaskResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品产品计划批量建立任务", tags = {"任务" },  notes = "根据产品产品计划批量建立任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/tasks/batch")
     public ResponseEntity<Boolean> createBatchByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody List<TaskDTO> taskdtos) {
@@ -7237,7 +6853,7 @@ public class TaskResource {
     }
 
     @VersionCheck(entity = "task" , versionfield = "lastediteddate")
-    @PreAuthorize("@TaskRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品产品计划更新任务", tags = {"任务" },  notes = "根据产品产品计划更新任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}")
     public ResponseEntity<TaskDTO> updateByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -7249,7 +6865,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品产品计划批量更新任务", tags = {"任务" },  notes = "根据产品产品计划批量更新任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}/tasks/batch")
     public ResponseEntity<Boolean> updateBatchByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody List<TaskDTO> taskdtos) {
@@ -7261,14 +6877,14 @@ public class TaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DELETE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
     @ApiOperation(value = "根据产品产品计划删除任务", tags = {"任务" },  notes = "根据产品产品计划删除任务")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}")
     public ResponseEntity<Boolean> removeByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DELETE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
     @ApiOperation(value = "根据产品产品计划批量删除任务", tags = {"任务" },  notes = "根据产品产品计划批量删除任务")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productplans/{productplan_id}/tasks/batch")
     public ResponseEntity<Boolean> removeBatchByProductProductPlan(@RequestBody List<Long> ids) {
@@ -7276,7 +6892,7 @@ public class TaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品产品计划获取任务", tags = {"任务" },  notes = "根据产品产品计划获取任务")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}")
     public ResponseEntity<TaskDTO> getByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id) {
@@ -7379,7 +6995,7 @@ public class TaskResource {
         boolean result = taskService.confirmStoryChangeBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品产品计划任务", tags = {"任务" },  notes = "根据产品产品计划任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/createcycletasks")
     public ResponseEntity<TaskDTO> createCycleTasksByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -7444,7 +7060,7 @@ public class TaskResource {
         boolean result = taskService.finishBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品产品计划任务", tags = {"任务" },  notes = "根据产品产品计划任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/getnextteamuser")
     public ResponseEntity<TaskDTO> getNextTeamUserByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -7461,7 +7077,7 @@ public class TaskResource {
         boolean result = taskService.getNextTeamUserBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品产品计划任务", tags = {"任务" },  notes = "根据产品产品计划任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/getteamuserleftactivity")
     public ResponseEntity<TaskDTO> getTeamUserLeftActivityByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -7478,7 +7094,7 @@ public class TaskResource {
         boolean result = taskService.getTeamUserLeftActivityBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品产品计划任务", tags = {"任务" },  notes = "根据产品产品计划任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/getteamuserleftstart")
     public ResponseEntity<TaskDTO> getTeamUserLeftStartByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -7495,7 +7111,7 @@ public class TaskResource {
         boolean result = taskService.getTeamUserLeftStartBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品产品计划任务", tags = {"任务" },  notes = "根据产品产品计划任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/getusernames")
     public ResponseEntity<TaskDTO> getUsernamesByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -7687,7 +7303,7 @@ public class TaskResource {
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品产品计划任务", tags = {"任务" },  notes = "根据产品产品计划任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/updatestoryversion")
     public ResponseEntity<TaskDTO> updateStoryVersionByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -7697,12 +7313,11 @@ public class TaskResource {
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取指派给我任务", tags = {"任务" } ,notes = "根据产品产品计划获取指派给我任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchassignedtomytask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskAssignedToMyTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7712,22 +7327,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询指派给我任务", tags = {"任务" } ,notes = "根据产品产品计划查询指派给我任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchassignedtomytask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskAssignedToMyTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取指派给我任务（PC）", tags = {"任务" } ,notes = "根据产品产品计划获取指派给我任务（PC）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchassignedtomytaskpc")
 	public ResponseEntity<List<TaskDTO>> fetchTaskAssignedToMyTaskPcByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7737,22 +7350,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询指派给我任务（PC）", tags = {"任务" } ,notes = "根据产品产品计划查询指派给我任务（PC）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchassignedtomytaskpc")
 	public ResponseEntity<Page<TaskDTO>> searchTaskAssignedToMyTaskPcByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取Bug相关任务", tags = {"任务" } ,notes = "根据产品产品计划获取Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchbugtask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskBugTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchBugTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7762,22 +7373,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询Bug相关任务", tags = {"任务" } ,notes = "根据产品产品计划查询Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchbugtask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskBugTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchBugTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取通过模块查询", tags = {"任务" } ,notes = "根据产品产品计划获取通过模块查询")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchbymodule")
 	public ResponseEntity<List<TaskDTO>> fetchTaskByModuleByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchByModule(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7787,22 +7396,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询通过模块查询", tags = {"任务" } ,notes = "根据产品产品计划查询通过模块查询")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchbymodule")
 	public ResponseEntity<Page<TaskDTO>> searchTaskByModuleByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchByModule(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取数据查询（子任务）", tags = {"任务" } ,notes = "根据产品产品计划获取数据查询（子任务）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchchilddefault")
 	public ResponseEntity<List<TaskDTO>> fetchTaskChildDefaultByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildDefault(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7812,22 +7419,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询数据查询（子任务）", tags = {"任务" } ,notes = "根据产品产品计划查询数据查询（子任务）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchchilddefault")
 	public ResponseEntity<Page<TaskDTO>> searchTaskChildDefaultByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取子任务", tags = {"任务" } ,notes = "根据产品产品计划获取子任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchchildtask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskChildTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7837,22 +7442,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询子任务", tags = {"任务" } ,notes = "根据产品产品计划查询子任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchchildtask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskChildTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取子任务（树）", tags = {"任务" } ,notes = "根据产品产品计划获取子任务（树）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchchildtasktree")
 	public ResponseEntity<List<TaskDTO>> fetchTaskChildTaskTreeByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTaskTree(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7862,22 +7465,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询子任务（树）", tags = {"任务" } ,notes = "根据产品产品计划查询子任务（树）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchchildtasktree")
 	public ResponseEntity<Page<TaskDTO>> searchTaskChildTaskTreeByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTaskTree(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取用户年度完成任务", tags = {"任务" } ,notes = "根据产品产品计划获取用户年度完成任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchcurfinishtask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskCurFinishTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchCurFinishTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7887,22 +7488,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询用户年度完成任务", tags = {"任务" } ,notes = "根据产品产品计划查询用户年度完成任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchcurfinishtask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskCurFinishTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchCurFinishTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取DEFAULT", tags = {"任务" } ,notes = "根据产品产品计划获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchdefault")
 	public ResponseEntity<List<TaskDTO>> fetchTaskDefaultByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefault(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7912,22 +7511,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询DEFAULT", tags = {"任务" } ,notes = "根据产品产品计划查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchdefault")
 	public ResponseEntity<Page<TaskDTO>> searchTaskDefaultByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取DefaultRow", tags = {"任务" } ,notes = "根据产品产品计划获取DefaultRow")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchdefaultrow")
 	public ResponseEntity<List<TaskDTO>> fetchTaskDefaultRowByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefaultRow(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7937,22 +7534,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询DefaultRow", tags = {"任务" } ,notes = "根据产品产品计划查询DefaultRow")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchdefaultrow")
 	public ResponseEntity<Page<TaskDTO>> searchTaskDefaultRowByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefaultRow(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取ES批量的导入", tags = {"任务" } ,notes = "根据产品产品计划获取ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchesbulk")
 	public ResponseEntity<List<TaskDTO>> fetchTaskESBulkByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchESBulk(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7962,22 +7557,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询ES批量的导入", tags = {"任务" } ,notes = "根据产品产品计划查询ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchesbulk")
 	public ResponseEntity<Page<TaskDTO>> searchTaskESBulkByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchESBulk(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取我代理的任务", tags = {"任务" } ,notes = "根据产品产品计划获取我代理的任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchmyagenttask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyAgentTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAgentTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -7987,22 +7580,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询我代理的任务", tags = {"任务" } ,notes = "根据产品产品计划查询我代理的任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchmyagenttask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyAgentTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAgentTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取我相关的任务", tags = {"任务" } ,notes = "根据产品产品计划获取我相关的任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchmyalltask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyAllTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAllTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -8012,22 +7603,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询我相关的任务", tags = {"任务" } ,notes = "根据产品产品计划查询我相关的任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchmyalltask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyAllTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAllTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据产品产品计划获取我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchmycompletetask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -8037,22 +7626,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询我完成的任务（汇报）", tags = {"任务" } ,notes = "根据产品产品计划查询我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchmycompletetask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取我完成的任务（移动端日报）", tags = {"任务" } ,notes = "根据产品产品计划获取我完成的任务（移动端日报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchmycompletetaskmobdaily")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskMobDailyByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -8062,22 +7649,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询我完成的任务（移动端日报）", tags = {"任务" } ,notes = "根据产品产品计划查询我完成的任务（移动端日报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchmycompletetaskmobdaily")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskMobDailyByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取我完成的任务（移动端月报）", tags = {"任务" } ,notes = "根据产品产品计划获取我完成的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchmycompletetaskmobmonthly")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskMobMonthlyByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -8087,22 +7672,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询我完成的任务（移动端月报）", tags = {"任务" } ,notes = "根据产品产品计划查询我完成的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchmycompletetaskmobmonthly")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskMobMonthlyByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取我完成的任务（月报展示）", tags = {"任务" } ,notes = "根据产品产品计划获取我完成的任务（月报展示）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchmycompletetaskmonthlyzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskMonthlyZSByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -8112,22 +7695,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询我完成的任务（月报展示）", tags = {"任务" } ,notes = "根据产品产品计划查询我完成的任务（月报展示）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchmycompletetaskmonthlyzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskMonthlyZSByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据产品产品计划获取我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchmycompletetaskzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskZSByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -8137,22 +7718,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询我完成的任务（汇报）", tags = {"任务" } ,notes = "根据产品产品计划查询我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchmycompletetaskzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskZSByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取我的收藏", tags = {"任务" } ,notes = "根据产品产品计划获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchmyfavorites")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyFavoritesByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyFavorites(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -8162,22 +7741,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询我的收藏", tags = {"任务" } ,notes = "根据产品产品计划查询我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchmyfavorites")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyFavoritesByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyFavorites(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "根据产品产品计划获取我计划参与的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchmyplanstaskmobmonthly")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyPlansTaskMobMonthlyByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -8187,22 +7764,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "根据产品产品计划查询我计划参与的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchmyplanstaskmobmonthly")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyPlansTaskMobMonthlyByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据产品产品计划获取我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchmytomorrowplantask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyTomorrowPlanTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -8212,22 +7787,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据产品产品计划查询我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchmytomorrowplantask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyTomorrowPlanTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据产品产品计划获取我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchmytomorrowplantaskmobdaily")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyTomorrowPlanTaskMobDailyByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -8237,22 +7810,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据产品产品计划查询我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchmytomorrowplantaskmobdaily")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyTomorrowPlanTaskMobDailyByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "根据产品产品计划获取移动端下周计划参与(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchnextweekcompletetaskmobzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskNextWeekCompleteTaskMobZSByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -8262,22 +7833,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "根据产品产品计划查询移动端下周计划参与(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchnextweekcompletetaskmobzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskNextWeekCompleteTaskMobZSByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据产品产品计划获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchnextweekcompletetaskzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskNextWeekCompleteTaskZSByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -8287,22 +7856,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据产品产品计划查询本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchnextweekcompletetaskzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskNextWeekCompleteTaskZSByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取下周计划完成任务(汇报)", tags = {"任务" } ,notes = "根据产品产品计划获取下周计划完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchnextweekplancompletetask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskNextWeekPlanCompleteTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -8312,22 +7879,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询下周计划完成任务(汇报)", tags = {"任务" } ,notes = "根据产品产品计划查询下周计划完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchnextweekplancompletetask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskNextWeekPlanCompleteTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取相关任务（计划）", tags = {"任务" } ,notes = "根据产品产品计划获取相关任务（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchplantask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskPlanTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchPlanTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -8337,22 +7902,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询相关任务（计划）", tags = {"任务" } ,notes = "根据产品产品计划查询相关任务（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchplantask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskPlanTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchPlanTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取项目任务（项目立项）", tags = {"任务" } ,notes = "根据产品产品计划获取项目任务（项目立项）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchprojectapptask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskProjectAppTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectAppTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -8362,22 +7925,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询项目任务（项目立项）", tags = {"任务" } ,notes = "根据产品产品计划查询项目任务（项目立项）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchprojectapptask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskProjectAppTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectAppTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取项目任务", tags = {"任务" } ,notes = "根据产品产品计划获取项目任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchprojecttask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskProjectTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -8387,22 +7948,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询项目任务", tags = {"任务" } ,notes = "根据产品产品计划查询项目任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchprojecttask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskProjectTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取根任务", tags = {"任务" } ,notes = "根据产品产品计划获取根任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchroottask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskRootTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchRootTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -8412,22 +7971,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询根任务", tags = {"任务" } ,notes = "根据产品产品计划查询根任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchroottask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskRootTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchRootTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取关联计划（当前项目未关联）", tags = {"任务" } ,notes = "根据产品产品计划获取关联计划（当前项目未关联）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchtasklinkplan")
 	public ResponseEntity<List<TaskDTO>> fetchTaskTaskLinkPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -8437,22 +7994,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询关联计划（当前项目未关联）", tags = {"任务" } ,notes = "根据产品产品计划查询关联计划（当前项目未关联）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchtasklinkplan")
 	public ResponseEntity<Page<TaskDTO>> searchTaskTaskLinkPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "根据产品产品计划获取我本月完成的任务（下拉列表框）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchthismonthcompletetaskchoice")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisMonthCompleteTaskChoiceByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -8462,22 +8017,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "根据产品产品计划查询我本月完成的任务（下拉列表框）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchthismonthcompletetaskchoice")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisMonthCompleteTaskChoiceByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据产品产品计划获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchthisweekcompletetask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -8487,22 +8040,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据产品产品计划查询本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchthisweekcompletetask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "根据产品产品计划获取本周已完成任务(下拉框选择)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchthisweekcompletetaskchoice")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskChoiceByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -8512,22 +8063,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "根据产品产品计划查询本周已完成任务(下拉框选择)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchthisweekcompletetaskchoice")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskChoiceByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "根据产品产品计划获取移动端本周已完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchthisweekcompletetaskmobzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskMobZSByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -8537,22 +8086,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "根据产品产品计划查询移动端本周已完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchthisweekcompletetaskmobzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskMobZSByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据产品产品计划获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchthisweekcompletetaskzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskZSByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -8562,22 +8109,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据产品产品计划查询本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchthisweekcompletetaskzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskZSByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取todo列表查询", tags = {"任务" } ,notes = "根据产品产品计划获取todo列表查询")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchtodolisttask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskTodoListTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTodoListTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -8587,22 +8132,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询todo列表查询", tags = {"任务" } ,notes = "根据产品产品计划查询todo列表查询")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchtodolisttask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskTodoListTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTodoListTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取任务类型分组", tags = {"任务" } ,notes = "根据产品产品计划获取任务类型分组")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchtypegroup")
 	public ResponseEntity<List<Map>> fetchTaskTypeGroupByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroup(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -8611,22 +8154,20 @@ public class TaskResource {
                 .body(domains.getContent());
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询任务类型分组", tags = {"任务" } ,notes = "根据产品产品计划查询任务类型分组")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchtypegroup")
 	public ResponseEntity<Page<Map>> searchTaskTypeGroupByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroup(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划获取任务类型分组（计划）", tags = {"任务" } ,notes = "根据产品产品计划获取任务类型分组（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/fetchtypegroupplan")
 	public ResponseEntity<List<Map>> fetchTaskTypeGroupPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -8635,17 +8176,16 @@ public class TaskResource {
                 .body(domains.getContent());
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划查询任务类型分组（计划）", tags = {"任务" } ,notes = "根据产品产品计划查询任务类型分组（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/searchtypegroupplan")
 	public ResponseEntity<Page<Map>> searchTaskTypeGroupPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskSearchContext context) {
         context.setN_plan_eq(productplan_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品需求建立任务", tags = {"任务" },  notes = "根据产品需求建立任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/tasks")
     public ResponseEntity<TaskDTO> createByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskDTO taskdto) {
@@ -8656,7 +8196,7 @@ public class TaskResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品需求批量建立任务", tags = {"任务" },  notes = "根据产品需求批量建立任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/tasks/batch")
     public ResponseEntity<Boolean> createBatchByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody List<TaskDTO> taskdtos) {
@@ -8669,7 +8209,7 @@ public class TaskResource {
     }
 
     @VersionCheck(entity = "task" , versionfield = "lastediteddate")
-    @PreAuthorize("@TaskRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品需求更新任务", tags = {"任务" },  notes = "根据产品需求更新任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}")
     public ResponseEntity<TaskDTO> updateByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -8681,7 +8221,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品需求批量更新任务", tags = {"任务" },  notes = "根据产品需求批量更新任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/tasks/batch")
     public ResponseEntity<Boolean> updateBatchByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody List<TaskDTO> taskdtos) {
@@ -8693,14 +8233,14 @@ public class TaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DELETE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
     @ApiOperation(value = "根据产品需求删除任务", tags = {"任务" },  notes = "根据产品需求删除任务")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}")
     public ResponseEntity<Boolean> removeByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DELETE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
     @ApiOperation(value = "根据产品需求批量删除任务", tags = {"任务" },  notes = "根据产品需求批量删除任务")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}/tasks/batch")
     public ResponseEntity<Boolean> removeBatchByProductStory(@RequestBody List<Long> ids) {
@@ -8708,7 +8248,7 @@ public class TaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品需求获取任务", tags = {"任务" },  notes = "根据产品需求获取任务")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}")
     public ResponseEntity<TaskDTO> getByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id) {
@@ -8811,7 +8351,7 @@ public class TaskResource {
         boolean result = taskService.confirmStoryChangeBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品需求任务", tags = {"任务" },  notes = "根据产品需求任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/createcycletasks")
     public ResponseEntity<TaskDTO> createCycleTasksByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -8876,7 +8416,7 @@ public class TaskResource {
         boolean result = taskService.finishBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品需求任务", tags = {"任务" },  notes = "根据产品需求任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/getnextteamuser")
     public ResponseEntity<TaskDTO> getNextTeamUserByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -8893,7 +8433,7 @@ public class TaskResource {
         boolean result = taskService.getNextTeamUserBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品需求任务", tags = {"任务" },  notes = "根据产品需求任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/getteamuserleftactivity")
     public ResponseEntity<TaskDTO> getTeamUserLeftActivityByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -8910,7 +8450,7 @@ public class TaskResource {
         boolean result = taskService.getTeamUserLeftActivityBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品需求任务", tags = {"任务" },  notes = "根据产品需求任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/getteamuserleftstart")
     public ResponseEntity<TaskDTO> getTeamUserLeftStartByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -8927,7 +8467,7 @@ public class TaskResource {
         boolean result = taskService.getTeamUserLeftStartBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品需求任务", tags = {"任务" },  notes = "根据产品需求任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/getusernames")
     public ResponseEntity<TaskDTO> getUsernamesByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -9119,7 +8659,7 @@ public class TaskResource {
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品需求任务", tags = {"任务" },  notes = "根据产品需求任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/updatestoryversion")
     public ResponseEntity<TaskDTO> updateStoryVersionByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -9129,12 +8669,11 @@ public class TaskResource {
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取指派给我任务", tags = {"任务" } ,notes = "根据产品需求获取指派给我任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchassignedtomytask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskAssignedToMyTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9144,22 +8683,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询指派给我任务", tags = {"任务" } ,notes = "根据产品需求查询指派给我任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchassignedtomytask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskAssignedToMyTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取指派给我任务（PC）", tags = {"任务" } ,notes = "根据产品需求获取指派给我任务（PC）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchassignedtomytaskpc")
 	public ResponseEntity<List<TaskDTO>> fetchTaskAssignedToMyTaskPcByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9169,22 +8706,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询指派给我任务（PC）", tags = {"任务" } ,notes = "根据产品需求查询指派给我任务（PC）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchassignedtomytaskpc")
 	public ResponseEntity<Page<TaskDTO>> searchTaskAssignedToMyTaskPcByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取Bug相关任务", tags = {"任务" } ,notes = "根据产品需求获取Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchbugtask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskBugTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchBugTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9194,22 +8729,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询Bug相关任务", tags = {"任务" } ,notes = "根据产品需求查询Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchbugtask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskBugTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchBugTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取通过模块查询", tags = {"任务" } ,notes = "根据产品需求获取通过模块查询")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchbymodule")
 	public ResponseEntity<List<TaskDTO>> fetchTaskByModuleByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchByModule(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9219,22 +8752,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询通过模块查询", tags = {"任务" } ,notes = "根据产品需求查询通过模块查询")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchbymodule")
 	public ResponseEntity<Page<TaskDTO>> searchTaskByModuleByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchByModule(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取数据查询（子任务）", tags = {"任务" } ,notes = "根据产品需求获取数据查询（子任务）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchchilddefault")
 	public ResponseEntity<List<TaskDTO>> fetchTaskChildDefaultByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildDefault(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9244,22 +8775,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询数据查询（子任务）", tags = {"任务" } ,notes = "根据产品需求查询数据查询（子任务）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchchilddefault")
 	public ResponseEntity<Page<TaskDTO>> searchTaskChildDefaultByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取子任务", tags = {"任务" } ,notes = "根据产品需求获取子任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchchildtask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskChildTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9269,22 +8798,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询子任务", tags = {"任务" } ,notes = "根据产品需求查询子任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchchildtask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskChildTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取子任务（树）", tags = {"任务" } ,notes = "根据产品需求获取子任务（树）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchchildtasktree")
 	public ResponseEntity<List<TaskDTO>> fetchTaskChildTaskTreeByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTaskTree(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9294,22 +8821,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询子任务（树）", tags = {"任务" } ,notes = "根据产品需求查询子任务（树）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchchildtasktree")
 	public ResponseEntity<Page<TaskDTO>> searchTaskChildTaskTreeByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTaskTree(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取用户年度完成任务", tags = {"任务" } ,notes = "根据产品需求获取用户年度完成任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchcurfinishtask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskCurFinishTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchCurFinishTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9319,22 +8844,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询用户年度完成任务", tags = {"任务" } ,notes = "根据产品需求查询用户年度完成任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchcurfinishtask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskCurFinishTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchCurFinishTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取DEFAULT", tags = {"任务" } ,notes = "根据产品需求获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchdefault")
 	public ResponseEntity<List<TaskDTO>> fetchTaskDefaultByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefault(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9344,22 +8867,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询DEFAULT", tags = {"任务" } ,notes = "根据产品需求查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchdefault")
 	public ResponseEntity<Page<TaskDTO>> searchTaskDefaultByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取DefaultRow", tags = {"任务" } ,notes = "根据产品需求获取DefaultRow")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchdefaultrow")
 	public ResponseEntity<List<TaskDTO>> fetchTaskDefaultRowByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefaultRow(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9369,22 +8890,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询DefaultRow", tags = {"任务" } ,notes = "根据产品需求查询DefaultRow")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchdefaultrow")
 	public ResponseEntity<Page<TaskDTO>> searchTaskDefaultRowByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefaultRow(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取ES批量的导入", tags = {"任务" } ,notes = "根据产品需求获取ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchesbulk")
 	public ResponseEntity<List<TaskDTO>> fetchTaskESBulkByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchESBulk(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9394,22 +8913,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询ES批量的导入", tags = {"任务" } ,notes = "根据产品需求查询ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchesbulk")
 	public ResponseEntity<Page<TaskDTO>> searchTaskESBulkByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchESBulk(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取我代理的任务", tags = {"任务" } ,notes = "根据产品需求获取我代理的任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchmyagenttask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyAgentTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAgentTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9419,22 +8936,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询我代理的任务", tags = {"任务" } ,notes = "根据产品需求查询我代理的任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchmyagenttask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyAgentTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAgentTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取我相关的任务", tags = {"任务" } ,notes = "根据产品需求获取我相关的任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchmyalltask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyAllTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAllTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9444,22 +8959,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询我相关的任务", tags = {"任务" } ,notes = "根据产品需求查询我相关的任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchmyalltask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyAllTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAllTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据产品需求获取我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchmycompletetask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9469,22 +8982,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询我完成的任务（汇报）", tags = {"任务" } ,notes = "根据产品需求查询我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchmycompletetask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取我完成的任务（移动端日报）", tags = {"任务" } ,notes = "根据产品需求获取我完成的任务（移动端日报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchmycompletetaskmobdaily")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskMobDailyByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9494,22 +9005,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询我完成的任务（移动端日报）", tags = {"任务" } ,notes = "根据产品需求查询我完成的任务（移动端日报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchmycompletetaskmobdaily")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskMobDailyByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取我完成的任务（移动端月报）", tags = {"任务" } ,notes = "根据产品需求获取我完成的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchmycompletetaskmobmonthly")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskMobMonthlyByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9519,22 +9028,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询我完成的任务（移动端月报）", tags = {"任务" } ,notes = "根据产品需求查询我完成的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchmycompletetaskmobmonthly")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskMobMonthlyByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取我完成的任务（月报展示）", tags = {"任务" } ,notes = "根据产品需求获取我完成的任务（月报展示）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchmycompletetaskmonthlyzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskMonthlyZSByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9544,22 +9051,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询我完成的任务（月报展示）", tags = {"任务" } ,notes = "根据产品需求查询我完成的任务（月报展示）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchmycompletetaskmonthlyzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskMonthlyZSByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据产品需求获取我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchmycompletetaskzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskZSByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9569,22 +9074,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询我完成的任务（汇报）", tags = {"任务" } ,notes = "根据产品需求查询我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchmycompletetaskzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskZSByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取我的收藏", tags = {"任务" } ,notes = "根据产品需求获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchmyfavorites")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyFavoritesByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyFavorites(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9594,22 +9097,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询我的收藏", tags = {"任务" } ,notes = "根据产品需求查询我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchmyfavorites")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyFavoritesByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyFavorites(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "根据产品需求获取我计划参与的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchmyplanstaskmobmonthly")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyPlansTaskMobMonthlyByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9619,22 +9120,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "根据产品需求查询我计划参与的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchmyplanstaskmobmonthly")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyPlansTaskMobMonthlyByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据产品需求获取我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchmytomorrowplantask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyTomorrowPlanTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9644,22 +9143,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据产品需求查询我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchmytomorrowplantask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyTomorrowPlanTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据产品需求获取我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchmytomorrowplantaskmobdaily")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyTomorrowPlanTaskMobDailyByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9669,22 +9166,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据产品需求查询我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchmytomorrowplantaskmobdaily")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyTomorrowPlanTaskMobDailyByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "根据产品需求获取移动端下周计划参与(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchnextweekcompletetaskmobzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskNextWeekCompleteTaskMobZSByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9694,22 +9189,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "根据产品需求查询移动端下周计划参与(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchnextweekcompletetaskmobzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskNextWeekCompleteTaskMobZSByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据产品需求获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchnextweekcompletetaskzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskNextWeekCompleteTaskZSByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9719,22 +9212,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据产品需求查询本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchnextweekcompletetaskzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskNextWeekCompleteTaskZSByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取下周计划完成任务(汇报)", tags = {"任务" } ,notes = "根据产品需求获取下周计划完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchnextweekplancompletetask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskNextWeekPlanCompleteTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9744,22 +9235,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询下周计划完成任务(汇报)", tags = {"任务" } ,notes = "根据产品需求查询下周计划完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchnextweekplancompletetask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskNextWeekPlanCompleteTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取相关任务（计划）", tags = {"任务" } ,notes = "根据产品需求获取相关任务（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchplantask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskPlanTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchPlanTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9769,22 +9258,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询相关任务（计划）", tags = {"任务" } ,notes = "根据产品需求查询相关任务（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchplantask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskPlanTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchPlanTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取项目任务（项目立项）", tags = {"任务" } ,notes = "根据产品需求获取项目任务（项目立项）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchprojectapptask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskProjectAppTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectAppTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9794,22 +9281,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询项目任务（项目立项）", tags = {"任务" } ,notes = "根据产品需求查询项目任务（项目立项）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchprojectapptask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskProjectAppTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectAppTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取项目任务", tags = {"任务" } ,notes = "根据产品需求获取项目任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchprojecttask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskProjectTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9819,22 +9304,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询项目任务", tags = {"任务" } ,notes = "根据产品需求查询项目任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchprojecttask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskProjectTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取根任务", tags = {"任务" } ,notes = "根据产品需求获取根任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchroottask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskRootTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchRootTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9844,22 +9327,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询根任务", tags = {"任务" } ,notes = "根据产品需求查询根任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchroottask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskRootTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchRootTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取关联计划（当前项目未关联）", tags = {"任务" } ,notes = "根据产品需求获取关联计划（当前项目未关联）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchtasklinkplan")
 	public ResponseEntity<List<TaskDTO>> fetchTaskTaskLinkPlanByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9869,22 +9350,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询关联计划（当前项目未关联）", tags = {"任务" } ,notes = "根据产品需求查询关联计划（当前项目未关联）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchtasklinkplan")
 	public ResponseEntity<Page<TaskDTO>> searchTaskTaskLinkPlanByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "根据产品需求获取我本月完成的任务（下拉列表框）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchthismonthcompletetaskchoice")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisMonthCompleteTaskChoiceByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9894,22 +9373,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "根据产品需求查询我本月完成的任务（下拉列表框）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchthismonthcompletetaskchoice")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisMonthCompleteTaskChoiceByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据产品需求获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchthisweekcompletetask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9919,22 +9396,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据产品需求查询本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchthisweekcompletetask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "根据产品需求获取本周已完成任务(下拉框选择)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchthisweekcompletetaskchoice")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskChoiceByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9944,22 +9419,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "根据产品需求查询本周已完成任务(下拉框选择)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchthisweekcompletetaskchoice")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskChoiceByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "根据产品需求获取移动端本周已完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchthisweekcompletetaskmobzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskMobZSByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9969,22 +9442,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "根据产品需求查询移动端本周已完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchthisweekcompletetaskmobzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskMobZSByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据产品需求获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchthisweekcompletetaskzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskZSByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -9994,22 +9465,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据产品需求查询本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchthisweekcompletetaskzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskZSByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取todo列表查询", tags = {"任务" } ,notes = "根据产品需求获取todo列表查询")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchtodolisttask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskTodoListTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTodoListTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -10019,22 +9488,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询todo列表查询", tags = {"任务" } ,notes = "根据产品需求查询todo列表查询")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchtodolisttask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskTodoListTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTodoListTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取任务类型分组", tags = {"任务" } ,notes = "根据产品需求获取任务类型分组")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchtypegroup")
 	public ResponseEntity<List<Map>> fetchTaskTypeGroupByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroup(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -10043,22 +9510,20 @@ public class TaskResource {
                 .body(domains.getContent());
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询任务类型分组", tags = {"任务" } ,notes = "根据产品需求查询任务类型分组")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchtypegroup")
 	public ResponseEntity<Page<Map>> searchTaskTypeGroupByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroup(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求获取任务类型分组（计划）", tags = {"任务" } ,notes = "根据产品需求获取任务类型分组（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/fetchtypegroupplan")
 	public ResponseEntity<List<Map>> fetchTaskTypeGroupPlanByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -10067,17 +9532,16 @@ public class TaskResource {
                 .body(domains.getContent());
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求查询任务类型分组（计划）", tags = {"任务" } ,notes = "根据产品需求查询任务类型分组（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/searchtypegroupplan")
 	public ResponseEntity<Page<Map>> searchTaskTypeGroupPlanByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskSearchContext context) {
         context.setN_story_eq(story_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目任务模块建立任务", tags = {"任务" },  notes = "根据项目任务模块建立任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks")
     public ResponseEntity<TaskDTO> createByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskDTO taskdto) {
@@ -10088,7 +9552,7 @@ public class TaskResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目任务模块批量建立任务", tags = {"任务" },  notes = "根据项目任务模块批量建立任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/batch")
     public ResponseEntity<Boolean> createBatchByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody List<TaskDTO> taskdtos) {
@@ -10101,7 +9565,7 @@ public class TaskResource {
     }
 
     @VersionCheck(entity = "task" , versionfield = "lastediteddate")
-    @PreAuthorize("@TaskRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目任务模块更新任务", tags = {"任务" },  notes = "根据项目任务模块更新任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}")
     public ResponseEntity<TaskDTO> updateByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -10113,7 +9577,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目任务模块批量更新任务", tags = {"任务" },  notes = "根据项目任务模块批量更新任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/batch")
     public ResponseEntity<Boolean> updateBatchByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody List<TaskDTO> taskdtos) {
@@ -10125,14 +9589,14 @@ public class TaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DELETE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
     @ApiOperation(value = "根据项目任务模块删除任务", tags = {"任务" },  notes = "根据项目任务模块删除任务")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}")
     public ResponseEntity<Boolean> removeByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DELETE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
     @ApiOperation(value = "根据项目任务模块批量删除任务", tags = {"任务" },  notes = "根据项目任务模块批量删除任务")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/batch")
     public ResponseEntity<Boolean> removeBatchByProjectProjectModule(@RequestBody List<Long> ids) {
@@ -10140,7 +9604,7 @@ public class TaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目任务模块获取任务", tags = {"任务" },  notes = "根据项目任务模块获取任务")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}")
     public ResponseEntity<TaskDTO> getByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id) {
@@ -10243,7 +9707,7 @@ public class TaskResource {
         boolean result = taskService.confirmStoryChangeBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目任务模块任务", tags = {"任务" },  notes = "根据项目任务模块任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/createcycletasks")
     public ResponseEntity<TaskDTO> createCycleTasksByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -10308,7 +9772,7 @@ public class TaskResource {
         boolean result = taskService.finishBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目任务模块任务", tags = {"任务" },  notes = "根据项目任务模块任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/getnextteamuser")
     public ResponseEntity<TaskDTO> getNextTeamUserByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -10325,7 +9789,7 @@ public class TaskResource {
         boolean result = taskService.getNextTeamUserBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目任务模块任务", tags = {"任务" },  notes = "根据项目任务模块任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/getteamuserleftactivity")
     public ResponseEntity<TaskDTO> getTeamUserLeftActivityByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -10342,7 +9806,7 @@ public class TaskResource {
         boolean result = taskService.getTeamUserLeftActivityBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目任务模块任务", tags = {"任务" },  notes = "根据项目任务模块任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/getteamuserleftstart")
     public ResponseEntity<TaskDTO> getTeamUserLeftStartByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -10359,7 +9823,7 @@ public class TaskResource {
         boolean result = taskService.getTeamUserLeftStartBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目任务模块任务", tags = {"任务" },  notes = "根据项目任务模块任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/getusernames")
     public ResponseEntity<TaskDTO> getUsernamesByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -10551,7 +10015,7 @@ public class TaskResource {
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目任务模块任务", tags = {"任务" },  notes = "根据项目任务模块任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/updatestoryversion")
     public ResponseEntity<TaskDTO> updateStoryVersionByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -10561,12 +10025,11 @@ public class TaskResource {
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取指派给我任务", tags = {"任务" } ,notes = "根据项目任务模块获取指派给我任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchassignedtomytask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskAssignedToMyTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -10576,22 +10039,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询指派给我任务", tags = {"任务" } ,notes = "根据项目任务模块查询指派给我任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchassignedtomytask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskAssignedToMyTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取指派给我任务（PC）", tags = {"任务" } ,notes = "根据项目任务模块获取指派给我任务（PC）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchassignedtomytaskpc")
 	public ResponseEntity<List<TaskDTO>> fetchTaskAssignedToMyTaskPcByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -10601,22 +10062,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询指派给我任务（PC）", tags = {"任务" } ,notes = "根据项目任务模块查询指派给我任务（PC）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchassignedtomytaskpc")
 	public ResponseEntity<Page<TaskDTO>> searchTaskAssignedToMyTaskPcByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchAssignedToMyTaskPc(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取Bug相关任务", tags = {"任务" } ,notes = "根据项目任务模块获取Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchbugtask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskBugTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchBugTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -10626,22 +10085,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询Bug相关任务", tags = {"任务" } ,notes = "根据项目任务模块查询Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchbugtask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskBugTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchBugTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取通过模块查询", tags = {"任务" } ,notes = "根据项目任务模块获取通过模块查询")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchbymodule")
 	public ResponseEntity<List<TaskDTO>> fetchTaskByModuleByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchByModule(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -10651,22 +10108,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询通过模块查询", tags = {"任务" } ,notes = "根据项目任务模块查询通过模块查询")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchbymodule")
 	public ResponseEntity<Page<TaskDTO>> searchTaskByModuleByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchByModule(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取数据查询（子任务）", tags = {"任务" } ,notes = "根据项目任务模块获取数据查询（子任务）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchchilddefault")
 	public ResponseEntity<List<TaskDTO>> fetchTaskChildDefaultByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildDefault(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -10676,22 +10131,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询数据查询（子任务）", tags = {"任务" } ,notes = "根据项目任务模块查询数据查询（子任务）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchchilddefault")
 	public ResponseEntity<Page<TaskDTO>> searchTaskChildDefaultByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取子任务", tags = {"任务" } ,notes = "根据项目任务模块获取子任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchchildtask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskChildTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -10701,22 +10154,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询子任务", tags = {"任务" } ,notes = "根据项目任务模块查询子任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchchildtask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskChildTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取子任务（树）", tags = {"任务" } ,notes = "根据项目任务模块获取子任务（树）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchchildtasktree")
 	public ResponseEntity<List<TaskDTO>> fetchTaskChildTaskTreeByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTaskTree(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -10726,22 +10177,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询子任务（树）", tags = {"任务" } ,notes = "根据项目任务模块查询子任务（树）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchchildtasktree")
 	public ResponseEntity<Page<TaskDTO>> searchTaskChildTaskTreeByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchChildTaskTree(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取用户年度完成任务", tags = {"任务" } ,notes = "根据项目任务模块获取用户年度完成任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchcurfinishtask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskCurFinishTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchCurFinishTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -10751,22 +10200,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询用户年度完成任务", tags = {"任务" } ,notes = "根据项目任务模块查询用户年度完成任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchcurfinishtask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskCurFinishTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchCurFinishTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取DEFAULT", tags = {"任务" } ,notes = "根据项目任务模块获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchdefault")
 	public ResponseEntity<List<TaskDTO>> fetchTaskDefaultByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefault(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -10776,22 +10223,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询DEFAULT", tags = {"任务" } ,notes = "根据项目任务模块查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchdefault")
 	public ResponseEntity<Page<TaskDTO>> searchTaskDefaultByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取DefaultRow", tags = {"任务" } ,notes = "根据项目任务模块获取DefaultRow")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchdefaultrow")
 	public ResponseEntity<List<TaskDTO>> fetchTaskDefaultRowByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefaultRow(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -10801,22 +10246,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询DefaultRow", tags = {"任务" } ,notes = "根据项目任务模块查询DefaultRow")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchdefaultrow")
 	public ResponseEntity<Page<TaskDTO>> searchTaskDefaultRowByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchDefaultRow(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取ES批量的导入", tags = {"任务" } ,notes = "根据项目任务模块获取ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchesbulk")
 	public ResponseEntity<List<TaskDTO>> fetchTaskESBulkByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchESBulk(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -10826,22 +10269,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询ES批量的导入", tags = {"任务" } ,notes = "根据项目任务模块查询ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchesbulk")
 	public ResponseEntity<Page<TaskDTO>> searchTaskESBulkByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchESBulk(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取我代理的任务", tags = {"任务" } ,notes = "根据项目任务模块获取我代理的任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchmyagenttask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyAgentTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAgentTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -10851,22 +10292,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询我代理的任务", tags = {"任务" } ,notes = "根据项目任务模块查询我代理的任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchmyagenttask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyAgentTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAgentTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取我相关的任务", tags = {"任务" } ,notes = "根据项目任务模块获取我相关的任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchmyalltask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyAllTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAllTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -10876,22 +10315,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询我相关的任务", tags = {"任务" } ,notes = "根据项目任务模块查询我相关的任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchmyalltask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyAllTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyAllTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据项目任务模块获取我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchmycompletetask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -10901,22 +10338,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询我完成的任务（汇报）", tags = {"任务" } ,notes = "根据项目任务模块查询我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchmycompletetask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取我完成的任务（移动端日报）", tags = {"任务" } ,notes = "根据项目任务模块获取我完成的任务（移动端日报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchmycompletetaskmobdaily")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskMobDailyByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -10926,22 +10361,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询我完成的任务（移动端日报）", tags = {"任务" } ,notes = "根据项目任务模块查询我完成的任务（移动端日报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchmycompletetaskmobdaily")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskMobDailyByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobDaily(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取我完成的任务（移动端月报）", tags = {"任务" } ,notes = "根据项目任务模块获取我完成的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchmycompletetaskmobmonthly")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskMobMonthlyByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -10951,22 +10384,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询我完成的任务（移动端月报）", tags = {"任务" } ,notes = "根据项目任务模块查询我完成的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchmycompletetaskmobmonthly")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskMobMonthlyByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMobMonthly(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取我完成的任务（月报展示）", tags = {"任务" } ,notes = "根据项目任务模块获取我完成的任务（月报展示）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchmycompletetaskmonthlyzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskMonthlyZSByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -10976,22 +10407,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询我完成的任务（月报展示）", tags = {"任务" } ,notes = "根据项目任务模块查询我完成的任务（月报展示）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchmycompletetaskmonthlyzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskMonthlyZSByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskMonthlyZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取我完成的任务（汇报）", tags = {"任务" } ,notes = "根据项目任务模块获取我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchmycompletetaskzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyCompleteTaskZSByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -11001,22 +10430,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询我完成的任务（汇报）", tags = {"任务" } ,notes = "根据项目任务模块查询我完成的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchmycompletetaskzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyCompleteTaskZSByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyCompleteTaskZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取我的收藏", tags = {"任务" } ,notes = "根据项目任务模块获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchmyfavorites")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyFavoritesByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyFavorites(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -11026,22 +10453,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询我的收藏", tags = {"任务" } ,notes = "根据项目任务模块查询我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchmyfavorites")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyFavoritesByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyFavorites(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "根据项目任务模块获取我计划参与的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchmyplanstaskmobmonthly")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyPlansTaskMobMonthlyByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -11051,22 +10476,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询我计划参与的任务（移动端月报）", tags = {"任务" } ,notes = "根据项目任务模块查询我计划参与的任务（移动端月报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchmyplanstaskmobmonthly")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyPlansTaskMobMonthlyByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyPlansTaskMobMonthly(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据项目任务模块获取我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchmytomorrowplantask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyTomorrowPlanTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -11076,22 +10499,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据项目任务模块查询我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchmytomorrowplantask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyTomorrowPlanTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据项目任务模块获取我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchmytomorrowplantaskmobdaily")
 	public ResponseEntity<List<TaskDTO>> fetchTaskMyTomorrowPlanTaskMobDailyByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -11101,22 +10522,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询我计划参与的任务（汇报）", tags = {"任务" } ,notes = "根据项目任务模块查询我计划参与的任务（汇报）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchmytomorrowplantaskmobdaily")
 	public ResponseEntity<Page<TaskDTO>> searchTaskMyTomorrowPlanTaskMobDailyByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchMyTomorrowPlanTaskMobDaily(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "根据项目任务模块获取移动端下周计划参与(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchnextweekcompletetaskmobzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskNextWeekCompleteTaskMobZSByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -11126,22 +10545,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询移动端下周计划参与(汇报)", tags = {"任务" } ,notes = "根据项目任务模块查询移动端下周计划参与(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchnextweekcompletetaskmobzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskNextWeekCompleteTaskMobZSByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskMobZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据项目任务模块获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchnextweekcompletetaskzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskNextWeekCompleteTaskZSByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -11151,22 +10568,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据项目任务模块查询本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchnextweekcompletetaskzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskNextWeekCompleteTaskZSByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekCompleteTaskZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取下周计划完成任务(汇报)", tags = {"任务" } ,notes = "根据项目任务模块获取下周计划完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchnextweekplancompletetask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskNextWeekPlanCompleteTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -11176,22 +10591,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询下周计划完成任务(汇报)", tags = {"任务" } ,notes = "根据项目任务模块查询下周计划完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchnextweekplancompletetask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskNextWeekPlanCompleteTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchNextWeekPlanCompleteTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取相关任务（计划）", tags = {"任务" } ,notes = "根据项目任务模块获取相关任务（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchplantask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskPlanTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchPlanTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -11201,22 +10614,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询相关任务（计划）", tags = {"任务" } ,notes = "根据项目任务模块查询相关任务（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchplantask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskPlanTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchPlanTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取项目任务（项目立项）", tags = {"任务" } ,notes = "根据项目任务模块获取项目任务（项目立项）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchprojectapptask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskProjectAppTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectAppTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -11226,22 +10637,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询项目任务（项目立项）", tags = {"任务" } ,notes = "根据项目任务模块查询项目任务（项目立项）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchprojectapptask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskProjectAppTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectAppTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取项目任务", tags = {"任务" } ,notes = "根据项目任务模块获取项目任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchprojecttask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskProjectTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -11251,22 +10660,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询项目任务", tags = {"任务" } ,notes = "根据项目任务模块查询项目任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchprojecttask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskProjectTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchProjectTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取根任务", tags = {"任务" } ,notes = "根据项目任务模块获取根任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchroottask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskRootTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchRootTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -11276,22 +10683,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询根任务", tags = {"任务" } ,notes = "根据项目任务模块查询根任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchroottask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskRootTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchRootTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取关联计划（当前项目未关联）", tags = {"任务" } ,notes = "根据项目任务模块获取关联计划（当前项目未关联）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchtasklinkplan")
 	public ResponseEntity<List<TaskDTO>> fetchTaskTaskLinkPlanByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -11301,22 +10706,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询关联计划（当前项目未关联）", tags = {"任务" } ,notes = "根据项目任务模块查询关联计划（当前项目未关联）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchtasklinkplan")
 	public ResponseEntity<Page<TaskDTO>> searchTaskTaskLinkPlanByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTaskLinkPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "根据项目任务模块获取我本月完成的任务（下拉列表框）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchthismonthcompletetaskchoice")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisMonthCompleteTaskChoiceByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -11326,22 +10729,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询我本月完成的任务（下拉列表框）", tags = {"任务" } ,notes = "根据项目任务模块查询我本月完成的任务（下拉列表框）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchthismonthcompletetaskchoice")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisMonthCompleteTaskChoiceByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisMonthCompleteTaskChoice(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据项目任务模块获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchthisweekcompletetask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -11351,22 +10752,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据项目任务模块查询本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchthisweekcompletetask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "根据项目任务模块获取本周已完成任务(下拉框选择)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchthisweekcompletetaskchoice")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskChoiceByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -11376,22 +10775,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询本周已完成任务(下拉框选择)", tags = {"任务" } ,notes = "根据项目任务模块查询本周已完成任务(下拉框选择)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchthisweekcompletetaskchoice")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskChoiceByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskChoice(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "根据项目任务模块获取移动端本周已完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchthisweekcompletetaskmobzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskMobZSByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -11401,22 +10798,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询移动端本周已完成任务(汇报)", tags = {"任务" } ,notes = "根据项目任务模块查询移动端本周已完成任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchthisweekcompletetaskmobzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskMobZSByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskMobZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据项目任务模块获取本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchthisweekcompletetaskzs")
 	public ResponseEntity<List<TaskDTO>> fetchTaskThisWeekCompleteTaskZSByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -11426,22 +10821,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询本周完成的任务(汇报)", tags = {"任务" } ,notes = "根据项目任务模块查询本周完成的任务(汇报)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchthisweekcompletetaskzs")
 	public ResponseEntity<Page<TaskDTO>> searchTaskThisWeekCompleteTaskZSByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchThisWeekCompleteTaskZS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取todo列表查询", tags = {"任务" } ,notes = "根据项目任务模块获取todo列表查询")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchtodolisttask")
 	public ResponseEntity<List<TaskDTO>> fetchTaskTodoListTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTodoListTask(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -11451,22 +10844,20 @@ public class TaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询todo列表查询", tags = {"任务" } ,notes = "根据项目任务模块查询todo列表查询")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchtodolisttask")
 	public ResponseEntity<Page<TaskDTO>> searchTaskTodoListTaskByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Task> domains = taskService.searchTodoListTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取任务类型分组", tags = {"任务" } ,notes = "根据项目任务模块获取任务类型分组")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchtypegroup")
 	public ResponseEntity<List<Map>> fetchTaskTypeGroupByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroup(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -11475,22 +10866,20 @@ public class TaskResource {
                 .body(domains.getContent());
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询任务类型分组", tags = {"任务" } ,notes = "根据项目任务模块查询任务类型分组")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchtypegroup")
 	public ResponseEntity<Page<Map>> searchTaskTypeGroupByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroup(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块获取任务类型分组（计划）", tags = {"任务" } ,notes = "根据项目任务模块获取任务类型分组（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/fetchtypegroupplan")
 	public ResponseEntity<List<Map>> fetchTaskTypeGroupPlanByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id,@RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -11499,12 +10888,11 @@ public class TaskResource {
                 .body(domains.getContent());
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块查询任务类型分组（计划）", tags = {"任务" } ,notes = "根据项目任务模块查询任务类型分组（计划）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/searchtypegroupplan")
 	public ResponseEntity<Page<Map>> searchTaskTypeGroupPlanByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskSearchContext context) {
         context.setN_module_eq(projectmodule_id);
-        taskRuntime.addAuthorityConditions(context,"READ");
         Page<Map> domains = taskService.searchTypeGroupPlan(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(domains.getContent(), context.getPageable(), domains.getTotalElements()));
