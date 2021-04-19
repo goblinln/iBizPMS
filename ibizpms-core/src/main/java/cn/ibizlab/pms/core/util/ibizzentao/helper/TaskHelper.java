@@ -961,9 +961,9 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             newTask.setAssigneddate(ZTDateUtil.now());
         }
         if (newTask.getLeft() == 0) {
-            newTask.setStatus(StaticDict.Task__status.DONE.getValue());
-            newTask.setFinisheddate(ZTDateUtil.now());
-            newTask.setFinishedby(AuthenticationUser.getAuthenticationUser().getUsername());
+            newTask.setStatus(StaticDict.Task__status.DOING.getValue());//开始任务时剩余为0 设置状态为进行中
+//            newTask.setFinisheddate(ZTDateUtil.now());
+//            newTask.setFinishedby(AuthenticationUser.getAuthenticationUser().getUsername());
             newTask.setAssignedto(old.getOpenedby());
         }
 
@@ -1644,7 +1644,7 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             if (assignedTo != "" && assignedTo != null) {
                 task.setAssigneddate(ZTDateUtil.now());
             }
-
+            task.setTaskspecies(StaticDict.TaskSpecies.TEMP.getValue());//创建子任务时子任务的状态为临时任务
             super.create(task);
 
             childTasks += task.getId() + ",";
@@ -1706,8 +1706,6 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             }
             calendar.add(Calendar.DATE, -beforeDays);
             begin = calendar.getTime();
-        }else {
-            throw new BadRequestAlertException("提前生成待办的天数不能为负！","task","");
         }
         //如果还未开始或者已经结束
         if (today.before(begin) || today.after(end)) {
@@ -1732,11 +1730,10 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             calendar.add(Calendar.DATE, beforeDays);
         }
         Date finish = calendar.getTime();
+        int count = 1;
         for (long time = begin.getTime(); time <= finish.getTime() ; time += 86400000) {
-
             Date today1 = new Date(time);
-            List<Task> lastCycleList = this.list(new QueryWrapper<Task>().eq("idvalue", et.getId()).last(" order by eststarted desc"));
-
+            List<Task> lastCycleList = this.list(new QueryWrapper<Task>().eq("idvalue", et.getId()).last(" order by eststarted "));
             Task lastCycleJson = null;
             if (lastCycleList.size() > 0) {
                 lastCycleJson = lastCycleList.get(0);
@@ -1747,8 +1744,7 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             if (StaticDict.CycleType.DAY.getValue().equals(et.getConfigtype())) {
                 Integer day = et.getConfigday();
                 if (day <= 0) {
-//                    continue;
-                    throw new BadRequestAlertException("间隔天数要大于0！","task","");
+                    continue;
                 }
                 if (lastCycleJson == null) {
                     calendar.setTime(today1);
@@ -1756,8 +1752,9 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
                     date = calendar.getTime();
                 } else if (lastCycleJson.getConfigbegin() != null) {
                     calendar.setTime(lastCycleJson.getConfigbegin());
-                    calendar.add(Calendar.DATE, day);
+                    calendar.add(Calendar.DATE, day*count);
                     date = calendar.getTime();
+                    count = count +1;
                 }
             } else if (StaticDict.CycleType.WEEK.getValue().equals(et.getConfigtype())) {
                 calendar.setTime(today1);
@@ -1812,7 +1809,7 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             String name = sdf.format(calendar.getTime());
             String title = et.getName() + "-" + name + "-" + et.getAssignedto();
             newTask.setName(title);
-            List<Task> taskList = this.list(new QueryWrapper<Task>().eq("name", title));
+            List<Task> taskList = this.list(new QueryWrapper<Task>().eq("parent", et.getId()).eq("CONFIG_BEGIN",new Timestamp(date.getTime())));
             if (taskList.size() > 0){
                 continue;
             }
