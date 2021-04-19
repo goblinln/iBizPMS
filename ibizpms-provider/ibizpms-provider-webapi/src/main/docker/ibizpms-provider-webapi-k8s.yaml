@@ -47,13 +47,13 @@ spec:
         - name: SPRING_DATASOURCE_DEFAULTSCHEMA
           value: "zentao"
         - name: PORTMAP
-          value: "9998:9998"      
+          value: "9988:9988"      
         - name: ZUUL_ROUTES_IBZEMP_SERVICEID
           value: "ibizpms-webapi"      
         - name: IBIZ_AUTH_LADP
           value: "true"      
         - name: JOBS_APP-PORT
-          value: "9998"      
+          value: "9988"      
         - name: CAS
           value: "https://passport.ibizlab.cn"      
         - name: NACOS

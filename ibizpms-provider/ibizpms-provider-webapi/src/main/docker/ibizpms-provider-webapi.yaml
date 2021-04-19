@@ -4,7 +4,7 @@ services:
     image: registry.cn-shanghai.aliyuncs.com/ibizsys/ibizpms-provider-webapi:latest
     ports:
       - "32011:32011"
-      - "9998:9998"
+      - "9988:9988"
     networks:
       - agent_network
     environment:
@@ -19,10 +19,10 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:mysql://172.16.180.217:3306/zentao?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&useOldAliasMetadataBehavior=true&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
       - SPRING_DATASOURCE_DRIVER-CLASS-NAME=com.mysql.jdbc.Driver
       - SPRING_DATASOURCE_DEFAULTSCHEMA=zentao
-      - PORTMAP=9998:9998
+      - PORTMAP=9988:9988
       - ZUUL_ROUTES_IBZEMP_SERVICEID=ibizpms-webapi
       - IBIZ_AUTH_LADP=true
-      - JOBS_APP-PORT=9998
+      - JOBS_APP-PORT=9988
       - CAS=https://passport.ibizlab.cn
       - NACOS=172.16.240.110:8850
       - IBIZ_CACHELEVEL=L2
