@@ -547,14 +547,19 @@ export default class IbzReportlyUIServiceBase extends UIService {
      * @param isEnableWorkflow  重定向视图是否需要处理流程中的数据
      * @memberof  IbzReportlyUIServiceBase
      */
-    public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
+    public async getRDAppViewEX(srfkey:string,isEnableWorkflow:boolean,rdviewname:string){        
         this.isEnableWorkflow = isEnableWorkflow;
         // 进行数据查询
         let result:any = await this.dataService.Get({ibzreportly:srfkey});
         const curData:any = result.data;
         //判断当前数据模式,默认为true，todo
         const iRealDEModel:boolean = true;
-
+        //常规重定向
+        const dataTypeDEField:string|null =null;
+        let strRDViewParam = rdviewname +':RDITEM:'+ curData[dataTypeDEField!];
+        if(this.allViewMap.has(strRDViewParam)){
+            return this.allViewMap.get(strRDViewParam);
+        }
         let bDataInWF:boolean = false;
 		let bWFMode:any = false;
 		// 计算数据模式
@@ -572,6 +577,17 @@ export default class IbzReportlyUIServiceBase extends UIService {
 
         //返回视图
         return this.allViewMap.get(strPDTViewParam);
+    }
+
+    /**
+     * 获取指定数据的重定向页面
+     * 
+     * @param srfkey 数据主键
+     * @param isEnableWorkflow  重定向视图是否需要处理流程中的数据
+     * @memberof  IbzReportlyUIServiceBase
+     */
+    public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
+        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**
