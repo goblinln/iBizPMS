@@ -3,17 +3,6 @@
   "actionType" : "USERCUSTOM",
   "codeName" : "ByVersionUpdateContext",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/ByVersionUpdateContext.json",
-  "extendMode" : 0,
   "logicName" : "根据版本更新正文信息",
-  "name" : "ByVersionUpdateContext",
-  "orderValue" : 99999,
-  "paramMode" : 1,
-  "requestParamType" : "ENTITY",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "builtinAction" : false,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  "name" : "ByVersionUpdateContext"
 }

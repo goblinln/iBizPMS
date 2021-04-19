@@ -1,98 +1,94 @@
 {
   "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/CompanyStats/PSDEACTIONS/Create.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/CompanyStats/PSDEACTIONS/Create.json",
+    "logicName" : "Create",
+    "name" : "Create",
+    "orderValue" : 1,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/CompanyStats/PSDEACTIONS/Update.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/CompanyStats/PSDEACTIONS/Update.json",
+    "logicName" : "Update",
+    "name" : "Update",
+    "orderValue" : 11,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/CompanyStats/PSDEACTIONS/Remove.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Remove",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/CompanyStats/PSDEACTIONS/Remove.json",
+    "logicName" : "Remove",
+    "name" : "Remove",
+    "orderValue" : 21,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/CompanyStats/PSDEACTIONS/Get.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/CompanyStats/PSDEACTIONS/Get.json",
+    "logicName" : "Get",
+    "name" : "Get",
+    "orderValue" : 31,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/CompanyStats/PSDEACTIONS/GetDraft.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/CompanyStats/PSDEACTIONS/GetDraft.json",
+    "logicName" : "GetDraft",
+    "name" : "GetDraft",
+    "orderValue" : 41,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/CompanyStats/PSDEACTIONS/CheckKey.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/CompanyStats/PSDEACTIONS/CheckKey.json",
+    "logicName" : "CheckKey",
+    "name" : "CheckKey",
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/CompanyStats/PSDEACTIONS/Save.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/CompanyStats/PSDEACTIONS/Save.json",
+    "logicName" : "Save",
+    "name" : "Save",
+    "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
     "codeName" : "CompanyDynamicStats",
-    "extendMode" : 0,
     "logicName" : "公司动态统计",
     "name" : "CompanyDynamicStats",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "数据查询",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "defaultMode" : true
   }, {
     "codeName" : "View",
-    "extendMode" : 0,
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "VIEW"
   } ],
   "getAllPSDEDataSets" : [ {
-    "cacheTimeout" : -1,
     "codeName" : "CompanyDynamicStats",
-    "extendMode" : 0,
     "logicName" : "公司动态统计",
     "name" : "CompanyDynamicStats",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "数据集",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
     "defaultMode" : true,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFDTColumns" : [ {
@@ -100,9 +96,7 @@
       "dBType" : "MYSQL5",
       "name" : "LOGINCNT",
       "queryCodeExp" : "0",
-      "standardColumnName" : "`LOGINCNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`LOGINCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -116,7 +110,6 @@
         "name" : "LOGINCNT",
         "codeName" : "Logincnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -126,7 +119,6 @@
     "codeName" : "Logincnt",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "4f2fda799cc4c05c9ac7496c6226f4d5",
     "importOrder" : 1000,
     "logicName" : "登录次数",
     "name" : "LOGINCNT",
@@ -140,9 +132,7 @@
       "dBType" : "MYSQL5",
       "name" : "OPENEDSTORYCNT",
       "queryCodeExp" : "0",
-      "standardColumnName" : "`OPENEDSTORYCNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`OPENEDSTORYCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -156,7 +146,6 @@
         "name" : "OPENEDSTORYCNT",
         "codeName" : "Openedstorycnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -166,7 +155,6 @@
     "codeName" : "Openedstorycnt",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "95833bb34097d34db3c2655cd1d7cfb1",
     "importOrder" : 1000,
     "logicName" : "新增需求数",
     "name" : "OPENEDSTORYCNT",
@@ -187,7 +175,6 @@
         "name" : "ZTDATE",
         "codeName" : "Ztdate"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -197,7 +184,6 @@
     "codeName" : "Ztdate",
     "dEFType" : 5,
     "dataType" : "DATE",
-    "deployId" : "7afdde49f747d477b3f66a05f1e92715",
     "importOrder" : 1000,
     "logicName" : "日期",
     "name" : "ZTDATE",
@@ -211,9 +197,7 @@
       "dBType" : "MYSQL5",
       "name" : "DATE",
       "queryCodeExp" : "t1.`DATE`",
-      "standardColumnName" : "`DATE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`DATE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -227,7 +211,6 @@
         "name" : "DATE",
         "codeName" : "Date"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -237,7 +220,6 @@
     "codeName" : "Date",
     "dEFType" : 1,
     "dataType" : "DATE",
-    "deployId" : "0efc4a335610db71a6af610b35d0fb3b",
     "importOrder" : 1000,
     "logicName" : "日志日期",
     "name" : "DATE",
@@ -249,9 +231,7 @@
       "dBType" : "MYSQL5",
       "name" : "CLOSEDSTORYCNT",
       "queryCodeExp" : "0",
-      "standardColumnName" : "`CLOSEDSTORYCNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`CLOSEDSTORYCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -265,7 +245,6 @@
         "name" : "CLOSEDSTORYCNT",
         "codeName" : "ClosedStoryCnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -275,7 +254,6 @@
     "codeName" : "ClosedStoryCnt",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "658ed4220fc9a9df30388d77abf88048",
     "importOrder" : 1000,
     "logicName" : "关闭需求数",
     "name" : "CLOSEDSTORYCNT",
@@ -289,9 +267,7 @@
       "dBType" : "MYSQL5",
       "name" : "OPENEDBUGCNT",
       "queryCodeExp" : "0",
-      "standardColumnName" : "`OPENEDBUGCNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`OPENEDBUGCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -305,7 +281,6 @@
         "name" : "OPENEDBUGCNT",
         "codeName" : "Openedbugcnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -315,7 +290,6 @@
     "codeName" : "Openedbugcnt",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "53b7721d4bbd9559c89780a713f81af5",
     "importOrder" : 1000,
     "logicName" : "新增Bug数",
     "name" : "OPENEDBUGCNT",
@@ -329,9 +303,7 @@
       "dBType" : "MYSQL5",
       "name" : "LOGHOURS",
       "queryCodeExp" : "0",
-      "standardColumnName" : "`LOGHOURS`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`LOGHOURS`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -345,7 +317,6 @@
         "name" : "LOGHOURS",
         "codeName" : "Loghours"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -355,7 +326,6 @@
     "codeName" : "Loghours",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "ff0b9516d669646b782ee366606e57c0",
     "importOrder" : 1000,
     "logicName" : "日志工时",
     "name" : "LOGHOURS",
@@ -369,9 +339,7 @@
       "dBType" : "MYSQL5",
       "name" : "DYNAMICCNT",
       "queryCodeExp" : "0",
-      "standardColumnName" : "`DYNAMICCNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`DYNAMICCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -385,7 +353,6 @@
         "name" : "DYNAMICCNT",
         "codeName" : "Dynamiccnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -395,7 +362,6 @@
     "codeName" : "Dynamiccnt",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "c4dd7fdef2659f7e88d9f70bbef139b4",
     "importOrder" : 1000,
     "logicName" : "动态数",
     "name" : "DYNAMICCNT",
@@ -409,9 +375,7 @@
       "dBType" : "MYSQL5",
       "name" : "FINISHEDTASKCNT",
       "queryCodeExp" : "0",
-      "standardColumnName" : "`FINISHEDTASKCNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`FINISHEDTASKCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -425,7 +389,6 @@
         "name" : "FINISHEDTASKCNT",
         "codeName" : "Finishedtaskcnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -435,7 +398,6 @@
     "codeName" : "Finishedtaskcnt",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "b1e50efa11f4d31d3d9f99cb21ff88b9",
     "importOrder" : 1000,
     "logicName" : "完成任务数",
     "name" : "FINISHEDTASKCNT",
@@ -449,9 +411,7 @@
       "dBType" : "MYSQL5",
       "name" : "RESOLVEDBUGCNT",
       "queryCodeExp" : "0",
-      "standardColumnName" : "`RESOLVEDBUGCNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`RESOLVEDBUGCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -465,7 +425,6 @@
         "name" : "RESOLVEDBUGCNT",
         "codeName" : "RESOLVEDBUGCNT"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -475,7 +434,6 @@
     "codeName" : "RESOLVEDBUGCNT",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "7e3270c44bebe27dce08c2a9916f1095",
     "importOrder" : 1000,
     "logicName" : "解决Bug数",
     "name" : "RESOLVEDBUGCNT",
@@ -489,9 +447,7 @@
       "dBType" : "MYSQL5",
       "name" : "COMMENT",
       "queryCodeExp" : "t1.`COMMENT`",
-      "standardColumnName" : "`COMMENT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`COMMENT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -516,7 +472,6 @@
         "name" : "COMMENT",
         "codeName" : "Comment"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[65535]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -526,7 +481,6 @@
     "codeName" : "Comment",
     "dEFType" : 1,
     "dataType" : "LONGTEXT",
-    "deployId" : "348cefb870bff4ee618b5b30316250a1",
     "importOrder" : 1000,
     "length" : 65535,
     "logicName" : "备注",
@@ -543,9 +497,7 @@
       "dBType" : "MYSQL5",
       "name" : "OPENEDTASKCNT",
       "queryCodeExp" : "0",
-      "standardColumnName" : "`OPENEDTASKCNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`OPENEDTASKCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -559,7 +511,6 @@
         "name" : "OPENEDTASKCNT",
         "codeName" : "Openedtaskcnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -569,7 +520,6 @@
     "codeName" : "Openedtaskcnt",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "88600b7cd37f06b52505998d272a7550",
     "importOrder" : 1000,
     "logicName" : "新增任务数",
     "name" : "OPENEDTASKCNT",
@@ -584,8 +534,7 @@
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`",
-      "autoIncrement" : true,
-      "valueAutoGen" : false
+      "autoIncrement" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -599,7 +548,6 @@
         "name" : "ID",
         "codeName" : "Id"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -609,7 +557,6 @@
     "codeName" : "Id",
     "dEFType" : 1,
     "dataType" : "ACID",
-    "deployId" : "51c278fdf9c50957f1c48c78a1bf04d3",
     "importOrder" : 1000,
     "length" : 20,
     "logicName" : "标识",
@@ -645,7 +592,6 @@
     "modelref" : true,
     "id" : "Default"
   },
-  "deployId" : "012ce27332ea62876c33516da1d27802",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/CompanyStats.json",
   "enableActions" : 7,
@@ -654,7 +600,6 @@
   "extendMode" : 0,
   "logicName" : "公司动态汇总",
   "name" : "IBZ_COMPANYSTATS",
-  "orderValue" : 99999,
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,

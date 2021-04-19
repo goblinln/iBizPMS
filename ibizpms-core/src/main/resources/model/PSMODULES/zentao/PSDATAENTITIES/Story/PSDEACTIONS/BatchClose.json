@@ -3,17 +3,6 @@
   "actionType" : "USERCUSTOM",
   "codeName" : "BatchClose",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchClose.json",
-  "extendMode" : 0,
   "logicName" : "批量关闭",
-  "name" : "BatchClose",
-  "orderValue" : 99999,
-  "paramMode" : 1,
-  "requestParamType" : "ENTITY",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "builtinAction" : false,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  "name" : "BatchClose"
 }

@@ -2,7 +2,6 @@
   "codeName" : "UpdateStoryVersion",
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/UpdateStoryVersion.json",
-  "logicHolder" : 1,
   "logicName" : "更新需求版本",
   "logicSubType" : "NONE",
   "name" : "更新需求版本",
@@ -89,7 +88,6 @@
   } ],
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",
-    "logicHolder" : 3,
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
@@ -106,7 +104,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取需求版本",
     "getPSDELogicNodeParams" : [ {
@@ -122,7 +119,6 @@
     "parallelOutput" : true
   }, {
     "codeName" : "Prepareparam1",
-    "logicHolder" : 3,
     "logicNodeType" : "PREPAREPARAM",
     "name" : "重置需求版本",
     "getPSDELogicNodeParams" : [ {

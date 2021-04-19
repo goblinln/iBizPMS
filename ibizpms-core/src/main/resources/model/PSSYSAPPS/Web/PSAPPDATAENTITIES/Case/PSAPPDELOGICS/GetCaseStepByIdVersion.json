@@ -2,7 +2,6 @@
   "codeName" : "GetCaseStepByIdVersion",
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSAPPDELOGICS/GetCaseStepByIdVersion.json",
-  "logicHolder" : 3,
   "logicName" : "根据用例标识和版本获取用例步骤",
   "logicSubType" : "NONE",
   "name" : "根据用例标识和版本获取用例步骤",
@@ -20,7 +19,6 @@
   } ],
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",
-    "logicHolder" : 3,
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
@@ -34,7 +32,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取用例步骤",
     "getPSDELogicNodeParams" : [ {

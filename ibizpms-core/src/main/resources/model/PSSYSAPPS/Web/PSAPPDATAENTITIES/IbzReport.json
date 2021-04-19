@@ -593,7 +593,6 @@
     "logicName" : "日报",
     "mSTag" : "daily",
     "name" : "日报",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "MONTHLY",
       "getPSDEOPPriv" : {
@@ -628,7 +627,6 @@
     "logicName" : "月报",
     "mSTag" : "monthly",
     "name" : "月报",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "WEEKLY",
       "getPSDEOPPriv" : {
@@ -663,7 +661,6 @@
     "logicName" : "汇报",
     "mSTag" : "reportly",
     "name" : "汇报",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "DAILY",
       "getPSDEOPPriv" : {
@@ -698,7 +695,6 @@
     "logicName" : "周报",
     "mSTag" : "weekly",
     "name" : "周报",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "REPORTLY",
       "getPSDEOPPriv" : {

@@ -2,6 +2,349 @@
   "codeName" : "Developer",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/Developer.json",
   "name" : "研发人员",
+  "getPSSysUserRoleDatas" : [ {
+    "name" : "研发人员-ZT_BUG[BUG维护]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+    }
+  }, {
+    "name" : "研发人员-ZT_MODULE[Module查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDEUSERROLES/Module_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+    }
+  }, {
+    "name" : "研发人员-ZT_STORY[需求查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+    }
+  }, {
+    "name" : "研发人员-ZT_PROJECT[项目查看（当前机构）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_CO.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    }
+  }, {
+    "name" : "研发人员-ZT_ACTION[系统日志添加备注（全部数据）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEUSERROLES/Action_MANAGE_ALL.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
+    }
+  }, {
+    "name" : "研发人员-ZT_PRODUCTPLAN[产品计划查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEUSERROLES/ProductPlan_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+    }
+  }, {
+    "name" : "研发人员-ZT_TESTTASK[测试单查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEUSERROLES/TestTask_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
+    }
+  }, {
+    "name" : "研发人员-ZT_TASK[任务维护]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+    }
+  }, {
+    "name" : "研发人员-ZT_ACTION[系统日志查看（全部数据）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEUSERROLES/Action_READ_ALL.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
+    }
+  }, {
+    "name" : "研发人员-ZT_BUILD[版本查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEUSERROLES/Build_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build.json"
+    }
+  }, {
+    "name" : "研发人员-ZT_CASE[用例查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEUSERROLES/Case_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+    }
+  }, {
+    "name" : "研发人员-ZT_RELEASE[产品发布查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEUSERROLES/Release_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
+    }
+  }, {
+    "name" : "研发人员-ZT_BUG[BUG查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+    }
+  }, {
+    "name" : "研发人员-ZT_TESTREPORT[测试报告查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEUSERROLES/TestReport_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
+    }
+  }, {
+    "name" : "研发人员-ZT_TASK[任务查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+    }
+  }, {
+    "name" : "研发人员-ZT_PRODUCT[产品查看（当前机构）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Read_CO.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    }
+  } ],
+  "getPSSysUserRoleReses" : [ {
+    "name" : "研发人员-Bug提需求",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__BUG_TOSTORY_BUT"
+    }
+  }, {
+    "name" : "研发人员-bug新建",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__BUG_CREATE_BUT"
+    }
+  }, {
+    "name" : "研发人员-任务编辑",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__TASK_EDIT_BUT"
+    }
+  }, {
+    "name" : "研发人员-任务转交",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__TASK_FORWARD_BUT"
+    }
+  }, {
+    "name" : "研发人员-任务暂停",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__TASK_PAUSE_BUT"
+    }
+  }, {
+    "name" : "研发人员-任务激活",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__TASK_ACTIVATION_BUT"
+    }
+  }, {
+    "name" : "研发人员-Bug激活",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__BUG_ACTIVATE_BUT"
+    }
+  }, {
+    "name" : "研发人员-任务完成",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__TASK_COMPLETE_BUT"
+    }
+  }, {
+    "name" : "研发人员-Bug移除",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__BUG_UNLINK_BUT"
+    }
+  }, {
+    "name" : "研发人员-任务取消",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__TASK_CANCEL_BUT"
+    }
+  }, {
+    "name" : "研发人员-Bug解决",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__BUG_RESOLVE_BUT"
+    }
+  }, {
+    "name" : "研发人员-任务待收藏",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__TASK_NFAVOR_BUT"
+    }
+  }, {
+    "name" : "研发人员-任务指派",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__TASK_ASSIGN_BUT"
+    }
+  }, {
+    "name" : "研发人员-任务新建",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__TASK_CREATE_BUT"
+    }
+  }, {
+    "name" : "研发人员-任务确认需求变更",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__TASK_XQCHANGE_BUT"
+    }
+  }, {
+    "name" : "研发人员-Bug编辑",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__BUG_EDIT_BUT"
+    }
+  }, {
+    "name" : "研发人员-任务删除",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__TASK_DELETE_BUT"
+    }
+  }, {
+    "name" : "研发人员-Bug待收藏",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__BUG_NFAVOR_BUT"
+    }
+  }, {
+    "name" : "研发人员-任务继续",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__TASK_PROCEED_BUT"
+    }
+  }, {
+    "name" : "研发人员-任务工时",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__TASK_CONSUM_BUT"
+    }
+  }, {
+    "name" : "研发人员-Bug删除",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__BUG_DELETE_BUT"
+    }
+  }, {
+    "name" : "研发人员-任务子任务",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__TASK_SUBTASKS_BUT"
+    }
+  }, {
+    "name" : "研发人员-Bug确认",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__BUG_CONFIRM_BUT"
+    }
+  }, {
+    "name" : "研发人员-Bug指派",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__BUG_ASSIGNTO_BUT"
+    }
+  }, {
+    "name" : "研发人员-任务已收藏",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__TASK_FAVOR_BUT"
+    }
+  }, {
+    "name" : "研发人员-Bug已收藏",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__BUG_FAVOR_BUT"
+    }
+  }, {
+    "name" : "研发人员-任务开始",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__TASK_START_BUT"
+    }
+  }, {
+    "name" : "研发人员-Bug建用例",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__BUG_CREATECASE_BUT"
+    }
+  }, {
+    "name" : "研发人员-任务关闭",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__TASK_CLOSE_BUT"
+    }
+  }, {
+    "name" : "研发人员-Bug关闭",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__BUG_CLOSE_BUT"
+    }
+  } ],
   "roleTag" : "Developer",
-  "roleType" : "CUSTOM"
+  "roleType" : "CUSTOM",
+  "uniResTags" : [ "BUG_TOSTORY_BUT", "BUG_CREATE_BUT", "TASK_EDIT_BUT", "TASK_FORWARD_BUT", "TASK_PAUSE_BUT", "TASK_ACTIVATION_BUT", "BUG_ACTIVATE_BUT", "TASK_COMPLETE_BUT", "BUG_UNLINK_BUT", "TASK_CANCEL_BUT", "BUG_RESOLVE_BUT", "TASK_NFAVOR_BUT", "TASK_ASSIGN_BUT", "TASK_CREATE_BUT", "TASK_XQCHANGE_BUT", "BUG_EDIT_BUT", "TASK_DELETE_BUT", "BUG_NFAVOR_BUT", "TASK_PROCEED_BUT", "TASK_CONSUM_BUT", "BUG_DELETE_BUT", "TASK_SUBTASKS_BUT", "BUG_CONFIRM_BUT", "BUG_ASSIGNTO_BUT", "TASK_FAVOR_BUT", "BUG_FAVOR_BUT", "TASK_START_BUT", "BUG_CREATECASE_BUT", "TASK_CLOSE_BUT", "BUG_CLOSE_BUT" ]
 }

@@ -3,21 +3,6 @@
   "actionType" : "USERCUSTOM",
   "codeName" : "CreateGetLastWeekPlanAndWork",
   "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CreateGetLastWeekPlanAndWork.json",
-  "extendMode" : 0,
   "logicName" : "获取上周周报的下周计划",
-  "name" : "CreateGetLastWeekPlanAndWork",
-  "orderValue" : 99999,
-  "getPSDEOPPriv" : {
-    "modelref" : true,
-    "id" : "CREATE"
-  },
-  "paramMode" : 1,
-  "requestParamType" : "ENTITY",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "builtinAction" : false,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  "name" : "CreateGetLastWeekPlanAndWork"
 }

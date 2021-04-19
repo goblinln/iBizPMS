@@ -3522,7 +3522,6 @@
     "logicName" : "已取消_未收藏_多人任务",
     "mSTag" : "cancel__0__10",
     "name" : "已取消_未收藏_多人任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_PROCEED_BUT",
       "getPSDEOPPriv" : {
@@ -3649,7 +3648,6 @@
     "logicName" : "已取消_未收藏_父任务",
     "mSTag" : "cancel__0__20",
     "name" : "已取消_未收藏_父任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_PROCEED_BUT",
       "getPSDEOPPriv" : {
@@ -3824,7 +3822,6 @@
     "logicName" : "已取消_未收藏_常规任务",
     "mSTag" : "cancel__0__30",
     "name" : "已取消_未收藏_常规任务",
-    "orderValue" : 99999,
     "getPSDEMainStateActions" : [ {
       "name" : "RemoveTemp",
       "getPSDEAction" : {
@@ -4078,7 +4075,6 @@
     "logicName" : "已取消_未收藏_子任务",
     "mSTag" : "cancel__0__40",
     "name" : "已取消_未收藏_子任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_XQCHANGE_BUT",
       "getPSDEOPPriv" : {
@@ -4217,7 +4213,6 @@
     "logicName" : "已取消_已收藏_多人任务",
     "mSTag" : "cancel__1__10",
     "name" : "已取消_已收藏_多人任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_PAUSE_BUT",
       "getPSDEOPPriv" : {
@@ -4344,7 +4339,6 @@
     "logicName" : "已取消_已收藏_父任务",
     "mSTag" : "cancel__1__20",
     "name" : "已取消_已收藏_父任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_DELETE_BUT",
       "getPSDEOPPriv" : {
@@ -4519,7 +4513,6 @@
     "logicName" : "已取消_已收藏_常规任务",
     "mSTag" : "cancel__1__30",
     "name" : "已取消_已收藏_常规任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_CANCEL_BUT",
       "getPSDEOPPriv" : {
@@ -4646,7 +4639,6 @@
     "logicName" : "已取消_已收藏_子任务",
     "mSTag" : "cancel__1__40",
     "name" : "已取消_已收藏_子任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_COMPLETE_BUT",
       "getPSDEOPPriv" : {
@@ -4785,7 +4777,6 @@
     "logicName" : "已关闭_未收藏_多人任务",
     "mSTag" : "closed__0__10",
     "name" : "已关闭_未收藏_多人任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_COMPLETE_BUT",
       "getPSDEOPPriv" : {
@@ -4936,7 +4927,6 @@
     "logicName" : "已关闭_未收藏_父任务",
     "mSTag" : "closed__0__20",
     "name" : "已关闭_未收藏_父任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_DELETE_BUT",
       "getPSDEOPPriv" : {
@@ -5111,7 +5101,6 @@
     "logicName" : "已关闭_未收藏_常规任务",
     "mSTag" : "closed__0__30",
     "name" : "已关闭_未收藏_常规任务",
-    "orderValue" : 99999,
     "getPSDEMainStateActions" : [ {
       "name" : "EditEstimate",
       "getPSDEAction" : {
@@ -5370,7 +5359,6 @@
     "logicName" : "已关闭_未收藏_子任务",
     "mSTag" : "closed__0__40",
     "name" : "已关闭_未收藏_子任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_SUBTASKS_BUT",
       "getPSDEOPPriv" : {
@@ -5521,7 +5509,6 @@
     "logicName" : "已关闭_已收藏_多人任务",
     "mSTag" : "closed__1__10",
     "name" : "已关闭_已收藏_多人任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_SUBTASKS_BUT",
       "getPSDEOPPriv" : {
@@ -5672,7 +5659,6 @@
     "logicName" : "已关闭_已收藏_父任务",
     "mSTag" : "closed__1__20",
     "name" : "已关闭_已收藏_父任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_ASSIGN_BUT",
       "getPSDEOPPriv" : {
@@ -5847,7 +5833,6 @@
     "logicName" : "已关闭_已收藏_常规任务",
     "mSTag" : "closed__1__30",
     "name" : "已关闭_已收藏_常规任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_NFAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -5986,7 +5971,6 @@
     "logicName" : "已关闭_已收藏_子任务",
     "mSTag" : "closed__1__40",
     "name" : "已关闭_已收藏_子任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_FORWARD_BUT",
       "getPSDEOPPriv" : {
@@ -6137,7 +6121,6 @@
     "logicName" : "进行中_未收藏_多人任务",
     "mSTag" : "doing__0__10",
     "name" : "进行中_未收藏_多人任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_ACTIVATION_BUT",
       "getPSDEOPPriv" : {
@@ -6252,7 +6235,6 @@
     "logicName" : "进行中_未收藏_父任务",
     "mSTag" : "doing__0__20",
     "name" : "进行中_未收藏_父任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_START_BUT",
       "getPSDEOPPriv" : {
@@ -6427,7 +6409,6 @@
     "logicName" : "进行中_未收藏_常规任务",
     "mSTag" : "doing__0__30",
     "name" : "进行中_未收藏_常规任务",
-    "orderValue" : 99999,
     "getPSDEMainStateActions" : [ {
       "name" : "DeleteEstimate",
       "getPSDEAction" : {
@@ -6664,7 +6645,6 @@
     "logicName" : "进行中_未收藏_子任务",
     "mSTag" : "doing__0__40",
     "name" : "进行中_未收藏_子任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_CLOSE_BUT",
       "getPSDEOPPriv" : {
@@ -6779,7 +6759,6 @@
     "logicName" : "进行中_已收藏_多人任务",
     "mSTag" : "doing__1__10",
     "name" : "进行中_已收藏_多人任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_START_BUT",
       "getPSDEOPPriv" : {
@@ -6894,7 +6873,6 @@
     "logicName" : "进行中_已收藏_父任务",
     "mSTag" : "doing__1__20",
     "name" : "进行中_已收藏_父任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_PAUSE_BUT",
       "getPSDEOPPriv" : {
@@ -7069,7 +7047,6 @@
     "logicName" : "进行中_已收藏_常规任务",
     "mSTag" : "doing__1__30",
     "name" : "进行中_已收藏_常规任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_START_BUT",
       "getPSDEOPPriv" : {
@@ -7172,7 +7149,6 @@
     "logicName" : "进行中_已收藏_子任务",
     "mSTag" : "doing__1__40",
     "name" : "进行中_已收藏_子任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_PROCEED_BUT",
       "getPSDEOPPriv" : {
@@ -7287,7 +7263,6 @@
     "logicName" : "已完成_未收藏_多人任务",
     "mSTag" : "done__0__10",
     "name" : "已完成_未收藏_多人任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_CANCEL_BUT",
       "getPSDEOPPriv" : {
@@ -7414,7 +7389,6 @@
     "logicName" : "已完成_未收藏_父任务",
     "mSTag" : "done__0__20",
     "name" : "已完成_未收藏_父任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_XQCHANGE_BUT",
       "getPSDEOPPriv" : {
@@ -7589,7 +7563,6 @@
     "logicName" : "已完成_未收藏_常规任务",
     "mSTag" : "done__0__30",
     "name" : "已完成_未收藏_常规任务",
-    "orderValue" : 99999,
     "getPSDEMainStateActions" : [ {
       "name" : "RecordEstimate",
       "getPSDEAction" : {
@@ -7831,7 +7804,6 @@
     "logicName" : "已完成_未收藏_子任务",
     "mSTag" : "done__0__40",
     "name" : "已完成_未收藏_子任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_XQCHANGE_BUT",
       "getPSDEOPPriv" : {
@@ -7958,7 +7930,6 @@
     "logicName" : "已完成_已收藏_多人任务",
     "mSTag" : "done__1__10",
     "name" : "已完成_已收藏_多人任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_START_BUT",
       "getPSDEOPPriv" : {
@@ -8085,7 +8056,6 @@
     "logicName" : "已完成_已收藏_父任务",
     "mSTag" : "done__1__20",
     "name" : "已完成_已收藏_父任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_PROCEED_BUT",
       "getPSDEOPPriv" : {
@@ -8260,7 +8230,6 @@
     "logicName" : "已完成_已收藏_常规任务",
     "mSTag" : "done__1__30",
     "name" : "已完成_已收藏_常规任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_NFAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -8375,7 +8344,6 @@
     "logicName" : "已完成_已收藏_子任务",
     "mSTag" : "done__1__40",
     "name" : "已完成_已收藏_子任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_FORWARD_BUT",
       "getPSDEOPPriv" : {
@@ -8502,7 +8470,6 @@
     "logicName" : "已暂停_未收藏_多人任务",
     "mSTag" : "pause__0__10",
     "name" : "已暂停_未收藏_多人任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_ACTIVATION_BUT",
       "getPSDEOPPriv" : {
@@ -8617,7 +8584,6 @@
     "logicName" : "已暂停_未收藏_父任务",
     "mSTag" : "pause__0__20",
     "name" : "已暂停_未收藏_父任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_FORWARD_BUT",
       "getPSDEOPPriv" : {
@@ -8792,7 +8758,6 @@
     "logicName" : "已暂停_未收藏_常规任务",
     "mSTag" : "pause__0__30",
     "name" : "已暂停_未收藏_常规任务",
-    "orderValue" : 99999,
     "getPSDEMainStateActions" : [ {
       "name" : "AssignTo",
       "getPSDEAction" : {
@@ -9029,7 +8994,6 @@
     "logicName" : "已暂停_未收藏_子任务",
     "mSTag" : "pause__0__40",
     "name" : "已暂停_未收藏_子任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_FAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -9144,7 +9108,6 @@
     "logicName" : "已暂停_已收藏_多人任务",
     "mSTag" : "pause__1__10",
     "name" : "已暂停_已收藏_多人任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_XQCHANGE_BUT",
       "getPSDEOPPriv" : {
@@ -9259,7 +9222,6 @@
     "logicName" : "已暂停_已收藏_父任务",
     "mSTag" : "pause__1__20",
     "name" : "已暂停_已收藏_父任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_START_BUT",
       "getPSDEOPPriv" : {
@@ -9434,7 +9396,6 @@
     "logicName" : "已暂停_已收藏_常规任务",
     "mSTag" : "pause__1__30",
     "name" : "已暂停_已收藏_常规任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_NFAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -9537,7 +9498,6 @@
     "logicName" : "已暂停_已收藏_子任务",
     "mSTag" : "pause__1__40",
     "name" : "已暂停_已收藏_子任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_CLOSE_BUT",
       "getPSDEOPPriv" : {
@@ -9652,7 +9612,6 @@
     "logicName" : "需求变更_未收藏_多人任务",
     "mSTag" : "storychange__0__10",
     "name" : "需求变更_未收藏_多人任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_PROCEED_BUT",
       "getPSDEOPPriv" : {
@@ -9815,7 +9774,6 @@
     "logicName" : "需求变更_未收藏_父任务",
     "mSTag" : "storychange__0__20",
     "name" : "需求变更_未收藏_父任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_ASSIGN_BUT",
       "getPSDEOPPriv" : {
@@ -10002,7 +9960,6 @@
     "logicName" : "需求变更_未收藏_常规任务",
     "mSTag" : "storychange__0__30",
     "name" : "需求变更_未收藏_常规任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_SUBTASKS_BUT",
       "getPSDEOPPriv" : {
@@ -10165,7 +10122,6 @@
     "logicName" : "需求变更_未收藏_子任务",
     "mSTag" : "storychange__0__40",
     "name" : "需求变更_未收藏_子任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_ASSIGN_BUT",
       "getPSDEOPPriv" : {
@@ -10328,7 +10284,6 @@
     "logicName" : "需求变更_已收藏_多人任务",
     "mSTag" : "storychange__1__10",
     "name" : "需求变更_已收藏_多人任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_CANCEL_BUT",
       "getPSDEOPPriv" : {
@@ -10491,7 +10446,6 @@
     "logicName" : "需求变更_已收藏_父任务",
     "mSTag" : "storychange__1__20",
     "name" : "需求变更_已收藏_父任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_CONSUM_BUT",
       "getPSDEOPPriv" : {
@@ -10678,7 +10632,6 @@
     "logicName" : "需求变更_已收藏_常规任务",
     "mSTag" : "storychange__1__30",
     "name" : "需求变更_已收藏_常规任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__STORY_FJTASK_BUT",
       "getPSDEOPPriv" : {
@@ -10841,7 +10794,6 @@
     "logicName" : "需求变更_已收藏_子任务",
     "mSTag" : "storychange__1__40",
     "name" : "需求变更_已收藏_子任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_ASSIGN_BUT",
       "getPSDEOPPriv" : {
@@ -11004,7 +10956,6 @@
     "logicName" : "未进行_未收藏_多人任务",
     "mSTag" : "wait__0__10",
     "name" : "未进行_未收藏_多人任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_SUBTASKS_BUT",
       "getPSDEOPPriv" : {
@@ -11119,7 +11070,6 @@
     "logicName" : "未进行_未收藏_父任务",
     "mSTag" : "wait__0__20",
     "name" : "未进行_未收藏_父任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_FORWARD_BUT",
       "getPSDEOPPriv" : {
@@ -11294,7 +11244,6 @@
     "logicName" : "未进行_未收藏_常规任务",
     "mSTag" : "wait__0__30",
     "name" : "未进行_未收藏_常规任务",
-    "orderValue" : 99999,
     "getPSDEMainStateActions" : [ {
       "name" : "Create",
       "getPSDEAction" : {
@@ -11538,7 +11487,6 @@
     "logicName" : "未进行_未收藏_子任务",
     "mSTag" : "wait__0__40",
     "name" : "未进行_未收藏_子任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_ACTIVATION_BUT",
       "getPSDEOPPriv" : {
@@ -11653,7 +11601,6 @@
     "logicName" : "未进行_已收藏_多人任务",
     "mSTag" : "wait__1__10",
     "name" : "未进行_已收藏_多人任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_SUBTASKS_BUT",
       "getPSDEOPPriv" : {
@@ -11768,7 +11715,6 @@
     "logicName" : "未进行_已收藏_父任务",
     "mSTag" : "wait__1__20",
     "name" : "未进行_已收藏_父任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_DELETE_BUT",
       "getPSDEOPPriv" : {
@@ -11943,7 +11889,6 @@
     "logicName" : "未进行_已收藏_常规任务",
     "mSTag" : "wait__1__30",
     "name" : "未进行_已收藏_常规任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_FORWARD_BUT",
       "getPSDEOPPriv" : {
@@ -12046,7 +11991,6 @@
     "logicName" : "未进行_已收藏_子任务",
     "mSTag" : "wait__1__40",
     "name" : "未进行_已收藏_子任务",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_ACTIVATION_BUT",
       "getPSDEOPPriv" : {

@@ -1,68 +1,83 @@
 {
   "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory/PSDEACTIONS/Create.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory/PSDEACTIONS/Create.json",
+    "logicName" : "Create",
+    "name" : "Create",
+    "orderValue" : 1,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory/PSDEACTIONS/Update.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory/PSDEACTIONS/Update.json",
+    "logicName" : "Update",
+    "name" : "Update",
+    "orderValue" : 11,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory/PSDEACTIONS/Remove.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Remove",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory/PSDEACTIONS/Remove.json",
+    "logicName" : "Remove",
+    "name" : "Remove",
+    "orderValue" : 21,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory/PSDEACTIONS/Get.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory/PSDEACTIONS/Get.json",
+    "logicName" : "Get",
+    "name" : "Get",
+    "orderValue" : 31,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory/PSDEACTIONS/GetDraft.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory/PSDEACTIONS/GetDraft.json",
+    "logicName" : "GetDraft",
+    "name" : "GetDraft",
+    "orderValue" : 41,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory/PSDEACTIONS/CheckKey.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory/PSDEACTIONS/CheckKey.json",
+    "logicName" : "CheckKey",
+    "name" : "CheckKey",
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory/PSDEACTIONS/Save.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory/PSDEACTIONS/Save.json",
+    "logicName" : "Save",
+    "name" : "Save",
+    "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "defaultMode" : true
   }, {
     "codeName" : "View",
-    "extendMode" : 0,
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "VIEW"
   } ],
   "getAllPSDEDataSets" : [ {
-    "cacheTimeout" : -1,
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
     "defaultMode" : true,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFDTColumns" : [ {
@@ -70,9 +85,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEBY",
       "queryCodeExp" : "t1.`UPDATEBY`",
-      "standardColumnName" : "`UPDATEBY`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`UPDATEBY`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -97,7 +110,6 @@
         "name" : "UPDATEBY",
         "codeName" : "UpdateBy"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -107,7 +119,6 @@
     "codeName" : "UpdateBy",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "eb2d3db9653cbf93f528f7986d4aca35",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "由谁更新",
@@ -127,9 +138,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "concat(t1.`PROJECT`,'__',t1.`STORY`)",
-      "standardColumnName" : "`ID`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`ID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -154,7 +163,6 @@
         "name" : "ID",
         "codeName" : "Id"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -164,7 +172,6 @@
     "codeName" : "Id",
     "dEFType" : 2,
     "dataType" : "TEXT",
-    "deployId" : "6a4db91b34999b405c4c5e118aefdff0",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "虚拟主键",
@@ -183,9 +190,7 @@
       "dBType" : "MYSQL5",
       "name" : "DEPT",
       "queryCodeExp" : "t1.`DEPT`",
-      "standardColumnName" : "`DEPT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`DEPT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -210,7 +215,6 @@
         "name" : "DEPT",
         "codeName" : "Dept"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -220,7 +224,6 @@
     "codeName" : "Dept",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "98740054c0c4ea8aac43b3ba8dec6701",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "归属部门",
@@ -235,9 +238,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORDER",
       "queryCodeExp" : "t1.`ORDER`",
-      "standardColumnName" : "`ORDER`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`ORDER`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -251,7 +252,6 @@
         "name" : "ORDER",
         "codeName" : "Order"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -261,7 +261,6 @@
     "codeName" : "Order",
     "dEFType" : 1,
     "dataType" : "INT",
-    "deployId" : "02e2789862f88734a627c9cfc8ee6a22",
     "importOrder" : 1000,
     "logicName" : "排序",
     "name" : "ORDER",
@@ -273,9 +272,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORG",
       "queryCodeExp" : "t1.`ORG`",
-      "standardColumnName" : "`ORG`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`ORG`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -300,7 +297,6 @@
         "name" : "ORG",
         "codeName" : "Org"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -310,7 +306,6 @@
     "codeName" : "Org",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "55abd90d5c1399928f713d78895f1af0",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "归属组织",
@@ -327,9 +322,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEBY",
       "queryCodeExp" : "t1.`CREATEBY`",
-      "standardColumnName" : "`CREATEBY`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`CREATEBY`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -354,7 +347,6 @@
         "name" : "CREATEBY",
         "codeName" : "CreateBy"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -364,7 +356,6 @@
     "codeName" : "CreateBy",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "cbdb34c339f6620f321efacb99f0ba11",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "由谁创建",
@@ -385,7 +376,6 @@
       "name" : "VERSION",
       "queryCodeExp" : "t1.`VERSION`",
       "standardColumnName" : "`VERSION`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -400,7 +390,6 @@
         "name" : "VERSION",
         "codeName" : "Version"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -411,7 +400,6 @@
     "dEFType" : 1,
     "dataType" : "PICKUPDATA",
     "defaultValue" : "1",
-    "deployId" : "40f930e9251f745e271c474b0d96b26a",
     "importOrder" : 1000,
     "length" : 6,
     "logicName" : "需求版本",
@@ -433,9 +421,7 @@
       "dBType" : "MYSQL5",
       "name" : "STORY",
       "queryCodeExp" : "t1.`STORY`",
-      "standardColumnName" : "`STORY`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`STORY`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -449,7 +435,6 @@
         "name" : "STORY",
         "codeName" : "Story"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -459,7 +444,6 @@
     "codeName" : "Story",
     "dEFType" : 1,
     "dataType" : "PICKUP",
-    "deployId" : "34070436e027cc375f02e83d48b05eeb",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "需求",
@@ -481,9 +465,7 @@
       "dBType" : "MYSQL5",
       "name" : "PROJECT",
       "queryCodeExp" : "t1.`PROJECT`",
-      "standardColumnName" : "`PROJECT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PROJECT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -497,7 +479,6 @@
         "name" : "PROJECT",
         "codeName" : "Project"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -507,7 +488,6 @@
     "codeName" : "Project",
     "dEFType" : 1,
     "dataType" : "PICKUP",
-    "deployId" : "e657033b58c0ac731b3a33ed21804e79",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "项目",
@@ -529,9 +509,7 @@
       "dBType" : "MYSQL5",
       "name" : "PRODUCT",
       "queryCodeExp" : "t1.`PRODUCT`",
-      "standardColumnName" : "`PRODUCT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PRODUCT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -545,7 +523,6 @@
         "name" : "PRODUCT",
         "codeName" : "Product"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -555,7 +532,6 @@
     "codeName" : "Product",
     "dEFType" : 1,
     "dataType" : "PICKUP",
-    "deployId" : "41927e48a89f291ccd2602728e1d235d",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "所属产品",
@@ -597,7 +573,6 @@
     "modelref" : true,
     "id" : "Default"
   },
-  "deployId" : "ed7cfd63ae629fd1fc6e2664a84b1e9e",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory.json",
   "enableActions" : 7,
@@ -606,17 +581,76 @@
   "extendMode" : 0,
   "logicName" : "项目中需要做的需求",
   "getMinorPSDERs" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory/PSDERS/DER1N_ZT_PROJECTSTORY_ZT_PRODUCT_PRODUCT.json"
+    "codeName" : "ZTProduct",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory/PSDERS/DER1N_ZT_PROJECTSTORY_ZT_PRODUCT_PRODUCT.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory.json"
+    },
+    "name" : "DER1N_ZT_PROJECTSTORY_ZT_PRODUCT_PRODUCT",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "pickupDEFName" : "PRODUCT",
+    "removeActionType" : -1,
+    "removeOrder" : 0
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory/PSDERS/DER1N_ZT_PROJECTSTORY_ZT_PROJECT_PROJECT.json"
+    "codeName" : "ZTProject",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory/PSDERS/DER1N_ZT_PROJECTSTORY_ZT_PROJECT_PROJECT.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory.json"
+    },
+    "name" : "DER1N_ZT_PROJECTSTORY_ZT_PROJECT_PROJECT",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    },
+    "pickupDEFName" : "PROJECT",
+    "removeActionType" : -1,
+    "removeOrder" : 0
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory/PSDERS/DER1N_ZT_PROJECTSTORY_ZT_STORY_STORY.json"
+    "codeName" : "ZTStory",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory/PSDERS/DER1N_ZT_PROJECTSTORY_ZT_STORY_STORY.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory.json"
+    },
+    "name" : "DER1N_ZT_PROJECTSTORY_ZT_STORY_STORY",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "STORY",
+      "codeName" : "Story"
+    },
+    "pickupDEFName" : "STORY",
+    "removeActionType" : -1,
+    "removeOrder" : 0
   } ],
   "name" : "ZT_PROJECTSTORY",
-  "orderValue" : 99999,
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,

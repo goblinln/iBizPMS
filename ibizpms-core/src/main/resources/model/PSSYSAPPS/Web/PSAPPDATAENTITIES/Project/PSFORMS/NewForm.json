@@ -78,7 +78,6 @@
         "name" : "END",
         "codeName" : "End"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "『截止日期』不能为空。",
       "checkDefault" : false,
       "defaultMode" : false,

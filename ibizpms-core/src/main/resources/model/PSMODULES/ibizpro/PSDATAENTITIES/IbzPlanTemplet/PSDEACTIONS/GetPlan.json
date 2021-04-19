@@ -3,22 +3,6 @@
   "actionType" : "USERCUSTOM",
   "codeName" : "GetPlan",
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/GetPlan.json",
-  "extendMode" : 0,
   "logicName" : "获取计划",
-  "name" : "getPlan",
-  "orderValue" : 99999,
-  "getPSDEOPPriv" : {
-    "modelref" : true,
-    "id" : "READ"
-  },
-  "paramMode" : 1,
-  "requestField" : "IBZ_PLANTEMPLETID",
-  "requestParamType" : "FIELD",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "builtinAction" : false,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  "name" : "getPlan"
 }

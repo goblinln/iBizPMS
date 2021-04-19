@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import java.io.File;
 
-@Component
+//@Component
 public class SystemDynaInstServiceGlobal extends PSDynaInstServiceGlobal {
 
     @Autowired

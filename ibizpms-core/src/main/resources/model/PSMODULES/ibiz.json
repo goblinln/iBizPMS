@@ -242,10 +242,6 @@
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
   } ],
   "codeName" : "ibiz",
-  "deployId" : "9707d1941d6d4eedd3abb424abe12f6e",
   "dynaModelFilePath" : "PSMODULES/ibiz.json",
-  "name" : "iBiz增强模块",
-  "defaultModule" : false,
-  "subSysAsCloud" : false,
-  "subSysModule" : false
+  "name" : "iBiz增强模块"
 }

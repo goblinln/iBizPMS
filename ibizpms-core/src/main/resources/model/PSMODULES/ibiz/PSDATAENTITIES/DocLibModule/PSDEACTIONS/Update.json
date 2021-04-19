@@ -12,27 +12,10 @@
     "ignoreException" : false,
     "internalLogic" : true
   } ],
-  "getCheckPSDEActionLogics" : [ {
-    "name" : "行为[Update]主状态拒绝逻辑",
-    "id" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/Update__MSDeny.json"
-  } ],
   "codeName" : "Update",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Update.json",
-  "extendMode" : 0,
   "logicName" : "Update",
   "name" : "Update",
   "orderValue" : 11,
-  "getPSDEOPPriv" : {
-    "modelref" : true,
-    "id" : "UPDATE"
-  },
-  "paramMode" : 1,
-  "requestParamType" : "ENTITY",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "builtinAction" : true,
-  "customParam" : false,
-  "generateTestUnit" : true,
-  "pubServiceDefault" : true
+  "builtinAction" : true
 }

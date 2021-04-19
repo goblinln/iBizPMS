@@ -3,22 +3,7 @@
   "actionType" : "USERCUSTOM",
   "codeName" : "Close",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Close.json",
-  "extendMode" : 0,
   "logicName" : "关闭",
   "name" : "Close",
-  "orderValue" : 99999,
-  "getPSDEOPPriv" : {
-    "modelref" : true,
-    "id" : "MANAGE"
-  },
-  "paramMode" : 1,
-  "requestParamType" : "ENTITY",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "userCat" : "CAT1",
-  "builtinAction" : false,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  "userCat" : "CAT1"
 }

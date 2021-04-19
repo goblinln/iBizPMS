@@ -2,7 +2,6 @@
   "codeName" : "GetOldPlanName",
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDELOGICS/GetOldPlanName.json",
-  "logicHolder" : 1,
   "logicName" : "获取上一个计划的名称",
   "logicSubType" : "NONE",
   "name" : "获取上一个计划的名称",
@@ -20,7 +19,6 @@
   } ],
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",
-    "logicHolder" : 3,
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
@@ -34,7 +32,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取名称",
     "getPSDELogicNodeParams" : [ {

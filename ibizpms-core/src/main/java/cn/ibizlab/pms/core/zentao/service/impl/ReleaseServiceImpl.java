@@ -105,9 +105,7 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
         if(!releaseRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
-        for (Release et : list) {
-            getProxyService().update(et);
-        }
+        updateBatchById(list, batchSize);
     }
 
     @Override
@@ -130,9 +128,7 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
     @Override
     @Transactional
     public void removeBatch(Collection<Long> idList) {
-        for (Long id : idList) {
-            getProxyService().removeById(id);
-        }
+        removeByIds(idList);
     }
 
     @Override

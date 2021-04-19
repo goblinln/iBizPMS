@@ -2,7 +2,6 @@
   "codeName" : "GetInfoTestTaskS",
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDELOGICS/GetInfoTestTaskS.json",
-  "logicHolder" : 1,
   "logicName" : "根据测试单获取相应信息（项目报告）（多测试）",
   "logicSubType" : "NONE",
   "name" : "根据测试单获取相应信息（项目报告）（多测试）",
@@ -112,7 +111,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取相应需求",
     "getPSDELogicLinks" : [ {
@@ -132,7 +130,6 @@
     "parallelOutput" : true
   }, {
     "codeName" : "Prepareparam1",
-    "logicHolder" : 3,
     "logicNodeType" : "PREPAREPARAM",
     "name" : "准备参数",
     "getPSDELogicLinks" : [ {
@@ -171,7 +168,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取产品",
     "getPSDELogicLinks" : [ {
@@ -195,7 +191,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取影响Bug",
     "getPSDELogicLinks" : [ {
@@ -255,7 +250,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取项目周期",
     "getPSDELogicLinks" : [ {
@@ -279,7 +273,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取产品数",
     "getPSDELogicLinks" : [ {
@@ -311,13 +304,11 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
     },
-    "logicHolder" : 3,
     "logicNodeType" : "DEACTION",
     "name" : "获取概况信息",
     "parallelOutput" : true
   }, {
     "codeName" : "Begin",
-    "logicHolder" : 3,
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
@@ -331,7 +322,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取数据",
     "getPSDELogicLinks" : [ {
@@ -364,7 +354,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取测试单",
     "getPSDELogicLinks" : [ {

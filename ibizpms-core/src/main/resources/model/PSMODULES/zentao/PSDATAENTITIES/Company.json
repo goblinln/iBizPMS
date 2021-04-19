@@ -1,68 +1,83 @@
 {
   "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Company/PSDEACTIONS/Create.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Company/PSDEACTIONS/Create.json",
+    "logicName" : "Create",
+    "name" : "Create",
+    "orderValue" : 1,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Company/PSDEACTIONS/Update.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Company/PSDEACTIONS/Update.json",
+    "logicName" : "Update",
+    "name" : "Update",
+    "orderValue" : 11,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Company/PSDEACTIONS/Remove.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Remove",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Company/PSDEACTIONS/Remove.json",
+    "logicName" : "Remove",
+    "name" : "Remove",
+    "orderValue" : 21,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Company/PSDEACTIONS/Get.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Company/PSDEACTIONS/Get.json",
+    "logicName" : "Get",
+    "name" : "Get",
+    "orderValue" : 31,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Company/PSDEACTIONS/GetDraft.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Company/PSDEACTIONS/GetDraft.json",
+    "logicName" : "GetDraft",
+    "name" : "GetDraft",
+    "orderValue" : 41,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Company/PSDEACTIONS/CheckKey.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Company/PSDEACTIONS/CheckKey.json",
+    "logicName" : "CheckKey",
+    "name" : "CheckKey",
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Company/PSDEACTIONS/Save.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Company/PSDEACTIONS/Save.json",
+    "logicName" : "Save",
+    "name" : "Save",
+    "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "defaultMode" : true
   }, {
     "codeName" : "View",
-    "extendMode" : 0,
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "VIEW"
   } ],
   "getAllPSDEDataSets" : [ {
-    "cacheTimeout" : -1,
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
     "defaultMode" : true,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFDTColumns" : [ {
@@ -70,9 +85,7 @@
       "dBType" : "MYSQL5",
       "name" : "ADMINS",
       "queryCodeExp" : "t1.`ADMINS`",
-      "standardColumnName" : "`ADMINS`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`ADMINS`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -97,7 +110,6 @@
         "name" : "ADMINS",
         "codeName" : "Admins"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[255]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -107,7 +119,6 @@
     "codeName" : "Admins",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "ae40652eba851c9055d48c5a0c3527bb",
     "importOrder" : 1000,
     "length" : 255,
     "logicName" : "admins",
@@ -121,9 +132,7 @@
       "dBType" : "MYSQL5",
       "name" : "FAX",
       "queryCodeExp" : "t1.`FAX`",
-      "standardColumnName" : "`FAX`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`FAX`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -148,7 +157,6 @@
         "name" : "FAX",
         "codeName" : "Fax"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[20]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -158,7 +166,6 @@
     "codeName" : "Fax",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "bf4e76495c81f911e5dc3093c1ea40e7",
     "importOrder" : 1000,
     "length" : 20,
     "logicName" : "传真",
@@ -173,7 +180,6 @@
       "name" : "DELETED",
       "queryCodeExp" : "t1.`DELETED`",
       "standardColumnName" : "`DELETED`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -199,7 +205,6 @@
         "name" : "DELETED",
         "codeName" : "Deleted"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[1]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -210,7 +215,6 @@
     "dEFType" : 1,
     "dataType" : "TEXT",
     "defaultValue" : "0",
-    "deployId" : "53dca846a9f17b36bb8231a3153e98f5",
     "importOrder" : 1000,
     "length" : 1,
     "logicName" : "逻辑删除标志",
@@ -227,9 +231,7 @@
       "dBType" : "MYSQL5",
       "name" : "WEBSITE",
       "queryCodeExp" : "t1.`WEBSITE`",
-      "standardColumnName" : "`WEBSITE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`WEBSITE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -254,7 +256,6 @@
         "name" : "WEBSITE",
         "codeName" : "Website"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[120]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -264,7 +265,6 @@
     "codeName" : "Website",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "cfa52326db255fec360b29c3bf168007",
     "importOrder" : 1000,
     "length" : 120,
     "logicName" : "官网",
@@ -279,8 +279,7 @@
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`",
-      "autoIncrement" : true,
-      "valueAutoGen" : false
+      "autoIncrement" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -294,7 +293,6 @@
         "name" : "ID",
         "codeName" : "Id"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -304,7 +302,6 @@
     "codeName" : "Id",
     "dEFType" : 1,
     "dataType" : "ACID",
-    "deployId" : "46712dfd343659c59087850438b0c050",
     "importOrder" : 1000,
     "logicName" : "id",
     "name" : "ID",
@@ -322,9 +319,7 @@
       "dBType" : "MYSQL5",
       "name" : "ZIPCODE",
       "queryCodeExp" : "t1.`ZIPCODE`",
-      "standardColumnName" : "`ZIPCODE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`ZIPCODE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -349,7 +344,6 @@
         "name" : "ZIPCODE",
         "codeName" : "Zipcode"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[10]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -359,7 +353,6 @@
     "codeName" : "Zipcode",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "028cab8a176b5f5b483b36914465c9b7",
     "importOrder" : 1000,
     "length" : 10,
     "logicName" : "邮政编码",
@@ -373,9 +366,7 @@
       "dBType" : "MYSQL5",
       "name" : "ADDRESS",
       "queryCodeExp" : "t1.`ADDRESS`",
-      "standardColumnName" : "`ADDRESS`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`ADDRESS`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -400,7 +391,6 @@
         "name" : "ADDRESS",
         "codeName" : "Address"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[120]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -410,7 +400,6 @@
     "codeName" : "Address",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "4508b724fea455e8e13944a5265da340",
     "importOrder" : 1000,
     "length" : 120,
     "logicName" : "通讯地址",
@@ -424,9 +413,7 @@
       "dBType" : "MYSQL5",
       "name" : "BACKYARD",
       "queryCodeExp" : "t1.`BACKYARD`",
-      "standardColumnName" : "`BACKYARD`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`BACKYARD`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -451,7 +438,6 @@
         "name" : "BACKYARD",
         "codeName" : "Backyard"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[120]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -461,7 +447,6 @@
     "codeName" : "Backyard",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "9c0f2c9778c36827bd48f9654baa650c",
     "importOrder" : 1000,
     "length" : 120,
     "logicName" : "内网",
@@ -475,9 +460,7 @@
       "dBType" : "MYSQL5",
       "name" : "NAME",
       "queryCodeExp" : "t1.`NAME`",
-      "standardColumnName" : "`NAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`NAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -502,7 +485,6 @@
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[120]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -512,7 +494,6 @@
     "codeName" : "Name",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "1558623b1a6392c70d143a50efab91a0",
     "importOrder" : 1000,
     "length" : 120,
     "logicName" : "公司名称",
@@ -529,9 +510,7 @@
       "dBType" : "MYSQL5",
       "name" : "GUEST",
       "queryCodeExp" : "t1.`GUEST`",
-      "standardColumnName" : "`GUEST`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`GUEST`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -556,7 +535,6 @@
         "name" : "GUEST",
         "codeName" : "Guest"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[1]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -566,7 +544,6 @@
     "codeName" : "Guest",
     "dEFType" : 1,
     "dataType" : "SSCODELIST",
-    "deployId" : "3096241932447ce07b29ba7fd1cadfe2",
     "importOrder" : 1000,
     "length" : 1,
     "logicName" : "匿名登陆",
@@ -584,9 +561,7 @@
       "dBType" : "MYSQL5",
       "name" : "PHONE",
       "queryCodeExp" : "t1.`PHONE`",
-      "standardColumnName" : "`PHONE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PHONE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -611,7 +586,6 @@
         "name" : "PHONE",
         "codeName" : "Phone"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[20]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -621,7 +595,6 @@
     "codeName" : "Phone",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "634a3429f0041448ce5c76fc91682c53",
     "importOrder" : 1000,
     "length" : 20,
     "logicName" : "联系电话",
@@ -655,7 +628,6 @@
     "modelref" : true,
     "id" : "Default"
   },
-  "deployId" : "a6cc23d6b3398ee4e8a13be87ef8da5e",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Company.json",
   "enableActions" : 7,
@@ -665,7 +637,6 @@
   "invalidLogicValue" : "1",
   "logicName" : "公司",
   "name" : "ZT_COMPANY",
-  "orderValue" : 99999,
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,

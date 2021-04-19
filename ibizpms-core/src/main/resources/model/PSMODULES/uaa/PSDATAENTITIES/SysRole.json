@@ -1,68 +1,83 @@
 {
   "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDEACTIONS/Create.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "dynaModelFilePath" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDEACTIONS/Create.json",
+    "logicName" : "Create",
+    "name" : "Create",
+    "orderValue" : 1,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDEACTIONS/Update.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "dynaModelFilePath" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDEACTIONS/Update.json",
+    "logicName" : "Update",
+    "name" : "Update",
+    "orderValue" : 11,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDEACTIONS/Remove.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Remove",
+    "dynaModelFilePath" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDEACTIONS/Remove.json",
+    "logicName" : "Remove",
+    "name" : "Remove",
+    "orderValue" : 21,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDEACTIONS/Get.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "dynaModelFilePath" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDEACTIONS/Get.json",
+    "logicName" : "Get",
+    "name" : "Get",
+    "orderValue" : 31,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDEACTIONS/GetDraft.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "dynaModelFilePath" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDEACTIONS/GetDraft.json",
+    "logicName" : "GetDraft",
+    "name" : "GetDraft",
+    "orderValue" : 41,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDEACTIONS/CheckKey.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "dynaModelFilePath" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDEACTIONS/CheckKey.json",
+    "logicName" : "CheckKey",
+    "name" : "CheckKey",
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDEACTIONS/Save.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "dynaModelFilePath" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDEACTIONS/Save.json",
+    "logicName" : "Save",
+    "name" : "Save",
+    "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "数据查询",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "defaultMode" : true
   }, {
     "codeName" : "View",
-    "extendMode" : 0,
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "VIEW"
   } ],
   "getAllPSDEDataSets" : [ {
-    "cacheTimeout" : -1,
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "数据集",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
     "defaultMode" : true,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFDTColumns" : [ {
@@ -70,9 +85,7 @@
       "dBType" : "MYSQL5",
       "name" : "SYS_ROLEID",
       "queryCodeExp" : "t1.`SYS_ROLEID`",
-      "standardColumnName" : "`SYS_ROLEID`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`SYS_ROLEID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -97,7 +110,6 @@
         "name" : "SYS_ROLEID",
         "codeName" : "RoleId"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -107,7 +119,6 @@
     "codeName" : "RoleId",
     "dEFType" : 1,
     "dataType" : "GUID",
-    "deployId" : "8ec1f77d6cb219cf380a15f65b54a3a1",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
       "lanResTag" : "CONTROL.SPEX.STANDARDPAGE",
@@ -128,9 +139,7 @@
       "dBType" : "MYSQL5",
       "name" : "SYS_ROLENAME",
       "queryCodeExp" : "t1.`SYS_ROLENAME`",
-      "standardColumnName" : "`SYS_ROLENAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`SYS_ROLENAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -155,7 +164,6 @@
         "name" : "SYS_ROLENAME",
         "codeName" : "RoleName"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -165,7 +173,6 @@
     "codeName" : "RoleName",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "42c7377420c308703ee9c37342d06f9f",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
       "lanResTag" : "TBB.TOOLTIP.*.SAVE",
@@ -185,9 +192,7 @@
       "dBType" : "MYSQL5",
       "name" : "MEMO",
       "queryCodeExp" : "t1.`MEMO`",
-      "standardColumnName" : "`MEMO`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`MEMO`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -212,7 +217,6 @@
         "name" : "MEMO",
         "codeName" : "Memo"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -222,7 +226,6 @@
     "codeName" : "Memo",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "c5f196c48b1f3d3da95191e272af962d",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "备注",
@@ -236,9 +239,7 @@
       "dBType" : "MYSQL5",
       "name" : "PROLEID",
       "queryCodeExp" : "t1.`PROLEID`",
-      "standardColumnName" : "`PROLEID`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PROLEID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -263,7 +264,6 @@
         "name" : "PROLEID",
         "codeName" : "PRoleId"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -273,7 +273,6 @@
     "codeName" : "PRoleId",
     "dEFType" : 1,
     "dataType" : "PICKUP",
-    "deployId" : "c789101b9b8b19692728d18cb700a3a8",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "父角色标识",
@@ -296,9 +295,7 @@
       "dBType" : "MYSQL5",
       "name" : "PROLENAME",
       "queryCodeExp" : "t11.`SYS_ROLENAME`",
-      "standardColumnName" : "`PROLENAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PROLENAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -323,7 +320,6 @@
         "name" : "PROLENAME",
         "codeName" : "PRoleName"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -333,7 +329,6 @@
     "codeName" : "PRoleName",
     "dEFType" : 3,
     "dataType" : "PICKUPTEXT",
-    "deployId" : "a936ecffea45168e7553c0a5d0aae174",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "父角色名称",
@@ -357,9 +352,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
-      "standardColumnName" : "`CREATEDATE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`CREATEDATE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -373,7 +366,6 @@
         "name" : "CREATEDATE",
         "codeName" : "CreateDate"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -383,7 +375,6 @@
     "codeName" : "CreateDate",
     "dEFType" : 1,
     "dataType" : "DATETIME",
-    "deployId" : "4d96a986d44f18b12f07473f8920c0f3",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
       "lanResTag" : "COMMON.CONDITION.ABSGT",
@@ -403,9 +394,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
-      "standardColumnName" : "`UPDATEDATE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`UPDATEDATE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -419,7 +408,6 @@
         "name" : "UPDATEDATE",
         "codeName" : "UpdateDate"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -429,7 +417,6 @@
     "codeName" : "UpdateDate",
     "dEFType" : 1,
     "dataType" : "DATETIME",
-    "deployId" : "901144dee29ae8e8a5ebc083fdf5b97b",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
       "lanResTag" : "CONTROL.PICTURE.UPLOAD.TEXT",
@@ -449,9 +436,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
-      "standardColumnName" : "`CREATEMAN`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`CREATEMAN`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -476,7 +461,6 @@
         "name" : "CREATEMAN",
         "codeName" : "CreateMan"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -486,7 +470,6 @@
     "codeName" : "CreateMan",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "faca85f80fec0a3a992fae088f3751a9",
     "importOrder" : 1000,
     "length" : 60,
     "logicName" : "建立人",
@@ -507,9 +490,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
-      "standardColumnName" : "`UPDATEMAN`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`UPDATEMAN`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -534,7 +515,6 @@
         "name" : "UPDATEMAN",
         "codeName" : "UpdateMan"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -544,7 +524,6 @@
     "codeName" : "UpdateMan",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "eb64e3fbb40e884db469f338f8294dff",
     "importOrder" : 1000,
     "length" : 60,
     "logicName" : "更新人",
@@ -585,7 +564,6 @@
     "modelref" : true,
     "id" : "Default"
   },
-  "deployId" : "2cc50d0bbc92ab9982dd16f6417120d9",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/uaa/PSDATAENTITIES/SysRole.json",
   "enableActions" : 7,
@@ -594,18 +572,92 @@
   "extendMode" : 0,
   "logicName" : "系统角色",
   "getMajorPSDERs" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDERS/DER1N_SYS_ROLE_SYS_ROLE_PROLEID.json"
+    "codeName" : "Parent",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDERS/DER1N_SYS_ROLE_SYS_ROLE_PROLEID.json",
+    "logicName" : "父角色",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole.json"
+    },
+    "name" : "DER1N_SYS_ROLE_SYS_ROLE_PROLEID",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "PROLEID",
+      "codeName" : "PRoleId"
+    },
+    "getPSPickupTextDEField" : {
+      "name" : "PROLENAME",
+      "codeName" : "PRoleName"
+    },
+    "pickupDEFName" : "PROLEID",
+    "removeActionType" : -1,
+    "removeOrder" : 0
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole/PSDERS/DER1N_SYS_USER_ROLE_SYS_ROLE_SYS_ROLEID.json"
+    "codeName" : "Role",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole/PSDERS/DER1N_SYS_USER_ROLE_SYS_ROLE_SYS_ROLEID.json",
+    "logicName" : "角色",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole.json"
+    },
+    "masterOrder" : 100,
+    "masterRS" : 3,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUserRole.json"
+    },
+    "name" : "DER1N_SYS_USER_ROLE_SYS_ROLE_SYS_ROLEID",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "SYS_ROLEID",
+      "codeName" : "RoleId"
+    },
+    "getPSPickupTextDEField" : {
+      "name" : "SYS_ROLENAME",
+      "codeName" : "RoleName"
+    },
+    "pickupDEFName" : "SYS_ROLEID",
+    "removeActionType" : 1,
+    "removeOrder" : 0
   } ],
   "getMinorPSDERs" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDERS/DER1N_SYS_ROLE_SYS_ROLE_PROLEID.json"
+    "codeName" : "Parent",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/uaa/PSDATAENTITIES/SysRole/PSDERS/DER1N_SYS_ROLE_SYS_ROLE_PROLEID.json",
+    "logicName" : "父角色",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/uaa/PSDATAENTITIES/SysRole.json"
+    },
+    "name" : "DER1N_SYS_ROLE_SYS_ROLE_PROLEID",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "PROLEID",
+      "codeName" : "PRoleId"
+    },
+    "getPSPickupTextDEField" : {
+      "name" : "PROLENAME",
+      "codeName" : "PRoleName"
+    },
+    "pickupDEFName" : "PROLEID",
+    "removeActionType" : -1,
+    "removeOrder" : 0
   } ],
   "name" : "SYS_ROLE",
-  "orderValue" : 99999,
   "saaSMode" : 0,
   "serviceAPIClientId" : "ccdd4a88804cf809e0cea3c2d56652c3",
   "serviceAPIMode" : 0,

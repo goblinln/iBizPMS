@@ -1,101 +1,101 @@
 {
   "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDEACTIONS/Create.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDEACTIONS/Create.json",
+    "logicName" : "Create",
+    "name" : "Create",
+    "orderValue" : 1,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDEACTIONS/Update.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDEACTIONS/Update.json",
+    "logicName" : "Update",
+    "name" : "Update",
+    "orderValue" : 11,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDEACTIONS/Remove.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Remove",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDEACTIONS/Remove.json",
+    "logicName" : "Remove",
+    "name" : "Remove",
+    "orderValue" : 21,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDEACTIONS/Get.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDEACTIONS/Get.json",
+    "logicName" : "Get",
+    "name" : "Get",
+    "orderValue" : 31,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDEACTIONS/GetDraft.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDEACTIONS/GetDraft.json",
+    "logicName" : "GetDraft",
+    "name" : "GetDraft",
+    "orderValue" : 41,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDEACTIONS/CheckKey.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDEACTIONS/CheckKey.json",
+    "logicName" : "CheckKey",
+    "name" : "CheckKey",
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDEACTIONS/Save.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDEACTIONS/Save.json",
+    "logicName" : "Save",
+    "name" : "Save",
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDEACTIONS/UpdateTime.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "UpdateTime",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDEACTIONS/UpdateTime.json",
+    "logicName" : "UpdateTime",
+    "name" : "UpdateTime"
   } ],
   "getAllPSDEDataQueries" : [ {
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "数据查询",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "defaultMode" : true
   }, {
     "codeName" : "GETWOERKLOAD",
-    "extendMode" : 0,
     "logicName" : "获取员工负载表",
     "name" : "GETWOERKLOAD",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "View",
-    "extendMode" : 0,
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "VIEW"
   } ],
   "getAllPSDEDataSets" : [ {
-    "cacheTimeout" : -1,
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "数据集",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
     "defaultMode" : true,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "GETWOERKLOAD",
-    "extendMode" : 0,
     "logicName" : "获取员工负载表",
     "name" : "GETWOERKLOAD",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFDTColumns" : [ {
@@ -103,9 +103,7 @@
       "dBType" : "MYSQL5",
       "name" : "NAME",
       "queryCodeExp" : "t1.`NAME`",
-      "standardColumnName" : "`NAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`NAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -130,7 +128,6 @@
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -140,7 +137,6 @@
     "codeName" : "Name",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "2f39beddbece971cc85006f92dbc99f0",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "任务名",
@@ -156,9 +152,7 @@
       "dBType" : "MYSQL5",
       "name" : "TASKCNT",
       "queryCodeExp" : "０",
-      "standardColumnName" : "`TASKCNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`TASKCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -172,7 +166,6 @@
         "name" : "TASKCNT",
         "codeName" : "TaskCnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -182,7 +175,6 @@
     "codeName" : "TaskCnt",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "f97c8826a711f358fd53960c7d01e999",
     "importOrder" : 1000,
     "logicName" : "任务数",
     "name" : "TASKCNT",
@@ -214,7 +206,6 @@
         "name" : "DEPT",
         "codeName" : "Dept"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -224,7 +215,6 @@
     "codeName" : "Dept",
     "dEFType" : 5,
     "dataType" : "SSCODELIST",
-    "deployId" : "d0043f276095e73caa512fea99058a79",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "部门",
@@ -245,8 +235,7 @@
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`",
-      "autoIncrement" : true,
-      "valueAutoGen" : false
+      "autoIncrement" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -260,7 +249,6 @@
         "name" : "ID",
         "codeName" : "Id"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -270,7 +258,6 @@
     "codeName" : "Id",
     "dEFType" : 1,
     "dataType" : "ACID",
-    "deployId" : "ae59c1ffe93e61ee334d93bb73b402d3",
     "importOrder" : 1000,
     "length" : 20,
     "logicName" : "主键",
@@ -293,7 +280,6 @@
         "name" : "WORKDAY",
         "codeName" : "Workday"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -303,7 +289,6 @@
     "codeName" : "Workday",
     "dEFType" : 5,
     "dataType" : "INT",
-    "deployId" : "3ca7550fdcad1a80ab29d3574049b02f",
     "importOrder" : 1000,
     "logicName" : "工作日天数",
     "name" : "WORKDAY",
@@ -317,9 +302,7 @@
       "dBType" : "MYSQL5",
       "name" : "TOTALTASKCNT",
       "queryCodeExp" : "０",
-      "standardColumnName" : "`TOTALTASKCNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`TOTALTASKCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -333,7 +316,6 @@
         "name" : "TOTALTASKCNT",
         "codeName" : "Totaltaskcnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -343,7 +325,6 @@
     "codeName" : "Totaltaskcnt",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "264b4e7d58bd2f411b17f4a26f5866d5",
     "importOrder" : 1000,
     "logicName" : "总任务数",
     "name" : "TOTALTASKCNT",
@@ -357,9 +338,7 @@
       "dBType" : "MYSQL5",
       "name" : "ASSIGNEDTO",
       "queryCodeExp" : "t1.`ASSIGNEDTO`",
-      "standardColumnName" : "`ASSIGNEDTO`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`ASSIGNEDTO`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -384,7 +363,6 @@
         "name" : "ASSIGNEDTO",
         "codeName" : "AssignedTo"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -394,7 +372,6 @@
     "codeName" : "AssignedTo",
     "dEFType" : 1,
     "dataType" : "SSCODELIST",
-    "deployId" : "08b3547148c27620ab7a5449ee02da15",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "指派给",
@@ -412,9 +389,7 @@
       "dBType" : "MYSQL5",
       "name" : "LEFT",
       "queryCodeExp" : "０",
-      "standardColumnName" : "`LEFT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`LEFT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -428,7 +403,6 @@
         "name" : "LEFT",
         "codeName" : "Left"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -438,7 +412,6 @@
     "codeName" : "Left",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "eee598cd2c618be9cc81759fa2bb987a",
     "importOrder" : 1000,
     "logicName" : "剩余工时",
     "name" : "LEFT",
@@ -452,9 +425,7 @@
       "dBType" : "MYSQL5",
       "name" : "ASSIGN",
       "queryCodeExp" : "t1.`ASSIGN`",
-      "standardColumnName" : "`ASSIGN`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`ASSIGN`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -479,7 +450,6 @@
         "name" : "ASSIGN",
         "codeName" : "Assign"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -489,7 +459,6 @@
     "codeName" : "Assign",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "26665b1011b88b05fef36786d7f1d6b8",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "是否指派",
@@ -510,7 +479,6 @@
         "name" : "BEGIN",
         "codeName" : "Begin"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -520,7 +488,6 @@
     "codeName" : "Begin",
     "dEFType" : 5,
     "dataType" : "DATE",
-    "deployId" : "404d0940d11eb152cbf23d8b846f1a48",
     "importOrder" : 1000,
     "logicName" : "属性",
     "name" : "BEGIN",
@@ -534,9 +501,7 @@
       "dBType" : "MYSQL5",
       "name" : "TOTALLEFT",
       "queryCodeExp" : "０",
-      "standardColumnName" : "`TOTALLEFT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`TOTALLEFT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -550,7 +515,6 @@
         "name" : "TOTALLEFT",
         "codeName" : "TotalLeft"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -560,7 +524,6 @@
     "codeName" : "TotalLeft",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "f3f6a7cf3f669d4bf79aa3854b6e0347",
     "importOrder" : 1000,
     "logicName" : "总工时",
     "name" : "TOTALLEFT",
@@ -574,9 +537,7 @@
       "dBType" : "MYSQL5",
       "name" : "WORKLOAD",
       "queryCodeExp" : "０",
-      "standardColumnName" : "`WORKLOAD`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`WORKLOAD`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -601,7 +562,6 @@
         "name" : "WORKLOAD",
         "codeName" : "Workload"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -611,7 +571,6 @@
     "codeName" : "Workload",
     "dEFType" : 2,
     "dataType" : "TEXT",
-    "deployId" : "3825b284e3fdfc5c43d95ce00f2619d3",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "工作负载",
@@ -634,7 +593,6 @@
         "name" : "END",
         "codeName" : "End"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -644,7 +602,6 @@
     "codeName" : "End",
     "dEFType" : 5,
     "dataType" : "DATE",
-    "deployId" : "bb481f2f1ef09f40135035a4c4305b83",
     "importOrder" : 1000,
     "logicName" : "结束",
     "name" : "END",
@@ -658,9 +615,7 @@
       "dBType" : "MYSQL5",
       "name" : "PROJECTNAME",
       "queryCodeExp" : "t11.`NAME`",
-      "standardColumnName" : "`PROJECTNAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PROJECTNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -685,7 +640,6 @@
         "name" : "PROJECTNAME",
         "codeName" : "ProjectName"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[90]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -695,7 +649,6 @@
     "codeName" : "ProjectName",
     "dEFType" : 3,
     "dataType" : "PICKUPTEXT",
-    "deployId" : "f27321dea816797f2e753b82d86e4a7e",
     "importOrder" : 1000,
     "length" : 90,
     "logicName" : "项目",
@@ -719,9 +672,7 @@
       "dBType" : "MYSQL5",
       "name" : "PROJECT",
       "queryCodeExp" : "t1.`PROJECT`",
-      "standardColumnName" : "`PROJECT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PROJECT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -735,7 +686,6 @@
         "name" : "PROJECT",
         "codeName" : "Project"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -745,7 +695,6 @@
     "codeName" : "Project",
     "dEFType" : 1,
     "dataType" : "PICKUP",
-    "deployId" : "59ed5976133b3b5e15c32e32e47bb18e",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "项目编号",
@@ -787,7 +736,6 @@
     "modelref" : true,
     "id" : "Default"
   },
-  "deployId" : "6f66dc91835723155313c55ac7561cdf",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload.json",
   "enableActions" : 7,
@@ -796,11 +744,35 @@
   "extendMode" : 0,
   "logicName" : "员工负载表",
   "getMinorPSDERs" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDERS/DER1N_IBZ_EMPLOYEELOAD_ZT_PROJECT_PROJECT.json"
+    "codeName" : "Ztproject",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDERS/DER1N_IBZ_EMPLOYEELOAD_ZT_PROJECT_PROJECT.json",
+    "logicName" : "项目",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload.json"
+    },
+    "name" : "DER1N_IBZ_EMPLOYEELOAD_ZT_PROJECT_PROJECT",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    },
+    "getPSPickupTextDEField" : {
+      "name" : "PROJECTNAME",
+      "codeName" : "ProjectName"
+    },
+    "pickupDEFName" : "PROJECT",
+    "removeActionType" : -1,
+    "removeOrder" : 0
   } ],
   "name" : "IBZ_EMPLOYEELOAD",
-  "orderValue" : 99999,
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,

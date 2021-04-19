@@ -3,17 +3,7 @@
   "actionType" : "BUILTIN",
   "codeName" : "CheckKey",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/CheckKey.json",
-  "extendMode" : 0,
   "logicName" : "CheckKey",
   "name" : "CheckKey",
-  "orderValue" : 99999,
-  "paramMode" : 1,
-  "requestParamType" : "ENTITY",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "builtinAction" : true,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  "builtinAction" : true
 }

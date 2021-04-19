@@ -2,7 +2,6 @@
   "codeName" : "ProjectTaskQCnt",
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project/PSAPPDELOGICS/ProjectTaskQCnt.json",
-  "logicHolder" : 3,
   "logicName" : "项目任务快速分组计数器",
   "logicSubType" : "NONE",
   "name" : "项目任务快速分组计数器",
@@ -130,7 +129,6 @@
   } ],
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",
-    "logicHolder" : 3,
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
@@ -144,7 +142,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "进行中的任务",
     "getPSDELogicLinks" : [ {
@@ -168,7 +165,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "未关闭的任务数",
     "getPSDELogicLinks" : [ {
@@ -192,7 +188,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "未关闭任务数",
     "getPSDELogicLinks" : [ {
@@ -216,7 +211,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "已关闭的任务数",
     "getPSDELogicLinks" : [ {
@@ -240,7 +234,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "指派给我的任务数",
     "getPSDELogicLinks" : [ {
@@ -269,7 +262,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "所有任务",
     "getPSDELogicLinks" : [ {
@@ -293,7 +285,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "已完成的任务数",
     "getPSDELogicLinks" : [ {
@@ -317,7 +308,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "已取消任务",
     "getPSDELogicLinks" : [ {
@@ -341,7 +331,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "未开始的任务数",
     "getPSDELogicLinks" : [ {
@@ -365,7 +354,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "我完成的任务数",
     "getPSDELogicLinks" : [ {
@@ -394,7 +382,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "需求变更数",
     "getPSDELogicNodeParams" : [ {

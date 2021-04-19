@@ -3,17 +3,6 @@
   "actionType" : "USERCUSTOM",
   "codeName" : "LinkCompleteTask",
   "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/LinkCompleteTask.json",
-  "extendMode" : 0,
   "logicName" : "关联完成任务",
-  "name" : "LinkCompleteTask",
-  "orderValue" : 99999,
-  "paramMode" : 1,
-  "requestParamType" : "ENTITY",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "builtinAction" : false,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  "name" : "LinkCompleteTask"
 }

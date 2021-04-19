@@ -3,21 +3,10 @@
   "actionType" : "DELOGIC",
   "codeName" : "MobProductTestCounter",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/MobProductTestCounter.json",
-  "extendMode" : 0,
   "logicName" : "移动端测试计数器",
   "name" : "MobProductTestCounter",
-  "orderValue" : 99999,
   "getPSDELogic" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDELOGICS/MobProductTestCounter.json"
-  },
-  "paramMode" : 1,
-  "requestParamType" : "ENTITY",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "builtinAction" : false,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  }
 }

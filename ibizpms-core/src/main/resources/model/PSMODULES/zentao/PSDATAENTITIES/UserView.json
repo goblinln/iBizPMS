@@ -1,68 +1,83 @@
 {
   "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserView/PSDEACTIONS/Create.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/UserView/PSDEACTIONS/Create.json",
+    "logicName" : "Create",
+    "name" : "Create",
+    "orderValue" : 1,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserView/PSDEACTIONS/Update.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/UserView/PSDEACTIONS/Update.json",
+    "logicName" : "Update",
+    "name" : "Update",
+    "orderValue" : 11,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserView/PSDEACTIONS/Remove.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Remove",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/UserView/PSDEACTIONS/Remove.json",
+    "logicName" : "Remove",
+    "name" : "Remove",
+    "orderValue" : 21,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserView/PSDEACTIONS/Get.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/UserView/PSDEACTIONS/Get.json",
+    "logicName" : "Get",
+    "name" : "Get",
+    "orderValue" : 31,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserView/PSDEACTIONS/GetDraft.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/UserView/PSDEACTIONS/GetDraft.json",
+    "logicName" : "GetDraft",
+    "name" : "GetDraft",
+    "orderValue" : 41,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserView/PSDEACTIONS/CheckKey.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/UserView/PSDEACTIONS/CheckKey.json",
+    "logicName" : "CheckKey",
+    "name" : "CheckKey",
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/UserView/PSDEACTIONS/Save.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/UserView/PSDEACTIONS/Save.json",
+    "logicName" : "Save",
+    "name" : "Save",
+    "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "defaultMode" : true
   }, {
     "codeName" : "View",
-    "extendMode" : 0,
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "VIEW"
   } ],
   "getAllPSDEDataSets" : [ {
-    "cacheTimeout" : -1,
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
     "defaultMode" : true,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFDTColumns" : [ {
@@ -70,9 +85,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "concat(t1.`ACCOUNT`)",
-      "standardColumnName" : "`ID`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`ID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -97,7 +110,6 @@
         "name" : "ID",
         "codeName" : "Id"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -107,7 +119,6 @@
     "codeName" : "Id",
     "dEFType" : 2,
     "dataType" : "TEXT",
-    "deployId" : "14cbda5cbfb268f38467b49d5ead53b5",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "虚拟主键",
@@ -126,9 +137,7 @@
       "dBType" : "MYSQL5",
       "name" : "PRODUCTS",
       "queryCodeExp" : "t1.`PRODUCTS`",
-      "standardColumnName" : "`PRODUCTS`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PRODUCTS`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -153,7 +162,6 @@
         "name" : "PRODUCTS",
         "codeName" : "Products"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[16777215]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -163,7 +171,6 @@
     "codeName" : "Products",
     "dEFType" : 1,
     "dataType" : "LONGTEXT",
-    "deployId" : "d1127e6dc8257b645e9adb957c9c286f",
     "importOrder" : 1000,
     "length" : 16777215,
     "logicName" : "products",
@@ -178,9 +185,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACCOUNT",
       "queryCodeExp" : "t1.`ACCOUNT`",
-      "standardColumnName" : "`ACCOUNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`ACCOUNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -205,7 +210,6 @@
         "name" : "ACCOUNT",
         "codeName" : "Account"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[30]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -215,7 +219,6 @@
     "codeName" : "Account",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "ae1bc90a1a1935456a5ebcd3a82f6b6a",
     "importOrder" : 1000,
     "length" : 30,
     "logicName" : "account",
@@ -231,9 +234,7 @@
       "dBType" : "MYSQL5",
       "name" : "PROJECTS",
       "queryCodeExp" : "t1.`PROJECTS`",
-      "standardColumnName" : "`PROJECTS`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PROJECTS`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -258,7 +259,6 @@
         "name" : "PROJECTS",
         "codeName" : "Projects"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[16777215]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -268,7 +268,6 @@
     "codeName" : "Projects",
     "dEFType" : 1,
     "dataType" : "LONGTEXT",
-    "deployId" : "b6a3b31730287c58749594678c7e5a03",
     "importOrder" : 1000,
     "length" : 16777215,
     "logicName" : "projects",
@@ -303,7 +302,6 @@
     "modelref" : true,
     "id" : "Default"
   },
-  "deployId" : "225d51139081759a6b7045df6d84ce65",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/UserView.json",
   "enableActions" : 7,
@@ -312,7 +310,6 @@
   "extendMode" : 0,
   "logicName" : "用户视图",
   "name" : "ZT_USERVIEW",
-  "orderValue" : 99999,
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,

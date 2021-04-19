@@ -2,7 +2,6 @@
   "codeName" : "GetInfoTestTaskOvProject",
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDELOGICS/GetInfoTestTaskOvProject.json",
-  "logicHolder" : 1,
   "logicName" : "根据测试报告概况信息（项目报告）",
   "logicSubType" : "NONE",
   "name" : "根据测试报告概况信息（项目报告）",
@@ -167,7 +166,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取用例数",
     "getPSDELogicLinks" : [ {
@@ -196,7 +194,6 @@
     "parallelOutput" : true
   }, {
     "codeName" : "Begin",
-    "logicHolder" : 3,
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
@@ -210,7 +207,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "测试版本",
     "getPSDELogicLinks" : [ {
@@ -234,7 +230,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "执行的用例数",
     "getPSDELogicLinks" : [ {
@@ -285,7 +280,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "执行结果",
     "getPSDELogicLinks" : [ {
@@ -336,7 +330,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "解决的Bug",
     "getPSDELogicLinks" : [ {
@@ -387,7 +380,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "有效Bug数",
     "getPSDELogicLinks" : [ {
@@ -438,7 +430,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "需求覆盖用例数",
     "getPSDELogicLinks" : [ {
@@ -462,7 +453,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "产生的Bug",
     "getPSDELogicLinks" : [ {
@@ -513,7 +503,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "设置概况",
     "getPSDELogicNodeParams" : [ {
@@ -767,7 +756,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "用例产生的Bug",
     "getPSDELogicLinks" : [ {
@@ -818,7 +806,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "失败的用例数",
     "getPSDELogicLinks" : [ {
@@ -869,7 +856,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "遗留Bug",
     "getPSDELogicLinks" : [ {
@@ -929,7 +915,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "有效需求数",
     "getPSDELogicLinks" : [ {
@@ -953,7 +938,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取需求数",
     "getPSDELogicLinks" : [ {

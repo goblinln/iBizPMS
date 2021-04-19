@@ -1,74 +1,97 @@
 {
   "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly/PSDEACTIONS/Create.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly/PSDEACTIONS/Create.json",
+    "logicName" : "Create",
+    "name" : "Create",
+    "orderValue" : 1,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly/PSDEACTIONS/Update.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly/PSDEACTIONS/Update.json",
+    "logicName" : "Update",
+    "name" : "Update",
+    "orderValue" : 11,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly/PSDEACTIONS/Remove.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Remove",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly/PSDEACTIONS/Remove.json",
+    "logicName" : "Remove",
+    "name" : "Remove",
+    "orderValue" : 21,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly/PSDEACTIONS/Get.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly/PSDEACTIONS/Get.json",
+    "logicName" : "Get",
+    "name" : "Get",
+    "orderValue" : 31,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly/PSDEACTIONS/GetDraft.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly/PSDEACTIONS/GetDraft.json",
+    "logicName" : "GetDraft",
+    "name" : "GetDraft",
+    "orderValue" : 41,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly/PSDEACTIONS/CheckKey.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly/PSDEACTIONS/CheckKey.json",
+    "logicName" : "CheckKey",
+    "name" : "CheckKey",
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly/PSDEACTIONS/ManualCreateMonthly.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "ManualCreateMonthly",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly/PSDEACTIONS/ManualCreateMonthly.json",
+    "logicName" : "手动生成产品月报",
+    "name" : "ManualCreateMonthly"
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly/PSDEACTIONS/Save.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly/PSDEACTIONS/Save.json",
+    "logicName" : "Save",
+    "name" : "Save",
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly/PSDEACTIONS/StatsProductMonthly.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "StatsProductMonthly",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly/PSDEACTIONS/StatsProductMonthly.json",
+    "logicName" : "汇总产品月报",
+    "name" : "StatsProductMonthly"
   } ],
   "getAllPSDEDataQueries" : [ {
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "数据查询",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "defaultMode" : true
   }, {
     "codeName" : "View",
-    "extendMode" : 0,
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "VIEW"
   } ],
   "getAllPSDEDataSets" : [ {
-    "cacheTimeout" : -1,
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "数据集",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
     "defaultMode" : true,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFDTColumns" : [ {
@@ -76,9 +99,7 @@
       "dBType" : "MYSQL5",
       "name" : "TASKS",
       "queryCodeExp" : "t1.`TASKS`",
-      "standardColumnName" : "`TASKS`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`TASKS`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -103,7 +124,6 @@
         "name" : "TASKS",
         "codeName" : "Tasks"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[2000]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -113,7 +133,6 @@
     "codeName" : "Tasks",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "c9742b3381697c69348370716c9f4874",
     "importOrder" : 1000,
     "length" : 2000,
     "logicName" : "任务",
@@ -127,9 +146,7 @@
       "dBType" : "MYSQL5",
       "name" : "DATE",
       "queryCodeExp" : "t1.`DATE`",
-      "standardColumnName" : "`DATE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`DATE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -143,7 +160,6 @@
         "name" : "DATE",
         "codeName" : "Date"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -153,7 +169,6 @@
     "codeName" : "Date",
     "dEFType" : 1,
     "dataType" : "DATE",
-    "deployId" : "8be7645861e492a4f99c485bfcdee40c",
     "importOrder" : 1000,
     "logicName" : "日期",
     "name" : "DATE",
@@ -165,9 +180,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
-      "standardColumnName" : "`UPDATEMAN`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`UPDATEMAN`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -192,7 +205,6 @@
         "name" : "UPDATEMAN",
         "codeName" : "UpdateMan"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -202,7 +214,6 @@
     "codeName" : "UpdateMan",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "c88c47bea47310b85526061c1939f6cd",
     "importOrder" : 1000,
     "length" : 60,
     "logicName" : "更新人",
@@ -223,9 +234,7 @@
       "dBType" : "MYSQL5",
       "name" : "TOTALESTIMATES",
       "queryCodeExp" : "t1.`TOTALESTIMATES`",
-      "standardColumnName" : "`TOTALESTIMATES`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`TOTALESTIMATES`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -239,7 +248,6 @@
         "name" : "TOTALESTIMATES",
         "codeName" : "Totalestimates"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -249,7 +257,6 @@
     "codeName" : "Totalestimates",
     "dEFType" : 1,
     "dataType" : "FLOAT",
-    "deployId" : "49bf99c87a1b4d0dc0787052f9915d49",
     "importOrder" : 1000,
     "logicName" : "总工时",
     "name" : "TOTALESTIMATES",
@@ -262,9 +269,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
-      "standardColumnName" : "`CREATEDATE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`CREATEDATE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -278,7 +283,6 @@
         "name" : "CREATEDATE",
         "codeName" : "CreateDate"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -288,7 +292,6 @@
     "codeName" : "CreateDate",
     "dEFType" : 1,
     "dataType" : "DATETIME",
-    "deployId" : "5204f0b2bc1ca17e05058099a70688b9",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "建立时间",
@@ -304,9 +307,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
-      "standardColumnName" : "`UPDATEDATE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`UPDATEDATE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -320,7 +321,6 @@
         "name" : "UPDATEDATE",
         "codeName" : "UpdateDate"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -330,7 +330,6 @@
     "codeName" : "UpdateDate",
     "dEFType" : 1,
     "dataType" : "DATETIME",
-    "deployId" : "58482c7b4285fd236077880a8f8a221a",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "更新时间",
@@ -346,9 +345,7 @@
       "dBType" : "MYSQL5",
       "name" : "YEAR_MONTH",
       "queryCodeExp" : "t1.`YEAR_MONTH`",
-      "standardColumnName" : "`YEAR_MONTH`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`YEAR_MONTH`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -373,7 +370,6 @@
         "name" : "YEAR_MONTH",
         "codeName" : "YearMonth"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -383,7 +379,6 @@
     "codeName" : "YearMonth",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "2694e2752b72ef29ca890e20cb2d39f0",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "年月",
@@ -398,8 +393,7 @@
       "name" : "IBIZPRO_PRODUCTMONTHLYID",
       "queryCodeExp" : "t1.`IBIZPRO_PRODUCTMONTHLYID`",
       "standardColumnName" : "`IBIZPRO_PRODUCTMONTHLYID`",
-      "autoIncrement" : true,
-      "valueAutoGen" : false
+      "autoIncrement" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -413,7 +407,6 @@
         "name" : "IBIZPRO_PRODUCTMONTHLYID",
         "codeName" : "IbizproProductMonthlyId"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -424,7 +417,6 @@
     "dEFType" : 1,
     "dEMSFieldMode" : "STATE1",
     "dataType" : "ACID",
-    "deployId" : "631beeec9e39f0af126757361475ce6d",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "产品月报标识",
@@ -441,9 +433,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBIZPRO_PRODUCTMONTHLYNAME",
       "queryCodeExp" : "t1.`IBIZPRO_PRODUCTMONTHLYNAME`",
-      "standardColumnName" : "`IBIZPRO_PRODUCTMONTHLYNAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`IBIZPRO_PRODUCTMONTHLYNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -468,7 +458,6 @@
         "name" : "IBIZPRO_PRODUCTMONTHLYNAME",
         "codeName" : "IbizproProductMonthlyName"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -478,7 +467,6 @@
     "codeName" : "IbizproProductMonthlyName",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "0351b41ad5b91a29b806d68554b6e0e2",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "产品月报名称",
@@ -494,9 +482,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
-      "standardColumnName" : "`CREATEMAN`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`CREATEMAN`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -521,7 +507,6 @@
         "name" : "CREATEMAN",
         "codeName" : "CreateMan"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -531,7 +516,6 @@
     "codeName" : "CreateMan",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "4b59d5445c7c4a4b9c0c6dfd94caa188",
     "importOrder" : 1000,
     "length" : 60,
     "logicName" : "建立人",
@@ -552,9 +536,7 @@
       "dBType" : "MYSQL5",
       "name" : "PO",
       "queryCodeExp" : "t11.`PO`",
-      "standardColumnName" : "`PO`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PO`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -579,7 +561,6 @@
         "name" : "PO",
         "codeName" : "PO"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[30]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -589,7 +570,6 @@
     "codeName" : "PO",
     "dEFType" : 3,
     "dataType" : "PICKUPDATA",
-    "deployId" : "c7f635155f3e95f61d8ab8dd0a20e0d1",
     "importOrder" : 1000,
     "length" : 30,
     "logicName" : "产品负责人",
@@ -617,9 +597,7 @@
       "dBType" : "MYSQL5",
       "name" : "PRODUCTNAME",
       "queryCodeExp" : "t11.`NAME`",
-      "standardColumnName" : "`PRODUCTNAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PRODUCTNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -644,7 +622,6 @@
         "name" : "PRODUCTNAME",
         "codeName" : "ProductName"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[90]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -654,7 +631,6 @@
     "codeName" : "ProductName",
     "dEFType" : 3,
     "dataType" : "PICKUPTEXT",
-    "deployId" : "ed80870bb0cc3629ea019bd4d71f851a",
     "importOrder" : 1000,
     "length" : 90,
     "logicName" : "产品名称",
@@ -678,9 +654,7 @@
       "dBType" : "MYSQL5",
       "name" : "PRODUCT",
       "queryCodeExp" : "t1.`PRODUCT`",
-      "standardColumnName" : "`PRODUCT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PRODUCT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -694,7 +668,6 @@
         "name" : "PRODUCT",
         "codeName" : "Product"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -704,7 +677,6 @@
     "codeName" : "Product",
     "dEFType" : 1,
     "dataType" : "PICKUP",
-    "deployId" : "8710c569cf7e461ca3571493fc0a1810",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "产品编号",
@@ -746,7 +718,6 @@
     "modelref" : true,
     "id" : "Default"
   },
-  "deployId" : "ca7c6b19e7c9bfc7e0aa0c65e47e0156",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly.json",
   "enableActions" : 7,
@@ -759,11 +730,35 @@
     "codeName" : "IbizproProductMonthlyId"
   } ],
   "getMinorPSDERs" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly/PSDERS/DER1N_IBIZPRO_PRODUCTMONTHLY_ZT_PRODUCT_PRODUCT.json"
+    "codeName" : "ZTProduct",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly/PSDERS/DER1N_IBIZPRO_PRODUCTMONTHLY_ZT_PRODUCT_PRODUCT.json",
+    "logicName" : "产品编号",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly.json"
+    },
+    "name" : "DER1N_IBIZPRO_PRODUCTMONTHLY_ZT_PRODUCT_PRODUCT",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "getPSPickupTextDEField" : {
+      "name" : "PRODUCTNAME",
+      "codeName" : "ProductName"
+    },
+    "pickupDEFName" : "PRODUCT",
+    "removeActionType" : -1,
+    "removeOrder" : 0
   } ],
   "name" : "IBIZPRO_PRODUCTMONTHLY",
-  "orderValue" : 99999,
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,

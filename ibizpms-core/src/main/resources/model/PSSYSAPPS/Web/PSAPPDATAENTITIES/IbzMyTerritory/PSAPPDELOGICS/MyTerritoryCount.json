@@ -2,7 +2,6 @@
   "codeName" : "MyTerritoryCount",
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory/PSAPPDELOGICS/MyTerritoryCount.json",
-  "logicHolder" : 3,
   "logicName" : "我的地盘移动端计数器",
   "logicSubType" : "NONE",
   "name" : "我的地盘移动端计数器",
@@ -57,7 +56,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取我的需求数",
     "getPSDELogicLinks" : [ {
@@ -77,7 +75,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "我的待办数",
     "getPSDELogicNodeParams" : [ {
@@ -89,7 +86,6 @@
     "parallelOutput" : true
   }, {
     "codeName" : "Begin",
-    "logicHolder" : 3,
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
@@ -103,7 +99,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取我的Bug数",
     "getPSDELogicLinks" : [ {
@@ -123,7 +118,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取我的Bug数",
     "getPSDELogicLinks" : [ {

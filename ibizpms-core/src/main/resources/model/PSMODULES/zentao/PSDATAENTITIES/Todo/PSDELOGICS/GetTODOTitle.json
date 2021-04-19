@@ -2,7 +2,6 @@
   "codeName" : "GetTODOTitle",
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDELOGICS/GetTODOTitle.json",
-  "logicHolder" : 1,
   "logicName" : "获取待办名称",
   "logicSubType" : "NONE",
   "name" : "获取待办名称",
@@ -37,7 +36,6 @@
   } ],
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",
-    "logicHolder" : 3,
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
@@ -51,7 +49,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取待办的标题",
     "getPSDELogicNodeParams" : [ {

@@ -126,6 +126,7 @@ public class ProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(productMapping.toDto(productService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "取消置顶", tags = {"产品" },  notes = "取消置顶")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cancelproducttop")
     public ResponseEntity<ProductDTO> cancelProductTop(@PathVariable("product_id") Long product_id, @RequestBody ProductDTO productdto) {
@@ -181,6 +182,7 @@ public class ProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(productdto);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "置顶", tags = {"产品" },  notes = "置顶")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/producttop")
     public ResponseEntity<ProductDTO> productTop(@PathVariable("product_id") Long product_id, @RequestBody ProductDTO productdto) {

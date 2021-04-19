@@ -1108,7 +1108,6 @@
     "logicName" : "正常",
     "mSTag" : "normal",
     "name" : "正常",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__RELEASE_ACTIVE",
       "getPSDEOPPriv" : {
@@ -1137,7 +1136,6 @@
     "logicName" : "停止维护",
     "mSTag" : "terminate",
     "name" : "停止维护",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__RELEASE_TERMINATE",
       "getPSDEOPPriv" : {

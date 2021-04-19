@@ -3,21 +3,10 @@
   "actionType" : "DELOGIC",
   "codeName" : "UnlinkSuiteCases",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UnlinkSuiteCases.json",
-  "extendMode" : 0,
   "logicName" : "unlinkSuiteCases",
   "name" : "unlinkSuiteCases",
-  "orderValue" : 99999,
   "getPSDELogic" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDELOGICS/unlinkSuiteCases.json"
-  },
-  "paramMode" : 1,
-  "requestParamType" : "ENTITY",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "builtinAction" : false,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  }
 }

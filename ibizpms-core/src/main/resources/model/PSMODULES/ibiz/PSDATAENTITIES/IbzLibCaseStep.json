@@ -1,99 +1,194 @@
 {
   "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/Create.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/Create.json",
+    "logicName" : "Create",
+    "name" : "Create",
+    "orderValue" : 1,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/CreateTemp.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "CreateTemp",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/CreateTemp.json",
+    "logicName" : "CreateTemp",
+    "name" : "CreateTemp",
+    "orderValue" : 2,
+    "tempDataMode" : 2,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/CreateTempMajor.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "CreateTempMajor",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/CreateTempMajor.json",
+    "logicName" : "CreateTempMajor",
+    "name" : "CreateTempMajor",
+    "orderValue" : 3,
+    "tempDataMode" : 1,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/Update.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/Update.json",
+    "logicName" : "Update",
+    "name" : "Update",
+    "orderValue" : 11,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/UpdateTemp.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "UpdateTemp",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/UpdateTemp.json",
+    "logicName" : "UpdateTemp",
+    "name" : "UpdateTemp",
+    "orderValue" : 12,
+    "tempDataMode" : 2,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/UpdateTempMajor.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "UpdateTempMajor",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/UpdateTempMajor.json",
+    "logicName" : "UpdateTempMajor",
+    "name" : "UpdateTempMajor",
+    "orderValue" : 13,
+    "tempDataMode" : 1,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/Remove.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Remove",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/Remove.json",
+    "logicName" : "Remove",
+    "name" : "Remove",
+    "orderValue" : 21,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/RemoveTemp.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "RemoveTemp",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/RemoveTemp.json",
+    "logicName" : "RemoveTemp",
+    "name" : "RemoveTemp",
+    "orderValue" : 22,
+    "tempDataMode" : 2,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/RemoveTempMajor.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "RemoveTempMajor",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/RemoveTempMajor.json",
+    "logicName" : "RemoveTempMajor",
+    "name" : "RemoveTempMajor",
+    "orderValue" : 23,
+    "tempDataMode" : 1,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/Get.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/Get.json",
+    "logicName" : "Get",
+    "name" : "Get",
+    "orderValue" : 31,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/GetTemp.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetTemp",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/GetTemp.json",
+    "logicName" : "GetTemp",
+    "name" : "GetTemp",
+    "orderValue" : 32,
+    "tempDataMode" : 2,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/GetTempMajor.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetTempMajor",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/GetTempMajor.json",
+    "logicName" : "GetTempMajor",
+    "name" : "GetTempMajor",
+    "orderValue" : 33,
+    "tempDataMode" : 1,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/GetDraft.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/GetDraft.json",
+    "logicName" : "GetDraft",
+    "name" : "GetDraft",
+    "orderValue" : 41,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/GetDraftTemp.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraftTemp",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/GetDraftTemp.json",
+    "logicName" : "GetDraftTemp",
+    "name" : "GetDraftTemp",
+    "orderValue" : 43,
+    "tempDataMode" : 2,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/GetDraftTempMajor.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraftTempMajor",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/GetDraftTempMajor.json",
+    "logicName" : "GetDraftTempMajor",
+    "name" : "GetDraftTempMajor",
+    "orderValue" : 45,
+    "tempDataMode" : 1,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/CheckKey.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/CheckKey.json",
+    "logicName" : "CheckKey",
+    "name" : "CheckKey",
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/Save.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/Save.json",
+    "logicName" : "Save",
+    "name" : "Save",
+    "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "defaultMode" : true
   }, {
     "codeName" : "View",
-    "extendMode" : 0,
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "VIEW"
   } ],
   "getAllPSDEDataSets" : [ {
-    "cacheTimeout" : -1,
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
     "defaultMode" : true,
     "enableBackend" : true,
-    "enableCache" : false,
     "enableFront" : true,
-    "enableGroup" : false,
-    "enableTempData" : true,
-    "pubServiceDefault" : true
+    "enableTempData" : true
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFDTColumns" : [ {
@@ -101,9 +196,7 @@
       "dBType" : "MYSQL5",
       "name" : "EXPECT",
       "queryCodeExp" : "t1.`EXPECT`",
-      "standardColumnName" : "`EXPECT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`EXPECT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -128,7 +221,6 @@
         "name" : "EXPECT",
         "codeName" : "Expect"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[65535]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -138,7 +230,6 @@
     "codeName" : "Expect",
     "dEFType" : 1,
     "dataType" : "LONGTEXT",
-    "deployId" : "592118993016497a827b75039f780b58",
     "importOrder" : 1000,
     "length" : 65535,
     "logicName" : "预期",
@@ -154,9 +245,7 @@
       "dBType" : "MYSQL5",
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
-      "standardColumnName" : "`TYPE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`TYPE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -181,7 +270,6 @@
         "name" : "TYPE",
         "codeName" : "Type"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -191,7 +279,6 @@
     "codeName" : "Type",
     "dEFType" : 1,
     "dataType" : "SSCODELIST",
-    "deployId" : "04057872ca502b2c1931e59307d04931",
     "importOrder" : 1000,
     "length" : 60,
     "logicName" : "类型",
@@ -227,7 +314,6 @@
         "name" : "FILES",
         "codeName" : "Files"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -237,7 +323,6 @@
     "codeName" : "Files",
     "dEFType" : 5,
     "dataType" : "TEXT",
-    "deployId" : "e0ec8db5e206b3932a789118acb4b8fb",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "附件",
@@ -254,8 +339,7 @@
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`",
-      "autoIncrement" : true,
-      "valueAutoGen" : false
+      "autoIncrement" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -269,7 +353,6 @@
         "name" : "ID",
         "codeName" : "Id"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -279,7 +362,6 @@
     "codeName" : "Id",
     "dEFType" : 1,
     "dataType" : "ACID",
-    "deployId" : "f8b21b3a9e12359e09b9b18511081529",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "编号",
@@ -298,9 +380,7 @@
       "dBType" : "MYSQL5",
       "name" : "DESC",
       "queryCodeExp" : "t1.`DESC`",
-      "standardColumnName" : "`DESC`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`DESC`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -325,7 +405,6 @@
         "name" : "DESC",
         "codeName" : "Desc"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[65535]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -335,7 +414,6 @@
     "codeName" : "Desc",
     "dEFType" : 1,
     "dataType" : "LONGTEXT",
-    "deployId" : "8b235bbbdc09b465cd0b204a7a5b6533",
     "importOrder" : 1000,
     "length" : 65535,
     "logicName" : "步骤",
@@ -367,7 +445,6 @@
         "name" : "REALS",
         "codeName" : "Reals"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -377,7 +454,6 @@
     "codeName" : "Reals",
     "dEFType" : 5,
     "dataType" : "TEXT",
-    "deployId" : "aad17da2848c15c9274ad87371f536a5",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "实际情况",
@@ -413,7 +489,6 @@
     "modelref" : true,
     "id" : "Default"
   },
-  "deployId" : "2857792ea78ebb99a4945119388b982c",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep.json",
   "enableActions" : 7,
@@ -422,7 +497,6 @@
   "extendMode" : 0,
   "logicName" : "用例库用例步骤",
   "name" : "IBZ_CASESTEP",
-  "orderValue" : 99999,
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,

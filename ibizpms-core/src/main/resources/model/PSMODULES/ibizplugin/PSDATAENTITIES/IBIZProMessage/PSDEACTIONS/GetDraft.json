@@ -3,21 +3,8 @@
   "actionType" : "BUILTIN",
   "codeName" : "GetDraft",
   "dynaModelFilePath" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProMessage/PSDEACTIONS/GetDraft.json",
-  "extendMode" : 0,
   "logicName" : "GetDraft",
   "name" : "GetDraft",
   "orderValue" : 41,
-  "getPSDEOPPriv" : {
-    "modelref" : true,
-    "id" : "CREATE"
-  },
-  "paramMode" : 1,
-  "requestParamType" : "NONE",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "builtinAction" : true,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  "builtinAction" : true
 }

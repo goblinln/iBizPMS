@@ -3,18 +3,7 @@
   "actionType" : "USERCUSTOM",
   "codeName" : "Fix",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDEACTIONS/Fix.json",
-  "extendMode" : 0,
   "logicName" : "重建模块路径",
   "name" : "Fix",
-  "orderValue" : 99999,
-  "paramMode" : 1,
-  "requestParamType" : "ENTITY",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "userCat" : "CAT1",
-  "builtinAction" : false,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  "userCat" : "CAT1"
 }

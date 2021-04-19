@@ -128,9 +128,7 @@ public class DocLibModuleServiceImpl extends ServiceImpl<DocLibModuleMapper, Doc
     @Override
     @Transactional
     public void removeBatch(Collection<Long> idList) {
-        for (Long id : idList) {
-            getProxyService().removeById(id);
-        }
+        removeByIds(idList);
     }
 
     @Override

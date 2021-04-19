@@ -2,7 +2,6 @@
   "codeName" : "CancelProductTop",
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDELOGICS/CancelProductTop.json",
-  "logicHolder" : 3,
   "logicName" : "取消置顶",
   "logicSubType" : "NONE",
   "name" : "取消置顶",
@@ -20,7 +19,6 @@
   } ],
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",
-    "logicHolder" : 3,
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
@@ -30,7 +28,6 @@
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall1",
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "删除置顶",
     "getPSDELogicNodeParams" : [ {

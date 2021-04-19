@@ -3,25 +3,10 @@
   "actionType" : "DELOGIC",
   "codeName" : "Comment",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/Comment.json",
-  "extendMode" : 0,
   "logicName" : "添加备注",
   "name" : "Comment",
-  "orderValue" : 99999,
   "getPSDELogic" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDELOGICS/Comment.json"
-  },
-  "getPSDEOPPriv" : {
-    "modelref" : true,
-    "id" : "MANAGE"
-  },
-  "paramMode" : 1,
-  "requestParamType" : "ENTITY",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "builtinAction" : false,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  }
 }

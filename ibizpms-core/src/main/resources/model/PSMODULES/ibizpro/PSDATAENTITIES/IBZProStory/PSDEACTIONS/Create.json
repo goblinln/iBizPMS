@@ -3,21 +3,8 @@
   "actionType" : "BUILTIN",
   "codeName" : "Create",
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory/PSDEACTIONS/Create.json",
-  "extendMode" : 0,
   "logicName" : "Create",
   "name" : "Create",
   "orderValue" : 1,
-  "getPSDEOPPriv" : {
-    "modelref" : true,
-    "id" : "CREATE"
-  },
-  "paramMode" : 1,
-  "requestParamType" : "ENTITY",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "builtinAction" : true,
-  "customParam" : false,
-  "generateTestUnit" : true,
-  "pubServiceDefault" : true
+  "builtinAction" : true
 }

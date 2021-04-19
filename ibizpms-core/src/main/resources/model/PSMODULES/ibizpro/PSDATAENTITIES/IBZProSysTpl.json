@@ -1,68 +1,83 @@
 {
   "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/Create.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/Create.json",
+    "logicName" : "Create",
+    "name" : "Create",
+    "orderValue" : 1,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/Update.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/Update.json",
+    "logicName" : "Update",
+    "name" : "Update",
+    "orderValue" : 11,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/Remove.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Remove",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/Remove.json",
+    "logicName" : "Remove",
+    "name" : "Remove",
+    "orderValue" : 21,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/Get.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/Get.json",
+    "logicName" : "Get",
+    "name" : "Get",
+    "orderValue" : 31,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/GetDraft.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/GetDraft.json",
+    "logicName" : "GetDraft",
+    "name" : "GetDraft",
+    "orderValue" : 41,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/CheckKey.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/CheckKey.json",
+    "logicName" : "CheckKey",
+    "name" : "CheckKey",
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/Save.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDEACTIONS/Save.json",
+    "logicName" : "Save",
+    "name" : "Save",
+    "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "数据查询",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "defaultMode" : true
   }, {
     "codeName" : "View",
-    "extendMode" : 0,
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "VIEW"
   } ],
   "getAllPSDEDataSets" : [ {
-    "cacheTimeout" : -1,
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "数据集",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
     "defaultMode" : true,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : false
+    "enableFront" : true
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFDTColumns" : [ {
@@ -70,9 +85,7 @@
       "dBType" : "MYSQL5",
       "name" : "CONTENT",
       "queryCodeExp" : "t1.`CONTENT`",
-      "standardColumnName" : "`CONTENT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`CONTENT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -97,7 +110,6 @@
         "name" : "CONTENT",
         "codeName" : "Content"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[65535]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -107,7 +119,6 @@
     "codeName" : "Content",
     "dEFType" : 1,
     "dataType" : "LONGTEXT",
-    "deployId" : "d03e55e47cdb7ce10910538499082fd1",
     "importOrder" : 1000,
     "length" : 65535,
     "logicName" : "模板内容",
@@ -122,9 +133,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
-      "standardColumnName" : "`CREATEMAN`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`CREATEMAN`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -149,7 +158,6 @@
         "name" : "CREATEMAN",
         "codeName" : "CreateMan"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -159,7 +167,6 @@
     "codeName" : "CreateMan",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "e24982807ca7133dfd17e8f7fe41fd6a",
     "importOrder" : 1000,
     "length" : 60,
     "logicName" : "建立人",
@@ -180,9 +187,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZPRO_SYSTPLID",
       "queryCodeExp" : "t1.`IBZPRO_SYSTPLID`",
-      "standardColumnName" : "`IBZPRO_SYSTPLID`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`IBZPRO_SYSTPLID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -207,7 +212,6 @@
         "name" : "IBZPRO_SYSTPLID",
         "codeName" : "IBZProSysTplId"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -217,7 +221,6 @@
     "codeName" : "IBZProSysTplId",
     "dEFType" : 1,
     "dataType" : "GUID",
-    "deployId" : "16db13c6c058e7e5ce9926be96b9e050",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "系统模板标识",
@@ -234,9 +237,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
-      "standardColumnName" : "`CREATEDATE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`CREATEDATE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -250,7 +251,6 @@
         "name" : "CREATEDATE",
         "codeName" : "CreateDate"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -260,7 +260,6 @@
     "codeName" : "CreateDate",
     "dEFType" : 1,
     "dataType" : "DATETIME",
-    "deployId" : "fee80e34c95aeddc26d5401d6c81a4fb",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "建立时间",
@@ -277,7 +276,6 @@
       "name" : "PUBLIC",
       "queryCodeExp" : "t1.`PUBLIC`",
       "standardColumnName" : "`PUBLIC`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -303,7 +301,6 @@
         "name" : "PUBLIC",
         "codeName" : "IBizPublic"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[1]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -314,7 +311,6 @@
     "dEFType" : 1,
     "dataType" : "SSCODELIST",
     "defaultValue" : "0",
-    "deployId" : "852044958476a092d008099853810dee",
     "importOrder" : 1000,
     "length" : 1,
     "logicName" : "是否公开",
@@ -332,9 +328,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
-      "standardColumnName" : "`UPDATEMAN`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`UPDATEMAN`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -359,7 +353,6 @@
         "name" : "UPDATEMAN",
         "codeName" : "UpdateMan"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -369,7 +362,6 @@
     "codeName" : "UpdateMan",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "50ca03629e96793f7c06c942a20248c2",
     "importOrder" : 1000,
     "length" : 60,
     "logicName" : "更新人",
@@ -390,9 +382,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
-      "standardColumnName" : "`UPDATEDATE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`UPDATEDATE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -406,7 +396,6 @@
         "name" : "UPDATEDATE",
         "codeName" : "UpdateDate"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -416,7 +405,6 @@
     "codeName" : "UpdateDate",
     "dEFType" : 1,
     "dataType" : "DATETIME",
-    "deployId" : "96f98cbca7076f7cda6d681068def27a",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "更新时间",
@@ -432,9 +420,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZPRO_SYSTPLNAME",
       "queryCodeExp" : "t1.`IBZPRO_SYSTPLNAME`",
-      "standardColumnName" : "`IBZPRO_SYSTPLNAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`IBZPRO_SYSTPLNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -459,7 +445,6 @@
         "name" : "IBZPRO_SYSTPLNAME",
         "codeName" : "IBZProSysTplName"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -469,7 +454,6 @@
     "codeName" : "IBZProSysTplName",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "43a5a5a9470d4b4296ed21507934c2b1",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "系统模板名称",
@@ -486,7 +470,6 @@
       "name" : "TPLTYPE",
       "queryCodeExp" : "t1.`TPLTYPE`",
       "standardColumnName" : "`TPLTYPE`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -512,7 +495,6 @@
         "name" : "TPLTYPE",
         "codeName" : "Tpltype"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -523,7 +505,6 @@
     "dEFType" : 1,
     "dataType" : "SSCODELIST",
     "defaultValue" : "freemarker",
-    "deployId" : "efe86297117682108f813925ca962515",
     "importOrder" : 1000,
     "length" : 60,
     "logicName" : "IBIZ模板类型",
@@ -541,9 +522,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBIZ_SOURCEOBJECT",
       "queryCodeExp" : "t1.`IBIZ_SOURCEOBJECT`",
-      "standardColumnName" : "`IBIZ_SOURCEOBJECT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`IBIZ_SOURCEOBJECT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -568,7 +547,6 @@
         "name" : "IBIZ_SOURCEOBJECT",
         "codeName" : "Ibiz_sourceobject"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -578,7 +556,6 @@
     "codeName" : "Ibiz_sourceobject",
     "dEFType" : 1,
     "dataType" : "SSCODELIST",
-    "deployId" : "d429ee96956edf0f75a0ccce47f21e0a",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "来源对象",
@@ -596,9 +573,7 @@
       "dBType" : "MYSQL5",
       "name" : "FILE",
       "queryCodeExp" : "t1.`FILE`",
-      "standardColumnName" : "`FILE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`FILE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -612,7 +587,6 @@
         "name" : "FILE",
         "codeName" : "File"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -622,7 +596,6 @@
     "codeName" : "File",
     "dEFType" : 1,
     "dataType" : "PICKUP",
-    "deployId" : "051f824d05f8700e2ba35cbc9120dcc5",
     "importOrder" : 1000,
     "logicName" : "id",
     "name" : "FILE",
@@ -663,7 +636,6 @@
     "modelref" : true,
     "id" : "Default"
   },
-  "deployId" : "eb10869fed093847209e5ec2e7cc4af2",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl.json",
   "enableActions" : 7,
@@ -672,11 +644,30 @@
   "extendMode" : 0,
   "logicName" : "系统模板",
   "getMinorPSDERs" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDERS/DER1N_IBZPRO_SYSTPL_ZT_FILE_FILE.json"
+    "codeName" : "ZT_FILE",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDERS/DER1N_IBZPRO_SYSTPL_ZT_FILE_FILE.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl.json"
+    },
+    "name" : "DER1N_IBZPRO_SYSTPL_ZT_FILE_FILE",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "FILE",
+      "codeName" : "File"
+    },
+    "pickupDEFName" : "FILE",
+    "removeActionType" : -1,
+    "removeOrder" : 0
   } ],
   "name" : "IBZPRO_SYSTPL",
-  "orderValue" : 99999,
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,

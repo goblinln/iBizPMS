@@ -126,9 +126,7 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         if(!taskRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
-        for (Task et : list) {
-            getProxyService().update(et);
-        }
+        updateBatchById(list, batchSize);
     }
 
     @Override
@@ -153,9 +151,7 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     @Override
     @Transactional
     public void removeBatch(Collection<Long> idList) {
-        for (Long id : idList) {
-            getProxyService().removeById(id);
-        }
+        removeByIds(idList);
     }
 
     @Override

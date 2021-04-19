@@ -2,7 +2,6 @@
   "codeName" : "DocLibModuleFavorite",
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/DocLibModuleFavorite.json",
-  "logicHolder" : 1,
   "logicName" : "文档库收藏",
   "logicSubType" : "NONE",
   "name" : "文档库收藏",
@@ -31,7 +30,6 @@
   } ],
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",
-    "logicHolder" : 3,
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
@@ -53,13 +51,11 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzFavorites.json"
     },
-    "logicHolder" : 3,
     "logicNodeType" : "DEACTION",
     "name" : "收藏",
     "parallelOutput" : true
   }, {
     "codeName" : "Prepareparam1",
-    "logicHolder" : 3,
     "logicNodeType" : "PREPAREPARAM",
     "name" : "准备参数",
     "getPSDELogicLinks" : [ {

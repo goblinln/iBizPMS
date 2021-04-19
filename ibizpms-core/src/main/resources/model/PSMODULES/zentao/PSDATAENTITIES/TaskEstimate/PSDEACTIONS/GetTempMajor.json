@@ -3,24 +3,10 @@
   "actionType" : "BUILTIN",
   "codeName" : "GetTempMajor",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetTempMajor.json",
-  "extendMode" : 0,
   "logicName" : "GetTempMajor",
   "name" : "GetTempMajor",
   "orderValue" : 33,
-  "getPSDEOPPriv" : {
-    "modelref" : true,
-    "id" : "READ"
-  },
-  "paramMode" : 1,
-  "requestField" : "ID",
-  "requestParamType" : "FIELD",
   "tempDataMode" : 1,
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
   "builtinAction" : true,
-  "customParam" : false,
-  "enableTempData" : true,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  "enableTempData" : true
 }

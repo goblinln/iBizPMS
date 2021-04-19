@@ -3,7 +3,6 @@
   "actionType" : "BUILTIN",
   "codeName" : "Remove",
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/Remove.json",
-  "extendMode" : 0,
   "logicName" : "Remove",
   "name" : "Remove",
   "orderValue" : 21,
@@ -16,18 +15,7 @@
     "stdDataType" : 1,
     "valueType" : "INPUTVALUE"
   } ],
-  "getPSDEOPPriv" : {
-    "modelref" : true,
-    "id" : "DELETE"
-  },
   "paramMode" : 2,
-  "requestField" : "INDEXID",
-  "requestParamType" : "FIELD",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
   "builtinAction" : true,
-  "customParam" : true,
-  "generateTestUnit" : true,
-  "pubServiceDefault" : true
+  "customParam" : true
 }

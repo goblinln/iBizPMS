@@ -3,17 +3,6 @@
   "actionType" : "USERCUSTOM",
   "codeName" : "UnCollect",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/UnCollect.json",
-  "extendMode" : 0,
   "logicName" : "取消收藏",
-  "name" : "UnCollect",
-  "orderValue" : 99999,
-  "paramMode" : 1,
-  "requestParamType" : "ENTITY",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "builtinAction" : false,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  "name" : "UnCollect"
 }

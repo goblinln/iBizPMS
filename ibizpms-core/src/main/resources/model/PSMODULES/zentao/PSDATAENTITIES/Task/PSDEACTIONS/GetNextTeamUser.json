@@ -3,22 +3,7 @@
   "actionType" : "USERCUSTOM",
   "codeName" : "GetNextTeamUser",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetNextTeamUser.json",
-  "extendMode" : 0,
   "logicName" : "获取下一个团队成员(完成)",
   "name" : "GetNextTeamUserFinish",
-  "orderValue" : 99999,
-  "getPSDEOPPriv" : {
-    "modelref" : true,
-    "id" : "READ"
-  },
-  "paramMode" : 1,
-  "requestParamType" : "ENTITY",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "userCat" : "CAT1",
-  "builtinAction" : false,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  "userCat" : "CAT1"
 }

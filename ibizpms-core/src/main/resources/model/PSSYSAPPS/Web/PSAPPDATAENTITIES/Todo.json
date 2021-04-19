@@ -1440,7 +1440,6 @@
     "logicName" : "closed",
     "mSTag" : "closed",
     "name" : "closed",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "UPDATE",
       "getPSDEOPPriv" : {
@@ -1475,7 +1474,6 @@
     "logicName" : "doing",
     "mSTag" : "doing",
     "name" : "doing",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "FINISH",
       "getPSDEOPPriv" : {
@@ -1528,7 +1526,6 @@
     "logicName" : "done",
     "mSTag" : "done",
     "name" : "done",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "DELETE",
       "getPSDEOPPriv" : {
@@ -1569,7 +1566,6 @@
     "logicName" : "wait",
     "mSTag" : "wait",
     "name" : "wait",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "DELETE",
       "getPSDEOPPriv" : {

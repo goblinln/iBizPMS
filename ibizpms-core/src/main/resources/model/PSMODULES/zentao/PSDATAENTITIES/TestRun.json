@@ -1,68 +1,83 @@
 {
   "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDEACTIONS/Create.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDEACTIONS/Create.json",
+    "logicName" : "Create",
+    "name" : "Create",
+    "orderValue" : 1,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDEACTIONS/Update.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDEACTIONS/Update.json",
+    "logicName" : "Update",
+    "name" : "Update",
+    "orderValue" : 11,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDEACTIONS/Remove.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Remove",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDEACTIONS/Remove.json",
+    "logicName" : "Remove",
+    "name" : "Remove",
+    "orderValue" : 21,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDEACTIONS/Get.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDEACTIONS/Get.json",
+    "logicName" : "Get",
+    "name" : "Get",
+    "orderValue" : 31,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDEACTIONS/GetDraft.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDEACTIONS/GetDraft.json",
+    "logicName" : "GetDraft",
+    "name" : "GetDraft",
+    "orderValue" : 41,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDEACTIONS/CheckKey.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDEACTIONS/CheckKey.json",
+    "logicName" : "CheckKey",
+    "name" : "CheckKey",
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDEACTIONS/Save.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDEACTIONS/Save.json",
+    "logicName" : "Save",
+    "name" : "Save",
+    "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "defaultMode" : true
   }, {
     "codeName" : "View",
-    "extendMode" : 0,
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "VIEW"
   } ],
   "getAllPSDEDataSets" : [ {
-    "cacheTimeout" : -1,
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
     "defaultMode" : true,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFDTColumns" : [ {
@@ -71,7 +86,6 @@
       "name" : "LASTRUNRESULT",
       "queryCodeExp" : "t1.`LASTRUNRESULT`",
       "standardColumnName" : "`LASTRUNRESULT`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -97,7 +111,6 @@
         "name" : "LASTRUNRESULT",
         "codeName" : "LastRunResult"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[30]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -108,7 +121,6 @@
     "dEFType" : 1,
     "dataType" : "SSCODELIST",
     "defaultValue" : "#EMPTY",
-    "deployId" : "a3d56c28fb6b951eade1afe9b2068d87",
     "importOrder" : 1000,
     "length" : 30,
     "logicName" : "结果",
@@ -126,9 +138,7 @@
       "dBType" : "MYSQL5",
       "name" : "LASTRUNDATE",
       "queryCodeExp" : "t1.`LASTRUNDATE`",
-      "standardColumnName" : "`LASTRUNDATE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`LASTRUNDATE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -142,7 +152,6 @@
         "name" : "LASTRUNDATE",
         "codeName" : "LastRunDate"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -152,7 +161,6 @@
     "codeName" : "LastRunDate",
     "dEFType" : 1,
     "dataType" : "DATETIME",
-    "deployId" : "41720b3dbf02449ccc64523f595f5982",
     "importOrder" : 1000,
     "logicName" : "最后执行时间",
     "name" : "LASTRUNDATE",
@@ -164,9 +172,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORG",
       "queryCodeExp" : "t1.`ORG`",
-      "standardColumnName" : "`ORG`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`ORG`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -191,7 +197,6 @@
         "name" : "ORG",
         "codeName" : "Org"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -201,7 +206,6 @@
     "codeName" : "Org",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "e7211db1e5d517043863d53f794ae20f",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "归属组织",
@@ -216,9 +220,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEBY",
       "queryCodeExp" : "t1.`UPDATEBY`",
-      "standardColumnName" : "`UPDATEBY`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`UPDATEBY`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -243,7 +245,6 @@
         "name" : "UPDATEBY",
         "codeName" : "UpdateBy"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -253,7 +254,6 @@
     "codeName" : "UpdateBy",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "679abeaf5db86d4cecc145f64ecdaf60",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "由谁更新",
@@ -274,7 +274,6 @@
       "name" : "ASSIGNEDTO",
       "queryCodeExp" : "t1.`ASSIGNEDTO`",
       "standardColumnName" : "`ASSIGNEDTO`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -300,7 +299,6 @@
         "name" : "ASSIGNEDTO",
         "codeName" : "AssignedTo"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[30]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -311,7 +309,6 @@
     "dEFType" : 1,
     "dataType" : "TEXT",
     "defaultValue" : "#EMPTY",
-    "deployId" : "4f80212cbc2fd9047f147903ad69b6d9",
     "importOrder" : 1000,
     "length" : 30,
     "logicName" : "指派给",
@@ -325,9 +322,7 @@
       "dBType" : "MYSQL5",
       "name" : "DEPT",
       "queryCodeExp" : "t1.`DEPT`",
-      "standardColumnName" : "`DEPT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`DEPT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -352,7 +347,6 @@
         "name" : "DEPT",
         "codeName" : "Dept"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -362,7 +356,6 @@
     "codeName" : "Dept",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "91a07685efe8d8b169df18f9952169f7",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "归属部门",
@@ -378,7 +371,6 @@
       "name" : "LASTRUNNER",
       "queryCodeExp" : "t1.`LASTRUNNER`",
       "standardColumnName" : "`LASTRUNNER`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -404,7 +396,6 @@
         "name" : "LASTRUNNER",
         "codeName" : "LastRunner"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[30]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -415,7 +406,6 @@
     "dEFType" : 1,
     "dataType" : "TEXT",
     "defaultValue" : "#EMPTY",
-    "deployId" : "ccf442a3442772224d0586301bfe890a",
     "importOrder" : 1000,
     "length" : 30,
     "logicName" : "最后执行人",
@@ -430,7 +420,6 @@
       "name" : "STATUS",
       "queryCodeExp" : "t1.`STATUS`",
       "standardColumnName" : "`STATUS`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -456,7 +445,6 @@
         "name" : "STATUS",
         "codeName" : "Status"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[30]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -467,7 +455,6 @@
     "dEFType" : 1,
     "dataType" : "SSCODELIST",
     "defaultValue" : "wait",
-    "deployId" : "be9f511e26557c7e93082516d57e0ed8",
     "importOrder" : 1000,
     "length" : 30,
     "logicName" : "当前状态",
@@ -486,8 +473,7 @@
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`",
-      "autoIncrement" : true,
-      "valueAutoGen" : false
+      "autoIncrement" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -501,7 +487,6 @@
         "name" : "ID",
         "codeName" : "Id"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -511,7 +496,6 @@
     "codeName" : "Id",
     "dEFType" : 1,
     "dataType" : "ACID",
-    "deployId" : "13ebc4a7b5b87e71e57ffbbe0e1523e7",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "编号",
@@ -532,9 +516,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEBY",
       "queryCodeExp" : "t1.`CREATEBY`",
-      "standardColumnName" : "`CREATEBY`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`CREATEBY`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -559,7 +541,6 @@
         "name" : "CREATEBY",
         "codeName" : "CreateBy"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -569,7 +550,6 @@
     "codeName" : "CreateBy",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "2498e34bb5abb5b8a88469cb7ff78d40",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "由谁创建",
@@ -590,7 +570,6 @@
       "name" : "VERSION",
       "queryCodeExp" : "t1.`VERSION`",
       "standardColumnName" : "`VERSION`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -605,7 +584,6 @@
         "name" : "VERSION",
         "codeName" : "Version"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -616,7 +594,6 @@
     "dEFType" : 1,
     "dataType" : "PICKUPDATA",
     "defaultValue" : "0",
-    "deployId" : "740969ab812741374500bcfdc6855c21",
     "importOrder" : 1000,
     "length" : 3,
     "logicName" : "用例版本",
@@ -643,7 +620,6 @@
       "name" : "CASE",
       "queryCodeExp" : "t1.`CASE`",
       "standardColumnName" : "`CASE`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -658,7 +634,6 @@
         "name" : "CASE",
         "codeName" : "IBizCase"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -669,7 +644,6 @@
     "dEFType" : 1,
     "dataType" : "PICKUP",
     "defaultValue" : "0",
-    "deployId" : "b8ae4b8a4d53ec0f36f516340c27c0cf",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "测试用例",
@@ -692,7 +666,6 @@
       "name" : "TASK",
       "queryCodeExp" : "t1.`TASK`",
       "standardColumnName" : "`TASK`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -707,7 +680,6 @@
         "name" : "TASK",
         "codeName" : "Task"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -718,7 +690,6 @@
     "dEFType" : 1,
     "dataType" : "PICKUP",
     "defaultValue" : "0",
-    "deployId" : "4a31b9519e3e40e410fcedd45f7e5da4",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "测试单",
@@ -752,11 +723,52 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDEUSERROLES/TestRun_Maintain.json"
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDEUSERROLES/TestRun_Maintain.json",
+    "name" : "测试运行维护",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "CREATE",
+      "name" : "TestRun_Maintain_CREATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CREATE"
+      }
+    }, {
+      "dataAccessAction" : "READ",
+      "name" : "TestRun_Maintain_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "TestRun_Maintain_UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "TestRun_Maintain_DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    } ],
+    "roleTag" : "TestRun_Maintain",
+    "userDRAction" : "READ"
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDEUSERROLES/TestRun_Read.json"
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDEUSERROLES/TestRun_Read.json",
+    "name" : "测试运行查看",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "TestRun_Read_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "TestRun_Read",
+    "userDRAction" : "READ"
   } ],
   "auditMode" : 0,
   "codeName" : "TestRun",
@@ -770,7 +782,6 @@
     "modelref" : true,
     "id" : "Default"
   },
-  "deployId" : "0567a0464f33402bca3d802f25f45a4b",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestRun.json",
   "enableActions" : 7,
@@ -779,18 +790,77 @@
   "extendMode" : 0,
   "logicName" : "测试运行",
   "getMajorPSDERs" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestResult/PSDERS/DER1N_ZT_TESTRESULT_ZT_TESTRUN_RUN.json"
+    "codeName" : "ZTTestRun",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestResult/PSDERS/DER1N_ZT_TESTRESULT_ZT_TESTRUN_RUN.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestResult.json"
+    },
+    "name" : "DER1N_ZT_TESTRESULT_ZT_TESTRUN_RUN",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "RUN",
+      "codeName" : "Run"
+    },
+    "pickupDEFName" : "RUN",
+    "removeActionType" : -1,
+    "removeOrder" : 0
   } ],
   "getMinorPSDERs" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDERS/DER1N_ZT_TESTRUN_ZT_CASE_CASE.json"
+    "codeName" : "ZTCase",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDERS/DER1N_ZT_TESTRUN_ZT_CASE_CASE.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun.json"
+    },
+    "name" : "DER1N_ZT_TESTRUN_ZT_CASE_CASE",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "CASE",
+      "codeName" : "IBizCase"
+    },
+    "pickupDEFName" : "CASE",
+    "removeActionType" : -1,
+    "removeOrder" : 0
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDERS/DER1N_ZT_TESTRUN_ZT_TESTTASK_TASK.json"
+    "codeName" : "ZTTestTask",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDERS/DER1N_ZT_TESTRUN_ZT_TESTTASK_TASK.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun.json"
+    },
+    "name" : "DER1N_ZT_TESTRUN_ZT_TESTTASK_TASK",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "TASK",
+      "codeName" : "Task"
+    },
+    "pickupDEFName" : "TASK",
+    "removeActionType" : -1,
+    "removeOrder" : 0
   } ],
   "name" : "ZT_TESTRUN",
-  "orderValue" : 99999,
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,

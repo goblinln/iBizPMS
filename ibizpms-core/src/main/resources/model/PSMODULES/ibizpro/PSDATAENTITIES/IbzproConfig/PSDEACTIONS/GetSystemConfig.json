@@ -3,21 +3,6 @@
   "actionType" : "USERCUSTOM",
   "codeName" : "GetSystemConfig",
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproConfig/PSDEACTIONS/GetSystemConfig.json",
-  "extendMode" : 0,
   "logicName" : "获取系统配置",
-  "name" : "GetSystemConfig",
-  "orderValue" : 99999,
-  "getPSDEOPPriv" : {
-    "modelref" : true,
-    "id" : "READ"
-  },
-  "paramMode" : 1,
-  "requestParamType" : "ENTITY",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "builtinAction" : false,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  "name" : "GetSystemConfig"
 }

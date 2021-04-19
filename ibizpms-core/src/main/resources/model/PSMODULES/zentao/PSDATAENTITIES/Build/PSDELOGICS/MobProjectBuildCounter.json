@@ -2,7 +2,6 @@
   "codeName" : "MobProjectBuildCounter",
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDELOGICS/MobProjectBuildCounter.json",
-  "logicHolder" : 1,
   "logicName" : "移动端项目版本计数器",
   "logicSubType" : "NONE",
   "name" : "移动端项目版本计数器",
@@ -42,7 +41,6 @@
   } ],
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",
-    "logicHolder" : 3,
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
@@ -56,7 +54,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取完成的需求数",
     "getPSDELogicLinks" : [ {
@@ -80,7 +77,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取产生的bug",
     "getPSDELogicNodeParams" : [ {
@@ -100,7 +96,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取解决的bug",
     "getPSDELogicLinks" : [ {

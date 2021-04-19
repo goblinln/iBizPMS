@@ -647,10 +647,6 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/WebHook.json"
   } ],
   "codeName" : "zentao",
-  "deployId" : "6de100d5fdb6f03510d44c0f2f6c5b7b",
   "dynaModelFilePath" : "PSMODULES/zentao.json",
-  "name" : "基础管理模块",
-  "defaultModule" : false,
-  "subSysAsCloud" : false,
-  "subSysModule" : false
+  "name" : "基础管理模块"
 }

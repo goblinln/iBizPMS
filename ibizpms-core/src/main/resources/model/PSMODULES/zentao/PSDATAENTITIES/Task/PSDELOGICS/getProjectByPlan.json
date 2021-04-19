@@ -2,7 +2,6 @@
   "codeName" : "getProjectByPlan",
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/getProjectByPlan.json",
-  "logicHolder" : 1,
   "logicName" : "根据计划或需求获取相关项目",
   "logicSubType" : "NONE",
   "name" : "根据计划或需求获取相关项目",
@@ -99,7 +98,6 @@
   } ],
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",
-    "logicHolder" : 3,
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
@@ -119,7 +117,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "根据需求获取项目",
     "getPSDELogicNodeParams" : [ {
@@ -139,7 +136,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取项目",
     "getPSDELogicNodeParams" : [ {
@@ -155,7 +151,6 @@
     "parallelOutput" : true
   }, {
     "codeName" : "Prepareparam1",
-    "logicHolder" : 3,
     "logicNodeType" : "PREPAREPARAM",
     "name" : "设置常规参数",
     "parallelOutput" : true

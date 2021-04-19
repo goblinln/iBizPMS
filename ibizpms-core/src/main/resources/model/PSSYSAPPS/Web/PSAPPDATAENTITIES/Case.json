@@ -3355,7 +3355,6 @@
     "logicName" : "被阻塞_阻塞_未收藏",
     "mSTag" : "blocked__blocked__0",
     "name" : "被阻塞_阻塞_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CASECOF_BUT",
       "getPSDEOPPriv" : {
@@ -3422,7 +3421,6 @@
     "logicName" : "被阻塞_阻塞_已收藏",
     "mSTag" : "blocked__blocked__1",
     "name" : "被阻塞_阻塞_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_NFAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -3489,7 +3487,6 @@
     "logicName" : "被阻塞_失败_未收藏",
     "mSTag" : "blocked__fail__0",
     "name" : "被阻塞_失败_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CASECOF_BUT",
       "getPSDEOPPriv" : {
@@ -3544,7 +3541,6 @@
     "logicName" : "被阻塞_失败_已收藏",
     "mSTag" : "blocked__fail__1",
     "name" : "被阻塞_失败_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_NFAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -3599,7 +3595,6 @@
     "logicName" : "被阻塞_忽略_未收藏",
     "mSTag" : "blocked__n/a__0",
     "name" : "被阻塞_忽略_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_TOBUG_BUT",
       "getPSDEOPPriv" : {
@@ -3666,7 +3661,6 @@
     "logicName" : "被阻塞_忽略_已收藏",
     "mSTag" : "blocked__n/a__1",
     "name" : "被阻塞_忽略_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CASECOF_BUT",
       "getPSDEOPPriv" : {
@@ -3733,7 +3727,6 @@
     "logicName" : "被阻塞_未执行_未收藏",
     "mSTag" : "blocked__no__0",
     "name" : "被阻塞_未执行_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CASECOF_BUT",
       "getPSDEOPPriv" : {
@@ -3800,7 +3793,6 @@
     "logicName" : "被阻塞_未执行_已收藏",
     "mSTag" : "blocked__no__1",
     "name" : "被阻塞_未执行_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_NFAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -3867,7 +3859,6 @@
     "logicName" : "被阻塞_通过_未收藏",
     "mSTag" : "blocked__pass__0",
     "name" : "被阻塞_通过_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CONFIRM_BUT",
       "getPSDEOPPriv" : {
@@ -3934,7 +3925,6 @@
     "logicName" : "被阻塞_通过_已收藏",
     "mSTag" : "blocked__pass__1",
     "name" : "被阻塞_通过_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_NFAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -4001,7 +3991,6 @@
     "logicName" : "原用例更新_阻塞_未收藏",
     "mSTag" : "casechange__blocked__0",
     "name" : "原用例更新_阻塞_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_FAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -4152,7 +4141,6 @@
     "logicName" : "原用例更新_阻塞_已收藏",
     "mSTag" : "casechange__blocked__1",
     "name" : "原用例更新_阻塞_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_EDIT_BUT",
       "getPSDEOPPriv" : {
@@ -4303,7 +4291,6 @@
     "logicName" : "原用例更新_失败_未收藏",
     "mSTag" : "casechange__fail__0",
     "name" : "原用例更新_失败_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_TOBUG_BUT",
       "getPSDEOPPriv" : {
@@ -4442,7 +4429,6 @@
     "logicName" : "原用例更新_失败_已收藏",
     "mSTag" : "casechange__fail__1",
     "name" : "原用例更新_失败_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_RUN_BUT",
       "getPSDEOPPriv" : {
@@ -4581,7 +4567,6 @@
     "logicName" : "原用例更新_忽略_未收藏",
     "mSTag" : "casechange__n/a__0",
     "name" : "原用例更新_忽略_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CASERUN_BUT",
       "getPSDEOPPriv" : {
@@ -4720,7 +4705,6 @@
     "logicName" : "原用例更新_忽略_已收藏",
     "mSTag" : "casechange__n/a__1",
     "name" : "原用例更新_忽略_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_RESULT_BUT",
       "getPSDEOPPriv" : {
@@ -4859,7 +4843,6 @@
     "logicName" : "原用例更新_未执行_未收藏",
     "mSTag" : "casechange__no__0",
     "name" : "原用例更新_未执行_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_RESULT_BUT",
       "getPSDEOPPriv" : {
@@ -5010,7 +4993,6 @@
     "logicName" : "原用例更新_未执行_已收藏",
     "mSTag" : "casechange__no__1",
     "name" : "原用例更新_未执行_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CONFIRM_BUT",
       "getPSDEOPPriv" : {
@@ -5161,7 +5143,6 @@
     "logicName" : "原用例更新_通过_未收藏",
     "mSTag" : "casechange__pass__0",
     "name" : "原用例更新_通过_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CASETOBUG_BUT",
       "getPSDEOPPriv" : {
@@ -5300,7 +5281,6 @@
     "logicName" : "原用例更新_通过_已收藏",
     "mSTag" : "casechange__pass__1",
     "name" : "原用例更新_通过_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_RUN_BUT",
       "getPSDEOPPriv" : {
@@ -5439,7 +5419,6 @@
     "logicName" : "已完成_阻塞_未收藏",
     "mSTag" : "done__blocked__0",
     "name" : "已完成_阻塞_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CONFIRM_BUT",
       "getPSDEOPPriv" : {
@@ -5506,7 +5485,6 @@
     "logicName" : "已完成_阻塞_已收藏",
     "mSTag" : "done__blocked__1",
     "name" : "已完成_阻塞_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_NFAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -5573,7 +5551,6 @@
     "logicName" : "已完成_失败_未收藏",
     "mSTag" : "done__fail__0",
     "name" : "已完成_失败_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CONFIRM_BUT",
       "getPSDEOPPriv" : {
@@ -5628,7 +5605,6 @@
     "logicName" : "已完成_失败_已收藏",
     "mSTag" : "done__fail__1",
     "name" : "已完成_失败_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CASECOF_BUT",
       "getPSDEOPPriv" : {
@@ -5683,7 +5659,6 @@
     "logicName" : "已完成_忽略_未收藏",
     "mSTag" : "done__n/a__0",
     "name" : "已完成_忽略_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_TOBUG_BUT",
       "getPSDEOPPriv" : {
@@ -5750,7 +5725,6 @@
     "logicName" : "已完成_忽略_已收藏",
     "mSTag" : "done__n/a__1",
     "name" : "已完成_忽略_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_NFAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -5817,7 +5791,6 @@
     "logicName" : "已完成_未执行_未收藏",
     "mSTag" : "done__no__0",
     "name" : "已完成_未执行_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_FAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -5884,7 +5857,6 @@
     "logicName" : "已完成_未执行_已收藏",
     "mSTag" : "done__no__1",
     "name" : "已完成_未执行_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CONFIRM_BUT",
       "getPSDEOPPriv" : {
@@ -5951,7 +5923,6 @@
     "logicName" : "已完成_通过_未收藏",
     "mSTag" : "done__pass__0",
     "name" : "已完成_通过_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_TOBUG_BUT",
       "getPSDEOPPriv" : {
@@ -6018,7 +5989,6 @@
     "logicName" : "已完成_通过_已收藏",
     "mSTag" : "done__pass__1",
     "name" : "已完成_通过_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CONFIRM_BUT",
       "getPSDEOPPriv" : {
@@ -6085,7 +6055,6 @@
     "logicName" : "研究中_阻塞_未收藏",
     "mSTag" : "investigate__blocked__0",
     "name" : "研究中_阻塞_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_FAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -6152,7 +6121,6 @@
     "logicName" : "研究中_阻塞_已收藏",
     "mSTag" : "investigate__blocked__1",
     "name" : "研究中_阻塞_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_NFAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -6219,7 +6187,6 @@
     "logicName" : "研究中_失败_未收藏",
     "mSTag" : "investigate__fail__0",
     "name" : "研究中_失败_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CONFIRM_BUT",
       "getPSDEOPPriv" : {
@@ -6274,7 +6241,6 @@
     "logicName" : "研究中_失败_已收藏",
     "mSTag" : "investigate__fail__1",
     "name" : "研究中_失败_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CASECOF_BUT",
       "getPSDEOPPriv" : {
@@ -6329,7 +6295,6 @@
     "logicName" : "研究中_忽略_未收藏",
     "mSTag" : "investigate__n/a__0",
     "name" : "研究中_忽略_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_FAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -6396,7 +6361,6 @@
     "logicName" : "研究中_忽略_已收藏",
     "mSTag" : "investigate__n/a__1",
     "name" : "研究中_忽略_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CONFIRM_BUT",
       "getPSDEOPPriv" : {
@@ -6463,7 +6427,6 @@
     "logicName" : "研究中_未执行_未收藏",
     "mSTag" : "investigate__no__0",
     "name" : "研究中_未执行_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CONFIRM_BUT",
       "getPSDEOPPriv" : {
@@ -6530,7 +6493,6 @@
     "logicName" : "研究中_未执行_已收藏",
     "mSTag" : "investigate__no__1",
     "name" : "研究中_未执行_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CASECOF_BUT",
       "getPSDEOPPriv" : {
@@ -6597,7 +6559,6 @@
     "logicName" : "研究中_通过_未收藏",
     "mSTag" : "investigate__pass__0",
     "name" : "研究中_通过_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_FAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -6664,7 +6625,6 @@
     "logicName" : "研究中_通过_已收藏",
     "mSTag" : "investigate__pass__1",
     "name" : "研究中_通过_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CASECOF_BUT",
       "getPSDEOPPriv" : {
@@ -6731,7 +6691,6 @@
     "logicName" : "正常_阻塞_未收藏",
     "mSTag" : "normal__blocked__0",
     "name" : "正常_阻塞_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CONFIRM_BUT",
       "getPSDEOPPriv" : {
@@ -6798,7 +6757,6 @@
     "logicName" : "正常_阻塞_已收藏",
     "mSTag" : "normal__blocked__1",
     "name" : "正常_阻塞_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CONFIRM_BUT",
       "getPSDEOPPriv" : {
@@ -6865,7 +6823,6 @@
     "logicName" : "正常_失败_未收藏",
     "mSTag" : "normal__fail__0",
     "name" : "正常_失败_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CONFIRM_BUT",
       "getPSDEOPPriv" : {
@@ -6920,7 +6877,6 @@
     "logicName" : "正常_失败_已收藏",
     "mSTag" : "normal__fail__1",
     "name" : "正常_失败_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CONFIRM_BUT",
       "getPSDEOPPriv" : {
@@ -6975,7 +6931,6 @@
     "logicName" : "正常_忽略_未收藏",
     "mSTag" : "normal__n/a__0",
     "name" : "正常_忽略_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_FAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -7042,7 +6997,6 @@
     "logicName" : "正常_忽略_已收藏",
     "mSTag" : "normal__n/a__1",
     "name" : "正常_忽略_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_NFAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -7109,7 +7063,6 @@
     "logicName" : "正常_未执行_未收藏",
     "mSTag" : "normal__no__0",
     "name" : "正常_未执行_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CASECOF_BUT",
       "getPSDEOPPriv" : {
@@ -7176,7 +7129,6 @@
     "logicName" : "正常_未执行_已收藏",
     "mSTag" : "normal__no__1",
     "name" : "正常_未执行_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CASECOF_BUT",
       "getPSDEOPPriv" : {
@@ -7243,7 +7195,6 @@
     "logicName" : "正常_通过_未收藏",
     "mSTag" : "normal__pass__0",
     "name" : "正常_通过_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_TOBUG_BUT",
       "getPSDEOPPriv" : {
@@ -7310,7 +7261,6 @@
     "logicName" : "正常_通过_已收藏",
     "mSTag" : "normal__pass__1",
     "name" : "正常_通过_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_TOBUG_BUT",
       "getPSDEOPPriv" : {
@@ -7377,7 +7327,6 @@
     "logicName" : "需求变更_阻塞_未收藏",
     "mSTag" : "storychange__blocked__0",
     "name" : "需求变更_阻塞_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CASERUN_BUT",
       "getPSDEOPPriv" : {
@@ -7516,7 +7465,6 @@
     "logicName" : "需求变更_阻塞_已收藏",
     "mSTag" : "storychange__blocked__1",
     "name" : "需求变更_阻塞_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_EDIT_BUT",
       "getPSDEOPPriv" : {
@@ -7655,7 +7603,6 @@
     "logicName" : "需求变更_失败_未收藏",
     "mSTag" : "storychange__fail__0",
     "name" : "需求变更_失败_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_RUN_BUT",
       "getPSDEOPPriv" : {
@@ -7806,7 +7753,6 @@
     "logicName" : "需求变更_失败_已收藏",
     "mSTag" : "storychange__fail__1",
     "name" : "需求变更_失败_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_NFAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -7945,7 +7891,6 @@
     "logicName" : "需求变更_忽略_未收藏",
     "mSTag" : "storychange__n/a__0",
     "name" : "需求变更_忽略_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CASERESULT_BUT",
       "getPSDEOPPriv" : {
@@ -8084,7 +8029,6 @@
     "logicName" : "需求变更_忽略_已收藏",
     "mSTag" : "storychange__n/a__1",
     "name" : "需求变更_忽略_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CASERESULT_BUT",
       "getPSDEOPPriv" : {
@@ -8223,7 +8167,6 @@
     "logicName" : "需求变更_未执行_未收藏",
     "mSTag" : "storychange__no__0",
     "name" : "需求变更_未执行_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_RESULT_BUT",
       "getPSDEOPPriv" : {
@@ -8362,7 +8305,6 @@
     "logicName" : "需求变更_未执行_已收藏",
     "mSTag" : "storychange__no__1",
     "name" : "需求变更_未执行_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CASETOBUG_BUT",
       "getPSDEOPPriv" : {
@@ -8501,7 +8443,6 @@
     "logicName" : "需求变更_通过_未收藏",
     "mSTag" : "storychange__pass__0",
     "name" : "需求变更_通过_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CASECOF_BUT",
       "getPSDEOPPriv" : {
@@ -8640,7 +8581,6 @@
     "logicName" : "需求变更_通过_已收藏",
     "mSTag" : "storychange__pass__1",
     "name" : "需求变更_通过_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_TOBUG_BUT",
       "getPSDEOPPriv" : {
@@ -8779,7 +8719,6 @@
     "logicName" : "未开始_阻塞_未收藏",
     "mSTag" : "wait__blocked__0",
     "name" : "未开始_阻塞_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_FAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -8846,7 +8785,6 @@
     "logicName" : "未开始_阻塞_已收藏",
     "mSTag" : "wait__blocked__1",
     "name" : "未开始_阻塞_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CONFIRM_BUT",
       "getPSDEOPPriv" : {
@@ -8913,7 +8851,6 @@
     "logicName" : "未开始_失败_未收藏",
     "mSTag" : "wait__fail__0",
     "name" : "未开始_失败_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CASECOF_BUT",
       "getPSDEOPPriv" : {
@@ -8968,7 +8905,6 @@
     "logicName" : "未开始_失败_已收藏",
     "mSTag" : "wait__fail__1",
     "name" : "未开始_失败_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_NFAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -9023,7 +8959,6 @@
     "logicName" : "未开始_忽略_未收藏",
     "mSTag" : "wait__n/a__0",
     "name" : "未开始_忽略_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CASECOF_BUT",
       "getPSDEOPPriv" : {
@@ -9090,7 +9025,6 @@
     "logicName" : "未开始_忽略_已收藏",
     "mSTag" : "wait__n/a__1",
     "name" : "未开始_忽略_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_NFAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -9157,7 +9091,6 @@
     "logicName" : "未开始_未执行_未收藏",
     "mSTag" : "wait__no__0",
     "name" : "未开始_未执行_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_TOBUG_BUT",
       "getPSDEOPPriv" : {
@@ -9224,7 +9157,6 @@
     "logicName" : "未开始_未执行_已收藏",
     "mSTag" : "wait__no__1",
     "name" : "未开始_未执行_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_NFAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -9291,7 +9223,6 @@
     "logicName" : "未开始_通过_未收藏",
     "mSTag" : "wait__pass__0",
     "name" : "未开始_通过_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CONFIRM_BUT",
       "getPSDEOPPriv" : {
@@ -9358,7 +9289,6 @@
     "logicName" : "未开始_通过_已收藏",
     "mSTag" : "wait__pass__1",
     "name" : "未开始_通过_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_TOBUG_BUT",
       "getPSDEOPPriv" : {

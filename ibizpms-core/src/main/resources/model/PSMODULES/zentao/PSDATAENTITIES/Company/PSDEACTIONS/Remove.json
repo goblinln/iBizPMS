@@ -3,22 +3,8 @@
   "actionType" : "BUILTIN",
   "codeName" : "Remove",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Company/PSDEACTIONS/Remove.json",
-  "extendMode" : 0,
   "logicName" : "Remove",
   "name" : "Remove",
   "orderValue" : 21,
-  "getPSDEOPPriv" : {
-    "modelref" : true,
-    "id" : "DELETE"
-  },
-  "paramMode" : 1,
-  "requestField" : "ID",
-  "requestParamType" : "FIELD",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "builtinAction" : true,
-  "customParam" : false,
-  "generateTestUnit" : true,
-  "pubServiceDefault" : true
+  "builtinAction" : true
 }

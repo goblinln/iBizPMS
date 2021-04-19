@@ -3,21 +3,10 @@
   "actionType" : "DELOGIC",
   "codeName" : "MobMenuCount",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/MobMenuCount.json",
-  "extendMode" : 0,
   "logicName" : "移动端菜单计数器",
   "name" : "MobMenuCount",
-  "orderValue" : 99999,
   "getPSDELogic" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDELOGICS/MobMenuCount.json"
-  },
-  "paramMode" : 1,
-  "requestParamType" : "NONE",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "builtinAction" : false,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  }
 }

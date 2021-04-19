@@ -3,22 +3,7 @@
   "actionType" : "BUILTIN",
   "codeName" : "GetTestStats",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDEACTIONS/GetTestStats.json",
-  "extendMode" : 0,
   "logicName" : "获取测试统计详情",
   "name" : "GetTestStats",
-  "orderValue" : 99999,
-  "getPSDEOPPriv" : {
-    "modelref" : true,
-    "id" : "READ"
-  },
-  "paramMode" : 1,
-  "requestField" : "ID",
-  "requestParamType" : "FIELD",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "builtinAction" : true,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  "builtinAction" : true
 }

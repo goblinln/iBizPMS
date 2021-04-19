@@ -3,7 +3,6 @@
   "dynaModelFilePath" : "PSSYSVALUERULES/Auto10.json",
   "name" : "非正整数（负整数 + 0）",
   "regExCode" : "((-\\d+)|(0+))+",
-  "ruleHolder" : 3,
   "ruleInfo" : "内容必须为正整数（负整数 + 0）",
   "ruleType" : "REG",
   "enableBackend" : true,

@@ -182,7 +182,6 @@
           "name" : "CURRENTCONSUMED",
           "codeName" : "CurrentConsumed"
         },
-        "ruleHolder" : 3,
         "ruleInfo" : "本次消耗必须大于0",
         "checkDefault" : false,
         "defaultMode" : false,

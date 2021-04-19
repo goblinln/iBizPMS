@@ -3,17 +3,6 @@
   "actionType" : "USERCUSTOM",
   "codeName" : "MarkRead",
   "dynaModelFilePath" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProMessage/PSDEACTIONS/MarkRead.json",
-  "extendMode" : 0,
   "logicName" : "标记已读",
-  "name" : "MarkRead",
-  "orderValue" : 99999,
-  "paramMode" : 1,
-  "requestParamType" : "ENTITY",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "builtinAction" : false,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  "name" : "MarkRead"
 }

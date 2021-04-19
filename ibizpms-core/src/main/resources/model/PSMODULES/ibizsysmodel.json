@@ -56,10 +56,6 @@
     "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSystemDBCfg.json"
   } ],
   "codeName" : "ibizsysmodel",
-  "deployId" : "ed284836fd79cad06dda6fe074a0048e",
   "dynaModelFilePath" : "PSMODULES/ibizsysmodel.json",
-  "name" : "iBiz系统模型",
-  "defaultModule" : false,
-  "subSysAsCloud" : false,
-  "subSysModule" : false
+  "name" : "iBiz系统模型"
 }

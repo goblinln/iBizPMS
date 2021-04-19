@@ -2,7 +2,6 @@
   "codeName" : "MobProductPlanCounter",
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDELOGICS/MobProductPlanCounter.json",
-  "logicHolder" : 1,
   "logicName" : "移动端产品计划计数器",
   "logicSubType" : "NONE",
   "name" : "移动端产品计划计数器",
@@ -31,7 +30,6 @@
   } ],
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",
-    "logicHolder" : 3,
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
@@ -45,7 +43,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取bug数",
     "getPSDELogicNodeParams" : [ {
@@ -65,7 +62,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取需求数",
     "getPSDELogicLinks" : [ {

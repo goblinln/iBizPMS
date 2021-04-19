@@ -3,24 +3,10 @@
   "actionType" : "BUILTIN",
   "codeName" : "GetTemp",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseStep/PSDEACTIONS/GetTemp.json",
-  "extendMode" : 0,
   "logicName" : "GetTemp",
   "name" : "GetTemp",
   "orderValue" : 32,
-  "getPSDEOPPriv" : {
-    "modelref" : true,
-    "id" : "READ"
-  },
-  "paramMode" : 1,
-  "requestField" : "ID",
-  "requestParamType" : "FIELD",
   "tempDataMode" : 2,
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
   "builtinAction" : true,
-  "customParam" : false,
-  "enableTempData" : true,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  "enableTempData" : true
 }

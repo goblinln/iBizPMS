@@ -19,13 +19,7 @@ public class SystemModelService extends net.ibizsys.model.PSModelServiceImpl{
             strPath = this.getPSModelFolderPath() + File.separator + strPath;
             strPath = strPath.replace("\\", "/");
             return (ObjectNode) MAPPER.readTree(this.getClass().getClassLoader().getResourceAsStream(strPath));
-        }else{
-			strPath = this.getPSModelFolderPath() + File.separator + strPath;
-			strPath = strPath.replace("\\", "/");
-			if(strPath.indexOf("http:") == 0){
-				return (ObjectNode) MAPPER.readTree(new URL(strPath).openStream());
-			}
-		}
+        }
 		return super.getObjectNode(strPath);
 	}
 	
