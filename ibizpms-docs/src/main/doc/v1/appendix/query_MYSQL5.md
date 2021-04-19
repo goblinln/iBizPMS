@@ -13425,13 +13425,13 @@ SELECT
 t1.`BEGIN`,
 (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`,
 t1.`BRANCH`,
-((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`,
+((select count(t.id) FROM zt_bug t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`,
 case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end AS `DELAY`,
 t1.`DELETED`,
 (to_Days(t1.`END`) - to_Days(t1.`BEGIN`)) AS `DURATION`,
 t1.`END`,
 (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`,
-(select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`,
+(select sum(t.estimate) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`,
 (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`,
 t1.`ID`,
 (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`,
@@ -13442,7 +13442,7 @@ t11.`TITLE` AS `PARENTNAME`,
 t1.`PRODUCT`,
 t1.`STATUS`,
 (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`,
-((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,
+((select COUNT(t.id) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,
 t1.`TITLE`
 FROM `zt_productplan` t1 
 LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID` 
@@ -13456,13 +13456,13 @@ SELECT
 t1.`BEGIN`,
 (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`,
 t1.`BRANCH`,
-((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`,
+((select count(t.id) FROM zt_bug t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`,
 case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end AS `DELAY`,
 t1.`DELETED`,
 (to_Days(t1.`END`) - to_Days(t1.`BEGIN`)) AS `DURATION`,
 t1.`END`,
 (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`,
-(select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`,
+(select sum(t.estimate) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`,
 (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`,
 t1.`ID`,
 (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`,
@@ -13473,7 +13473,7 @@ t11.`TITLE` AS `PARENTNAME`,
 t1.`PRODUCT`,
 t1.`STATUS`,
 (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`,
-((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,
+((select COUNT(t.id) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,
 t1.`TITLE`
 FROM `zt_productplan` t1 
 LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID` 
@@ -13488,13 +13488,13 @@ SELECT
 t1.`BEGIN`,
 (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`,
 t1.`BRANCH`,
-((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`,
+((select count(t.id) FROM zt_bug t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`,
 case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end AS `DELAY`,
 t1.`DELETED`,
 (to_Days(t1.`END`) - to_Days(t1.`BEGIN`)) AS `DURATION`,
 t1.`END`,
 (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`,
-(select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`,
+(select sum(t.estimate) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`,
 (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`,
 t1.`ID`,
 (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`,
@@ -13505,7 +13505,7 @@ t11.`TITLE` AS `PARENTNAME`,
 t1.`PRODUCT`,
 t1.`STATUS`,
 (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`,
-((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,
+((select COUNT(t.id) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,
 t1.`TITLE`
 FROM `zt_productplan` t1 
 LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID` 
@@ -13543,7 +13543,7 @@ SELECT
 	count( t.id ) 
 FROM
 	zt_bug t 
-WHERE
+WHERE  t.product = t1.product and 
 	(
 	t.plan = t1.id 
 	OR (
@@ -13561,7 +13561,7 @@ SELECT
 	sum( t.estimate ) 
 FROM
 	zt_story t 
-WHERE
+WHERE  t.product = t1.product and 
 	(
 	t.plan = t1.id 
 	OR (
@@ -13583,7 +13583,7 @@ SELECT
 	COUNT( t.id ) 
 FROM
 	zt_story t 
-WHERE
+WHERE  t.product = t1.product and 
 	(
 	t.plan = t1.id 
 	OR (
@@ -13599,7 +13599,7 @@ SELECT
 	COUNT( t.id ) 
 FROM
 	zt_task t 
-WHERE
+WHERE  t.deleted = '0' and t.plan > 0 and
 	(
 	t.plan = t1.id 
 	OR (
@@ -13614,7 +13614,7 @@ SELECT
 	COUNT( t.id ) 
 FROM
 	zt_task t 
-WHERE
+WHERE  t.deleted = '0' and t.plan > 0 and
 	(
 	t.plan = t1.id 
 	OR (
@@ -13630,7 +13630,7 @@ SELECT
 	COUNT( t.id ) 
 FROM
 	zt_task t 
-WHERE
+WHERE  t.deleted = '0' and t.plan > 0 and
 	(
 	t.plan = t1.id 
 	OR (
@@ -13646,7 +13646,7 @@ SELECT
 	COUNT( t.id ) 
 FROM
 	zt_task t 
-WHERE
+WHERE  t.deleted = '0' and t.plan > 0 and
 	(
 	t.plan = t1.id 
 	OR (
@@ -13684,6 +13684,7 @@ SELECT
 FROM
 	zt_taskestimate t1
 	LEFT JOIN zt_task t2 ON t1.task = t2.id 
+        where t2.deleted = '0' and t2.plan > 0 
 GROUP BY
 	t1.task 
 	) t 
@@ -13702,13 +13703,13 @@ SELECT
 t1.`BEGIN`,
 (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`,
 t1.`BRANCH`,
-((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`,
+((select count(t.id) FROM zt_bug t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`,
 case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end AS `DELAY`,
 t1.`DELETED`,
 (to_Days(t1.`END`) - to_Days(t1.`BEGIN`)) AS `DURATION`,
 t1.`END`,
 (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`,
-(select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`,
+(select sum(t.estimate) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`,
 (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`,
 t1.`ID`,
 (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`,
@@ -13719,7 +13720,7 @@ t11.`TITLE` AS `PARENTNAME`,
 t1.`PRODUCT`,
 t1.`STATUS`,
 (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`,
-((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,
+((select COUNT(t.id) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,
 t1.`TITLE`
 FROM `zt_productplan` t1 
 LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID` 
@@ -13814,14 +13815,14 @@ SELECT
 t1.`BEGIN`,
 (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`,
 t1.`BRANCH`,
-((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`,
+((select count(t.id) FROM zt_bug t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`,
 case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end AS `DELAY`,
 t1.`DELETED`,
 t1.`DESC`,
 (to_Days(t1.`END`) - to_Days(t1.`BEGIN`)) AS `DURATION`,
 t1.`END`,
 (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`,
-(select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`,
+(select sum(t.estimate) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`,
 (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`,
 t1.`ID`,
 (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`,
@@ -13832,7 +13833,7 @@ t11.`TITLE` AS `PARENTNAME`,
 t1.`PRODUCT`,
 t1.`STATUS`,
 (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`,
-((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,
+((select COUNT(t.id) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,
 t1.`TITLE`
 FROM `zt_productplan` t1 
 LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID` 
