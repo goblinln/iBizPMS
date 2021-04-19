@@ -7,7 +7,7 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
   },
   "masterOrder" : -1,
-  "masterRS" : 0,
+  "masterRS" : 16,
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
@@ -20,5 +20,6 @@
   },
   "pickupDEFName" : "PARENT",
   "removeActionType" : -1,
-  "removeOrder" : 0
+  "removeOrder" : 0,
+  "recursiveRS" : true
 }

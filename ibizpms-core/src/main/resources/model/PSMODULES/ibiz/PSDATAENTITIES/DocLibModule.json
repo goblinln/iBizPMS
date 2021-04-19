@@ -1725,11 +1725,75 @@
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
+    "logicName" : "管理",
+    "name" : "MANAGE"
+  }, {
     "logicName" : "读取",
     "name" : "READ"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
+  } ],
+  "getAllPSDEUserRoles" : [ {
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEUSERROLES/DocLibModule_Maintain.json",
+    "name" : "文档模块维护",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "CREATE",
+      "name" : "DocLibModule_Maintain_CREATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CREATE"
+      }
+    }, {
+      "dataAccessAction" : "READ",
+      "name" : "DocLibModule_Maintain_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "DocLibModule_Maintain_UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "DocLibModule_Maintain_DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    } ],
+    "roleTag" : "DocLibModule_Maintain",
+    "userDRAction" : "READ"
+  }, {
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEUSERROLES/DocLibModule_Manage.json",
+    "name" : "文档模块管理",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "MANAGE",
+      "name" : "DocLibModule_Manage_MANGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "MANAGE"
+      }
+    } ],
+    "roleTag" : "DocLibModule_Manage",
+    "userDRAction" : "READ"
+  }, {
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEUSERROLES/DocLibModule_Read.json",
+    "name" : "文档模块查看",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "DocLibModule_Read_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "DocLibModule_Read",
+    "userDRAction" : "READ"
   } ],
   "auditMode" : 0,
   "codeName" : "DocLibModule",
@@ -1825,7 +1889,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"

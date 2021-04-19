@@ -1146,11 +1146,75 @@
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
+    "logicName" : "管理",
+    "name" : "MANAGE"
+  }, {
     "logicName" : "读取",
     "name" : "READ"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
+  } ],
+  "getAllPSDEUserRoles" : [ {
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule/PSDEUSERROLES/LibModule_Maintain.json",
+    "name" : "用例库模块维护",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "UPDATE",
+      "name" : "LibModule_Maintain_UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    }, {
+      "dataAccessAction" : "CREATE",
+      "name" : "LibModule_Maintain_CREATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CREATE"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "LibModule_Maintain_DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    }, {
+      "dataAccessAction" : "READ",
+      "name" : "LibModule_Maintain_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "LibModule_Maintain",
+    "userDRAction" : "READ"
+  }, {
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule/PSDEUSERROLES/LibModule_Manage.json",
+    "name" : "用例库模块管理",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "MANAGE",
+      "name" : "LibModule_Manage_MANGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "MANAGE"
+      }
+    } ],
+    "roleTag" : "LibModule_Manage",
+    "userDRAction" : "READ"
+  }, {
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule/PSDEUSERROLES/LibModule_Read.json",
+    "name" : "用例库模块查看",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "LibModule_Read_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "LibModule_Read",
+    "userDRAction" : "READ"
   } ],
   "auditMode" : 0,
   "codeName" : "IbzLibModule",

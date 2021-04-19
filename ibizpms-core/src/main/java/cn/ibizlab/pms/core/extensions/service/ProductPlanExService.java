@@ -1,8 +1,17 @@
 package cn.ibizlab.pms.core.extensions.service;
 
+import cn.ibizlab.pms.core.ibizpro.domain.IbzPlanTempletDetail;
+import cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext;
 import cn.ibizlab.pms.core.zentao.service.impl.ProductPlanServiceImpl;
+import cn.ibizlab.pms.util.dict.StaticDict;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
 import cn.ibizlab.pms.core.zentao.domain.ProductPlan;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.context.annotation.Primary;
@@ -16,13 +25,47 @@ import java.util.*;
 @Service("ProductPlanExService")
 public class ProductPlanExService extends ProductPlanServiceImpl {
 
+    @Autowired
+    @Lazy
+    protected cn.ibizlab.pms.core.ibizpro.service.IIbzPlanTempletDetailService ibzplantempletdetailService;
+
+
     @Override
     protected Class currentModelClass() {
         return com.baomidou.mybatisplus.core.toolkit.ReflectionKit.getSuperClassGenericType(this.getClass().getSuperclass(), 1);
     }
 
+    @Override
+    @Transactional
+    public ProductPlan importPlanTemplet(ProductPlan et) {
+        //自定义代码
+        List<IbzPlanTempletDetail> ibzPlanTempletDetails = ibzplantempletdetailService.list(new QueryWrapper<IbzPlanTempletDetail>().eq("plantempletid", et.getPlantemplet()).orderByAsc("`order`").orderByAsc("PLANCODE"));
+        Long parent = 0L;
+        for (IbzPlanTempletDetail ibzPlanTempletDetail : ibzPlanTempletDetails) {
+            if(StringUtils.isBlank(ibzPlanTempletDetail.getDesc())) {
+                continue;
+            }
+            ProductPlan productPlan = new ProductPlan();
+            productPlan.setProduct(et.getProduct());
+            productPlan.setTitle(ibzPlanTempletDetail.getDesc());
+            productPlan.setDesc(ibzPlanTempletDetail.getExpect());
+            String type = ibzPlanTempletDetail.getType();
+            if(StaticDict.PlantempletType.ITEM.getValue().equals(type)) {
+                productPlan.setParent(parent);
+            }else if(StaticDict.PlantempletType.STEP.getValue().equals(type)) {
+                productPlan.setParent(0L);
+            }else if(StaticDict.PlantempletType.GROUP.getValue().equals(type)) {
+                productPlan.setParent(-1L);
+            }
+            this.create(productPlan);
+            if(StaticDict.PlantempletType.GROUP.getValue().equals(type)) {parent = productPlan.getId();}
+            if(StaticDict.PlantempletType.STEP.getValue().equals(type)) {parent = 0L;}
+        }
+        return et;
+    }
+
     /**
-     * [BatchUnlinkBug:批量解除关联Bug] 行为扩展
+     * 自定义行为[BatchUnlinkBug]用户扩展
      * @param et
      * @return
      */
@@ -32,7 +75,7 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
         return super.batchUnlinkBug(et);
     }
     /**
-     * [BatchUnlinkStory:批量解除关联需求] 行为扩展
+     * 自定义行为[BatchUnlinkStory]用户扩展
      * @param et
      * @return
      */
@@ -42,117 +85,7 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
         return super.batchUnlinkStory(et);
     }
     /**
-     * [EeActivePlan:EE激活计划] 行为扩展
-     * @param et
-     * @return
-     */
-    @Override
-    @Transactional
-    public ProductPlan eeActivePlan(ProductPlan et) {
-        return super.eeActivePlan(et);
-    }
-    /**
-     * [EeCancelPlan:EE取消计划] 行为扩展
-     * @param et
-     * @return
-     */
-    @Override
-    @Transactional
-    public ProductPlan eeCancelPlan(ProductPlan et) {
-        return super.eeCancelPlan(et);
-    }
-    /**
-     * [EeClosePlan:EE关闭计划] 行为扩展
-     * @param et
-     * @return
-     */
-    @Override
-    @Transactional
-    public ProductPlan eeClosePlan(ProductPlan et) {
-        return super.eeClosePlan(et);
-    }
-    /**
-     * [EeFinishPlan:EE完成计划] 行为扩展
-     * @param et
-     * @return
-     */
-    @Override
-    @Transactional
-    public ProductPlan eeFinishPlan(ProductPlan et) {
-        return super.eeFinishPlan(et);
-    }
-    /**
-     * [EePausePlan:EE暂停计划] 行为扩展
-     * @param et
-     * @return
-     */
-    @Override
-    @Transactional
-    public ProductPlan eePausePlan(ProductPlan et) {
-        return super.eePausePlan(et);
-    }
-    /**
-     * [EeRestartPlan:继续计划] 行为扩展
-     * @param et
-     * @return
-     */
-    @Override
-    @Transactional
-    public ProductPlan eeRestartPlan(ProductPlan et) {
-        return super.eeRestartPlan(et);
-    }
-    /**
-     * [EeStartPlan:EE开始计划] 行为扩展
-     * @param et
-     * @return
-     */
-    @Override
-    @Transactional
-    public ProductPlan eeStartPlan(ProductPlan et) {
-        return super.eeStartPlan(et);
-    }
-    /**
-     * [ImportPlanTemplet:导入计划模板] 行为扩展
-     * @param et
-     * @return
-     */
-    @Override
-    @Transactional
-    public ProductPlan importPlanTemplet(ProductPlan et) {
-        return super.importPlanTemplet(et);
-    }
-    /**
-     * [LinkBug:关联Bug] 行为扩展
-     * @param et
-     * @return
-     */
-    @Override
-    @Transactional
-    public ProductPlan linkBug(ProductPlan et) {
-        return super.linkBug(et);
-    }
-    /**
-     * [LinkStory:关联需求] 行为扩展
-     * @param et
-     * @return
-     */
-    @Override
-    @Transactional
-    public ProductPlan linkStory(ProductPlan et) {
-        return super.linkStory(et);
-    }
-    /**
-     * [LinkTask:关联任务] 行为扩展
-     * @param et
-     * @return
-     */
-    @Override
-    @Transactional
-    public ProductPlan linkTask(ProductPlan et) {
-        return super.linkTask(et);
-    }
-    /**
-     * [UnlinkBug:解除关联Bug] 行为扩展
+     * 自定义行为[UnlinkBug]用户扩展
      * @param et
      * @return
      */
@@ -162,7 +95,7 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
         return super.unlinkBug(et);
     }
     /**
-     * [UnlinkStory:解除关联需求] 行为扩展
+     * 自定义行为[UnlinkStory]用户扩展
      * @param et
      * @return
      */
@@ -171,5 +104,43 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
     public ProductPlan unlinkStory(ProductPlan et) {
         return super.unlinkStory(et);
     }
+
+    /**
+     * 查询集合 默认查询
+     */
+    @Override
+    public Page<ProductPlan> searchDefaultParent(ProductPlanSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProductPlan> pages=baseMapper.searchDefaultParent(context.getPages(),context,context.getSelectCond());
+        for (ProductPlan productPlan : pages.getRecords()) {
+            if(productPlan.getParent() == 0L) {
+                continue;
+            }
+            ProductPlanSearchContext productPlanSearchContext = new ProductPlanSearchContext();
+            productPlanSearchContext.setSelectCond(context.getSelectCond().clone());
+            productPlanSearchContext.setN_parent_eq(productPlan.getId());
+            productPlan.set("items", this.searchDefault(productPlanSearchContext).getContent());
+        }
+        return new PageImpl<ProductPlan>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+    /**
+     * 查询集合 默认查询
+     */
+    @Override
+    public Page<ProductPlan> searchPlanTasks(ProductPlanSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProductPlan> pages=baseMapper.searchPlanTasks(context.getPages(),context,context.getSelectCond());
+        for (ProductPlan productPlan : pages.getRecords()) {
+            if(productPlan.getParent() == 0L) {
+                continue;
+            }
+            ProductPlanSearchContext productPlanSearchContext = new ProductPlanSearchContext();
+            productPlanSearchContext.setSelectCond(context.getSelectCond().clone());
+            productPlanSearchContext.setN_parent_eq(productPlan.getId());
+            productPlanSearchContext.setSort(context.getSort());
+            productPlan.set("items", this.searchDefault(productPlanSearchContext).getContent());
+        }
+        return new PageImpl<ProductPlan>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+
 }
 

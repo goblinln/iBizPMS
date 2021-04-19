@@ -1654,66 +1654,21 @@
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
+    "logicName" : "管理",
+    "name" : "MANAGE"
+  }, {
     "logicName" : "读取",
     "name" : "READ"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
-  "getAllPSDEUserRoles" : [ {
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEUSERROLES/Taskestimate_Maintain.json",
-    "name" : "任务工时维护",
-    "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "CREATE",
-      "name" : "Taskestimate_Maintain_CREATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "CREATE"
-      }
-    }, {
-      "dataAccessAction" : "UPDATE",
-      "name" : "Taskestimate_Maintain_UPDATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "UPDATE"
-      }
-    }, {
-      "dataAccessAction" : "DELETE",
-      "name" : "Taskestimate_Maintain_DELETE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "DELETE"
-      }
-    }, {
-      "dataAccessAction" : "READ",
-      "name" : "Taskestimate_Maintain_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
-    } ],
-    "roleTag" : "Taskestimate_Maintain",
-    "userDRAction" : "READ"
-  }, {
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEUSERROLES/Taskestimate_Read.json",
-    "name" : "任务工时查看",
-    "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "READ",
-      "name" : "Taskestimate_Read_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
-    } ],
-    "roleTag" : "Taskestimate_Read",
-    "userDRAction" : "READ"
-  } ],
   "auditMode" : 0,
   "codeName" : "TaskEstimate",
   "dEType" : 1,
   "dSLink" : "DEFAULT",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dataChangeLogMode" : 0,
   "dataImpExpMode" : 3,
   "getDefaultPSDEDataSet" : {
@@ -1735,8 +1690,8 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
     },
-    "masterOrder" : -1,
-    "masterRS" : 8,
+    "masterOrder" : 100,
+    "masterRS" : 13,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate.json"

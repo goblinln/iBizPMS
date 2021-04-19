@@ -1787,7 +1787,7 @@
   } ],
   "codeName" : "ProductPlan",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 3,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json",
   "enableUIActions" : 15,
   "logicName" : "产品计划",

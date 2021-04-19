@@ -2189,6 +2189,9 @@
     "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/Developer.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/AgentDebug.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/ResearchDirector.json"
   } ],
   "getAllPSSysValueRules" : [ {

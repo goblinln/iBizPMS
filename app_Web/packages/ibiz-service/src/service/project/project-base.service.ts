@@ -90,14 +90,6 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
     }
 
     protected getDefaultCond() {
-        if (!this.condCache.has('default')) {
-            const strCond: any[] = ['AND', ['EQ', 'ORGID',{ type: 'SESSIONCONTEXT', value: 'srforgid'}]];
-            if (!isNil(strCond) && !isEmpty(strCond)) {
-                const cond = new PSDEDQCondEngine();
-                cond.parse(strCond);
-                this.condCache.set('default', cond);
-            }
-        }
         return this.condCache.get('default');
     }
 

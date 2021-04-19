@@ -3502,7 +3502,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
@@ -3529,7 +3529,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 8,
+    "masterRS" : 12,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM.json"
@@ -3685,7 +3685,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"

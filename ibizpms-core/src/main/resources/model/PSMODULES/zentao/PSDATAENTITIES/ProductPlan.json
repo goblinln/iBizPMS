@@ -386,7 +386,7 @@
       "columnName" : "ESTIMATECNT",
       "dBType" : "MYSQL5",
       "name" : "ESTIMATECNT",
-      "queryCodeExp" : "(select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )",
+      "queryCodeExp" : "(select sum(t.estimate) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )",
       "standardColumnName" : "`ESTIMATECNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1616,7 +1616,7 @@
       "columnName" : "STORYCNT",
       "dBType" : "MYSQL5",
       "name" : "STORYCNT",
-      "queryCodeExp" : "((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ))",
+      "queryCodeExp" : "((select COUNT(t.id) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ))",
       "standardColumnName" : "`STORYCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1727,7 +1727,7 @@
       "columnName" : "BUGCNT",
       "dBType" : "MYSQL5",
       "name" : "BUGCNT",
-      "queryCodeExp" : "((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0'))",
+      "queryCodeExp" : "((select count(t.id) FROM zt_bug t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0'))",
       "standardColumnName" : "`BUGCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2351,7 +2351,7 @@
   "dEType" : 1,
   "dSLink" : "DEFAULT",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 3,
   "dataChangeLogMode" : 0,
   "dataImpExpMode" : 3,
   "getDefaultPSDEDataSet" : {

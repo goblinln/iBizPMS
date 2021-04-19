@@ -155,7 +155,7 @@
       "columnName" : "ISWEEKEND",
       "dBType" : "MYSQL5",
       "name" : "ISWEEKEND",
-      "queryCodeExp" : "1",
+      "queryCodeExp" : "DATE_FORMAT( t1.`DATE`, '%w' )",
       "standardColumnName" : "`ISWEEKEND`"
     } ],
     "getAllPSDEFValueRules" : [ {

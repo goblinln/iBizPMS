@@ -1,0 +1,14 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Manage.json",
+  "name" : "待办管理",
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "MANAGE",
+    "name" : "Todo_Manage_MANGE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
+    }
+  } ],
+  "roleTag" : "Todo_Manage",
+  "userDRAction" : "READ"
+}

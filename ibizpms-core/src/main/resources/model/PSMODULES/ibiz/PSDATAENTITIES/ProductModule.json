@@ -841,7 +841,7 @@
       "columnName" : "ROOTNAME",
       "dBType" : "MYSQL5",
       "name" : "ROOTNAME",
-      "queryCodeExp" : "t11.`NAME`",
+      "queryCodeExp" : "t11.`name`",
       "standardColumnName" : "`ROOTNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1390,11 +1390,75 @@
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
+    "logicName" : "管理",
+    "name" : "MANAGE"
+  }, {
     "logicName" : "读取",
     "name" : "READ"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
+  } ],
+  "getAllPSDEUserRoles" : [ {
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDEUSERROLES/ProductModule_Maintain.json",
+    "name" : "需求模块维护",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "ProductModule_Maintain_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "ProductModule_Maintain_DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "ProductModule_Maintain_UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    }, {
+      "dataAccessAction" : "CREATE",
+      "name" : "ProductModule_Maintain_CREATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CREATE"
+      }
+    } ],
+    "roleTag" : "ProductModule_Maintain",
+    "userDRAction" : "READ"
+  }, {
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDEUSERROLES/ProductModule_Manage.json",
+    "name" : "需求模块管理",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "MANAGE",
+      "name" : "ProductModule_Manage_MANGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "MANAGE"
+      }
+    } ],
+    "roleTag" : "ProductModule_Manage",
+    "userDRAction" : "READ"
+  }, {
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDEUSERROLES/ProductModule_Read.json",
+    "name" : "需求模块查看",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "ProductModule_Read_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "ProductModule_Read",
+    "userDRAction" : "READ"
   } ],
   "auditMode" : 0,
   "codeName" : "ProductModule",
@@ -1507,7 +1571,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"

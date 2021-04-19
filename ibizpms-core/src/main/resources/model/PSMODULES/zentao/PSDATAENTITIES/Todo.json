@@ -2213,6 +2213,9 @@
     "logicName" : "完成",
     "name" : "FINISH"
   }, {
+    "logicName" : "管理",
+    "name" : "MANAGE"
+  }, {
     "logicName" : "读取",
     "name" : "READ"
   }, {
@@ -2224,6 +2227,67 @@
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
+  } ],
+  "getAllPSDEUserRoles" : [ {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Maintain.json",
+    "name" : "待办维护",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "Todo_Maintain_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "Todo_Maintain_UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "Todo_Maintain_DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    }, {
+      "dataAccessAction" : "CREATE",
+      "name" : "Todo_Maintain_CREATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CREATE"
+      }
+    } ],
+    "roleTag" : "Todo_Maintain",
+    "userDRAction" : "READ"
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Manage.json",
+    "name" : "待办管理",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "MANAGE",
+      "name" : "Todo_Manage_MANGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "MANAGE"
+      }
+    } ],
+    "roleTag" : "Todo_Manage",
+    "userDRAction" : "READ"
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Read.json",
+    "name" : "待办查看",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "Todo_Read_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "Todo_Read",
+    "userDRAction" : "READ"
   } ],
   "auditMode" : 0,
   "codeName" : "Todo",

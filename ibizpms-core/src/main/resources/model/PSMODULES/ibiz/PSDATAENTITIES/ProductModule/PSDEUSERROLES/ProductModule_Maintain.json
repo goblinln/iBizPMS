@@ -1,0 +1,35 @@
+{
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDEUSERROLES/ProductModule_Maintain.json",
+  "name" : "需求模块维护",
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "READ",
+    "name" : "ProductModule_Maintain_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "dataAccessAction" : "DELETE",
+    "name" : "ProductModule_Maintain_DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  }, {
+    "dataAccessAction" : "UPDATE",
+    "name" : "ProductModule_Maintain_UPDATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  }, {
+    "dataAccessAction" : "CREATE",
+    "name" : "ProductModule_Maintain_CREATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  } ],
+  "roleTag" : "ProductModule_Maintain",
+  "userDRAction" : "READ"
+}
