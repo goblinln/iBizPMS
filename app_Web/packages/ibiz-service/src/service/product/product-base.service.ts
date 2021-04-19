@@ -72,7 +72,7 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
 
     protected getAllListCond() {
         if (!this.condCache.has('allList')) {
-            const strCond: any[] = ['AND', ['OR', ['NOTEQ', 'STATUS','closed']], ['EQ', 'ORGID',{ type: 'SESSIONCONTEXT', value: 'SRFORGID'}]];
+            const strCond: any[] = ['AND', ['OR', ['NOTEQ', 'STATUS','closed']]];
             if (!isNil(strCond) && !isEmpty(strCond)) {
                 const cond = new PSDEDQCondEngine();
                 cond.parse(strCond);
@@ -107,14 +107,6 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
     }
 
     protected getDefaultCond() {
-        if (!this.condCache.has('default')) {
-            const strCond: any[] = ['AND', ['EQ', 'ORGID',{ type: 'SESSIONCONTEXT', value: 'srforgid'}]];
-            if (!isNil(strCond) && !isEmpty(strCond)) {
-                const cond = new PSDEDQCondEngine();
-                cond.parse(strCond);
-                this.condCache.set('default', cond);
-            }
-        }
         return this.condCache.get('default');
     }
 
