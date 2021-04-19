@@ -3,18 +3,7 @@
   "actionType" : "USERCUSTOM",
   "codeName" : "ReleaseLinkBugbyBug",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/ReleaseLinkBugbyBug.json",
-  "extendMode" : 0,
   "logicName" : "关联Bug（解决Bug）",
   "name" : "ReleaseLinkBugbyBug",
-  "orderValue" : 99999,
-  "paramMode" : 1,
-  "requestParamType" : "ENTITY",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "userCat" : "CAT1",
-  "builtinAction" : false,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  "userCat" : "CAT1"
 }

@@ -3,18 +3,7 @@
   "actionType" : "USERCUSTOM",
   "codeName" : "BuildBatchUnlinkBug",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/BuildBatchUnlinkBug.json",
-  "extendMode" : 0,
   "logicName" : "版本批量解除关联Bug",
   "name" : "buildBatchUnlinkBug",
-  "orderValue" : 99999,
-  "paramMode" : 1,
-  "requestParamType" : "ENTITY",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "userCat" : "CAT1",
-  "builtinAction" : false,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  "userCat" : "CAT1"
 }

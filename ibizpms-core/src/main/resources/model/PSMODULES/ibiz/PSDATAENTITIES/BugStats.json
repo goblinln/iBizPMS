@@ -1,308 +1,172 @@
 {
   "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEACTIONS/Create.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEACTIONS/Create.json",
+    "logicName" : "Create",
+    "name" : "Create",
+    "orderValue" : 1,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEACTIONS/Update.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEACTIONS/Update.json",
+    "logicName" : "Update",
+    "name" : "Update",
+    "orderValue" : 11,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEACTIONS/Remove.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Remove",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEACTIONS/Remove.json",
+    "logicName" : "Remove",
+    "name" : "Remove",
+    "orderValue" : 21,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEACTIONS/Get.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEACTIONS/Get.json",
+    "logicName" : "Get",
+    "name" : "Get",
+    "orderValue" : 31,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEACTIONS/GetDraft.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEACTIONS/GetDraft.json",
+    "logicName" : "GetDraft",
+    "name" : "GetDraft",
+    "orderValue" : 41,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEACTIONS/CheckKey.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEACTIONS/CheckKey.json",
+    "logicName" : "CheckKey",
+    "name" : "CheckKey",
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEACTIONS/Save.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDEACTIONS/Save.json",
+    "logicName" : "Save",
+    "name" : "Save",
+    "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
     "codeName" : "BugCountInResolution",
-    "extendMode" : 0,
     "logicName" : "Bug在每个解决方案的Bug数",
     "name" : "BugCountInResolution",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "BugResolvedBy",
-    "extendMode" : 0,
     "logicName" : "Bug完成表",
     "name" : "BugResolvedBy",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "BugResolvedGird",
-    "extendMode" : 0,
     "logicName" : "bug解决汇总表",
     "name" : "BugResolvedGird",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "BugassignedTo",
-    "extendMode" : 0,
     "logicName" : "Bug指派表",
     "name" : "BugassignedTo",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "Bug创建表",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
     "customCode" : true,
-    "defaultMode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "defaultMode" : true
   }, {
     "codeName" : "ProductBugResolutionStats",
-    "extendMode" : 0,
     "logicName" : "产品Bug解决方案汇总",
     "name" : "ProductBugResolutionStats",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "ProductBugStatusSum",
-    "extendMode" : 0,
     "logicName" : "产品Bug状态汇总",
     "name" : "ProductBugStatusSum",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "ProductCreateBug",
-    "extendMode" : 0,
     "logicName" : "产品创建bug占比",
     "name" : "ProductCreateBug",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "ProjectBugStatusCount",
-    "extendMode" : 0,
     "logicName" : "项目bug状态统计",
     "name" : "ProjectBugStatusCount",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "View",
-    "extendMode" : 0,
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "VIEW"
   } ],
   "getAllPSDEDataSets" : [ {
-    "cacheTimeout" : -1,
     "codeName" : "BugCountInResolution",
-    "extendMode" : 0,
     "logicName" : "Bug在每个解决方案的Bug数",
     "name" : "BugCountInResolution",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "BugResolvedBy",
-    "extendMode" : 0,
     "logicName" : "Bug完成表",
     "name" : "BugResolvedBy",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "BugResolvedGird",
-    "extendMode" : 0,
     "logicName" : "bug解决汇总表",
     "name" : "BugResolvedGird",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "BugassignedTo",
-    "extendMode" : 0,
     "logicName" : "Bug指派表",
     "name" : "BugassignedTo",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "数据集",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
     "defaultMode" : true,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "ProductBugResolutionStats",
-    "extendMode" : 0,
     "logicName" : "产品Bug解决方案汇总",
     "name" : "ProductBugResolutionStats",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "ProductBugStatusSum",
-    "extendMode" : 0,
     "logicName" : "产品Bug状态汇总",
     "name" : "ProductBugStatusSum",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "ProductCreateBug",
-    "extendMode" : 0,
     "logicName" : "产品创建bug占比",
     "name" : "ProductCreateBug",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "ProjectBugStatusCount",
-    "extendMode" : 0,
     "logicName" : "项目bug状态统计",
     "name" : "ProjectBugStatusCount",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFValueRules" : [ {
@@ -317,7 +181,6 @@
         "name" : "BUGACTIVE",
         "codeName" : "Bugactive"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -327,7 +190,6 @@
     "codeName" : "Bugactive",
     "dEFType" : 5,
     "dataType" : "INT",
-    "deployId" : "7bea0da34d150dbe21cf8580e2cc837b",
     "importOrder" : 1000,
     "logicName" : "激活Bug",
     "name" : "BUGACTIVE",
@@ -340,9 +202,7 @@
       "columnName" : "BUGWILLNOTFIX",
       "dBType" : "MYSQL5",
       "name" : "BUGWILLNOTFIX",
-      "standardColumnName" : "`BUGWILLNOTFIX`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`BUGWILLNOTFIX`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -356,7 +216,6 @@
         "name" : "BUGWILLNOTFIX",
         "codeName" : "Bugwillnotfix"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -366,7 +225,6 @@
     "codeName" : "Bugwillnotfix",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "00c4594630ffc11e2c0ddbd373f4b661",
     "importOrder" : 1000,
     "logicName" : "不予解决",
     "name" : "BUGWILLNOTFIX",
@@ -379,9 +237,7 @@
       "columnName" : "RESOLVEDBY",
       "dBType" : "MYSQL5",
       "name" : "RESOLVEDBY",
-      "standardColumnName" : "`RESOLVEDBY`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`RESOLVEDBY`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -406,7 +262,6 @@
         "name" : "RESOLVEDBY",
         "codeName" : "ResolvedBy"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -416,7 +271,6 @@
     "codeName" : "ResolvedBy",
     "dEFType" : 1,
     "dataType" : "SSCODELIST",
-    "deployId" : "a5e36b850e78c4f79b18a8ec1d18ad40",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "由谁解决",
@@ -452,7 +306,6 @@
         "name" : "BUGRESOLUTION",
         "codeName" : "BugRESOLUTION"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -462,7 +315,6 @@
     "codeName" : "BugRESOLUTION",
     "dEFType" : 5,
     "dataType" : "TEXT",
-    "deployId" : "38d5402e697360598081d3d0a9ebc30c",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "Bug解决方案",
@@ -500,7 +352,6 @@
         "name" : "DEPT",
         "codeName" : "Dept"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -510,7 +361,6 @@
     "codeName" : "Dept",
     "dEFType" : 5,
     "dataType" : "SSCODELIST",
-    "deployId" : "462b58fc3ebdc1ec756b0fd35ad988c4",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "部门",
@@ -529,9 +379,7 @@
       "columnName" : "BUGBYDESIGN",
       "dBType" : "MYSQL5",
       "name" : "BUGBYDESIGN",
-      "standardColumnName" : "`BUGBYDESIGN`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`BUGBYDESIGN`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -545,7 +393,6 @@
         "name" : "BUGBYDESIGN",
         "codeName" : "Bugbydesign"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -555,7 +402,6 @@
     "codeName" : "Bugbydesign",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "6c8dee868d819c0e7058a46fb5ee4f50",
     "importOrder" : 1000,
     "logicName" : "设计如此",
     "name" : "BUGBYDESIGN",
@@ -587,7 +433,6 @@
         "name" : "BUGOPENEDBY",
         "codeName" : "Bugopenedby"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -597,7 +442,6 @@
     "codeName" : "Bugopenedby",
     "dEFType" : 5,
     "dataType" : "TEXT",
-    "deployId" : "75ffab03d591e9ea0b367a2fc1e1aea3",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "bug创建人",
@@ -635,7 +479,6 @@
         "name" : "BUGSTATUS",
         "codeName" : "Bugstatus"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -645,7 +488,6 @@
     "codeName" : "Bugstatus",
     "dEFType" : 5,
     "dataType" : "TEXT",
-    "deployId" : "139007849d9c67a5f022054a655c2cf6",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "Bug状态",
@@ -672,7 +514,6 @@
         "name" : "BUGCLOSED",
         "codeName" : "Bugclosed"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -682,7 +523,6 @@
     "codeName" : "Bugclosed",
     "dEFType" : 5,
     "dataType" : "INT",
-    "deployId" : "eee06d2234357b860244d4c10e283216",
     "importOrder" : 1000,
     "logicName" : "已关闭Bug",
     "name" : "BUGCLOSED",
@@ -695,9 +535,7 @@
       "columnName" : "ASSIGNEDTO",
       "dBType" : "MYSQL5",
       "name" : "ASSIGNEDTO",
-      "standardColumnName" : "`ASSIGNEDTO`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`ASSIGNEDTO`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -722,7 +560,6 @@
         "name" : "ASSIGNEDTO",
         "codeName" : "AssignedTo"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -732,7 +569,6 @@
     "codeName" : "AssignedTo",
     "dEFType" : 1,
     "dataType" : "SSCODELIST",
-    "deployId" : "aa40d651cffd6ed835f6606c78d1e0ee",
     "importOrder" : 1000,
     "length" : 60,
     "logicName" : "指派给",
@@ -749,9 +585,7 @@
       "columnName" : "BUGEXTERNAL",
       "dBType" : "MYSQL5",
       "name" : "BUGEXTERNAL",
-      "standardColumnName" : "`BUGEXTERNAL`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`BUGEXTERNAL`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -765,7 +599,6 @@
         "name" : "BUGEXTERNAL",
         "codeName" : "Bugexternal"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -775,7 +608,6 @@
     "codeName" : "Bugexternal",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "b4df6582622b925ec7cbfe0b001097f0",
     "importOrder" : 1000,
     "logicName" : "外部原因",
     "name" : "BUGEXTERNAL",
@@ -796,7 +628,6 @@
         "name" : "BEGIN",
         "codeName" : "Begin"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -806,7 +637,6 @@
     "codeName" : "Begin",
     "dEFType" : 5,
     "dataType" : "DATE",
-    "deployId" : "90bda4aac0d630b770e84564c8f9d1eb",
     "importOrder" : 1000,
     "logicName" : "开始",
     "name" : "BEGIN",
@@ -827,7 +657,6 @@
         "name" : "BUGRESOLVEDDATE",
         "codeName" : "Bugresolveddate"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -837,7 +666,6 @@
     "codeName" : "Bugresolveddate",
     "dEFType" : 5,
     "dataType" : "DATE",
-    "deployId" : "302e94fc976415cb30d10064be9e4d0f",
     "importOrder" : 1000,
     "logicName" : "bug解决日期",
     "name" : "BUGRESOLVEDDATE",
@@ -858,7 +686,6 @@
         "name" : "END",
         "codeName" : "End"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -868,7 +695,6 @@
     "codeName" : "End",
     "dEFType" : 5,
     "dataType" : "DATE",
-    "deployId" : "0df432b76ddae9aad4d0ce811ac86ad1",
     "importOrder" : 1000,
     "logicName" : "结束",
     "name" : "END",
@@ -889,7 +715,6 @@
         "name" : "BUGID",
         "codeName" : "Bugid"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -899,7 +724,6 @@
     "codeName" : "Bugid",
     "dEFType" : 5,
     "dataType" : "INT",
-    "deployId" : "168fcdf69e5dfc23b189e9f2b7bb7056",
     "importOrder" : 1000,
     "logicName" : "Bug编号",
     "name" : "BUGID",
@@ -912,9 +736,7 @@
       "columnName" : "PROJECTNAME",
       "dBType" : "MYSQL5",
       "name" : "PROJECTNAME",
-      "standardColumnName" : "`PROJECTNAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PROJECTNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -939,7 +761,6 @@
         "name" : "PROJECTNAME",
         "codeName" : "ProjectName"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -949,7 +770,6 @@
     "codeName" : "ProjectName",
     "dEFType" : 3,
     "dataType" : "TEXT",
-    "deployId" : "ce10d70dd0b25fbe7516444ba7716456",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "项目名称",
@@ -962,9 +782,7 @@
       "columnName" : "BUGFIXED",
       "dBType" : "MYSQL5",
       "name" : "BUGFIXED",
-      "standardColumnName" : "`BUGFIXED`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`BUGFIXED`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -978,7 +796,6 @@
         "name" : "BUGFIXED",
         "codeName" : "Bugfixed"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -988,7 +805,6 @@
     "codeName" : "Bugfixed",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "8ffb7c8dafd45da2b8066142e7359400",
     "importOrder" : 1000,
     "logicName" : "已解决",
     "name" : "BUGFIXED",
@@ -1002,8 +818,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "standardColumnName" : "`ID`",
-      "autoIncrement" : true,
-      "valueAutoGen" : false
+      "autoIncrement" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1017,7 +832,6 @@
         "name" : "ID",
         "codeName" : "Id"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1027,7 +841,6 @@
     "codeName" : "Id",
     "dEFType" : 1,
     "dataType" : "ACID",
-    "deployId" : "4fb90cf7c738d987379467977d4636bf",
     "importOrder" : 1000,
     "length" : 20,
     "logicName" : "标识",
@@ -1042,9 +855,7 @@
       "columnName" : "BUGPOSTPONED",
       "dBType" : "MYSQL5",
       "name" : "BUGPOSTPONED",
-      "standardColumnName" : "`BUGPOSTPONED`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`BUGPOSTPONED`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1058,7 +869,6 @@
         "name" : "BUGPOSTPONED",
         "codeName" : "Bugpostponed"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1068,7 +878,6 @@
     "codeName" : "Bugpostponed",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "5f42963912d939b65e83c60a880d3976",
     "importOrder" : 1000,
     "logicName" : "延期处理",
     "name" : "BUGPOSTPONED",
@@ -1100,7 +909,6 @@
         "name" : "BUGTITLE",
         "codeName" : "Bugtitle"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1110,7 +918,6 @@
     "codeName" : "Bugtitle",
     "dEFType" : 5,
     "dataType" : "TEXT",
-    "deployId" : "250e71f7dff9af3ecfb99db912475254",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "Bug标题",
@@ -1125,9 +932,7 @@
       "columnName" : "BUGCNT",
       "dBType" : "MYSQL5",
       "name" : "BUGCNT",
-      "standardColumnName" : "`BUGCNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`BUGCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1141,7 +946,6 @@
         "name" : "BUGCNT",
         "codeName" : "BugCnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1151,7 +955,6 @@
     "codeName" : "BugCnt",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "66dbb133e3daa974567a98b347941226",
     "importOrder" : 1000,
     "logicName" : "Bug",
     "name" : "BUGCNT",
@@ -1172,7 +975,6 @@
         "name" : "BUGOPENEDDATE",
         "codeName" : "Bugopeneddate"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1182,7 +984,6 @@
     "codeName" : "Bugopeneddate",
     "dEFType" : 5,
     "dataType" : "DATE",
-    "deployId" : "f2c72c6ebefac83b7308501ebb48af51",
     "importOrder" : 1000,
     "logicName" : "Bug创建日期",
     "name" : "BUGOPENEDDATE",
@@ -1195,9 +996,7 @@
       "columnName" : "BUGWJJ",
       "dBType" : "MYSQL5",
       "name" : "BUGWJJ",
-      "standardColumnName" : "`BUGWJJ`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`BUGWJJ`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1211,7 +1010,6 @@
         "name" : "BUGWJJ",
         "codeName" : "Bugwjj"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1221,7 +1019,6 @@
     "codeName" : "Bugwjj",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "ca1a5d58cc473000ef226f719e6aee4a",
     "importOrder" : 1000,
     "logicName" : "未解决",
     "name" : "BUGWJJ",
@@ -1234,9 +1031,7 @@
       "columnName" : "TITLE",
       "dBType" : "MYSQL5",
       "name" : "TITLE",
-      "standardColumnName" : "`TITLE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`TITLE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1261,7 +1056,6 @@
         "name" : "TITLE",
         "codeName" : "Title"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1271,7 +1065,6 @@
     "codeName" : "Title",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "6c4a9cfebef987e0f8c883211b1532ca",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "名称",
@@ -1294,7 +1087,6 @@
         "name" : "BUGPRI",
         "codeName" : "Bugpri"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1304,7 +1096,6 @@
     "codeName" : "Bugpri",
     "dEFType" : 5,
     "dataType" : "INT",
-    "deployId" : "e013314ca6d91089443524cbfa02529b",
     "importOrder" : 1000,
     "logicName" : "Bug优先级",
     "name" : "BUGPRI",
@@ -1321,9 +1112,7 @@
       "columnName" : "BUGNOTREPRO",
       "dBType" : "MYSQL5",
       "name" : "BUGNOTREPRO",
-      "standardColumnName" : "`BUGNOTREPRO`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`BUGNOTREPRO`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1337,7 +1126,6 @@
         "name" : "BUGNOTREPRO",
         "codeName" : "Bugnotrepro"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1347,7 +1135,6 @@
     "codeName" : "Bugnotrepro",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "fee72c12ba77f40fd76599c394ce82cb",
     "importOrder" : 1000,
     "logicName" : "无法重现",
     "name" : "BUGNOTREPRO",
@@ -1379,7 +1166,6 @@
         "name" : "PROJECTNAME1",
         "codeName" : "Projectname1"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1389,7 +1175,6 @@
     "codeName" : "Projectname1",
     "dEFType" : 5,
     "dataType" : "TEXT",
-    "deployId" : "eab32b14b03ef4c8c35466d13921560a",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "项目名称",
@@ -1412,7 +1197,6 @@
         "name" : "BUGRESOLVED",
         "codeName" : "Bugresolved"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1422,7 +1206,6 @@
     "codeName" : "Bugresolved",
     "dEFType" : 5,
     "dataType" : "INT",
-    "deployId" : "911f428c9a54e0b17e8cb308cb341ffc",
     "importOrder" : 1000,
     "logicName" : "已解决Bug",
     "name" : "BUGRESOLVED",
@@ -1435,9 +1218,7 @@
       "columnName" : "BUGDUPLICATE",
       "dBType" : "MYSQL5",
       "name" : "BUGDUPLICATE",
-      "standardColumnName" : "`BUGDUPLICATE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`BUGDUPLICATE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1451,7 +1232,6 @@
         "name" : "BUGDUPLICATE",
         "codeName" : "Bugduplicate"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1461,7 +1241,6 @@
     "codeName" : "Bugduplicate",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "d460e6663b996af6540bd8cd4208620e",
     "importOrder" : 1000,
     "logicName" : "重复Bug",
     "name" : "BUGDUPLICATE",
@@ -1474,9 +1253,7 @@
       "columnName" : "OPENEDBY",
       "dBType" : "MYSQL5",
       "name" : "OPENEDBY",
-      "standardColumnName" : "`OPENEDBY`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`OPENEDBY`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1501,7 +1278,6 @@
         "name" : "OPENEDBY",
         "codeName" : "OpenedBy"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1511,7 +1287,6 @@
     "codeName" : "OpenedBy",
     "dEFType" : 1,
     "dataType" : "SSCODELIST",
-    "deployId" : "7293b546eb2dd6e8d2ba7e86dd126fa7",
     "importOrder" : 1000,
     "length" : 60,
     "logicName" : "由谁创建",
@@ -1528,9 +1303,7 @@
       "columnName" : "BUGEFFICIENT",
       "dBType" : "MYSQL5",
       "name" : "BUGEFFICIENT",
-      "standardColumnName" : "`BUGEFFICIENT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`BUGEFFICIENT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1555,7 +1328,6 @@
         "name" : "BUGEFFICIENT",
         "codeName" : "Bugefficient"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1565,7 +1337,6 @@
     "codeName" : "Bugefficient",
     "dEFType" : 2,
     "dataType" : "TEXT",
-    "deployId" : "980343da3072f5a5ea8f46a80d904802",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "有效率",
@@ -1580,9 +1351,7 @@
       "columnName" : "BUGTOSTORY",
       "dBType" : "MYSQL5",
       "name" : "BUGTOSTORY",
-      "standardColumnName" : "`BUGTOSTORY`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`BUGTOSTORY`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1596,7 +1365,6 @@
         "name" : "BUGTOSTORY",
         "codeName" : "Bugtostory"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1606,7 +1374,6 @@
     "codeName" : "Bugtostory",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "a782a90e75d4994846f4ef91abbece20",
     "importOrder" : 1000,
     "logicName" : "转为需求",
     "name" : "BUGTOSTORY",
@@ -1627,7 +1394,6 @@
         "name" : "BUGSEVERITY",
         "codeName" : "Bugseverity"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1637,7 +1403,6 @@
     "codeName" : "Bugseverity",
     "dEFType" : 5,
     "dataType" : "INT",
-    "deployId" : "97c25a02e210f09d5d2bb688acdd6aa4",
     "importOrder" : 1000,
     "logicName" : "Bug严重程度",
     "name" : "BUGSEVERITY",
@@ -1654,9 +1419,7 @@
       "columnName" : "BUGTOTAL",
       "dBType" : "MYSQL5",
       "name" : "BUGTOTAL",
-      "standardColumnName" : "`BUGTOTAL`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`BUGTOTAL`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1670,7 +1433,6 @@
         "name" : "BUGTOTAL",
         "codeName" : "Bugtotal"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1680,7 +1442,6 @@
     "codeName" : "Bugtotal",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "f2b4dd3fe4a7726fd29b4af8e6a02cc4",
     "importOrder" : 1000,
     "logicName" : "总计",
     "name" : "BUGTOTAL",
@@ -1693,9 +1454,7 @@
       "columnName" : "PRODUCTNAME",
       "dBType" : "MYSQL5",
       "name" : "PRODUCTNAME",
-      "standardColumnName" : "`PRODUCTNAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PRODUCTNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1720,7 +1479,6 @@
         "name" : "PRODUCTNAME",
         "codeName" : "ProductName"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[90]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1730,7 +1488,6 @@
     "codeName" : "ProductName",
     "dEFType" : 3,
     "dataType" : "PICKUPTEXT",
-    "deployId" : "16443ce48efc510c51379f3007711678",
     "importOrder" : 1000,
     "length" : 90,
     "logicName" : "产品名称",
@@ -1753,9 +1510,7 @@
       "columnName" : "PRODUCT",
       "dBType" : "MYSQL5",
       "name" : "PRODUCT",
-      "standardColumnName" : "`PRODUCT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PRODUCT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1769,7 +1524,6 @@
         "name" : "PRODUCT",
         "codeName" : "Product"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1779,7 +1533,6 @@
     "codeName" : "Product",
     "dEFType" : 1,
     "dataType" : "PICKUP",
-    "deployId" : "5123e2c69f199b9a37e30bab65898f3f",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "编号",
@@ -1800,9 +1553,7 @@
       "columnName" : "PROJECT",
       "dBType" : "MYSQL5",
       "name" : "PROJECT",
-      "standardColumnName" : "`PROJECT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PROJECT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1816,7 +1567,6 @@
         "name" : "PROJECT",
         "codeName" : "Project"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1826,7 +1576,6 @@
     "codeName" : "Project",
     "dEFType" : 1,
     "dataType" : "PICKUP",
-    "deployId" : "91de27e2728ac4d18041ae8ad4f614f3",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "项目编号",
@@ -1868,7 +1617,6 @@
     "modelref" : true,
     "id" : "Default"
   },
-  "deployId" : "f4bfe067315d773d374641d8a29ca5cd",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats.json",
   "enableActions" : 7,
@@ -1877,14 +1625,59 @@
   "extendMode" : 0,
   "logicName" : "Bug统计",
   "getMinorPSDERs" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDERS/DER1N_IBZ_BUGSTATS_ZT_PRODUCT_PRODUCT.json"
+    "codeName" : "ZTProduct",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDERS/DER1N_IBZ_BUGSTATS_ZT_PRODUCT_PRODUCT.json",
+    "logicName" : "产品",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats.json"
+    },
+    "name" : "DER1N_IBZ_BUGSTATS_ZT_PRODUCT_PRODUCT",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "getPSPickupTextDEField" : {
+      "name" : "PRODUCTNAME",
+      "codeName" : "ProductName"
+    },
+    "pickupDEFName" : "PRODUCT",
+    "removeActionType" : -1,
+    "removeOrder" : 0
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDERS/DER1N_IBZ_BUGSTATS_ZT_PROJECT_PROJECT.json"
+    "codeName" : "ZTProject",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats/PSDERS/DER1N_IBZ_BUGSTATS_ZT_PROJECT_PROJECT.json",
+    "logicName" : "项目",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats.json"
+    },
+    "name" : "DER1N_IBZ_BUGSTATS_ZT_PROJECT_PROJECT",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    },
+    "pickupDEFName" : "PROJECT",
+    "removeActionType" : -1,
+    "removeOrder" : 0
   } ],
   "name" : "IBZ_BUGSTATS",
-  "orderValue" : 99999,
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,

@@ -2,7 +2,6 @@
   "codeName" : "buildUnlinkStorys",
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/buildUnlinkStorys.json",
-  "logicHolder" : 1,
   "logicName" : "buildUnlinkStorys",
   "logicSubType" : "NONE",
   "name" : "buildUnlinkStorys",
@@ -31,7 +30,6 @@
   } ],
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",
-    "logicHolder" : 3,
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
@@ -41,7 +39,6 @@
     "parallelOutput" : true
   }, {
     "codeName" : "Prepareparam1",
-    "logicHolder" : 3,
     "logicNodeType" : "PREPAREPARAM",
     "name" : "参数",
     "getPSDELogicLinks" : [ {
@@ -92,7 +89,6 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
     },
-    "logicHolder" : 3,
     "logicNodeType" : "DEACTION",
     "name" : "处理",
     "parallelOutput" : true

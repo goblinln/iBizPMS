@@ -1191,7 +1191,6 @@
     "logicName" : "文档库_未收藏",
     "mSTag" : "doc__0",
     "name" : "文档库_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__DOCLIB_NFAVOUR_BUT",
       "getPSDEOPPriv" : {
@@ -1227,7 +1226,6 @@
     "logicName" : "文档库_已收藏",
     "mSTag" : "doc__1",
     "name" : "文档库_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__DOCLIB_FAVOUR_BUT",
       "getPSDEOPPriv" : {
@@ -1263,7 +1261,6 @@
     "logicName" : "附件库_未收藏",
     "mSTag" : "file__0",
     "name" : "附件库_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__DOCLIB_FAVOUR_BUT",
       "getPSDEOPPriv" : {
@@ -1311,7 +1308,6 @@
     "logicName" : "附件库_已收藏",
     "mSTag" : "file__1",
     "name" : "附件库_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "DOC",
       "getPSDEOPPriv" : {

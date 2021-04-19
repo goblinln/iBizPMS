@@ -1,138 +1,213 @@
 {
   "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/Create.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/Create.json",
+    "logicName" : "Create",
+    "name" : "Create",
+    "orderValue" : 1,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/CreateTemp.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "CreateTemp",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/CreateTemp.json",
+    "logicName" : "CreateTemp",
+    "name" : "CreateTemp",
+    "orderValue" : 2,
+    "tempDataMode" : 2,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/CreateTempMajor.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "CreateTempMajor",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/CreateTempMajor.json",
+    "logicName" : "CreateTempMajor",
+    "name" : "CreateTempMajor",
+    "orderValue" : 3,
+    "tempDataMode" : 1,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/Update.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/Update.json",
+    "logicName" : "Update",
+    "name" : "Update",
+    "orderValue" : 11,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/UpdateTemp.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "UpdateTemp",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/UpdateTemp.json",
+    "logicName" : "UpdateTemp",
+    "name" : "UpdateTemp",
+    "orderValue" : 12,
+    "tempDataMode" : 2,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/UpdateTempMajor.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "UpdateTempMajor",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/UpdateTempMajor.json",
+    "logicName" : "UpdateTempMajor",
+    "name" : "UpdateTempMajor",
+    "orderValue" : 13,
+    "tempDataMode" : 1,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/Remove.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Remove",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/Remove.json",
+    "logicName" : "Remove",
+    "name" : "Remove",
+    "orderValue" : 21,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/RemoveTemp.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "RemoveTemp",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/RemoveTemp.json",
+    "logicName" : "RemoveTemp",
+    "name" : "RemoveTemp",
+    "orderValue" : 22,
+    "tempDataMode" : 2,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/RemoveTempMajor.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "RemoveTempMajor",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/RemoveTempMajor.json",
+    "logicName" : "RemoveTempMajor",
+    "name" : "RemoveTempMajor",
+    "orderValue" : 23,
+    "tempDataMode" : 1,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/Get.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/Get.json",
+    "logicName" : "Get",
+    "name" : "Get",
+    "orderValue" : 31,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/GetTemp.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetTemp",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/GetTemp.json",
+    "logicName" : "GetTemp",
+    "name" : "GetTemp",
+    "orderValue" : 32,
+    "tempDataMode" : 2,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/GetTempMajor.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetTempMajor",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/GetTempMajor.json",
+    "logicName" : "GetTempMajor",
+    "name" : "GetTempMajor",
+    "orderValue" : 33,
+    "tempDataMode" : 1,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/GetDraft.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/GetDraft.json",
+    "logicName" : "GetDraft",
+    "name" : "GetDraft",
+    "orderValue" : 41,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/GetDraftTemp.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraftTemp",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/GetDraftTemp.json",
+    "logicName" : "GetDraftTemp",
+    "name" : "GetDraftTemp",
+    "orderValue" : 43,
+    "tempDataMode" : 2,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/GetDraftTempMajor.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraftTempMajor",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/GetDraftTempMajor.json",
+    "logicName" : "GetDraftTempMajor",
+    "name" : "GetDraftTempMajor",
+    "orderValue" : 45,
+    "tempDataMode" : 1,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/CheckKey.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/CheckKey.json",
+    "logicName" : "CheckKey",
+    "name" : "CheckKey",
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/Save.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEACTIONS/Save.json",
+    "logicName" : "Save",
+    "name" : "Save",
+    "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
     "codeName" : "CurTest",
-    "extendMode" : 0,
     "logicName" : "当前测试步骤",
     "name" : "CurTest",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
     "customCode" : true,
-    "defaultMode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "defaultMode" : true
   }, {
     "codeName" : "Default1",
-    "extendMode" : 0,
     "logicName" : "DEFAULT1",
-    "name" : "DEFAULT1",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "DEFAULT1"
   }, {
     "codeName" : "Mob",
-    "extendMode" : 0,
     "logicName" : "Mob",
     "name" : "Mob",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "Version",
-    "extendMode" : 0,
     "logicName" : "版本",
     "name" : "Version",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "Versions",
-    "extendMode" : 0,
     "logicName" : "版本1",
     "name" : "Versions",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "View",
-    "extendMode" : 0,
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "VIEW"
   } ],
   "getAllPSDEDataSets" : [ {
-    "cacheTimeout" : -1,
     "codeName" : "CurTest",
-    "extendMode" : 0,
     "logicName" : "当前测试步骤",
     "majorSortDir" : "ASC",
     "getMajorSortPSDEField" : {
@@ -140,129 +215,52 @@
       "codeName" : "Id"
     },
     "name" : "CurTest",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
     "enableFront" : true,
-    "enableGroup" : false,
-    "enableTempData" : true,
-    "pubServiceDefault" : true
+    "enableTempData" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
     "defaultMode" : true,
     "enableBackend" : true,
-    "enableCache" : false,
     "enableFront" : true,
-    "enableGroup" : false,
-    "enableTempData" : true,
-    "pubServiceDefault" : true
+    "enableTempData" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "Default1",
-    "extendMode" : 0,
     "logicName" : "DEFAULT1",
     "name" : "DEFAULT1",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
     "enableFront" : true,
-    "enableGroup" : false,
-    "enableTempData" : true,
-    "pubServiceDefault" : true
+    "enableTempData" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "Mob",
-    "extendMode" : 0,
     "logicName" : "Mob",
     "name" : "Mob",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
     "enableFront" : true,
-    "enableGroup" : false,
-    "enableTempData" : true,
-    "pubServiceDefault" : true
+    "enableTempData" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "Version",
-    "extendMode" : 0,
     "logicName" : "版本",
     "name" : "Version",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
     "enableFront" : true,
-    "enableGroup" : false,
-    "enableTempData" : true,
-    "pubServiceDefault" : true
+    "enableTempData" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "Versions",
-    "extendMode" : 0,
     "logicName" : "版本1",
     "name" : "Versions",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
     "enableFront" : true,
-    "enableGroup" : false,
-    "enableTempData" : true,
-    "pubServiceDefault" : true
+    "enableTempData" : true
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "CASESTEPID",
       "dBType" : "MYSQL5",
       "name" : "CASESTEPID",
-      "standardColumnName" : "`CASESTEPID`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`CASESTEPID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -276,7 +274,6 @@
         "name" : "CASESTEPID",
         "codeName" : "Casestepid"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -286,7 +283,6 @@
     "codeName" : "Casestepid",
     "dEFType" : 2,
     "dataType" : "BIGINT",
-    "deployId" : "e1951c32bd5843fab289197f6ffb8d73",
     "importOrder" : 1000,
     "logicName" : "用例步骤编号",
     "name" : "CASESTEPID",
@@ -299,9 +295,7 @@
       "columnName" : "DEPT",
       "dBType" : "MYSQL5",
       "name" : "DEPT",
-      "standardColumnName" : "`DEPT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`DEPT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -326,7 +320,6 @@
         "name" : "DEPT",
         "codeName" : "Dept"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -336,7 +329,6 @@
     "codeName" : "Dept",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "1bd8651d72d093f2bf4ff9a3413913b5",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "归属部门",
@@ -369,7 +361,6 @@
         "name" : "REALS",
         "codeName" : "Reals"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -379,7 +370,6 @@
     "codeName" : "Reals",
     "dEFType" : 5,
     "dataType" : "TEXT",
-    "deployId" : "0f704c44b42b7929a4d5b877b72125cd",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "实际情况",
@@ -413,7 +403,6 @@
         "name" : "STEPS",
         "codeName" : "Steps"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -423,7 +412,6 @@
     "codeName" : "Steps",
     "dEFType" : 5,
     "dataType" : "SSCODELIST",
-    "deployId" : "1bf80290d3730a5220acb5f5235ac7a0",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "测试结果",
@@ -444,7 +432,6 @@
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
       "standardColumnName" : "`TYPE`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -470,7 +457,6 @@
         "name" : "TYPE",
         "codeName" : "Type"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[10]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -481,7 +467,6 @@
     "dEFType" : 1,
     "dataType" : "SSCODELIST",
     "defaultValue" : "step",
-    "deployId" : "29b5a1272c6c2f50d1f61efcb45c27ec",
     "importOrder" : 1000,
     "length" : 10,
     "logicName" : "用例步骤类型",
@@ -498,9 +483,7 @@
       "columnName" : "CREATEBY",
       "dBType" : "MYSQL5",
       "name" : "CREATEBY",
-      "standardColumnName" : "`CREATEBY`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`CREATEBY`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -525,7 +508,6 @@
         "name" : "CREATEBY",
         "codeName" : "CreateBy"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -535,7 +517,6 @@
     "codeName" : "CreateBy",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "a55e3cd4ad79977bc52eef94c7fd24ac",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "由谁创建",
@@ -556,8 +537,7 @@
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`",
-      "autoIncrement" : true,
-      "valueAutoGen" : false
+      "autoIncrement" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -571,7 +551,6 @@
         "name" : "ID",
         "codeName" : "Id"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -581,7 +560,6 @@
     "codeName" : "Id",
     "dEFType" : 1,
     "dataType" : "ACID",
-    "deployId" : "e32f581a27fc81920ef5453ba2be5a62",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "编号",
@@ -601,7 +579,6 @@
       "name" : "DESC",
       "queryCodeExp" : "t1.`DESC`",
       "standardColumnName" : "`DESC`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -627,7 +604,6 @@
         "name" : "DESC",
         "codeName" : "Desc"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[65535]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -638,7 +614,6 @@
     "dEFType" : 1,
     "dataType" : "LONGTEXT",
     "defaultValue" : "#EMPTY",
-    "deployId" : "6581147667ce3dc8333df1bc9ccb0ac0",
     "importOrder" : 1000,
     "length" : 65535,
     "logicName" : "步骤",
@@ -653,7 +628,6 @@
       "name" : "EXPECT",
       "queryCodeExp" : "t1.`EXPECT`",
       "standardColumnName" : "`EXPECT`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -679,7 +653,6 @@
         "name" : "EXPECT",
         "codeName" : "Expect"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[65535]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -690,7 +663,6 @@
     "dEFType" : 1,
     "dataType" : "LONGTEXT",
     "defaultValue" : "#EMPTY",
-    "deployId" : "8ee151456bc290a99ce251c42916203d",
     "importOrder" : 1000,
     "length" : 65535,
     "logicName" : "预期",
@@ -724,7 +696,6 @@
         "name" : "FILES",
         "codeName" : "Files"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -734,7 +705,6 @@
     "codeName" : "Files",
     "dEFType" : 5,
     "dataType" : "TEXT",
-    "deployId" : "b29c14c59095aa4cfe59eb098d0b567e",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "附件",
@@ -749,9 +719,7 @@
       "columnName" : "UPDATEBY",
       "dBType" : "MYSQL5",
       "name" : "UPDATEBY",
-      "standardColumnName" : "`UPDATEBY`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`UPDATEBY`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -776,7 +744,6 @@
         "name" : "UPDATEBY",
         "codeName" : "UpdateBy"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -786,7 +753,6 @@
     "codeName" : "UpdateBy",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "870102e3f13c5207b7556043b46c2b16",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "由谁更新",
@@ -813,7 +779,6 @@
         "name" : "RUNID",
         "codeName" : "Runid"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -823,7 +788,6 @@
     "codeName" : "Runid",
     "dEFType" : 5,
     "dataType" : "INT",
-    "deployId" : "da780a895448f5a8cda5d9592500eaa6",
     "importOrder" : 1000,
     "logicName" : "执行编号",
     "name" : "RUNID",
@@ -836,9 +800,7 @@
       "columnName" : "ORG",
       "dBType" : "MYSQL5",
       "name" : "ORG",
-      "standardColumnName" : "`ORG`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`ORG`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -863,7 +825,6 @@
         "name" : "ORG",
         "codeName" : "Org"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -873,7 +834,6 @@
     "codeName" : "Org",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "4dc6fa3e81f4deda26d937c0a7491ba5",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "归属组织",
@@ -889,7 +849,6 @@
       "name" : "VERSION",
       "queryCodeExp" : "t1.`VERSION`",
       "standardColumnName" : "`VERSION`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -904,7 +863,6 @@
         "name" : "VERSION",
         "codeName" : "Version"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -915,7 +873,6 @@
     "dEFType" : 1,
     "dataType" : "PICKUPDATA",
     "defaultValue" : "0",
-    "deployId" : "acc09982dc113edf7063f7476915d3c0",
     "importOrder" : 1000,
     "length" : 3,
     "logicName" : "用例版本",
@@ -942,7 +899,6 @@
       "name" : "CASE",
       "queryCodeExp" : "t1.`CASE`",
       "standardColumnName" : "`CASE`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -957,7 +913,6 @@
         "name" : "CASE",
         "codeName" : "IBizCase"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -968,7 +923,6 @@
     "dEFType" : 1,
     "dataType" : "PICKUP",
     "defaultValue" : "0",
-    "deployId" : "46df8bfcd76a9919861b2a31b97b2bc2",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "用例",
@@ -991,7 +945,6 @@
       "name" : "PARENT",
       "queryCodeExp" : "t1.`PARENT`",
       "standardColumnName" : "`PARENT`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1006,7 +959,6 @@
         "name" : "PARENT",
         "codeName" : "Parent"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1017,7 +969,6 @@
     "dEFType" : 1,
     "dataType" : "PICKUP",
     "defaultValue" : "0",
-    "deployId" : "de9be4242001a0565bf72bf65ed65971",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "分组用例步骤的组编号",
@@ -1048,11 +999,52 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEUSERROLES/CaseStep_Maintain.json"
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEUSERROLES/CaseStep_Maintain.json",
+    "name" : "用例步骤维护",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "CREATE",
+      "name" : "CaseStep_Maintain_CREATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CREATE"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "CaseStep_Maintain_DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    }, {
+      "dataAccessAction" : "READ",
+      "name" : "CaseStep_Maintain_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "CaseStep_Maintain_UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    } ],
+    "roleTag" : "CaseStep_Maintain",
+    "userDRAction" : "READ"
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEUSERROLES/CaseStep_Read.json"
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEUSERROLES/CaseStep_Read.json",
+    "name" : "用例步骤查看",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "CaseStep_Read_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "CaseStep_Read",
+    "userDRAction" : "READ"
   } ],
   "auditMode" : 0,
   "codeName" : "CaseStep",
@@ -1066,7 +1058,6 @@
     "modelref" : true,
     "id" : "Default"
   },
-  "deployId" : "2c90222419999a8178fec1080b537058",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json",
   "enableActions" : 7,
@@ -1075,18 +1066,78 @@
   "extendMode" : 0,
   "logicName" : "用例步骤",
   "getMajorPSDERs" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDERS/DER1N__ZT_CASESTEP__ZT_CASESTEP__PARENT.json"
+    "codeName" : "IBizParent",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDERS/DER1N__ZT_CASESTEP__ZT_CASESTEP__PARENT.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
+    },
+    "name" : "DER1N__ZT_CASESTEP__ZT_CASESTEP__PARENT",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "PARENT",
+      "codeName" : "Parent"
+    },
+    "pickupDEFName" : "PARENT",
+    "removeActionType" : -1,
+    "removeOrder" : 0
   } ],
   "getMinorPSDERs" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDERS/DER1N_ZT_CASESTEP_ZT_CASE_CASE.json"
+    "codeName" : "ZTCase",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDERS/DER1N_ZT_CASESTEP_ZT_CASE_CASE.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 8,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
+    },
+    "name" : "DER1N_ZT_CASESTEP_ZT_CASE_CASE",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "CASE",
+      "codeName" : "IBizCase"
+    },
+    "pickupDEFName" : "CASE",
+    "removeActionType" : -1,
+    "removeOrder" : 0,
+    "nestedRS" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDERS/DER1N__ZT_CASESTEP__ZT_CASESTEP__PARENT.json"
+    "codeName" : "IBizParent",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDERS/DER1N__ZT_CASESTEP__ZT_CASESTEP__PARENT.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
+    },
+    "name" : "DER1N__ZT_CASESTEP__ZT_CASESTEP__PARENT",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "PARENT",
+      "codeName" : "Parent"
+    },
+    "pickupDEFName" : "PARENT",
+    "removeActionType" : -1,
+    "removeOrder" : 0
   } ],
   "name" : "ZT_CASESTEP",
-  "orderValue" : 99999,
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,

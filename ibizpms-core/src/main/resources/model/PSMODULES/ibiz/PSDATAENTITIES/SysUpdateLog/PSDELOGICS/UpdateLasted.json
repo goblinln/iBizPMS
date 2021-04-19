@@ -2,7 +2,6 @@
   "codeName" : "UpdateLasted",
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDELOGICS/UpdateLasted.json",
-  "logicHolder" : 1,
   "logicName" : "更新最新更新标识",
   "logicSubType" : "NONE",
   "name" : "更新最新更新标识",
@@ -20,7 +19,6 @@
   } ],
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",
-    "logicHolder" : 3,
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
@@ -34,7 +32,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "更新最新更新标识",
     "getPSDELogicNodeParams" : [ {

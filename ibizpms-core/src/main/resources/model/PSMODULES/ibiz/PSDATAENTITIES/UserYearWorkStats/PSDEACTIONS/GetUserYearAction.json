@@ -14,21 +14,6 @@
   } ],
   "codeName" : "GetUserYearAction",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetUserYearAction.json",
-  "extendMode" : 0,
   "logicName" : "获取用户所选年度的动作",
-  "name" : "GetUserYearAction",
-  "orderValue" : 99999,
-  "getPSDEOPPriv" : {
-    "modelref" : true,
-    "id" : "READ"
-  },
-  "paramMode" : 1,
-  "requestParamType" : "ENTITY",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "builtinAction" : false,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  "name" : "GetUserYearAction"
 }

@@ -2,7 +2,6 @@
   "codeName" : "GetCurUserConcat",
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSAPPDELOGICS/GetCurUserConcat.json",
-  "logicHolder" : 2,
   "logicName" : "获取联系人",
   "logicSubType" : "NONE",
   "name" : "获取联系人",
@@ -20,7 +19,6 @@
   } ],
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",
-    "logicHolder" : 3,
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
@@ -30,7 +28,6 @@
     "parallelOutput" : true
   }, {
     "codeName" : "Prepareparam1",
-    "logicHolder" : 3,
     "logicNodeType" : "PREPAREPARAM",
     "name" : "获取参数",
     "getPSDELogicNodeParams" : [ {

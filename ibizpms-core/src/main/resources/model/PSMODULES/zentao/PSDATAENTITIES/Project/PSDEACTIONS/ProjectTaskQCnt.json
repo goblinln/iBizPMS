@@ -3,21 +3,10 @@
   "actionType" : "DELOGIC",
   "codeName" : "ProjectTaskQCnt",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/ProjectTaskQCnt.json",
-  "extendMode" : 0,
   "logicName" : "项目任务快速分组计数器",
   "name" : "ProjectTaskQCnt",
-  "orderValue" : 99999,
   "getPSDELogic" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDELOGICS/ProjectTaskQCnt.json"
-  },
-  "paramMode" : 1,
-  "requestParamType" : "ENTITY",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "builtinAction" : false,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  }
 }

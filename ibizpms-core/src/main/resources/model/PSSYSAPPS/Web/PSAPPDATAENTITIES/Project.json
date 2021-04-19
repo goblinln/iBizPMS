@@ -2398,7 +2398,6 @@
     "logicName" : "已关闭_未置顶",
     "mSTag" : "closed__0",
     "name" : "已关闭_未置顶",
-    "orderValue" : 99999,
     "getPSDEMainStateActions" : [ {
       "name" : "Activate",
       "getPSDEAction" : {
@@ -2506,7 +2505,6 @@
     "logicName" : "已关闭_已置顶",
     "mSTag" : "closed__1",
     "name" : "已关闭_已置顶",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__PROJ_SUSPEND_BUT",
       "getPSDEOPPriv" : {
@@ -2578,7 +2576,6 @@
     "logicName" : "进行中_未置顶",
     "mSTag" : "doing__0",
     "name" : "进行中_未置顶",
-    "orderValue" : 99999,
     "getPSDEMainStateActions" : [ {
       "name" : "Suspend",
       "getPSDEAction" : {
@@ -2676,7 +2673,6 @@
     "logicName" : "进行中_已置顶",
     "mSTag" : "doing__1",
     "name" : "进行中_已置顶",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__PROJ_ACTIVATION_BUT",
       "getPSDEOPPriv" : {
@@ -2724,7 +2720,6 @@
     "logicName" : "已挂起_未置顶",
     "mSTag" : "suspended__0",
     "name" : "已挂起_未置顶",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__PROJ_SUSPEND_BUT",
       "getPSDEOPPriv" : {
@@ -2784,7 +2779,6 @@
     "logicName" : "已挂起_已置顶",
     "mSTag" : "suspended__1",
     "name" : "已挂起_已置顶",
-    "orderValue" : 99999,
     "getPSDEMainStateActions" : [ {
       "name" : "Activate",
       "getPSDEAction" : {
@@ -2880,7 +2874,6 @@
     "logicName" : "未开始_未置顶",
     "mSTag" : "wait__0",
     "name" : "未开始_未置顶",
-    "orderValue" : 99999,
     "getPSDEMainStateActions" : [ {
       "name" : "Putoff",
       "getPSDEAction" : {
@@ -2973,7 +2966,6 @@
     "logicName" : "未开始_已置顶",
     "mSTag" : "wait__1",
     "name" : "未开始_已置顶",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "NOTOP",
       "getPSDEOPPriv" : {

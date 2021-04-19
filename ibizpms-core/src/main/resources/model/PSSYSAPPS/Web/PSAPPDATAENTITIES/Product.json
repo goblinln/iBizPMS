@@ -117,6 +117,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/CancelProductTop.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CancelProductTop"
@@ -180,6 +184,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/ProductTop.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -761,6 +769,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/CancelProductTop.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CancelProductTop"
@@ -824,6 +836,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/ProductTop.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -1342,7 +1358,6 @@
     "logicName" : "关闭_未置顶",
     "mSTag" : "closed__0",
     "name" : "关闭_未置顶",
-    "orderValue" : 99999,
     "getPSDEMainStateActions" : [ {
       "name" : "Update",
       "getPSDEAction" : {
@@ -1407,7 +1422,6 @@
     "logicName" : "关闭_已置顶",
     "mSTag" : "closed__1",
     "name" : "关闭_已置顶",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__PROD_CLOSED_BUT",
       "getPSDEOPPriv" : {
@@ -1443,7 +1457,6 @@
     "logicName" : "正常_未置顶",
     "mSTag" : "normal__0",
     "name" : "正常_未置顶",
-    "orderValue" : 99999,
     "getPSDEMainStateActions" : [ {
       "name" : "Close",
       "getPSDEAction" : {
@@ -1503,7 +1516,6 @@
     "logicName" : "正常_已置顶",
     "mSTag" : "normal__1",
     "name" : "正常_已置顶",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "NOTOP",
       "getPSDEOPPriv" : {

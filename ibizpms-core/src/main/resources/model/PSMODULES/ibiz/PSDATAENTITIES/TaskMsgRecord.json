@@ -1,68 +1,83 @@
 {
   "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskMsgRecord/PSDEACTIONS/Create.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TaskMsgRecord/PSDEACTIONS/Create.json",
+    "logicName" : "Create",
+    "name" : "Create",
+    "orderValue" : 1,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskMsgRecord/PSDEACTIONS/Update.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TaskMsgRecord/PSDEACTIONS/Update.json",
+    "logicName" : "Update",
+    "name" : "Update",
+    "orderValue" : 11,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskMsgRecord/PSDEACTIONS/Remove.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Remove",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TaskMsgRecord/PSDEACTIONS/Remove.json",
+    "logicName" : "Remove",
+    "name" : "Remove",
+    "orderValue" : 21,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskMsgRecord/PSDEACTIONS/Get.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TaskMsgRecord/PSDEACTIONS/Get.json",
+    "logicName" : "Get",
+    "name" : "Get",
+    "orderValue" : 31,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskMsgRecord/PSDEACTIONS/GetDraft.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TaskMsgRecord/PSDEACTIONS/GetDraft.json",
+    "logicName" : "GetDraft",
+    "name" : "GetDraft",
+    "orderValue" : 41,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskMsgRecord/PSDEACTIONS/CheckKey.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TaskMsgRecord/PSDEACTIONS/CheckKey.json",
+    "logicName" : "CheckKey",
+    "name" : "CheckKey",
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskMsgRecord/PSDEACTIONS/Save.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TaskMsgRecord/PSDEACTIONS/Save.json",
+    "logicName" : "Save",
+    "name" : "Save",
+    "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "数据查询",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "defaultMode" : true
   }, {
     "codeName" : "View",
-    "extendMode" : 0,
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "VIEW"
   } ],
   "getAllPSDEDataSets" : [ {
-    "cacheTimeout" : -1,
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "数据集",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
     "defaultMode" : true,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : false
+    "enableFront" : true
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFDTColumns" : [ {
@@ -70,9 +85,7 @@
       "dBType" : "MYSQL5",
       "name" : "APPTASKID",
       "queryCodeExp" : "t1.`APPTASKID`",
-      "standardColumnName" : "`APPTASKID`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`APPTASKID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -97,7 +110,6 @@
         "name" : "APPTASKID",
         "codeName" : "Apptaskid"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -107,7 +119,6 @@
     "codeName" : "Apptaskid",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "05818ab2a6b60c3d94bb63689c89a454",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "第三方应用待办标识",
@@ -121,9 +132,7 @@
       "dBType" : "MYSQL5",
       "name" : "DATAID",
       "queryCodeExp" : "t1.`DATAID`",
-      "standardColumnName" : "`DATAID`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`DATAID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -148,7 +157,6 @@
         "name" : "DATAID",
         "codeName" : "Dataid"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -158,7 +166,6 @@
     "codeName" : "Dataid",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "5ab48cf24d2dadec4176f9c7f8537478",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "数据标识",
@@ -172,9 +179,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
       "queryCodeExp" : "t1.`UPDATEDATE`",
-      "standardColumnName" : "`UPDATEDATE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`UPDATEDATE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -188,7 +193,6 @@
         "name" : "UPDATEDATE",
         "codeName" : "UpdateDate"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -198,7 +202,6 @@
     "codeName" : "UpdateDate",
     "dEFType" : 1,
     "dataType" : "DATETIME",
-    "deployId" : "07767252b1fdd2e6343ecfe58bb67108",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "更新时间",
@@ -214,9 +217,7 @@
       "dBType" : "MYSQL5",
       "name" : "TITLE",
       "queryCodeExp" : "t1.`TITLE`",
-      "standardColumnName" : "`TITLE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`TITLE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -241,7 +242,6 @@
         "name" : "TITLE",
         "codeName" : "Title"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -251,7 +251,6 @@
     "codeName" : "Title",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "be84d685aec18ce9fa4cd45f2f66f1c0",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "标题",
@@ -265,9 +264,7 @@
       "dBType" : "MYSQL5",
       "name" : "MEMO",
       "queryCodeExp" : "t1.`MEMO`",
-      "standardColumnName" : "`MEMO`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`MEMO`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -292,7 +289,6 @@
         "name" : "MEMO",
         "codeName" : "Memo"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -302,7 +298,6 @@
     "codeName" : "Memo",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "ad660e2b69a9e8974e0c6c5c2e46f819",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "备注",
@@ -316,9 +311,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
       "queryCodeExp" : "t1.`CREATEMAN`",
-      "standardColumnName" : "`CREATEMAN`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`CREATEMAN`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -343,7 +336,6 @@
         "name" : "CREATEMAN",
         "codeName" : "CreateMan"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -353,7 +345,6 @@
     "codeName" : "CreateMan",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "ff70604911e4a3a34d4c48e9b8c4c983",
     "importOrder" : 1000,
     "length" : 60,
     "logicName" : "建立人",
@@ -374,9 +365,7 @@
       "dBType" : "MYSQL5",
       "name" : "TASKUSERID",
       "queryCodeExp" : "t1.`TASKUSERID`",
-      "standardColumnName" : "`TASKUSERID`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`TASKUSERID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -401,7 +390,6 @@
         "name" : "TASKUSERID",
         "codeName" : "Taskuserid"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -411,7 +399,6 @@
     "codeName" : "Taskuserid",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "15788a620bdb8a824a6abf40e8ff7c69",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "待办人标识",
@@ -425,9 +412,7 @@
       "dBType" : "MYSQL5",
       "name" : "TASKTYPE",
       "queryCodeExp" : "t1.`TASKTYPE`",
-      "standardColumnName" : "`TASKTYPE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`TASKTYPE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -452,7 +437,6 @@
         "name" : "TASKTYPE",
         "codeName" : "Tasktype"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -462,7 +446,6 @@
     "codeName" : "Tasktype",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "9cd4f3f307c186a5cfa4ddf4554ee8d0",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "待办类型",
@@ -476,9 +459,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
       "queryCodeExp" : "t1.`UPDATEMAN`",
-      "standardColumnName" : "`UPDATEMAN`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`UPDATEMAN`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -503,7 +484,6 @@
         "name" : "UPDATEMAN",
         "codeName" : "UpdateMan"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -513,7 +493,6 @@
     "codeName" : "UpdateMan",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "23ab1d04d37a61e19195e8df8a12bff5",
     "importOrder" : 1000,
     "length" : 60,
     "logicName" : "更新人",
@@ -534,9 +513,7 @@
       "dBType" : "MYSQL5",
       "name" : "TASKMSGRECORDNAME",
       "queryCodeExp" : "t1.`TASKMSGRECORDNAME`",
-      "standardColumnName" : "`TASKMSGRECORDNAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`TASKMSGRECORDNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -561,7 +538,6 @@
         "name" : "TASKMSGRECORDNAME",
         "codeName" : "TaskMsgRecordName"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -571,7 +547,6 @@
     "codeName" : "TaskMsgRecordName",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "b390fb8e99c73aadccda3a025a133f79",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "\b待办消息记录名称",
@@ -587,9 +562,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
       "queryCodeExp" : "t1.`CREATEDATE`",
-      "standardColumnName" : "`CREATEDATE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`CREATEDATE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -603,7 +576,6 @@
         "name" : "CREATEDATE",
         "codeName" : "CreateDate"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -613,7 +585,6 @@
     "codeName" : "CreateDate",
     "dEFType" : 1,
     "dataType" : "DATETIME",
-    "deployId" : "54106a629d6e379e37b73478e96b7bc3",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "建立时间",
@@ -629,9 +600,7 @@
       "dBType" : "MYSQL5",
       "name" : "TASKMSGRECORDID",
       "queryCodeExp" : "t1.`TASKMSGRECORDID`",
-      "standardColumnName" : "`TASKMSGRECORDID`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`TASKMSGRECORDID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -656,7 +625,6 @@
         "name" : "TASKMSGRECORDID",
         "codeName" : "TaskMsgRecordId"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -666,7 +634,6 @@
     "codeName" : "TaskMsgRecordId",
     "dEFType" : 1,
     "dataType" : "GUID",
-    "deployId" : "b85345ee5115aee52d1a517d920dd580",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "\b待办消息记录标识",
@@ -683,9 +650,7 @@
       "dBType" : "MYSQL5",
       "name" : "ENABLE",
       "queryCodeExp" : "t1.`ENABLE`",
-      "standardColumnName" : "`ENABLE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`ENABLE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -699,7 +664,6 @@
         "name" : "ENABLE",
         "codeName" : "Enable"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -709,7 +673,6 @@
     "codeName" : "Enable",
     "dEFType" : 1,
     "dataType" : "YESNO",
-    "deployId" : "547c3a6e7f4c5783d93e12e37ffd623c",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "逻辑有效标志",
@@ -744,7 +707,6 @@
     "modelref" : true,
     "id" : "Default"
   },
-  "deployId" : "7317adfe7ddd4c52e9fdb2b8cfc54ceb",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TaskMsgRecord.json",
   "enableActions" : 7,
@@ -754,7 +716,6 @@
   "invalidLogicValue" : "0",
   "logicName" : "待办消息记录",
   "name" : "TASKMSGRECORD",
-  "orderValue" : 99999,
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,

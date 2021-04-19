@@ -1,7 +1,6 @@
 {
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDEUSERROLES/Module_Read.json",
   "name" : "Module查看",
-  "orgDR" : 0,
   "getPSDEUserRoleOPPrivs" : [ {
     "dataAccessAction" : "READ",
     "name" : "Module_Read_READ",
@@ -11,11 +10,5 @@
     }
   } ],
   "roleTag" : "Module_Read",
-  "secDR" : 0,
-  "userDRAction" : "READ",
-  "defaultMode" : false,
-  "enableOrgDR" : false,
-  "enableSecBC" : false,
-  "enableSecDR" : false,
-  "enableUserDR" : false
+  "userDRAction" : "READ"
 }

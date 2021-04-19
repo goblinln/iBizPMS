@@ -2,7 +2,6 @@
   "codeName" : "GetInfo",
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/GetInfo.json",
-  "logicHolder" : 1,
   "logicName" : "获取相关信息",
   "logicSubType" : "NONE",
   "name" : "获取相关信息",
@@ -104,7 +103,6 @@
   } ],
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",
-    "logicHolder" : 3,
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
@@ -126,7 +124,6 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
     },
-    "logicHolder" : 3,
     "logicNodeType" : "DEACTION",
     "name" : "获取产品经理信息",
     "parallelOutput" : true
@@ -144,7 +141,6 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
     },
-    "logicHolder" : 3,
     "logicNodeType" : "DEACTION",
     "name" : "获取研发用户信息",
     "parallelOutput" : true
@@ -162,7 +158,6 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
     },
-    "logicHolder" : 3,
     "logicNodeType" : "DEACTION",
     "name" : "获取用户信息",
     "getPSDELogicLinks" : [ {
@@ -190,7 +185,6 @@
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
     },
-    "logicHolder" : 3,
     "logicNodeType" : "DEACTION",
     "name" : "获取测试用户信息",
     "parallelOutput" : true

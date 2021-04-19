@@ -238,7 +238,6 @@
           "name" : "DATE",
           "codeName" : "Date"
         },
-        "ruleHolder" : 3,
         "ruleInfo" : "发布日期不能大于当前日期",
         "checkDefault" : false,
         "defaultMode" : false,

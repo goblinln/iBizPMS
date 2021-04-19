@@ -3,18 +3,6 @@
   "actionType" : "USERCUSTOM",
   "codeName" : "GetUserRole",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/GetUserRole.json",
-  "extendMode" : 0,
   "logicName" : "获取成员角色",
-  "name" : "GetUserRole",
-  "orderValue" : 99999,
-  "paramMode" : 1,
-  "requestField" : "ID",
-  "requestParamType" : "FIELD",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "builtinAction" : false,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  "name" : "GetUserRole"
 }

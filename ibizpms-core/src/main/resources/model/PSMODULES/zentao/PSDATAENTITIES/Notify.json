@@ -1,68 +1,83 @@
 {
   "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Notify/PSDEACTIONS/Create.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Notify/PSDEACTIONS/Create.json",
+    "logicName" : "Create",
+    "name" : "Create",
+    "orderValue" : 1,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Notify/PSDEACTIONS/Update.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Notify/PSDEACTIONS/Update.json",
+    "logicName" : "Update",
+    "name" : "Update",
+    "orderValue" : 11,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Notify/PSDEACTIONS/Remove.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Remove",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Notify/PSDEACTIONS/Remove.json",
+    "logicName" : "Remove",
+    "name" : "Remove",
+    "orderValue" : 21,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Notify/PSDEACTIONS/Get.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Notify/PSDEACTIONS/Get.json",
+    "logicName" : "Get",
+    "name" : "Get",
+    "orderValue" : 31,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Notify/PSDEACTIONS/GetDraft.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Notify/PSDEACTIONS/GetDraft.json",
+    "logicName" : "GetDraft",
+    "name" : "GetDraft",
+    "orderValue" : 41,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Notify/PSDEACTIONS/CheckKey.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Notify/PSDEACTIONS/CheckKey.json",
+    "logicName" : "CheckKey",
+    "name" : "CheckKey",
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Notify/PSDEACTIONS/Save.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Notify/PSDEACTIONS/Save.json",
+    "logicName" : "Save",
+    "name" : "Save",
+    "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "defaultMode" : true
   }, {
     "codeName" : "View",
-    "extendMode" : 0,
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "VIEW"
   } ],
   "getAllPSDEDataSets" : [ {
-    "cacheTimeout" : -1,
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
     "defaultMode" : true,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFDTColumns" : [ {
@@ -70,9 +85,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDDATE",
       "queryCodeExp" : "t1.`CREATEDDATE`",
-      "standardColumnName" : "`CREATEDDATE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`CREATEDDATE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -86,7 +99,6 @@
         "name" : "CREATEDDATE",
         "codeName" : "CreatedDate"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -96,7 +108,6 @@
     "codeName" : "CreatedDate",
     "dEFType" : 1,
     "dataType" : "DATETIME",
-    "deployId" : "4f7cd4034d8580e02027813aa85fc08e",
     "importOrder" : 1000,
     "logicName" : "createdDate",
     "name" : "CREATEDDATE",
@@ -108,9 +119,7 @@
       "dBType" : "MYSQL5",
       "name" : "CCLIST",
       "queryCodeExp" : "t1.`CCLIST`",
-      "standardColumnName" : "`CCLIST`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`CCLIST`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -135,7 +144,6 @@
         "name" : "CCLIST",
         "codeName" : "CcList"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[65535]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -145,7 +153,6 @@
     "codeName" : "CcList",
     "dEFType" : 1,
     "dataType" : "LONGTEXT",
-    "deployId" : "7bf758054fb3c0b1699e23e5250cca3f",
     "importOrder" : 1000,
     "length" : 65535,
     "logicName" : "ccList",
@@ -160,9 +167,7 @@
       "dBType" : "MYSQL5",
       "name" : "FAILREASON",
       "queryCodeExp" : "t1.`FAILREASON`",
-      "standardColumnName" : "`FAILREASON`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`FAILREASON`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -187,7 +192,6 @@
         "name" : "FAILREASON",
         "codeName" : "FailReason"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[65535]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -197,7 +201,6 @@
     "codeName" : "FailReason",
     "dEFType" : 1,
     "dataType" : "LONGTEXT",
-    "deployId" : "701fafba1a356bb02ca417bfdf8566cf",
     "importOrder" : 1000,
     "length" : 65535,
     "logicName" : "failReason",
@@ -212,9 +215,7 @@
       "dBType" : "MYSQL5",
       "name" : "ACTION",
       "queryCodeExp" : "t1.`ACTION`",
-      "standardColumnName" : "`ACTION`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`ACTION`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -228,7 +229,6 @@
         "name" : "ACTION",
         "codeName" : "Action"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -238,7 +238,6 @@
     "codeName" : "Action",
     "dEFType" : 1,
     "dataType" : "INT",
-    "deployId" : "e6ed36fb6b3cff67e3877da8ccc2e5bd",
     "importOrder" : 1000,
     "logicName" : "action",
     "name" : "ACTION",
@@ -251,8 +250,7 @@
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`",
-      "autoIncrement" : true,
-      "valueAutoGen" : false
+      "autoIncrement" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -266,7 +264,6 @@
         "name" : "ID",
         "codeName" : "Id"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -276,7 +273,6 @@
     "codeName" : "Id",
     "dEFType" : 1,
     "dataType" : "ACID",
-    "deployId" : "5e054145751146a4fe06b68a457a6869",
     "importOrder" : 1000,
     "logicName" : "id",
     "name" : "ID",
@@ -296,9 +292,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEDBY",
       "queryCodeExp" : "t1.`CREATEDBY`",
-      "standardColumnName" : "`CREATEDBY`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`CREATEDBY`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -323,7 +317,6 @@
         "name" : "CREATEDBY",
         "codeName" : "CreatedBy"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[30]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -333,7 +326,6 @@
     "codeName" : "CreatedBy",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "9df87153a500a2ae7ddfcd387e761d60",
     "importOrder" : 1000,
     "length" : 30,
     "logicName" : "createdBy",
@@ -348,7 +340,6 @@
       "name" : "STATUS",
       "queryCodeExp" : "t1.`STATUS`",
       "standardColumnName" : "`STATUS`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -374,7 +365,6 @@
         "name" : "STATUS",
         "codeName" : "Status"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[10]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -385,7 +375,6 @@
     "dEFType" : 1,
     "dataType" : "TEXT",
     "defaultValue" : "wait",
-    "deployId" : "fcac650f0b79f67bc417014fe5ef757a",
     "importOrder" : 1000,
     "length" : 10,
     "logicName" : "status",
@@ -399,9 +388,7 @@
       "dBType" : "MYSQL5",
       "name" : "SUBJECT",
       "queryCodeExp" : "t1.`SUBJECT`",
-      "standardColumnName" : "`SUBJECT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`SUBJECT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -426,7 +413,6 @@
         "name" : "SUBJECT",
         "codeName" : "Subject"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[255]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -436,7 +422,6 @@
     "codeName" : "Subject",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "f2921ec69b5e3c72f1c50c3697aa7f67",
     "importOrder" : 1000,
     "length" : 255,
     "logicName" : "subject",
@@ -450,9 +435,7 @@
       "dBType" : "MYSQL5",
       "name" : "OBJECTID",
       "queryCodeExp" : "t1.`OBJECTID`",
-      "standardColumnName" : "`OBJECTID`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`OBJECTID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -466,7 +449,6 @@
         "name" : "OBJECTID",
         "codeName" : "ObjectID"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -476,7 +458,6 @@
     "codeName" : "ObjectID",
     "dEFType" : 1,
     "dataType" : "INT",
-    "deployId" : "8269087c211ea3f504b5357b29c9cf11",
     "importOrder" : 1000,
     "logicName" : "objectID",
     "name" : "OBJECTID",
@@ -488,9 +469,7 @@
       "dBType" : "MYSQL5",
       "name" : "DATA",
       "queryCodeExp" : "t1.`DATA`",
-      "standardColumnName" : "`DATA`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`DATA`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -515,7 +494,6 @@
         "name" : "DATA",
         "codeName" : "Data"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[65535]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -525,7 +503,6 @@
     "codeName" : "Data",
     "dEFType" : 1,
     "dataType" : "LONGTEXT",
-    "deployId" : "4970ac60c70f58a4f35c0c44bab3b3d5",
     "importOrder" : 1000,
     "length" : 65535,
     "logicName" : "data",
@@ -540,9 +517,7 @@
       "dBType" : "MYSQL5",
       "name" : "TOLIST",
       "queryCodeExp" : "t1.`TOLIST`",
-      "standardColumnName" : "`TOLIST`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`TOLIST`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -567,7 +542,6 @@
         "name" : "TOLIST",
         "codeName" : "ToList"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[255]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -577,7 +551,6 @@
     "codeName" : "ToList",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "c891da9a58a84f2ae547e10458e1a690",
     "importOrder" : 1000,
     "length" : 255,
     "logicName" : "toList",
@@ -591,9 +564,7 @@
       "dBType" : "MYSQL5",
       "name" : "SENDTIME",
       "queryCodeExp" : "t1.`SENDTIME`",
-      "standardColumnName" : "`SENDTIME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`SENDTIME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -607,7 +578,6 @@
         "name" : "SENDTIME",
         "codeName" : "SendTime"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -617,7 +587,6 @@
     "codeName" : "SendTime",
     "dEFType" : 1,
     "dataType" : "DATETIME",
-    "deployId" : "814708702513e5a755695b0cf2491b8a",
     "importOrder" : 1000,
     "logicName" : "sendTime",
     "name" : "SENDTIME",
@@ -629,9 +598,7 @@
       "dBType" : "MYSQL5",
       "name" : "OBJECTTYPE",
       "queryCodeExp" : "t1.`OBJECTTYPE`",
-      "standardColumnName" : "`OBJECTTYPE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`OBJECTTYPE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -656,7 +623,6 @@
         "name" : "OBJECTTYPE",
         "codeName" : "ObjectType"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[50]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -666,7 +632,6 @@
     "codeName" : "ObjectType",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "32d59040306f84ec77015c1d8ec5316b",
     "importOrder" : 1000,
     "length" : 50,
     "logicName" : "objectType",
@@ -700,7 +665,6 @@
     "modelref" : true,
     "id" : "Default"
   },
-  "deployId" : "5fb03e2809861c4687282cc2ce508dbc",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Notify.json",
   "enableActions" : 7,
@@ -709,7 +673,6 @@
   "extendMode" : 0,
   "logicName" : "通知",
   "name" : "ZT_NOTIFY",
-  "orderValue" : 99999,
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,

@@ -999,7 +999,6 @@
     "logicName" : "未提交",
     "mSTag" : "0",
     "name" : "未提交",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__WEEKLY_NSUBMIT_BUT",
       "getPSDEOPPriv" : {
@@ -1028,7 +1027,6 @@
     "logicName" : "已提交",
     "mSTag" : "1",
     "name" : "已提交",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__WEEKLY_SUBMIT_BUT",
       "getPSDEOPPriv" : {

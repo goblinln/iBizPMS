@@ -2,7 +2,6 @@
   "codeName" : "FixPath",
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule/PSDELOGICS/FixPath.json",
-  "logicHolder" : 1,
   "logicName" : "重建模块路径",
   "logicSubType" : "NONE",
   "name" : "重建模块路径",
@@ -31,7 +30,6 @@
   } ],
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",
-    "logicHolder" : 3,
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
@@ -53,13 +51,11 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
     },
-    "logicHolder" : 3,
     "logicNodeType" : "DEACTION",
     "name" : "执行重建模块路径行为",
     "parallelOutput" : true
   }, {
     "codeName" : "Prepareparam1",
-    "logicHolder" : 3,
     "logicNodeType" : "PREPAREPARAM",
     "name" : "准备参数",
     "getPSDELogicLinks" : [ {

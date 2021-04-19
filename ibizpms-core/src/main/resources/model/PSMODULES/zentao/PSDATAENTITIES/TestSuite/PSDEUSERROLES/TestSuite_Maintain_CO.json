@@ -32,11 +32,6 @@
     }
   } ],
   "roleTag" : "TestSuite_Maintain_CO",
-  "secDR" : 0,
   "userDRAction" : "READ",
-  "defaultMode" : false,
-  "enableOrgDR" : true,
-  "enableSecBC" : false,
-  "enableSecDR" : false,
-  "enableUserDR" : false
+  "enableOrgDR" : true
 }

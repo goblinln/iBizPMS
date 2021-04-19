@@ -19,10 +19,6 @@
     "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember.json"
   } ],
   "codeName" : "ou",
-  "deployId" : "98a604b2a2c8e0ab2884b3c066f6d80b",
   "dynaModelFilePath" : "PSMODULES/ou.json",
-  "name" : "ou组织用户管理模块",
-  "defaultModule" : false,
-  "subSysAsCloud" : false,
-  "subSysModule" : false
+  "name" : "ou组织用户管理模块"
 }

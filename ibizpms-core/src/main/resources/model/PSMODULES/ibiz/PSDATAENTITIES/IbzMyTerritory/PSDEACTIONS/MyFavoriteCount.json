@@ -3,21 +3,10 @@
   "actionType" : "DELOGIC",
   "codeName" : "MyFavoriteCount",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/MyFavoriteCount.json",
-  "extendMode" : 0,
   "logicName" : "我的收藏计数器",
   "name" : "MyFavoriteCount",
-  "orderValue" : 99999,
   "getPSDELogic" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDELOGICS/MyFavoriteCount.json"
-  },
-  "paramMode" : 1,
-  "requestParamType" : "NONE",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "builtinAction" : false,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  }
 }

@@ -2,7 +2,6 @@
   "codeName" : "MyFavoriteCount",
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDELOGICS/MyFavoriteCount.json",
-  "logicHolder" : 1,
   "logicName" : "我的收藏计数器",
   "logicSubType" : "NONE",
   "name" : "我的收藏计数器",
@@ -42,7 +41,6 @@
   } ],
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",
-    "logicHolder" : 3,
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
@@ -56,7 +54,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "我的收藏任务数",
     "getPSDELogicNodeParams" : [ {
@@ -72,7 +69,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取我的收藏需求数",
     "getPSDELogicLinks" : [ {
@@ -92,7 +88,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "我的收藏Bug数",
     "getPSDELogicLinks" : [ {

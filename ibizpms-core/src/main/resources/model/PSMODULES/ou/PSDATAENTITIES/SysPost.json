@@ -1,68 +1,83 @@
 {
   "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysPost/PSDEACTIONS/Create.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysPost/PSDEACTIONS/Create.json",
+    "logicName" : "Create",
+    "name" : "Create",
+    "orderValue" : 1,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysPost/PSDEACTIONS/Update.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysPost/PSDEACTIONS/Update.json",
+    "logicName" : "Update",
+    "name" : "Update",
+    "orderValue" : 11,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysPost/PSDEACTIONS/Remove.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Remove",
+    "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysPost/PSDEACTIONS/Remove.json",
+    "logicName" : "Remove",
+    "name" : "Remove",
+    "orderValue" : 21,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysPost/PSDEACTIONS/Get.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysPost/PSDEACTIONS/Get.json",
+    "logicName" : "Get",
+    "name" : "Get",
+    "orderValue" : 31,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysPost/PSDEACTIONS/GetDraft.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysPost/PSDEACTIONS/GetDraft.json",
+    "logicName" : "GetDraft",
+    "name" : "GetDraft",
+    "orderValue" : 41,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysPost/PSDEACTIONS/CheckKey.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysPost/PSDEACTIONS/CheckKey.json",
+    "logicName" : "CheckKey",
+    "name" : "CheckKey",
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysPost/PSDEACTIONS/Save.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysPost/PSDEACTIONS/Save.json",
+    "logicName" : "Save",
+    "name" : "Save",
+    "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "数据查询",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "defaultMode" : true
   }, {
     "codeName" : "View",
-    "extendMode" : 0,
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "VIEW"
   } ],
   "getAllPSDEDataSets" : [ {
-    "cacheTimeout" : -1,
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "数据集",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
     "defaultMode" : true,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFDTColumns" : [ {
@@ -71,7 +86,6 @@
       "name" : "POSTID",
       "queryCodeExp" : "t1.`POSTID`",
       "standardColumnName" : "`POSTID`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -97,7 +111,6 @@
         "name" : "POSTID",
         "codeName" : "PostId"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -109,7 +122,6 @@
     "dataType" : "TEXT",
     "defaultValue" : "postcode",
     "defaultValueType" : "PARAM",
-    "deployId" : "baed11bba876eef20c3335f7934a1a67",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "岗位标识",
@@ -125,9 +137,7 @@
       "dBType" : "MYSQL5",
       "name" : "POSTCODE",
       "queryCodeExp" : "t1.`POSTCODE`",
-      "standardColumnName" : "`POSTCODE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`POSTCODE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -152,7 +162,6 @@
         "name" : "POSTCODE",
         "codeName" : "PostCode"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -162,7 +171,6 @@
     "codeName" : "PostCode",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "55d88d451a40e226639ec52d1e9afe87",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "岗位编码",
@@ -177,9 +185,7 @@
       "dBType" : "MYSQL5",
       "name" : "POSTNAME",
       "queryCodeExp" : "t1.`POSTNAME`",
-      "standardColumnName" : "`POSTNAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`POSTNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -204,7 +210,6 @@
         "name" : "POSTNAME",
         "codeName" : "PostName"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -214,7 +219,6 @@
     "codeName" : "PostName",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "c3be81544cfb15e9b5e0127fa8113d7a",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "岗位名称",
@@ -231,9 +235,7 @@
       "dBType" : "MYSQL5",
       "name" : "DOMAINS",
       "queryCodeExp" : "t1.`DOMAINS`",
-      "standardColumnName" : "`DOMAINS`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`DOMAINS`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -258,7 +260,6 @@
         "name" : "DOMAINS",
         "codeName" : "Domains"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -268,7 +269,6 @@
     "codeName" : "Domains",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "b5c743f1f0a6c25c42e00e516d1c6ee7",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "区属",
@@ -282,9 +282,7 @@
       "dBType" : "MYSQL5",
       "name" : "MEMO",
       "queryCodeExp" : "t1.`MEMO`",
-      "standardColumnName" : "`MEMO`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`MEMO`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -309,7 +307,6 @@
         "name" : "MEMO",
         "codeName" : "Memo"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[2000]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -319,7 +316,6 @@
     "codeName" : "Memo",
     "dEFType" : 1,
     "dataType" : "LONGTEXT_1000",
-    "deployId" : "f2700a889cc8eafb89a95b30a873c4c9",
     "importOrder" : 1000,
     "length" : 2000,
     "logicName" : "备注",
@@ -353,7 +349,6 @@
     "modelref" : true,
     "id" : "Default"
   },
-  "deployId" : "ac23aaa698cfaee8d514de2beebbfa8e",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysPost.json",
   "enableActions" : 7,
@@ -362,11 +357,34 @@
   "extendMode" : 0,
   "logicName" : "岗位",
   "getMajorPSDERs" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDERS/DER1N_SYS_TEAMMEMBER_SYS_POST_POSTID.json"
+    "codeName" : "Post",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDERS/DER1N_SYS_TEAMMEMBER_SYS_POST_POSTID.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysPost.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember.json"
+    },
+    "name" : "DER1N_SYS_TEAMMEMBER_SYS_POST_POSTID",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "POSTID",
+      "codeName" : "PostId"
+    },
+    "getPSPickupTextDEField" : {
+      "name" : "POSTNAME",
+      "codeName" : "PostName"
+    },
+    "pickupDEFName" : "POSTID",
+    "removeActionType" : -1,
+    "removeOrder" : 0
   } ],
   "name" : "SYS_POST",
-  "orderValue" : 99999,
   "saaSMode" : 0,
   "serviceAPIClientId" : "9dab79080bf86d9ac588a8ab99d5d28c",
   "serviceAPIMode" : 0,

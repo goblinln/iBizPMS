@@ -1,288 +1,273 @@
 {
   "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Create.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Create.json",
+    "logicName" : "Create",
+    "name" : "Create",
+    "orderValue" : 1,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/CreateTemp.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "CreateTemp",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/CreateTemp.json",
+    "logicName" : "CreateTemp",
+    "name" : "CreateTemp",
+    "orderValue" : 2,
+    "tempDataMode" : 2,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/CreateTempMajor.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "CreateTempMajor",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/CreateTempMajor.json",
+    "logicName" : "CreateTempMajor",
+    "name" : "CreateTempMajor",
+    "orderValue" : 3,
+    "tempDataMode" : 1,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Update.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Update.json",
+    "logicName" : "Update",
+    "name" : "Update",
+    "orderValue" : 11,
+    "userCat" : "CAT1",
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/UpdateTemp.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "UpdateTemp",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/UpdateTemp.json",
+    "logicName" : "UpdateTemp",
+    "name" : "UpdateTemp",
+    "orderValue" : 12,
+    "tempDataMode" : 2,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/UpdateTempMajor.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "UpdateTempMajor",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/UpdateTempMajor.json",
+    "logicName" : "UpdateTempMajor",
+    "name" : "UpdateTempMajor",
+    "orderValue" : 13,
+    "tempDataMode" : 1,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Remove.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Remove",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Remove.json",
+    "logicName" : "Remove",
+    "name" : "Remove",
+    "orderValue" : 21,
+    "userCat" : "CAT1",
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/RemoveTemp.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "RemoveTemp",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/RemoveTemp.json",
+    "logicName" : "RemoveTemp",
+    "name" : "RemoveTemp",
+    "orderValue" : 22,
+    "tempDataMode" : 2,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/RemoveTempMajor.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "RemoveTempMajor",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/RemoveTempMajor.json",
+    "logicName" : "RemoveTempMajor",
+    "name" : "RemoveTempMajor",
+    "orderValue" : 23,
+    "tempDataMode" : 1,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Get.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Get.json",
+    "logicName" : "Get",
+    "name" : "Get",
+    "orderValue" : 31,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetTemp.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetTemp",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetTemp.json",
+    "logicName" : "GetTemp",
+    "name" : "GetTemp",
+    "orderValue" : 32,
+    "tempDataMode" : 2,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetTempMajor.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetTempMajor",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetTempMajor.json",
+    "logicName" : "GetTempMajor",
+    "name" : "GetTempMajor",
+    "orderValue" : 33,
+    "tempDataMode" : 1,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetDraft.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetDraft.json",
+    "logicName" : "GetDraft",
+    "name" : "GetDraft",
+    "orderValue" : 41,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetDraftTemp.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraftTemp",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetDraftTemp.json",
+    "logicName" : "GetDraftTemp",
+    "name" : "GetDraftTemp",
+    "orderValue" : 43,
+    "tempDataMode" : 2,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetDraftTempMajor.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraftTempMajor",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetDraftTempMajor.json",
+    "logicName" : "GetDraftTempMajor",
+    "name" : "GetDraftTempMajor",
+    "orderValue" : 45,
+    "tempDataMode" : 1,
+    "builtinAction" : true,
+    "enableTempData" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/CheckKey.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/CheckKey.json",
+    "logicName" : "CheckKey",
+    "name" : "CheckKey",
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/PMEvaluation.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "PMEvaluation",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/PMEvaluation.json",
+    "logicName" : "项目经理评估",
+    "name" : "PMEvaluation"
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Save.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Save.json",
+    "logicName" : "Save",
+    "name" : "Save",
+    "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
     "codeName" : "ActionMonth",
-    "extendMode" : 0,
     "logicName" : "日志月",
     "name" : "ActionMonth",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "ActionYear",
-    "extendMode" : 0,
     "logicName" : "日志年",
     "name" : "ActionYear",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "defaultMode" : true
   }, {
     "codeName" : "Defaults",
-    "extendMode" : 0,
     "logicName" : "DEFAULT1",
-    "name" : "DEFAULT1",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "DEFAULT1"
   }, {
     "codeName" : "ProjectActionMonth",
-    "extendMode" : 0,
     "logicName" : "日志月（项目）",
     "name" : "ProjectActionMonth",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "ProjectActionYear",
-    "extendMode" : 0,
     "logicName" : "日志年（项目）",
     "name" : "ProjectActionYear",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "ProjectTaskEstimate",
-    "extendMode" : 0,
     "logicName" : "项目日志",
-    "name" : "ProjectTaskEstimate",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "ProjectTaskEstimate"
   }, {
     "codeName" : "View",
-    "extendMode" : 0,
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "VIEW"
   } ],
   "getAllPSDEDataSets" : [ {
-    "cacheTimeout" : -1,
     "codeName" : "ActionMonth",
-    "extendMode" : 0,
     "logicName" : "日志月",
     "name" : "ActionMonth",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
     "enableFront" : true,
-    "enableGroup" : false,
-    "enableTempData" : true,
-    "pubServiceDefault" : true
+    "enableTempData" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "ActionYear",
-    "extendMode" : 0,
     "logicName" : "日志年",
     "name" : "ActionYear",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
     "enableFront" : true,
-    "enableGroup" : false,
-    "enableTempData" : true,
-    "pubServiceDefault" : true
+    "enableTempData" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
     "defaultMode" : true,
     "enableBackend" : true,
-    "enableCache" : false,
     "enableFront" : true,
-    "enableGroup" : false,
-    "enableTempData" : true,
-    "pubServiceDefault" : true
+    "enableTempData" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "Defaults",
-    "extendMode" : 0,
     "logicName" : "DEFAULT1",
     "name" : "DEFAULT1",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
     "enableFront" : true,
-    "enableGroup" : false,
-    "enableTempData" : true,
-    "pubServiceDefault" : true
+    "enableTempData" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "ProjectActionMonth",
-    "extendMode" : 0,
     "logicName" : "日志月（项目）",
     "name" : "ProjectActionMonth",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
     "enableFront" : true,
-    "enableGroup" : false,
-    "enableTempData" : true,
-    "pubServiceDefault" : true
+    "enableTempData" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "ProjectActionYear",
-    "extendMode" : 0,
     "logicName" : "日志年（项目）",
     "name" : "ProjectActionYear",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
     "enableFront" : true,
-    "enableGroup" : false,
-    "enableTempData" : true,
-    "pubServiceDefault" : true
+    "enableTempData" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "ProjectTaskEstimate",
-    "extendMode" : 0,
     "logicName" : "项目日志",
     "name" : "ProjectTaskEstimate",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
     "enableFront" : true,
-    "enableGroup" : false,
-    "enableTempData" : true,
-    "pubServiceDefault" : true
+    "enableTempData" : true
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFDTColumns" : [ {
@@ -290,9 +275,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORG",
       "queryCodeExp" : "t1.`ORG`",
-      "standardColumnName" : "`ORG`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`ORG`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -317,7 +300,6 @@
         "name" : "ORG",
         "codeName" : "Org"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -327,7 +309,6 @@
     "codeName" : "Org",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "2c615409c3a97e22b5c26973c43fe47e",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "归属组织",
@@ -342,9 +323,7 @@
       "dBType" : "MYSQL5",
       "name" : "MONTHNAME",
       "queryCodeExp" : "t1.`MONTHNAME`",
-      "standardColumnName" : "`MONTHNAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`MONTHNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -369,7 +348,6 @@
         "name" : "MONTHNAME",
         "codeName" : "Monthname"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -379,7 +357,6 @@
     "codeName" : "Monthname",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "54b2de301f31042da3bee781c9d966c9",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "月（显示）",
@@ -393,9 +370,7 @@
       "dBType" : "MYSQL5",
       "name" : "DEPT",
       "queryCodeExp" : "t1.`DEPT`",
-      "standardColumnName" : "`DEPT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`DEPT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -420,7 +395,6 @@
         "name" : "DEPT",
         "codeName" : "Dept"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -430,7 +404,6 @@
     "codeName" : "Dept",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "7f28d075d53ab9df1ddfc0b06b395641",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "归属部门",
@@ -463,7 +436,6 @@
         "name" : "YEAR",
         "codeName" : "Year"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -473,7 +445,6 @@
     "codeName" : "Year",
     "dEFType" : 5,
     "dataType" : "TEXT",
-    "deployId" : "08323cd7ef93da260037c6190d02c03b",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "年",
@@ -490,7 +461,6 @@
       "name" : "ACCOUNT",
       "queryCodeExp" : "t1.`ACCOUNT`",
       "standardColumnName" : "`ACCOUNT`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -516,7 +486,6 @@
         "name" : "ACCOUNT",
         "codeName" : "Account"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[30]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -527,7 +496,6 @@
     "dEFType" : 1,
     "dataType" : "TEXT",
     "defaultValue" : "#EMPTY",
-    "deployId" : "8928ec767f76a362d6a84eba4d4b6d82",
     "importOrder" : 1000,
     "length" : 30,
     "logicName" : "用户",
@@ -542,7 +510,6 @@
       "name" : "LEFT",
       "queryCodeExp" : "t1.`LEFT`",
       "standardColumnName" : "`LEFT`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -567,7 +534,6 @@
         "name" : "LEFT",
         "codeName" : "Left"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "预计剩余大于等于0",
       "checkDefault" : false,
       "defaultMode" : false,
@@ -585,7 +551,6 @@
         "name" : "LEFT",
         "codeName" : "Left"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -596,7 +561,6 @@
     "dEFType" : 1,
     "dataType" : "FLOAT",
     "defaultValue" : "0",
-    "deployId" : "67b9efc701f3d659d034e4e6837166eb",
     "importOrder" : 1000,
     "logicName" : "预计剩余",
     "name" : "LEFT",
@@ -610,7 +574,6 @@
       "name" : "CONSUMED",
       "queryCodeExp" : "t1.`CONSUMED`",
       "standardColumnName" : "`CONSUMED`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -635,7 +598,6 @@
         "name" : "CONSUMED",
         "codeName" : "Consumed"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "总计消耗大于等于0",
       "checkDefault" : false,
       "defaultMode" : false,
@@ -653,7 +615,6 @@
         "name" : "CONSUMED",
         "codeName" : "Consumed"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -664,7 +625,6 @@
     "dEFType" : 1,
     "dataType" : "FLOAT",
     "defaultValue" : "0",
-    "deployId" : "b02044847a1b77d31876ad3451ac280a",
     "importOrder" : 1000,
     "logicName" : "总计消耗",
     "name" : "CONSUMED",
@@ -677,9 +637,7 @@
       "dBType" : "MYSQL5",
       "name" : "CREATEBY",
       "queryCodeExp" : "t1.`CREATEBY`",
-      "standardColumnName" : "`CREATEBY`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`CREATEBY`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -704,7 +662,6 @@
         "name" : "CREATEBY",
         "codeName" : "CreateBy"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -714,7 +671,6 @@
     "codeName" : "CreateBy",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "611571dd218bc2063b8e0d279d16fdaf",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "由谁创建",
@@ -734,9 +690,7 @@
       "dBType" : "MYSQL5",
       "name" : "EVALUATIONCOST",
       "queryCodeExp" : "t1.`EVALUATIONCOST`",
-      "standardColumnName" : "`EVALUATIONCOST`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`EVALUATIONCOST`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -750,7 +704,6 @@
         "name" : "EVALUATIONCOST",
         "codeName" : "Evaluationcost"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -760,7 +713,6 @@
     "codeName" : "Evaluationcost",
     "dEFType" : 1,
     "dataType" : "FLOAT",
-    "deployId" : "efbf4b2ca5c63e1e53b3de55abe91d04",
     "importOrder" : 1000,
     "length" : 2,
     "logicName" : "评估成本",
@@ -780,7 +732,6 @@
         "name" : "MONTHORDER",
         "codeName" : "Monthorder"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -790,7 +741,6 @@
     "codeName" : "Monthorder",
     "dEFType" : 5,
     "dataType" : "INT",
-    "deployId" : "6e449492f5235f86170f8eadc70122a8",
     "importOrder" : 1000,
     "logicName" : "月（排序）",
     "name" : "MONTHORDER",
@@ -804,9 +754,7 @@
       "dBType" : "MYSQL5",
       "name" : "FILES",
       "queryCodeExp" : "t1.`FILES`",
-      "standardColumnName" : "`FILES`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`FILES`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -831,7 +779,6 @@
         "name" : "FILES",
         "codeName" : "Files"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[2000]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -841,7 +788,6 @@
     "codeName" : "Files",
     "dEFType" : 1,
     "dataType" : "LONGTEXT_1000",
-    "deployId" : "cc214dcc03987523bb206d42e7dd4ae7",
     "importOrder" : 1000,
     "length" : 2000,
     "logicName" : "附件",
@@ -856,8 +802,7 @@
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`",
-      "autoIncrement" : true,
-      "valueAutoGen" : false
+      "autoIncrement" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -871,7 +816,6 @@
         "name" : "ID",
         "codeName" : "Id"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -881,7 +825,6 @@
     "codeName" : "Id",
     "dEFType" : 1,
     "dataType" : "ACID",
-    "deployId" : "f63e42e86e57771767e9e5c16268825d",
     "importOrder" : 1000,
     "logicName" : "编号",
     "name" : "ID",
@@ -902,7 +845,6 @@
       "name" : "EVALUATIONSTATUS",
       "queryCodeExp" : "t1.`EVALUATIONSTATUS`",
       "standardColumnName" : "`EVALUATIONSTATUS`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -928,7 +870,6 @@
         "name" : "EVALUATIONSTATUS",
         "codeName" : "Evaluationstatus"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -939,7 +880,6 @@
     "dEFType" : 1,
     "dataType" : "TEXT",
     "defaultValue" : "no",
-    "deployId" : "08e26eb1730c1c89df056e570a577e3f",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "评估状态",
@@ -971,7 +911,6 @@
         "name" : "YEARNAME",
         "codeName" : "Yearname"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -981,7 +920,6 @@
     "codeName" : "Yearname",
     "dEFType" : 5,
     "dataType" : "TEXT",
-    "deployId" : "b6699984d1a021869746c1d96f75004b",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "年（显示）",
@@ -997,9 +935,7 @@
       "dBType" : "MYSQL5",
       "name" : "DATE",
       "queryCodeExp" : "t1.`DATE`",
-      "standardColumnName" : "`DATE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`DATE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1013,7 +949,6 @@
         "name" : "DATE",
         "codeName" : "Date"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1023,7 +958,6 @@
     "codeName" : "Date",
     "dEFType" : 1,
     "dataType" : "DATE",
-    "deployId" : "2189f8e59a602cbf1517340d04b2dfa7",
     "importOrder" : 1000,
     "logicName" : "日期",
     "name" : "DATE",
@@ -1035,9 +969,7 @@
       "dBType" : "MYSQL5",
       "name" : "UPDATEBY",
       "queryCodeExp" : "t1.`UPDATEBY`",
-      "standardColumnName" : "`UPDATEBY`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`UPDATEBY`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1062,7 +994,6 @@
         "name" : "UPDATEBY",
         "codeName" : "UpdateBy"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1072,7 +1003,6 @@
     "codeName" : "UpdateBy",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "3a8cca8c5c5dfdc8ffb8576ff3fff8b0",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "由谁更新",
@@ -1092,9 +1022,7 @@
       "dBType" : "MYSQL5",
       "name" : "EVALUATIONTIME",
       "queryCodeExp" : "t1.`EVALUATIONTIME`",
-      "standardColumnName" : "`EVALUATIONTIME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`EVALUATIONTIME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1108,7 +1036,6 @@
         "name" : "EVALUATIONTIME",
         "codeName" : "Evaluationtime"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1118,7 +1045,6 @@
     "codeName" : "Evaluationtime",
     "dEFType" : 1,
     "dataType" : "FLOAT",
-    "deployId" : "f5dbb5b900f129d652d9b561e088e654",
     "importOrder" : 1000,
     "length" : 2,
     "logicName" : "评估工时",
@@ -1131,9 +1057,7 @@
       "dBType" : "MYSQL5",
       "name" : "INPUTCOST",
       "queryCodeExp" : "t1.`INPUTCOST`",
-      "standardColumnName" : "`INPUTCOST`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`INPUTCOST`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1147,7 +1071,6 @@
         "name" : "INPUTCOST",
         "codeName" : "Inputcost"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1157,7 +1080,6 @@
     "codeName" : "Inputcost",
     "dEFType" : 1,
     "dataType" : "FLOAT",
-    "deployId" : "85c31388ef890e2d1919dcc15b372bbc",
     "importOrder" : 1000,
     "length" : 2,
     "logicName" : "投入成本",
@@ -1170,9 +1092,7 @@
       "dBType" : "MYSQL5",
       "name" : "DATES",
       "queryCodeExp" : "t1.`date`",
-      "standardColumnName" : "`DATES`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`DATES`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1186,7 +1106,6 @@
         "name" : "DATES",
         "codeName" : "Dates"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1196,7 +1115,6 @@
     "codeName" : "Dates",
     "dEFType" : 2,
     "dataType" : "DATE",
-    "deployId" : "8f41ef6b4ba652e90d534458cfd0e306",
     "importOrder" : 1000,
     "logicName" : "日期",
     "name" : "DATES",
@@ -1228,7 +1146,6 @@
         "name" : "MONTH",
         "codeName" : "Month"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1238,7 +1155,6 @@
     "codeName" : "Month",
     "dEFType" : 5,
     "dataType" : "TEXT",
-    "deployId" : "a538f373d0f3cc1993392582bbed54e3",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "月",
@@ -1255,7 +1171,6 @@
       "name" : "WORK",
       "queryCodeExp" : "t1.`WORK`",
       "standardColumnName" : "`WORK`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1281,7 +1196,6 @@
         "name" : "WORK",
         "codeName" : "Work"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[65535]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1292,7 +1206,6 @@
     "dEFType" : 1,
     "dataType" : "LONGTEXT",
     "defaultValue" : "#EMPTY",
-    "deployId" : "878a65d256642417d81b547dde691dcf",
     "importOrder" : 1000,
     "length" : 65535,
     "logicName" : "work",
@@ -1307,9 +1220,7 @@
       "dBType" : "MYSQL5",
       "name" : "EVALUATIONDESC",
       "queryCodeExp" : "t1.`EVALUATIONDESC`",
-      "standardColumnName" : "`EVALUATIONDESC`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`EVALUATIONDESC`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1334,7 +1245,6 @@
         "name" : "EVALUATIONDESC",
         "codeName" : "Evaluationdesc"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[1048576]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1344,7 +1254,6 @@
     "codeName" : "Evaluationdesc",
     "dEFType" : 1,
     "dataType" : "LONGTEXT",
-    "deployId" : "a965516cab0d1f034db4ceb87a41ed03",
     "importOrder" : 1000,
     "length" : 1048576,
     "logicName" : "评估说明",
@@ -1359,9 +1268,7 @@
       "dBType" : "MYSQL5",
       "name" : "TASKSPECIES",
       "queryCodeExp" : "t11.`TASKSPECIES`",
-      "standardColumnName" : "`TASKSPECIES`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`TASKSPECIES`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1386,7 +1293,6 @@
         "name" : "TASKSPECIES",
         "codeName" : "Taskspecies"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1396,7 +1302,6 @@
     "codeName" : "Taskspecies",
     "dEFType" : 3,
     "dataType" : "PICKUPDATA",
-    "deployId" : "469fc649cf181fbf68a95feca17156e5",
     "importOrder" : 1000,
     "length" : 60,
     "logicName" : "任务种别",
@@ -1424,9 +1329,7 @@
       "dBType" : "MYSQL5",
       "name" : "TASKNAME",
       "queryCodeExp" : "t11.`NAME`",
-      "standardColumnName" : "`TASKNAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`TASKNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1451,7 +1354,6 @@
         "name" : "TASKNAME",
         "codeName" : "TaskName"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[255]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1461,7 +1363,6 @@
     "codeName" : "TaskName",
     "dEFType" : 3,
     "dataType" : "PICKUPTEXT",
-    "deployId" : "1a0683d0b4faf86cc2029196538694ce",
     "importOrder" : 1000,
     "length" : 255,
     "logicName" : "任务名称",
@@ -1485,9 +1386,7 @@
       "dBType" : "MYSQL5",
       "name" : "PROJECTNAME",
       "queryCodeExp" : "t21.`NAME`",
-      "standardColumnName" : "`PROJECTNAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PROJECTNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1512,7 +1411,6 @@
         "name" : "PROJECTNAME",
         "codeName" : "ProjectName"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[90]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1522,7 +1420,6 @@
     "codeName" : "ProjectName",
     "dEFType" : 3,
     "dataType" : "PICKUPDATA",
-    "deployId" : "ace55cbe1007474c0d6772df2ff78821",
     "importOrder" : 1000,
     "length" : 90,
     "logicName" : "所属项目",
@@ -1546,9 +1443,7 @@
       "dBType" : "MYSQL5",
       "name" : "TYPE",
       "queryCodeExp" : "t11.`TYPE`",
-      "standardColumnName" : "`TYPE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`TYPE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1573,7 +1468,6 @@
         "name" : "TYPE",
         "codeName" : "Type"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[20]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1583,7 +1477,6 @@
     "codeName" : "Type",
     "dEFType" : 3,
     "dataType" : "PICKUPDATA",
-    "deployId" : "497d502266551e1ffbff6d3f629ffc0c",
     "importOrder" : 1000,
     "length" : 20,
     "logicName" : "任务类型",
@@ -1611,9 +1504,7 @@
       "dBType" : "MYSQL5",
       "name" : "DELETED",
       "queryCodeExp" : "t11.`DELETED`",
-      "standardColumnName" : "`DELETED`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`DELETED`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1638,7 +1529,6 @@
         "name" : "DELETED",
         "codeName" : "Deleted"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[1]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1648,7 +1538,6 @@
     "codeName" : "Deleted",
     "dEFType" : 3,
     "dataType" : "PICKUPDATA",
-    "deployId" : "30ea1ba042909c9842fff45216eb7c42",
     "importOrder" : 1000,
     "length" : 1,
     "logicName" : "任务删除标识",
@@ -1672,9 +1561,7 @@
       "dBType" : "MYSQL5",
       "name" : "PROJECT",
       "queryCodeExp" : "t11.`PROJECT`",
-      "standardColumnName" : "`PROJECT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PROJECT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1688,7 +1575,6 @@
         "name" : "PROJECT",
         "codeName" : "Project"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1698,7 +1584,6 @@
     "codeName" : "Project",
     "dEFType" : 3,
     "dataType" : "PICKUPDATA",
-    "deployId" : "9103518a88693cce913220e4c0cbfde0",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "项目",
@@ -1722,7 +1607,6 @@
       "name" : "TASK",
       "queryCodeExp" : "t1.`TASK`",
       "standardColumnName" : "`TASK`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1737,7 +1621,6 @@
         "name" : "TASK",
         "codeName" : "Task"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1748,7 +1631,6 @@
     "dEFType" : 1,
     "dataType" : "PICKUP",
     "defaultValue" : "0",
-    "deployId" : "07b0acf8a229326ad49970775d3451ce",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "任务",
@@ -1779,11 +1661,52 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEUSERROLES/Taskestimate_Maintain.json"
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEUSERROLES/Taskestimate_Maintain.json",
+    "name" : "任务工时维护",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "CREATE",
+      "name" : "Taskestimate_Maintain_CREATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CREATE"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "Taskestimate_Maintain_UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "Taskestimate_Maintain_DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    }, {
+      "dataAccessAction" : "READ",
+      "name" : "Taskestimate_Maintain_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "Taskestimate_Maintain",
+    "userDRAction" : "READ"
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEUSERROLES/Taskestimate_Read.json"
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEUSERROLES/Taskestimate_Read.json",
+    "name" : "任务工时查看",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "Taskestimate_Read_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "Taskestimate_Read",
+    "userDRAction" : "READ"
   } ],
   "auditMode" : 0,
   "codeName" : "TaskEstimate",
@@ -1797,7 +1720,6 @@
     "modelref" : true,
     "id" : "Default"
   },
-  "deployId" : "e399f932771e3dbe62097e9647bc3ef2",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate.json",
   "enableActions" : 7,
@@ -1806,11 +1728,35 @@
   "extendMode" : 0,
   "logicName" : "任务预计",
   "getMinorPSDERs" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDERS/DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK.json"
+    "codeName" : "ZTtask",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDERS/DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 8,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate.json"
+    },
+    "name" : "DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "TASK",
+      "codeName" : "Task"
+    },
+    "getPSPickupTextDEField" : {
+      "name" : "TASKNAME",
+      "codeName" : "TaskName"
+    },
+    "pickupDEFName" : "TASK",
+    "removeActionType" : -1,
+    "removeOrder" : 0,
+    "nestedRS" : true
   } ],
   "name" : "ZT_TASKESTIMATE",
-  "orderValue" : 99999,
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,

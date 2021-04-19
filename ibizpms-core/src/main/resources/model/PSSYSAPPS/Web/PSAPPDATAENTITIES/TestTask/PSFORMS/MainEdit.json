@@ -60,7 +60,6 @@
         "name" : "END",
         "codeName" : "End"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "结束日期必须大于等于开始日期!",
       "checkDefault" : false,
       "defaultMode" : false,

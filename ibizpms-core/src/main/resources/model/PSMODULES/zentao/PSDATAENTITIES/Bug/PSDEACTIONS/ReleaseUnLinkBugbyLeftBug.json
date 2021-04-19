@@ -3,18 +3,7 @@
   "actionType" : "USERCUSTOM",
   "codeName" : "ReleaseUnLinkBugbyLeftBug",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/ReleaseUnLinkBugbyLeftBug.json",
-  "extendMode" : 0,
   "logicName" : "移除关联Bug（遗留Bug）",
   "name" : "ReleaseUnLinkBugbyLeftBug",
-  "orderValue" : 99999,
-  "paramMode" : 1,
-  "requestParamType" : "ENTITY",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "userCat" : "CAT1",
-  "builtinAction" : false,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  "userCat" : "CAT1"
 }

@@ -3,19 +3,8 @@
   "actionType" : "USERCUSTOM",
   "codeName" : "Change",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Change.json",
-  "extendMode" : 0,
   "logicName" : "变更",
   "name" : "Change",
-  "orderValue" : 99999,
-  "paramMode" : 1,
-  "requestParamType" : "ENTITY",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
   "userCat" : "CAT1",
-  "userTag4" : "update",
-  "builtinAction" : false,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  "userTag4" : "update"
 }

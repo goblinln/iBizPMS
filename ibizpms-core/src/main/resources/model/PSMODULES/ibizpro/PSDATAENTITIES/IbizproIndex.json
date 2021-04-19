@@ -1,107 +1,108 @@
 {
   "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/Create.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/Create.json",
+    "logicName" : "Create",
+    "name" : "Create",
+    "orderValue" : 1,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/Update.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/Update.json",
+    "logicName" : "Update",
+    "name" : "Update",
+    "orderValue" : 11,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/Remove.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Remove",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/Remove.json",
+    "logicName" : "Remove",
+    "name" : "Remove",
+    "orderValue" : 21,
+    "getPSDEActionParams" : [ {
+      "name" : "INDEXID",
+      "getPSDEField" : {
+        "name" : "INDEXID",
+        "codeName" : "Indexid"
+      },
+      "stdDataType" : 1,
+      "valueType" : "INPUTVALUE"
+    } ],
+    "paramMode" : 2,
+    "builtinAction" : true,
+    "customParam" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/Get.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/Get.json",
+    "logicName" : "Get",
+    "name" : "Get",
+    "orderValue" : 31,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/GetDraft.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/GetDraft.json",
+    "logicName" : "GetDraft",
+    "name" : "GetDraft",
+    "orderValue" : 41,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/CheckKey.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/CheckKey.json",
+    "logicName" : "CheckKey",
+    "name" : "CheckKey",
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/Save.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex/PSDEACTIONS/Save.json",
+    "logicName" : "Save",
+    "name" : "Save",
+    "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "数据查询",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
     "customCode" : true,
-    "defaultMode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "defaultMode" : true
   }, {
     "codeName" : "View",
-    "extendMode" : 0,
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "VIEW"
   } ],
   "getAllPSDEDataSets" : [ {
-    "cacheTimeout" : -1,
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "数据集",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
     "defaultMode" : true,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "ESquery",
-    "extendMode" : 0,
     "logicName" : "全文检索",
     "name" : "ESquery",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "IndexDER",
-    "extendMode" : 0,
     "logicName" : "数据集2",
     "name" : "IndexDER",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
     "predefinedType" : "INDEXDE",
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFDTColumns" : [ {
@@ -109,9 +110,7 @@
       "dBType" : "MYSQL5",
       "name" : "INDEXID",
       "queryCodeExp" : "t1.`INDEXID`",
-      "standardColumnName" : "`INDEXID`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`INDEXID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -125,7 +124,6 @@
         "name" : "INDEXID",
         "codeName" : "Indexid"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -135,7 +133,6 @@
     "codeName" : "Indexid",
     "dEFType" : 2,
     "dataType" : "BIGINT",
-    "deployId" : "1ec4a4f783eb607daa0002be2d5a1329",
     "importOrder" : 1000,
     "logicName" : "主键",
     "name" : "INDEXID",
@@ -150,9 +147,7 @@
       "columnName" : "ACL",
       "dBType" : "MYSQL5",
       "name" : "ACL",
-      "standardColumnName" : "`ACL`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`ACL`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -177,7 +172,6 @@
         "name" : "ACL",
         "codeName" : "Acl"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -187,7 +181,6 @@
     "codeName" : "Acl",
     "dEFType" : 2,
     "dataType" : "TEXT",
-    "deployId" : "57b93aa7ebc73d24c8d74d7bb289fa5f",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "权限",
@@ -221,7 +214,6 @@
         "name" : "DOCID",
         "codeName" : "Docid"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -231,7 +223,6 @@
     "codeName" : "Docid",
     "dEFType" : 5,
     "dataType" : "TEXT",
-    "deployId" : "59d69e257891ecdc79bbc8722d4b3f48",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "docid",
@@ -248,9 +239,7 @@
       "dBType" : "MYSQL5",
       "name" : "INDEXNAME",
       "queryCodeExp" : "t1.`INDEXNAME`",
-      "standardColumnName" : "`INDEXNAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`INDEXNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -275,7 +264,6 @@
         "name" : "INDEXNAME",
         "codeName" : "Indexname"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -285,7 +273,6 @@
     "codeName" : "Indexname",
     "dEFType" : 2,
     "dataType" : "TEXT",
-    "deployId" : "6bb64605e6d5bd201aa6d8413efb8391",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "标题[需求、任务等]",
@@ -302,9 +289,7 @@
       "columnName" : "COLOR",
       "dBType" : "MYSQL5",
       "name" : "COLOR",
-      "standardColumnName" : "`COLOR`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`COLOR`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -329,7 +314,6 @@
         "name" : "COLOR",
         "codeName" : "Color"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -339,7 +323,6 @@
     "codeName" : "Color",
     "dEFType" : 2,
     "dataType" : "TEXT",
-    "deployId" : "cf59db790c3da34f50797a691966c4f5",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "颜色",
@@ -355,9 +338,7 @@
       "dBType" : "MYSQL5",
       "name" : "DELETED",
       "queryCodeExp" : "t1.`DELETED`",
-      "standardColumnName" : "`DELETED`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`DELETED`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -382,7 +363,6 @@
         "name" : "DELETED",
         "codeName" : "Deleted"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -392,7 +372,6 @@
     "codeName" : "Deleted",
     "dEFType" : 2,
     "dataType" : "YESNO",
-    "deployId" : "669bbc5c8a3eb20e7b6724ec11024435",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "逻辑标识",
@@ -408,9 +387,7 @@
       "columnName" : "ACLLIST",
       "dBType" : "MYSQL5",
       "name" : "ACLLIST",
-      "standardColumnName" : "`ACLLIST`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`ACLLIST`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -435,7 +412,6 @@
         "name" : "ACLLIST",
         "codeName" : "Acllist"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -445,7 +421,6 @@
     "codeName" : "Acllist",
     "dEFType" : 2,
     "dataType" : "TEXT",
-    "deployId" : "3f2e007ef4205df8471e447ee1a8d249",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "权限列表",
@@ -460,9 +435,7 @@
       "columnName" : "INDEXDESC",
       "dBType" : "MYSQL5",
       "name" : "INDEXDESC",
-      "standardColumnName" : "`INDEXDESC`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`INDEXDESC`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -487,7 +460,6 @@
         "name" : "INDEXDESC",
         "codeName" : "Indexdesc"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -497,7 +469,6 @@
     "codeName" : "Indexdesc",
     "dEFType" : 2,
     "dataType" : "LONGTEXT",
-    "deployId" : "1da35368ba6a230575abd6b13c017982",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "内容[需求、任务等]",
@@ -521,7 +492,6 @@
         "name" : "PRODUCT",
         "codeName" : "Product"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -531,7 +501,6 @@
     "codeName" : "Product",
     "dEFType" : 5,
     "dataType" : "BIGINT",
-    "deployId" : "c144920e3739d71272ab8f255c16222a",
     "importOrder" : 1000,
     "logicName" : "产品",
     "name" : "PRODUCT",
@@ -545,9 +514,7 @@
       "dBType" : "MYSQL5",
       "name" : "INDEX_TYPE",
       "queryCodeExp" : "t1.`INDEX_TYPE`",
-      "standardColumnName" : "`INDEX_TYPE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`INDEX_TYPE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -572,7 +539,6 @@
         "name" : "INDEX_TYPE",
         "codeName" : "IndexType"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -582,7 +548,6 @@
     "codeName" : "IndexType",
     "dEFType" : 2,
     "dataType" : "SSCODELIST",
-    "deployId" : "8d1b5c04363556bb341feab2236a27ae",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "类型",
@@ -604,9 +569,7 @@
       "dBType" : "MYSQL5",
       "name" : "MDEPTID",
       "queryCodeExp" : "t1.`MDEPTID`",
-      "standardColumnName" : "`MDEPTID`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`MDEPTID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -631,7 +594,6 @@
         "name" : "MDEPTID",
         "codeName" : "MdeptId"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -641,7 +603,6 @@
     "codeName" : "MdeptId",
     "dEFType" : 2,
     "dataType" : "TEXT",
-    "deployId" : "a96cd817fd1f83969e2edde1fdc3f4db",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "部门标识",
@@ -656,9 +617,7 @@
       "columnName" : "PROJECT",
       "dBType" : "MYSQL5",
       "name" : "PROJECT",
-      "standardColumnName" : "`PROJECT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PROJECT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -672,7 +631,6 @@
         "name" : "PROJECT",
         "codeName" : "Project"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -682,7 +640,6 @@
     "codeName" : "Project",
     "dEFType" : 2,
     "dataType" : "BIGINT",
-    "deployId" : "6b8b00e45d3a10b43e2320aae6dcb84e",
     "importOrder" : 1000,
     "logicName" : "项目",
     "name" : "PROJECT",
@@ -696,9 +653,7 @@
       "dBType" : "MYSQL5",
       "name" : "ORGID",
       "queryCodeExp" : "t1.`ORGID`",
-      "standardColumnName" : "`ORGID`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`ORGID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -723,7 +678,6 @@
         "name" : "ORGID",
         "codeName" : "OrgId"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -733,7 +687,6 @@
     "codeName" : "OrgId",
     "dEFType" : 2,
     "dataType" : "TEXT",
-    "deployId" : "21b1277568bbe39925fcde3736dd94f2",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "组织标识",
@@ -783,7 +736,6 @@
     "modelref" : true,
     "id" : "Default"
   },
-  "deployId" : "59e00bfe4af69fb5c13b079ab9014d9d",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex.json",
   "enableActions" : 7,
@@ -793,26 +745,321 @@
   "indexDEType" : "INDEX",
   "logicName" : "索引检索",
   "getMajorPSDERs" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DERINDEX_ZT_BUG_IBIZPRO_INDEX.json"
+    "codeName" : "Bug",
+    "dERType" : "DERINDEX",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DERINDEX_ZT_BUG_IBIZPRO_INDEX.json",
+    "logicName" : "Bug",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex.json"
+    },
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+    },
+    "name" : "DERINDEX_ZT_BUG_IBIZPRO_INDEX",
+    "orderValue" : 100,
+    "getPSDERIndexDEFieldMaps" : [ {
+      "getMajorPSDEField" : {
+        "name" : "DELETED",
+        "codeName" : "Deleted"
+      },
+      "getMinorPSDEField" : {
+        "name" : "DELETED",
+        "codeName" : "Deleted"
+      },
+      "name" : "deleted=deleted"
+    }, {
+      "getMajorPSDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      },
+      "getMinorPSDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      },
+      "name" : "product=product"
+    }, {
+      "getMajorPSDEField" : {
+        "name" : "INDEXDESC",
+        "codeName" : "Indexdesc"
+      },
+      "getMinorPSDEField" : {
+        "name" : "STEPS",
+        "codeName" : "Steps"
+      },
+      "name" : "indexdesc=steps"
+    }, {
+      "getMajorPSDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "getMinorPSDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "name" : "project=project"
+    } ],
+    "typeValue" : "bug",
+    "inherit" : false,
+    "virtual" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DERINDEX_ZT_CASE_IBIZPRO_INDEX.json"
+    "codeName" : "Case",
+    "dERType" : "DERINDEX",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DERINDEX_ZT_CASE_IBIZPRO_INDEX.json",
+    "logicName" : "功能测试",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex.json"
+    },
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+    },
+    "name" : "DERINDEX_ZT_CASE_IBIZPRO_INDEX",
+    "orderValue" : 100,
+    "getPSDERIndexDEFieldMaps" : [ {
+      "getMajorPSDEField" : {
+        "name" : "DELETED",
+        "codeName" : "Deleted"
+      },
+      "getMinorPSDEField" : {
+        "name" : "DELETED",
+        "codeName" : "Deleted"
+      },
+      "name" : "deleted=deleted"
+    }, {
+      "getMajorPSDEField" : {
+        "name" : "INDEXDESC",
+        "codeName" : "Indexdesc"
+      },
+      "getMinorPSDEField" : {
+        "name" : "PRECONDITION",
+        "codeName" : "Precondition"
+      },
+      "name" : "INDEXDESC=PRECONDITION"
+    }, {
+      "getMajorPSDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      },
+      "getMinorPSDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      },
+      "name" : "PRODUCT=PRODUCT"
+    } ],
+    "typeValue" : "case",
+    "inherit" : false,
+    "virtual" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDERS/DERINDEX_ZT_PRODUCT_IBIZPRO_INDEX.json"
+    "codeName" : "Product",
+    "dERType" : "DERINDEX",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDERS/DERINDEX_ZT_PRODUCT_IBIZPRO_INDEX.json",
+    "logicName" : "产品",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex.json"
+    },
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    },
+    "name" : "DERINDEX_ZT_PRODUCT_IBIZPRO_INDEX",
+    "orderValue" : 100,
+    "getPSDERIndexDEFieldMaps" : [ {
+      "getMajorPSDEField" : {
+        "name" : "DELETED",
+        "codeName" : "Deleted"
+      },
+      "getMinorPSDEField" : {
+        "name" : "DELETED",
+        "codeName" : "Deleted"
+      },
+      "name" : "deleted=deleted"
+    }, {
+      "getMajorPSDEField" : {
+        "name" : "INDEXDESC",
+        "codeName" : "Indexdesc"
+      },
+      "getMinorPSDEField" : {
+        "name" : "DESC",
+        "codeName" : "Desc"
+      },
+      "name" : "INDEXDESC=DESC"
+    }, {
+      "getMajorPSDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      },
+      "getMinorPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "PRODUCT=ID"
+    } ],
+    "typeValue" : "product",
+    "inherit" : false,
+    "virtual" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDERS/DERINDEX_ZT_PROJECT_IBIZPRO_INDEX.json"
+    "codeName" : "Project",
+    "dERType" : "DERINDEX",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDERS/DERINDEX_ZT_PROJECT_IBIZPRO_INDEX.json",
+    "logicName" : "项目",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex.json"
+    },
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    },
+    "name" : "DERINDEX_ZT_PROJECT_IBIZPRO_INDEX",
+    "orderValue" : 100,
+    "getPSDERIndexDEFieldMaps" : [ {
+      "getMajorPSDEField" : {
+        "name" : "DELETED",
+        "codeName" : "Deleted"
+      },
+      "getMinorPSDEField" : {
+        "name" : "DELETED",
+        "codeName" : "Deleted"
+      },
+      "name" : "deleted=deleted"
+    }, {
+      "getMajorPSDEField" : {
+        "name" : "INDEXDESC",
+        "codeName" : "Indexdesc"
+      },
+      "getMinorPSDEField" : {
+        "name" : "DESC",
+        "codeName" : "Desc"
+      },
+      "name" : "INDEXDESC=DESC"
+    }, {
+      "getMajorPSDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "getMinorPSDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "name" : "PROJECT=ID"
+    } ],
+    "typeValue" : "project",
+    "inherit" : false,
+    "virtual" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DERINDEX_ZT_STORY_IBIZPRO_INDEX.json"
+    "codeName" : "Story",
+    "dERType" : "DERINDEX",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DERINDEX_ZT_STORY_IBIZPRO_INDEX.json",
+    "logicName" : "需求",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex.json"
+    },
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+    },
+    "name" : "DERINDEX_ZT_STORY_IBIZPRO_INDEX",
+    "orderValue" : 100,
+    "getPSDERIndexDEFieldMaps" : [ {
+      "getMajorPSDEField" : {
+        "name" : "DELETED",
+        "codeName" : "Deleted"
+      },
+      "getMinorPSDEField" : {
+        "name" : "DELETED",
+        "codeName" : "Deleted"
+      },
+      "name" : "deleted=deleted"
+    }, {
+      "getMajorPSDEField" : {
+        "name" : "COLOR",
+        "codeName" : "Color"
+      },
+      "getMinorPSDEField" : {
+        "name" : "COLOR",
+        "codeName" : "Color"
+      },
+      "name" : "color=color"
+    }, {
+      "getMajorPSDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      },
+      "getMinorPSDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      },
+      "name" : "PRODUCT=PRODUCT"
+    }, {
+      "getMajorPSDEField" : {
+        "name" : "INDEXDESC",
+        "codeName" : "Indexdesc"
+      },
+      "getMinorPSDEField" : {
+        "name" : "SPEC",
+        "codeName" : "Spec"
+      },
+      "name" : "indexdesc=spec"
+    } ],
+    "typeValue" : "story",
+    "inherit" : false,
+    "virtual" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DERINDEX_ZT_TASK_IBIZPRO_INDEX.json"
+    "codeName" : "Task",
+    "dERType" : "DERINDEX",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DERINDEX_ZT_TASK_IBIZPRO_INDEX.json",
+    "logicName" : "任务",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex.json"
+    },
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+    },
+    "name" : "DERINDEX_ZT_TASK_IBIZPRO_INDEX",
+    "orderValue" : 100,
+    "getPSDERIndexDEFieldMaps" : [ {
+      "getMajorPSDEField" : {
+        "name" : "DELETED",
+        "codeName" : "Deleted"
+      },
+      "getMinorPSDEField" : {
+        "name" : "DELETED",
+        "codeName" : "Deleted"
+      },
+      "name" : "deleted=deleted"
+    }, {
+      "getMajorPSDEField" : {
+        "name" : "INDEXDESC",
+        "codeName" : "Indexdesc"
+      },
+      "getMinorPSDEField" : {
+        "name" : "DESC",
+        "codeName" : "Desc"
+      },
+      "name" : "INDEXDESC=DESC"
+    }, {
+      "getMajorPSDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "getMinorPSDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "name" : "PROJECT=PROJECT"
+    } ],
+    "typeValue" : "task",
+    "inherit" : false,
+    "virtual" : true
   } ],
   "name" : "IBIZPRO_INDEX",
-  "orderValue" : 99999,
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,

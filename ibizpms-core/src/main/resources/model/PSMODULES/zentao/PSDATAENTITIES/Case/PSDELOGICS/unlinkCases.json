@@ -2,7 +2,6 @@
   "codeName" : "unlinkCases",
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDELOGICS/unlinkCases.json",
-  "logicHolder" : 1,
   "logicName" : "unlinkCases",
   "logicSubType" : "NONE",
   "name" : "unlinkCases",
@@ -42,7 +41,6 @@
   } ],
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",
-    "logicHolder" : 3,
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
@@ -64,13 +62,11 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
     },
-    "logicHolder" : 3,
     "logicNodeType" : "DEACTION",
     "name" : "处理移除接口",
     "parallelOutput" : true
   }, {
     "codeName" : "Prepareparam1",
-    "logicHolder" : 3,
     "logicNodeType" : "PREPAREPARAM",
     "name" : "重置ID",
     "getPSDELogicLinks" : [ {
@@ -99,7 +95,6 @@
       "modelref" : true,
       "id" : "testrun"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取数据",
     "getPSDELogicLinks" : [ {

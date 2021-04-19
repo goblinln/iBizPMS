@@ -3,17 +3,6 @@
   "actionType" : "USERCUSTOM",
   "codeName" : "BugCreateCase",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/BugCreateCase.json",
-  "extendMode" : 0,
   "logicName" : "建用例",
-  "name" : "bugCreateCase",
-  "orderValue" : 99999,
-  "paramMode" : 1,
-  "requestParamType" : "ENTITY",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "builtinAction" : false,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  "name" : "bugCreateCase"
 }

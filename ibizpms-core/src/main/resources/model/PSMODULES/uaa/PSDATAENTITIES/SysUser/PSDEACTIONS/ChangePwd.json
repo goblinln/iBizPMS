@@ -3,17 +3,6 @@
   "actionType" : "USERCUSTOM",
   "codeName" : "ChangePwd",
   "dynaModelFilePath" : "PSMODULES/uaa/PSDATAENTITIES/SysUser/PSDEACTIONS/ChangePwd.json",
-  "extendMode" : 0,
   "logicName" : "修改密码",
-  "name" : "ChangePwd",
-  "orderValue" : 99999,
-  "paramMode" : 1,
-  "requestParamType" : "ENTITY",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "builtinAction" : false,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  "name" : "ChangePwd"
 }

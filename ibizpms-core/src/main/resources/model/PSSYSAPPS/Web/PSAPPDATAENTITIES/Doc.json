@@ -1340,7 +1340,6 @@
     "logicName" : "文档_未收藏",
     "mSTag" : "doc__0",
     "name" : "文档_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "MODULE",
       "getPSDEOPPriv" : {
@@ -1382,7 +1381,6 @@
     "logicName" : "文档_已收藏",
     "mSTag" : "doc__1",
     "name" : "文档_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "MODULE",
       "getPSDEOPPriv" : {
@@ -1424,7 +1422,6 @@
     "logicName" : "文档库_未收藏",
     "mSTag" : "doclib__0",
     "name" : "文档库_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "DOC",
       "getPSDEOPPriv" : {
@@ -1466,7 +1463,6 @@
     "logicName" : "文档库_已收藏",
     "mSTag" : "doclib__1",
     "name" : "文档库_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__DOC_FAVOUR_BUT",
       "getPSDEOPPriv" : {
@@ -1508,7 +1504,6 @@
     "logicName" : "文档库分类模块_未收藏",
     "mSTag" : "module__0",
     "name" : "文档库分类模块_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "DOCLIB",
       "getPSDEOPPriv" : {
@@ -1550,7 +1545,6 @@
     "logicName" : "文档库分类模块_已收藏",
     "mSTag" : "module__1",
     "name" : "文档库分类模块_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "DOCLIB",
       "getPSDEOPPriv" : {

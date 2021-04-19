@@ -3,21 +3,6 @@
   "actionType" : "USERCUSTOM",
   "codeName" : "GetTeamUserLeftActivity",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetTeamUserLeftActivity.json",
-  "extendMode" : 0,
   "logicName" : "获取团队成员剩余工时（激活）",
-  "name" : "GetTeamUserLeftActivity",
-  "orderValue" : 99999,
-  "getPSDEOPPriv" : {
-    "modelref" : true,
-    "id" : "READ"
-  },
-  "paramMode" : 1,
-  "requestParamType" : "ENTITY",
-  "testActionMode" : 0,
-  "timeOut" : -1,
-  "transactionMode" : "DEFAULT",
-  "builtinAction" : false,
-  "customParam" : false,
-  "generateTestUnit" : false,
-  "pubServiceDefault" : true
+  "name" : "GetTeamUserLeftActivity"
 }

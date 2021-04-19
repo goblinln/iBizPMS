@@ -1042,7 +1042,6 @@
     "logicName" : "未提交",
     "mSTag" : "0",
     "name" : "未提交",
-    "orderValue" : 99999,
     "stateValue" : "0",
     "viewActions" : 0,
     "wFStateMode" : 0,
@@ -1058,7 +1057,6 @@
     "logicName" : "已提交",
     "mSTag" : "1",
     "name" : "已提交",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__MONTHLY_SUBMIT_BUT",
       "getPSDEOPPriv" : {

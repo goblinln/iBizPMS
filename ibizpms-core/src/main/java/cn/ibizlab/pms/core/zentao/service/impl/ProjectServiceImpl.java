@@ -154,9 +154,7 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
         if(!projectRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
-        for (Project et : list) {
-            getProxyService().update(et);
-        }
+        updateBatchById(list, batchSize);
     }
 
     @Override
@@ -180,9 +178,7 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
     @Override
     @Transactional
     public void removeBatch(Collection<Long> idList) {
-        for (Long id : idList) {
-            getProxyService().removeById(id);
-        }
+        removeByIds(idList);
     }
 
     @Override

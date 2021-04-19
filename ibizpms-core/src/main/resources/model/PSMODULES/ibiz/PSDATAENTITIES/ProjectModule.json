@@ -1,239 +1,186 @@
 {
   "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Create.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "getAfterPSDEActionLogics" : [ {
+      "attachMode" : "AFTER",
+      "name" : "附加逻辑",
+      "getPSDELogic" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDELOGICS/FixPath.json"
+      },
+      "cloneParam" : false,
+      "ignoreException" : false,
+      "internalLogic" : true
+    } ],
+    "codeName" : "Create",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Create.json",
+    "logicName" : "Create",
+    "name" : "Create",
+    "orderValue" : 1,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Update.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "getAfterPSDEActionLogics" : [ {
+      "attachMode" : "AFTER",
+      "name" : "附加逻辑",
+      "getPSDELogic" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDELOGICS/FixPath.json"
+      },
+      "cloneParam" : false,
+      "ignoreException" : false,
+      "internalLogic" : true
+    } ],
+    "codeName" : "Update",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Update.json",
+    "logicName" : "Update",
+    "name" : "Update",
+    "orderValue" : 11,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Remove.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Remove",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Remove.json",
+    "logicName" : "Remove",
+    "name" : "Remove",
+    "orderValue" : 21,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Get.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Get.json",
+    "logicName" : "Get",
+    "name" : "Get",
+    "orderValue" : 31,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/GetDraft.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/GetDraft.json",
+    "logicName" : "GetDraft",
+    "name" : "GetDraft",
+    "orderValue" : 41,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/CheckKey.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/CheckKey.json",
+    "logicName" : "CheckKey",
+    "name" : "CheckKey",
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Fix.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "DELOGIC",
+    "codeName" : "Fix",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Fix.json",
+    "logicName" : "重建模块路径",
+    "name" : "Fix",
+    "getPSDELogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDELOGICS/FixPath.json"
+    }
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/RemoveModule.json"
+    "actionMode" : "DELETE",
+    "actionType" : "DELOGIC",
+    "codeName" : "RemoveModule",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/RemoveModule.json",
+    "logicName" : "删除模块",
+    "name" : "RemoveModule",
+    "getPSDELogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDELOGICS/RemoveModule.json"
+    }
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Save.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/Save.json",
+    "logicName" : "Save",
+    "name" : "Save",
+    "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
     "codeName" : "ByPath",
-    "extendMode" : 0,
     "logicName" : "BYPATH",
     "name" : "BYPATH",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "defaultMode" : true
   }, {
     "codeName" : "ParentModule",
-    "extendMode" : 0,
     "logicName" : "父模块",
     "name" : "ParentModule",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "Root",
-    "extendMode" : 0,
     "logicName" : "根需求模块",
-    "name" : "ROOT",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "ROOT"
   }, {
     "codeName" : "Root_NoBranch",
-    "extendMode" : 0,
     "logicName" : "根需求模块_无分支",
-    "name" : "Root_NoBranch",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "Root_NoBranch"
   }, {
     "codeName" : "Root_Task",
-    "extendMode" : 0,
     "logicName" : "根任务模块",
-    "name" : "ROOT_TASK",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "ROOT_TASK"
   }, {
     "codeName" : "TaskModules",
-    "extendMode" : 0,
     "logicName" : "任务模块",
     "name" : "TaskModules",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "View",
-    "extendMode" : 0,
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "VIEW"
   } ],
   "getAllPSDEDataSets" : [ {
-    "cacheTimeout" : -1,
     "codeName" : "ByPath",
-    "extendMode" : 0,
     "logicName" : "BYPATH",
     "name" : "BYPATH",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
     "defaultMode" : true,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "ParentModule",
-    "extendMode" : 0,
     "logicName" : "父模块",
     "name" : "ParentModule",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "Root",
-    "extendMode" : 0,
     "logicName" : "根模块",
     "name" : "ROOT",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "Root_NoBranch",
-    "extendMode" : 0,
     "logicName" : "根模块_无分支",
     "name" : "Root_NoBranch",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "Root_Task",
-    "extendMode" : 0,
     "logicName" : "根模块",
     "name" : "ROOT_TASK",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "TaskModules",
-    "extendMode" : 0,
     "logicName" : "任务模块",
     "majorSortDir" : "ASC",
     "getMajorSortPSDEField" : {
@@ -246,19 +193,8 @@
       "codeName" : "Id"
     },
     "name" : "TaskModules",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFDTColumns" : [ {
@@ -267,7 +203,6 @@
       "name" : "SHORT",
       "queryCodeExp" : "t1.`SHORT`",
       "standardColumnName" : "`SHORT`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -293,7 +228,6 @@
         "name" : "SHORT",
         "codeName" : "IBizShort"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[30]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -304,7 +238,6 @@
     "dEFType" : 1,
     "dataType" : "TEXT",
     "defaultValue" : "/",
-    "deployId" : "8a3f1eac634f441085f7d9b338333901",
     "importOrder" : 1000,
     "length" : 30,
     "logicName" : "简称",
@@ -318,9 +251,7 @@
       "dBType" : "MYSQL5",
       "name" : "ISLEAF",
       "queryCodeExp" : "(CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END )",
-      "standardColumnName" : "`ISLEAF`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`ISLEAF`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -345,7 +276,6 @@
         "name" : "ISLEAF",
         "codeName" : "IsLeaf"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -355,7 +285,6 @@
     "codeName" : "IsLeaf",
     "dEFType" : 2,
     "dataType" : "TEXT",
-    "deployId" : "ada13a6742411a5662b6682b214c3316",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "叶子模块",
@@ -372,7 +301,6 @@
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
       "standardColumnName" : "`TYPE`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -398,7 +326,6 @@
         "name" : "TYPE",
         "codeName" : "Type"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[30]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -409,7 +336,6 @@
     "dEFType" : 1,
     "dataType" : "TEXT",
     "defaultValue" : "task",
-    "deployId" : "68cff533630bc56b548ddbcf4420166b",
     "importOrder" : 1000,
     "length" : 30,
     "logicName" : "类型（task）",
@@ -441,7 +367,6 @@
         "name" : "ORDERPK",
         "codeName" : "Orderpk"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -451,7 +376,6 @@
     "codeName" : "Orderpk",
     "dEFType" : 5,
     "dataType" : "TEXT",
-    "deployId" : "b9ffb232194e6e06ded0e4d84718e61d",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "数据选择排序",
@@ -467,9 +391,7 @@
       "dBType" : "MYSQL5",
       "name" : "NAME",
       "queryCodeExp" : "t1.`NAME`",
-      "standardColumnName" : "`NAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`NAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -494,7 +416,6 @@
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -504,7 +425,6 @@
     "codeName" : "Name",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "22a23c48b335071033f56815f51f7822",
     "importOrder" : 1000,
     "length" : 60,
     "logicName" : "名称",
@@ -522,7 +442,6 @@
       "name" : "ORDER",
       "queryCodeExp" : "t1.`ORDER`",
       "standardColumnName" : "`ORDER`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -537,7 +456,6 @@
         "name" : "ORDER",
         "codeName" : "Order"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -548,7 +466,6 @@
     "dEFType" : 1,
     "dataType" : "INT",
     "defaultValue" : "0",
-    "deployId" : "9d56041f3a2bf652c8670210eddba759",
     "importOrder" : 1000,
     "logicName" : "排序值",
     "name" : "ORDER",
@@ -562,7 +479,6 @@
       "name" : "COLLECTOR",
       "queryCodeExp" : "t1.`COLLECTOR`",
       "standardColumnName" : "`COLLECTOR`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -588,7 +504,6 @@
         "name" : "COLLECTOR",
         "codeName" : "Collector"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[65535]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -599,7 +514,6 @@
     "dEFType" : 1,
     "dataType" : "LONGTEXT",
     "defaultValue" : "/",
-    "deployId" : "f1877b34c4d6f6f13fe3599b366ffab1",
     "importOrder" : 1000,
     "length" : 65535,
     "logicName" : "collector",
@@ -615,7 +529,6 @@
       "name" : "GRADE",
       "queryCodeExp" : "t1.`GRADE`",
       "standardColumnName" : "`GRADE`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -630,7 +543,6 @@
         "name" : "GRADE",
         "codeName" : "Grade"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -641,7 +553,6 @@
     "dEFType" : 1,
     "dataType" : "INT",
     "defaultValue" : "0",
-    "deployId" : "dd87cb6549dab893d6db879c244d3360",
     "importOrder" : 1000,
     "logicName" : "grade",
     "name" : "GRADE",
@@ -654,7 +565,6 @@
       "name" : "BRANCH",
       "queryCodeExp" : "t1.`BRANCH`",
       "standardColumnName" : "`BRANCH`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -669,7 +579,6 @@
         "name" : "BRANCH",
         "codeName" : "Branch"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -680,7 +589,6 @@
     "dEFType" : 1,
     "dataType" : "INT",
     "defaultValue" : "0",
-    "deployId" : "4bdac124b78c8f67829b32a1eeeb08a8",
     "importOrder" : 1000,
     "logicName" : "branch",
     "name" : "BRANCH",
@@ -693,7 +601,6 @@
       "name" : "PATH",
       "queryCodeExp" : "t1.`PATH`",
       "standardColumnName" : "`PATH`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -719,7 +626,6 @@
         "name" : "PATH",
         "codeName" : "Path"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[255]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -730,7 +636,6 @@
     "dEFType" : 1,
     "dataType" : "TEXT",
     "defaultValue" : ",",
-    "deployId" : "d1b55b81e7faf127416618e0bffd06bb",
     "importOrder" : 1000,
     "length" : 255,
     "logicName" : "path",
@@ -745,8 +650,7 @@
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`",
-      "autoIncrement" : true,
-      "valueAutoGen" : false
+      "autoIncrement" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -760,7 +664,6 @@
         "name" : "ID",
         "codeName" : "Id"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -770,7 +673,6 @@
     "codeName" : "Id",
     "dEFType" : 1,
     "dataType" : "ACID",
-    "deployId" : "f14071ae6a5e3f4e2d4d968a8e39ece8",
     "importOrder" : 1000,
     "length" : 20,
     "logicName" : "id",
@@ -790,7 +692,6 @@
       "name" : "OWNER",
       "queryCodeExp" : "t1.`OWNER`",
       "standardColumnName" : "`OWNER`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -816,7 +717,6 @@
         "name" : "OWNER",
         "codeName" : "Owner"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[30]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -827,7 +727,6 @@
     "dEFType" : 1,
     "dataType" : "TEXT",
     "defaultValue" : "/",
-    "deployId" : "a0818397fad81535316287a05791fb1f",
     "importOrder" : 1000,
     "length" : 30,
     "logicName" : "owner",
@@ -842,7 +741,6 @@
       "name" : "DELETED",
       "queryCodeExp" : "t1.`DELETED`",
       "standardColumnName" : "`DELETED`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -868,7 +766,6 @@
         "name" : "DELETED",
         "codeName" : "Deleted"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[1]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -879,7 +776,6 @@
     "dEFType" : 1,
     "dataType" : "TEXT",
     "defaultValue" : "0",
-    "deployId" : "ffe0b14db9a19d31bffb6cdb27c837cd",
     "importOrder" : 1000,
     "length" : 1,
     "logicName" : "逻辑删除标志",
@@ -896,9 +792,7 @@
       "dBType" : "MYSQL5",
       "name" : "ROOTNAME",
       "queryCodeExp" : "t11.`NAME`",
-      "standardColumnName" : "`ROOTNAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`ROOTNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -923,7 +817,6 @@
         "name" : "ROOTNAME",
         "codeName" : "RootName"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[90]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -933,7 +826,6 @@
     "codeName" : "RootName",
     "dEFType" : 3,
     "dataType" : "PICKUPTEXT",
-    "deployId" : "937dba7f986fb0188bcd9b848651a673",
     "importOrder" : 1000,
     "length" : 90,
     "logicName" : "所属项目",
@@ -957,9 +849,7 @@
       "dBType" : "MYSQL5",
       "name" : "PARENTNAME",
       "queryCodeExp" : "t21.`NAME`",
-      "standardColumnName" : "`PARENTNAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PARENTNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -984,7 +874,6 @@
         "name" : "PARENTNAME",
         "codeName" : "ParentName"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -994,7 +883,6 @@
     "codeName" : "ParentName",
     "dEFType" : 3,
     "dataType" : "PICKUPTEXT",
-    "deployId" : "840c6f4a60365a9f4f557a94799a8001",
     "importOrder" : 1000,
     "length" : 60,
     "logicName" : "上级模块",
@@ -1018,9 +906,7 @@
       "dBType" : "MYSQL5",
       "name" : "ROOT",
       "queryCodeExp" : "t1.`ROOT`",
-      "standardColumnName" : "`ROOT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`ROOT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1034,7 +920,6 @@
         "name" : "ROOT",
         "codeName" : "Root"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1044,7 +929,6 @@
     "codeName" : "Root",
     "dEFType" : 1,
     "dataType" : "PICKUP",
-    "deployId" : "653e857f457b60e3d84683f0679f3d82",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "项目",
@@ -1066,9 +950,7 @@
       "dBType" : "MYSQL5",
       "name" : "PARENT",
       "queryCodeExp" : "t1.`PARENT`",
-      "standardColumnName" : "`PARENT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PARENT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1082,7 +964,6 @@
         "name" : "PARENT",
         "codeName" : "Parent"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1092,7 +973,6 @@
     "codeName" : "Parent",
     "dEFType" : 1,
     "dataType" : "PICKUP",
-    "deployId" : "7ef13b26bc3dc43d849cf1f7f315b051",
     "importOrder" : 1000,
     "length" : 20,
     "logicName" : "id",
@@ -1110,11 +990,335 @@
     "linkDEField" : true
   } ],
   "getAllPSDELogics" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDELOGICS/FixPath.json"
+    "codeName" : "FixPath",
+    "defaultParamName" : "Default",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDELOGICS/FixPath.json",
+    "logicName" : "重建模块路径",
+    "logicSubType" : "NONE",
+    "name" : "重建模块路径",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Prepareparam1"
+      },
+      "name" : "连接7754",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      },
+      "defaultLink" : false
+    }, {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Deaction1"
+      },
+      "name" : "连接7212",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Prepareparam1"
+      },
+      "defaultLink" : false
+    } ],
+    "getPSDELogicNodes" : [ {
+      "codeName" : "Deaction1",
+      "getDstPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDEACTIONS/Update.json"
+      },
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "ZT_Module"
+      },
+      "getDstPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+      },
+      "logicNodeType" : "DEACTION",
+      "name" : "执行重建模块路径行为",
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Prepareparam1",
+      "logicNodeType" : "PREPAREPARAM",
+      "name" : "准备参数",
+      "getPSDELogicLinks" : [ {
+        "modelref" : true,
+        "id" : "连接7212"
+      } ],
+      "getPSDELogicNodeParams" : [ {
+        "dstFieldName" : "BRANCH",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "ZT_Module"
+        },
+        "name" : "Default[BRANCH] ==> ZT_Module[BRANCH]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "BRANCH",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      }, {
+        "dstFieldName" : "COLLECTOR",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "ZT_Module"
+        },
+        "name" : "Default[COLLECTOR] ==> ZT_Module[COLLECTOR]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "COLLECTOR",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      }, {
+        "dstFieldName" : "GRADE",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "ZT_Module"
+        },
+        "name" : "Default[GRADE] ==> ZT_Module[GRADE]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "GRADE",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      }, {
+        "dstFieldName" : "ID",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "ZT_Module"
+        },
+        "name" : "Default[ID] ==> ZT_Module[ID]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "ID",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      }, {
+        "dstFieldName" : "NAME",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "ZT_Module"
+        },
+        "name" : "Default[NAME] ==> ZT_Module[NAME]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "NAME",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      }, {
+        "dstFieldName" : "ORDER",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "ZT_Module"
+        },
+        "name" : "Default[ORDER] ==> ZT_Module[ORDER]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "ORDER",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      }, {
+        "dstFieldName" : "PARENT",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "ZT_Module"
+        },
+        "name" : "Default[PARENT] ==> ZT_Module[PARENT]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "PARENT",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      }, {
+        "dstFieldName" : "ROOT",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "ZT_Module"
+        },
+        "name" : "Default[ROOT] ==> ZT_Module[ROOT]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "ROOT",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      }, {
+        "dstFieldName" : "SHORT",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "ZT_Module"
+        },
+        "name" : "Default[SHORT] ==> ZT_Module[SHORT]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "SHORT",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      }, {
+        "dstFieldName" : "TYPE",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "ZT_Module"
+        },
+        "name" : "Default[TYPE] ==> ZT_Module[TYPE]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "TYPE",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "getPSDELogicLinks" : [ {
+        "modelref" : true,
+        "id" : "连接7754"
+      } ],
+      "parallelOutput" : true
+    } ],
+    "getPSDELogicParams" : [ {
+      "codeName" : "ZT_Module",
+      "name" : "模块实体",
+      "default" : false,
+      "envParam" : false,
+      "lastParam" : false,
+      "sessionParam" : false
+    }, {
+      "codeName" : "Default",
+      "name" : "传入变量",
+      "default" : true,
+      "envParam" : false,
+      "lastParam" : false,
+      "sessionParam" : false
+    } ],
+    "getStartPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "enableBackend" : true,
+    "enableFront" : false
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDELOGICS/RemoveModule.json"
+    "codeName" : "RemoveModule",
+    "defaultParamName" : "Default",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDELOGICS/RemoveModule.json",
+    "logicName" : "删除模块",
+    "logicSubType" : "NONE",
+    "name" : "删除模块",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Prepareparam1"
+      },
+      "name" : "连接2200",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      },
+      "defaultLink" : false
+    }, {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Deaction1"
+      },
+      "name" : "连接1737",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Prepareparam1"
+      },
+      "defaultLink" : false
+    } ],
+    "getPSDELogicNodes" : [ {
+      "codeName" : "Deaction1",
+      "getDstPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDEACTIONS/Remove.json"
+      },
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "module"
+      },
+      "getDstPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+      },
+      "logicNodeType" : "DEACTION",
+      "name" : "模块删除",
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Prepareparam1",
+      "logicNodeType" : "PREPAREPARAM",
+      "name" : "设置模块参数",
+      "getPSDELogicLinks" : [ {
+        "modelref" : true,
+        "id" : "连接1737"
+      } ],
+      "getPSDELogicNodeParams" : [ {
+        "dstFieldName" : "ID",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "module"
+        },
+        "name" : "Default[ID] ==> module[ID]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "ID",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "getPSDELogicLinks" : [ {
+        "modelref" : true,
+        "id" : "连接2200"
+      } ],
+      "parallelOutput" : true
+    } ],
+    "getPSDELogicParams" : [ {
+      "codeName" : "module",
+      "name" : "模块",
+      "default" : false,
+      "envParam" : false,
+      "lastParam" : false,
+      "sessionParam" : false
+    }, {
+      "codeName" : "Default",
+      "name" : "传入变量",
+      "default" : true,
+      "envParam" : false,
+      "lastParam" : false,
+      "sessionParam" : false
+    } ],
+    "getStartPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "enableBackend" : true,
+    "enableFront" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
@@ -1141,7 +1345,6 @@
     "modelref" : true,
     "id" : "Default"
   },
-  "deployId" : "4da1dae684ab37849479e7a36590c3a7",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json",
   "enableActions" : 7,
@@ -1151,21 +1354,116 @@
   "invalidLogicValue" : "1",
   "logicName" : "任务模块",
   "getMajorPSDERs" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDERS/DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT.json"
+    "codeName" : "ParentModule",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDERS/DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+    },
+    "name" : "DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "PARENT",
+      "codeName" : "Parent"
+    },
+    "getPSPickupTextDEField" : {
+      "name" : "PARENTNAME",
+      "codeName" : "ParentName"
+    },
+    "pickupDEFName" : "PARENT",
+    "removeActionType" : -1,
+    "removeOrder" : 0
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_IBZ_PROJECTMODULE_MODULE.json"
+    "codeName" : "ProjectModule",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_IBZ_PROJECTMODULE_MODULE.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+    },
+    "name" : "DER1N_ZT_TASK_IBZ_PROJECTMODULE_MODULE",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "MODULE",
+      "codeName" : "Module"
+    },
+    "getPSPickupTextDEField" : {
+      "name" : "MODULENAME",
+      "codeName" : "Modulename"
+    },
+    "pickupDEFName" : "MODULE",
+    "removeActionType" : -1,
+    "removeOrder" : 0
   } ],
   "getMinorPSDERs" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDERS/DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT.json"
+    "codeName" : "ParentModule",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDERS/DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+    },
+    "name" : "DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "PARENT",
+      "codeName" : "Parent"
+    },
+    "getPSPickupTextDEField" : {
+      "name" : "PARENTNAME",
+      "codeName" : "ParentName"
+    },
+    "pickupDEFName" : "PARENT",
+    "removeActionType" : -1,
+    "removeOrder" : 0
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDERS/DER1N_IBZ_PROJECTMODULE_ZT_PROJECT_ROOT.json"
+    "codeName" : "ZTProject",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDERS/DER1N_IBZ_PROJECTMODULE_ZT_PROJECT_ROOT.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+    },
+    "name" : "DER1N_IBZ_PROJECTMODULE_ZT_PROJECT_ROOT",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "ROOT",
+      "codeName" : "Root"
+    },
+    "getPSPickupTextDEField" : {
+      "name" : "ROOTNAME",
+      "codeName" : "RootName"
+    },
+    "pickupDEFName" : "ROOT",
+    "removeActionType" : -1,
+    "removeOrder" : 0
   } ],
   "name" : "IBZ_PROJECTMODULE",
-  "orderValue" : 99999,
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,

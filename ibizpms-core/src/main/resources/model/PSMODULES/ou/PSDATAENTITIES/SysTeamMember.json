@@ -1,68 +1,83 @@
 {
   "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDEACTIONS/Create.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDEACTIONS/Create.json",
+    "logicName" : "Create",
+    "name" : "Create",
+    "orderValue" : 1,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDEACTIONS/Update.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDEACTIONS/Update.json",
+    "logicName" : "Update",
+    "name" : "Update",
+    "orderValue" : 11,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDEACTIONS/Remove.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Remove",
+    "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDEACTIONS/Remove.json",
+    "logicName" : "Remove",
+    "name" : "Remove",
+    "orderValue" : 21,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDEACTIONS/Get.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDEACTIONS/Get.json",
+    "logicName" : "Get",
+    "name" : "Get",
+    "orderValue" : 31,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDEACTIONS/GetDraft.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDEACTIONS/GetDraft.json",
+    "logicName" : "GetDraft",
+    "name" : "GetDraft",
+    "orderValue" : 41,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDEACTIONS/CheckKey.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDEACTIONS/CheckKey.json",
+    "logicName" : "CheckKey",
+    "name" : "CheckKey",
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDEACTIONS/Save.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDEACTIONS/Save.json",
+    "logicName" : "Save",
+    "name" : "Save",
+    "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "数据查询",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "defaultMode" : true
   }, {
     "codeName" : "View",
-    "extendMode" : 0,
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "VIEW"
   } ],
   "getAllPSDEDataSets" : [ {
-    "cacheTimeout" : -1,
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "数据集",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
     "defaultMode" : true,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFDTColumns" : [ {
@@ -70,9 +85,7 @@
       "dBType" : "MYSQL5",
       "name" : "TEAMMEMBERID",
       "queryCodeExp" : "t1.`TEAMMEMBERID`",
-      "standardColumnName" : "`TEAMMEMBERID`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`TEAMMEMBERID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -97,7 +110,6 @@
         "name" : "TEAMMEMBERID",
         "codeName" : "TeamMemberId"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -107,7 +119,6 @@
     "codeName" : "TeamMemberId",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "7ccea085e0f28fbc4101901b1aa23fda",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "组成员标识",
@@ -123,9 +134,7 @@
       "dBType" : "MYSQL5",
       "name" : "TEAMNAME",
       "queryCodeExp" : "t11.`TEAMNAME`",
-      "standardColumnName" : "`TEAMNAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`TEAMNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -150,7 +159,6 @@
         "name" : "TEAMNAME",
         "codeName" : "TeamName"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -160,7 +168,6 @@
     "codeName" : "TeamName",
     "dEFType" : 3,
     "dataType" : "PICKUPTEXT",
-    "deployId" : "ec773aba257f604a0b4e6a907bc8c85b",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "组名称",
@@ -185,9 +192,7 @@
       "dBType" : "MYSQL5",
       "name" : "POSTNAME",
       "queryCodeExp" : "t21.`POSTNAME`",
-      "standardColumnName" : "`POSTNAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`POSTNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -212,7 +217,6 @@
         "name" : "POSTNAME",
         "codeName" : "PostName"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -222,7 +226,6 @@
     "codeName" : "PostName",
     "dEFType" : 3,
     "dataType" : "PICKUPTEXT",
-    "deployId" : "6b23bf6531f3392dfe7b00d69ff47ff7",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "岗位",
@@ -246,9 +249,7 @@
       "dBType" : "MYSQL5",
       "name" : "DOMAINS",
       "queryCodeExp" : "t1.`DOMAINS`",
-      "standardColumnName" : "`DOMAINS`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`DOMAINS`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -273,7 +274,6 @@
         "name" : "DOMAINS",
         "codeName" : "Domains"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -283,7 +283,6 @@
     "codeName" : "Domains",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "186fb2257639934e4aa7ed53d688d131",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "区属",
@@ -297,9 +296,7 @@
       "dBType" : "MYSQL5",
       "name" : "USERICON",
       "queryCodeExp" : "t31.`USERICON`",
-      "standardColumnName" : "`USERICON`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`USERICON`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -324,7 +321,6 @@
         "name" : "USERICON",
         "codeName" : "UserIcon"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[255]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -334,7 +330,6 @@
     "codeName" : "UserIcon",
     "dEFType" : 3,
     "dataType" : "PICKUPDATA",
-    "deployId" : "dddfb71bc94f688e543be87f5cb150d7",
     "importOrder" : 1000,
     "length" : 255,
     "logicName" : "头像",
@@ -358,9 +353,7 @@
       "dBType" : "MYSQL5",
       "name" : "PERSONNAME",
       "queryCodeExp" : "t31.`PERSONNAME`",
-      "standardColumnName" : "`PERSONNAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PERSONNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -385,7 +378,6 @@
         "name" : "PERSONNAME",
         "codeName" : "PersonName"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -395,7 +387,6 @@
     "codeName" : "PersonName",
     "dEFType" : 3,
     "dataType" : "PICKUPTEXT",
-    "deployId" : "030bb07ba1e6e67456cef68afce1be3c",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "姓名",
@@ -419,9 +410,7 @@
       "dBType" : "MYSQL5",
       "name" : "USERNAME",
       "queryCodeExp" : "t31.`USERNAME`",
-      "standardColumnName" : "`USERNAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`USERNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -446,7 +435,6 @@
         "name" : "USERNAME",
         "codeName" : "UserName"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -456,7 +444,6 @@
     "codeName" : "UserName",
     "dEFType" : 3,
     "dataType" : "PICKUPDATA",
-    "deployId" : "3a3a361eae02e7d3d847b37c4e0b7d82",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "账号",
@@ -480,9 +467,7 @@
       "dBType" : "MYSQL5",
       "name" : "POSTID",
       "queryCodeExp" : "t1.`POSTID`",
-      "standardColumnName" : "`POSTID`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`POSTID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -507,7 +492,6 @@
         "name" : "POSTID",
         "codeName" : "PostId"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -517,7 +501,6 @@
     "codeName" : "PostId",
     "dEFType" : 1,
     "dataType" : "PICKUP",
-    "deployId" : "a2f03077b42719d1faf47772bf24ae20",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "岗位标识",
@@ -540,9 +523,7 @@
       "dBType" : "MYSQL5",
       "name" : "TEAMID",
       "queryCodeExp" : "t1.`TEAMID`",
-      "standardColumnName" : "`TEAMID`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`TEAMID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -567,7 +548,6 @@
         "name" : "TEAMID",
         "codeName" : "TeamId"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -577,7 +557,6 @@
     "codeName" : "TeamId",
     "dEFType" : 1,
     "dataType" : "PICKUP",
-    "deployId" : "4deef6b5a851e1082705c04a180ae210",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "组标识",
@@ -600,9 +579,7 @@
       "dBType" : "MYSQL5",
       "name" : "USERID",
       "queryCodeExp" : "t1.`USERID`",
-      "standardColumnName" : "`USERID`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`USERID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -627,7 +604,6 @@
         "name" : "USERID",
         "codeName" : "UserId"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -637,7 +613,6 @@
     "codeName" : "UserId",
     "dEFType" : 1,
     "dataType" : "PICKUP",
-    "deployId" : "74a0a2589ad56a06828d98027c52b18b",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "用户标识",
@@ -680,7 +655,6 @@
     "modelref" : true,
     "id" : "Default"
   },
-  "deployId" : "458fa31b3022d5dbe2ab9b8911c09223",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember.json",
   "enableActions" : 7,
@@ -689,17 +663,88 @@
   "extendMode" : 0,
   "logicName" : "组成员",
   "getMinorPSDERs" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDERS/DER1N_SYS_TEAMMEMBER_IBZEMP_USERID.json"
+    "codeName" : "Emp",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDERS/DER1N_SYS_TEAMMEMBER_IBZEMP_USERID.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember.json"
+    },
+    "name" : "DER1N_SYS_TEAMMEMBER_IBZEMP_USERID",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "USERID",
+      "codeName" : "UserId"
+    },
+    "getPSPickupTextDEField" : {
+      "name" : "PERSONNAME",
+      "codeName" : "PersonName"
+    },
+    "pickupDEFName" : "USERID",
+    "removeActionType" : -1,
+    "removeOrder" : 0
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDERS/DER1N_SYS_TEAMMEMBER_SYS_POST_POSTID.json"
+    "codeName" : "Post",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDERS/DER1N_SYS_TEAMMEMBER_SYS_POST_POSTID.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysPost.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember.json"
+    },
+    "name" : "DER1N_SYS_TEAMMEMBER_SYS_POST_POSTID",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "POSTID",
+      "codeName" : "PostId"
+    },
+    "getPSPickupTextDEField" : {
+      "name" : "POSTNAME",
+      "codeName" : "PostName"
+    },
+    "pickupDEFName" : "POSTID",
+    "removeActionType" : -1,
+    "removeOrder" : 0
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDERS/DER1N_SYS_TEAMMEMBER_SYS_TEAM_TEAMID.json"
+    "codeName" : "Team",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDERS/DER1N_SYS_TEAMMEMBER_SYS_TEAM_TEAMID.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeam.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember.json"
+    },
+    "name" : "DER1N_SYS_TEAMMEMBER_SYS_TEAM_TEAMID",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "TEAMID",
+      "codeName" : "TeamId"
+    },
+    "getPSPickupTextDEField" : {
+      "name" : "TEAMNAME",
+      "codeName" : "TeamName"
+    },
+    "pickupDEFName" : "TEAMID",
+    "removeActionType" : -1,
+    "removeOrder" : 0
   } ],
   "name" : "SYS_TEAMMEMBER",
-  "orderValue" : 99999,
   "saaSMode" : 0,
   "serviceAPIClientId" : "9dab79080bf86d9ac588a8ab99d5d28c",
   "serviceAPIMode" : 0,

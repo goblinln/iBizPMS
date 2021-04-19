@@ -2797,7 +2797,6 @@
     "logicName" : "激活_未收藏_不能细分",
     "mSTag" : "active__0__0",
     "name" : "激活_未收藏_不能细分",
-    "orderValue" : 99999,
     "getPSDEMainStateActions" : [ {
       "name" : "Close",
       "getPSDEAction" : {
@@ -3012,7 +3011,6 @@
     "logicName" : "激活_未收藏_细分",
     "mSTag" : "active__0__1",
     "name" : "激活_未收藏_细分",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__STORY_FAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -3127,7 +3125,6 @@
     "logicName" : "激活_未收藏_细分（删除）",
     "mSTag" : "active__0__2",
     "name" : "激活_未收藏_细分（删除）",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__STORY_ACTIVE_BUT",
       "getPSDEOPPriv" : {
@@ -3182,7 +3179,6 @@
     "logicName" : "激活_已收藏_不能细分",
     "mSTag" : "active__1__0",
     "name" : "激活_已收藏_不能细分",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__STORY_ACTIVE_BUT",
       "getPSDEOPPriv" : {
@@ -3249,7 +3245,6 @@
     "logicName" : "激活_已收藏_细分",
     "mSTag" : "active__1__1",
     "name" : "激活_已收藏_细分",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__STORY_CHANGED_BUT",
       "getPSDEOPPriv" : {
@@ -3364,7 +3359,6 @@
     "logicName" : "激活_已收藏_细分（删除）",
     "mSTag" : "active__1__2",
     "name" : "激活_已收藏_细分（删除）",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__STORY_REVIEW_BUT",
       "getPSDEOPPriv" : {
@@ -3419,7 +3413,6 @@
     "logicName" : "已变更_未收藏_不能细分",
     "mSTag" : "changed__0__0",
     "name" : "已变更_未收藏_不能细分",
-    "orderValue" : 99999,
     "getPSDEMainStateActions" : [ {
       "name" : "LinkStory",
       "getPSDEAction" : {
@@ -3622,7 +3615,6 @@
     "logicName" : "已变更_未收藏_细分",
     "mSTag" : "changed__0__1",
     "name" : "已变更_未收藏_细分",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__STORY_ACTIVE_BUT",
       "getPSDEOPPriv" : {
@@ -3749,7 +3741,6 @@
     "logicName" : "已变更_未收藏_细分（删除）",
     "mSTag" : "changed__0__2",
     "name" : "已变更_未收藏_细分（删除）",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__STORY_ACTIVE_BUT",
       "getPSDEOPPriv" : {
@@ -3804,7 +3795,6 @@
     "logicName" : "已变更_已收藏_不能细分",
     "mSTag" : "changed__1__0",
     "name" : "已变更_已收藏_不能细分",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__STORY_XQXF_BUT",
       "getPSDEOPPriv" : {
@@ -3859,7 +3849,6 @@
     "logicName" : "已变更_已收藏_细分",
     "mSTag" : "changed__1__1",
     "name" : "已变更_已收藏_细分",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__STORY_ASS_BUT",
       "getPSDEOPPriv" : {
@@ -3986,7 +3975,6 @@
     "logicName" : "已变更_已收藏_细分（删除）",
     "mSTag" : "changed__1__2",
     "name" : "已变更_已收藏_细分（删除）",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__STORY_XQXF_BUT",
       "getPSDEOPPriv" : {
@@ -4041,7 +4029,6 @@
     "logicName" : "已关闭_未收藏_不能细分",
     "mSTag" : "closed__0__0",
     "name" : "已关闭_未收藏_不能细分",
-    "orderValue" : 99999,
     "getPSDEMainStateActions" : [ {
       "name" : "ReleaseBatchUnlinkStory",
       "getPSDEAction" : {
@@ -4266,7 +4253,6 @@
     "logicName" : "已关闭_未收藏_细分",
     "mSTag" : "closed__0__1",
     "name" : "已关闭_未收藏_细分",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__STORY_DELETE_BUT",
       "getPSDEOPPriv" : {
@@ -4393,7 +4379,6 @@
     "logicName" : "已关闭_未收藏_细分（删除）",
     "mSTag" : "closed__0__2",
     "name" : "已关闭_未收藏_细分（删除）",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__STORY_CLOSED_BUT",
       "getPSDEOPPriv" : {
@@ -4496,7 +4481,6 @@
     "logicName" : "已关闭_已收藏_不能细分",
     "mSTag" : "closed__1__0",
     "name" : "已关闭_已收藏_不能细分",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__STORY_CHANGED_BUT",
       "getPSDEOPPriv" : {
@@ -4587,7 +4571,6 @@
     "logicName" : "已关闭_已收藏_细分",
     "mSTag" : "closed__1__1",
     "name" : "已关闭_已收藏_细分",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__STORY_REVIEW_BUT",
       "getPSDEOPPriv" : {
@@ -4714,7 +4697,6 @@
     "logicName" : "已关闭_已收藏_细分（删除）",
     "mSTag" : "closed__1__2",
     "name" : "已关闭_已收藏_细分（删除）",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__STORY_REVIEW_BUT",
       "getPSDEOPPriv" : {
@@ -4817,7 +4799,6 @@
     "logicName" : "草稿-未收藏_不能细分",
     "mSTag" : "draft__0__0",
     "name" : "草稿-未收藏_不能细分",
-    "orderValue" : 99999,
     "getPSDEMainStateActions" : [ {
       "name" : "BatchUnlinkStory",
       "getPSDEAction" : {
@@ -5027,7 +5008,6 @@
     "logicName" : "草稿-未收藏_细分",
     "mSTag" : "draft__0__1",
     "name" : "草稿-未收藏_细分",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__STORY_FAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -5154,7 +5134,6 @@
     "logicName" : "草稿-未收藏_细分（删除）",
     "mSTag" : "draft__0__2",
     "name" : "草稿-未收藏_细分（删除）",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__STORY_XQXF_BUT",
       "getPSDEOPPriv" : {
@@ -5209,7 +5188,6 @@
     "logicName" : "草稿-已收藏_不能细分",
     "mSTag" : "draft__1__0",
     "name" : "草稿-已收藏_不能细分",
-    "orderValue" : 99999,
     "getPSDEMainStateActions" : [ {
       "name" : "Review",
       "getPSDEAction" : {
@@ -5398,7 +5376,6 @@
     "logicName" : "草稿-已收藏_细分",
     "mSTag" : "draft__1__1",
     "name" : "草稿-已收藏_细分",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__STORY_DELETE_BUT",
       "getPSDEOPPriv" : {
@@ -5525,7 +5502,6 @@
     "logicName" : "草稿-已收藏_细分（删除）",
     "mSTag" : "draft__1__2",
     "name" : "草稿-已收藏_细分（删除）",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__STORY_ACTIVE_BUT",
       "getPSDEOPPriv" : {
@@ -5593,7 +5569,7 @@
   } ],
   "codeName" : "SubStory",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubStory.json",
   "enableUIActions" : 15,
   "logicName" : "子需求",

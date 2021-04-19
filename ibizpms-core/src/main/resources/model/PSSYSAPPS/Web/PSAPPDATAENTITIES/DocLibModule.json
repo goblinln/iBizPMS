@@ -998,7 +998,6 @@
     "logicName" : "模块_未收藏",
     "mSTag" : "module__0",
     "name" : "模块_未收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__DOCLIBMODULE_NFAVOUR_BUT",
       "getPSDEOPPriv" : {
@@ -1028,7 +1027,6 @@
     "logicName" : "模块_已收藏",
     "mSTag" : "module__1",
     "name" : "模块_已收藏",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__DOCLIBMODULE_FAVOUR_BUT",
       "getPSDEOPPriv" : {

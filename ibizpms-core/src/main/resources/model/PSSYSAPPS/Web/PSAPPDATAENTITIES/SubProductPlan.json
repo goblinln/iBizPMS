@@ -1349,7 +1349,6 @@
     "logicName" : "子计划",
     "mSTag" : "chlid",
     "name" : "子计划",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__PROP_CHILD_BUT",
       "getPSDEOPPriv" : {
@@ -1378,7 +1377,6 @@
     "logicName" : "正常",
     "mSTag" : "normal",
     "name" : "正常",
-    "orderValue" : 99999,
     "stateValue" : "normal",
     "viewActions" : 0,
     "wFStateMode" : 0,
@@ -1394,7 +1392,6 @@
     "logicName" : "父计划",
     "mSTag" : "parent",
     "name" : "父计划",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__PROP_DELETE_BUT",
       "getPSDEOPPriv" : {

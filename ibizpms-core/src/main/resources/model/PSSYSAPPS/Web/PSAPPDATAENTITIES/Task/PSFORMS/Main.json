@@ -1156,7 +1156,6 @@
                     "name" : "ESTIMATE",
                     "codeName" : "Estimate"
                   },
-                  "ruleHolder" : 3,
                   "ruleInfo" : "预计大于等于0",
                   "checkDefault" : false,
                   "defaultMode" : false,

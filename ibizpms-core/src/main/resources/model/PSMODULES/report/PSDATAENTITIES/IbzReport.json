@@ -1,143 +1,135 @@
 {
   "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Create.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Create.json",
+    "logicName" : "Create",
+    "name" : "Create",
+    "orderValue" : 1,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Update.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Update.json",
+    "logicName" : "Update",
+    "name" : "Update",
+    "orderValue" : 11,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Remove.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Remove",
+    "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Remove.json",
+    "logicName" : "Remove",
+    "name" : "Remove",
+    "orderValue" : 21,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Get.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Get.json",
+    "logicName" : "Get",
+    "name" : "Get",
+    "orderValue" : 31,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/GetDraft.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/GetDraft.json",
+    "logicName" : "GetDraft",
+    "name" : "GetDraft",
+    "orderValue" : 41,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/CheckKey.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/CheckKey.json",
+    "logicName" : "CheckKey",
+    "name" : "CheckKey",
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/MyReportINotSubmit.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "DELOGIC",
+    "codeName" : "MyReportINotSubmit",
+    "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/MyReportINotSubmit.json",
+    "logicName" : "我未提交的（计数器）",
+    "name" : "MyReportINotSubmit",
+    "getPSDELogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDELOGICS/MyReportINotSubmit.json"
+    }
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/ReportIReceived.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "DELOGIC",
+    "codeName" : "ReportIReceived",
+    "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/ReportIReceived.json",
+    "logicName" : "我收到的汇报（计数器）",
+    "name" : "ReportIReceived",
+    "getPSDELogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDELOGICS/ReportIReceived.json"
+    }
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Save.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Save.json",
+    "logicName" : "Save",
+    "name" : "Save",
+    "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
     "codeName" : "AllReport",
-    "extendMode" : 0,
     "logicName" : "汇报汇总",
     "name" : "AllReport",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "数据查询",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
     "customCode" : true,
-    "defaultMode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "defaultMode" : true
   }, {
     "codeName" : "MyReAllReport",
-    "extendMode" : 0,
     "logicName" : "汇报汇总（我收到的）",
     "name" : "MyReAllReport",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "View",
-    "extendMode" : 0,
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "VIEW"
   } ],
   "getAllPSDEDataSets" : [ {
-    "cacheTimeout" : -1,
     "codeName" : "AllReport",
-    "extendMode" : 0,
     "logicName" : "汇报汇总",
     "name" : "AllReport",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "数据集",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
     "defaultMode" : true,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "MyReAllReport",
-    "extendMode" : 0,
     "logicName" : "汇报汇总（我收到的）",
     "name" : "MyReAllReport",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "UPDATEMANNAME",
       "dBType" : "MYSQL5",
       "name" : "UPDATEMANNAME",
-      "standardColumnName" : "`UPDATEMANNAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`UPDATEMANNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -162,7 +154,6 @@
         "name" : "UPDATEMANNAME",
         "codeName" : "UpdateManName"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -172,7 +163,6 @@
     "codeName" : "UpdateManName",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "15b89a287858c946603e33eb3558c839",
     "importOrder" : 1000,
     "length" : 60,
     "logicName" : "更新人名称",
@@ -188,9 +178,7 @@
       "columnName" : "MAILTO",
       "dBType" : "MYSQL5",
       "name" : "MAILTO",
-      "standardColumnName" : "`MAILTO`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`MAILTO`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -215,7 +203,6 @@
         "name" : "MAILTO",
         "codeName" : "Mailto"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[2000]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -225,7 +212,6 @@
     "codeName" : "Mailto",
     "dEFType" : 1,
     "dataType" : "SMCODELIST",
-    "deployId" : "a09ba28d41d35f9817ab26d7bb1c1239",
     "importOrder" : 1000,
     "length" : 2000,
     "logicName" : "抄送给",
@@ -243,8 +229,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZ_DAILYID",
       "standardColumnName" : "`IBZ_DAILYID`",
-      "autoIncrement" : true,
-      "valueAutoGen" : false
+      "autoIncrement" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -258,7 +243,6 @@
         "name" : "IBZ_DAILYID",
         "codeName" : "IbzDailyId"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -268,7 +252,6 @@
     "codeName" : "IbzDailyId",
     "dEFType" : 1,
     "dataType" : "ACID",
-    "deployId" : "03f5ce6cd1a0b3fe732e53808e6b42bd",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "汇报标识",
@@ -292,7 +275,6 @@
         "name" : "REPORTLYCNT",
         "codeName" : "Reportlycnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -302,7 +284,6 @@
     "codeName" : "Reportlycnt",
     "dEFType" : 5,
     "dataType" : "INT",
-    "deployId" : "bb41477eef11702eacf55d749be1f3ec",
     "importOrder" : 1000,
     "logicName" : "未读汇报数",
     "name" : "REPORTLYCNT",
@@ -315,9 +296,7 @@
       "columnName" : "UPDATEDATE",
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
-      "standardColumnName" : "`UPDATEDATE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`UPDATEDATE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -331,7 +310,6 @@
         "name" : "UPDATEDATE",
         "codeName" : "UpdateDate"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -341,7 +319,6 @@
     "codeName" : "UpdateDate",
     "dEFType" : 1,
     "dataType" : "DATETIME",
-    "deployId" : "57380481433cdf8459e2e3c2c77cd202",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "更新时间",
@@ -356,9 +333,7 @@
       "columnName" : "WORKTODAY",
       "dBType" : "MYSQL5",
       "name" : "WORKTODAY",
-      "standardColumnName" : "`WORKTODAY`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`WORKTODAY`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -383,7 +358,6 @@
         "name" : "WORKTODAY",
         "codeName" : "Worktoday"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[1048576]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -393,7 +367,6 @@
     "codeName" : "Worktoday",
     "dEFType" : 1,
     "dataType" : "HTMLTEXT",
-    "deployId" : "775b98e4c55a920ba373c361bdf507d6",
     "importOrder" : 1000,
     "length" : 1048576,
     "logicName" : "工作",
@@ -415,7 +388,6 @@
         "name" : "MONTHLYCNT",
         "codeName" : "MonthlyCnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -425,7 +397,6 @@
     "codeName" : "MonthlyCnt",
     "dEFType" : 5,
     "dataType" : "INT",
-    "deployId" : "13fe3711bb51d1f1cfb3ca6aaca9cadf",
     "importOrder" : 1000,
     "logicName" : "未读月报数",
     "name" : "MONTHLYCNT",
@@ -446,7 +417,6 @@
         "name" : "DAILYCNT",
         "codeName" : "Dailycnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -456,7 +426,6 @@
     "codeName" : "Dailycnt",
     "dEFType" : 5,
     "dataType" : "INT",
-    "deployId" : "5725eda5d51c761c28bd551a1a55f70e",
     "importOrder" : 1000,
     "logicName" : "未读日报数",
     "name" : "DAILYCNT",
@@ -469,9 +438,7 @@
       "columnName" : "CREATEDATE",
       "dBType" : "MYSQL5",
       "name" : "CREATEDATE",
-      "standardColumnName" : "`CREATEDATE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`CREATEDATE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -485,7 +452,6 @@
         "name" : "CREATEDATE",
         "codeName" : "CreateDate"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -495,7 +461,6 @@
     "codeName" : "CreateDate",
     "dEFType" : 1,
     "dataType" : "DATETIME",
-    "deployId" : "181b108d1088a10385a84a7f6325cac3",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "建立时间",
@@ -510,9 +475,7 @@
       "columnName" : "TODAYTASK",
       "dBType" : "MYSQL5",
       "name" : "TODAYTASK",
-      "standardColumnName" : "`TODAYTASK`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`TODAYTASK`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -537,7 +500,6 @@
         "name" : "TODAYTASK",
         "codeName" : "Todaytask"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[2000]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -547,7 +509,6 @@
     "codeName" : "Todaytask",
     "dEFType" : 1,
     "dataType" : "SMCODELIST",
-    "deployId" : "27b403d80755792cc71f2a8f28100407",
     "importOrder" : 1000,
     "length" : 2000,
     "logicName" : "完成任务",
@@ -564,9 +525,7 @@
       "columnName" : "ACCOUNT",
       "dBType" : "MYSQL5",
       "name" : "ACCOUNT",
-      "standardColumnName" : "`ACCOUNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`ACCOUNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -591,7 +550,6 @@
         "name" : "ACCOUNT",
         "codeName" : "Account"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -601,7 +559,6 @@
     "codeName" : "Account",
     "dEFType" : 1,
     "dataType" : "SSCODELIST",
-    "deployId" : "98f9c427bfffa56e8bc5688fb9c27a96",
     "importOrder" : 1000,
     "length" : 60,
     "logicName" : "用户",
@@ -637,7 +594,6 @@
         "name" : "TYPE",
         "codeName" : "Type"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -648,7 +604,6 @@
     "dEFType" : 5,
     "dEMSFieldMode" : "STATE1",
     "dataType" : "SSCODELIST",
-    "deployId" : "e761552981bfd6157d9fee4e64c464e3",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "类型",
@@ -667,9 +622,7 @@
       "columnName" : "CREATEMAN",
       "dBType" : "MYSQL5",
       "name" : "CREATEMAN",
-      "standardColumnName" : "`CREATEMAN`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`CREATEMAN`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -694,7 +647,6 @@
         "name" : "CREATEMAN",
         "codeName" : "CreateMan"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -704,7 +656,6 @@
     "codeName" : "CreateMan",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "5851b0662fde2241525b86eb74edcfc6",
     "importOrder" : 1000,
     "length" : 60,
     "logicName" : "建立人",
@@ -724,9 +675,7 @@
       "columnName" : "UPDATEMAN",
       "dBType" : "MYSQL5",
       "name" : "UPDATEMAN",
-      "standardColumnName" : "`UPDATEMAN`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`UPDATEMAN`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -751,7 +700,6 @@
         "name" : "UPDATEMAN",
         "codeName" : "UpdateMan"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -761,7 +709,6 @@
     "codeName" : "UpdateMan",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "154ebcb2f428d203cda4767ef3b47b34",
     "importOrder" : 1000,
     "length" : 60,
     "logicName" : "更新人",
@@ -781,9 +728,7 @@
       "columnName" : "IBZ_DAILYNAME",
       "dBType" : "MYSQL5",
       "name" : "IBZ_DAILYNAME",
-      "standardColumnName" : "`IBZ_DAILYNAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`IBZ_DAILYNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -808,7 +753,6 @@
         "name" : "IBZ_DAILYNAME",
         "codeName" : "IbzDailyName"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -818,7 +762,6 @@
     "codeName" : "IbzDailyName",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "4ac4af715d4a558655b43d24d49629ee",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "汇报名称",
@@ -833,9 +776,7 @@
       "columnName" : "REPORTTO",
       "dBType" : "MYSQL5",
       "name" : "REPORTTO",
-      "standardColumnName" : "`REPORTTO`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`REPORTTO`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -860,7 +801,6 @@
         "name" : "REPORTTO",
         "codeName" : "Reportto"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -870,7 +810,6 @@
     "codeName" : "Reportto",
     "dEFType" : 1,
     "dataType" : "SSCODELIST",
-    "deployId" : "1938f6d844d2de0e521c10c6b9f63969",
     "importOrder" : 1000,
     "length" : 60,
     "logicName" : "汇报给",
@@ -906,7 +845,6 @@
         "name" : "SUBMITTIME",
         "codeName" : "Submittime"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -916,7 +854,6 @@
     "codeName" : "Submittime",
     "dEFType" : 5,
     "dataType" : "TEXT",
-    "deployId" : "e6b8e44a7f914e3e3a2b7c0815b12722",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "提交时间",
@@ -950,7 +887,6 @@
         "name" : "FILES",
         "codeName" : "Files"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -960,7 +896,6 @@
     "codeName" : "Files",
     "dEFType" : 5,
     "dataType" : "TEXT",
-    "deployId" : "52108eae08e6d650a14487d34aa73043",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "附件",
@@ -975,9 +910,7 @@
       "columnName" : "CREATEMANNAME",
       "dBType" : "MYSQL5",
       "name" : "CREATEMANNAME",
-      "standardColumnName" : "`CREATEMANNAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`CREATEMANNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1002,7 +935,6 @@
         "name" : "CREATEMANNAME",
         "codeName" : "CreateManName"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1012,7 +944,6 @@
     "codeName" : "CreateManName",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "08d9dbb356f2467a5ed65818bf185dd4",
     "importOrder" : 1000,
     "length" : 60,
     "logicName" : "建立人名称",
@@ -1028,9 +959,7 @@
       "columnName" : "PLANSTOMORROW",
       "dBType" : "MYSQL5",
       "name" : "PLANSTOMORROW",
-      "standardColumnName" : "`PLANSTOMORROW`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PLANSTOMORROW`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1055,7 +984,6 @@
         "name" : "PLANSTOMORROW",
         "codeName" : "Planstomorrow"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[1048576]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1065,7 +993,6 @@
     "codeName" : "Planstomorrow",
     "dEFType" : 1,
     "dataType" : "HTMLTEXT",
-    "deployId" : "4296f7e5a682cdbdee29dd082f0a0acc",
     "importOrder" : 1000,
     "length" : 1048576,
     "logicName" : "计划",
@@ -1080,7 +1007,6 @@
       "dBType" : "MYSQL5",
       "name" : "REPORTSTATUS",
       "standardColumnName" : "`REPORTSTATUS`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1106,7 +1032,6 @@
         "name" : "REPORTSTATUS",
         "codeName" : "Reportstatus"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1117,7 +1042,6 @@
     "dEFType" : 1,
     "dataType" : "SSCODELIST",
     "defaultValue" : "0",
-    "deployId" : "beec2649a9eaff9b37b9cb7d7b9d2ab4",
     "importOrder" : 1000,
     "length" : 60,
     "logicName" : "状态",
@@ -1134,9 +1058,7 @@
       "columnName" : "DATE",
       "dBType" : "MYSQL5",
       "name" : "DATE",
-      "standardColumnName" : "`DATE`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`DATE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1150,7 +1072,6 @@
         "name" : "DATE",
         "codeName" : "Date"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1160,7 +1081,6 @@
     "codeName" : "Date",
     "dEFType" : 1,
     "dataType" : "DATE",
-    "deployId" : "c7d5662b76ef977cbfde4113cd7ddd5b",
     "importOrder" : 1000,
     "logicName" : "日期",
     "name" : "DATE",
@@ -1172,7 +1092,6 @@
       "dBType" : "MYSQL5",
       "name" : "ISSUBMIT",
       "standardColumnName" : "`ISSUBMIT`",
-      "autoIncrement" : false,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1198,7 +1117,6 @@
         "name" : "ISSUBMIT",
         "codeName" : "Issubmit"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1209,7 +1127,6 @@
     "dEFType" : 1,
     "dataType" : "SSCODELIST",
     "defaultValue" : "0",
-    "deployId" : "3202250c6a979c21e8b53341cc8ff214",
     "importOrder" : 1000,
     "length" : 60,
     "logicName" : "是否提交",
@@ -1226,9 +1143,7 @@
       "columnName" : "COMMENT",
       "dBType" : "MYSQL5",
       "name" : "COMMENT",
-      "standardColumnName" : "`COMMENT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`COMMENT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1253,7 +1168,6 @@
         "name" : "COMMENT",
         "codeName" : "Comment"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[1048576]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1263,7 +1177,6 @@
     "codeName" : "Comment",
     "dEFType" : 1,
     "dataType" : "HTMLTEXT",
-    "deployId" : "b1559932d26743d15f04c813f58ba1f3",
     "importOrder" : 1000,
     "length" : 1048576,
     "logicName" : "其他事项",
@@ -1277,9 +1190,7 @@
       "columnName" : "TOMORROWPLANSTASK",
       "dBType" : "MYSQL5",
       "name" : "TOMORROWPLANSTASK",
-      "standardColumnName" : "`TOMORROWPLANSTASK`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`TOMORROWPLANSTASK`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1304,7 +1215,6 @@
         "name" : "TOMORROWPLANSTASK",
         "codeName" : "Tomorrowplanstask"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[2000]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1314,7 +1224,6 @@
     "codeName" : "Tomorrowplanstask",
     "dEFType" : 1,
     "dataType" : "SMCODELIST",
-    "deployId" : "592275ee1955f8f7e177a74d5e2b7d3a",
     "importOrder" : 1000,
     "length" : 2000,
     "logicName" : "计划任务",
@@ -1328,11 +1237,396 @@
     "valueFormat" : "%1$s"
   } ],
   "getAllPSDELogics" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDELOGICS/MyReportINotSubmit.json"
+    "codeName" : "MyReportINotSubmit",
+    "defaultParamName" : "Default",
+    "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDELOGICS/MyReportINotSubmit.json",
+    "logicName" : "我未提交的（计数器）",
+    "logicSubType" : "NONE",
+    "name" : "我未提交的（计数器）",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall3"
+      },
+      "name" : "连接7180",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall2"
+      },
+      "defaultLink" : false
+    }, {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "MyUnReadCnt"
+      },
+      "name" : "连接9813",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall3"
+      },
+      "defaultLink" : false
+    }, {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall2"
+      },
+      "name" : "连接7044",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall1"
+      },
+      "defaultLink" : false
+    }, {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall4"
+      },
+      "name" : "连接1334",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "MyUnReadCnt"
+      },
+      "defaultLink" : false
+    }, {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall1"
+      },
+      "name" : "连接879",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      },
+      "defaultLink" : false
+    } ],
+    "getPSDELogicNodes" : [ {
+      "codeName" : "Rawsqlcall4",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "logicNodeType" : "RAWSQLCALL",
+      "name" : "统计我未提交的汇报数",
+      "getPSDELogicNodeParams" : [ {
+        "name" : "用户全局对象[srfloginname]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Rawsqlcall2",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "logicNodeType" : "RAWSQLCALL",
+      "name" : "统计我未提交的周报",
+      "getPSDELogicLinks" : [ {
+        "modelref" : true,
+        "id" : "连接7180"
+      } ],
+      "getPSDELogicNodeParams" : [ {
+        "name" : "用户全局对象[srfloginname]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "MyUnReadCnt",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "logicNodeType" : "RAWSQLCALL",
+      "name" : "统计我收到的（未读）",
+      "getPSDELogicLinks" : [ {
+        "modelref" : true,
+        "id" : "连接1334"
+      } ],
+      "getPSDELogicNodeParams" : [ {
+        "name" : "用户全局对象[srfloginname]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      }, {
+        "name" : "用户全局对象[srfloginname]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      }, {
+        "name" : "用户全局对象[srfloginname]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      }, {
+        "name" : "用户全局对象[srfloginname]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      }, {
+        "name" : "用户全局对象[srfloginname]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      }, {
+        "name" : "用户全局对象[srfloginname]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Rawsqlcall3",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "logicNodeType" : "RAWSQLCALL",
+      "name" : "统计我未提交的月报",
+      "getPSDELogicLinks" : [ {
+        "modelref" : true,
+        "id" : "连接9813"
+      } ],
+      "getPSDELogicNodeParams" : [ {
+        "name" : "用户全局对象[srfloginname]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Rawsqlcall1",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "logicNodeType" : "RAWSQLCALL",
+      "name" : "统计我未提交的日报数",
+      "getPSDELogicLinks" : [ {
+        "modelref" : true,
+        "id" : "连接7044"
+      } ],
+      "getPSDELogicNodeParams" : [ {
+        "name" : "用户全局对象[srfloginname]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "getPSDELogicLinks" : [ {
+        "modelref" : true,
+        "id" : "连接879"
+      } ],
+      "parallelOutput" : true
+    } ],
+    "getPSDELogicParams" : [ {
+      "codeName" : "Default",
+      "name" : "传入变量",
+      "default" : true,
+      "envParam" : false,
+      "lastParam" : false,
+      "sessionParam" : false
+    } ],
+    "getStartPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "enableBackend" : true,
+    "enableFront" : false
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDELOGICS/ReportIReceived.json"
+    "codeName" : "ReportIReceived",
+    "defaultParamName" : "Default",
+    "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDELOGICS/ReportIReceived.json",
+    "logicName" : "我收到的汇报（计数器）",
+    "logicSubType" : "NONE",
+    "name" : "我收到的汇报（计数器）",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall2"
+      },
+      "name" : "连接2143",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall1"
+      },
+      "defaultLink" : false
+    }, {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall4"
+      },
+      "name" : "连接82",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall3"
+      },
+      "defaultLink" : false
+    }, {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall3"
+      },
+      "name" : "连接5862",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall2"
+      },
+      "defaultLink" : false
+    }, {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall1"
+      },
+      "name" : "连接879",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      },
+      "defaultLink" : false
+    } ],
+    "getPSDELogicNodes" : [ {
+      "codeName" : "Rawsqlcall3",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "logicNodeType" : "RAWSQLCALL",
+      "name" : "获取未读周报",
+      "getPSDELogicLinks" : [ {
+        "modelref" : true,
+        "id" : "连接82"
+      } ],
+      "getPSDELogicNodeParams" : [ {
+        "name" : "用户全局对象[srfloginname]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      }, {
+        "name" : "用户全局对象[srfloginname]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      }, {
+        "name" : "用户全局对象[srfloginname]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Rawsqlcall4",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "logicNodeType" : "RAWSQLCALL",
+      "name" : "统计我收到的汇报数（未读）",
+      "getPSDELogicNodeParams" : [ {
+        "name" : "用户全局对象[srfloginname]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      }, {
+        "name" : "用户全局对象[srfloginname]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      }, {
+        "name" : "用户全局对象[srfloginname]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "getPSDELogicLinks" : [ {
+        "modelref" : true,
+        "id" : "连接879"
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Rawsqlcall1",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "logicNodeType" : "RAWSQLCALL",
+      "name" : "统计我收到的日报数",
+      "getPSDELogicLinks" : [ {
+        "modelref" : true,
+        "id" : "连接2143"
+      } ],
+      "getPSDELogicNodeParams" : [ {
+        "name" : "用户全局对象[srfloginname]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      }, {
+        "name" : "用户全局对象[srfloginname]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      }, {
+        "name" : "用户全局对象[srfloginname]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Rawsqlcall2",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "logicNodeType" : "RAWSQLCALL",
+      "name" : "统计我收到的月报数（未读）",
+      "getPSDELogicLinks" : [ {
+        "modelref" : true,
+        "id" : "连接5862"
+      } ],
+      "getPSDELogicNodeParams" : [ {
+        "name" : "用户全局对象[srfloginname]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      }, {
+        "name" : "用户全局对象[srfloginname]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      }, {
+        "name" : "用户全局对象[srfloginname]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      } ],
+      "parallelOutput" : true
+    } ],
+    "getPSDELogicParams" : [ {
+      "codeName" : "Default",
+      "name" : "传入变量",
+      "default" : true,
+      "envParam" : false,
+      "lastParam" : false,
+      "sessionParam" : false
+    } ],
+    "getStartPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "enableBackend" : true,
+    "enableFront" : false
   } ],
   "getAllPSDEMainStates" : [ {
     "codeName" : "daily",
@@ -1340,7 +1634,6 @@
     "logicName" : "日报",
     "mSTag" : "daily",
     "name" : "日报",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "MONTHLY",
       "getPSDEOPPriv" : {
@@ -1375,7 +1668,6 @@
     "logicName" : "月报",
     "mSTag" : "monthly",
     "name" : "月报",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "WEEKLY",
       "getPSDEOPPriv" : {
@@ -1410,7 +1702,6 @@
     "logicName" : "汇报",
     "mSTag" : "reportly",
     "name" : "汇报",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "DAILY",
       "getPSDEOPPriv" : {
@@ -1445,7 +1736,6 @@
     "logicName" : "周报",
     "mSTag" : "weekly",
     "name" : "周报",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "REPORTLY",
       "getPSDEOPPriv" : {
@@ -1500,7 +1790,6 @@
     "modelref" : true,
     "id" : "Default"
   },
-  "deployId" : "a584aeb6b7aebf9bdba4c0cca4e5090e",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzReport.json",
   "enableActions" : 7,
@@ -1513,7 +1802,6 @@
     "codeName" : "Type"
   } ],
   "name" : "IBZ_REPORT",
-  "orderValue" : 99999,
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,

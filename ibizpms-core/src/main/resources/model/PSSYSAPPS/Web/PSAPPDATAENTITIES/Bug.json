@@ -3574,7 +3574,6 @@
     "logicName" : "激活_未收藏_未确认",
     "mSTag" : "active__0__0",
     "name" : "激活_未收藏_未确认",
-    "orderValue" : 99999,
     "getPSDEMainStateActions" : [ {
       "name" : "Confirm",
       "getPSDEAction" : {
@@ -3761,7 +3760,6 @@
     "logicName" : "激活_未收藏_已确认",
     "mSTag" : "active__0__1",
     "name" : "激活_未收藏_已确认",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__BUG_ACTIVATE_BUT",
       "getPSDEOPPriv" : {
@@ -3840,7 +3838,6 @@
     "logicName" : "激活_已收藏_未确认",
     "mSTag" : "active__1__0",
     "name" : "激活_已收藏_未确认",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__BUG_NFAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -3907,7 +3904,6 @@
     "logicName" : "激活_已收藏_已确认",
     "mSTag" : "active__1__1",
     "name" : "激活_已收藏_已确认",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__BUG_CLOSE_BUT",
       "getPSDEOPPriv" : {
@@ -3986,7 +3982,6 @@
     "logicName" : "已关闭_未收藏_未确认",
     "mSTag" : "closed__0__0",
     "name" : "已关闭_未收藏_未确认",
-    "orderValue" : 99999,
     "getPSDEMainStateActions" : [ {
       "name" : "buildBatchUnlinkBug",
       "getPSDEAction" : {
@@ -4209,7 +4204,6 @@
     "logicName" : "已关闭_未收藏_已确认",
     "mSTag" : "closed__0__1",
     "name" : "已关闭_未收藏_已确认",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__BUG_ASSIGNTO_BUT",
       "getPSDEOPPriv" : {
@@ -4312,7 +4306,6 @@
     "logicName" : "已关闭_已收藏_未确认",
     "mSTag" : "closed__1__0",
     "name" : "已关闭_已收藏_未确认",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__PROP_LBUG_BUT",
       "getPSDEOPPriv" : {
@@ -4415,7 +4408,6 @@
     "logicName" : "已关闭_已收藏_已确认",
     "mSTag" : "closed__1__1",
     "name" : "已关闭_已收藏_已确认",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__BUG_CLOSE_BUT",
       "getPSDEOPPriv" : {
@@ -4518,7 +4510,6 @@
     "logicName" : "已解决_未收藏_未确认",
     "mSTag" : "resolved__0__0",
     "name" : "已解决_未收藏_未确认",
-    "orderValue" : 99999,
     "getPSDEMainStateActions" : [ {
       "name" : "Get",
       "getPSDEAction" : {
@@ -4712,7 +4703,6 @@
     "logicName" : "已解决_未收藏_已确认",
     "mSTag" : "resolved__0__1",
     "name" : "已解决_未收藏_已确认",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__PROP_LBUG_BUT",
       "getPSDEOPPriv" : {
@@ -4779,7 +4769,6 @@
     "logicName" : "已解决_已收藏_未确认",
     "mSTag" : "resolved__1__0",
     "name" : "已解决_已收藏_未确认",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__PROP_LBUG_BUT",
       "getPSDEOPPriv" : {
@@ -4846,7 +4835,6 @@
     "logicName" : "已解决_已收藏_已确认",
     "mSTag" : "resolved__1__1",
     "name" : "已解决_已收藏_已确认",
-    "orderValue" : 99999,
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__BUG_CONFIRM_BUT",
       "getPSDEOPPriv" : {

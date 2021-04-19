@@ -1,68 +1,83 @@
 {
   "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEACTIONS/Create.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEACTIONS/Create.json",
+    "logicName" : "Create",
+    "name" : "Create",
+    "orderValue" : 1,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEACTIONS/Update.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEACTIONS/Update.json",
+    "logicName" : "Update",
+    "name" : "Update",
+    "orderValue" : 11,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEACTIONS/Remove.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Remove",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEACTIONS/Remove.json",
+    "logicName" : "Remove",
+    "name" : "Remove",
+    "orderValue" : 21,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEACTIONS/Get.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEACTIONS/Get.json",
+    "logicName" : "Get",
+    "name" : "Get",
+    "orderValue" : 31,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEACTIONS/GetDraft.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEACTIONS/GetDraft.json",
+    "logicName" : "GetDraft",
+    "name" : "GetDraft",
+    "orderValue" : 41,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEACTIONS/CheckKey.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEACTIONS/CheckKey.json",
+    "logicName" : "CheckKey",
+    "name" : "CheckKey",
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEACTIONS/Save.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEACTIONS/Save.json",
+    "logicName" : "Save",
+    "name" : "Save",
+    "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "defaultMode" : true
   }, {
     "codeName" : "View",
-    "extendMode" : 0,
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "VIEW"
   } ],
   "getAllPSDEDataSets" : [ {
-    "cacheTimeout" : -1,
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
     "defaultMode" : true,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFDTColumns" : [ {
@@ -70,9 +85,7 @@
       "dBType" : "MYSQL5",
       "name" : "SECONDMEMBER",
       "queryCodeExp" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 1,1)",
-      "standardColumnName" : "`SECONDMEMBER`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`SECONDMEMBER`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -97,7 +110,6 @@
         "name" : "SECONDMEMBER",
         "codeName" : "Secondmember"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -107,7 +119,6 @@
     "codeName" : "Secondmember",
     "dEFType" : 2,
     "dataType" : "TEXT",
-    "deployId" : "05f7664bd43ff0cbd967a429c6017c0d",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "团队成员（二）",
@@ -127,9 +138,7 @@
       "dBType" : "MYSQL5",
       "name" : "RD",
       "queryCodeExp" : "t1.RD",
-      "standardColumnName" : "`RD`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`RD`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -154,7 +163,6 @@
         "name" : "RD",
         "codeName" : "RD"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -164,7 +172,6 @@
     "codeName" : "RD",
     "dEFType" : 2,
     "dataType" : "TEXT",
-    "deployId" : "79fadfa8a37ed25c937e275760e4e2d5",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "发布负责人",
@@ -184,9 +191,7 @@
       "dBType" : "MYSQL5",
       "name" : "QD",
       "queryCodeExp" : "t1.QD",
-      "standardColumnName" : "`QD`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`QD`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -211,7 +216,6 @@
         "name" : "QD",
         "codeName" : "QD"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -221,7 +225,6 @@
     "codeName" : "QD",
     "dEFType" : 2,
     "dataType" : "TEXT",
-    "deployId" : "33cf258279a592f568c75ddf1d0ee4b0",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "测试负责人",
@@ -241,9 +244,7 @@
       "dBType" : "MYSQL5",
       "name" : "TEAMEMBERS",
       "queryCodeExp" : "(select GROUP_CONCAT(t.account order by t.`order` asc) from zt_team t where t.type = 'project' and t.root = t1.id GROUP BY t.root)",
-      "standardColumnName" : "`TEAMEMBERS`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`TEAMEMBERS`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -268,7 +269,6 @@
         "name" : "TEAMEMBERS",
         "codeName" : "Teamembers"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -278,7 +278,6 @@
     "codeName" : "Teamembers",
     "dEFType" : 2,
     "dataType" : "SMCODELIST",
-    "deployId" : "b052c6ffde8ddc80271363fc725c2a2d",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "全部成员",
@@ -298,9 +297,7 @@
       "dBType" : "MYSQL5",
       "name" : "THIRDMEMBER",
       "queryCodeExp" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 2,1)",
-      "standardColumnName" : "`THIRDMEMBER`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`THIRDMEMBER`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -325,7 +322,6 @@
         "name" : "THIRDMEMBER",
         "codeName" : "Thirdmember"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -335,7 +331,6 @@
     "codeName" : "Thirdmember",
     "dEFType" : 2,
     "dataType" : "TEXT",
-    "deployId" : "1ae6dd2e6e8571b0b286aa258b587747",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "团队成员（三）",
@@ -356,8 +351,7 @@
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`",
-      "autoIncrement" : true,
-      "valueAutoGen" : false
+      "autoIncrement" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -371,7 +365,6 @@
         "name" : "ID",
         "codeName" : "Id"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -381,7 +374,6 @@
     "codeName" : "Id",
     "dEFType" : 1,
     "dataType" : "ACID",
-    "deployId" : "503f0e033b2a4bb980c66ecb07581209",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "编号",
@@ -397,9 +389,7 @@
       "dBType" : "MYSQL5",
       "name" : "FRISTMEMBER",
       "queryCodeExp" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 0,1)",
-      "standardColumnName" : "`FRISTMEMBER`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`FRISTMEMBER`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -424,7 +414,6 @@
         "name" : "FRISTMEMBER",
         "codeName" : "Fristmember"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -434,7 +423,6 @@
     "codeName" : "Fristmember",
     "dEFType" : 2,
     "dataType" : "TEXT",
-    "deployId" : "dd43b59dee0c2318216942e891a4853f",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "团队成员（一）",
@@ -454,9 +442,7 @@
       "dBType" : "MYSQL5",
       "name" : "PO",
       "queryCodeExp" : "t1.PO",
-      "standardColumnName" : "`PO`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PO`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -481,7 +467,6 @@
         "name" : "PO",
         "codeName" : "PO"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -491,7 +476,6 @@
     "codeName" : "PO",
     "dEFType" : 2,
     "dataType" : "TEXT",
-    "deployId" : "b5f4786721b5242b0349cfb8acb96c35",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "产品负责人",
@@ -511,9 +495,7 @@
       "dBType" : "MYSQL5",
       "name" : "FOURTHMEMBER",
       "queryCodeExp" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 3,1)",
-      "standardColumnName" : "`FOURTHMEMBER`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`FOURTHMEMBER`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -538,7 +520,6 @@
         "name" : "FOURTHMEMBER",
         "codeName" : "Fourthmember"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -548,7 +529,6 @@
     "codeName" : "Fourthmember",
     "dEFType" : 2,
     "dataType" : "TEXT",
-    "deployId" : "1649ce27ff7fe07c34011ab897001272",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "团队成员（四）",
@@ -568,9 +548,7 @@
       "dBType" : "MYSQL5",
       "name" : "PM",
       "queryCodeExp" : "t1.PM",
-      "standardColumnName" : "`PM`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PM`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -595,7 +573,6 @@
         "name" : "PM",
         "codeName" : "PM"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -605,7 +582,6 @@
     "codeName" : "PM",
     "dEFType" : 2,
     "dataType" : "TEXT",
-    "deployId" : "9b19f6fc5994d2e1324e128fed05073b",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "项目负责人",
@@ -625,9 +601,7 @@
       "dBType" : "MYSQL5",
       "name" : "FIFTHMEMBER",
       "queryCodeExp" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 4,1)",
-      "standardColumnName" : "`FIFTHMEMBER`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`FIFTHMEMBER`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -652,7 +626,6 @@
         "name" : "FIFTHMEMBER",
         "codeName" : "Fifthmember"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -662,7 +635,6 @@
     "codeName" : "Fifthmember",
     "dEFType" : 2,
     "dataType" : "TEXT",
-    "deployId" : "9245d906d3dbffa5fee1c871f3cbd6b0",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "团队成员（五）",
@@ -682,9 +654,7 @@
       "dBType" : "MYSQL5",
       "name" : "SIXTHMEMBER",
       "queryCodeExp" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 5,1)",
-      "standardColumnName" : "`SIXTHMEMBER`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`SIXTHMEMBER`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -709,7 +679,6 @@
         "name" : "SIXTHMEMBER",
         "codeName" : "Sixthmember"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -719,7 +688,6 @@
     "codeName" : "Sixthmember",
     "dEFType" : 2,
     "dataType" : "TEXT",
-    "deployId" : "a94dee25381a9793a8822f4bea5cb74c",
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "团队成员（六）",
@@ -739,9 +707,7 @@
       "dBType" : "MYSQL5",
       "name" : "NAME",
       "queryCodeExp" : "t1.`NAME`",
-      "standardColumnName" : "`NAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`NAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -766,7 +732,6 @@
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -776,7 +741,6 @@
     "codeName" : "Name",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "325302e332a71b73c22cb9c342c2e64c",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "项目名称",
@@ -812,7 +776,6 @@
     "modelref" : true,
     "id" : "Default"
   },
-  "deployId" : "22312953a122afe2e3542e620d737d66",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember.json",
   "enableActions" : 7,
@@ -821,7 +784,6 @@
   "extendMode" : 0,
   "logicName" : "项目相关成员",
   "name" : "IBZ_PROJECTMEMBER",
-  "orderValue" : 99999,
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,

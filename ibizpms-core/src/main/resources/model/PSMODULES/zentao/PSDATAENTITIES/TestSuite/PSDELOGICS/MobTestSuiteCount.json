@@ -2,7 +2,6 @@
   "codeName" : "MobTestSuiteCount",
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDELOGICS/MobTestSuiteCount.json",
-  "logicHolder" : 1,
   "logicName" : "移动端测试套件计数器",
   "logicSubType" : "NONE",
   "name" : "移动端测试套件计数器",
@@ -20,7 +19,6 @@
   } ],
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",
-    "logicHolder" : 3,
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
@@ -34,7 +32,6 @@
       "modelref" : true,
       "id" : "Default"
     },
-    "logicHolder" : 1,
     "logicNodeType" : "RAWSQLCALL",
     "name" : "查询测试用例数",
     "getPSDELogicNodeParams" : [ {

@@ -3,6 +3,7 @@
   "codeName" : "MyWorkPC",
   "controlType" : "CALENDAR",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory/PSCALENDARS/MyWorkPC.json",
+  "groupMode" : "NONE",
   "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
   "legendPos" : "TOP",
   "logicName" : "我的工作（PC）",
@@ -1064,5 +1065,6 @@
     "enableQuickCreate" : false,
     "id" : "Story"
   } ],
+  "enableGroup" : false,
   "modelid" : "1c72d13c2b12a4d55b0bfc83756fb2c7"
 }

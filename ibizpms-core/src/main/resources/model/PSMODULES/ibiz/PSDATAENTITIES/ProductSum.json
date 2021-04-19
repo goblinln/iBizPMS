@@ -1,248 +1,150 @@
 {
   "getAllPSDEActions" : [ {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/Create.json"
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/Create.json",
+    "logicName" : "Create",
+    "name" : "Create",
+    "orderValue" : 1,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/Update.json"
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/Update.json",
+    "logicName" : "Update",
+    "name" : "Update",
+    "orderValue" : 11,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/Remove.json"
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Remove",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/Remove.json",
+    "logicName" : "Remove",
+    "name" : "Remove",
+    "orderValue" : 21,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/Get.json"
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/Get.json",
+    "logicName" : "Get",
+    "name" : "Get",
+    "orderValue" : 31,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/GetDraft.json"
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/GetDraft.json",
+    "logicName" : "GetDraft",
+    "name" : "GetDraft",
+    "orderValue" : 41,
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/CheckKey.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/CheckKey.json",
+    "logicName" : "CheckKey",
+    "name" : "CheckKey",
+    "builtinAction" : true
   }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/Save.json"
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum/PSDEACTIONS/Save.json",
+    "logicName" : "Save",
+    "name" : "Save",
+    "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "数据查询",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
     "customCode" : true,
-    "defaultMode" : true,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "defaultMode" : true
   }, {
     "codeName" : "ProductBugcnt_QA",
-    "extendMode" : 0,
     "logicName" : "产品创建bug数_测试人员",
     "name" : "ProductBugcnt_QA",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "ProductCreateStory",
-    "extendMode" : 0,
     "logicName" : "产品创建需求占比",
     "name" : "ProductCreateStory",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "ProductPlancntAndStorycnt_PO",
-    "extendMode" : 0,
     "logicName" : "产品计划数和需求数_产品经理",
     "name" : "ProductPlancntAndStorycnt_PO",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "ProductStoryHoursSum",
-    "extendMode" : 0,
     "logicName" : "产品需求工时汇总",
     "name" : "ProductStoryHoursSum",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "ProductStorySum",
-    "extendMode" : 0,
     "logicName" : "产品需求汇总查询",
     "name" : "ProductStorySum",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "ProductSumBugType",
-    "extendMode" : 0,
     "logicName" : "产品Bug类型统计",
     "name" : "ProductSumBugType",
-    "orderValue" : 99999,
-    "customCode" : true,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "customCode" : true
   }, {
     "codeName" : "View",
-    "extendMode" : 0,
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW",
-    "orderValue" : 99999,
-    "customCode" : false,
-    "defaultMode" : false,
-    "privQuery" : false,
-    "pubServiceDefault" : false,
-    "queryFromView" : false
+    "name" : "VIEW"
   } ],
   "getAllPSDEDataSets" : [ {
-    "cacheTimeout" : -1,
     "codeName" : "Default",
-    "extendMode" : 0,
     "logicName" : "数据集",
     "name" : "DEFAULT",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
     "defaultMode" : true,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "ProductBugcnt_QA",
-    "extendMode" : 0,
     "logicName" : "产品创建bug数及占比",
     "name" : "ProductBugcnt_QA",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "ProductCreateStory",
-    "extendMode" : 0,
     "logicName" : "产品创建需求占比",
     "name" : "ProductCreateStory",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "ProductStoryHoursSum",
-    "extendMode" : 0,
     "logicName" : "产品需求工时汇总",
     "name" : "ProductStoryHoursSum",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "ProductStorySum",
-    "extendMode" : 0,
     "logicName" : "产品需求汇总查询",
     "name" : "ProductStorySum",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "ProductStorycntAndPlancnt",
-    "extendMode" : 0,
     "logicName" : "产品计划数和需求数",
     "name" : "ProductStorycntAndPlancnt",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   }, {
-    "cacheTimeout" : -1,
     "codeName" : "ProductSumBugType",
-    "extendMode" : 0,
     "logicName" : "产品Bug类型统计",
     "name" : "ProductSumBugType",
-    "orderValue" : 99999,
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "pageSize" : -1,
-    "userDRAction" : "READ",
-    "defaultMode" : false,
     "enableBackend" : true,
-    "enableCache" : false,
-    "enableFront" : true,
-    "enableGroup" : false,
-    "pubServiceDefault" : true
+    "enableFront" : true
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFValueRules" : [ {
@@ -257,7 +159,6 @@
         "name" : "DESIGNDEFECT",
         "codeName" : "Designdefect"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -267,7 +168,6 @@
     "codeName" : "Designdefect",
     "dEFType" : 5,
     "dataType" : "INT",
-    "deployId" : "1b2fe67819ae8a9c383ca65b0f5297ba",
     "importOrder" : 1000,
     "logicName" : "设计缺陷",
     "name" : "DESIGNDEFECT",
@@ -280,9 +180,7 @@
       "columnName" : "CHANGEDSTORYCNT",
       "dBType" : "MYSQL5",
       "name" : "CHANGEDSTORYCNT",
-      "standardColumnName" : "`CHANGEDSTORYCNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`CHANGEDSTORYCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -296,7 +194,6 @@
         "name" : "CHANGEDSTORYCNT",
         "codeName" : "Changedstorycnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -306,7 +203,6 @@
     "codeName" : "Changedstorycnt",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "b136d38f78aaf2dc227cf7a700c33c40",
     "importOrder" : 1000,
     "logicName" : "已变更",
     "name" : "CHANGEDSTORYCNT",
@@ -319,9 +215,7 @@
       "columnName" : "DEVELOPINGSTAGESTORYHOURS",
       "dBType" : "MYSQL5",
       "name" : "DEVELOPINGSTAGESTORYHOURS",
-      "standardColumnName" : "`DEVELOPINGSTAGESTORYHOURS`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`DEVELOPINGSTAGESTORYHOURS`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -335,7 +229,6 @@
         "name" : "DEVELOPINGSTAGESTORYHOURS",
         "codeName" : "Developingstagestoryhours"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -345,7 +238,6 @@
     "codeName" : "Developingstagestoryhours",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "0d06075441b9425cbbdea0f4efe7ace3",
     "importOrder" : 1000,
     "logicName" : "研发中阶段需求工时",
     "name" : "DEVELOPINGSTAGESTORYHOURS",
@@ -358,9 +250,7 @@
       "columnName" : "STORYCNT",
       "dBType" : "MYSQL5",
       "name" : "STORYCNT",
-      "standardColumnName" : "`STORYCNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`STORYCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -374,7 +264,6 @@
         "name" : "STORYCNT",
         "codeName" : "StoryCnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -384,7 +273,6 @@
     "codeName" : "StoryCnt",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "99d080be32132f374560c54f739892cd",
     "importOrder" : 1000,
     "logicName" : "总计",
     "name" : "STORYCNT",
@@ -405,7 +293,6 @@
         "name" : "OTHERS",
         "codeName" : "Others"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -415,7 +302,6 @@
     "codeName" : "Others",
     "dEFType" : 5,
     "dataType" : "INT",
-    "deployId" : "4e915005433c2f54d8caff2f57013160",
     "importOrder" : 1000,
     "logicName" : "其他",
     "name" : "OTHERS",
@@ -436,7 +322,6 @@
         "name" : "CONFIG",
         "codeName" : "Config"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -446,7 +331,6 @@
     "codeName" : "Config",
     "dEFType" : 5,
     "dataType" : "INT",
-    "deployId" : "ffd19b2e8e77c5858cfe8bb3aae624fb",
     "importOrder" : 1000,
     "logicName" : "配置相关",
     "name" : "CONFIG",
@@ -467,7 +351,6 @@
         "name" : "CODEERROR",
         "codeName" : "Codeerror"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -477,7 +360,6 @@
     "codeName" : "Codeerror",
     "dEFType" : 5,
     "dataType" : "INT",
-    "deployId" : "c662fa9bff1751367c527d17c2caad84",
     "importOrder" : 1000,
     "logicName" : "代码错误",
     "name" : "CODEERROR",
@@ -498,7 +380,6 @@
         "name" : "BUGSUM",
         "codeName" : "Bugsum"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -508,7 +389,6 @@
     "codeName" : "Bugsum",
     "dEFType" : 5,
     "dataType" : "INT",
-    "deployId" : "cb54129cf8caa6d2273cfd1c84250c52",
     "importOrder" : 1000,
     "logicName" : "bug总计",
     "name" : "BUGSUM",
@@ -529,7 +409,6 @@
         "name" : "PERFORMANCE",
         "codeName" : "Performance"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -539,7 +418,6 @@
     "codeName" : "Performance",
     "dEFType" : 5,
     "dataType" : "INT",
-    "deployId" : "bf1624d5f96dd52af46b85cfe939947c",
     "importOrder" : 1000,
     "logicName" : "性能问题",
     "name" : "PERFORMANCE",
@@ -571,7 +449,6 @@
         "name" : "END",
         "codeName" : "End"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -581,7 +458,6 @@
     "codeName" : "End",
     "dEFType" : 5,
     "dataType" : "TEXT",
-    "deployId" : "7a6da31b6998648a1d6c75e0d0ae3a1f",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "结束日期",
@@ -596,9 +472,7 @@
       "columnName" : "CLOSEDSTORYCNT",
       "dBType" : "MYSQL5",
       "name" : "CLOSEDSTORYCNT",
-      "standardColumnName" : "`CLOSEDSTORYCNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`CLOSEDSTORYCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -612,7 +486,6 @@
         "name" : "CLOSEDSTORYCNT",
         "codeName" : "ClosedStoryCnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -622,7 +495,6 @@
     "codeName" : "ClosedStoryCnt",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "a0345f79500b02c5f33bf35f1162c4bc",
     "importOrder" : 1000,
     "logicName" : "已关闭",
     "name" : "CLOSEDSTORYCNT",
@@ -635,9 +507,7 @@
       "columnName" : "CLOSEDSTAGESTORYHOURS",
       "dBType" : "MYSQL5",
       "name" : "CLOSEDSTAGESTORYHOURS",
-      "standardColumnName" : "`CLOSEDSTAGESTORYHOURS`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`CLOSEDSTAGESTORYHOURS`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -651,7 +521,6 @@
         "name" : "CLOSEDSTAGESTORYHOURS",
         "codeName" : "Closedstagestoryhours"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -661,7 +530,6 @@
     "codeName" : "Closedstagestoryhours",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "5021246d95741440b528fbf9160b56ba",
     "importOrder" : 1000,
     "logicName" : "已关闭阶段需求工时",
     "name" : "CLOSEDSTAGESTORYHOURS",
@@ -674,9 +542,7 @@
       "columnName" : "TESTEDSTAGESTORYHOURS",
       "dBType" : "MYSQL5",
       "name" : "TESTEDSTAGESTORYHOURS",
-      "standardColumnName" : "`TESTEDSTAGESTORYHOURS`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`TESTEDSTAGESTORYHOURS`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -690,7 +556,6 @@
         "name" : "TESTEDSTAGESTORYHOURS",
         "codeName" : "Testedstagestoryhours"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -700,7 +565,6 @@
     "codeName" : "Testedstagestoryhours",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "c67aca599cb049866d5c2e5b33d09d7f",
     "importOrder" : 1000,
     "logicName" : "测试完毕阶段需求工时",
     "name" : "TESTEDSTAGESTORYHOURS",
@@ -713,9 +577,7 @@
       "columnName" : "WAITSTAGESTORYHOURS",
       "dBType" : "MYSQL5",
       "name" : "WAITSTAGESTORYHOURS",
-      "standardColumnName" : "`WAITSTAGESTORYHOURS`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`WAITSTAGESTORYHOURS`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -729,7 +591,6 @@
         "name" : "WAITSTAGESTORYHOURS",
         "codeName" : "Waitstagestoryhours"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -739,7 +600,6 @@
     "codeName" : "Waitstagestoryhours",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "906150e257722ca4eb058626eff5aace",
     "importOrder" : 1000,
     "logicName" : "未开始阶段需求工时",
     "name" : "WAITSTAGESTORYHOURS",
@@ -752,9 +612,7 @@
       "columnName" : "PO",
       "dBType" : "MYSQL5",
       "name" : "PO",
-      "standardColumnName" : "`PO`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PO`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -779,7 +637,6 @@
         "name" : "PO",
         "codeName" : "PO"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -789,7 +646,6 @@
     "codeName" : "PO",
     "dEFType" : 1,
     "dataType" : "SSCODELIST",
-    "deployId" : "cfe249a4aa42ee2290575e18b7bb10a4",
     "importOrder" : 1000,
     "length" : 60,
     "logicName" : "产品负责人",
@@ -806,9 +662,7 @@
       "columnName" : "TESTINGSTAGESTORYHOURS",
       "dBType" : "MYSQL5",
       "name" : "TESTINGSTAGESTORYHOURS",
-      "standardColumnName" : "`TESTINGSTAGESTORYHOURS`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`TESTINGSTAGESTORYHOURS`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -822,7 +676,6 @@
         "name" : "TESTINGSTAGESTORYHOURS",
         "codeName" : "Testingstagestoryhours"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -832,7 +685,6 @@
     "codeName" : "Testingstagestoryhours",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "67371c7ccfb7ca7a603f32439dc99973",
     "importOrder" : 1000,
     "logicName" : "测试中阶段需求工时",
     "name" : "TESTINGSTAGESTORYHOURS",
@@ -845,9 +697,7 @@
       "columnName" : "PROJECTEDSTAGESTORYHOURS",
       "dBType" : "MYSQL5",
       "name" : "PROJECTEDSTAGESTORYHOURS",
-      "standardColumnName" : "`PROJECTEDSTAGESTORYHOURS`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PROJECTEDSTAGESTORYHOURS`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -861,7 +711,6 @@
         "name" : "PROJECTEDSTAGESTORYHOURS",
         "codeName" : "Projectedstagestoryhours"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -871,7 +720,6 @@
     "codeName" : "Projectedstagestoryhours",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "48397098bd93bce7624391696f8df1c9",
     "importOrder" : 1000,
     "logicName" : "已立项阶段需求工时",
     "name" : "PROJECTEDSTAGESTORYHOURS",
@@ -884,9 +732,7 @@
       "columnName" : "PROJECTEDSTAGESTORYCNT",
       "dBType" : "MYSQL5",
       "name" : "PROJECTEDSTAGESTORYCNT",
-      "standardColumnName" : "`PROJECTEDSTAGESTORYCNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PROJECTEDSTAGESTORYCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -900,7 +746,6 @@
         "name" : "PROJECTEDSTAGESTORYCNT",
         "codeName" : "Projectedstagestorycnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -910,7 +755,6 @@
     "codeName" : "Projectedstagestorycnt",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "9d394e4bc5d806adea04305c86af5b09",
     "importOrder" : 1000,
     "logicName" : "已立项阶段需求数量",
     "name" : "PROJECTEDSTAGESTORYCNT",
@@ -923,9 +767,7 @@
       "columnName" : "VERIFIEDSTAGESTORYCNT",
       "dBType" : "MYSQL5",
       "name" : "VERIFIEDSTAGESTORYCNT",
-      "standardColumnName" : "`VERIFIEDSTAGESTORYCNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`VERIFIEDSTAGESTORYCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -939,7 +781,6 @@
         "name" : "VERIFIEDSTAGESTORYCNT",
         "codeName" : "Verifiedstagestorycnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -949,7 +790,6 @@
     "codeName" : "Verifiedstagestorycnt",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "a578b5c277cb1f56a88ff07f4b851d03",
     "importOrder" : 1000,
     "logicName" : "已验收阶段需求数量",
     "name" : "VERIFIEDSTAGESTORYCNT",
@@ -963,8 +803,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "standardColumnName" : "`ID`",
-      "autoIncrement" : true,
-      "valueAutoGen" : false
+      "autoIncrement" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -978,7 +817,6 @@
         "name" : "ID",
         "codeName" : "Id"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -988,7 +826,6 @@
     "codeName" : "Id",
     "dEFType" : 1,
     "dataType" : "ACID",
-    "deployId" : "ccb03dce11280f555b9011f636e46cf2",
     "importOrder" : 1000,
     "length" : 20,
     "logicName" : "主键标识",
@@ -1003,9 +840,7 @@
       "columnName" : "TOTALHOURS",
       "dBType" : "MYSQL5",
       "name" : "TOTALHOURS",
-      "standardColumnName" : "`TOTALHOURS`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`TOTALHOURS`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1019,7 +854,6 @@
         "name" : "TOTALHOURS",
         "codeName" : "Totalhours"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1029,7 +863,6 @@
     "codeName" : "Totalhours",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "5aa386581c9a3898397b7788916c2385",
     "importOrder" : 1000,
     "logicName" : "总工时",
     "name" : "TOTALHOURS",
@@ -1042,9 +875,7 @@
       "columnName" : "PLANEDSTAGESTORYCNT",
       "dBType" : "MYSQL5",
       "name" : "PLANEDSTAGESTORYCNT",
-      "standardColumnName" : "`PLANEDSTAGESTORYCNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PLANEDSTAGESTORYCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1058,7 +889,6 @@
         "name" : "PLANEDSTAGESTORYCNT",
         "codeName" : "Planedstagestorycnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1068,7 +898,6 @@
     "codeName" : "Planedstagestorycnt",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "4e5354fb90556f49e23c10d535822c06",
     "importOrder" : 1000,
     "logicName" : "已计划阶段需求数量",
     "name" : "PLANEDSTAGESTORYCNT",
@@ -1081,9 +910,7 @@
       "columnName" : "DEVELOPINGSTAGESTORYCNT",
       "dBType" : "MYSQL5",
       "name" : "DEVELOPINGSTAGESTORYCNT",
-      "standardColumnName" : "`DEVELOPINGSTAGESTORYCNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`DEVELOPINGSTAGESTORYCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1097,7 +924,6 @@
         "name" : "DEVELOPINGSTAGESTORYCNT",
         "codeName" : "Developingstagestorycnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1107,7 +933,6 @@
     "codeName" : "Developingstagestorycnt",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "bd60dbb7552d4042af6077c7f0c400f2",
     "importOrder" : 1000,
     "logicName" : "研发中阶段需求数量",
     "name" : "DEVELOPINGSTAGESTORYCNT",
@@ -1120,9 +945,7 @@
       "columnName" : "ACTIVESTORYCNT",
       "dBType" : "MYSQL5",
       "name" : "ACTIVESTORYCNT",
-      "standardColumnName" : "`ACTIVESTORYCNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`ACTIVESTORYCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1136,7 +959,6 @@
         "name" : "ACTIVESTORYCNT",
         "codeName" : "ActiveStoryCnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1146,7 +968,6 @@
     "codeName" : "ActiveStoryCnt",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "244926365b7a55a6d3edd86bcb3df31b",
     "importOrder" : 1000,
     "logicName" : "激活",
     "name" : "ACTIVESTORYCNT",
@@ -1159,9 +980,7 @@
       "columnName" : "BUGCNT",
       "dBType" : "MYSQL5",
       "name" : "BUGCNT",
-      "standardColumnName" : "`BUGCNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`BUGCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1175,7 +994,6 @@
         "name" : "BUGCNT",
         "codeName" : "BugCnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1185,7 +1003,6 @@
     "codeName" : "BugCnt",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "c568931a9137d51afda19dbb84f8fa64",
     "importOrder" : 1000,
     "logicName" : "Bug数",
     "name" : "BUGCNT",
@@ -1198,9 +1015,7 @@
       "columnName" : "WAITSTAGESTORYCNT",
       "dBType" : "MYSQL5",
       "name" : "WAITSTAGESTORYCNT",
-      "standardColumnName" : "`WAITSTAGESTORYCNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`WAITSTAGESTORYCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1214,7 +1029,6 @@
         "name" : "WAITSTAGESTORYCNT",
         "codeName" : "Waitstagestorycnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1224,7 +1038,6 @@
     "codeName" : "Waitstagestorycnt",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "6398ca14044e47972bded7b6da1c4cb9",
     "importOrder" : 1000,
     "logicName" : "未开始阶段需求数量",
     "name" : "WAITSTAGESTORYCNT",
@@ -1237,9 +1050,7 @@
       "columnName" : "VERIFIEDSTAGESTORYHOURS",
       "dBType" : "MYSQL5",
       "name" : "VERIFIEDSTAGESTORYHOURS",
-      "standardColumnName" : "`VERIFIEDSTAGESTORYHOURS`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`VERIFIEDSTAGESTORYHOURS`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1253,7 +1064,6 @@
         "name" : "VERIFIEDSTAGESTORYHOURS",
         "codeName" : "Verifiedstagestoryhours"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1263,7 +1073,6 @@
     "codeName" : "Verifiedstagestoryhours",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "9bbeec086548d22d6fc34f057460bcc5",
     "importOrder" : 1000,
     "logicName" : "已验收阶段需求工时",
     "name" : "VERIFIEDSTAGESTORYHOURS",
@@ -1276,9 +1085,7 @@
       "columnName" : "WAITSTORYCNT",
       "dBType" : "MYSQL5",
       "name" : "WAITSTORYCNT",
-      "standardColumnName" : "`WAITSTORYCNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`WAITSTORYCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1292,7 +1099,6 @@
         "name" : "WAITSTORYCNT",
         "codeName" : "WaitStoryCnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1302,7 +1108,6 @@
     "codeName" : "WaitStoryCnt",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "9b4759ebdc753a266cbb6aa4102a2c57",
     "importOrder" : 1000,
     "logicName" : "草稿",
     "name" : "WAITSTORYCNT",
@@ -1315,9 +1120,7 @@
       "columnName" : "TESTINGSTAGESTORYCNT",
       "dBType" : "MYSQL5",
       "name" : "TESTINGSTAGESTORYCNT",
-      "standardColumnName" : "`TESTINGSTAGESTORYCNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`TESTINGSTAGESTORYCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1331,7 +1134,6 @@
         "name" : "TESTINGSTAGESTORYCNT",
         "codeName" : "Testingstagestorycnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1341,7 +1143,6 @@
     "codeName" : "Testingstagestorycnt",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "e54fd482d66c1fbd60c1b2e5059c89f9",
     "importOrder" : 1000,
     "logicName" : "测试中阶段需求数量",
     "name" : "TESTINGSTAGESTORYCNT",
@@ -1373,7 +1174,6 @@
         "name" : "BEGIN",
         "codeName" : "Begin"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1383,7 +1183,6 @@
     "codeName" : "Begin",
     "dEFType" : 5,
     "dataType" : "TEXT",
-    "deployId" : "198449003705a64e232c86f0885220c7",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "开始日期",
@@ -1398,9 +1197,7 @@
       "columnName" : "PLAN",
       "dBType" : "MYSQL5",
       "name" : "PLAN",
-      "standardColumnName" : "`PLAN`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PLAN`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1414,7 +1211,6 @@
         "name" : "PLAN",
         "codeName" : "Plan"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1424,7 +1220,6 @@
     "codeName" : "Plan",
     "dEFType" : 2,
     "dataType" : "BIGINT",
-    "deployId" : "8d6c619b06493daef83190a661a0b25e",
     "importOrder" : 1000,
     "logicName" : "计划",
     "name" : "PLAN",
@@ -1441,9 +1236,7 @@
       "columnName" : "RELEASEDSTAGESTORYHOURS",
       "dBType" : "MYSQL5",
       "name" : "RELEASEDSTAGESTORYHOURS",
-      "standardColumnName" : "`RELEASEDSTAGESTORYHOURS`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`RELEASEDSTAGESTORYHOURS`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1457,7 +1250,6 @@
         "name" : "RELEASEDSTAGESTORYHOURS",
         "codeName" : "Releasedstagestoryhours"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1467,7 +1259,6 @@
     "codeName" : "Releasedstagestoryhours",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "dfaa8ca9dc1445448f15b88aa33b1844",
     "importOrder" : 1000,
     "logicName" : "已发布阶段需求工时",
     "name" : "RELEASEDSTAGESTORYHOURS",
@@ -1480,9 +1271,7 @@
       "columnName" : "DEVELOPEDSTAGESTORYHOURS",
       "dBType" : "MYSQL5",
       "name" : "DEVELOPEDSTAGESTORYHOURS",
-      "standardColumnName" : "`DEVELOPEDSTAGESTORYHOURS`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`DEVELOPEDSTAGESTORYHOURS`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1496,7 +1285,6 @@
         "name" : "DEVELOPEDSTAGESTORYHOURS",
         "codeName" : "Developedstagestoryhours"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1506,7 +1294,6 @@
     "codeName" : "Developedstagestoryhours",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "f7bffa469732c7a78d08933dd58034e9",
     "importOrder" : 1000,
     "logicName" : "研发完毕阶段需求工时",
     "name" : "DEVELOPEDSTAGESTORYHOURS",
@@ -1519,9 +1306,7 @@
       "columnName" : "NAME",
       "dBType" : "MYSQL5",
       "name" : "NAME",
-      "standardColumnName" : "`NAME`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`NAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1546,7 +1331,6 @@
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1556,7 +1340,6 @@
     "codeName" : "Name",
     "dEFType" : 1,
     "dataType" : "TEXT",
-    "deployId" : "ba96a9d4f4654f107a3c4de791ecda66",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "产品名称",
@@ -1571,9 +1354,7 @@
       "columnName" : "DEVELOPEDSTAGESTORYCNT",
       "dBType" : "MYSQL5",
       "name" : "DEVELOPEDSTAGESTORYCNT",
-      "standardColumnName" : "`DEVELOPEDSTAGESTORYCNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`DEVELOPEDSTAGESTORYCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1587,7 +1368,6 @@
         "name" : "DEVELOPEDSTAGESTORYCNT",
         "codeName" : "Developedstagestorycnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1597,7 +1377,6 @@
     "codeName" : "Developedstagestorycnt",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "59609f51954acdc5f547f63cfc5afdbb",
     "importOrder" : 1000,
     "logicName" : "研发完毕阶段需求数量",
     "name" : "DEVELOPEDSTAGESTORYCNT",
@@ -1618,7 +1397,6 @@
         "name" : "AUTOMATION",
         "codeName" : "Automation"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1628,7 +1406,6 @@
     "codeName" : "Automation",
     "dEFType" : 5,
     "dataType" : "INT",
-    "deployId" : "9a9dfefa372b0662ad83204de4eac991",
     "importOrder" : 1000,
     "logicName" : "测试脚本",
     "name" : "AUTOMATION",
@@ -1641,9 +1418,7 @@
       "columnName" : "PLANEDSTAGESTORYHOURS",
       "dBType" : "MYSQL5",
       "name" : "PLANEDSTAGESTORYHOURS",
-      "standardColumnName" : "`PLANEDSTAGESTORYHOURS`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`PLANEDSTAGESTORYHOURS`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1657,7 +1432,6 @@
         "name" : "PLANEDSTAGESTORYHOURS",
         "codeName" : "Planedstagestoryhours"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1667,7 +1441,6 @@
     "codeName" : "Planedstagestoryhours",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "98f2d464738eb3da0d00284af435360f",
     "importOrder" : 1000,
     "logicName" : "已计划阶段需求工时",
     "name" : "PLANEDSTAGESTORYHOURS",
@@ -1688,7 +1461,6 @@
         "name" : "INSTALL",
         "codeName" : "Install"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1698,7 +1470,6 @@
     "codeName" : "Install",
     "dEFType" : 5,
     "dataType" : "INT",
-    "deployId" : "4d4fa80ade995ec713c1bb03b92b5fa0",
     "importOrder" : 1000,
     "logicName" : "安装部署",
     "name" : "INSTALL",
@@ -1719,7 +1490,6 @@
         "name" : "SECURITY",
         "codeName" : "Security"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1729,7 +1499,6 @@
     "codeName" : "Security",
     "dEFType" : 5,
     "dataType" : "INT",
-    "deployId" : "4b8fe1080232627d95d14c3148f8ca7b",
     "importOrder" : 1000,
     "logicName" : "安全相关",
     "name" : "SECURITY",
@@ -1742,9 +1511,7 @@
       "columnName" : "RELEASEDSTAGESTORYCNT",
       "dBType" : "MYSQL5",
       "name" : "RELEASEDSTAGESTORYCNT",
-      "standardColumnName" : "`RELEASEDSTAGESTORYCNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`RELEASEDSTAGESTORYCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1758,7 +1525,6 @@
         "name" : "RELEASEDSTAGESTORYCNT",
         "codeName" : "Releasedstagestorycnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1768,7 +1534,6 @@
     "codeName" : "Releasedstagestorycnt",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "b6d987a59d24ef49e49b7c687fabedce",
     "importOrder" : 1000,
     "logicName" : "已发布阶段需求数量",
     "name" : "RELEASEDSTAGESTORYCNT",
@@ -1781,9 +1546,7 @@
       "columnName" : "TESTEDSTAGESTORYCNT",
       "dBType" : "MYSQL5",
       "name" : "TESTEDSTAGESTORYCNT",
-      "standardColumnName" : "`TESTEDSTAGESTORYCNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`TESTEDSTAGESTORYCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1797,7 +1560,6 @@
         "name" : "TESTEDSTAGESTORYCNT",
         "codeName" : "Testedstagestorycnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1807,7 +1569,6 @@
     "codeName" : "Testedstagestorycnt",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "99e2c5c9d9476f6ac18895c29219f313",
     "importOrder" : 1000,
     "logicName" : "测试完毕阶段需求数量",
     "name" : "TESTEDSTAGESTORYCNT",
@@ -1828,7 +1589,6 @@
         "name" : "STANDARD",
         "codeName" : "Standard"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1838,7 +1598,6 @@
     "codeName" : "Standard",
     "dEFType" : 5,
     "dataType" : "INT",
-    "deployId" : "8cc9f480c09c4a22cc290b1f919fe5be",
     "importOrder" : 1000,
     "logicName" : "标准规范",
     "name" : "STANDARD",
@@ -1851,9 +1610,7 @@
       "columnName" : "CLOSEDSTAGESTORYCNT",
       "dBType" : "MYSQL5",
       "name" : "CLOSEDSTAGESTORYCNT",
-      "standardColumnName" : "`CLOSEDSTAGESTORYCNT`",
-      "autoIncrement" : false,
-      "valueAutoGen" : false
+      "standardColumnName" : "`CLOSEDSTAGESTORYCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1867,7 +1624,6 @@
         "name" : "CLOSEDSTAGESTORYCNT",
         "codeName" : "Closedstagestorycnt"
       },
-      "ruleHolder" : 3,
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1877,7 +1633,6 @@
     "codeName" : "Closedstagestorycnt",
     "dEFType" : 2,
     "dataType" : "INT",
-    "deployId" : "baaa585afc901fe44869f1b3572cca3c",
     "importOrder" : 1000,
     "logicName" : "已关闭阶段需求数量",
     "name" : "CLOSEDSTAGESTORYCNT",
@@ -1911,7 +1666,6 @@
     "modelref" : true,
     "id" : "Default"
   },
-  "deployId" : "b89d05c483aa9801cfe506f8f9ac7706",
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum.json",
   "enableActions" : 7,
@@ -1920,7 +1674,6 @@
   "extendMode" : 0,
   "logicName" : "产品汇总表",
   "name" : "IBZ_PRODUCTSUM",
-  "orderValue" : 99999,
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,
