@@ -126,6 +126,7 @@ public class TodoResource {
         return ResponseEntity.status(HttpStatus.OK).body(todoMapping.toDto(todoService.getDraft(domain)));
     }
 
+    @PreAuthorize("@TodoRuntime.test(#todo_id,'MANAGE')")
     @ApiOperation(value = "Activate", tags = {"待办" },  notes = "Activate")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/activate")
     public ResponseEntity<TodoDTO> activate(@PathVariable("todo_id") Long todo_id, @RequestBody TodoDTO tododto) {
@@ -135,6 +136,7 @@ public class TodoResource {
         tododto = todoMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
+    @PreAuthorize("@TodoRuntime.test('MANAGE')")
     @ApiOperation(value = "批量处理[Activate]", tags = {"待办" },  notes = "批量处理[Activate]")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/activatebatch")
     public ResponseEntity<Boolean> activateBatch(@RequestBody List<TodoDTO> tododtos) {
@@ -143,6 +145,7 @@ public class TodoResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
+    @PreAuthorize("@TodoRuntime.test(#todo_id,'MANAGE')")
     @ApiOperation(value = "AssignTo", tags = {"待办" },  notes = "AssignTo")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/assignto")
     public ResponseEntity<TodoDTO> assignTo(@PathVariable("todo_id") Long todo_id, @RequestBody TodoDTO tododto) {
@@ -152,6 +155,7 @@ public class TodoResource {
         tododto = todoMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
+    @PreAuthorize("@TodoRuntime.test('MANAGE')")
     @ApiOperation(value = "批量处理[AssignTo]", tags = {"待办" },  notes = "批量处理[AssignTo]")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/assigntobatch")
     public ResponseEntity<Boolean> assignToBatch(@RequestBody List<TodoDTO> tododtos) {
@@ -166,6 +170,7 @@ public class TodoResource {
         return  ResponseEntity.status(HttpStatus.OK).body(todoService.checkKey(todoMapping.toDomain(tododto)));
     }
 
+    @PreAuthorize("@TodoRuntime.test(#todo_id,'MANAGE')")
     @ApiOperation(value = "Close", tags = {"待办" },  notes = "Close")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/close")
     public ResponseEntity<TodoDTO> close(@PathVariable("todo_id") Long todo_id, @RequestBody TodoDTO tododto) {
@@ -175,6 +180,7 @@ public class TodoResource {
         tododto = todoMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
+    @PreAuthorize("@TodoRuntime.test('MANAGE')")
     @ApiOperation(value = "批量处理[Close]", tags = {"待办" },  notes = "批量处理[Close]")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/closebatch")
     public ResponseEntity<Boolean> closeBatch(@RequestBody List<TodoDTO> tododtos) {
@@ -183,7 +189,7 @@ public class TodoResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("@TodoRuntime.test(#todo_id,'CREATE')")
+    @PreAuthorize("@TodoRuntime.test(#todo_id,'READ')")
     @ApiOperation(value = "定时创建周期", tags = {"待办" },  notes = "定时创建周期")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/createcycle")
     public ResponseEntity<TodoDTO> createCycle(@PathVariable("todo_id") Long todo_id, @RequestBody TodoDTO tododto) {
@@ -193,7 +199,7 @@ public class TodoResource {
         tododto = todoMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
-    @PreAuthorize("@TodoRuntime.test('CREATE')")
+    @PreAuthorize("@TodoRuntime.test('READ')")
     @ApiOperation(value = "批量处理[定时创建周期]", tags = {"待办" },  notes = "批量处理[定时创建周期]")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/createcyclebatch")
     public ResponseEntity<Boolean> createCycleBatch(@RequestBody List<TodoDTO> tododtos) {
@@ -202,6 +208,7 @@ public class TodoResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
+    @PreAuthorize("@TodoRuntime.test(#todo_id,'MANAGE')")
     @ApiOperation(value = "Finish", tags = {"待办" },  notes = "Finish")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/finish")
     public ResponseEntity<TodoDTO> finish(@PathVariable("todo_id") Long todo_id, @RequestBody TodoDTO tododto) {
@@ -211,6 +218,7 @@ public class TodoResource {
         tododto = todoMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
+    @PreAuthorize("@TodoRuntime.test('MANAGE')")
     @ApiOperation(value = "批量处理[Finish]", tags = {"待办" },  notes = "批量处理[Finish]")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/finishbatch")
     public ResponseEntity<Boolean> finishBatch(@RequestBody List<TodoDTO> tododtos) {
@@ -234,6 +242,7 @@ public class TodoResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@TodoRuntime.test(#todo_id,'MANAGE')")
     @ApiOperation(value = "行为", tags = {"待办" },  notes = "行为")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/sendmessage")
     public ResponseEntity<TodoDTO> sendMessage(@PathVariable("todo_id") Long todo_id, @RequestBody TodoDTO tododto) {
@@ -243,6 +252,7 @@ public class TodoResource {
         tododto = todoMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
+    @PreAuthorize("@TodoRuntime.test('MANAGE')")
     @ApiOperation(value = "批量处理[行为]", tags = {"待办" },  notes = "批量处理[行为]")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/sendmessagebatch")
     public ResponseEntity<Boolean> sendMessageBatch(@RequestBody List<TodoDTO> tododtos) {
@@ -251,6 +261,7 @@ public class TodoResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
+    @PreAuthorize("@TodoRuntime.test(#todo_id,'MANAGE')")
     @ApiOperation(value = "发送消息前置处理", tags = {"待办" },  notes = "发送消息前置处理")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/sendmsgpreprocess")
     public ResponseEntity<TodoDTO> sendMsgPreProcess(@PathVariable("todo_id") Long todo_id, @RequestBody TodoDTO tododto) {
@@ -260,6 +271,7 @@ public class TodoResource {
         tododto = todoMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
+    @PreAuthorize("@TodoRuntime.test('MANAGE')")
     @ApiOperation(value = "批量处理[发送消息前置处理]", tags = {"待办" },  notes = "批量处理[发送消息前置处理]")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/sendmsgpreprocessbatch")
     public ResponseEntity<Boolean> sendMsgPreProcessBatch(@RequestBody List<TodoDTO> tododtos) {

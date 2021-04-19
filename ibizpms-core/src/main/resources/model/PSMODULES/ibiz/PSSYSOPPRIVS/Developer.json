@@ -33,6 +33,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
     }
   }, {
+    "name" : "研发人员-ZT_TODO[待办管理]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Manage.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
+    }
+  }, {
     "name" : "研发人员-ZT_PROJECT[项目查看（当前机构）]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -41,6 +51,26 @@
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    }
+  }, {
+    "name" : "研发人员-ZT_DOC[文档查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEUSERROLES/Doc_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
+    }
+  }, {
+    "name" : "研发人员-ZT_DOCLIB[文档库查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/DocLib_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
     }
   }, {
     "name" : "研发人员-ZT_ACTION[系统日志添加备注（全部数据）]",
@@ -63,6 +93,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
     }
   }, {
+    "name" : "研发人员-IBZ_TESTMODULE[测试模块查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEUSERROLES/TestModule_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
+    }
+  }, {
     "name" : "研发人员-ZT_TESTTASK[测试单查看]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -83,6 +123,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
     }
   }, {
+    "name" : "研发人员-IBZ_PROJECTMODULE[任务模块查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEUSERROLES/ProjectModule_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+    }
+  }, {
     "name" : "研发人员-ZT_ACTION[系统日志查看（全部数据）]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -101,6 +151,16 @@
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Build.json"
+    }
+  }, {
+    "name" : "研发人员-IBZ_PRODUCTMODULE[需求模块查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDEUSERROLES/ProductModule_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
     }
   }, {
     "name" : "研发人员-ZT_CASE[用例查看]",
@@ -133,6 +193,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
     }
   }, {
+    "name" : "研发人员-IBZ_DOCLIBMODULE[文档模块查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEUSERROLES/DocLibModule_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+    }
+  }, {
     "name" : "研发人员-ZT_TESTREPORT[测试报告查看]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -141,6 +211,26 @@
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
+    }
+  }, {
+    "name" : "研发人员-ZT_TODO[待办查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
+    }
+  }, {
+    "name" : "研发人员-ZT_TODO[待办维护]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
     }
   }, {
     "name" : "研发人员-ZT_TASK[任务查看]",
@@ -164,6 +254,12 @@
     }
   } ],
   "getPSSysUserRoleReses" : [ {
+    "name" : "研发人员-取消收藏文档库",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__DOCLIB_NFAVOUR_BUT"
+    }
+  }, {
     "name" : "研发人员-Bug提需求",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -308,6 +404,12 @@
       "id" : "ibiz__BUG_ASSIGNTO_BUT"
     }
   }, {
+    "name" : "研发人员-收藏文档库分类",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__DOCLIBMODULE_FAVOUR_BUT"
+    }
+  }, {
     "name" : "研发人员-任务已收藏",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -346,5 +448,5 @@
   } ],
   "roleTag" : "Developer",
   "roleType" : "CUSTOM",
-  "uniResTags" : [ "BUG_TOSTORY_BUT", "BUG_CREATE_BUT", "TASK_EDIT_BUT", "TASK_FORWARD_BUT", "TASK_PAUSE_BUT", "TASK_ACTIVATION_BUT", "BUG_ACTIVATE_BUT", "TASK_COMPLETE_BUT", "BUG_UNLINK_BUT", "TASK_CANCEL_BUT", "BUG_RESOLVE_BUT", "TASK_NFAVOR_BUT", "TASK_ASSIGN_BUT", "TASK_CREATE_BUT", "TASK_XQCHANGE_BUT", "BUG_EDIT_BUT", "TASK_DELETE_BUT", "BUG_NFAVOR_BUT", "TASK_PROCEED_BUT", "TASK_CONSUM_BUT", "BUG_DELETE_BUT", "TASK_SUBTASKS_BUT", "BUG_CONFIRM_BUT", "BUG_ASSIGNTO_BUT", "TASK_FAVOR_BUT", "BUG_FAVOR_BUT", "TASK_START_BUT", "BUG_CREATECASE_BUT", "TASK_CLOSE_BUT", "BUG_CLOSE_BUT" ]
+  "uniResTags" : [ "DOCLIB_NFAVOUR_BUT", "BUG_TOSTORY_BUT", "BUG_CREATE_BUT", "TASK_EDIT_BUT", "TASK_FORWARD_BUT", "TASK_PAUSE_BUT", "TASK_ACTIVATION_BUT", "BUG_ACTIVATE_BUT", "TASK_COMPLETE_BUT", "BUG_UNLINK_BUT", "TASK_CANCEL_BUT", "BUG_RESOLVE_BUT", "TASK_NFAVOR_BUT", "TASK_ASSIGN_BUT", "TASK_CREATE_BUT", "TASK_XQCHANGE_BUT", "BUG_EDIT_BUT", "TASK_DELETE_BUT", "BUG_NFAVOR_BUT", "TASK_PROCEED_BUT", "TASK_CONSUM_BUT", "BUG_DELETE_BUT", "TASK_SUBTASKS_BUT", "BUG_CONFIRM_BUT", "BUG_ASSIGNTO_BUT", "DOCLIBMODULE_FAVOUR_BUT", "TASK_FAVOR_BUT", "BUG_FAVOR_BUT", "TASK_START_BUT", "BUG_CREATECASE_BUT", "TASK_CLOSE_BUT", "BUG_CLOSE_BUT" ]
 }
