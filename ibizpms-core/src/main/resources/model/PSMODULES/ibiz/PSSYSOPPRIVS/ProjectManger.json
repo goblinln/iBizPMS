@@ -2,6 +2,189 @@
   "codeName" : "ProjectManger",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProjectManger.json",
   "name" : "项目经理",
+  "getPSSysUserRoleDatas" : [ {
+    "name" : "项目经理-ZT_PROJECT[项目维护（当前机构）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Maintain_CO.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    }
+  }, {
+    "name" : "项目经理-IBZ_PROJECTMODULE[任务模块管理]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEUSERROLES/ProjectModule_Manage.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+    }
+  }, {
+    "name" : "项目经理-IBZ_PROJECTMODULE[任务模块维护]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEUSERROLES/ProjectModule_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+    }
+  }, {
+    "name" : "项目经理-IBZ_PROJECTMODULE[任务模块查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEUSERROLES/ProjectModule_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+    }
+  }, {
+    "name" : "项目经理-ZT_PROJECT[项目管理（当前机构）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Manage_CO.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    }
+  }, {
+    "name" : "项目经理-ZT_PROJECT[项目查看（当前机构）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_CO.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    }
+  } ],
+  "getPSSysUserRoleReses" : [ {
+    "name" : "项目经理-项目删除",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PROJ_DELETE_BUT"
+    }
+  }, {
+    "name" : "项目经理-项目延期",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PROJ_DELAY_BUT"
+    }
+  }, {
+    "name" : "项目经理-项目分页导航-测试-测试单",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PROJ_TEST_TESTTASK"
+    }
+  }, {
+    "name" : "项目经理-项目编辑",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PROJ_EDIT_BUT"
+    }
+  }, {
+    "name" : "项目经理-项目管理",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PROJ_MANAGE_BUT"
+    }
+  }, {
+    "name" : "项目经理-项目激活",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PROJ_ACTIVATION_BUT"
+    }
+  }, {
+    "name" : "项目经理-项目版本提交测试",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__BUILD_SUBT_BUT"
+    }
+  }, {
+    "name" : "项目经理-项目开始",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PROJ_START_BUT"
+    }
+  }, {
+    "name" : "项目经理-项目团队管理",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PROJT_TM_BUT"
+    }
+  }, {
+    "name" : "项目经理-项目挂起",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PROJ_SUSPEND_BUT"
+    }
+  }, {
+    "name" : "项目经理-项目版本编辑",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__BUILD_EDIT_BUT"
+    }
+  }, {
+    "name" : "项目经理-项目经理",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "PROJECT_MANAGER"
+    }
+  }, {
+    "name" : "项目经理-项目版本关联Bug（需求）",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__BUILD_LINK_BUT"
+    }
+  }, {
+    "name" : "项目经理-项目关闭",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PROJ_CLOSED_BUT"
+    }
+  }, {
+    "name" : "项目经理-项目新建",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PROJ_CREATE_BUT"
+    }
+  }, {
+    "name" : "项目经理-产品统计创建项目",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PRODSTA_PROJCRT_BUT"
+    }
+  }, {
+    "name" : "项目经理-项目报告列表",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PROJECT_REPORT_BUT"
+    }
+  }, {
+    "name" : "项目经理-项目版本删除",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__BUILD_DELETE_BUT"
+    }
+  }, {
+    "name" : "项目经理-项目版本新建",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__BUILD_CREATE_BUT"
+    }
+  }, {
+    "name" : "项目经理-需求移除项目关联",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__STORY_UNLP_BUT"
+    }
+  } ],
   "roleTag" : "ProjectManger",
-  "roleType" : "CUSTOM"
+  "roleType" : "CUSTOM",
+  "uniResTags" : [ "PROJ_DELETE_BUT", "PROJ_DELAY_BUT", "PROJ_TEST_TESTTASK", "PROJ_EDIT_BUT", "PROJ_MANAGE_BUT", "PROJ_ACTIVATION_BUT", "BUILD_SUBT_BUT", "PROJ_START_BUT", "PROJT_TM_BUT", "PROJ_SUSPEND_BUT", "BUILD_EDIT_BUT", "PROJECT_MANAGER", "BUILD_LINK_BUT", "PROJ_CLOSED_BUT", "PROJ_CREATE_BUT", "PRODSTA_PROJCRT_BUT", "PROJECT_REPORT_BUT", "BUILD_DELETE_BUT", "BUILD_CREATE_BUT", "STORY_UNLP_BUT" ]
 }
