@@ -31164,7 +31164,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
-    "expression":"(select sum(t.estimate) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )",
+    "expression":"(select sum(t.estimate) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31506,7 +31506,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
-    "expression":"((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ))",
+    "expression":"((select COUNT(t.id) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ))",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31548,7 +31548,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
-    "expression":"((select count(t.id) FROM zt_bug t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0'))",
+    "expression":"((select count(t.id) FROM zt_bug t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0'))",
     "key_field":0,
     "show_order":1000,
     "major_field":0
