@@ -557,60 +557,12 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
-  "getAllPSDEUserRoles" : [ {
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/StoryStage/PSDEUSERROLES/StoryStage_Maintain.json",
-    "name" : "需求维护",
-    "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "READ",
-      "name" : "StoryStage_Maintain_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
-    }, {
-      "dataAccessAction" : "CREATE",
-      "name" : "StoryStage_Maintain_CREATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "CREATE"
-      }
-    }, {
-      "dataAccessAction" : "UPDATE",
-      "name" : "StoryStage_Maintain_UPDATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "UPDATE"
-      }
-    }, {
-      "dataAccessAction" : "DELETE",
-      "name" : "StoryStage_Maintain_DELETE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "DELETE"
-      }
-    } ],
-    "roleTag" : "StoryStage_Maintain",
-    "userDRAction" : "READ"
-  }, {
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/StoryStage/PSDEUSERROLES/StoryStage_Read.json",
-    "name" : "需求查看",
-    "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "READ",
-      "name" : "StoryStage_Read_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
-    } ],
-    "roleTag" : "StoryStage_Read",
-    "userDRAction" : "READ"
-  } ],
   "auditMode" : 0,
   "codeName" : "StoryStage",
   "dEType" : 1,
   "dSLink" : "DEFAULT",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dataChangeLogMode" : 0,
   "dataImpExpMode" : 3,
   "getDefaultPSDEDataSet" : {
@@ -655,8 +607,8 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
     },
-    "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterOrder" : 100,
+    "masterRS" : 5,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/StoryStage.json"

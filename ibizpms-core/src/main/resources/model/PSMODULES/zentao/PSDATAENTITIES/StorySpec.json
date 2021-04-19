@@ -603,60 +603,12 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
-  "getAllPSDEUserRoles" : [ {
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEUSERROLES/StorySpec_Maintain.json",
-    "name" : "需求描述维护",
-    "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "DELETE",
-      "name" : "StorySpec_Maintain_DELETE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "DELETE"
-      }
-    }, {
-      "dataAccessAction" : "UPDATE",
-      "name" : "StorySpec_Maintain_UPDATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "UPDATE"
-      }
-    }, {
-      "dataAccessAction" : "READ",
-      "name" : "StorySpec_Maintain_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
-    }, {
-      "dataAccessAction" : "CREATE",
-      "name" : "StorySpec_Maintain_CREATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "CREATE"
-      }
-    } ],
-    "roleTag" : "StorySpec_Maintain",
-    "userDRAction" : "READ"
-  }, {
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEUSERROLES/StorySpec_Read.json",
-    "name" : "需求描述查看",
-    "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "READ",
-      "name" : "StorySpec_Read_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
-    } ],
-    "roleTag" : "StorySpec_Read",
-    "userDRAction" : "READ"
-  } ],
   "auditMode" : 0,
   "codeName" : "StorySpec",
   "dEType" : 1,
   "dSLink" : "DEFAULT",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dataChangeLogMode" : 0,
   "dataImpExpMode" : 3,
   "getDefaultPSDEDataSet" : {
@@ -678,8 +630,8 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
     },
-    "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterOrder" : 100,
+    "masterRS" : 5,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec.json"

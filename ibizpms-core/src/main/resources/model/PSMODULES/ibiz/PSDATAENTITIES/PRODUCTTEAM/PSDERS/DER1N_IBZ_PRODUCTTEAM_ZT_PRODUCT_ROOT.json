@@ -7,7 +7,7 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
   },
   "masterOrder" : -1,
-  "masterRS" : 8,
+  "masterRS" : 12,
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM.json"

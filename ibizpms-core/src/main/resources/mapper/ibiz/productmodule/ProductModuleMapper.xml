@@ -5,7 +5,7 @@
 	
 	<!-- 无视图模式 -->
 	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`BRANCH`, t1.`COLLECTOR`, t1.`DELETED`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t21.`NAME` AS `PARENTNAME`, t1.`PATH`, t1.`ROOT`, t11.`NAME` AS `ROOTNAME`, t1.`SHORT`, t1.`TYPE` FROM `zt_module` t1  LEFT JOIN `zt_product` t11 ON t1.`ROOT` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t1.`PARENT` = t21.`ID`   ]]>
+        <![CDATA[ SELECT t1.`BRANCH`, t1.`COLLECTOR`, t1.`DELETED`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t21.`NAME` AS `PARENTNAME`, t1.`PATH`, t1.`ROOT`, t11.`name` AS `ROOTNAME`, t1.`SHORT`, t1.`TYPE` FROM `zt_module` t1  LEFT JOIN `zt_product` t11 ON t1.`ROOT` = t11.`id`  LEFT JOIN `zt_module` t21 ON t1.`PARENT` = t21.`ID`   ]]>
     </sql>
 
 	
@@ -25,11 +25,11 @@
 			<![CDATA[ AND  t1.`TYPE` = #{srf.n_type_eq,jdbcType=VARCHAR} ]]>
         </if>
 		<if test="srf.n_rootname_eq != null ">
-			<![CDATA[ AND  t11.`NAME` = #{srf.n_rootname_eq,jdbcType=VARCHAR} ]]>
+			<![CDATA[ AND  t11.`name` = #{srf.n_rootname_eq,jdbcType=VARCHAR} ]]>
         </if>
 		<if test="srf.n_rootname_like != null ">
             <bind name="bind_n_rootname_like" value="'%' + srf.n_rootname_like + '%'" />
-            <![CDATA[ AND  t11.`NAME` like #{bind_n_rootname_like,jdbcType=VARCHAR} ]]>
+            <![CDATA[ AND  t11.`name` like #{bind_n_rootname_like,jdbcType=VARCHAR} ]]>
         </if>
 		<if test="srf.n_parentname_eq != null ">
 			<![CDATA[ AND  t21.`NAME` = #{srf.n_parentname_eq,jdbcType=VARCHAR} ]]>
@@ -183,7 +183,7 @@
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t21.`NAME` AS `PARENTNAME`, t1.`PATH`, t1.`ROOT`, t11.`NAME` AS `ROOTNAME`, t1.`SHORT`, t1.`TYPE` FROM `zt_module` t1  LEFT JOIN `zt_product` t11 ON t1.`ROOT` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t1.`PARENT` = t21.`ID`   ]]>
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t21.`NAME` AS `PARENTNAME`, t1.`PATH`, t1.`ROOT`, t11.`name` AS `ROOTNAME`, t1.`SHORT`, t1.`TYPE` FROM `zt_module` t1  LEFT JOIN `zt_product` t11 ON t1.`ROOT` = t11.`id`  LEFT JOIN `zt_module` t21 ON t1.`PARENT` = t21.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
 			<![CDATA[ AND t1.DELETED = '0' ]]>
@@ -214,7 +214,7 @@
 
     <!--数据查询[Root]-->
     <sql id="Root" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t21.`NAME` AS `PARENTNAME`, t1.`PATH`, t1.`ROOT`, t11.`NAME` AS `ROOTNAME`, t1.`SHORT`, t1.`TYPE` FROM `zt_module` t1  LEFT JOIN `zt_product` t11 ON t1.`ROOT` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t1.`PARENT` = t21.`ID`   ]]>
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t21.`NAME` AS `PARENTNAME`, t1.`PATH`, t1.`ROOT`, t11.`name` AS `ROOTNAME`, t1.`SHORT`, t1.`TYPE` FROM `zt_module` t1  LEFT JOIN `zt_product` t11 ON t1.`ROOT` = t11.`id`  LEFT JOIN `zt_module` t21 ON t1.`PARENT` = t21.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
 			<![CDATA[ AND t1.DELETED = '0' ]]>
@@ -228,7 +228,7 @@
 
     <!--数据查询[Root_NoBranch]-->
     <sql id="Root_NoBranch" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t21.`NAME` AS `PARENTNAME`, t1.`PATH`, t1.`ROOT`, t11.`NAME` AS `ROOTNAME`, t1.`SHORT`, t1.`TYPE` FROM `zt_module` t1  LEFT JOIN `zt_product` t11 ON t1.`ROOT` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t1.`PARENT` = t21.`ID`   ]]>
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t21.`NAME` AS `PARENTNAME`, t1.`PATH`, t1.`ROOT`, t11.`name` AS `ROOTNAME`, t1.`SHORT`, t1.`TYPE` FROM `zt_module` t1  LEFT JOIN `zt_product` t11 ON t1.`ROOT` = t11.`id`  LEFT JOIN `zt_module` t21 ON t1.`PARENT` = t21.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
 			<![CDATA[ AND t1.DELETED = '0' ]]>
@@ -256,7 +256,7 @@
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BRANCH`, t1.`COLLECTOR`, t1.`DELETED`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t21.`NAME` AS `PARENTNAME`, t1.`PATH`, t1.`ROOT`, t11.`NAME` AS `ROOTNAME`, t1.`SHORT`, t1.`TYPE` FROM `zt_module` t1  LEFT JOIN `zt_product` t11 ON t1.`ROOT` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t1.`PARENT` = t21.`ID`   ]]>
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`COLLECTOR`, t1.`DELETED`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t21.`NAME` AS `PARENTNAME`, t1.`PATH`, t1.`ROOT`, t11.`name` AS `ROOTNAME`, t1.`SHORT`, t1.`TYPE` FROM `zt_module` t1  LEFT JOIN `zt_product` t11 ON t1.`ROOT` = t11.`id`  LEFT JOIN `zt_module` t21 ON t1.`PARENT` = t21.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
 			<![CDATA[ AND t1.DELETED = '0' ]]>

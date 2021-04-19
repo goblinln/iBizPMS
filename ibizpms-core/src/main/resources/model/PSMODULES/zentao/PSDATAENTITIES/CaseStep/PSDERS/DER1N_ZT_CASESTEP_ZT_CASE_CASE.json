@@ -6,8 +6,8 @@
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
   },
-  "masterOrder" : -1,
-  "masterRS" : 8,
+  "masterOrder" : 100,
+  "masterRS" : 13,
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"

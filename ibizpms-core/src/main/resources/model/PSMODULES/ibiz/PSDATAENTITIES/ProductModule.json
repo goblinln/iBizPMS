@@ -841,7 +841,7 @@
       "columnName" : "ROOTNAME",
       "dBType" : "MYSQL5",
       "name" : "ROOTNAME",
-      "queryCodeExp" : "t11.`NAME`",
+      "queryCodeExp" : "t11.`name`",
       "standardColumnName" : "`ROOTNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1507,7 +1507,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
