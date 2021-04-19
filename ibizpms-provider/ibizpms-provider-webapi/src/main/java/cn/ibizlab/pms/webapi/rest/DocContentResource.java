@@ -151,7 +151,6 @@ public class DocContentResource {
 	@ApiOperation(value = "获取当前版本", tags = {"文档内容" } ,notes = "获取当前版本")
     @RequestMapping(method= RequestMethod.POST , value="/doccontents/fetchcurversion")
 	public ResponseEntity<List<DocContentDTO>> fetchCurVersion(@RequestBody DocContentSearchContext context) {
-        doccontentRuntime.addAuthorityConditions(context,"READ");
         Page<DocContent> domains = doccontentService.searchCurVersion(context) ;
         List<DocContentDTO> list = doccontentMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -165,7 +164,6 @@ public class DocContentResource {
 	@ApiOperation(value = "查询当前版本", tags = {"文档内容" } ,notes = "查询当前版本")
     @RequestMapping(method= RequestMethod.POST , value="/doccontents/searchcurversion")
 	public ResponseEntity<Page<DocContentDTO>> searchCurVersion(@RequestBody DocContentSearchContext context) {
-        doccontentRuntime.addAuthorityConditions(context,"READ");
         Page<DocContent> domains = doccontentService.searchCurVersion(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(doccontentMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -175,7 +173,6 @@ public class DocContentResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"文档内容" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/doccontents/fetchdefault")
 	public ResponseEntity<List<DocContentDTO>> fetchDefault(@RequestBody DocContentSearchContext context) {
-        doccontentRuntime.addAuthorityConditions(context,"READ");
         Page<DocContent> domains = doccontentService.searchDefault(context) ;
         List<DocContentDTO> list = doccontentMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -189,7 +186,6 @@ public class DocContentResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"文档内容" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/doccontents/searchdefault")
 	public ResponseEntity<Page<DocContentDTO>> searchDefault(@RequestBody DocContentSearchContext context) {
-        doccontentRuntime.addAuthorityConditions(context,"READ");
         Page<DocContent> domains = doccontentService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(doccontentMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -203,7 +199,7 @@ public class DocContentResource {
         doccontentdto = doccontentMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(doccontentdto);
     }
-    @PreAuthorize("@DocContentRuntime.quickTest('CREATE')")
+    @PreAuthorize("@DocRuntime.test(#doc_id,'CREATE')")
     @ApiOperation(value = "根据文档建立文档内容", tags = {"文档内容" },  notes = "根据文档建立文档内容")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/{doc_id}/doccontents")
     public ResponseEntity<DocContentDTO> createByDoc(@PathVariable("doc_id") Long doc_id, @RequestBody DocContentDTO doccontentdto) {
@@ -214,7 +210,7 @@ public class DocContentResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@DocContentRuntime.quickTest('CREATE')")
+    @PreAuthorize("@DocRuntime.test(#doc_id,'CREATE')")
     @ApiOperation(value = "根据文档批量建立文档内容", tags = {"文档内容" },  notes = "根据文档批量建立文档内容")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/{doc_id}/doccontents/batch")
     public ResponseEntity<Boolean> createBatchByDoc(@PathVariable("doc_id") Long doc_id, @RequestBody List<DocContentDTO> doccontentdtos) {
@@ -226,7 +222,7 @@ public class DocContentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@DocContentRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@DocRuntime.test(#doc_id,'UPDATE')")
     @ApiOperation(value = "根据文档更新文档内容", tags = {"文档内容" },  notes = "根据文档更新文档内容")
 	@RequestMapping(method = RequestMethod.PUT, value = "/docs/{doc_id}/doccontents/{doccontent_id}")
     public ResponseEntity<DocContentDTO> updateByDoc(@PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id, @RequestBody DocContentDTO doccontentdto) {
@@ -238,7 +234,7 @@ public class DocContentResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@DocContentRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@DocRuntime.test(#doc_id,'UPDATE')")
     @ApiOperation(value = "根据文档批量更新文档内容", tags = {"文档内容" },  notes = "根据文档批量更新文档内容")
 	@RequestMapping(method = RequestMethod.PUT, value = "/docs/{doc_id}/doccontents/batch")
     public ResponseEntity<Boolean> updateBatchByDoc(@PathVariable("doc_id") Long doc_id, @RequestBody List<DocContentDTO> doccontentdtos) {
@@ -250,14 +246,14 @@ public class DocContentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@DocContentRuntime.quickTest('DELETE')")
+    @PreAuthorize("@DocRuntime.test(#doc_id,'DELETE')")
     @ApiOperation(value = "根据文档删除文档内容", tags = {"文档内容" },  notes = "根据文档删除文档内容")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/docs/{doc_id}/doccontents/{doccontent_id}")
     public ResponseEntity<Boolean> removeByDoc(@PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(doccontentService.remove(doccontent_id));
     }
 
-    @PreAuthorize("@DocContentRuntime.quickTest('DELETE')")
+    @PreAuthorize("@DocRuntime.test(#doc_id,'DELETE')")
     @ApiOperation(value = "根据文档批量删除文档内容", tags = {"文档内容" },  notes = "根据文档批量删除文档内容")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/docs/{doc_id}/doccontents/batch")
     public ResponseEntity<Boolean> removeBatchByDoc(@RequestBody List<Long> ids) {
@@ -265,7 +261,7 @@ public class DocContentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@DocContentRuntime.quickTest('READ')")
+    @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
     @ApiOperation(value = "根据文档获取文档内容", tags = {"文档内容" },  notes = "根据文档获取文档内容")
 	@RequestMapping(method = RequestMethod.GET, value = "/docs/{doc_id}/doccontents/{doccontent_id}")
     public ResponseEntity<DocContentDTO> getByDoc(@PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id) {
@@ -308,12 +304,11 @@ public class DocContentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@DocContentRuntime.quickTest('READ')")
+    @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
 	@ApiOperation(value = "根据文档获取当前版本", tags = {"文档内容" } ,notes = "根据文档获取当前版本")
     @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/doccontents/fetchcurversion")
 	public ResponseEntity<List<DocContentDTO>> fetchDocContentCurVersionByDoc(@PathVariable("doc_id") Long doc_id,@RequestBody DocContentSearchContext context) {
         context.setN_doc_eq(doc_id);
-        doccontentRuntime.addAuthorityConditions(context,"READ");
         Page<DocContent> domains = doccontentService.searchCurVersion(context) ;
         List<DocContentDTO> list = doccontentMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -323,22 +318,20 @@ public class DocContentResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@DocContentRuntime.quickTest('READ')")
+    @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
 	@ApiOperation(value = "根据文档查询当前版本", tags = {"文档内容" } ,notes = "根据文档查询当前版本")
     @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/doccontents/searchcurversion")
 	public ResponseEntity<Page<DocContentDTO>> searchDocContentCurVersionByDoc(@PathVariable("doc_id") Long doc_id, @RequestBody DocContentSearchContext context) {
         context.setN_doc_eq(doc_id);
-        doccontentRuntime.addAuthorityConditions(context,"READ");
         Page<DocContent> domains = doccontentService.searchCurVersion(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(doccontentMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@DocContentRuntime.quickTest('READ')")
+    @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
 	@ApiOperation(value = "根据文档获取DEFAULT", tags = {"文档内容" } ,notes = "根据文档获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/doccontents/fetchdefault")
 	public ResponseEntity<List<DocContentDTO>> fetchDocContentDefaultByDoc(@PathVariable("doc_id") Long doc_id,@RequestBody DocContentSearchContext context) {
         context.setN_doc_eq(doc_id);
-        doccontentRuntime.addAuthorityConditions(context,"READ");
         Page<DocContent> domains = doccontentService.searchDefault(context) ;
         List<DocContentDTO> list = doccontentMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -348,12 +341,11 @@ public class DocContentResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@DocContentRuntime.quickTest('READ')")
+    @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
 	@ApiOperation(value = "根据文档查询DEFAULT", tags = {"文档内容" } ,notes = "根据文档查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/doccontents/searchdefault")
 	public ResponseEntity<Page<DocContentDTO>> searchDocContentDefaultByDoc(@PathVariable("doc_id") Long doc_id, @RequestBody DocContentSearchContext context) {
         context.setN_doc_eq(doc_id);
-        doccontentRuntime.addAuthorityConditions(context,"READ");
         Page<DocContent> domains = doccontentService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(doccontentMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

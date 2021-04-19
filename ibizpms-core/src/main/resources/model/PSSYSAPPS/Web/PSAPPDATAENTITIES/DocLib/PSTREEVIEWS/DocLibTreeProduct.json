@@ -1977,7 +1977,7 @@
         "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
       },
       "masterOrder" : -1,
-      "masterRS" : 0,
+      "masterRS" : 4,
       "getMinorPSDataEntity" : {
         "modelref" : true,
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
@@ -2068,7 +2068,7 @@
         "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
       },
       "masterOrder" : -1,
-      "masterRS" : 0,
+      "masterRS" : 4,
       "getMinorPSDataEntity" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"

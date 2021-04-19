@@ -1128,7 +1128,7 @@
       "columnName" : "PRODUCTNAME",
       "dBType" : "MYSQL5",
       "name" : "PRODUCTNAME",
-      "queryCodeExp" : "t11.`NAME`",
+      "queryCodeExp" : "t11.`name`",
       "standardColumnName" : "`PRODUCTNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1668,6 +1668,19 @@
     "roleTag" : "DocLib_Maintain",
     "userDRAction" : "READ"
   }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/DocLib_Manage.json",
+    "name" : "文档库管理",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "MANAGE",
+      "name" : "DocLib_Manage_MANAGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "MANAGE"
+      }
+    } ],
+    "roleTag" : "DocLib_Manage",
+    "userDRAction" : "READ"
+  }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/DocLib_Read.json",
     "name" : "文档库查看",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -1718,7 +1731,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
@@ -1745,7 +1758,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
@@ -1773,7 +1786,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
@@ -1800,7 +1813,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"

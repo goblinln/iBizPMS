@@ -672,60 +672,12 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
-  "getAllPSDEUserRoles" : [ {
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/DocContent/PSDEUSERROLES/DocContent_Maintain.json",
-    "name" : "文档内容维护",
-    "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "CREATE",
-      "name" : "DocContent_Maintain_CREATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "CREATE"
-      }
-    }, {
-      "dataAccessAction" : "UPDATE",
-      "name" : "DocContent_Maintain_UPDATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "UPDATE"
-      }
-    }, {
-      "dataAccessAction" : "READ",
-      "name" : "DocContent_Maintain_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
-    }, {
-      "dataAccessAction" : "DELETE",
-      "name" : "DocContent_Maintain_DELETE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "DELETE"
-      }
-    } ],
-    "roleTag" : "DocContent_Maintain",
-    "userDRAction" : "READ"
-  }, {
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/DocContent/PSDEUSERROLES/DocContent_Read.json",
-    "name" : "文档内容查看",
-    "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "READ",
-      "name" : "DocContent_Read_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
-    } ],
-    "roleTag" : "DocContent_Read",
-    "userDRAction" : "READ"
-  } ],
   "auditMode" : 0,
   "codeName" : "DocContent",
   "dEType" : 1,
   "dSLink" : "DEFAULT",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dataChangeLogMode" : 0,
   "dataImpExpMode" : 3,
   "getDefaultPSDEDataSet" : {
@@ -747,8 +699,8 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
     },
-    "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterOrder" : 100,
+    "masterRS" : 5,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocContent.json"

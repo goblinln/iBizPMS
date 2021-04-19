@@ -5,17 +5,17 @@
 	
 	<!-- 无视图模式 -->
 	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`CONSUMED`, t1.`CREATEBY`, t1.`DATE`, t1.`DEPT`, t1.`ESTIMATE`, concat(t1.`PROJECT`,'__',t1.`TASK`,'__',t1.`DATE`) AS `ID`, 1 AS `ISWEEKEND`, t1.`LEFT`, t1.`ORG`, t1.`PROJECT`, t1.`TASK`, t1.`UPDATEBY` FROM `zt_burn` t1   ]]>
+        <![CDATA[ SELECT t1.`CONSUMED`, t1.`CREATEBY`, t1.`DATE`, t1.`DEPT`, t1.`ESTIMATE`, concat(t1.`PROJECT`,'__',t1.`TASK`,'__',t1.`DATE`) AS `ID`, DATE_FORMAT( t1.`DATE`, '%w' ) AS `ISWEEKEND`, t1.`LEFT`, t1.`ORG`, t1.`PROJECT`, t1.`TASK`, t1.`UPDATEBY` FROM `zt_burn` t1   ]]>
     </sql>
 
 	
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_isweekend_eq != null ">
-			<![CDATA[ AND  1 = #{srf.n_isweekend_eq,jdbcType=VARCHAR} ]]>
+			<![CDATA[ AND  DATE_FORMAT( t1.`DATE`, '%w' ) = #{srf.n_isweekend_eq,jdbcType=VARCHAR} ]]>
         </if>
 		<if test="srf.n_isweekend_in != null ">
-			<![CDATA[ AND  1 IN ]]>
+			<![CDATA[ AND  DATE_FORMAT( t1.`DATE`, '%w' ) IN ]]>
             <foreach item="item" collection="srf.n_isweekend_in.split(',|;')"  open="(" separator="," close=")">
                 #{item}
             </foreach>
@@ -84,7 +84,7 @@
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CONSUMED`, t1.`CREATEBY`, t1.`DATE`, t1.`DEPT`, t1.`ESTIMATE`, concat(t1.`PROJECT`,'__',t1.`TASK`,'__',t1.`DATE`) AS `ID`, 1 AS `ISWEEKEND`, t1.`LEFT`, t1.`ORG`, t1.`PROJECT`, t1.`TASK`, t1.`UPDATEBY` FROM `zt_burn` t1   ]]>
+		<![CDATA[ SELECT t1.`CONSUMED`, t1.`CREATEBY`, t1.`DATE`, t1.`DEPT`, t1.`ESTIMATE`, concat(t1.`PROJECT`,'__',t1.`TASK`,'__',t1.`DATE`) AS `ID`, DATE_FORMAT( t1.`DATE`, '%w' ) AS `ISWEEKEND`, t1.`LEFT`, t1.`ORG`, t1.`PROJECT`, t1.`TASK`, t1.`UPDATEBY` FROM `zt_burn` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>
@@ -100,7 +100,7 @@
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CONSUMED`, t1.`CREATEBY`, t1.`DATE`, t1.`DEPT`, t1.`ESTIMATE`, concat(t1.`PROJECT`,'__',t1.`TASK`,'__',t1.`DATE`) AS `ID`, 1 AS `ISWEEKEND`, t1.`LEFT`, t1.`ORG`, t1.`PROJECT`, t1.`TASK`, t1.`UPDATEBY` FROM `zt_burn` t1   ]]>
+		<![CDATA[ SELECT t1.`CONSUMED`, t1.`CREATEBY`, t1.`DATE`, t1.`DEPT`, t1.`ESTIMATE`, concat(t1.`PROJECT`,'__',t1.`TASK`,'__',t1.`DATE`) AS `ID`, DATE_FORMAT( t1.`DATE`, '%w' ) AS `ISWEEKEND`, t1.`LEFT`, t1.`ORG`, t1.`PROJECT`, t1.`TASK`, t1.`UPDATEBY` FROM `zt_burn` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>

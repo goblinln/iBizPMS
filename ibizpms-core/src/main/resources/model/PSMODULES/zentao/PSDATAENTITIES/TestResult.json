@@ -1194,60 +1194,12 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
-  "getAllPSDEUserRoles" : [ {
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestResult/PSDEUSERROLES/TestResult_Maintain.json",
-    "name" : "测试结果维护",
-    "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "DELETE",
-      "name" : "TestResult_Maintain_DELETE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "DELETE"
-      }
-    }, {
-      "dataAccessAction" : "CREATE",
-      "name" : "TestResult_Maintain_CREATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "CREATE"
-      }
-    }, {
-      "dataAccessAction" : "UPDATE",
-      "name" : "TestResult_Maintain_UPDATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "UPDATE"
-      }
-    }, {
-      "dataAccessAction" : "READ",
-      "name" : "TestResult_Maintain_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
-    } ],
-    "roleTag" : "TestResult_Maintain",
-    "userDRAction" : "READ"
-  }, {
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestResult/PSDEUSERROLES/TestResult_Read.json",
-    "name" : "测试结果查看",
-    "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "READ",
-      "name" : "TestResult_Read_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
-    } ],
-    "roleTag" : "TestResult_Read",
-    "userDRAction" : "READ"
-  } ],
   "auditMode" : 0,
   "codeName" : "TestResult",
   "dEType" : 1,
   "dSLink" : "DEFAULT",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dataChangeLogMode" : 0,
   "dataImpExpMode" : 3,
   "getDefaultPSDEDataSet" : {
@@ -1342,8 +1294,8 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun.json"
     },
-    "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterOrder" : 100,
+    "masterRS" : 5,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestResult.json"
