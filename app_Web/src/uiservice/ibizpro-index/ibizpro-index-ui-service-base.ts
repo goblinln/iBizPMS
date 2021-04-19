@@ -114,6 +114,69 @@ export default class IbizproIndexUIServiceBase extends UIService {
             width: 0,
             height: 0
         });
+        this.allViewMap.set('RedirectView:RDITEM:EDITVIEW:DOC', {
+            viewname: 'dashboardview',
+            srfappde: 'docs',
+            component: 'doc-dashboard-view',
+            openmode: 'DRAWER_TOP',
+            title: '文档',
+            width: 1400,
+            height: 850
+        })
+        this.allViewMap.set('RedirectView:RDITEM:EDITVIEW:TASK', {
+            viewname: 'maindashboardview',
+            srfappde: 'tasks',
+            component: 'task-main-dashboard-view',
+            openmode: 'DRAWER_TOP',
+            title: '任务',
+            width: 1400,
+            height: 850
+        })
+        this.allViewMap.set('RedirectView:RDITEM:EDITVIEW:PRODUCT', {
+            viewname: 'maintabexpview',
+            srfappde: 'products',
+            component: 'product-main-tab-exp-view',
+            openmode: '',
+            title: '产品',
+            width: 1400,
+            height: 850
+        })
+        this.allViewMap.set('RedirectView:RDITEM:EDITVIEW:PROJECT', {
+            viewname: 'maintabexpview',
+            srfappde: 'projects',
+            component: 'project-main-tab-exp-view',
+            openmode: '',
+            title: '项目',
+            width: 1400,
+            height: 850
+        })
+        this.allViewMap.set('RedirectView:RDITEM:EDITVIEW:CASE', {
+            viewname: 'maindashboardview',
+            srfappde: 'cases',
+            component: 'case-main-dashboard-view',
+            openmode: 'DRAWER_TOP',
+            title: '功能测试',
+            width: 1400,
+            height: 850
+        })
+        this.allViewMap.set('RedirectView:RDITEM:EDITVIEW:STORY', {
+            viewname: 'mainview',
+            srfappde: 'stories',
+            component: 'story-main-view',
+            openmode: 'DRAWER_TOP',
+            title: '需求',
+            width: 1400,
+            height: 850
+        })
+        this.allViewMap.set('RedirectView:RDITEM:EDITVIEW:BUG', {
+            viewname: 'maindashboardview',
+            srfappde: 'bugs',
+            component: 'bug-main-dashboard-view',
+            openmode: 'DRAWER_TOP',
+            title: 'Bug',
+            width: 1400,
+            height: 850
+        })
     }
 
     /**
@@ -140,14 +203,19 @@ export default class IbizproIndexUIServiceBase extends UIService {
      * @param isEnableWorkflow  重定向视图是否需要处理流程中的数据
      * @memberof  IbizproIndexUIServiceBase
      */
-    public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
+    public async getRDAppViewEX(srfkey:string,isEnableWorkflow:boolean,rdviewname:string){        
         this.isEnableWorkflow = isEnableWorkflow;
         // 进行数据查询
         let result:any = await this.dataService.Get({ibizproindex:srfkey});
         const curData:any = result.data;
         //判断当前数据模式,默认为true，todo
         const iRealDEModel:boolean = true;
-
+        //常规重定向
+        const dataTypeDEField:string|null ="indextype";
+        let strRDViewParam = rdviewname +':RDITEM:'+ curData[dataTypeDEField!];
+        if(this.allViewMap.has(strRDViewParam)){
+            return this.allViewMap.get(strRDViewParam);
+        }
         let bDataInWF:boolean = false;
 		let bWFMode:any = false;
 		// 计算数据模式
@@ -165,6 +233,17 @@ export default class IbizproIndexUIServiceBase extends UIService {
 
         //返回视图
         return this.allViewMap.get(strPDTViewParam);
+    }
+
+    /**
+     * 获取指定数据的重定向页面
+     * 
+     * @param srfkey 数据主键
+     * @param isEnableWorkflow  重定向视图是否需要处理流程中的数据
+     * @memberof  IbizproIndexUIServiceBase
+     */
+    public async getRDAppView(srfkey:string,isEnableWorkflow:boolean){
+        this.getRDAppViewEX(srfkey,isEnableWorkflow,'')
     }
 
     /**
