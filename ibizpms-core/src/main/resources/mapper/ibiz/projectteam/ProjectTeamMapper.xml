@@ -73,7 +73,6 @@
 			<![CDATA[ AND T1.ROOT=#{id} ]]>
 		</trim>
 		 )t1
-		 order by order  asc  
      </select>
 
     <!--数据集合[Default]-->

@@ -77,7 +77,6 @@
 			<![CDATA[ AND T1.BRANCH=#{id} ]]>
 		</trim>
 		 )t1
-		 order by order  asc , id   desc
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N__ZT_MODULE__ZT_MODULE__PARENT] -->
 	 <select id="selectByParent" resultMap="ModuleResultMap"  databaseId="mysql">
@@ -90,7 +89,6 @@
 			<![CDATA[ AND T1.PARENT=#{id} ]]>
 		</trim>
 		 )t1
-		 order by order  asc , id   desc
      </select>
 
     <!--数据集合[BugModule]-->
