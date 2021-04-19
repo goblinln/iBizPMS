@@ -121,6 +121,9 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
     public Page<ProductPlan> searchDefaultParent(ProductPlanSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProductPlan> pages=baseMapper.searchDefaultParent(context.getPages(),context,context.getSelectCond());
         for (ProductPlan productPlan : pages.getRecords()) {
+            if(productPlan.getParent() == 0L) {
+                continue;
+            }
             ProductPlanSearchContext productPlanSearchContext = new ProductPlanSearchContext();
             productPlanSearchContext.setSelectCond(context.getSelectCond().clone());
             productPlanSearchContext.setN_parent_eq(productPlan.getId());
@@ -135,6 +138,9 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
     public Page<ProductPlan> searchPlanTasks(ProductPlanSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProductPlan> pages=baseMapper.searchPlanTasks(context.getPages(),context,context.getSelectCond());
         for (ProductPlan productPlan : pages.getRecords()) {
+            if(productPlan.getParent() == 0L) {
+                continue;
+            }
             ProductPlanSearchContext productPlanSearchContext = new ProductPlanSearchContext();
             productPlanSearchContext.setSelectCond(context.getSelectCond().clone());
             productPlanSearchContext.setN_parent_eq(productPlan.getId());
