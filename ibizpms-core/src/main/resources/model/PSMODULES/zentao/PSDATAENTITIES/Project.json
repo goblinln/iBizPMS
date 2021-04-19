@@ -6118,7 +6118,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 8,
+    "masterRS" : 12,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam.json"
@@ -6221,7 +6221,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn.json"

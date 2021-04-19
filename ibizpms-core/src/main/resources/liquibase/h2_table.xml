@@ -17,7 +17,7 @@
 
 
     <!--输出实体[ZT_ACTION]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_action-13-2">
+    <changeSet author="zentao" id="tab-zt_action-21-2">
         <createTable tableName="zt_action">
                 <column name="EXTRA" remarks="" type="TEXT(65535)">
                 </column>
@@ -270,7 +270,7 @@
 
 
     <!--输出实体[ZT_BURN]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_burn-8-8">
+    <changeSet author="zentao" id="tab-zt_burn-11-8">
         <createTable tableName="zt_burn">
                 <column name="CREATEBY" remarks="" type="VARCHAR(100)">
                 </column>
@@ -948,7 +948,7 @@
 
 
     <!--输出实体[ZT_HISTORY]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_history-9-30">
+    <changeSet author="zentao" id="tab-zt_history-13-30">
         <createTable tableName="zt_history">
                 <column name="DIFF" remarks="" type="TEXT(16777215)">
                 </column>
@@ -2931,7 +2931,7 @@
 
 
     <!--输出实体[ZT_TODO]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_todo-11-119">
+    <changeSet author="zentao" id="tab-zt_todo-13-119">
         <createTable tableName="zt_todo">
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_TODO_ID"/>

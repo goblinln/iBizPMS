@@ -1023,7 +1023,7 @@
   } ],
   "codeName" : "ProjectTeam",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json",
   "enableUIActions" : 15,
   "logicName" : "项目团队",

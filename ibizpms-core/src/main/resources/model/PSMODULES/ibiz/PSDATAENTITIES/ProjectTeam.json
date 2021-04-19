@@ -1320,7 +1320,7 @@
   "dEType" : 1,
   "dSLink" : "DEFAULT",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dataChangeLogMode" : 0,
   "dataImpExpMode" : 3,
   "getDefaultPSDEDataSet" : {
@@ -1343,7 +1343,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 8,
+    "masterRS" : 12,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam.json"
