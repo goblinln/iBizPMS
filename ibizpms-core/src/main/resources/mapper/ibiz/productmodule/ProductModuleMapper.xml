@@ -93,7 +93,6 @@
 			<![CDATA[ AND T1.PARENT=#{id} ]]>
 		</trim>
 		 )t1
-		 order by order  asc , id   desc
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_IBZ_PRODUCTMODULE_ZT_PRODUCT_ROOT] -->
 	 <select id="selectByRoot" resultMap="ProductModuleResultMap"  databaseId="mysql">
@@ -109,7 +108,6 @@
 			<![CDATA[ AND T1.ROOT=#{id} ]]>
 		</trim>
 		 )t1
-		 order by order  asc , id   desc
      </select>
 
     <!--数据集合[ByPath]-->

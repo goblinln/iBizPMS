@@ -88,7 +88,6 @@
 			<![CDATA[ AND T1.BRANCH=#{id} ]]>
 		</trim>
 		 )t1
-		 order by begin  desc  
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_PRODUCTPLAN_ZT_PRODUCT_PRODUCT] -->
 	 <select id="selectByProduct" resultMap="ProductPlanResultMap"  databaseId="mysql">
@@ -101,7 +100,6 @@
 			<![CDATA[ AND T1.PRODUCT=#{id} ]]>
 		</trim>
 		 )t1
-		 order by begin  desc  
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N__ZT_PRODUCTPLAN__ZT_PRODUCTPLAN__PARENT] -->
 	 <select id="selectByParent" resultMap="ProductPlanResultMap"  databaseId="mysql">
@@ -114,7 +112,6 @@
 			<![CDATA[ AND T1.PARENT=#{id} ]]>
 		</trim>
 		 )t1
-		 order by begin  desc  
      </select>
 
     <!--数据集合[ChildPlan]-->

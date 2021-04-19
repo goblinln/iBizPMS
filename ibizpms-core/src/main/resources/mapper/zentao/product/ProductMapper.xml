@@ -92,7 +92,6 @@
 			<![CDATA[ AND T1.LINE=#{id} ]]>
 		</trim>
 		 )t1
-		 order by id  desc  
      </select>
 
     <!--数据集合[AllList]-->
