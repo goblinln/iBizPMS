@@ -1942,6 +1942,7 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
 
     @Transactional
     public Task recordTimateZeroLeft(Task et) {
+        et = this.get(et.getId());
         Task newTask = new Task();
         newTask.setId(et.getId());
         if ( et.getLeft() == 0){
