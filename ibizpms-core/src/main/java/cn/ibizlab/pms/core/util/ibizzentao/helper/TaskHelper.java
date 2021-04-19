@@ -961,9 +961,9 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             newTask.setAssigneddate(ZTDateUtil.now());
         }
         if (newTask.getLeft() == 0) {
-            newTask.setStatus(StaticDict.Task__status.DOING.getValue());//开始任务时剩余为0 设置状态为进行中
-//            newTask.setFinisheddate(ZTDateUtil.now());
-//            newTask.setFinishedby(AuthenticationUser.getAuthenticationUser().getUsername());
+            newTask.setStatus(StaticDict.Task__status.DONE.getValue());
+            newTask.setFinisheddate(ZTDateUtil.now());
+            newTask.setFinishedby(AuthenticationUser.getAuthenticationUser().getUsername());
             newTask.setAssignedto(old.getOpenedby());
         }
 
@@ -1946,7 +1946,12 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
         if ( et.getLeft() == 0){
             et.setStatus(StaticDict.Task__status.DOING.getValue());
             et.setStatus1(StaticDict.Task__status.DOING.getValue());
+            et.setFinishedby("");
+            et.setFinisheddate(null);
             super.internalUpdate(et);
+        }
+        if (et.getParent()>0){
+            updateParentStatus(et,et.getParent(),true);
         }
         return et;
     }
