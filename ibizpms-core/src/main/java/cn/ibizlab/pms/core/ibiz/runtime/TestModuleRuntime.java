@@ -28,7 +28,7 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.core.annotation.Order;
 import org.springframework.beans.factory.annotation.Autowired;
-import net.ibizsys.runtime.dataentity.DEActions;
+import net.ibizsys.runtime.dataentity.action.DEActions;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.springframework.transaction.annotation.Transactional;
@@ -190,7 +190,7 @@ public class TestModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
      * @throws Throwable
      */
     @Override
-    protected void onExecuteDELogic(Object arg0, IPSDEAction iPSDEAction, IPSDELogic iPSDELogic, IDynaInstRuntime iDynaInstRuntime, ProceedingJoinPoint joinPoint) throws Throwable {
+    protected void onExecuteDELogic(Object arg0, IPSDEAction iPSDEAction, IPSDELogic iPSDELogic, IDynaInstRuntime iDynaInstRuntime, Object joinPoint) throws Throwable {
         if (arg0 instanceof EntityBase)
             logicExecutor.executeLogic((EntityBase) arg0, iPSDEAction, iPSDELogic, iDynaInstRuntime);
         else

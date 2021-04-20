@@ -19,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.wf.IPSDEWF;
 import net.ibizsys.runtime.IDynaInstRuntime;
-import net.ibizsys.runtime.dataentity.CheckKeyStates;
+import net.ibizsys.runtime.dataentity.action.CheckKeyStates;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
 import net.ibizsys.runtime.ISystemRuntime;
 import net.ibizsys.runtime.dataentity.IDataEntityRuntime;
@@ -30,7 +30,6 @@ import net.ibizsys.runtime.util.IEntity;
 import net.ibizsys.runtime.util.IEntityBase;
 import net.ibizsys.runtime.util.ISearchContextBase;
 import org.apache.commons.lang3.StringUtils;
-import org.aspectj.lang.ProceedingJoinPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
@@ -83,7 +82,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     }
 
     @PostConstruct
-    public void init() throws Exception {
+    public void init() {
         this.getSystemRuntime().registerDataEntityRuntime(this);
     }
 
@@ -148,7 +147,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     }
 
     @Override
-    protected void onWFStart(Object arg0, IPSDEAction iPSDEAction, IPSDEWF iPSDEWF, IDynaInstRuntime iDynaInstRuntime, ProceedingJoinPoint joinPoint) throws Throwable {
+    protected void onWFStart(Object arg0, IPSDEAction iPSDEAction, IPSDEWF iPSDEWF, IDynaInstRuntime iDynaInstRuntime, Object joinPoint) throws Throwable {
         
     }
 
