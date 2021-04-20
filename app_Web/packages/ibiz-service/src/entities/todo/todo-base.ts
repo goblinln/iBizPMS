@@ -203,6 +203,10 @@ export abstract class TodoBase extends EntityBase implements ITodo {
      * 归属部门
      */
     dept?: any;
+    /**
+     * 待办编号
+     */
+    todosn?: any;
 
     /**
      * 重置实体数据

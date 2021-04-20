@@ -178,4 +178,8 @@ export interface ITodo extends IEntityBase {
      * 归属部门
      */
     dept?: any;
+    /**
+     * 待办编号
+     */
+    todosn?: any;
 }

@@ -37,4 +37,5 @@ export default [
     'updateby',
     'org',
     'dept',
+    'todosn',
 ];

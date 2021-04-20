@@ -41,6 +41,7 @@ function getLocaleResourceBase(){
 		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 		'org': commonLogic.appcommonhandle("归属组织",null),
 		'dept': commonLogic.appcommonhandle("归属部门",null),
+		'todosn': commonLogic.appcommonhandle("待办编号",null),
 	},
 		views: {
 			'closeview': {
