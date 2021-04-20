@@ -204,7 +204,7 @@ public class IbizproProjectDailyRuntime extends cn.ibizlab.pms.core.runtime.Syst
      * @throws Throwable
      */
     @Override
-    protected void onExecuteActionLogics(Object arg0, IPSDEAction iPSDEAction, String strAttachMode, IDynaInstRuntime iDynaInstRuntime, ProceedingJoinPoint joinPoint) throws Throwable {
+    protected void onExecuteActionLogics(Object arg0, IPSDEAction iPSDEAction, String strAttachMode, IDynaInstRuntime iDynaInstRuntime, Object joinPoint) throws Throwable {
         IbizproProjectDaily entity = null;
         String action = iPSDEAction.getName();
         if (arg0 instanceof IbizproProjectDaily) {

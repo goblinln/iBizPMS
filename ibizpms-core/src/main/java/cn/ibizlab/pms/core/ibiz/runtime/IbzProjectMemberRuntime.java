@@ -201,7 +201,7 @@ public class IbzProjectMemberRuntime extends cn.ibizlab.pms.core.runtime.SystemD
      * @throws Throwable
      */
     @Override
-    protected void onExecuteActionLogics(Object arg0, IPSDEAction iPSDEAction, String strAttachMode, IDynaInstRuntime iDynaInstRuntime, ProceedingJoinPoint joinPoint) throws Throwable {
+    protected void onExecuteActionLogics(Object arg0, IPSDEAction iPSDEAction, String strAttachMode, IDynaInstRuntime iDynaInstRuntime, Object joinPoint) throws Throwable {
         IbzProjectMember entity = null;
         String action = iPSDEAction.getName();
         if (arg0 instanceof IbzProjectMember) {
