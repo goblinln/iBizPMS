@@ -1512,6 +1512,10 @@
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/CreateProductDailyService.json"
   } ],
+  "getAllPSSysSequences" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProSeq.json"
+  } ],
   "getAllPSSysUniReses" : [ {
     "name" : "通用创建",
     "resCode" : "UNIVERSALCREATE",

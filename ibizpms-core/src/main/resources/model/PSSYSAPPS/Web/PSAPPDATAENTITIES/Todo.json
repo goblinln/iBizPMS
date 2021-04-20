@@ -625,6 +625,11 @@
     "name" : "DEPT",
     "stdDataType" : 25,
     "stringLength" : 100
+  }, {
+    "codeName" : "Todosn",
+    "logicName" : "待办编号",
+    "name" : "TODOSN",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

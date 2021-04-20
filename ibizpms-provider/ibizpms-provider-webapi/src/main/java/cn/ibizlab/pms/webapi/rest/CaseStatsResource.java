@@ -147,11 +147,9 @@ public class CaseStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@CaseStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"测试用例统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/casestats/fetchdefault")
 	public ResponseEntity<List<CaseStatsDTO>> fetchDefault(@RequestBody CaseStatsSearchContext context) {
-        casestatsRuntime.addAuthorityConditions(context,"READ");
         Page<CaseStats> domains = casestatsService.searchDefault(context) ;
         List<CaseStatsDTO> list = casestatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -161,21 +159,17 @@ public class CaseStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@CaseStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"测试用例统计" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/casestats/searchdefault")
 	public ResponseEntity<Page<CaseStatsDTO>> searchDefault(@RequestBody CaseStatsSearchContext context) {
-        casestatsRuntime.addAuthorityConditions(context,"READ");
         Page<CaseStats> domains = casestatsService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(casestatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@CaseStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试用例统计", tags = {"测试用例统计" } ,notes = "获取测试用例统计")
     @RequestMapping(method= RequestMethod.POST , value="/casestats/fetchtestcasestats")
 	public ResponseEntity<List<CaseStatsDTO>> fetchTestCaseStats(@RequestBody CaseStatsSearchContext context) {
-        casestatsRuntime.addAuthorityConditions(context,"READ");
         Page<CaseStats> domains = casestatsService.searchTestCaseStats(context) ;
         List<CaseStatsDTO> list = casestatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -185,11 +179,9 @@ public class CaseStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@CaseStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询测试用例统计", tags = {"测试用例统计" } ,notes = "查询测试用例统计")
     @RequestMapping(method= RequestMethod.POST , value="/casestats/searchtestcasestats")
 	public ResponseEntity<Page<CaseStatsDTO>> searchTestCaseStats(@RequestBody CaseStatsSearchContext context) {
-        casestatsRuntime.addAuthorityConditions(context,"READ");
         Page<CaseStats> domains = casestatsService.searchTestCaseStats(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(casestatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

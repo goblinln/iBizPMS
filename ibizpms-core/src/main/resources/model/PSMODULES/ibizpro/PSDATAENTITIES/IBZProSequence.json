@@ -547,13 +547,24 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组"
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "YEAR",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]"
       },
       "getPSDEField" : {
         "name" : "YEAR",
         "codeName" : "Year"
       },
-      "ruleInfo" : "默认规则",
+      "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
       "enableBackend" : true,
@@ -561,12 +572,14 @@
     } ],
     "codeName" : "Year",
     "dEFType" : 1,
-    "dataType" : "DATE",
+    "dataType" : "TEXT",
     "importOrder" : 1000,
+    "length" : 100,
     "logicName" : "年份",
     "name" : "YEAR",
-    "stdDataType" : 5,
-    "valueFormat" : "%1$tY-%1$tm-%1$td"
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "ISENABLE",
@@ -713,88 +726,6 @@
     "name" : "CURSEQ",
     "stdDataType" : 1,
     "valueFormat" : "%1$s"
-  } ],
-  "getAllPSDELogics" : [ {
-    "codeName" : "GenSeq",
-    "defaultParamName" : "Default",
-    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSequence/PSDELOGICS/GenSeq.json",
-    "logicName" : "构建序列号",
-    "logicSubType" : "NONE",
-    "name" : "构建序列号",
-    "getPSDELogicNodes" : [ {
-      "codeName" : "Begin",
-      "logicNodeType" : "BEGIN",
-      "name" : "开始",
-      "parallelOutput" : true
-    } ],
-    "getPSDELogicParams" : [ {
-      "codeName" : "Default",
-      "name" : "传入变量",
-      "default" : true,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
-    } ],
-    "getStartPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Begin"
-    },
-    "enableBackend" : true,
-    "enableFront" : false
-  }, {
-    "codeName" : "InstallSeqFunc",
-    "defaultParamName" : "Default",
-    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSequence/PSDELOGICS/InstallSeqFunc.json",
-    "logicName" : "安装自增序列函数",
-    "logicSubType" : "NONE",
-    "name" : "安装自增序列函数",
-    "getPSDELogicNodes" : [ {
-      "codeName" : "Begin",
-      "logicNodeType" : "BEGIN",
-      "name" : "开始",
-      "parallelOutput" : true
-    } ],
-    "getPSDELogicParams" : [ {
-      "codeName" : "Default",
-      "name" : "传入变量",
-      "default" : true,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
-    } ],
-    "getStartPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Begin"
-    },
-    "enableBackend" : true,
-    "enableFront" : false
-  }, {
-    "codeName" : "initSeq",
-    "defaultParamName" : "Default",
-    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSequence/PSDELOGICS/initSeq.json",
-    "logicName" : "初始化序列号",
-    "logicSubType" : "NONE",
-    "name" : "初始化序列号",
-    "getPSDELogicNodes" : [ {
-      "codeName" : "Begin",
-      "logicNodeType" : "BEGIN",
-      "name" : "开始",
-      "parallelOutput" : true
-    } ],
-    "getPSDELogicParams" : [ {
-      "codeName" : "Default",
-      "name" : "传入变量",
-      "default" : true,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
-    } ],
-    "getStartPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Begin"
-    },
-    "enableBackend" : true,
-    "enableFront" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",

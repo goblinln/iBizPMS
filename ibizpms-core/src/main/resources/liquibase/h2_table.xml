@@ -787,7 +787,7 @@
 
 
     <!--输出实体[IBZ_EMPLOYEELOAD]数据结构 -->
-    <changeSet author="zentao" id="tab-ibz_employeeload-1-24">
+    <changeSet author="zentao" id="tab-ibz_employeeload-3-24">
         <createTable tableName="ZT_TASK">
                 <column name="NAME" remarks="" type="VARCHAR(100)">
                 </column>
@@ -1000,7 +1000,7 @@
 
 
     <!--输出实体[IBZPRO_SEQUENCE]数据结构 -->
-    <changeSet author="zentao" id="tab-ibzpro_sequence-39-32">
+    <changeSet author="zentao" id="tab-ibzpro_sequence-53-32">
         <createTable tableName="T_IBZPRO_SEQUENCE">
                 <column name="IBZPRO_SEQUENCEID" remarks="" type="VARCHAR(100)">
                     <constraints primaryKey="true" primaryKeyName="PK_IBZPRO_SEQUENCE_IBZPRO_SEQU"/>
@@ -1021,7 +1021,7 @@
                 </column>
                 <column name="CATEGORY" remarks="" type="VARCHAR(60)">
                 </column>
-                <column name="YEAR" remarks="" type="DATETIME">
+                <column name="YEAR" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="ISENABLE" remarks="" type="INT">
                 </column>
@@ -2967,7 +2967,7 @@
 
 
     <!--输出实体[ZT_TODO]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_todo-38-120">
+    <changeSet author="zentao" id="tab-zt_todo-41-120">
         <createTable tableName="zt_todo">
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_TODO_ID"/>
@@ -3019,6 +3019,8 @@
                 <column name="ORG" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="TODOSN" remarks="" type="BIGINT">
                 </column>
         </createTable>
     </changeSet>

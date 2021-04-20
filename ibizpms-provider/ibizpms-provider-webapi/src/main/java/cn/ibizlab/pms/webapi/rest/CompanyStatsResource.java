@@ -147,11 +147,9 @@ public class CompanyStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@CompanyStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取公司动态统计", tags = {"公司动态汇总" } ,notes = "获取公司动态统计")
     @RequestMapping(method= RequestMethod.POST , value="/companystats/fetchcompanydynamicstats")
 	public ResponseEntity<List<CompanyStatsDTO>> fetchCompanyDynamicStats(@RequestBody CompanyStatsSearchContext context) {
-        companystatsRuntime.addAuthorityConditions(context,"READ");
         Page<CompanyStats> domains = companystatsService.searchCompanyDynamicStats(context) ;
         List<CompanyStatsDTO> list = companystatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -161,21 +159,17 @@ public class CompanyStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@CompanyStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询公司动态统计", tags = {"公司动态汇总" } ,notes = "查询公司动态统计")
     @RequestMapping(method= RequestMethod.POST , value="/companystats/searchcompanydynamicstats")
 	public ResponseEntity<Page<CompanyStatsDTO>> searchCompanyDynamicStats(@RequestBody CompanyStatsSearchContext context) {
-        companystatsRuntime.addAuthorityConditions(context,"READ");
         Page<CompanyStats> domains = companystatsService.searchCompanyDynamicStats(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(companystatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@CompanyStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"公司动态汇总" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/companystats/fetchdefault")
 	public ResponseEntity<List<CompanyStatsDTO>> fetchDefault(@RequestBody CompanyStatsSearchContext context) {
-        companystatsRuntime.addAuthorityConditions(context,"READ");
         Page<CompanyStats> domains = companystatsService.searchDefault(context) ;
         List<CompanyStatsDTO> list = companystatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -185,11 +179,9 @@ public class CompanyStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@CompanyStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"公司动态汇总" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/companystats/searchdefault")
 	public ResponseEntity<Page<CompanyStatsDTO>> searchDefault(@RequestBody CompanyStatsSearchContext context) {
-        companystatsRuntime.addAuthorityConditions(context,"READ");
         Page<CompanyStats> domains = companystatsService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(companystatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

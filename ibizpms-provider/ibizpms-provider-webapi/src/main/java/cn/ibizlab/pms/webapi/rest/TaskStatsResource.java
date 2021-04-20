@@ -147,11 +147,9 @@ public class TaskStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"任务统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/taskstats/fetchdefault")
 	public ResponseEntity<List<TaskStatsDTO>> fetchDefault(@RequestBody TaskStatsSearchContext context) {
-        taskstatsRuntime.addAuthorityConditions(context,"READ");
         Page<TaskStats> domains = taskstatsService.searchDefault(context) ;
         List<TaskStatsDTO> list = taskstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -161,21 +159,17 @@ public class TaskStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"任务统计" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/taskstats/searchdefault")
 	public ResponseEntity<Page<TaskStatsDTO>> searchDefault(@RequestBody TaskStatsSearchContext context) {
-        taskstatsRuntime.addAuthorityConditions(context,"READ");
         Page<TaskStats> domains = taskstatsService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@TaskStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取任务完成汇总表", tags = {"任务统计" } ,notes = "获取任务完成汇总表")
     @RequestMapping(method= RequestMethod.POST , value="/taskstats/fetchtaskfinishhuizong")
 	public ResponseEntity<List<TaskStatsDTO>> fetchTaskFinishHuiZong(@RequestBody TaskStatsSearchContext context) {
-        taskstatsRuntime.addAuthorityConditions(context,"READ");
         Page<TaskStats> domains = taskstatsService.searchTaskFinishHuiZong(context) ;
         List<TaskStatsDTO> list = taskstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -185,21 +179,17 @@ public class TaskStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询任务完成汇总表", tags = {"任务统计" } ,notes = "查询任务完成汇总表")
     @RequestMapping(method= RequestMethod.POST , value="/taskstats/searchtaskfinishhuizong")
 	public ResponseEntity<Page<TaskStatsDTO>> searchTaskFinishHuiZong(@RequestBody TaskStatsSearchContext context) {
-        taskstatsRuntime.addAuthorityConditions(context,"READ");
         Page<TaskStats> domains = taskstatsService.searchTaskFinishHuiZong(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@TaskStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取用户完成任务统计", tags = {"任务统计" } ,notes = "获取用户完成任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/taskstats/fetchuserfinishtasksum")
 	public ResponseEntity<List<TaskStatsDTO>> fetchUserFinishTaskSum(@RequestBody TaskStatsSearchContext context) {
-        taskstatsRuntime.addAuthorityConditions(context,"READ");
         Page<TaskStats> domains = taskstatsService.searchUserFinishTaskSum(context) ;
         List<TaskStatsDTO> list = taskstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -209,11 +199,9 @@ public class TaskStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询用户完成任务统计", tags = {"任务统计" } ,notes = "查询用户完成任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/taskstats/searchuserfinishtasksum")
 	public ResponseEntity<Page<TaskStatsDTO>> searchUserFinishTaskSum(@RequestBody TaskStatsSearchContext context) {
-        taskstatsRuntime.addAuthorityConditions(context,"READ");
         Page<TaskStats> domains = taskstatsService.searchUserFinishTaskSum(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(taskstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

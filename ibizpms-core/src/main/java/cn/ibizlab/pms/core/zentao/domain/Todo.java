@@ -372,6 +372,14 @@ public class Todo extends EntityMP implements Serializable {
     @JsonProperty("dept")
     @ApiModelProperty("归属部门")
     private String dept;
+    /**
+     * 待办编号
+     */
+    @TableField(value = "`TODOSN`")
+    @JSONField(name = "todosn")
+    @JsonProperty("todosn")
+    @ApiModelProperty("待办编号")
+    private Long todosn;
 
 
 
@@ -573,6 +581,14 @@ public class Todo extends EntityMP implements Serializable {
     public void setConfig(String config) {
         this.config = config;
         this.modify("config", config);
+    }
+
+    /**
+     * 设置 [待办编号]
+     */
+    public void setTodosn(Long todosn) {
+        this.todosn = todosn;
+        this.modify("todosn", todosn);
     }
 
 

@@ -405,6 +405,16 @@ public class TodoDTO extends DTOBase implements Serializable {
     @ApiModelProperty("归属部门")
     private String dept;
 
+    /**
+     * 属性 [TODOSN]
+     *
+     */
+    @JSONField(name = "todosn")
+    @JsonProperty("todosn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("待办编号")
+    private Long todosn;
+
 
     /**
      * 设置 [CLOSEDDATE]
@@ -564,6 +574,14 @@ public class TodoDTO extends DTOBase implements Serializable {
     public void setConfig(String  config){
         this.config = config ;
         this.modify("config",config);
+    }
+
+    /**
+     * 设置 [TODOSN]
+     */
+    public void setTodosn(Long  todosn){
+        this.todosn = todosn ;
+        this.modify("todosn",todosn);
     }
 
 
