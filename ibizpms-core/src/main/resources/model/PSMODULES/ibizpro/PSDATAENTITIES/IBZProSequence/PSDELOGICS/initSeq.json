@@ -1,0 +1,28 @@
+{
+  "codeName" : "initSeq",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSequence/PSDELOGICS/initSeq.json",
+  "logicName" : "初始化序列号",
+  "logicSubType" : "NONE",
+  "name" : "初始化序列号",
+  "getPSDELogicNodes" : [ {
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "parallelOutput" : true
+  } ],
+  "getPSDELogicParams" : [ {
+    "codeName" : "Default",
+    "name" : "传入变量",
+    "default" : true,
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
+  } ],
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : true,
+  "enableFront" : false
+}

@@ -137,6 +137,40 @@ public class IBZProSequence extends EntityMP implements Serializable {
     @JsonProperty("year")
     @ApiModelProperty("年份")
     private Timestamp year;
+    /**
+     * 是否启用
+     */
+    @TableField(value = "`ISENABLE`")
+    @JSONField(name = "isenable")
+    @JsonProperty("isenable")
+    @ApiModelProperty("是否启用")
+    private Integer isenable;
+    /**
+     * 开始序列号
+     */
+    @DEField(defaultValue = "0")
+    @TableField(value = "`BEGINSEQ`")
+    @JSONField(name = "beginseq")
+    @JsonProperty("beginseq")
+    @ApiModelProperty("开始序列号")
+    private Long beginseq;
+    /**
+     * 自增数值
+     */
+    @DEField(defaultValue = "1")
+    @TableField(value = "`INCREMENT`")
+    @JSONField(name = "increment")
+    @JsonProperty("increment")
+    @ApiModelProperty("自增数值")
+    private Integer increment;
+    /**
+     * 当前序列号
+     */
+    @TableField(value = "`CURSEQ`")
+    @JSONField(name = "curseq")
+    @JsonProperty("curseq")
+    @ApiModelProperty("当前序列号")
+    private Long curseq;
 
 
 
@@ -174,6 +208,38 @@ public class IBZProSequence extends EntityMP implements Serializable {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         return sdf.format(year);
     }
+    /**
+     * 设置 [是否启用]
+     */
+    public void setIsenable(Integer isenable) {
+        this.isenable = isenable;
+        this.modify("isenable", isenable);
+    }
+
+    /**
+     * 设置 [开始序列号]
+     */
+    public void setBeginseq(Long beginseq) {
+        this.beginseq = beginseq;
+        this.modify("beginseq", beginseq);
+    }
+
+    /**
+     * 设置 [自增数值]
+     */
+    public void setIncrement(Integer increment) {
+        this.increment = increment;
+        this.modify("increment", increment);
+    }
+
+    /**
+     * 设置 [当前序列号]
+     */
+    public void setCurseq(Long curseq) {
+        this.curseq = curseq;
+        this.modify("curseq", curseq);
+    }
+
 
     /**
      * 复制当前对象数据到目标对象(粘贴重置)

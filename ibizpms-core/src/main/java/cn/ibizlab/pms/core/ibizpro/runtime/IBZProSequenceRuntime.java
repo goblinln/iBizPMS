@@ -146,6 +146,9 @@ public class IBZProSequenceRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
             else if (iPSDEAction.getName().equals("CheckKey")) {
                 return ibzprosequenceService.checkKey((IBZProSequence) args[0]);
             }
+            else if (iPSDEAction.getName().equals("INIT")) {
+                return ibzprosequenceService.init((IBZProSequence) args[0]);
+            }
             else if (iPSDEAction.getName().equals("Save")) {
                 return ibzprosequenceService.save((IBZProSequence) args[0]);
             }
@@ -257,6 +260,9 @@ public class IBZProSequenceRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
         }
         else if (action.equals("checkKey")) {
             return aroundAction("CheckKey", point);
+        }
+        else if (action.equals("init")) {
+            return aroundAction("INIT", point);
         }
         else if (action.equals("save")) {
             return aroundAction("Save", point);

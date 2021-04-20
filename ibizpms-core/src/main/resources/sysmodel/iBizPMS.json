@@ -11355,6 +11355,61 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"ISENABLE" ,
+    "codename":"IsEnable",
+    "field_logic_name":"是否启用",
+    "entity_name":"IBZPRO_SEQUENCE",
+    "field_type":"YESNO",
+    "dict":"YesNo3",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"INT",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"BEGINSEQ" ,
+    "codename":"Beginseq",
+    "field_logic_name":"开始序列号",
+    "entity_name":"IBZPRO_SEQUENCE",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"INCREMENT" ,
+    "codename":"Increment",
+    "field_logic_name":"自增数值",
+    "entity_name":"IBZPRO_SEQUENCE",
+    "field_type":"INT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"INT",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"CURSEQ" ,
+    "codename":"Curseq",
+    "field_logic_name":"当前序列号",
+    "entity_name":"IBZPRO_SEQUENCE",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[

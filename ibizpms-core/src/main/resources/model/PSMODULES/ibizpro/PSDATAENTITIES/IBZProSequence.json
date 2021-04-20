@@ -54,6 +54,13 @@
     "builtinAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "Init",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSequence/PSDEACTIONS/Init.json",
+    "logicName" : "初始化序列",
+    "name" : "INIT"
+  }, {
+    "actionMode" : "UNKNOWN",
     "actionType" : "BUILTIN",
     "codeName" : "Save",
     "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSequence/PSDEACTIONS/Save.json",
@@ -560,6 +567,234 @@
     "name" : "YEAR",
     "stdDataType" : 5,
     "valueFormat" : "%1$tY-%1$tm-%1$td"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "ISENABLE",
+      "dBType" : "MYSQL5",
+      "name" : "ISENABLE",
+      "queryCodeExp" : "t1.`ISENABLE`",
+      "standardColumnName" : "`ISENABLE`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "ISENABLE",
+        "codeName" : "IsEnable"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "IsEnable",
+    "dEFType" : 1,
+    "dataType" : "YESNO",
+    "importOrder" : 1000,
+    "logicName" : "是否启用",
+    "name" : "ISENABLE",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/YesNo3.json"
+    },
+    "stdDataType" : 9,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "BEGINSEQ",
+      "dBType" : "MYSQL5",
+      "name" : "BEGINSEQ",
+      "queryCodeExp" : "t1.`BEGINSEQ`",
+      "standardColumnName" : "`BEGINSEQ`",
+      "valueAutoGen" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "BEGINSEQ",
+        "codeName" : "Beginseq"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Beginseq",
+    "dEFType" : 1,
+    "dataType" : "BIGINT",
+    "defaultValue" : "0",
+    "importOrder" : 1000,
+    "length" : 20,
+    "logicName" : "开始序列号",
+    "name" : "BEGINSEQ",
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "INCREMENT",
+      "dBType" : "MYSQL5",
+      "name" : "INCREMENT",
+      "queryCodeExp" : "t1.`INCREMENT`",
+      "standardColumnName" : "`INCREMENT`",
+      "valueAutoGen" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "INCREMENT",
+        "codeName" : "Increment"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Increment",
+    "dEFType" : 1,
+    "dataType" : "INT",
+    "defaultValue" : "1",
+    "importOrder" : 1000,
+    "logicName" : "自增数值",
+    "name" : "INCREMENT",
+    "stdDataType" : 9,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CURSEQ",
+      "dBType" : "MYSQL5",
+      "name" : "CURSEQ",
+      "queryCodeExp" : "t1.`CURSEQ`",
+      "standardColumnName" : "`CURSEQ`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "CURSEQ",
+        "codeName" : "Curseq"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Curseq",
+    "dEFType" : 1,
+    "dataType" : "BIGINT",
+    "importOrder" : 1000,
+    "length" : 20,
+    "logicName" : "当前序列号",
+    "name" : "CURSEQ",
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s"
+  } ],
+  "getAllPSDELogics" : [ {
+    "codeName" : "GenSeq",
+    "defaultParamName" : "Default",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSequence/PSDELOGICS/GenSeq.json",
+    "logicName" : "构建序列号",
+    "logicSubType" : "NONE",
+    "name" : "构建序列号",
+    "getPSDELogicNodes" : [ {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "parallelOutput" : true
+    } ],
+    "getPSDELogicParams" : [ {
+      "codeName" : "Default",
+      "name" : "传入变量",
+      "default" : true,
+      "envParam" : false,
+      "lastParam" : false,
+      "sessionParam" : false
+    } ],
+    "getStartPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "enableBackend" : true,
+    "enableFront" : false
+  }, {
+    "codeName" : "InstallSeqFunc",
+    "defaultParamName" : "Default",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSequence/PSDELOGICS/InstallSeqFunc.json",
+    "logicName" : "安装自增序列函数",
+    "logicSubType" : "NONE",
+    "name" : "安装自增序列函数",
+    "getPSDELogicNodes" : [ {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "parallelOutput" : true
+    } ],
+    "getPSDELogicParams" : [ {
+      "codeName" : "Default",
+      "name" : "传入变量",
+      "default" : true,
+      "envParam" : false,
+      "lastParam" : false,
+      "sessionParam" : false
+    } ],
+    "getStartPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "enableBackend" : true,
+    "enableFront" : false
+  }, {
+    "codeName" : "initSeq",
+    "defaultParamName" : "Default",
+    "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSequence/PSDELOGICS/initSeq.json",
+    "logicName" : "初始化序列号",
+    "logicSubType" : "NONE",
+    "name" : "初始化序列号",
+    "getPSDELogicNodes" : [ {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "parallelOutput" : true
+    } ],
+    "getPSDELogicParams" : [ {
+      "codeName" : "Default",
+      "name" : "传入变量",
+      "default" : true,
+      "envParam" : false,
+      "lastParam" : false,
+      "sessionParam" : false
+    } ],
+    "getStartPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "enableBackend" : true,
+    "enableFront" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",

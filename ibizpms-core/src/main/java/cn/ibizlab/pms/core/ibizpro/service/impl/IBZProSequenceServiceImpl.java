@@ -147,6 +147,21 @@ public class IBZProSequenceServiceImpl extends ServiceImpl<IBZProSequenceMapper,
     }
     @Override
     @Transactional
+    public IBZProSequence init(IBZProSequence et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean initBatch(List<IBZProSequence> etList) {
+        for(IBZProSequence et : etList) {
+            init(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean save(IBZProSequence et) {
         if(!saveOrUpdate(et)) {
             return false;

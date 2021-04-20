@@ -36,6 +36,8 @@ public interface IIBZProSequenceService extends IService<IBZProSequence> {
     IBZProSequence sysGet(String key);
     IBZProSequence getDraft(IBZProSequence et);
     boolean checkKey(IBZProSequence et);
+    IBZProSequence init(IBZProSequence et);
+    boolean initBatch(List<IBZProSequence> etList);
     boolean save(IBZProSequence et);
     void saveBatch(List<IBZProSequence> list);
     Page<IBZProSequence> searchDefault(IBZProSequenceSearchContext context);
