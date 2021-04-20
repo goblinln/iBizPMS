@@ -180,11 +180,9 @@ public class ProjectStatsResource {
                 .body(new PageImpl(projectstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取未关闭产品", tags = {"项目统计" } ,notes = "获取未关闭产品")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchnoopenproduct")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchNoOpenProduct(@RequestBody ProjectStatsSearchContext context) {
-        projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchNoOpenProduct(context) ;
         List<ProjectStatsDTO> list = projectstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -194,11 +192,9 @@ public class ProjectStatsResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询未关闭产品", tags = {"项目统计" } ,notes = "查询未关闭产品")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/searchnoopenproduct")
 	public ResponseEntity<Page<ProjectStatsDTO>> searchNoOpenProduct(@RequestBody ProjectStatsSearchContext context) {
-        projectstatsRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectStats> domains = projectstatsService.searchNoOpenProduct(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projectstatsMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

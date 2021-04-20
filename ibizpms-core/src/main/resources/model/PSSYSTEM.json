@@ -1098,6 +1098,9 @@
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProduct.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSequence.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory.json"
   }, {
     "modelref" : true,
@@ -3336,6 +3339,9 @@
     }, {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProduct.json"
+    }, {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSequence.json"
     }, {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory.json"

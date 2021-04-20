@@ -126,6 +126,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docMapping.toDto(docService.getDraft(domain)));
     }
 
+    @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
     @ApiOperation(value = "根据版本更新正文信息", tags = {"文档" },  notes = "根据版本更新正文信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/docs/{doc_id}/byversionupdatecontext")
     public ResponseEntity<DocDTO> byVersionUpdateContext(@PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -135,6 +136,7 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
+    @PreAuthorize("@DocRuntime.test('READ')")
     @ApiOperation(value = "批量处理[根据版本更新正文信息]", tags = {"文档" },  notes = "批量处理[根据版本更新正文信息]")
 	@RequestMapping(method = RequestMethod.PUT, value = "/docs/byversionupdatecontextbatch")
     public ResponseEntity<Boolean> byVersionUpdateContextBatch(@RequestBody List<DocDTO> docdtos) {
@@ -149,6 +151,7 @@ public class DocResource {
         return  ResponseEntity.status(HttpStatus.OK).body(docService.checkKey(docMapping.toDomain(docdto)));
     }
 
+    @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
     @ApiOperation(value = "收藏", tags = {"文档" },  notes = "收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/{doc_id}/collect")
     public ResponseEntity<DocDTO> collect(@PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -158,6 +161,7 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
+    @PreAuthorize("@DocRuntime.test('READ')")
     @ApiOperation(value = "批量处理[收藏]", tags = {"文档" },  notes = "批量处理[收藏]")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/collectbatch")
     public ResponseEntity<Boolean> collectBatch(@RequestBody List<DocDTO> docdtos) {
@@ -185,6 +189,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
+    @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
     @ApiOperation(value = "仅收藏文档", tags = {"文档" },  notes = "仅收藏文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/{doc_id}/onlycollectdoc")
     public ResponseEntity<DocDTO> onlyCollectDoc(@PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -194,6 +199,7 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
+    @PreAuthorize("@DocRuntime.test('READ')")
     @ApiOperation(value = "批量处理[仅收藏文档]", tags = {"文档" },  notes = "批量处理[仅收藏文档]")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/onlycollectdocbatch")
     public ResponseEntity<Boolean> onlyCollectDocBatch(@RequestBody List<DocDTO> docdtos) {
@@ -202,6 +208,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
+    @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
     @ApiOperation(value = "仅取消收藏文档", tags = {"文档" },  notes = "仅取消收藏文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/{doc_id}/onlyuncollectdoc")
     public ResponseEntity<DocDTO> onlyUnCollectDoc(@PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -211,6 +218,7 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
+    @PreAuthorize("@DocRuntime.test('READ')")
     @ApiOperation(value = "批量处理[仅取消收藏文档]", tags = {"文档" },  notes = "批量处理[仅取消收藏文档]")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/onlyuncollectdocbatch")
     public ResponseEntity<Boolean> onlyUnCollectDocBatch(@RequestBody List<DocDTO> docdtos) {
@@ -234,6 +242,7 @@ public class DocResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
     @ApiOperation(value = "取消收藏", tags = {"文档" },  notes = "取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/{doc_id}/uncollect")
     public ResponseEntity<DocDTO> unCollect(@PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -243,6 +252,7 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
+    @PreAuthorize("@DocRuntime.test('READ')")
     @ApiOperation(value = "批量处理[取消收藏]", tags = {"文档" },  notes = "批量处理[取消收藏]")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/uncollectbatch")
     public ResponseEntity<Boolean> unCollectBatch(@RequestBody List<DocDTO> docdtos) {

@@ -29,6 +29,14 @@ public interface IBZWFFeignClient
 	Map<String, Map<String, Object>> getTaskByUserId(@PathVariable("system") String system, @PathVariable("userId") String userId,
 													 @PathVariable("entity") String entity, @PathVariable("insttag") String instTag, @PathVariable("insttag2") String instTag2);
 
+	@RequestMapping(method = RequestMethod.POST, value = "/{system}-user-{userId}/{insttag}/{insttag2}/{entity}/tasks")
+	Map<String, Map<String, Object>> getTaskByUserId(@PathVariable("system") String system, @PathVariable("userId") String userId,
+													 @PathVariable("entity") String entity, @PathVariable("insttag") String instTag, @PathVariable("insttag2") String instTag2);
+
+	@RequestMapping(method = RequestMethod.POST, value = "/{system}-user-{userId}/{insttag}/{insttag2}/{entity}/tasks")
+	Map<String, Map<String, Object>> getTaskByStep(@PathVariable("system") String system, @PathVariable("userId") String userId,
+													 @PathVariable("entity") String entity, @PathVariable("insttag") String instTag, @PathVariable("insttag2") String instTag2 ,@RequestParam("n_taskdefinitionkey_eq") String srfwfstep);
+
 	@RequestMapping(method = RequestMethod.POST, value = "/{system}-user-{userId}/{insttag}/{insttag2}/{entity}/tasks/unread")
 	Map<String, Map<String, Object>> getUnReadTaskByUserId(@PathVariable("system") String system, @PathVariable("userId") String userId,
 														   @PathVariable("entity") String entity, @PathVariable("insttag") String instTag, @PathVariable("insttag2") String instTag2);

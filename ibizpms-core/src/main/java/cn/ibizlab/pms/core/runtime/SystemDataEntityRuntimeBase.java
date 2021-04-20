@@ -17,6 +17,12 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
+import net.ibizsys.model.dataentity.ds.IPSDEDataQuery;
+import net.ibizsys.model.dataentity.ds.IPSDEDataQueryCode;
+import net.ibizsys.model.dataentity.ds.IPSDEDataQueryCodeCond;
+import net.ibizsys.model.dataentity.ds.IPSDEDataSet;
+import net.ibizsys.model.dataentity.priv.IPSDEUserRole;
+import net.ibizsys.model.dataentity.priv.IPSDEUserRoleOPPriv;
 import net.ibizsys.model.dataentity.wf.IPSDEWF;
 import net.ibizsys.runtime.IDynaInstRuntime;
 import net.ibizsys.runtime.dataentity.action.CheckKeyStates;
@@ -68,6 +74,11 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
 
     private final ExpressionParser parser = new SpelExpressionParser();
 
+    /**
+     * 默认实体能力
+     */
+    protected List<UAADEAuthority> defaultAuthorities = new ArrayList<>();
+
     @Autowired
     ISystemRuntime system;
 
@@ -84,6 +95,58 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     @PostConstruct
     public void init() {
         this.getSystemRuntime().registerDataEntityRuntime(this);
+    }
+
+    @Override
+    protected void onInit() throws Exception {
+        super.onInit();
+        List<IPSDEUserRole> psDEUserRoles = this.getDefaultPSDEUserRoles();
+        if (psDEUserRoles != null) {
+            for (IPSDEUserRole psDEUserRole : psDEUserRoles) {
+                //非系统默认实体角色不处理
+                if (!psDEUserRole.isDefaultMode())
+                    continue;
+                UAADEAuthority authority = new UAADEAuthority();
+                IPSDEDataSet psdeDataSet = psDEUserRole.getPSDEDataSet();
+                if (psdeDataSet != null) {
+                    List<IPSDEDataQuery> psdeDataQueries = psdeDataSet.getPSDEDataQueries();
+                    if (psdeDataQueries != null) {
+                        for (IPSDEDataQuery ipsdeDataQuery : psdeDataQueries) {
+                            List<IPSDEDataQueryCode> psdeDataQueryCodes = ipsdeDataQuery.getAllPSDEDataQueryCodes();
+                            if (psdeDataQueryCodes != null) {
+                                for (IPSDEDataQueryCode psdeDataQueryCode : psdeDataQueryCodes) {
+                                    if (this.getDBType().equals(psdeDataQueryCode.getDBType())) {
+                                        List<IPSDEDataQueryCodeCond> psdeDataQueryCodeConds = psdeDataQueryCode.getPSDEDataQueryCodeConds();
+                                        if (psdeDataQueryCodeConds != null) {
+                                            String sttBScope = "";
+                                            for (int i = 0; i < psdeDataQueryCodeConds.size(); i++) {
+                                                IPSDEDataQueryCodeCond psdeDataQueryCodeCond = psdeDataQueryCodeConds.get(i);
+                                                if (i > 0)
+                                                    sttBScope += " AND ";
+                                                sttBScope += psdeDataQueryCodeCond.getCustomCond();
+                                            }
+                                            authority.setBscope(sttBScope);
+                                        }
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                java.util.List<IPSDEUserRoleOPPriv> psDEUserRoleOPPrivs = psDEUserRole.getPSDEUserRoleOPPrivs();
+                if (psDEUserRoleOPPrivs != null) {
+                    List<Map<String, String>> deActions = new ArrayList<>();
+                    for (IPSDEUserRoleOPPriv psDEUserRoleOPPriv : psDEUserRoleOPPrivs) {
+                        Map<String, String> deAction = new HashMap<>();
+                        deAction.put(psDEUserRoleOPPriv.getDataAccessAction(), "");
+                        deActions.add(deAction);
+                    }
+                    authority.setDeAction(deActions);
+                }
+                this.defaultAuthorities.add(authority);
+            }
+        }
     }
 
     @Override
@@ -192,26 +255,29 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         List<GrantedAuthority> authorities;
         if(StringUtils.isEmpty(curSystemId)){
             authorities= curUser.getAuthorities().stream()
-                .filter(f -> f instanceof UAADEAuthority && ((UAADEAuthority) f).getEntity().equals(this.getName()))
+                .filter(uaadeAuthority -> uaadeAuthority instanceof UAADEAuthority
+                        && ((UAADEAuthority) uaadeAuthority).getEntity().equals(this.getName())
+                        && ((UAADEAuthority) uaadeAuthority).getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action)))
                 .collect(Collectors.toList());
         }else {
             authorities= curUser.getAuthorities().stream()
-                    .filter(f -> f instanceof UAADEAuthority && curSystemId.equalsIgnoreCase(((UAADEAuthority) f).getSystemid()) &&((UAADEAuthority) f).getEntity().equals(this.getName()))
+                    .filter(uaadeAuthority -> uaadeAuthority instanceof UAADEAuthority
+                            && curSystemId.equalsIgnoreCase(((UAADEAuthority) uaadeAuthority).getSystemid())
+                            && ((UAADEAuthority) uaadeAuthority).getEntity().equals(this.getName()) && ((UAADEAuthority) uaadeAuthority).getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action)))
                     .collect(Collectors.toList());
         }
 
-        if (authorities.size() == 0)
-            return false;
-        if (action.equals("READ"))
-            return true;
-
-        for (GrantedAuthority authority : authorities) {
-            UAADEAuthority uaadeAuthority = (UAADEAuthority) authority;
-            if (uaadeAuthority.getDeAction().stream().anyMatch(u -> u.containsKey(action)))
+        List<UAADEAuthority> defaultAuthorities = getDefaultAuthorities().stream().filter(uaadeAuthority -> {
+            if (StringUtils.isNotBlank(uaadeAuthority.getBscope()) && uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))) {
                 return true;
-        }
+            }
+            return false;
+        }).collect(Collectors.toList());
 
-        return false;
+        if (authorities.size() == 0 && defaultAuthorities.size() == 0)
+            return false;
+
+        return true;
     }
 
     /**
@@ -335,15 +401,16 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
             return;
         if(testUnires(action))
             return ;
+        addAuthorityDefaultConditions(context, action);
         String curSystemId = curUser.getSrfsystemid();
         List<GrantedAuthority> authorities;
         if(StringUtils.isEmpty(curSystemId)){
             authorities= curUser.getAuthorities().stream()
-                .filter(f -> f instanceof UAADEAuthority && ((UAADEAuthority) f).getEntity().equals(this.getName()))
+                .filter(f -> f instanceof UAADEAuthority && ((UAADEAuthority) f).getEntity().equals(this.getName()) && ((UAADEAuthority) f).getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action)))
                 .collect(Collectors.toList());
         }else {
             authorities= curUser.getAuthorities().stream()
-                    .filter(f -> f instanceof UAADEAuthority && curSystemId.equalsIgnoreCase(((UAADEAuthority) f).getSystemid()) &&((UAADEAuthority) f).getEntity().equals(this.getName()))
+                    .filter(f -> f instanceof UAADEAuthority && curSystemId.equalsIgnoreCase(((UAADEAuthority) f).getSystemid()) &&((UAADEAuthority) f).getEntity().equals(this.getName()) && ((UAADEAuthority) f).getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action)))
                     .collect(Collectors.toList());
         }
         boolean hasCondition = false;
@@ -377,6 +444,34 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         };
         if (hasCondition)
             context.getSelectCond().and(authorityConditions);
+    }
+
+    /**
+     * 系统内置权限
+     * @param context
+     * @param action
+     */
+    public void addAuthorityDefaultConditions(QueryWrapperContext context, String action) {
+        List<UAADEAuthority> actionUAADEAuthority = getDefaultAuthorities().stream().filter(uaadeAuthority -> {
+            if (StringUtils.isNotBlank(uaadeAuthority.getBscope()) && uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))) {
+                return true;
+            }
+            return false;
+        }).collect(Collectors.toList());
+
+        if (actionUAADEAuthority.size() > 0) {
+            Consumer<QueryWrapper> authorityConditions = authorityCondition -> {
+                for (UAADEAuthority uaadeAuthority : actionUAADEAuthority) {
+                    if (uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))) {
+                        Consumer<QueryWrapper> roleConditions = roleCondition -> {
+                            roleCondition.apply(uaadeAuthority.getBscope());
+                        };
+                        authorityCondition.or(roleConditions);
+                    }
+                }
+            };
+            context.getSelectCond().and(authorityConditions);
+        }
     }
 
     protected Consumer<QueryWrapper> genDataCondition(UAADEAuthority uaadeAuthority) {
@@ -483,6 +578,14 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
 
     protected void setRtmodel(boolean rtmodel) {
         this.rtmodel = rtmodel;
+    }
+
+    /**
+     * 获取默认能力
+     * @return
+     */
+    public List<UAADEAuthority> getDefaultAuthorities() {
+        return defaultAuthorities;
     }
 
     /**

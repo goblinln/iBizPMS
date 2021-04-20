@@ -33,6 +33,11 @@ public class IBZWFFallback implements IBZWFFeignClient {
     }
 
     @Override
+    public Map<String, Map<String, Object>> getTaskByStep(String system, String userId, String entity, String instTag, String instTag2 , String srfwfstep) {
+        return null;
+    }
+
+    @Override
     public Map<String, Map<String, Object>> getUnReadTaskByUserId(String system, String userId, String entity, String instTag, String instTag2) {
         return null;
     }

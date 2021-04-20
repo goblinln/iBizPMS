@@ -117,6 +117,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/ByVersionUpdateContext.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ByVersionUpdateContext"
@@ -140,6 +144,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Collect.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -169,6 +177,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/OnlyCollectDoc.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "OnlyCollectDoc"
@@ -180,6 +192,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/OnlyUnCollectDoc.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -204,6 +220,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/UnCollect.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -705,6 +725,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/ByVersionUpdateContext.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ByVersionUpdateContext"
@@ -728,6 +752,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Collect.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -757,6 +785,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/OnlyCollectDoc.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "OnlyCollectDoc"
@@ -768,6 +800,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/OnlyUnCollectDoc.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -792,6 +828,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/UnCollect.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
