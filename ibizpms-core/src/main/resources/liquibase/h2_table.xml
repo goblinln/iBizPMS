@@ -1224,7 +1224,7 @@
 
 
     <!--输出实体[IBIZPRO_PRODUCTWEEKLY]数据结构 -->
-    <changeSet author="zentao" id="tab-ibizpro_productweekly-1-40">
+    <changeSet author="zentao" id="tab-ibizpro_productweekly-2-40">
         <createTable tableName="T_IBIZPRO_PRODUCTWEEKLY">
                 <column name="PO" remarks="" type="VARCHAR(100)">
                 </column>
@@ -1322,7 +1322,7 @@
 
 
     <!--输出实体[IBZPRO_PROJECTWEEKLY]数据结构 -->
-    <changeSet author="zentao" id="tab-ibzpro_projectweekly-1-43">
+    <changeSet author="zentao" id="tab-ibzpro_projectweekly-2-43">
         <createTable tableName="T_IBZPRO_PROJECTWEEKLY">
                 <column name="CREATEDATE" remarks="" type="DATETIME">
                 </column>
@@ -1718,7 +1718,7 @@
 
 
     <!--输出实体[IBZ_WEEKLY]数据结构 -->
-    <changeSet author="zentao" id="tab-ibz_weekly-1-61">
+    <changeSet author="zentao" id="tab-ibz_weekly-6-61">
         <createTable tableName="T_IBZ_WEEKLY">
                 <column name="ISSUBMIT" remarks="" type="VARCHAR(60)">
                 </column>
@@ -2992,7 +2992,7 @@
 
 
     <!--输出实体[ZT_USERCONTACT]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_usercontact-9-121">
+    <changeSet author="zentao" id="tab-zt_usercontact-16-121">
         <createTable tableName="zt_usercontact">
                 <column name="USERLIST" remarks="" type="TEXT(65535)">
                 </column>

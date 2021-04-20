@@ -165,11 +165,9 @@ public class IbizproProjectWeeklyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IbizproProjectWeeklyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"项目周报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproprojectweeklies/fetchdefault")
 	public ResponseEntity<List<IbizproProjectWeeklyDTO>> fetchDefault(@RequestBody IbizproProjectWeeklySearchContext context) {
-        ibizproprojectweeklyRuntime.addAuthorityConditions(context,"READ");
         Page<IbizproProjectWeekly> domains = ibizproprojectweeklyService.searchDefault(context) ;
         List<IbizproProjectWeeklyDTO> list = ibizproprojectweeklyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -179,11 +177,9 @@ public class IbizproProjectWeeklyResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbizproProjectWeeklyRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"项目周报" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproprojectweeklies/searchdefault")
 	public ResponseEntity<Page<IbizproProjectWeeklyDTO>> searchDefault(@RequestBody IbizproProjectWeeklySearchContext context) {
-        ibizproprojectweeklyRuntime.addAuthorityConditions(context,"READ");
         Page<IbizproProjectWeekly> domains = ibizproprojectweeklyService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibizproprojectweeklyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

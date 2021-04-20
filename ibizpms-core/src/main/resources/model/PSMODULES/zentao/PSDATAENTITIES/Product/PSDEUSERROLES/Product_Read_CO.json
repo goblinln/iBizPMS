@@ -12,6 +12,5 @@
   } ],
   "roleTag" : "Product_Read_CO",
   "userDRAction" : "READ",
-  "defaultMode" : true,
   "enableOrgDR" : true
 }
