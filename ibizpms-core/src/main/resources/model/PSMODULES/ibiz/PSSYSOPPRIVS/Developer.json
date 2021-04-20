@@ -93,6 +93,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
     }
   }, {
+    "name" : "研发人员-ZT_USERTPL[模板查看（当前机构）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEUSERROLES/UserTpl_Read_CO.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl.json"
+    }
+  }, {
     "name" : "研发人员-ZT_DOCLIB[文档库查看]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -221,6 +231,16 @@
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam.json"
+    }
+  }, {
+    "name" : "研发人员-ZT_USERTPL[模板维护（当前机构）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEUSERROLES/UserTpl_Maintain_CO.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl.json"
     }
   }, {
     "name" : "研发人员-ZT_RELEASE[产品发布查看]",
