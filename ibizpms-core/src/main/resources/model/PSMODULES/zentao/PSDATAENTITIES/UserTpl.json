@@ -64,15 +64,37 @@
     "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( ( t1.`PUBLIC` = '1'  OR  t1.`ACCOUNT` =  ${srfwebcontext('account','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_USERTPL\"}')} )  AND  t1.`TYPE` =  ${srfwebcontext('type','{\"defname\":\"TYPE\",\"dename\":\"ZT_USERTPL\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`ACCOUNT` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_USERTPL\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyUserTpl",
     "logicName" : "我的模板",
     "name" : "MyUserTpl"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -81,6 +103,10 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -88,6 +114,10 @@
     "codeName" : "MyUserTpl",
     "logicName" : "我的模板",
     "name" : "MyUserTpl",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyUserTpl"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -692,7 +722,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : false,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

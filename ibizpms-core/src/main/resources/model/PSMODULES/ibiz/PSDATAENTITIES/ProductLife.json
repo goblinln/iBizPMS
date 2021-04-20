@@ -62,26 +62,46 @@
     "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "GetRoadmap",
     "logicName" : "获取产品路线",
     "name" : "GetRoadmap",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "GetRoadmapS",
     "logicName" : "获取产品路线",
     "name" : "GetRoadmapS",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "RoadMapYear",
     "logicName" : "获取路线图年份",
     "name" : "RoadMapYear",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -90,6 +110,10 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -97,18 +121,30 @@
     "codeName" : "GetRoadmap",
     "logicName" : "GetRoadmap",
     "name" : "GetRoadmap",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "GetRoadmap"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "GetRoadmapS",
     "logicName" : "获取产品路线",
     "name" : "GetRoadmapS",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "GetRoadmapS"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "RoadMapYear",
     "logicName" : "RoadMapYear",
     "name" : "RoadMapYear",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "RoadMapYear"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -793,7 +829,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : false,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

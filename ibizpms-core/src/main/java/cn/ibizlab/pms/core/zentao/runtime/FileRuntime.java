@@ -109,7 +109,7 @@ public class FileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     public File selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
         Page<File> domains = fileService.searchDefault((FileSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
+        if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
     }

@@ -167,11 +167,9 @@ public class SysUpdateLogResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@SysUpdateLogRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"更新日志" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysupdatelogs/fetchdefault")
 	public ResponseEntity<List<SysUpdateLogDTO>> fetchDefault(@RequestBody SysUpdateLogSearchContext context) {
-        sysupdatelogRuntime.addAuthorityConditions(context,"READ");
         Page<SysUpdateLog> domains = sysupdatelogService.searchDefault(context) ;
         List<SysUpdateLogDTO> list = sysupdatelogMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -181,11 +179,9 @@ public class SysUpdateLogResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@SysUpdateLogRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"更新日志" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysupdatelogs/searchdefault")
 	public ResponseEntity<Page<SysUpdateLogDTO>> searchDefault(@RequestBody SysUpdateLogSearchContext context) {
-        sysupdatelogRuntime.addAuthorityConditions(context,"READ");
         Page<SysUpdateLog> domains = sysupdatelogService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(sysupdatelogMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

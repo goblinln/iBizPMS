@@ -110,7 +110,6 @@ public class ProductStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProductStatsRuntime.test(#productstats_id,'READ')")
     @ApiOperation(value = "获取产品统计", tags = {"产品统计" },  notes = "获取产品统计")
 	@RequestMapping(method = RequestMethod.GET, value = "/productstats/{productstats_id}")
     public ResponseEntity<ProductStatsDTO> get(@PathVariable("productstats_id") Long productstats_id) {
@@ -132,7 +131,6 @@ public class ProductStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(productstatsService.checkKey(productstatsMapping.toDomain(productstatsdto)));
     }
 
-    @PreAuthorize("@ProductStatsRuntime.test(#productstats_id,'READ')")
     @ApiOperation(value = "获取测试统计详情", tags = {"产品统计" },  notes = "获取测试统计详情")
 	@RequestMapping(method = RequestMethod.GET, value = "/productstats/{productstats_id}/getteststats")
     public ResponseEntity<ProductStatsDTO> getTestStats(@PathVariable("productstats_id") Long productstats_id, @RequestBody ProductStatsDTO productstatsdto) {

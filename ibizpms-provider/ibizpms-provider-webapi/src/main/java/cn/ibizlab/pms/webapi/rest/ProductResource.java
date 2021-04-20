@@ -73,6 +73,7 @@ public class ProductResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @VersionCheck(entity = "product" , versionfield = "updatedate")
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "更新产品", tags = {"产品" },  notes = "更新产品")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}")
@@ -281,6 +282,30 @@ public class ProductResource {
 	}
 
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取默认查询", tags = {"产品" } ,notes = "获取默认查询")
+    @RequestMapping(method= RequestMethod.POST , value="/products/fetchcurdefault")
+	public ResponseEntity<List<ProductDTO>> fetchCurDefault(@RequestBody ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
+        Page<Product> domains = productService.searchCurDefault(context) ;
+        List<ProductDTO> list = productMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询默认查询", tags = {"产品" } ,notes = "查询默认查询")
+    @RequestMapping(method= RequestMethod.POST , value="/products/searchcurdefault")
+	public ResponseEntity<Page<ProductDTO>> searchCurDefault(@RequestBody ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
+        Page<Product> domains = productService.searchCurDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前项目", tags = {"产品" } ,notes = "获取当前项目")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchcurproject")
 	public ResponseEntity<List<ProductDTO>> fetchCurProject(@RequestBody ProductSearchContext context) {
@@ -372,6 +397,54 @@ public class ProductResource {
 	public ResponseEntity<Page<ProductDTO>> searchESBulk(@RequestBody ProductSearchContext context) {
         productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchESBulk(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取公开查询", tags = {"产品" } ,notes = "获取公开查询")
+    @RequestMapping(method= RequestMethod.POST , value="/products/fetchopenquery")
+	public ResponseEntity<List<ProductDTO>> fetchOpenQuery(@RequestBody ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
+        Page<Product> domains = productService.searchOpenQuery(context) ;
+        List<ProductDTO> list = productMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询公开查询", tags = {"产品" } ,notes = "查询公开查询")
+    @RequestMapping(method= RequestMethod.POST , value="/products/searchopenquery")
+	public ResponseEntity<Page<ProductDTO>> searchOpenQuery(@RequestBody ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
+        Page<Product> domains = productService.searchOpenQuery(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取产品经理（启用权限）", tags = {"产品" } ,notes = "获取产品经理（启用权限）")
+    @RequestMapping(method= RequestMethod.POST , value="/products/fetchproductmanagerquery")
+	public ResponseEntity<List<ProductDTO>> fetchProductManagerQuery(@RequestBody ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
+        Page<Product> domains = productService.searchProductManagerQuery(context) ;
+        List<ProductDTO> list = productMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询产品经理（启用权限）", tags = {"产品" } ,notes = "查询产品经理（启用权限）")
+    @RequestMapping(method= RequestMethod.POST , value="/products/searchproductmanagerquery")
+	public ResponseEntity<Page<ProductDTO>> searchProductManagerQuery(@RequestBody ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
+        Page<Product> domains = productService.searchProductManagerQuery(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}

@@ -190,26 +190,71 @@
     "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`TYPE` = 'project' )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t11.`PM` =  ${srfsessioncontext('srfloginname','{\"defname\":\"PM\",\"dename\":\"ZT_PROJECT\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProjectTeamPm",
     "logicName" : "项目成员（项目经理）",
     "name" : "ProjectTeamPm",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "\t\n( t1.`TYPE` = 'project' )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "RowEditDefault",
     "logicName" : "行编辑查询",
     "name" : "RowEditDefault",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.type = 'project'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "TaskCntEstimateConsumedLeft",
     "logicName" : "数据查询",
     "name" : "TaskCntEstimateConsumedLeft",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`TYPE` = 'project' )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -218,6 +263,10 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true,
@@ -226,6 +275,10 @@
     "codeName" : "ProjectTeamPm",
     "logicName" : "项目成员（项目经理）",
     "name" : "ProjectTeamPm",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectTeamPm"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -233,6 +286,10 @@
     "codeName" : "RowEditDefault",
     "logicName" : "行编辑查询",
     "name" : "RowEditDefault",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "RowEditDefault"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -240,6 +297,10 @@
     "codeName" : "TaskCntEstimateConsumedLeft",
     "logicName" : "数据查询",
     "name" : "TaskCntEstimateConsumedLeft",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "TaskCntEstimateConsumedLeft"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -1413,10 +1474,6 @@
     "nestedRS" : true
   } ],
   "name" : "IBZ_PROJECTTEAM",
-  "getPSSysImage" : {
-    "glyph" : "xf0c0@FontAwesome",
-    "cssClass" : "fa fa-users"
-  },
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,
@@ -1441,7 +1498,5 @@
   "enableTempData" : true,
   "enableTempDataFront" : true,
   "logicValid" : false,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

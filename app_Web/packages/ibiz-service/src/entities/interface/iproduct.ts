@@ -216,4 +216,16 @@ export interface IProduct extends IEntityBase {
      * 产品线
      */
     line?: any;
+    /**
+     * 更新人
+     */
+    updateman?: any;
+    /**
+     * 建立人
+     */
+    createman?: any;
+    /**
+     * 更新时间
+     */
+    updatedate?: any;
 }

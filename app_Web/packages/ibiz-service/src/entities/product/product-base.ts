@@ -241,6 +241,18 @@ export abstract class ProductBase extends EntityBase implements IProduct {
      * 产品线
      */
     line?: any;
+    /**
+     * 更新人
+     */
+    updateman?: any;
+    /**
+     * 建立人
+     */
+    createman?: any;
+    /**
+     * 更新时间
+     */
+    updatedate?: any;
 
     /**
      * 重置实体数据

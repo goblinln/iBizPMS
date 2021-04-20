@@ -416,6 +416,15 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     }
 
     /**
+     * 查询集合 默认查询
+     */
+    @Override
+    public Page<Product> searchCurDefault(ProductSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchCurDefault(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Product>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
      * 查询集合 当前项目
      */
     @Override
@@ -443,11 +452,38 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     }
 
     /**
+     * 查询集合 研发人员（启用权限）
+     */
+    @Override
+    public Page<Product> searchDeveloperQuery(ProductSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchDeveloperQuery(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Product>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
      * 查询集合 ES批量的导入
      */
     @Override
     public Page<Product> searchESBulk(ProductSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchESBulk(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Product>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 公开查询
+     */
+    @Override
+    public Page<Product> searchOpenQuery(ProductSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchOpenQuery(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Product>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 产品经理（启用权限）
+     */
+    @Override
+    public Page<Product> searchProductManagerQuery(ProductSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchProductManagerQuery(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Product>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

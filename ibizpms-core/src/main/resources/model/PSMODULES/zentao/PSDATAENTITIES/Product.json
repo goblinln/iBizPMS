@@ -134,54 +134,232 @@
     "name" : "WizardCreate"
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( ( t1.`status` <> 'closed'  OR  (#{srf.datacontext.products} is not null and t1.id = #{srf.datacontext.products}) ) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "AllList",
     "logicName" : "全部产品",
     "name" : "AllList"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "deleted = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "AllProduct",
     "logicName" : "所有产品",
     "name" : "AllProduct",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "CheckNameOrCode",
     "logicName" : "校验产品名称或产品代号是否已经存在",
     "name" : "CheckNameOrCode",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "CurDefault",
+    "logicName" : "默认查询",
+    "name" : "CurDefault",
+    "customCode" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "EXISTS(SELECT * FROM `zt_projectproduct` t21 \n WHERE \n t1.`id` = t21.`PRODUCT`  AND  ( t21.`PROJECT` = ${srfdatacontext('srfparentkey','{\"defname\":\"PROJECT\",\"dename\":\"ZT_PROJECTPRODUCT\"}')} ) )",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "CurProject",
     "logicName" : "当前项目",
     "name" : "CURPROJECT"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "CurUer",
     "logicName" : "当前用户",
     "name" : "CurUer",
     "customCode" : true,
     "privQuery" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.id IN (\nSELECT t.root from zt_team t\nWHERE\n\tt.account =  #{srf.sessioncontext.srfloginname} \n\tAND t.type = 'product' \n\t \n\t) )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "DeveloperQuery",
+    "logicName" : "研发人员（启用权限）",
+    "name" : "DeveloperQuery"
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ESBulk",
     "logicName" : "ES批量的导入",
     "name" : "ESBulk",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`acl` = 'open' )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "OpenQuery",
+    "logicName" : "公开查询",
+    "name" : "OpenQuery"
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( ( t1.`acl` = 'private'  AND  t1.`createdby` =  ${srfsessioncontext('srfloginname','{\"defname\":\"CREATEDBY\",\"dename\":\"ZT_PRODUCT\"}')} ) )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "ProductManagerQuery",
+    "logicName" : "产品经理（启用权限）",
+    "name" : "ProductManagerQuery"
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ProductPM",
     "logicName" : "产品总览",
     "name" : "ProductPM",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t21.type = 'product'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : " t21.account = #{srf.sessioncontext.srfloginname}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProductTeam",
     "logicName" : "产品团队",
     "name" : "ProductTeam",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "Simple",
+    "dEFGroupType" : "BASEFIELDS",
+    "logicName" : "基础属性查询",
+    "name" : "SIMPLE"
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "EXISTS(SELECT * FROM `zt_projectproduct` t21 \n WHERE \n t1.`id` = t21.`PRODUCT`  AND  ( t21.`PROJECT` = ${srfdatacontext('project','{\"defname\":\"PROJECT\",\"dename\":\"ZT_PROJECTPRODUCT\"}')} ) )",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "StoryCurProject",
     "logicName" : "当前项目",
     "name" : "StoryCURPROJECT"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -190,18 +368,40 @@
     "codeName" : "AllList",
     "logicName" : "全部产品",
     "name" : "AllList",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "AllList"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "AllProduct",
     "logicName" : "所有产品",
     "name" : "AllProduct",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "AllProduct"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "CheckNameOrCode",
     "logicName" : "校验产品名称或产品代号是否已经存在",
     "name" : "CheckNameOrCode",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "CheckNameOrCode"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "CurDefault",
+    "logicName" : "默认查询",
+    "name" : "CurDefault",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "CurDefault"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -213,6 +413,10 @@
       "codeName" : "Id"
     },
     "name" : "CURPROJECT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "CurProject"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -229,6 +433,10 @@
       "codeName" : "Id"
     },
     "name" : "CurUer",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "CurUer"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -240,32 +448,82 @@
       "codeName" : "Id"
     },
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "pageSize" : 1000,
     "defaultMode" : true,
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "DeveloperQuery",
+    "logicName" : "研发人员（启用权限）",
+    "name" : "DeveloperQuery",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "DeveloperQuery"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ESBulk",
     "logicName" : "ES批量的导入",
     "name" : "ESBulk",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ESBulk"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "OpenQuery",
+    "logicName" : "公开查询",
+    "name" : "OpenQuery",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "OpenQuery"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "ProductManagerQuery",
+    "logicName" : "产品经理（启用权限）",
+    "name" : "ProductManagerQuery",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProductManagerQuery"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProductPM",
     "logicName" : "产品总览",
     "name" : "ProductPM",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProductPM"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProductTeam",
     "logicName" : "产品团队",
     "name" : "ProductTeam",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProductTeam"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "StoryCurProject",
     "logicName" : "当前项目",
     "name" : "StoryCURPROJECT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "StoryCurProject"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -2521,6 +2779,152 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "linkDEField" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "updateman",
+      "dBType" : "MYSQL5",
+      "name" : "UPDATEMAN",
+      "queryCodeExp" : "t1.`updateman`",
+      "standardColumnName" : "`updateman`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "UPDATEMAN",
+          "maxValue" : 60,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[60]"
+      },
+      "getPSDEField" : {
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
+      },
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "UpdateMan",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 60,
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSCODELISTS/SysOperator.json"
+    },
+    "predefinedType" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false,
+    "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "createman",
+      "dBType" : "MYSQL5",
+      "name" : "CREATEMAN",
+      "queryCodeExp" : "t1.`createman`",
+      "standardColumnName" : "`createman`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "CREATEMAN",
+          "maxValue" : 60,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[60]"
+      },
+      "getPSDEField" : {
+        "name" : "CREATEMAN",
+        "codeName" : "CreateMan"
+      },
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "CreateMan",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 60,
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSCODELISTS/SysOperator.json"
+    },
+    "predefinedType" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false,
+    "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "updatedate",
+      "dBType" : "MYSQL5",
+      "name" : "UPDATEDATE",
+      "queryCodeExp" : "t1.`updatedate`",
+      "standardColumnName" : "`updatedate`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "UpdateDate",
+    "dEFType" : 1,
+    "dataType" : "DATETIME",
+    "importOrder" : 1000,
+    "length" : 8,
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "predefinedType" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "allowEmpty" : false,
+    "systemReserver" : true
   } ],
   "getAllPSDELogics" : [ {
     "codeName" : "CancelProductTop",
@@ -3316,6 +3720,24 @@
     "userDRAction" : "READ",
     "enableOrgDR" : true
   }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Manage_PO.json",
+    "name" : "产品管理（产品经理）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductManagerQuery"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "MANAGE",
+      "name" : "Product_Manage_PO_MANAGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "MANAGE"
+      }
+    } ],
+    "roleTag" : "Product_Manage_PO",
+    "userDRAction" : "READ",
+    "defaultMode" : true
+  }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Read_CO.json",
     "name" : "产品查看（当前机构）",
     "orgDR" : 1,
@@ -3329,7 +3751,44 @@
     } ],
     "roleTag" : "Product_Read_CO",
     "userDRAction" : "READ",
+    "defaultMode" : true,
     "enableOrgDR" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Read_DEV.json",
+    "name" : "产品查看（成员）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "DeveloperQuery"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "Product_Read_Dev_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "Product_Read_DEV",
+    "userDRAction" : "READ",
+    "defaultMode" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Read_Open.json",
+    "name" : "产品查看（公开）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenQuery"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "Product_Read_Open_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "Product_Read_Open",
+    "userDRAction" : "READ",
+    "defaultMode" : true
   } ],
   "auditMode" : 0,
   "codeName" : "Product",
@@ -4059,7 +4518,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : true,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

@@ -84,22 +84,43 @@
     "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "AllReport",
     "logicName" : "汇报汇总",
     "name" : "AllReport",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
     "customCode" : true,
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "(t1.REPORTTO = #{srf.sessioncontext.srfloginname} or FIND_IN_SET(#{srf.sessioncontext.srfloginname},t1.MAILTO))",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyReAllReport",
     "logicName" : "汇报汇总（我收到的）",
     "name" : "MyReAllReport",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -108,12 +129,20 @@
     "codeName" : "AllReport",
     "logicName" : "汇报汇总",
     "name" : "AllReport",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "AllReport"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "Default",
     "logicName" : "数据集",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -121,6 +150,10 @@
     "codeName" : "MyReAllReport",
     "logicName" : "汇报汇总（我收到的）",
     "name" : "MyReAllReport",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyReAllReport"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -1823,7 +1856,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : false,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

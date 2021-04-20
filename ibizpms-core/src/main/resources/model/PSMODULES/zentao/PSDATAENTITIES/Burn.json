@@ -69,16 +69,28 @@
     "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ESTIMATEANDLEFT",
     "logicName" : "燃尽图预计（含周末）",
     "name" : "ESTIMATEANDLEFT",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -87,6 +99,10 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -94,6 +110,10 @@
     "codeName" : "ESTIMATEANDLEFT",
     "logicName" : "燃尽图预计（含周末）",
     "name" : "ESTIMATEANDLEFT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ESTIMATEANDLEFT"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -805,7 +825,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : false,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

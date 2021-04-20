@@ -83,21 +83,37 @@
     "name" : "Send"
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "UserAllMessages",
     "logicName" : "用户全部消息",
     "name" : "UserAllMessages",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "UserUnreadMessages",
     "logicName" : "用户未读信息",
     "name" : "UserUnreadMessages",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -106,6 +122,10 @@
     "codeName" : "Default",
     "logicName" : "数据集",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -113,12 +133,20 @@
     "codeName" : "UserAllMessages",
     "logicName" : "用户全部消息",
     "name" : "UserAllMessages",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "UserAllMessages"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "UserUnreadMessages",
     "logicName" : "用户未读信息",
     "name" : "UserUnreadMessages",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "UserUnreadMessages"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -1026,7 +1054,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : false,
   "logicValid" : false,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

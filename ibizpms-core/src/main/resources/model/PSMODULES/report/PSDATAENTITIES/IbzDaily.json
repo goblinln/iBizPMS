@@ -118,40 +118,96 @@
     "userCat" : "CAT1"
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.account =  #{srf.sessioncontext.srfloginname}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyAllDaily",
     "logicName" : "我的日报（已提交和未提交）",
     "name" : "MyAllDaily",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.issubmit = '1'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "(t1.REPORTTO = #{srf.sessioncontext.srfloginname} or FIND_IN_SET(#{srf.sessioncontext.srfloginname},t1.MAILTO))",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyDaily",
     "logicName" : "我收到的日报",
     "name" : "MyDaily",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "MyNotSubmit",
     "logicName" : "我的日报",
     "name" : "MyNotSubmit",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.account=#{srf.sessioncontext.srfloginname}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MySubmitDaily",
     "logicName" : "我提交的日报",
     "name" : "MySubmitDaily",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ProductDaily",
     "logicName" : "产品日报",
     "name" : "ProductDaily",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`ISSUBMIT` = '1'  AND  t1.ACCOUNT in (select t.ACCOUNT from zt_team t where t.type = 'project' and t.root =${srfdatacontext('curproject')})  AND  DATE_FORMAT(t1.date,'%Y-%m-%d') = DATE_FORMAT(${srfdatacontext('date')},'%Y-%m-%d') )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProjectDaily",
     "logicName" : "项目日报",
     "name" : "ProjectDaily"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -160,6 +216,10 @@
     "codeName" : "Default",
     "logicName" : "数据集",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -167,36 +227,60 @@
     "codeName" : "MyAllDaily",
     "logicName" : "我的日报（已提交和未提交）",
     "name" : "MyAllDaily",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyAllDaily"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "MyDaily",
     "logicName" : "我收到的日报",
     "name" : "MyDaily",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyDaily"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "MyNotSubmit",
     "logicName" : "我的日报",
     "name" : "MyNotSubmit",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyNotSubmit"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "MySubmitDaily",
     "logicName" : "我提交的日报",
     "name" : "MySubmitDaily",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MySubmitDaily"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProductDaily",
     "logicName" : "产品日报",
     "name" : "ProductDaily",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProductDaily"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectDaily",
     "logicName" : "项目日报",
     "name" : "ProjectDaily",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectDaily"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -1339,6 +1423,9 @@
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
+    "logicName" : "管理",
+    "name" : "MANAGE"
+  }, {
     "logicName" : "读取",
     "name" : "READ"
   }, {
@@ -1390,7 +1477,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : false,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

@@ -62,20 +62,46 @@
     "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`ACCOUNT` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_USERCONTACT\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "CurUSERCONTACT",
     "logicName" : "抄送联系人",
     "name" : "CurUSERCONTACT",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`ACCOUNT` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_USERCONTACT\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyUSERCONTACT",
     "logicName" : "我的联系人",
     "name" : "MyUSERCONTACT"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -84,12 +110,20 @@
     "codeName" : "CurUSERCONTACT",
     "logicName" : "抄送联系人",
     "name" : "CurUSERCONTACT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "CurUSERCONTACT"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -97,6 +131,10 @@
     "codeName" : "MyUSERCONTACT",
     "logicName" : "我的联系人",
     "name" : "MyUSERCONTACT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyUSERCONTACT"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -542,7 +580,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : false,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

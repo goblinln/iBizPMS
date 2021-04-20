@@ -52,20 +52,16 @@ public class IbzReportlyResource {
     @Lazy
     public IbzReportlyMapping ibzreportlyMapping;
 
-    @PreAuthorize("@IbzReportlyRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建汇报", tags = {"汇报" },  notes = "新建汇报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportlies")
     @Transactional
     public ResponseEntity<IbzReportlyDTO> create(@Validated @RequestBody IbzReportlyDTO ibzreportlydto) {
         IbzReportly domain = ibzreportlyMapping.toDomain(ibzreportlydto);
 		ibzreportlyService.create(domain);
-        if(!ibzreportlyRuntime.test(domain.getIbzreportlyid(),"CREATE"))
-            throw new RuntimeException("无权限操作");
         IbzReportlyDTO dto = ibzreportlyMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzReportlyRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量新建汇报", tags = {"汇报" },  notes = "批量新建汇报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportlies/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<IbzReportlyDTO> ibzreportlydtos) {
@@ -74,7 +70,6 @@ public class IbzReportlyResource {
     }
 
     @VersionCheck(entity = "ibzreportly" , versionfield = "updatedate")
-    @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'UPDATE')")
     @ApiOperation(value = "更新汇报", tags = {"汇报" },  notes = "更新汇报")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzreportlies/{ibzreportly_id}")
     @Transactional
@@ -82,13 +77,10 @@ public class IbzReportlyResource {
 		IbzReportly domain  = ibzreportlyMapping.toDomain(ibzreportlydto);
         domain.setIbzreportlyid(ibzreportly_id);
 		ibzreportlyService.update(domain );
-        if(!ibzreportlyRuntime.test(ibzreportly_id,"UPDATE"))
-            throw new RuntimeException("无权限操作");
 		IbzReportlyDTO dto = ibzreportlyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzReportlyRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "批量更新汇报", tags = {"汇报" },  notes = "批量更新汇报")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzreportlies/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzReportlyDTO> ibzreportlydtos) {
@@ -96,14 +88,12 @@ public class IbzReportlyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'DELETE')")
     @ApiOperation(value = "删除汇报", tags = {"汇报" },  notes = "删除汇报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzreportlies/{ibzreportly_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzreportly_id") Long ibzreportly_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibzreportlyService.remove(ibzreportly_id));
     }
 
-    @PreAuthorize("@IbzReportlyRuntime.test(#ids,'DELETE')")
     @ApiOperation(value = "批量删除汇报", tags = {"汇报" },  notes = "批量删除汇报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzreportlies/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -111,7 +101,6 @@ public class IbzReportlyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'READ')")
     @ApiOperation(value = "获取汇报", tags = {"汇报" },  notes = "获取汇报")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzreportlies/{ibzreportly_id}")
     public ResponseEntity<IbzReportlyDTO> get(@PathVariable("ibzreportly_id") Long ibzreportly_id) {
@@ -182,11 +171,9 @@ public class IbzReportlyResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("@IbzReportlyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"汇报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/fetchdefault")
 	public ResponseEntity<List<IbzReportlyDTO>> fetchDefault(@RequestBody IbzReportlySearchContext context) {
-        ibzreportlyRuntime.addAuthorityConditions(context,"READ");
         Page<IbzReportly> domains = ibzreportlyService.searchDefault(context) ;
         List<IbzReportlyDTO> list = ibzreportlyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -196,21 +183,17 @@ public class IbzReportlyResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzReportlyRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"汇报" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/searchdefault")
 	public ResponseEntity<Page<IbzReportlyDTO>> searchDefault(@RequestBody IbzReportlySearchContext context) {
-        ibzreportlyRuntime.addAuthorityConditions(context,"READ");
         Page<IbzReportly> domains = ibzreportlyService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzreportlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@IbzReportlyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我所有的汇报", tags = {"汇报" } ,notes = "获取我所有的汇报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/fetchmyallreportly")
 	public ResponseEntity<List<IbzReportlyDTO>> fetchMyAllReportly(@RequestBody IbzReportlySearchContext context) {
-        ibzreportlyRuntime.addAuthorityConditions(context,"READ");
         Page<IbzReportly> domains = ibzreportlyService.searchMyAllReportly(context) ;
         List<IbzReportlyDTO> list = ibzreportlyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -220,21 +203,17 @@ public class IbzReportlyResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzReportlyRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询我所有的汇报", tags = {"汇报" } ,notes = "查询我所有的汇报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/searchmyallreportly")
 	public ResponseEntity<Page<IbzReportlyDTO>> searchMyAllReportly(@RequestBody IbzReportlySearchContext context) {
-        ibzreportlyRuntime.addAuthorityConditions(context,"READ");
         Page<IbzReportly> domains = ibzreportlyService.searchMyAllReportly(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzreportlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@IbzReportlyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我收到的汇报", tags = {"汇报" } ,notes = "获取我收到的汇报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/fetchmyreceived")
 	public ResponseEntity<List<IbzReportlyDTO>> fetchMyReceived(@RequestBody IbzReportlySearchContext context) {
-        ibzreportlyRuntime.addAuthorityConditions(context,"READ");
         Page<IbzReportly> domains = ibzreportlyService.searchMyReceived(context) ;
         List<IbzReportlyDTO> list = ibzreportlyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -244,21 +223,17 @@ public class IbzReportlyResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzReportlyRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询我收到的汇报", tags = {"汇报" } ,notes = "查询我收到的汇报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/searchmyreceived")
 	public ResponseEntity<Page<IbzReportlyDTO>> searchMyReceived(@RequestBody IbzReportlySearchContext context) {
-        ibzreportlyRuntime.addAuthorityConditions(context,"READ");
         Page<IbzReportly> domains = ibzreportlyService.searchMyReceived(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzreportlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@IbzReportlyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的未提交汇报", tags = {"汇报" } ,notes = "获取我的未提交汇报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/fetchmyreportlymob")
 	public ResponseEntity<List<IbzReportlyDTO>> fetchMyReportlyMob(@RequestBody IbzReportlySearchContext context) {
-        ibzreportlyRuntime.addAuthorityConditions(context,"READ");
         Page<IbzReportly> domains = ibzreportlyService.searchMyReportlyMob(context) ;
         List<IbzReportlyDTO> list = ibzreportlyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -268,11 +243,9 @@ public class IbzReportlyResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzReportlyRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询我的未提交汇报", tags = {"汇报" } ,notes = "查询我的未提交汇报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/searchmyreportlymob")
 	public ResponseEntity<Page<IbzReportlyDTO>> searchMyReportlyMob(@RequestBody IbzReportlySearchContext context) {
-        ibzreportlyRuntime.addAuthorityConditions(context,"READ");
         Page<IbzReportly> domains = ibzreportlyService.searchMyReportlyMob(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzreportlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

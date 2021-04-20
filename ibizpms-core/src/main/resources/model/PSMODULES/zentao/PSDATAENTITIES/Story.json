@@ -419,133 +419,451 @@
     "userCat" : "CAT1"
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`ASSIGNEDTO` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ASSIGNEDTO\",\"dename\":\"ZT_STORY\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "AssignedToMyStory",
     "logicName" : "指派给我的需求",
     "name" : "AssignedToMyStory",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`ASSIGNEDTO` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ASSIGNEDTO\",\"dename\":\"ZT_STORY\"}')} )",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.assignedDate <> '0000-00-00 00:00:00' and t1.assignedDate is not null",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "AssignedToMyStoryCalendar",
     "logicName" : "指派给我的需求（日历）",
     "name" : "AssignedToMyStoryCalendar",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( ( EXISTS ( SELECT 1 FROM zt_projectstory t51 WHERE t1.ID = t51.STORY AND ( t51.`PROJECT` = ${srfdatacontext('n_project_eq','{\"defname\":\"PROJECT\",\"dename\":\"ZT_PROJECTSTORY\"}')}) )  OR  ${srfdatacontext('n_project_eq','{\"defname\":\"PROJECT\",\"dename\":\"ZT_PROJECTSTORY\"}')} is null ) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "BugStory",
     "logicName" : "Bug相关需求",
     "name" : "BugStory",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "BuildLinkCompletedStories",
     "logicName" : "版本关联\b已完成的需求（选择数据源）\b",
     "name" : "buildLinkCompletedStories",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.`product` in ( select t2.`product` from zt_projectproduct t2 where t2.project = ${srfdatacontext('project','{\"defname\":\"ID\",\"dename\":\"ZT_PRODUCT\"}')}  )",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.`STATUS` = 'active'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "BuildLinkableStories",
     "logicName" : "版本可关联的需求（产品内）",
     "name" : "BuildLinkableStories",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "BuildStories",
     "logicName" : "获取版本相关需求",
     "name" : "BuildStories",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "FIND_IN_SET (${srfdatacontext('srfparentkey','{\"defname\":\"ID\",\"dename\":\"ZT_PROJECTMODULE\"}')}, t11.`PATH`)",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ByModule",
     "logicName" : "通过模块查询",
     "name" : "ByModule",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "CaseStory",
     "logicName" : "相关用例需求",
     "name" : "CaseStory",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "customCode" : true,
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ESBulk",
     "logicName" : "ES批量的导入",
     "name" : "ESBulk",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`PRODUCT` = ${srfdatacontext('product','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_STORY\"}')}  AND  <#assign _value=srfdatacontext('branch','{\"ignoreempty\":true,\"defname\":\"BRANCH\",\"dename\":\"ZT_STORY\"}')><#if _value?length gt 0>t1.`BRANCH` = ${_value}<#else>1=1</#if>  AND  <#assign _value=srfdatacontext('nodeid','{\"ignoreempty\":true,\"defname\":\"MODULE\",\"dename\":\"ZT_STORY\"}')><#if _value?length gt 0>t1.`MODULE` = ${_value}<#else>1=1</#if> )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "GetProductStories",
     "logicName" : "获取产品需求",
     "name" : "GetProductStories"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyAgentStory",
     "logicName" : "我代理的需求",
     "name" : "MyAgentStory",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( DATE_FORMAT( t1.openedDate, '%Y' ) = DATE_FORMAT(now(), '%Y' )  AND  t1.`OPENEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"OPENEDBY\",\"dename\":\"ZT_STORY\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyCurOpenedStory",
     "logicName" : "所创建需求数和对应的优先级及状态",
     "name" : "MyCurOpenedStory"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.id in (select t.OBJECTID from T_IBZ_FAVORITES t where t.type = 'story' and t.account = #{srf.sessioncontext.srfloginname})",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyFavorites",
     "logicName" : "我的收藏",
     "name" : "MyFavorites",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.plan <> ${srfwebcontext('plan','{\"defname\":\"id\",\"dename\":\"ZT_PRODUCTPLAN\"}')}",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.product =  ${srfwebcontext('product','{\"defname\":\"product\",\"dename\":\"ZT_PRODUCT\"}')}",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.`status` <> 'closed'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.parent <> '-1'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "NotCurPlanLinkStory",
     "logicName" : "计划关联需求(去除已关联)",
     "name" : "NotCurPlanLinkStory",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( ( t1.`PARENT` = -1  OR  t1.`PARENT` = 0 ) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ParentDefault",
     "logicName" : "数据查询",
     "name" : "ParentDefault",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( ( t1.`PARENT` = -1  OR  t1.`PARENT` = 0 ) )",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.`status` = 'active' and t1.stage = 'wait'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ParentDefaultQ",
     "logicName" : "数据查询",
     "name" : "ParentDefaultQ",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t61.`PROJECT` = ${srfwebcontext('project','{\"defname\":\"PROJECT\",\"dename\":\"ZT_PROJECTPRODUCT\"}')}  AND  (t61.plan = 0 or t1.plan = t61.plan or t1.plan in (select t.id from zt_productplan t where t.parent = t61.plan)) )",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "NOT(EXISTS(SELECT * FROM `zt_projectstory` t71 \n WHERE \n t1.`ID` = t71.`STORY`  AND  ( t71.`PROJECT` = ${srfwebcontext('project','{\"defname\":\"PROJECT\",\"dename\":\"ZT_PROJECTSTORY\"}')} ) ))",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`STATUS` NOT  IN ('draft','closed') )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProjectLinkStory",
     "logicName" : "项目关联需求",
     "name" : "projectLinkStory"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "EXISTS(SELECT * FROM zt_projectstory t51 \n WHERE \n t1.ID = t51.STORY  AND  ( t51.`PROJECT` = ${srfdatacontext('srfparentkey','{\"defname\":\"PROJECT\",\"dename\":\"ZT_PROJECTSTORY\"}')} ) )",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProjectStories",
     "logicName" : "项目相关需求",
     "name" : "ProjectStories",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "(t1.id IN ( select tt3.story from zt_release  tt1 \nLEFT JOIN zt_build tt2 on tt1.build = tt2.id  \nLEFT JOIN zt_projectstory tt3 on tt3.project = tt2.project\nwhere tt1.id =  #{srf.datacontext.release}\n)  or (select tt2.project from zt_release  tt1 \nLEFT JOIN zt_build tt2 on tt1.build = tt2.id where tt1.id =  #{srf.datacontext.release}\n) = 0)\n\tAND t1.product =  #{srf.datacontext.product}\n\tAND not FIND_IN_SET (\nt1.ID,(SELECT STORIES FROM ZT_RELEASE WHERE ID =  #{srf.datacontext.release}\n))",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ReleaseLinkableStories",
     "logicName" : "版本可关联的完成的需求",
     "name" : "ReleaseLinkableStories",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.`DELETED` = '0' AND FIND_IN_SET ( t1.ID, (SELECT STORIES FROM ZT_RELEASE WHERE ID = ${srfdatacontext('srfparentkey','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')}))",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ReleaseStories",
     "logicName" : "获取产品发布相关需求",
     "name" : "ReleaseStories",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ReportStories",
     "logicName" : "报告完成需求",
     "name" : "ReportStories",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : " FIND_IN_SET ( t1.ID, (select tt.childStories from zt_story tt where tt.id = ${srfdatacontext('srfparentkey','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')}))",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "StoryChild",
     "logicName" : "获取产品发布相关需求",
     "name" : "StoryChild",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : " FIND_IN_SET ( t1.ID, (select tt.linkStories from zt_story tt where tt.id = ${srfdatacontext('srfparentkey','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')}))",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "StoryRelated",
     "logicName" : "获取产品发布相关需求",
     "name" : "StoryRelated",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( 1<>1 )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "SubStory",
     "logicName" : "需求细分",
     "name" : "SubStory"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "(t1.`id` in (select tt.`story` from zt_projectstory tt where tt.`project` = ${srfdatacontext('project','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')}) or ${srfdatacontext('project','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')} is null)",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "(t1.module = #{srf.datacontext.module} or #{srf.datacontext.module}  = '0' or #{srf.datacontext.module} is null)",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "TaskRelatedStory",
     "logicName" : "任务相关需求",
     "name" : "TaskRelatedStory",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -554,12 +872,20 @@
     "codeName" : "AssignedToMyStory",
     "logicName" : "指派给我的需求",
     "name" : "AssignedToMyStory",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "AssignedToMyStory"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "AssignedToMyStoryCalendar",
     "logicName" : "指派给我的需求（日历）",
     "name" : "AssignedToMyStoryCalendar",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "AssignedToMyStoryCalendar"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -571,18 +897,30 @@
       "codeName" : "Id"
     },
     "name" : "BugStory",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "BugStory"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "BuildLinkCompletedStories",
     "logicName" : "版本关联\b已完成的需求（选择数据源）\b",
     "name" : "buildLinkCompletedStories",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "BuildLinkCompletedStories"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "BuildLinkableStories",
     "logicName" : "版本可关联的需求（产品内）",
     "name" : "BuildLinkableStories",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "BuildLinkableStories"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -594,12 +932,20 @@
       "codeName" : "Id"
     },
     "name" : "BuildStories",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "BuildStories"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ByModule",
     "logicName" : "通过模块查询",
     "name" : "ByModule",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ByModule"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -611,12 +957,20 @@
       "codeName" : "Id"
     },
     "name" : "CaseStory",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "CaseStory"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -624,30 +978,50 @@
     "codeName" : "ESBulk",
     "logicName" : "ES批量的导入",
     "name" : "ESBulk",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ESBulk"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "GetProductStories",
     "logicName" : "获取产品需求",
     "name" : "GetProductStories",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "GetProductStories"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "MyAgentStory",
     "logicName" : "我代理的需求",
     "name" : "MyAgentStory",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyAgentStory"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "MyCurOpenedStory",
     "logicName" : "所创建需求数和对应的优先级及状态",
     "name" : "MyCurOpenedStory",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyCurOpenedStory"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "MyFavorites",
     "logicName" : "我的收藏",
     "name" : "MyFavorites",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyFavorites"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -659,24 +1033,40 @@
       "codeName" : "Id"
     },
     "name" : "NotCurPlanLinkStory",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "NotCurPlanLinkStory"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ParentDefault",
     "logicName" : "数据查询",
     "name" : "ParentDefault",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ParentDefault"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ParentDefaultQ",
     "logicName" : "数据查询",
     "name" : "ParentDefaultQ",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ParentDefaultQ"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectLinkStory",
     "logicName" : "项目关联需求",
     "name" : "projectLinkStory",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectLinkStory"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -688,6 +1078,10 @@
       "codeName" : "Id"
     },
     "name" : "ProjectStories",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectStories"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -699,6 +1093,10 @@
       "codeName" : "Id"
     },
     "name" : "ReleaseLinkableStories",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ReleaseLinkableStories"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -710,12 +1108,20 @@
       "codeName" : "Id"
     },
     "name" : "ReleaseStories",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ReleaseStories"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ReportStories",
     "logicName" : "通过模块查询",
     "name" : "ReportStories",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ReportStories"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -727,6 +1133,10 @@
       "codeName" : "Id"
     },
     "name" : "StoryChild",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "StoryChild"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -738,12 +1148,20 @@
       "codeName" : "Id"
     },
     "name" : "StoryRelated",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "StoryRelated"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "SubStory",
     "logicName" : "需求细分",
     "name" : "SubStory",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "SubStory"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -755,12 +1173,20 @@
       "codeName" : "Id"
     },
     "name" : "TaskRelatedStory",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "TaskRelatedStory"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "View"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -8396,10 +8822,6 @@
     "virtual" : true
   } ],
   "name" : "ZT_STORY",
-  "getPSSysImage" : {
-    "glyph" : "xf006@FontAwesome",
-    "cssClass" : "fa fa-star-o"
-  },
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,
@@ -8424,7 +8846,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : true,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

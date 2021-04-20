@@ -146,16 +146,38 @@
     "userCat" : "CAT1"
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "MyTestTaskPc",
     "logicName" : "我的测试单",
     "name" : "MyTestTaskPc",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -164,6 +186,10 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -171,6 +197,10 @@
     "codeName" : "MyTestTaskPc",
     "logicName" : "我的测试单",
     "name" : "MyTestTaskPc",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyTestTaskPc"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -2193,10 +2223,6 @@
     "removeOrder" : 0
   } ],
   "name" : "ZT_TESTTASK",
-  "getPSSysImage" : {
-    "glyph" : "xf0ea@FontAwesome",
-    "cssClass" : "fa fa-clipboard"
-  },
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,
@@ -2219,7 +2245,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : true,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

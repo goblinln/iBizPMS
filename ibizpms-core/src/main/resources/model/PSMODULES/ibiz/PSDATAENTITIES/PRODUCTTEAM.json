@@ -69,25 +69,65 @@
     "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`TYPE` = 'product' )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.type = 'product'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProductTeamInfo",
     "logicName" : "产品团队成员信息",
     "name" : "ProductTeamInfo",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`ROOT` = ${srfwebcontext('product','{\"defname\":\"ROOT\",\"dename\":\"IBZ_PRODUCTTEAM\"}')}  AND  t1.`TYPE` = 'product' )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProjectApp",
     "logicName" : "项目立项",
     "name" : "ProjectApp"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.type = 'product'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "RowEditDefaultProductTeam",
     "logicName" : "产品团队管理",
     "name" : "RowEditDefaultProductTeam",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -96,6 +136,10 @@
     "codeName" : "Default",
     "logicName" : "数据集",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -103,18 +147,30 @@
     "codeName" : "ProductTeamInfo",
     "logicName" : "产品团队成员信息",
     "name" : "ProductTeamInfo",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProductTeamInfo"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectApp",
     "logicName" : "项目立项",
     "name" : "ProjectApp",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectApp"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "RowEditDefaultProductTeam",
     "logicName" : "产品团队管理",
     "name" : "RowEditDefaultProductTeam",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "RowEditDefaultProductTeam"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -1256,7 +1312,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : false,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

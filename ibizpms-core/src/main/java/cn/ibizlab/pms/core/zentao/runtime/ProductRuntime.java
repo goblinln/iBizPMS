@@ -109,7 +109,7 @@ public class ProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     public Product selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
         Page<Product> domains = productService.searchDefault((ProductSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
+        if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
     }
@@ -300,6 +300,9 @@ public class ProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         else if (action.equals("searchCheckNameOrCode")) {
             return aroundDataSet("CheckNameOrCode", point);
         }
+        else if (action.equals("searchCurDefault")) {
+            return aroundDataSet("CurDefault", point);
+        }
         else if (action.equals("searchCurProject")) {
             return aroundDataSet("CURPROJECT", point);
         }
@@ -309,8 +312,17 @@ public class ProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         else if (action.equals("searchDefault")) {
             return aroundDataSet("DEFAULT", point);
         }
+        else if (action.equals("searchDeveloperQuery")) {
+            return aroundDataSet("DeveloperQuery", point);
+        }
         else if (action.equals("searchESBulk")) {
             return aroundDataSet("ESBulk", point);
+        }
+        else if (action.equals("searchOpenQuery")) {
+            return aroundDataSet("OpenQuery", point);
+        }
+        else if (action.equals("searchProductManagerQuery")) {
+            return aroundDataSet("ProductManagerQuery", point);
         }
         else if (action.equals("searchProductPM")) {
             return aroundDataSet("ProductPM", point);

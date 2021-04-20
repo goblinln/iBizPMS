@@ -22,8 +22,8 @@ import java.util.*;
  * 权限：向uaa同步当前系统菜单、权限资源任务类
  */
 @Slf4j
-@Component
-@ConditionalOnProperty( name = "ibiz.enablePermissionValid", havingValue = "true")
+//@Component
+//@ConditionalOnProperty( name = "ibiz.enablePermissionValid", havingValue = "true")
 public class PermissionSyncJob implements ApplicationRunner {
 
     @Value("${ibiz.systemid:iBizPMS}")

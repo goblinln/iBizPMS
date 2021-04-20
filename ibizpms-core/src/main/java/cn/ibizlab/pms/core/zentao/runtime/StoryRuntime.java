@@ -109,7 +109,7 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     public Story selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
         Page<Story> domains = storyService.searchDefault((StorySearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
+        if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
     }

@@ -87,7 +87,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -129,6 +129,10 @@
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/MyReportINotSubmit.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "MyReportINotSubmit"
@@ -140,6 +144,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/ReportIReceived.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -427,7 +435,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -469,6 +477,10 @@
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/MyReportINotSubmit.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "MyReportINotSubmit"
@@ -480,6 +492,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/ReportIReceived.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,

@@ -49,4 +49,7 @@ export default [
     'activestorycnt',
     'linename',
     'line',
+    'updateman',
+    'createman',
+    'updatedate',
 ];

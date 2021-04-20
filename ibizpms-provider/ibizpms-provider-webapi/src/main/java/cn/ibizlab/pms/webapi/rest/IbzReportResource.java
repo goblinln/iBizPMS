@@ -111,7 +111,6 @@ public class IbzReportResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IbzReportRuntime.test(#ibzreport_id,'READ')")
     @ApiOperation(value = "获取汇报汇总", tags = {"汇报汇总" },  notes = "获取汇报汇总")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzreports/{ibzreport_id}")
     public ResponseEntity<IbzReportDTO> get(@PathVariable("ibzreport_id") Long ibzreport_id) {

@@ -274,6 +274,22 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchCurDefault",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "CurDefault"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchCurDefault"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchCurProject",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
@@ -338,6 +354,38 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchOpenQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchOpenQuery"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProductManagerQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductManagerQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProductManagerQuery"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchProductPM",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
@@ -383,6 +431,15 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchStoryCurProject"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDeveloperQuery",
+    "methodType" : "FETCH",
+    "name" : "DeveloperQuery",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "DeveloperQuery"
     },
     "builtinMethod" : false
   } ],
@@ -669,6 +726,24 @@
     "logicName" : "产品线",
     "name" : "LINE",
     "stdDataType" : 1
+  }, {
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",
@@ -907,6 +982,22 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchCurDefault",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "CurDefault"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchCurDefault"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchCurProject",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
@@ -968,6 +1059,38 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchESBulk"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchOpenQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchOpenQuery"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProductManagerQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductManagerQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProductManagerQuery"
     },
     "builtinMethod" : false
   }, {
@@ -1034,6 +1157,15 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/WizardCreate.json"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDeveloperQuery",
+    "methodType" : "FETCH",
+    "name" : "DeveloperQuery",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "DeveloperQuery"
     },
     "builtinMethod" : false
   }, {

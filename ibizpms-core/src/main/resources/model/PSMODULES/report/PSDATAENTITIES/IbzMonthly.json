@@ -111,40 +111,105 @@
     "userCat" : "CAT1"
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.account = #{srf.sessioncontext.srfloginname}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyMonthly",
     "logicName" : "我的月报",
     "name" : "MyMonthly",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.account = #{srf.sessioncontext.srfloginname}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyMonthlyMob",
     "logicName" : "我的月报（移动端）",
     "name" : "MyMonthlyMob",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.issubmit = '1'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "(t1.REPORTTO = #{srf.sessioncontext.srfloginname} OR FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.MAILTO ))",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyReceivedMonthly",
     "logicName" : "我收到的月报",
     "name" : "MyReceivedMonthly",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.issubmit = '1'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.account = #{srf.sessioncontext.srfloginname}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MySubmitMonthly",
     "logicName" : "我提交的月报",
     "name" : "MySubmitMonthly",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ProductMonthly",
     "logicName" : "产品月报",
     "name" : "ProductMonthly",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`ISSUBMIT` = '1'  AND  DATE_FORMAT(t1.date,'%Y-%m') = ${srfdatacontext('yearmonth')}  AND  t1.ACCOUNT in (select t.ACCOUNT from zt_team t where t.type = 'project' and t.root =${srfdatacontext('curproject')}) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProjectMonthly",
     "logicName" : "项目月报",
     "name" : "ProjectMonthly"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -153,6 +218,10 @@
     "codeName" : "Default",
     "logicName" : "数据集",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -160,36 +229,60 @@
     "codeName" : "MyMonthly",
     "logicName" : "我的月报",
     "name" : "MyMonthly",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyMonthly"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "MyMonthlyMob",
     "logicName" : "我的月报（移动端）",
     "name" : "MyMonthlyMob",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyMonthlyMob"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "MyReceivedMonthly",
     "logicName" : "我收到的月报",
     "name" : "MyReceivedMonthly",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyReceivedMonthly"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "MySubmitMonthly",
     "logicName" : "我提交的月报",
     "name" : "MySubmitMonthly",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MySubmitMonthly"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProductMonthly",
     "logicName" : "产品月报",
     "name" : "ProductMonthly",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProductMonthly"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectMonthly",
     "logicName" : "项目月报",
     "name" : "ProjectMonthly",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectMonthly"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -1397,7 +1490,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : false,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

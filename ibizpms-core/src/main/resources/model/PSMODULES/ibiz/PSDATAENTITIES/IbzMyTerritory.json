@@ -95,35 +95,63 @@
     "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "MyWork",
     "logicName" : "我的工作",
     "name" : "MyWork",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "MyWorkMob",
     "logicName" : "我的工作",
     "name" : "MyWorkMob",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "MyWorkPm",
     "logicName" : "我的工作（项目经理）",
     "name" : "MyWorkPm",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "PersonInfo",
     "logicName" : "个人信息-个人贡献",
     "name" : "PersonInfo",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "Welcome",
     "logicName" : "欢迎",
     "name" : "welcome",
@@ -133,6 +161,10 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -140,30 +172,50 @@
     "codeName" : "MyWork",
     "logicName" : "我的工作",
     "name" : "MyWork",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyWork"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "MyWorkMob",
     "logicName" : "我的工作",
     "name" : "MyWorkMob",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyWorkMob"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "MyWorkPm",
     "logicName" : "我的工作（项目经理）",
     "name" : "MyWorkPm",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyWorkPm"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "PersonInfo",
     "logicName" : "个人信息-个人贡献",
     "name" : "PersonInfo",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "PersonInfo"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "Welcome",
     "logicName" : "欢迎",
     "name" : "welcome",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Welcome"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -3002,7 +3054,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : false,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

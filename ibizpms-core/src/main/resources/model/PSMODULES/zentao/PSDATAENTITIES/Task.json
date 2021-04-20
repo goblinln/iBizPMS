@@ -424,196 +424,688 @@
     }
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`ASSIGNEDTO` =  #{srf.sessioncontext.srfloginname} )",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "(t1.parent <= 0 or (t1.parent > 0 and t1.assignedTo not in (select t.assignedTo from zt_task t where  t.deleted = '0' and t.id = t1.parent)))",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "AssignedToMyTask",
     "logicName" : "指派给我任务",
     "name" : "AssignedToMyTask",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`ASSIGNEDTO` =  #{srf.sessioncontext.srfloginname} )",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.estStarted is not null and t1.estStarted <> '0000-00-00' and t1.estStarted <> '1970-01-01'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.parent >= 0",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.assigneddate is not null and t1.assigneddate <> '0000-00-00 00:00:00'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "AssignedToMyTaskPc",
     "logicName" : "指派给我任务（PC）",
     "name" : "AssignedToMyTaskPc",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "(t1.project = #{srf.webcontext.project} or t1.project = #{srf.webcontext.curproject})",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "BugTask",
     "logicName" : "Bug相关任务",
     "name" : "BugTask",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "FIND_IN_SET (#{srf.datacontext.srfparentkey}, t11.`PATH`)",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`PARENT` = 0  or  t1.`PARENT` = -1)",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ByModule",
     "logicName" : "通过模块查询",
     "name" : "ByModule",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.`parent` = #{srf.webcontext.parent}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ChildDefault",
     "logicName" : "数据查询（子任务）",
     "name" : "ChildDefault",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( 1<>1 )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ChildTask",
     "logicName" : "子任务",
     "name" : "ChildTask",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ChildTaskTree",
     "logicName" : "子任务（树）",
     "name" : "ChildTaskTree",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`FINISHEDBY` =  #{srf.sessioncontext.srfloginname}  AND  left(t1.finishedDate,4) = #{srf.webcontext.curyear} )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "CurFinishTask",
     "logicName" : "用户年度完成任务",
     "name" : "CurFinishTask",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "customCode" : true,
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "DefaultRow",
     "logicName" : "DefaultRow",
     "name" : "DefaultRow",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ESBulk",
     "logicName" : "ES批量的导入",
     "name" : "ESBulk",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyAgentTask",
     "logicName" : "我代理的任务",
     "name" : "MyAgentTask",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "(t1.assignedTo = #{srf.sessioncontext.srfloginname} or t1.openedBy =#{srf.sessioncontext.srfloginname}  or FIND_IN_SET(#{srf.sessioncontext.srfloginname}, t1.finishedList) or t1.closedBy = #{srf.sessioncontext.srfloginname} or t1.finishedBy = #{srf.sessioncontext.srfloginname} or t1.canceledBy = #{srf.sessioncontext.srfloginname})",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "(t1.parent <= 0 or (t1.parent > 0 and not EXISTS (select 1 from zt_task t where  t.deleted = '0' and t.id = t1.parent and (t.assignedTo =#{srf.sessioncontext.srfloginname} or t.openedBy =#{srf.sessioncontext.srfloginname} or t.closedBy = #{srf.sessioncontext.srfloginname} or t.finishedBy = #{srf.sessioncontext.srfloginname} or t.canceledBy =#{srf.sessioncontext.srfloginname} or FIND_IN_SET(#{srf.sessioncontext.srfloginname}, t.finishedList) ))))",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyAllTask",
     "logicName" : "我相关的任务",
     "name" : "MyAllTask",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "EXISTS(select 1 from zt_taskestimate t where t.task = t1.id and t.account = #{srf.sessioncontext.srfloginname} and DATE_FORMAT( t.date, '%Y-%m-%d' ) = DATE_FORMAT( CASE WHEN #{srf.datacontext.date} IS NULL THEN now() ELSE #{srf.datacontext.date} END, '%Y-%m-%d' ))",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t31.deleted='0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyCompleteTask",
     "logicName" : "我完成的任务（汇报）",
     "name" : "MyCompleteTask",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "FIND_IN_SET(t1.id,(select TODAYTASK from t_ibz_daily where IBZ_dailyID = #{srf.datacontext.srfparentkey}))",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted='0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyCompleteTaskMobDaily",
     "logicName" : "我完成的任务（移动端日报）",
     "name" : "MyCompleteTaskMobDaily",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "FIND_IN_SET(t1.id,(select thismonthtask from t_ibz_monthly where IBZ_MONTHLYID = #{srf.datacontext.srfparentkey} ))",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyCompleteTaskMobMonthly",
     "logicName" : "我完成的任务（移动端月报）",
     "name" : "MyCompleteTaskMobMonthly",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "(FIND_IN_SET (t1.`ID`,#{srf.webcontext.todaytask}) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyCompleteTaskMonthlyZS",
     "logicName" : "我完成的任务（月报展示）",
     "name" : "MyCompleteTaskMonthlyZS",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "(FIND_IN_SET (t1.`ID`,#{srf.webcontext.todaytask}) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyCompleteTaskZS",
     "logicName" : "我完成的任务（汇报）",
     "name" : "MyCompleteTaskZS",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.id in (select t.OBJECTID from T_IBZ_FAVORITES t where t.type = 'task' and t.account = #{srf.sessioncontext.srfloginname})",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyFavorites",
     "logicName" : "我的收藏",
     "name" : "MyFavorites",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "FIND_IN_SET(t1.id,(select nextmonthplanstask from t_ibz_monthly where IBZ_MONTHLYID = #{srf.datacontext.srfparentkey} ))",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyPlansTaskMobMonthly",
     "logicName" : "我计划参与的任务（移动端月报）",
     "name" : "MyPlansTaskMobMonthly",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`STATUS` IN ('doing','wait')  AND  t1.`ASSIGNEDTO` =  #{srf.sessioncontext.srfloginname} )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyTomorrowPlanTask",
     "logicName" : "我计划参与的任务（汇报）",
     "name" : "MyTomorrowPlanTask",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( FIND_IN_SET(t1.id,(select tomorrowplanstask from t_ibz_daily where IBZ_dailyID = #{srf.datacontext.srfparentkey})) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyTomorrowPlanTaskMobDaily",
     "logicName" : "我计划参与的任务（汇报）",
     "name" : "MyTomorrowPlanTaskMobDaily",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "find_in_set(t1.id, (select nextweektask from t_ibz_weekly where ibz_weeklyid = #{srf.datacontext.srfparentkey} ))",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "NextWeekCompleteTaskMobZS",
     "logicName" : "移动端下周计划参与(汇报)",
     "name" : "NextWeekCompleteTaskMobZS",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( FIND_IN_SET(t1.id, case when  #{srf.webcontext.nextweektask} is null then 0 else #{srf.webcontext.nextweektask} end  ) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "NextWeekCompleteTaskZS",
     "logicName" : "本周完成的任务(汇报)",
     "name" : "NextWeekCompleteTaskZS",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`STATUS` IN ('doing','wait')  AND  t1.`ASSIGNEDTO` =  #{srf.sessioncontext.srfloginname} )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "NextWeekPlanCompleteTask",
     "logicName" : "下周计划完成任务(汇报)",
     "name" : "NextWeekPlanCompleteTask",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.plan=#{srf.webcontext.plan}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "PlanTask",
     "logicName" : "相关任务（计划）",
     "name" : "PlanTask",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted='0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.project=#{srf.webcontext.project}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProjectAppTask",
     "logicName" : "项目任务（项目立项）",
     "name" : "ProjectAppTask",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`PARENT` <= 0 )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProjectTask",
     "logicName" : "项目任务",
     "name" : "ProjectTask",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.`PARENT` in (0,-1)",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "RootTask",
     "logicName" : "根任务",
     "name" : "RootTask",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.project in (select t.project from zt_projectproduct t left join zt_productplan tt on tt.product = t.product where tt.id = ${srfwebcontext('productplan','{\"defname\":\"PLAN\",\"dename\":\"ZT_TASK\"}')})  AND  ( t1.`PLAN` <> ${srfwebcontext('productplan','{\"defname\":\"PLAN\",\"dename\":\"ZT_TASK\"}')}  OR  t1.`PLAN` IS NULL ) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "TaskLinkPlan",
     "logicName" : "关联计划（当前项目未关联）",
     "name" : "TaskLinkPlan"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t31.deleted = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "EXISTS(select 1 from zt_taskestimate t where t.task = t1.id and t.account = #{srf.sessioncontext.srfloginname} and DATE_FORMAT( t.date, '%Y-%m' ) = DATE_FORMAT( CASE WHEN #{srf.datacontext.date} IS NULL THEN now() ELSE #{srf.datacontext.date} END, '%Y-%m' ))",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ThisMonthCompleteTaskChoice",
     "logicName" : "我本月完成的任务（下拉列表框）",
     "name" : "ThisMonthCompleteTaskChoice",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( ( ( t1.`STATUS` IN ('doing','wait')  AND  t1.`ASSIGNEDTO` =  #{srf.sessioncontext.srfloginname} )  OR  ( t1.`FINISHEDBY` =  #{srf.sessioncontext.srfloginname} ) ) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ThisWeekCompleteTask",
     "logicName" : "本周完成的任务(汇报)",
     "name" : "ThisWeekCompleteTask",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t31.deleted = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "EXISTS(SELECT 1 from zt_taskestimate t2 where t1.id = t2.task and t2.account = #{srf.sessioncontext.srfloginname} and YEARWEEK(t2.date,1) = YEARWEEK(case when #{srf.datacontext.date} is null then now() else #{srf.datacontext.date}  end,1) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ThisWeekCompleteTaskChoice",
     "logicName" : "本周已完成任务(下拉框选择)",
     "name" : "ThisWeekCompleteTaskChoice",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "find_in_set(t1.id, (select thisweektask from t_ibz_weekly where ibz_weeklyid = #{srf.datacontext.srfparentkey} ))",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ThisWeekCompleteTaskMobZS",
     "logicName" : "移动端本周已完成任务(汇报)",
     "name" : "ThisWeekCompleteTaskMobZS",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( FIND_IN_SET(t1.id, case when  #{srf.webcontext.thisweektask} is null then 0 else #{srf.webcontext.thisweektask} end  ) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ThisWeekCompleteTaskZS",
     "logicName" : "本周完成的任务(汇报)",
     "name" : "ThisWeekCompleteTaskZS",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "TodoListTask",
     "logicName" : "todo列表查询",
     "name" : "TodoListTask",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : " t1.DELETED = '0'  and t1.project = #{srf.datacontext.project}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "TypeGroup",
     "logicName" : "任务类型分组",
     "name" : "TypeGroup",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "TypeGroupPlan",
     "logicName" : "任务类型分组（计划）",
     "name" : "TypeGroupPlan",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -622,6 +1114,10 @@
     "codeName" : "AssignedToMyTask",
     "logicName" : "指派给我任务",
     "name" : "AssignedToMyTask",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "AssignedToMyTask"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -629,6 +1125,10 @@
     "codeName" : "AssignedToMyTaskPc",
     "logicName" : "指派给我任务（PC）",
     "name" : "AssignedToMyTaskPc",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "AssignedToMyTaskPc"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -641,6 +1141,10 @@
       "codeName" : "Id"
     },
     "name" : "BugTask",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "BugTask"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -648,6 +1152,10 @@
     "codeName" : "ByModule",
     "logicName" : "通过模块查询",
     "name" : "ByModule",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ByModule"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -655,6 +1163,10 @@
     "codeName" : "ChildDefault",
     "logicName" : "数据查询（子任务）",
     "name" : "ChildDefault",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ChildDefault"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -662,6 +1174,10 @@
     "codeName" : "ChildTask",
     "logicName" : "子任务",
     "name" : "ChildTask",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ChildTask"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -669,6 +1185,10 @@
     "codeName" : "ChildTaskTree",
     "logicName" : "子任务（树）",
     "name" : "ChildTaskTree",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ChildTaskTree"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -676,6 +1196,10 @@
     "codeName" : "CurFinishTask",
     "logicName" : "用户年度完成任务",
     "name" : "CurFinishTask",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "CurFinishTask"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -683,6 +1207,10 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true,
@@ -691,6 +1219,10 @@
     "codeName" : "DefaultRow",
     "logicName" : "DefaultRow",
     "name" : "DefaultRow",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "DefaultRow"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -698,6 +1230,10 @@
     "codeName" : "ESBulk",
     "logicName" : "ES批量的导入",
     "name" : "ESBulk",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ESBulk"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -705,6 +1241,10 @@
     "codeName" : "MyAgentTask",
     "logicName" : "我代理的任务",
     "name" : "MyAgentTask",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyAgentTask"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -712,6 +1252,10 @@
     "codeName" : "MyAllTask",
     "logicName" : "我相关的任务",
     "name" : "MyAllTask",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyAllTask"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -719,6 +1263,10 @@
     "codeName" : "MyCompleteTask",
     "logicName" : "我完成的任务（汇报）",
     "name" : "MyCompleteTask",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyCompleteTask"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -726,6 +1274,10 @@
     "codeName" : "MyCompleteTaskMobDaily",
     "logicName" : "我完成的任务（移动端日报）",
     "name" : "MyCompleteTaskMobDaily",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyCompleteTaskMobDaily"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -733,6 +1285,10 @@
     "codeName" : "MyCompleteTaskMobMonthly",
     "logicName" : "我完成的任务（移动端月报）",
     "name" : "MyCompleteTaskMobMonthly",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyCompleteTaskMobMonthly"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -740,6 +1296,10 @@
     "codeName" : "MyCompleteTaskMonthlyZS",
     "logicName" : "我完成的任务（月报展示）",
     "name" : "MyCompleteTaskMonthlyZS",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyCompleteTaskMonthlyZS"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -747,6 +1307,10 @@
     "codeName" : "MyCompleteTaskZS",
     "logicName" : "我完成的任务（汇报）",
     "name" : "MyCompleteTaskZS",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyCompleteTaskZS"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -754,6 +1318,10 @@
     "codeName" : "MyFavorites",
     "logicName" : "我的收藏",
     "name" : "MyFavorites",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyFavorites"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -761,6 +1329,10 @@
     "codeName" : "MyPlansTaskMobMonthly",
     "logicName" : "我计划参与的任务（移动端月报）",
     "name" : "MyPlansTaskMobMonthly",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyPlansTaskMobMonthly"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -768,6 +1340,10 @@
     "codeName" : "MyTomorrowPlanTask",
     "logicName" : "我计划参与的任务（汇报）",
     "name" : "MyTomorrowPlanTask",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyTomorrowPlanTask"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -775,6 +1351,10 @@
     "codeName" : "MyTomorrowPlanTaskMobDaily",
     "logicName" : "我计划参与的任务（汇报）",
     "name" : "MyTomorrowPlanTaskMobDaily",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyTomorrowPlanTaskMobDaily"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -782,6 +1362,10 @@
     "codeName" : "NextWeekCompleteTaskMobZS",
     "logicName" : "移动端下周计划参与(汇报)",
     "name" : "NextWeekCompleteTaskMobZS",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "NextWeekCompleteTaskMobZS"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -789,6 +1373,10 @@
     "codeName" : "NextWeekCompleteTaskZS",
     "logicName" : "本周完成的任务(汇报)",
     "name" : "NextWeekCompleteTaskZS",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "NextWeekCompleteTaskZS"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -796,6 +1384,10 @@
     "codeName" : "NextWeekPlanCompleteTask",
     "logicName" : "下周计划完成任务(汇报)",
     "name" : "NextWeekPlanCompleteTask",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "NextWeekPlanCompleteTask"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -803,6 +1395,10 @@
     "codeName" : "PlanTask",
     "logicName" : "相关任务（计划）",
     "name" : "PlanTask",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "PlanTask"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -810,6 +1406,10 @@
     "codeName" : "ProjectAppTask",
     "logicName" : "项目任务（项目立项）",
     "name" : "ProjectAppTask",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectAppTask"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -817,6 +1417,10 @@
     "codeName" : "ProjectTask",
     "logicName" : "项目任务",
     "name" : "ProjectTask",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectTask"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -824,6 +1428,10 @@
     "codeName" : "RootTask",
     "logicName" : "根任务",
     "name" : "RootTask",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "RootTask"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -831,6 +1439,10 @@
     "codeName" : "TaskLinkPlan",
     "logicName" : "关联计划（当前项目未关联）",
     "name" : "TaskLinkPlan",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "TaskLinkPlan"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -838,6 +1450,10 @@
     "codeName" : "ThisMonthCompleteTaskChoice",
     "logicName" : "我本月完成的任务（下拉列表框）",
     "name" : "ThisMonthCompleteTaskChoice",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ThisMonthCompleteTaskChoice"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -845,6 +1461,10 @@
     "codeName" : "ThisWeekCompleteTask",
     "logicName" : "本周完成的任务(汇报)",
     "name" : "ThisWeekCompleteTask",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ThisWeekCompleteTask"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -852,6 +1472,10 @@
     "codeName" : "ThisWeekCompleteTaskChoice",
     "logicName" : "本周已完成任务(下拉框选择)",
     "name" : "ThisWeekCompleteTaskChoice",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ThisWeekCompleteTaskChoice"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -859,6 +1483,10 @@
     "codeName" : "ThisWeekCompleteTaskMobZS",
     "logicName" : "移动端本周已完成任务(汇报)",
     "name" : "ThisWeekCompleteTaskMobZS",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ThisWeekCompleteTaskMobZS"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -866,6 +1494,10 @@
     "codeName" : "ThisWeekCompleteTaskZS",
     "logicName" : "本周完成的任务(汇报)",
     "name" : "ThisWeekCompleteTaskZS",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ThisWeekCompleteTaskZS"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -873,6 +1505,10 @@
     "codeName" : "TodoListTask",
     "logicName" : "todo列表查询",
     "name" : "TodoListTask",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "TodoListTask"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -880,6 +1516,10 @@
     "codeName" : "TypeGroup",
     "logicName" : "任务类型分组",
     "name" : "TypeGroup",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "TypeGroup"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableGroup" : true,
@@ -888,6 +1528,10 @@
     "codeName" : "TypeGroupPlan",
     "logicName" : "任务类型分组（计划）",
     "name" : "TypeGroupPlan",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "TypeGroupPlan"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableGroup" : true,
@@ -14416,7 +15060,8 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
     },
-    "name" : "CREATE"
+    "name" : "CREATE",
+    "id" : "ZTProject__CREATE"
   }, {
     "logicName" : "删除",
     "mapPSDEOPPrivName" : "DELETE",
@@ -14424,7 +15069,8 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
     },
-    "name" : "DELETE"
+    "name" : "DELETE",
+    "id" : "ZTProject__DELETE"
   }, {
     "logicName" : "管理",
     "mapPSDEOPPrivName" : "MANAGE",
@@ -14432,7 +15078,8 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
     },
-    "name" : "MANAGE"
+    "name" : "MANAGE",
+    "id" : "ZTProject__MANAGE"
   }, {
     "logicName" : "读取",
     "mapPSDEOPPrivName" : "READ",
@@ -14440,7 +15087,8 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
     },
-    "name" : "READ"
+    "name" : "READ",
+    "id" : "ZTProject__READ"
   }, {
     "logicName" : "更新",
     "mapPSDEOPPrivName" : "UPDATE",
@@ -14448,7 +15096,8 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
     },
-    "name" : "UPDATE"
+    "name" : "UPDATE",
+    "id" : "ZTProject__UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Maintain.json",
@@ -14458,28 +15107,28 @@
       "name" : "Task_Maintain_CREATE",
       "getPSDEOPPriv" : {
         "modelref" : true,
-        "id" : "CREATE"
+        "id" : "ZTProject__CREATE"
       }
     }, {
       "dataAccessAction" : "DELETE",
       "name" : "Task_Maintain_DELETE",
       "getPSDEOPPriv" : {
         "modelref" : true,
-        "id" : "DELETE"
+        "id" : "ZTProject__DELETE"
       }
     }, {
       "dataAccessAction" : "READ",
       "name" : "Task_Maintain_READ",
       "getPSDEOPPriv" : {
         "modelref" : true,
-        "id" : "READ"
+        "id" : "ZTProject__READ"
       }
     }, {
       "dataAccessAction" : "UPDATE",
       "name" : "Task_Maintain_UPDATE",
       "getPSDEOPPriv" : {
         "modelref" : true,
-        "id" : "UPDATE"
+        "id" : "ZTProject__UPDATE"
       }
     } ],
     "roleTag" : "Task_Maintain",
@@ -14492,7 +15141,7 @@
       "name" : "Task_Read_READ",
       "getPSDEOPPriv" : {
         "modelref" : true,
-        "id" : "READ"
+        "id" : "ZTProject__READ"
       }
     } ],
     "roleTag" : "Task_Read",
@@ -14911,10 +15560,6 @@
     "virtual" : true
   } ],
   "name" : "ZT_TASK",
-  "getPSSysImage" : {
-    "glyph" : "xf0ae@FontAwesome",
-    "cssClass" : "fa fa-tasks"
-  },
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,
@@ -14942,7 +15587,5 @@
   "enableTempData" : true,
   "enableTempDataFront" : true,
   "logicValid" : true,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

@@ -85,30 +85,100 @@
     "userCat" : "CAT1"
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "((t1.objectType = 'project' and t1.objectID = #{srf.datacontext.project}) or (t1.objectType = 'task' and EXISTS(select 1 from zt_task t where t.deleted = '0' and t.project = #{srf.datacontext.project} and t.id = t1.objectID)) or (t1.objectType = 'doc' and EXISTS(select 1 from zt_doc t where t.deleted = '0' and t.project = #{srf.datacontext.project} and t.id = t1.objectID)) or (t1.objectType = 'build' and EXISTS(select 1 from zt_build t where t.deleted = '0' and t.project = #{srf.datacontext.project} and t.id = t1.objectID)) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "DocLibFile",
     "logicName" : "文件库查询",
     "name" : "DocLibFile",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "((t1.objectType = 'product' and t1.objectID = #{srf.datacontext.product}) or (t1.objectType = 'story' and EXISTS(select 1 from zt_story t where t.deleted = '0' and t.product = #{srf.datacontext.product} and t.id = t1.objectID)) or (t1.objectType = 'doc' and EXISTS(select 1 from zt_doc t where t.deleted = '0' and t.product = #{srf.datacontext.product} and t.id = t1.objectID)) or (t1.objectType = 'bug' and EXISTS(select 1 from zt_bug t where t.deleted = '0' and t.product = #{srf.datacontext.product} and t.id = t1.objectID)) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProductDocLibFile",
     "logicName" : "文件库查询",
     "name" : "ProductDocLibFile",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`OBJECTID` = ${srfdatacontext('srfparentkey','{\"defname\":\"OBJECTID\",\"dename\":\"ZT_FILE\"}')}  AND  t1.`OBJECTTYPE` =  ${srfdatacontext('objecttype','{\"defname\":\"OBJECTTYPE\",\"dename\":\"ZT_FILE\"}')}  AND  t1.`EXTRA` <> 'editor' )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Type",
     "logicName" : "动态(根据类型过滤)",
     "name" : "Type"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`OBJECTID` = ${srfdatacontext('objectid','{\"defname\":\"OBJECTID\",\"dename\":\"ZT_FILE\"}')}  AND  t1.`OBJECTTYPE` =  ${srfdatacontext('objecttype','{\"defname\":\"OBJECTTYPE\",\"dename\":\"ZT_FILE\"}')}  AND  t1.`EXTRA` <> 'editor' )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "TypeNotBySrfparentkey",
     "logicName" : "查询附件",
     "name" : "TypeNotBySrfparentkey",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -117,6 +187,10 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -124,24 +198,40 @@
     "codeName" : "DocLibFile",
     "logicName" : "文件库查询",
     "name" : "DocLibFile",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "DocLibFile"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProductDocLibFile",
     "logicName" : "文件库查询",
     "name" : "ProductDocLibFile",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProductDocLibFile"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "Type",
     "logicName" : "动态(根据类型过滤)",
     "name" : "Type",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Type"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "TypeNotBySrfparentkey",
     "logicName" : "查询附件",
     "name" : "TypeNotBySrfparentkey",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "TypeNotBySrfparentkey"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -1044,7 +1134,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : true,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

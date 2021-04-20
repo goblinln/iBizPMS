@@ -102,47 +102,113 @@
     "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "BianGengLineHistory",
     "logicName" : "项目立项变更线路操作历史记录",
     "name" : "BianGengLineHistory",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "customCode" : true,
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`OBJECTID` = ${srfdatacontext('srfparentkey','{\"defname\":\"OBJECTID\",\"dename\":\"ZT_ACTION\"}')} AND t1.`OBJECTTYPE` = ${srfdatacontext('objecttype','{\"defname\":\"OBJECTTYPE\",\"dename\":\"ZT_ACTION\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MobType",
     "logicName" : "动态(根据类型过滤)",
     "name" : "MobType",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.actor = #{srf.sessioncontext.srfloginname}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyTrends",
     "logicName" : "项目动态(我的)",
     "name" : "MyTrends",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`PRODUCT` LIKE  CONCAT('%,',${srfdatacontext('srfparentkey','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_ACTION\"}')},',%') )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProductTrends",
     "logicName" : "产品动态(产品相关所有)",
     "name" : "ProductTrends",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`PROJECT` = ${srfdatacontext('srfparentkey','{\"defname\":\"PROJECT\",\"dename\":\"ZT_ACTION\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProjectTrends",
     "logicName" : "项目动态(项目相关所有)",
     "name" : "ProjectTrends",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : " t1.actor = #{srf.sessioncontext.srfloginname}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "QueryUserYEAR",
     "logicName" : "查询用户使用年",
     "name" : "QueryUserYEAR",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`OBJECTID` = ${srfdatacontext('srfparentkey','{\"defname\":\"OBJECTID\",\"dename\":\"ZT_ACTION\"}')}  AND  t1.`OBJECTTYPE` =  ${srfdatacontext('objecttype','{\"defname\":\"OBJECTTYPE\",\"dename\":\"ZT_ACTION\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Type",
     "logicName" : "动态(根据类型过滤)",
     "name" : "Type",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -151,6 +217,10 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -158,12 +228,20 @@
     "codeName" : "MobType",
     "logicName" : "MobType",
     "name" : "MobType",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MobType"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "MyTrends",
     "logicName" : "项目动态(我的)",
     "name" : "MyTrends",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyTrends"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -175,24 +253,40 @@
       "codeName" : "Date"
     },
     "name" : "ProductTrends",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProductTrends"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectTrends",
     "logicName" : "项目动态(项目相关所有)",
     "name" : "ProjectTrends",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectTrends"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "QueryUserYEAR",
     "logicName" : "查询用户使用年",
     "name" : "QueryUserYEAR",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "QueryUserYEAR"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "Type",
     "logicName" : "Type",
     "name" : "Type",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Type"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -1562,7 +1656,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : false,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

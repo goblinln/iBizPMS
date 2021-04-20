@@ -81,32 +81,87 @@
     "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "(t1.id in(\n\tSELECT t.root from zt_team t\nWHERE\n\tt.account =  #{srf.sessioncontext.srfloginname}\n\tAND t.type = 'product' \n\t \n\t) or t1.acl = 'open' )\n\t",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.orgid = #{srf.sessioncontext.srforgid}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "customCode" : true,
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`STATUS` = 'normal' )",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "(t1.id IN (\nSELECT\n\tt.product \nFROM\n\tzt_projectproduct t \nWHERE\n\tt.project IN (\nSELECT\n\tt3.root \nFROM\n\tzt_team t3 \nWHERE\n\tt3.account = #{srf.sessioncontext.srfloginname} \n\tAND t3.type = 'project' \n\t) \n\t) or  t1.acl = 'open')",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "NoOpenProduct",
     "logicName" : "未关闭产品",
     "name" : "NoOpenProduct",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ProdctQuantiGird",
     "logicName" : "产品质量表",
     "name" : "ProdctQuantiGird",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ProductInputTable",
     "logicName" : "产品投入表",
     "name" : "ProductInputTable",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "Productcompletionstatistics",
     "logicName" : "产品完成统计表",
     "name" : "Productcompletionstatistics",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -125,6 +180,10 @@
       "codeName" : "Id"
     },
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -142,24 +201,40 @@
       "codeName" : "Id"
     },
     "name" : "NoOpenProduct",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "NoOpenProduct"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProdctQuantiGird",
     "logicName" : "产品质量表",
     "name" : "ProdctQuantiGird",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProdctQuantiGird"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProductInputTable",
     "logicName" : "产品投入表",
     "name" : "ProductInputTable",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProductInputTable"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "Productcompletionstatistics",
     "logicName" : "产品完成统计表",
     "name" : "Productcompletionstatistics",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Productcompletionstatistics"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -1688,7 +1763,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : true,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

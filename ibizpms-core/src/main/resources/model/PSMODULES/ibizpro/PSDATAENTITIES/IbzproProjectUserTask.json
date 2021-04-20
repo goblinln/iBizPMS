@@ -62,26 +62,61 @@
     "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "FIND_IN_SET(t1.task, ${srfdatacontext('tasks')})",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProjectDailyTask",
     "logicName" : "项目日报任务",
     "name" : "ProjectDailyTask",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "FIND_IN_SET(t1.task, ${srfdatacontext('tasks')})",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProjectMonthlyTask",
     "logicName" : "项目月报任务",
     "name" : "ProjectMonthlyTask",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "FIND_IN_SET(t1.task, ${srfdatacontext('tasks')})",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProjectWeeklyTask",
     "logicName" : "项目周报任务",
     "name" : "ProjectWeeklyTask",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -90,6 +125,10 @@
     "codeName" : "Default",
     "logicName" : "数据集",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -97,18 +136,30 @@
     "codeName" : "ProjectDailyTask",
     "logicName" : "项目日报任务",
     "name" : "ProjectDailyTask",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectDailyTask"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectMonthlyTask",
     "logicName" : "项目日报任务",
     "name" : "ProjectMonthlyTask",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectMonthlyTask"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectWeeklyTask",
     "logicName" : "项目周报任务",
     "name" : "ProjectWeeklyTask",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectWeeklyTask"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -683,7 +734,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : false,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

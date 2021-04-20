@@ -172,36 +172,69 @@
     "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t21.`ID` = ${srfwebcontext('srfparentkey','{\"defname\":\"ID\",\"dename\":\"ZT_TESTRESULT\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "CurTest",
     "logicName" : "当前测试步骤",
     "name" : "CurTest",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "customCode" : true,
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "Default1",
     "logicName" : "DEFAULT1",
     "name" : "DEFAULT1"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "Mob",
     "logicName" : "Mob",
     "name" : "Mob",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "Version",
     "logicName" : "版本",
     "name" : "Version",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "Versions",
     "logicName" : "版本1",
     "name" : "Versions",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -215,6 +248,10 @@
       "codeName" : "Id"
     },
     "name" : "CurTest",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "CurTest"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -222,6 +259,10 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true,
@@ -230,6 +271,10 @@
     "codeName" : "Default1",
     "logicName" : "DEFAULT1",
     "name" : "DEFAULT1",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default1"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -237,6 +282,10 @@
     "codeName" : "Mob",
     "logicName" : "Mob",
     "name" : "Mob",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Mob"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -244,6 +293,10 @@
     "codeName" : "Version",
     "logicName" : "版本",
     "name" : "Version",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Version"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -251,6 +304,10 @@
     "codeName" : "Versions",
     "logicName" : "版本1",
     "name" : "Versions",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Versions"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -1180,7 +1237,5 @@
   "enableTempData" : true,
   "enableTempDataFront" : true,
   "logicValid" : false,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

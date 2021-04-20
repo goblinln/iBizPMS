@@ -6,8 +6,8 @@
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog.json"
   },
-  "masterOrder" : -1,
-  "masterRS" : 0,
+  "masterOrder" : 100,
+  "masterRS" : 5,
   "minorCodeName" : "sysUpdateFeatures",
   "getMinorPSDataEntity" : {
     "modelref" : true,

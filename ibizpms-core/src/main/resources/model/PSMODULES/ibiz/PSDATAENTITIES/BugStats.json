@@ -62,52 +62,92 @@
     "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "BugCountInResolution",
     "logicName" : "Bug在每个解决方案的Bug数",
     "name" : "BugCountInResolution",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "BugResolvedBy",
     "logicName" : "Bug完成表",
     "name" : "BugResolvedBy",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "BugResolvedGird",
     "logicName" : "bug解决汇总表",
     "name" : "BugResolvedGird",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "BugassignedTo",
     "logicName" : "Bug指派表",
     "name" : "BugassignedTo",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "Default",
     "logicName" : "Bug创建表",
     "name" : "DEFAULT",
     "customCode" : true,
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ProductBugResolutionStats",
     "logicName" : "产品Bug解决方案汇总",
     "name" : "ProductBugResolutionStats",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ProductBugStatusSum",
     "logicName" : "产品Bug状态汇总",
     "name" : "ProductBugStatusSum",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ProductCreateBug",
     "logicName" : "产品创建bug占比",
     "name" : "ProductCreateBug",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ProjectBugStatusCount",
     "logicName" : "项目bug状态统计",
     "name" : "ProjectBugStatusCount",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -116,30 +156,50 @@
     "codeName" : "BugCountInResolution",
     "logicName" : "Bug在每个解决方案的Bug数",
     "name" : "BugCountInResolution",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "BugCountInResolution"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "BugResolvedBy",
     "logicName" : "Bug完成表",
     "name" : "BugResolvedBy",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "BugResolvedBy"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "BugResolvedGird",
     "logicName" : "bug解决汇总表",
     "name" : "BugResolvedGird",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "BugResolvedGird"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "BugassignedTo",
     "logicName" : "Bug指派表",
     "name" : "BugassignedTo",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "BugassignedTo"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "Default",
     "logicName" : "数据集",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -147,24 +207,40 @@
     "codeName" : "ProductBugResolutionStats",
     "logicName" : "产品Bug解决方案汇总",
     "name" : "ProductBugResolutionStats",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProductBugResolutionStats"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProductBugStatusSum",
     "logicName" : "产品Bug状态汇总",
     "name" : "ProductBugStatusSum",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProductBugStatusSum"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProductCreateBug",
     "logicName" : "产品创建bug占比",
     "name" : "ProductCreateBug",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProductCreateBug"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectBugStatusCount",
     "logicName" : "项目bug状态统计",
     "name" : "ProjectBugStatusCount",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectBugStatusCount"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -1699,7 +1775,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : false,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

@@ -62,26 +62,46 @@
     "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ProductDailyUserTaskStats",
     "logicName" : "产品日报用户任务统计",
     "name" : "ProductDailyUserTaskStats",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ProductMonthlyUserTaskStats",
     "logicName" : "产品月报用户任务统计",
     "name" : "ProductMonthlyUserTaskStats",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ProductWeeklyUserTaskStats",
     "logicName" : "产品周报用户任务统计",
     "name" : "ProductWeeklyUserTaskStats",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -90,6 +110,10 @@
     "codeName" : "Default",
     "logicName" : "数据集",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -97,18 +121,30 @@
     "codeName" : "ProductDailyUserTaskStats",
     "logicName" : "产品日报用户任务统计",
     "name" : "ProductDailyUserTaskStats",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProductDailyUserTaskStats"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProductMonthlyUserTaskStats",
     "logicName" : "产品月报用户任务统计",
     "name" : "ProductMonthlyUserTaskStats",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProductMonthlyUserTaskStats"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProductWeeklyUserTaskStats",
     "logicName" : "产品周报用户任务统计",
     "name" : "ProductWeeklyUserTaskStats",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProductWeeklyUserTaskStats"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -631,7 +667,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : false,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

@@ -139,27 +139,83 @@
     "name" : "sendMsgPreProcess"
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "((#{srf.datacontext.thisyear} = 'thisyear' and YEAR(t1.date) = year(now())) or #{srf.datacontext.thisyear} is null)",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`ACCOUNT` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_TODO\"}')}  or t1.`assignedTo` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_TODO\"}')}  or t1.`finishedBy` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_TODO\"}')}   )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "customCode" : true,
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`ACCOUNT` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_TODO\"}')}  or t1.`assignedTo` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_TODO\"}')}  or t1.`finishedBy` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_TODO\"}')}   )",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.`CYCLE` = 0",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyTodo",
     "logicName" : "我的待办",
     "name" : "MyTodo",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`ACCOUNT` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_TODO\"}')}  or t1.`assignedTo` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_TODO\"}')}  or t1.`finishedBy` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_TODO\"}')}   )",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.`CYCLE` = 0",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.date is not null",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyTodoPc",
     "logicName" : "我的待办",
     "name" : "MyTodoPc",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`ACCOUNT` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_TODO\"}')}  or t1.`assignedTo` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_TODO\"}')}  or t1.`finishedBy` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_TODO\"}')}   )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyUpcoming",
     "logicName" : "MyUpcoming",
     "name" : "MyUpcoming",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -168,6 +224,10 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -175,18 +235,30 @@
     "codeName" : "MyTodo",
     "logicName" : "我的待办",
     "name" : "MyTodo",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyTodo"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "MyTodoPc",
     "logicName" : "我的待办",
     "name" : "MyTodoPc",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyTodoPc"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "MyUpcoming",
     "logicName" : "MyUpcoming",
     "name" : "MyUpcoming",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyUpcoming"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -2336,7 +2408,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : false,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

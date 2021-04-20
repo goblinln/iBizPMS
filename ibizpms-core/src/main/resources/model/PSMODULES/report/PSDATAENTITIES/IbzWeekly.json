@@ -118,31 +118,74 @@
     "userCat" : "CAT1"
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "MyNotSubmit",
     "logicName" : "我的周报",
     "name" : "MyNotSubmit",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.issubmit = '1'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "(t1.REPORTTO = #{srf.sessioncontext.srfloginname} or FIND_IN_SET(#{srf.sessioncontext.srfloginname},t1.MAILTO))",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyWeekly",
     "logicName" : "我收到的周报",
     "name" : "MyWeekly",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`ISSUBMIT` = '1'  AND  t1.ACCOUNT in (select t.ACCOUNT from zt_team t where t.type = 'product' and t.root =${srfdatacontext('product')})  \nand YEARWEEK(t1.date,1) = YEARWEEK(${srfdatacontext('date')},1) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProductTeamMemberWeekly",
     "logicName" : "产品团队成员周报",
     "name" : "ProductTeamMemberWeekly",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`ISSUBMIT` = '1'  AND  t1.ACCOUNT in (select t.ACCOUNT from zt_team t where t.type = 'project' and t.root =${srfdatacontext('curproject')})  AND  (DATE_FORMAT(t1.date,'%Y-%m-%d') between DATE_FORMAT(${srfdatacontext('begindatestats')},'%Y-%m-%d') and DATE_FORMAT(${srfdatacontext('enddatestats')},'%Y-%m-%d'))  )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProjectWeekly",
     "logicName" : "项目周报",
     "name" : "ProjectWeekly",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -151,6 +194,10 @@
     "codeName" : "Default",
     "logicName" : "数据集",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -158,24 +205,40 @@
     "codeName" : "MyNotSubmit",
     "logicName" : "我的周报",
     "name" : "MyNotSubmit",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyNotSubmit"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "MyWeekly",
     "logicName" : "我收到的周报",
     "name" : "MyWeekly",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyWeekly"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProductTeamMemberWeekly",
     "logicName" : "产品团队成员周报",
     "name" : "ProductTeamMemberWeekly",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProductTeamMemberWeekly"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectWeekly",
     "logicName" : "项目周报",
     "name" : "ProjectWeekly",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectWeekly"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -1380,7 +1443,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : false,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

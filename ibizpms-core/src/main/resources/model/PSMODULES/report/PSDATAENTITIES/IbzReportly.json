@@ -80,26 +80,65 @@
     "userCat" : "CAT1"
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.account = #{srf.sessioncontext.srfloginname}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyAllReportly",
     "logicName" : "我所有的汇报",
     "name" : "MyAllReportly",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.issubmit = '1'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "(t1.REPORTTO = #{srf.sessioncontext.srfloginname} OR FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.MAILTO ))",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyReceived",
     "logicName" : "我收到的汇报",
     "name" : "MyReceived",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.account = #{srf.sessioncontext.srfloginname}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyReportlyMob",
     "logicName" : "我的未提交汇报",
     "name" : "MyReportlyMob",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -108,6 +147,10 @@
     "codeName" : "Default",
     "logicName" : "数据集",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -115,18 +158,30 @@
     "codeName" : "MyAllReportly",
     "logicName" : "我所有的汇报",
     "name" : "MyAllReportly",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyAllReportly"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "MyReceived",
     "logicName" : "我收到的汇报",
     "name" : "MyReceived",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyReceived"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "MyReportlyMob",
     "logicName" : "我的未提交汇报",
     "name" : "MyReportlyMob",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyReportlyMob"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -1034,7 +1089,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : false,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

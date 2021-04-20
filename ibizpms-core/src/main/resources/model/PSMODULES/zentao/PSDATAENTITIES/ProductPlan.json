@@ -235,52 +235,174 @@
     "userCat" : "CAT1"
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ChildPlan",
     "logicName" : "子计划",
     "name" : "ChildPlan",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( ( t1.`PARENT` <= 0 ) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "DefaultParent",
     "logicName" : "默认查询",
     "name" : "DefaultParent"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( ( t1.`PRODUCT` = ${srfdatacontext('product','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_PRODUCTPLAN\"}')}  OR  t1.`PRODUCT` = ${srfdatacontext('products','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_PRODUCTPLAN\"}')} ) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "GetList",
     "logicName" : "获取产品计划列表",
     "name" : "GetList"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "PlanCodeList",
     "logicName" : "计划（代码表）",
     "name" : "PlanCodeList",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( ( t1.`PARENT` <= 0 ) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "PlanTasks",
     "logicName" : "项目计划任务（项目管理-项目计划）",
     "name" : "PlanTasks",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`PRODUCT` = ${srfwebcontext('product','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_PRODUCTPLAN\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProjectApp",
     "logicName" : "项目立项",
     "name" : "ProjectApp"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t21.`PROJECT` = \t${srfdatacontext('srfparentkey','{\"defname\":\"PROJECT\",\"dename\":\"ZT_PROJECTPRODUCT\"}')}\n or t1.parent in (\tSELECT GROUP_CONCAT(t1.id)\nFROM\n\t`zt_productplan` t1\n\tLEFT JOIN zt_productplan t11 ON t1.PARENT = t11.ID\n\tLEFT JOIN zt_product t31 ON t1.product = t31.id \n\tLEFT JOIN zt_projectproduct t21 ON t31.id = t21.product and t1.id = t21.plan\n\t\n\twhere t1.deleted = '0' and ( t21.`PROJECT` = \n${srfdatacontext('srfparentkey','{\"defname\":\"PROJECT\",\"dename\":\"ZT_PROJECTPRODUCT\"}')}\n ) ) )",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProjectPlan",
     "logicName" : "项目计划列表",
     "name" : "ProjectPlan",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.parent <= '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "RootPlan",
     "logicName" : "根计划",
     "name" : "RootPlan",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.product in (select t.product from zt_projectproduct t where t.project =#{srf.webcontext.project} ) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "TaskPlan",
     "logicName" : "任务计划",
     "name" : "TaskPlan"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -289,12 +411,20 @@
     "codeName" : "ChildPlan",
     "logicName" : "子计划",
     "name" : "ChildPlan",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ChildPlan"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "CurProductPlan",
     "logicName" : "CurProductPlan",
     "name" : "CurProductPlan",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "GetList"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -306,6 +436,10 @@
       "codeName" : "Begin"
     },
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -313,42 +447,70 @@
     "codeName" : "DefaultParent",
     "logicName" : "默认查询",
     "name" : "DefaultParent",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "DefaultParent"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "PlanCodeList",
     "logicName" : "计划（代码表）",
     "name" : "PlanCodeList",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "PlanCodeList"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "PlanTasks",
     "logicName" : "项目计划任务（项目管理-项目计划）",
     "name" : "PlanTasks",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "PlanTasks"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectApp",
     "logicName" : "项目立项",
     "name" : "ProjectApp",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectApp"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectPlan",
     "logicName" : "项目计划列表",
     "name" : "ProjectPlan",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectPlan"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "RootPlan",
     "logicName" : "跟计划",
     "name" : "RootPlan",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "RootPlan"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "TaskPlan",
     "logicName" : "任务计划",
     "name" : "TaskPlan",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "TaskPlan"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -2573,7 +2735,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : true,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

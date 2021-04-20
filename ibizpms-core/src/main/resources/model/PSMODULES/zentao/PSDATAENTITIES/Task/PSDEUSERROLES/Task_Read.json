@@ -6,7 +6,7 @@
     "name" : "Task_Read_READ",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProject__READ"
     }
   } ],
   "roleTag" : "Task_Read",

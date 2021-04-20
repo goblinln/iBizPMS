@@ -73,62 +73,142 @@
     "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "((t1.acl = 'private' and t1.id in (select t3.root from zt_team t3 where t3.account = #{srf.sessioncontext.srfloginname}  and t3.type = 'project')) or t1.acl = 'open')",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "customCode" : true,
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`STATUS` <> 'closed' )",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "((t1.acl = 'private' and t1.id in (select t3.root from zt_team t3 where t3.account = #{srf.sessioncontext.srfloginname}  and t3.type = 'project')) or t1.acl = 'open')",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "NoOpenProduct",
     "logicName" : "未关闭产品",
     "name" : "NOOpenProduct",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ProjectBugType",
     "logicName" : "项目bug类型",
     "name" : "ProjectBugType",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProjectInputStats",
     "logicName" : "项目投入统计",
     "name" : "ProjectInputStats",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ProjectProgress",
     "logicName" : "项目进度",
     "name" : "ProjectProgress",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ProjectQuality",
     "logicName" : "项目质量表查询",
     "name" : "ProjectQuality",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ProjectStoryStageStats",
     "logicName" : "项目需求阶段统计",
     "name" : "ProjectStoryStageStats",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ProjectStoryStatusStats",
     "logicName" : "项目需求状态统计",
     "name" : "ProjectStoryStatusStats",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ProjectTaskCountByTaskStatus",
     "logicName" : "项目任务统计(任务状态)",
     "name" : "ProjectTaskCountByTaskStatus",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ProjectTaskCountByType",
     "logicName" : "项目任务类型统计",
     "name" : "ProjectTaskCountByType",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "TaskTime",
     "logicName" : "任务工时消耗剩余查询",
     "name" : "TASKTIME",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -147,6 +227,10 @@
       "codeName" : "Id"
     },
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -164,60 +248,100 @@
       "codeName" : "Id"
     },
     "name" : "NOOpenProduct",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "NoOpenProduct"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectBugType",
     "logicName" : "项目bug类型统计",
     "name" : "ProjectBugType",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectBugType"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectInputStats",
     "logicName" : "项目投入统计",
     "name" : "ProjectInputStats",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectInputStats"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectProgress",
     "logicName" : "项目进度",
     "name" : "ProjectProgress",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectProgress"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectQuality",
     "logicName" : "项目质量",
     "name" : "ProjectQuality",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectQuality"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectStoryStageStats",
     "logicName" : "项目需求阶段统计",
     "name" : "ProjectStoryStageStats",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectStoryStageStats"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectStoryStatusStats",
     "logicName" : "项目需求状态统计",
     "name" : "ProjectStoryStatusStats",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectStoryStatusStats"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectTaskCountByTaskStatus",
     "logicName" : "项目任务统计(任务状态)",
     "name" : "ProjectTaskCountByTaskStatus",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectTaskCountByTaskStatus"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectTaskCountByType",
     "logicName" : "项目任务类型统计",
     "name" : "ProjectTaskCountByType",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectTaskCountByType"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "TaskTime",
     "logicName" : "任务工时消耗剩余查询",
     "name" : "TASKTIME",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "TaskTime"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -3010,7 +3134,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : true,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

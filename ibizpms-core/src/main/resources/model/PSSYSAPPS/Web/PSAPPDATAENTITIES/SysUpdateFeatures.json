@@ -410,7 +410,7 @@
   } ],
   "codeName" : "SysUpdateFeatures",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysUpdateFeatures.json",
   "enableUIActions" : 15,
   "logicName" : "系统更新功能",

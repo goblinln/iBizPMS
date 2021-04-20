@@ -109,7 +109,7 @@ public class IbzproProductUserTaskRuntime extends cn.ibizlab.pms.core.runtime.Sy
     public IbzproProductUserTask selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
         Page<IbzproProductUserTask> domains = ibzproproductusertaskService.searchDefault((IbzproProductUserTaskSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
+        if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
     }

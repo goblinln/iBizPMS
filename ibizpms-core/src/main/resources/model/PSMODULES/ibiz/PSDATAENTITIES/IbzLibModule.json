@@ -84,15 +84,37 @@
     "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`TYPE` = 'caselib' )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`TYPE` = 'caselib'  AND  ( t1.`PARENT` IS NULL  OR  t1.`PARENT` = 0 ) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Root_NoBranch",
     "logicName" : "无枝叶",
     "name" : "Root_NoBranch"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -101,6 +123,10 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -108,6 +134,10 @@
     "codeName" : "Root_NoBranch",
     "logicName" : "无枝叶",
     "name" : "Root_NoBranch",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Root_NoBranch"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -1366,7 +1396,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : false,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

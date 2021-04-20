@@ -22,10 +22,14 @@ public interface ProductMapper extends BaseMapper<Product> {
     Page<Product> searchAllList(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     Page<Product> searchAllProduct(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     Page<Product> searchCheckNameOrCode(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
+    Page<Product> searchCurDefault(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     Page<Product> searchCurProject(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     Page<Product> searchCurUer(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     Page<Product> searchDefault(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
+    Page<Product> searchDeveloperQuery(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     Page<Product> searchESBulk(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
+    Page<Product> searchOpenQuery(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
+    Page<Product> searchProductManagerQuery(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     Page<Product> searchProductPM(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     Page<Product> searchProductTeam(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     Page<Product> searchStoryCurProject(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);

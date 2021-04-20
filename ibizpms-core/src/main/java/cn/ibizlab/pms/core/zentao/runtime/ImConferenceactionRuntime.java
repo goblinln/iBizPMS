@@ -109,7 +109,7 @@ public class ImConferenceactionRuntime extends cn.ibizlab.pms.core.runtime.Syste
     public ImConferenceaction selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
         Page<ImConferenceaction> domains = imconferenceactionService.searchDefault((ImConferenceactionSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
+        if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
     }

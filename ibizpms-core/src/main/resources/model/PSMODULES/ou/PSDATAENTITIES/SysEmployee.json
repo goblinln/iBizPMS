@@ -62,65 +62,136 @@
     "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "BugUser",
     "logicName" : "Bug用户",
     "name" : "BugUser",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ContActList",
     "logicName" : "联系人用户",
     "name" : "ContActList"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( (t1.account = ${srfwebcontext('account','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_USER\"}')} or t1.account not in (select t.account from zt_team t where t.type = 'project' and t.root = ${srfwebcontext('srfparentkey','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_USER\"}')})) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProductTeamM",
     "logicName" : "项目团队管理",
     "name" : "ProductTeamM"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( (t1.account = ${srfwebcontext('account','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_USER\"}')} or t1.account not in (select t.account from zt_team t where t.type = 'project' and t.root = ${srfwebcontext('srfparentkey','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_USER\"}')})) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProjectTeamM",
     "logicName" : "项目团队管理",
     "name" : "ProjectTeamM"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( (t1.account = ${srfwebcontext('account','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_USER\"}')} or t1.account not in (select t.account from zt_team t where t.type = 'project' and t.root = ${srfwebcontext('srfparentkey','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_USER\"}')})) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProjectTeamMProduct",
     "logicName" : "项目团队管理",
     "name" : "ProjectTeamMProduct"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ProjectTeamTaskUserTemp",
     "logicName" : "项目团队成员(临时)",
     "name" : "ProjectTeamTaskUserTemp",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ProjectTeamUser",
     "logicName" : "项目团队成员",
     "name" : "ProjectTeamUser",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ProjectTeamUserTask",
     "logicName" : "项目团队成员",
     "name" : "ProjectTeamUserTask",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ProjectteamPk",
     "logicName" : "项目团队成员选择",
     "name" : "ProjectteamPk"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "StoryProductTeamPK",
     "logicName" : "产品团队成员选择",
     "name" : "StoryProductTeamChoice"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "TaskMTeam",
     "logicName" : "任务多人团队",
     "name" : "TaskMTeam",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "TaskTeam",
     "logicName" : "任务团队",
     "name" : "TASKTEAM",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -129,18 +200,30 @@
     "codeName" : "BugUser",
     "logicName" : "Bug用户",
     "name" : "BugUser",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "BugUser"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ContActList",
     "logicName" : "联系人用户",
     "name" : "ContActList",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ContActList"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "Default",
     "logicName" : "数据集",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -148,60 +231,100 @@
     "codeName" : "ProductTeamM",
     "logicName" : "项目团队管理",
     "name" : "ProductTeamM",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProductTeamM"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectTeamM",
     "logicName" : "项目团队管理",
     "name" : "ProjectTeamM",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectTeamM"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectTeamMProduct",
     "logicName" : "项目团队管理",
     "name" : "ProjectTeamMProduct",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectTeamMProduct"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectTeamTaskUserTemp",
     "logicName" : "项目团队成员(临时)",
     "name" : "ProjectTeamTaskUserTemp",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectTeamTaskUserTemp"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectTeamUser",
     "logicName" : "项目团队成员",
     "name" : "ProjectTeamUser",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectTeamUser"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectTeamUserTask",
     "logicName" : "项目团队成员",
     "name" : "ProjectTeamUserTask",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectTeamUserTask"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectteamPk",
     "logicName" : "项目团队成员选择",
     "name" : "ProjectteamPk",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectteamPk"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "StoryProductTeamPK",
     "logicName" : "产品团队成员选择",
     "name" : "StoryProductTeamChoice",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "StoryProductTeamPK"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "TaskMTeam",
     "logicName" : "任务多人团队",
     "name" : "TaskMTeam",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "TaskMTeam"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "TaskTeam",
     "logicName" : "数据查询2",
     "name" : "TASKTEAM",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "TaskTeam"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -1842,7 +1965,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : false,
   "logicValid" : false,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

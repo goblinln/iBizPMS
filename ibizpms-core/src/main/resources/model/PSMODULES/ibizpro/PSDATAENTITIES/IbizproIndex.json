@@ -73,12 +73,33 @@
     "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.orgid = #{srf.sessioncontext.srforgid}",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "((t1.acl = 'open') or (FIND_IN_SET(#{srf.sessioncontext.srfloginname}, t1.acllist)) or (EXISTS(select 1 from zt_team t where t.type = 'project' and t.account = #{srf.sessioncontext.srfloginname} and FIND_IN_SET(t.root, t1.project))))",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
     "customCode" : true,
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -87,6 +108,10 @@
     "codeName" : "Default",
     "logicName" : "数据集",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -94,6 +119,10 @@
     "codeName" : "ESquery",
     "logicName" : "全文检索",
     "name" : "ESquery",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -1082,7 +1111,6 @@
   "enableSQLStorage" : true,
   "logicValid" : false,
   "subSysAsCloud" : false,
-  "subSysDE" : false,
   "virtual" : true,
   "getUserParam" : {
     "elasticsearch" : ""

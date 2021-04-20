@@ -76,15 +76,46 @@
     "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( ( t1.`TYPE` = 'public'  OR  ( t1.`TYPE` = 'private'  AND  t1.`ADDEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ADDEDBY\",\"dename\":\"ZT_TESTSUITE\"}')} ) )  AND  t1.`PRODUCT` = ${srfwebcontext('srfparentkey','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_TESTSUITE\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "PublicTestSuite",
     "logicName" : "公开套件",
     "name" : "PublicTestSuite"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -93,6 +124,10 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -100,6 +135,10 @@
     "codeName" : "PublicTestSuite",
     "logicName" : "公开套件",
     "name" : "PublicTestSuite",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "PublicTestSuite"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -938,10 +977,6 @@
     "removeOrder" : 0
   } ],
   "name" : "ZT_TESTSUITE",
-  "getPSSysImage" : {
-    "glyph" : "xf0f2@FontAwesome",
-    "cssClass" : "fa fa-suitcase"
-  },
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,
@@ -964,7 +999,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : true,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

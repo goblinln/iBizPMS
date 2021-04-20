@@ -109,7 +109,7 @@ public class IbzPlanTempletRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
     public IbzPlanTemplet selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
         Page<IbzPlanTemplet> domains = ibzplantempletService.searchDefault((IbzPlanTempletSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
+        if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
     }

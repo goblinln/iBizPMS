@@ -53,6 +53,9 @@ function getLocaleResourceBase(){
 		'activestorycnt': commonLogic.appcommonhandle("激活需求数",null),
 		'linename': commonLogic.appcommonhandle("产品线",null),
 		'line': commonLogic.appcommonhandle("产品线",null),
+		'updateman': commonLogic.appcommonhandle("更新人",null),
+		'createman': commonLogic.appcommonhandle("建立人",null),
+		'updatedate': commonLogic.appcommonhandle("更新时间",null),
 	},
 		views: {
 			'testtabexpview': {
@@ -165,6 +168,7 @@ function getLocaleResourceBase(){
 				'druipart1': commonLogic.appcommonhandle("",null), 
 				'group1': commonLogic.appcommonhandle("基本信息",null), 
 				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
+				'srfupdatedate': commonLogic.appcommonhandle("更新时间",null), 
 				'srforikey': commonLogic.appcommonhandle("",null), 
 				'srfkey': commonLogic.appcommonhandle("编号",null), 
 				'srfmajortext': commonLogic.appcommonhandle("产品名称",null), 
@@ -186,6 +190,7 @@ function getLocaleResourceBase(){
 				'grouppanel1': commonLogic.appcommonhandle("分组面板",null), 
 				'group1': commonLogic.appcommonhandle("product基本信息",null), 
 				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
+				'srfupdatedate': commonLogic.appcommonhandle("更新时间",null), 
 				'srforikey': commonLogic.appcommonhandle("",null), 
 				'srfkey': commonLogic.appcommonhandle("编号",null), 
 				'srfmajortext': commonLogic.appcommonhandle("产品名称",null), 
@@ -219,6 +224,7 @@ function getLocaleResourceBase(){
 				'grouppanel3': commonLogic.appcommonhandle("基本信息",null), 
 				'grouppanel4': commonLogic.appcommonhandle("其他信息",null), 
 				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
+				'srfupdatedate': commonLogic.appcommonhandle("更新时间",null), 
 				'srforikey': commonLogic.appcommonhandle("",null), 
 				'srfkey': commonLogic.appcommonhandle("编号",null), 
 				'srfmajortext': commonLogic.appcommonhandle("产品名称",null), 
@@ -262,6 +268,7 @@ function getLocaleResourceBase(){
 				'grouppanel1': commonLogic.appcommonhandle("分组面板",null), 
 				'group1': commonLogic.appcommonhandle("product基本信息",null), 
 				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
+				'srfupdatedate': commonLogic.appcommonhandle("更新时间",null), 
 				'srforikey': commonLogic.appcommonhandle("",null), 
 				'srfkey': commonLogic.appcommonhandle("编号",null), 
 				'srfmajortext': commonLogic.appcommonhandle("产品名称",null), 
@@ -290,6 +297,7 @@ function getLocaleResourceBase(){
 			details: {
 				'rawitem1': commonLogic.appcommonhandle("",null), 
 				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
+				'srfupdatedate': commonLogic.appcommonhandle("更新时间",null), 
 				'srforikey': commonLogic.appcommonhandle("",null), 
 				'srfkey': commonLogic.appcommonhandle("编号",null), 
 				'srfmajortext': commonLogic.appcommonhandle("产品名称",null), 
@@ -310,6 +318,7 @@ function getLocaleResourceBase(){
 				'grouppanel1': commonLogic.appcommonhandle("分组面板",null), 
 				'group1': commonLogic.appcommonhandle("product基本信息",null), 
 				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
+				'srfupdatedate': commonLogic.appcommonhandle("更新时间",null), 
 				'srforikey': commonLogic.appcommonhandle("",null), 
 				'srfkey': commonLogic.appcommonhandle("编号",null), 
 				'srfmajortext': commonLogic.appcommonhandle("产品名称",null), 
@@ -337,6 +346,7 @@ function getLocaleResourceBase(){
 			details: {
 				'rawitem1': commonLogic.appcommonhandle("",null), 
 				'formpage1': commonLogic.appcommonhandle("表单分页",null), 
+				'srfupdatedate': commonLogic.appcommonhandle("更新时间",null), 
 				'srforikey': commonLogic.appcommonhandle("",null), 
 				'srfkey': commonLogic.appcommonhandle("编号",null), 
 				'srfmajortext': commonLogic.appcommonhandle("产品名称",null), 
@@ -353,6 +363,7 @@ function getLocaleResourceBase(){
 			details: {
 				'grouppanel1': commonLogic.appcommonhandle("分组面板",null), 
 				'formpage1': commonLogic.appcommonhandle("表单分页",null), 
+				'srfupdatedate': commonLogic.appcommonhandle("更新时间",null), 
 				'srforikey': commonLogic.appcommonhandle("",null), 
 				'srfkey': commonLogic.appcommonhandle("编号",null), 
 				'srfmajortext': commonLogic.appcommonhandle("产品名称",null), 

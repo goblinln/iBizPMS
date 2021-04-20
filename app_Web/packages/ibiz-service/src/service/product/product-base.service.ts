@@ -90,6 +90,10 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return this.condCache.get('checkNameOrCode');
     }
 
+    protected getCurDefaultCond() {
+        return this.condCache.get('curDefault');
+    }
+
     protected getCurProjectCond() {
         return this.condCache.get('curProject');
     }
@@ -110,8 +114,44 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return this.condCache.get('default');
     }
 
+    protected getDeveloperQueryCond() {
+        if (!this.condCache.has('developerQuery')) {
+            const strCond: any[] = ['AND'];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('developerQuery', cond);
+            }
+        }
+        return this.condCache.get('developerQuery');
+    }
+
     protected getESBulkCond() {
         return this.condCache.get('eSBulk');
+    }
+
+    protected getOpenQueryCond() {
+        if (!this.condCache.has('openQuery')) {
+            const strCond: any[] = ['AND', ['EQ', 'ACL','open']];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('openQuery', cond);
+            }
+        }
+        return this.condCache.get('openQuery');
+    }
+
+    protected getProductManagerQueryCond() {
+        if (!this.condCache.has('productManagerQuery')) {
+            const strCond: any[] = ['AND', ['AND', ['EQ', 'ACL','private'], ['EQ', 'CREATEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('productManagerQuery', cond);
+            }
+        }
+        return this.condCache.get('productManagerQuery');
     }
 
     protected getProductPMCond() {
@@ -120,6 +160,10 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
 
     protected getProductTeamCond() {
         return this.condCache.get('productTeam');
+    }
+
+    protected getSimpleCond() {
+        return this.condCache.get('simple');
     }
 
     protected getStoryCurProjectCond() {
@@ -296,6 +340,17 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return this.http.post(`/products/fetchchecknameorcode`, _data);
     }
     /**
+     * FetchCurDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async FetchCurDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/fetchcurdefault`, _data);
+    }
+    /**
      * FetchCurProject
      *
      * @param {*} [_context={}]
@@ -338,6 +393,28 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      */
     async FetchESBulk(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/products/fetchesbulk`, _data);
+    }
+    /**
+     * FetchOpenQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async FetchOpenQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/fetchopenquery`, _data);
+    }
+    /**
+     * FetchProductManagerQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async FetchProductManagerQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/fetchproductmanagerquery`, _data);
     }
     /**
      * FetchProductPM

@@ -106,34 +106,125 @@
     "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`TYPE` = 'story' )",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "FIND_IN_SET (${srfdatacontext('srfparentkey','{\"defname\":\"ID\",\"dename\":\"ZT_PRODUCTMODULE\"}')}, t1.`PATH`)",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ByPath",
     "logicName" : "BYPATH",
     "name" : "BYPATH",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`TYPE` = 'story'  AND  t1.`DELETED` = '0' )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.type = 'story'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.id <> #{srf.webcontext.id} and find_in_set(#{srf.webcontext.id},t1.path) = 0",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ParentModule",
     "logicName" : "父模块",
     "name" : "ParentModule",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`TYPE` = 'story'  AND  ( t1.`PARENT` IS NULL  OR  t1.`PARENT` = 0 ) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Root",
     "logicName" : "根模块",
     "name" : "ROOT"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`TYPE` = 'story'  AND  t1.`BRANCH` = 0  AND  ( t1.`PARENT` IS NULL  OR  t1.`PARENT` = 0 ) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Root_NoBranch",
     "logicName" : "根模块_无分支",
     "name" : "Root_NoBranch"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`TYPE` = 'story'  AND  t1.`DELETED` = '0' )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "TestModule",
     "logicName" : "TestModule",
     "name" : "TestModule",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -142,12 +233,20 @@
     "codeName" : "ByPath",
     "logicName" : "BYPATH",
     "name" : "BYPATH",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ByPath"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -155,24 +254,40 @@
     "codeName" : "ParentModule",
     "logicName" : "父模块",
     "name" : "ParentModule",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ParentModule"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "Root",
     "logicName" : "根模块",
     "name" : "ROOT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Root"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "Root_NoBranch",
     "logicName" : "根模块_无分支",
     "name" : "Root_NoBranch",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Root_NoBranch"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "TestModule",
     "logicName" : "TestModule",
     "name" : "TestModule",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "TestModule"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -1468,7 +1583,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : true,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

@@ -117,61 +117,191 @@
     "name" : "UnCollect"
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ChildDocLibDoc",
     "logicName" : "文档库文档（子库）",
     "name" : "ChildDocLibDoc",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "customCode" : true,
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.module = (case when ${srfdatacontext('srfparentkey','{\"defname\":\"ROOT\",\"dename\":\"ZT_MODULE\"}')} is null then '0' else \n${srfdatacontext('srfparentkey','{\"defname\":\"ROOT\",\"dename\":\"ZT_MODULE\"}')} end\n)\n",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "DocLibAndDoc",
     "logicName" : "文档库文档",
     "name" : "DocLibAndDoc",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.module = (case when ${srfdatacontext('parent','{\"defname\":\"ROOT\",\"dename\":\"ZT_MODULE\"}')} is null then '0' else \n${srfdatacontext('parent','{\"defname\":\"ROOT\",\"dename\":\"ZT_MODULE\"}')} end\n)\n",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "DocLibDoc",
     "logicName" : "文档库文档",
     "name" : "DocLibDoc",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.module = ${srfdatacontext('id','{\"defname\":\"ROOT\",\"dename\":\"ZT_MODULE\"}')}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "DocModuleDoc",
     "logicName" : "文档库分类文档",
     "name" : "DocModuleDoc",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "DocStatus",
     "logicName" : "文档统计",
     "name" : "DocStatus",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`MODULE` = ${srfwebcontext('srfparentkey','{\"defname\":\"MODULE\",\"dename\":\"ZT_DOC\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ModuleDocChild",
     "logicName" : "文件夹文档（子目录）",
     "name" : "ModuleDocChild"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "MyFavourite",
     "logicName" : "我的收藏",
     "name" : "MYFAVOURITE",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "FIND_IN_SET(#{srf.sessioncontext.srfloginname}, t1.collector ) > 0",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyFavouritesOnlyDoc",
     "logicName" : "我的收藏",
     "name" : "MyFavouritesOnlyDoc",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.module = ${srfdatacontext('srfparentkey','{\"defname\":\"ROOT\",\"dename\":\"ZT_MODULE\"}')}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "NotRootDoc",
     "logicName" : "子目录文档",
     "name" : "NotRootDoc",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.module = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.lib = ${srfdatacontext('srfparentkey','{\"defname\":\"ROOT\",\"dename\":\"ZT_MODULE\"}')}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "RootDoc",
     "logicName" : "根目录文档",
     "name" : "RootDoc",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -180,12 +310,20 @@
     "codeName" : "ChildDocLibDoc",
     "logicName" : "文档库文档（子库）",
     "name" : "ChildDocLibDoc",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ChildDocLibDoc"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -193,54 +331,90 @@
     "codeName" : "DocLibAndDoc",
     "logicName" : "文档库文档",
     "name" : "DocLibAndDoc",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "DocLibAndDoc"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "DocLibDoc",
     "logicName" : "文档库文档",
     "name" : "DocLibDoc",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "DocLibDoc"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "DocModuleDoc",
     "logicName" : "文档库分类文档",
     "name" : "DocModuleDoc",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "DocModuleDoc"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "DocStatus",
     "logicName" : "文档统计",
     "name" : "DocStatus",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "DocStatus"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ModuleDocChild",
     "logicName" : "文件夹文档（子目录）",
     "name" : "ModuleDocChild",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ModuleDocChild"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "MyFavourite",
     "logicName" : "我的收藏",
     "name" : "MYFAVOURITE",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyFavourite"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "MyFavouritesOnlyDoc",
     "logicName" : "我的收藏",
     "name" : "MyFavouritesOnlyDoc",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyFavouritesOnlyDoc"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "NotRootDoc",
     "logicName" : "子目录文档",
     "name" : "NotRootDoc",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "NotRootDoc"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "RootDoc",
     "logicName" : "根目录文档",
     "name" : "RootDoc",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "RootDoc"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -2542,7 +2716,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : true,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

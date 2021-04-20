@@ -71,21 +71,56 @@
     "userCat" : "CAT1"
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( ( t1.`PRODUCT` = ${srfwebcontext('product','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_BRANCH\"}')}  OR  t1.`PRODUCT` = ${srfdatacontext('product','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_BRANCH\"}')}  OR  t1.`PRODUCT` = ${srfdatacontext('products','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_BRANCH\"}')}  or t1.`product` is null) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "CurProduct",
     "logicName" : "CurProduct",
     "name" : "CurProduct",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "DefaultBranch",
     "logicName" : "DefaultBranch",
     "name" : "DefaultBranch",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -94,6 +129,10 @@
     "codeName" : "CurProduct",
     "logicName" : "CurProduct",
     "name" : "CurProduct",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "CurProduct"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -105,6 +144,10 @@
       "codeName" : "Order"
     },
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -864,10 +907,6 @@
     "removeOrder" : 0
   } ],
   "name" : "ZT_BRANCH",
-  "getPSSysImage" : {
-    "glyph" : "xf126@FontAwesome",
-    "cssClass" : "fa fa-code-fork"
-  },
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,
@@ -890,7 +929,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : true,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

@@ -77,39 +77,143 @@
     "name" : "SyncAccount"
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "(${srfdatacontext('project','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')} is null or ${srfdatacontext('project','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')} = '0' or t1.account in (select tt.account from zt_team tt where tt.type = 'project' and tt.root = ${srfdatacontext('project','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')}))",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "BugUser",
     "logicName" : "Bug用户",
     "name" : "BugUser",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( ( t1.`ACCOUNT` = 'account'  OR  t1.`MOBILE` = 'mobile'  OR  t1.`EMAIL` = 'email'  OR  t1.`COMMITER` = 'commiter' ) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "GetByLogin",
     "logicName" : "账户获取登录名",
     "name" : "getByLogin"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( (t1.account = ${srfwebcontext('account','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_USER\"}')} or t1.account not in (select t.account from zt_team t where t.type = 'project' and t.root = ${srfwebcontext('srfparentkey','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_USER\"}')})) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProjectTeamM",
     "logicName" : "项目团队管理",
     "name" : "ProjectTeamM"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.`account` in (select t.`account` from zt_team t where t.`type` = 'project' and t.`root` = ${srfdatacontext('project','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')})",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.`account` not in(select t2.`account` from zt_user t2 where FIND_IN_SET(t2.`account`, ${srfdatacontext('account','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')}))",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProjectTeamUser",
     "logicName" : "项目团队成员",
     "name" : "ProjectTeamUser",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.`account` in (select t.`account` from zt_team t where t.`type` = 'project' and t.`root` = (select tt.`project` from zt_task tt where tt.`id` = ${srfdatacontext('srfparentkey','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')}))",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.`account` not in(select t2.`account` from zt_user t2 where FIND_IN_SET(t2.`account`, ${srfdatacontext('account','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')}))",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProjectTeamUserTask",
     "logicName" : "项目团队成员",
     "name" : "ProjectTeamUserTask",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "(t1.`account` in (select t.`account` from zt_team t where t.`type` = 'task' and ${srfdatacontext('multiple','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')} = '1'  and t.`root` = ${srfdatacontext('id','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')}) or \nt1.`account` in (select t.`account` from zt_team t where t.`type` = 'project' and ${srfdatacontext('multiple','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')} = '0'  and t.`root` = (select tt.`project` from zt_task tt where tt.`id` = ${srfdatacontext('id','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')}))\n)",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "TaskTeam",
     "logicName" : "TASKTEAM",
     "name" : "TASKTEAM",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -118,12 +222,20 @@
     "codeName" : "BugUser",
     "logicName" : "Bug用户",
     "name" : "BugUser",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "BugUser"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -131,30 +243,50 @@
     "codeName" : "GetByCommiter",
     "logicName" : "根据源代码账户获取登录名",
     "name" : "getByCommiter",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "GetByLogin"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectTeamM",
     "logicName" : "项目团队管理",
     "name" : "ProjectTeamM",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectTeamM"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectTeamUser",
     "logicName" : "项目团队成员",
     "name" : "ProjectTeamUser",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectTeamUser"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ProjectTeamUserTask",
     "logicName" : "项目团队成员",
     "name" : "ProjectTeamUserTask",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectTeamUserTask"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "TaskTeam",
     "logicName" : "TASKTEAM",
     "name" : "TASKTEAM",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "TaskTeam"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -1729,7 +1861,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : true,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

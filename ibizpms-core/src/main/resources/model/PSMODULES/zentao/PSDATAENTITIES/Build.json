@@ -98,34 +98,113 @@
     "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`PRODUCT` = ${srfdatacontext('bugproduct','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_BUILD\"}')}  OR  t1.`PRODUCT` = ${srfwebcontext('bugproduct','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_BUILD\"}')} \n or t1.`PRODUCT` is null)",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`PROJECT` = ${srfdatacontext('bugproject','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_BUILD\"}')}  \n or t1.`PROJECT` is null or ${srfdatacontext('bugproject','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_BUILD\"}')} is null)",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "BugProductBuild",
     "logicName" : "Bug产品版本",
     "name" : "BugProductBuild",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( ( t1.`PRODUCT` = ${srfdatacontext('product','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_BUILD\"}')}  OR  t1.`PRODUCT` = ${srfwebcontext('product','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_BUILD\"}')} ) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "CurProduct",
     "logicName" : "产品版本",
     "name" : "CurProduct"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "TestBuild",
     "logicName" : "测试版本",
     "name" : "TestBuild",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( FIND_IN_SET(t1.id,(select tt.builds from zt_testreport tt where tt.id = ${srfwebcontext('srfparentkey','{\"defname\":\"ID\",\"dename\":\"ZT_BUILD\"}')})) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "TestRounds",
     "logicName" : "测试轮次",
     "name" : "TestRounds"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "UpdateLog",
     "logicName" : "更新日志",
     "name" : "UpdateLog",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -139,18 +218,30 @@
       "codeName" : "Id"
     },
     "name" : "BugProductBuild",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "BugProductBuild"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "CurProduct",
     "logicName" : "产品版本",
     "name" : "CurProduct",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "CurProduct"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -158,12 +249,20 @@
     "codeName" : "TestBuild",
     "logicName" : "测试版本",
     "name" : "TestBuild",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "TestBuild"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "TestRounds",
     "logicName" : "测试轮次",
     "name" : "TestRounds",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "TestRounds"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -180,6 +279,10 @@
       "codeName" : "Id"
     },
     "name" : "UpdateLog",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "UpdateLog"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -1838,10 +1941,6 @@
     "removeOrder" : 0
   } ],
   "name" : "ZT_BUILD",
-  "getPSSysImage" : {
-    "glyph" : "xf126@FontAwesome",
-    "cssClass" : "fa fa-code-fork"
-  },
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,
@@ -1864,7 +1963,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : true,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

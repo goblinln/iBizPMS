@@ -109,7 +109,7 @@ public class DynaDashboardRuntime extends cn.ibizlab.pms.core.runtime.SystemData
     public DynaDashboard selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
         Page<DynaDashboard> domains = dynadashboardService.searchDefault((DynaDashboardSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
+        if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
     }

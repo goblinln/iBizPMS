@@ -155,19 +155,63 @@
     "userCat" : "CAT1"
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`PRODUCT` = ${srfdatacontext('product','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_RELEASE\"}')}  AND  <#assign _value=srfdatacontext('status','{\"ignoreempty\":true,\"defname\":\"STATUS\",\"dename\":\"ZT_RELEASE\"}')><#if _value?length gt 0>t1.`STATUS` =  ${_value}<#else>1=1</#if> )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "GetList",
     "logicName" : "获取产品发布",
     "name" : "GetList"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( FIND_IN_SET(t1.`ID`, (select tt.builds from zt_testreport tt where tt.id = ${srfwebcontext('srfparentkey','{\"defname\":\"ID\",\"dename\":\"ZT_BUILD\"}')})) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ReportRelease",
     "logicName" : "测试报告关联发布",
     "name" : "ReportRelease"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -176,6 +220,10 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -183,6 +231,10 @@
     "codeName" : "ReportRelease",
     "logicName" : "测试报告关联发布",
     "name" : "ReportRelease",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ReportRelease"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -1977,10 +2029,6 @@
     "removeOrder" : 0
   } ],
   "name" : "ZT_RELEASE",
-  "getPSSysImage" : {
-    "glyph" : "xf11d@FontAwesome",
-    "cssClass" : "fa fa-flag-o"
-  },
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,
@@ -2003,7 +2051,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : true,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

@@ -51,10 +51,14 @@ public interface IProductService extends IService<Product> {
     Page<Product> searchAllList(ProductSearchContext context);
     Page<Product> searchAllProduct(ProductSearchContext context);
     Page<Product> searchCheckNameOrCode(ProductSearchContext context);
+    Page<Product> searchCurDefault(ProductSearchContext context);
     Page<Product> searchCurProject(ProductSearchContext context);
     Page<Product> searchCurUer(ProductSearchContext context);
     Page<Product> searchDefault(ProductSearchContext context);
+    Page<Product> searchDeveloperQuery(ProductSearchContext context);
     Page<Product> searchESBulk(ProductSearchContext context);
+    Page<Product> searchOpenQuery(ProductSearchContext context);
+    Page<Product> searchProductManagerQuery(ProductSearchContext context);
     Page<Product> searchProductPM(ProductSearchContext context);
     Page<Product> searchProductTeam(ProductSearchContext context);
     Page<Product> searchStoryCurProject(ProductSearchContext context);

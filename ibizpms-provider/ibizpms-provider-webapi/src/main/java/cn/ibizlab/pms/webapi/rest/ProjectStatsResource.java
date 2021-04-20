@@ -110,7 +110,6 @@ public class ProjectStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProjectStatsRuntime.test(#projectstats_id,'READ')")
     @ApiOperation(value = "获取项目统计", tags = {"项目统计" },  notes = "获取项目统计")
 	@RequestMapping(method = RequestMethod.GET, value = "/projectstats/{projectstats_id}")
     public ResponseEntity<ProjectStatsDTO> get(@PathVariable("projectstats_id") Long projectstats_id) {

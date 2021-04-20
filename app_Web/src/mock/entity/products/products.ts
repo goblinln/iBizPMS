@@ -593,6 +593,50 @@ mock.onGet(new RegExp(/^\/products\/fetchchecknameorcode(\?[\w-./?%&=,]*)*$/)).r
     return [status, records ?  records : []];
 });
     
+// FetchCurDefault
+mock.onGet(new RegExp(/^\/products\/fetchcurdefault$/)).reply((config: any) => {
+    console.groupCollapsed("实体:product 方法: FetchCurDefault");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(mockDatas);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, mockDatas ? mockDatas : []];
+});
+
+// FetchCurDefault
+mock.onGet(new RegExp(/^\/products\/fetchcurdefault(\?[\w-./?%&=,]*)*$/)).reply((config: any) => {
+    console.groupCollapsed("实体:product 方法: FetchCurDefault");
+    console.table({url:config.url, method: config.method, data:config.data});
+    if(config.url.includes('page')){
+        let url = config.url.split('?')[1];
+        let params  =  qs.parse(url);
+        Object.assign(config, params);
+    }
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }
+    let total = mockDatas.length;
+    let records: Array<any> = [];
+    if(!config.page || !config.size){
+        records = mockDatas;
+    }else{
+        if((config.page-1)*config.size < total){
+          records = mockDatas.slice(config.page,config.size);
+        }
+    }
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(records ?  records : []);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, records ?  records : []];
+});
+    
 // FetchCurProject
 mock.onGet(new RegExp(/^\/products\/fetchcurproject$/)).reply((config: any) => {
     console.groupCollapsed("实体:product 方法: FetchCurProject");
@@ -743,6 +787,94 @@ mock.onGet(new RegExp(/^\/products\/fetchesbulk$/)).reply((config: any) => {
 // FetchESBulk
 mock.onGet(new RegExp(/^\/products\/fetchesbulk(\?[\w-./?%&=,]*)*$/)).reply((config: any) => {
     console.groupCollapsed("实体:product 方法: FetchESBulk");
+    console.table({url:config.url, method: config.method, data:config.data});
+    if(config.url.includes('page')){
+        let url = config.url.split('?')[1];
+        let params  =  qs.parse(url);
+        Object.assign(config, params);
+    }
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }
+    let total = mockDatas.length;
+    let records: Array<any> = [];
+    if(!config.page || !config.size){
+        records = mockDatas;
+    }else{
+        if((config.page-1)*config.size < total){
+          records = mockDatas.slice(config.page,config.size);
+        }
+    }
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(records ?  records : []);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, records ?  records : []];
+});
+    
+// FetchOpenQuery
+mock.onGet(new RegExp(/^\/products\/fetchopenquery$/)).reply((config: any) => {
+    console.groupCollapsed("实体:product 方法: FetchOpenQuery");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(mockDatas);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, mockDatas ? mockDatas : []];
+});
+
+// FetchOpenQuery
+mock.onGet(new RegExp(/^\/products\/fetchopenquery(\?[\w-./?%&=,]*)*$/)).reply((config: any) => {
+    console.groupCollapsed("实体:product 方法: FetchOpenQuery");
+    console.table({url:config.url, method: config.method, data:config.data});
+    if(config.url.includes('page')){
+        let url = config.url.split('?')[1];
+        let params  =  qs.parse(url);
+        Object.assign(config, params);
+    }
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }
+    let total = mockDatas.length;
+    let records: Array<any> = [];
+    if(!config.page || !config.size){
+        records = mockDatas;
+    }else{
+        if((config.page-1)*config.size < total){
+          records = mockDatas.slice(config.page,config.size);
+        }
+    }
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(records ?  records : []);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, records ?  records : []];
+});
+    
+// FetchProductManagerQuery
+mock.onGet(new RegExp(/^\/products\/fetchproductmanagerquery$/)).reply((config: any) => {
+    console.groupCollapsed("实体:product 方法: FetchProductManagerQuery");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(mockDatas);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, mockDatas ? mockDatas : []];
+});
+
+// FetchProductManagerQuery
+mock.onGet(new RegExp(/^\/products\/fetchproductmanagerquery(\?[\w-./?%&=,]*)*$/)).reply((config: any) => {
+    console.groupCollapsed("实体:product 方法: FetchProductManagerQuery");
     console.table({url:config.url, method: config.method, data:config.data});
     if(config.url.includes('page')){
         let url = config.url.split('?')[1];
@@ -975,6 +1107,50 @@ mock.onPost(new RegExp(/^\/products\/?([a-zA-Z0-9\-\;]{0,35})\/fetchstorycurproj
     console.groupEnd();
     console.groupEnd();
     return [status, data];
+});
+    
+// FetchDeveloperQuery
+mock.onGet(new RegExp(/^\/products\/fetchstorycurproject$/)).reply((config: any) => {
+    console.groupCollapsed("实体:product 方法: FetchDeveloperQuery");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(mockDatas);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, mockDatas ? mockDatas : []];
+});
+
+// FetchDeveloperQuery
+mock.onGet(new RegExp(/^\/products\/fetchstorycurproject(\?[\w-./?%&=,]*)*$/)).reply((config: any) => {
+    console.groupCollapsed("实体:product 方法: FetchDeveloperQuery");
+    console.table({url:config.url, method: config.method, data:config.data});
+    if(config.url.includes('page')){
+        let url = config.url.split('?')[1];
+        let params  =  qs.parse(url);
+        Object.assign(config, params);
+    }
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }
+    let total = mockDatas.length;
+    let records: Array<any> = [];
+    if(!config.page || !config.size){
+        records = mockDatas;
+    }else{
+        if((config.page-1)*config.size < total){
+          records = mockDatas.slice(config.page,config.size);
+        }
+    }
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(records ?  records : []);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, records ?  records : []];
 });
         
 // FilterUpdate

@@ -39,7 +39,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -55,7 +55,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -71,7 +71,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -87,7 +87,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -103,7 +103,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -131,7 +131,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -147,7 +147,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -163,7 +163,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -177,6 +177,10 @@
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/HaveRead.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "HaveRead"
@@ -189,6 +193,10 @@
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/LinkCompleteTask.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "LinkCompleteTask"
@@ -200,6 +208,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/PushUserDaily.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -224,6 +236,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/Submit.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -307,7 +323,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -323,7 +339,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -339,7 +355,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -355,7 +371,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -371,7 +387,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -387,7 +403,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -403,7 +419,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -573,7 +589,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -589,7 +605,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -605,7 +621,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -621,7 +637,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -637,7 +653,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -665,7 +681,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -681,7 +697,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -697,7 +713,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -711,6 +727,10 @@
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/HaveRead.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "HaveRead"
@@ -723,6 +743,10 @@
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/LinkCompleteTask.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "LinkCompleteTask"
@@ -734,6 +758,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/PushUserDaily.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -759,6 +787,10 @@
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/Submit.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Submit"
@@ -773,7 +805,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -789,7 +821,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -805,7 +837,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -821,7 +853,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -837,7 +869,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -853,7 +885,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -869,7 +901,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -1247,6 +1279,9 @@
   }, {
     "logicName" : "删除",
     "name" : "DELETE"
+  }, {
+    "logicName" : "管理",
+    "name" : "MANAGE"
   }, {
     "logicName" : "读取",
     "name" : "READ"

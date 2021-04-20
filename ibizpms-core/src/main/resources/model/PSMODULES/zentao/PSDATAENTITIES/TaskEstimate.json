@@ -181,39 +181,91 @@
     "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ActionMonth",
     "logicName" : "日志月",
     "name" : "ActionMonth",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ActionYear",
     "logicName" : "日志年",
     "name" : "ActionYear",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( 1<>1 )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Defaults",
     "logicName" : "DEFAULT1",
     "name" : "DEFAULT1"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.project =#{srf.webcontext.project}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProjectActionMonth",
     "logicName" : "日志月（项目）",
     "name" : "ProjectActionMonth",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.project =#{srf.webcontext.project}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProjectActionYear",
     "logicName" : "日志年（项目）",
     "name" : "ProjectActionYear",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t11.`PROJECT` = ${srfwebcontext('project','{\"defname\":\"PROJECT\",\"dename\":\"ZT_TASKESTIMATE\"}')}  AND  t11.`DELETED` = '0' )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ProjectTaskEstimate",
     "logicName" : "项目日志",
     "name" : "ProjectTaskEstimate"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -222,6 +274,10 @@
     "codeName" : "ActionMonth",
     "logicName" : "日志月",
     "name" : "ActionMonth",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ActionMonth"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -229,6 +285,10 @@
     "codeName" : "ActionYear",
     "logicName" : "日志年",
     "name" : "ActionYear",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ActionYear"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -236,6 +296,10 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true,
@@ -244,6 +308,10 @@
     "codeName" : "Defaults",
     "logicName" : "DEFAULT1",
     "name" : "DEFAULT1",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Defaults"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -251,6 +319,10 @@
     "codeName" : "ProjectActionMonth",
     "logicName" : "日志月（项目）",
     "name" : "ProjectActionMonth",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectActionMonth"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -258,6 +330,10 @@
     "codeName" : "ProjectActionYear",
     "logicName" : "日志年（项目）",
     "name" : "ProjectActionYear",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectActionYear"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -265,6 +341,10 @@
     "codeName" : "ProjectTaskEstimate",
     "logicName" : "项目日志",
     "name" : "ProjectTaskEstimate",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProjectTaskEstimate"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -1797,7 +1877,5 @@
   "enableTempData" : true,
   "enableTempDataFront" : true,
   "logicValid" : false,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

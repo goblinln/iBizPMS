@@ -6,28 +6,28 @@
     "name" : "Task_Maintain_CREATE",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "ZTProject__CREATE"
     }
   }, {
     "dataAccessAction" : "DELETE",
     "name" : "Task_Maintain_DELETE",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "ZTProject__DELETE"
     }
   }, {
     "dataAccessAction" : "READ",
     "name" : "Task_Maintain_READ",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProject__READ"
     }
   }, {
     "dataAccessAction" : "UPDATE",
     "name" : "Task_Maintain_UPDATE",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "ZTProject__UPDATE"
     }
   } ],
   "roleTag" : "Task_Maintain",

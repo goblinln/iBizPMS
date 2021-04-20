@@ -72,39 +72,135 @@
     "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.type = 'story'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "BugModule",
     "logicName" : "BugModule",
     "name" : "BugModule",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.type = 'story'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "BugModuleCodeList",
     "logicName" : "数据查询",
     "name" : "BugModuleCodeList",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`TYPE` = 'doc'  AND  t1.`ROOT` =  ${srfdatacontext('doclib','{\"defname\":\"ROOT\",\"dename\":\"ZT_MODULE\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "DocModule",
     "logicName" : "文档目录查询",
     "name" : "DocModule",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`TYPE` = 'line'  AND  t1.`ORGID` =  ${srfsessioncontext('SRFORGID','{\"defname\":\"ORGID\",\"dename\":\"ZT_MODULE\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Line",
     "logicName" : "产品线",
     "name" : "Line",
     "privQuery" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`ROOT` =  ${srfwebcontext('product','{\"defname\":\"ROOT\",\"dename\":\"ZT_MODULE\"}')}  AND  t1.`TYPE` = 'story'  AND  <#assign _value=srfdatacontext('branch','{\"ignoreempty\":true,\"defname\":\"BRANCH\",\"dename\":\"ZT_MODULE\"}')><#if _value?length gt 0>t1.`BRANCH` = ${_value}<#else>1=1</#if> )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "StoryModule",
     "logicName" : "需求模块",
     "name" : "StoryModule"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`ROOT` =  ${srfdatacontext('project','{\"defname\":\"ROOT\",\"dename\":\"ZT_MODULE\"}')}  AND  t1.`TYPE` = 'task' )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "TaskModule",
     "logicName" : "任务模块",
     "name" : "TaskModule"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -123,6 +219,10 @@
       "codeName" : "Id"
     },
     "name" : "BugModule",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "BugModule"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -139,6 +239,10 @@
       "codeName" : "Id"
     },
     "name" : "BugModuleCodeList",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "BugModuleCodeList"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -155,6 +259,10 @@
       "codeName" : "Id"
     },
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -172,6 +280,10 @@
       "codeName" : "Id"
     },
     "name" : "DocModule",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "DocModule"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -188,18 +300,30 @@
       "codeName" : "Id"
     },
     "name" : "Line",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Line"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "StoryModule",
     "logicName" : "需求模块",
     "name" : "StoryModule",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "StoryModule"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "TaskModule",
     "logicName" : "任务模块",
     "name" : "TaskModule",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "TaskModule"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -1430,7 +1554,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : true,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

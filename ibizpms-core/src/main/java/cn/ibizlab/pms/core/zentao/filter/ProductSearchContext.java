@@ -51,6 +51,10 @@ public class ProductSearchContext extends QueryWrapperContext<Product> {
 	public void setN_id_in(String n_id_in) {
         this.n_id_in = n_id_in;
     }
+	private String n_supproreport_eq;//[支持产品汇报]
+	public void setN_supproreport_eq(String n_supproreport_eq) {
+        this.n_supproreport_eq = n_supproreport_eq;
+    }
 	private String n_type_eq;//[产品类型]
 	public void setN_type_eq(String n_type_eq) {
         this.n_type_eq = n_type_eq;

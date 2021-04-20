@@ -106,38 +106,146 @@
     "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.`TYPE` = 'task'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "FIND_IN_SET (${srfdatacontext('srfparentkey','{\"defname\":\"ID\",\"dename\":\"ZT_PROJECTMODULE\"}')}, t1.`PATH`)",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ByPath",
     "logicName" : "BYPATH",
     "name" : "BYPATH",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`TYPE` = 'task' )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.type = 'task'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.id <> #{srf.webcontext.id} and find_in_set(#{srf.webcontext.id},t1.path) = 0",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ParentModule",
     "logicName" : "父模块",
     "name" : "ParentModule",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`TYPE` = 'story'  AND  ( t1.`PARENT` IS NULL  OR  t1.`PARENT` = 0 ) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Root",
     "logicName" : "根需求模块",
     "name" : "ROOT"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`TYPE` = 'story'  AND  t1.`BRANCH` = 0  AND  ( t1.`PARENT` IS NULL  OR  t1.`PARENT` = 0 ) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Root_NoBranch",
     "logicName" : "根需求模块_无分支",
     "name" : "Root_NoBranch"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`TYPE` = 'task'  AND  ( t1.`PARENT` IS NULL  OR  t1.`PARENT` = 0 ) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Root_Task",
     "logicName" : "根任务模块",
     "name" : "ROOT_TASK"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( ( t1.`type` = 'task' and t1.`ROOT` = ${srfwebcontext('project','{\"defname\":\"ROOT\",\"dename\":\"IBZ_PROJECTMODULE\"}')} )  or \n(${srfwebcontext('allmodules','{\"defname\":\"ROOT\",\"dename\":\"IBZ_PROJECTMODULE\"}')} = '1' and t1.`type` = 'story' and t1.`root` in (select product from zt_projectproduct where project =  ${srfwebcontext('project','{\"defname\":\"ROOT\",\"dename\":\"IBZ_PROJECTMODULE\"}')}))  or (t1.`id` = ${srfwebcontext('module','{\"defname\":\"ROOT\",\"dename\":\"IBZ_PROJECTMODULE\"}')}))",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "TaskModules",
     "logicName" : "任务模块",
     "name" : "TaskModules",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -146,12 +254,20 @@
     "codeName" : "ByPath",
     "logicName" : "BYPATH",
     "name" : "BYPATH",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ByPath"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -159,24 +275,40 @@
     "codeName" : "ParentModule",
     "logicName" : "父模块",
     "name" : "ParentModule",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ParentModule"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "Root",
     "logicName" : "根模块",
     "name" : "ROOT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Root"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "Root_NoBranch",
     "logicName" : "根模块_无分支",
     "name" : "Root_NoBranch",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Root_NoBranch"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "Root_Task",
     "logicName" : "根模块",
     "name" : "ROOT_TASK",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Root_Task"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -193,6 +325,10 @@
       "codeName" : "Id"
     },
     "name" : "TaskModules",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "TaskModules"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -1550,7 +1686,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : true,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

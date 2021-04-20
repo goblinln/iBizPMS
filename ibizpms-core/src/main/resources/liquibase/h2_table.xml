@@ -1393,7 +1393,7 @@
 
 
     <!--输出实体[IBZ_DAILY]数据结构 -->
-    <changeSet author="zentao" id="tab-ibz_daily-2-46">
+    <changeSet author="zentao" id="tab-ibz_daily-22-46">
         <createTable tableName="T_IBZ_DAILY">
                 <column name="UPDATEDATE" remarks="" type="DATETIME">
                 </column>
@@ -1654,7 +1654,7 @@
 
 
     <!--输出实体[IBZ_REPORTLY]数据结构 -->
-    <changeSet author="zentao" id="tab-ibz_reportly-1-59">
+    <changeSet author="zentao" id="tab-ibz_reportly-11-59">
         <createTable tableName="T_IBZ_REPORTLY">
                 <column name="ACCOUNT" remarks="" type="VARCHAR(60)">
                 </column>
@@ -2668,7 +2668,7 @@
 
 
     <!--输出实体[SYS_UPDATE_FEATURES]数据结构 -->
-    <changeSet author="zentao" id="tab-sys_update_features-1-104">
+    <changeSet author="zentao" id="tab-sys_update_features-4-104">
         <createTable tableName="T_SYS_UPDATE_FEATURES">
                 <column name="SYS_UPDATE_FEATURESNAME" remarks="" type="VARCHAR(200)">
                 </column>
@@ -2698,7 +2698,7 @@
 
 
     <!--输出实体[SYS_UPDATE_LOG]数据结构 -->
-    <changeSet author="zentao" id="tab-sys_update_log-1-105">
+    <changeSet author="zentao" id="tab-sys_update_log-3-105">
         <createTable tableName="T_SYS_UPDATE_LOG">
                 <column name="UPDATEDATE" remarks="" type="DATETIME">
                 </column>

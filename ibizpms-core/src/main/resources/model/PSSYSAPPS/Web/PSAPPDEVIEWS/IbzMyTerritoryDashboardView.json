@@ -1052,7 +1052,7 @@
                         "name" : "fetch",
                         "getPSAppDEMethod" : {
                           "modelref" : true,
-                          "id" : "FetchCurUer"
+                          "id" : "FetchCurDefault"
                         },
                         "getPSAppDataEntity" : {
                           "modelref" : true,
@@ -1701,7 +1701,7 @@
                         "name" : "fetch",
                         "getPSAppDEMethod" : {
                           "modelref" : true,
-                          "id" : "FetchCurUer"
+                          "id" : "FetchCurDefault"
                         },
                         "getPSAppDataEntity" : {
                           "modelref" : true,

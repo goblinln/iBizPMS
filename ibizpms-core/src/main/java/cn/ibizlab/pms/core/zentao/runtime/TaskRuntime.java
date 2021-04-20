@@ -109,7 +109,7 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     public Task selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
         Page<Task> domains = taskService.searchDefault((TaskSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
+        if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
     }

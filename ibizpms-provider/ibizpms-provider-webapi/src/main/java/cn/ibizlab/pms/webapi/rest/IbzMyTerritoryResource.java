@@ -174,11 +174,9 @@ public class IbzMyTerritoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"我的地盘" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/fetchdefault")
 	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchDefault(@RequestBody IbzMyTerritorySearchContext context) {
-        ibzmyterritoryRuntime.addAuthorityConditions(context,"READ");
         Page<IbzMyTerritory> domains = ibzmyterritoryService.searchDefault(context) ;
         List<IbzMyTerritoryDTO> list = ibzmyterritoryMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -188,21 +186,17 @@ public class IbzMyTerritoryResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"我的地盘" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/searchdefault")
 	public ResponseEntity<Page<IbzMyTerritoryDTO>> searchDefault(@RequestBody IbzMyTerritorySearchContext context) {
-        ibzmyterritoryRuntime.addAuthorityConditions(context,"READ");
         Page<IbzMyTerritory> domains = ibzmyterritoryService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzmyterritoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的工作", tags = {"我的地盘" } ,notes = "获取我的工作")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/fetchmywork")
 	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchMyWork(@RequestBody IbzMyTerritorySearchContext context) {
-        ibzmyterritoryRuntime.addAuthorityConditions(context,"READ");
         Page<IbzMyTerritory> domains = ibzmyterritoryService.searchMyWork(context) ;
         List<IbzMyTerritoryDTO> list = ibzmyterritoryMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -212,21 +206,17 @@ public class IbzMyTerritoryResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询我的工作", tags = {"我的地盘" } ,notes = "查询我的工作")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/searchmywork")
 	public ResponseEntity<Page<IbzMyTerritoryDTO>> searchMyWork(@RequestBody IbzMyTerritorySearchContext context) {
-        ibzmyterritoryRuntime.addAuthorityConditions(context,"READ");
         Page<IbzMyTerritory> domains = ibzmyterritoryService.searchMyWork(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzmyterritoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的工作", tags = {"我的地盘" } ,notes = "获取我的工作")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/fetchmyworkmob")
 	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchMyWorkMob(@RequestBody IbzMyTerritorySearchContext context) {
-        ibzmyterritoryRuntime.addAuthorityConditions(context,"READ");
         Page<IbzMyTerritory> domains = ibzmyterritoryService.searchMyWorkMob(context) ;
         List<IbzMyTerritoryDTO> list = ibzmyterritoryMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -236,21 +226,17 @@ public class IbzMyTerritoryResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询我的工作", tags = {"我的地盘" } ,notes = "查询我的工作")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/searchmyworkmob")
 	public ResponseEntity<Page<IbzMyTerritoryDTO>> searchMyWorkMob(@RequestBody IbzMyTerritorySearchContext context) {
-        ibzmyterritoryRuntime.addAuthorityConditions(context,"READ");
         Page<IbzMyTerritory> domains = ibzmyterritoryService.searchMyWorkMob(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzmyterritoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的工作（项目经理）", tags = {"我的地盘" } ,notes = "获取我的工作（项目经理）")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/fetchmyworkpm")
 	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchMyWorkPm(@RequestBody IbzMyTerritorySearchContext context) {
-        ibzmyterritoryRuntime.addAuthorityConditions(context,"READ");
         Page<IbzMyTerritory> domains = ibzmyterritoryService.searchMyWorkPm(context) ;
         List<IbzMyTerritoryDTO> list = ibzmyterritoryMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -260,21 +246,17 @@ public class IbzMyTerritoryResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询我的工作（项目经理）", tags = {"我的地盘" } ,notes = "查询我的工作（项目经理）")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/searchmyworkpm")
 	public ResponseEntity<Page<IbzMyTerritoryDTO>> searchMyWorkPm(@RequestBody IbzMyTerritorySearchContext context) {
-        ibzmyterritoryRuntime.addAuthorityConditions(context,"READ");
         Page<IbzMyTerritory> domains = ibzmyterritoryService.searchMyWorkPm(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzmyterritoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取个人信息-个人贡献", tags = {"我的地盘" } ,notes = "获取个人信息-个人贡献")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/fetchpersoninfo")
 	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchPersonInfo(@RequestBody IbzMyTerritorySearchContext context) {
-        ibzmyterritoryRuntime.addAuthorityConditions(context,"READ");
         Page<IbzMyTerritory> domains = ibzmyterritoryService.searchPersonInfo(context) ;
         List<IbzMyTerritoryDTO> list = ibzmyterritoryMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -284,21 +266,17 @@ public class IbzMyTerritoryResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询个人信息-个人贡献", tags = {"我的地盘" } ,notes = "查询个人信息-个人贡献")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/searchpersoninfo")
 	public ResponseEntity<Page<IbzMyTerritoryDTO>> searchPersonInfo(@RequestBody IbzMyTerritorySearchContext context) {
-        ibzmyterritoryRuntime.addAuthorityConditions(context,"READ");
         Page<IbzMyTerritory> domains = ibzmyterritoryService.searchPersonInfo(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzmyterritoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取欢迎", tags = {"我的地盘" } ,notes = "获取欢迎")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/fetchwelcome")
 	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchWelcome(@RequestBody IbzMyTerritorySearchContext context) {
-        ibzmyterritoryRuntime.addAuthorityConditions(context,"READ");
         Page<IbzMyTerritory> domains = ibzmyterritoryService.searchWelcome(context) ;
         List<IbzMyTerritoryDTO> list = ibzmyterritoryMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -308,11 +286,9 @@ public class IbzMyTerritoryResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询欢迎", tags = {"我的地盘" } ,notes = "查询欢迎")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/searchwelcome")
 	public ResponseEntity<Page<IbzMyTerritoryDTO>> searchWelcome(@RequestBody IbzMyTerritorySearchContext context) {
-        ibzmyterritoryRuntime.addAuthorityConditions(context,"READ");
         Page<IbzMyTerritory> domains = ibzmyterritoryService.searchWelcome(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzmyterritoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

@@ -142,56 +142,211 @@
     "name" : "UnCollect"
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "(t1.parent = 0 or t1.parent is null ) and t1.type = 'doc'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "AllDoclibModule_Custom",
     "logicName" : "数据查询",
     "name" : "AllDoclibModule_Custom",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.type = 'doc'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.parent = ${srfdatacontext('srfparentkey','{\"defname\":\"ROOT\",\"dename\":\"ZT_MODULE\"}')}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ChildModuleByParent",
     "logicName" : "子模块目录",
     "name" : "ChildModuleByParent",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.type = 'doc'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.parent = ${srfdatacontext('srfparent','{\"defname\":\"ROOT\",\"dename\":\"ZT_MODULE\"}')}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ChildModuleByRealParent",
     "logicName" : "文档库分类子模块",
     "name" : "ChildModuleByRealParent",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.type = 'doc'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "DefaultDoclib",
     "logicName" : "数据查询",
     "name" : "AllDoclibModule",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyFavourites",
     "logicName" : "我的收藏",
     "name" : "MyFavourites",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.type = 'doc'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.id <> #{srf.webcontext.id} and find_in_set(#{srf.webcontext.id},t1.path) = 0",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ParentModule",
     "logicName" : "父模块",
     "name" : "ParentModule",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "(t1.parent = 0 or t1.parent is null ) and t1.type = 'doc'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "RootModuleMuLu",
     "logicName" : "所有根模块目录",
     "name" : "RootModuleMuLu",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "(t1.parent = 0 or t1.parent is null ) and t1.type = 'doc'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.root = #{srf.webcontext.id}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "RootModuleMuLuByRoot",
     "logicName" : "根模块目录动态",
     "name" : "RootModuleMuLuByRoot",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "(t1.parent = 0 or t1.parent is null ) and t1.type = 'doc'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.root = #{srf.webcontext.srfparentkey}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "RootModuleMuLuBysrfparentkey",
     "logicName" : "根模块目录动态",
     "name" : "RootModuleMuLuBysrfparentkey",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -200,30 +355,50 @@
     "codeName" : "AllDocLibModule_Custom",
     "logicName" : "自定义文档库的模块",
     "name" : "AllDocLibModule_Custom",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "AllDoclibModule_Custom"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "AllDoclibModule",
     "logicName" : "所有文档库模块",
     "name" : "AllDoclibModule",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "DefaultDoclib"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ChildModuleByParent",
     "logicName" : "子模块目录",
     "name" : "ChildModuleByParent",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ChildModuleByParent"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ChildModuleByRealParent",
     "logicName" : "文档库分类子模块",
     "name" : "ChildModuleByRealParent",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ChildModuleByRealParent"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "Default",
     "logicName" : "数据集",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -231,30 +406,50 @@
     "codeName" : "MyFavourites",
     "logicName" : "我的收藏",
     "name" : "MyFavourites",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyFavourites"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "ParentModule",
     "logicName" : "父集合",
     "name" : "ParentModule",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ParentModule"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "RootModuleMuLu",
     "logicName" : "所有根模块目录",
     "name" : "RootModuleMuLu",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "RootModuleMuLu"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "RootModuleMuLuByRoot",
     "logicName" : "根模块目录",
     "name" : "RootModuleMuLuByRoot",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "RootModuleMuLuByRoot"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "RootModuleMuLuBysrfparentkey",
     "logicName" : "根模块目录动态",
     "name" : "RootModuleMuLuBysrfparentkey",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "RootModuleMuLuBysrfparentkey"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -1931,7 +2126,5 @@
   "enableRemove" : true,
   "enableSQLStorage" : true,
   "logicValid" : true,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

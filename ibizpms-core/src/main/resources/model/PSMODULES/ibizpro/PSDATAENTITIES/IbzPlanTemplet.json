@@ -179,15 +179,32 @@
     "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( ( t1.`ACL` = 'open'  OR  t1.`CREATEMANNAME` =  ${srfsessioncontext('srfloginname','{\"defname\":\"CREATEMANNAME\",\"dename\":\"IBZ_PLANTEMPLET\"}')} ) )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "CurUserTemplet",
     "logicName" : "CurUserTemplet",
     "name" : "CurUserTemplet"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -196,6 +213,10 @@
     "codeName" : "CurUserTemplet",
     "logicName" : "CurUserTemplet",
     "name" : "CurUserTemplet",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "CurUserTemplet"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -203,6 +224,10 @@
     "codeName" : "Default",
     "logicName" : "数据集",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true,
@@ -804,7 +829,5 @@
   "enableTempData" : true,
   "enableTempDataFront" : true,
   "logicValid" : false,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

@@ -337,114 +337,368 @@
     }
   } ],
   "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( 1<>1 )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "BatchNew",
     "logicName" : "批量新建用例",
     "name" : "BatchNew"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( DATE_FORMAT( t1.openedDate, '%Y' ) = DATE_FORMAT(now(), '%Y' )  AND  t1.`OPENEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"OPENEDBY\",\"dename\":\"ZT_CASE\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "CurOpenedCase",
     "logicName" : "累计创建的用例",
     "name" : "CurOpenedCase"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "EXISTS(SELECT * FROM `zt_suitecase` t51 \n WHERE \n t1.`ID` = t51.`CASE`  AND  ( t51.`SUITE` = ${srfdatacontext('srfparentkey','{\"defname\":\"SUITE\",\"dename\":\"ZT_SUITECASE\"}')} ) )",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "CurSuite",
     "logicName" : "套件关联用例",
     "name" : "CurSuite"
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t41.`TASK` = ${srfdatacontext('srfparentkey','{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}')}",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "CurTestTask",
     "logicName" : "测试单关联用例",
     "name" : "CurTestTask",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "customCode" : true,
     "defaultMode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ESBulk",
     "logicName" : "ES批量的导入",
     "name" : "ESBulk",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t61.id = ${srfwebcontext('srfparentkey','{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}')}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ModuleRePortCase",
     "logicName" : "测试报告关联-按模块",
     "name" : "ModuleRePortCase",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "ModuleRePortCaseEntry",
     "logicName" : "测试报告关联-按模块-条目",
     "name" : "ModuleRePortCaseEntry",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t61.id = ${srfwebcontext('srfparentkey','{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}')}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "ModuleRePortCase_Project",
     "logicName" : "项目报告关联-按模块",
     "name" : "ModuleRePortCase_Project",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.id in (select t.OBJECTID from T_IBZ_FAVORITES t where t.type = 'case' and t.account = #{srf.sessioncontext.srfloginname})  AND  t1.DELETED = '0' )",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "MyFavorite",
     "logicName" : "用例我得收藏",
     "name" : "MyFavorite",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "NOT(EXISTS(SELECT * FROM zt_suitecase t41 \n WHERE \n t1.ID = t41.`CASE`  AND  ( t41.`suite` = ${srfwebcontext('suite','{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}')} ) ))",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.`deleted` = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "NotCurTestSuite",
     "logicName" : "套件关联用例",
     "name" : "NotCurTestSuite",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "NOT(EXISTS(SELECT * FROM zt_testrun t41 \n WHERE \n t1.ID = t41.`CASE`  AND  ( t41.`task` = ${srfwebcontext('task','{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}')} ) ))",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.product in (select tt.product from zt_testtask t left join zt_projectproduct tt on tt.project = t.project where t.id = ${srfwebcontext('task','{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}')})",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "NotCurTestTask",
     "logicName" : "测试单关联用例",
     "name" : "NotCurTestTask",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "NOT(EXISTS(SELECT * FROM zt_testrun t41 \n WHERE \n t1.ID = t41.`CASE`  AND  ( t41.`task` = ${srfwebcontext('task','{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}')} ) ))",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.product in (select tt.product from zt_testtask t left join zt_projectproduct tt on tt.project = t.project where t.id = ${srfwebcontext('task','{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}')})",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "NotCurTestTaskProject",
     "logicName" : "测试单关联用例（项目关联）",
     "name" : "NotCurTestTaskProject",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t61.id = ${srfwebcontext('srfparentkey','{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}')}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "RePortCase",
     "logicName" : "测试报告关联用例",
     "name" : "RePortCase",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "RePortCaseEntry",
     "logicName" : "测试报告关联用例-条目",
     "name" : "RePortCaseEntry",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t61.id = ${srfwebcontext('srfparentkey','{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}')}",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "RePortCase_Project",
     "logicName" : "项目报告关联用例-关联用例",
     "name" : "RePortCase_Project",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t91.id = ${srfwebcontext('srfparentkey','{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}')}\nand \n( FIND_IN_SET(t1.id,t91.cases) ) and t71.date > t91.`begin` and t71.date < t91.`end`",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "RunERRePortCase",
     "logicName" : "测试报告关联-执行人",
     "name" : "RunERRePortCase",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "RunERRePortCaseEntry",
     "logicName" : "测试报告关联-执行人-条目",
     "name" : "RunERRePortCaseEntry",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t91.id = ${srfwebcontext('srfparentkey','{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}')}\nand \n( FIND_IN_SET(t1.id,t91.cases) ) and t71.date > t91.`begin` and t71.date < CONCAT(DATE_FORMAT(t91.`end`,'%Y-%m-%d'),' 23:59:59')",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "RunERRePortCase_Project",
     "logicName" : "项目报告关联-执行人",
     "name" : "RunERRePortCase_Project",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : " t81.id = ${srfwebcontext('srfparentkey','{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}')}\nand \n( FIND_IN_SET(t1.id,t81.cases) ) and t71.date > t81.`begin` and t71.date < t81.`end`",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "RunRePortCase",
     "logicName" : "测试报告关联--执行结果",
     "name" : "RunRePortCase",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "RunRePortCaseEntry",
     "logicName" : "测试报告关联--执行结果条目",
     "name" : "RunRePortCaseEntry",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : " t81.id = ${srfwebcontext('srfparentkey','{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}')}\nand \n( FIND_IN_SET(t1.id,t81.cases) ) and t71.date > t81.`begin` and t71.date <  CONCAT(DATE_FORMAT(t81.`end`,'%Y-%m-%d'),' 23:59:59')",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "RunRePortCase_Project",
     "logicName" : "项目报告关联-执行结果",
     "name" : "RunRePortCase_Project",
     "customCode" : true
   }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW"
@@ -453,6 +707,10 @@
     "codeName" : "BatchNew",
     "logicName" : "批量新建用例",
     "name" : "BatchNew",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "BatchNew"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -460,6 +718,10 @@
     "codeName" : "CurOpenedCase",
     "logicName" : "累计创建的用例",
     "name" : "CurOpenedCase",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "CurOpenedCase"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -467,6 +729,10 @@
     "codeName" : "CurSuite",
     "logicName" : "套件关联用例",
     "name" : "CurSuite",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "CurSuite"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -474,6 +740,10 @@
     "codeName" : "CurTestTask",
     "logicName" : "测试单关联用例",
     "name" : "CurTestTask",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "CurTestTask"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -481,6 +751,10 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true,
@@ -489,6 +763,10 @@
     "codeName" : "ESBulk",
     "logicName" : "ES批量的导入",
     "name" : "ESBulk",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ESBulk"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -496,6 +774,10 @@
     "codeName" : "ModuleRePortCase",
     "logicName" : "测试报告关联用例",
     "name" : "ModuleRePortCase",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ModuleRePortCase"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -503,6 +785,10 @@
     "codeName" : "ModuleRePortCaseEntry",
     "logicName" : "测试报告关联-按模块-条目",
     "name" : "ModuleRePortCaseEntry",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ModuleRePortCaseEntry"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -510,6 +796,10 @@
     "codeName" : "ModuleRePortCase_Project",
     "logicName" : "项目报告关联-按模块",
     "name" : "ModuleRePortCase_Project",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ModuleRePortCase_Project"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -517,6 +807,10 @@
     "codeName" : "MyFavorites",
     "logicName" : "我的收藏",
     "name" : "MyFavorite",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyFavorite"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -524,6 +818,10 @@
     "codeName" : "NotCurTestSuite",
     "logicName" : "套件关联用例",
     "name" : "NotCurTestSuite",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "NotCurTestSuite"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -531,6 +829,10 @@
     "codeName" : "NotCurTestTask",
     "logicName" : "测试单关联用例",
     "name" : "NotCurTestTask",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "NotCurTestTask"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -538,6 +840,10 @@
     "codeName" : "NotCurTestTaskProject",
     "logicName" : "测试单关联用例（项目关联）",
     "name" : "NotCurTestTaskProject",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "NotCurTestTaskProject"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -545,6 +851,10 @@
     "codeName" : "RePortCase",
     "logicName" : "测试报告关联用例",
     "name" : "RePortCase",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "RePortCase"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -552,6 +862,10 @@
     "codeName" : "RePortCaseEntry",
     "logicName" : "测试报告关联用例-条目",
     "name" : "RePortCaseEntry",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "RePortCaseEntry"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -559,6 +873,10 @@
     "codeName" : "RePortCase_Project",
     "logicName" : "项目报告关联用例-关联用例",
     "name" : "RePortCase_Project",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "RePortCase_Project"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -566,6 +884,10 @@
     "codeName" : "RunERRePortCase",
     "logicName" : "测试报告关联-执行人",
     "name" : "RunERRePortCase",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "RunERRePortCase"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -573,6 +895,10 @@
     "codeName" : "RunERRePortCaseEntry",
     "logicName" : "测试报告关联-执行人-条目",
     "name" : "RunERRePortCaseEntry",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "RunERRePortCaseEntry"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -580,6 +906,10 @@
     "codeName" : "RunERRePortCase_Project",
     "logicName" : "项目报告关联-执行人",
     "name" : "RunERRePortCase_Project",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "RunERRePortCase_Project"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -587,6 +917,10 @@
     "codeName" : "RunRePortCase",
     "logicName" : "测试报告关联用例",
     "name" : "RunRePortCase",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "RunRePortCase"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -594,6 +928,10 @@
     "codeName" : "RunRePortCaseEntry",
     "logicName" : "测试报告关联--执行结果条目",
     "name" : "RunRePortCaseEntry",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "RunRePortCaseEntry"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -601,6 +939,10 @@
     "codeName" : "RunRePortCase_Project",
     "logicName" : "项目报告关联-执行结果",
     "name" : "RunRePortCase_Project",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "RunRePortCase_Project"
+    } ],
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -10771,10 +11113,6 @@
     "virtual" : true
   } ],
   "name" : "ZT_CASE",
-  "getPSSysImage" : {
-    "glyph" : "xf006@FontAwesome",
-    "cssClass" : "fa fa-star-o"
-  },
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,
@@ -10800,7 +11138,5 @@
   "enableTempData" : true,
   "enableTempDataFront" : true,
   "logicValid" : true,
-  "subSysAsCloud" : false,
-  "subSysDE" : false,
-  "virtual" : false
+  "subSysAsCloud" : false
 }

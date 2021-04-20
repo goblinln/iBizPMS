@@ -70,6 +70,14 @@
       "id" : "wizardpanel_form_Product"
     },
     "getPSDEFormItems" : [ {
+      "id" : "srfupdatedate",
+      "hidden" : true,
+      "dataType" : 5,
+      "getPSAppDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      }
+    }, {
       "id" : "srforikey",
       "hidden" : true,
       "dataType" : 25
@@ -248,6 +256,14 @@
       "id" : "wizardpanel_form_AddProduct"
     },
     "getPSDEFormItems" : [ {
+      "id" : "srfupdatedate",
+      "hidden" : true,
+      "dataType" : 5,
+      "getPSAppDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      }
+    }, {
       "id" : "srforikey",
       "hidden" : true,
       "dataType" : 25
@@ -947,6 +963,14 @@
       "id" : "wizardpanel_form_CreateStory"
     },
     "getPSDEFormItems" : [ {
+      "id" : "srfupdatedate",
+      "hidden" : true,
+      "dataType" : 5,
+      "getPSAppDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      }
+    }, {
       "id" : "srforikey",
       "hidden" : true,
       "dataType" : 25
@@ -1099,6 +1123,14 @@
       "id" : "wizardpanel_form_AddStory"
     },
     "getPSDEFormItems" : [ {
+      "id" : "srfupdatedate",
+      "hidden" : true,
+      "dataType" : 5,
+      "getPSAppDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      }
+    }, {
       "id" : "srforikey",
       "hidden" : true,
       "dataType" : 25
