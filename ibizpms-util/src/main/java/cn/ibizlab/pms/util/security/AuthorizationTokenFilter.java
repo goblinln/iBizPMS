@@ -69,6 +69,11 @@ public class AuthorizationTokenFilter extends OncePerRequestFilter {
             if (authTokenUtil.validateToken(authToken, userDetails)) {
                 UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                 authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+                String strInstTag = request.getParameter("srfinsttag") ;
+                String strInstTag2 = request.getParameter("srfinsttag2") ;
+                AuthenticationUser curUser = (AuthenticationUser)userDetails ;
+                curUser.setSrfdynainsttag(strInstTag);
+                curUser.setSrfdynainsttag2(strInstTag2);
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }
         }

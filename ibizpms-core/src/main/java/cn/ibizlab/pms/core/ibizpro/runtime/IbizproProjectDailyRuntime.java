@@ -31,6 +31,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import net.ibizsys.runtime.dataentity.DEActions;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.ObjectUtils;
 import java.io.Serializable;
 import java.util.List;
@@ -236,6 +237,7 @@ public class IbizproProjectDailyRuntime extends cn.ibizlab.pms.core.runtime.Syst
     }
 
     @Around("execution(* cn.ibizlab.pms.core.ibizpro.service.impl.IbizproProjectDailyServiceImpl.*(..))")
+    @Transactional
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
         if (!this.isRtmodel()) {
             return point.proceed();

@@ -33,6 +33,10 @@ public class AuthenticationUser implements UserDetails, net.ibizsys.runtime.secu
      */
     private String username;
     /**
+     * 员工标识
+     */
+    private String personid;
+    /**
      * 用户姓名
      */
     private String personname;
@@ -72,6 +76,14 @@ public class AuthenticationUser implements UserDetails, net.ibizsys.runtime.secu
      * 真实实例标识
      */
     private String srfrealdynainstid;
+    /**
+     * 动态实例标识
+     */
+    private String srfdynainsttag;
+    /**
+     * 动态实例标记2
+     */
+    private String srfdynainsttag2;
     /**
      * 部门标识
      */
@@ -267,7 +279,7 @@ public class AuthenticationUser implements UserDetails, net.ibizsys.runtime.secu
         if (this.sessionParams == null) {
             sessionParams = getUserSessionParam();
             sessionParams.put("srfsystemid",this.getSrfsystemid());
-            sessionParams.put("srfpersonid", this.getUserid());
+            sessionParams.put("srfpersonid", this.getPersonid());
             sessionParams.put("srfpersonname", this.getPersonname());
             sessionParams.put("srforgsectorid", this.getMdeptid());
             sessionParams.put("srforgsectorcode", this.getMdeptcode());
@@ -347,6 +359,16 @@ public class AuthenticationUser implements UserDetails, net.ibizsys.runtime.secu
     @Override
     public String getDynainstid() {
         return this.srfrealdynainstid;
+    }
+
+    @Override
+    public String getDynainsttag() {
+        return srfdynainsttag;
+    }
+
+    @Override
+    public String getDynainsttag2() {
+        return srfdynainsttag2;
     }
 
     @Override
