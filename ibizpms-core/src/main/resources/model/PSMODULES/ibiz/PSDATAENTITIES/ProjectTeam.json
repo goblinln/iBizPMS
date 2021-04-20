@@ -217,11 +217,6 @@
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
     "logicName" : "DEFAULT",
-    "majorSortDir" : "ASC",
-    "getMajorSortPSDEField" : {
-      "name" : "ORDER",
-      "codeName" : "Order"
-    },
     "name" : "DEFAULT",
     "defaultMode" : true,
     "enableBackend" : true,
@@ -237,11 +232,6 @@
   }, {
     "codeName" : "RowEditDefault",
     "logicName" : "行编辑查询",
-    "majorSortDir" : "ASC",
-    "getMajorSortPSDEField" : {
-      "name" : "ORDER",
-      "codeName" : "Order"
-    },
     "name" : "RowEditDefault",
     "enableBackend" : true,
     "enableFront" : true,
@@ -249,11 +239,6 @@
   }, {
     "codeName" : "TaskCntEstimateConsumedLeft",
     "logicName" : "数据查询",
-    "majorSortDir" : "ASC",
-    "getMajorSortPSDEField" : {
-      "name" : "ORDER",
-      "codeName" : "Order"
-    },
     "name" : "TaskCntEstimateConsumedLeft",
     "enableBackend" : true,
     "enableFront" : true,
@@ -1309,11 +1294,75 @@
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
+    "logicName" : "管理",
+    "name" : "MANAGE"
+  }, {
     "logicName" : "读取",
     "name" : "READ"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
+  } ],
+  "getAllPSDEUserRoles" : [ {
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEUSERROLES/ProjectTeam_Maintain.json",
+    "name" : "项目团队维护",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "CREATE",
+      "name" : "ProjectTeam_Maintain_CREATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CREATE"
+      }
+    }, {
+      "dataAccessAction" : "READ",
+      "name" : "ProjectTeam_Maintain_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "ProjectTeam_Maintain_UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "ProjectTeam_Maintain_DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    } ],
+    "roleTag" : "ProjectTeam_Maintain",
+    "userDRAction" : "READ"
+  }, {
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEUSERROLES/ProjectTeam_Manage.json",
+    "name" : "项目团队管理",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "MANAGE",
+      "name" : "ProjectTeam_Manage_MANGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "MANAGE"
+      }
+    } ],
+    "roleTag" : "ProjectTeam_Manage",
+    "userDRAction" : "READ"
+  }, {
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEUSERROLES/ProjectTeam_Read.json",
+    "name" : "项目团队查看",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "ProjectTeam_Read_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "ProjectTeam_Read",
+    "userDRAction" : "READ"
   } ],
   "auditMode" : 0,
   "codeName" : "ProjectTeam",
