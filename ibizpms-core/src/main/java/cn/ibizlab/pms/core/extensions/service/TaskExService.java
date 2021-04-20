@@ -421,5 +421,19 @@ public class TaskExService extends TaskServiceImpl {
     public Task recordTimateZeroLeft(Task et) {
       return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskHelper.class).recordTimateZeroLeft(et);
     }
+
+    @Override
+    @Transactional
+    public Task recordTimZeroLeftAfterContinue(Task et) {
+        //自定义代码
+        return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskHelper.class).recordTimZeroLeftAfterContinue(et);
+    }
+
+    @Override
+    @Transactional
+    public Task recordTimateZeroLeftAfterStart(Task et) {
+        //自定义代码
+        return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskHelper.class).recordTimateZeroLeftAfterStart(et);
+    }
 }
 

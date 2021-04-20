@@ -1635,7 +1635,8 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
 //            task.set(FIELD_ESTSTARTED, task.getEststarted() == null ? DEFAULT_TIME : task.getEststarted());
 ////            task.set(FIELD_DEADLINE, task.getDeadline() == null ? DEFAULT_TIME : task.getDeadline());
             task.setStatus(StaticDict.Task__status.WAIT.getValue());
-            task.setLeft(task.getEstimate());
+//            task.setLeft(task.getEstimate());
+            task.setEstimate(task.getLeft());
             if(isOps) {
                 task.setStory(0L);
             }else if (task.getStory() != null && task.getStory() != 0L) {
@@ -1940,6 +1941,11 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
 
     }
 
+    /**
+     * 激活时或者填入工时的时候 如果预计剩余为0 任务状态换成进行中
+     * @param et
+     * @return
+     */
     @Transactional
     public Task recordTimateZeroLeft(Task et) {
         et = this.get(et.getId());
@@ -1950,6 +1956,66 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             newTask.setFinishedby("");
             newTask.setFinisheddate(null);
             super.internalUpdate(newTask);
+        }
+        if (et.getParent()>0){
+            updateParentStatus(et,et.getParent(),true);
+        }
+        return et;
+    }
+
+    /**
+     * 继续任务时如果预计剩余为0 操作记录里要将完成换成继续
+     * @param et
+     * @return
+     */
+    @Transactional
+    public Task recordTimZeroLeftAfterContinue(Task et) {
+        et = this.get(et.getId());
+        Task newTask = new Task();
+        newTask.setId(et.getId());
+        if ( et.getLeft() == 0){
+            newTask.setStatus(StaticDict.Task__status.DOING.getValue());
+            newTask.setFinishedby("");
+            newTask.setFinisheddate(null);
+            super.internalUpdate(newTask);
+            List<Action> actionList = actionHelper.list(new QueryWrapper<Action>().eq("objectID", et.getId()).eq("actor", AuthenticationUser.getAuthenticationUser().getUsername()).eq("action",StaticDict.Action__type.FINISHED.getValue()).orderByDesc("date"));
+            if (actionList.size()>0){
+                Action action = actionList.get(0);
+                Action old = new Action();
+                old.setId(action.getId());
+                old.setAction(StaticDict.Action__type.RESTARTED.getValue());
+                actionHelper.updateById(old);
+            }
+        }
+        if (et.getParent()>0){
+            updateParentStatus(et,et.getParent(),true);
+        }
+        return et;
+    }
+
+    /**
+     * 开始任务时如果预计剩余为0时将操作记录里完成换成开始
+     * @param et
+     * @return
+     */
+    @Transactional
+    public Task recordTimateZeroLeftAfterStart(Task et) {
+        et = this.get(et.getId());
+        Task newTask = new Task();
+        newTask.setId(et.getId());
+        if ( et.getLeft() == 0){
+            newTask.setStatus(StaticDict.Task__status.DOING.getValue());
+            newTask.setFinishedby("");
+            newTask.setFinisheddate(null);
+            super.internalUpdate(newTask);
+            List<Action> actionList = actionHelper.list(new QueryWrapper<Action>().eq("objectID", et.getId()).eq("actor", AuthenticationUser.getAuthenticationUser().getUsername()).eq("action",StaticDict.Action__type.FINISHED.getValue()).orderByDesc("date"));
+            if (actionList.size()>0){
+                Action action = actionList.get(0);
+                Action old = new Action();
+                old.setId(action.getId());
+                old.setAction(StaticDict.Action__type.STARTED.getValue());
+                actionHelper.updateById(old);
+            }
         }
         if (et.getParent()>0){
             updateParentStatus(et,et.getParent(),true);
