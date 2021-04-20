@@ -1,13 +1,16 @@
 package cn.ibizlab.pms.core.runtime;
 
 import cn.ibizlab.pms.util.client.IBZUAAFeignClient;
+import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.IPSDynaInstService;
+import net.ibizsys.runtime.IDynaInstRuntime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.util.StringUtils;
 
 import java.io.File;
 
+@Slf4j
 public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntimeBase {
 
 	@Override
@@ -43,6 +46,21 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
         }
         systemModelService.setPSModelFolderPath(strPath);
         return systemModelService;
+    }
+
+    @Override
+    protected boolean checkDynaInstRuntime(IDynaInstRuntime iDynaInstRuntime) {
+        String strDynaInstId = iDynaInstRuntime.getId();
+        String strDynaPath = iDynaInstRuntime.getDynaInstFolderPath();
+        String strDynaModelId = "";
+        try {
+            strDynaModelId = uaaClient.getDynaModelIdByInstId(strDynaInstId);
+        } catch (Exception e) {
+            log.error(String.format("刷新实例异常:%s",e.getMessage()));
+            return true ;
+        }
+
+        return strDynaPath.indexOf(strDynaModelId) != -1;
     }
 
     @Override
