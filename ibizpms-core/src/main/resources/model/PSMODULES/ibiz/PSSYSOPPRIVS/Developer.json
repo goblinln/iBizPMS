@@ -33,6 +33,36 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
     }
   }, {
+    "name" : "研发人员-IBZ_PROJECTTEAM[项目团队查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEUSERROLES/ProjectTeam_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam.json"
+    }
+  }, {
+    "name" : "研发人员-ZT_FILE[文件维护]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEUSERROLES/File_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    }
+  }, {
+    "name" : "研发人员-IBZ_TASKTEAM[任务团队维护]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam/PSDEUSERROLES/TaskTeam_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam.json"
+    }
+  }, {
     "name" : "研发人员-ZT_TODO[待办管理]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -101,6 +131,16 @@
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
+    }
+  }, {
+    "name" : "研发人员-ZT_TASKESTIMATE[任务预计查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEUSERROLES/TaskEstimate_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate.json"
     }
   }, {
     "name" : "研发人员-ZT_TESTTASK[测试单查看]",
@@ -173,6 +213,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
     }
   }, {
+    "name" : "研发人员-IBZ_TASKTEAM[任务团队查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam/PSDEUSERROLES/TaskTeam_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam.json"
+    }
+  }, {
     "name" : "研发人员-ZT_RELEASE[产品发布查看]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -213,6 +263,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
     }
   }, {
+    "name" : "研发人员-ZT_FILE[文件查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEUSERROLES/File_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    }
+  }, {
     "name" : "研发人员-ZT_TODO[待办查看]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -221,6 +281,16 @@
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
+    }
+  }, {
+    "name" : "研发人员-ZT_TASKESTIMATE[任务预计维护]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEUSERROLES/TaskEstimate_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate.json"
     }
   }, {
     "name" : "研发人员-ZT_TODO[待办维护]",
@@ -241,6 +311,26 @@
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+    }
+  }, {
+    "name" : "研发人员-ZT_TASKESTIMATE[任务预计管理]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEUSERROLES/TaskEstimate_Manage.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate.json"
+    }
+  }, {
+    "name" : "研发人员-IBZ_PRODUCTTEAM[产品团队查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEUSERROLES/ProductTeam_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM.json"
     }
   }, {
     "name" : "研发人员-ZT_PRODUCT[产品查看（当前机构）]",

@@ -64,7 +64,6 @@
 
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_IBZ_PROJECTTEAM_ZT_PROJECT_ROOT] -->
 	 <select id="selectByRoot" resultMap="ProjectTeamResultMap"  databaseId="mysql">
-		select * from (
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
@@ -72,16 +71,13 @@
 			</if>
 			<![CDATA[ AND T1.ROOT=#{id} ]]>
 		</trim>
-		 )t1
      </select>
 
     <!--数据集合[Default]-->
 	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectTeamSearchContext"  resultMap="ProjectTeamResultMap">
-	 	select * from (
          select t1.* from (
                 <include refid="Default" />
          )t1
-		 )t1
      </select>
 
     <!--数据集合[ProjectTeamPm]-->
@@ -93,20 +89,16 @@
 
     <!--数据集合[RowEditDefault]-->
 	 <select id="searchRowEditDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectTeamSearchContext"  resultMap="ProjectTeamResultMap">
-	 	select * from (
          select t1.* from (
                 <include refid="RowEditDefault" />
          )t1
-		 )t1
      </select>
 
     <!--数据集合[TaskCntEstimateConsumedLeft]-->
 	 <select id="searchTaskCntEstimateConsumedLeft"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectTeamSearchContext"  resultMap="ProjectTeamResultMap">
-	 	select * from (
          select t1.* from (
                 <include refid="TaskCntEstimateConsumedLeft" />
          )t1
-		 )t1
      </select>
 
     <!--数据查询[Default]-->

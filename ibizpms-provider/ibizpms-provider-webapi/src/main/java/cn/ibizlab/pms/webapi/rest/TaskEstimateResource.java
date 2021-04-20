@@ -132,6 +132,7 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(taskestimateService.checkKey(taskestimateMapping.toDomain(taskestimatedto)));
     }
 
+    @PreAuthorize("@TaskEstimateRuntime.test(#taskestimate_id,'MANAGE')")
     @ApiOperation(value = "项目经理评估", tags = {"任务预计" },  notes = "项目经理评估")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskestimates/{taskestimate_id}/pmevaluation")
     public ResponseEntity<TaskEstimateDTO> pMEvaluation(@PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -411,6 +412,7 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(taskestimateService.checkKey(taskestimateMapping.toDomain(taskestimatedto)));
     }
 
+    @PreAuthorize("@TaskRuntime.test(#task_id,'MANAGE')")
     @ApiOperation(value = "根据任务任务预计", tags = {"任务预计" },  notes = "根据任务任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/taskestimates/{taskestimate_id}/pmevaluation")
     public ResponseEntity<TaskEstimateDTO> pMEvaluationByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -693,6 +695,7 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(taskestimateService.checkKey(taskestimateMapping.toDomain(taskestimatedto)));
     }
 
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'MANAGE')")
     @ApiOperation(value = "根据任务模块任务任务预计", tags = {"任务预计" },  notes = "根据任务模块任务任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/{taskestimate_id}/pmevaluation")
     public ResponseEntity<TaskEstimateDTO> pMEvaluationByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -975,6 +978,7 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(taskestimateService.checkKey(taskestimateMapping.toDomain(taskestimatedto)));
     }
 
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'MANAGE')")
     @ApiOperation(value = "根据产品计划任务任务预计", tags = {"任务预计" },  notes = "根据产品计划任务任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/tasks/{task_id}/taskestimates/{taskestimate_id}/pmevaluation")
     public ResponseEntity<TaskEstimateDTO> pMEvaluationByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -1257,6 +1261,7 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(taskestimateService.checkKey(taskestimateMapping.toDomain(taskestimatedto)));
     }
 
+    @PreAuthorize("@StoryRuntime.test(#story_id,'MANAGE')")
     @ApiOperation(value = "根据需求任务任务预计", tags = {"任务预计" },  notes = "根据需求任务任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/tasks/{task_id}/taskestimates/{taskestimate_id}/pmevaluation")
     public ResponseEntity<TaskEstimateDTO> pMEvaluationByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -1539,6 +1544,7 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(taskestimateService.checkKey(taskestimateMapping.toDomain(taskestimatedto)));
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
     @ApiOperation(value = "根据项目任务任务预计", tags = {"任务预计" },  notes = "根据项目任务任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/{taskestimate_id}/pmevaluation")
     public ResponseEntity<TaskEstimateDTO> pMEvaluationByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -1821,6 +1827,7 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(taskestimateService.checkKey(taskestimateMapping.toDomain(taskestimatedto)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
     @ApiOperation(value = "根据产品产品计划任务任务预计", tags = {"任务预计" },  notes = "根据产品产品计划任务任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/{taskestimate_id}/pmevaluation")
     public ResponseEntity<TaskEstimateDTO> pMEvaluationByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -2103,6 +2110,7 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(taskestimateService.checkKey(taskestimateMapping.toDomain(taskestimatedto)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
     @ApiOperation(value = "根据产品需求任务任务预计", tags = {"任务预计" },  notes = "根据产品需求任务任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/{taskestimate_id}/pmevaluation")
     public ResponseEntity<TaskEstimateDTO> pMEvaluationByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
@@ -2385,6 +2393,7 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(taskestimateService.checkKey(taskestimateMapping.toDomain(taskestimatedto)));
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
     @ApiOperation(value = "根据项目任务模块任务任务预计", tags = {"任务预计" },  notes = "根据项目任务模块任务任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/{taskestimate_id}/pmevaluation")
     public ResponseEntity<TaskEstimateDTO> pMEvaluationByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {

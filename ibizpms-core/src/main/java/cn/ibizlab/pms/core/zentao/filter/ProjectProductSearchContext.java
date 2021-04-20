@@ -77,7 +77,7 @@ public class ProjectProductSearchContext extends QueryWrapperContext<ProjectProd
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("t11.`NAME`", query)
+                     wrapper.like("t11.`name`", query)
             );
 		 }
 	}
