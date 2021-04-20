@@ -1000,7 +1000,7 @@
 
 
     <!--输出实体[IBZPRO_SEQUENCE]数据结构 -->
-    <changeSet author="zentao" id="tab-ibzpro_sequence-10-32">
+    <changeSet author="zentao" id="tab-ibzpro_sequence-15-32">
         <createTable tableName="T_IBZPRO_SEQUENCE">
                 <column name="IBZPRO_SEQUENCEID" remarks="" type="VARCHAR(100)">
                     <constraints primaryKey="true" primaryKeyName="PK_IBZPRO_SEQUENCE_IBZPRO_SEQU"/>
@@ -1018,6 +1018,10 @@
                 <column name="ORGID" remarks="" type="VARCHAR(60)">
                 </column>
                 <column name="DEPTID" remarks="" type="VARCHAR(60)">
+                </column>
+                <column name="CATEGORY" remarks="" type="VARCHAR(60)">
+                </column>
+                <column name="YEAR" remarks="" type="DATETIME">
                 </column>
         </createTable>
     </changeSet>

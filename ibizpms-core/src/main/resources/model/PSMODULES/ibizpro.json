@@ -7,6 +7,9 @@
     "path" : "PSMODULES/ibizpro/PSCODELISTS/Ibzpro__pssystype.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSCODELISTS/Ibzpro__category.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSCODELISTS/Ibz__systpl__type.json"
   }, {
     "modelref" : true,

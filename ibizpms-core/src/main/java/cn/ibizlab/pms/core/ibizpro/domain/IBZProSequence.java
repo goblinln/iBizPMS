@@ -120,6 +120,23 @@ public class IBZProSequence extends EntityMP implements Serializable {
     @JsonProperty("deptid")
     @ApiModelProperty("组织部门标识")
     private String deptid;
+    /**
+     * 业务类别
+     */
+    @TableField(value = "`CATEGORY`")
+    @JSONField(name = "category")
+    @JsonProperty("category")
+    @ApiModelProperty("业务类别")
+    private String category;
+    /**
+     * 年份
+     */
+    @TableField(value = "`YEAR`")
+    @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "year", format = "yyyy-MM-dd")
+    @JsonProperty("year")
+    @ApiModelProperty("年份")
+    private Timestamp year;
 
 
 
@@ -131,6 +148,32 @@ public class IBZProSequence extends EntityMP implements Serializable {
         this.modify("ibzpro_sequencename", ibzprosequencename);
     }
 
+    /**
+     * 设置 [业务类别]
+     */
+    public void setCategory(String category) {
+        this.category = category;
+        this.modify("category", category);
+    }
+
+    /**
+     * 设置 [年份]
+     */
+    public void setYear(Timestamp year) {
+        this.year = year;
+        this.modify("year", year);
+    }
+
+    /**
+     * 格式化日期 [年份]
+     */
+    public String formatYear() {
+        if (this.year == null) {
+            return null;
+        }
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(year);
+    }
 
     /**
      * 复制当前对象数据到目标对象(粘贴重置)

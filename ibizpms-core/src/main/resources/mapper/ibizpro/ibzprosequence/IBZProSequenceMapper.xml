@@ -5,7 +5,7 @@
 	
 	<!-- 无视图模式 -->
 	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`IBZPRO_SEQUENCEID`, t1.`IBZPRO_SEQUENCENAME`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZPRO_SEQUENCE` t1   ]]>
+        <![CDATA[ SELECT t1.`CATEGORY`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`IBZPRO_SEQUENCEID`, t1.`IBZPRO_SEQUENCENAME`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`YEAR` FROM `T_IBZPRO_SEQUENCE` t1   ]]>
     </sql>
 
 	
@@ -14,6 +14,9 @@
 		<if test="srf.n_ibzpro_sequencename_like != null ">
             <bind name="bind_n_ibzpro_sequencename_like" value="'%' + srf.n_ibzpro_sequencename_like + '%'" />
             <![CDATA[ AND  t1.`IBZPRO_SEQUENCENAME` like #{bind_n_ibzpro_sequencename_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_category_eq != null ">
+			<![CDATA[ AND  t1.`CATEGORY` = #{srf.n_category_eq,jdbcType=VARCHAR} ]]>
         </if>
 		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
 		AND ${ew.sqlSegment}
@@ -48,7 +51,7 @@
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`IBZPRO_SEQUENCEID`, t1.`IBZPRO_SEQUENCENAME`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZPRO_SEQUENCE` t1   ]]>
+		<![CDATA[ SELECT t1.`CATEGORY`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`IBZPRO_SEQUENCEID`, t1.`IBZPRO_SEQUENCENAME`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`YEAR` FROM `T_IBZPRO_SEQUENCE` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>
@@ -64,7 +67,7 @@
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`IBZPRO_SEQUENCEID`, t1.`IBZPRO_SEQUENCENAME`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZPRO_SEQUENCE` t1   ]]>
+		<![CDATA[ SELECT t1.`CATEGORY`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`IBZPRO_SEQUENCEID`, t1.`IBZPRO_SEQUENCENAME`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`YEAR` FROM `T_IBZPRO_SEQUENCE` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>
