@@ -77,8 +77,12 @@ public interface ITaskService extends IService<Task> {
     boolean pauseBatch(List<Task> etList);
     Task recordEstimate(Task et);
     boolean recordEstimateBatch(List<Task> etList);
+    Task recordTimZeroLeftAfterContinue(Task et);
+    boolean recordTimZeroLeftAfterContinueBatch(List<Task> etList);
     Task recordTimateZeroLeft(Task et);
     boolean recordTimateZeroLeftBatch(List<Task> etList);
+    Task recordTimateZeroLeftAfterStart(Task et);
+    boolean recordTimateZeroLeftAfterStartBatch(List<Task> etList);
     Task restart(Task et);
     boolean restartBatch(List<Task> etList);
     boolean save(Task et);
