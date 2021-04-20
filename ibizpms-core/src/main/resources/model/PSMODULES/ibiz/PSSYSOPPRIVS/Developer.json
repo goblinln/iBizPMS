@@ -243,6 +243,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
     }
   }, {
+    "name" : "研发人员-IBZ_PROJECTMEMBER[项目相关成员查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/ProjectMember_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember.json"
+    }
+  }, {
     "name" : "研发人员-IBZ_DOCLIBMODULE[文档模块查看]",
     "getPSDEUserRole" : {
       "modelref" : true,
