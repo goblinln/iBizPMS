@@ -182,11 +182,9 @@ public class IbizproProductDailyResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("@IbizproProductDailyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"产品日报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproproductdailies/fetchdefault")
 	public ResponseEntity<List<IbizproProductDailyDTO>> fetchDefault(@RequestBody IbizproProductDailySearchContext context) {
-        ibizproproductdailyRuntime.addAuthorityConditions(context,"READ");
         Page<IbizproProductDaily> domains = ibizproproductdailyService.searchDefault(context) ;
         List<IbizproProductDailyDTO> list = ibizproproductdailyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -196,21 +194,17 @@ public class IbizproProductDailyResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbizproProductDailyRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"产品日报" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproproductdailies/searchdefault")
 	public ResponseEntity<Page<IbizproProductDailyDTO>> searchDefault(@RequestBody IbizproProductDailySearchContext context) {
-        ibizproproductdailyRuntime.addAuthorityConditions(context,"READ");
         Page<IbizproProductDaily> domains = ibizproproductdailyService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibizproproductdailyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@IbizproProductDailyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品日报", tags = {"产品日报" } ,notes = "获取产品日报")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproproductdailies/fetchproductdaily")
 	public ResponseEntity<List<IbizproProductDailyDTO>> fetchProductDaily(@RequestBody IbizproProductDailySearchContext context) {
-        ibizproproductdailyRuntime.addAuthorityConditions(context,"READ");
         Page<IbizproProductDaily> domains = ibizproproductdailyService.searchProductDaily(context) ;
         List<IbizproProductDailyDTO> list = ibizproproductdailyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -220,11 +214,9 @@ public class IbizproProductDailyResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbizproProductDailyRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询产品日报", tags = {"产品日报" } ,notes = "查询产品日报")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproproductdailies/searchproductdaily")
 	public ResponseEntity<Page<IbizproProductDailyDTO>> searchProductDaily(@RequestBody IbizproProductDailySearchContext context) {
-        ibizproproductdailyRuntime.addAuthorityConditions(context,"READ");
         Page<IbizproProductDaily> domains = ibizproproductdailyService.searchProductDaily(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibizproproductdailyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

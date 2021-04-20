@@ -182,11 +182,9 @@ public class IbizproProjectMonthlyResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("@IbizproProjectMonthlyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"项目月报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproprojectmonthlies/fetchdefault")
 	public ResponseEntity<List<IbizproProjectMonthlyDTO>> fetchDefault(@RequestBody IbizproProjectMonthlySearchContext context) {
-        ibizproprojectmonthlyRuntime.addAuthorityConditions(context,"READ");
         Page<IbizproProjectMonthly> domains = ibizproprojectmonthlyService.searchDefault(context) ;
         List<IbizproProjectMonthlyDTO> list = ibizproprojectmonthlyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -196,11 +194,9 @@ public class IbizproProjectMonthlyResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbizproProjectMonthlyRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"项目月报" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproprojectmonthlies/searchdefault")
 	public ResponseEntity<Page<IbizproProjectMonthlyDTO>> searchDefault(@RequestBody IbizproProjectMonthlySearchContext context) {
-        ibizproprojectmonthlyRuntime.addAuthorityConditions(context,"READ");
         Page<IbizproProjectMonthly> domains = ibizproprojectmonthlyService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibizproprojectmonthlyMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

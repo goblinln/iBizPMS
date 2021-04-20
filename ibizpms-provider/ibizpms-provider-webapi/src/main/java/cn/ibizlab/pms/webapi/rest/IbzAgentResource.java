@@ -148,11 +148,9 @@ public class IbzAgentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IbzAgentRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"代理" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzagents/fetchdefault")
 	public ResponseEntity<List<IbzAgentDTO>> fetchDefault(@RequestBody IbzAgentSearchContext context) {
-        ibzagentRuntime.addAuthorityConditions(context,"READ");
         Page<IbzAgent> domains = ibzagentService.searchDefault(context) ;
         List<IbzAgentDTO> list = ibzagentMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -162,11 +160,9 @@ public class IbzAgentResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzAgentRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"代理" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzagents/searchdefault")
 	public ResponseEntity<Page<IbzAgentDTO>> searchDefault(@RequestBody IbzAgentSearchContext context) {
-        ibzagentRuntime.addAuthorityConditions(context,"READ");
         Page<IbzAgent> domains = ibzagentService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzagentMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
