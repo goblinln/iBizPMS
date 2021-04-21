@@ -1,0 +1,24 @@
+{
+  "codeName" : "ZTCompile",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestResult/PSDERS/DER1N_ZT_TESTRESULT_ZT_COMPILE_COMPILE.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Compile.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 0,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/TestResult.json"
+  },
+  "name" : "DER1N_ZT_TESTRESULT_ZT_COMPILE_COMPILE",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "COMPILE",
+    "codeName" : "Compile"
+  },
+  "pickupDEFName" : "COMPILE",
+  "removeActionType" : -1,
+  "removeOrder" : 0
+}

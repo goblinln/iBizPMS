@@ -1,0 +1,17 @@
+{
+  "codeName" : "SumPorjectDaily",
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/SumPorjectDaily.json",
+  "name" : "汇总项目日报",
+  "getPSDEAction" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/SumProjectDaily.json"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily.json"
+  },
+  "serviceContainer" : "SC01",
+  "serviceHandler" : "SumPorjectDaily",
+  "serviceOrder" : 0,
+  "startMode" : "AUTO"
+}

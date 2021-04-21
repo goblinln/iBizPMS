@@ -1,0 +1,20 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "getAfterPSDEActionLogics" : [ {
+    "attachMode" : "AFTER",
+    "name" : "附加逻辑",
+    "getPSDELogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/sendNotice.json"
+    },
+    "cloneParam" : false,
+    "ignoreException" : false,
+    "internalLogic" : true
+  } ],
+  "codeName" : "Resolve",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Resolve.json",
+  "logicName" : "解决",
+  "name" : "Resolve",
+  "userCat" : "CAT1"
+}

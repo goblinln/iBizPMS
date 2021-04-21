@@ -1,0 +1,12 @@
+{
+  "actionMode" : "READ",
+  "actionType" : "BUILTIN",
+  "codeName" : "GetTemp",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetTemp.json",
+  "logicName" : "GetTemp",
+  "name" : "GetTemp",
+  "orderValue" : 32,
+  "tempDataMode" : 2,
+  "builtinAction" : true,
+  "enableTempData" : true
+}

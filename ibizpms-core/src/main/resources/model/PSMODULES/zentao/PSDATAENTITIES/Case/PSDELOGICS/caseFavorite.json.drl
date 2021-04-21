@@ -1,0 +1,44 @@
+package cn.ibizlab.pms.zentao.logic.caselogic.casefavorite;
+        import java.util.Map;
+        import java.util.HashMap;
+        import com.alibaba.fastjson.JSONObject;
+        import org.springframework.util.StringUtils;
+        import org.springframework.util.ObjectUtils;
+        import cn.ibizlab.pms.util.errors.BadRequestAlertException;
+                global cn.ibizlab.pms.core.zentao.domain.Case casecasefavoritedefault;
+                global cn.ibizlab.pms.core.ibiz.domain.IbzFavorites casecasefavoriteibzfavorite;
+                    global cn.ibizlab.pms.core.ibiz.service.IIbzFavoritesService ibzfavoritesservice;
+        global cn.ibizlab.pms.core.zentao.service.ICaseService iBzSysCaseDefaultService;
+        global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
+
+
+    no-loop
+
+            //逻辑处理节点[create]
+            rule "create"
+            ruleflow-group "casecasefavoritecreate"
+            when
+            then
+                        ibzfavoritesservice.create(casecasefavoriteibzfavorite);
+                        update(casecasefavoritedefault);//更新fact中变量值
+                        update(casecasefavoriteibzfavorite);//更新fact中变量值
+            end
+
+            //逻辑处理节点[开始]
+            rule "begin"
+            ruleflow-group "casecasefavoritebegin"
+            when
+            then
+            end
+
+            //逻辑处理节点[准备参数]
+            rule "prepareparam1"
+            ruleflow-group "casecasefavoriteprepareparam1"
+            when
+            then
+                            casecasefavoriteibzfavorite.set("objectid",casecasefavoritedefault.get("id"));
+                                casecasefavoriteibzfavorite.set("account",curuser.getSessionParams().get("srfloginname"));
+                            casecasefavoriteibzfavorite.set("type","case");
+                        update(casecasefavoritedefault);//更新fact中变量值
+                        update(casecasefavoriteibzfavorite);//更新fact中变量值
+            end

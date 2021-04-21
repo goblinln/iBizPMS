@@ -1,0 +1,8 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "BatchChangePlan",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchChangePlan.json",
+  "logicName" : "批量关联计划",
+  "name" : "BatchChangePlan"
+}

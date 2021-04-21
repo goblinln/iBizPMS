@@ -1,0 +1,9 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "Confirmstorychange",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Confirmstorychange.json",
+  "logicName" : "确认需求变更",
+  "name" : "confirmstorychange",
+  "userCat" : "CAT1"
+}

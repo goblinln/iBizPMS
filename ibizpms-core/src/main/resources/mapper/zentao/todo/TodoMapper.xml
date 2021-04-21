@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="cn.ibizlab.pms.core.zentao.mapper.TodoMapper">
+	
+	<!-- 无视图模式 -->
+	<sql id="select" databaseId="mysql">
+        <![CDATA[ SELECT t1.`ACCOUNT`, t1.`ASSIGNEDBY`, t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.ASSIGNEDTO AS `ASSIGNEDTOPK`, t1.`BEGIN`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CONFIG`, t1.`COST`, t1.`CYCLE`, t1.`DATE`, (case when t1.`DATE` = '2030-01-01' then '待定' else t1.`DATE` end) AS `DATE1`, t1.`DEPT`, t1.`DESC`, t1.`END`, t1.`FINISHEDBY`, t1.`FINISHEDDATE`, t1.`ID`, t1.`IDVALUE`, t1.`NAME`, t1.`ORG`, t1.`PRI`, t1.`PRIVATE`, t1.`STATUS`, t1.`TODOSN`, t1.`TYPE`, t1.`UPDATEBY` FROM `zt_todo` t1   ]]>
+    </sql>
+
+	
+	<!-- 搜索条件 -->
+	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_account_eq != null ">
+			<![CDATA[ AND  t1.`ACCOUNT` = #{srf.n_account_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_type_eq != null ">
+			<![CDATA[ AND  t1.`TYPE` = #{srf.n_type_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_type_noteq != null ">
+			<![CDATA[ AND  t1.`TYPE` <> #{srf.n_type_noteq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_end_eq != null ">
+			<![CDATA[ AND  t1.`END` = #{srf.n_end_eq,jdbcType=INTEGER} ]]>
+        </if>
+		<if test="srf.n_begin_eq != null ">
+			<![CDATA[ AND  t1.`BEGIN` = #{srf.n_begin_eq,jdbcType=INTEGER} ]]>
+        </if>
+		<if test="srf.n_cycle_eq != null ">
+			<![CDATA[ AND  t1.`CYCLE` = #{srf.n_cycle_eq,jdbcType=INTEGER} ]]>
+        </if>
+		<if test="srf.n_status_eq != null ">
+			<![CDATA[ AND  t1.`STATUS` = #{srf.n_status_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_status_noteq != null ">
+			<![CDATA[ AND  t1.`STATUS` <> #{srf.n_status_noteq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_name_like != null ">
+            <bind name="bind_n_name_like" value="'%' + srf.n_name_like + '%'" />
+            <![CDATA[ AND  t1.`NAME` like #{bind_n_name_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_date_eq != null ">
+			<![CDATA[ AND  t1.`DATE` = #{srf.n_date_eq,jdbcType=TIMESTAMP} ]]>
+        </if>
+		<if test="srf.n_date_gtandeq != null ">
+			<![CDATA[ AND  t1.`DATE` >= #{srf.n_date_gtandeq,jdbcType=TIMESTAMP} ]]>
+        </if>
+		<if test="srf.n_date_ltandeq != null ">
+			<![CDATA[ AND  t1.`DATE` <= #{srf.n_date_ltandeq,jdbcType=TIMESTAMP} ]]>
+        </if>
+		<if test="srf.n_date_noteq != null ">
+			<![CDATA[ AND  t1.`DATE` <> #{srf.n_date_noteq,jdbcType=TIMESTAMP} ]]>
+        </if>
+		<if test="srf.n_private_eq != null ">
+			<![CDATA[ AND  t1.`PRIVATE` = #{srf.n_private_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
+		AND ${ew.sqlSegment}
+		</if>
+	</sql>
+
+
+    <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
+	<select id="selectById"  resultMap="TodoResultMap" databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND T1.ID = #{id} ]]>
+		</trim>
+    </select>
+
+
+    <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="TodoResultMap" type="cn.ibizlab.pms.core.zentao.domain.Todo" autoMapping="true">
+		<id property="id" column="id" /><!--主键字段映射-->
+		<result property="configDay" column="config_day" />
+		<result property="configType" column="config_type" />
+		<result property="configMonth" column="config_month" />
+		<result property="dateDisable" column="date_disable" />
+		<result property="configWeek" column="config_week" />
+		<result property="configBeforedays" column="config_beforedays" />
+		<result property="configEnd" column="config_end" />
+		<result property="ibizprivate" column="private" />
+            
+		
+    </resultMap>
+
+
+    <!--数据集合[Default]-->
+	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.TodoSearchContext"  resultMap="TodoResultMap">
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+     </select>
+
+    <!--数据集合[MyTodo]-->
+	 <select id="searchMyTodo"  parameterType="cn.ibizlab.pms.core.zentao.filter.TodoSearchContext"  resultMap="TodoResultMap">
+         select t1.* from (
+                <include refid="MyTodo" />
+         )t1
+     </select>
+
+    <!--数据集合[MyTodoPc]-->
+	 <select id="searchMyTodoPc"  parameterType="cn.ibizlab.pms.core.zentao.filter.TodoSearchContext"  resultMap="TodoResultMap">
+         select t1.* from (
+                <include refid="MyTodoPc" />
+         )t1
+     </select>
+
+    <!--数据集合[MyUpcoming]-->
+	 <select id="searchMyUpcoming"  parameterType="cn.ibizlab.pms.core.zentao.filter.TodoSearchContext"  resultMap="TodoResultMap">
+         select t1.* from (
+                <include refid="MyUpcoming" />
+         )t1
+     </select>
+
+    <!--数据查询[Default]-->
+    <sql id="Default" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ASSIGNEDBY`, t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, case when t1.`BEGIN` = 2400 then null else t1.`begin` end as `begin`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CONFIG`, t1.`CYCLE`, t1.`DATE` as `DATE`, (case when t1.`DATE` = '2030-01-01' then '待定' else t1.`DATE` end) AS `DATE1`, case when t1.`END` = 2400 then null else t1.`END` end as `END`, t1.`FINISHEDBY`, t1.`FINISHEDDATE`, t1.`ID`, t1.`IDVALUE`, case when t1.type = 'bug' then t11.`TITLE` when t1.type = 'task' then t21.`name` when t1.type = 'story' then t31.`TITLE` else t1.`NAME` end `name`, t1.`PRI`, t1.`PRIVATE`, t1.`STATUS`, t1.`TYPE` FROM `zt_todo` t1  LEFT JOIN zt_bug t11 on t11.id = t1.idvalue LEFT JOIN zt_task t21 on t21.id = t1.idvalue LEFT JOIN zt_story t31 on t31.id = t1.idvalue ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND ((#{srf.datacontext.thisyear} = 'thisyear' and YEAR(t1.date) = year(now())) or #{srf.datacontext.thisyear} is null) ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND ( t1.`ACCOUNT` =  #{srf.sessioncontext.srfloginname}  or t1.`assignedTo` =  #{srf.sessioncontext.srfloginname}  or t1.`finishedBy` =  #{srf.sessioncontext.srfloginname}   ) ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[MyTodo]-->
+    <sql id="MyTodo" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ASSIGNEDBY`, t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`BEGIN`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CONFIG`, t1.`CYCLE`, t1.`DATE`, (case when t1.`DATE` = '2030-01-01' then '待定' else t1.`DATE` end) AS `DATE1`, t1.`END`, t1.`FINISHEDBY`, t1.`FINISHEDDATE`, t1.`ID`, t1.`IDVALUE`, t1.`NAME`, t1.`PRI`, t1.`PRIVATE`, t1.`STATUS`, t1.`TYPE` FROM `zt_todo` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND ( t1.`ACCOUNT` =  #{srf.sessioncontext.srfloginname}  or t1.`assignedTo` =  #{srf.sessioncontext.srfloginname}  or t1.`finishedBy` =  #{srf.sessioncontext.srfloginname}   ) ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND t1.`CYCLE` = 0 ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[MyTodoPc]-->
+    <sql id="MyTodoPc" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ASSIGNEDBY`, t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`BEGIN`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CONFIG`, t1.`CYCLE`, t1.`DATE`, (case when t1.`DATE` = '2030-01-01' then '待定' else t1.`DATE` end) AS `DATE1`, t1.`END`, t1.`FINISHEDBY`, t1.`FINISHEDDATE`, t1.`ID`, t1.`IDVALUE`, t1.`NAME`, t1.`PRI`, t1.`PRIVATE`, t1.`STATUS`, t1.`TYPE` FROM `zt_todo` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND ( t1.`ACCOUNT` =  #{srf.sessioncontext.srfloginname}  or t1.`assignedTo` =  #{srf.sessioncontext.srfloginname}  or t1.`finishedBy` =  #{srf.sessioncontext.srfloginname}   ) ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND t1.`CYCLE` = 0 ]]>
+			</if>
+			<if test="true">
+			<![CDATA[ AND t1.date is not null ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[MyUpcoming]-->
+    <sql id="MyUpcoming" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ASSIGNEDBY`, t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, case when t1.`BEGIN` = 2400 then null else t1.`begin` end as `begin`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CONFIG`, t1.`CYCLE`, t1.`DATE` as `DATE`, DATE_FORMAT(t1.`date`,'%c月%d日') AS `DATE1`, case when t1.`END` = 2400 then null else t1.`END` end as `END`, t1.`FINISHEDBY`, t1.`FINISHEDDATE`, t1.`ID`, t1.`IDVALUE`, case when t1.type = 'bug' then t11.`TITLE` when t1.type = 'task' then t21.`name` when t1.type = 'story' then t31.`TITLE` else t1.`NAME` end `name`, t1.`PRI`, t1.`PRIVATE`, t1.`STATUS`, t1.`TYPE` FROM `zt_todo` t1  LEFT JOIN zt_bug t11 on t11.id = t1.idvalue LEFT JOIN zt_task t21 on t21.id = t1.idvalue LEFT JOIN zt_story t31 on t31.id = t1.idvalue ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND ( t1.`ACCOUNT` =  #{srf.sessioncontext.srfloginname}  or t1.`assignedTo` =  #{srf.sessioncontext.srfloginname}  or t1.`finishedBy` =  #{srf.sessioncontext.srfloginname}   ) ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[View]-->
+    <sql id="View" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ASSIGNEDBY`, t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.ASSIGNEDTO AS `ASSIGNEDTOPK`, t1.`BEGIN`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CONFIG`, t1.`COST`, t1.`CYCLE`, t1.`DATE`, (case when t1.`DATE` = '2030-01-01' then '待定' else t1.`DATE` end) AS `DATE1`, t1.`DEPT`, t1.`DESC`, t1.`END`, t1.`FINISHEDBY`, t1.`FINISHEDDATE`, t1.`ID`, t1.`IDVALUE`, t1.`NAME`, t1.`ORG`, t1.`PRI`, t1.`PRIVATE`, t1.`STATUS`, t1.`TODOSN`, t1.`TYPE`, t1.`UPDATEBY` FROM `zt_todo` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+</mapper>
+

@@ -1,0 +1,8 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "StatsProductMonthly",
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly/PSDEACTIONS/StatsProductMonthly.json",
+  "logicName" : "汇总产品月报",
+  "name" : "StatsProductMonthly"
+}

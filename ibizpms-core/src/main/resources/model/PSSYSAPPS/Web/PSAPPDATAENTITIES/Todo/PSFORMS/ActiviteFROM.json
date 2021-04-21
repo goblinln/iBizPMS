@@ -1,0 +1,121 @@
+{
+  "codeName" : "ActiviteFROM",
+  "controlType" : "FORM",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo/PSFORMS/ActiviteFROM.json",
+  "getGetDraftFromPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraftfrom"
+  },
+  "getGetDraftPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraft"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "logicName" : "激活",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+  },
+  "getPSDEFormItems" : [ {
+    "id" : "srforikey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfkey",
+    "hidden" : true,
+    "dataType" : 1,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "id" : "srfmajortext",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "id" : "srftempmode",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfuf",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfdeid",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfsourcekey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "id",
+    "hidden" : true,
+    "dataType" : 1,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  } ],
+  "getPSDEFormPages" : [ {
+    "caption" : "基本信息",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "codeName" : "rawitem1",
+      "contentType" : "RAW",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "RAWITEM",
+      "name" : "rawitem1",
+      "getPSLayoutPos" : {
+        "colLG" : 20,
+        "colLGOffset" : 4,
+        "colMD" : 20,
+        "colMDOffset" : 4,
+        "layout" : "TABLE_24COL"
+      },
+      "rawContent" : "您确定要激活这条待办吗？",
+      "rawItemHeight" : -1.0,
+      "rawItemWidth" : -1.0,
+      "showCaption" : true
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "tabHeaderPos" : "TOP",
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "enableAutoSave" : false,
+  "infoFormMode" : false,
+  "noTabHeader" : true,
+  "readOnly" : false,
+  "showFormNavBar" : false,
+  "modelid" : "e9bfd3da59aa22ebef1b06a3d5d17249"
+}

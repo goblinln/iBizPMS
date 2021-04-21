@@ -1,0 +1,8 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "Collect",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/Collect.json",
+  "logicName" : "收藏",
+  "name" : "Collect"
+}

@@ -1,0 +1,9 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "Suspend",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Suspend.json",
+  "logicName" : "挂起",
+  "name" : "Suspend",
+  "userCat" : "CAT1"
+}

@@ -1,0 +1,35 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEUSERROLES/Release_Maintain.json",
+  "name" : "产品发布维护",
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "UPDATE",
+    "name" : "Release_Maintain_UPDATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  }, {
+    "dataAccessAction" : "CREATE",
+    "name" : "Release_Maintain_CREATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "dataAccessAction" : "READ",
+    "name" : "Release_Maintain_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "dataAccessAction" : "DELETE",
+    "name" : "Release_Maintain_DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  } ],
+  "roleTag" : "Release_Maintain",
+  "userDRAction" : "READ"
+}

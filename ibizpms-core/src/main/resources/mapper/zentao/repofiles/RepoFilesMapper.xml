@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="cn.ibizlab.pms.core.zentao.mapper.RepoFilesMapper">
+	
+	<!-- 无视图模式 -->
+	<sql id="select" databaseId="mysql">
+        <![CDATA[ SELECT t1.`ACTION`, t1.`ID`, t1.`PARENT`, t1.`PATH`, t1.`REPO`, t1.`REVISION`, t1.`TYPE` FROM `zt_repofiles` t1   ]]>
+    </sql>
+
+	
+	<!-- 搜索条件 -->
+	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_parent_eq != null ">
+			<![CDATA[ AND  t1.`PARENT` = #{srf.n_parent_eq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
+		AND ${ew.sqlSegment}
+		</if>
+	</sql>
+
+
+    <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
+	<select id="selectById"  resultMap="RepoFilesResultMap" databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND T1.ID = #{id} ]]>
+		</trim>
+    </select>
+
+
+    <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="RepoFilesResultMap" type="cn.ibizlab.pms.core.zentao.domain.RepoFiles" autoMapping="true">
+		<id property="id" column="id" /><!--主键字段映射-->
+		<result property="parent" column="parent" />
+            
+		
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="ibizparent" javaType="cn.ibizlab.pms.core.zentao.domain.RepoFiles" column="parent" select="cn.ibizlab.pms.core.zentao.mapper.RepoFilesMapper.selectById" fetchType="lazy"></association>
+    </resultMap>
+
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N__ZT_REPOFILES__ZT_REPOFILES__PARENT] -->
+	 <select id="selectByParent" resultMap="RepoFilesResultMap"  databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND T1.PARENT=#{id} ]]>
+		</trim>
+     </select>
+
+    <!--数据集合[Default]-->
+	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.RepoFilesSearchContext"  resultMap="RepoFilesResultMap">
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+     </select>
+
+    <!--数据查询[Default]-->
+    <sql id="Default" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACTION`, t1.`ID`, t1.`PARENT`, t1.`PATH`, t1.`REPO`, t1.`REVISION`, t1.`TYPE` FROM `zt_repofiles` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[View]-->
+    <sql id="View" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACTION`, t1.`ID`, t1.`PARENT`, t1.`PATH`, t1.`REPO`, t1.`REVISION`, t1.`TYPE` FROM `zt_repofiles` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+</mapper>
+

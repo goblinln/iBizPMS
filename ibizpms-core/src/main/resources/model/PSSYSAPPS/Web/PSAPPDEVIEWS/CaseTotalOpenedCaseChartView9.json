@@ -1,0 +1,328 @@
+{
+  "accUserMode" : 2,
+  "caption" : "累计创建用例",
+  "codeName" : "CaseTotalOpenedCaseChartView9",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseTotalOpenedCaseChartView9.json",
+  "name" : "CaseTotalOpenedCaseChartView9",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "ChartView9",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "name" : "CHART",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "CurOpenedCase",
+    "controlType" : "CHART",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case/PSCHARTS/CurOpenedCase.json",
+    "emptyText" : "无",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
+    "logicName" : "CurOpenedCase",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getPSChartCoordinateSystems" : [ {
+      "eChartsType" : "none",
+      "index" : 0,
+      "name" : "[Caseresult]无坐标系[0]",
+      "type" : "NONE",
+      "id" : "0"
+    } ],
+    "getPSChartDataSetGroups" : [ {
+      "index" : 0,
+      "name" : "CurOpenedCase",
+      "id" : "0"
+    } ],
+    "getPSChartDataSets" : [ {
+      "index" : 0,
+      "name" : "Caseresult-CurOpenedCase",
+      "getPSChartDataSetFields" : [ {
+        "index" : 0,
+        "name" : "PRI",
+        "getPSCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__pri.json"
+        },
+        "groupField" : true,
+        "id" : "0"
+      }, {
+        "index" : 1,
+        "name" : "SRFCOUNT",
+        "groupField" : false,
+        "id" : "1"
+      } ],
+      "id" : "0"
+    } ],
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchCurOpenedCase"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+        }
+      } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "数据视图处理器"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "CHART"
+    },
+    "getPSDEChartLegend" : {
+      "index" : 0,
+      "showLegend" : true,
+      "id" : "0"
+    },
+    "getPSDEChartSerieses" : [ {
+      "catalogField" : "PRI",
+      "getCatalogPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__pri.json"
+      },
+      "eChartsType" : "pie",
+      "index" : 0,
+      "name" : "Caseresult",
+      "getPSChartCoordinateSystem" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "getPSChartDataSet" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "getPSChartSeriesEncode" : {
+        "category" : "PRI",
+        "index" : 0,
+        "name" : "坐标系编码",
+        "type" : "NONE",
+        "value" : "SRFCOUNT",
+        "id" : "0"
+      },
+      "seriesLayoutBy" : "column",
+      "seriesType" : "pie",
+      "valueField" : "SRFCOUNT",
+      "enableChartDataSet" : true,
+      "getUserParam" : {
+        "ECX.labelLine" : "{show:false}",
+        "ECX.label" : "{show:false}",
+        "EC.radius" : "['60%', '70%']"
+      }
+    } ],
+    "getPSDEChartTitle" : {
+      "index" : 0,
+      "title" : "累计创建用例",
+      "showTitle" : true,
+      "id" : "0"
+    },
+    "getPSSysPFPlugin" : {
+      "pluginType" : "CHART_RENDER",
+      "pluginCode" : "piePlugin"
+    },
+    "readOnly" : true,
+    "name" : "chart",
+    "modelid" : "5b60ad4bb21c7faf9c631c8c13e42149",
+    "getUserParam" : {
+      "EC.legend" : "{show:false}",
+      "EC.color" : "[\"#00FF99\",\"#00CCFF\",\"#aa00ff\",\"#884bff\",'#00ffa9','#85B3FF','#A1FFFF']"
+    }
+  } ],
+  "getPSDEViewCodeName" : "TotalOpenedCaseChartView9",
+  "getPSSysImage" : {
+    "glyph" : "xf006@FontAwesome",
+    "cssClass" : "fa fa-star-o"
+  },
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDECHARTVIEW9_STYLE2",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "getPSControlParam" : { },
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "测试用例图表视图（累计创建用例）",
+  "viewStyle" : "STYLE2",
+  "viewType" : "DECHARTVIEW9",
+  "enableDP" : true,
+  "enableQuickGroup" : false,
+  "enableQuickSearch" : false,
+  "enableSearch" : false,
+  "expandSearchForm" : false,
+  "loadDefault" : true,
+  "showCaptionBar" : false,
+  "getPSAppDERSPaths" : [ [ {
+    "actionRSMode" : 1,
+    "codeName" : "Stories",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "name" : "产品需求",
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  }, {
+    "actionRSMode" : 1,
+    "codeName" : "Cases",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "name" : "需求用例",
+    "getParentPSAppDEField" : {
+      "name" : "STORY",
+      "codeName" : "Story"
+    },
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ], [ {
+    "actionRSMode" : 1,
+    "codeName" : "Cases",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "name" : "需求用例",
+    "getParentPSAppDEField" : {
+      "name" : "STORY",
+      "codeName" : "Story"
+    },
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ], [ {
+    "actionRSMode" : 1,
+    "codeName" : "Cases",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Case.json"
+    },
+    "name" : "产品用例",
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ] ]
+}

@@ -1,0 +1,7 @@
+{
+  "codeName" : "ProjectMember",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProjectMember.json",
+  "name" : "项目成员",
+  "roleTag" : "ProjectMember",
+  "roleType" : "CUSTOM"
+}

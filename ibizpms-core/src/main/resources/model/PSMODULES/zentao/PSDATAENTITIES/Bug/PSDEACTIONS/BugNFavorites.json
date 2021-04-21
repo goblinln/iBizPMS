@@ -1,0 +1,12 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "DELOGIC",
+  "codeName" : "BugNFavorites",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/BugNFavorites.json",
+  "logicName" : "取消收藏",
+  "name" : "BugNFavorites",
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/BugNFavorites.json"
+  }
+}

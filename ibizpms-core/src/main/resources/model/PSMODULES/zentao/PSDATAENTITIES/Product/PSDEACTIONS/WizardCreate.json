@@ -1,0 +1,8 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "WizardCreate",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/WizardCreate.json",
+  "logicName" : "向导使用",
+  "name" : "WizardCreate"
+}

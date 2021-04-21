@@ -1,0 +1,8 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "BatchReview",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchReview.json",
+  "logicName" : "批量评审",
+  "name" : "BatchReview"
+}

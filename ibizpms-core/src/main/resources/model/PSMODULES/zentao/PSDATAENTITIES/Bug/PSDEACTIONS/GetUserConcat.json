@@ -1,0 +1,12 @@
+{
+  "actionMode" : "READ",
+  "actionType" : "DELOGIC",
+  "codeName" : "GetUserConcat",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/GetUserConcat.json",
+  "logicName" : "获取联系人",
+  "name" : "GetUserConcat",
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/GetCurUserConcat.json"
+  }
+}

@@ -1,0 +1,408 @@
+{
+  "codeName" : "Custom",
+  "controlType" : "SEARCHBAR",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib/PSSEARCHBARS/Custom.json",
+  "logicName" : "文档库自定义搜索栏",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+  },
+  "getPSSearchBarFilters" : [ {
+    "caption" : "文档库名称(%)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
+    "itemWidth" : 100.0,
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "name" : "namelike",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_NAME_LIKE",
+      "name" : "N_NAME_LIKE",
+      "getPSDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "valueOP" : "LIKE",
+      "default" : false
+    },
+    "getPSEditor" : {
+      "editorType" : "TEXTBOX",
+      "editorWidth" : 100.0,
+      "name" : "namelike"
+    },
+    "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "showCaption" : false
+  }, {
+    "caption" : "文档类型(=)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
+    "itemWidth" : 100.0,
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "name" : "typeeq",
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    },
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_TYPE_EQ",
+      "name" : "N_TYPE_EQ",
+      "getPSDEField" : {
+        "name" : "TYPE",
+        "codeName" : "Type"
+      },
+      "valueOP" : "EQ",
+      "default" : false
+    },
+    "getPSEditor" : {
+      "editorType" : "DROPDOWNLIST",
+      "editorWidth" : 100.0,
+      "name" : "typeeq",
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Doclib__type.json"
+      },
+      "singleSelect" : true
+    },
+    "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "needCodeListConfig" : true,
+    "showCaption" : false
+  }, {
+    "caption" : "权限(=)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
+    "itemWidth" : 100.0,
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "name" : "acleq",
+    "getPSAppDEField" : {
+      "name" : "ACL",
+      "codeName" : "Acl"
+    },
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_ACL_EQ",
+      "name" : "N_ACL_EQ",
+      "getPSDEField" : {
+        "name" : "ACL",
+        "codeName" : "Acl"
+      },
+      "valueOP" : "EQ",
+      "default" : false
+    },
+    "getPSEditor" : {
+      "editorType" : "DROPDOWNLIST",
+      "editorWidth" : 100.0,
+      "name" : "acleq",
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Doclib__acl.json"
+      },
+      "singleSelect" : true
+    },
+    "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "needCodeListConfig" : true,
+    "showCaption" : false
+  }, {
+    "caption" : "文件库类型(=)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
+    "itemWidth" : 100.0,
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "name" : "doclibtypeeq",
+    "getPSAppDEField" : {
+      "name" : "DOCLIBTYPE",
+      "codeName" : "Doclibtype"
+    },
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_DOCLIBTYPE_EQ",
+      "name" : "N_DOCLIBTYPE_EQ",
+      "getPSDEField" : {
+        "name" : "DOCLIBTYPE",
+        "codeName" : "Doclibtype"
+      },
+      "valueOP" : "EQ",
+      "default" : false
+    },
+    "getPSEditor" : {
+      "editorType" : "SPAN",
+      "editorWidth" : 100.0,
+      "name" : "doclibtypeeq",
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/DOCLIBTYPE.json"
+      },
+      "editable" : false,
+      "enableLinkView" : false
+    },
+    "allowEmpty" : true,
+    "convertToCodeItemText" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "showCaption" : false
+  }, {
+    "caption" : "是否是主库(=)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "name" : "maineq",
+    "getPSAppDEField" : {
+      "name" : "MAIN",
+      "codeName" : "Main"
+    },
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_MAIN_EQ",
+      "name" : "N_MAIN_EQ",
+      "getPSDEField" : {
+        "name" : "MAIN",
+        "codeName" : "Main"
+      },
+      "valueOP" : "EQ",
+      "default" : false
+    },
+    "getPSEditor" : {
+      "editorType" : "DROPDOWNLIST",
+      "name" : "maineq",
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo2.json"
+      },
+      "singleSelect" : true
+    },
+    "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "needCodeListConfig" : true,
+    "showCaption" : false
+  }, {
+    "caption" : "所属产品(=)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "name" : "productnameeq",
+    "getPSAppDEField" : {
+      "name" : "PRODUCTNAME",
+      "codeName" : "ProductName"
+    },
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_PRODUCTNAME_EQ",
+      "name" : "N_PRODUCTNAME_EQ",
+      "getPSDEField" : {
+        "name" : "PRODUCTNAME",
+        "codeName" : "ProductName"
+      },
+      "valueOP" : "EQ",
+      "default" : false
+    },
+    "getPSEditor" : {
+      "editorParams" : {
+        "AC" : "TRUE",
+        "TRIGGER" : "TRUE",
+        "PICKUPVIEW" : "FALSE"
+      },
+      "editorType" : "PICKEREX_TRIGGER",
+      "name" : "productnameeq",
+      "getPSAppDEACMode" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+      },
+      "dropDownView" : false,
+      "enableAC" : true,
+      "enableLinkView" : false,
+      "enablePickupView" : false,
+      "forceSelection" : true,
+      "showTrigger" : true,
+      "singleSelect" : true
+    },
+    "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "showCaption" : false
+  }, {
+    "caption" : "所属产品(%)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "name" : "productnamelike",
+    "getPSAppDEField" : {
+      "name" : "PRODUCTNAME",
+      "codeName" : "ProductName"
+    },
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_PRODUCTNAME_LIKE",
+      "name" : "N_PRODUCTNAME_LIKE",
+      "getPSDEField" : {
+        "name" : "PRODUCTNAME",
+        "codeName" : "ProductName"
+      },
+      "valueOP" : "LIKE",
+      "default" : false
+    },
+    "getPSEditor" : {
+      "editorParams" : {
+        "AC" : "TRUE",
+        "TRIGGER" : "TRUE",
+        "PICKUPVIEW" : "FALSE"
+      },
+      "editorType" : "PICKEREX_TRIGGER",
+      "name" : "productnamelike",
+      "getPSAppDEACMode" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+      },
+      "dropDownView" : false,
+      "enableAC" : true,
+      "enableLinkView" : false,
+      "enablePickupView" : false,
+      "forceSelection" : true,
+      "showTrigger" : true,
+      "singleSelect" : true
+    },
+    "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "showCaption" : false
+  }, {
+    "caption" : "所属项目(=)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "name" : "projectnameeq",
+    "getPSAppDEField" : {
+      "name" : "PROJECTNAME",
+      "codeName" : "ProjectName"
+    },
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_PROJECTNAME_EQ",
+      "name" : "N_PROJECTNAME_EQ",
+      "getPSDEField" : {
+        "name" : "PROJECTNAME",
+        "codeName" : "ProjectName"
+      },
+      "valueOP" : "EQ",
+      "default" : false
+    },
+    "getPSEditor" : {
+      "editorParams" : {
+        "AC" : "TRUE",
+        "TRIGGER" : "TRUE",
+        "PICKUPVIEW" : "FALSE"
+      },
+      "editorType" : "PICKEREX_TRIGGER",
+      "name" : "projectnameeq",
+      "getPSAppDEACMode" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+      },
+      "dropDownView" : false,
+      "enableAC" : true,
+      "enableLinkView" : false,
+      "enablePickupView" : false,
+      "forceSelection" : true,
+      "showTrigger" : true,
+      "singleSelect" : true
+    },
+    "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "showCaption" : false
+  }, {
+    "caption" : "所属项目(%)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "name" : "projectnamelike",
+    "getPSAppDEField" : {
+      "name" : "PROJECTNAME",
+      "codeName" : "ProjectName"
+    },
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_PROJECTNAME_LIKE",
+      "name" : "N_PROJECTNAME_LIKE",
+      "getPSDEField" : {
+        "name" : "PROJECTNAME",
+        "codeName" : "ProjectName"
+      },
+      "valueOP" : "LIKE",
+      "default" : false
+    },
+    "getPSEditor" : {
+      "editorParams" : {
+        "AC" : "TRUE",
+        "TRIGGER" : "TRUE",
+        "PICKUPVIEW" : "FALSE"
+      },
+      "editorType" : "PICKEREX_TRIGGER",
+      "name" : "projectnamelike",
+      "getPSAppDEACMode" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+      },
+      "dropDownView" : false,
+      "enableAC" : true,
+      "enableLinkView" : false,
+      "enablePickupView" : false,
+      "forceSelection" : true,
+      "showTrigger" : true,
+      "singleSelect" : true
+    },
+    "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "showCaption" : false
+  } ],
+  "quickSearchMode" : 1,
+  "quickSearchWidth" : 0,
+  "enableFilter" : true,
+  "enableGroup" : false,
+  "enableQuickSearch" : true,
+  "mobileSearchBar" : false,
+  "modelid" : "29a60976ecd724b3a40bbb2f38a011f8"
+}

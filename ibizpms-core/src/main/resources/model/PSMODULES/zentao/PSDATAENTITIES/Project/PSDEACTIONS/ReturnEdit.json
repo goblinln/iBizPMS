@@ -1,0 +1,8 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "ReturnEdit",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/ReturnEdit.json",
+  "logicName" : "退出",
+  "name" : "ReturnEdit"
+}

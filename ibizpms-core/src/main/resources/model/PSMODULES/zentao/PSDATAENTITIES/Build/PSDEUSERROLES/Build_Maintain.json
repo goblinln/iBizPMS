@@ -1,0 +1,35 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEUSERROLES/Build_Maintain.json",
+  "name" : "版本维护",
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "UPDATE",
+    "name" : "Build_Maintain_UPDATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  }, {
+    "dataAccessAction" : "READ",
+    "name" : "Build_Maintain_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "dataAccessAction" : "DELETE",
+    "name" : "Build_Maintain_DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  }, {
+    "dataAccessAction" : "CREATE",
+    "name" : "Build_Maintain_CREATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  } ],
+  "roleTag" : "Build_Maintain",
+  "userDRAction" : "READ"
+}

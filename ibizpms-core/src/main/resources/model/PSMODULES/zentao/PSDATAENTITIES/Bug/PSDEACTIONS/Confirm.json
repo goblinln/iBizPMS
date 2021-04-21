@@ -1,0 +1,20 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "getAfterPSDEActionLogics" : [ {
+    "attachMode" : "AFTER",
+    "name" : "附加逻辑",
+    "getPSDELogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/sendNotice.json"
+    },
+    "cloneParam" : false,
+    "ignoreException" : false,
+    "internalLogic" : true
+  } ],
+  "codeName" : "Confirm",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Confirm.json",
+  "logicName" : "确认",
+  "name" : "Confirm",
+  "userCat" : "CAT1"
+}

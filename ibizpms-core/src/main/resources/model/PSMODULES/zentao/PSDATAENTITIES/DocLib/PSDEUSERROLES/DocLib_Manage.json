@@ -1,0 +1,14 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/DocLib_Manage.json",
+  "name" : "文档库管理",
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "MANAGE",
+    "name" : "DocLib_Manage_MANAGE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
+    }
+  } ],
+  "roleTag" : "DocLib_Manage",
+  "userDRAction" : "READ"
+}

@@ -1,0 +1,8 @@
+{
+  "actionMode" : "UPDATE",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "UpdateProjectCycle",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/UpdateProjectCycle.json",
+  "logicName" : "更新项目周期及可用工作日",
+  "name" : "UpdateProjectCycle"
+}

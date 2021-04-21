@@ -1,0 +1,9 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "EeClosePlan",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EeClosePlan.json",
+  "logicName" : "EE关闭计划",
+  "name" : "EeClosePlan",
+  "userCat" : "CAT1"
+}

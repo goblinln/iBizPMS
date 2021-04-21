@@ -1,0 +1,188 @@
+.studio-view.view-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: var(--view-background-color);
+
+    .app-search-form {
+        padding: 4px 0px 4px 7px;
+        display: flex;
+        flex-direction: row-reverse;
+
+        > .search-button {
+            flex-shrink: 0;
+
+            > .ivu-btn {
+                margin-left: 4px;
+            }
+        }
+
+        > .form-content {
+            flex-grow: 1;
+        }
+    }
+
+    .quick-search {
+        float: left;
+        width: 230px;
+        margin-right: 30px;
+
+        .ivu-icon-ios-search {
+            border-radius: 0px 5px 5px 0px;
+        }
+
+        .ivu-input.ivu-input-default.ivu-input-with-suffix {
+            height: 28px;
+            line-height: 28px;
+            border: 1px solid var(--form-editor-border-color);
+            color: var(--form-editor-font-color);
+            background-color: var(--form-editor-background-color);
+        }
+
+        .ivu-input.ivu-input-default.ivu-input-with-suffix:hover {
+            border-color: var(--form-editor-active-color);
+        }
+
+        .ivu-input.ivu-input-default.ivu-input-with-suffix::-webkit-input-placeholder {
+            color: var(--form-editor-placeholder-font-color);
+        }
+
+        .ivu-input-icon {
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+        }
+    }
+
+    > .view-header {
+        height: 42px;
+        width: 100%;
+        overflow: hidden;
+        color: var(--view-font-color);
+        border-bottom: 1px solid var(--app-dividing-line-color-bright);
+
+        > .title,
+        > .quick-search,
+        > .toolbar {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0px 0px 0px 3px;
+        }
+
+        > .title {
+            float: left;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 0px 8px;
+
+            .caption-image {
+                margin-right: 6px;
+            }
+        }
+
+        > .quick-group-search,
+        > .quick-search-form {
+            float: left;
+            height: 100%;
+            margin-left: 8px;
+        }
+
+        > .toolbar {
+            float: right;
+        }
+    }
+
+    > .view-content {
+        display: flex;
+        flex-direction: column;
+        height: calc(100% - 42px);
+        width: 100%;
+        padding: 3px 3px 0px 3px !important;
+        color: var(--view-font-color);
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        > .content-wrapper {
+            height: 100%;
+        }
+    }
+
+    > .view-content.show-search-form {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+        > .search-form-wrapper {
+            flex-shrink: 0;
+        }
+
+        > .search-bar-wrapper {
+            flex-shrink: 0;
+        }
+
+        > .content-wrapper {
+            flex-grow: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+    }
+
+    > .view-content {
+        > .search-bar-wrapper {
+            .search-bar-action {
+                margin-bottom: 4px;
+                text-align: right;
+
+                .ivu-btn {
+                    margin-left: 4px;
+                }
+            }
+        }
+    }
+}
+
+.ivu-poptip-popper {
+    .save-action {
+        margin-top: 4px;
+        text-align: right;
+
+        .ivu-btn {
+            margin-left: 4px;
+        }
+    }
+}
+
+.studio-view.view-container.hidden-header {
+    > .view-header {
+        display: none;
+    }
+
+    > .view-content {
+        height: 100%;
+        padding: 0px !important;
+    }
+}
+
+.studio-view.view-container.hidden-header.show-footer {
+    > .view-content {
+        height: calc(100% - 46px);
+    }
+}
+
+.studio-view.view-container.show-footer {
+    > .view-content {
+        height: calc(100% - 82px);
+    }
+
+    > .view-footer {
+        height: 45px;
+        text-align: right;
+        padding: 6px 16px;
+        border-top: 1px solid var(--app-dividing-line-color-bright);
+    }
+}
+
+@import './studio-view-layout.less';

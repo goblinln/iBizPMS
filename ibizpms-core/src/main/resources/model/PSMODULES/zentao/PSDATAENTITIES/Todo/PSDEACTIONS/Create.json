@@ -1,0 +1,11 @@
+{
+  "actionMode" : "CREATE",
+  "actionType" : "BUILTIN",
+  "codeName" : "Create",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Create.json",
+  "logicName" : "Create",
+  "name" : "Create",
+  "orderValue" : 1,
+  "userCat" : "CAT1",
+  "builtinAction" : true
+}

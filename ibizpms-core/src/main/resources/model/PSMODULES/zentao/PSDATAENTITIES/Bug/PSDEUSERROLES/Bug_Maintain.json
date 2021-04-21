@@ -1,0 +1,35 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Maintain.json",
+  "name" : "BUG维护",
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "UPDATE",
+    "name" : "Bug_Maintain_UPDATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  }, {
+    "dataAccessAction" : "READ",
+    "name" : "Bug_Maintain_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "dataAccessAction" : "CREATE",
+    "name" : "Bug_Maintain_CREATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "dataAccessAction" : "DELETE",
+    "name" : "Bug_Maintain_DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  } ],
+  "roleTag" : "Bug_Maintain",
+  "userDRAction" : "READ"
+}

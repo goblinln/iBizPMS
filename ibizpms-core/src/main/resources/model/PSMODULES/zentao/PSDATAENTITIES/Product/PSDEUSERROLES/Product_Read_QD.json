@@ -1,0 +1,19 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Read_QD.json",
+  "name" : "产品查看（测试负责人）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "QDQuery"
+  },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "READ",
+    "name" : "Product_Read_QD_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  } ],
+  "roleTag" : "Product_Read_QD",
+  "userDRAction" : "READ",
+  "defaultMode" : true
+}

@@ -1,0 +1,29 @@
+{
+  "codeName" : "CaseLib",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzCase/PSDERS/DER1N_IBZ_CASE_IBZ_LIB_LIB.json",
+  "logicName" : "用例库",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLib.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 0,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzCase.json"
+  },
+  "name" : "DER1N_IBZ_CASE_IBZ_LIB_LIB",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "LIB",
+    "codeName" : "Lib"
+  },
+  "getPSPickupTextDEField" : {
+    "name" : "LIBNAME",
+    "codeName" : "Libname"
+  },
+  "pickupDEFName" : "LIB",
+  "removeActionType" : -1,
+  "removeOrder" : 0
+}

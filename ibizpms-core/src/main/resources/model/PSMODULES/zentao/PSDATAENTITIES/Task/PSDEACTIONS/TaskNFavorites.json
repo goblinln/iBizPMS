@@ -1,0 +1,12 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "DELOGIC",
+  "codeName" : "TaskNFavorites",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskNFavorites.json",
+  "logicName" : "任务收藏",
+  "name" : "TaskNFavorites",
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/TaskCancleFavorites.json"
+  }
+}

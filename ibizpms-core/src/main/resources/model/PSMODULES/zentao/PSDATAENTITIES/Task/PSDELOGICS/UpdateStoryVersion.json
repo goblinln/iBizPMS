@@ -1,0 +1,151 @@
+{
+  "codeName" : "UpdateStoryVersion",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/UpdateStoryVersion.json",
+  "logicName" : "更新需求版本",
+  "logicSubType" : "NONE",
+  "name" : "更新需求版本",
+  "getPSDELogicLinks" : [ {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "name" : "连接6511",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "ISNOTNULL",
+        "dstFieldName" : "STORY",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "logicType" : "SINGLE",
+        "name" : "Default[STORY] 值不为空(NotNil)"
+      }, {
+        "condOP" : "NOTEQ",
+        "dstFieldName" : "STORY",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "logicType" : "SINGLE",
+        "name" : "Default[STORY] 不等于(<>) (0)",
+        "paramValue" : "0"
+      } ],
+      "notMode" : false,
+      "id" : "0ede868dc0065cbb531a122876268a63"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam1"
+    },
+    "name" : "连接4196",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "groupOP" : "OR",
+        "logicType" : "GROUP",
+        "name" : "OR",
+        "getPSDELogicLinkConds" : [ {
+          "condOP" : "EQ",
+          "dstFieldName" : "STORY",
+          "getDstLogicParam" : {
+            "modelref" : true,
+            "id" : "Default"
+          },
+          "logicType" : "SINGLE",
+          "name" : "Default[STORY] 等于(=) (0)",
+          "paramValue" : "0"
+        }, {
+          "condOP" : "ISNULL",
+          "dstFieldName" : "STORY",
+          "getDstLogicParam" : {
+            "modelref" : true,
+            "id" : "Default"
+          },
+          "logicType" : "SINGLE",
+          "name" : "Default[STORY] 值为空(Nil)"
+        } ],
+        "notMode" : false
+      } ],
+      "notMode" : false,
+      "id" : "7d3cb39b708b11b9edf837531bc07d80"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "defaultLink" : false
+  } ],
+  "getPSDELogicNodes" : [ {
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接6511"
+    }, {
+      "modelref" : true,
+      "id" : "连接4196"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall1",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取需求版本",
+    "getPSDELogicNodeParams" : [ {
+      "name" : "Default[STORY]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "STORY",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Prepareparam1",
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "重置需求版本",
+    "getPSDELogicNodeParams" : [ {
+      "dstFieldName" : "STORYVERSION",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "name" : "直接值[1] ==> Default[STORYVERSION]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcValue" : "1",
+      "srcValueType" : "SRCVALUE"
+    } ],
+    "parallelOutput" : true
+  } ],
+  "getPSDELogicParams" : [ {
+    "codeName" : "Default",
+    "name" : "传入变量",
+    "default" : true,
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
+  } ],
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : true,
+  "enableFront" : false
+}

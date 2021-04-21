@@ -1,0 +1,9 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "RunCase",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/RunCase.json",
+  "logicName" : "执行测试",
+  "name" : "RunCase",
+  "userCat" : "CAT1"
+}

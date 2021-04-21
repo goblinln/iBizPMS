@@ -1,0 +1,8 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "Init",
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSequence/PSDEACTIONS/Init.json",
+  "logicName" : "初始化序列",
+  "name" : "INIT"
+}

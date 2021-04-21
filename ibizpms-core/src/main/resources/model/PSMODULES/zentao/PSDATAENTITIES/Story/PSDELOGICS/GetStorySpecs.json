@@ -1,0 +1,174 @@
+{
+  "codeName" : "GetStorySpecs",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/GetStorySpecs.json",
+  "logicName" : "GetStorySpecs",
+  "logicSubType" : "NONE",
+  "name" : "GetStorySpecs",
+  "getPSDELogicLinks" : [ {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "name" : "连接987",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam1"
+    },
+    "name" : "连接6939",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Deaction1"
+    },
+    "name" : "连接8758",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Prepareparam1"
+    },
+    "defaultLink" : false
+  } ],
+  "getPSDELogicNodes" : [ {
+    "codeName" : "Rawsqlcall1",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "story"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取数据",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接6939"
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "Default[ID]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "ID",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[VERSION]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "VERSION",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Deaction1",
+    "getDstPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/GetStorySpec.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+    },
+    "logicNodeType" : "DEACTION",
+    "name" : "处理",
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Prepareparam1",
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "参数",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接8758"
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "dstFieldName" : "TITLE",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "name" : "story[TITLE] ==> Default[TITLE]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "TITLE",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "story"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "dstFieldName" : "VERIFY",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "name" : "story[VERIFY] ==> Default[VERIFY]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "VERIFY",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "story"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "dstFieldName" : "SPEC",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "name" : "story[SPEC] ==> Default[SPEC]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "SPEC",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "story"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接987"
+    } ],
+    "parallelOutput" : true
+  } ],
+  "getPSDELogicParams" : [ {
+    "codeName" : "story",
+    "name" : "story",
+    "default" : false,
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
+  }, {
+    "codeName" : "Default",
+    "name" : "传入变量",
+    "default" : true,
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
+  } ],
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : true,
+  "enableFront" : false
+}

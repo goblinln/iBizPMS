@@ -1,0 +1,28 @@
+{
+  "codeName" : "No2DupChkPSDEF",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDEField/PSDERS/DER1N_PSDEFIELD_PSDEFIELD_NO2DUPCHKPSDEFID.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDEField.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 0,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSDEField.json"
+  },
+  "name" : "DER1N_PSDEFIELD_PSDEFIELD_NO2DUPCHKPSDEFID",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "NO2DUPCHKPSDEFID",
+    "codeName" : "No2DupChkPSDEFId"
+  },
+  "getPSPickupTextDEField" : {
+    "name" : "NO2DUPCHKPSDEFNAME",
+    "codeName" : "No2DupChkPSDEFName"
+  },
+  "pickupDEFName" : "NO2DUPCHKPSDEFID",
+  "removeActionType" : 3,
+  "removeOrder" : 0
+}

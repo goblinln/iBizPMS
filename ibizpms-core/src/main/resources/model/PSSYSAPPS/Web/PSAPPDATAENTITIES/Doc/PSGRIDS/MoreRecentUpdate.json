@@ -1,0 +1,605 @@
+{
+  "aggMode" : "NONE",
+  "codeName" : "MoreRecentUpdate",
+  "columnEnableLink" : 2,
+  "controlType" : "GRID",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc/PSGRIDS/MoreRecentUpdate.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "最近更新（更多）",
+  "minorSortDir" : "DESC",
+  "getMinorSortPSAppDEField" : {
+    "name" : "EDITEDDATE",
+    "codeName" : "EditedDate"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
+  },
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "grid_title_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "查看"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "grid_uagridcolumn1_ud6acdb1_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "编辑"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "grid_uagridcolumn1_u02e7012_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "删除"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "grid_uagridcolumn1_u907ac33_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "收藏"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "grid_uagridcolumn1_u0bb60a8_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "取消收藏"
+    }
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "name" : "查看",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
+      },
+      "modelref" : true,
+      "id" : "Look@Doc"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "grid"
+  }, {
+    "name" : "编辑",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
+      },
+      "modelref" : true,
+      "id" : "Edit@Doc"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "grid"
+  }, {
+    "name" : "删除",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
+      },
+      "modelref" : true,
+      "id" : "Delete@Doc"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "grid"
+  }, {
+    "name" : "收藏",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
+      },
+      "modelref" : true,
+      "id" : "Collect@Doc"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "grid"
+  }, {
+    "name" : "取消收藏",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
+      },
+      "modelref" : true,
+      "id" : "UnCollect@Doc"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "grid"
+  } ],
+  "getPSDEGridColumns" : [ {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "文档编号",
+    "codeName" : "id",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "id",
+    "excelCaption" : "文档编号",
+    "name" : "id",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "文档标题",
+    "codeName" : "title",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "title",
+    "excelCaption" : "文档标题",
+    "name" : "title",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    },
+    "getPSDEUIAction" : {
+      "actionTarget" : "SINGLEKEY",
+      "getNoPrivDisplayMode" : 2,
+      "caption" : "查看",
+      "codeName" : "Look",
+      "getFrontPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocDocModuleGridView.json",
+        "viewType" : "DEGRIDVIEW"
+      },
+      "frontProcessType" : "TOP",
+      "fullCodeName" : "Doc_Look",
+      "name" : "查看",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
+      },
+      "getPSNavigateContexts" : [ {
+        "key" : "LIB",
+        "name" : "LIB",
+        "value" : "lib",
+        "rawValue" : false
+      }, {
+        "key" : "DOCQTYPE",
+        "name" : "DOCQTYPE",
+        "value" : "docqtype",
+        "rawValue" : false
+      } ],
+      "getPSNavigateParams" : [ {
+        "key" : "lib",
+        "name" : "lib",
+        "value" : "lib",
+        "rawValue" : false
+      }, {
+        "key" : "docqtype",
+        "name" : "docqtype",
+        "value" : "docqtype",
+        "rawValue" : false
+      } ],
+      "timeout" : 60000,
+      "uIActionMode" : "FRONT",
+      "uIActionTag" : "Look",
+      "uIActionType" : "DEUIACTION",
+      "id" : "Look@Doc"
+    },
+    "width" : 150,
+    "widthUnit" : "STAR",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "由谁添加",
+    "codeName" : "addedby",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "addedby",
+    "excelCaption" : "由谁添加",
+    "name" : "addedby",
+    "noPrivDisplayMode" : 1,
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "ADDEDBY",
+      "codeName" : "AddedBy"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "添加时间",
+    "codeName" : "addeddate",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "addeddate",
+    "excelCaption" : "添加时间",
+    "name" : "addeddate",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "ADDEDDATE",
+      "codeName" : "AddedDate"
+    },
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "由谁更新",
+    "codeName" : "editedby",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "editedby",
+    "excelCaption" : "由谁更新",
+    "name" : "editedby",
+    "noPrivDisplayMode" : 1,
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "EDITEDBY",
+      "codeName" : "EditedBy"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "更新时间",
+    "codeName" : "editeddate",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "editeddate",
+    "excelCaption" : "更新时间",
+    "name" : "editeddate",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "EDITEDDATE",
+      "codeName" : "EditedDate"
+    },
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "CENTER",
+    "caption" : "操作",
+    "codeName" : "uagridcolumn1",
+    "columnType" : "UAGRIDCOLUMN",
+    "name" : "uagridcolumn1",
+    "noPrivDisplayMode" : 1,
+    "getPSDEUIActionGroup" : {
+      "name" : "文档库编辑",
+      "getPSUIActionGroupDetails" : [ {
+        "detailType" : "DEUIACTION",
+        "name" : "ud6acdb1",
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "getNoPrivDisplayMode" : 2,
+          "caption" : "编辑",
+          "codeName" : "Edit",
+          "dataAccessAction" : "SRFUR__DOC_EDIT_BUT",
+          "getFrontPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",
+            "viewType" : "DEEDITVIEW"
+          },
+          "frontProcessType" : "WIZARD",
+          "fullCodeName" : "Doc_Edit",
+          "name" : "编辑",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
+          },
+          "getPSSysImage" : {
+            "glyph" : "xf044@FontAwesome",
+            "cssClass" : "fa fa-edit"
+          },
+          "timeout" : 60000,
+          "uIActionMode" : "FRONT",
+          "uIActionTag" : "Edit",
+          "uIActionType" : "DEUIACTION",
+          "id" : "Edit@Doc"
+        },
+        "addSeparator" : false,
+        "showCaption" : false,
+        "showIcon" : true
+      }, {
+        "detailType" : "DEUIACTION",
+        "name" : "u02e7012",
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "getNoPrivDisplayMode" : 2,
+          "caption" : "删除",
+          "codeName" : "Delete",
+          "confirmMsg" : "您确定删除该文档吗？",
+          "dataAccessAction" : "SRFUR__DOC_DELETE_BUT",
+          "fullCodeName" : "Doc_Delete",
+          "name" : "删除",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
+          },
+          "getPSSysImage" : {
+            "glyph" : "xf00d@FontAwesome",
+            "cssClass" : "fa fa-remove"
+          },
+          "refreshMode" : 1,
+          "timeout" : 60000,
+          "uIActionMode" : "BACKEND",
+          "uIActionTag" : "Delete",
+          "uIActionType" : "DEUIACTION",
+          "enableConfirm" : true,
+          "reloadData" : true,
+          "id" : "Delete@Doc"
+        },
+        "addSeparator" : false,
+        "showCaption" : false,
+        "showIcon" : true
+      }, {
+        "detailType" : "DEUIACTION",
+        "name" : "u907ac33",
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "getNoPrivDisplayMode" : 2,
+          "caption" : "收藏",
+          "codeName" : "Collect",
+          "dataAccessAction" : "SRFUR__DOC_FAVOUR_BUT",
+          "fullCodeName" : "Doc_Collect",
+          "name" : "收藏",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Collect"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
+          },
+          "getPSNavigateParams" : [ {
+            "key" : "docqtype",
+            "name" : "docqtype",
+            "value" : "docqtype",
+            "rawValue" : false
+          } ],
+          "getPSSysImage" : {
+            "glyph" : "xf006@FontAwesome",
+            "cssClass" : "fa fa-star-o"
+          },
+          "refreshMode" : 1,
+          "timeout" : 60000,
+          "uIActionMode" : "BACKEND",
+          "uIActionTag" : "Collect",
+          "uIActionType" : "DEUIACTION",
+          "enableConfirm" : true,
+          "reloadData" : true,
+          "id" : "Collect@Doc"
+        },
+        "addSeparator" : false,
+        "showCaption" : false,
+        "showIcon" : true
+      }, {
+        "detailType" : "DEUIACTION",
+        "name" : "u0bb60a8",
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "getNoPrivDisplayMode" : 2,
+          "caption" : "取消收藏",
+          "codeName" : "UnCollect",
+          "dataAccessAction" : "SRFUR__DOC_NFAVOUR_BUT",
+          "fullCodeName" : "Doc_UnCollect",
+          "name" : "取消收藏",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "UnCollect"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
+          },
+          "getPSNavigateParams" : [ {
+            "key" : "docqtype",
+            "name" : "docqtype",
+            "value" : "docqtype",
+            "rawValue" : false
+          } ],
+          "getPSSysImage" : {
+            "glyph" : "xf005@FontAwesome",
+            "cssClass" : "fa fa-star"
+          },
+          "refreshMode" : 1,
+          "timeout" : 60000,
+          "uIActionMode" : "BACKEND",
+          "uIActionTag" : "UnCollect",
+          "uIActionType" : "DEUIACTION",
+          "enableConfirm" : true,
+          "reloadData" : true,
+          "id" : "UnCollect@Doc"
+        },
+        "addSeparator" : false,
+        "showCaption" : false,
+        "showIcon" : true
+      } ]
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : false
+  } ],
+  "getPSDEGridDataItems" : [ {
+    "dataType" : 1,
+    "name" : "module",
+    "getPSAppDEField" : {
+      "name" : "MODULE",
+      "codeName" : "Module"
+    }
+  }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "addeddate",
+    "getPSAppDEField" : {
+      "name" : "ADDEDDATE",
+      "codeName" : "AddedDate"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 1,
+    "name" : "product",
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "id",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "project",
+    "getPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "title",
+    "getPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "lib",
+    "getPSAppDEField" : {
+      "name" : "LIB",
+      "codeName" : "Lib"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "addedby",
+    "getPSAppDEField" : {
+      "name" : "ADDEDBY",
+      "codeName" : "AddedBy"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "isfavourites",
+    "getPSAppDEField" : {
+      "name" : "ISFAVOURITES",
+      "codeName" : "Isfavourites"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "editedby",
+    "getPSAppDEField" : {
+      "name" : "EDITEDBY",
+      "codeName" : "EditedBy"
+    }
+  }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "editeddate",
+    "getPSAppDEField" : {
+      "name" : "EDITEDDATE",
+      "codeName" : "EditedDate"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "docqtype",
+    "getPSAppDEField" : {
+      "name" : "DOCQTYPE",
+      "codeName" : "Docqtype"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "文档编号",
+    "codeName" : "srfkey",
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
+  "pagingSize" : 20,
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
+    }
+  },
+  "sortMode" : "REMOTE",
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableGroup" : false,
+  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : false,
+  "singleSelect" : true,
+  "modelid" : "42108d2dae522920ee16aadc7b06b031"
+}

@@ -1,0 +1,52 @@
+package cn.ibizlab.pms.ibiz.logic.testmodulelogic.fixpath;
+import java.util.Map;
+import java.util.HashMap;
+import com.alibaba.fastjson.JSONObject;
+import org.springframework.util.StringUtils;
+import org.springframework.util.ObjectUtils;
+import cn.ibizlab.pms.util.errors.BadRequestAlertException;
+global cn.ibizlab.pms.core.ibiz.domain.TestModule testmodulefixpathdefault;
+global cn.ibizlab.pms.core.zentao.domain.Module testmodulefixpathzt_module;
+global cn.ibizlab.pms.core.zentao.service.IModuleService moduleservice;
+global cn.ibizlab.pms.core.ibiz.service.ITestModuleService iBzSysTestmoduleDefaultService;
+global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
+
+
+no-loop
+
+//逻辑处理节点[执行重建模块路径行为]
+rule "deaction1"
+ruleflow-group "testmodulefixpathdeaction1"
+    when
+    then
+    moduleservice.update(testmodulefixpathzt_module);
+    update(testmodulefixpathdefault);//更新fact中变量值
+    update(testmodulefixpathzt_module);//更新fact中变量值
+    end
+
+//逻辑处理节点[开始]
+rule "begin"
+ruleflow-group "testmodulefixpathbegin"
+    when
+    then
+    end
+
+//逻辑处理节点[准备参数]
+rule "prepareparam1"
+ruleflow-group "testmodulefixpathprepareparam1"
+    when
+    then
+    testmodulefixpathzt_module.set("branch",testmodulefixpathdefault.get("branch"));
+    testmodulefixpathzt_module.set("collector",testmodulefixpathdefault.get("collector"));
+    testmodulefixpathzt_module.set("grade",testmodulefixpathdefault.get("grade"));
+    testmodulefixpathzt_module.set("id",testmodulefixpathdefault.get("id"));
+    testmodulefixpathzt_module.set("name",testmodulefixpathdefault.get("name"));
+    testmodulefixpathzt_module.set("order",testmodulefixpathdefault.get("order"));
+    testmodulefixpathzt_module.set("parent",testmodulefixpathdefault.get("parent"));
+    testmodulefixpathzt_module.set("root",testmodulefixpathdefault.get("root"));
+    testmodulefixpathzt_module.set("ibizshort",testmodulefixpathdefault.get("ibizshort"));
+    testmodulefixpathzt_module.set("type",testmodulefixpathdefault.get("type"));
+    update(testmodulefixpathdefault);//更新fact中变量值
+    update(testmodulefixpathzt_module);//更新fact中变量值
+    end
+

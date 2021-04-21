@@ -1,0 +1,9 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "BUILTIN",
+  "codeName" : "Save",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/GroupPriv/PSDEACTIONS/Save.json",
+  "logicName" : "Save",
+  "name" : "Save",
+  "builtinAction" : true
+}

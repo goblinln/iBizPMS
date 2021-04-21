@@ -1,0 +1,30 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "getAfterPSDEActionLogics" : [ {
+    "attachMode" : "AFTER",
+    "name" : "附加逻辑",
+    "getPSDELogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/sendTodoTask.json"
+    },
+    "cloneParam" : false,
+    "ignoreException" : false,
+    "internalLogic" : true
+  }, {
+    "attachMode" : "AFTER",
+    "name" : "附加逻辑",
+    "getPSDELogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/sendNotice.json"
+    },
+    "cloneParam" : false,
+    "ignoreException" : false,
+    "internalLogic" : true
+  } ],
+  "codeName" : "AssignTo",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/AssignTo.json",
+  "logicName" : "指派",
+  "name" : "assignTo",
+  "userCat" : "CAT1"
+}

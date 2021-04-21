@@ -1,0 +1,12 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "DELOGIC",
+  "codeName" : "MyFavoriteCount",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/MyFavoriteCount.json",
+  "logicName" : "我的收藏计数器",
+  "name" : "MyFavoriteCount",
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDELOGICS/MyFavoriteCount.json"
+  }
+}

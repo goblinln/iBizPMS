@@ -1,0 +1,97 @@
+{
+  "codeName" : "MobProductPlanCounter",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDELOGICS/MobProductPlanCounter.json",
+  "logicName" : "移动端产品计划计数器",
+  "logicSubType" : "NONE",
+  "name" : "移动端产品计划计数器",
+  "getPSDELogicLinks" : [ {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "name" : "连接5534",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall2"
+    },
+    "name" : "连接6798",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "defaultLink" : false
+  } ],
+  "getPSDELogicNodes" : [ {
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接5534"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall2",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取bug数",
+    "getPSDELogicNodeParams" : [ {
+      "name" : "Default[ID]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "ID",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Rawsqlcall1",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取需求数",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接6798"
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "name" : "Default[ID]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "ID",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "parallelOutput" : true
+  } ],
+  "getPSDELogicParams" : [ {
+    "codeName" : "Default",
+    "name" : "传入变量",
+    "default" : true,
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
+  } ],
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : true,
+  "enableFront" : false
+}

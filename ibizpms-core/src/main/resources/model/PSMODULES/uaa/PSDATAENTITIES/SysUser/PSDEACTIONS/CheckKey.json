@@ -1,0 +1,9 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "BUILTIN",
+  "codeName" : "CheckKey",
+  "dynaModelFilePath" : "PSMODULES/uaa/PSDATAENTITIES/SysUser/PSDEACTIONS/CheckKey.json",
+  "logicName" : "CheckKey",
+  "name" : "CheckKey",
+  "builtinAction" : true
+}

@@ -1,0 +1,23 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "DOCLIBTYPE",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSCODELISTS/DOCLIBTYPE.json",
+  "emptyText" : "未定义",
+  "getPSCodeItems" : [ {
+    "codeName" : "Doc",
+    "text" : "文档",
+    "value" : "doc"
+  }, {
+    "codeName" : "File",
+    "text" : "附件",
+    "value" : "file"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
+}

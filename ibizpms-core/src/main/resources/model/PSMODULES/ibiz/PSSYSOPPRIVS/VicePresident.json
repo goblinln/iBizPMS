@@ -1,0 +1,7 @@
+{
+  "codeName" : "VicePresident",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/VicePresident.json",
+  "name" : "公司领导",
+  "roleTag" : "VicePresident",
+  "roleType" : "CUSTOM"
+}

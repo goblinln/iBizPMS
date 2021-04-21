@@ -1,0 +1,9 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "Block",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Block.json",
+  "logicName" : "阻塞",
+  "name" : "Block",
+  "userCat" : "CAT1"
+}

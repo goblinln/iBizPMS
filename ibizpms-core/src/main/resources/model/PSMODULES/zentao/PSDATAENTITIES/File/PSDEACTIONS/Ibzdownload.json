@@ -1,0 +1,8 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "Ibzdownload",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEACTIONS/Ibzdownload.json",
+  "logicName" : "下载",
+  "name" : "ibzdownload"
+}

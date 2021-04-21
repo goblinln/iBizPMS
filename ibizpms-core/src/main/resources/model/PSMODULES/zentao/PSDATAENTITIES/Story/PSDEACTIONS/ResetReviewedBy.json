@@ -1,0 +1,8 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "ResetReviewedBy",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ResetReviewedBy.json",
+  "logicName" : "重置由谁评审",
+  "name" : "ResetReviewedBy"
+}

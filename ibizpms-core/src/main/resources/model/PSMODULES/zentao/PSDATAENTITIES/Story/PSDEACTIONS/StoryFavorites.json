@@ -1,0 +1,12 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "DELOGIC",
+  "codeName" : "StoryFavorites",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryFavorites.json",
+  "logicName" : "需求收藏",
+  "name" : "StoryFavorites",
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/StoryFavorites.json"
+  }
+}

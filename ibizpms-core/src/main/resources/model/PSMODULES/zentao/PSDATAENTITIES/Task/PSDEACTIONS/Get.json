@@ -1,0 +1,21 @@
+{
+  "actionMode" : "READ",
+  "actionType" : "BUILTIN",
+  "getAfterPSDEActionLogics" : [ {
+    "attachMode" : "AFTER",
+    "name" : "附加逻辑",
+    "getPSDELogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/ResetTaskestimate.json"
+    },
+    "cloneParam" : false,
+    "ignoreException" : false,
+    "internalLogic" : true
+  } ],
+  "codeName" : "Get",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Get.json",
+  "logicName" : "Get",
+  "name" : "Get",
+  "orderValue" : 31,
+  "builtinAction" : true
+}

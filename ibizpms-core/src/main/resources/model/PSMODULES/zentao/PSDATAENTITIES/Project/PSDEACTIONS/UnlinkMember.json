@@ -1,0 +1,9 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "UnlinkMember",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/UnlinkMember.json",
+  "logicName" : "移除成员",
+  "name" : "UnlinkMember",
+  "userCat" : "CAT1"
+}

@@ -1,0 +1,9 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "ReleaseUnLinkBugbyLeftBug",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/ReleaseUnLinkBugbyLeftBug.json",
+  "logicName" : "移除关联Bug（遗留Bug）",
+  "name" : "ReleaseUnLinkBugbyLeftBug",
+  "userCat" : "CAT1"
+}

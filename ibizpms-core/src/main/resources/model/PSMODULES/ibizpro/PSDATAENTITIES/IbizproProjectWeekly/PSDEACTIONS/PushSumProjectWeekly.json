@@ -1,0 +1,8 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "PushSumProjectWeekly",
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly/PSDEACTIONS/PushSumProjectWeekly.json",
+  "logicName" : "定时推送项目周报",
+  "name" : "pushSumProjectWeekly"
+}

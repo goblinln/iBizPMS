@@ -1,0 +1,8 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "OnlyUnCollectDoc",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/OnlyUnCollectDoc.json",
+  "logicName" : "仅取消收藏文档",
+  "name" : "OnlyUnCollectDoc"
+}

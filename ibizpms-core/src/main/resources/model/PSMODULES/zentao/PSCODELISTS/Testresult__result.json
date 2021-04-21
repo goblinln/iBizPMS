@@ -1,0 +1,35 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "Testresult__result",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/Testresult__result.json",
+  "emptyText" : "未定义",
+  "getPSCodeItems" : [ {
+    "codeName" : "N_a",
+    "color" : "rgba(27, 97, 247, 1)",
+    "text" : "忽略",
+    "value" : "n/a"
+  }, {
+    "codeName" : "Pass",
+    "color" : "rgba(101, 214, 15, 1)",
+    "text" : "通过",
+    "value" : "pass"
+  }, {
+    "codeName" : "Fail",
+    "color" : "rgba(244, 12, 12, 1)",
+    "text" : "失败",
+    "value" : "fail"
+  }, {
+    "codeName" : "Blocked",
+    "color" : "rgba(234, 187, 17, 1)",
+    "text" : "阻塞",
+    "value" : "blocked"
+  } ],
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "codeItemValueNumber" : false,
+  "enableCache" : true,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
+}

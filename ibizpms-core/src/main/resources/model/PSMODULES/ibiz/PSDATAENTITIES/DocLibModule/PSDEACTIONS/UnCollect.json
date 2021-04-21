@@ -1,0 +1,8 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "UnCollect",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/UnCollect.json",
+  "logicName" : "取消收藏",
+  "name" : "UnCollect"
+}

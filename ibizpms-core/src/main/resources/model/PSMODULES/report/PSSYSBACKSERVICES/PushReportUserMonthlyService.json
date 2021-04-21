@@ -1,0 +1,17 @@
+{
+  "codeName" : "PushReportUserMonthlyService",
+  "dynaModelFilePath" : "PSMODULES/report/PSSYSBACKSERVICES/PushReportUserMonthlyService.json",
+  "name" : "定时推送待阅提醒用户月报",
+  "getPSDEAction" : {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/PushUserMonthly.json"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly.json"
+  },
+  "serviceContainer" : "SC01",
+  "serviceHandler" : "PushReportUserMonthlyService",
+  "serviceOrder" : 0,
+  "startMode" : "MANUAL"
+}

@@ -1,0 +1,28 @@
+{
+  "codeName" : "ZTProduct",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDERS/DER1N_IBZ_PRODUCTMODULE_ZT_PRODUCT_ROOT.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 4,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+  },
+  "name" : "DER1N_IBZ_PRODUCTMODULE_ZT_PRODUCT_ROOT",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "ROOT",
+    "codeName" : "Root"
+  },
+  "getPSPickupTextDEField" : {
+    "name" : "ROOTNAME",
+    "codeName" : "RootName"
+  },
+  "pickupDEFName" : "ROOT",
+  "removeActionType" : -1,
+  "removeOrder" : 0
+}

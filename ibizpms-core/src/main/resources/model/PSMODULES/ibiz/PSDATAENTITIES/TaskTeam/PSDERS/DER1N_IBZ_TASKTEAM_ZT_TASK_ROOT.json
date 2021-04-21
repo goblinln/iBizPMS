@@ -1,0 +1,25 @@
+{
+  "codeName" : "TaskTeam",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam/PSDERS/DER1N_IBZ_TASKTEAM_ZT_TASK_ROOT.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 12,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam.json"
+  },
+  "name" : "DER1N_IBZ_TASKTEAM_ZT_TASK_ROOT",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "ROOT",
+    "codeName" : "Root"
+  },
+  "pickupDEFName" : "ROOT",
+  "removeActionType" : -1,
+  "removeOrder" : 0,
+  "nestedRS" : true
+}

@@ -1,0 +1,35 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/UserContact/PSDEUSERROLES/UserContact_Maintain.json",
+  "name" : "用户联系人维护",
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "CREATE",
+    "name" : "UserContact_Maintain_CREATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "dataAccessAction" : "READ",
+    "name" : "UserContact_Maintain_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "dataAccessAction" : "DELETE",
+    "name" : "UserContact_Maintain_DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  }, {
+    "dataAccessAction" : "UPDATE",
+    "name" : "UserContact_Maintain_UPDATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  } ],
+  "roleTag" : "UserContact_Maintain",
+  "userDRAction" : "READ"
+}

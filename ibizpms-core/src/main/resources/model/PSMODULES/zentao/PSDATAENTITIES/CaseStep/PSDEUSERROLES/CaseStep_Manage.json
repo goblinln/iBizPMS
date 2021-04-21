@@ -1,0 +1,14 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEUSERROLES/CaseStep_Manage.json",
+  "name" : "用例步骤管理",
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "MANAGE",
+    "name" : "CaseStep_Manage_MANGE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
+    }
+  } ],
+  "roleTag" : "CaseStep_Manage",
+  "userDRAction" : "READ"
+}

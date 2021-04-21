@@ -1,0 +1,8 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "Preview",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEACTIONS/Preview.json",
+  "logicName" : "预览",
+  "name" : "Preview"
+}

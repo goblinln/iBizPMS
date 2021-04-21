@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="cn.ibizlab.pms.core.zentao.mapper.BurnMapper">
+	
+	<!-- 无视图模式 -->
+	<sql id="select" databaseId="mysql">
+        <![CDATA[ SELECT t1.`CONSUMED`, t1.`CREATEBY`, t1.`DATE`, t1.`DEPT`, t1.`ESTIMATE`, concat(t1.`PROJECT`,'__',t1.`TASK`,'__',t1.`DATE`) AS `ID`, DATE_FORMAT( t1.`DATE`, '%w' ) AS `ISWEEKEND`, t1.`LEFT`, t1.`ORG`, t1.`PROJECT`, t1.`TASK`, t1.`UPDATEBY` FROM `zt_burn` t1   ]]>
+    </sql>
+
+	
+	<!-- 搜索条件 -->
+	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_isweekend_eq != null ">
+			<![CDATA[ AND  DATE_FORMAT( t1.`DATE`, '%w' ) = #{srf.n_isweekend_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_isweekend_in != null ">
+			<![CDATA[ AND  DATE_FORMAT( t1.`DATE`, '%w' ) IN ]]>
+            <foreach item="item" collection="srf.n_isweekend_in.split(',|;')"  open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+		<if test="srf.n_project_eq != null ">
+			<![CDATA[ AND  t1.`PROJECT` = #{srf.n_project_eq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="srf.n_task_eq != null ">
+			<![CDATA[ AND  t1.`TASK` = #{srf.n_task_eq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
+		AND ${ew.sqlSegment}
+		</if>
+	</sql>
+
+
+    <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
+	<select id="selectById"  resultMap="BurnResultMap" databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND T1.ID = #{id} ]]>
+		</trim>
+    </select>
+
+
+    <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="BurnResultMap" type="cn.ibizlab.pms.core.zentao.domain.Burn" autoMapping="true">
+		<result property="project" column="project" />
+		<result property="task" column="task" />
+            
+		
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="ztproject" javaType="cn.ibizlab.pms.core.zentao.domain.Project" column="project" select="cn.ibizlab.pms.core.zentao.mapper.ProjectMapper.selectById" fetchType="lazy"></association>
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="zttask" javaType="cn.ibizlab.pms.core.zentao.domain.Task" column="task" select="cn.ibizlab.pms.core.zentao.mapper.TaskMapper.selectById" fetchType="lazy"></association>
+    </resultMap>
+
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_BURN_ZT_PROJECT_PROJECT] -->
+	 <select id="selectByProject" resultMap="BurnResultMap"  databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND T1.PROJECT=#{id} ]]>
+		</trim>
+     </select>
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_BURN_ZT_TASK_TASK] -->
+	 <select id="selectByTask" resultMap="BurnResultMap"  databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND T1.TASK=#{id} ]]>
+		</trim>
+     </select>
+
+    <!--数据集合[Default]-->
+	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.BurnSearchContext"  resultMap="BurnResultMap">
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+     </select>
+
+    <!--数据集合[ESTIMATEANDLEFT]-->
+	 <select id="searchESTIMATEANDLEFT"  parameterType="cn.ibizlab.pms.core.zentao.filter.BurnSearchContext"  resultMap="BurnResultMap">
+         select t1.* from (
+                <include refid="ESTIMATEANDLEFT" />
+         )t1
+     </select>
+
+    <!--数据查询[Default]-->
+    <sql id="Default" databaseId="mysql">
+		<![CDATA[ SELECT t1.`CONSUMED`, t1.`CREATEBY`, t1.`DATE`, t1.`DEPT`, t1.`ESTIMATE`, concat(t1.`PROJECT`,'__',t1.`TASK`,'__',t1.`DATE`) AS `ID`, DATE_FORMAT( t1.`DATE`, '%w' ) AS `ISWEEKEND`, t1.`LEFT`, t1.`ORG`, t1.`PROJECT`, t1.`TASK`, t1.`UPDATEBY` FROM `zt_burn` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[ESTIMATEANDLEFT]-->
+    <sql id="ESTIMATEANDLEFT" databaseId="mysql">
+		<![CDATA[ SELECT t1.`CONSUMED`, t1.`DATE`, ROUND((select estimate from zt_burn where date=t2.`begin` and project=t1.project)*(1-(DATEDIFF(t1.date,t2.`begin`))/(DATEDIFF(t2.`end`,t2.`begin`))),1) AS `ESTIMATE`, t1.`LEFT`, t1.`PROJECT`, DATE_FORMAT(t1.date,'%w')  as ISWEEKEND FROM `zt_burn` t1   LEFT JOIN zt_project t2 on t1.project=t2.id ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[View]-->
+    <sql id="View" databaseId="mysql">
+		<![CDATA[ SELECT t1.`CONSUMED`, t1.`CREATEBY`, t1.`DATE`, t1.`DEPT`, t1.`ESTIMATE`, concat(t1.`PROJECT`,'__',t1.`TASK`,'__',t1.`DATE`) AS `ID`, DATE_FORMAT( t1.`DATE`, '%w' ) AS `ISWEEKEND`, t1.`LEFT`, t1.`ORG`, t1.`PROJECT`, t1.`TASK`, t1.`UPDATEBY` FROM `zt_burn` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+</mapper>
+

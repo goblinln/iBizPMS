@@ -1,0 +1,12 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "DELOGIC",
+  "codeName" : "BuildUnlinkStorys",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BuildUnlinkStorys.json",
+  "logicName" : "版本解除关联需求",
+  "name" : "buildUnlinkStorys",
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/buildUnlinkStorys.json"
+  }
+}

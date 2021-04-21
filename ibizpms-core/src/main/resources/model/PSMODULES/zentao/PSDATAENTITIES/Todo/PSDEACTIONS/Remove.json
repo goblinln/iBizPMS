@@ -1,0 +1,11 @@
+{
+  "actionMode" : "DELETE",
+  "actionType" : "BUILTIN",
+  "codeName" : "Remove",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Remove.json",
+  "logicName" : "Remove",
+  "name" : "Remove",
+  "orderValue" : 21,
+  "userCat" : "CAT1",
+  "builtinAction" : true
+}

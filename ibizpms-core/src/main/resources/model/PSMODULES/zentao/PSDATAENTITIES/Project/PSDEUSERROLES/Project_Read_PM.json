@@ -1,0 +1,19 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_PM.json",
+  "name" : "项目查看（项目负责人）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "PMQuery"
+  },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "READ",
+    "name" : "Project_Read_PM_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  } ],
+  "roleTag" : "Project_Read_PM",
+  "userDRAction" : "READ",
+  "defaultMode" : true
+}

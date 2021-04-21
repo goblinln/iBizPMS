@@ -1,0 +1,19 @@
+{
+  "actionMode" : "UPDATE",
+  "actionType" : "USERCUSTOM",
+  "getAfterPSDEActionLogics" : [ {
+    "attachMode" : "AFTER",
+    "name" : "附加逻辑",
+    "getPSDELogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/UpdateInfo.json"
+    },
+    "cloneParam" : false,
+    "ignoreException" : false,
+    "internalLogic" : true
+  } ],
+  "codeName" : "UpdateTitleByYear",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/UpdateTitleByYear.json",
+  "logicName" : "更新标题",
+  "name" : "UpdateTitleByYear"
+}

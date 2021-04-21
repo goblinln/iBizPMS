@@ -1,0 +1,8 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "ComputeBurn",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEACTIONS/ComputeBurn.json",
+  "logicName" : "更新燃尽图",
+  "name" : "ComputeBurn"
+}

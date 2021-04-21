@@ -1,0 +1,8 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "SumProductWeekly",
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDEACTIONS/SumProductWeekly.json",
+  "logicName" : "统计产品周报",
+  "name" : "SUMPRODUCTWEEKLY"
+}

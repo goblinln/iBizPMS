@@ -1,0 +1,8 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "ManualCreateDaily",
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductDaily/PSDEACTIONS/ManualCreateDaily.json",
+  "logicName" : "手动生成产品日报",
+  "name" : "ManualCreateDaily"
+}

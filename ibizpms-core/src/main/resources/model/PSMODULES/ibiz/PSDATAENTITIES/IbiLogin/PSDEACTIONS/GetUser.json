@@ -1,0 +1,10 @@
+{
+  "actionMode" : "READ",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "GetUser",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbiLogin/PSDEACTIONS/GetUser.json",
+  "logicName" : "获取ZT账户登录信息\u001C",
+  "name" : "getUser",
+  "transactionMode" : "NONE",
+  "customParam" : true
+}

@@ -1,0 +1,9 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "Cancel",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Cancel.json",
+  "logicName" : "取消",
+  "name" : "Cancel",
+  "userCat" : "CAT1"
+}

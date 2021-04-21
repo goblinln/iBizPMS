@@ -1,0 +1,12 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "DELOGIC",
+  "codeName" : "ReportIReceived",
+  "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/ReportIReceived.json",
+  "logicName" : "我收到的汇报（计数器）",
+  "name" : "ReportIReceived",
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDELOGICS/ReportIReceived.json"
+  }
+}

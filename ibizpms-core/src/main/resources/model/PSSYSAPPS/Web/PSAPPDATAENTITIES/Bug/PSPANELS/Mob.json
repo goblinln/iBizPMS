@@ -1,0 +1,239 @@
+{
+  "getAllPSPanelFields" : [ {
+    "id" : "pri"
+  }, {
+    "id" : "title"
+  }, {
+    "id" : "status"
+  }, {
+    "id" : "resolution"
+  }, {
+    "id" : "assignedto"
+  } ],
+  "codeName" : "Mob",
+  "controlType" : "PANEL",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSPANELS/Mob.json",
+  "layoutMode" : "TABLE_12COL",
+  "logicName" : "移动端列表项布局面板",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+  },
+  "getPSLayout" : {
+    "columnCount" : 12,
+    "layout" : "TABLE_12COL"
+  },
+  "getRootPSPanelItems" : [ {
+    "itemStyle" : "DEFAULT",
+    "itemType" : "CONTAINER",
+    "name" : "container2",
+    "getPSLayout" : {
+      "columnCount" : 12,
+      "layout" : "TABLE_12COL"
+    },
+    "getPSLayoutPos" : {
+      "colMD" : 12,
+      "layout" : "TABLE_12COL"
+    },
+    "getPSPanelItems" : [ {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "pri",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "pri",
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__pri.json"
+        },
+        "editable" : false,
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 2,
+        "colMD" : 2,
+        "layout" : "TABLE_12COL"
+      },
+      "viewFieldName" : "pri",
+      "convertToCodeItemText" : true,
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "title",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "title",
+        "editable" : false,
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 10,
+        "colMD" : 10,
+        "layout" : "TABLE_12COL"
+      },
+      "viewFieldName" : "title",
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "status",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "status",
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__status.json"
+        },
+        "editable" : false,
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 4,
+        "colMD" : 4,
+        "layout" : "TABLE_12COL"
+      },
+      "viewFieldName" : "status",
+      "convertToCodeItemText" : true,
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "resolution",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "resolution",
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__resolution.json"
+        },
+        "editable" : false,
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 3,
+        "colMD" : 3,
+        "layout" : "TABLE_12COL"
+      },
+      "viewFieldName" : "resolution",
+      "convertToCodeItemText" : true,
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "RAWITEM",
+      "name" : "rawitem2",
+      "getPSLayoutPos" : {
+        "colLG" : 1,
+        "colLGOffset" : 1,
+        "colMD" : 1,
+        "colMDOffset" : 1,
+        "layout" : "TABLE_12COL"
+      },
+      "getPSPanelItemGroupLogics" : [ {
+        "groupOP" : "AND",
+        "logicCat" : "PANELVISIBLE",
+        "logicType" : "GROUP",
+        "name" : "面板成员[rawitem2][面板显示]逻辑",
+        "getPSPanelItemLogics" : [ {
+          "condOp" : "ISNULL",
+          "dstModelField" : "assignedto",
+          "logicType" : "SINGLE",
+          "name" : "assignedto 值为空(Nil)"
+        } ],
+        "notMode" : false
+      } ],
+      "showCaption" : true
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "RAWITEM",
+      "name" : "rawitem3",
+      "getPSLayoutPos" : {
+        "colLG" : 1,
+        "colLGOffset" : 1,
+        "colMD" : 1,
+        "colMDOffset" : 1,
+        "layout" : "TABLE_12COL"
+      },
+      "getPSPanelItemGroupLogics" : [ {
+        "groupOP" : "AND",
+        "logicCat" : "PANELVISIBLE",
+        "logicType" : "GROUP",
+        "name" : "面板成员[rawitem3][面板显示]逻辑",
+        "getPSPanelItemLogics" : [ {
+          "condOp" : "EQ",
+          "dstModelField" : "assignedto",
+          "logicType" : "SINGLE",
+          "name" : "assignedto 等于(=) (closed)",
+          "value" : "closed"
+        } ],
+        "notMode" : false
+      } ],
+      "showCaption" : true
+    }, {
+      "htmlContent" : "<i class=\"fa fa-hand-o-right\"></i>",
+      "itemStyle" : "DEFAULT",
+      "itemType" : "RAWITEM",
+      "name" : "rawitem1",
+      "getPSLayoutPos" : {
+        "colLG" : 1,
+        "colLGOffset" : 1,
+        "colMD" : 1,
+        "colMDOffset" : 1,
+        "layout" : "TABLE_12COL"
+      },
+      "getPSPanelItemGroupLogics" : [ {
+        "groupOP" : "AND",
+        "logicCat" : "PANELVISIBLE",
+        "logicType" : "GROUP",
+        "name" : "面板成员[rawitem1][面板显示]逻辑",
+        "getPSPanelItemLogics" : [ {
+          "condOp" : "NOTEQ",
+          "dstModelField" : "assignedto",
+          "logicType" : "SINGLE",
+          "name" : "assignedto 不等于(<>) (closed)",
+          "value" : "closed"
+        }, {
+          "condOp" : "ISNOTNULL",
+          "dstModelField" : "assignedto",
+          "logicType" : "SINGLE",
+          "name" : "assignedto 值不为空(NotNil)"
+        } ],
+        "notMode" : false
+      } ],
+      "showCaption" : true
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "assignedto",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "assignedto",
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+        },
+        "editable" : false,
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 3,
+        "colMD" : 3,
+        "layout" : "TABLE_12COL"
+      },
+      "viewFieldName" : "assignedto",
+      "convertToCodeItemText" : true,
+      "hidden" : false,
+      "showCaption" : false
+    } ],
+    "getPSSysCss" : {
+      "cssName" : "mob_list_card"
+    },
+    "showCaption" : false
+  } ],
+  "mobilePanel" : true,
+  "modelid" : "15ac73e6dfc7a5d8c85fcba439f3ac38"
+}

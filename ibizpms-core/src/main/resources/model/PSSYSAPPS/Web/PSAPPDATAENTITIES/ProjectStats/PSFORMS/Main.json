@@ -1,0 +1,1265 @@
+{
+  "codeName" : "Main",
+  "controlType" : "FORM",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats/PSFORMS/Main.json",
+  "getGetDraftFromPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraftfrom"
+  },
+  "getGetDraftPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraft"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "logicName" : "主编辑表单",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json"
+  },
+  "getPSDEFormItems" : [ {
+    "id" : "srforikey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfkey",
+    "hidden" : true,
+    "dataType" : 1,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "id" : "srfmajortext",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "id" : "srftempmode",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfuf",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfdeid",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfsourcekey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "custom7",
+    "hidden" : true,
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "TOTALWH",
+      "codeName" : "Totalwh"
+    }
+  }, {
+    "id" : "custom8",
+    "hidden" : true,
+    "dataType" : 7,
+    "getPSAppDEField" : {
+      "name" : "TOTALCONSUMED",
+      "codeName" : "TotalConsumed"
+    }
+  }, {
+    "id" : "formitemex4",
+    "dataType" : 25
+  }, {
+    "id" : "totalestimate",
+    "dataType" : 7,
+    "getPSAppDEField" : {
+      "name" : "TOTALESTIMATE",
+      "codeName" : "TotalEstimate"
+    }
+  }, {
+    "id" : "totalconsumed",
+    "dataType" : 7,
+    "getPSAppDEField" : {
+      "name" : "TOTALCONSUMED",
+      "codeName" : "TotalConsumed"
+    }
+  }, {
+    "id" : "totalleft",
+    "dataType" : 7,
+    "getPSAppDEField" : {
+      "name" : "TOTALLEFT",
+      "codeName" : "TotalLeft"
+    }
+  }, {
+    "id" : "yesterdayctaskcnt",
+    "hidden" : true,
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "YESTERDAYCTASKCNT",
+      "codeName" : "Yesterdayctaskcnt"
+    }
+  }, {
+    "id" : "taskcnt",
+    "hidden" : true,
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "TASKCNT",
+      "codeName" : "TaskCnt"
+    }
+  }, {
+    "id" : "custom1",
+    "hidden" : true,
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "TASKCNT",
+      "codeName" : "TaskCnt"
+    }
+  }, {
+    "id" : "custom2",
+    "hidden" : true,
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "FINISHTASKCNT",
+      "codeName" : "FinishTaskCnt"
+    }
+  }, {
+    "id" : "formitemex1",
+    "dataType" : 25
+  }, {
+    "id" : "undonetaskcnt",
+    "hidden" : true,
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "UNDONETASKCNT",
+      "codeName" : "UnDoneTaskCnt"
+    }
+  }, {
+    "id" : "releasedstorycnt",
+    "hidden" : true,
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "RELEASEDSTORYCNT",
+      "codeName" : "ReleasedStoryCnt"
+    }
+  }, {
+    "id" : "storycnt",
+    "hidden" : true,
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "STORYCNT",
+      "codeName" : "StoryCnt"
+    }
+  }, {
+    "id" : "custom3",
+    "hidden" : true,
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "STORYCNT",
+      "codeName" : "StoryCnt"
+    }
+  }, {
+    "id" : "custom4",
+    "hidden" : true,
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "CLOSEDSTORYCNT",
+      "codeName" : "ClosedStoryCnt"
+    }
+  }, {
+    "id" : "formitemex2",
+    "dataType" : 25
+  }, {
+    "id" : "unclosedstorycnt",
+    "hidden" : true,
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "UNCLOSEDSTORYCNT",
+      "codeName" : "UnClosedStoryCnt"
+    }
+  }, {
+    "id" : "yesterdayrbugcnt",
+    "hidden" : true,
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "YESTERDAYRBUGCNT",
+      "codeName" : "Yesterdayrbugcnt"
+    }
+  }, {
+    "id" : "bugcnt",
+    "hidden" : true,
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "BUGCNT",
+      "codeName" : "BugCnt"
+    }
+  }, {
+    "id" : "custom5",
+    "hidden" : true,
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "BUGCNT",
+      "codeName" : "BugCnt"
+    }
+  }, {
+    "id" : "custom6",
+    "hidden" : true,
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "FINISHBUGCNT",
+      "codeName" : "FinishBugCnt"
+    }
+  }, {
+    "id" : "formitemex3",
+    "dataType" : 25
+  }, {
+    "id" : "activebugcnt",
+    "hidden" : true,
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "ACTIVEBUGCNT",
+      "codeName" : "ActiveBugCnt"
+    }
+  }, {
+    "id" : "id",
+    "hidden" : true,
+    "dataType" : 1,
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  } ],
+  "getPSDEFormPages" : [ {
+    "caption" : "基本信息",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "分组面板",
+      "codeName" : "grouppanel4",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "grouppanel4",
+      "getPSDEFormDetails" : [ {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "分组面板",
+        "codeName" : "grouppanel6",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel6",
+        "getPSDEFormDetails" : [ {
+          "caption" : "已完成",
+          "codeName" : "formitemex4",
+          "contentHeight" : 250.0,
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "height" : 250.0,
+          "ignoreInput" : 0,
+          "itemHeight" : 250.0,
+          "labelPos" : "NONE",
+          "labelWidth" : 0,
+          "name" : "formitemex4",
+          "noPrivDisplayMode" : 1,
+          "getPSDEFormItems" : [ {
+            "caption" : "总工时",
+            "codeName" : "custom7",
+            "dataType" : 9,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 70,
+            "name" : "custom7",
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "TOTALWH",
+              "codeName" : "Totalwh"
+            },
+            "getPSEditor" : {
+              "editorType" : "HIDDEN",
+              "name" : "custom7"
+            },
+            "allowEmpty" : true,
+            "emptyCaption" : false,
+            "hidden" : true,
+            "inputTipClosable" : false,
+            "showCaption" : true
+          }, {
+            "caption" : "任务消耗总工时",
+            "codeName" : "custom8",
+            "dataType" : 7,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 70,
+            "name" : "custom8",
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "TOTALCONSUMED",
+              "codeName" : "TotalConsumed"
+            },
+            "getPSEditor" : {
+              "editorType" : "HIDDEN",
+              "name" : "custom8"
+            },
+            "allowEmpty" : true,
+            "emptyCaption" : false,
+            "hidden" : true,
+            "inputTipClosable" : false,
+            "showCaption" : true
+          } ],
+          "getPSEditor" : {
+            "editorHeight" : 250.0,
+            "editorParams" : {
+              "USERCONTROL" : "TRUE"
+            },
+            "editorStyle" : "PROGRESSCIRCLE",
+            "editorType" : "USERCONTROL",
+            "name" : "formitemex4",
+            "getPSSysPFPlugin" : {
+              "pluginType" : "EDITOR_CUSTOMSTYLE",
+              "pluginCode" : "PROGRESSCIRCLEX"
+            }
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "height" : 250,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "compositeItem" : true,
+          "emptyCaption" : false,
+          "hidden" : false,
+          "inputTipClosable" : false,
+          "showCaption" : false
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "infoGroupMode" : true,
+        "showCaption" : false
+      }, {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "分组面板",
+        "codeName" : "grouppanel5",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel5",
+        "getPSDEFormDetails" : [ {
+          "caption" : "预计",
+          "codeName" : "totalestimate",
+          "dataType" : 7,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "TOP",
+          "labelWidth" : 70,
+          "name" : "totalestimate",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "TOTALESTIMATE",
+            "codeName" : "TotalEstimate"
+          },
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "totalestimate",
+            "editable" : false,
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 8,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSSysCss" : {
+            "cssName" : "text-center"
+          },
+          "allowEmpty" : true,
+          "emptyCaption" : false,
+          "hidden" : false,
+          "inputTipClosable" : false,
+          "showCaption" : true
+        }, {
+          "caption" : "消耗",
+          "codeName" : "totalconsumed",
+          "dataType" : 7,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "TOP",
+          "labelWidth" : 70,
+          "name" : "totalconsumed",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "TOTALCONSUMED",
+            "codeName" : "TotalConsumed"
+          },
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "totalconsumed",
+            "editable" : false,
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 8,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSSysCss" : {
+            "cssName" : "text-center"
+          },
+          "allowEmpty" : true,
+          "emptyCaption" : false,
+          "hidden" : false,
+          "inputTipClosable" : false,
+          "showCaption" : true
+        }, {
+          "caption" : "剩余",
+          "codeName" : "totalleft",
+          "dataType" : 7,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "TOP",
+          "labelWidth" : 70,
+          "name" : "totalleft",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "TOTALLEFT",
+            "codeName" : "TotalLeft"
+          },
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "totalleft",
+            "editable" : false,
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 8,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSSysCss" : {
+            "cssName" : "text-center"
+          },
+          "allowEmpty" : true,
+          "emptyCaption" : false,
+          "hidden" : false,
+          "inputTipClosable" : false,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "infoGroupMode" : true,
+        "showCaption" : false
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 8,
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : true,
+      "showCaption" : false
+    }, {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "项目统计基本信息",
+      "codeName" : "group1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "group1",
+      "getPSDEFormDetails" : [ {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "任务统计",
+        "codeName" : "grouppanel1",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel1",
+        "getPSDEFormDetails" : [ {
+          "codeName" : "rawitem1",
+          "contentType" : "RAW",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "RAWITEM",
+          "name" : "rawitem1",
+          "getPSLayoutPos" : {
+            "colLG" : 18,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "rawContent" : "<div style=\"margin-top: 6px;padding-left: 69px;\"><Icon type=\"md-checkmark-circle\" color=\"#49db44\"/>&nbsp;昨日完成任务数&nbsp;<b>{{data.yesterdayctaskcnt ? data.yesterdayctaskcnt : 0}}</b></div>",
+          "rawItemHeight" : -1.0,
+          "rawItemWidth" : -1.0,
+          "showCaption" : true
+        }, {
+          "codeName" : "rawitem6",
+          "contentType" : "RAW",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "RAWITEM",
+          "name" : "rawitem6",
+          "getPSLayoutPos" : {
+            "colLG" : 6,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "rawContent" : "<div style=\"margin-top: 6px;padding-left: 19px;\">&nbsp;总任务&nbsp;:&nbsp;{{data.taskcnt ? data.taskcnt : 0}}</div>",
+          "rawItemHeight" : -1.0,
+          "rawItemWidth" : -1.0,
+          "showCaption" : true
+        }, {
+          "codeName" : "yesterdayctaskcnt",
+          "dataType" : 9,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 0,
+          "name" : "yesterdayctaskcnt",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "YESTERDAYCTASKCNT",
+            "codeName" : "Yesterdayctaskcnt"
+          },
+          "getPSEditor" : {
+            "editorType" : "HIDDEN",
+            "name" : "yesterdayctaskcnt"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL",
+            "width" : 0
+          },
+          "allowEmpty" : true,
+          "emptyCaption" : true,
+          "hidden" : true,
+          "inputTipClosable" : false,
+          "showCaption" : true
+        }, {
+          "caption" : "总任务",
+          "codeName" : "taskcnt",
+          "dataType" : 9,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 70,
+          "name" : "taskcnt",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "TASKCNT",
+            "codeName" : "TaskCnt"
+          },
+          "getPSEditor" : {
+            "editorType" : "HIDDEN",
+            "name" : "taskcnt"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 4,
+            "colMD" : 4,
+            "colMDOffset" : 18,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "emptyCaption" : false,
+          "hidden" : true,
+          "inputTipClosable" : false,
+          "showCaption" : true
+        }, {
+          "codeName" : "formitemex1",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 70,
+          "name" : "formitemex1",
+          "noPrivDisplayMode" : 1,
+          "getPSDEFormItems" : [ {
+            "caption" : "任务总数",
+            "codeName" : "custom1",
+            "dataType" : 9,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 70,
+            "name" : "custom1",
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "TASKCNT",
+              "codeName" : "TaskCnt"
+            },
+            "getPSEditor" : {
+              "editorType" : "HIDDEN",
+              "name" : "custom1"
+            },
+            "allowEmpty" : true,
+            "emptyCaption" : false,
+            "hidden" : true,
+            "inputTipClosable" : false,
+            "showCaption" : true
+          }, {
+            "caption" : "已结束任务总数",
+            "codeName" : "custom2",
+            "dataType" : 9,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 70,
+            "name" : "custom2",
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "FINISHTASKCNT",
+              "codeName" : "FinishTaskCnt"
+            },
+            "getPSEditor" : {
+              "editorType" : "HIDDEN",
+              "name" : "custom2"
+            },
+            "allowEmpty" : true,
+            "emptyCaption" : false,
+            "hidden" : true,
+            "inputTipClosable" : false,
+            "showCaption" : true
+          } ],
+          "getPSEditor" : {
+            "editorParams" : {
+              "USERCONTROL" : "TRUE"
+            },
+            "editorStyle" : "PROGRESSLINE",
+            "editorType" : "USERCONTROL",
+            "name" : "formitemex1",
+            "getPSSysPFPlugin" : {
+              "pluginType" : "EDITOR_CUSTOMSTYLE",
+              "pluginCode" : "PROGRESSLINE"
+            }
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 18,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "compositeItem" : true,
+          "emptyCaption" : false,
+          "hidden" : false,
+          "inputTipClosable" : false,
+          "showCaption" : true
+        }, {
+          "codeName" : "rawitem7",
+          "contentType" : "RAW",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "RAWITEM",
+          "name" : "rawitem7",
+          "getPSLayoutPos" : {
+            "colLG" : 6,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "rawContent" : "<div style=\"margin-top: 6px;padding-left: 19px;\">&nbsp;未完成&nbsp;:&nbsp;{{data.undonetaskcnt ? data.undonetaskcnt : 0}}</div>",
+          "rawItemHeight" : -1.0,
+          "rawItemWidth" : -1.0,
+          "showCaption" : true
+        }, {
+          "caption" : "未完成",
+          "codeName" : "undonetaskcnt",
+          "dataType" : 9,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 70,
+          "name" : "undonetaskcnt",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "UNDONETASKCNT",
+            "codeName" : "UnDoneTaskCnt"
+          },
+          "getPSEditor" : {
+            "editorType" : "HIDDEN",
+            "name" : "undonetaskcnt"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 4,
+            "colMD" : 4,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "emptyCaption" : false,
+          "hidden" : true,
+          "inputTipClosable" : false,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSSysCss" : {
+          "cssName" : "group-projectstats"
+        },
+        "infoGroupMode" : true,
+        "showCaption" : false
+      }, {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "需求统计",
+        "codeName" : "grouppanel2",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel2",
+        "getPSDEFormDetails" : [ {
+          "codeName" : "rawitem2",
+          "contentType" : "RAW",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "RAWITEM",
+          "name" : "rawitem2",
+          "getPSLayoutPos" : {
+            "colLG" : 18,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "rawContent" : "<div style=\"margin-top: 6px;padding-left: 69px;\"><Icon type=\"md-checkmark-circle\" color=\"#49db44\"/>&nbsp;已发布需求数&nbsp;<b>{{data.releasedstorycnt ? data.releasedstorycnt : 0}}</b></div>",
+          "rawItemHeight" : -1.0,
+          "rawItemWidth" : -1.0,
+          "showCaption" : true
+        }, {
+          "codeName" : "rawitem5",
+          "contentType" : "RAW",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "RAWITEM",
+          "name" : "rawitem5",
+          "getPSLayoutPos" : {
+            "colLG" : 6,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "rawContent" : "<div style=\"margin-top: 6px;padding-left: 19px;\">&nbsp;总需求&nbsp;:&nbsp;{{data.storycnt ? data.storycnt : 0}}</div>",
+          "rawItemHeight" : -1.0,
+          "rawItemWidth" : -1.0,
+          "showCaption" : true
+        }, {
+          "codeName" : "releasedstorycnt",
+          "dataType" : 9,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 0,
+          "name" : "releasedstorycnt",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "RELEASEDSTORYCNT",
+            "codeName" : "ReleasedStoryCnt"
+          },
+          "getPSEditor" : {
+            "editorType" : "HIDDEN",
+            "name" : "releasedstorycnt"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL",
+            "width" : 0
+          },
+          "allowEmpty" : true,
+          "emptyCaption" : true,
+          "hidden" : true,
+          "inputTipClosable" : false,
+          "showCaption" : true
+        }, {
+          "caption" : "总需求",
+          "codeName" : "storycnt",
+          "dataType" : 9,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 70,
+          "name" : "storycnt",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "STORYCNT",
+            "codeName" : "StoryCnt"
+          },
+          "getPSEditor" : {
+            "editorType" : "HIDDEN",
+            "name" : "storycnt"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 4,
+            "colMD" : 4,
+            "colMDOffset" : 18,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "emptyCaption" : false,
+          "hidden" : true,
+          "inputTipClosable" : false,
+          "showCaption" : true
+        }, {
+          "codeName" : "formitemex2",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 70,
+          "name" : "formitemex2",
+          "noPrivDisplayMode" : 1,
+          "getPSDEFormItems" : [ {
+            "caption" : "需求总数",
+            "codeName" : "custom3",
+            "dataType" : 9,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 70,
+            "name" : "custom3",
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "STORYCNT",
+              "codeName" : "StoryCnt"
+            },
+            "getPSEditor" : {
+              "editorType" : "HIDDEN",
+              "name" : "custom3"
+            },
+            "allowEmpty" : true,
+            "emptyCaption" : false,
+            "hidden" : true,
+            "inputTipClosable" : false,
+            "showCaption" : true
+          }, {
+            "caption" : "关闭需求总数",
+            "codeName" : "custom4",
+            "dataType" : 9,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 70,
+            "name" : "custom4",
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "CLOSEDSTORYCNT",
+              "codeName" : "ClosedStoryCnt"
+            },
+            "getPSEditor" : {
+              "editorType" : "HIDDEN",
+              "name" : "custom4"
+            },
+            "allowEmpty" : true,
+            "emptyCaption" : false,
+            "hidden" : true,
+            "inputTipClosable" : false,
+            "showCaption" : true
+          } ],
+          "getPSEditor" : {
+            "editorParams" : {
+              "USERCONTROL" : "TRUE"
+            },
+            "editorStyle" : "PROGRESSLINE",
+            "editorType" : "USERCONTROL",
+            "name" : "formitemex2",
+            "getPSSysPFPlugin" : {
+              "pluginType" : "EDITOR_CUSTOMSTYLE",
+              "pluginCode" : "PROGRESSLINE"
+            }
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 18,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "compositeItem" : true,
+          "emptyCaption" : false,
+          "hidden" : false,
+          "inputTipClosable" : false,
+          "showCaption" : true
+        }, {
+          "codeName" : "rawitem8",
+          "contentType" : "RAW",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "RAWITEM",
+          "name" : "rawitem8",
+          "getPSLayoutPos" : {
+            "colLG" : 6,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "rawContent" : "<div style=\"margin-top: 6px;padding-left: 19px;\">&nbsp;未关闭&nbsp;:&nbsp;{{data.unclosedstorycnt ? data.unclosedstorycnt : 0}}</div>",
+          "rawItemHeight" : -1.0,
+          "rawItemWidth" : -1.0,
+          "showCaption" : true
+        }, {
+          "caption" : "未关闭",
+          "codeName" : "unclosedstorycnt",
+          "dataType" : 9,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 70,
+          "name" : "unclosedstorycnt",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "UNCLOSEDSTORYCNT",
+            "codeName" : "UnClosedStoryCnt"
+          },
+          "getPSEditor" : {
+            "editorType" : "HIDDEN",
+            "name" : "unclosedstorycnt"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 4,
+            "colMD" : 4,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "emptyCaption" : false,
+          "hidden" : true,
+          "inputTipClosable" : false,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSSysCss" : {
+          "cssName" : "group-projectstats"
+        },
+        "infoGroupMode" : true,
+        "showCaption" : false
+      }, {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "bug统计",
+        "codeName" : "grouppanel3",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel3",
+        "getPSDEFormDetails" : [ {
+          "codeName" : "rawitem3",
+          "contentType" : "RAW",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "RAWITEM",
+          "name" : "rawitem3",
+          "getPSLayoutPos" : {
+            "colLG" : 18,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "rawContent" : "<div style=\"margin-top: 6px;padding-left: 69px;\"><Icon type=\"md-checkmark-circle\" color=\"#49db44\"/>&nbsp;昨日解决Bug数&nbsp;<b>{{data.yesterdayrbugcnt ? data.yesterdayrbugcnt : 0}}</b></div>",
+          "rawItemHeight" : -1.0,
+          "rawItemWidth" : -1.0,
+          "showCaption" : true
+        }, {
+          "codeName" : "yesterdayrbugcnt",
+          "dataType" : 9,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 0,
+          "name" : "yesterdayrbugcnt",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "YESTERDAYRBUGCNT",
+            "codeName" : "Yesterdayrbugcnt"
+          },
+          "getPSEditor" : {
+            "editorType" : "HIDDEN",
+            "name" : "yesterdayrbugcnt"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL",
+            "width" : 0
+          },
+          "allowEmpty" : true,
+          "emptyCaption" : true,
+          "hidden" : true,
+          "inputTipClosable" : false,
+          "showCaption" : true
+        }, {
+          "codeName" : "rawitem4",
+          "contentType" : "RAW",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "RAWITEM",
+          "name" : "rawitem4",
+          "getPSLayoutPos" : {
+            "colLG" : 6,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "rawContent" : "<div style=\"margin-top: 6px;padding-left: 31px;\">&nbsp;所有&nbsp;:&nbsp;{{data.bugcnt ? data.bugcnt : 0}}</div>",
+          "rawItemHeight" : -1.0,
+          "rawItemWidth" : -1.0,
+          "showCaption" : true
+        }, {
+          "caption" : "所有",
+          "codeName" : "bugcnt",
+          "dataType" : 9,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 70,
+          "name" : "bugcnt",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "BUGCNT",
+            "codeName" : "BugCnt"
+          },
+          "getPSEditor" : {
+            "editorType" : "HIDDEN",
+            "name" : "bugcnt"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 4,
+            "colMD" : 4,
+            "colMDOffset" : 18,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "emptyCaption" : false,
+          "hidden" : true,
+          "inputTipClosable" : false,
+          "showCaption" : true
+        }, {
+          "codeName" : "formitemex3",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 70,
+          "name" : "formitemex3",
+          "noPrivDisplayMode" : 1,
+          "getPSDEFormItems" : [ {
+            "caption" : "Bug总数",
+            "codeName" : "custom5",
+            "dataType" : 9,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 70,
+            "name" : "custom5",
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "BUGCNT",
+              "codeName" : "BugCnt"
+            },
+            "getPSEditor" : {
+              "editorType" : "HIDDEN",
+              "name" : "custom5"
+            },
+            "allowEmpty" : true,
+            "emptyCaption" : false,
+            "hidden" : true,
+            "inputTipClosable" : false,
+            "showCaption" : true
+          }, {
+            "caption" : "已解决Bug总数",
+            "codeName" : "custom6",
+            "dataType" : 9,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 70,
+            "name" : "custom6",
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "FINISHBUGCNT",
+              "codeName" : "FinishBugCnt"
+            },
+            "getPSEditor" : {
+              "editorType" : "HIDDEN",
+              "name" : "custom6"
+            },
+            "allowEmpty" : true,
+            "emptyCaption" : false,
+            "hidden" : true,
+            "inputTipClosable" : false,
+            "showCaption" : true
+          } ],
+          "getPSEditor" : {
+            "editorParams" : {
+              "USERCONTROL" : "TRUE"
+            },
+            "editorStyle" : "PROGRESSLINE",
+            "editorType" : "USERCONTROL",
+            "name" : "formitemex3",
+            "getPSSysPFPlugin" : {
+              "pluginType" : "EDITOR_CUSTOMSTYLE",
+              "pluginCode" : "PROGRESSLINE"
+            }
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 18,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "compositeItem" : true,
+          "emptyCaption" : false,
+          "hidden" : false,
+          "inputTipClosable" : false,
+          "showCaption" : true
+        }, {
+          "codeName" : "rawitem9",
+          "contentType" : "RAW",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "RAWITEM",
+          "name" : "rawitem9",
+          "getPSLayoutPos" : {
+            "colLG" : 6,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "rawContent" : "<div style=\"margin-top: 6px;padding-left: 19px;\">&nbsp;未解决&nbsp;:&nbsp;{{data.activebugcnt ? data.activebugcnt : 0}}</div>",
+          "rawItemHeight" : -1.0,
+          "rawItemWidth" : -1.0,
+          "showCaption" : true
+        }, {
+          "caption" : "未解决",
+          "codeName" : "activebugcnt",
+          "dataType" : 9,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 70,
+          "name" : "activebugcnt",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "ACTIVEBUGCNT",
+            "codeName" : "ActiveBugCnt"
+          },
+          "getPSEditor" : {
+            "editorType" : "HIDDEN",
+            "name" : "activebugcnt"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 4,
+            "colMD" : 4,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "emptyCaption" : false,
+          "hidden" : true,
+          "inputTipClosable" : false,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSSysCss" : {
+          "cssName" : "group-projectstats"
+        },
+        "infoGroupMode" : true,
+        "showCaption" : false
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 16,
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : true,
+      "showCaption" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : true
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "tabHeaderPos" : "TOP",
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "enableAutoSave" : false,
+  "infoFormMode" : true,
+  "noTabHeader" : true,
+  "readOnly" : false,
+  "showFormNavBar" : false,
+  "modelid" : "881e805e623ff3ab79b9d6b30e89797f"
+}

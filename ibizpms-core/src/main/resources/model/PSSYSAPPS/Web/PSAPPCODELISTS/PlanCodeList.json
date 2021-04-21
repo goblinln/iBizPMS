@@ -1,0 +1,17 @@
+{
+  "codeListType" : "DYNAMIC",
+  "codeName" : "PlanCodeList",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/PlanCodeList.json",
+  "emptyText" : "未计划",
+  "name" : "计划（动态）",
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchPlanCodeList"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+  },
+  "enableCache" : true
+}

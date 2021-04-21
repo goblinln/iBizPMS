@@ -1,0 +1,9 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "LinkPlan",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/LinkPlan.json",
+  "logicName" : "关联计划",
+  "name" : "LinkPlan",
+  "userCat" : "CAT1"
+}

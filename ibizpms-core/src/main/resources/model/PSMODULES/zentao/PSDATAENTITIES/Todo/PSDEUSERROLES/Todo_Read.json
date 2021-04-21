@@ -1,0 +1,14 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Read.json",
+  "name" : "待办查看",
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "READ",
+    "name" : "Todo_Read_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  } ],
+  "roleTag" : "Todo_Read",
+  "userDRAction" : "READ"
+}

@@ -1,0 +1,24 @@
+{
+  "codeName" : "ZTToStory",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_STORY_TOSTORY.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 0,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+  },
+  "name" : "DER1N_ZT_BUG_ZT_STORY_TOSTORY",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "TOSTORY",
+    "codeName" : "ToStory"
+  },
+  "pickupDEFName" : "TOSTORY",
+  "removeActionType" : -1,
+  "removeOrder" : 0
+}

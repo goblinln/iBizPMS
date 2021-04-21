@@ -1,0 +1,12 @@
+{
+  "actionMode" : "DELETE",
+  "actionType" : "BUILTIN",
+  "codeName" : "RemoveTempMajor",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RemoveTempMajor.json",
+  "logicName" : "RemoveTempMajor",
+  "name" : "RemoveTempMajor",
+  "orderValue" : 23,
+  "tempDataMode" : 1,
+  "builtinAction" : true,
+  "enableTempData" : true
+}

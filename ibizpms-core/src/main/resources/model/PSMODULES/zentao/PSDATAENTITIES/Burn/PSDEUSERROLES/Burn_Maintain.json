@@ -1,0 +1,35 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEUSERROLES/Burn_Maintain.json",
+  "name" : "燃尽图维护",
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "DELETE",
+    "name" : "Burn_Maintain_DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  }, {
+    "dataAccessAction" : "CREATE",
+    "name" : "Burn_Maintain_CREATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "dataAccessAction" : "UPDATE",
+    "name" : "Burn_Maintain_UPDATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  }, {
+    "dataAccessAction" : "READ",
+    "name" : "Burn_Maintain_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  } ],
+  "roleTag" : "Burn_Maintain",
+  "userDRAction" : "READ"
+}

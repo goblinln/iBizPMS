@@ -1,0 +1,9 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "UnlinkStory",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/UnlinkStory.json",
+  "logicName" : "解除关联需求",
+  "name" : "UnlinkStory",
+  "userCat" : "CAT1"
+}

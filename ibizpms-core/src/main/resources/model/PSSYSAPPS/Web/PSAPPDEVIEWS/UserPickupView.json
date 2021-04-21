@@ -1,0 +1,763 @@
+{
+  "accUserMode" : 2,
+  "caption" : "用户",
+  "codeName" : "UserPickupView",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserPickupView.json",
+  "funcViewMode" : "PICKUPVIEW",
+  "name" : "UserPickupView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "PickupView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "name" : "PICKUPVIEWPANEL",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "PickupViewpickupviewpanel",
+    "controlType" : "PICKUPVIEWPANEL",
+    "getEmbeddedPSAppDEView" : {
+      "accUserMode" : 2,
+      "caption" : "用户",
+      "codeName" : "UserPickupGridView",
+      "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserPickupGridView.json",
+      "gridRowActiveMode" : 2,
+      "name" : "UserPickupGridView",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
+      },
+      "getPSAppViewEngines" : [ {
+        "engineCat" : "VIEW",
+        "engineType" : "PickupGridView",
+        "name" : "engine",
+        "getPSUIEngineParams" : [ {
+          "name" : "GRID",
+          "paramType" : "CTRL"
+        }, {
+          "name" : "SEARCHFORM",
+          "paramType" : "CTRL"
+        } ]
+      } ],
+      "getPSControls" : [ {
+        "aggMode" : "NONE",
+        "codeName" : "Main",
+        "columnEnableLink" : 2,
+        "controlType" : "GRID",
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User/PSGRIDS/Main.json",
+        "getFetchPSControlAction" : {
+          "modelref" : true,
+          "id" : "fetch"
+        },
+        "groupMode" : "NONE",
+        "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "LOAD" ],
+        "logicName" : "主表格",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
+        },
+        "getPSAppViewLogics" : [ {
+          "logicTrigger" : "CUSTOM",
+          "logicType" : "APPVIEWUIACTION",
+          "name" : "grid_uagridcolumn1_ufcdaecf_click",
+          "getPSAppViewUIAction" : {
+            "modelref" : true,
+            "id" : "编辑"
+          }
+        }, {
+          "logicTrigger" : "CUSTOM",
+          "logicType" : "APPVIEWUIACTION",
+          "name" : "grid_uagridcolumn1_ue48fa68_click",
+          "getPSAppViewUIAction" : {
+            "modelref" : true,
+            "id" : "删除"
+          }
+        } ],
+        "getPSAppViewUIActions" : [ {
+          "name" : "编辑",
+          "getPSUIAction" : {
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
+            },
+            "modelref" : true,
+            "id" : "Edit@User"
+          },
+          "uIActionTarget" : "SINGLEKEY",
+          "xDataControlName" : "grid"
+        }, {
+          "name" : "删除",
+          "getPSUIAction" : {
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
+            },
+            "modelref" : true,
+            "id" : "Delete@User"
+          },
+          "uIActionTarget" : "SINGLEKEY",
+          "xDataControlName" : "grid"
+        } ],
+        "getPSControlHandler" : {
+          "getPSHandlerActions" : [ {
+            "actionName" : "Update",
+            "actionType" : "DEACTION",
+            "dataAccessAction" : "UPDATE",
+            "name" : "update",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Update"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
+            }
+          }, {
+            "actionType" : "DEDATASET",
+            "name" : "fetch",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "FetchDefault"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
+            }
+          }, {
+            "actionName" : "Remove",
+            "actionType" : "DEACTION",
+            "dataAccessAction" : "DELETE",
+            "name" : "remove",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Remove"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
+            }
+          }, {
+            "actionName" : "Get",
+            "actionType" : "DEACTION",
+            "dataAccessAction" : "READ",
+            "name" : "load",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Get"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
+            }
+          }, {
+            "actionName" : "GetDraft",
+            "actionType" : "DEACTION",
+            "dataAccessAction" : "CREATE",
+            "name" : "loaddraft",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "GetDraft"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
+            }
+          }, {
+            "actionName" : "Create",
+            "actionType" : "DEACTION",
+            "dataAccessAction" : "CREATE",
+            "name" : "create",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Create"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
+            }
+          } ],
+          "userDRAction" : "READ",
+          "enableDEFieldPrivilege" : false,
+          "id" : "数据表格处理器"
+        },
+        "getPSControlParam" : {
+          "autoLoad" : true,
+          "showBusyIndicator" : true,
+          "id" : "GRID"
+        },
+        "getPSDEGridColumns" : [ {
+          "align" : "LEFT",
+          "cLConvertMode" : "NONE",
+          "caption" : "ID",
+          "codeName" : "id",
+          "columnType" : "DEFGRIDCOLUMN",
+          "dataItemName" : "id",
+          "excelCaption" : "ID",
+          "name" : "id",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "ID",
+            "codeName" : "Id"
+          },
+          "width" : 70,
+          "widthUnit" : "PX",
+          "enableSort" : true
+        }, {
+          "align" : "LEFT",
+          "cLConvertMode" : "NONE",
+          "caption" : "真实姓名",
+          "codeName" : "realname",
+          "columnType" : "DEFGRIDCOLUMN",
+          "dataItemName" : "realname",
+          "excelCaption" : "真实姓名",
+          "getLinkPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserINFOEditView.json",
+            "viewType" : "DEEDITVIEW"
+          },
+          "linkValueItem" : "srfkey",
+          "name" : "realname",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "REALNAME",
+            "codeName" : "Realname"
+          },
+          "width" : 150,
+          "widthUnit" : "PX",
+          "enableLinkView" : true,
+          "enableSort" : true
+        }, {
+          "align" : "LEFT",
+          "cLConvertMode" : "NONE",
+          "caption" : "账户",
+          "codeName" : "account",
+          "columnType" : "DEFGRIDCOLUMN",
+          "dataItemName" : "account",
+          "excelCaption" : "账户",
+          "name" : "account",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "ACCOUNT",
+            "codeName" : "Account"
+          },
+          "width" : 150,
+          "widthUnit" : "PX",
+          "enableSort" : true
+        }, {
+          "align" : "LEFT",
+          "cLConvertMode" : "FRONT",
+          "caption" : "职位",
+          "codeName" : "role",
+          "columnType" : "DEFGRIDCOLUMN",
+          "dataItemName" : "role",
+          "excelCaption" : "职位",
+          "name" : "role",
+          "noPrivDisplayMode" : 1,
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Role.json"
+          },
+          "getPSAppDEField" : {
+            "name" : "ROLE",
+            "codeName" : "Role"
+          },
+          "width" : 150,
+          "widthUnit" : "PX",
+          "enableSort" : true
+        }, {
+          "align" : "LEFT",
+          "cLConvertMode" : "NONE",
+          "caption" : "邮箱",
+          "codeName" : "email",
+          "columnType" : "DEFGRIDCOLUMN",
+          "dataItemName" : "email",
+          "excelCaption" : "邮箱",
+          "name" : "email",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "EMAIL",
+            "codeName" : "Email"
+          },
+          "width" : 200,
+          "widthUnit" : "PX",
+          "enableSort" : true
+        }, {
+          "align" : "LEFT",
+          "cLConvertMode" : "FRONT",
+          "caption" : "性别",
+          "codeName" : "gender",
+          "columnType" : "DEFGRIDCOLUMN",
+          "dataItemName" : "gender",
+          "excelCaption" : "性别",
+          "name" : "gender",
+          "noPrivDisplayMode" : 1,
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/User__gender.json"
+          },
+          "getPSAppDEField" : {
+            "name" : "GENDER",
+            "codeName" : "Gender"
+          },
+          "width" : 100,
+          "widthUnit" : "PX",
+          "enableSort" : true
+        }, {
+          "align" : "LEFT",
+          "cLConvertMode" : "NONE",
+          "caption" : "电话",
+          "codeName" : "phone",
+          "columnType" : "DEFGRIDCOLUMN",
+          "dataItemName" : "phone",
+          "excelCaption" : "电话",
+          "name" : "phone",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "PHONE",
+            "codeName" : "Phone"
+          },
+          "width" : 150,
+          "widthUnit" : "PX",
+          "enableSort" : true
+        }, {
+          "align" : "LEFT",
+          "cLConvertMode" : "NONE",
+          "caption" : "QQ",
+          "codeName" : "qq",
+          "columnType" : "DEFGRIDCOLUMN",
+          "dataItemName" : "qq",
+          "excelCaption" : "QQ",
+          "name" : "qq",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "QQ",
+            "codeName" : "Qq"
+          },
+          "width" : 200,
+          "widthUnit" : "PX",
+          "enableSort" : true
+        }, {
+          "align" : "LEFT",
+          "cLConvertMode" : "NONE",
+          "caption" : "通讯地址",
+          "codeName" : "address",
+          "columnType" : "DEFGRIDCOLUMN",
+          "dataItemName" : "address",
+          "excelCaption" : "通讯地址",
+          "name" : "address",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "ADDRESS",
+            "codeName" : "Address"
+          },
+          "width" : 200,
+          "widthUnit" : "STAR",
+          "enableSort" : true
+        }, {
+          "align" : "LEFT",
+          "cLConvertMode" : "NONE",
+          "caption" : "最后登录",
+          "codeName" : "last",
+          "columnType" : "DEFGRIDCOLUMN",
+          "dataItemName" : "last",
+          "excelCaption" : "最后登录",
+          "name" : "last",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "LAST",
+            "codeName" : "Last"
+          },
+          "width" : 100,
+          "widthUnit" : "PX",
+          "enableSort" : true,
+          "hideDefault" : true
+        }, {
+          "align" : "LEFT",
+          "cLConvertMode" : "NONE",
+          "caption" : "访问次数",
+          "codeName" : "visits",
+          "columnType" : "DEFGRIDCOLUMN",
+          "dataItemName" : "visits",
+          "excelCaption" : "访问次数",
+          "name" : "visits",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "VISITS",
+            "codeName" : "Visits"
+          },
+          "width" : 120,
+          "widthUnit" : "PX",
+          "enableSort" : true
+        }, {
+          "align" : "CENTER",
+          "caption" : "操作",
+          "codeName" : "uagridcolumn1",
+          "columnType" : "UAGRIDCOLUMN",
+          "name" : "uagridcolumn1",
+          "noPrivDisplayMode" : 1,
+          "getPSDEUIActionGroup" : {
+            "name" : "表格操作列默认行为组",
+            "getPSUIActionGroupDetails" : [ {
+              "detailType" : "DEUIACTION",
+              "name" : "ufcdaecf",
+              "getPSUIAction" : {
+                "actionTarget" : "SINGLEKEY",
+                "getNoPrivDisplayMode" : 1,
+                "caption" : "编辑",
+                "codeName" : "Edit",
+                "dataAccessAction" : "SRFUR__ADMIN",
+                "getFrontPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserEditView.json",
+                  "viewType" : "DEEDITVIEW"
+                },
+                "frontProcessType" : "WIZARD",
+                "fullCodeName" : "User_Edit",
+                "name" : "编辑",
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
+                },
+                "getPSSysImage" : {
+                  "glyph" : "xf044@FontAwesome",
+                  "cssClass" : "fa fa-edit"
+                },
+                "refreshMode" : 1,
+                "timeout" : 60000,
+                "uIActionMode" : "FRONT",
+                "uIActionTag" : "Edit",
+                "uIActionType" : "DEUIACTION",
+                "reloadData" : true,
+                "id" : "Edit@User"
+              },
+              "addSeparator" : false,
+              "showCaption" : false,
+              "showIcon" : true
+            }, {
+              "detailType" : "DEUIACTION",
+              "name" : "ue48fa68",
+              "getPSUIAction" : {
+                "actionTarget" : "SINGLEKEY",
+                "getNoPrivDisplayMode" : 1,
+                "caption" : "删除",
+                "codeName" : "Delete",
+                "dataAccessAction" : "SRFUR__ADMIN",
+                "fullCodeName" : "User_Delete",
+                "name" : "删除",
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "Remove"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
+                },
+                "getPSSysImage" : {
+                  "glyph" : "xf00d@FontAwesome",
+                  "cssClass" : "fa fa-remove"
+                },
+                "refreshMode" : 1,
+                "timeout" : 60000,
+                "uIActionMode" : "BACKEND",
+                "uIActionTag" : "Delete",
+                "uIActionType" : "DEUIACTION",
+                "enableConfirm" : true,
+                "reloadData" : true,
+                "id" : "Delete@User"
+              },
+              "addSeparator" : false,
+              "showCaption" : false,
+              "showIcon" : true
+            } ]
+          },
+          "width" : 150,
+          "widthUnit" : "PX",
+          "enableSort" : false
+        } ],
+        "getPSDEGridDataItems" : [ {
+          "dataType" : 25,
+          "name" : "phone",
+          "getPSAppDEField" : {
+            "name" : "PHONE",
+            "codeName" : "Phone"
+          }
+        }, {
+          "dataType" : 9,
+          "name" : "last",
+          "getPSAppDEField" : {
+            "name" : "LAST",
+            "codeName" : "Last"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "srfmajortext",
+          "getPSAppDEField" : {
+            "name" : "REALNAME",
+            "codeName" : "Realname"
+          }
+        }, {
+          "dataType" : 1,
+          "name" : "srfdataaccaction",
+          "getPSAppDEField" : {
+            "name" : "ID",
+            "codeName" : "Id"
+          },
+          "dataAccessAction" : true
+        }, {
+          "dataType" : 1,
+          "name" : "srfkey",
+          "getPSAppDEField" : {
+            "name" : "ID",
+            "codeName" : "Id"
+          }
+        }, {
+          "dataType" : 1,
+          "name" : "id",
+          "getPSAppDEField" : {
+            "name" : "ID",
+            "codeName" : "Id"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "email",
+          "getPSAppDEField" : {
+            "name" : "EMAIL",
+            "codeName" : "Email"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "address",
+          "getPSAppDEField" : {
+            "name" : "ADDRESS",
+            "codeName" : "Address"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "account",
+          "getPSAppDEField" : {
+            "name" : "ACCOUNT",
+            "codeName" : "Account"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "role",
+          "getPSAppDEField" : {
+            "name" : "ROLE",
+            "codeName" : "Role"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "gender",
+          "getPSAppDEField" : {
+            "name" : "GENDER",
+            "codeName" : "Gender"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "realname",
+          "getPSAppDEField" : {
+            "name" : "REALNAME",
+            "codeName" : "Realname"
+          }
+        }, {
+          "dataType" : 9,
+          "name" : "visits",
+          "getPSAppDEField" : {
+            "name" : "VISITS",
+            "codeName" : "Visits"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "qq",
+          "getPSAppDEField" : {
+            "name" : "QQ",
+            "codeName" : "Qq"
+          }
+        } ],
+        "getPSDEGridEditItems" : [ {
+          "caption" : "ID",
+          "codeName" : "srfkey",
+          "enableCond" : 0,
+          "ignoreInput" : 0,
+          "name" : "srfkey",
+          "getPSAppDEField" : {
+            "name" : "ID",
+            "codeName" : "Id"
+          },
+          "getPSEditor" : {
+            "editorType" : "HIDDEN",
+            "name" : "srfkey"
+          },
+          "allowEmpty" : true
+        } ],
+        "pagingSize" : 20,
+        "getRemovePSControlAction" : {
+          "actionName" : "Remove",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "DELETE",
+          "name" : "remove",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
+          }
+        },
+        "sortMode" : "REMOTE",
+        "hasWFDataItems" : false,
+        "enableColFilter" : false,
+        "enableGroup" : false,
+        "enablePagingBar" : true,
+        "enableRowEdit" : false,
+        "enableRowEditOrder" : false,
+        "enableRowNew" : false,
+        "forceFit" : false,
+        "hideHeader" : false,
+        "noSort" : false,
+        "singleSelect" : false,
+        "name" : "grid",
+        "modelid" : "03814dd8ec9097fb8dc654dc6e3311d5"
+      }, {
+        "codeName" : "Default",
+        "controlType" : "SEARCHFORM",
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User/PSSEARCHFORMS/Default.json",
+        "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+        "logicName" : "默认搜索表单",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
+        },
+        "getPSControlHandler" : {
+          "getPSHandlerActions" : [ {
+            "actionType" : "FILTERACTION",
+            "name" : "search",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "FilterSearch"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
+            }
+          }, {
+            "actionType" : "FILTERACTION",
+            "name" : "load",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "FilterGet"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
+            }
+          }, {
+            "actionType" : "FILTERACTION",
+            "name" : "loaddraft",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "FilterGetDraft"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
+            }
+          } ],
+          "enableDEFieldPrivilege" : false,
+          "id" : "搜索表单处理器"
+        },
+        "getPSControlParam" : {
+          "autoLoad" : true,
+          "showBusyIndicator" : true,
+          "id" : "SEARCHFORM"
+        },
+        "getPSDEFormPages" : [ {
+          "caption" : "常规条件",
+          "codeName" : "formpage1",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMPAGE",
+          "name" : "formpage1",
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "infoGroupMode" : false
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "searchButtonStyle" : "DEFAULT",
+        "tabHeaderPos" : "TOP",
+        "enableAdvanceSearch" : false,
+        "enableAutoSearch" : false,
+        "enableFilterSave" : false,
+        "noTabHeader" : true,
+        "name" : "searchform",
+        "modelid" : "9b792bbd199dba01a0dabf6e77003be9"
+      } ],
+      "getPSDEViewCodeName" : "PickupGridView",
+      "getPSViewLayoutPanel" : {
+        "codeName" : "Layoutpanel",
+        "controlStyle" : "APPDEPICKUPGRIDVIEW_STYLE2",
+        "controlType" : "VIEWLAYOUTPANEL",
+        "name" : "layoutpanel",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
+        },
+        "getPSControlParam" : { },
+        "layoutPanel" : true,
+        "useDefaultLayout" : true
+      },
+      "title" : "用户选择表格视图",
+      "viewStyle" : "STYLE2",
+      "viewType" : "DEPICKUPGRIDVIEW",
+      "xDataControlName" : "grid",
+      "enableDP" : true,
+      "enableExport" : true,
+      "enableFilter" : true,
+      "enableImport" : true,
+      "enableRowEdit" : false,
+      "enableSearch" : true,
+      "expandSearchForm" : true,
+      "pickupMode" : true,
+      "rowEditDefault" : false,
+      "showCaptionBar" : true
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "name" : "pickupviewpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
+    },
+    "getPSControlParam" : {
+      "id" : "PICKUPVIEWPANEL"
+    }
+  } ],
+  "getPSDEViewCodeName" : "PickupView",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEPICKUPVIEW_STYLE2",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json"
+    },
+    "getPSControlParam" : { },
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "用户数据选择视图",
+  "viewStyle" : "STYLE2",
+  "viewType" : "DEPICKUPVIEW",
+  "enableDP" : true,
+  "showCaptionBar" : false
+}

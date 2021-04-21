@@ -1,0 +1,258 @@
+{
+  "aggMode" : "NONE",
+  "codeName" : "Main",
+  "columnEnableLink" : 2,
+  "controlType" : "GRID",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductMonthly/PSGRIDS/Main.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "主表格",
+  "minorSortDir" : "DESC",
+  "getMinorSortPSAppDEField" : {
+    "name" : "DATE",
+    "codeName" : "Date"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductMonthly.json"
+  },
+  "getPSDEGridColumns" : [ {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "产品月报名称",
+    "codeName" : "ibizpro_productmonthlyname",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "ibizpro_productmonthlyname",
+    "excelCaption" : "产品月报名称",
+    "getLinkPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproProductMonthlyEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "linkValueItem" : "srfkey",
+    "name" : "ibizpro_productmonthlyname",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PRODUCTMONTHLYNAME",
+      "codeName" : "IbizproProductMonthlyName"
+    },
+    "width" : 150,
+    "widthUnit" : "STAR",
+    "enableLinkView" : true,
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "产品名称",
+    "codeName" : "productname",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "productname",
+    "excelCaption" : "产品名称",
+    "name" : "productname",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "PRODUCTNAME",
+      "codeName" : "ProductName"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "年月",
+    "codeName" : "year_month",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "year_month",
+    "excelCaption" : "年月",
+    "name" : "year_month",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "YEAR_MONTH",
+      "codeName" : "YearMonth"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "日期",
+    "codeName" : "date",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "date",
+    "excelCaption" : "日期",
+    "name" : "date",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    },
+    "valueFormat" : "YYYY-MM-DD",
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "产品负责人",
+    "codeName" : "po",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "po",
+    "excelCaption" : "产品负责人",
+    "name" : "po",
+    "noPrivDisplayMode" : 1,
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "PO",
+      "codeName" : "PO"
+    },
+    "width" : 130,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "总工时",
+    "codeName" : "totalestimates",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "totalestimates",
+    "excelCaption" : "总工时",
+    "name" : "totalestimates",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "TOTALESTIMATES",
+      "codeName" : "Totalestimates"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  } ],
+  "getPSDEGridDataItems" : [ {
+    "dataType" : 1,
+    "name" : "product",
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    }
+  }, {
+    "dataType" : 7,
+    "name" : "totalestimates",
+    "getPSAppDEField" : {
+      "name" : "TOTALESTIMATES",
+      "codeName" : "Totalestimates"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "ibizpro_productmonthlyname",
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PRODUCTMONTHLYNAME",
+      "codeName" : "IbizproProductMonthlyName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "year_month",
+    "getPSAppDEField" : {
+      "name" : "YEAR_MONTH",
+      "codeName" : "YearMonth"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "po",
+    "getPSAppDEField" : {
+      "name" : "PO",
+      "codeName" : "PO"
+    }
+  }, {
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "date",
+    "getPSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PRODUCTMONTHLYNAME",
+      "codeName" : "IbizproProductMonthlyName"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PRODUCTMONTHLYID",
+      "codeName" : "IbizproProductMonthlyId"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PRODUCTMONTHLYID",
+      "codeName" : "IbizproProductMonthlyId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "productname",
+    "getPSAppDEField" : {
+      "name" : "PRODUCTNAME",
+      "codeName" : "ProductName"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "产品月报标识",
+    "codeName" : "srfkey",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "IBIZPRO_PRODUCTMONTHLYID",
+      "codeName" : "IbizproProductMonthlyId"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
+  "pagingSize" : 20,
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductMonthly.json"
+    }
+  },
+  "sortMode" : "REMOTE",
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableGroup" : false,
+  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : false,
+  "singleSelect" : false,
+  "modelid" : "aedb117aa6e1070d5ddb67906a1a0921"
+}

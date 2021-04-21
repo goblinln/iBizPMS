@@ -1,0 +1,522 @@
+{
+  "getAllPSPanelFields" : [ {
+    "id" : "account"
+  }, {
+    "id" : "role"
+  }, {
+    "id" : "join"
+  }, {
+    "id" : "days"
+  }, {
+    "id" : "hours"
+  }, {
+    "id" : "total"
+  }, {
+    "id" : "consumed"
+  }, {
+    "id" : "left"
+  }, {
+    "id" : "estimate"
+  }, {
+    "id" : "id",
+    "hidden" : true
+  } ],
+  "codeName" : "ProjectTeamPc",
+  "controlType" : "PANEL",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam/PSPANELS/ProjectTeamPc.json",
+  "layoutMode" : "TABLE_24COL",
+  "logicName" : "团队成员卡片视图",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
+  },
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "list_itempanel_button1_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "list_itempanel_button1"
+    }
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "name" : "list_itempanel_button1",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
+      },
+      "modelref" : true,
+      "id" : "RemoveMember@ProjectTeam"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "list_itempanel"
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "getRootPSPanelItems" : [ {
+    "itemStyle" : "DEFAULT",
+    "itemType" : "CONTAINER",
+    "name" : "container1",
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getPSLayoutPos" : {
+      "colLG" : 8,
+      "colMD" : 8,
+      "colSM" : 8,
+      "colXS" : 8,
+      "layout" : "TABLE_24COL"
+    },
+    "getPSPanelItems" : [ {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTAINER",
+      "name" : "container2",
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSPanelItems" : [ {
+        "caption" : "用户名",
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "account",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "account",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+          },
+          "editable" : false,
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSSysPFPlugin" : {
+          "pluginType" : "LIST_ITEMRENDER",
+          "pluginCode" : "listicon"
+        },
+        "viewFieldName" : "account",
+        "convertToCodeItemText" : true,
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "caption" : "角色",
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "role",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "role",
+          "editable" : false,
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSPanelItemGroupLogics" : [ {
+          "groupOP" : "AND",
+          "logicCat" : "PANELVISIBLE",
+          "logicType" : "GROUP",
+          "name" : "面板成员[role][面板显示]逻辑",
+          "getPSPanelItemLogics" : [ {
+            "condOp" : "ISNOTNULL",
+            "dstModelField" : "role",
+            "logicType" : "SINGLE",
+            "name" : "role 值不为空(NotNil)"
+          } ],
+          "notMode" : false
+        } ],
+        "viewFieldName" : "role",
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "contentType" : "RAW",
+        "itemStyle" : "DEFAULT",
+        "itemType" : "RAWITEM",
+        "name" : "rawitem5",
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSPanelItemGroupLogics" : [ {
+          "groupOP" : "AND",
+          "logicCat" : "PANELVISIBLE",
+          "logicType" : "GROUP",
+          "name" : "面板成员[rawitem5][面板显示]逻辑",
+          "getPSPanelItemLogics" : [ {
+            "condOp" : "ISNULL",
+            "dstModelField" : "role",
+            "logicType" : "SINGLE",
+            "name" : "role 值为空(Nil)"
+          } ],
+          "notMode" : false
+        } ],
+        "getPSSysCss" : {
+          "cssName" : "team-wszrole"
+        },
+        "rawContent" : "未设置角色",
+        "showCaption" : true
+      } ],
+      "getPSSysCss" : {
+        "cssName" : "team-fontsize"
+      },
+      "showCaption" : true
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTAINER",
+      "name" : "container4",
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSPanelItems" : [ {
+        "contentType" : "RAW",
+        "itemStyle" : "DEFAULT",
+        "itemType" : "RAWITEM",
+        "name" : "rawitem4",
+        "getPSLayoutPos" : {
+          "colLG" : 5,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "rawContent" : "加盟日",
+        "showCaption" : true
+      }, {
+        "caption" : "加盟日",
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "join",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "join",
+          "editable" : false,
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 9,
+          "colMD" : 9,
+          "colSM" : 9,
+          "colXS" : 9,
+          "layout" : "TABLE_24COL"
+        },
+        "viewFieldName" : "join",
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "contentType" : "RAW",
+        "itemStyle" : "DEFAULT",
+        "itemType" : "RAWITEM",
+        "name" : "rawitem6",
+        "getPSLayoutPos" : {
+          "colLG" : 4,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "rawContent" : "可用工日",
+        "showCaption" : true
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "days",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "days",
+          "editable" : false,
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 6,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "viewFieldName" : "days",
+        "hidden" : false,
+        "showCaption" : false
+      } ],
+      "showCaption" : false
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTAINER",
+      "name" : "container5",
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSPanelItems" : [ {
+        "contentType" : "RAW",
+        "itemStyle" : "DEFAULT",
+        "itemType" : "RAWITEM",
+        "name" : "rawitem7",
+        "getPSLayoutPos" : {
+          "colLG" : 5,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "rawContent" : "可用工时/天",
+        "showCaption" : true
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "hours",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "hours",
+          "editable" : false,
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 9,
+          "colMD" : 9,
+          "colSM" : 9,
+          "colXS" : 9,
+          "layout" : "TABLE_24COL"
+        },
+        "viewFieldName" : "hours",
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "contentType" : "RAW",
+        "itemStyle" : "DEFAULT",
+        "itemType" : "RAWITEM",
+        "name" : "rawitem8",
+        "getPSLayoutPos" : {
+          "colLG" : 4,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "rawContent" : "总计",
+        "showCaption" : true
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "total",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "total",
+          "editable" : false,
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 6,
+          "colMD" : 6,
+          "colSM" : 6,
+          "colXS" : 6,
+          "layout" : "TABLE_24COL"
+        },
+        "viewFieldName" : "total",
+        "hidden" : false,
+        "showCaption" : false
+      } ],
+      "showCaption" : false
+    }, {
+      "contentType" : "RAW",
+      "itemStyle" : "DEFAULT",
+      "itemType" : "RAWITEM",
+      "name" : "rawitem1",
+      "getPSLayoutPos" : {
+        "colLG" : 3,
+        "colMD" : 3,
+        "colSM" : 3,
+        "colXS" : 2,
+        "layout" : "TABLE_24COL"
+      },
+      "rawContent" : "消耗",
+      "showCaption" : true
+    }, {
+      "caption" : "消耗",
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "consumed",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "consumed",
+        "editable" : false,
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 5,
+        "colMD" : 5,
+        "colSM" : 5,
+        "colXS" : 5,
+        "layout" : "TABLE_24COL"
+      },
+      "viewFieldName" : "consumed",
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "contentType" : "RAW",
+      "itemStyle" : "DEFAULT",
+      "itemType" : "RAWITEM",
+      "name" : "rawitem2",
+      "getPSLayoutPos" : {
+        "colLG" : 3,
+        "colMD" : 3,
+        "colSM" : 3,
+        "colXS" : 3,
+        "layout" : "TABLE_24COL"
+      },
+      "rawContent" : "剩余",
+      "showCaption" : true
+    }, {
+      "caption" : "剩余工时",
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "left",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "left",
+        "editable" : false,
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 5,
+        "colMD" : 5,
+        "colSM" : 5,
+        "colXS" : 5,
+        "layout" : "TABLE_24COL"
+      },
+      "viewFieldName" : "left",
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "contentType" : "RAW",
+      "itemStyle" : "DEFAULT",
+      "itemType" : "RAWITEM",
+      "name" : "rawitem3",
+      "getPSLayoutPos" : {
+        "colLG" : 3,
+        "colMD" : 3,
+        "colSM" : 3,
+        "colXS" : 3,
+        "layout" : "TABLE_24COL"
+      },
+      "rawContent" : "预计",
+      "showCaption" : true
+    }, {
+      "caption" : "最初预计",
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "estimate",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "estimate",
+        "editable" : false,
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 5,
+        "colMD" : 5,
+        "colSM" : 5,
+        "colXS" : 5,
+        "layout" : "TABLE_24COL"
+      },
+      "viewFieldName" : "estimate",
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTAINER",
+      "name" : "container3",
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSPanelItems" : [ {
+        "actionType" : "UIACTION",
+        "caption" : "移除",
+        "itemStyle" : "DEFAULT",
+        "itemType" : "BUTTON",
+        "name" : "button1",
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "list_itempanel_button1"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 2,
+          "colLGOffset" : 21,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf127@FontAwesome",
+          "cssClass" : "fa fa-unlink"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "getNoPrivDisplayMode" : 1,
+          "caption" : "移除成员",
+          "codeName" : "RemoveMember",
+          "confirmMsg" : "您确定从该项目中移除该用户吗？",
+          "dataAccessAction" : "SRFUR__PROJT_TM_BUT",
+          "fullCodeName" : "ProjectTeam_RemoveMember",
+          "name" : "移除成员",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
+          },
+          "getPSSysImage" : {
+            "glyph" : "xf127@FontAwesome",
+            "cssClass" : "fa fa-unlink"
+          },
+          "refreshMode" : 1,
+          "successMsg" : "移除成功",
+          "timeout" : 60000,
+          "uIActionMode" : "BACKEND",
+          "uIActionTag" : "RemoveMember",
+          "uIActionType" : "DEUIACTION",
+          "enableConfirm" : true,
+          "reloadData" : true,
+          "id" : "RemoveMember@ProjectTeam"
+        },
+        "tooltip" : "移除",
+        "showCaption" : false
+      } ],
+      "showCaption" : false
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "id",
+      "getPSEditor" : {
+        "editorType" : "HIDDEN",
+        "name" : "id"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "viewFieldName" : "id",
+      "hidden" : true,
+      "showCaption" : false
+    } ],
+    "showCaption" : true
+  } ],
+  "modelid" : "5b593e04311d89e113cb62c983f879c2"
+}

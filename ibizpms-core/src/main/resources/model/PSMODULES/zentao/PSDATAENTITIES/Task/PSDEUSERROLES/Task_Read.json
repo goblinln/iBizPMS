@@ -1,0 +1,14 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Read.json",
+  "name" : "任务查看",
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "READ",
+    "name" : "Task_Read_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__READ"
+    }
+  } ],
+  "roleTag" : "Task_Read",
+  "userDRAction" : "READ"
+}

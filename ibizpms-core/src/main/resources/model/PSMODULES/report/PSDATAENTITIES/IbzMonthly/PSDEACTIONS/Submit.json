@@ -1,0 +1,9 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "Submit",
+  "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/Submit.json",
+  "logicName" : "提交",
+  "name" : "Submit",
+  "userCat" : "CAT1"
+}

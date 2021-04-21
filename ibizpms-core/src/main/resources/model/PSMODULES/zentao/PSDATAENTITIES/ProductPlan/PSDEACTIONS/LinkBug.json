@@ -1,0 +1,9 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "LinkBug",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/LinkBug.json",
+  "logicName" : "关联Bug",
+  "name" : "LinkBug",
+  "userCat" : "CAT1"
+}

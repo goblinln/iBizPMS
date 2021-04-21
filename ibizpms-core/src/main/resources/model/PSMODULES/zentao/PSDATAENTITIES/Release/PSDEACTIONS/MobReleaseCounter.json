@@ -1,0 +1,12 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "DELOGIC",
+  "codeName" : "MobReleaseCounter",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/MobReleaseCounter.json",
+  "logicName" : "移动端发布计数器",
+  "name" : "MobReleaseCounter",
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDELOGICS/MobReleaseCounter.json"
+  }
+}

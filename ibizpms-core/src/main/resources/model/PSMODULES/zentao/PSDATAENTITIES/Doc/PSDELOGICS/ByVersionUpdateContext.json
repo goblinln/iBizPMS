@@ -1,0 +1,72 @@
+{
+  "codeName" : "ByVersionUpdateContext",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDELOGICS/ByVersionUpdateContext.json",
+  "logicName" : "根据版本更新正文信息",
+  "logicSubType" : "NONE",
+  "name" : "根据版本更新正文信息",
+  "getPSDELogicLinks" : [ {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "name" : "连接2516",
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "defaultLink" : false
+  } ],
+  "getPSDELogicNodes" : [ {
+    "codeName" : "Rawsqlcall1",
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "logicNodeType" : "RAWSQLCALL",
+    "name" : "获取正文信息",
+    "getPSDELogicNodeParams" : [ {
+      "name" : "Default[VERSION]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "VERSION",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "name" : "Default[ID]",
+      "paramAction" : "SQLPARAM",
+      "srcFieldName" : "ID",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "getPSDELogicLinks" : [ {
+      "modelref" : true,
+      "id" : "连接2516"
+    } ],
+    "parallelOutput" : true
+  } ],
+  "getPSDELogicParams" : [ {
+    "codeName" : "Default",
+    "name" : "传入变量",
+    "default" : true,
+    "envParam" : false,
+    "lastParam" : false,
+    "sessionParam" : false
+  } ],
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : true,
+  "enableFront" : false
+}

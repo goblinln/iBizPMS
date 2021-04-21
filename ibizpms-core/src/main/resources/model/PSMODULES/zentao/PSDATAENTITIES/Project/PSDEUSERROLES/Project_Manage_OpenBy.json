@@ -1,0 +1,19 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Manage_OpenBy.json",
+  "name" : "项目管理（当前创建者）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "OpenByQuery"
+  },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "MANAGE",
+    "name" : "Project_Manage_OpenBy_MANAGE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
+    }
+  } ],
+  "roleTag" : "Project_Manage_OpenBy",
+  "userDRAction" : "READ",
+  "defaultMode" : true
+}
