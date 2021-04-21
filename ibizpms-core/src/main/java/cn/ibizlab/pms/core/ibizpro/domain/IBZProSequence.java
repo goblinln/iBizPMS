@@ -170,6 +170,14 @@ public class IBZProSequence extends EntityMP implements Serializable {
     @JsonProperty("curseq")
     @ApiModelProperty("当前序列号")
     private Long curseq;
+    /**
+     * 租户
+     */
+    @TableField(value = "`SRFDCID`")
+    @JSONField(name = "srfdcid")
+    @JsonProperty("srfdcid")
+    @ApiModelProperty("租户")
+    private String srfdcid;
 
 
 
@@ -227,6 +235,14 @@ public class IBZProSequence extends EntityMP implements Serializable {
     public void setCurseq(Long curseq) {
         this.curseq = curseq;
         this.modify("curseq", curseq);
+    }
+
+    /**
+     * 设置 [租户]
+     */
+    public void setSrfdcid(String srfdcid) {
+        this.srfdcid = srfdcid;
+        this.modify("srfdcid", srfdcid);
     }
 
 
