@@ -167,10 +167,6 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             return taskService.searchThisWeekCompleteTaskZS(searchContext);    
         if (iPSDEDataSet.getName().equals("TodoListTask"))
             return taskService.searchTodoListTask(searchContext);    
-        if (iPSDEDataSet.getName().equals("TypeGroup"))
-            return taskService.searchTypeGroup(searchContext);    
-        if (iPSDEDataSet.getName().equals("TypeGroupPlan"))
-            return taskService.searchTypeGroupPlan(searchContext);    
         return null;
     }
 
