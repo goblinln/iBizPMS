@@ -370,6 +370,22 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchPOQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "POQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchPOQuery"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchProductManagerQuery",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
@@ -415,6 +431,38 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProductTeam"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchQDQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "QDQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchQDQuery"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchRDQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "RDQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchRDQuery"
     },
     "builtinMethod" : false
   }, {
@@ -1078,6 +1126,22 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchPOQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "POQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchPOQuery"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchProductManagerQuery",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
@@ -1123,6 +1187,38 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProductTeam"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchQDQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "QDQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchQDQuery"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchRDQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "RDQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchRDQuery"
     },
     "builtinMethod" : false
   }, {

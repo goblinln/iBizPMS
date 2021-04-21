@@ -173,6 +173,13 @@
          )t1
      </select>
 
+    <!--数据集合[POQuery]-->
+	 <select id="searchPOQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext"  resultMap="ProductResultMap">
+         select t1.* from (
+                <include refid="POQuery" />
+         )t1
+     </select>
+
     <!--数据集合[ProductManagerQuery]-->
 	 <select id="searchProductManagerQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext"  resultMap="ProductResultMap">
          select t1.* from (
@@ -191,6 +198,20 @@
 	 <select id="searchProductTeam"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext"  resultMap="ProductResultMap">
          select t1.* from (
                 <include refid="ProductTeam" />
+         )t1
+     </select>
+
+    <!--数据集合[QDQuery]-->
+	 <select id="searchQDQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext"  resultMap="ProductResultMap">
+         select t1.* from (
+                <include refid="QDQuery" />
+         )t1
+     </select>
+
+    <!--数据集合[RDQuery]-->
+	 <select id="searchRDQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext"  resultMap="ProductResultMap">
+         select t1.* from (
+                <include refid="RDQuery" />
          )t1
      </select>
 

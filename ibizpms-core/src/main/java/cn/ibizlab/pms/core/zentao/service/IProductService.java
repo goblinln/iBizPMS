@@ -58,9 +58,12 @@ public interface IProductService extends IService<Product> {
     Page<Product> searchDeveloperQuery(ProductSearchContext context);
     Page<Product> searchESBulk(ProductSearchContext context);
     Page<Product> searchOpenQuery(ProductSearchContext context);
+    Page<Product> searchPOQuery(ProductSearchContext context);
     Page<Product> searchProductManagerQuery(ProductSearchContext context);
     Page<Product> searchProductPM(ProductSearchContext context);
     Page<Product> searchProductTeam(ProductSearchContext context);
+    Page<Product> searchQDQuery(ProductSearchContext context);
+    Page<Product> searchRDQuery(ProductSearchContext context);
     Page<Product> searchStoryCurProject(ProductSearchContext context);
     List<Product> selectByLine(Long id);
     void removeByLine(Long id);

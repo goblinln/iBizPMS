@@ -115,12 +115,18 @@ public class ProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
             return productService.searchESBulk(searchContext);    
         if (iPSDEDataSet.getName().equals("OpenQuery"))
             return productService.searchOpenQuery(searchContext);    
+        if (iPSDEDataSet.getName().equals("POQuery"))
+            return productService.searchPOQuery(searchContext);    
         if (iPSDEDataSet.getName().equals("ProductManagerQuery"))
             return productService.searchProductManagerQuery(searchContext);    
         if (iPSDEDataSet.getName().equals("ProductPM"))
             return productService.searchProductPM(searchContext);    
         if (iPSDEDataSet.getName().equals("ProductTeam"))
             return productService.searchProductTeam(searchContext);    
+        if (iPSDEDataSet.getName().equals("QDQuery"))
+            return productService.searchQDQuery(searchContext);    
+        if (iPSDEDataSet.getName().equals("RDQuery"))
+            return productService.searchRDQuery(searchContext);    
         if (iPSDEDataSet.getName().equals("StoryCURPROJECT"))
             return productService.searchStoryCurProject(searchContext);    
         return null;
@@ -352,6 +358,9 @@ public class ProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         else if (action.equals("searchOpenQuery")) {
             return aroundDataSet("OpenQuery", point);
         }
+        else if (action.equals("searchPOQuery")) {
+            return aroundDataSet("POQuery", point);
+        }
         else if (action.equals("searchProductManagerQuery")) {
             return aroundDataSet("ProductManagerQuery", point);
         }
@@ -360,6 +369,12 @@ public class ProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         }
         else if (action.equals("searchProductTeam")) {
             return aroundDataSet("ProductTeam", point);
+        }
+        else if (action.equals("searchQDQuery")) {
+            return aroundDataSet("QDQuery", point);
+        }
+        else if (action.equals("searchRDQuery")) {
+            return aroundDataSet("RDQuery", point);
         }
         else if (action.equals("searchStoryCurProject")) {
             return aroundDataSet("StoryCURPROJECT", point);

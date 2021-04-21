@@ -14,5 +14,6 @@
     }
   } ],
   "roleTag" : "Project_Read_RD",
-  "userDRAction" : "READ"
+  "userDRAction" : "READ",
+  "defaultMode" : true
 }

@@ -6313,6 +6313,24 @@
     "userDRAction" : "READ",
     "enableOrgDR" : true
   }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Manage_OpenBy.json",
+    "name" : "项目管理（当前创建者）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenByQuery"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "MANAGE",
+      "name" : "Project_Manage_OpenBy_MANAGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "MANAGE"
+      }
+    } ],
+    "roleTag" : "Project_Manage_OpenBy",
+    "userDRAction" : "READ",
+    "defaultMode" : true
+  }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_CO.json",
     "name" : "项目查看（当前机构）",
     "orgDR" : 1,
@@ -6343,7 +6361,8 @@
       }
     } ],
     "roleTag" : "Project_Read_DEV",
-    "userDRAction" : "READ"
+    "userDRAction" : "READ",
+    "defaultMode" : true
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_Open.json",
     "name" : "项目查看（公开项目）",
@@ -6360,7 +6379,8 @@
       }
     } ],
     "roleTag" : "Project_Read_Open",
-    "userDRAction" : "READ"
+    "userDRAction" : "READ",
+    "defaultMode" : true
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_OpenBy.json",
     "name" : "项目查看（当前创建者）",
@@ -6377,7 +6397,8 @@
       }
     } ],
     "roleTag" : "Project_Read_OpenBy",
-    "userDRAction" : "READ"
+    "userDRAction" : "READ",
+    "defaultMode" : true
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_PM.json",
     "name" : "项目查看（项目负责人）",
@@ -6394,7 +6415,8 @@
       }
     } ],
     "roleTag" : "Project_Read_PM",
-    "userDRAction" : "READ"
+    "userDRAction" : "READ",
+    "defaultMode" : true
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_PO.json",
     "name" : "项目查看（产品负责人）",
@@ -6411,7 +6433,8 @@
       }
     } ],
     "roleTag" : "Project_Read_PO",
-    "userDRAction" : "READ"
+    "userDRAction" : "READ",
+    "defaultMode" : true
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_QD.json",
     "name" : "项目查看（测试负责人）",
@@ -6428,7 +6451,8 @@
       }
     } ],
     "roleTag" : "Project_Read_QD",
-    "userDRAction" : "READ"
+    "userDRAction" : "READ",
+    "defaultMode" : true
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_RD.json",
     "name" : "项目查看（发布负责人）",
@@ -6445,7 +6469,8 @@
       }
     } ],
     "roleTag" : "Project_Read_RD",
-    "userDRAction" : "READ"
+    "userDRAction" : "READ",
+    "defaultMode" : true
   } ],
   "auditMode" : 0,
   "codeName" : "Project",

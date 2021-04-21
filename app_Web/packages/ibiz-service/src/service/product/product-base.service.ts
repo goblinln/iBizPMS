@@ -442,6 +442,17 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return this.http.post(`/products/fetchopenquery`, _data);
     }
     /**
+     * FetchPOQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async FetchPOQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/fetchpoquery`, _data);
+    }
+    /**
      * FetchProductManagerQuery
      *
      * @param {*} [_context={}]
@@ -473,6 +484,28 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      */
     async FetchProductTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/products/fetchproductteam`, _data);
+    }
+    /**
+     * FetchQDQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async FetchQDQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/fetchqdquery`, _data);
+    }
+    /**
+     * FetchRDQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async FetchRDQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/fetchrdquery`, _data);
     }
     /**
      * FetchStoryCurProject

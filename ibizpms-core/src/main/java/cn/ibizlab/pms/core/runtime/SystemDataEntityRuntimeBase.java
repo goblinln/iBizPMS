@@ -184,7 +184,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     public void setSearchCondition(ISearchContextBase iSearchContextBase, IPSDEField iPSDEField, String strCondition, Object objValue) {
         try {
             String strSearchField = String.format("n_%s_%s", iPSDEField.getName().toLowerCase(), strCondition.toLowerCase());
-            Field searchField = iSearchContextBase.getClass().getField(strSearchField);
+            Field searchField = iSearchContextBase.getClass().getDeclaredField(strSearchField);
             searchField.setAccessible(true);
             if(strCondition.equals(Conditions.ISNULL) || strCondition.equals(Conditions.ISNULL)){
                 searchField.set(iSearchContextBase, "true");
