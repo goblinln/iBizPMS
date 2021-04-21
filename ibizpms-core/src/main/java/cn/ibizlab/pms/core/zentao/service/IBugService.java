@@ -76,6 +76,7 @@ public interface IBugService extends IService<Bug> {
     boolean sendMessageBatch(List<Bug> etList);
     Bug sendMsgPreProcess(Bug et);
     boolean sendMsgPreProcessBatch(List<Bug> etList);
+    Bug testScript(Bug et);
     Bug toStory(Bug et);
     boolean toStoryBatch(List<Bug> etList);
     Bug unlinkBug(Bug et);

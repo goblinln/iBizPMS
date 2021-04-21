@@ -363,6 +363,18 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "TestScript",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/TestScript.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "TestScript"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "ToStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -1872,6 +1884,18 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SendMsgPreProcess"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "TestScript",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/TestScript.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "TestScript"
     },
     "builtinMethod" : false
   }, {

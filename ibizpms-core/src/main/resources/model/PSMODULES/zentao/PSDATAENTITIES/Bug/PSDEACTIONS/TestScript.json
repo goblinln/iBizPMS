@@ -1,0 +1,9 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "SCRIPT",
+  "codeName" : "TestScript",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/TestScript.json",
+  "logicName" : "TestScript",
+  "name" : "TestScript",
+  "scriptCode" : "entity.set(\"id\",100).update();"
+}

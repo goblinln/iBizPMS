@@ -1123,6 +1123,33 @@ export class BugBaseService extends EntityBaseService<IBug> {
         return this.http.post(`/bugs/${_context.bug}/sendmsgpreprocess`, _data);
     }
     /**
+     * TestScript
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof BugService
+     */
+    async TestScript(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && _context.bug) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/${_context.bug}/testscript`, _data);
+        }
+        if (_context.project && _context.bug) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/testscript`, _data);
+        }
+        if (_context.story && _context.bug) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/${_context.bug}/testscript`, _data);
+        }
+        if (_context.product && _context.bug) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/${_context.bug}/testscript`, _data);
+        }
+        return this.http.post(`/bugs/${_context.bug}/testscript`, _data);
+    }
+    /**
      * ToStory
      *
      * @param {*} [_context={}]

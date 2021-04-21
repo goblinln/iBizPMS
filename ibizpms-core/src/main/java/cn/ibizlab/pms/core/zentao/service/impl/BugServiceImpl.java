@@ -552,6 +552,13 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
 
     @Override
     @Transactional
+    public Bug testScript(Bug et) {
+        //自定义代码
+        return et;
+    }
+
+    @Override
+    @Transactional
     public Bug toStory(Bug et) {
         //自定义代码
         return et;

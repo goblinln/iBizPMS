@@ -273,6 +273,9 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
             else if (iPSDEAction.getName().equals("sendMsgPreProcess")) {
                 return bugService.sendMsgPreProcess((Bug) args[0]);
             }
+            else if (iPSDEAction.getName().equals("TestScript")) {
+                return bugService.testScript((Bug) args[0]);
+            }
             else if (iPSDEAction.getName().equals("toStory")) {
                 return bugService.toStory((Bug) args[0]);
             }
@@ -450,6 +453,9 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
         }
         else if (action.equals("sendMsgPreProcess")) {
             return aroundAction("sendMsgPreProcess", point);
+        }
+        else if (action.equals("testScript")) {
+            return aroundAction(action, point);
         }
         else if (action.equals("toStory")) {
             return aroundAction("toStory", point);
