@@ -73,6 +73,10 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         return this.condCache.get('bugSelectableProjectList');
     }
 
+    protected getCurDefaultQueryCond() {
+        return this.condCache.get('curDefaultQuery');
+    }
+
     protected getCurPlanProjectCond() {
         return this.condCache.get('curPlanProject');
     }
@@ -91,6 +95,18 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
 
     protected getDefaultCond() {
         return this.condCache.get('default');
+    }
+
+    protected getDeveloperQueryCond() {
+        if (!this.condCache.has('developerQuery')) {
+            const strCond: any[] = ['AND'];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('developerQuery', cond);
+            }
+        }
+        return this.condCache.get('developerQuery');
     }
 
     protected getESBulkCond() {
@@ -117,8 +133,80 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         return this.condCache.get('myProject');
     }
 
+    protected getOpenByQueryCond() {
+        if (!this.condCache.has('openByQuery')) {
+            const strCond: any[] = ['AND', ['EQ', 'OPENEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('openByQuery', cond);
+            }
+        }
+        return this.condCache.get('openByQuery');
+    }
+
+    protected getOpenQueryCond() {
+        if (!this.condCache.has('openQuery')) {
+            const strCond: any[] = ['AND', ['EQ', 'ACL','open']];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('openQuery', cond);
+            }
+        }
+        return this.condCache.get('openQuery');
+    }
+
+    protected getPMQueryCond() {
+        if (!this.condCache.has('pMQuery')) {
+            const strCond: any[] = ['AND', ['EQ', 'PM',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('pMQuery', cond);
+            }
+        }
+        return this.condCache.get('pMQuery');
+    }
+
+    protected getPOQueryCond() {
+        if (!this.condCache.has('pOQuery')) {
+            const strCond: any[] = ['AND', ['EQ', 'PO',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('pOQuery', cond);
+            }
+        }
+        return this.condCache.get('pOQuery');
+    }
+
     protected getProjectTeamCond() {
         return this.condCache.get('projectTeam');
+    }
+
+    protected getQDQueryCond() {
+        if (!this.condCache.has('qDQuery')) {
+            const strCond: any[] = ['AND', ['EQ', 'QD',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('qDQuery', cond);
+            }
+        }
+        return this.condCache.get('qDQuery');
+    }
+
+    protected getRDQueryCond() {
+        if (!this.condCache.has('rDQuery')) {
+            const strCond: any[] = ['AND', ['EQ', 'RD',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('rDQuery', cond);
+            }
+        }
+        return this.condCache.get('rDQuery');
     }
 
     protected getStoryProjectCond() {
@@ -409,6 +497,17 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         return this.http.post(`/projects/fetchbugproject`, _data);
     }
     /**
+     * FetchCurDefaultQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectService
+     */
+    async FetchCurDefaultQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/projects/fetchcurdefaultquery`, _data);
+    }
+    /**
      * FetchCurPlanProject
      *
      * @param {*} [_context={}]
@@ -464,6 +563,17 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         return this.http.post(`/projects/fetchdefault`, _data);
     }
     /**
+     * FetchDeveloperQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectService
+     */
+    async FetchDeveloperQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/projects/fetchdeveloperquery`, _data);
+    }
+    /**
      * FetchESBulk
      *
      * @param {*} [_context={}]
@@ -508,6 +618,50 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         return this.http.post(`/projects/fetchmyproject`, _data);
     }
     /**
+     * FetchOpenByQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectService
+     */
+    async FetchOpenByQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/projects/fetchopenbyquery`, _data);
+    }
+    /**
+     * FetchOpenQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectService
+     */
+    async FetchOpenQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/projects/fetchopenquery`, _data);
+    }
+    /**
+     * FetchPMQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectService
+     */
+    async FetchPMQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/projects/fetchpmquery`, _data);
+    }
+    /**
+     * FetchPOQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectService
+     */
+    async FetchPOQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/projects/fetchpoquery`, _data);
+    }
+    /**
      * FetchProjectTeam
      *
      * @param {*} [_context={}]
@@ -517,6 +671,28 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      */
     async FetchProjectTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/projects/fetchprojectteam`, _data);
+    }
+    /**
+     * FetchQDQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectService
+     */
+    async FetchQDQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/projects/fetchqdquery`, _data);
+    }
+    /**
+     * FetchRDQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectService
+     */
+    async FetchRDQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/projects/fetchrdquery`, _data);
     }
     /**
      * FetchStoryProject

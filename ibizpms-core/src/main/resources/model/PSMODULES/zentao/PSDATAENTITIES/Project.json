@@ -380,6 +380,20 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "CurDefaultQuery",
+    "logicName" : "默认查询",
+    "name" : "CurDefaultQuery",
+    "customCode" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
         "customCond" : "( t21.`PLAN` = ${srfwebcontext('plan','{\"defname\":\"PLAN\",\"dename\":\"ZT_PROJECTPRODUCT\"}')} )",
         "name" : "查询条件"
       }, {
@@ -445,6 +459,23 @@
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.id in (select t3.root from zt_team t3 where t3.account = #{srf.sessioncontext.srfloginname}  \nand t3.type = 'project') )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "DeveloperQuery",
+    "logicName" : "研发人员（启用权限）",
+    "name" : "DeveloperQuery"
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
       "name" : "MySQL5"
     } ],
     "codeName" : "ESBulk",
@@ -493,6 +524,74 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
+        "customCond" : "( t1.`OPENEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"OPENEDBY\",\"dename\":\"ZT_PROJECT\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "OpenByQuery",
+    "logicName" : "当前创建者（启用权限）",
+    "name" : "OpenByQuery"
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`ACL` = 'open' )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "OpenQuery",
+    "logicName" : "公开（启用权限）",
+    "name" : "OpenQuery"
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`PM` =  ${srfsessioncontext('srfloginname','{\"defname\":\"PM\",\"dename\":\"ZT_PROJECT\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "PMQuery",
+    "logicName" : "项目负责人（启用权限）",
+    "name" : "PMQuery"
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`PO` =  ${srfsessioncontext('srfloginname','{\"defname\":\"PO\",\"dename\":\"ZT_PROJECT\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "POQuery",
+    "logicName" : "产品负责人（启用权限）",
+    "name" : "POQuery"
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
         "customCond" : "t21.type = 'project'",
         "name" : "查询条件"
       }, {
@@ -505,6 +604,40 @@
     "logicName" : "项目团队",
     "name" : "ProjectTeam",
     "customCode" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`QD` =  ${srfsessioncontext('srfloginname','{\"defname\":\"QD\",\"dename\":\"ZT_PROJECT\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "QDQuery",
+    "logicName" : "测试负责人（启用权限）",
+    "name" : "QDQuery"
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`RD` =  ${srfsessioncontext('srfloginname','{\"defname\":\"RD\",\"dename\":\"ZT_PROJECT\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "RDQuery",
+    "logicName" : "发布负责人（启用权限）",
+    "name" : "RDQuery"
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -554,6 +687,17 @@
     "getPSDEDataQueries" : [ {
       "modelref" : true,
       "id" : "BugSelectableProjectList"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true,
+    "enableTempData" : true
+  }, {
+    "codeName" : "CurDefaultQuery",
+    "logicName" : "默认查询",
+    "name" : "CurDefaultQuery",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "CurDefaultQuery"
     } ],
     "enableBackend" : true,
     "enableFront" : true,
@@ -635,6 +779,17 @@
     "enableFront" : true,
     "enableTempData" : true
   }, {
+    "codeName" : "DeveloperQuery",
+    "logicName" : "研发人员（启用权限）",
+    "name" : "DeveloperQuery",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "DeveloperQuery"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true,
+    "enableTempData" : true
+  }, {
     "codeName" : "ESBulk",
     "logicName" : "ES批量的导入",
     "name" : "ESBulk",
@@ -679,12 +834,78 @@
     "enableFront" : true,
     "enableTempData" : true
   }, {
+    "codeName" : "OpenByQuery",
+    "logicName" : "当前创建者（启用权限）",
+    "name" : "OpenByQuery",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "OpenByQuery"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true,
+    "enableTempData" : true
+  }, {
+    "codeName" : "OpenQuery",
+    "logicName" : "公开（启用权限）",
+    "name" : "OpenQuery",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "OpenQuery"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true,
+    "enableTempData" : true
+  }, {
+    "codeName" : "PMQuery",
+    "logicName" : "项目负责人（启用权限）",
+    "name" : "PMQuery",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "PMQuery"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true,
+    "enableTempData" : true
+  }, {
+    "codeName" : "POQuery",
+    "logicName" : "产品负责人（启用权限）",
+    "name" : "POQuery",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "POQuery"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true,
+    "enableTempData" : true
+  }, {
     "codeName" : "ProjectTeam",
     "logicName" : "项目团队",
     "name" : "ProjectTeam",
     "getPSDEDataQueries" : [ {
       "modelref" : true,
       "id" : "ProjectTeam"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true,
+    "enableTempData" : true
+  }, {
+    "codeName" : "QDQuery",
+    "logicName" : "测试负责人（启用权限）",
+    "name" : "QDQuery",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "QDQuery"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true,
+    "enableTempData" : true
+  }, {
+    "codeName" : "RDQuery",
+    "logicName" : "发布负责人（启用权限）",
+    "name" : "RDQuery",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "RDQuery"
     } ],
     "enableBackend" : true,
     "enableFront" : true,
@@ -6106,6 +6327,42 @@
     "roleTag" : "Project_Read_CO",
     "userDRAction" : "READ",
     "enableOrgDR" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_Open.json",
+    "name" : "项目查看（公开项目）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenQuery"
+    },
+    "roleTag" : "Project_Read_Open",
+    "userDRAction" : "READ"
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_OpenBy.json",
+    "name" : "项目查看（当前创建者）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenByQuery"
+    },
+    "roleTag" : "Project_Read_OpenBy",
+    "userDRAction" : "READ"
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_PM.json",
+    "name" : "项目查看（项目负责人）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "PMQuery"
+    },
+    "roleTag" : "Project_Read_PM",
+    "userDRAction" : "READ"
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_PO.json",
+    "name" : "项目查看（产品负责人）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "POQuery"
+    },
+    "roleTag" : "Project_Read_PO",
+    "userDRAction" : "READ"
   } ],
   "auditMode" : 0,
   "codeName" : "Project",

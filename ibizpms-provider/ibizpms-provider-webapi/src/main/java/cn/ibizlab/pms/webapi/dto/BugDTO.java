@@ -804,6 +804,16 @@ public class BugDTO extends DTOBase implements Serializable {
     @ApiModelProperty("测试单")
     private Long testtask;
 
+    /**
+     * 属性 [BUGSN]
+     *
+     */
+    @JSONField(name = "bugsn")
+    @JsonProperty("bugsn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("BUG编号")
+    private Long bugsn;
+
 
     /**
      * 设置 [SEVERITY]
@@ -1195,6 +1205,14 @@ public class BugDTO extends DTOBase implements Serializable {
     public void setTesttask(Long  testtask){
         this.testtask = testtask ;
         this.modify("testtask",testtask);
+    }
+
+    /**
+     * 设置 [BUGSN]
+     */
+    public void setBugsn(Long  bugsn){
+        this.bugsn = bugsn ;
+        this.modify("bugsn",bugsn);
     }
 
 

@@ -1514,7 +1514,7 @@
   } ],
   "getAllPSSysSequences" : [ {
     "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProSeq.json"
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProBugSeq.json"
   } ],
   "getAllPSSysUniReses" : [ {
     "name" : "通用创建",

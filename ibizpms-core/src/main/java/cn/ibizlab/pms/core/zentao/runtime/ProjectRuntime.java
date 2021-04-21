@@ -366,6 +366,9 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         else if (action.equals("searchBugProject")) {
             return aroundDataSet("BugProject", point);
         }
+        else if (action.equals("searchCurDefaultQuery")) {
+            return aroundDataSet("CurDefaultQuery", point);
+        }
         else if (action.equals("searchCurPlanProject")) {
             return aroundDataSet("CurPlanProject", point);
         }
@@ -381,6 +384,9 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         else if (action.equals("searchDefault")) {
             return aroundDataSet("DEFAULT", point);
         }
+        else if (action.equals("searchDeveloperQuery")) {
+            return aroundDataSet("DeveloperQuery", point);
+        }
         else if (action.equals("searchESBulk")) {
             return aroundDataSet("ESBulk", point);
         }
@@ -393,8 +399,26 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         else if (action.equals("searchMyProject")) {
             return aroundDataSet("MyProject", point);
         }
+        else if (action.equals("searchOpenByQuery")) {
+            return aroundDataSet("OpenByQuery", point);
+        }
+        else if (action.equals("searchOpenQuery")) {
+            return aroundDataSet("OpenQuery", point);
+        }
+        else if (action.equals("searchPMQuery")) {
+            return aroundDataSet("PMQuery", point);
+        }
+        else if (action.equals("searchPOQuery")) {
+            return aroundDataSet("POQuery", point);
+        }
         else if (action.equals("searchProjectTeam")) {
             return aroundDataSet("ProjectTeam", point);
+        }
+        else if (action.equals("searchQDQuery")) {
+            return aroundDataSet("QDQuery", point);
+        }
+        else if (action.equals("searchRDQuery")) {
+            return aroundDataSet("RDQuery", point);
         }
         else if (action.equals("searchStoryProject")) {
             return aroundDataSet("StoryProject", point);

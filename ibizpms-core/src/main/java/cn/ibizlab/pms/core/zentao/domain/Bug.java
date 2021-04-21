@@ -728,6 +728,14 @@ public class Bug extends EntityMP implements Serializable {
     @JsonProperty("testtask")
     @ApiModelProperty("测试单")
     private Long testtask;
+    /**
+     * BUG编号
+     */
+    @TableField(value = "`BUGSN`")
+    @JSONField(name = "bugsn")
+    @JsonProperty("bugsn")
+    @ApiModelProperty("BUG编号")
+    private Long bugsn;
 
     /**
      * 
@@ -1283,6 +1291,14 @@ public class Bug extends EntityMP implements Serializable {
     public void setTesttask(Long testtask) {
         this.testtask = testtask;
         this.modify("testtask", testtask);
+    }
+
+    /**
+     * 设置 [BUG编号]
+     */
+    public void setBugsn(Long bugsn) {
+        this.bugsn = bugsn;
+        this.modify("bugsn", bugsn);
     }
 
 

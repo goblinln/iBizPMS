@@ -1940,10 +1940,6 @@
     "length" : 20,
     "logicName" : "待办编号",
     "name" : "TODOSN",
-    "getPSSysSequence" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProSeq.json"
-    },
     "sequenceMode" : "CREATE",
     "stdDataType" : 1,
     "valueFormat" : "%1$s"

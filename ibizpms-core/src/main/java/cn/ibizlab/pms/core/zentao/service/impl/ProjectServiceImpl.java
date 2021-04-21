@@ -562,6 +562,15 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
     }
 
     /**
+     * 查询集合 默认查询
+     */
+    @Override
+    public Page<Project> searchCurDefaultQuery(ProjectSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Project> pages=baseMapper.searchCurDefaultQuery(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Project>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
      * 查询集合 当前计划项目
      */
     @Override
@@ -607,6 +616,15 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
     }
 
     /**
+     * 查询集合 研发人员（启用权限）
+     */
+    @Override
+    public Page<Project> searchDeveloperQuery(ProjectSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Project> pages=baseMapper.searchDeveloperQuery(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Project>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
      * 查询集合 ES批量的导入
      */
     @Override
@@ -643,11 +661,65 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
     }
 
     /**
+     * 查询集合 当前创建者（启用权限）
+     */
+    @Override
+    public Page<Project> searchOpenByQuery(ProjectSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Project> pages=baseMapper.searchOpenByQuery(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Project>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 公开（启用权限）
+     */
+    @Override
+    public Page<Project> searchOpenQuery(ProjectSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Project> pages=baseMapper.searchOpenQuery(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Project>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 项目负责人（启用权限）
+     */
+    @Override
+    public Page<Project> searchPMQuery(ProjectSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Project> pages=baseMapper.searchPMQuery(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Project>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 产品负责人（启用权限）
+     */
+    @Override
+    public Page<Project> searchPOQuery(ProjectSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Project> pages=baseMapper.searchPOQuery(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Project>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
      * 查询集合 项目团队
      */
     @Override
     public Page<Project> searchProjectTeam(ProjectSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Project> pages=baseMapper.searchProjectTeam(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Project>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 测试负责人（启用权限）
+     */
+    @Override
+    public Page<Project> searchQDQuery(ProjectSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Project> pages=baseMapper.searchQDQuery(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Project>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 发布负责人（启用权限）
+     */
+    @Override
+    public Page<Project> searchRDQuery(ProjectSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Project> pages=baseMapper.searchRDQuery(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Project>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

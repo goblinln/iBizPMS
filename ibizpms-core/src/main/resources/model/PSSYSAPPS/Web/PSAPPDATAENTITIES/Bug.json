@@ -1524,6 +1524,11 @@
     "logicName" : "测试单",
     "name" : "TESTTASK",
     "stdDataType" : 1
+  }, {
+    "codeName" : "Bugsn",
+    "logicName" : "BUG编号",
+    "name" : "BUGSN",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

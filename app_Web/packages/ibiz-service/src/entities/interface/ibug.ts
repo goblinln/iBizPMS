@@ -340,4 +340,8 @@ export interface IBug extends IEntityBase {
      * 测试单
      */
     testtask?: any;
+    /**
+     * BUG编号
+     */
+    bugsn?: any;
 }

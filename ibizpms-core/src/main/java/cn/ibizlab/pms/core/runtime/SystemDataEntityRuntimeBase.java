@@ -27,6 +27,7 @@ import net.ibizsys.runtime.dataentity.action.CheckKeyStates;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
 import net.ibizsys.runtime.ISystemRuntime;
 import net.ibizsys.runtime.dataentity.IDataEntityRuntime;
+import net.ibizsys.runtime.security.DataAccessActions;
 import net.ibizsys.runtime.security.DataRanges;
 import net.ibizsys.runtime.security.IUserContext;
 import net.ibizsys.runtime.util.Conditions;
@@ -255,18 +256,19 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
             authorities= curUser.getAuthorities().stream()
                 .filter(uaadeAuthority -> uaadeAuthority instanceof UAADEAuthority
                         && ((UAADEAuthority) uaadeAuthority).getEntity().equals(this.getName())
-                        && ((UAADEAuthority) uaadeAuthority).getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action)))
+                        && (DataAccessActions.READ.equals(action) || ((UAADEAuthority) uaadeAuthority).getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))))
                 .collect(Collectors.toList());
         }else {
             authorities= curUser.getAuthorities().stream()
                     .filter(uaadeAuthority -> uaadeAuthority instanceof UAADEAuthority
                             && curSystemId.equalsIgnoreCase(((UAADEAuthority) uaadeAuthority).getSystemid())
-                            && ((UAADEAuthority) uaadeAuthority).getEntity().equals(this.getName()) && ((UAADEAuthority) uaadeAuthority).getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action)))
+                            && (DataAccessActions.READ.equals(action) || ((UAADEAuthority) uaadeAuthority).getEntity().equals(this.getName()) && ((UAADEAuthority) uaadeAuthority).getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))))
                     .collect(Collectors.toList());
         }
 
         List<UAADEAuthority> defaultAuthorities = getDefaultAuthorities().stream().filter(uaadeAuthority -> {
-            if (StringUtils.isNotBlank(uaadeAuthority.getBscope()) && uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))) {
+            if (StringUtils.isNotBlank(uaadeAuthority.getBscope()) 
+                    && (DataAccessActions.READ.equals(action) || uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action)))) {
                 return true;
             }
             return false;
@@ -404,11 +406,15 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         List<GrantedAuthority> authorities;
         if(StringUtils.isEmpty(curSystemId)){
             authorities= curUser.getAuthorities().stream()
-                .filter(f -> f instanceof UAADEAuthority && ((UAADEAuthority) f).getEntity().equals(this.getName()) && ((UAADEAuthority) f).getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action)))
-                .collect(Collectors.toList());
+                .filter(f -> f instanceof UAADEAuthority 
+                    && ((UAADEAuthority) f).getEntity().equals(this.getName()) 
+                    && (DataAccessActions.READ.equals(action) || ((UAADEAuthority) f).getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))))
+                    .collect(Collectors.toList());
         }else {
             authorities= curUser.getAuthorities().stream()
-                    .filter(f -> f instanceof UAADEAuthority && curSystemId.equalsIgnoreCase(((UAADEAuthority) f).getSystemid()) &&((UAADEAuthority) f).getEntity().equals(this.getName()) && ((UAADEAuthority) f).getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action)))
+                    .filter(f -> f instanceof UAADEAuthority 
+                    && curSystemId.equalsIgnoreCase(((UAADEAuthority) f).getSystemid()) &&((UAADEAuthority) f).getEntity().equals(this.getName()) 
+                    && (DataAccessActions.READ.equals(action) || ((UAADEAuthority) f).getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))))
                     .collect(Collectors.toList());
         }
         boolean hasCondition = false;
@@ -451,7 +457,8 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      */
     public void addAuthorityDefaultConditions(QueryWrapperContext context, String action) {
         List<UAADEAuthority> actionUAADEAuthority = getDefaultAuthorities().stream().filter(uaadeAuthority -> {
-            if (StringUtils.isNotBlank(uaadeAuthority.getBscope()) && uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))) {
+            if (StringUtils.isNotBlank(uaadeAuthority.getBscope()) 
+                    && (DataAccessActions.READ.equals(action) || uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action)))) {
                 return true;
             }
             return false;
@@ -460,7 +467,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         if (actionUAADEAuthority.size() > 0) {
             Consumer<QueryWrapper> authorityConditions = authorityCondition -> {
                 for (UAADEAuthority uaadeAuthority : actionUAADEAuthority) {
-                    if (uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))) {
+                    if (DataAccessActions.READ.equals(action) || uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))) {
                         Consumer<QueryWrapper> roleConditions = roleCondition -> {
                             roleCondition.apply(uaadeAuthority.getBscope());
                         };

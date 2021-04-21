@@ -587,6 +587,22 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchCurDefaultQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "CurDefaultQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchCurDefaultQuery"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchCurPlanProject",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
@@ -667,6 +683,22 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchDeveloperQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "DeveloperQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDeveloperQuery"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchESBulk",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
@@ -731,6 +763,70 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchOpenByQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenByQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchOpenByQuery"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchOpenQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchOpenQuery"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchPMQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "PMQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchPMQuery"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchPOQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "POQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchPOQuery"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchProjectTeam",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
@@ -744,6 +840,38 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectTeam"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchQDQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "QDQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchQDQuery"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchRDQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "RDQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchRDQuery"
     },
     "builtinMethod" : false
   }, {
@@ -1631,6 +1759,22 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchCurDefaultQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "CurDefaultQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchCurDefaultQuery"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchCurPlanProject",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
@@ -1711,6 +1855,22 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchDeveloperQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "DeveloperQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDeveloperQuery"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchESBulk",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
@@ -1775,6 +1935,70 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchOpenByQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenByQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchOpenByQuery"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchOpenQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchOpenQuery"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchPMQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "PMQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchPMQuery"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchPOQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "POQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchPOQuery"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchProjectTeam",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
@@ -1788,6 +2012,38 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectTeam"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchQDQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "QDQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchQDQuery"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchRDQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "RDQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchRDQuery"
     },
     "builtinMethod" : false
   }, {
@@ -2008,6 +2264,16 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchTempCurDefaultQuery",
+    "methodType" : "FETCHTEMP",
+    "name" : "CurDefaultQuery",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "CurDefaultQuery"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchTempCurPlanProject",
     "methodType" : "FETCHTEMP",
     "name" : "CurPlanProject",
@@ -2058,6 +2324,16 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchTempDeveloperQuery",
+    "methodType" : "FETCHTEMP",
+    "name" : "DeveloperQuery",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "DeveloperQuery"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchTempESBulk",
     "methodType" : "FETCHTEMP",
     "name" : "ESBulk",
@@ -2098,12 +2374,72 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchTempOpenByQuery",
+    "methodType" : "FETCHTEMP",
+    "name" : "OpenByQuery",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenByQuery"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempOpenQuery",
+    "methodType" : "FETCHTEMP",
+    "name" : "OpenQuery",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenQuery"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempPMQuery",
+    "methodType" : "FETCHTEMP",
+    "name" : "PMQuery",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "PMQuery"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempPOQuery",
+    "methodType" : "FETCHTEMP",
+    "name" : "POQuery",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "POQuery"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchTempProjectTeam",
     "methodType" : "FETCHTEMP",
     "name" : "ProjectTeam",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ProjectTeam"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempQDQuery",
+    "methodType" : "FETCHTEMP",
+    "name" : "QDQuery",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "QDQuery"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempRDQuery",
+    "methodType" : "FETCHTEMP",
+    "name" : "RDQuery",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "RDQuery"
     },
     "tempDataMode" : 2,
     "builtinMethod" : false

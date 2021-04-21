@@ -1,0 +1,22 @@
+{
+  "codeName" : "IBZProBugSeq",
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProBugSeq.json",
+  "getKeyPSDEField" : {
+    "name" : "IBZPRO_SEQUENCEID",
+    "codeName" : "IBZProSequenceId"
+  },
+  "maxValue" : 99999999,
+  "minValue" : 1,
+  "name" : "BUG编号序列",
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSequence.json"
+  },
+  "sequenceFormat" : "%1$d",
+  "sequenceTag" : "BUG",
+  "sequenceType" : "DE",
+  "getValuePSDEField" : {
+    "name" : "CURSEQ",
+    "codeName" : "Curseq"
+  }
+}
