@@ -11,6 +11,9 @@
 	
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_ibzpro_sequencename_eq != null ">
+			<![CDATA[ AND  t1.`IBZPRO_SEQUENCENAME` = #{srf.n_ibzpro_sequencename_eq,jdbcType=VARCHAR} ]]>
+        </if>
 		<if test="srf.n_ibzpro_sequencename_like != null ">
             <bind name="bind_n_ibzpro_sequencename_like" value="'%' + srf.n_ibzpro_sequencename_like + '%'" />
             <![CDATA[ AND  t1.`IBZPRO_SEQUENCENAME` like #{bind_n_ibzpro_sequencename_like,jdbcType=VARCHAR} ]]>

@@ -1002,7 +1002,7 @@
 
 
     <!--输出实体[IBZPRO_SEQUENCE]数据结构 -->
-    <changeSet author="zentao" id="tab-ibzpro_sequence-4-32">
+    <changeSet author="zentao" id="tab-ibzpro_sequence-5-32">
         <createTable tableName="T_IBZPRO_SEQUENCE">
                 <column name="CREATEDATE" remarks="" type="DATETIME">
                 </column>
