@@ -15,7 +15,7 @@ CREATE TABLE `ibzauthlog` (
   `USERAGENT` varchar(100) DEFAULT NULL COMMENT '客户端',
   `AUTHCODE` varchar(15) DEFAULT NULL COMMENT '认证结果',
   PRIMARY KEY (`LOGID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='认证日志';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='认证日志';
 
 -- ----------------------------
 -- Table structure for ibzcfg
@@ -30,7 +30,7 @@ CREATE TABLE `ibzcfg` (
   `CFG` mediumtext DEFAULT NULL COMMENT '配置',
   `UPDATEDATE` datetime DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`CFGID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='配置';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='配置';
 
 -- ----------------------------
 -- Table structure for ibzdataaudit
@@ -48,7 +48,7 @@ CREATE TABLE `ibzdataaudit` (
   `AUDITINFO` longtext DEFAULT NULL COMMENT '审计明细',
   `ISDATACHANGED` int(11) DEFAULT NULL COMMENT '审计数据是否发生变化',
   PRIMARY KEY (`DATAAUDITID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='数据审计';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='数据审计';
 
 -- ----------------------------
 -- Table structure for ibzdept
@@ -73,7 +73,7 @@ CREATE TABLE `ibzdept` (
   PRIMARY KEY (`DEPTID`),
   KEY `F223F0F447DB8D2FFC` (`ORGID`),
   KEY `F80B5DF0BBDD97B3A4` (`PDEPTID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='部门';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='部门';
 
 -- ----------------------------
 -- Table structure for ibzdeptmember
@@ -89,7 +89,7 @@ CREATE TABLE `ibzdeptmember` (
   KEY `F9BCDD858DBCC07B50` (`DEPTID`),
   KEY `F7FA2FDE871DCB4A40` (`POSTID`),
   KEY `F9D98C90BBC4E2653C` (`USERID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='部门成员';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='部门成员';
 
 -- ----------------------------
 -- Table structure for ibzemp
@@ -136,7 +136,7 @@ CREATE TABLE `ibzemp` (
   KEY `FDC89D199944690EAA` (`MDEPTID`),
   KEY `F8B9F71B72F82C0C2E` (`ORGID`),
   KEY `F08B347CA05ECDAC50` (`POSTID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='人员';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='人员';
 
 -- ----------------------------
 -- Table structure for ibzfile
@@ -159,7 +159,7 @@ CREATE TABLE `ibzfile` (
   `MEMO` varchar(500) DEFAULT NULL,
   `RESERVER` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`FILEID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='文件';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='文件';
 
 -- ----------------------------
 -- Table structure for ibzmsgbody
@@ -218,7 +218,7 @@ CREATE TABLE `ibzopenaccess` (
   `DISABLED` int(11) DEFAULT NULL,
   `REDIRECT_URI` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`ACCESSID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for ibzorg
@@ -238,7 +238,7 @@ CREATE TABLE `ibzorg` (
   `UPDATEDATE` datetime DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`ORGID`),
   KEY `FA6203C15E7EFB55C0` (`PORGID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='单位机构';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='单位机构';
 
 -- ----------------------------
 -- Table structure for ibzpermission
@@ -253,7 +253,7 @@ CREATE TABLE `ibzpermission` (
   `CREATEDATE` datetime DEFAULT '0000-00-00 00:00:00',
   `UPDATEDATE` datetime DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`SYS_PERMISSIONID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='权限/资源';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='权限/资源';
 
 -- ----------------------------
 -- Table structure for ibzpost
@@ -266,7 +266,7 @@ CREATE TABLE `ibzpost` (
   `DOMAINS` varchar(100) DEFAULT NULL COMMENT '区属',
   `MEMO` varchar(2000) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`POSTID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='岗位';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='岗位';
 
 -- ----------------------------
 -- Table structure for ibzpssystem
@@ -280,7 +280,7 @@ CREATE TABLE `ibzpssystem` (
   `MD5CHECK` varchar(100) DEFAULT NULL COMMENT '校验',
   `SHOWORDER` int(11) DEFAULT NULL COMMENT '排序',
   PRIMARY KEY (`PSSYSTEMID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='系统';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='系统';
 
 -- ----------------------------
 -- Table structure for ibzrole
@@ -297,7 +297,7 @@ CREATE TABLE `ibzrole` (
   `UPDATEMAN` varchar(60) DEFAULT NULL COMMENT '更新人',
   PRIMARY KEY (`SYS_ROLEID`),
   KEY `FC9A58A7D79B5CB5C3` (`PROLEID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='系统角色';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='系统角色';
 
 -- ----------------------------
 -- Table structure for ibzrole_permission
@@ -312,7 +312,7 @@ CREATE TABLE `ibzrole_permission` (
   PRIMARY KEY (`SYS_ROLE_PERMISSIONID`),
   KEY `FCC4D55F90426B0F15` (`SYS_ROLEID`),
   KEY `FE283EACB26C3C950C` (`SYS_PERMISSIONID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='角色权限关系';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='角色权限关系';
 
 -- ----------------------------
 -- Table structure for ibzteam
@@ -324,7 +324,7 @@ CREATE TABLE `ibzteam` (
   `MEMO` varchar(2000) DEFAULT NULL COMMENT '备注',
   `DOMAINS` varchar(100) DEFAULT NULL COMMENT '区属',
   PRIMARY KEY (`TEAMID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='组';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='组';
 
 -- ----------------------------
 -- Table structure for ibzteammember
@@ -340,7 +340,7 @@ CREATE TABLE `ibzteammember` (
   KEY `F85616C3A567AA2EEA` (`POSTID`),
   KEY `FACE47503B6D6CE4F9` (`TEAMID`),
   KEY `F18491F92BEEBCF773` (`USERID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='组成员';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='组成员';
 
 -- ----------------------------
 -- Table structure for ibzuser
@@ -393,7 +393,7 @@ CREATE TABLE `ibzuserauth` (
   `CREDENTIAL` varchar(500) DEFAULT NULL COMMENT '凭据',
   `IDENTIFIER` varchar(200) DEFAULT NULL COMMENT '认证标识',
   PRIMARY KEY (`AUTHID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='实体';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='实体';
 
 -- ----------------------------
 -- Table structure for ibzuser_role
@@ -407,7 +407,7 @@ CREATE TABLE `ibzuser_role` (
   `UPDATEDATE` datetime DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`SYS_USER_ROLEID`),
   KEY `F6472927DB7FA72043` (`SYS_ROLEID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='用户角色关系';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户角色关系';
 
 -- ----------------------------
 -- Table structure for t_ibizpro_keyword
@@ -421,7 +421,7 @@ CREATE TABLE `t_ibizpro_keyword` (
   `UPDATEDATE` datetime DEFAULT NULL COMMENT '更新时间',
   `UPDATEMAN` varchar(60) DEFAULT NULL COMMENT '更新人',
   PRIMARY KEY (`IBIZPRO_KEYWORDID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='关键词';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='关键词';
 
 -- ----------------------------
 -- Table structure for t_ibizpro_message
@@ -450,7 +450,7 @@ CREATE TABLE `t_ibizpro_message` (
   `ISREAD` int(11) DEFAULT NULL COMMENT '是否已读',
   `ISDONE` int(11) DEFAULT NULL COMMENT '是否完成',
   PRIMARY KEY (`IBIZPRO_MESSAGEID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='消息';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='消息';
 
 -- ----------------------------
 -- Table structure for t_ibizpro_messageobject
@@ -466,7 +466,7 @@ CREATE TABLE `t_ibizpro_messageobject` (
   `OBJECTTYPE` varchar(60) DEFAULT NULL COMMENT '对象类型',
   `OBJECTID` varchar(100) DEFAULT NULL COMMENT '对象标识',
   PRIMARY KEY (`IBIZPRO_MESSAGEOBJECTID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='消息对象';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='消息对象';
 
 -- ----------------------------
 -- Table structure for t_ibizpro_messageproxy
@@ -487,7 +487,7 @@ CREATE TABLE `t_ibizpro_messageproxy` (
   `HANDLER` varchar(2000) DEFAULT NULL COMMENT '处理对象',
   PRIMARY KEY (`IBIZPRO_MESSAGEPROXYID`),
   KEY `FFC86BCEAFAF246A7F` (`PLUGINID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='消息代理';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='消息代理';
 
 -- ----------------------------
 -- Table structure for t_ibizpro_messagesend
@@ -513,7 +513,7 @@ CREATE TABLE `t_ibizpro_messagesend` (
   PRIMARY KEY (`IBIZPRO_MESSAGESENDID`),
   KEY `FD3C16A900930ED1F7` (`MSGID`),
   KEY `FFBCC3A87C220A3380` (`SENDPROXYID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='消息发送';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='消息发送';
 
 -- ----------------------------
 -- Table structure for t_ibizpro_plugin
@@ -532,7 +532,7 @@ CREATE TABLE `t_ibizpro_plugin` (
   `TAG` varchar(2000) DEFAULT NULL COMMENT '标签',
   `KEYWORD` varchar(2000) DEFAULT NULL COMMENT '关键字',
   PRIMARY KEY (`IBIZPRO_PLUGINID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='系统插件';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='系统插件';
 
 -- ----------------------------
 -- Table structure for t_ibizpro_tag
@@ -546,7 +546,7 @@ CREATE TABLE `t_ibizpro_tag` (
   `IBIZPRO_TAGID` varchar(100) NOT NULL COMMENT '标签标识',
   `UPDATEDATE` datetime DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`IBIZPRO_TAGID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='标签';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='标签';
 
 -- ----------------------------
 -- Table structure for t_ibizpro_todomessage
@@ -568,7 +568,7 @@ CREATE TABLE `t_ibizpro_todomessage` (
   `PARAM` varchar(2000) DEFAULT NULL COMMENT '消息参数',
   `SENDTIME` datetime DEFAULT NULL COMMENT '发送时间',
   PRIMARY KEY (`IBIZPRO_MESSAGEID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='ToDo消息';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ToDo消息';
 
 -- ----------------------------
 -- Table structure for t_ibzpro_system
@@ -582,7 +582,7 @@ CREATE TABLE `t_ibzpro_system` (
   `CREATEDATE` datetime DEFAULT '0000-00-00 00:00:00',
   `UPDATEDATE` datetime DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`IBZPRO_SYSTEMID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='运行生产系统';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='运行生产系统';
 
 -- ----------------------------
 -- Table structure for t_ibzpro_systpl
@@ -602,7 +602,7 @@ CREATE TABLE `t_ibzpro_systpl` (
   `FILE` bigint(20) unsigned DEFAULT NULL COMMENT 'id',
   PRIMARY KEY (`IBZPRO_SYSTPLID`),
   KEY `FFD0FBE185A072627C` (`FILE`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='系统模板';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='系统模板';
 
 -- ----------------------------
 -- Table structure for t_ibz_daily
@@ -630,7 +630,7 @@ CREATE TABLE `t_ibz_daily` (
   `REPORTSTATUS` varchar(60) DEFAULT NULL COMMENT '状态',
   `SUBMITTIME` datetime DEFAULT NULL COMMENT '提交时间',
   PRIMARY KEY (`IBZ_DAILYID`)
-) ENGINE=MyISAM AUTO_INCREMENT=313 DEFAULT CHARSET=utf8 COMMENT='日报';
+) ENGINE=InnoDB AUTO_INCREMENT=313 DEFAULT CHARSET=utf8 COMMENT='日报';
 
 -- ----------------------------
 -- Table structure for t_ibz_favorites
@@ -647,7 +647,7 @@ CREATE TABLE `t_ibz_favorites` (
   `ACCOUNT` varchar(60) DEFAULT NULL COMMENT '收藏用户',
   `TYPE` varchar(60) DEFAULT NULL COMMENT '类型',
   PRIMARY KEY (`IBZ_FAVORITESID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='收藏';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='收藏';
 
 -- ----------------------------
 -- Table structure for t_ibz_monthly
@@ -675,7 +675,7 @@ CREATE TABLE `t_ibz_monthly` (
   `CREATEMANNAME` varchar(60) DEFAULT NULL COMMENT '建立人名称',
   `SUBMITTIME` datetime DEFAULT NULL COMMENT '提交时间',
   PRIMARY KEY (`IBZ_MONTHLYID`)
-) ENGINE=MyISAM AUTO_INCREMENT=325 DEFAULT CHARSET=utf8 COMMENT='月报';
+) ENGINE=InnoDB AUTO_INCREMENT=325 DEFAULT CHARSET=utf8 COMMENT='月报';
 
 -- ----------------------------
 -- Table structure for t_ibz_report_role_config
@@ -691,7 +691,7 @@ CREATE TABLE `t_ibz_report_role_config` (
   `REPORT_ROLE` varchar(2000) DEFAULT NULL COMMENT '角色',
   `TYPE` varchar(60) DEFAULT NULL COMMENT '类型',
   PRIMARY KEY (`IBZ_REPORT_ROLE_CONFIGID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='汇报角色配置';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='汇报角色配置';
 
 -- ----------------------------
 -- Table structure for t_ibz_systpl
@@ -705,7 +705,7 @@ CREATE TABLE `t_ibz_systpl` (
   `UPDATEDATE` datetime DEFAULT '0000-00-00 00:00:00',
   `UPDATEMAN` varchar(60) DEFAULT NULL COMMENT '更新人',
   PRIMARY KEY (`IBZ_SYSTPLID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='系统模板';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='系统模板';
 
 -- ----------------------------
 -- Table structure for t_ibz_top
@@ -723,7 +723,7 @@ CREATE TABLE `t_ibz_top` (
   `OBJECTORDER` int(11) DEFAULT NULL COMMENT '排序',
   `ACCOUNT` varchar(60) DEFAULT NULL COMMENT '置顶用户',
   PRIMARY KEY (`IBZ_TOPID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='置顶';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='置顶';
 
 -- ----------------------------
 -- Table structure for t_ibz_weekly
@@ -751,7 +751,7 @@ CREATE TABLE `t_ibz_weekly` (
   `REPORTSTATUS` varchar(60) DEFAULT NULL COMMENT '状态',
   `SUBMITTIME` datetime DEFAULT NULL COMMENT '提交时间',
   PRIMARY KEY (`IBZ_WEEKLYID`)
-) ENGINE=MyISAM AUTO_INCREMENT=351 DEFAULT CHARSET=utf8 COMMENT='周报';
+) ENGINE=InnoDB AUTO_INCREMENT=351 DEFAULT CHARSET=utf8 COMMENT='周报';
 
 -- ----------------------------
 -- Table structure for t_sys_update_features
@@ -773,7 +773,7 @@ CREATE TABLE `t_sys_update_features` (
   PRIMARY KEY (`SYS_UPDATE_FEATURESID`),
   KEY `F4E719C7322A682CBD` (`SYS_UPDATE_LOG`),
   KEY `F4F285C7ACBBE2262F` (`SYS_UPDATE_LOGID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='系统更新功能';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='系统更新功能';
 
 -- ----------------------------
 -- Table structure for t_sys_update_log
@@ -791,7 +791,7 @@ CREATE TABLE `t_sys_update_log` (
   `LATESTUPDATE` int(11) DEFAULT NULL COMMENT '最新更新',
   `UPDATEBRANCH` varchar(3) DEFAULT NULL COMMENT '更新平台',
   PRIMARY KEY (`SYS_UPDATE_LOGID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='系统更新日志';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='系统更新日志';
 
 -- ----------------------------
 -- Table structure for t_taskmsgrecord
@@ -812,7 +812,7 @@ CREATE TABLE `t_taskmsgrecord` (
   `TITLE` varchar(100) DEFAULT NULL COMMENT '标题',
   `DATAID` varchar(100) DEFAULT NULL COMMENT '数据标识',
   PRIMARY KEY (`TASKMSGRECORDID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='待办消息记录';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='待办消息记录';
 
 -- ----------------------------
 -- Table structure for zt_action
@@ -835,7 +835,7 @@ CREATE TABLE `zt_action` (
   KEY `actor` (`actor`),
   KEY `project` (`project`),
   KEY `objectID` (`objectID`)
-) ENGINE=MyISAM AUTO_INCREMENT=48502 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=48502 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_block
@@ -856,7 +856,7 @@ CREATE TABLE `zt_block` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `accountModuleOrder` (`account`,`module`,`order`),
   KEY `account` (`account`)
-) ENGINE=MyISAM AUTO_INCREMENT=810 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=810 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_branch
@@ -870,7 +870,7 @@ CREATE TABLE `zt_branch` (
   `deleted` enum('0','1') NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `product` (`product`)
-) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_bug
@@ -949,7 +949,7 @@ CREATE TABLE `zt_bug` (
   KEY `F2AAA7501573EA258E` (`testtask`),
   KEY `FBC549EB20D0091CA8` (`toStory`),
   KEY `FE9BAFE0B99BFA950C` (`toTask`)
-) ENGINE=MyISAM AUTO_INCREMENT=1236 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1236 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_build
@@ -974,7 +974,7 @@ CREATE TABLE `zt_build` (
   KEY `product` (`product`),
   KEY `project` (`project`),
   KEY `F8A46A551C9DC16F40` (`branch`)
-) ENGINE=MyISAM AUTO_INCREMENT=394 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=394 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_burn
@@ -989,7 +989,7 @@ CREATE TABLE `zt_burn` (
   `consumed` float NOT NULL,
   PRIMARY KEY (`project`,`date`,`task`),
   KEY `F50C7A44EC35D2C2C5` (`task`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_case
@@ -1045,7 +1045,7 @@ CREATE TABLE `zt_case` (
   KEY `F30260955C984B92AD` (`fromBug`),
   KEY `FC94FB7363E9E779B1` (`fromCaseID`),
   KEY `FDDBEF4CB165D6CF31` (`lib`)
-) ENGINE=MyISAM AUTO_INCREMENT=335 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=335 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_casestep
@@ -1063,7 +1063,7 @@ CREATE TABLE `zt_casestep` (
   KEY `case` (`case`),
   KEY `version` (`version`),
   KEY `FF94559ADBCA21DAD8` (`parent`)
-) ENGINE=MyISAM AUTO_INCREMENT=987 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=987 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_company
@@ -1082,7 +1082,7 @@ CREATE TABLE `zt_company` (
   `admins` char(255) DEFAULT NULL,
   `deleted` enum('0','1') NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_compile
@@ -1103,7 +1103,7 @@ CREATE TABLE `zt_compile` (
   `updateDate` datetime DEFAULT '0000-00-00 00:00:00',
   `deleted` enum('0','1') NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_config
@@ -1118,7 +1118,7 @@ CREATE TABLE `zt_config` (
   `value` text NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique` (`owner`,`module`,`section`,`key`)
-) ENGINE=MyISAM AUTO_INCREMENT=713 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=713 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_cron
@@ -1139,7 +1139,7 @@ CREATE TABLE `zt_cron` (
   `lastTime` datetime DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`),
   KEY `lastTime` (`lastTime`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_dept
@@ -1158,7 +1158,7 @@ CREATE TABLE `zt_dept` (
   PRIMARY KEY (`id`),
   KEY `parent` (`parent`),
   KEY `path` (`path`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_doc
@@ -1189,7 +1189,7 @@ CREATE TABLE `zt_doc` (
   KEY `project` (`project`),
   KEY `lib` (`lib`),
   KEY `F6B68C678D04BE731E` (`module`)
-) ENGINE=MyISAM AUTO_INCREMENT=75 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=75 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_doccontent
@@ -1206,7 +1206,7 @@ CREATE TABLE `zt_doccontent` (
   `version` smallint(5) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `doc_version` (`doc`,`version`)
-) ENGINE=MyISAM AUTO_INCREMENT=89 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_doclib
@@ -1230,7 +1230,7 @@ CREATE TABLE `zt_doclib` (
   PRIMARY KEY (`id`),
   KEY `product` (`product`),
   KEY `project` (`project`)
-) ENGINE=MyISAM AUTO_INCREMENT=327 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=327 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_effort
@@ -1250,7 +1250,7 @@ CREATE TABLE `zt_effort` (
   `status` enum('1','2','3') NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `user` (`user`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_entry
@@ -1272,7 +1272,7 @@ CREATE TABLE `zt_entry` (
   `editedDate` datetime DEFAULT '0000-00-00 00:00:00',
   `deleted` enum('0','1') NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_extension
@@ -1298,7 +1298,7 @@ CREATE TABLE `zt_extension` (
   UNIQUE KEY `code` (`code`),
   KEY `name` (`name`),
   KEY `installedTime` (`installedTime`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_file
@@ -1320,7 +1320,7 @@ CREATE TABLE `zt_file` (
   PRIMARY KEY (`id`),
   KEY `objectType` (`objectType`),
   KEY `objectID` (`objectID`)
-) ENGINE=MyISAM AUTO_INCREMENT=4826 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4826 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_group
@@ -1333,7 +1333,7 @@ CREATE TABLE `zt_group` (
   `desc` char(255) NOT NULL DEFAULT '',
   `acl` text DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_grouppriv
@@ -1344,7 +1344,7 @@ CREATE TABLE `zt_grouppriv` (
   `module` char(30) NOT NULL DEFAULT '',
   `method` char(30) NOT NULL DEFAULT '',
   UNIQUE KEY `group` (`group`,`module`,`method`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_history
@@ -1359,7 +1359,7 @@ CREATE TABLE `zt_history` (
   `diff` mediumtext NOT NULL,
   PRIMARY KEY (`id`),
   KEY `action` (`action`)
-) ENGINE=MyISAM AUTO_INCREMENT=63608 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=63608 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_im_chat
@@ -1387,7 +1387,7 @@ CREATE TABLE `zt_im_chat` (
   KEY `public` (`public`),
   KEY `createdBy` (`createdBy`),
   KEY `editedBy` (`editedBy`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_im_chatuser
@@ -1412,7 +1412,7 @@ CREATE TABLE `zt_im_chatuser` (
   KEY `order` (`order`),
   KEY `star` (`star`),
   KEY `hide` (`hide`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_im_client
@@ -1431,7 +1431,7 @@ CREATE TABLE `zt_im_client` (
   `editedBy` varchar(30) NOT NULL DEFAULT '',
   `status` enum('released','wait') NOT NULL DEFAULT 'wait',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_im_conference
@@ -1446,7 +1446,7 @@ CREATE TABLE `zt_im_conference` (
   `openedBy` mediumint(8) NOT NULL DEFAULT 0,
   `openedDate` datetime DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_im_conferenceaction
@@ -1459,7 +1459,7 @@ CREATE TABLE `zt_im_conferenceaction` (
   `user` mediumint(8) NOT NULL DEFAULT 0,
   `date` datetime DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_im_message
@@ -1482,7 +1482,7 @@ CREATE TABLE `zt_im_message` (
   KEY `mcgid` (`cgid`),
   KEY `muser` (`user`),
   KEY `mtype` (`type`)
-) ENGINE=MyISAM AUTO_INCREMENT=4328 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4328 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_im_messagestatus
@@ -1493,7 +1493,7 @@ CREATE TABLE `zt_im_messagestatus` (
   `message` int(11) unsigned NOT NULL,
   `status` enum('waiting','sent','readed','deleted') NOT NULL DEFAULT 'waiting',
   UNIQUE KEY `user` (`user`,`message`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_im_queue
@@ -1508,7 +1508,7 @@ CREATE TABLE `zt_im_queue` (
   `result` text NOT NULL,
   `status` char(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_jenkins
@@ -1527,7 +1527,7 @@ CREATE TABLE `zt_jenkins` (
   `editedDate` datetime DEFAULT '0000-00-00 00:00:00',
   `deleted` enum('0','1') NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_job
@@ -1555,7 +1555,7 @@ CREATE TABLE `zt_job` (
   `lastTag` varchar(255) DEFAULT NULL,
   `deleted` enum('0','1') NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_lang
@@ -1571,7 +1571,7 @@ CREATE TABLE `zt_lang` (
   `system` enum('0','1') NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   UNIQUE KEY `lang` (`lang`,`module`,`section`,`key`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_log
@@ -1590,7 +1590,7 @@ CREATE TABLE `zt_log` (
   PRIMARY KEY (`id`),
   KEY `objectType` (`objectType`),
   KEY `obejctID` (`objectID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_module
@@ -1620,7 +1620,7 @@ CREATE TABLE `zt_module` (
   KEY `path` (`path`),
   KEY `FFFF259E27212EF105` (`branch`),
   KEY `FFA8C1CE8C188BAC20` (`parent`)
-) ENGINE=MyISAM AUTO_INCREMENT=969 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=969 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_notify
@@ -1641,7 +1641,7 @@ CREATE TABLE `zt_notify` (
   `status` varchar(10) NOT NULL DEFAULT 'wait',
   `failReason` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3795 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3795 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_oauth
@@ -1655,7 +1655,7 @@ CREATE TABLE `zt_oauth` (
   KEY `account` (`account`),
   KEY `providerType` (`providerType`),
   KEY `providerID` (`providerID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_product
@@ -1686,7 +1686,7 @@ CREATE TABLE `zt_product` (
   PRIMARY KEY (`id`),
   KEY `acl` (`acl`),
   KEY `order` (`order`)
-) ENGINE=MyISAM AUTO_INCREMENT=165 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=165 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_productplan
@@ -1708,7 +1708,7 @@ CREATE TABLE `zt_productplan` (
   KEY `end` (`end`),
   KEY `F3867C90B35CA7708F` (`branch`),
   KEY `FD318C2A1115FC7997` (`parent`)
-) ENGINE=MyISAM AUTO_INCREMENT=252 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=252 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_project
@@ -1755,7 +1755,7 @@ CREATE TABLE `zt_project` (
   KEY `status` (`status`),
   KEY `acl` (`acl`),
   KEY `order` (`order`)
-) ENGINE=MyISAM AUTO_INCREMENT=171 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=171 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_projectproduct
@@ -1767,7 +1767,7 @@ CREATE TABLE `zt_projectproduct` (
   `branch` mediumint(8) unsigned NOT NULL,
   `plan` mediumint(8) unsigned NOT NULL,
   PRIMARY KEY (`project`,`product`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_projectstory
@@ -1780,7 +1780,7 @@ CREATE TABLE `zt_projectstory` (
   `version` smallint(6) NOT NULL DEFAULT 1,
   `order` smallint(6) unsigned NOT NULL,
   UNIQUE KEY `project` (`project`,`story`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_relation
@@ -1801,7 +1801,7 @@ CREATE TABLE `zt_relation` (
   `extra` char(30) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `relation` (`relation`,`AType`,`BType`,`AID`,`BID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_release
@@ -1826,7 +1826,7 @@ CREATE TABLE `zt_release` (
   KEY `product` (`product`),
   KEY `build` (`build`),
   KEY `FAE99ACA3C05B3E9D1` (`branch`)
-) ENGINE=MyISAM AUTO_INCREMENT=91 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_repo
@@ -1850,7 +1850,7 @@ CREATE TABLE `zt_repo` (
   `desc` text NOT NULL,
   `deleted` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_repobranch
@@ -1863,7 +1863,7 @@ CREATE TABLE `zt_repobranch` (
   UNIQUE KEY `repo_revision_branch` (`repo`,`revision`,`branch`),
   KEY `branch` (`branch`),
   KEY `revision` (`revision`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_repofiles
@@ -1882,7 +1882,7 @@ CREATE TABLE `zt_repofiles` (
   KEY `parent` (`parent`),
   KEY `repo` (`repo`),
   KEY `revision` (`revision`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_repohistory
@@ -1899,7 +1899,7 @@ CREATE TABLE `zt_repohistory` (
   PRIMARY KEY (`id`),
   KEY `repo` (`repo`),
   KEY `revision` (`revision`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_score
@@ -1919,7 +1919,7 @@ CREATE TABLE `zt_score` (
   KEY `account` (`account`),
   KEY `model` (`module`),
   KEY `method` (`method`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_story
@@ -1981,7 +1981,7 @@ CREATE TABLE `zt_story` (
   KEY `F527F557C5C23076D4` (`duplicateStory`),
   KEY `F7AB21BF59AE8B5F19` (`branch`),
   KEY `F3AFBA8646F5E252B0` (`toBug`)
-) ENGINE=MyISAM AUTO_INCREMENT=1067 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1067 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_storyspec
@@ -1994,7 +1994,7 @@ CREATE TABLE `zt_storyspec` (
   `spec` text NOT NULL,
   `verify` text NOT NULL,
   UNIQUE KEY `story` (`story`,`version`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_storystage
@@ -2007,7 +2007,7 @@ CREATE TABLE `zt_storystage` (
   `stagedBy` char(30) NOT NULL,
   UNIQUE KEY `story_branch` (`story`,`branch`),
   KEY `story` (`story`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_suitecase
@@ -2020,7 +2020,7 @@ CREATE TABLE `zt_suitecase` (
   `version` smallint(5) unsigned NOT NULL,
   UNIQUE KEY `suitecase` (`suite`,`case`),
   KEY `FB036A4369AEBF5F5A` (`product`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_task
@@ -2071,7 +2071,7 @@ CREATE TABLE `zt_task` (
   KEY `FABB39F1104D7A0988` (`parent`),
   KEY `F5A6E508731D6A28E8` (`fromBug`),
   KEY `F289B4B264489CC840` (`module`)
-) ENGINE=MyISAM AUTO_INCREMENT=2565 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2565 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_taskestimate
@@ -2087,7 +2087,7 @@ CREATE TABLE `zt_taskestimate` (
   `work` text DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `task` (`task`)
-) ENGINE=MyISAM AUTO_INCREMENT=3518 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3518 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_team
@@ -2109,7 +2109,7 @@ CREATE TABLE `zt_team` (
   `order` tinyint(3) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   UNIQUE KEY `team` (`root`,`type`,`account`)
-) ENGINE=MyISAM AUTO_INCREMENT=5479 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5479 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_testreport
@@ -2138,7 +2138,7 @@ CREATE TABLE `zt_testreport` (
   PRIMARY KEY (`id`),
   KEY `FA3B31D7443A91D8D3` (`product`),
   KEY `FC00A2ED8D564367CA` (`project`)
-) ENGINE=MyISAM AUTO_INCREMENT=80 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_testresult
@@ -2163,7 +2163,7 @@ CREATE TABLE `zt_testresult` (
   KEY `run` (`run`),
   KEY `F54B7F130A43530537` (`compile`),
   KEY `F6AD166F82D8D03198` (`job`)
-) ENGINE=MyISAM AUTO_INCREMENT=470 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=470 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_testrun
@@ -2181,7 +2181,7 @@ CREATE TABLE `zt_testrun` (
   `status` char(30) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `task` (`task`,`case`)
-) ENGINE=MyISAM AUTO_INCREMENT=362 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=362 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_testsuite
@@ -2200,7 +2200,7 @@ CREATE TABLE `zt_testsuite` (
   `deleted` enum('0','1') NOT NULL,
   PRIMARY KEY (`id`),
   KEY `product` (`product`)
-) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_testtask
@@ -2227,7 +2227,7 @@ CREATE TABLE `zt_testtask` (
   KEY `product` (`product`),
   KEY `build` (`build`),
   KEY `FE5DF49DF0D94F4758` (`project`)
-) ENGINE=MyISAM AUTO_INCREMENT=73 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_todo
@@ -2260,7 +2260,7 @@ CREATE TABLE `zt_todo` (
   KEY `assignedTo` (`assignedTo`),
   KEY `finishedBy` (`finishedBy`),
   KEY `date` (`date`)
-) ENGINE=MyISAM AUTO_INCREMENT=1292 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1292 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_user
@@ -2306,7 +2306,7 @@ CREATE TABLE `zt_user` (
   KEY `dept` (`dept`),
   KEY `email` (`email`),
   KEY `commiter` (`commiter`)
-) ENGINE=MyISAM AUTO_INCREMENT=69 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_usercontact
@@ -2319,7 +2319,7 @@ CREATE TABLE `zt_usercontact` (
   `userList` text NOT NULL,
   PRIMARY KEY (`id`),
   KEY `account` (`account`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_usergroup
@@ -2329,7 +2329,7 @@ CREATE TABLE `zt_usergroup` (
   `account` char(30) NOT NULL DEFAULT '',
   `group` mediumint(8) unsigned NOT NULL DEFAULT 0,
   UNIQUE KEY `account` (`account`,`group`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_userquery
@@ -2346,7 +2346,7 @@ CREATE TABLE `zt_userquery` (
   PRIMARY KEY (`id`),
   KEY `account` (`account`),
   KEY `module` (`module`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_usertpl
@@ -2361,7 +2361,7 @@ CREATE TABLE `zt_usertpl` (
   `public` enum('0','1') NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `account` (`account`)
-) ENGINE=MyISAM AUTO_INCREMENT=61 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_userview
@@ -2372,7 +2372,7 @@ CREATE TABLE `zt_userview` (
   `products` mediumtext NOT NULL,
   `projects` mediumtext NOT NULL,
   UNIQUE KEY `account` (`account`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for zt_webhook
@@ -2398,5 +2398,5 @@ CREATE TABLE `zt_webhook` (
   `editedDate` datetime DEFAULT '0000-00-00 00:00:00',
   `deleted` enum('0','1') NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 SET FOREIGN_KEY_CHECKS=1;
