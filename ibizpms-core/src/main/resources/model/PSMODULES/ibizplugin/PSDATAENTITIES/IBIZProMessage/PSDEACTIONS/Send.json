@@ -1,8 +1,0 @@
-{
-  "actionMode" : "UNKNOWN",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "Send",
-  "dynaModelFilePath" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProMessage/PSDEACTIONS/Send.json",
-  "logicName" : "发送消息",
-  "name" : "Send"
-}

@@ -1,7 +1,0 @@
-spring:
-  profiles:
-    include: sys ,nacos, web-dev,mob-dev,  webapi-dev,  dev
-  application:
-    name: ibizpms
-  main:
-    allow-bean-definition-overriding: true

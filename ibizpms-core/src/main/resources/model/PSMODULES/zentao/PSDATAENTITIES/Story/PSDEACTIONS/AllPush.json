@@ -1,8 +1,0 @@
-{
-  "actionMode" : "UNKNOWN",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "AllPush",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/AllPush.json",
-  "logicName" : "全部推送",
-  "name" : "AllPush"
-}

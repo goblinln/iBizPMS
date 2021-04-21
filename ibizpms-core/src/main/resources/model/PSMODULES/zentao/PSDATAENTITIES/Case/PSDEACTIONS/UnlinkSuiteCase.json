@@ -1,9 +1,0 @@
-{
-  "actionMode" : "UNKNOWN",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "UnlinkSuiteCase",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UnlinkSuiteCase.json",
-  "logicName" : "移除用例",
-  "name" : "unlinkSuiteCase",
-  "userCat" : "CAT1"
-}

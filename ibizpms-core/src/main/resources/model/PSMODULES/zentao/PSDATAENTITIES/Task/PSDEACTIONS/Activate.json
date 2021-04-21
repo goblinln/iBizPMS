@@ -1,9 +1,0 @@
-{
-  "actionMode" : "UNKNOWN",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "Activate",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Activate.json",
-  "logicName" : "激活",
-  "name" : "Activate",
-  "userCat" : "CAT1"
-}

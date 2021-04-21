@@ -1,9 +1,0 @@
-{
-  "actionMode" : "UNKNOWN",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "Putoff",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Putoff.json",
-  "logicName" : "延期",
-  "name" : "Putoff",
-  "userCat" : "CAT1"
-}

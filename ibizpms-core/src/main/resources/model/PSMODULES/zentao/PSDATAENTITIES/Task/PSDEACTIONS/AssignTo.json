@@ -1,9 +1,0 @@
-{
-  "actionMode" : "UNKNOWN",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "AssignTo",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json",
-  "logicName" : "指派/转交",
-  "name" : "AssignTo",
-  "userCat" : "CAT1"
-}

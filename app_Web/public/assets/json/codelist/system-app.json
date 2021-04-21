@@ -1,1 +1,0 @@
-{"codeListType":"DYNAMIC","codeName":"SystemAPP","dynaInstMode":1,"dynaModelFilePath":"PSSYSAPPS/Web/PSAPPCODELISTS/SystemAPP.json","emptyText":"未定义","name":"系统应用","getPSAppDEDataSet":{"modelref":true,"id":"FetchDefault"},"getPSAppDataEntity":{"modelref":true,"path":"PSSYSAPPS/Web/PSAPPDATAENTITIES/PSSysApp.json"},"enableCache":true}

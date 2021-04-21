@@ -1,9 +1,0 @@
-{
-  "actionMode" : "UNKNOWN",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "EeActivePlan",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EeActivePlan.json",
-  "logicName" : "EE激活计划",
-  "name" : "EeActivePlan",
-  "userCat" : "CAT1"
-}

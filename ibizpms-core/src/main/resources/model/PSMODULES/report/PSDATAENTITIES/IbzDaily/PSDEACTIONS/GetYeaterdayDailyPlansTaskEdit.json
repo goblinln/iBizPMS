@@ -1,8 +1,0 @@
-{
-  "actionMode" : "READ",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "GetYeaterdayDailyPlansTaskEdit",
-  "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/GetYeaterdayDailyPlansTaskEdit.json",
-  "logicName" : "获取前一天日报计划参与任务（编辑）",
-  "name" : "getYeaterdayDailyPlansTaskEdit"
-}

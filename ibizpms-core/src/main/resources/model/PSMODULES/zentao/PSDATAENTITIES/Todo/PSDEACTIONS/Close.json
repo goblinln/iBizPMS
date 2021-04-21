@@ -1,9 +1,0 @@
-{
-  "actionMode" : "UNKNOWN",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "Close",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Close.json",
-  "logicName" : "Close",
-  "name" : "Close",
-  "userCat" : "CAT1"
-}

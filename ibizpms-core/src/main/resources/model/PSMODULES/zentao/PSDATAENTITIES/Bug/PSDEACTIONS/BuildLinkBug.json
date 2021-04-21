@@ -1,9 +1,0 @@
-{
-  "actionMode" : "UNKNOWN",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "BuildLinkBug",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/BuildLinkBug.json",
-  "logicName" : "版本关联Bug",
-  "name" : "buildLinkBug",
-  "userCat" : "CAT1"
-}

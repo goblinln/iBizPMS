@@ -1,8 +1,0 @@
-{
-  "actionMode" : "UNKNOWN",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "SumProjectDaily",
-  "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/SumProjectDaily.json",
-  "logicName" : "汇总项目日报",
-  "name" : "SumProjectDaily"
-}

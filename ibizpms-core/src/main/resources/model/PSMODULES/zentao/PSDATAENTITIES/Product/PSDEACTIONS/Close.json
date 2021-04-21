@@ -1,9 +1,0 @@
-{
-  "actionMode" : "UNKNOWN",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "Close",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Close.json",
-  "logicName" : "关闭",
-  "name" : "Close",
-  "userCat" : "CAT1"
-}

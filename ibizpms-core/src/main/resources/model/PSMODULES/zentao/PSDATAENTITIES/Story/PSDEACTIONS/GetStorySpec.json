@@ -1,8 +1,0 @@
-{
-  "actionMode" : "READ",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "GetStorySpec",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/GetStorySpec.json",
-  "logicName" : "获取需求描述",
-  "name" : "GetStorySpec"
-}

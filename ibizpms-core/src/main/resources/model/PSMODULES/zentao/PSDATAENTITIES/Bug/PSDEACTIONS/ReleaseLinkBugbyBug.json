@@ -1,9 +1,0 @@
-{
-  "actionMode" : "UNKNOWN",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "ReleaseLinkBugbyBug",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/ReleaseLinkBugbyBug.json",
-  "logicName" : "关联Bug（解决Bug）",
-  "name" : "ReleaseLinkBugbyBug",
-  "userCat" : "CAT1"
-}

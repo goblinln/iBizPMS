@@ -1,9 +1,0 @@
-{
-  "actionMode" : "UNKNOWN",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "ChangeStatus",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/ChangeStatus.json",
-  "logicName" : "状态变更",
-  "name" : "ChangeStatus",
-  "userCat" : "CAT1"
-}

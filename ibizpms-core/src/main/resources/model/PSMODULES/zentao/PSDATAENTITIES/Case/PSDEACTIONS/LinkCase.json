@@ -1,9 +1,0 @@
-{
-  "actionMode" : "UNKNOWN",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "LinkCase",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/LinkCase.json",
-  "logicName" : "测试单关联测试用例",
-  "name" : "linkCase",
-  "userCat" : "CAT1"
-}

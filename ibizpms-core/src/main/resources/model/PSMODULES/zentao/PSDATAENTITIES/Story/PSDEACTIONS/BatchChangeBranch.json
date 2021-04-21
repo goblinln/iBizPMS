@@ -1,8 +1,0 @@
-{
-  "actionMode" : "UNKNOWN",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "BatchChangeBranch",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchChangeBranch.json",
-  "logicName" : "批量变更平台/分支",
-  "name" : "BatchChangeBranch"
-}

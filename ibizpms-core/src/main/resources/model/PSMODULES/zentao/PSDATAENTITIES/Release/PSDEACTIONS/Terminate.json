@@ -1,9 +1,0 @@
-{
-  "actionMode" : "UNKNOWN",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "Terminate",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/Terminate.json",
-  "logicName" : "状态变更（停止维护）",
-  "name" : "Terminate",
-  "userCat" : "CAT1"
-}

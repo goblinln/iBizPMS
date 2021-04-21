@@ -1,8 +1,0 @@
-{
-  "actionMode" : "UNKNOWN",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "OneClickRelease",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/OneClickRelease.json",
-  "logicName" : "一键发布",
-  "name" : "OneClickRelease"
-}

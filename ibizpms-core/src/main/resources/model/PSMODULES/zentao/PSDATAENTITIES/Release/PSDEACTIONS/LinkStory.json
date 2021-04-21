@@ -1,9 +1,0 @@
-{
-  "actionMode" : "UNKNOWN",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "LinkStory",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/LinkStory.json",
-  "logicName" : "关联需求",
-  "name" : "linkStory",
-  "userCat" : "CAT1"
-}
