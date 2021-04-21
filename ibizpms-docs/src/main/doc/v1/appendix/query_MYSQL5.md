@@ -10963,6 +10963,46 @@ FROM `zt_team` t1
 WHERE ( t1.`ROOT` = ${srfwebcontext('product','{"defname":"ROOT","dename":"IBZ_PRODUCTTEAM"}')}  AND  t1.`TYPE` = 'product' ) 
 
 ```
+### 项目产品团队(ProjectProductTeam)<div id="PRODUCTTEAM_ProjectProductTeam"></div>
+```sql
+SELECT
+	t1.* 
+FROM
+	(
+SELECT
+	t1.id,
+	t1.root,
+	t1.type,
+	t1.account,
+	t1.role,
+	t1.limited,
+	t1.`join`,
+	t1.days,
+	t1.hours,
+	t1.estimate,
+	t1.consumed,
+	t1.`left`,
+	t1.`order`,
+	t1.`end`,
+	t1.LEADINGCADRE,
+	t1.TEAMSTATUS,
+	t1.srfdcid,
+	t1.dept,
+	t1.org,
+	t2.project,
+	t2.branch,
+	t2.plan 
+FROM
+	zt_team t1
+	LEFT JOIN zt_projectproduct t2 ON t1.root = t2.product 
+WHERE
+	(t2.project = #{srf.sessioncontext.srfparentkey} and t1.type = 'project')
+	OR (t1.root IN ( SELECT t1.product FROM zt_projectproduct t1 WHERE t1.project = #{srf.sessioncontext.srfparentkey} ) AND t1.type = 'product'  ) 
+	) t1 
+
+WHERE t1.project = #{srf.sessioncontext.srfparentkey} 
+
+```
 ### 产品团队管理(RowEditDefaultProductTeam)<div id="PRODUCTTEAM_RowEditDefaultProductTeam"></div>
 ```sql
 SELECT
@@ -14794,6 +14834,241 @@ left join t_ibz_top t2 on t1.id = t2.OBJECTID and t2.type = 'project' and t2.ACC
 LEFT JOIN zt_project t11 ON t1.PARENT = t11.ID 
 where t1.deleted = '0' and t1.acl = 'private' and t1.id in (select t3.root from zt_team t3 where t3.account = #{srf.sessioncontext.srfloginname}  
 and t3.type = 'project')) t1
+```
+### 当前用户待办项目(CurUserTodo)<div id="Project_CurUserTodo"></div>
+```sql
+SELECT
+	t1.MDEPTID,
+	t1.orgid,
+	t1.`ACL`,
+	t1.`BEGIN`,
+	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND DELETED = '0' ) AS `BUGCNT`,
+	t1.`CANCELEDBY`,
+	( SELECT count( 1 ) + 1 FROM zt_doclib WHERE type = 'project' AND project = t1.`id` ) AS `DOCLIBCNT`,
+	t1.`CANCELEDDATE`,
+	t1.`CATID`,
+	t1.`CLOSEDBY`,
+	t1.`CLOSEDDATE`,
+	t1.`CODE`,
+	t1.`DAYS`,
+	t1.`DELETED`,
+	t1.`END`,
+	t1.`ID`,
+	t1.`ISCAT`,
+	t1.`NAME`,
+	t1.`OPENEDBY`,
+	t1.`OPENEDDATE`,
+	t1.`OPENEDVERSION`,
+	t1.`ORDER`,
+	( CASE WHEN T2.OBJECTORDER IS NOT NULL THEN T2.OBJECTORDER ELSE t1.`ORDER` END ) AS `ORDER1`,
+	( CASE WHEN T2.OBJECTORDER IS NOT NULL THEN 1 ELSE 0 END ) AS `ISTOP`,
+	t1.`PARENT`,
+	t11.`NAME` AS `PARENTNAME`,
+	t1.`PM`,
+	t1.`PO`,
+	t1.`PRI`,
+	t1.`QD`,
+	t1.`RD`,
+	t1.`STATGE`,
+	t1.`STATUS`,
+	(
+SELECT
+	COUNT( 1 ) 
+FROM
+	ZT_STORY
+	LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY 
+WHERE
+	PROJECT = t1.`ID` 
+	AND DELETED = '0' 
+	) AS `STORYCNT`,
+	t1.`SUBSTATUS`,
+	( SELECT COUNT( 1 ) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' ) AS `TASKCNT`,
+	t1.`TEAM`,
+	(
+SELECT
+	round( SUM( CONSUMED ), 0 ) 
+FROM
+	ZT_TASK 
+WHERE
+	PROJECT = t1.`ID` 
+	AND DELETED = '0' 
+	AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) 
+	) AS `TOTALCONSUMED`,
+	(
+SELECT
+	round( SUM( ESTIMATE ), 0 ) 
+FROM
+	ZT_TASK 
+WHERE
+	PROJECT = t1.`ID` 
+	AND DELETED = '0' 
+	AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) 
+	) AS `TOTALESTIMATE`,
+	( SELECT sum( days * hours ) FROM zt_team tt WHERE type = 'project' AND root = t1.id ) AS `TOTALHOURS`,
+	(
+SELECT
+	round( SUM( `LEFT` ), 0 ) 
+FROM
+	ZT_TASK 
+WHERE
+	PROJECT = t1.`ID` 
+	AND DELETED = '0' 
+	AND `status` IN ( 'doing', 'wait', 'pause' ) 
+	AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) 
+	) AS `TOTALLEFT`,
+	(
+	(
+SELECT
+	round( SUM( `LEFT` ), 0 ) 
+FROM
+	ZT_TASK 
+WHERE
+	PROJECT = t1.`ID` 
+	AND DELETED = '0' 
+	AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) 
+	AND `status` IN ( 'doing', 'wait', 'pause' ) 
+	) + (
+SELECT
+	round( SUM( CONSUMED ), 0 ) 
+FROM
+	ZT_TASK 
+WHERE
+	PROJECT = t1.`ID` 
+	AND DELETED = '0' 
+	AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) 
+	) 
+	) AS `TOTALWH`,
+	t1.`TYPE` 
+FROM
+	`zt_project` t1
+	LEFT JOIN t_ibz_top t2 ON t1.id = t2.OBJECTID 
+	AND t2.type = 'project' 
+	AND t2.ACCOUNT = #{srf.sessioncontext.srfloginname}
+	LEFT JOIN zt_project t11 ON t1.PARENT = t11.ID 
+WHERE
+	t1.deleted = '0' 
+	AND (
+	t1.acl = 'open' 
+	OR t1.OPENEDBY = #{srf.sessioncontext.srfloginname} 
+	OR t1.pm = #{srf.sessioncontext.srfloginname}
+	OR t1.PO = #{srf.sessioncontext.srfloginname} 
+	OR t1.RD = #{srf.sessioncontext.srfloginname} 
+	OR t1.QD = #{srf.sessioncontext.srfloginname}
+	) UNION
+SELECT
+	t1.MDEPTID,
+	t1.orgid,
+	t1.`ACL`,
+	t1.`BEGIN`,
+	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND DELETED = '0' ) AS `BUGCNT`,
+	t1.`CANCELEDBY`,
+	( SELECT count( 1 ) + 1 FROM zt_doclib WHERE type = 'project' AND project = t1.`id` ) AS `DOCLIBCNT`,
+	t1.`CANCELEDDATE`,
+	t1.`CATID`,
+	t1.`CLOSEDBY`,
+	t1.`CLOSEDDATE`,
+	t1.`CODE`,
+	t1.`DAYS`,
+	t1.`DELETED`,
+	t1.`END`,
+	t1.`ID`,
+	t1.`ISCAT`,
+	t1.`NAME`,
+	t1.`OPENEDBY`,
+	t1.`OPENEDDATE`,
+	t1.`OPENEDVERSION`,
+	t1.`ORDER`,
+	( CASE WHEN T2.OBJECTORDER IS NOT NULL THEN T2.OBJECTORDER ELSE t1.`ORDER` END ) AS `ORDER1`,
+	( CASE WHEN T2.OBJECTORDER IS NOT NULL THEN 1 ELSE 0 END ) AS `ISTOP`,
+	t1.`PARENT`,
+	t11.`NAME` AS `PARENTNAME`,
+	t1.`PM`,
+	t1.`PO`,
+	t1.`PRI`,
+	t1.`QD`,
+	t1.`RD`,
+	t1.`STATGE`,
+	t1.`STATUS`,
+	(
+SELECT
+	COUNT( 1 ) 
+FROM
+	ZT_STORY
+	LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY 
+WHERE
+	PROJECT = t1.`ID` 
+	AND DELETED = '0' 
+	) AS `STORYCNT`,
+	t1.`SUBSTATUS`,
+	( SELECT COUNT( 1 ) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' ) AS `TASKCNT`,
+	t1.`TEAM`,
+	(
+SELECT
+	round( SUM( CONSUMED ), 0 ) 
+FROM
+	ZT_TASK 
+WHERE
+	PROJECT = t1.`ID` 
+	AND DELETED = '0' 
+	AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) 
+	) AS `TOTALCONSUMED`,
+	(
+SELECT
+	round( SUM( ESTIMATE ), 0 ) 
+FROM
+	ZT_TASK 
+WHERE
+	PROJECT = t1.`ID` 
+	AND DELETED = '0' 
+	AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) 
+	) AS `TOTALESTIMATE`,
+	( SELECT sum( days * hours ) FROM zt_team tt WHERE type = 'project' AND root = t1.id ) AS `TOTALHOURS`,
+	(
+SELECT
+	round( SUM( `LEFT` ), 0 ) 
+FROM
+	ZT_TASK 
+WHERE
+	PROJECT = t1.`ID` 
+	AND DELETED = '0' 
+	AND `status` IN ( 'doing', 'wait', 'pause' ) 
+	AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) 
+	) AS `TOTALLEFT`,
+	(
+	(
+SELECT
+	round( SUM( `LEFT` ), 0 ) 
+FROM
+	ZT_TASK 
+WHERE
+	PROJECT = t1.`ID` 
+	AND DELETED = '0' 
+	AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) 
+	AND `status` IN ( 'doing', 'wait', 'pause' ) 
+	) + (
+SELECT
+	round( SUM( CONSUMED ), 0 ) 
+FROM
+	ZT_TASK 
+WHERE
+	PROJECT = t1.`ID` 
+	AND DELETED = '0' 
+	AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) 
+	) 
+	) AS `TOTALWH`,
+	t1.`TYPE` 
+FROM
+	`zt_project` t1
+	LEFT JOIN t_ibz_top t2 ON t1.id = t2.OBJECTID 
+	AND t2.type = 'project' 
+	AND t2.ACCOUNT = #{srf.sessioncontext.srfloginname}
+	LEFT JOIN zt_project t11 ON t1.PARENT = t11.ID 
+WHERE
+	t1.deleted = '0' 
+	AND t1.acl = 'private' 
+	AND t1.id IN ( SELECT t4.project FROM zt_team t3 left join zt_projectproduct t4 on t3.root = t4.product WHERE t3.account = #{srf.sessioncontext.srfloginname} AND t3.type = 'project'  )
+WHERE t1.orgid = #{srf.sessioncontext.srforgid} 
+
 ```
 ### DEFAULT(DEFAULT)<div id="Project_Default"></div>
 ```sql

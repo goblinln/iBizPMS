@@ -22,6 +22,7 @@ public interface PRODUCTTEAMMapper extends BaseMapper<PRODUCTTEAM> {
     Page<PRODUCTTEAM> searchDefault(IPage page, @Param("srf") PRODUCTTEAMSearchContext context, @Param("ew") Wrapper<PRODUCTTEAM> wrapper);
     Page<PRODUCTTEAM> searchProductTeamInfo(IPage page, @Param("srf") PRODUCTTEAMSearchContext context, @Param("ew") Wrapper<PRODUCTTEAM> wrapper);
     Page<PRODUCTTEAM> searchProjectApp(IPage page, @Param("srf") PRODUCTTEAMSearchContext context, @Param("ew") Wrapper<PRODUCTTEAM> wrapper);
+    Page<PRODUCTTEAM> searchProjectProductTeam(IPage page, @Param("srf") PRODUCTTEAMSearchContext context, @Param("ew") Wrapper<PRODUCTTEAM> wrapper);
     Page<PRODUCTTEAM> searchRowEditDefaultProductTeam(IPage page, @Param("srf") PRODUCTTEAMSearchContext context, @Param("ew") Wrapper<PRODUCTTEAM> wrapper);
     @Override
     PRODUCTTEAM selectById(Serializable id);

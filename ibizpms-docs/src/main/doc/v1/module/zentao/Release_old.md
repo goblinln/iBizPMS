@@ -126,48 +126,6 @@ hide footbox
 |2|获取完成需求数 |
 |3|获取遗留的bug |
 <center>移动端产品发布计数器</center>
-* 行为[Update]主状态拒绝逻辑 (Update__MSDeny)
-  
-   
-
-{% plantuml %}
-hide footbox
-
-发布 -> 发布: 准备临时参数
-发布 -> 发布: 获取数据
-发布 -> : 状态[正常]拒绝[Update]操作
-发布 -> : 状态[停止维护]拒绝[Update]操作
-{% endplantuml %}
-
-| 步骤       | 操作        |
-| --------   | --------   |
-|0|开始 | 
-|1|准备临时参数 |
-|2|获取数据 |
-|3|状态[正常]拒绝[Update]操作 |
-|4|状态[停止维护]拒绝[Update]操作 |
-<center>行为[Update]主状态拒绝逻辑</center>
-* 行为[Remove]主状态拒绝逻辑 (Remove__MSDeny)
-  
-   
-
-{% plantuml %}
-hide footbox
-
-发布 -> 发布: 准备临时参数
-发布 -> 发布: 获取数据
-发布 -> : 状态[正常]拒绝[Remove]操作
-发布 -> : 状态[停止维护]拒绝[Remove]操作
-{% endplantuml %}
-
-| 步骤       | 操作        |
-| --------   | --------   |
-|0|开始 | 
-|1|准备临时参数 |
-|2|获取数据 |
-|3|状态[正常]拒绝[Remove]操作 |
-|4|状态[停止维护]拒绝[Remove]操作 |
-<center>行为[Remove]主状态拒绝逻辑</center>
 
 ## 查询集合
 

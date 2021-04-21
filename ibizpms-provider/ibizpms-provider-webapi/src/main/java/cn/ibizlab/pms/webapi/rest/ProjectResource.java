@@ -545,6 +545,28 @@ public class ProjectResource {
                 .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Project-searchCurUserTodo-all') and hasPermission(#context,'pms-Project-Get')")
+	@ApiOperation(value = "获取当前用户待办项目", tags = {"项目" } ,notes = "获取当前用户待办项目")
+    @RequestMapping(method= RequestMethod.GET , value="/projects/fetchcurusertodo")
+	public ResponseEntity<List<ProjectDTO>> fetchCurUserTodo(ProjectSearchContext context) {
+        Page<Project> domains = projectService.searchCurUserTodo(context) ;
+        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Project-searchCurUserTodo-all') and hasPermission(#context,'pms-Project-Get')")
+	@ApiOperation(value = "查询当前用户待办项目", tags = {"项目" } ,notes = "查询当前用户待办项目")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/searchcurusertodo")
+	public ResponseEntity<Page<ProjectDTO>> searchCurUserTodo(@RequestBody ProjectSearchContext context) {
+        Page<Project> domains = projectService.searchCurUserTodo(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Project-searchDefault-all') and hasPermission(#context,'pms-Project-Get')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"项目" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.GET , value="/projects/fetchdefault")

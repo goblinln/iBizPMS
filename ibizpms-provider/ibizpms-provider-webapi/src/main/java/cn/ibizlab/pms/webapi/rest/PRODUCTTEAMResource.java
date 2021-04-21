@@ -223,6 +223,28 @@ public class PRODUCTTEAMResource {
                 .body(new PageImpl(productteamMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-PRODUCTTEAM-searchProjectProductTeam-all')")
+	@ApiOperation(value = "获取项目产品团队", tags = {"产品团队" } ,notes = "获取项目产品团队")
+    @RequestMapping(method= RequestMethod.GET , value="/productteams/fetchprojectproductteam")
+	public ResponseEntity<List<PRODUCTTEAMDTO>> fetchProjectProductTeam(PRODUCTTEAMSearchContext context) {
+        Page<PRODUCTTEAM> domains = productteamService.searchProjectProductTeam(context) ;
+        List<PRODUCTTEAMDTO> list = productteamMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-PRODUCTTEAM-searchProjectProductTeam-all')")
+	@ApiOperation(value = "查询项目产品团队", tags = {"产品团队" } ,notes = "查询项目产品团队")
+    @RequestMapping(method= RequestMethod.POST , value="/productteams/searchprojectproductteam")
+	public ResponseEntity<Page<PRODUCTTEAMDTO>> searchProjectProductTeam(@RequestBody PRODUCTTEAMSearchContext context) {
+        Page<PRODUCTTEAM> domains = productteamService.searchProjectProductTeam(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(productteamMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-PRODUCTTEAM-searchRowEditDefaultProductTeam-all')")
 	@ApiOperation(value = "获取产品团队管理", tags = {"产品团队" } ,notes = "获取产品团队管理")
     @RequestMapping(method= RequestMethod.GET , value="/productteams/fetchroweditdefaultproductteam")
@@ -437,6 +459,29 @@ public class PRODUCTTEAMResource {
 	public ResponseEntity<Page<PRODUCTTEAMDTO>> searchPRODUCTTEAMProjectAppByProduct(@PathVariable("product_id") Long product_id, @RequestBody PRODUCTTEAMSearchContext context) {
         context.setN_root_eq(product_id);
         Page<PRODUCTTEAM> domains = productteamService.searchProjectApp(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(productteamMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-PRODUCTTEAM-searchProjectProductTeam-all')")
+	@ApiOperation(value = "根据产品获取项目产品团队", tags = {"产品团队" } ,notes = "根据产品获取项目产品团队")
+    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productteams/fetchprojectproductteam")
+	public ResponseEntity<List<PRODUCTTEAMDTO>> fetchPRODUCTTEAMProjectProductTeamByProduct(@PathVariable("product_id") Long product_id,PRODUCTTEAMSearchContext context) {
+        context.setN_root_eq(product_id);
+        Page<PRODUCTTEAM> domains = productteamService.searchProjectProductTeam(context) ;
+        List<PRODUCTTEAMDTO> list = productteamMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-PRODUCTTEAM-searchProjectProductTeam-all')")
+	@ApiOperation(value = "根据产品查询项目产品团队", tags = {"产品团队" } ,notes = "根据产品查询项目产品团队")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productteams/searchprojectproductteam")
+	public ResponseEntity<Page<PRODUCTTEAMDTO>> searchPRODUCTTEAMProjectProductTeamByProduct(@PathVariable("product_id") Long product_id, @RequestBody PRODUCTTEAMSearchContext context) {
+        context.setN_root_eq(product_id);
+        Page<PRODUCTTEAM> domains = productteamService.searchProjectProductTeam(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productteamMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}

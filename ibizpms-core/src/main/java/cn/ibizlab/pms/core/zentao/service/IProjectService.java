@@ -81,6 +81,7 @@ public interface IProjectService extends IService<Project> {
     Page<Project> searchCurProduct(ProjectSearchContext context);
     Page<Project> searchCurUser(ProjectSearchContext context);
     Page<Project> searchCurUserSa(ProjectSearchContext context);
+    Page<Project> searchCurUserTodo(ProjectSearchContext context);
     Page<Project> searchDefault(ProjectSearchContext context);
     Page<Project> searchESBulk(ProjectSearchContext context);
     Page<Project> searchInvolvedProject(ProjectSearchContext context);
