@@ -197,6 +197,10 @@ export interface IBug extends IEntityBase {
      */
     substatus?: any;
     /**
+     * BUG编号
+     */
+    bugsn?: any;
+    /**
      * 归属组织
      */
     org?: any;
@@ -340,8 +344,4 @@ export interface IBug extends IEntityBase {
      * 测试单
      */
     testtask?: any;
-    /**
-     * BUG编号
-     */
-    bugsn?: any;
 }

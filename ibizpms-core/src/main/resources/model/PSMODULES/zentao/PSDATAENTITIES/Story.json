@@ -8251,11 +8251,11 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain.json",
     "name" : "需求维护",
     "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "UPDATE",
-      "name" : "Story_Maintain_UPDATE",
+      "dataAccessAction" : "CREATE",
+      "name" : "Story_Maintain_CREATE",
       "getPSDEOPPriv" : {
         "modelref" : true,
-        "id" : "UPDATE"
+        "id" : "CREATE"
       }
     }, {
       "dataAccessAction" : "READ",
@@ -8265,11 +8265,11 @@
         "id" : "READ"
       }
     }, {
-      "dataAccessAction" : "CREATE",
-      "name" : "Story_Maintain_CREATE",
+      "dataAccessAction" : "UPDATE",
+      "name" : "Story_Maintain_UPDATE",
       "getPSDEOPPriv" : {
         "modelref" : true,
-        "id" : "CREATE"
+        "id" : "UPDATE"
       }
     }, {
       "dataAccessAction" : "DELETE",

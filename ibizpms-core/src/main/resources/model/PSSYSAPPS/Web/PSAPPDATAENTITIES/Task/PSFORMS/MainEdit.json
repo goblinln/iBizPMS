@@ -2366,36 +2366,6 @@
                   "checkMode" : 3,
                   "name" : "编辑项值规则",
                   "getPSDEFValueRule" : {
-                    "codeName" : "ValueRule",
-                    "name" : "预计消耗大于等于0",
-                    "getPSDEFVRGroupCondition" : {
-                      "condOp" : "AND",
-                      "condType" : "GROUP",
-                      "name" : "默认组",
-                      "getPSDEFVRConditions" : [ {
-                        "condOp" : "GT",
-                        "condType" : "SIMPLE",
-                        "dEFName" : "ESTIMATE",
-                        "name" : "[常规条件] 大于(>) (0)",
-                        "paramValue" : "0"
-                      } ]
-                    },
-                    "getPSDEField" : {
-                      "name" : "ESTIMATE",
-                      "codeName" : "Estimate"
-                    },
-                    "ruleInfo" : "预计大于等于0",
-                    "checkDefault" : false,
-                    "defaultMode" : false,
-                    "enableBackend" : true,
-                    "enableFront" : true
-                  },
-                  "getPSDEGridEditItemName" : "estimate",
-                  "valueRuleType" : "DEFVALUERULE"
-                }, {
-                  "checkMode" : 3,
-                  "name" : "编辑项值规则",
-                  "getPSDEFValueRule" : {
                     "codeName" : "ValueRule2",
                     "name" : "预计剩余大于等于0",
                     "getPSDEFVRGroupCondition" : {
@@ -2457,6 +2427,36 @@
                     "enableFront" : true
                   },
                   "getPSDEGridEditItemName" : "consumed",
+                  "valueRuleType" : "DEFVALUERULE"
+                }, {
+                  "checkMode" : 3,
+                  "name" : "编辑项值规则",
+                  "getPSDEFValueRule" : {
+                    "codeName" : "ValueRule",
+                    "name" : "预计消耗大于等于0",
+                    "getPSDEFVRGroupCondition" : {
+                      "condOp" : "AND",
+                      "condType" : "GROUP",
+                      "name" : "默认组",
+                      "getPSDEFVRConditions" : [ {
+                        "condOp" : "GT",
+                        "condType" : "SIMPLE",
+                        "dEFName" : "ESTIMATE",
+                        "name" : "[常规条件] 大于(>) (0)",
+                        "paramValue" : "0"
+                      } ]
+                    },
+                    "getPSDEField" : {
+                      "name" : "ESTIMATE",
+                      "codeName" : "Estimate"
+                    },
+                    "ruleInfo" : "预计大于等于0",
+                    "checkDefault" : false,
+                    "defaultMode" : false,
+                    "enableBackend" : true,
+                    "enableFront" : true
+                  },
+                  "getPSDEGridEditItemName" : "estimate",
                   "valueRuleType" : "DEFVALUERULE"
                 } ],
                 "getPSDEGridEditItems" : [ {

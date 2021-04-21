@@ -2,7 +2,8 @@
 import { Component, Watch } from 'vue-property-decorator';
 import { VueLifeCycleProcessing,AppControlBase } from 'ibiz-vue';
 import { AppDefaultGrid } from 'ibiz-vue/src/components/control/app-default-grid/app-default-grid';
-import { IBizEditorModel } from 'ibiz-core';
+import { IPSDEGrid, IPSDEGridColumn, IPSDEGridEditItem, IPSDEGridFieldColumn, IPSEditor } from '@ibiz/dynamic-model-api';
+import { ModelTool } from 'ibiz-core';
 
 
 /**
@@ -16,6 +17,7 @@ import { IBizEditorModel } from 'ibiz-core';
 @Component({})
 @VueLifeCycleProcessing()
 export class StepTable extends AppDefaultGrid {
+
 
     /**
      * 添加数据
@@ -74,10 +76,10 @@ export class StepTable extends AppDefaultGrid {
      */
     public initAllColumns() {
         this.allColumns = [];
-        let columnsInstanceArr: Array<any> = this.controlInstance.allColumns;
+        let columnsInstanceArr: Array<IPSDEGridColumn> = this.controlInstance.getPSDEGridColumns() || [];
         if(columnsInstanceArr && columnsInstanceArr.length>0) {
             for(const columnInstance of columnsInstanceArr) {
-                let editItem: any = this.controlInstance.getEditColumnByName(columnInstance.name.toLowerCase());
+                let editItem: IPSDEGridEditItem = ModelTool.getGridItemByCodeName(columnInstance.codeName, this.controlInstance) as IPSDEGridEditItem;
                 //表格列
                 const column = {
                     name: columnInstance.name.toLowerCase(),
@@ -88,7 +90,7 @@ export class StepTable extends AppDefaultGrid {
                     unit: columnInstance.widthUnit,
                     isEnableRowEdit: columnInstance.enableRowEdit,
                     enableCond: editItem?.enableCond ? editItem?.enableCond : 3,
-                    codelistId: columnInstance.codeList?.codeName,
+                    codelistId: (columnInstance as IPSDEGridFieldColumn)?.getPSAppCodeList?.()?.codeName,
                 };
                 this.allColumns.push(column);
             }
@@ -102,9 +104,9 @@ export class StepTable extends AppDefaultGrid {
      * @param {*} scope 标识
      * @memberof StepTable
      */
-    public renderEditContent(item: any,scope: any) {
-        const editItem: any = this.controlInstance.getEditColumnByName(item.name.toLowerCase());
-        let editor: IBizEditorModel = new IBizEditorModel(editItem?.getPSEditor,this.context);
+    public renderEditContent(item: IPSDEGridColumn,scope: any) {
+        const editItem: IPSDEGridEditItem = ModelTool.getGridItemByCodeName(item.codeName, this.controlInstance) as IPSDEGridEditItem;
+        let editor = editItem.getPSEditor() as IPSEditor;
         const { row, column, $index } = scope;
         const data: any = {
             row: row,
@@ -132,7 +134,7 @@ export class StepTable extends AppDefaultGrid {
      */
     public renderSolt(){
         let scopedSlots: any = {}
-        this.allColumnsInstance.forEach((item: any) => {
+        this.allColumnsInstance.forEach((item: IPSDEGridColumn) => {
             scopedSlots[item.name] = (scope: any)=>{
                 return (
                     this.renderEditContent(item, scope) 
@@ -152,13 +154,17 @@ export class StepTable extends AppDefaultGrid {
         if (!this.controlIsLoaded) {
             return null;
         }
+        const groupfield =  ModelTool.getGridItemByCodeName("type", this.controlInstance, 'GRIDCOLUMN') as IPSDEGridColumn;
         return (
             <group-step-table
                 class="grid"
 		           newRowState={this.newRowState}
-                groupfield={this.controlInstance?.getColumnByName("type")? "type": ""}
+                groupfield={groupfield ? "type": ""}
                 data={this.items}
                 cols={this.allColumns}
+						context={this.context}
+                viewparams={this.viewparams}
+                codeListService={this.codeListService}
                 isEdit={this.actualIsOpenEdit}
                 gridItemsModel={this.gridItemsModel}
                 on-change={(row: any, field: string,rowField: any, index: number) => {
@@ -176,6 +182,7 @@ export class StepTable extends AppDefaultGrid {
             </group-step-table> 
         )
     }
+
 
 }
 

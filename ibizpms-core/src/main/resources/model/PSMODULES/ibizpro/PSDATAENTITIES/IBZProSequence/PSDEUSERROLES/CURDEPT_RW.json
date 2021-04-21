@@ -2,6 +2,13 @@
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSequence/PSDEUSERROLES/CURDEPT_RW.json",
   "name" : "当前部门（读写）",
   "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "DELETE",
+    "name" : "DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  }, {
     "dataAccessAction" : "UPDATE",
     "name" : "UPDATE",
     "getPSDEOPPriv" : {
@@ -14,13 +21,6 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
-    }
-  }, {
-    "dataAccessAction" : "DELETE",
-    "name" : "DELETE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
     }
   } ],
   "roleTag" : "CURDEPT_RW",

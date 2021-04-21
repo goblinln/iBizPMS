@@ -30,8 +30,8 @@ export class Extend extends EditorBase {
         }
         return this.$createElement('rich-text-editor', {
             props: {
-                context: this.context,
-                viewparams: this.viewparams,
+			  			context: this.context,
+			  			viewparams: this.viewparams,
                 name: this.editorInstance.name,
                 value: this.value,
                 formState: this.contextState,
@@ -43,5 +43,6 @@ export class Extend extends EditorBase {
             style: this.customStyle
         })
     }
+
 
 }

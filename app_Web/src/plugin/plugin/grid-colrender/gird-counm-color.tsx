@@ -1,5 +1,6 @@
 
 
+import { IPSDEGridFieldColumn, IPSAppView, IPSAppDataEntity, IPSAppDEView } from '@ibiz/dynamic-model-api';
 import { Util } from "ibiz-core";
 
 /**
@@ -20,8 +21,10 @@ export class GirdCounmColor {
      * 
      * @memberof GirdCounmColor
      */
-    public renderCtrlItem(h:any,ctrlItemModel:any,parentContainer:any,data:any){
-        const { name, caption, align, $linkView: linkView, width, widthUnit, linkViewEntity: entity } = ctrlItemModel;
+    public renderCtrlItem(h:any,ctrlItemModel:IPSDEGridFieldColumn,parentContainer:any,data:any){
+        const { name, caption, align, width, widthUnit } = ctrlItemModel;
+        const linkView = ctrlItemModel.getLinkPSAppView() as IPSAppDEView;
+        const entity = linkView?.getPSAppDataEntity() as IPSAppDataEntity;
         let renderParams: any = {
             "show-overflow-tooltip": true,
             "label": caption,
@@ -36,17 +39,17 @@ export class GirdCounmColor {
         }
         let view: any = {
             viewname: 'app-view-shell',
-            height: linkView.height ? linkView.height : 0,
-            width: linkView.width,
-            title: linkView.title,
-            isRedirectView: linkView.isRedirectView ? true : false,
-            placement: linkView.openMode ? linkView.openMode : '',
-            viewpath: linkView.dynaModelFilePath
+            height: linkView?.height ? linkView.height : 0,
+            width: linkView?.width,
+            title: linkView?.title,
+            isRedirectView: linkView?.redirectView ? true : false,
+            placement: linkView?.openMode ? linkView.openMode : '',
+            viewpath: linkView?.modelFilePath
         }
         this.handleLinkViewParams(linkView, view, entity, parentContainer.context);
         let tempContext: any = Util.deepCopy(parentContainer.context);
-        if (linkView && linkView.dynaModelFilePath) {
-            Object.assign(tempContext, { viewpath: linkView.dynaModelFilePath });
+        if (linkView && linkView.modelFilePath) {
+            Object.assign(tempContext, { viewpath: linkView.modelFilePath });
         }
         let tempViewParam: any = Util.deepCopy(parentContainer.viewparams);
         const deKeyField = entity ? entity.codeName.toLowerCase() : ""
@@ -79,9 +82,9 @@ export class GirdCounmColor {
      * @param view 模型
      * @param entity 链接视图实体
      */
-    public handleLinkViewParams(linkView: any, view: any, entity?: any, context?: any) {
+    public handleLinkViewParams(linkView: IPSAppDEView, view: any, entity?: IPSAppDataEntity, context?: any) {
         //获取父关系路由参数
-        let tempDeResParameters: any[] = linkView.getPSAppDERSPaths ? Util.formatAppDERSPath(context, linkView.getPSAppDERSPaths) : [];
+        let tempDeResParameters: any[] = linkView.getPSAppDERSPaths() ? Util.formatAppDERSPath(context, linkView.getPSAppDERSPaths()) : [];
         //视图本身路由参数
         let tempParameters: any[] = [];
         if (entity) {
@@ -91,7 +94,7 @@ export class GirdCounmColor {
             });
             tempParameters.push({
                 pathName: 'views',
-                parameterName: linkView.getPSDEViewCodeName.toLowerCase()
+                parameterName: linkView.getPSDEViewCodeName()?.toLowerCase()
             });
         } else {
             tempParameters.push({
@@ -104,5 +107,6 @@ export class GirdCounmColor {
             deResParameters: tempDeResParameters
         })
     }
+
 
 }

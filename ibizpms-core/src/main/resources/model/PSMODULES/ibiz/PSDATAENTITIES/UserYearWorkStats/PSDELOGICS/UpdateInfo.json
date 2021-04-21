@@ -8,6 +8,34 @@
   "getPSDELogicLinks" : [ {
     "getDstPSDELogicNode" : {
       "modelref" : true,
+      "id" : "Deaction2"
+    },
+    "name" : "连接3680",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "EQ",
+        "dstFieldName" : "JUDGEROLE",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "logicType" : "SINGLE",
+        "name" : "Default[JUDGEROLE] 等于(=) (dev)",
+        "paramValue" : "dev"
+      } ],
+      "notMode" : false,
+      "id" : "1957729305db8c4c4219abb6d85591ba"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
       "id" : "Deaction3"
     },
     "name" : "连接7399",
@@ -26,7 +54,7 @@
         "paramValue" : "qa"
       } ],
       "notMode" : false,
-      "id" : "2b277c10b0a061af3fafce140e6cc77b"
+      "id" : "ac0fee7dc67d2d818848442ce9070eb3"
     },
     "getSrcPSDELogicNode" : {
       "modelref" : true,
@@ -54,35 +82,7 @@
         "paramValue" : "po"
       } ],
       "notMode" : false,
-      "id" : "3034df19631b58166b71850e7b582355"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall1"
-    },
-    "defaultLink" : false
-  }, {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Deaction2"
-    },
-    "name" : "连接3680",
-    "getPSDELogicLinkGroupCond" : {
-      "groupOP" : "AND",
-      "logicType" : "GROUP",
-      "getPSDELogicLinkConds" : [ {
-        "condOP" : "EQ",
-        "dstFieldName" : "JUDGEROLE",
-        "getDstLogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "logicType" : "SINGLE",
-        "name" : "Default[JUDGEROLE] 等于(=) (dev)",
-        "paramValue" : "dev"
-      } ],
-      "notMode" : false,
-      "id" : "c37133b6b0dd61291c661df8d7c9c030"
+      "id" : "e371ce9ded27822b88ed523e923e9898"
     },
     "getSrcPSDELogicNode" : {
       "modelref" : true,
@@ -171,13 +171,13 @@
     "name" : "获取标题",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
+      "id" : "连接3680"
+    }, {
+      "modelref" : true,
       "id" : "连接7399"
     }, {
       "modelref" : true,
       "id" : "连接5802"
-    }, {
-      "modelref" : true,
-      "id" : "连接3680"
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[CURYEAR]",

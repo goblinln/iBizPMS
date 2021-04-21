@@ -1483,13 +1483,6 @@
         "id" : "UPDATE"
       }
     }, {
-      "dataAccessAction" : "DELETE",
-      "name" : "ProjectModule_Maintain_DELETE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "DELETE"
-      }
-    }, {
       "dataAccessAction" : "CREATE",
       "name" : "ProjectModule_Maintain_CREATE",
       "getPSDEOPPriv" : {
@@ -1502,6 +1495,13 @@
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "READ"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "ProjectModule_Maintain_DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
       }
     } ],
     "roleTag" : "ProjectModule_Maintain",

@@ -265,12 +265,12 @@
       "getPSDETreeNodeRSs" : [ {
         "getChildPSDETreeNode" : {
           "modelref" : true,
-          "id" : "RootModule"
+          "id" : "ALLmodule"
         },
-        "name" : "所有分类 - 跟目录",
+        "name" : "默认根节点 - 所有分类",
         "getParentPSDETreeNode" : {
           "modelref" : true,
-          "id" : "ALLmodule"
+          "id" : "ROOT"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3
@@ -367,12 +367,12 @@
       }, {
         "getChildPSDETreeNode" : {
           "modelref" : true,
-          "id" : "ALLmodule"
+          "id" : "RootModule"
         },
-        "name" : "默认根节点 - 所有分类",
+        "name" : "所有分类 - 跟目录",
         "getParentPSDETreeNode" : {
           "modelref" : true,
-          "id" : "ROOT"
+          "id" : "ALLmodule"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3

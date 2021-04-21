@@ -164,7 +164,7 @@
         "enableBackend" : true,
         "enableFront" : true
       },
-      "getPSDEFormItemName" : "left",
+      "getPSDEFormItemName" : "consumed",
       "valueRuleType" : "DEFVALUERULE"
     }, {
       "checkMode" : 3,
@@ -197,7 +197,7 @@
         "enableBackend" : true,
         "enableFront" : true
       },
-      "getPSDEFormItemName" : "consumed",
+      "getPSDEFormItemName" : "left",
       "valueRuleType" : "DEFVALUERULE"
     } ],
     "getPSDEFormItems" : [ {

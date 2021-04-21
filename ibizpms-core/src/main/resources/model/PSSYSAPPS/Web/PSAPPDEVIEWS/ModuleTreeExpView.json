@@ -300,24 +300,24 @@
       "getPSDETreeNodeRSs" : [ {
         "getChildPSDETreeNode" : {
           "modelref" : true,
-          "id" : "Line"
-        },
-        "name" : "所有产品 - 产品线",
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "All"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
           "id" : "All"
         },
         "name" : "默认根节点 - 所有产品",
         "getParentPSDETreeNode" : {
           "modelref" : true,
           "id" : "ROOT"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "Line"
+        },
+        "name" : "所有产品 - 产品线",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "All"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3

@@ -1,7 +1,7 @@
 
 import { Component } from 'vue-property-decorator';
 import { VueLifeCycleProcessing,EditorBase } from 'ibiz-vue';
-
+import { IPSDEForm, IPSDEFormItem } from '@ibiz/dynamic-model-api';
 
 /**
  * 进度条（线）插件类
@@ -33,10 +33,11 @@ export class PROGRESSLINE extends EditorBase {
      * @type {*}
      * @memberof PROGRESSLINE
      */         
-    public initEditor(){
-	  let formItems:any = this.editorInstance.parentItem?.formItems;
-	  this.total = formItems[0]?.codeName;
-	  this.progress = formItems[1]?.codeName;
+    public async initEditor(){
+        await super.initEditor();
+        let formItems: Array<IPSDEFormItem> = (this.editorInstance.getParentPSModelObject() as IPSDEForm).getPSDEFormItems() || [];
+        this.total = formItems[0]?.name;
+        this.progress = formItems[1]?.name;
     }
 
     /**

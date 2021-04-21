@@ -547,7 +547,7 @@
       "columnName" : "PO",
       "dBType" : "MYSQL5",
       "name" : "PO",
-      "queryCodeExp" : "t11.`PO`",
+      "queryCodeExp" : "t11.`po`",
       "standardColumnName" : "`PO`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -608,7 +608,7 @@
       "columnName" : "PRODUCTNAME",
       "dBType" : "MYSQL5",
       "name" : "PRODUCTNAME",
-      "queryCodeExp" : "t11.`NAME`",
+      "queryCodeExp" : "t11.`name`",
       "standardColumnName" : "`PRODUCTNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {

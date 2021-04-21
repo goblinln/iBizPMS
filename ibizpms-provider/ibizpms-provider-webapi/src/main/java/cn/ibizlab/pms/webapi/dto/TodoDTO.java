@@ -92,6 +92,16 @@ public class TodoDTO extends DTOBase implements Serializable {
     private String configType;
 
     /**
+     * 属性 [TODOSN]
+     *
+     */
+    @JSONField(name = "todosn")
+    @JsonProperty("todosn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("待办编号")
+    private Long todosn;
+
+    /**
      * 属性 [CLOSEDDATE]
      *
      */
@@ -141,6 +151,16 @@ public class TodoDTO extends DTOBase implements Serializable {
     private String desc;
 
     /**
+     * 属性 [UPDATEBY]
+     *
+     */
+    @JSONField(name = "updateby")
+    @JsonProperty("updateby")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("由谁更新")
+    private String updateby;
+
+    /**
      * 属性 [NOTICEUSERS]
      *
      */
@@ -149,6 +169,16 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("消息通知用户")
     private String noticeusers;
+
+    /**
+     * 属性 [ORG]
+     *
+     */
+    @JSONField(name = "org")
+    @JsonProperty("org")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属组织")
+    private String org;
 
     /**
      * 属性 [FINISHEDBY]
@@ -188,6 +218,16 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("由谁指派")
     private String assignedby;
+
+    /**
+     * 属性 [DEPT]
+     *
+     */
+    @JSONField(name = "dept")
+    @JsonProperty("dept")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属部门")
+    private String dept;
 
     /**
      * 属性 [CONFIG_MONTH]
@@ -375,46 +415,14 @@ public class TodoDTO extends DTOBase implements Serializable {
     @ApiModelProperty("config")
     private String config;
 
-    /**
-     * 属性 [UPDATEBY]
-     *
-     */
-    @JSONField(name = "updateby")
-    @JsonProperty("updateby")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("由谁更新")
-    private String updateby;
 
     /**
-     * 属性 [ORG]
-     *
+     * 设置 [TODOSN]
      */
-    @JSONField(name = "org")
-    @JsonProperty("org")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("归属组织")
-    private String org;
-
-    /**
-     * 属性 [DEPT]
-     *
-     */
-    @JSONField(name = "dept")
-    @JsonProperty("dept")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("归属部门")
-    private String dept;
-
-    /**
-     * 属性 [TODOSN]
-     *
-     */
-    @JSONField(name = "todosn")
-    @JsonProperty("todosn")
-    @JsonSerialize(using = ToStringSerializer.class)
-    @ApiModelProperty("待办编号")
-    private Long todosn;
-
+    public void setTodosn(Long  todosn){
+        this.todosn = todosn ;
+        this.modify("todosn",todosn);
+    }
 
     /**
      * 设置 [CLOSEDDATE]
@@ -574,14 +582,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     public void setConfig(String  config){
         this.config = config ;
         this.modify("config",config);
-    }
-
-    /**
-     * 设置 [TODOSN]
-     */
-    public void setTodosn(Long  todosn){
-        this.todosn = todosn ;
-        this.modify("todosn",todosn);
     }
 
 

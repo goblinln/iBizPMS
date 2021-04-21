@@ -184,6 +184,18 @@
       "getPSDETreeNodeRSs" : [ {
         "getChildPSDETreeNode" : {
           "modelref" : true,
+          "id" : "ALL"
+        },
+        "name" : "默认根节点 - 全部",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ROOT"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
           "id" : "MODULE"
         },
         "name" : "根模块（动态） - 非根模块（动态）",
@@ -278,18 +290,6 @@
         "getParentPSDETreeNode" : {
           "modelref" : true,
           "id" : "MODULE"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "ALL"
-        },
-        "name" : "默认根节点 - 全部",
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "ROOT"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3

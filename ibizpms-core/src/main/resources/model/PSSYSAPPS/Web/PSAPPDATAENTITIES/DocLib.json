@@ -329,6 +329,12 @@
     "stdDataType" : 21,
     "stringLength" : 65535
   }, {
+    "codeName" : "UpdateManName",
+    "logicName" : "由谁更新",
+    "name" : "UPDATEMANNAME",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
     "codeName" : "MdeptId",
     "logicName" : "部门标识",
     "name" : "MDEPTID",
@@ -445,12 +451,6 @@
     "logicName" : "产品库",
     "name" : "PRODUCT",
     "stdDataType" : 1
-  }, {
-    "codeName" : "UpdateManName",
-    "logicName" : "由谁更新",
-    "name" : "UPDATEMANNAME",
-    "stdDataType" : 25,
-    "stringLength" : 60
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

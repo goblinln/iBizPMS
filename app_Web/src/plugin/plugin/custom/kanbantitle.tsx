@@ -1,6 +1,6 @@
 
 
-
+import { IPSDEKanban, IPSUIActionGroupDetail } from "@ibiz/dynamic-model-api";
 
 /**
  * 看板标题颜色插件（自定义）插件类
@@ -11,24 +11,24 @@
  */
 export class Kanbantitle {
 
-    renderCtrlItem(h: any, ctrlItemModel: any, parentContainer: any, group: any) {
-        const { groupWidth, getGroupPSSysCss, getGroupPSUIActionGroup } = ctrlItemModel.controlModelData;
+ renderCtrlItem(h: any, ctrlItemModel: IPSDEKanban, parentContainer: any, group: any) {
+        const { groupWidth } = ctrlItemModel;
         return <div class="dataview-group-content" style={groupWidth ? { width: groupWidth + 'px' } : { flexGrow: 1 }}>
-            <div class={["dataview-group-header", getGroupPSSysCss?.cssName]} style={this.getHeaderStyle(group.name, parentContainer)}>
+            <div class={["dataview-group-header", ctrlItemModel.getGroupPSSysCss()?.cssName]} style={this.getHeaderStyle(group)}>
                 {parentContainer.getGroupText(group.name)}
                 {
-                    getGroupPSUIActionGroup ?
+                    ctrlItemModel.getGroupPSUIActionGroup() ?
                         <poptip trigger="hover" content="content" placement="bottom-end" style="float: right;">
                             <icon type="md-more" />
                             <div slot="content" class="group-action">
                                 {
-                                    getGroupPSUIActionGroup.getPSUIActions.map((action: any) => {
+                                    ctrlItemModel.getGroupPSUIActionGroup()?.getPSUIActionGroupDetails()?.map((action: IPSUIActionGroupDetail) => {
                                         return (
                                             <div class="group-action-item">
                                                 <i-button long on-click={($event: any) => parentContainer.uiActionClick(action, $event, group)}>
-                                                    {action.getPSUIAction.getPSSysImage?.imagePath ? <img class="app-kanban-icon" src={action.getPSUIAction.getPSSysImage.imagePath} /> : null}
-                                                    {action.getPSUIAction.getPSSysImage?.cssClass ? <i class={[action.getPSUIAction.getPSSysImage.cssClass, "app-kanban-icon"]}></i> : null}
-                                                    <span class="caption">{action.getPSUIAction.caption}</span>
+                                                    {action.getPSUIAction()?.getPSSysImage()?.imagePath ? <img class="app-kanban-icon" src={action.getPSUIAction()?.getPSSysImage()?.imagePath} /> : null}
+                                                    {action.getPSUIAction()?.getPSSysImage()?.cssClass ? <i class={[action.getPSUIAction()?.getPSSysImage()?.cssClass, "app-kanban-icon"]}></i> : null}
+                                                    <span class="caption">{action.getPSUIAction()?.caption}</span>
                                                 </i-button>
                                             </div>
                                         )
@@ -38,7 +38,7 @@ export class Kanbantitle {
                         </poptip> : null
                 }
             </div>
-            <draggable list={group.items} group={ctrlItemModel.controlModelData.name} class="dataview-group-items" on-change={($event: any) => parentContainer.onDragChange($event, group.value)}>
+            <draggable list={group.items} group={ctrlItemModel.name} class="dataview-group-items" on-change={($event: any) => parentContainer.onDragChange($event, group.value)}>
                 {
                     group.items.map((item: any) => {
                         return (
@@ -52,19 +52,13 @@ export class Kanbantitle {
         </div >
     }
 
-    public getHeaderStyle(name: string, _this: any) {
+    public getHeaderStyle(group: any) {
         let style = { 'text-align': 'center' };
-        if (Object.is(_this.groupMode, 'CODELIST') && _this.groupCodelist) {
-            let codelist: any = _this.$store.getters.getCodeList(_this.groupCodelist.tag);
-            if (codelist) {
-                let item = codelist.items.find((item: any) => Object.is(item.value, name));
-                if (item) {
-                    Object.assign(style, {
-                        'border-color': item.color,
-                        'border-width': '3px'
-                    })
-                }
-            }
+        if (group.color) {
+            Object.assign(style, {
+                'border-color': group.color,
+                'border-width': '3px'
+            })
         }
         return style;
     }

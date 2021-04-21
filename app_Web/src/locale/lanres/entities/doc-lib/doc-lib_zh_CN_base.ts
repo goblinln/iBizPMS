@@ -7,6 +7,7 @@ function getLocaleResourceBase(){
 		'doclibtype': commonLogic.appcommonhandle("文件库类型",null),
 		'isfavourites': commonLogic.appcommonhandle("是否收藏",null),
 		'collector': commonLogic.appcommonhandle("收藏者",null),
+		'updatemanname': commonLogic.appcommonhandle("由谁更新",null),
 		'mdeptid': commonLogic.appcommonhandle("部门标识",null),
 		'orgid': commonLogic.appcommonhandle("组织标识",null),
 		'acl': commonLogic.appcommonhandle("权限",null),
@@ -27,7 +28,6 @@ function getLocaleResourceBase(){
 		'projectname': commonLogic.appcommonhandle("所属项目",null),
 		'project': commonLogic.appcommonhandle("项目库",null),
 		'product': commonLogic.appcommonhandle("产品库",null),
-		'updatemanname': commonLogic.appcommonhandle("由谁更新",null),
 	},
 		views: {
 			'usr2treeview': {

@@ -46,6 +46,7 @@ function getLocaleResourceBase(){
 		'deleted': commonLogic.appcommonhandle("已删除",null),
 		'lines': commonLogic.appcommonhandle("lines",null),
 		'substatus': commonLogic.appcommonhandle("子状态",null),
+		'bugsn': commonLogic.appcommonhandle("BUG编号",null),
 		'org': commonLogic.appcommonhandle("归属组织",null),
 		'buildproject': commonLogic.appcommonhandle("版本项目",null),
 		'id': commonLogic.appcommonhandle("Bug编号",null),
@@ -81,7 +82,6 @@ function getLocaleResourceBase(){
 		'project': commonLogic.appcommonhandle("所属项目",null),
 		'task': commonLogic.appcommonhandle("相关任务",null),
 		'testtask': commonLogic.appcommonhandle("测试单",null),
-		'bugsn': commonLogic.appcommonhandle("BUG编号",null),
 	},
 		views: {
 			'testbugsgridview': {

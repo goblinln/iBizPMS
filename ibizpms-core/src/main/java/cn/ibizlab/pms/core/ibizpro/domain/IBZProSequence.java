@@ -47,24 +47,6 @@ public class IBZProSequence extends EntityMP implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 业务序列表标识
-     */
-    @DEField(name = "ibzpro_sequenceid", isKeyField = true)
-    @TableId(value = "`IBZPRO_SEQUENCEID`", type = IdType.ASSIGN_UUID)
-    @JSONField(name = "ibzprosequenceid")
-    @JsonProperty("ibzprosequenceid")
-    @ApiModelProperty("业务序列表标识")
-    private String ibzprosequenceid;
-    /**
-     * 业务序列表名称
-     */
-    @DEField(name = "ibzpro_sequencename")
-    @TableField(value = "`IBZPRO_SEQUENCENAME`")
-    @JSONField(name = "ibzprosequencename")
-    @JsonProperty("ibzprosequencename")
-    @ApiModelProperty("业务序列表名称")
-    private String ibzprosequencename;
-    /**
      * 建立时间
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
@@ -75,6 +57,14 @@ public class IBZProSequence extends EntityMP implements Serializable {
     @ApiModelProperty("建立时间")
     private Timestamp createdate;
     /**
+     * 是否启用
+     */
+    @TableField(value = "`ISENABLE`")
+    @JSONField(name = "isenable")
+    @JsonProperty("isenable")
+    @ApiModelProperty("是否启用")
+    private Integer isenable;
+    /**
      * 更新时间
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
@@ -84,6 +74,50 @@ public class IBZProSequence extends EntityMP implements Serializable {
     @JsonProperty("updatedate")
     @ApiModelProperty("更新时间")
     private Timestamp updatedate;
+    /**
+     * 组织部门标识
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
+    @TableField(value = "`DEPTID`")
+    @JSONField(name = "deptid")
+    @JsonProperty("deptid")
+    @ApiModelProperty("组织部门标识")
+    private String deptid;
+    /**
+     * 自增数值
+     */
+    @DEField(defaultValue = "1")
+    @TableField(value = "`INCREMENT`")
+    @JSONField(name = "increment")
+    @JsonProperty("increment")
+    @ApiModelProperty("自增数值")
+    private Integer increment;
+    /**
+     * 业务序列表标识
+     */
+    @DEField(name = "ibzpro_sequenceid", isKeyField = true)
+    @TableId(value = "`IBZPRO_SEQUENCEID`", type = IdType.ASSIGN_UUID)
+    @JSONField(name = "ibzprosequenceid")
+    @JsonProperty("ibzprosequenceid")
+    @ApiModelProperty("业务序列表标识")
+    private String ibzprosequenceid;
+    /**
+     * 开始序列号
+     */
+    @DEField(defaultValue = "0")
+    @TableField(value = "`BEGINSEQ`")
+    @JSONField(name = "beginseq")
+    @JsonProperty("beginseq")
+    @ApiModelProperty("开始序列号")
+    private Long beginseq;
+    /**
+     * 年份
+     */
+    @TableField(value = "`YEAR`")
+    @JSONField(name = "year")
+    @JsonProperty("year")
+    @ApiModelProperty("年份")
+    private String year;
     /**
      * 更新人
      */
@@ -103,65 +137,13 @@ public class IBZProSequence extends EntityMP implements Serializable {
     @ApiModelProperty("建立人")
     private String createman;
     /**
-     * 组织机构标识
+     * 租户
      */
-    @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "`ORGID`")
-    @JSONField(name = "orgid")
-    @JsonProperty("orgid")
-    @ApiModelProperty("组织机构标识")
-    private String orgid;
-    /**
-     * 组织部门标识
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "`DEPTID`")
-    @JSONField(name = "deptid")
-    @JsonProperty("deptid")
-    @ApiModelProperty("组织部门标识")
-    private String deptid;
-    /**
-     * 业务类别
-     */
-    @TableField(value = "`CATEGORY`")
-    @JSONField(name = "category")
-    @JsonProperty("category")
-    @ApiModelProperty("业务类别")
-    private String category;
-    /**
-     * 年份
-     */
-    @TableField(value = "`YEAR`")
-    @JSONField(name = "year")
-    @JsonProperty("year")
-    @ApiModelProperty("年份")
-    private String year;
-    /**
-     * 是否启用
-     */
-    @TableField(value = "`ISENABLE`")
-    @JSONField(name = "isenable")
-    @JsonProperty("isenable")
-    @ApiModelProperty("是否启用")
-    private Integer isenable;
-    /**
-     * 开始序列号
-     */
-    @DEField(defaultValue = "0")
-    @TableField(value = "`BEGINSEQ`")
-    @JSONField(name = "beginseq")
-    @JsonProperty("beginseq")
-    @ApiModelProperty("开始序列号")
-    private Long beginseq;
-    /**
-     * 自增数值
-     */
-    @DEField(defaultValue = "1")
-    @TableField(value = "`INCREMENT`")
-    @JSONField(name = "increment")
-    @JsonProperty("increment")
-    @ApiModelProperty("自增数值")
-    private Integer increment;
+    @TableField(value = "`SRFDCID`")
+    @JSONField(name = "srfdcid")
+    @JsonProperty("srfdcid")
+    @ApiModelProperty("租户")
+    private String srfdcid;
     /**
      * 当前序列号
      */
@@ -171,15 +153,81 @@ public class IBZProSequence extends EntityMP implements Serializable {
     @ApiModelProperty("当前序列号")
     private Long curseq;
     /**
-     * 租户
+     * 业务序列表名称
      */
-    @TableField(value = "`SRFDCID`")
-    @JSONField(name = "srfdcid")
-    @JsonProperty("srfdcid")
-    @ApiModelProperty("租户")
-    private String srfdcid;
+    @DEField(name = "ibzpro_sequencename")
+    @TableField(value = "`IBZPRO_SEQUENCENAME`")
+    @JSONField(name = "ibzprosequencename")
+    @JsonProperty("ibzprosequencename")
+    @ApiModelProperty("业务序列表名称")
+    private String ibzprosequencename;
+    /**
+     * 组织机构标识
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGID)
+    @TableField(value = "`ORGID`")
+    @JSONField(name = "orgid")
+    @JsonProperty("orgid")
+    @ApiModelProperty("组织机构标识")
+    private String orgid;
+    /**
+     * 业务类别
+     */
+    @TableField(value = "`CATEGORY`")
+    @JSONField(name = "category")
+    @JsonProperty("category")
+    @ApiModelProperty("业务类别")
+    private String category;
 
 
+
+    /**
+     * 设置 [是否启用]
+     */
+    public void setIsenable(Integer isenable) {
+        this.isenable = isenable;
+        this.modify("isenable", isenable);
+    }
+
+    /**
+     * 设置 [自增数值]
+     */
+    public void setIncrement(Integer increment) {
+        this.increment = increment;
+        this.modify("increment", increment);
+    }
+
+    /**
+     * 设置 [开始序列号]
+     */
+    public void setBeginseq(Long beginseq) {
+        this.beginseq = beginseq;
+        this.modify("beginseq", beginseq);
+    }
+
+    /**
+     * 设置 [年份]
+     */
+    public void setYear(String year) {
+        this.year = year;
+        this.modify("year", year);
+    }
+
+    /**
+     * 设置 [租户]
+     */
+    public void setSrfdcid(String srfdcid) {
+        this.srfdcid = srfdcid;
+        this.modify("srfdcid", srfdcid);
+    }
+
+    /**
+     * 设置 [当前序列号]
+     */
+    public void setCurseq(Long curseq) {
+        this.curseq = curseq;
+        this.modify("curseq", curseq);
+    }
 
     /**
      * 设置 [业务序列表名称]
@@ -195,54 +243,6 @@ public class IBZProSequence extends EntityMP implements Serializable {
     public void setCategory(String category) {
         this.category = category;
         this.modify("category", category);
-    }
-
-    /**
-     * 设置 [年份]
-     */
-    public void setYear(String year) {
-        this.year = year;
-        this.modify("year", year);
-    }
-
-    /**
-     * 设置 [是否启用]
-     */
-    public void setIsenable(Integer isenable) {
-        this.isenable = isenable;
-        this.modify("isenable", isenable);
-    }
-
-    /**
-     * 设置 [开始序列号]
-     */
-    public void setBeginseq(Long beginseq) {
-        this.beginseq = beginseq;
-        this.modify("beginseq", beginseq);
-    }
-
-    /**
-     * 设置 [自增数值]
-     */
-    public void setIncrement(Integer increment) {
-        this.increment = increment;
-        this.modify("increment", increment);
-    }
-
-    /**
-     * 设置 [当前序列号]
-     */
-    public void setCurseq(Long curseq) {
-        this.curseq = curseq;
-        this.modify("curseq", curseq);
-    }
-
-    /**
-     * 设置 [租户]
-     */
-    public void setSrfdcid(String srfdcid) {
-        this.srfdcid = srfdcid;
-        this.modify("srfdcid", srfdcid);
     }
 
 

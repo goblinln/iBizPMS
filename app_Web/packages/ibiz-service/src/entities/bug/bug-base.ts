@@ -222,6 +222,10 @@ export abstract class BugBase extends EntityBase implements IBug {
      */
     substatus?: any;
     /**
+     * BUG编号
+     */
+    bugsn?: any;
+    /**
      * 归属组织
      */
     org?: any;
@@ -365,10 +369,6 @@ export abstract class BugBase extends EntityBase implements IBug {
      * 测试单
      */
     testtask?: any;
-    /**
-     * BUG编号
-     */
-    bugsn?: any;
 
     /**
      * 重置实体数据

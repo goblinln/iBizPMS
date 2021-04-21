@@ -229,6 +229,18 @@
       }, {
         "getChildPSDETreeNode" : {
           "modelref" : true,
+          "id" : "RootDept"
+        },
+        "name" : "所有部门 - 根部门",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "AllDept"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
           "id" : "SubDept"
         },
         "name" : "根部门 - 子部门",
@@ -280,18 +292,6 @@
         "getParentPSDETreeNode" : {
           "modelref" : true,
           "id" : "ROOT"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "RootDept"
-        },
-        "name" : "所有部门 - 根部门",
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "AllDept"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3

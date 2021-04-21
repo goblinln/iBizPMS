@@ -1,6 +1,6 @@
 
 
-import { DataTypes, IBizEditorModel, Util } from "ibiz-core";
+import { DataTypes, Util } from "ibiz-core";
 
 /**
  * 关联表单项复合绘制插件插件类
@@ -15,26 +15,24 @@ export class Associatedform {
      * 绘制表单项前端扩展插件
      * 
      * @param h 
-     * @param ctrlItemModel 表单项模型
+     * @param detailsInstance 表单项实例对象
      * @param parentContainer 表单容器
      * @param data 数据
      * @returns 
      */
-    public renderCtrlItem(h: any, ctrlItemModel: any, parentContainer: any, data: any) {
-        const { formItems } = ctrlItemModel;
+    public renderCtrlItem(h: any, detailsInstance: any, parentContainer: any, data: any) {
+        let formItems = detailsInstance.getPSDEFormItems();
         const formItemsProp: any[] = [];
         const localParam: any[] = [];
         const getItemLocaleTag = (field: any) => {
-            if (field.getPSAppDEField) {
-                return `entities.${parentContainer.controlInstance.appDataEntity?.codeName?.toLowerCase()}.fields.${field.getPSAppDEField.codeName.toLowerCase()}`
-            }
+            return `entities.${parentContainer.appDeCodeName.toLowerCase()}.fields.${field.getPSAppDEField().codeName.toLowerCase()}`;
         }
         formItems?.forEach(async (item: any) => {
-            if (item.name != 'srfarray' && item.getPSAppDEField) {
+            if (item.name != 'srfarray' && item.getPSAppDEField()) {
                 let tempProp: any = {
                     name: item.caption,
                     localetag: getItemLocaleTag(item),
-                    prop: item.getPSAppDEField.codeName.toLowerCase(),
+                    prop: item.getPSAppDEField().codeName.toLowerCase(),
                 };
                 if (item.userTag && (item.userTag == 'unique' || item.userTag == 'hidden')) {
                     Object.assign(tempProp, {
@@ -44,14 +42,9 @@ export class Associatedform {
                 formItemsProp.push(tempProp);
                 localParam.push(
                     {
-                        [item.getPSAppDEField?.codeName?.toLowerCase()]: ['%' + item.getPSAppDEField?.codeName?.toLowerCase() + '%']
+                        [item.getPSAppDEField().codeName?.toLowerCase()]: ['%' + item.getPSAppDEField().codeName?.toLowerCase() + '%']
                     }
                 );
-                if(item.getPSEditor){
-                    let editor: IBizEditorModel = new IBizEditorModel(item.getPSEditor, parentContainer.context);
-                    await editor.loaded();
-                    Object.assign(item, { editorInstance: editor });
-                }
             }
         });
         return parentContainer.$createElement('comb-form-item', {
@@ -63,7 +56,7 @@ export class Associatedform {
             on: {
                 'formitemvaluechange': parentContainer.onFormItemValueChange.bind(parentContainer)
             },
-            scopedSlots: this.renderSolt(formItems, parentContainer, ctrlItemModel, localParam)
+            scopedSlots: this.renderSolt(formItems, parentContainer, detailsInstance, localParam)
         })
     }
 
@@ -72,17 +65,17 @@ export class Associatedform {
      * 
      * @param formItems 复合表单项集合
      * @param parentContainer 表单容器
-     * @param ctrlItemModel 复合表单项模型
+     * @param detailsInstance 复合表单项实例对象
      * @param localParam 局部参数
      * @returns 插槽
      */
-    public renderSolt(formItems: any[], parentContainer: any, ctrlItemModel: any, localParam: any){
+    public renderSolt(formItems: any[], parentContainer: any, detailsInstance: any, localParam: any){
         let scopedSlots: any = {}
         formItems.forEach((formItem: any) => {
-            if(formItem.name != "srfarray" && formItem.userTag != "hidden" && formItem.getPSAppDEField){
-                scopedSlots[formItem.getPSAppDEField.codeName.toLowerCase()] = (scope: any)=>{
+            if(formItem.name != "srfarray" && formItem.userTag != "hidden" && formItem.getPSAppDEField()){
+                scopedSlots[formItem.getPSAppDEField().codeName.toLowerCase()] = (scope: any)=>{
                     return (
-                        this.readerItem(formItem, formItems, parentContainer, ctrlItemModel, localParam, scope)
+                        this.readerItem(formItem, formItems, parentContainer, detailsInstance, localParam, scope)
                     )
                 }
             }
@@ -96,13 +89,15 @@ export class Associatedform {
      * @param formItem 当前绘制项
      * @param formItems 复合表单项集合
      * @param parentContainer 表单容器
-     * @param ctrlItemModel 复合表单项模型
+     * @param detailsInstance 复合表单项实例对象
      * @param localParam 局部参数
      * @param scope 插槽数据
      */
-    public readerItem(formItem: any, formItems: any[], parentContainer: any, ctrlItemModel: any, localParam: any, scope: any){
+    public readerItem(formItem: any, formItems: any[], parentContainer: any, detailsInstance: any, localParam: any, scope: any){
         const { item } = scope;
         const branchs: any = formItems.find((_formItem: any) =>{ return Object.is('branchs', _formItem.name) });
+        const branchsCodeList = branchs?.getPSEditor()?.getPSAppCodeList?.();
+        const codeList = formItem.getPSEditor()?.getPSAppCodeList?.();
         let h: any = parentContainer.$createElement;
         return h('div', 
             {
@@ -111,20 +106,20 @@ export class Associatedform {
             [
                 h('dropdown-list-dynamic',{
                     props: {
-                        itemValue: item[formItem.getPSAppDEField.codeName.toLowerCase()],
+                        itemValue: item[formItem.getPSAppDEField().codeName.toLowerCase()],
                         data: {...parentContainer.data, ...item},
                         context: Util.deepCopy(parentContainer.context),
                         viewparams: parentContainer.viewparams,
                         localParam: localParam,
-                        disabled: parentContainer.detailsModel[ctrlItemModel.name].disabled,
+                        disabled: parentContainer.detailsModel[detailsInstance.name].disabled,
                         valueType: DataTypes.isNumber(DataTypes.toString(item.dataType)) ? 'number' : 'string',
-                        tag: formItem.editorInstance?.codeList ? formItem.editorInstance.codeList.codeName : null,
-                        codelistType: formItem.editorInstance?.codeList ? formItem.editorInstance.codeList.codeListType : null,
+                        tag: codeList ? codeList.codeName : null,
+                        codelistType: codeList ? codeList.codeListType : null,
                         placeholder: ""
                     },
                     on: {
                         change: (value: any) =>{
-                            item[formItem.getPSAppDEField.codeName.toLowerCase()] = value;
+                            item[formItem.getPSAppDEField().codeName.toLowerCase()] = value;
                         }
                     },
                     style: "flex-grow: 1;"
@@ -132,20 +127,20 @@ export class Associatedform {
                 Object.is('products', formItem.name) && branchs ?
                 h('dropdown-list-dynamic',{
                     props: {
-                        itemValue: item[branchs.getPSAppDEField.codeName.toLowerCase()],
+                        itemValue: item[branchs.getPSAppDEField().codeName.toLowerCase()],
                         data: {...parentContainer.data, ...item},
                         context: Util.deepCopy(parentContainer.context),
                         viewparams: parentContainer.viewparams,
                         localParam: localParam,
-                        disabled: parentContainer.detailsModel[ctrlItemModel.name].disabled,
+                        disabled: parentContainer.detailsModel[detailsInstance.name].disabled,
                         valueType: DataTypes.isNumber(DataTypes.toString(item.dataType)) ? 'number' : 'string',
-                        tag: branchs.editorInstance?.codeList ? branchs.editorInstance.codeList.codeName : null,
-                        codelistType: branchs.editorInstance?.codeList ? branchs.editorInstance.codeList.codeListType : null,
+                        tag: branchsCodeList ? branchsCodeList.codeName : null,
+                        codelistType: branchsCodeList ? branchsCodeList.codeListType : null,
                         placeholder:"" 
                     },
                     on: {
                         change: (value: any) =>{
-                            item[branchs.getPSAppDEField.codeName.toLowerCase()] = value;
+                            item[branchs.getPSAppDEField().codeName.toLowerCase()] = value;
                         }
                     },
                     style: "width: 100px;flex-shrink: 0;margin-left: 5px;"

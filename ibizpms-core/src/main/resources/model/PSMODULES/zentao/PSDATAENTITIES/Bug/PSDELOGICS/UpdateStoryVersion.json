@@ -8,43 +8,6 @@
   "getPSDELogicLinks" : [ {
     "getDstPSDELogicNode" : {
       "modelref" : true,
-      "id" : "Rawsqlcall1"
-    },
-    "name" : "连接6511",
-    "getPSDELogicLinkGroupCond" : {
-      "groupOP" : "AND",
-      "logicType" : "GROUP",
-      "getPSDELogicLinkConds" : [ {
-        "condOP" : "ISNOTNULL",
-        "dstFieldName" : "STORY",
-        "getDstLogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "logicType" : "SINGLE",
-        "name" : "Default[STORY] 值不为空(NotNil)"
-      }, {
-        "condOP" : "NOTEQ",
-        "dstFieldName" : "STORY",
-        "getDstLogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "logicType" : "SINGLE",
-        "name" : "Default[STORY] 不等于(<>) (0)",
-        "paramValue" : "0"
-      } ],
-      "notMode" : false,
-      "id" : "6fcdb8241837c5dc1b2a0b66b3dc4ea2"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Begin"
-    },
-    "defaultLink" : false
-  }, {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
       "id" : "Prepareparam1"
     },
     "name" : "连接4196",
@@ -78,7 +41,44 @@
         "notMode" : false
       } ],
       "notMode" : false,
-      "id" : "c9df44413ebab826fef964008f429bad"
+      "id" : "78c84ea5e369bdbd3751671870b06faa"
+    },
+    "getSrcPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "defaultLink" : false
+  }, {
+    "getDstPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Rawsqlcall1"
+    },
+    "name" : "连接6511",
+    "getPSDELogicLinkGroupCond" : {
+      "groupOP" : "AND",
+      "logicType" : "GROUP",
+      "getPSDELogicLinkConds" : [ {
+        "condOP" : "ISNOTNULL",
+        "dstFieldName" : "STORY",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "logicType" : "SINGLE",
+        "name" : "Default[STORY] 值不为空(NotNil)"
+      }, {
+        "condOP" : "NOTEQ",
+        "dstFieldName" : "STORY",
+        "getDstLogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "logicType" : "SINGLE",
+        "name" : "Default[STORY] 不等于(<>) (0)",
+        "paramValue" : "0"
+      } ],
+      "notMode" : false,
+      "id" : "e5644b68dcd61e4fefc3c4848af3eb5a"
     },
     "getSrcPSDELogicNode" : {
       "modelref" : true,
@@ -127,10 +127,10 @@
     "name" : "开始",
     "getPSDELogicLinks" : [ {
       "modelref" : true,
-      "id" : "连接6511"
+      "id" : "连接4196"
     }, {
       "modelref" : true,
-      "id" : "连接4196"
+      "id" : "连接6511"
     } ],
     "parallelOutput" : true
   } ],

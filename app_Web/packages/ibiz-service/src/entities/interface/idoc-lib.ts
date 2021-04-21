@@ -29,6 +29,10 @@ export interface IDocLib extends IEntityBase {
      */
     collector?: any;
     /**
+     * 由谁更新
+     */
+    updatemanname?: any;
+    /**
      * 部门标识
      */
     mdeptid?: any;
@@ -110,8 +114,4 @@ export interface IDocLib extends IEntityBase {
      * 产品库
      */
     product?: any;
-    /**
-     * 由谁更新
-     */
-    updatemanname?: any;
 }

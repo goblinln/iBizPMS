@@ -2,6 +2,13 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEUSERROLES/ProductPlan_Maintain.json",
   "name" : "产品计划维护",
   "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "CREATE",
+    "name" : "ProductPlan_Maintain_CREATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
     "dataAccessAction" : "READ",
     "name" : "ProductPlan_Maintain_READ",
     "getPSDEOPPriv" : {
@@ -21,13 +28,6 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "DELETE"
-    }
-  }, {
-    "dataAccessAction" : "CREATE",
-    "name" : "ProductPlan_Maintain_CREATE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
     }
   } ],
   "roleTag" : "ProductPlan_Maintain",

@@ -6266,13 +6266,6 @@
     "name" : "项目维护（当前机构）",
     "orgDR" : 1,
     "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "UPDATE",
-      "name" : "Project_Maintain_CO_UPDATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "UPDATE"
-      }
-    }, {
       "dataAccessAction" : "DELETE",
       "name" : "Project_Maintain_CO_DELETE",
       "getPSDEOPPriv" : {
@@ -6280,18 +6273,25 @@
         "id" : "DELETE"
       }
     }, {
-      "dataAccessAction" : "CREATE",
-      "name" : "Project_Maintain_CO_CREATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "CREATE"
-      }
-    }, {
       "dataAccessAction" : "READ",
       "name" : "Project_Maintain_CO_READ",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "READ"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "Project_Maintain_CO_UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    }, {
+      "dataAccessAction" : "CREATE",
+      "name" : "Project_Maintain_CO_CREATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CREATE"
       }
     } ],
     "roleTag" : "Project_Maintain_CO",

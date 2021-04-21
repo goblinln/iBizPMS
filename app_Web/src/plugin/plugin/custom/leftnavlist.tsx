@@ -4,6 +4,7 @@ import { VueLifeCycleProcessing,AppControlBase } from 'ibiz-vue';
 import { AppViewLogicService } from 'ibiz-vue';
 import { Product } from 'ibiz-service';
 import { AppDefaultList } from 'ibiz-vue/src/components/control/app-default-list/app-default-list';
+import { IPSDEListDataItem } from '@ibiz/dynamic-model-api';
 import '../plugin-style.less';
 
 /**
@@ -53,7 +54,7 @@ export class LEFTNAVLIST extends AppDefaultList {
      * @memberof GridControlBase
      */
     public handleActionClick(data: any, event: any, tag: any) {
-        AppViewLogicService.getInstance().executeViewLogic(this.getViewLogicTag('list', 'quicktoolbar', tag), event, this, data, this.controlInstance.getPSAppViewLogics);
+        AppViewLogicService.getInstance().executeViewLogic(this.getViewLogicTag('list', 'quicktoolbar', tag), event, this, data, this.controlInstance.getPSAppViewLogics());
     }
 
     /**
@@ -111,8 +112,12 @@ export class LEFTNAVLIST extends AppDefaultList {
      * @memberof ProductList
      */
     protected renderItem(p: Product): any {
-        let typeItem: any =  this.controlInstance.getListDataItemByName('type');
-        let statusItem: any =  this.controlInstance.getListDataItemByName('status');
+        let typeItem: IPSDEListDataItem | undefined =  this.controlInstance.getPSDEListDataItems()?.find((item:any)=>{
+            return item.name == 'type'
+        });
+        let statusItem: IPSDEListDataItem | undefined =  this.controlInstance.getPSDEListDataItems()?.find((item:any)=>{
+            return item.name == 'status'
+        });
         return <listItem class={{ 'is-top': p.istop }}>
             <div class="content-wrapper" on-click={(e: any) => this.click(e, p)}>
                 <div class="title">
@@ -130,10 +135,10 @@ export class LEFTNAVLIST extends AppDefaultList {
                 </div>
                 <div class="content">
                     <tag color="cyan">类型：
-                        <codelist value={p.type} codeList={typeItem.getFrontPSCodeList} context={this.context} viewparams={this.viewparams} textOnly={true} ></codelist>
+                        <codelist value={p.type} codeList={typeItem?.getFrontPSCodeList()} context={this.context} viewparams={this.viewparams} textOnly={true} ></codelist>
                     </tag>
                     <tag color="geekblue">状态：
-                        <codelist value={p.status} codeList={statusItem.getFrontPSCodeList} context={this.context} viewparams={this.viewparams} textOnly={true} ></codelist>
+                        <codelist value={p.status} codeList={statusItem?.getFrontPSCodeList()} context={this.context} viewparams={this.viewparams} textOnly={true} ></codelist>
                     </tag>
                 </div>
             </div>

@@ -3,6 +3,7 @@ import { Component, Watch } from 'vue-property-decorator';
 import { VueLifeCycleProcessing,AppControlBase } from 'ibiz-vue';
 import { AppContextStore, AppGridService } from 'ibiz-vue';
 import { AppDefaultGrid } from 'ibiz-vue/src/components/control/app-default-grid/app-default-grid';
+import { IPSDEGridUAColumn, IPSDEUIAction, IPSDEUIActionGroup, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
 
 export class AppTreeGridService extends AppGridService {
 
@@ -95,7 +96,7 @@ export class AppTreeGridService extends AppGridService {
 @VueLifeCycleProcessing()
 export class TreeGrid extends AppDefaultGrid {
 
-    public async ctrlModelInit() {
+public async ctrlModelInit() {
         await super.ctrlModelInit();
         if (!(this.Environment && this.Environment.isPreviewMode)) {
             this.service = new AppTreeGridService(this.controlInstance);
@@ -108,7 +109,7 @@ export class TreeGrid extends AppDefaultGrid {
      * @param {any} column 表格列实例
      * @memberof TreeGrid 
      */
-    public renderUAColumn(column: any) {
+    public renderUAColumn(column: IPSDEGridUAColumn) {
         const { name, caption, align, width, widthUnit } = column;
         //参数
         let renderParams: any = {
@@ -143,16 +144,16 @@ export class TreeGrid extends AppDefaultGrid {
      * @param {any} _column 表格列实例
      * @param {row, column, $index} scope 插槽返回数据
      */
-    public renderActionModel(_column: any, scope: any) {
-        const { getPSDEUIActionGroup: UIActionGroup } = _column;
-        if (UIActionGroup?.getPSUIActionGroupDetails?.length > 0) {
+    public renderActionModel(_column: IPSDEGridUAColumn, scope: any) {
+        const uiactionDetails: Array<IPSUIActionGroupDetail> = (_column.getPSDEUIActionGroup() as IPSDEUIActionGroup)?.getPSUIActionGroupDetails() || [];
+        if (uiactionDetails.length > 0) {
             return (
                 <div style="text-align: center;">
                     {
                         scope.row.children ?
                             <span>
                                 <a title={scope.row.tooltip} on-click={this.loadMore(scope.row)}>{scope.row.toolcaption}</a>
-                            </span> : this.renderActionModelDetail(_column, scope)
+                            </span> : this.renderActionModelDetail(_column, scope, uiactionDetails)
                     }
                 </div>
             );
@@ -177,19 +178,18 @@ export class TreeGrid extends AppDefaultGrid {
      * @param {any} _column 表格列实例
      * @param {row, column, $index} scope 插槽返回数据
      */
-    public renderActionModelDetail(_column: any, scope: any) {
-        const { getPSDEUIActionGroup: UIActionGroup } = _column;
+    public renderActionModelDetail(_column: any, scope: any, uiactionDetails: Array<IPSUIActionGroupDetail>) {
         const { row } = scope;
-        if (UIActionGroup?.getPSUIActionGroupDetails?.length > 0) {
+        if (uiactionDetails.length > 0) {
             return (
                 <div style="text-align: center;">
-                    {UIActionGroup.getPSUIActionGroupDetails.map((uiactionDetail: any, index: number) => {
-                        const uiaction = uiactionDetail.getPSUIAction;
-                        if(row[uiaction.uIActionTag].visabled){
+                    {uiactionDetails.map((uiactionDetail: IPSUIActionGroupDetail, index: number) => {
+                        const uiaction: IPSDEUIAction = uiactionDetail.getPSUIAction() as IPSDEUIAction;
+                        if(row[uiaction.uIActionTag]?.visabled){
                             return (
                                 <tooltip transfer={true} max-width={600}>
                                     <a class={index == 0 ? "grid-first-uiaction" : "grid-uiaction-divider"} disabled={row[uiaction.uIActionTag].disabled} style={{'display': 'block'}} on-click={($event: any) => { this.handleActionClick(row, $event, _column, uiactionDetail) }} >
-                                        {uiactionDetail.showIcon ? <i class={uiaction?.getPSSysImage?.cssClass ? uiaction.getPSSysImage.cssClass : "fa fa-save"}></i> : ""}
+                                        {uiactionDetail.showIcon ? <i class={uiaction?.getPSSysImage()?.cssClass ? uiaction?.getPSSysImage()?.cssClass : "fa fa-save"}></i> : ""}
                                     </a>
                                     <div slot="content">
                                         {uiaction?.caption ? uiaction.caption : ""}
@@ -357,7 +357,7 @@ export class TreeGrid extends AppDefaultGrid {
                 excel.export_json_to_excel({
                     header: tHeader, //表头 必填
                     data, //具体数据 必填
-                    filename: `${this.controlInstance.appDataEntity.logicName}` + (this.$t('app.gridpage.grid') as string), 
+                    filename: `${this.controlInstance.getPSAppDataEntity()?.logicName}` + (this.$t('app.gridpage.grid') as string), 
                     autoWidth: true, //非必填
                     bookType: 'xlsx', //非必填
                 });

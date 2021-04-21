@@ -2,7 +2,7 @@
 import { Component, Watch } from 'vue-property-decorator';
 import { VueLifeCycleProcessing,AppControlBase } from 'ibiz-vue';
 import { AppGridBase } from 'ibiz-vue/src/components/control/app-common-control/app-grid-base';
-
+import { IPSDEGridColumn } from '@ibiz/dynamic-model-api';
 import '../plugin-style.less';
 
 /**
@@ -73,7 +73,7 @@ export class SaveBatch extends AppGridBase {
      */
     public renderGridColumn(h: any, column: any) {
         const { name, enableRowEdit, width, caption, widthUnit, align } = column;
-        const editItem = this.controlInstance.getEditColumnByName(name.toLowerCase());
+        const editItem = this.controlInstance.findPSDEGridEditItem(column.codeName);
         let renderParams: any = {
             "label": caption,
             "prop": name,

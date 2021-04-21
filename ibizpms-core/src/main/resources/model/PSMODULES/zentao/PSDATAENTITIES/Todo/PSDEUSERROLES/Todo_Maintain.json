@@ -2,6 +2,13 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Maintain.json",
   "name" : "待办维护",
   "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "CREATE",
+    "name" : "Todo_Maintain_CREATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
     "dataAccessAction" : "READ",
     "name" : "Todo_Maintain_READ",
     "getPSDEOPPriv" : {
@@ -21,13 +28,6 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "DELETE"
-    }
-  }, {
-    "dataAccessAction" : "CREATE",
-    "name" : "Todo_Maintain_CREATE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
     }
   } ],
   "roleTag" : "Todo_Maintain",

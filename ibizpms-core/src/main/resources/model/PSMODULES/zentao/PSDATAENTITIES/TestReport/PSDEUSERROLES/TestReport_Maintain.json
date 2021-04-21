@@ -2,18 +2,11 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEUSERROLES/TestReport_Maintain.json",
   "name" : "测试报告维护",
   "getPSDEUserRoleOPPrivs" : [ {
-    "dataAccessAction" : "DELETE",
-    "name" : "TestReport_Maintain_DELETE",
+    "dataAccessAction" : "UPDATE",
+    "name" : "TestReport_Maintain_UPDATE",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
-    }
-  }, {
-    "dataAccessAction" : "CREATE",
-    "name" : "TestReport_Maintain_CREATE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
+      "id" : "UPDATE"
     }
   }, {
     "dataAccessAction" : "READ",
@@ -23,11 +16,18 @@
       "id" : "READ"
     }
   }, {
-    "dataAccessAction" : "UPDATE",
-    "name" : "TestReport_Maintain_UPDATE",
+    "dataAccessAction" : "CREATE",
+    "name" : "TestReport_Maintain_CREATE",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "CREATE"
+    }
+  }, {
+    "dataAccessAction" : "DELETE",
+    "name" : "TestReport_Maintain_DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
     }
   } ],
   "roleTag" : "TestReport_Maintain",

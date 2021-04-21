@@ -3221,6 +3221,45 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "BUGSN",
+      "dBType" : "MYSQL5",
+      "name" : "BUGSN",
+      "standardColumnName" : "`BUGSN`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "BUGSN",
+        "codeName" : "Bugsn"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Bugsn",
+    "dEFType" : 1,
+    "dataType" : "BIGINT",
+    "importOrder" : 1000,
+    "length" : 20,
+    "logicName" : "BUG编号",
+    "name" : "BUGSN",
+    "getPSSysSequence" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProBugSeq.json"
+    },
+    "sequenceMode" : "CREATE",
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "ORG",
       "dBType" : "MYSQL5",
       "name" : "ORG",
@@ -4967,45 +5006,6 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "linkDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "BUGSN",
-      "dBType" : "MYSQL5",
-      "name" : "BUGSN",
-      "standardColumnName" : "`BUGSN`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "BUGSN",
-        "codeName" : "Bugsn"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Bugsn",
-    "dEFType" : 1,
-    "dataType" : "BIGINT",
-    "importOrder" : 1000,
-    "length" : 20,
-    "logicName" : "BUG编号",
-    "name" : "BUGSN",
-    "getPSSysSequence" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProBugSeq.json"
-    },
-    "sequenceMode" : "CREATE",
-    "stdDataType" : 1,
-    "valueFormat" : "%1$s"
   } ],
   "getAllPSDELogics" : [ {
     "codeName" : "BugFavorites",
@@ -5293,7 +5293,7 @@
           "name" : "Default[MODULE] 值不为空(NotNil)"
         } ],
         "notMode" : false,
-        "id" : "87305d0111576435af0510abbef59b91"
+        "id" : "7d94f35e09afb96807e231a7ec3ac625"
       },
       "getSrcPSDELogicNode" : {
         "modelref" : true,
@@ -5480,43 +5480,6 @@
     "getPSDELogicLinks" : [ {
       "getDstPSDELogicNode" : {
         "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "name" : "连接6511",
-      "getPSDELogicLinkGroupCond" : {
-        "groupOP" : "AND",
-        "logicType" : "GROUP",
-        "getPSDELogicLinkConds" : [ {
-          "condOP" : "ISNOTNULL",
-          "dstFieldName" : "STORY",
-          "getDstLogicParam" : {
-            "modelref" : true,
-            "id" : "Default"
-          },
-          "logicType" : "SINGLE",
-          "name" : "Default[STORY] 值不为空(NotNil)"
-        }, {
-          "condOP" : "NOTEQ",
-          "dstFieldName" : "STORY",
-          "getDstLogicParam" : {
-            "modelref" : true,
-            "id" : "Default"
-          },
-          "logicType" : "SINGLE",
-          "name" : "Default[STORY] 不等于(<>) (0)",
-          "paramValue" : "0"
-        } ],
-        "notMode" : false,
-        "id" : "6fcdb8241837c5dc1b2a0b66b3dc4ea2"
-      },
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
-    }, {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
         "id" : "Prepareparam1"
       },
       "name" : "连接4196",
@@ -5550,7 +5513,44 @@
           "notMode" : false
         } ],
         "notMode" : false,
-        "id" : "c9df44413ebab826fef964008f429bad"
+        "id" : "78c84ea5e369bdbd3751671870b06faa"
+      },
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      },
+      "defaultLink" : false
+    }, {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall1"
+      },
+      "name" : "连接6511",
+      "getPSDELogicLinkGroupCond" : {
+        "groupOP" : "AND",
+        "logicType" : "GROUP",
+        "getPSDELogicLinkConds" : [ {
+          "condOP" : "ISNOTNULL",
+          "dstFieldName" : "STORY",
+          "getDstLogicParam" : {
+            "modelref" : true,
+            "id" : "Default"
+          },
+          "logicType" : "SINGLE",
+          "name" : "Default[STORY] 值不为空(NotNil)"
+        }, {
+          "condOP" : "NOTEQ",
+          "dstFieldName" : "STORY",
+          "getDstLogicParam" : {
+            "modelref" : true,
+            "id" : "Default"
+          },
+          "logicType" : "SINGLE",
+          "name" : "Default[STORY] 不等于(<>) (0)",
+          "paramValue" : "0"
+        } ],
+        "notMode" : false,
+        "id" : "e5644b68dcd61e4fefc3c4848af3eb5a"
       },
       "getSrcPSDELogicNode" : {
         "modelref" : true,
@@ -5599,10 +5599,10 @@
       "name" : "开始",
       "getPSDELogicLinks" : [ {
         "modelref" : true,
-        "id" : "连接6511"
+        "id" : "连接4196"
       }, {
         "modelref" : true,
-        "id" : "连接4196"
+        "id" : "连接6511"
       } ],
       "parallelOutput" : true
     } ],

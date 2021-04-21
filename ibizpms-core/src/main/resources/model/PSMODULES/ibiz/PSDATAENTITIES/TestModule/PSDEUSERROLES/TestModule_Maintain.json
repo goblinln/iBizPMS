@@ -2,6 +2,13 @@
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEUSERROLES/TestModule_Maintain.json",
   "name" : "测试模块维护",
   "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "READ",
+    "name" : "TestModule_Maintain_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
     "dataAccessAction" : "UPDATE",
     "name" : "TestModule_Maintain_UPDATE",
     "getPSDEOPPriv" : {
@@ -14,13 +21,6 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
-    }
-  }, {
-    "dataAccessAction" : "READ",
-    "name" : "TestModule_Maintain_READ",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
     }
   }, {
     "dataAccessAction" : "DELETE",

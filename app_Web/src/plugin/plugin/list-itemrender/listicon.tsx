@@ -1,6 +1,6 @@
 
 
-
+import { IPSSysPanelField } from "@ibiz/dynamic-model-api";
 
 /**
  * 列表项图标呈现插件插件类
@@ -19,9 +19,11 @@ export class Listicon {
    * @param data  当前项数据
    * 
    * @memberof Listicon
-   */  
-  public renderCtrlItem(h:any,ctrlItemModel:any,parentContainer:any,data:any){
-    const { name, codelist } = ctrlItemModel;
+   */
+  public renderCtrlItem(h: any, ctrlItemModel: IPSSysPanelField, parentContainer: any, data: any) {
+    const editor: any = ctrlItemModel.getPSEditor();
+    const codelist = editor?.getPSAppCodeList();
+    const { name } = ctrlItemModel;
     let renderParams: any = {
       "value": data[name],
     };

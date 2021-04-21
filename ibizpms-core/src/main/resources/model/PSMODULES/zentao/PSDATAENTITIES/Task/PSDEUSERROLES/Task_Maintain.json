@@ -2,13 +2,6 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Maintain.json",
   "name" : "任务维护",
   "getPSDEUserRoleOPPrivs" : [ {
-    "dataAccessAction" : "CREATE",
-    "name" : "Task_Maintain_CREATE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__CREATE"
-    }
-  }, {
     "dataAccessAction" : "DELETE",
     "name" : "Task_Maintain_DELETE",
     "getPSDEOPPriv" : {
@@ -16,11 +9,11 @@
       "id" : "ZTProject__DELETE"
     }
   }, {
-    "dataAccessAction" : "READ",
-    "name" : "Task_Maintain_READ",
+    "dataAccessAction" : "CREATE",
+    "name" : "Task_Maintain_CREATE",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__READ"
+      "id" : "ZTProject__CREATE"
     }
   }, {
     "dataAccessAction" : "UPDATE",
@@ -28,6 +21,13 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "ZTProject__UPDATE"
+    }
+  }, {
+    "dataAccessAction" : "READ",
+    "name" : "Task_Maintain_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__READ"
     }
   } ],
   "roleTag" : "Task_Maintain",

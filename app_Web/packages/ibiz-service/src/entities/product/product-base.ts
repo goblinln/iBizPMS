@@ -38,6 +38,10 @@ export abstract class ProductBase extends EntityBase implements IProduct {
      */
     orgid?: any;
     /**
+     * 更新时间
+     */
+    updatedate?: any;
+    /**
      * 是否置顶
      */
     istop?: any;
@@ -124,6 +128,10 @@ export abstract class ProductBase extends EntityBase implements IProduct {
      */
     notclosedbugcnt?: any;
     /**
+     * 更新人
+     */
+    updateman?: any;
+    /**
      * 支持产品汇报
      *
      * @type {('1' | '0')} 1: 是, 0: 否
@@ -173,6 +181,10 @@ export abstract class ProductBase extends EntityBase implements IProduct {
      * 发布负责人（选择）
      */
     rdpk?: any;
+    /**
+     * 建立人
+     */
+    createman?: any;
     /**
      * 当前系统版本
      */
@@ -241,18 +253,6 @@ export abstract class ProductBase extends EntityBase implements IProduct {
      * 产品线
      */
     line?: any;
-    /**
-     * 更新人
-     */
-    updateman?: any;
-    /**
-     * 建立人
-     */
-    createman?: any;
-    /**
-     * 更新时间
-     */
-    updatedate?: any;
 
     /**
      * 重置实体数据

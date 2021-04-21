@@ -1,5 +1,6 @@
 
 
+import { IPSAppDataEntity, IPSAppDEView, IPSAppView, IPSDEGridColumn, IPSDEGridFieldColumn } from '@ibiz/dynamic-model-api';
 import { Util } from 'ibiz-core';
 
 /**
@@ -21,7 +22,8 @@ export class TASKTYPEFATHERORCHILD {
      * @memberof TASKTYPEFATHERORCHILD
      */
     public renderCtrlItem(h:any,ctrlItemModel:any,parentContainer:any,data:any){
-        const { name, caption, align, width, widthUnit, $linkView: linkView, linkViewEntity: entity } = ctrlItemModel;
+        const { name, caption, align, width, widthUnit } = ctrlItemModel as IPSDEGridColumn;
+        const linkView: IPSAppView = (ctrlItemModel as IPSDEGridFieldColumn)?.getLinkPSAppView?.() as IPSAppView;
         let renderParams: any = {
             "show-overflow-tooltip": true,
             "label": caption,
@@ -39,15 +41,12 @@ export class TASKTYPEFATHERORCHILD {
             height: linkView.height,
             width: linkView.width,
             title: linkView.title,
-            isRedirectView: linkView.isRedirectView ? true : false,
+            isRedirectView: linkView.redirectView ? true : false,
             placement: linkView.openMode ? linkView.openMode : '',
-            viewpath: linkView.dynaModelFilePath
+            viewpath: linkView.modelFilePath
         }
-        this.handleLinkViewParams(linkView, view, entity, parentContainer.context);
+        this.handleLinkViewParams(linkView, view, parentContainer.context);
         let tempContext: any = Util.deepCopy(parentContainer.context);
-        if (linkView && linkView.dynaModelFilePath) {
-            Object.assign(tempContext, { viewpath: linkView.dynaModelFilePath });
-        }
         let tempViewParam: any = Util.deepCopy(parentContainer.viewparams);
         const refresh = parentContainer.refresh ? parentContainer.refresh : () => { };
         return parentContainer.$createElement('el-table-column', {
@@ -86,24 +85,26 @@ export class TASKTYPEFATHERORCHILD {
      * @param view 模型
      * @param entity 链接视图实体
      */
-    public handleLinkViewParams(linkView: any, view: any, entity?: any, context?: any) {
+    public handleLinkViewParams(linkView: IPSAppView, view: any, context?: any) {
+        const entity: IPSAppDataEntity = linkView.getPSAppDataEntity() as IPSAppDataEntity;
         //获取父关系路由参数
-        let tempDeResParameters: any[] = linkView.getPSAppDERSPaths ? Util.formatAppDERSPath(context, linkView.getPSAppDERSPaths) : [];
+        let tempDeResParameters: any[] = [];
         //视图本身路由参数
         let tempParameters: any[] = [];
-        if (entity) {
+        if (entity && entity.codeName) {
+            tempDeResParameters = Util.formatAppDERSPath(context, (linkView as IPSAppDEView).getPSAppDERSPaths());
             tempParameters.push({
                 pathName: Util.srfpluralize(entity.codeName).toLowerCase(),
                 parameterName: entity.codeName.toLowerCase()
             });
             tempParameters.push({
-                pathName: 'views',
-                parameterName: linkView.getPSDEViewCodeName.toLowerCase()
+                pathName: (linkView as IPSAppDEView).getPSDEViewCodeName()?.toLowerCase(),
+                parameterName: (linkView as IPSAppDEView).getPSDEViewCodeName()?.toLowerCase()
             });
         } else {
             tempParameters.push({
-                pathName: 'views',
-                parameterName: linkView.codeName.toLowerCase()
+                pathName: linkView.codeName?.toLowerCase(),
+                parameterName: linkView.codeName?.toLowerCase()
             });
         }
         Object.assign(view, {

@@ -586,11 +586,11 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEUSERROLES/UserTpl_Maintain.json",
     "name" : "模板维护",
     "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "DELETE",
-      "name" : "UserTpl_Maintain_DELETE",
+      "dataAccessAction" : "READ",
+      "name" : "UserTpl_Maintain_READ",
       "getPSDEOPPriv" : {
         "modelref" : true,
-        "id" : "DELETE"
+        "id" : "READ"
       }
     }, {
       "dataAccessAction" : "CREATE",
@@ -600,18 +600,18 @@
         "id" : "CREATE"
       }
     }, {
-      "dataAccessAction" : "READ",
-      "name" : "UserTpl_Maintain_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
-    }, {
       "dataAccessAction" : "UPDATE",
       "name" : "UserTpl_Maintain_UPDATE",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "UPDATE"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "UserTpl_Maintain_DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
       }
     } ],
     "roleTag" : "UserTpl_Maintain",
@@ -621,18 +621,18 @@
     "name" : "模板维护（当前机构）",
     "orgDR" : 1,
     "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "CREATE",
-      "name" : "UserTpl_Maintain_CO_CREATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "CREATE"
-      }
-    }, {
       "dataAccessAction" : "DELETE",
       "name" : "UserTpl_Maintain_CO_DELETE",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "DELETE"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "UserTpl_Maintain_CO_UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
       }
     }, {
       "dataAccessAction" : "READ",
@@ -642,11 +642,11 @@
         "id" : "READ"
       }
     }, {
-      "dataAccessAction" : "UPDATE",
-      "name" : "UserTpl_Maintain_CO_UPDATE",
+      "dataAccessAction" : "CREATE",
+      "name" : "UserTpl_Maintain_CO_CREATE",
       "getPSDEOPPriv" : {
         "modelref" : true,
-        "id" : "UPDATE"
+        "id" : "CREATE"
       }
     } ],
     "roleTag" : "UserTpl_Maintain_CO",
