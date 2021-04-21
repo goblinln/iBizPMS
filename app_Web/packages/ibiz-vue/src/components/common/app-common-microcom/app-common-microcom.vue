@@ -184,6 +184,26 @@ export default class AppCommonMicrocom extends Vue {
     }
 
     /**
+     * 处理特殊filter参数
+     * 
+     * @type {*}
+     * @memberof AppCommonMicrocom
+     */
+    public handleFilterValue(value: string) {
+        if (value && value.startsWith('%') && value.endsWith('%')) {
+            const key = value.slice(1, value.length - 1);
+            if (this.data && this.data.hasOwnProperty(key)) {
+                return this.data[key];
+            } else if (this.context && this.context[key]) {
+                return this.context[key];
+            } else if (this.viewparams && this.viewparams[key]) {
+                return this.viewparams[key];
+            }
+        }
+        return value;
+    }
+
+    /**
      * 解析URL
      * 
      * @type {*}
@@ -205,7 +225,7 @@ export default class AppCommonMicrocom extends Vue {
                         if (isNaN(parseInt(filterIndex)) || filterArr.length < parseInt(filterIndex) - 1) {
                             console.warn('filter参数配置错误, 请检查')
                         } else {
-                            value = filterArr[parseInt(filterIndex) - 1]
+                            value = this.handleFilterValue(filterArr[parseInt(filterIndex) - 1]);
                         }
                     } else {
                         value = filterArr[0];

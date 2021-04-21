@@ -208,7 +208,7 @@ public class IbzCaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IbzCaseRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@IbzCaseRuntime.test(#ibzcase_id,'UPDATE')")
     @ApiOperation(value = "根据用例库更新测试用例", tags = {"测试用例" },  notes = "根据用例库更新测试用例")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}")
     public ResponseEntity<IbzCaseDTO> updateByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody IbzCaseDTO ibzcasedto) {
@@ -232,7 +232,7 @@ public class IbzCaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IbzCaseRuntime.quickTest('DELETE')")
+    @PreAuthorize("@IbzCaseRuntime.test(#ibzcase_id,'DELETE')")
     @ApiOperation(value = "根据用例库删除测试用例", tags = {"测试用例" },  notes = "根据用例库删除测试用例")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}")
     public ResponseEntity<Boolean> removeByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id) {
@@ -247,7 +247,7 @@ public class IbzCaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IbzCaseRuntime.quickTest('READ')")
+    @PreAuthorize("@IbzCaseRuntime.test(#ibzcase_id,'READ')")
     @ApiOperation(value = "根据用例库获取测试用例", tags = {"测试用例" },  notes = "根据用例库获取测试用例")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}")
     public ResponseEntity<IbzCaseDTO> getByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id) {

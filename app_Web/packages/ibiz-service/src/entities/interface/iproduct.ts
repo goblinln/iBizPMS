@@ -13,6 +13,10 @@ export interface IProduct extends IEntityBase {
      */
     orgid?: any;
     /**
+     * 更新时间
+     */
+    updatedate?: any;
+    /**
      * 是否置顶
      */
     istop?: any;
@@ -99,6 +103,10 @@ export interface IProduct extends IEntityBase {
      */
     notclosedbugcnt?: any;
     /**
+     * 更新人
+     */
+    updateman?: any;
+    /**
      * 支持产品汇报
      *
      * @type {('1' | '0')} 1: 是, 0: 否
@@ -148,6 +156,10 @@ export interface IProduct extends IEntityBase {
      * 发布负责人（选择）
      */
     rdpk?: any;
+    /**
+     * 建立人
+     */
+    createman?: any;
     /**
      * 当前系统版本
      */
@@ -216,16 +228,4 @@ export interface IProduct extends IEntityBase {
      * 产品线
      */
     line?: any;
-    /**
-     * 更新人
-     */
-    updateman?: any;
-    /**
-     * 建立人
-     */
-    createman?: any;
-    /**
-     * 更新时间
-     */
-    updatedate?: any;
 }

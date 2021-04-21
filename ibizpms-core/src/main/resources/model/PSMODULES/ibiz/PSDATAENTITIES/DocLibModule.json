@@ -1933,11 +1933,11 @@
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEUSERROLES/DocLibModule_Maintain.json",
     "name" : "文档模块维护",
     "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "CREATE",
-      "name" : "DocLibModule_Maintain_CREATE",
+      "dataAccessAction" : "DELETE",
+      "name" : "DocLibModule_Maintain_DELETE",
       "getPSDEOPPriv" : {
         "modelref" : true,
-        "id" : "CREATE"
+        "id" : "DELETE"
       }
     }, {
       "dataAccessAction" : "READ",
@@ -1954,11 +1954,11 @@
         "id" : "UPDATE"
       }
     }, {
-      "dataAccessAction" : "DELETE",
-      "name" : "DocLibModule_Maintain_DELETE",
+      "dataAccessAction" : "CREATE",
+      "name" : "DocLibModule_Maintain_CREATE",
       "getPSDEOPPriv" : {
         "modelref" : true,
-        "id" : "DELETE"
+        "id" : "CREATE"
       }
     } ],
     "roleTag" : "DocLibModule_Maintain",

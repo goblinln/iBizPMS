@@ -338,7 +338,7 @@ public class TestTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TestTaskRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'UPDATE')")
     @ApiOperation(value = "根据产品更新测试版本", tags = {"测试版本" },  notes = "根据产品更新测试版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
@@ -362,7 +362,7 @@ public class TestTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TestTaskRuntime.quickTest('DELETE')")
+    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'DELETE')")
     @ApiOperation(value = "根据产品删除测试版本", tags = {"测试版本" },  notes = "根据产品删除测试版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testtasks/{testtask_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id) {
@@ -377,7 +377,7 @@ public class TestTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TestTaskRuntime.quickTest('READ')")
+    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'READ')")
     @ApiOperation(value = "根据产品获取测试版本", tags = {"测试版本" },  notes = "根据产品获取测试版本")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id) {
@@ -399,6 +399,7 @@ public class TestTaskResource {
     public ResponseEntity<TestTaskDTO> activateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
         TestTask domain = testtaskMapping.toDomain(testtaskdto);
         domain.setProduct(product_id);
+        domain.setId(testtask_id);
         domain = testtaskService.activate(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
@@ -415,6 +416,7 @@ public class TestTaskResource {
     public ResponseEntity<TestTaskDTO> blockByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
         TestTask domain = testtaskMapping.toDomain(testtaskdto);
         domain.setProduct(product_id);
+        domain.setId(testtask_id);
         domain = testtaskService.block(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
@@ -437,6 +439,7 @@ public class TestTaskResource {
     public ResponseEntity<TestTaskDTO> closeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
         TestTask domain = testtaskMapping.toDomain(testtaskdto);
         domain.setProduct(product_id);
+        domain.setId(testtask_id);
         domain = testtaskService.close(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
@@ -453,6 +456,7 @@ public class TestTaskResource {
     public ResponseEntity<TestTaskDTO> linkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
         TestTask domain = testtaskMapping.toDomain(testtaskdto);
         domain.setProduct(product_id);
+        domain.setId(testtask_id);
         domain = testtaskService.linkCase(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
@@ -469,6 +473,7 @@ public class TestTaskResource {
     public ResponseEntity<TestTaskDTO> mobTestTaskCounterByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
         TestTask domain = testtaskMapping.toDomain(testtaskdto);
         domain.setProduct(product_id);
+        domain.setId(testtask_id);
         domain = testtaskService.mobTestTaskCounter(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
@@ -498,6 +503,7 @@ public class TestTaskResource {
     public ResponseEntity<TestTaskDTO> startByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
         TestTask domain = testtaskMapping.toDomain(testtaskdto);
         domain.setProduct(product_id);
+        domain.setId(testtask_id);
         domain = testtaskService.start(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
@@ -514,6 +520,7 @@ public class TestTaskResource {
     public ResponseEntity<TestTaskDTO> unlinkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
         TestTask domain = testtaskMapping.toDomain(testtaskdto);
         domain.setProduct(product_id);
+        domain.setId(testtask_id);
         domain = testtaskService.unlinkCase(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
@@ -598,7 +605,7 @@ public class TestTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TestTaskRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'UPDATE')")
     @ApiOperation(value = "根据项目更新测试版本", tags = {"测试版本" },  notes = "根据项目更新测试版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
@@ -622,7 +629,7 @@ public class TestTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TestTaskRuntime.quickTest('DELETE')")
+    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'DELETE')")
     @ApiOperation(value = "根据项目删除测试版本", tags = {"测试版本" },  notes = "根据项目删除测试版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/testtasks/{testtask_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id) {
@@ -637,7 +644,7 @@ public class TestTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TestTaskRuntime.quickTest('READ')")
+    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'READ')")
     @ApiOperation(value = "根据项目获取测试版本", tags = {"测试版本" },  notes = "根据项目获取测试版本")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id) {
@@ -659,6 +666,7 @@ public class TestTaskResource {
     public ResponseEntity<TestTaskDTO> activateByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
         TestTask domain = testtaskMapping.toDomain(testtaskdto);
         domain.setProject(project_id);
+        domain.setId(testtask_id);
         domain = testtaskService.activate(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
@@ -675,6 +683,7 @@ public class TestTaskResource {
     public ResponseEntity<TestTaskDTO> blockByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
         TestTask domain = testtaskMapping.toDomain(testtaskdto);
         domain.setProject(project_id);
+        domain.setId(testtask_id);
         domain = testtaskService.block(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
@@ -697,6 +706,7 @@ public class TestTaskResource {
     public ResponseEntity<TestTaskDTO> closeByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
         TestTask domain = testtaskMapping.toDomain(testtaskdto);
         domain.setProject(project_id);
+        domain.setId(testtask_id);
         domain = testtaskService.close(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
@@ -713,6 +723,7 @@ public class TestTaskResource {
     public ResponseEntity<TestTaskDTO> linkCaseByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
         TestTask domain = testtaskMapping.toDomain(testtaskdto);
         domain.setProject(project_id);
+        domain.setId(testtask_id);
         domain = testtaskService.linkCase(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
@@ -729,6 +740,7 @@ public class TestTaskResource {
     public ResponseEntity<TestTaskDTO> mobTestTaskCounterByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
         TestTask domain = testtaskMapping.toDomain(testtaskdto);
         domain.setProject(project_id);
+        domain.setId(testtask_id);
         domain = testtaskService.mobTestTaskCounter(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
@@ -758,6 +770,7 @@ public class TestTaskResource {
     public ResponseEntity<TestTaskDTO> startByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
         TestTask domain = testtaskMapping.toDomain(testtaskdto);
         domain.setProject(project_id);
+        domain.setId(testtask_id);
         domain = testtaskService.start(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
@@ -774,6 +787,7 @@ public class TestTaskResource {
     public ResponseEntity<TestTaskDTO> unlinkCaseByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
         TestTask domain = testtaskMapping.toDomain(testtaskdto);
         domain.setProject(project_id);
+        domain.setId(testtask_id);
         domain = testtaskService.unlinkCase(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);

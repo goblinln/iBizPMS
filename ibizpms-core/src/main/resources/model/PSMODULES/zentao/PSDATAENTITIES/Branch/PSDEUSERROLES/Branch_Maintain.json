@@ -2,18 +2,18 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Branch/PSDEUSERROLES/Branch_Maintain.json",
   "name" : "产品分支/平台维护",
   "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "READ",
+    "name" : "Branch_Maintain_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
     "dataAccessAction" : "CREATE",
     "name" : "Branch_Maintain_CREATE",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
-    }
-  }, {
-    "dataAccessAction" : "UPDATE",
-    "name" : "Branch_Maintain_UPDATE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
     }
   }, {
     "dataAccessAction" : "DELETE",
@@ -23,11 +23,11 @@
       "id" : "DELETE"
     }
   }, {
-    "dataAccessAction" : "READ",
-    "name" : "Branch_Maintain_READ",
+    "dataAccessAction" : "UPDATE",
+    "name" : "Branch_Maintain_UPDATE",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "UPDATE"
     }
   } ],
   "roleTag" : "Branch_Maintain",

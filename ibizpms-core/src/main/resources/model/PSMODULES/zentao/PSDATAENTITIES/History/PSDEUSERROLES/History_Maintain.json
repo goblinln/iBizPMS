@@ -2,13 +2,6 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/History/PSDEUSERROLES/History_Maintain.json",
   "name" : "操作历史维护",
   "getPSDEUserRoleOPPrivs" : [ {
-    "dataAccessAction" : "READ",
-    "name" : "History_Maintain_READ",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    }
-  }, {
     "dataAccessAction" : "DELETE",
     "name" : "History_Maintain_DELETE",
     "getPSDEOPPriv" : {
@@ -28,6 +21,13 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "UPDATE"
+    }
+  }, {
+    "dataAccessAction" : "READ",
+    "name" : "History_Maintain_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
     }
   } ],
   "roleTag" : "History_Maintain",

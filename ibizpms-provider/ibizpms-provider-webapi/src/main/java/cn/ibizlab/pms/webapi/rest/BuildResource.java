@@ -366,7 +366,7 @@ public class BuildResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@BuildRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@BuildRuntime.test(#build_id,'UPDATE')")
     @ApiOperation(value = "根据产品更新版本", tags = {"版本" },  notes = "根据产品更新版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/builds/{build_id}")
     public ResponseEntity<BuildDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -390,7 +390,7 @@ public class BuildResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@BuildRuntime.quickTest('DELETE')")
+    @PreAuthorize("@BuildRuntime.test(#build_id,'DELETE')")
     @ApiOperation(value = "根据产品删除版本", tags = {"版本" },  notes = "根据产品删除版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/builds/{build_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id) {
@@ -405,7 +405,7 @@ public class BuildResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@BuildRuntime.quickTest('READ')")
+    @PreAuthorize("@BuildRuntime.test(#build_id,'READ')")
     @ApiOperation(value = "根据产品获取版本", tags = {"版本" },  notes = "根据产品获取版本")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/builds/{build_id}")
     public ResponseEntity<BuildDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id) {
@@ -433,6 +433,7 @@ public class BuildResource {
     public ResponseEntity<BuildDTO> linkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
         domain.setProduct(product_id);
+        domain.setId(build_id);
         domain = buildService.linkStory(domain) ;
         builddto = buildMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
@@ -449,6 +450,7 @@ public class BuildResource {
     public ResponseEntity<BuildDTO> mobProjectBuildCounterByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
         domain.setProduct(product_id);
+        domain.setId(build_id);
         domain = buildService.mobProjectBuildCounter(domain) ;
         builddto = buildMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
@@ -458,6 +460,7 @@ public class BuildResource {
     public ResponseEntity<BuildDTO> oneClickReleaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
         domain.setProduct(product_id);
+        domain.setId(build_id);
         domain = buildService.oneClickRelease(domain) ;
         builddto = buildMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
@@ -662,7 +665,7 @@ public class BuildResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@BuildRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@BuildRuntime.test(#build_id,'UPDATE')")
     @ApiOperation(value = "根据项目更新版本", tags = {"版本" },  notes = "根据项目更新版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/builds/{build_id}")
     public ResponseEntity<BuildDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -686,7 +689,7 @@ public class BuildResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@BuildRuntime.quickTest('DELETE')")
+    @PreAuthorize("@BuildRuntime.test(#build_id,'DELETE')")
     @ApiOperation(value = "根据项目删除版本", tags = {"版本" },  notes = "根据项目删除版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/builds/{build_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id) {
@@ -701,7 +704,7 @@ public class BuildResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@BuildRuntime.quickTest('READ')")
+    @PreAuthorize("@BuildRuntime.test(#build_id,'READ')")
     @ApiOperation(value = "根据项目获取版本", tags = {"版本" },  notes = "根据项目获取版本")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/builds/{build_id}")
     public ResponseEntity<BuildDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id) {
@@ -729,6 +732,7 @@ public class BuildResource {
     public ResponseEntity<BuildDTO> linkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
         domain.setProject(project_id);
+        domain.setId(build_id);
         domain = buildService.linkStory(domain) ;
         builddto = buildMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
@@ -745,6 +749,7 @@ public class BuildResource {
     public ResponseEntity<BuildDTO> mobProjectBuildCounterByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
         domain.setProject(project_id);
+        domain.setId(build_id);
         domain = buildService.mobProjectBuildCounter(domain) ;
         builddto = buildMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
@@ -754,6 +759,7 @@ public class BuildResource {
     public ResponseEntity<BuildDTO> oneClickReleaseByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
         domain.setProject(project_id);
+        domain.setId(build_id);
         domain = buildService.oneClickRelease(domain) ;
         builddto = buildMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);

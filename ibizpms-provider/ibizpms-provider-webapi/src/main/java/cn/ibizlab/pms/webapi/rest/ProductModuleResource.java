@@ -360,7 +360,7 @@ public class ProductModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProductModuleRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@ProductModuleRuntime.test(#productmodule_id,'UPDATE')")
     @ApiOperation(value = "根据产品更新需求模块", tags = {"需求模块" },  notes = "根据产品更新需求模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productmodules/{productmodule_id}")
     public ResponseEntity<ProductModuleDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id, @RequestBody ProductModuleDTO productmoduledto) {
@@ -384,7 +384,7 @@ public class ProductModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProductModuleRuntime.quickTest('DELETE')")
+    @PreAuthorize("@ProductModuleRuntime.test(#productmodule_id,'DELETE')")
     @ApiOperation(value = "根据产品删除需求模块", tags = {"需求模块" },  notes = "根据产品删除需求模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productmodules/{productmodule_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id) {
@@ -399,7 +399,7 @@ public class ProductModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProductModuleRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductModuleRuntime.test(#productmodule_id,'READ')")
     @ApiOperation(value = "根据产品获取需求模块", tags = {"需求模块" },  notes = "根据产品获取需求模块")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productmodules/{productmodule_id}")
     public ResponseEntity<ProductModuleDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id) {
@@ -427,16 +427,18 @@ public class ProductModuleResource {
     public ResponseEntity<ProductModuleDTO> fixByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id, @RequestBody ProductModuleDTO productmoduledto) {
         ProductModule domain = productmoduleMapping.toDomain(productmoduledto);
         domain.setRoot(product_id);
+        domain.setId(productmodule_id);
         domain = productmoduleService.fix(domain) ;
         productmoduledto = productmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(productmoduledto);
     }
-    @PreAuthorize("@ProductModuleRuntime.quickTest('DELETE')")
+    @PreAuthorize("@ProductModuleRuntime.test(#productmodule_id,'DELETE')")
     @ApiOperation(value = "根据产品需求模块", tags = {"需求模块" },  notes = "根据产品需求模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productmodules/{productmodule_id}/removemodule")
     public ResponseEntity<ProductModuleDTO> removeModuleByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id, @RequestBody ProductModuleDTO productmoduledto) {
         ProductModule domain = productmoduleMapping.toDomain(productmoduledto);
         domain.setRoot(product_id);
+        domain.setId(productmodule_id);
         domain = productmoduleService.removeModule(domain) ;
         productmoduledto = productmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(productmoduledto);
@@ -466,6 +468,7 @@ public class ProductModuleResource {
     public ResponseEntity<ProductModuleDTO> syncFromIBIZByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id, @RequestBody ProductModuleDTO productmoduledto) {
         ProductModule domain = productmoduleMapping.toDomain(productmoduledto);
         domain.setRoot(product_id);
+        domain.setId(productmodule_id);
         domain = productmoduleService.syncFromIBIZ(domain) ;
         productmoduledto = productmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(productmoduledto);

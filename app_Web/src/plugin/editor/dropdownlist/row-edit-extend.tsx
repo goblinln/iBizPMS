@@ -1,7 +1,7 @@
 
 import { Component } from 'vue-property-decorator';
 import { VueLifeCycleProcessing,EditorBase } from 'ibiz-vue';
-
+import { IPSAppCodeList, IPSDropDownList } from '@ibiz/dynamic-model-api';
 
 /**
  * 表格行编辑下拉扩展插件类
@@ -14,17 +14,18 @@ import { VueLifeCycleProcessing,EditorBase } from 'ibiz-vue';
 @VueLifeCycleProcessing()
 export class RowEditExtend extends EditorBase {
     
-    /**
+        /**
      * 编辑器初始化
      *
      * @memberof RowEditExtend
      */
-    public initEditor() {
+    public async initEditor() {
+        await super.initEditor();
         //TODO
         this.customProps.localContext = {};
         this.customProps.localParam = {};
         this.customProps.placeholder = '请选择...';
-        let codeList: any = this.editorInstance.codeList;
+        let codeList: IPSAppCodeList | null = (this.editorInstance as IPSDropDownList).getPSAppCodeList();
         if(codeList) {
             Object.assign(this.customProps, {
                 tag: codeList.codeName,

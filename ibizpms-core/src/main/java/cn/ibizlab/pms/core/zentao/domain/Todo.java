@@ -97,6 +97,14 @@ public class Todo extends EntityMP implements Serializable {
     @ApiModelProperty("周期类型")
     private String configType;
     /**
+     * 待办编号
+     */
+    @TableField(value = "`TODOSN`")
+    @JSONField(name = "todosn")
+    @JsonProperty("todosn")
+    @ApiModelProperty("待办编号")
+    private Long todosn;
+    /**
      * 关闭时间
      */
     @TableField(value = "`CLOSEDDATE`")
@@ -141,6 +149,15 @@ public class Todo extends EntityMP implements Serializable {
     @ApiModelProperty("描述")
     private String desc;
     /**
+     * 由谁更新
+     */
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @TableField(value = "`UPDATEBY`")
+    @JSONField(name = "updateby")
+    @JsonProperty("updateby")
+    @ApiModelProperty("由谁更新")
+    private String updateby;
+    /**
      * 消息通知用户
      */
     @TableField(exist = false)
@@ -148,6 +165,15 @@ public class Todo extends EntityMP implements Serializable {
     @JsonProperty("noticeusers")
     @ApiModelProperty("消息通知用户")
     private String noticeusers;
+    /**
+     * 归属组织
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGID)
+    @TableField(value = "`ORG`")
+    @JSONField(name = "org")
+    @JsonProperty("org")
+    @ApiModelProperty("归属组织")
+    private String org;
     /**
      * 由谁完成
      */
@@ -183,6 +209,15 @@ public class Todo extends EntityMP implements Serializable {
     @JsonProperty("assignedby")
     @ApiModelProperty("由谁指派")
     private String assignedby;
+    /**
+     * 归属部门
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
+    @TableField(value = "`DEPT`")
+    @JSONField(name = "dept")
+    @JsonProperty("dept")
+    @ApiModelProperty("归属部门")
+    private String dept;
     /**
      * 周期设置月
      */
@@ -345,43 +380,16 @@ public class Todo extends EntityMP implements Serializable {
     @JsonProperty("config")
     @ApiModelProperty("config")
     private String config;
-    /**
-     * 由谁更新
-     */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "`UPDATEBY`")
-    @JSONField(name = "updateby")
-    @JsonProperty("updateby")
-    @ApiModelProperty("由谁更新")
-    private String updateby;
-    /**
-     * 归属组织
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "`ORG`")
-    @JSONField(name = "org")
-    @JsonProperty("org")
-    @ApiModelProperty("归属组织")
-    private String org;
-    /**
-     * 归属部门
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "`DEPT`")
-    @JSONField(name = "dept")
-    @JsonProperty("dept")
-    @ApiModelProperty("归属部门")
-    private String dept;
-    /**
-     * 待办编号
-     */
-    @TableField(value = "`TODOSN`")
-    @JSONField(name = "todosn")
-    @JsonProperty("todosn")
-    @ApiModelProperty("待办编号")
-    private Long todosn;
 
 
+
+    /**
+     * 设置 [待办编号]
+     */
+    public void setTodosn(Long todosn) {
+        this.todosn = todosn;
+        this.modify("todosn", todosn);
+    }
 
     /**
      * 设置 [关闭时间]
@@ -581,14 +589,6 @@ public class Todo extends EntityMP implements Serializable {
     public void setConfig(String config) {
         this.config = config;
         this.modify("config", config);
-    }
-
-    /**
-     * 设置 [待办编号]
-     */
-    public void setTodosn(Long todosn) {
-        this.todosn = todosn;
-        this.modify("todosn", todosn);
     }
 
 

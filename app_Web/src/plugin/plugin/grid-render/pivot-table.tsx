@@ -2,7 +2,7 @@
 import { Component, Watch } from 'vue-property-decorator';
 import { VueLifeCycleProcessing,AppControlBase } from 'ibiz-vue';
 import { AppDefaultGrid } from 'ibiz-vue/src/components/control/app-default-grid/app-default-grid';
-import { DynamicService } from "ibiz-core";
+import { IPSAppCodeList, IPSDEGridColumn, IPSDEGridFieldColumn } from '@ibiz/dynamic-model-api';
 
 
 /**
@@ -49,8 +49,8 @@ export class PivotTable extends AppDefaultGrid {
         this.selections = [];
         if(this.selectedData){
             const refs: any = this.$refs;
-            if (refs.multipleTable) {
-                refs.multipleTable.clearSelection();
+            if (refs[this.gridRefName]) {
+                refs[this.gridRefName].clearSelection();
                 JSON.parse(this.selectedData).forEach((selection:any)=>{
                     let selectedItem = this.items.find((item:any)=>{
                         return Object.is(item.srfkey, selection.srfkey);
@@ -89,7 +89,7 @@ export class PivotTable extends AppDefaultGrid {
         }
         Object.assign(arg, page);
         const parentdata: any = {};
-        this.ctrlEvent({ controlname: this.controlInstance.name , action: "beforeload", data: parentdata });
+        this.ctrlEvent({ controlname: this.name , action: "beforeload", data: parentdata });
         Object.assign(arg, parentdata);
         let tempViewParams:any = parentdata.viewparams?parentdata.viewparams:{};
         Object.assign(tempViewParams,JSON.parse(JSON.stringify(this.viewparams)));
@@ -112,7 +112,7 @@ export class PivotTable extends AppDefaultGrid {
             this.items.forEach((item:any)=>{
                 Object.assign(item,this.getActionState(item));    
             });
-            this.ctrlEvent({ controlname: this.controlInstance.name , action: "load", data: this.items });
+            this.ctrlEvent({ controlname: this.name , action: "load", data: this.items });
             // 设置默认选中
             let _this = this;
             setTimeout(() => {
@@ -126,7 +126,7 @@ export class PivotTable extends AppDefaultGrid {
                                 models.forEach((model: any) => {
                                     emptyItem[model.name] = null;
                                 });
-                                this.ctrlEvent({ controlname: _this.controlInstance.name, action: "selectionchange", data: [emptyItem] });
+                                this.ctrlEvent({ controlname: _this.name, action: "selectionchange", data: [emptyItem] });
                             }
                         }
                         _this.selections.forEach((select: any)=>{
@@ -174,39 +174,37 @@ export class PivotTable extends AppDefaultGrid {
      * @memberof PivotTable
      */
     public async formatGridData(data:any){
-        let columnsInstanceArr: Array<any> = this.controlInstance.allColumns;
+        let columnsInstanceArr: Array<IPSDEGridColumn> = this.controlInstance.getPSDEGridColumns() || [];
         let codelistColumns:Array<any> = [];
         if(columnsInstanceArr && columnsInstanceArr.length>0) {
             for(const columnInstance of columnsInstanceArr) {
-                if(columnInstance.getPSCodeList?.modelref && columnInstance.getPSCodeList?.path){
-                    const codelist = await DynamicService.getInstance(this.context).getAppCodeListJsonData(columnInstance.getPSCodeList.path);
-                    if(codelist){
-                        let codeListColumn = { 
-                            name: columnInstance.name.toLowerCase(),
-                            srfkey: codelist.codeName,
-                            codelistType: codelist.codeListType,
-                        }
-                        if(codelist.orMode && Object.is('STR', codelist.orMode)){
-                            Object.assign(codeListColumn,{
-                                renderMode: 'string',
-                                textSeparator: codelist.textSeparator,
-                                valueSeparator: codelist.valueSeparator,
-                            })
-                        } else if(codelist.orMode && Object.is('NUM', codelist.orMode)){
-                            Object.assign(codeListColumn,{
-                                renderMode: 'number',
-                                textSeparator: codelist.textSeparator,
-                                valueSeparator: ',',
-                            })
-                        } else {
-                            Object.assign(codeListColumn,{
-                                renderMode: 'other',
-                                textSeparator: '、',
-                                valueSeparator: ',',
-                            })
-                        }
-                        codelistColumns.push(codeListColumn);
+                const codelist: IPSAppCodeList = (columnInstance as IPSDEGridFieldColumn).getPSAppCodeList() as IPSAppCodeList;
+                if(codelist && codelist.codeName){
+                    let codeListColumn = { 
+                        name: columnInstance.name.toLowerCase(),
+                        srfkey: codelist.codeName,
+                        codelistType: codelist.codeListType,
                     }
+                    if(codelist.orMode && Object.is('STR', codelist.orMode)){
+                        Object.assign(codeListColumn,{
+                            renderMode: 'string',
+                            textSeparator: codelist.textSeparator,
+                            valueSeparator: codelist.valueSeparator,
+                        })
+                    } else if(codelist.orMode && Object.is('NUM', codelist.orMode)){
+                        Object.assign(codeListColumn,{
+                            renderMode: 'number',
+                            textSeparator: codelist.textSeparator,
+                            valueSeparator: ',',
+                        })
+                    } else {
+                        Object.assign(codeListColumn,{
+                            renderMode: 'other',
+                            textSeparator: '、',
+                            valueSeparator: ',',
+                        })
+                    }
+                    codelistColumns.push(codeListColumn);
                 }
             }
         }

@@ -1478,6 +1478,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> activateByTask(@PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.activate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -1494,6 +1495,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> assignToByTask(@PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.assignTo(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -1510,6 +1512,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> cancelByTask(@PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.cancel(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -1532,6 +1535,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> closeByTask(@PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.close(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -1548,6 +1552,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> confirmStoryChangeByTask(@PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.confirmStoryChange(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -1565,6 +1570,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> createCycleTasksByTask(@PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.createCycleTasks(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -1581,6 +1587,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> deleteEstimateByTask(@PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.deleteEstimate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -1597,6 +1604,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> editEstimateByTask(@PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.editEstimate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -1613,6 +1621,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> finishByTask(@PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.finish(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -1630,6 +1639,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getNextTeamUserByTask(@PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getNextTeamUser(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -1647,6 +1657,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getTeamUserLeftActivityByTask(@PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getTeamUserLeftActivity(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -1664,6 +1675,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getTeamUserLeftStartByTask(@PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getTeamUserLeftStart(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -1681,6 +1693,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getUsernamesByTask(@PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getUsernames(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -1690,6 +1703,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> linkPlanByTask(@PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.linkPlan(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -1706,6 +1720,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> otherUpdateByTask(@PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.otherUpdate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -1722,6 +1737,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> pauseByTask(@PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.pause(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -1738,6 +1754,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> recordEstimateByTask(@PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.recordEstimate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -1754,6 +1771,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> restartByTask(@PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.restart(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -1790,6 +1808,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> sendMessageByTask(@PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.sendMessage(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -1806,6 +1825,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> sendMsgPreProcessByTask(@PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.sendMsgPreProcess(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -1822,6 +1842,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> startByTask(@PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.start(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -1838,6 +1859,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> taskFavoritesByTask(@PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.taskFavorites(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -1847,6 +1869,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> taskForwardByTask(@PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.taskForward(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -1863,6 +1886,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> taskNFavoritesByTask(@PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.taskNFavorites(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -1873,6 +1897,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> updateStoryVersionByTask(@PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.updateStoryVersion(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -2834,6 +2859,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> activateByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.activate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -2850,6 +2876,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> assignToByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.assignTo(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -2866,6 +2893,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> cancelByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.cancel(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -2888,6 +2916,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> closeByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.close(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -2904,6 +2933,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> confirmStoryChangeByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.confirmStoryChange(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -2921,6 +2951,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> createCycleTasksByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.createCycleTasks(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -2937,6 +2968,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> deleteEstimateByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.deleteEstimate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -2953,6 +2985,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> editEstimateByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.editEstimate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -2969,6 +3002,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> finishByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.finish(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -2986,6 +3020,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getNextTeamUserByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getNextTeamUser(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -3003,6 +3038,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getTeamUserLeftActivityByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getTeamUserLeftActivity(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -3020,6 +3056,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getTeamUserLeftStartByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getTeamUserLeftStart(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -3037,6 +3074,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getUsernamesByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getUsernames(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -3046,6 +3084,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> linkPlanByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.linkPlan(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -3062,6 +3101,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> otherUpdateByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.otherUpdate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -3078,6 +3118,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> pauseByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.pause(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -3094,6 +3135,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> recordEstimateByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.recordEstimate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -3110,6 +3152,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> restartByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.restart(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -3146,6 +3189,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> sendMessageByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.sendMessage(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -3162,6 +3206,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> sendMsgPreProcessByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.sendMsgPreProcess(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -3178,6 +3223,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> startByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.start(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -3194,6 +3240,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> taskFavoritesByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.taskFavorites(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -3203,6 +3250,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> taskForwardByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.taskForward(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -3219,6 +3267,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> taskNFavoritesByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.taskNFavorites(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -3229,6 +3278,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> updateStoryVersionByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.updateStoryVersion(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -4190,6 +4240,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> activateByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.activate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -4206,6 +4257,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> assignToByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.assignTo(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -4222,6 +4274,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> cancelByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.cancel(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -4244,6 +4297,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> closeByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.close(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -4260,6 +4314,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> confirmStoryChangeByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.confirmStoryChange(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -4277,6 +4332,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> createCycleTasksByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.createCycleTasks(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -4293,6 +4349,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> deleteEstimateByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.deleteEstimate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -4309,6 +4366,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> editEstimateByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.editEstimate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -4325,6 +4383,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> finishByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.finish(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -4342,6 +4401,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getNextTeamUserByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getNextTeamUser(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -4359,6 +4419,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getTeamUserLeftActivityByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getTeamUserLeftActivity(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -4376,6 +4437,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getTeamUserLeftStartByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getTeamUserLeftStart(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -4393,6 +4455,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getUsernamesByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getUsernames(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -4402,6 +4465,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> linkPlanByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.linkPlan(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -4418,6 +4482,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> otherUpdateByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.otherUpdate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -4434,6 +4499,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> pauseByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.pause(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -4450,6 +4516,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> recordEstimateByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.recordEstimate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -4466,6 +4533,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> restartByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.restart(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -4502,6 +4570,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> sendMessageByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.sendMessage(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -4518,6 +4587,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> sendMsgPreProcessByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.sendMsgPreProcess(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -4534,6 +4604,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> startByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.start(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -4550,6 +4621,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> taskFavoritesByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.taskFavorites(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -4559,6 +4631,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> taskForwardByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.taskForward(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -4575,6 +4648,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> taskNFavoritesByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.taskNFavorites(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -4585,6 +4659,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> updateStoryVersionByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.updateStoryVersion(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -5546,6 +5621,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> activateByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.activate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -5562,6 +5638,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> assignToByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.assignTo(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -5578,6 +5655,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> cancelByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.cancel(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -5600,6 +5678,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> closeByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.close(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -5616,6 +5695,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> confirmStoryChangeByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.confirmStoryChange(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -5633,6 +5713,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> createCycleTasksByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.createCycleTasks(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -5649,6 +5730,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> deleteEstimateByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.deleteEstimate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -5665,6 +5747,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> editEstimateByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.editEstimate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -5681,6 +5764,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> finishByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.finish(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -5698,6 +5782,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getNextTeamUserByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getNextTeamUser(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -5715,6 +5800,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getTeamUserLeftActivityByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getTeamUserLeftActivity(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -5732,6 +5818,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getTeamUserLeftStartByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getTeamUserLeftStart(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -5749,6 +5836,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getUsernamesByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getUsernames(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -5758,6 +5846,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> linkPlanByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.linkPlan(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -5774,6 +5863,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> otherUpdateByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.otherUpdate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -5790,6 +5880,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> pauseByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.pause(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -5806,6 +5897,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> recordEstimateByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.recordEstimate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -5822,6 +5914,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> restartByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.restart(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -5858,6 +5951,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> sendMessageByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.sendMessage(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -5874,6 +5968,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> sendMsgPreProcessByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.sendMsgPreProcess(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -5890,6 +5985,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> startByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.start(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -5906,6 +6002,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> taskFavoritesByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.taskFavorites(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -5915,6 +6012,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> taskForwardByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.taskForward(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -5931,6 +6029,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> taskNFavoritesByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.taskNFavorites(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -5941,6 +6040,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> updateStoryVersionByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.updateStoryVersion(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -6902,6 +7002,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> activateByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.activate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -6918,6 +7019,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> assignToByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.assignTo(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -6934,6 +7036,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> cancelByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.cancel(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -6956,6 +7059,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> closeByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.close(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -6972,6 +7076,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> confirmStoryChangeByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.confirmStoryChange(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -6989,6 +7094,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> createCycleTasksByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.createCycleTasks(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -7005,6 +7111,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> deleteEstimateByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.deleteEstimate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -7021,6 +7128,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> editEstimateByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.editEstimate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -7037,6 +7145,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> finishByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.finish(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -7054,6 +7163,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getNextTeamUserByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getNextTeamUser(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -7071,6 +7181,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getTeamUserLeftActivityByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getTeamUserLeftActivity(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -7088,6 +7199,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getTeamUserLeftStartByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getTeamUserLeftStart(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -7105,6 +7217,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getUsernamesByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getUsernames(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -7114,6 +7227,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> linkPlanByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.linkPlan(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -7130,6 +7244,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> otherUpdateByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.otherUpdate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -7146,6 +7261,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> pauseByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.pause(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -7162,6 +7278,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> recordEstimateByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.recordEstimate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -7178,6 +7295,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> restartByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.restart(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -7214,6 +7332,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> sendMessageByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.sendMessage(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -7230,6 +7349,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> sendMsgPreProcessByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.sendMsgPreProcess(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -7246,6 +7366,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> startByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.start(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -7262,6 +7383,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> taskFavoritesByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.taskFavorites(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -7271,6 +7393,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> taskForwardByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.taskForward(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -7287,6 +7410,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> taskNFavoritesByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.taskNFavorites(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -7297,6 +7421,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> updateStoryVersionByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.updateStoryVersion(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -8258,6 +8383,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> activateByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.activate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -8274,6 +8400,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> assignToByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.assignTo(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -8290,6 +8417,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> cancelByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.cancel(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -8312,6 +8440,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> closeByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.close(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -8328,6 +8457,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> confirmStoryChangeByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.confirmStoryChange(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -8345,6 +8475,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> createCycleTasksByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.createCycleTasks(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -8361,6 +8492,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> deleteEstimateByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.deleteEstimate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -8377,6 +8509,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> editEstimateByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.editEstimate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -8393,6 +8526,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> finishByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.finish(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -8410,6 +8544,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getNextTeamUserByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getNextTeamUser(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -8427,6 +8562,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getTeamUserLeftActivityByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getTeamUserLeftActivity(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -8444,6 +8580,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getTeamUserLeftStartByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getTeamUserLeftStart(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -8461,6 +8598,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getUsernamesByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getUsernames(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -8470,6 +8608,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> linkPlanByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.linkPlan(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -8486,6 +8625,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> otherUpdateByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.otherUpdate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -8502,6 +8642,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> pauseByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.pause(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -8518,6 +8659,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> recordEstimateByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.recordEstimate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -8534,6 +8676,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> restartByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.restart(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -8570,6 +8713,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> sendMessageByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.sendMessage(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -8586,6 +8730,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> sendMsgPreProcessByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.sendMsgPreProcess(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -8602,6 +8747,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> startByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.start(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -8618,6 +8764,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> taskFavoritesByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.taskFavorites(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -8627,6 +8774,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> taskForwardByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.taskForward(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -8643,6 +8791,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> taskNFavoritesByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.taskNFavorites(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -8653,6 +8802,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> updateStoryVersionByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.updateStoryVersion(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -9614,6 +9764,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> activateByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.activate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -9630,6 +9781,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> assignToByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.assignTo(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -9646,6 +9798,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> cancelByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.cancel(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -9668,6 +9821,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> closeByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.close(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -9684,6 +9838,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> confirmStoryChangeByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.confirmStoryChange(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -9701,6 +9856,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> createCycleTasksByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.createCycleTasks(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -9717,6 +9873,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> deleteEstimateByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.deleteEstimate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -9733,6 +9890,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> editEstimateByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.editEstimate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -9749,6 +9907,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> finishByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.finish(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -9766,6 +9925,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getNextTeamUserByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getNextTeamUser(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -9783,6 +9943,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getTeamUserLeftActivityByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getTeamUserLeftActivity(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -9800,6 +9961,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getTeamUserLeftStartByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getTeamUserLeftStart(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -9817,6 +9979,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getUsernamesByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getUsernames(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -9826,6 +9989,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> linkPlanByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.linkPlan(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -9842,6 +10006,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> otherUpdateByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.otherUpdate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -9858,6 +10023,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> pauseByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.pause(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -9874,6 +10040,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> recordEstimateByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.recordEstimate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -9890,6 +10057,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> restartByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.restart(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -9926,6 +10094,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> sendMessageByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.sendMessage(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -9942,6 +10111,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> sendMsgPreProcessByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.sendMsgPreProcess(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -9958,6 +10128,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> startByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.start(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -9974,6 +10145,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> taskFavoritesByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.taskFavorites(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -9983,6 +10155,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> taskForwardByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.taskForward(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -9999,6 +10172,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> taskNFavoritesByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.taskNFavorites(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -10009,6 +10183,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> updateStoryVersionByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.updateStoryVersion(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -10970,6 +11145,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> activateByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.activate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -10986,6 +11162,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> assignToByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.assignTo(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -11002,6 +11179,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> cancelByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.cancel(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -11024,6 +11202,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> closeByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.close(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -11040,6 +11219,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> confirmStoryChangeByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.confirmStoryChange(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -11057,6 +11237,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> createCycleTasksByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.createCycleTasks(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -11073,6 +11254,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> deleteEstimateByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.deleteEstimate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -11089,6 +11271,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> editEstimateByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.editEstimate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -11105,6 +11288,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> finishByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.finish(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -11122,6 +11306,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getNextTeamUserByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getNextTeamUser(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -11139,6 +11324,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getTeamUserLeftActivityByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getTeamUserLeftActivity(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -11156,6 +11342,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getTeamUserLeftStartByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getTeamUserLeftStart(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -11173,6 +11360,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> getUsernamesByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.getUsernames(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -11182,6 +11370,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> linkPlanByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.linkPlan(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -11198,6 +11387,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> otherUpdateByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.otherUpdate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -11214,6 +11404,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> pauseByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.pause(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -11230,6 +11421,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> recordEstimateByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.recordEstimate(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -11246,6 +11438,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> restartByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.restart(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -11282,6 +11475,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> sendMessageByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.sendMessage(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -11298,6 +11492,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> sendMsgPreProcessByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.sendMsgPreProcess(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -11314,6 +11509,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> startByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.start(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -11330,6 +11526,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> taskFavoritesByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.taskFavorites(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -11339,6 +11536,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> taskForwardByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.taskForward(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -11355,6 +11553,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> taskNFavoritesByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.taskNFavorites(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
@@ -11365,6 +11564,7 @@ public class SubTaskResource {
     public ResponseEntity<SubTaskDTO> updateStoryVersionByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
         domain.setParent(task_id);
+        domain.setId(subtask_id);
         domain = taskService.updateStoryVersion(domain) ;
         subtaskdto = subtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);

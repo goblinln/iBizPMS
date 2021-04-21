@@ -2,18 +2,11 @@
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEUSERROLES/ProductTeam_Maintain.json",
   "name" : "产品团队维护",
   "getPSDEUserRoleOPPrivs" : [ {
-    "dataAccessAction" : "READ",
-    "name" : "ProductTeam_Maintain_READ",
+    "dataAccessAction" : "DELETE",
+    "name" : "ProductTeam_Maintain_DELETE",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
-    }
-  }, {
-    "dataAccessAction" : "UPDATE",
-    "name" : "ProductTeam_Maintain_UPDATE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "DELETE"
     }
   }, {
     "dataAccessAction" : "CREATE",
@@ -23,11 +16,18 @@
       "id" : "CREATE"
     }
   }, {
-    "dataAccessAction" : "DELETE",
-    "name" : "ProductTeam_Maintain_DELETE",
+    "dataAccessAction" : "UPDATE",
+    "name" : "ProductTeam_Maintain_UPDATE",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "UPDATE"
+    }
+  }, {
+    "dataAccessAction" : "READ",
+    "name" : "ProductTeam_Maintain_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
     }
   } ],
   "roleTag" : "ProductTeam_Maintain",

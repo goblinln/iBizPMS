@@ -42,6 +42,7 @@ export default [
     'deleted',
     'lines',
     'substatus',
+    'bugsn',
     'org',
     'buildproject',
     'id',
@@ -77,5 +78,4 @@ export default [
     'project',
     'task',
     'testtask',
-    'bugsn',
 ];

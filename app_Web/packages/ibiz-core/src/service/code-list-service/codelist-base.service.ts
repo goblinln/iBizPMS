@@ -141,6 +141,7 @@ export class CodeListServiceBase {
                 text: element.text,
                 value: element.value,
                 id: element.value,
+                color: element.color,
                 codename: element.codeName
             }
             if (element.data) {

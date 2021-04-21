@@ -2144,7 +2144,7 @@
           "paramValue" : "待定"
         } ],
         "notMode" : false,
-        "id" : "3ff46e57f16c42b198dac51894e4b23f"
+        "id" : "9207623f86872f5e1c36a7d70484b208"
       },
       "getSrcPSDELogicNode" : {
         "modelref" : true,
@@ -2464,6 +2464,13 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEUSERROLES/ProductPlan_Maintain.json",
     "name" : "产品计划维护",
     "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "CREATE",
+      "name" : "ProductPlan_Maintain_CREATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CREATE"
+      }
+    }, {
       "dataAccessAction" : "READ",
       "name" : "ProductPlan_Maintain_READ",
       "getPSDEOPPriv" : {
@@ -2483,13 +2490,6 @@
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "DELETE"
-      }
-    }, {
-      "dataAccessAction" : "CREATE",
-      "name" : "ProductPlan_Maintain_CREATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "CREATE"
       }
     } ],
     "roleTag" : "ProductPlan_Maintain",

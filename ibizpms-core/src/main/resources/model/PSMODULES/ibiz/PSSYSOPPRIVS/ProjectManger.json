@@ -3,10 +3,70 @@
   "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProjectManger.json",
   "name" : "项目经理",
   "getPSSysUserRoleDatas" : [ {
-    "name" : "项目经理-IBZ_DOCLIBMODULE[文档模块管理]",
+    "name" : "项目经理-ZT_PROJECT[项目管理（当前机构）]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEUSERROLES/DocLibModule_Manage.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Manage_CO.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    }
+  }, {
+    "name" : "项目经理-ZT_DOCLIB[文档库查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/DocLib_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
+    }
+  }, {
+    "name" : "项目经理-ZT_PROJECT[项目查看（当前机构）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_CO.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    }
+  }, {
+    "name" : "项目经理-ZT_DOC[文档维护]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEUSERROLES/Doc_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
+    }
+  }, {
+    "name" : "项目经理-ZT_DOCLIB[文档库维护]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/DocLib_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
+    }
+  }, {
+    "name" : "项目经理-IBZ_PROJECTMODULE[任务模块查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEUSERROLES/ProjectModule_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+    }
+  }, {
+    "name" : "项目经理-IBZ_DOCLIBMODULE[文档模块维护]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEUSERROLES/DocLibModule_Maintain.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
@@ -33,16 +93,6 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
     }
   }, {
-    "name" : "项目经理-ZT_DOC[文档维护]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEUSERROLES/Doc_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
-    }
-  }, {
     "name" : "项目经理-ZT_PROJECT[项目维护（当前机构）]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -51,6 +101,16 @@
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    }
+  }, {
+    "name" : "项目经理-IBZ_DOCLIBMODULE[文档模块查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEUSERROLES/DocLibModule_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
     }
   }, {
     "name" : "项目经理-IBZ_PROJECTMODULE[任务模块管理]",
@@ -73,74 +133,14 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
     }
   }, {
-    "name" : "项目经理-IBZ_DOCLIBMODULE[文档模块查看]",
+    "name" : "项目经理-IBZ_DOCLIBMODULE[文档模块管理]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEUSERROLES/DocLibModule_Read.json"
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEUSERROLES/DocLibModule_Manage.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
-    }
-  }, {
-    "name" : "项目经理-IBZ_PROJECTMODULE[任务模块查看]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEUSERROLES/ProjectModule_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
-    }
-  }, {
-    "name" : "项目经理-ZT_PROJECT[项目管理（当前机构）]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Manage_CO.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
-    }
-  }, {
-    "name" : "项目经理-ZT_DOCLIB[文档库维护]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/DocLib_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
-    }
-  }, {
-    "name" : "项目经理-ZT_PROJECT[项目查看（当前机构）]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_CO.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
-    }
-  }, {
-    "name" : "项目经理-IBZ_DOCLIBMODULE[文档模块维护]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEUSERROLES/DocLibModule_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
-    }
-  }, {
-    "name" : "项目经理-ZT_DOCLIB[文档库查看]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/DocLib_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
     }
   } ],
   "getPSSysUserRoleReses" : [ {

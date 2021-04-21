@@ -2,7 +2,9 @@
 import { Component, Watch } from 'vue-property-decorator';
 import { VueLifeCycleProcessing,AppControlBase } from 'ibiz-vue';
 import { AppListBase } from 'ibiz-vue/src/components/control/app-common-control/app-list-base';
-import { AppListService, AppCenterService } from 'ibiz-vue';
+import { AppListService } from 'ibiz-vue';
+import { IPSAppDEListView,IPSDEList, IPSDEListDataItem } from '@ibiz/dynamic-model-api';
+import { ModelTool } from 'ibiz-core';
 import '../plugin-style.less';
 
 /**
@@ -16,6 +18,7 @@ import '../plugin-style.less';
 @Component({})
 @VueLifeCycleProcessing()
 export class ActionHistory extends AppListBase {
+
 
     /**
      * 行为类型代码表
@@ -48,25 +51,6 @@ export class ActionHistory extends AppListBase {
     ];
 
     /**
-     * 列表部件挂载
-     * 
-     * @memberof ActionHistory
-     */
-    public ctrlMounted() {
-        if (AppCenterService.getMessageCenter()) {
-            const _this: any = this;
-            _this.appStateEvent = AppCenterService.getMessageCenter().subscribe(({ name, action, data }: { name: string, action: string, data: any }) => {
-                if (name && this.context && this.context.objecttype && Object.is(this.context.objecttype.toLowerCase(), name.toLowerCase())) {
-                    if (Object.is(action, 'appRefresh')) {
-                        _this.refresh(data);
-                    }
-                }
-            })
-        }
-        super.ctrlMounted();
-    }
-
-    /**
      * 列表数据加载 根据Action加载对应History
      *
      * @public
@@ -82,7 +66,10 @@ export class ActionHistory extends AppListBase {
         context.action = item.id;
         let items: any[] = [];
         try {
-            let _list: any = this.controlInstance.getView().getControl("history");
+            let listView = this.controlInstance?.getParentPSModelObject() as IPSAppDEListView;
+            let _list = ModelTool.findPSControlByName("history",listView.getPSControls()) as IPSDEList;
+            let appde = _list.getPSAppDataEntity();
+            await appde?.fill();
             let service: AppListService = new AppListService(_list);
             await service.loaded(_list);
             const response = await service.search('FetchDefault', {...context}, arg, this.showBusyIndicator);
@@ -179,7 +166,7 @@ export class ActionHistory extends AppListBase {
                     }
                 }
                 if(this.items.length > 0){
-                    this.listModel = this.controlInstance.allListDataItems;
+                    this.listModel = this.controlInstance.getPSDEListDataItems() as IPSDEListDataItem[];
                     this.formatData();
                 }
             },
@@ -199,11 +186,11 @@ export class ActionHistory extends AppListBase {
      * @protected
      * @memberof ActionHistory
      */
-    protected formatData(): void {
+    protected async formatData(){
         if (this.actionType.length === 0) {
-            const codeList2 = this.$store.getters.getCodeList('Action__type');
+            const codeList2 = await this.codeListService.getDataItems({ tag: 'Action__type', type: 'STATIC', context: this.context });
             if (codeList2) {
-                this.actionType.push(...codeList2.items);
+                this.actionType.push(...codeList2);
             }
         }
         this.items.forEach((item: any) => {
@@ -223,10 +210,10 @@ export class ActionHistory extends AppListBase {
      */
     public listItemCodelist(item: any){
         if(this.listModel && this.listModel.length > 0){
-            this.listModel.forEach((listItem:any)=>{
+            this.listModel.forEach((listItem:IPSDEListDataItem)=>{
                 for(const key in item){
-                    if(Object.is(key,listItem.name) && listItem.getFrontPSCodeList){  
-                        this.codeListService.getDataItems({tag: listItem.getFrontPSCodeList.codeName, type:listItem.getFrontPSCodeList.codeListType}).then((res: any)=>{
+                    if(Object.is(key,listItem.name) && listItem.getFrontPSCodeList()){  
+                        this.codeListService.getDataItems({tag: listItem.getFrontPSCodeList()?.codeName, type:listItem.getFrontPSCodeList()?.codeListType}).then((res: any)=>{
                             if(res){
                                 const data = res.find((code:any) => Object.is(code.value, item[key]));
                                 if(data){
@@ -234,7 +221,7 @@ export class ActionHistory extends AppListBase {
                                 }
                             }
                         }).catch((error: any)=>{
-                            console.log(`----${listItem.getFrontPSCodeList.codeName}----代码表不存在`);
+                            console.log(`----${listItem.getFrontPSCodeList()?.codeName}----代码表不存在`);
                         });
                     }
                 }
@@ -424,6 +411,20 @@ export class ActionHistory extends AppListBase {
     }
 
     /**
+     * 部件挂载
+     *
+     * @memberof ActionHistory
+     */
+    public ctrlMounted(args?: any) {
+        this.ctrlEvent({
+            controlname: 'history',
+            action: 'controlIsMounted',
+            data: true
+        })
+        super.ctrlMounted();
+    }
+
+    /**
      * 绘制
      * 
      * @memberof ActionHistory
@@ -442,6 +443,7 @@ export class ActionHistory extends AppListBase {
             </div>
         }
     }
+
 
 }
 

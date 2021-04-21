@@ -1062,13 +1062,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEUSERROLES/CaseStep_Maintain.json",
     "name" : "用例步骤维护",
     "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "CREATE",
-      "name" : "CaseStep_Maintain_CREATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "CREATE"
-      }
-    }, {
       "dataAccessAction" : "DELETE",
       "name" : "CaseStep_Maintain_DELETE",
       "getPSDEOPPriv" : {
@@ -1076,11 +1069,11 @@
         "id" : "DELETE"
       }
     }, {
-      "dataAccessAction" : "READ",
-      "name" : "CaseStep_Maintain_READ",
+      "dataAccessAction" : "CREATE",
+      "name" : "CaseStep_Maintain_CREATE",
       "getPSDEOPPriv" : {
         "modelref" : true,
-        "id" : "READ"
+        "id" : "CREATE"
       }
     }, {
       "dataAccessAction" : "UPDATE",
@@ -1088,6 +1081,13 @@
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "UPDATE"
+      }
+    }, {
+      "dataAccessAction" : "READ",
+      "name" : "CaseStep_Maintain_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
       }
     } ],
     "roleTag" : "CaseStep_Maintain",

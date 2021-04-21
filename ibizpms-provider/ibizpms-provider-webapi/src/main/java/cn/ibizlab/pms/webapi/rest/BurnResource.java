@@ -306,6 +306,7 @@ public class BurnResource {
     public ResponseEntity<BurnDTO> computeBurnByProject(@PathVariable("project_id") Long project_id, @PathVariable("burn_id") String burn_id, @RequestBody BurnDTO burndto) {
         Burn domain = burnMapping.toDomain(burndto);
         domain.setProject(project_id);
+        domain.setId(burn_id);
         domain = burnService.computeBurn(domain) ;
         burndto = burnMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(burndto);

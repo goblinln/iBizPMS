@@ -2,8 +2,8 @@
   "codeName" : "IBZProBugSeq",
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProBugSeq.json",
   "getKeyPSDEField" : {
-    "name" : "IBZPRO_SEQUENCEID",
-    "codeName" : "IBZProSequenceId"
+    "name" : "IBZPRO_SEQUENCENAME",
+    "codeName" : "IBZProSequenceName"
   },
   "maxValue" : 99999999,
   "minValue" : 1,

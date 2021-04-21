@@ -1189,13 +1189,6 @@
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule/PSDEUSERROLES/LibModule_Maintain.json",
     "name" : "用例库模块维护",
     "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "UPDATE",
-      "name" : "LibModule_Maintain_UPDATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "UPDATE"
-      }
-    }, {
       "dataAccessAction" : "CREATE",
       "name" : "LibModule_Maintain_CREATE",
       "getPSDEOPPriv" : {
@@ -1208,6 +1201,13 @@
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "DELETE"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "LibModule_Maintain_UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
       }
     }, {
       "dataAccessAction" : "READ",

@@ -4,7 +4,7 @@
 
 
     <!--输出实体[ACCOUNTTASKESTIMATE]数据结构 -->
-    <changeSet author="zentao" id="tab-accounttaskestimate-2-1">
+    <changeSet author="zentao" id="tab-accounttaskestimate-1-1">
         <createTable tableName="zt_taskestimate">
                 <column name="DATE" remarks="" type="DATETIME">
                 </column>
@@ -17,7 +17,7 @@
 
 
     <!--输出实体[ZT_ACTION]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_action-21-2">
+    <changeSet author="zentao" id="tab-zt_action-1-2">
         <createTable tableName="zt_action">
                 <column name="EXTRA" remarks="" type="TEXT(65535)">
                 </column>
@@ -77,7 +77,7 @@
 
 
     <!--输出实体[ZT_BRANCH]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_branch-11-4">
+    <changeSet author="zentao" id="tab-zt_branch-1-4">
         <createTable tableName="zt_branch">
                 <column name="NAME" remarks="" type="VARCHAR(255)">
                 </column>
@@ -103,7 +103,7 @@
 
 
     <!--输出实体[ZT_BUG]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_bug-17-5">
+    <changeSet author="zentao" id="tab-zt_bug-1-5">
         <createTable tableName="zt_bug">
                 <column name="SEVERITY" remarks="" type="INT">
                 </column>
@@ -167,6 +167,8 @@
                 </column>
                 <column name="SUBSTATUS" remarks="" type="VARCHAR(30)">
                 </column>
+                <column name="BUGSN" remarks="" type="BIGINT">
+                </column>
                 <column name="ORG" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="ID" remarks="" type="BIGINT">
@@ -220,8 +222,6 @@
                 </column>
                 <column name="TESTTASK" remarks="" type="BIGINT">
                 </column>
-                <column name="BUGSN" remarks="" type="BIGINT">
-                </column>
         </createTable>
     </changeSet>
 
@@ -230,7 +230,7 @@
 
 
     <!--输出实体[ZT_BUILD]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_build-9-7">
+    <changeSet author="zentao" id="tab-zt_build-1-7">
         <createTable tableName="zt_build">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
@@ -272,7 +272,7 @@
 
 
     <!--输出实体[ZT_BURN]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_burn-13-8">
+    <changeSet author="zentao" id="tab-zt_burn-1-8">
         <createTable tableName="zt_burn">
                 <column name="CREATEBY" remarks="" type="VARCHAR(100)">
                 </column>
@@ -299,7 +299,7 @@
 
 
     <!--输出实体[ZT_CASE]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_case-21-9">
+    <changeSet author="zentao" id="tab-zt_case-1-9">
         <createTable tableName="zt_case">
                 <column name="LASTEDITEDDATE" remarks="" type="DATETIME">
                 </column>
@@ -396,7 +396,7 @@
 
 
     <!--输出实体[ZT_CASESTEP]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_casestep-29-11">
+    <changeSet author="zentao" id="tab-zt_casestep-1-11">
         <createTable tableName="zt_casestep">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
@@ -493,7 +493,7 @@
 
 
     <!--输出实体[ZT_CONFIG]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_config-2-15">
+    <changeSet author="zentao" id="tab-zt_config-1-15">
         <createTable tableName="zt_config">
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_CONFIG_ID"/>
@@ -513,7 +513,7 @@
 
 
     <!--输出实体[ZT_CRON]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_cron-2-16">
+    <changeSet author="zentao" id="tab-zt_cron-1-16">
         <createTable tableName="zt_cron">
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_CRON_ID"/>
@@ -571,7 +571,7 @@
 
 
     <!--输出实体[ZT_DOC]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_doc-22-18">
+    <changeSet author="zentao" id="tab-zt_doc-1-18">
         <createTable tableName="zt_doc">
                 <column name="GROUPS" remarks="" type="VARCHAR(255)">
                 </column>
@@ -623,7 +623,7 @@
 
 
     <!--输出实体[ZT_DOCCONTENT]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_doccontent-18-19">
+    <changeSet author="zentao" id="tab-zt_doccontent-1-19">
         <createTable tableName="zt_doccontent">
                 <column name="FILES" remarks="" type="TEXT(65535)">
                 </column>
@@ -655,11 +655,13 @@
 
 
     <!--输出实体[ZT_DOCLIB]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_doclib-23-20">
+    <changeSet author="zentao" id="tab-zt_doclib-1-20">
         <createTable tableName="zt_doclib">
                 <column name="TYPE" remarks="" type="VARCHAR(30)">
                 </column>
                 <column name="COLLECTOR" remarks="" type="TEXT(65535)">
+                </column>
+                <column name="UPDATEMANNAME" remarks="" type="VARCHAR(60)">
                 </column>
                 <column name="MDEPTID" remarks="" type="VARCHAR(100)">
                 </column>
@@ -690,14 +692,12 @@
                 </column>
                 <column name="PRODUCT" remarks="" type="BIGINT">
                 </column>
-                <column name="UPDATEMANNAME" remarks="" type="VARCHAR(60)">
-                </column>
         </createTable>
     </changeSet>
 
 
     <!--输出实体[IBZ_DOCLIBMODULE]数据结构 -->
-    <changeSet author="zentao" id="tab-ibz_doclibmodule-12-21">
+    <changeSet author="zentao" id="tab-ibz_doclibmodule-1-21">
         <createTable tableName="zt_module">
                 <column name="GRADE" remarks="" type="INT">
                 </column>
@@ -789,7 +789,7 @@
 
 
     <!--输出实体[IBZ_EMPLOYEELOAD]数据结构 -->
-    <changeSet author="zentao" id="tab-ibz_employeeload-3-24">
+    <changeSet author="zentao" id="tab-ibz_employeeload-1-24">
         <createTable tableName="ZT_TASK">
                 <column name="NAME" remarks="" type="VARCHAR(100)">
                 </column>
@@ -881,7 +881,7 @@
 
 
     <!--输出实体[ZT_FILE]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_file-20-27">
+    <changeSet author="zentao" id="tab-zt_file-1-27">
         <createTable tableName="zt_file">
                 <column name="PATHNAME" remarks="" type="VARCHAR(100)">
                 </column>
@@ -937,7 +937,7 @@
 
 
     <!--输出实体[ZT_GROUPPRIV]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_grouppriv-2-29">
+    <changeSet author="zentao" id="tab-zt_grouppriv-1-29">
         <createTable tableName="zt_grouppriv">
                 <column name="GROUP" remarks="" type="INT">
                 </column>
@@ -950,7 +950,7 @@
 
 
     <!--输出实体[ZT_HISTORY]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_history-13-30">
+    <changeSet author="zentao" id="tab-zt_history-1-30">
         <createTable tableName="zt_history">
                 <column name="DIFF" remarks="" type="TEXT(16777215)">
                 </column>
@@ -1002,36 +1002,36 @@
 
 
     <!--输出实体[IBZPRO_SEQUENCE]数据结构 -->
-    <changeSet author="zentao" id="tab-ibzpro_sequence-53-32">
+    <changeSet author="zentao" id="tab-ibzpro_sequence-4-32">
         <createTable tableName="T_IBZPRO_SEQUENCE">
+                <column name="CREATEDATE" remarks="" type="DATETIME">
+                </column>
+                <column name="ISENABLE" remarks="" type="INT">
+                </column>
+                <column name="UPDATEDATE" remarks="" type="DATETIME">
+                </column>
+                <column name="DEPTID" remarks="" type="VARCHAR(60)">
+                </column>
+                <column name="INCREMENT" remarks="" type="INT">
+                </column>
                 <column name="IBZPRO_SEQUENCEID" remarks="" type="VARCHAR(100)">
                     <constraints primaryKey="true" primaryKeyName="PK_IBZPRO_SEQUENCE_IBZPRO_SEQU"/>
                 </column>
-                <column name="IBZPRO_SEQUENCENAME" remarks="" type="VARCHAR(200)">
+                <column name="BEGINSEQ" remarks="" type="BIGINT">
                 </column>
-                <column name="CREATEDATE" remarks="" type="DATETIME">
-                </column>
-                <column name="UPDATEDATE" remarks="" type="DATETIME">
+                <column name="YEAR" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="UPDATEMAN" remarks="" type="VARCHAR(60)">
                 </column>
                 <column name="CREATEMAN" remarks="" type="VARCHAR(60)">
                 </column>
+                <column name="CURSEQ" remarks="" type="BIGINT">
+                </column>
+                <column name="IBZPRO_SEQUENCENAME" remarks="" type="VARCHAR(200)">
+                </column>
                 <column name="ORGID" remarks="" type="VARCHAR(60)">
                 </column>
-                <column name="DEPTID" remarks="" type="VARCHAR(60)">
-                </column>
                 <column name="CATEGORY" remarks="" type="VARCHAR(60)">
-                </column>
-                <column name="YEAR" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="ISENABLE" remarks="" type="INT">
-                </column>
-                <column name="BEGINSEQ" remarks="" type="BIGINT">
-                </column>
-                <column name="INCREMENT" remarks="" type="INT">
-                </column>
-                <column name="CURSEQ" remarks="" type="BIGINT">
                 </column>
         </createTable>
     </changeSet>
@@ -1179,7 +1179,7 @@
 
 
     <!--输出实体[IBZ_LOGIN]数据结构 -->
-    <changeSet author="zentao" id="tab-ibz_login-5-37">
+    <changeSet author="zentao" id="tab-ibz_login-1-37">
         <createTable tableName="zt_user">
                 <column name="REALNAME" remarks="" type="VARCHAR(100)">
                 </column>
@@ -1198,7 +1198,7 @@
 
 
     <!--输出实体[IBIZPRO_PRODUCTDAILY]数据结构 -->
-    <changeSet author="zentao" id="tab-ibizpro_productdaily-3-39">
+    <changeSet author="zentao" id="tab-ibizpro_productdaily-1-39">
         <createTable tableName="T_IBIZPRO_PRODUCTDAILY">
                 <column name="END" remarks="" type="DATETIME">
                 </column>
@@ -1232,7 +1232,7 @@
 
 
     <!--输出实体[IBIZPRO_PRODUCTMONTHLY]数据结构 -->
-    <changeSet author="zentao" id="tab-ibizpro_productmonthly-2-40">
+    <changeSet author="zentao" id="tab-ibizpro_productmonthly-1-40">
         <createTable tableName="T_IBIZPRO_PRODUCTMONTHLY">
                 <column name="TASKS" remarks="" type="VARCHAR(2000)">
                 </column>
@@ -1262,7 +1262,7 @@
 
 
     <!--输出实体[IBIZPRO_PRODUCTWEEKLY]数据结构 -->
-    <changeSet author="zentao" id="tab-ibizpro_productweekly-2-41">
+    <changeSet author="zentao" id="tab-ibizpro_productweekly-1-41">
         <createTable tableName="T_IBIZPRO_PRODUCTWEEKLY">
                 <column name="PO" remarks="" type="VARCHAR(100)">
                 </column>
@@ -1296,7 +1296,7 @@
 
 
     <!--输出实体[IBIZPRO_PROJECTDAILY]数据结构 -->
-    <changeSet author="zentao" id="tab-ibizpro_projectdaily-2-42">
+    <changeSet author="zentao" id="tab-ibizpro_projectdaily-1-42">
         <createTable tableName="T_IBIZPRO_PROJECTDAILY">
                 <column name="IBIZPRO_PROJECTDAILYNAME" remarks="" type="VARCHAR(200)">
                 </column>
@@ -1330,7 +1330,7 @@
 
 
     <!--输出实体[IBIZPRO_PROJECTMONTHLY]数据结构 -->
-    <changeSet author="zentao" id="tab-ibizpro_projectmonthly-2-43">
+    <changeSet author="zentao" id="tab-ibizpro_projectmonthly-1-43">
         <createTable tableName="T_IBIZPRO_PROJECTMONTHLY">
                 <column name="IBIZPRO_PROJECTMONTHLYNAME" remarks="" type="VARCHAR(200)">
                 </column>
@@ -1360,7 +1360,7 @@
 
 
     <!--输出实体[IBZPRO_PROJECTWEEKLY]数据结构 -->
-    <changeSet author="zentao" id="tab-ibzpro_projectweekly-2-44">
+    <changeSet author="zentao" id="tab-ibzpro_projectweekly-1-44">
         <createTable tableName="T_IBZPRO_PROJECTWEEKLY">
                 <column name="CREATEDATE" remarks="" type="DATETIME">
                 </column>
@@ -1400,7 +1400,7 @@
 
 
     <!--输出实体[IBZ_AGENT]数据结构 -->
-    <changeSet author="zentao" id="tab-ibz_agent-2-45">
+    <changeSet author="zentao" id="tab-ibz_agent-1-45">
         <createTable tableName="T_IBZ_AGENT">
                 <column name="UPDATEMAN" remarks="" type="VARCHAR(60)">
                 </column>
@@ -1431,7 +1431,7 @@
 
 
     <!--输出实体[IBZ_DAILY]数据结构 -->
-    <changeSet author="zentao" id="tab-ibz_daily-22-47">
+    <changeSet author="zentao" id="tab-ibz_daily-1-47">
         <createTable tableName="T_IBZ_DAILY">
                 <column name="UPDATEDATE" remarks="" type="DATETIME">
                 </column>
@@ -1653,7 +1653,7 @@
 
 
     <!--输出实体[IBZ_PROJECTMEMBER]数据结构 -->
-    <changeSet author="zentao" id="tab-ibz_projectmember-5-57">
+    <changeSet author="zentao" id="tab-ibz_projectmember-1-57">
         <createTable tableName="zt_project">
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_IBZ_PROJECTMEMBER_ID"/>
@@ -1692,7 +1692,7 @@
 
 
     <!--输出实体[IBZ_REPORTLY]数据结构 -->
-    <changeSet author="zentao" id="tab-ibz_reportly-11-60">
+    <changeSet author="zentao" id="tab-ibz_reportly-1-60">
         <createTable tableName="T_IBZ_REPORTLY">
                 <column name="ACCOUNT" remarks="" type="VARCHAR(60)">
                 </column>
@@ -1756,7 +1756,7 @@
 
 
     <!--输出实体[IBZ_WEEKLY]数据结构 -->
-    <changeSet author="zentao" id="tab-ibz_weekly-6-62">
+    <changeSet author="zentao" id="tab-ibz_weekly-1-62">
         <createTable tableName="T_IBZ_WEEKLY">
                 <column name="ISSUBMIT" remarks="" type="VARCHAR(60)">
                 </column>
@@ -1876,7 +1876,7 @@
 
 
     <!--输出实体[ZT_IM_CHATUSER]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_im_chatuser-2-67">
+    <changeSet author="zentao" id="tab-zt_im_chatuser-1-67">
         <createTable tableName="zt_im_chatuser">
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_IM_CHATUSER_ID"/>
@@ -1906,7 +1906,7 @@
 
 
     <!--输出实体[ZT_IM_CLIENT]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_im_client-2-68">
+    <changeSet author="zentao" id="tab-zt_im_client-1-68">
         <createTable tableName="zt_im_client">
                 <column name="EDITEDDATE" remarks="" type="DATETIME">
                 </column>
@@ -1936,7 +1936,7 @@
 
 
     <!--输出实体[ZT_IM_CONFERENCE]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_im_conference-2-69">
+    <changeSet author="zentao" id="tab-zt_im_conference-1-69">
         <createTable tableName="zt_im_conference">
                 <column name="STATUS" remarks="" type="VARCHAR(6)">
                 </column>
@@ -1958,7 +1958,7 @@
 
 
     <!--输出实体[ZT_IM_CONFERENCEACTION]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_im_conferenceaction-2-70">
+    <changeSet author="zentao" id="tab-zt_im_conferenceaction-1-70">
         <createTable tableName="zt_im_conferenceaction">
                 <column name="RID" remarks="" type="VARCHAR(24)">
                 </column>
@@ -1976,7 +1976,7 @@
 
 
     <!--输出实体[ZT_IM_MESSAGE]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_im_message-2-71">
+    <changeSet author="zentao" id="tab-zt_im_message-1-71">
         <createTable tableName="zt_im_message">
                 <column name="USER" remarks="" type="VARCHAR(30)">
                 </column>
@@ -2006,7 +2006,7 @@
 
 
     <!--输出实体[ZT_IM_MESSAGESTATUS]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_im_messagestatus-2-72">
+    <changeSet author="zentao" id="tab-zt_im_messagestatus-1-72">
         <createTable tableName="zt_im_messagestatus">
                 <column name="MESSAGE" remarks="" type="INT">
                 </column>
@@ -2019,7 +2019,7 @@
 
 
     <!--输出实体[ZT_IM_QUEUE]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_im_queue-2-73">
+    <changeSet author="zentao" id="tab-zt_im_queue-1-73">
         <createTable tableName="zt_im_queue">
                 <column name="PROCESSDATE" remarks="" type="DATETIME">
                 </column>
@@ -2119,7 +2119,7 @@
 
 
     <!--输出实体[ZT_LANG]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_lang-2-76">
+    <changeSet author="zentao" id="tab-zt_lang-1-76">
         <createTable tableName="zt_lang">
                 <column name="MODULE" remarks="" type="VARCHAR(30)">
                 </column>
@@ -2141,7 +2141,7 @@
 
 
     <!--输出实体[ZT_LOG]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_log-2-77">
+    <changeSet author="zentao" id="tab-zt_log-1-77">
         <createTable tableName="zt_log">
                 <column name="URL" remarks="" type="VARCHAR(255)">
                 </column>
@@ -2170,7 +2170,7 @@
 
 
     <!--输出实体[ZT_NOTIFY]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_notify-2-79">
+    <changeSet author="zentao" id="tab-zt_notify-1-79">
         <createTable tableName="zt_notify">
                 <column name="CREATEDDATE" remarks="" type="DATETIME">
                 </column>
@@ -2204,7 +2204,7 @@
 
 
     <!--输出实体[IBZ_PRODUCTTEAM]数据结构 -->
-    <changeSet author="zentao" id="tab-ibz_productteam-16-80">
+    <changeSet author="zentao" id="tab-ibz_productteam-1-80">
         <createTable tableName="zt_team">
                 <column name="TEAMSTATUS" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2271,7 +2271,7 @@
 
 
     <!--输出实体[IBZ_PRODUCTLIFE]数据结构 -->
-    <changeSet author="zentao" id="tab-ibz_productlife-5-82">
+    <changeSet author="zentao" id="tab-ibz_productlife-1-82">
         <createTable tableName="T_IBZ_PRODUCTLIFE">
                 <column name="BRANCH" remarks="" type="VARCHAR(8)">
                 </column>
@@ -2312,7 +2312,7 @@
 
 
     <!--输出实体[ZT_PRODUCTPLAN]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_productplan-21-84">
+    <changeSet author="zentao" id="tab-zt_productplan-1-84">
         <createTable tableName="zt_productplan">
                 <column name="TITLE" remarks="" type="VARCHAR(90)">
                 </column>
@@ -2362,7 +2362,7 @@
 
 
     <!--输出实体[ZT_PROJECTPRODUCT]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_projectproduct-12-89">
+    <changeSet author="zentao" id="tab-zt_projectproduct-1-89">
         <createTable tableName="zt_projectproduct">
                 <column name="CREATEBY" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2388,7 +2388,7 @@
 
 
     <!--输出实体[ZT_PROJECTSTORY]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_projectstory-4-91">
+    <changeSet author="zentao" id="tab-zt_projectstory-1-91">
         <createTable tableName="zt_projectstory">
                 <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2419,7 +2419,7 @@
 
 
     <!--输出实体[ZT_RELATION]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_relation-2-94">
+    <changeSet author="zentao" id="tab-zt_relation-1-94">
         <createTable tableName="zt_relation">
                 <column name="BID" remarks="" type="INT">
                 </column>
@@ -2451,7 +2451,7 @@
 
 
     <!--输出实体[ZT_RELEASE]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_release-11-95">
+    <changeSet author="zentao" id="tab-zt_release-1-95">
         <createTable tableName="zt_release">
                 <column name="STORIES" remarks="" type="TEXT(65535)">
                 </column>
@@ -2535,7 +2535,7 @@
 
 
     <!--输出实体[ZT_REPOBRANCH]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_repobranch-2-97">
+    <changeSet author="zentao" id="tab-zt_repobranch-1-97">
         <createTable tableName="zt_repobranch">
                 <column name="REVISION" remarks="" type="INT">
                 </column>
@@ -2548,7 +2548,7 @@
 
 
     <!--输出实体[ZT_REPOFILES]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_repofiles-2-98">
+    <changeSet author="zentao" id="tab-zt_repofiles-1-98">
         <createTable tableName="zt_repofiles">
                 <column name="PATH" remarks="" type="VARCHAR(255)">
                 </column>
@@ -2570,7 +2570,7 @@
 
 
     <!--输出实体[ZT_REPOHISTORY]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_repohistory-2-99">
+    <changeSet author="zentao" id="tab-zt_repohistory-1-99">
         <createTable tableName="zt_repohistory">
                 <column name="COMMITTER" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2592,7 +2592,7 @@
 
 
     <!--输出实体[ZT_SCORE]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_score-2-100">
+    <changeSet author="zentao" id="tab-zt_score-1-100">
         <createTable tableName="zt_score">
                 <column name="METHOD" remarks="" type="VARCHAR(30)">
                 </column>
@@ -2621,7 +2621,7 @@
 
 
     <!--输出实体[ZT_STORYSPEC]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_storyspec-19-102">
+    <changeSet author="zentao" id="tab-zt_storyspec-1-102">
         <createTable tableName="zt_storyspec">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2646,7 +2646,7 @@
 
 
     <!--输出实体[ZT_STORYSTAGE]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_storystage-19-103">
+    <changeSet author="zentao" id="tab-zt_storystage-1-103">
         <createTable tableName="zt_storystage">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2669,7 +2669,7 @@
 
 
     <!--输出实体[ZT_SUITECASE]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_suitecase-10-104">
+    <changeSet author="zentao" id="tab-zt_suitecase-1-104">
         <createTable tableName="zt_suitecase">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2706,7 +2706,7 @@
 
 
     <!--输出实体[SYS_UPDATE_FEATURES]数据结构 -->
-    <changeSet author="zentao" id="tab-sys_update_features-4-105">
+    <changeSet author="zentao" id="tab-sys_update_features-1-105">
         <createTable tableName="T_SYS_UPDATE_FEATURES">
                 <column name="SYS_UPDATE_FEATURESNAME" remarks="" type="VARCHAR(200)">
                 </column>
@@ -2736,7 +2736,7 @@
 
 
     <!--输出实体[SYS_UPDATE_LOG]数据结构 -->
-    <changeSet author="zentao" id="tab-sys_update_log-3-106">
+    <changeSet author="zentao" id="tab-sys_update_log-1-106">
         <createTable tableName="T_SYS_UPDATE_LOG">
                 <column name="UPDATEDATE" remarks="" type="DATETIME">
                 </column>
@@ -2792,7 +2792,7 @@
 
 
     <!--输出实体[ZT_TESTREPORT]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_testreport-9-115">
+    <changeSet author="zentao" id="tab-zt_testreport-1-115">
         <createTable tableName="zt_testreport">
                 <column name="OBJECTID" remarks="" type="INT">
                 </column>
@@ -2844,7 +2844,7 @@
 
 
     <!--输出实体[ZT_TESTRESULT]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_testresult-18-116">
+    <changeSet author="zentao" id="tab-zt_testresult-1-116">
         <createTable tableName="zt_testresult">
                 <column name="CREATEBY" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2884,7 +2884,7 @@
 
 
     <!--输出实体[ZT_TESTRUN]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_testrun-13-117">
+    <changeSet author="zentao" id="tab-zt_testrun-1-117">
         <createTable tableName="zt_testrun">
                 <column name="LASTRUNRESULT" remarks="" type="VARCHAR(30)">
                 </column>
@@ -2921,7 +2921,7 @@
 
 
     <!--输出实体[ZT_TESTTASK]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_testtask-11-119">
+    <changeSet author="zentao" id="tab-zt_testtask-1-119">
         <createTable tableName="zt_testtask">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2969,12 +2969,14 @@
 
 
     <!--输出实体[ZT_TODO]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_todo-42-120">
+    <changeSet author="zentao" id="tab-zt_todo-1-120">
         <createTable tableName="zt_todo">
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_TODO_ID"/>
                 </column>
                 <column name="ACCOUNT" remarks="" type="VARCHAR(30)">
+                </column>
+                <column name="TODOSN" remarks="" type="BIGINT">
                 </column>
                 <column name="CLOSEDDATE" remarks="" type="DATETIME">
                 </column>
@@ -2986,6 +2988,10 @@
                 </column>
                 <column name="DESC" remarks="" type="TEXT(65535)">
                 </column>
+                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="ORG" remarks="" type="VARCHAR(100)">
+                </column>
                 <column name="FINISHEDBY" remarks="" type="VARCHAR(30)">
                 </column>
                 <column name="BEGIN" remarks="" type="INT">
@@ -2993,6 +2999,8 @@
                 <column name="IDVALUE" remarks="" type="BIGINT">
                 </column>
                 <column name="ASSIGNEDBY" remarks="" type="VARCHAR(30)">
+                </column>
+                <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="FINISHEDDATE" remarks="" type="DATETIME">
                 </column>
@@ -3016,14 +3024,6 @@
                 </column>
                 <column name="CONFIG" remarks="" type="VARCHAR(255)">
                 </column>
-                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="ORG" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="DEPT" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="TODOSN" remarks="" type="BIGINT">
-                </column>
         </createTable>
     </changeSet>
 
@@ -3032,7 +3032,7 @@
 
 
     <!--输出实体[ZT_USERCONTACT]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_usercontact-16-122">
+    <changeSet author="zentao" id="tab-zt_usercontact-1-122">
         <createTable tableName="zt_usercontact">
                 <column name="USERLIST" remarks="" type="TEXT(65535)">
                 </column>
@@ -3054,7 +3054,7 @@
 
 
     <!--输出实体[ZT_USERGROUP]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_usergroup-2-123">
+    <changeSet author="zentao" id="tab-zt_usergroup-1-123">
         <createTable tableName="zt_usergroup">
                 <column name="ACCOUNT" remarks="" type="VARCHAR(30)">
                 </column>
@@ -3087,7 +3087,7 @@
 
 
     <!--输出实体[ZT_USERTPL]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_usertpl-16-125">
+    <changeSet author="zentao" id="tab-zt_usertpl-1-125">
         <createTable tableName="zt_usertpl">
                 <column name="TITLE" remarks="" type="VARCHAR(150)">
                 </column>
@@ -3113,7 +3113,7 @@
 
 
     <!--输出实体[ZT_USERVIEW]数据结构 -->
-    <changeSet author="zentao" id="tab-zt_userview-2-126">
+    <changeSet author="zentao" id="tab-zt_userview-1-126">
         <createTable tableName="zt_userview">
                 <column name="PRODUCTS" remarks="" type="TEXT(16777215)">
                 </column>

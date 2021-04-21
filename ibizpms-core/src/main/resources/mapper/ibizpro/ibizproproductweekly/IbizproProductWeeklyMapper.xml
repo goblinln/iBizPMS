@@ -5,7 +5,7 @@
 	
 	<!-- 无视图模式 -->
 	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`BEGINDATESTATS`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATE`, t1.`ENDDATESTATS`, t1.`IBIZPRO_PRODUCTDAILYNAME`, t1.`IBIZPRO_PRODUCTWEEKLYID`, t1.`PO`, t1.`PRODUCT`, t11.`NAME` AS `PRODUCTNAME`, t1.`TASKS`, t1.`TOTALESTIMATES`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBIZPRO_PRODUCTWEEKLY` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`ID`   ]]>
+        <![CDATA[ SELECT t1.`BEGINDATESTATS`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATE`, t1.`ENDDATESTATS`, t1.`IBIZPRO_PRODUCTDAILYNAME`, t1.`IBIZPRO_PRODUCTWEEKLYID`, t1.`PO`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`TASKS`, t1.`TOTALESTIMATES`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBIZPRO_PRODUCTWEEKLY` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id`   ]]>
     </sql>
 
 	
@@ -19,11 +19,11 @@
             <![CDATA[ AND  t1.`IBIZPRO_PRODUCTDAILYNAME` like #{bind_n_ibizpro_productdailyname_like,jdbcType=VARCHAR} ]]>
         </if>
 		<if test="srf.n_productname_eq != null ">
-			<![CDATA[ AND  t11.`NAME` = #{srf.n_productname_eq,jdbcType=VARCHAR} ]]>
+			<![CDATA[ AND  t11.`name` = #{srf.n_productname_eq,jdbcType=VARCHAR} ]]>
         </if>
 		<if test="srf.n_productname_like != null ">
             <bind name="bind_n_productname_like" value="'%' + srf.n_productname_like + '%'" />
-            <![CDATA[ AND  t11.`NAME` like #{bind_n_productname_like,jdbcType=VARCHAR} ]]>
+            <![CDATA[ AND  t11.`name` like #{bind_n_productname_like,jdbcType=VARCHAR} ]]>
         </if>
 		<if test="srf.n_product_eq != null ">
 			<![CDATA[ AND  t1.`PRODUCT` = #{srf.n_product_eq,jdbcType=BIGINT} ]]>
@@ -71,7 +71,7 @@
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BEGINDATESTATS`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATE`, t1.`ENDDATESTATS`, t1.`IBIZPRO_PRODUCTDAILYNAME`, t1.`IBIZPRO_PRODUCTWEEKLYID`, t1.`PO`, t1.`PRODUCT`, t11.`NAME` AS `PRODUCTNAME`, t1.`TASKS`, t1.`TOTALESTIMATES`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBIZPRO_PRODUCTWEEKLY` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`ID`   ]]>
+		<![CDATA[ SELECT t1.`BEGINDATESTATS`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATE`, t1.`ENDDATESTATS`, t1.`IBIZPRO_PRODUCTDAILYNAME`, t1.`IBIZPRO_PRODUCTWEEKLYID`, t1.`PO`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`TASKS`, t1.`TOTALESTIMATES`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBIZPRO_PRODUCTWEEKLY` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>
@@ -79,7 +79,7 @@
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BEGINDATESTATS`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATE`, t1.`ENDDATESTATS`, t1.`IBIZPRO_PRODUCTDAILYNAME`, t1.`IBIZPRO_PRODUCTWEEKLYID`, t1.`PO`, t1.`PRODUCT`, t11.`NAME` AS `PRODUCTNAME`, t1.`TASKS`, t1.`TOTALESTIMATES`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBIZPRO_PRODUCTWEEKLY` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`ID`   ]]>
+		<![CDATA[ SELECT t1.`BEGINDATESTATS`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATE`, t1.`ENDDATESTATS`, t1.`IBIZPRO_PRODUCTDAILYNAME`, t1.`IBIZPRO_PRODUCTWEEKLYID`, t1.`PO`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`TASKS`, t1.`TOTALESTIMATES`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBIZPRO_PRODUCTWEEKLY` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>

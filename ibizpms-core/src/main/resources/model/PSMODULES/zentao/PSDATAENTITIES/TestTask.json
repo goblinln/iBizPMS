@@ -1325,7 +1325,7 @@
       "columnName" : "PRODUCTNAME",
       "dBType" : "MYSQL5",
       "name" : "PRODUCTNAME",
-      "queryCodeExp" : "t21.`NAME`",
+      "queryCodeExp" : "t21.`name`",
       "standardColumnName" : "`PRODUCTNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1662,7 +1662,7 @@
           "name" : "Default[PRODUCT] 值不为空(NotNil)"
         } ],
         "notMode" : false,
-        "id" : "288248dcd0a91b69e4cfc640b0c4fb7a"
+        "id" : "3e96cf1efd8f186f59968a54c079e111"
       },
       "getSrcPSDELogicNode" : {
         "modelref" : true,
@@ -1689,7 +1689,7 @@
           "name" : "Default[PROJECT] 值不为空(NotNil)"
         } ],
         "notMode" : false,
-        "id" : "84222f5b37b903fec5e2a6583e978a37"
+        "id" : "b791d8c91d594b21f33237d5ef975d8c"
       },
       "getSrcPSDELogicNode" : {
         "modelref" : true,

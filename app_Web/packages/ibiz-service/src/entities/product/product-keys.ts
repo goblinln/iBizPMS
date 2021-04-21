@@ -1,5 +1,6 @@
 export default [
     'orgid',
+    'updatedate',
     'istop',
     'comment',
     'qd',
@@ -21,6 +22,7 @@ export default [
     'rd',
     'popk',
     'notclosedbugcnt',
+    'updateman',
     'supproreport',
     'order',
     'type',
@@ -32,6 +34,7 @@ export default [
     'activebugcnt',
     'createdby',
     'rdpk',
+    'createman',
     'createdversion',
     'draftstorycnt',
     'doccnt',
@@ -49,7 +52,4 @@ export default [
     'activestorycnt',
     'linename',
     'line',
-    'updateman',
-    'createman',
-    'updatedate',
 ];

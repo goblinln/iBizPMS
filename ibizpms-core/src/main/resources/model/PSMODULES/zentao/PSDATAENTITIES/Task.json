@@ -5993,7 +5993,7 @@
           "paramValue" : "0"
         } ],
         "notMode" : false,
-        "id" : "0ede868dc0065cbb531a122876268a63"
+        "id" : "686558b2b80cb7ce96a990ac8807d4d2"
       },
       "getSrcPSDELogicNode" : {
         "modelref" : true,
@@ -6036,7 +6036,7 @@
           "notMode" : false
         } ],
         "notMode" : false,
-        "id" : "7d3cb39b708b11b9edf837531bc07d80"
+        "id" : "71fb46665d77d5fb8056714839ac97bc"
       },
       "getSrcPSDELogicNode" : {
         "modelref" : true,
@@ -6142,7 +6142,7 @@
           "name" : "Default[STORY] 值为空(Nil)"
         } ],
         "notMode" : false,
-        "id" : "95c0cd716a5ac74cabd6bdccefcef74c"
+        "id" : "d63f5ab0738f93ad91fc5eb5ed466638"
       },
       "getSrcPSDELogicNode" : {
         "modelref" : true,
@@ -6169,7 +6169,7 @@
           "name" : "Default[STORY] 值不为空(NotNil)"
         } ],
         "notMode" : false,
-        "id" : "194b69272a3a236aff360310dfc907ac"
+        "id" : "821f2daee10588ada3e72da13b1b161c"
       },
       "getSrcPSDELogicNode" : {
         "modelref" : true,
@@ -6196,7 +6196,7 @@
           "name" : "Default[PLAN] 值不为空(NotNil)"
         } ],
         "notMode" : false,
-        "id" : "c80894da5bb5d65d04badc86b5e66c39"
+        "id" : "917ad9c2835d133e829cb39d5a9db061"
       },
       "getSrcPSDELogicNode" : {
         "modelref" : true,
@@ -6305,7 +6305,7 @@
           "paramValue" : "1"
         } ],
         "notMode" : false,
-        "id" : "163698cc888d1e368504ec61a68a62bc"
+        "id" : "744eb69b991e71834727d528f79a3dd2"
       },
       "getSrcPSDELogicNode" : {
         "modelref" : true,
@@ -6333,7 +6333,7 @@
           "paramValue" : "1"
         } ],
         "notMode" : false,
-        "id" : "4aa51fbc4edc84cb77be6fe75c886568"
+        "id" : "92d1be3cfd5aaa4a72a363b7741b4476"
       },
       "getSrcPSDELogicNode" : {
         "modelref" : true,
@@ -15103,13 +15103,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Maintain.json",
     "name" : "任务维护",
     "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "CREATE",
-      "name" : "Task_Maintain_CREATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "ZTProject__CREATE"
-      }
-    }, {
       "dataAccessAction" : "DELETE",
       "name" : "Task_Maintain_DELETE",
       "getPSDEOPPriv" : {
@@ -15117,11 +15110,11 @@
         "id" : "ZTProject__DELETE"
       }
     }, {
-      "dataAccessAction" : "READ",
-      "name" : "Task_Maintain_READ",
+      "dataAccessAction" : "CREATE",
+      "name" : "Task_Maintain_CREATE",
       "getPSDEOPPriv" : {
         "modelref" : true,
-        "id" : "ZTProject__READ"
+        "id" : "ZTProject__CREATE"
       }
     }, {
       "dataAccessAction" : "UPDATE",
@@ -15129,6 +15122,13 @@
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "ZTProject__UPDATE"
+      }
+    }, {
+      "dataAccessAction" : "READ",
+      "name" : "Task_Maintain_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProject__READ"
       }
     } ],
     "roleTag" : "Task_Maintain",

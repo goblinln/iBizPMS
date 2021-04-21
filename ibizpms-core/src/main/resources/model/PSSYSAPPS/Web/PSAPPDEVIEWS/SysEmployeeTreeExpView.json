@@ -286,67 +286,6 @@
       "getPSDETreeNodeRSs" : [ {
         "getChildPSDETreeNode" : {
           "modelref" : true,
-          "id" : "Org"
-        },
-        "name" : "组织机构 - 组织",
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "OrgEmp"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "ProjectTeam"
-        },
-        "name" : "项目团队 - 项目",
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "project"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "OrgEmp"
-        },
-        "name" : "默认根节点 - 组织机构",
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "ROOT"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "ProjectEmp"
-        },
-        "name" : "项目 - 项目人员",
-        "parentFilter" : "project",
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "ProjectTeam"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "ContActUser"
-        },
-        "name" : "联系列表 - 联系用户",
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "UserContact"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
           "id" : "UserContact"
         },
         "name" : "联系人 - 联系列表",
@@ -403,50 +342,6 @@
       }, {
         "getChildPSDETreeNode" : {
           "modelref" : true,
-          "id" : "IBZEMP"
-        },
-        "name" : "部门 - 人员",
-        "getParentPSAppDEField" : {
-          "name" : "MDEPTID",
-          "codeName" : "MdeptId"
-        },
-        "getParentPSDER1N" : {
-          "codeName" : "MainDept",
-          "dERType" : "DER1N",
-          "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDERS/DER1N_IBZEMP_SYS_DEPT_MDEPTID.json",
-          "getMajorPSDataEntity" : {
-            "modelref" : true,
-            "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment.json"
-          },
-          "masterOrder" : -1,
-          "masterRS" : 0,
-          "getMinorPSDataEntity" : {
-            "modelref" : true,
-            "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
-          },
-          "name" : "DER1N_IBZEMP_SYS_DEPT_MDEPTID",
-          "orderValue" : 100,
-          "getPSPickupDEField" : {
-            "name" : "MDEPTID",
-            "codeName" : "MdeptId"
-          },
-          "getPSPickupTextDEField" : {
-            "name" : "MDEPTNAME",
-            "codeName" : "MDeptName"
-          },
-          "pickupDEFName" : "MDEPTID",
-          "removeActionType" : 2,
-          "removeOrder" : 0
-        },
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "Depart"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
           "id" : "Depart"
         },
         "name" : "组织 - 部门",
@@ -488,6 +383,62 @@
         "getParentPSDETreeNode" : {
           "modelref" : true,
           "id" : "Org"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ContActUser"
+        },
+        "name" : "联系列表 - 联系用户",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "UserContact"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "IBZEMP"
+        },
+        "name" : "部门 - 人员",
+        "getParentPSAppDEField" : {
+          "name" : "MDEPTID",
+          "codeName" : "MdeptId"
+        },
+        "getParentPSDER1N" : {
+          "codeName" : "MainDept",
+          "dERType" : "DER1N",
+          "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDERS/DER1N_IBZEMP_SYS_DEPT_MDEPTID.json",
+          "getMajorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment.json"
+          },
+          "masterOrder" : -1,
+          "masterRS" : 0,
+          "getMinorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
+          },
+          "name" : "DER1N_IBZEMP_SYS_DEPT_MDEPTID",
+          "orderValue" : 100,
+          "getPSPickupDEField" : {
+            "name" : "MDEPTID",
+            "codeName" : "MdeptId"
+          },
+          "getPSPickupTextDEField" : {
+            "name" : "MDEPTNAME",
+            "codeName" : "MDeptName"
+          },
+          "pickupDEFName" : "MDEPTID",
+          "removeActionType" : 2,
+          "removeOrder" : 0
+        },
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "Depart"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3
@@ -538,12 +489,49 @@
       }, {
         "getChildPSDETreeNode" : {
           "modelref" : true,
-          "id" : "SysTeam"
+          "id" : "Org"
         },
-        "name" : "组 - 团队",
+        "name" : "组织机构 - 组织",
         "getParentPSDETreeNode" : {
           "modelref" : true,
-          "id" : "Team"
+          "id" : "OrgEmp"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ProjectTeam"
+        },
+        "name" : "项目团队 - 项目",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "project"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ProjectEmp"
+        },
+        "name" : "项目 - 项目人员",
+        "parentFilter" : "project",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ProjectTeam"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "OrgEmp"
+        },
+        "name" : "默认根节点 - 组织机构",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ROOT"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3
@@ -556,6 +544,30 @@
         "getParentPSDETreeNode" : {
           "modelref" : true,
           "id" : "post"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "SysTeam"
+        },
+        "name" : "组 - 团队",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "Team"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "project"
+        },
+        "name" : "默认根节点 - 项目团队",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ROOT"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3
@@ -600,18 +612,6 @@
         "getParentPSDETreeNode" : {
           "modelref" : true,
           "id" : "Org"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "project"
-        },
-        "name" : "默认根节点 - 项目团队",
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "ROOT"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3

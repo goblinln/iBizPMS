@@ -4,6 +4,7 @@ import { VueLifeCycleProcessing,AppControlBase } from 'ibiz-vue';
 import moment from 'moment';
 import { AppListBase } from 'ibiz-vue/src/components/control/app-common-control/app-list-base';
 import { CodeListService } from 'ibiz-service';
+import { IPSAppCodeList, IPSDEListDataItem } from '@ibiz/dynamic-model-api';
 
 import '../plugin-style.less';
 
@@ -54,13 +55,6 @@ export class NewDynamicTimeLine extends AppListBase {
     public codeListService:CodeListService = new CodeListService({ $store: this.$store });
 
     /**
-     * 列表模型
-     * 
-     * @memberof NewDynamicTimeLine
-     */
-    public listModel!: any[];
-
-    /**
      * 已展开的项
      *
      * @protected
@@ -93,15 +87,25 @@ export class NewDynamicTimeLine extends AppListBase {
      * @memberof NewDynamicTimeLine
      */
     public created(): void {
-        const codeList = this.$store.getters.getCodeList('Action__object_type');
-        if (codeList) {
-            this.actionObjectType.push(...codeList.items);
+        this.getCodeList().then(() => {
+            this.formatData(this.items)
+        })
+    }
+
+    /**
+     * 获取代码表
+     *
+     * @memberof NewDynamicTimeLine
+     */
+    public async getCodeList() {
+        const actionObjectTypes = await this.codeListService.getDataItems({ tag: 'Action__object_type', type: 'STATIC', context: this.context });
+        if (actionObjectTypes) {
+            this.actionObjectType.push(...actionObjectTypes);
         }
-        const codeList2 = this.$store.getters.getCodeList('Action__type');
-        if (codeList2) {
-            this.actionType.push(...codeList2.items);
+        const actionTypes = await this.codeListService.getDataItems({ tag: 'Action__type', type: 'STATIC', context: this.context });
+        if (actionTypes) {
+            this.actionType.push(...actionTypes);
         }
-        this.formatData(this.items)
     }
 
     /**
@@ -139,60 +143,57 @@ export class NewDynamicTimeLine extends AppListBase {
             Object.assign(tempViewParams, JSON.parse(JSON.stringify(this.viewparams)));
         }
         Object.assign(arg, { viewparams: tempViewParams });
-		this.ctrlBeginLoading();
+        this.ctrlBeginLoading();
         const post: Promise<any> = this.service.search(
             this.fetchAction,
             this.context ? JSON.parse(JSON.stringify(this.context)) : {},
             arg,
             this.showBusyIndicator
         );
-        post.then(
-            (response: any) => {
-			this.ctrlEndLoading();
-                if (!response || response.status !== 200) {
-                    if (response.errorMessage) {
-                        this.$Notice.error({ title: '错误', desc: response.errorMessage });
-                    }
-                    return;
+        post.then((response: any) => {
+            this.ctrlEndLoading();
+            if (!response || response.status !== 200) {
+                if (response.errorMessage) {
+                    this.$Notice.error({ title: '错误', desc: response.errorMessage });
                 }
-                const data: any = response.data;
-                if (!this.isAddBehind) {
-                    this.items = [];
-                }
-                if (data && data.length > 0) {
-                    let datas = JSON.parse(JSON.stringify(data));
-                    datas.map((item: any) => {
-                        Object.assign(item, { isselected: false });
-                    });
-                    this.totalRecord = response.total;
-                    this.items.push(...datas);
-                    this.items = this.arrayNonRepeatfy(this.items);
-                }
-                this.isAddBehind = false;
-                this.ctrlEvent({
-                    controlname: this.controlInstance.name,
-                    action: 'load',
-                    data: this.items,
+                return;
+            }
+            const data: any = response.data;
+            if (!this.isAddBehind) {
+                this.items = [];
+            }
+            if (data && data.length > 0) {
+                let datas = JSON.parse(JSON.stringify(data));
+                datas.map((item: any) => {
+                    Object.assign(item, { isselected: false });
                 });
-                if (this.isSelectFirstDefault) {
-                    if (this.selections && this.selections.length > 0) {
-                        this.selections.forEach((select: any) => {
-                            const index = this.items.findIndex((item: any) => Object.is(item.srfkey, select.srfkey));
-                            if (index != -1) {
-                                this.handleClick(this.items[index]);
-                            }
-                        });
-                    } else {
-                        this.handleClick(this.items[0]);
-                    }
+                this.totalRecord = response.total;
+                this.items.push(...datas);
+                this.items = this.arrayNonRepeatfy(this.items);
+            }
+            this.isAddBehind = false;
+            this.ctrlEvent({
+                controlname: this.name,
+                action: 'load',
+                data: this.items,
+            });
+            if (this.isSelectFirstDefault) {
+                if (this.selections && this.selections.length > 0) {
+                    this.selections.forEach((select: any) => {
+                        const index = this.items.findIndex((item: any) => Object.is(item.srfkey, select.srfkey));
+                        if (index != -1) {
+                            this.handleClick(this.items[index]);
+                        }
+                    });
+                } else {
+                    this.handleClick(this.items[0]);
                 }
-                this.listModel = this.controlInstance.allListDataItems;
-                if(this.items.length > 0){
-                    this.formatData(this.items);
-                }
-            },
-            (response: any) => {
-			this.ctrlEndLoading();
+            }
+            if(this.items.length > 0){
+                this.formatData(this.items);
+            }
+        },(response: any) => {
+                this.ctrlEndLoading();
                 if (response && response.status === 401) {
                     return;
                 }
@@ -255,22 +256,24 @@ export class NewDynamicTimeLine extends AppListBase {
      * @memberof NewDynamicTimeLine
      */
     public listItemCodelist(item: any){
-        if(this.listModel && this.listModel.length > 0){
-            this.listModel.forEach((listItem:any)=>{
-                for(const key in item){
-                    if(Object.is(key,listItem.name) && listItem.getFrontPSCodeList){  
-                        this.codeListService.getDataItems({tag: listItem.getFrontPSCodeList.codeName, type:listItem.getFrontPSCodeList.codeListType}).then((res: any)=>{
-                            if(res){
-                                const data = res.find((code:any) => Object.is(code.value, item[key]));
-                                if(data){
-                                    item[key] = data.text;
-                                }
+        const listModel: Array<IPSDEListDataItem> = this.controlInstance.getPSDEListDataItems() || [];
+        if(listModel.length > 0){
+            listModel.forEach((listItem: IPSDEListDataItem)=>{
+                const codeList: IPSAppCodeList | null = listItem.getFrontPSCodeList();
+                const key = Object.keys(item).find((_item: any) => { return _item == listItem.name; })
+                if(codeList && key){
+                    this.codeListService.getDataItems({tag: codeList.codeName, type: codeList.codeListType}).then((res: any)=>{
+                        if(res){
+                            const data = res.find((code:any) => Object.is(code.value, item[key]));
+                            if(data){
+                                item[key] = data.text;
                             }
-                        }).catch((error: any)=>{
-                            console.log(`----${listItem.getFrontPSCodeList.codeName}----代码表不存在`);
-                        });
-                    }
+                        }
+                    }).catch((error: any)=>{
+                        console.log(`----${codeList.codeName}----代码表不存在`);
+                    });
                 }
+                
             })
         }
     }
@@ -407,6 +410,8 @@ export class NewDynamicTimeLine extends AppListBase {
             {this.renderActionTimeline()}
         </div>
     }
+
+
 
 }
 

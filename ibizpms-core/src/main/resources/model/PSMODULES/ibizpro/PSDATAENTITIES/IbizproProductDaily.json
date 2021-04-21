@@ -637,7 +637,7 @@
       "columnName" : "PRODUCTNAME",
       "dBType" : "MYSQL5",
       "name" : "PRODUCTNAME",
-      "queryCodeExp" : "t11.`NAME`",
+      "queryCodeExp" : "t11.`name`",
       "standardColumnName" : "`PRODUCTNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {

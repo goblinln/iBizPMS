@@ -270,18 +270,6 @@
       "getPSDETreeNodeRSs" : [ {
         "getChildPSDETreeNode" : {
           "modelref" : true,
-          "id" : "Module"
-        },
-        "name" : "所有分类 - 子目录",
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "AllModule"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
           "id" : "ChileModule"
         },
         "name" : "目录 - 子目录",
@@ -380,6 +368,18 @@
         "getParentPSDETreeNode" : {
           "modelref" : true,
           "id" : "ChileModule"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "Module"
+        },
+        "name" : "所有分类 - 子目录",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "AllModule"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3

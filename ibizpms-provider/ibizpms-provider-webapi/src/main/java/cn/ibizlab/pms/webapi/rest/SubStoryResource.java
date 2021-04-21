@@ -1502,6 +1502,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> activateByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.activate(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1519,6 +1520,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> allPushByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.allPush(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1536,6 +1538,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> assignToByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.assignTo(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1553,6 +1556,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> batchAssignToByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.batchAssignTo(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1570,6 +1574,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> batchChangeBranchByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.batchChangeBranch(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1587,6 +1592,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> batchChangeModuleByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.batchChangeModule(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1604,6 +1610,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> batchChangePlanByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.batchChangePlan(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1621,6 +1628,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> batchChangeStageByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.batchChangeStage(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1638,6 +1646,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> batchCloseByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.batchClose(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1655,6 +1664,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> batchReviewByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.batchReview(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1672,6 +1682,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> batchUnlinkStoryByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.batchUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1689,6 +1700,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> bugToStoryByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.bugToStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1706,6 +1718,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> buildBatchUnlinkStoryByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.buildBatchUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1723,6 +1736,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> buildLinkStoryByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.buildLinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1740,6 +1754,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> buildUnlinkStoryByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.buildUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1757,6 +1772,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> buildUnlinkStorysByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.buildUnlinkStorys(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1767,6 +1783,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> changeByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.change(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1790,6 +1807,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> closeByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.close(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1807,6 +1825,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> createTasksByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.createTasks(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1824,6 +1843,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> getStorySpecByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.getStorySpec(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1841,6 +1861,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> getStorySpecsByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.getStorySpecs(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1851,6 +1872,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> importPlanStoriesByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.importPlanStories(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1868,6 +1890,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> linkStoryByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.linkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1885,6 +1908,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> projectBatchUnlinkStoryByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.projectBatchUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1902,6 +1926,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> projectLinkStoryByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.projectLinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1919,6 +1944,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> projectUnlinkStoryByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.projectUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1936,6 +1962,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> projectUnlinkStorysByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.projectUnlinkStorys(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1946,6 +1973,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> pushByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.push(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1963,6 +1991,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> releaseBatchUnlinkStoryByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.releaseBatchUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1980,6 +2009,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> releaseLinkStoryByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.releaseLinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -1997,6 +2027,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> releaseUnlinkStoryByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.releaseUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -2014,6 +2045,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> resetReviewedByByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.resetReviewedBy(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -2031,6 +2063,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> reviewByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.review(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -2068,6 +2101,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> sendMessageByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.sendMessage(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -2085,6 +2119,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> sendMsgPreProcessByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.sendMsgPreProcess(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -2102,6 +2137,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> storyFavoritesByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.storyFavorites(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -2112,6 +2148,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> storyNFavoritesByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.storyNFavorites(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -2121,6 +2158,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> syncFromIbizByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.syncFromIbiz(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -2138,6 +2176,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> unlinkStoryByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.unlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -2856,6 +2895,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> activateByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.activate(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -2873,6 +2913,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> allPushByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.allPush(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -2890,6 +2931,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> assignToByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.assignTo(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -2907,6 +2949,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> batchAssignToByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.batchAssignTo(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -2924,6 +2967,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> batchChangeBranchByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.batchChangeBranch(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -2941,6 +2985,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> batchChangeModuleByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.batchChangeModule(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -2958,6 +3003,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> batchChangePlanByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.batchChangePlan(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -2975,6 +3021,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> batchChangeStageByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.batchChangeStage(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -2992,6 +3039,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> batchCloseByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.batchClose(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3009,6 +3057,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> batchReviewByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.batchReview(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3026,6 +3075,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> batchUnlinkStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.batchUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3043,6 +3093,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> bugToStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.bugToStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3060,6 +3111,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> buildBatchUnlinkStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.buildBatchUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3077,6 +3129,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> buildLinkStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.buildLinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3094,6 +3147,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> buildUnlinkStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.buildUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3111,6 +3165,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> buildUnlinkStorysByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.buildUnlinkStorys(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3121,6 +3176,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> changeByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.change(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3144,6 +3200,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> closeByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.close(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3161,6 +3218,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> createTasksByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.createTasks(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3178,6 +3236,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> getStorySpecByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.getStorySpec(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3195,6 +3254,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> getStorySpecsByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.getStorySpecs(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3205,6 +3265,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> importPlanStoriesByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.importPlanStories(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3222,6 +3283,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> linkStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.linkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3239,6 +3301,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> projectBatchUnlinkStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.projectBatchUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3256,6 +3319,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> projectLinkStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.projectLinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3273,6 +3337,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> projectUnlinkStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.projectUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3290,6 +3355,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> projectUnlinkStorysByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.projectUnlinkStorys(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3300,6 +3366,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> pushByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.push(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3317,6 +3384,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> releaseBatchUnlinkStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.releaseBatchUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3334,6 +3402,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> releaseLinkStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.releaseLinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3351,6 +3420,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> releaseUnlinkStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.releaseUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3368,6 +3438,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> resetReviewedByByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.resetReviewedBy(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3385,6 +3456,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> reviewByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.review(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3422,6 +3494,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> sendMessageByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.sendMessage(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3439,6 +3512,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> sendMsgPreProcessByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.sendMsgPreProcess(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3456,6 +3530,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> storyFavoritesByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.storyFavorites(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3466,6 +3541,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> storyNFavoritesByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.storyNFavorites(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3475,6 +3551,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> syncFromIbizByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.syncFromIbiz(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
@@ -3492,6 +3569,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> unlinkStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
+        domain.setId(substory_id);
         domain = storyService.unlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);

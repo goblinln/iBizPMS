@@ -72,7 +72,7 @@ export class TASKASSPlugin {
      * @memberof GridControlBase
      */
     public handleActionClick (data: any, event: any, column: any, parentContainer: any) {
-        AppViewLogicService.getInstance().executeViewLogic(`${parentContainer.controlInstance.controlType.toLowerCase()}_${column}_click`,event,parentContainer,data,parentContainer.controlInstance.getPSAppViewLogics);
+        AppViewLogicService.getInstance().executeViewLogic(`${parentContainer.controlInstance.controlType.toLowerCase()}_${column}_click`,event,parentContainer,data,parentContainer.controlInstance.getPSAppViewLogics() || []);
     }
 
 }

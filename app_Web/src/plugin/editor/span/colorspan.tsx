@@ -1,7 +1,7 @@
 
 import { Component } from 'vue-property-decorator';
 import { VueLifeCycleProcessing,EditorBase } from 'ibiz-vue';
-
+import { IPSCodeListEditor, IPSEditor } from '@ibiz/dynamic-model-api';
 
 /**
  * 标签（颜色）插件类
@@ -14,13 +14,15 @@ import { VueLifeCycleProcessing,EditorBase } from 'ibiz-vue';
 @VueLifeCycleProcessing()
 export class COLORSPAN extends EditorBase {
     
+        
     /**
      * 编辑器初始化
      *
      * @memberof COLORSPAN
      */
-    public initEditor() {
-        let codeList: any = this.editorInstance.codeList;
+    public async initEditor() {
+        await super.initEditor();
+        let codeList = (this.editorInstance as IPSCodeListEditor)?.getPSAppCodeList?.();
         if(codeList) {
             Object.assign(this.customProps, {
                 tag: codeList.codeName,

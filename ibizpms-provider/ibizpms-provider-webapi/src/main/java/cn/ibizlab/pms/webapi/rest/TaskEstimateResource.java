@@ -418,6 +418,7 @@ public class TaskEstimateResource {
     public ResponseEntity<TaskEstimateDTO> pMEvaluationByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
         TaskEstimate domain = taskestimateMapping.toDomain(taskestimatedto);
         domain.setTask(task_id);
+        domain.setId(taskestimate_id);
         domain = taskestimateService.pMEvaluation(domain) ;
         taskestimatedto = taskestimateMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskestimatedto);
@@ -701,6 +702,7 @@ public class TaskEstimateResource {
     public ResponseEntity<TaskEstimateDTO> pMEvaluationByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
         TaskEstimate domain = taskestimateMapping.toDomain(taskestimatedto);
         domain.setTask(task_id);
+        domain.setId(taskestimate_id);
         domain = taskestimateService.pMEvaluation(domain) ;
         taskestimatedto = taskestimateMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskestimatedto);
@@ -984,6 +986,7 @@ public class TaskEstimateResource {
     public ResponseEntity<TaskEstimateDTO> pMEvaluationByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
         TaskEstimate domain = taskestimateMapping.toDomain(taskestimatedto);
         domain.setTask(task_id);
+        domain.setId(taskestimate_id);
         domain = taskestimateService.pMEvaluation(domain) ;
         taskestimatedto = taskestimateMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskestimatedto);
@@ -1267,6 +1270,7 @@ public class TaskEstimateResource {
     public ResponseEntity<TaskEstimateDTO> pMEvaluationByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
         TaskEstimate domain = taskestimateMapping.toDomain(taskestimatedto);
         domain.setTask(task_id);
+        domain.setId(taskestimate_id);
         domain = taskestimateService.pMEvaluation(domain) ;
         taskestimatedto = taskestimateMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskestimatedto);
@@ -1550,6 +1554,7 @@ public class TaskEstimateResource {
     public ResponseEntity<TaskEstimateDTO> pMEvaluationByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
         TaskEstimate domain = taskestimateMapping.toDomain(taskestimatedto);
         domain.setTask(task_id);
+        domain.setId(taskestimate_id);
         domain = taskestimateService.pMEvaluation(domain) ;
         taskestimatedto = taskestimateMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskestimatedto);
@@ -1833,6 +1838,7 @@ public class TaskEstimateResource {
     public ResponseEntity<TaskEstimateDTO> pMEvaluationByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
         TaskEstimate domain = taskestimateMapping.toDomain(taskestimatedto);
         domain.setTask(task_id);
+        domain.setId(taskestimate_id);
         domain = taskestimateService.pMEvaluation(domain) ;
         taskestimatedto = taskestimateMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskestimatedto);
@@ -2116,6 +2122,7 @@ public class TaskEstimateResource {
     public ResponseEntity<TaskEstimateDTO> pMEvaluationByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
         TaskEstimate domain = taskestimateMapping.toDomain(taskestimatedto);
         domain.setTask(task_id);
+        domain.setId(taskestimate_id);
         domain = taskestimateService.pMEvaluation(domain) ;
         taskestimatedto = taskestimateMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskestimatedto);
@@ -2399,6 +2406,7 @@ public class TaskEstimateResource {
     public ResponseEntity<TaskEstimateDTO> pMEvaluationByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
         TaskEstimate domain = taskestimateMapping.toDomain(taskestimatedto);
         domain.setTask(task_id);
+        domain.setId(taskestimate_id);
         domain = taskestimateService.pMEvaluation(domain) ;
         taskestimatedto = taskestimateMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskestimatedto);

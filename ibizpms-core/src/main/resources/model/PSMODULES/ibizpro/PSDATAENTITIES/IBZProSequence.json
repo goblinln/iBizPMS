@@ -109,6 +109,204 @@
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CREATEDATE",
+      "dBType" : "MYSQL5",
+      "name" : "CREATEDATE",
+      "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "CREATEDATE",
+        "codeName" : "CreateDate"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "CreateDate",
+    "dEFType" : 1,
+    "dataType" : "DATETIME",
+    "importOrder" : 1000,
+    "length" : 8,
+    "logicName" : "建立时间",
+    "name" : "CREATEDATE",
+    "predefinedType" : "CREATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "allowEmpty" : false,
+    "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "ISENABLE",
+      "dBType" : "MYSQL5",
+      "name" : "ISENABLE",
+      "queryCodeExp" : "t1.`ISENABLE`",
+      "standardColumnName" : "`ISENABLE`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "ISENABLE",
+        "codeName" : "IsEnable"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "IsEnable",
+    "dEFType" : 1,
+    "dataType" : "YESNO",
+    "importOrder" : 1000,
+    "logicName" : "是否启用",
+    "name" : "ISENABLE",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/YesNo3.json"
+    },
+    "stdDataType" : 9,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "UPDATEDATE",
+      "dBType" : "MYSQL5",
+      "name" : "UPDATEDATE",
+      "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "UpdateDate",
+    "dEFType" : 1,
+    "dataType" : "DATETIME",
+    "importOrder" : 1000,
+    "length" : 8,
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "predefinedType" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "allowEmpty" : false,
+    "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "DEPTID",
+      "dBType" : "MYSQL5",
+      "name" : "DEPTID",
+      "queryCodeExp" : "t1.`DEPTID`",
+      "standardColumnName" : "`DEPTID`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "DEPTID",
+          "maxValue" : 60,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[60]"
+      },
+      "getPSDEField" : {
+        "name" : "DEPTID",
+        "codeName" : "DeptId"
+      },
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "DeptId",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 60,
+    "logicName" : "组织部门标识",
+    "name" : "DEPTID",
+    "predefinedType" : "ORGSECTORID",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "INCREMENT",
+      "dBType" : "MYSQL5",
+      "name" : "INCREMENT",
+      "queryCodeExp" : "t1.`INCREMENT`",
+      "standardColumnName" : "`INCREMENT`",
+      "valueAutoGen" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "INCREMENT",
+        "codeName" : "Increment"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Increment",
+    "dEFType" : 1,
+    "dataType" : "INT",
+    "defaultValue" : "1",
+    "importOrder" : 1000,
+    "logicName" : "自增数值",
+    "name" : "INCREMENT",
+    "stdDataType" : 9,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "IBZPRO_SEQUENCEID",
       "dBType" : "MYSQL5",
       "name" : "IBZPRO_SEQUENCEID",
@@ -159,11 +357,48 @@
     "pasteReset" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "IBZPRO_SEQUENCENAME",
+      "columnName" : "BEGINSEQ",
       "dBType" : "MYSQL5",
-      "name" : "IBZPRO_SEQUENCENAME",
-      "queryCodeExp" : "t1.`IBZPRO_SEQUENCENAME`",
-      "standardColumnName" : "`IBZPRO_SEQUENCENAME`"
+      "name" : "BEGINSEQ",
+      "queryCodeExp" : "t1.`BEGINSEQ`",
+      "standardColumnName" : "`BEGINSEQ`",
+      "valueAutoGen" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "BEGINSEQ",
+        "codeName" : "Beginseq"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Beginseq",
+    "dEFType" : 1,
+    "dataType" : "BIGINT",
+    "defaultValue" : "0",
+    "importOrder" : 1000,
+    "length" : 20,
+    "logicName" : "开始序列号",
+    "name" : "BEGINSEQ",
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "YEAR",
+      "dBType" : "MYSQL5",
+      "name" : "YEAR",
+      "queryCodeExp" : "t1.`YEAR`",
+      "standardColumnName" : "`YEAR`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -174,114 +409,36 @@
         "name" : "默认组",
         "getPSDEFVRConditions" : [ {
           "condType" : "STRINGLENGTH",
-          "dEFName" : "IBZPRO_SEQUENCENAME",
-          "maxValue" : 200,
+          "dEFName" : "YEAR",
+          "maxValue" : 100,
           "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[200]",
+          "ruleInfo" : "内容长度必须小于等于[100]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
           "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[200]"
+        "ruleInfo" : "内容长度必须小于等于[100]"
       },
       "getPSDEField" : {
-        "name" : "IBZPRO_SEQUENCENAME",
-        "codeName" : "IBZProSequenceName"
+        "name" : "YEAR",
+        "codeName" : "Year"
       },
-      "ruleInfo" : "内容长度必须小于等于[200]",
+      "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
       "enableBackend" : true,
       "enableFront" : true
     } ],
-    "codeName" : "IBZProSequenceName",
+    "codeName" : "Year",
     "dEFType" : 1,
     "dataType" : "TEXT",
     "importOrder" : 1000,
-    "length" : 200,
-    "logicName" : "业务序列表名称",
-    "name" : "IBZPRO_SEQUENCENAME",
+    "length" : 100,
+    "logicName" : "年份",
+    "name" : "YEAR",
     "stdDataType" : 25,
-    "stringLength" : 200,
-    "valueFormat" : "%1$s",
-    "enableQuickSearch" : true,
-    "majorDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "CREATEDATE",
-      "dBType" : "MYSQL5",
-      "name" : "CREATEDATE",
-      "queryCodeExp" : "t1.`CREATEDATE`",
-      "standardColumnName" : "`CREATEDATE`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "CREATEDATE",
-        "codeName" : "CreateDate"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "CreateDate",
-    "dEFType" : 1,
-    "dataType" : "DATETIME",
-    "importOrder" : 1000,
-    "length" : 8,
-    "logicName" : "建立时间",
-    "name" : "CREATEDATE",
-    "predefinedType" : "CREATEDATE",
-    "stdDataType" : 5,
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
-    "allowEmpty" : false,
-    "systemReserver" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "UPDATEDATE",
-      "dBType" : "MYSQL5",
-      "name" : "UPDATEDATE",
-      "queryCodeExp" : "t1.`UPDATEDATE`",
-      "standardColumnName" : "`UPDATEDATE`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "UPDATEDATE",
-        "codeName" : "UpdateDate"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "UpdateDate",
-    "dEFType" : 1,
-    "dataType" : "DATETIME",
-    "importOrder" : 1000,
-    "length" : 8,
-    "logicName" : "更新时间",
-    "name" : "UPDATEDATE",
-    "predefinedType" : "UPDATEDATE",
-    "stdDataType" : 5,
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
-    "allowEmpty" : false,
-    "systemReserver" : true
+    "stringLength" : 100,
+    "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "UPDATEMAN",
@@ -392,6 +549,90 @@
     "systemReserver" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CURSEQ",
+      "dBType" : "MYSQL5",
+      "name" : "CURSEQ",
+      "queryCodeExp" : "t1.`CURSEQ`",
+      "standardColumnName" : "`CURSEQ`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "CURSEQ",
+        "codeName" : "Curseq"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Curseq",
+    "dEFType" : 1,
+    "dataType" : "BIGINT",
+    "importOrder" : 1000,
+    "length" : 20,
+    "logicName" : "当前序列号",
+    "name" : "CURSEQ",
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "IBZPRO_SEQUENCENAME",
+      "dBType" : "MYSQL5",
+      "name" : "IBZPRO_SEQUENCENAME",
+      "queryCodeExp" : "t1.`IBZPRO_SEQUENCENAME`",
+      "standardColumnName" : "`IBZPRO_SEQUENCENAME`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "IBZPRO_SEQUENCENAME",
+          "maxValue" : 200,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[200]"
+      },
+      "getPSDEField" : {
+        "name" : "IBZPRO_SEQUENCENAME",
+        "codeName" : "IBZProSequenceName"
+      },
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "IBZProSequenceName",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 200,
+    "logicName" : "业务序列表名称",
+    "name" : "IBZPRO_SEQUENCENAME",
+    "stdDataType" : 25,
+    "stringLength" : 200,
+    "valueFormat" : "%1$s",
+    "enableQuickSearch" : true,
+    "majorDEField" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "ORGID",
       "dBType" : "MYSQL5",
       "name" : "ORGID",
@@ -435,54 +676,6 @@
     "logicName" : "组织机构标识",
     "name" : "ORGID",
     "predefinedType" : "ORGID",
-    "stdDataType" : 25,
-    "stringLength" : 60,
-    "valueFormat" : "%1$s"
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "DEPTID",
-      "dBType" : "MYSQL5",
-      "name" : "DEPTID",
-      "queryCodeExp" : "t1.`DEPTID`",
-      "standardColumnName" : "`DEPTID`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "DEPTID",
-          "maxValue" : 60,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[60]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[60]"
-      },
-      "getPSDEField" : {
-        "name" : "DEPTID",
-        "codeName" : "DeptId"
-      },
-      "ruleInfo" : "内容长度必须小于等于[60]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "DeptId",
-    "dEFType" : 1,
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "length" : 60,
-    "logicName" : "组织部门标识",
-    "name" : "DEPTID",
-    "predefinedType" : "ORGSECTORID",
     "stdDataType" : 25,
     "stringLength" : 60,
     "valueFormat" : "%1$s"
@@ -533,199 +726,6 @@
     "stdDataType" : 25,
     "stringLength" : 60,
     "valueFormat" : "%1$s"
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "YEAR",
-      "dBType" : "MYSQL5",
-      "name" : "YEAR",
-      "queryCodeExp" : "t1.`YEAR`",
-      "standardColumnName" : "`YEAR`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "YEAR",
-          "maxValue" : 100,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[100]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[100]"
-      },
-      "getPSDEField" : {
-        "name" : "YEAR",
-        "codeName" : "Year"
-      },
-      "ruleInfo" : "内容长度必须小于等于[100]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Year",
-    "dEFType" : 1,
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "length" : 100,
-    "logicName" : "年份",
-    "name" : "YEAR",
-    "stdDataType" : 25,
-    "stringLength" : 100,
-    "valueFormat" : "%1$s"
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "ISENABLE",
-      "dBType" : "MYSQL5",
-      "name" : "ISENABLE",
-      "queryCodeExp" : "t1.`ISENABLE`",
-      "standardColumnName" : "`ISENABLE`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "ISENABLE",
-        "codeName" : "IsEnable"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "IsEnable",
-    "dEFType" : 1,
-    "dataType" : "YESNO",
-    "importOrder" : 1000,
-    "logicName" : "是否启用",
-    "name" : "ISENABLE",
-    "getPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/YesNo3.json"
-    },
-    "stdDataType" : 9,
-    "valueFormat" : "%1$s"
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "BEGINSEQ",
-      "dBType" : "MYSQL5",
-      "name" : "BEGINSEQ",
-      "queryCodeExp" : "t1.`BEGINSEQ`",
-      "standardColumnName" : "`BEGINSEQ`",
-      "valueAutoGen" : true
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "BEGINSEQ",
-        "codeName" : "Beginseq"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Beginseq",
-    "dEFType" : 1,
-    "dataType" : "BIGINT",
-    "defaultValue" : "0",
-    "importOrder" : 1000,
-    "length" : 20,
-    "logicName" : "开始序列号",
-    "name" : "BEGINSEQ",
-    "stdDataType" : 1,
-    "valueFormat" : "%1$s"
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "INCREMENT",
-      "dBType" : "MYSQL5",
-      "name" : "INCREMENT",
-      "queryCodeExp" : "t1.`INCREMENT`",
-      "standardColumnName" : "`INCREMENT`",
-      "valueAutoGen" : true
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "INCREMENT",
-        "codeName" : "Increment"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Increment",
-    "dEFType" : 1,
-    "dataType" : "INT",
-    "defaultValue" : "1",
-    "importOrder" : 1000,
-    "logicName" : "自增数值",
-    "name" : "INCREMENT",
-    "stdDataType" : 9,
-    "valueFormat" : "%1$s"
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "CURSEQ",
-      "dBType" : "MYSQL5",
-      "name" : "CURSEQ",
-      "queryCodeExp" : "t1.`CURSEQ`",
-      "standardColumnName" : "`CURSEQ`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "CURSEQ",
-        "codeName" : "Curseq"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Curseq",
-    "dEFType" : 1,
-    "dataType" : "BIGINT",
-    "importOrder" : 1000,
-    "length" : 20,
-    "logicName" : "当前序列号",
-    "name" : "CURSEQ",
-    "stdDataType" : 1,
-    "valueFormat" : "%1$s"
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
@@ -759,6 +759,13 @@
     "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSequence/PSDEUSERROLES/CURDEPT_RW.json",
     "name" : "当前部门（读写）",
     "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "DELETE",
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    }, {
       "dataAccessAction" : "UPDATE",
       "name" : "UPDATE",
       "getPSDEOPPriv" : {
@@ -771,13 +778,6 @@
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "READ"
-      }
-    }, {
-      "dataAccessAction" : "DELETE",
-      "name" : "DELETE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "DELETE"
       }
     } ],
     "roleTag" : "CURDEPT_RW",
@@ -804,18 +804,18 @@
     "name" : "当前组织（读写）",
     "orgDR" : 1,
     "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "READ",
-      "name" : "READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
-    }, {
       "dataAccessAction" : "DELETE",
       "name" : "DELETE",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "DELETE"
+      }
+    }, {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
       }
     }, {
       "dataAccessAction" : "UPDATE",
@@ -849,7 +849,9 @@
   "extendMode" : 0,
   "logicName" : "业务序列表",
   "name" : "IBZPRO_SEQUENCE",
-  "saaSMode" : 0,
+  "saaSDCIdColumnName" : "SRFDCID",
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSMode" : 4,
   "serviceAPIMode" : 0,
   "serviceCodeName" : "IBZProSequence",
   "storageMode" : 1,

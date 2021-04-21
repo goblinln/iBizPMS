@@ -2,13 +2,6 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEUSERROLES/TaskEstimate_Maintain.json",
   "name" : "任务预计维护",
   "getPSDEUserRoleOPPrivs" : [ {
-    "dataAccessAction" : "CREATE",
-    "name" : "TaskEstimate_Maintain_CREATE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    }
-  }, {
     "dataAccessAction" : "UPDATE",
     "name" : "TaskEstimate_Maintain_UPDATE",
     "getPSDEOPPriv" : {
@@ -16,11 +9,11 @@
       "id" : "UPDATE"
     }
   }, {
-    "dataAccessAction" : "DELETE",
-    "name" : "TaskEstimate_Maintain_DELETE",
+    "dataAccessAction" : "CREATE",
+    "name" : "TaskEstimate_Maintain_CREATE",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "CREATE"
     }
   }, {
     "dataAccessAction" : "READ",
@@ -28,6 +21,13 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
+    }
+  }, {
+    "dataAccessAction" : "DELETE",
+    "name" : "TaskEstimate_Maintain_DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
     }
   } ],
   "roleTag" : "TaskEstimate_Maintain",

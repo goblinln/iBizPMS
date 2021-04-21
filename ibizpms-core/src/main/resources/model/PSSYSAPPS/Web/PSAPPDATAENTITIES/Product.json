@@ -498,6 +498,12 @@
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
     "codeName" : "Istop",
     "logicName" : "是否置顶",
     "name" : "ISTOP",
@@ -618,6 +624,12 @@
     "name" : "NOTCLOSEDBUGCNT",
     "stdDataType" : 9
   }, {
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
     "codeName" : "Supproreport",
     "logicName" : "支持产品汇报",
     "name" : "SUPPROREPORT",
@@ -680,6 +692,12 @@
     "name" : "RDPK",
     "stdDataType" : 25,
     "stringLength" : 200
+  }, {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
   }, {
     "codeName" : "CreatedVersion",
     "logicName" : "当前系统版本",
@@ -774,24 +792,6 @@
     "logicName" : "产品线",
     "name" : "LINE",
     "stdDataType" : 1
-  }, {
-    "codeName" : "UpdateMan",
-    "logicName" : "更新人",
-    "name" : "UPDATEMAN",
-    "stdDataType" : 25,
-    "stringLength" : 60
-  }, {
-    "codeName" : "CreateMan",
-    "logicName" : "建立人",
-    "name" : "CREATEMAN",
-    "stdDataType" : 25,
-    "stringLength" : 60
-  }, {
-    "codeName" : "UpdateDate",
-    "logicName" : "更新时间",
-    "name" : "UPDATEDATE",
-    "stdDataType" : 5,
-    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

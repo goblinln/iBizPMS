@@ -1306,7 +1306,7 @@
       "columnName" : "PRODUCTNAME",
       "dBType" : "MYSQL5",
       "name" : "PRODUCTNAME",
-      "queryCodeExp" : "t11.`NAME`",
+      "queryCodeExp" : "t11.`name`",
       "standardColumnName" : "`PRODUCTNAME`",
       "valueAutoGen" : true
     } ],
@@ -1882,18 +1882,18 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEUSERROLES/Release_Maintain.json",
     "name" : "产品发布维护",
     "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "UPDATE",
-      "name" : "Release_Maintain_UPDATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "UPDATE"
-      }
-    }, {
       "dataAccessAction" : "CREATE",
       "name" : "Release_Maintain_CREATE",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "CREATE"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "Release_Maintain_DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
       }
     }, {
       "dataAccessAction" : "READ",
@@ -1903,11 +1903,11 @@
         "id" : "READ"
       }
     }, {
-      "dataAccessAction" : "DELETE",
-      "name" : "Release_Maintain_DELETE",
+      "dataAccessAction" : "UPDATE",
+      "name" : "Release_Maintain_UPDATE",
       "getPSDEOPPriv" : {
         "modelref" : true,
-        "id" : "DELETE"
+        "id" : "UPDATE"
       }
     } ],
     "roleTag" : "Release_Maintain",

@@ -406,7 +406,7 @@ public class ReleaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ReleaseRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@ReleaseRuntime.test(#release_id,'UPDATE')")
     @ApiOperation(value = "根据产品更新发布", tags = {"发布" },  notes = "根据产品更新发布")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/releases/{release_id}")
     public ResponseEntity<ReleaseDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
@@ -430,7 +430,7 @@ public class ReleaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ReleaseRuntime.quickTest('DELETE')")
+    @PreAuthorize("@ReleaseRuntime.test(#release_id,'DELETE')")
     @ApiOperation(value = "根据产品删除发布", tags = {"发布" },  notes = "根据产品删除发布")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/releases/{release_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id) {
@@ -445,7 +445,7 @@ public class ReleaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ReleaseRuntime.quickTest('READ')")
+    @PreAuthorize("@ReleaseRuntime.test(#release_id,'READ')")
     @ApiOperation(value = "根据产品获取发布", tags = {"发布" },  notes = "根据产品获取发布")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/releases/{release_id}")
     public ResponseEntity<ReleaseDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id) {
@@ -467,6 +467,7 @@ public class ReleaseResource {
     public ResponseEntity<ReleaseDTO> activateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
         Release domain = releaseMapping.toDomain(releasedto);
         domain.setProduct(product_id);
+        domain.setId(release_id);
         domain = releaseService.activate(domain) ;
         releasedto = releaseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
@@ -483,6 +484,7 @@ public class ReleaseResource {
     public ResponseEntity<ReleaseDTO> batchUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
         Release domain = releaseMapping.toDomain(releasedto);
         domain.setProduct(product_id);
+        domain.setId(release_id);
         domain = releaseService.batchUnlinkBug(domain) ;
         releasedto = releaseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
@@ -499,6 +501,7 @@ public class ReleaseResource {
     public ResponseEntity<ReleaseDTO> changeStatusByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
         Release domain = releaseMapping.toDomain(releasedto);
         domain.setProduct(product_id);
+        domain.setId(release_id);
         domain = releaseService.changeStatus(domain) ;
         releasedto = releaseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
@@ -521,6 +524,7 @@ public class ReleaseResource {
     public ResponseEntity<ReleaseDTO> linkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
         Release domain = releaseMapping.toDomain(releasedto);
         domain.setProduct(product_id);
+        domain.setId(release_id);
         domain = releaseService.linkBug(domain) ;
         releasedto = releaseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
@@ -537,6 +541,7 @@ public class ReleaseResource {
     public ResponseEntity<ReleaseDTO> linkBugbyBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
         Release domain = releaseMapping.toDomain(releasedto);
         domain.setProduct(product_id);
+        domain.setId(release_id);
         domain = releaseService.linkBugbyBug(domain) ;
         releasedto = releaseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
@@ -553,6 +558,7 @@ public class ReleaseResource {
     public ResponseEntity<ReleaseDTO> linkBugbyLeftBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
         Release domain = releaseMapping.toDomain(releasedto);
         domain.setProduct(product_id);
+        domain.setId(release_id);
         domain = releaseService.linkBugbyLeftBug(domain) ;
         releasedto = releaseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
@@ -569,6 +575,7 @@ public class ReleaseResource {
     public ResponseEntity<ReleaseDTO> linkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
         Release domain = releaseMapping.toDomain(releasedto);
         domain.setProduct(product_id);
+        domain.setId(release_id);
         domain = releaseService.linkStory(domain) ;
         releasedto = releaseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
@@ -585,6 +592,7 @@ public class ReleaseResource {
     public ResponseEntity<ReleaseDTO> mobReleaseCounterByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
         Release domain = releaseMapping.toDomain(releasedto);
         domain.setProduct(product_id);
+        domain.setId(release_id);
         domain = releaseService.mobReleaseCounter(domain) ;
         releasedto = releaseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
@@ -594,6 +602,7 @@ public class ReleaseResource {
     public ResponseEntity<ReleaseDTO> oneClickReleaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
         Release domain = releaseMapping.toDomain(releasedto);
         domain.setProduct(product_id);
+        domain.setId(release_id);
         domain = releaseService.oneClickRelease(domain) ;
         releasedto = releaseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
@@ -630,6 +639,7 @@ public class ReleaseResource {
     public ResponseEntity<ReleaseDTO> terminateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
         Release domain = releaseMapping.toDomain(releasedto);
         domain.setProduct(product_id);
+        domain.setId(release_id);
         domain = releaseService.terminate(domain) ;
         releasedto = releaseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
@@ -646,6 +656,7 @@ public class ReleaseResource {
     public ResponseEntity<ReleaseDTO> unlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
         Release domain = releaseMapping.toDomain(releasedto);
         domain.setProduct(product_id);
+        domain.setId(release_id);
         domain = releaseService.unlinkBug(domain) ;
         releasedto = releaseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);

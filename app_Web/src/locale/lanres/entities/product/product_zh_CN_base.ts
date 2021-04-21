@@ -4,6 +4,7 @@ function getLocaleResourceBase(){
 	const data:any = {
 	fields: {
 		'orgid': commonLogic.appcommonhandle("组织标识",null),
+		'updatedate': commonLogic.appcommonhandle("更新时间",null),
 		'istop': commonLogic.appcommonhandle("是否置顶",null),
 		'comment': commonLogic.appcommonhandle("备注",null),
 		'qd': commonLogic.appcommonhandle("测试负责人",null),
@@ -25,6 +26,7 @@ function getLocaleResourceBase(){
 		'rd': commonLogic.appcommonhandle("发布负责人",null),
 		'popk': commonLogic.appcommonhandle("产品负责人（选择）",null),
 		'notclosedbugcnt': commonLogic.appcommonhandle("未关闭Bug数",null),
+		'updateman': commonLogic.appcommonhandle("更新人",null),
 		'supproreport': commonLogic.appcommonhandle("支持产品汇报",null),
 		'order': commonLogic.appcommonhandle("排序",null),
 		'type': commonLogic.appcommonhandle("产品类型",null),
@@ -36,6 +38,7 @@ function getLocaleResourceBase(){
 		'activebugcnt': commonLogic.appcommonhandle("未解决Bug数",null),
 		'createdby': commonLogic.appcommonhandle("由谁创建",null),
 		'rdpk': commonLogic.appcommonhandle("发布负责人（选择）",null),
+		'createman': commonLogic.appcommonhandle("建立人",null),
 		'createdversion': commonLogic.appcommonhandle("当前系统版本",null),
 		'draftstorycnt': commonLogic.appcommonhandle("草稿需求",null),
 		'doccnt': commonLogic.appcommonhandle("文档数",null),
@@ -53,9 +56,6 @@ function getLocaleResourceBase(){
 		'activestorycnt': commonLogic.appcommonhandle("激活需求数",null),
 		'linename': commonLogic.appcommonhandle("产品线",null),
 		'line': commonLogic.appcommonhandle("产品线",null),
-		'updateman': commonLogic.appcommonhandle("更新人",null),
-		'createman': commonLogic.appcommonhandle("建立人",null),
-		'updatedate': commonLogic.appcommonhandle("更新时间",null),
 	},
 		views: {
 			'testtabexpview': {

@@ -35,6 +35,10 @@ export interface ITodo extends IEntityBase {
      */
     config_type?: 'day' | 'week' | 'month';
     /**
+     * 待办编号
+     */
+    todosn?: any;
+    /**
      * 关闭时间
      */
     closeddate?: any;
@@ -59,9 +63,17 @@ export interface ITodo extends IEntityBase {
      */
     desc?: any;
     /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
      * 消息通知用户
      */
     noticeusers?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
     /**
      * 由谁完成
      */
@@ -80,6 +92,10 @@ export interface ITodo extends IEntityBase {
      * 由谁指派
      */
     assignedby?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
     /**
      * 周期设置月
      *
@@ -166,20 +182,4 @@ export interface ITodo extends IEntityBase {
      * config
      */
     config?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
-    /**
-     * 待办编号
-     */
-    todosn?: any;
 }

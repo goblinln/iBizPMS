@@ -425,6 +425,14 @@ public class Bug extends EntityMP implements Serializable {
     @ApiModelProperty("子状态")
     private String substatus;
     /**
+     * BUG编号
+     */
+    @TableField(value = "`BUGSN`")
+    @JSONField(name = "bugsn")
+    @JsonProperty("bugsn")
+    @ApiModelProperty("BUG编号")
+    private Long bugsn;
+    /**
      * 归属组织
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
@@ -728,14 +736,6 @@ public class Bug extends EntityMP implements Serializable {
     @JsonProperty("testtask")
     @ApiModelProperty("测试单")
     private Long testtask;
-    /**
-     * BUG编号
-     */
-    @TableField(value = "`BUGSN`")
-    @JSONField(name = "bugsn")
-    @JsonProperty("bugsn")
-    @ApiModelProperty("BUG编号")
-    private Long bugsn;
 
     /**
      * 
@@ -1110,6 +1110,14 @@ public class Bug extends EntityMP implements Serializable {
     }
 
     /**
+     * 设置 [BUG编号]
+     */
+    public void setBugsn(Long bugsn) {
+        this.bugsn = bugsn;
+        this.modify("bugsn", bugsn);
+    }
+
+    /**
      * 设置 [found]
      */
     public void setFound(String found) {
@@ -1291,14 +1299,6 @@ public class Bug extends EntityMP implements Serializable {
     public void setTesttask(Long testtask) {
         this.testtask = testtask;
         this.modify("testtask", testtask);
-    }
-
-    /**
-     * 设置 [BUG编号]
-     */
-    public void setBugsn(Long bugsn) {
-        this.bugsn = bugsn;
-        this.modify("bugsn", bugsn);
     }
 
 

@@ -2431,6 +2431,26 @@ public class StaticDict {
 
 
     /**
+     * 代码表[业务类别]
+     */
+    @Getter
+    public enum Ibzpro__category {
+        ZT_TODO("ZT_TODO","ZT_TODO");
+
+        private String value;
+        private String text;
+        private String valueSeparator="";
+        private String textSeparator="";
+        private String emptyText="";
+
+        Ibzpro__category(String value , String text) {
+            this.value=value;
+            this.text = text;
+        }
+    }
+
+
+    /**
      * 代码表[ZT_USER__CLIENTSTATUS]
      */
     @Getter
@@ -3497,26 +3517,6 @@ public class StaticDict {
         private String emptyText="";
 
         Doclib__type(String value , String text) {
-            this.value=value;
-            this.text = text;
-        }
-    }
-
-
-    /**
-     * 代码表[业务类别]
-     */
-    @Getter
-    public enum Ibzpro__category {
-        ZT_TODO("ZT_TODO","ZT_TODO");
-
-        private String value;
-        private String text;
-        private String valueSeparator="";
-        private String textSeparator="";
-        private String emptyText="";
-
-        Ibzpro__category(String value , String text) {
             this.value=value;
             this.text = text;
         }

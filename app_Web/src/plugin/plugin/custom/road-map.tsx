@@ -50,6 +50,21 @@ export class RoadMap extends AppListBase {
     protected showItems: any[] = [];
 
     /**
+     * 部件挂载
+     *
+     * @param {*} [args]
+     * @memberof RoadMap
+     */
+    public ctrlMounted(args?: any) {
+        this.ctrlEvent({
+            controlname: 'list2',
+            action: 'controlIsMounted',
+            data: true
+        })
+        super.ctrlMounted();
+    }
+	
+    /**
      * 格式化展示数据
      *
      * @protected
@@ -197,7 +212,7 @@ export class RoadMap extends AppListBase {
                 this.handleClick(this.items[0]);
             }
             if(this.items.length > 0){
-                if(this.controlInstance.getView().codeName == 'ProductLifeRoadMapListView'){
+                if(this.controlInstance?.getParentPSModelObject?.()?.codeName == 'ProductLifeRoadMapListView'){
                     this.mode = 'group';
                 }
                 this.formatData();

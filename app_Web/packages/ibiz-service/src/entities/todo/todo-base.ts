@@ -60,6 +60,10 @@ export abstract class TodoBase extends EntityBase implements ITodo {
      */
     config_type?: 'day' | 'week' | 'month';
     /**
+     * 待办编号
+     */
+    todosn?: any;
+    /**
      * 关闭时间
      */
     closeddate?: any;
@@ -84,9 +88,17 @@ export abstract class TodoBase extends EntityBase implements ITodo {
      */
     desc?: any;
     /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
      * 消息通知用户
      */
     noticeusers?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
     /**
      * 由谁完成
      */
@@ -105,6 +117,10 @@ export abstract class TodoBase extends EntityBase implements ITodo {
      * 由谁指派
      */
     assignedby?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
     /**
      * 周期设置月
      *
@@ -191,22 +207,6 @@ export abstract class TodoBase extends EntityBase implements ITodo {
      * config
      */
     config?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
-    /**
-     * 待办编号
-     */
-    todosn?: any;
 
     /**
      * 重置实体数据

@@ -1,5 +1,6 @@
 
 
+import { IPSAppDataEntity, IPSAppDEView, IPSDEGridFieldColumn } from '@ibiz/dynamic-model-api';
 import { Util } from 'ibiz-core';
 
 /**
@@ -11,7 +12,8 @@ import { Util } from 'ibiz-core';
  */
 export class StoryGridType {
 
-	/**
+
+	  /**
      * 绘制部件项内容
      * @param h createElement函数
      * @param ctrlItemModel 部件项模型数据
@@ -21,7 +23,9 @@ export class StoryGridType {
      * @memberof StoryGridType
      */
     public renderCtrlItem(h:any,ctrlItemModel:any,parentContainer:any,data:any){
-        const { name, caption, align, $linkView: linkView, linkViewEntity: entity, linkValueItem, width, widthUnit } = ctrlItemModel;
+        const { name, caption, align, linkValueItem, width, widthUnit } = ctrlItemModel as IPSDEGridFieldColumn;
+        const linkView = ctrlItemModel.getLinkPSAppView() as IPSAppDEView;
+        const entity = linkView?.getPSAppDataEntity() as IPSAppDataEntity;
         let renderParams: any = {
             "show-overflow-tooltip": true,
             "label": caption,
@@ -39,14 +43,14 @@ export class StoryGridType {
             height: linkView.height ? linkView.height : 0,
             width: linkView.width,
             title: linkView.title,
-            isRedirectView: linkView.isRedirectView ? true : false,
+            isRedirectView: linkView.redirectView ? true : false,
             placement: linkView.openMode ? linkView.openMode : '',
-            viewpath: linkView.dynaModelFilePath
+            viewpath: linkView.modelFilePath
         }
         this.handleLinkViewParams(linkView, view, entity, parentContainer.context);
         let tempContext: any = Util.deepCopy(parentContainer.context);
-        if (linkView && linkView.dynaModelFilePath) {
-            Object.assign(tempContext, { viewpath: linkView.dynaModelFilePath });
+        if (linkView && linkView.modelFilePath) {
+            Object.assign(tempContext, { viewpath: linkView.modelFilePath });
         }
         let tempViewParam: any = Util.deepCopy(parentContainer.viewparams);
         const deKeyField = entity ? entity.codeName.toLowerCase() : "";
@@ -91,9 +95,9 @@ export class StoryGridType {
      * @param view 模型
      * @param entity 链接视图实体
      */
-    public handleLinkViewParams(linkView: any, view: any, entity?: any, context?: any) {
+    public handleLinkViewParams(linkView: IPSAppDEView, view: any, entity?: IPSAppDataEntity, context?: any) {
         //获取父关系路由参数
-        let tempDeResParameters: any[] = linkView.getPSAppDERSPaths ? Util.formatAppDERSPath(context, linkView.getPSAppDERSPaths) : [];
+        let tempDeResParameters: any[] = linkView.getPSAppDERSPaths() ? Util.formatAppDERSPath(context, linkView.getPSAppDERSPaths()) : [];
         //视图本身路由参数
         let tempParameters: any[] = [];
         if (entity) {
@@ -103,7 +107,7 @@ export class StoryGridType {
             });
             tempParameters.push({
                 pathName: 'views',
-                parameterName: linkView.getPSDEViewCodeName.toLowerCase()
+                parameterName: linkView.getPSDEViewCodeName()?.toLowerCase()
             });
         } else {
             tempParameters.push({

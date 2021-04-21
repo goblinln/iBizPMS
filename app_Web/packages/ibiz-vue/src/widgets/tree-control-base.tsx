@@ -552,7 +552,7 @@ export class TreeControlBase extends MDControlBase {
             nodeOwner: item.nodeType
         }
         if(toolbarItem.itemType == 'DEUIACTION') {
-            const uiAction:any = (toolbarItem as IPSDECMUIActionItem).getPSUIAction();
+            const uiAction:IPSDEUIAction = (toolbarItem as IPSDECMUIActionItem).getPSUIAction() as IPSDEUIAction;
             if (uiAction) {
               tempItem.type = uiAction.uIActionType;
               tempItem.tag = uiAction.uIActionTag;

@@ -1502,6 +1502,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> activateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.activate(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1519,6 +1520,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> allPushByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.allPush(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1536,6 +1538,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> assignToByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.assignTo(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1553,6 +1556,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> batchAssignToByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.batchAssignTo(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1570,6 +1574,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> batchChangeBranchByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.batchChangeBranch(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1587,6 +1592,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> batchChangeModuleByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.batchChangeModule(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1604,6 +1610,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> batchChangePlanByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.batchChangePlan(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1621,6 +1628,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> batchChangeStageByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.batchChangeStage(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1638,6 +1646,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> batchCloseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.batchClose(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1655,6 +1664,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> batchReviewByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.batchReview(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1672,6 +1682,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> batchUnlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.batchUnlinkStory(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1689,6 +1700,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> bugToStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.bugToStory(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1706,6 +1718,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> buildBatchUnlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.buildBatchUnlinkStory(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1723,6 +1736,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> buildLinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.buildLinkStory(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1740,6 +1754,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> buildUnlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.buildUnlinkStory(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1757,6 +1772,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> buildUnlinkStorysByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.buildUnlinkStorys(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1767,6 +1783,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> changeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.change(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1790,6 +1807,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> closeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.close(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1807,6 +1825,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> createTasksByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.createTasks(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1824,6 +1843,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> getStorySpecByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.getStorySpec(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1841,6 +1861,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> getStorySpecsByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.getStorySpecs(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1851,6 +1872,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> importPlanStoriesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.importPlanStories(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1868,6 +1890,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> linkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.linkStory(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1885,6 +1908,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> projectBatchUnlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.projectBatchUnlinkStory(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1902,6 +1926,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> projectLinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.projectLinkStory(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1919,6 +1944,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> projectUnlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.projectUnlinkStory(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1936,6 +1962,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> projectUnlinkStorysByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.projectUnlinkStorys(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1946,6 +1973,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> pushByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.push(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1963,6 +1991,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> releaseBatchUnlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.releaseBatchUnlinkStory(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1980,6 +2009,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> releaseLinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.releaseLinkStory(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -1997,6 +2027,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> releaseUnlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.releaseUnlinkStory(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -2014,6 +2045,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> resetReviewedByByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.resetReviewedBy(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -2031,6 +2063,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> reviewByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.review(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -2068,6 +2101,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> sendMessageByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.sendMessage(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -2085,6 +2119,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> sendMsgPreProcessByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.sendMsgPreProcess(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -2102,6 +2137,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> storyFavoritesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.storyFavorites(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -2112,6 +2148,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> storyNFavoritesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.storyNFavorites(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -2121,6 +2158,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> syncFromIbizByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.syncFromIbiz(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
@@ -2138,6 +2176,7 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> unlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
+        domain.setId(story_id);
         domain = storyService.unlinkStory(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);

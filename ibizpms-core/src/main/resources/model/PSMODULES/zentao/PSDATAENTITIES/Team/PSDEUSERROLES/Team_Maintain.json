@@ -9,18 +9,18 @@
       "id" : "READ"
     }
   }, {
-    "dataAccessAction" : "UPDATE",
-    "name" : "Team_Maintain_UPDATE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    }
-  }, {
     "dataAccessAction" : "DELETE",
     "name" : "Team_Maintain_DELETE",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "DELETE"
+    }
+  }, {
+    "dataAccessAction" : "UPDATE",
+    "name" : "Team_Maintain_UPDATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
     }
   }, {
     "dataAccessAction" : "CREATE",

@@ -9,6 +9,13 @@
       "id" : "DELETE"
     }
   }, {
+    "dataAccessAction" : "READ",
+    "name" : "Doc_Maintain_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
     "dataAccessAction" : "CREATE",
     "name" : "Doc_Maintain_CREATE",
     "getPSDEOPPriv" : {
@@ -21,13 +28,6 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "UPDATE"
-    }
-  }, {
-    "dataAccessAction" : "READ",
-    "name" : "Doc_Maintain_READ",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
     }
   } ],
   "roleTag" : "Doc_Maintain",

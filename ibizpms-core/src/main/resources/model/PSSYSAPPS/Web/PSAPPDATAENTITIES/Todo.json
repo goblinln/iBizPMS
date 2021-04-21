@@ -439,6 +439,11 @@
     "stdDataType" : 25,
     "stringLength" : 200
   }, {
+    "codeName" : "Todosn",
+    "logicName" : "待办编号",
+    "name" : "TODOSN",
+    "stdDataType" : 1
+  }, {
     "codeName" : "ClosedDate",
     "logicName" : "关闭时间",
     "name" : "CLOSEDDATE",
@@ -468,9 +473,21 @@
     "stdDataType" : 21,
     "stringLength" : 65535
   }, {
+    "codeName" : "UpdateBy",
+    "logicName" : "由谁更新",
+    "name" : "UPDATEBY",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Noticeusers",
     "logicName" : "消息通知用户",
     "name" : "NOTICEUSERS",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Org",
+    "logicName" : "归属组织",
+    "name" : "ORG",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
@@ -495,6 +512,12 @@
     "name" : "ASSIGNEDBY",
     "stdDataType" : 25,
     "stringLength" : 30
+  }, {
+    "codeName" : "Dept",
+    "logicName" : "归属部门",
+    "name" : "DEPT",
+    "stdDataType" : 25,
+    "stringLength" : 100
   }, {
     "codeName" : "Config_month",
     "logicName" : "周期设置月",
@@ -607,29 +630,6 @@
     "name" : "CONFIG",
     "stdDataType" : 25,
     "stringLength" : 255
-  }, {
-    "codeName" : "UpdateBy",
-    "logicName" : "由谁更新",
-    "name" : "UPDATEBY",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "Org",
-    "logicName" : "归属组织",
-    "name" : "ORG",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "Dept",
-    "logicName" : "归属部门",
-    "name" : "DEPT",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "Todosn",
-    "logicName" : "待办编号",
-    "name" : "TODOSN",
-    "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

@@ -1368,11 +1368,11 @@
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEUSERROLES/ProjectTeam_Maintain.json",
     "name" : "项目团队维护",
     "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "CREATE",
-      "name" : "ProjectTeam_Maintain_CREATE",
+      "dataAccessAction" : "DELETE",
+      "name" : "ProjectTeam_Maintain_DELETE",
       "getPSDEOPPriv" : {
         "modelref" : true,
-        "id" : "CREATE"
+        "id" : "DELETE"
       }
     }, {
       "dataAccessAction" : "READ",
@@ -1389,11 +1389,11 @@
         "id" : "UPDATE"
       }
     }, {
-      "dataAccessAction" : "DELETE",
-      "name" : "ProjectTeam_Maintain_DELETE",
+      "dataAccessAction" : "CREATE",
+      "name" : "ProjectTeam_Maintain_CREATE",
       "getPSDEOPPriv" : {
         "modelref" : true,
-        "id" : "DELETE"
+        "id" : "CREATE"
       }
     } ],
     "roleTag" : "ProjectTeam_Maintain",

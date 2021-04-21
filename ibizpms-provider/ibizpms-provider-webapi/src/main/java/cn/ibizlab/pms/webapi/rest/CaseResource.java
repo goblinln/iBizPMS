@@ -965,7 +965,7 @@ public class CaseResource {
     }
 
     @VersionCheck(entity = "case" , versionfield = "lastediteddate")
-    @PreAuthorize("@CaseRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@CaseRuntime.test(#case_id,'UPDATE')")
     @ApiOperation(value = "根据产品更新测试用例", tags = {"测试用例" },  notes = "根据产品更新测试用例")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/cases/{case_id}")
     public ResponseEntity<CaseDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -989,7 +989,7 @@ public class CaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@CaseRuntime.quickTest('DELETE')")
+    @PreAuthorize("@CaseRuntime.test(#case_id,'DELETE')")
     @ApiOperation(value = "根据产品删除测试用例", tags = {"测试用例" },  notes = "根据产品删除测试用例")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/cases/{case_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id) {
@@ -1004,7 +1004,7 @@ public class CaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@CaseRuntime.quickTest('READ')")
+    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
     @ApiOperation(value = "根据产品获取测试用例", tags = {"测试用例" },  notes = "根据产品获取测试用例")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/cases/{case_id}")
     public ResponseEntity<CaseDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id) {
@@ -1026,6 +1026,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> caseFavoriteByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setProduct(product_id);
+        domain.setId(case_id);
         domain = caseService.caseFavorite(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -1035,6 +1036,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> caseNFavoriteByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setProduct(product_id);
+        domain.setId(case_id);
         domain = caseService.caseNFavorite(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -1050,6 +1052,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> confirmChangeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setProduct(product_id);
+        domain.setId(case_id);
         domain = caseService.confirmChange(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -1066,6 +1069,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> confirmstorychangeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setProduct(product_id);
+        domain.setId(case_id);
         domain = caseService.confirmstorychange(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -1077,12 +1081,13 @@ public class CaseResource {
         boolean result = caseService.confirmstorychangeBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@CaseRuntime.quickTest('READ')")
+    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
     @ApiOperation(value = "根据产品测试用例", tags = {"测试用例" },  notes = "根据产品测试用例")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/cases/{case_id}/getbytesttask")
     public ResponseEntity<CaseDTO> getByTestTaskByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setProduct(product_id);
+        domain.setId(case_id);
         domain = caseService.getByTestTask(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -1094,12 +1099,13 @@ public class CaseResource {
         boolean result = caseService.getByTestTaskBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@CaseRuntime.quickTest('READ')")
+    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
     @ApiOperation(value = "根据产品测试用例", tags = {"测试用例" },  notes = "根据产品测试用例")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/cases/{case_id}/gettesttaskcntrun")
     public ResponseEntity<CaseDTO> getTestTaskCntRunByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setProduct(product_id);
+        domain.setId(case_id);
         domain = caseService.getTestTaskCntRun(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -1116,6 +1122,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> linkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setProduct(product_id);
+        domain.setId(case_id);
         domain = caseService.linkCase(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -1132,6 +1139,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> mobLinkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setProduct(product_id);
+        domain.setId(case_id);
         domain = caseService.mobLinkCase(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -1148,6 +1156,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> runCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setProduct(product_id);
+        domain.setId(case_id);
         domain = caseService.runCase(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -1164,6 +1173,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> runCasesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setProduct(product_id);
+        domain.setId(case_id);
         domain = caseService.runCases(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -1193,6 +1203,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> testRunCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setProduct(product_id);
+        domain.setId(case_id);
         domain = caseService.testRunCase(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -1209,6 +1220,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> testRunCasesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setProduct(product_id);
+        domain.setId(case_id);
         domain = caseService.testRunCases(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -1218,6 +1230,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> testsuitelinkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setProduct(product_id);
+        domain.setId(case_id);
         domain = caseService.testsuitelinkCase(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -1234,6 +1247,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> unlinkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setProduct(product_id);
+        domain.setId(case_id);
         domain = caseService.unlinkCase(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -1250,6 +1264,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> unlinkCasesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setProduct(product_id);
+        domain.setId(case_id);
         domain = caseService.unlinkCases(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -1259,6 +1274,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> unlinkSuiteCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setProduct(product_id);
+        domain.setId(case_id);
         domain = caseService.unlinkSuiteCase(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -1275,6 +1291,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> unlinkSuiteCasesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setProduct(product_id);
+        domain.setId(case_id);
         domain = caseService.unlinkSuiteCases(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -1853,7 +1870,7 @@ public class CaseResource {
     }
 
     @VersionCheck(entity = "case" , versionfield = "lastediteddate")
-    @PreAuthorize("@CaseRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@CaseRuntime.test(#case_id,'UPDATE')")
     @ApiOperation(value = "根据需求更新测试用例", tags = {"测试用例" },  notes = "根据需求更新测试用例")
 	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/cases/{case_id}")
     public ResponseEntity<CaseDTO> updateByStory(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -1877,7 +1894,7 @@ public class CaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@CaseRuntime.quickTest('DELETE')")
+    @PreAuthorize("@CaseRuntime.test(#case_id,'DELETE')")
     @ApiOperation(value = "根据需求删除测试用例", tags = {"测试用例" },  notes = "根据需求删除测试用例")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}/cases/{case_id}")
     public ResponseEntity<Boolean> removeByStory(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id) {
@@ -1892,7 +1909,7 @@ public class CaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@CaseRuntime.quickTest('READ')")
+    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
     @ApiOperation(value = "根据需求获取测试用例", tags = {"测试用例" },  notes = "根据需求获取测试用例")
 	@RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/cases/{case_id}")
     public ResponseEntity<CaseDTO> getByStory(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id) {
@@ -1914,6 +1931,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> caseFavoriteByStory(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.caseFavorite(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -1923,6 +1941,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> caseNFavoriteByStory(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.caseNFavorite(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -1938,6 +1957,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> confirmChangeByStory(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.confirmChange(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -1954,6 +1974,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> confirmstorychangeByStory(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.confirmstorychange(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -1965,12 +1986,13 @@ public class CaseResource {
         boolean result = caseService.confirmstorychangeBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@CaseRuntime.quickTest('READ')")
+    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
     @ApiOperation(value = "根据需求测试用例", tags = {"测试用例" },  notes = "根据需求测试用例")
 	@RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/cases/{case_id}/getbytesttask")
     public ResponseEntity<CaseDTO> getByTestTaskByStory(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.getByTestTask(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -1982,12 +2004,13 @@ public class CaseResource {
         boolean result = caseService.getByTestTaskBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@CaseRuntime.quickTest('READ')")
+    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
     @ApiOperation(value = "根据需求测试用例", tags = {"测试用例" },  notes = "根据需求测试用例")
 	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/cases/{case_id}/gettesttaskcntrun")
     public ResponseEntity<CaseDTO> getTestTaskCntRunByStory(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.getTestTaskCntRun(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -2004,6 +2027,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> linkCaseByStory(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.linkCase(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -2020,6 +2044,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> mobLinkCaseByStory(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.mobLinkCase(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -2036,6 +2061,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> runCaseByStory(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.runCase(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -2052,6 +2078,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> runCasesByStory(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.runCases(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -2081,6 +2108,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> testRunCaseByStory(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.testRunCase(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -2097,6 +2125,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> testRunCasesByStory(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.testRunCases(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -2106,6 +2135,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> testsuitelinkCaseByStory(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.testsuitelinkCase(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -2122,6 +2152,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> unlinkCaseByStory(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.unlinkCase(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -2138,6 +2169,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> unlinkCasesByStory(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.unlinkCases(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -2147,6 +2179,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> unlinkSuiteCaseByStory(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.unlinkSuiteCase(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -2163,6 +2196,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> unlinkSuiteCasesByStory(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.unlinkSuiteCases(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -2741,7 +2775,7 @@ public class CaseResource {
     }
 
     @VersionCheck(entity = "case" , versionfield = "lastediteddate")
-    @PreAuthorize("@CaseRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@CaseRuntime.test(#case_id,'UPDATE')")
     @ApiOperation(value = "根据产品需求更新测试用例", tags = {"测试用例" },  notes = "根据产品需求更新测试用例")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}")
     public ResponseEntity<CaseDTO> updateByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -2765,7 +2799,7 @@ public class CaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@CaseRuntime.quickTest('DELETE')")
+    @PreAuthorize("@CaseRuntime.test(#case_id,'DELETE')")
     @ApiOperation(value = "根据产品需求删除测试用例", tags = {"测试用例" },  notes = "根据产品需求删除测试用例")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}")
     public ResponseEntity<Boolean> removeByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id) {
@@ -2780,7 +2814,7 @@ public class CaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@CaseRuntime.quickTest('READ')")
+    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
     @ApiOperation(value = "根据产品需求获取测试用例", tags = {"测试用例" },  notes = "根据产品需求获取测试用例")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}")
     public ResponseEntity<CaseDTO> getByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id) {
@@ -2802,6 +2836,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> caseFavoriteByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.caseFavorite(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -2811,6 +2846,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> caseNFavoriteByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.caseNFavorite(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -2826,6 +2862,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> confirmChangeByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.confirmChange(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -2842,6 +2879,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> confirmstorychangeByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.confirmstorychange(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -2853,12 +2891,13 @@ public class CaseResource {
         boolean result = caseService.confirmstorychangeBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@CaseRuntime.quickTest('READ')")
+    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
     @ApiOperation(value = "根据产品需求测试用例", tags = {"测试用例" },  notes = "根据产品需求测试用例")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}/getbytesttask")
     public ResponseEntity<CaseDTO> getByTestTaskByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.getByTestTask(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -2870,12 +2909,13 @@ public class CaseResource {
         boolean result = caseService.getByTestTaskBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@CaseRuntime.quickTest('READ')")
+    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
     @ApiOperation(value = "根据产品需求测试用例", tags = {"测试用例" },  notes = "根据产品需求测试用例")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}/gettesttaskcntrun")
     public ResponseEntity<CaseDTO> getTestTaskCntRunByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.getTestTaskCntRun(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -2892,6 +2932,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> linkCaseByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.linkCase(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -2908,6 +2949,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> mobLinkCaseByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.mobLinkCase(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -2924,6 +2966,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> runCaseByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.runCase(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -2940,6 +2983,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> runCasesByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.runCases(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -2969,6 +3013,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> testRunCaseByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.testRunCase(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -2985,6 +3030,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> testRunCasesByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.testRunCases(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -2994,6 +3040,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> testsuitelinkCaseByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.testsuitelinkCase(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -3010,6 +3057,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> unlinkCaseByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.unlinkCase(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -3026,6 +3074,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> unlinkCasesByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.unlinkCases(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -3035,6 +3084,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> unlinkSuiteCaseByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.unlinkSuiteCase(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
@@ -3051,6 +3101,7 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> unlinkSuiteCasesByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case domain = caseMapping.toDomain(casedto);
         domain.setStory(story_id);
+        domain.setId(case_id);
         domain = caseService.unlinkSuiteCases(domain) ;
         casedto = caseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);

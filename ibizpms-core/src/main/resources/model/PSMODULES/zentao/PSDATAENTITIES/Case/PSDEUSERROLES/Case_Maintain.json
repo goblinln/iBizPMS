@@ -2,18 +2,18 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEUSERROLES/Case_Maintain.json",
   "name" : "用例维护",
   "getPSDEUserRoleOPPrivs" : [ {
-    "dataAccessAction" : "UPDATE",
-    "name" : "Case_Maintain_UPDATE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    }
-  }, {
     "dataAccessAction" : "CREATE",
     "name" : "Case_Maintain_CREATE",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
+    }
+  }, {
+    "dataAccessAction" : "DELETE",
+    "name" : "Case_Maintain_DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
     }
   }, {
     "dataAccessAction" : "READ",
@@ -23,11 +23,11 @@
       "id" : "READ"
     }
   }, {
-    "dataAccessAction" : "DELETE",
-    "name" : "Case_Maintain_DELETE",
+    "dataAccessAction" : "UPDATE",
+    "name" : "Case_Maintain_UPDATE",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "UPDATE"
     }
   } ],
   "roleTag" : "Case_Maintain",

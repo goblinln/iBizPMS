@@ -22,6 +22,14 @@
      <endEvent id="deaction4_end" name="end"/>
      <sequenceFlow id="deaction4_end_line" sourceRef="deaction4" targetRef="deaction4_end"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="useryearworkstatsupdateinforawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="获取标题"/>
+     <sequenceFlow id="gateway-rawsqlcall1_deaction2" sourceRef="gateway-rawsqlcall1" targetRef="deaction2">
+            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+            $useryearworkstatsupdateinfodefault:UserYearWorkStats();
+            eval($useryearworkstatsupdateinfodefault==useryearworkstatsupdateinfodefault);
+                eval((RuleUtils.test($useryearworkstatsupdateinfodefault.get("judgerole"),"EQ","dev")))
+                ]]>
+            </conditionExpression>
+     </sequenceFlow>
      <sequenceFlow id="gateway-rawsqlcall1_deaction3" sourceRef="gateway-rawsqlcall1" targetRef="deaction3">
             <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
             $useryearworkstatsupdateinfodefault:UserYearWorkStats();
@@ -35,14 +43,6 @@
             $useryearworkstatsupdateinfodefault:UserYearWorkStats();
             eval($useryearworkstatsupdateinfodefault==useryearworkstatsupdateinfodefault);
                 eval((RuleUtils.test($useryearworkstatsupdateinfodefault.get("judgerole"),"EQ","po")))
-                ]]>
-            </conditionExpression>
-     </sequenceFlow>
-     <sequenceFlow id="gateway-rawsqlcall1_deaction2" sourceRef="gateway-rawsqlcall1" targetRef="deaction2">
-            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
-            $useryearworkstatsupdateinfodefault:UserYearWorkStats();
-            eval($useryearworkstatsupdateinfodefault==useryearworkstatsupdateinfodefault);
-                eval((RuleUtils.test($useryearworkstatsupdateinfodefault.get("judgerole"),"EQ","dev")))
                 ]]>
             </conditionExpression>
      </sequenceFlow>

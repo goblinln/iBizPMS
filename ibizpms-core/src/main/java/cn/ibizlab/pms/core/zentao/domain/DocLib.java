@@ -80,6 +80,15 @@ public class DocLib extends EntityMP implements Serializable {
     @ApiModelProperty("收藏者")
     private String collector;
     /**
+     * 由谁更新
+     */
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @TableField(value = "`UPDATEMANNAME`")
+    @JSONField(name = "updatemanname")
+    @JsonProperty("updatemanname")
+    @ApiModelProperty("由谁更新")
+    private String updatemanname;
+    /**
      * 部门标识
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
@@ -253,15 +262,6 @@ public class DocLib extends EntityMP implements Serializable {
     @JsonProperty("product")
     @ApiModelProperty("产品库")
     private Long product;
-    /**
-     * 由谁更新
-     */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "`UPDATEMANNAME`")
-    @JSONField(name = "updatemanname")
-    @JsonProperty("updatemanname")
-    @ApiModelProperty("由谁更新")
-    private String updatemanname;
 
     /**
      * 

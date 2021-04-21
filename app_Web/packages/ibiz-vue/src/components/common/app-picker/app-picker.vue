@@ -43,8 +43,8 @@
             :placeholder="placeholder">
             <template v-if="items">
                 <template v-for="(_item,index) in items">
-                    <el-option  v-if="!_item.tag" :key="index" :value="_item[deKeyField]" :label="_item[deMajorField]" :disabled="_item.disabled"></el-option>
-                    <el-option  v-else :key="index" value="action"><span  @click="clickAction(_item.tag)" style="float: left; width: 100%;">{{ _item.caption }}</span></el-option>
+                    <el-option  v-if="!_item.tag" :key="`${_item[deKeyField]}${index}${parentCodeName}`" :value="_item[deKeyField]" :label="_item[deMajorField]" :disabled="_item.disabled"></el-option>
+                    <el-option  v-else :key="`${_item[deKeyField]}${index}${parentCodeName}`" value="action"><span  @click="clickAction(_item.tag)" style="float: left; width: 100%;">{{ _item.caption }}</span></el-option>
                 </template>
             </template>
         </el-select>
@@ -233,6 +233,22 @@ export default class AppPicker extends Vue {
     @Prop() public placeholder?: string;
 
     /**
+     * 父容器标识
+     * 
+     * @type {*}
+     * @memberof AppPicker
+     */
+    @Prop() public parentCodeName?: string;
+
+    /**
+     * 值格式化
+     * 
+     * @type {*}
+     * @memberof AppPicker
+     */
+    @Prop() public valFormat?: any;
+
+    /**
      * 当前值
      *
      * @type {string}
@@ -286,7 +302,14 @@ export default class AppPicker extends Vue {
      */
     get refvalue() {
         if (this.valueitem && this.data) {
-            return this.data[this.valueitem];
+            const key = this.data[this.valueitem];
+            if (this.valFormat) {
+                const format =  eval("("+ this.valFormat +")");
+                if (format.hasOwnProperty(key)) {
+                    return format[key];
+                }
+            }
+            return key;
         }
         return this.curvalue;
     }

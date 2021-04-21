@@ -3,18 +3,18 @@
   "name" : "产品维护（当前机构）",
   "orgDR" : 1,
   "getPSDEUserRoleOPPrivs" : [ {
-    "dataAccessAction" : "DELETE",
-    "name" : "Product_Maintain_CO_DELETE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    }
-  }, {
     "dataAccessAction" : "UPDATE",
     "name" : "Product_Maintain_CO_UPDATE",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "UPDATE"
+    }
+  }, {
+    "dataAccessAction" : "READ",
+    "name" : "Product_Maintain_CO_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
     }
   }, {
     "dataAccessAction" : "CREATE",
@@ -24,11 +24,11 @@
       "id" : "CREATE"
     }
   }, {
-    "dataAccessAction" : "READ",
-    "name" : "Product_Maintain_CO_READ",
+    "dataAccessAction" : "DELETE",
+    "name" : "Product_Maintain_CO_DELETE",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "DELETE"
     }
   } ],
   "roleTag" : "Product_Maintain_CO",
