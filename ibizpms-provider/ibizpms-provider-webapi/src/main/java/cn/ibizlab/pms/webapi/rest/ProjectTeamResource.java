@@ -265,6 +265,7 @@ public class ProjectTeamResource {
     public ResponseEntity<ProjectTeamDTO> getUserRoleByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectteam_id") Long projectteam_id, @RequestBody ProjectTeamDTO projectteamdto) {
         ProjectTeam domain = projectteamMapping.toDomain(projectteamdto);
         domain.setRoot(project_id);
+        domain.setId(projectteam_id);
         domain = projectteamService.getUserRole(domain) ;
         projectteamdto = projectteamMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(projectteamdto);

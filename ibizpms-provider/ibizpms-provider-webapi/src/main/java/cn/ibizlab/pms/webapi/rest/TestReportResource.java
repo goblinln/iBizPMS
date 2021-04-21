@@ -273,6 +273,7 @@ public class TestReportResource {
     public ResponseEntity<TestReportDTO> getInfoTestTaskByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProduct(product_id);
+        domain.setId(testreport_id);
         domain = testreportService.getInfoTestTask(domain) ;
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
@@ -324,7 +325,7 @@ public class TestReportResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TestReportRuntime.quickTest('DELETE')")
+    @PreAuthorize("@TestReportRuntime.test(#testreport_id,'DELETE')")
     @ApiOperation(value = "根据产品删除测试报告", tags = {"测试报告" },  notes = "根据产品删除测试报告")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testreports/{testreport_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id) {
@@ -368,6 +369,7 @@ public class TestReportResource {
     public ResponseEntity<TestReportDTO> getInfoTaskOvByTimeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProduct(product_id);
+        domain.setId(testreport_id);
         domain = testreportService.getInfoTaskOvByTime(domain) ;
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
@@ -378,6 +380,7 @@ public class TestReportResource {
     public ResponseEntity<TestReportDTO> getInfoTestTaskOvProjectByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProduct(product_id);
+        domain.setId(testreport_id);
         domain = testreportService.getInfoTestTaskOvProject(domain) ;
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
@@ -388,6 +391,7 @@ public class TestReportResource {
     public ResponseEntity<TestReportDTO> getInfoTestTaskProjectByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProduct(product_id);
+        domain.setId(testreport_id);
         domain = testreportService.getInfoTestTaskProject(domain) ;
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
@@ -398,6 +402,7 @@ public class TestReportResource {
     public ResponseEntity<TestReportDTO> getInfoTestTaskRByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProduct(product_id);
+        domain.setId(testreport_id);
         domain = testreportService.getInfoTestTaskR(domain) ;
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
@@ -408,6 +413,7 @@ public class TestReportResource {
     public ResponseEntity<TestReportDTO> getInfoTestTaskSByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProduct(product_id);
+        domain.setId(testreport_id);
         domain = testreportService.getInfoTestTaskS(domain) ;
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
@@ -418,6 +424,7 @@ public class TestReportResource {
     public ResponseEntity<TestReportDTO> getTestReportBasicInfoByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProduct(product_id);
+        domain.setId(testreport_id);
         domain = testreportService.getTestReportBasicInfo(domain) ;
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
@@ -428,6 +435,7 @@ public class TestReportResource {
     public ResponseEntity<TestReportDTO> getTestReportProjectByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProduct(product_id);
+        domain.setId(testreport_id);
         domain = testreportService.getTestReportProject(domain) ;
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
@@ -483,6 +491,7 @@ public class TestReportResource {
     public ResponseEntity<TestReportDTO> getInfoTestTaskByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProject(project_id);
+        domain.setId(testreport_id);
         domain = testreportService.getInfoTestTask(domain) ;
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
@@ -534,7 +543,7 @@ public class TestReportResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TestReportRuntime.quickTest('DELETE')")
+    @PreAuthorize("@TestReportRuntime.test(#testreport_id,'DELETE')")
     @ApiOperation(value = "根据项目删除测试报告", tags = {"测试报告" },  notes = "根据项目删除测试报告")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/testreports/{testreport_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id) {
@@ -578,6 +587,7 @@ public class TestReportResource {
     public ResponseEntity<TestReportDTO> getInfoTaskOvByTimeByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProject(project_id);
+        domain.setId(testreport_id);
         domain = testreportService.getInfoTaskOvByTime(domain) ;
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
@@ -588,6 +598,7 @@ public class TestReportResource {
     public ResponseEntity<TestReportDTO> getInfoTestTaskOvProjectByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProject(project_id);
+        domain.setId(testreport_id);
         domain = testreportService.getInfoTestTaskOvProject(domain) ;
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
@@ -598,6 +609,7 @@ public class TestReportResource {
     public ResponseEntity<TestReportDTO> getInfoTestTaskProjectByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProject(project_id);
+        domain.setId(testreport_id);
         domain = testreportService.getInfoTestTaskProject(domain) ;
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
@@ -608,6 +620,7 @@ public class TestReportResource {
     public ResponseEntity<TestReportDTO> getInfoTestTaskRByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProject(project_id);
+        domain.setId(testreport_id);
         domain = testreportService.getInfoTestTaskR(domain) ;
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
@@ -618,6 +631,7 @@ public class TestReportResource {
     public ResponseEntity<TestReportDTO> getInfoTestTaskSByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProject(project_id);
+        domain.setId(testreport_id);
         domain = testreportService.getInfoTestTaskS(domain) ;
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
@@ -628,6 +642,7 @@ public class TestReportResource {
     public ResponseEntity<TestReportDTO> getTestReportBasicInfoByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProject(project_id);
+        domain.setId(testreport_id);
         domain = testreportService.getTestReportBasicInfo(domain) ;
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
@@ -638,6 +653,7 @@ public class TestReportResource {
     public ResponseEntity<TestReportDTO> getTestReportProjectByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProject(project_id);
+        domain.setId(testreport_id);
         domain = testreportService.getTestReportProject(domain) ;
         testreportdto = testreportMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);

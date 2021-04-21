@@ -391,7 +391,7 @@ public class ProjectModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('DELETE')")
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'DELETE')")
     @ApiOperation(value = "根据项目删除任务模块", tags = {"任务模块" },  notes = "根据项目删除任务模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectmodules/{projectmodule_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id) {
@@ -434,6 +434,7 @@ public class ProjectModuleResource {
     public ResponseEntity<ProjectModuleDTO> fixByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody ProjectModuleDTO projectmoduledto) {
         ProjectModule domain = projectmoduleMapping.toDomain(projectmoduledto);
         domain.setRoot(project_id);
+        domain.setId(projectmodule_id);
         domain = projectmoduleService.fix(domain) ;
         projectmoduledto = projectmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(projectmoduledto);
@@ -444,6 +445,7 @@ public class ProjectModuleResource {
     public ResponseEntity<ProjectModuleDTO> removeModuleByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody ProjectModuleDTO projectmoduledto) {
         ProjectModule domain = projectmoduleMapping.toDomain(projectmoduledto);
         domain.setRoot(project_id);
+        domain.setId(projectmodule_id);
         domain = projectmoduleService.removeModule(domain) ;
         projectmoduledto = projectmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(projectmoduledto);

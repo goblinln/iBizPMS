@@ -262,7 +262,7 @@ public class TestSuiteResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TestSuiteRuntime.quickTest('DELETE')")
+    @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'DELETE')")
     @ApiOperation(value = "根据产品删除测试套件", tags = {"测试套件" },  notes = "根据产品删除测试套件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testsuites/{testsuite_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id) {
@@ -305,6 +305,7 @@ public class TestSuiteResource {
     public ResponseEntity<TestSuiteDTO> mobTestSuiteCountByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody TestSuiteDTO testsuitedto) {
         TestSuite domain = testsuiteMapping.toDomain(testsuitedto);
         domain.setProduct(product_id);
+        domain.setId(testsuite_id);
         domain = testsuiteService.mobTestSuiteCount(domain) ;
         testsuitedto = testsuiteMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);

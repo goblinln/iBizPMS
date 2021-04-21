@@ -99,7 +99,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskTeamRuntime.quickTest('DELETE')")
+    @PreAuthorize("@TaskTeamRuntime.test(#taskteam_id,'DELETE')")
     @ApiOperation(value = "根据任务删除任务团队", tags = {"任务团队" },  notes = "根据任务删除任务团队")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<Boolean> removeByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
@@ -229,7 +229,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskTeamRuntime.quickTest('DELETE')")
+    @PreAuthorize("@TaskTeamRuntime.test(#taskteam_id,'DELETE')")
     @ApiOperation(value = "根据任务模块任务删除任务团队", tags = {"任务团队" },  notes = "根据任务模块任务删除任务团队")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<Boolean> removeByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
@@ -359,7 +359,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskTeamRuntime.quickTest('DELETE')")
+    @PreAuthorize("@TaskTeamRuntime.test(#taskteam_id,'DELETE')")
     @ApiOperation(value = "根据产品计划任务删除任务团队", tags = {"任务团队" },  notes = "根据产品计划任务删除任务团队")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/productplans/{productplan_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<Boolean> removeByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
@@ -489,7 +489,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskTeamRuntime.quickTest('DELETE')")
+    @PreAuthorize("@TaskTeamRuntime.test(#taskteam_id,'DELETE')")
     @ApiOperation(value = "根据需求任务删除任务团队", tags = {"任务团队" },  notes = "根据需求任务删除任务团队")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<Boolean> removeByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
@@ -619,7 +619,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskTeamRuntime.quickTest('DELETE')")
+    @PreAuthorize("@TaskTeamRuntime.test(#taskteam_id,'DELETE')")
     @ApiOperation(value = "根据项目任务删除任务团队", tags = {"任务团队" },  notes = "根据项目任务删除任务团队")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<Boolean> removeByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
@@ -749,7 +749,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskTeamRuntime.quickTest('DELETE')")
+    @PreAuthorize("@TaskTeamRuntime.test(#taskteam_id,'DELETE')")
     @ApiOperation(value = "根据产品产品计划任务删除任务团队", tags = {"任务团队" },  notes = "根据产品产品计划任务删除任务团队")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<Boolean> removeByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
@@ -879,7 +879,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskTeamRuntime.quickTest('DELETE')")
+    @PreAuthorize("@TaskTeamRuntime.test(#taskteam_id,'DELETE')")
     @ApiOperation(value = "根据产品需求任务删除任务团队", tags = {"任务团队" },  notes = "根据产品需求任务删除任务团队")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<Boolean> removeByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
@@ -1009,7 +1009,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskTeamRuntime.quickTest('DELETE')")
+    @PreAuthorize("@TaskTeamRuntime.test(#taskteam_id,'DELETE')")
     @ApiOperation(value = "根据项目任务模块任务删除任务团队", tags = {"任务团队" },  notes = "根据项目任务模块任务删除任务团队")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<Boolean> removeByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {

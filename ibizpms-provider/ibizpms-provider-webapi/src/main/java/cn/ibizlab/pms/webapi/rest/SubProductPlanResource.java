@@ -129,6 +129,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> batchUnlinkBugByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.batchUnlinkBug(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -145,6 +146,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> batchUnlinkStoryByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.batchUnlinkStory(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -167,6 +169,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> eeActivePlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.eeActivePlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -183,6 +186,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> eeCancelPlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.eeCancelPlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -199,6 +203,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> eeClosePlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.eeClosePlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -215,6 +220,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> eeFinishPlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.eeFinishPlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -231,6 +237,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> eePausePlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.eePausePlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -247,6 +254,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> eeRestartPlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.eeRestartPlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -263,6 +271,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> eeStartPlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.eeStartPlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -279,6 +288,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> getOldPlanNameByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.getOldPlanName(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -288,6 +298,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> importPlanTempletByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.importPlanTemplet(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -304,6 +315,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> linkBugByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.linkBug(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -320,6 +332,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> linkStoryByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.linkStory(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -336,6 +349,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> linkTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.linkTask(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -352,6 +366,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> mobProductPlanCounterByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.mobProductPlanCounter(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -381,6 +396,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> unlinkBugByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.unlinkBug(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -397,6 +413,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> unlinkStoryByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.unlinkStory(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -695,6 +712,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> batchUnlinkBugByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.batchUnlinkBug(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -711,6 +729,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> batchUnlinkStoryByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.batchUnlinkStory(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -733,6 +752,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> eeActivePlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.eeActivePlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -749,6 +769,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> eeCancelPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.eeCancelPlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -765,6 +786,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> eeClosePlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.eeClosePlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -781,6 +803,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> eeFinishPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.eeFinishPlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -797,6 +820,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> eePausePlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.eePausePlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -813,6 +837,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> eeRestartPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.eeRestartPlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -829,6 +854,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> eeStartPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.eeStartPlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -845,6 +871,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> getOldPlanNameByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.getOldPlanName(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -854,6 +881,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> importPlanTempletByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.importPlanTemplet(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -870,6 +898,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> linkBugByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.linkBug(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -886,6 +915,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> linkStoryByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.linkStory(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -902,6 +932,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> linkTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.linkTask(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -918,6 +949,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> mobProductPlanCounterByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.mobProductPlanCounter(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -947,6 +979,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> unlinkBugByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.unlinkBug(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
@@ -963,6 +996,7 @@ public class SubProductPlanResource {
     public ResponseEntity<SubProductPlanDTO> unlinkStoryByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
         domain = productplanService.unlinkStory(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);

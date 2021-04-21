@@ -1336,7 +1336,7 @@ public class BugResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DELETE')")
+    @PreAuthorize("@BugRuntime.test(#bug_id,'DELETE')")
     @ApiOperation(value = "根据产品删除Bug", tags = {"Bug" },  notes = "根据产品删除Bug")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/bugs/{bug_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id) {
@@ -1373,6 +1373,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> activateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
+        domain.setId(bug_id);
         domain = bugService.activate(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -1389,6 +1390,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> assignToByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
+        domain.setId(bug_id);
         domain = bugService.assignTo(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -1405,6 +1407,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> batchUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
+        domain.setId(bug_id);
         domain = bugService.batchUnlinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -1421,6 +1424,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> bugFavoritesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
+        domain.setId(bug_id);
         domain = bugService.bugFavorites(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -1430,6 +1434,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> bugNFavoritesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
+        domain.setId(bug_id);
         domain = bugService.bugNFavorites(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -1439,6 +1444,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> buildBatchUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
+        domain.setId(bug_id);
         domain = bugService.buildBatchUnlinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -1455,6 +1461,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> buildLinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
+        domain.setId(bug_id);
         domain = bugService.buildLinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -1471,6 +1478,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> buildUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
+        domain.setId(bug_id);
         domain = bugService.buildUnlinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -1493,6 +1501,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> closeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
+        domain.setId(bug_id);
         domain = bugService.close(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -1509,6 +1518,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> confirmByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
+        domain.setId(bug_id);
         domain = bugService.confirm(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -1525,6 +1535,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> linkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
+        domain.setId(bug_id);
         domain = bugService.linkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -1541,6 +1552,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> releaaseBatchUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
+        domain.setId(bug_id);
         domain = bugService.releaaseBatchUnlinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -1557,6 +1569,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> releaseLinkBugbyBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
+        domain.setId(bug_id);
         domain = bugService.releaseLinkBugbyBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -1573,6 +1586,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> releaseLinkBugbyLeftBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
+        domain.setId(bug_id);
         domain = bugService.releaseLinkBugbyLeftBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -1589,6 +1603,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> releaseUnLinkBugbyLeftBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
+        domain.setId(bug_id);
         domain = bugService.releaseUnLinkBugbyLeftBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -1605,6 +1620,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> releaseUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
+        domain.setId(bug_id);
         domain = bugService.releaseUnlinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -1621,6 +1637,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> resolveByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
+        domain.setId(bug_id);
         domain = bugService.resolve(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -1657,6 +1674,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> sendMessageByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
+        domain.setId(bug_id);
         domain = bugService.sendMessage(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -1673,6 +1691,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> sendMsgPreProcessByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
+        domain.setId(bug_id);
         domain = bugService.sendMsgPreProcess(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -1689,6 +1708,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> testScriptByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
+        domain.setId(bug_id);
         domain = bugService.testScript(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -1698,6 +1718,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> toStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
+        domain.setId(bug_id);
         domain = bugService.toStory(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -1714,6 +1735,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> unlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
+        domain.setId(bug_id);
         domain = bugService.unlinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -1731,6 +1753,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> updateStoryVersionByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
+        domain.setId(bug_id);
         domain = bugService.updateStoryVersion(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -2583,7 +2606,7 @@ public class BugResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DELETE')")
+    @PreAuthorize("@BugRuntime.test(#bug_id,'DELETE')")
     @ApiOperation(value = "根据需求删除Bug", tags = {"Bug" },  notes = "根据需求删除Bug")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}/bugs/{bug_id}")
     public ResponseEntity<Boolean> removeByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id) {
@@ -2620,6 +2643,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> activateByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.activate(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -2636,6 +2660,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> assignToByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.assignTo(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -2652,6 +2677,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> batchUnlinkBugByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.batchUnlinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -2668,6 +2694,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> bugFavoritesByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.bugFavorites(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -2677,6 +2704,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> bugNFavoritesByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.bugNFavorites(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -2686,6 +2714,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> buildBatchUnlinkBugByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.buildBatchUnlinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -2702,6 +2731,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> buildLinkBugByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.buildLinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -2718,6 +2748,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> buildUnlinkBugByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.buildUnlinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -2740,6 +2771,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> closeByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.close(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -2756,6 +2788,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> confirmByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.confirm(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -2772,6 +2805,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> linkBugByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.linkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -2788,6 +2822,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> releaaseBatchUnlinkBugByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.releaaseBatchUnlinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -2804,6 +2839,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> releaseLinkBugbyBugByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.releaseLinkBugbyBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -2820,6 +2856,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> releaseLinkBugbyLeftBugByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.releaseLinkBugbyLeftBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -2836,6 +2873,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> releaseUnLinkBugbyLeftBugByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.releaseUnLinkBugbyLeftBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -2852,6 +2890,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> releaseUnlinkBugByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.releaseUnlinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -2868,6 +2907,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> resolveByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.resolve(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -2904,6 +2944,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> sendMessageByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.sendMessage(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -2920,6 +2961,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> sendMsgPreProcessByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.sendMsgPreProcess(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -2936,6 +2978,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> testScriptByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.testScript(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -2945,6 +2988,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> toStoryByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.toStory(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -2961,6 +3005,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> unlinkBugByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.unlinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -2978,6 +3023,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> updateStoryVersionByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.updateStoryVersion(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -3830,7 +3876,7 @@ public class BugResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DELETE')")
+    @PreAuthorize("@BugRuntime.test(#bug_id,'DELETE')")
     @ApiOperation(value = "根据项目删除Bug", tags = {"Bug" },  notes = "根据项目删除Bug")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/bugs/{bug_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id) {
@@ -3867,6 +3913,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> activateByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
+        domain.setId(bug_id);
         domain = bugService.activate(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -3883,6 +3930,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> assignToByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
+        domain.setId(bug_id);
         domain = bugService.assignTo(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -3899,6 +3947,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> batchUnlinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
+        domain.setId(bug_id);
         domain = bugService.batchUnlinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -3915,6 +3964,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> bugFavoritesByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
+        domain.setId(bug_id);
         domain = bugService.bugFavorites(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -3924,6 +3974,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> bugNFavoritesByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
+        domain.setId(bug_id);
         domain = bugService.bugNFavorites(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -3933,6 +3984,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> buildBatchUnlinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
+        domain.setId(bug_id);
         domain = bugService.buildBatchUnlinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -3949,6 +4001,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> buildLinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
+        domain.setId(bug_id);
         domain = bugService.buildLinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -3965,6 +4018,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> buildUnlinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
+        domain.setId(bug_id);
         domain = bugService.buildUnlinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -3987,6 +4041,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> closeByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
+        domain.setId(bug_id);
         domain = bugService.close(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -4003,6 +4058,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> confirmByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
+        domain.setId(bug_id);
         domain = bugService.confirm(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -4019,6 +4075,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> linkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
+        domain.setId(bug_id);
         domain = bugService.linkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -4035,6 +4092,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> releaaseBatchUnlinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
+        domain.setId(bug_id);
         domain = bugService.releaaseBatchUnlinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -4051,6 +4109,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> releaseLinkBugbyBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
+        domain.setId(bug_id);
         domain = bugService.releaseLinkBugbyBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -4067,6 +4126,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> releaseLinkBugbyLeftBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
+        domain.setId(bug_id);
         domain = bugService.releaseLinkBugbyLeftBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -4083,6 +4143,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> releaseUnLinkBugbyLeftBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
+        domain.setId(bug_id);
         domain = bugService.releaseUnLinkBugbyLeftBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -4099,6 +4160,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> releaseUnlinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
+        domain.setId(bug_id);
         domain = bugService.releaseUnlinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -4115,6 +4177,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> resolveByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
+        domain.setId(bug_id);
         domain = bugService.resolve(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -4151,6 +4214,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> sendMessageByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
+        domain.setId(bug_id);
         domain = bugService.sendMessage(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -4167,6 +4231,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> sendMsgPreProcessByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
+        domain.setId(bug_id);
         domain = bugService.sendMsgPreProcess(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -4183,6 +4248,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> testScriptByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
+        domain.setId(bug_id);
         domain = bugService.testScript(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -4192,6 +4258,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> toStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
+        domain.setId(bug_id);
         domain = bugService.toStory(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -4208,6 +4275,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> unlinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
+        domain.setId(bug_id);
         domain = bugService.unlinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -4225,6 +4293,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> updateStoryVersionByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
+        domain.setId(bug_id);
         domain = bugService.updateStoryVersion(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -5077,7 +5146,7 @@ public class BugResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DELETE')")
+    @PreAuthorize("@BugRuntime.test(#bug_id,'DELETE')")
     @ApiOperation(value = "根据产品需求删除Bug", tags = {"Bug" },  notes = "根据产品需求删除Bug")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}/bugs/{bug_id}")
     public ResponseEntity<Boolean> removeByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id) {
@@ -5114,6 +5183,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> activateByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.activate(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -5130,6 +5200,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> assignToByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.assignTo(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -5146,6 +5217,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> batchUnlinkBugByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.batchUnlinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -5162,6 +5234,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> bugFavoritesByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.bugFavorites(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -5171,6 +5244,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> bugNFavoritesByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.bugNFavorites(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -5180,6 +5254,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> buildBatchUnlinkBugByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.buildBatchUnlinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -5196,6 +5271,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> buildLinkBugByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.buildLinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -5212,6 +5288,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> buildUnlinkBugByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.buildUnlinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -5234,6 +5311,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> closeByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.close(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -5250,6 +5328,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> confirmByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.confirm(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -5266,6 +5345,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> linkBugByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.linkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -5282,6 +5362,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> releaaseBatchUnlinkBugByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.releaaseBatchUnlinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -5298,6 +5379,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> releaseLinkBugbyBugByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.releaseLinkBugbyBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -5314,6 +5396,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> releaseLinkBugbyLeftBugByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.releaseLinkBugbyLeftBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -5330,6 +5413,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> releaseUnLinkBugbyLeftBugByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.releaseUnLinkBugbyLeftBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -5346,6 +5430,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> releaseUnlinkBugByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.releaseUnlinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -5362,6 +5447,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> resolveByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.resolve(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -5398,6 +5484,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> sendMessageByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.sendMessage(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -5414,6 +5501,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> sendMsgPreProcessByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.sendMsgPreProcess(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -5430,6 +5518,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> testScriptByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.testScript(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -5439,6 +5528,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> toStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.toStory(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -5455,6 +5545,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> unlinkBugByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.unlinkBug(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
@@ -5472,6 +5563,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> updateStoryVersionByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setStory(story_id);
+        domain.setId(bug_id);
         domain = bugService.updateStoryVersion(domain) ;
         bugdto = bugMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);

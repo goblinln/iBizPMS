@@ -267,7 +267,7 @@ public class BranchResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@BranchRuntime.quickTest('DELETE')")
+    @PreAuthorize("@BranchRuntime.test(#branch_id,'DELETE')")
     @ApiOperation(value = "根据产品删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品删除产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/branches/{branch_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("branch_id") Long branch_id) {
@@ -330,6 +330,7 @@ public class BranchResource {
     public ResponseEntity<BranchDTO> sortByProduct(@PathVariable("product_id") Long product_id, @PathVariable("branch_id") Long branch_id, @RequestBody BranchDTO branchdto) {
         Branch domain = branchMapping.toDomain(branchdto);
         domain.setProduct(product_id);
+        domain.setId(branch_id);
         domain = branchService.sort(domain) ;
         branchdto = branchMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(branchdto);
