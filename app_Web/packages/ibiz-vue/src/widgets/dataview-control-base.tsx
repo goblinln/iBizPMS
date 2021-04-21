@@ -13,7 +13,7 @@ import {
 import { MDControlBase } from './md-control-base';
 import { AppDataViewService } from '../ctrl-service';
 import { AppViewLogicService } from '../app-service';
-import { notNilEmpty } from 'ibz-dynamic-core';
+import { notNilEmpty } from 'qx-util';
 
 /**
  * 数据视图部件基类

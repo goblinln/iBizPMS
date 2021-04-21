@@ -633,6 +633,7 @@ export class KanbanControlBase extends MDControlBase {
                     this.groups.push({
                         name: item.value,
                         value: item.value,
+                        color: item.color,
                         folding: (state && !state.folding) ? state.folding : true,
                         items: this.getGroupItems(item.value)
                     })

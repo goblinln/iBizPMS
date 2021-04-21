@@ -825,6 +825,15 @@ export class MainViewBase extends ViewBase {
                     Object.assign(data, { copymode: (fullargs as any).copymode });
                 }
                 let tempContext = JSON.parse(JSON.stringify(this.context));
+                const dataview: IPSAppView | null = newviewRef.getRefPSAppView();
+                if (!dataview) return;
+                await dataview.fill(true);
+                if (
+                    dataview.getPSAppDataEntity() &&
+                    tempContext[(dataview.getPSAppDataEntity() as IPSAppDataEntity)?.codeName.toLowerCase()]
+                ) {
+                    delete tempContext[(dataview.getPSAppDataEntity() as IPSAppDataEntity)?.codeName.toLowerCase()];
+                }
                 if (args.length > 0) {
                     Object.assign(tempContext, args[0]);
                 }
@@ -846,15 +855,6 @@ export class MainViewBase extends ViewBase {
                 }
                 let deResParameters: any[] = [];
                 let parameters: any[] = [];
-                const dataview: IPSAppView | null = newviewRef.getRefPSAppView();
-                if (!dataview) return;
-                await dataview.fill(true);
-                if (
-                    dataview.getPSAppDataEntity() &&
-                    tempContext[(dataview.getPSAppDataEntity() as IPSAppDataEntity)?.codeName.toLowerCase()]
-                ) {
-                    delete tempContext[(dataview.getPSAppDataEntity() as IPSAppDataEntity)?.codeName.toLowerCase()];
-                }
                 if (dataview.getPSAppDataEntity()) {
                     // 处理视图关系参数 （只是路由打开模式才计算）
                     if (!dataview.openMode || dataview.openMode == 'INDEXVIEWTAB' || dataview.openMode == 'POPUPAPP') {
