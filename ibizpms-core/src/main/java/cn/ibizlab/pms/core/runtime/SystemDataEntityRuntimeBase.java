@@ -9,6 +9,7 @@ import java.util.*;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
+import cn.ibizlab.pms.util.helper.QueryContextHelper;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import cn.ibizlab.pms.util.security.UAADEAuthority;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -99,6 +100,14 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     @Override
     protected void onInit() throws Exception {
         super.onInit();
+        this.loadDefaultDEUserRoles();
+    }
+
+    /**
+     * 加载系统默认角色
+     * @throws Exception
+     */
+    protected void loadDefaultDEUserRoles() throws Exception{
         List<IPSDEUserRole> psDEUserRoles = this.getDefaultPSDEUserRoles();
         if (psDEUserRoles != null) {
             for (IPSDEUserRole psDEUserRole : psDEUserRoles) {
@@ -117,14 +126,14 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                                     if (this.getDBType().equals(psdeDataQueryCode.getDBType())) {
                                         List<IPSDEDataQueryCodeCond> psdeDataQueryCodeConds = psdeDataQueryCode.getPSDEDataQueryCodeConds();
                                         if (psdeDataQueryCodeConds != null) {
-                                            String sttBScope = "";
+                                            String strBScope = "";
                                             for (int i = 0; i < psdeDataQueryCodeConds.size(); i++) {
                                                 IPSDEDataQueryCodeCond psdeDataQueryCodeCond = psdeDataQueryCodeConds.get(i);
                                                 if (i > 0)
-                                                    sttBScope += " AND ";
-                                                sttBScope += psdeDataQueryCodeCond.getCustomCond();
+                                                    strBScope += " AND ";
+                                                strBScope += QueryContextHelper.contextParamConvert(psdeDataQueryCodeCond.getCustomCond());
                                             }
-                                            authority.setBscope(sttBScope);
+                                            authority.setBscope(strBScope);
                                         }
                                         break;
                                     }
@@ -401,7 +410,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
             return;
         if(testUnires(action))
             return ;
-        addAuthorityDefaultConditions(context, action);
+        Consumer<QueryWrapper> defaultAuthorityConditions = genDefaultConditions(context, action);
         String curSystemId = curUser.getSrfsystemid();
         List<GrantedAuthority> authorities;
         if(StringUtils.isEmpty(curSystemId)){
@@ -446,8 +455,19 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                     authorityCondition.or(dataCondition);
             }
         };
-        if (hasCondition)
+        if (defaultAuthorityConditions != null){
+            if(hasCondition){
+                Consumer<QueryWrapper> or = orCondition -> {
+                    orCondition.or(defaultAuthorityConditions);
+                    orCondition.or(authorityConditions);
+                };
+                context.getSelectCond().and(or);
+            }else{
+                context.getSelectCond().and(defaultAuthorityConditions);
+            }
+        }else if(hasCondition){
             context.getSelectCond().and(authorityConditions);
+        }
     }
 
     /**
@@ -455,7 +475,8 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      * @param context
      * @param action
      */
-    public void addAuthorityDefaultConditions(QueryWrapperContext context, String action) {
+    protected Consumer<QueryWrapper> genDefaultConditions(QueryWrapperContext context, String action) {
+        Consumer<QueryWrapper> authorityConditions = null;
         List<UAADEAuthority> actionUAADEAuthority = getDefaultAuthorities().stream().filter(uaadeAuthority -> {
             if (StringUtils.isNotBlank(uaadeAuthority.getBscope()) 
                     && (DataAccessActions.READ.equals(action) || uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action)))) {
@@ -465,7 +486,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         }).collect(Collectors.toList());
 
         if (actionUAADEAuthority.size() > 0) {
-            Consumer<QueryWrapper> authorityConditions = authorityCondition -> {
+            authorityConditions = authorityCondition -> {
                 for (UAADEAuthority uaadeAuthority : actionUAADEAuthority) {
                     if (DataAccessActions.READ.equals(action) || uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))) {
                         Consumer<QueryWrapper> roleConditions = roleCondition -> {
@@ -475,8 +496,8 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                     }
                 }
             };
-            context.getSelectCond().and(authorityConditions);
         }
+        return authorityConditions;
     }
 
     protected Consumer<QueryWrapper> genDataCondition(UAADEAuthority uaadeAuthority) {
