@@ -658,10 +658,7 @@ export class MainViewBase extends ViewBase {
             this.$Notice.warning({ title: '错误', desc: '新建应用界面逻辑不存在' });
             return;
         }
-        let viewNewAppUIlogic:
-            | IPSAppUINewDataLogic
-            | undefined
-            | null = newAppViewLogic.getPSAppUILogic() as IPSAppUINewDataLogic;
+        let viewNewAppUIlogic: IPSAppUINewDataLogic | undefined | null = newAppViewLogic.getPSAppUILogic() as IPSAppUINewDataLogic;
         if (viewNewAppUIlogic) {
             if (viewNewAppUIlogic.enableWizardAdd) {
                 let wizardPSAppView: IPSAppView | null;
@@ -976,6 +973,8 @@ export class MainViewBase extends ViewBase {
                 } else {
                     this.$Notice.warning({ title: '错误', desc: `${dataview.title}不支持该模式打开` });
                 }
+            }else{
+                this.$Notice.warning({ title: '错误', desc: '未指定关系视图' });
             }
         } else {
             this.$Notice.warning({ title: '错误', desc: '未指定关系视图' });

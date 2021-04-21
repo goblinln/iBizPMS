@@ -29,16 +29,18 @@ export class AppDefaultGridViewLayout extends AppDefaultViewLayout{
      * @memberof AppDefaultGridViewLayout
      */
     public renderContent() {
+        const noHeader = !this.viewInstance.showCaptionBar && !this.viewIsshowToolbar && !this.$slots.quickGroupSearch && !this.$slots.quickSearch
         let cardClass = {
             'view-card': true,
             'view-no-caption': !this.viewInstance.showCaptionBar,
             'view-no-toolbar': !this.viewIsshowToolbar,
+            'view-no-header': noHeader
         };
         return (
             <card class={cardClass} disHover={true} bordered={false}>
-                <div slot='title' class='header-container' key='view-header'>
+                {!noHeader ? <div slot='title' class='header-container' key='view-header'>
                     {this.renderViewHeader()}
-                </div>
+                </div> : null}
                 {this.$slots.topMessage}
                 {this.$slots.searchForm}
                 <div class='content-container'>
