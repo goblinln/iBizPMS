@@ -24,7 +24,7 @@ rule "prepareparam1"
 ruleflow-group "taskresettaskestimateprepareparam1"
     when
     then
-    taskresettaskestimatedefault.set("taskestimate","null");
+    taskresettaskestimatedefault.set("taskestimate",null);
     update(taskresettaskestimatedefault);//更新fact中变量值
     end
 
