@@ -12,7 +12,6 @@
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSequence.json"
   },
-  "sequenceFormat" : "%1$d",
   "sequenceType" : "DE",
   "getValuePSDEField" : {
     "name" : "CURSEQ",

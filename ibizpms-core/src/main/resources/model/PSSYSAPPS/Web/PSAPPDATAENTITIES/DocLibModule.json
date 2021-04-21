@@ -841,7 +841,6 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "维护分类",
     "codeName" : "WeiHuFenLei",
     "dataAccessAction" : "SRFUR__DOCLIBMODULE_MAINTENANCE_BUT",
@@ -910,7 +909,6 @@
     "id" : "WeiHuFenLei@DocLibModule"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "取消收藏",
     "codeName" : "NFavorite",
     "dataAccessAction" : "SRFUR__DOCLIBMODULE_NFAVOUR_BUT",
@@ -938,7 +936,6 @@
     "id" : "NFavorite@DocLibModule"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "收藏",
     "codeName" : "Favorite",
     "dataAccessAction" : "SRFUR__DOCLIBMODULE_FAVOUR_BUT",
@@ -966,7 +963,6 @@
     "id" : "Favorite@DocLibModule"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "编辑",
     "codeName" : "edit",
     "dataAccessAction" : "SRFUR__DOCLIBMODULE_EDIT_BUT",

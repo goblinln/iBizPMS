@@ -151,7 +151,6 @@
         "cssClass" : "fa fa-filter"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.FILTER",
           "id" : "工具栏按钮文本[*.FILTER]"
@@ -709,7 +708,7 @@
           "name" : "u89ab0d2",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "确认",
             "codeName" : "confirmstorychange",
             "dataAccessAction" : "SRFUR__CASE_CONFIRM_BUT",
@@ -744,7 +743,7 @@
           "name" : "u3c342d8",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "结果",
             "codeName" : "OpenTestRunResultView",
             "dataAccessAction" : "SRFUR__CASE_RESULT_BUT",
@@ -778,7 +777,7 @@
           "name" : "u18be210",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "执行",
             "codeName" : "Execute",
             "dataAccessAction" : "SRFUR__CASE_CASERUN_BUT",
@@ -812,7 +811,7 @@
           "name" : "u8063cdc",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "编辑",
             "codeName" : "MainEdit",
             "dataAccessAction" : "SRFUR__CASE_EDIT_BUT",
@@ -850,7 +849,7 @@
           "name" : "ub990a3a",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "转Bug",
             "codeName" : "NewBugByCaseResult",
             "dataAccessAction" : "SRFUR__CASE_TOBUG_BUT",
@@ -902,7 +901,6 @@
           "name" : "u5e1a676",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "getCapPSLanguageRes" : {
               "lanResTag" : "TBB.TEXT.*.COPY",
               "id" : "工具栏按钮文本[*.COPY]"
@@ -933,7 +931,6 @@
           "name" : "udbf86ab",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "收藏",
             "codeName" : "caseFavorite",
             "dataAccessAction" : "SRFUR__CASE_NFAVOR_BUT",
@@ -990,7 +987,6 @@
           "name" : "u9a18214",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "取消收藏",
             "codeName" : "CaseNFavorite",
             "dataAccessAction" : "SRFUR__CASE_FAVOR_BUT",

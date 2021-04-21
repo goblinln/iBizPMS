@@ -1052,7 +1052,6 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "取消收藏",
     "codeName" : "UnCollect",
     "dataAccessAction" : "SRFUR__DOC_NFAVOUR_BUT",
@@ -1086,7 +1085,6 @@
     "id" : "UnCollect@Doc"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "MORE",
     "codeName" : "MoreMyDoc",
     "getFrontPSAppView" : {
@@ -1108,7 +1106,6 @@
     "id" : "MoreMyDoc@Doc"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "取消收藏",
     "codeName" : "OnlyUnCollectDoc",
     "dataAccessAction" : "SRFUR__DOC_NFAVOUR_BUT",
@@ -1136,7 +1133,6 @@
     "id" : "OnlyUnCollectDoc@Doc"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "查看文档详情",
     "codeName" : "DocInfo",
     "getFrontPSAppView" : {
@@ -1164,7 +1160,6 @@
     "id" : "DocInfo@Doc"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "收藏",
     "codeName" : "Collect",
     "dataAccessAction" : "SRFUR__DOC_FAVOUR_BUT",
@@ -1198,7 +1193,6 @@
     "id" : "Collect@Doc"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "编辑",
     "codeName" : "Edit",
     "dataAccessAction" : "SRFUR__DOC_EDIT_BUT",
@@ -1225,7 +1219,6 @@
     "id" : "Edit@Doc"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "MORE",
     "codeName" : "MoreMyFavourite",
     "getFrontPSAppView" : {
@@ -1247,7 +1240,6 @@
     "id" : "MoreMyFavourite@Doc"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "收藏",
     "codeName" : "OnlyCollectDoc",
     "dataAccessAction" : "SRFUR__DOC_FAVOUR_BUT",
@@ -1275,7 +1267,6 @@
     "id" : "OnlyCollectDoc@Doc"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "删除",
     "codeName" : "Delete",
     "confirmMsg" : "您确定删除该文档吗？",
@@ -1304,7 +1295,6 @@
     "id" : "Delete@Doc"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "MORE",
     "codeName" : "MoreRecentUpdate",
     "getFrontPSAppView" : {
@@ -1326,7 +1316,6 @@
     "id" : "MoreRecentUpdate@Doc"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "查看",
     "codeName" : "Look",
     "getFrontPSAppView" : {

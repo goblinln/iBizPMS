@@ -172,7 +172,6 @@
         "cssClass" : "fa fa-file-excel-o"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.EXPORT",
           "id" : "工具栏按钮文本[*.EXPORT]"
@@ -220,7 +219,6 @@
         "cssClass" : "fa fa-filter"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.FILTER",
           "id" : "工具栏按钮文本[*.FILTER]"
@@ -620,7 +618,7 @@
           "name" : "u601e72e",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "提缺陷",
             "codeName" : "StoryToBug",
             "dataAccessAction" : "SRFUR__BUG_CREATE_BUT",
@@ -736,7 +734,7 @@
           "name" : "u18f3a7b",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "变更",
             "codeName" : "ChangeStoryDetail",
             "dataAccessAction" : "SRFUR__STORY_CHANGED_BUT",
@@ -770,7 +768,7 @@
           "name" : "ud1a868b",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "评审",
             "codeName" : "ReviewStory",
             "dataAccessAction" : "SRFUR__STORY_REVIEW_BUT",
@@ -804,7 +802,7 @@
           "name" : "ud9ce680",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "关闭",
             "codeName" : "CloseStory",
             "dataAccessAction" : "SRFUR__STORY_CLOSED_BUT",
@@ -841,7 +839,7 @@
           "name" : "ued8f63a",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "建用例",
             "codeName" : "OpenCaseCreateView",
             "dataAccessAction" : "SRFUR__STORY_CCASE_BUT",
@@ -897,7 +895,7 @@
           "name" : "u60233af",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "需求细分",
             "codeName" : "SubStory",
             "dataAccessAction" : "SRFUR__STORY_XQXF_BUT",
@@ -954,7 +952,6 @@
           "name" : "u0f557af",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "getCapPSLanguageRes" : {
               "lanResTag" : "TBB.TEXT.*.COPY",
               "id" : "工具栏按钮文本[*.COPY]"
@@ -985,7 +982,6 @@
           "name" : "u27be842",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "收藏",
             "codeName" : "StoryFavorites",
             "dataAccessAction" : "SRFUR__STORY_NFAVOR_BUT",
@@ -1020,7 +1016,6 @@
           "name" : "u7be23af",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "取消收藏",
             "codeName" : "StoryNFavorites",
             "dataAccessAction" : "SRFUR__STORY_FAVOR_BUT",

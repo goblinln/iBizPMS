@@ -816,7 +816,6 @@
               },
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "指派",
                 "codeName" : "AssignToDash",
                 "dataAccessAction" : "SRFUR__STORY_ASS_BUT",
@@ -865,7 +864,6 @@
               },
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "评审",
                 "codeName" : "ReviewStoryDash",
                 "dataAccessAction" : "SRFUR__STORY_REVIEW_BUT",
@@ -911,7 +909,6 @@
               },
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "激活",
                 "codeName" : "ActiviteDash",
                 "dataAccessAction" : "SRFUR__STORY_ACTIVE_BUT",
@@ -957,7 +954,6 @@
               },
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "关闭",
                 "codeName" : "CloseStoryDash",
                 "dataAccessAction" : "SRFUR__STORY_CLOSED_BUT",
@@ -1006,7 +1002,6 @@
               },
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "变更",
                 "codeName" : "ChangeStoryDetailDash",
                 "dataAccessAction" : "SRFUR__STORY_CHANGED_BUT",
@@ -1052,7 +1047,6 @@
               },
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "细分",
                 "codeName" : "SubStoryCz",
                 "dataAccessAction" : "SRFUR__STORY_XQXF_BUT",
@@ -1121,7 +1115,6 @@
               },
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "编辑",
                 "codeName" : "OpenBaseInfoC",
                 "dataAccessAction" : "SRFUR__STORY_EDIT_BUT",
@@ -1666,7 +1659,6 @@
                   },
                   "getPSUIAction" : {
                     "actionTarget" : "NONE",
-                    "getNoPrivDisplayMode" : 2,
                     "caption" : "添加备注",
                     "codeName" : "AddComment",
                     "dataAccessAction" : "SRFUR__UNIVERSALCREATE",

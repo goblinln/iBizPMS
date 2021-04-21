@@ -241,7 +241,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "新建需求",
         "codeName" : "CreatePlan",
         "dataAccessAction" : "SRFUR__STORY_CREATE_BUT",
@@ -300,7 +299,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "关联需求",
         "codeName" : "PlanRelationStory",
         "dataAccessAction" : "SRFUR__PROP_LSTORY_BUT",
@@ -363,7 +361,6 @@
         "cssClass" : "fa fa-refresh"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "caption" : "刷新",
         "codeName" : "Refresh",
         "fullCodeName" : "Refresh",
@@ -399,7 +396,6 @@
         "cssClass" : "fa fa-file-excel-o"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.EXPORT",
           "id" : "工具栏按钮文本[*.EXPORT]"
@@ -447,7 +443,6 @@
         "cssClass" : "fa fa-filter"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.FILTER",
           "id" : "工具栏按钮文本[*.FILTER]"
@@ -813,7 +808,7 @@
           "name" : "ufbd4e10",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "移除关联",
             "codeName" : "UnlinkStory",
             "confirmMsg" : "是否移除需求关联",

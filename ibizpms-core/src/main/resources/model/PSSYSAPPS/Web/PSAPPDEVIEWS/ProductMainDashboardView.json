@@ -1180,7 +1180,6 @@
                 },
                 "getPSUIAction" : {
                   "actionTarget" : "NONE",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "添加备注",
                   "codeName" : "AddComment",
                   "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
@@ -1552,7 +1551,6 @@
                 "name" : "ub8a0b43",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "关闭",
                   "codeName" : "CloseProduct",
                   "dataAccessAction" : "SRFUR__PROD_CLOSED_BUT",
@@ -1587,7 +1585,6 @@
                 "name" : "u7de7460",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "编辑",
                   "codeName" : "OpenQuickCfgView",
                   "dataAccessAction" : "SRFUR__PROD_EDIT_BUT",
@@ -1623,7 +1620,6 @@
                 "name" : "u68f0e17",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "删除",
                   "codeName" : "delete",
                   "confirmMsg" : "确认要删除，删除操作将不可恢复？",

@@ -1045,7 +1045,6 @@
             "detailType" : "DEUIACTION",
             "name" : "u8b59d6c",
             "getPSUIAction" : {
-              "getNoPrivDisplayMode" : 2,
               "getCapPSLanguageRes" : {
                 "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE",
                 "id" : "工具栏按钮文本[EDITVIEW.CLOSE]"
@@ -1075,7 +1074,6 @@
             "name" : "u3ba6d70",
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "getNoPrivDisplayMode" : 2,
               "caption" : "编辑",
               "codeName" : "EditlibCz",
               "dataAccessAction" : "SRFUR__ADMIN",
@@ -1109,7 +1107,6 @@
             "name" : "uf1a9062",
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "getNoPrivDisplayMode" : 2,
               "caption" : "删除",
               "codeName" : "DeleteCz",
               "dataAccessAction" : "SRFUR__ADMIN",

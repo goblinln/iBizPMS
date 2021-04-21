@@ -810,7 +810,6 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "新建",
     "codeName" : "Create",
     "getFrontPSAppView" : {
@@ -836,7 +835,7 @@
     "id" : "Create@TestReport"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "删除",
     "codeName" : "Delete",
     "confirmMsg" : "是否删除该报告？",
@@ -866,7 +865,7 @@
     "id" : "Delete@TestReport"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "Edits",
     "dataAccessAction" : "SRFUR__REPORT_EDIT_BUT",
@@ -895,7 +894,7 @@
     "id" : "Edits@TestReport"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "ProjectEdits",
     "dataAccessAction" : "SRFUR__REPORT_EDIT_BUT",
@@ -924,7 +923,6 @@
     "id" : "ProjectEdits@TestReport"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "新建",
     "codeName" : "CreateProject",
     "dataAccessAction" : "SRFUR__REPORT_CREATE_BUT",

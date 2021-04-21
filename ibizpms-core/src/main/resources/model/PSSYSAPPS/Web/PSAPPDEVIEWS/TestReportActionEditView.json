@@ -504,7 +504,6 @@
                 },
                 "getPSUIAction" : {
                   "actionTarget" : "NONE",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "添加备注",
                   "codeName" : "AddComment",
                   "dataAccessAction" : "SRFUR__UNIVERSALCREATE",

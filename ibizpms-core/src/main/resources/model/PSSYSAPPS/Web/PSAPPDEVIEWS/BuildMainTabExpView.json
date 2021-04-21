@@ -279,7 +279,6 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "NONE",
-              "getNoPrivDisplayMode" : 2,
               "caption" : "关联需求",
               "codeName" : "buildLinkStories",
               "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
@@ -366,7 +365,6 @@
               "cssClass" : "fa fa-filter"
             },
             "getPSUIAction" : {
-              "getNoPrivDisplayMode" : 2,
               "getCapPSLanguageRes" : {
                 "lanResTag" : "TBB.TEXT.*.FILTER",
                 "id" : "工具栏按钮文本[*.FILTER]"
@@ -711,7 +709,7 @@
                 "name" : "u92f0290",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 1,
+                  "noPrivDisplayMode" : 1,
                   "caption" : "解绑需求",
                   "codeName" : "buildUnlinkStory",
                   "confirmMsg" : "您确认移除该需求吗？",

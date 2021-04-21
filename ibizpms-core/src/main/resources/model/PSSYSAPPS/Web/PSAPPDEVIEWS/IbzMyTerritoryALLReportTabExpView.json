@@ -325,7 +325,6 @@
                   },
                   "getPSUIAction" : {
                     "actionTarget" : "NONE",
-                    "getNoPrivDisplayMode" : 2,
                     "caption" : "生成日报",
                     "codeName" : "CreateUserDaily",
                     "dataAccessAction" : "SRFUR__ADMIN",
@@ -379,7 +378,6 @@
                   },
                   "getPSUIAction" : {
                     "actionTarget" : "NONE",
-                    "getNoPrivDisplayMode" : 2,
                     "caption" : "新建",
                     "codeName" : "create",
                     "getFrontPSAppView" : {
@@ -438,7 +436,6 @@
                     "cssClass" : "fa fa-file-excel-o"
                   },
                   "getPSUIAction" : {
-                    "getNoPrivDisplayMode" : 2,
                     "getCapPSLanguageRes" : {
                       "lanResTag" : "TBB.TEXT.*.EXPORT",
                       "id" : "工具栏按钮文本[*.EXPORT]"
@@ -718,7 +715,7 @@
                       "name" : "u2f95d53",
                       "getPSUIAction" : {
                         "actionTarget" : "SINGLEKEY",
-                        "getNoPrivDisplayMode" : 1,
+                        "noPrivDisplayMode" : 1,
                         "caption" : "修改",
                         "codeName" : "Edit",
                         "dataAccessAction" : "SRFUR__DAILY_SUBMIT_BUT",
@@ -764,7 +761,7 @@
                       "name" : "u6ece727",
                       "getPSUIAction" : {
                         "actionTarget" : "SINGLEKEY",
-                        "getNoPrivDisplayMode" : 1,
+                        "noPrivDisplayMode" : 1,
                         "caption" : "提交",
                         "codeName" : "submitCz",
                         "confirmMsg" : "确认要马上提交吗？",

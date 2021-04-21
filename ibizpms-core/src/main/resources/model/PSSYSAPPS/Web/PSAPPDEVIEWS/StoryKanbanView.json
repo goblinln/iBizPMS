@@ -211,7 +211,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "新建",
         "codeName" : "ProjectCreateView",
         "dataAccessAction" : "SRFUR__STORY_CREATE_BUT",
@@ -280,7 +279,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "关联需求",
         "codeName" : "projectLinkStories",
         "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
@@ -344,7 +342,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "按照计划关联",
         "codeName" : "ProjecPlanLink",
         "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
@@ -398,7 +395,6 @@
         "cssClass" : "fa fa-refresh"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "caption" : "刷新",
         "codeName" : "Refresh",
         "fullCodeName" : "Refresh",
@@ -664,7 +660,7 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "getNoPrivDisplayMode" : 1,
+              "noPrivDisplayMode" : 1,
               "caption" : "移除",
               "codeName" : "ProjectUnlinkStory",
               "confirmMsg" : "您确定从该项目中移除该需求吗？",

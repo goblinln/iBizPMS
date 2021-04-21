@@ -289,7 +289,7 @@
         "name" : "ua470664",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "添加项目",
           "codeName" : "AddProject",
           "dataAccessAction" : "SRFUR__PROJ_CREATE_BUT",
@@ -377,7 +377,7 @@
         "name" : "u54b2dce",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "关联需求",
           "codeName" : "RelationStory",
           "dataAccessAction" : "SRFUR__PROP_LSTORY_BUT",
@@ -415,7 +415,7 @@
         "name" : "u02b47f0",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "关联Bug",
           "codeName" : "RelationBug",
           "dataAccessAction" : "SRFUR__PROP_LBUG_BUT",
@@ -454,7 +454,7 @@
         "name" : "u7d4e6c8",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "编辑",
           "codeName" : "MainEdit",
           "dataAccessAction" : "SRFUR__PROP_EDIT_BUT",
@@ -488,7 +488,7 @@
         "name" : "ud7f4fc7",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "子计划",
           "codeName" : "NewSubPlan",
           "dataAccessAction" : "SRFUR__PROP_CHILD_BUT",
@@ -522,7 +522,6 @@
         "name" : "u38dee22",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "getCapPSLanguageRes" : {
             "lanResTag" : "TBB.TEXT.*.COPY",
             "id" : "工具栏按钮文本[*.COPY]"
@@ -553,7 +552,7 @@
         "name" : "ub056033",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "删除",
           "codeName" : "Delete",
           "confirmMsg" : "您确认删除该计划吗？",

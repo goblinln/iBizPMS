@@ -487,7 +487,6 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "生成日报",
     "codeName" : "ManualCreateDaily",
     "confirmMsg" : "是否手动生成昨日日报",

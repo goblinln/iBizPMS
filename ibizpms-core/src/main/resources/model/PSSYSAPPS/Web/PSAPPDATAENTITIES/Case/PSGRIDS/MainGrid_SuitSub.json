@@ -276,7 +276,7 @@
         "name" : "uef3aae0",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "移除",
           "codeName" : "unlinkSuiteCase",
           "dataAccessAction" : "SRFUR__CASE_UNLINK_BUT",
@@ -323,7 +323,7 @@
         "name" : "udb1307b",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "结果",
           "codeName" : "OpenTestRunResultView",
           "dataAccessAction" : "SRFUR__CASE_RESULT_BUT",
@@ -357,7 +357,7 @@
         "name" : "uceeae1e",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "执行",
           "codeName" : "Execute",
           "dataAccessAction" : "SRFUR__CASE_CASERUN_BUT",

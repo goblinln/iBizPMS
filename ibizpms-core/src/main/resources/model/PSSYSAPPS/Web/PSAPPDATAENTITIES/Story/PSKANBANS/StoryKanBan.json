@@ -245,7 +245,7 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "移除",
             "codeName" : "ProjectUnlinkStory",
             "confirmMsg" : "您确定从该项目中移除该需求吗？",

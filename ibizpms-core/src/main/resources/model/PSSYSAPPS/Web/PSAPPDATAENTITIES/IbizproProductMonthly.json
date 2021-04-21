@@ -450,7 +450,6 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "生成月报",
     "codeName" : "ManualCreateMonthly",
     "confirmMsg" : "是否要手动生成月报",

@@ -224,7 +224,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "新建",
         "codeName" : "Create",
         "dataAccessAction" : "SRFUR__ADMIN",
@@ -267,7 +266,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "同步账号",
         "codeName" : "SyncAccount",
         "dataAccessAction" : "SRFUR__ADMIN",
@@ -308,7 +306,6 @@
         "cssClass" : "fa fa-refresh"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "caption" : "刷新",
         "codeName" : "Refresh",
         "fullCodeName" : "Refresh",
@@ -344,7 +341,6 @@
         "cssClass" : "fa fa-file-excel-o"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.EXPORT",
           "id" : "工具栏按钮文本[*.EXPORT]"
@@ -738,7 +734,7 @@
           "name" : "ufcdaecf",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "编辑",
             "codeName" : "Edit",
             "dataAccessAction" : "SRFUR__ADMIN",
@@ -774,7 +770,7 @@
           "name" : "ue48fa68",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "删除",
             "codeName" : "Delete",
             "dataAccessAction" : "SRFUR__ADMIN",

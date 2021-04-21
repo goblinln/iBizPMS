@@ -202,7 +202,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "新建",
         "codeName" : "TodoCreate",
         "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
@@ -248,7 +247,6 @@
         "cssClass" : "fa fa-refresh"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "caption" : "刷新",
         "codeName" : "Refresh",
         "fullCodeName" : "Refresh",
@@ -284,7 +282,6 @@
         "cssClass" : "fa fa-file-excel-o"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.EXPORT",
           "id" : "工具栏按钮文本[*.EXPORT]"
@@ -332,7 +329,6 @@
         "cssClass" : "fa fa-filter"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.FILTER",
           "id" : "工具栏按钮文本[*.FILTER]"
@@ -777,7 +773,7 @@
           "name" : "ucbe5848",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "指派",
             "codeName" : "assignTo",
             "dataAccessAction" : "ASSIGNTO",
@@ -813,7 +809,7 @@
           "name" : "u73f3925",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "完成",
             "codeName" : "finish",
             "confirmMsg" : "您确定这条待办已经完成了吗？",
@@ -849,7 +845,7 @@
           "name" : "u028b830",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "激活",
             "codeName" : "activate",
             "confirmMsg" : "您确定要激活这条待办吗？",
@@ -885,7 +881,7 @@
           "name" : "u24b965b",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "关闭",
             "codeName" : "close",
             "confirmMsg" : "您确定要关闭这条待办吗？",
@@ -921,7 +917,7 @@
           "name" : "uc8e81f7",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "编辑",
             "codeName" : "edit1",
             "dataAccessAction" : "UPDATE",
@@ -959,7 +955,7 @@
           "name" : "u51ddac6",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "删除",
             "codeName" : "delete",
             "confirmMsg" : "您确定要删除这条待办吗？",

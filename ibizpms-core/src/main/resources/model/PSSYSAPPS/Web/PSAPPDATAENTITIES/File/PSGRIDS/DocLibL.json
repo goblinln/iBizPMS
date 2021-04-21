@@ -115,7 +115,6 @@
     },
     "getPSDEUIAction" : {
       "actionTarget" : "SINGLEKEY",
-      "getNoPrivDisplayMode" : 2,
       "caption" : "查看",
       "codeName" : "Look",
       "frontProcessType" : "OTHER",
@@ -242,7 +241,6 @@
         "name" : "ue934bc9",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "下载",
           "codeName" : "ibzdownload",
           "dataAccessAction" : "SRFUR__FILE_DOWNLOAD_BUT",
@@ -271,7 +269,6 @@
         "name" : "u8a00ae7",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "删除",
           "codeName" : "delete",
           "confirmMsg" : "您确定删除该附件吗？",

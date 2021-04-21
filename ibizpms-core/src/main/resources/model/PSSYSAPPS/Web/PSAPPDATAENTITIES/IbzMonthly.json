@@ -882,7 +882,7 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "修改",
     "codeName" : "Edit",
     "dataAccessAction" : "SRFUR__MONTHLY_EDIT_BUT",
@@ -923,7 +923,6 @@
     "id" : "Edit@IbzMonthly"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "项目月报查看详情",
     "codeName" : "ProjectMonthly",
     "getFrontPSAppView" : {
@@ -945,7 +944,6 @@
     "id" : "ProjectMonthly@IbzMonthly"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "新建",
     "codeName" : "Create",
     "getFrontPSAppView" : {
@@ -985,7 +983,6 @@
     "id" : "Create@IbzMonthly"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "已读",
     "codeName" : "HaveRead",
     "getFrontPSAppView" : {
@@ -1009,7 +1006,7 @@
     "id" : "HaveRead@IbzMonthly"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "提交",
     "codeName" : "Submit",
     "dataAccessAction" : "SRFUR__MONTHLY_SUBMIT_BUT",

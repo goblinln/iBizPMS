@@ -2718,7 +2718,7 @@
                                 "name" : "uaf9f3f9",
                                 "getPSUIAction" : {
                                   "actionTarget" : "SINGLEKEY",
-                                  "getNoPrivDisplayMode" : 1,
+                                  "noPrivDisplayMode" : 1,
                                   "caption" : "指派",
                                   "codeName" : "AssignTask",
                                   "dataAccessAction" : "SRFUR__TASK_ASSIGN_BUT",
@@ -2752,7 +2752,7 @@
                                 "name" : "u6428ba2",
                                 "getPSUIAction" : {
                                   "actionTarget" : "SINGLEKEY",
-                                  "getNoPrivDisplayMode" : 1,
+                                  "noPrivDisplayMode" : 1,
                                   "caption" : "开始",
                                   "codeName" : "StartTask",
                                   "dataAccessAction" : "SRFUR__TASK_START_BUT",
@@ -2792,7 +2792,7 @@
                                 "name" : "ue9c7208",
                                 "getPSUIAction" : {
                                   "actionTarget" : "SINGLEKEY",
-                                  "getNoPrivDisplayMode" : 1,
+                                  "noPrivDisplayMode" : 1,
                                   "caption" : "激活",
                                   "codeName" : "Activation",
                                   "dataAccessAction" : "SRFUR__TASK_ACTIVATION_BUT",
@@ -2826,7 +2826,7 @@
                                 "name" : "u4b268ea",
                                 "getPSUIAction" : {
                                   "actionTarget" : "SINGLEKEY",
-                                  "getNoPrivDisplayMode" : 1,
+                                  "noPrivDisplayMode" : 1,
                                   "caption" : "工时",
                                   "codeName" : "WorkHours1",
                                   "dataAccessAction" : "SRFUR__TASK_CONSUM_BUT",
@@ -2860,7 +2860,7 @@
                                 "name" : "u53344aa",
                                 "getPSUIAction" : {
                                   "actionTarget" : "SINGLEKEY",
-                                  "getNoPrivDisplayMode" : 1,
+                                  "noPrivDisplayMode" : 1,
                                   "caption" : "完成",
                                   "codeName" : "DoneTask",
                                   "dataAccessAction" : "SRFUR__TASK_COMPLETE_BUT",
@@ -2900,7 +2900,7 @@
                                 "name" : "u77c1d36",
                                 "getPSUIAction" : {
                                   "actionTarget" : "SINGLEKEY",
-                                  "getNoPrivDisplayMode" : 1,
+                                  "noPrivDisplayMode" : 1,
                                   "caption" : "关闭",
                                   "codeName" : "CloseTask",
                                   "dataAccessAction" : "SRFUR__TASK_CLOSE_BUT",
@@ -2938,7 +2938,7 @@
                                 "name" : "u5f5e79b",
                                 "getPSUIAction" : {
                                   "actionTarget" : "SINGLEKEY",
-                                  "getNoPrivDisplayMode" : 1,
+                                  "noPrivDisplayMode" : 1,
                                   "caption" : "编辑",
                                   "codeName" : "MainEdit",
                                   "dataAccessAction" : "SRFUR__TASK_EDIT_BUT",
@@ -4126,7 +4126,6 @@
                 },
                 "getPSUIAction" : {
                   "actionTarget" : "NONE",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "添加备注",
                   "codeName" : "AddComment",
                   "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
@@ -4752,7 +4751,6 @@
                 "detailType" : "DEUIACTION",
                 "name" : "udf09ee0",
                 "getPSUIAction" : {
-                  "getNoPrivDisplayMode" : 2,
                   "getCapPSLanguageRes" : {
                     "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE",
                     "id" : "工具栏按钮文本[EDITVIEW.CLOSE]"
@@ -4782,7 +4780,6 @@
                 "name" : "u9639771",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "确认",
                   "codeName" : "confirmStoryChangeCz",
                   "dataAccessAction" : "SRFUR__TASK_XQCHANGE_BUT",
@@ -4817,7 +4814,6 @@
                 "name" : "uf95eaa3",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "子任务",
                   "codeName" : "NewSubTaskDash",
                   "dataAccessAction" : "SRFUR__TASK_SUBTASKS_BUT",
@@ -4872,7 +4868,6 @@
                 "name" : "uc1239b0",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "指派",
                   "codeName" : "AssignTaskDash",
                   "dataAccessAction" : "SRFUR__TASK_ASSIGN_BUT",
@@ -4906,7 +4901,6 @@
                 "name" : "u1596d9c",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "转交",
                   "codeName" : "checkForwardDash",
                   "dataAccessAction" : "SRFUR__TASK_FORWARD_BUT",
@@ -4954,7 +4948,6 @@
                 "name" : "u5a6cb3f",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "开始",
                   "codeName" : "MStartTaskDash",
                   "dataAccessAction" : "SRFUR__TASK_START_BUT",
@@ -5002,7 +4995,6 @@
                 "name" : "u1a35262",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "工时",
                   "codeName" : "MWorkHours",
                   "dataAccessAction" : "SRFUR__TASK_CONSUM_BUT",
@@ -5050,7 +5042,6 @@
                 "name" : "u37f427d",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "暂停",
                   "codeName" : "MPauseTask",
                   "dataAccessAction" : "SRFUR__TASK_PAUSE_BUT",
@@ -5098,7 +5089,6 @@
                 "name" : "uf1ea16d",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "继续",
                   "codeName" : "ReStartTeamTask",
                   "dataAccessAction" : "SRFUR__TASK_PROCEED_BUT",
@@ -5142,7 +5132,6 @@
                 "name" : "udce2cc3",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "激活",
                   "codeName" : "ActivationDash",
                   "dataAccessAction" : "SRFUR__TASK_ACTIVATION_BUT",
@@ -5176,7 +5165,6 @@
                 "name" : "u551257a",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "完成",
                   "codeName" : "MDoneTask",
                   "dataAccessAction" : "SRFUR__TASK_COMPLETE_BUT",
@@ -5225,7 +5213,6 @@
                 "name" : "u319fb75",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "取消",
                   "codeName" : "CancelTaskDash",
                   "dataAccessAction" : "SRFUR__TASK_CANCEL_BUT",
@@ -5259,7 +5246,6 @@
                 "name" : "uc56391f",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "关闭",
                   "codeName" : "CloseTaskDash",
                   "dataAccessAction" : "SRFUR__TASK_CLOSE_BUT",
@@ -5297,7 +5283,6 @@
                 "name" : "ufe00d6a",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "编辑",
                   "codeName" : "MainEditDash",
                   "dataAccessAction" : "SRFUR__TASK_EDIT_BUT",
@@ -5331,7 +5316,6 @@
                 "name" : "uec6add9",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "删除",
                   "codeName" : "delete",
                   "confirmMsg" : "确认要删除，删除操作将不可恢复？",
@@ -5367,7 +5351,6 @@
                 "name" : "batchdownload",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "下载",
                   "codeName" : "BatchDownload",
                   "frontProcessType" : "OTHER",

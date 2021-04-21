@@ -253,7 +253,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "新建",
         "codeName" : "ProjectCreateView",
         "dataAccessAction" : "SRFUR__STORY_CREATE_BUT",
@@ -322,7 +321,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "关联需求",
         "codeName" : "projectLinkStories",
         "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
@@ -386,7 +384,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "按照计划关联",
         "codeName" : "ProjecPlanLink",
         "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
@@ -444,7 +441,6 @@
         "cssClass" : "fa fa-file-excel-o"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.EXPORT",
           "id" : "工具栏按钮文本[*.EXPORT]"
@@ -488,7 +484,6 @@
         "cssClass" : "fa fa-refresh"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "caption" : "刷新",
         "codeName" : "Refresh",
         "fullCodeName" : "Refresh",
@@ -524,7 +519,6 @@
         "cssClass" : "fa fa-filter"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.FILTER",
           "id" : "工具栏按钮文本[*.FILTER]"
@@ -930,7 +924,7 @@
           "name" : "ucdd2824",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "分解任务",
             "codeName" : "Breakdowntasks",
             "dataAccessAction" : "SRFUR__STORY_FJTASK_BUT",
@@ -1023,7 +1017,7 @@
           "name" : "u2fdcaeb",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "批量分解",
             "codeName" : "BatchBreakdowntasks",
             "dataAccessAction" : "SRFUR__STORY_FJTASK_BUT",
@@ -1116,7 +1110,7 @@
           "name" : "u247f69c",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "移除",
             "codeName" : "ProjectUnlinkStory",
             "confirmMsg" : "您确定从该项目中移除该需求吗？",

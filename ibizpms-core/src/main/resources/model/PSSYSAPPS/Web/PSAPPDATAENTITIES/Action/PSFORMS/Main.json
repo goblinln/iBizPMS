@@ -209,7 +209,6 @@
             "cssClass" : "fa fa-sign-out"
           },
           "getPSUIAction" : {
-            "getNoPrivDisplayMode" : 2,
             "getCapPSLanguageRes" : {
               "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE",
               "id" : "工具栏按钮文本[EDITVIEW.CLOSE]"
@@ -258,7 +257,6 @@
             "cssClass" : "fa fa-save"
           },
           "getPSUIAction" : {
-            "getNoPrivDisplayMode" : 2,
             "getCapPSLanguageRes" : {
               "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
               "id" : "工具栏按钮文本[EDITVIEW.SAVEANDCLOSE]"

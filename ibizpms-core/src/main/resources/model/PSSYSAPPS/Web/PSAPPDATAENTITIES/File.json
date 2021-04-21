@@ -620,7 +620,6 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "全部下载",
     "codeName" : "AllDownload",
     "frontProcessType" : "OTHER",
@@ -640,7 +639,6 @@
     "id" : "AllDownload@File"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "查看",
     "codeName" : "Look",
     "frontProcessType" : "OTHER",
@@ -657,7 +655,6 @@
     "id" : "Look@File"
   }, {
     "actionTarget" : "MULTIKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "批量下载",
     "codeName" : "BatchDownload",
     "frontProcessType" : "OTHER",
@@ -677,7 +674,6 @@
     "id" : "BatchDownload@File"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "删除",
     "codeName" : "delete",
     "confirmMsg" : "您确定删除该附件吗？",
@@ -706,7 +702,6 @@
     "id" : "delete@File"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "下载",
     "codeName" : "ibzdownload",
     "dataAccessAction" : "SRFUR__FILE_DOWNLOAD_BUT",

@@ -424,7 +424,6 @@
             "cssClass" : "fa fa-refresh"
           },
           "getPSUIAction" : {
-            "getNoPrivDisplayMode" : 2,
             "caption" : "刷新",
             "codeName" : "RefreshParent",
             "fullCodeName" : "RefreshParent",
@@ -471,7 +470,6 @@
             "cssClass" : "fa fa-refresh"
           },
           "getPSUIAction" : {
-            "getNoPrivDisplayMode" : 2,
             "caption" : "刷新",
             "codeName" : "RefreshAll",
             "fullCodeName" : "RefreshAll",
@@ -519,7 +517,7 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "编辑",
             "codeName" : "OpenQuickCfgView",
             "dataAccessAction" : "SRFUR__TESTMOD_OQCVIEW_BUT",
@@ -565,7 +563,6 @@
             "cssClass" : "fa fa-refresh"
           },
           "getPSUIAction" : {
-            "getNoPrivDisplayMode" : 2,
             "caption" : "刷新",
             "codeName" : "RefreshAll",
             "fullCodeName" : "RefreshAll",
@@ -613,7 +610,7 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "编辑",
             "codeName" : "OpenQuickCfgView",
             "dataAccessAction" : "SRFUR__TESTMOD_OQCVIEW_BUT",
@@ -659,7 +656,6 @@
             "cssClass" : "fa fa-refresh"
           },
           "getPSUIAction" : {
-            "getNoPrivDisplayMode" : 2,
             "caption" : "刷新",
             "codeName" : "RefreshAll",
             "fullCodeName" : "RefreshAll",
@@ -707,7 +703,7 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "编辑",
             "codeName" : "OpenQuickCfgView",
             "dataAccessAction" : "SRFUR__TESTMOD_OQCVIEW_BUT",
@@ -753,7 +749,6 @@
             "cssClass" : "fa fa-refresh"
           },
           "getPSUIAction" : {
-            "getNoPrivDisplayMode" : 2,
             "caption" : "刷新",
             "codeName" : "RefreshAll",
             "fullCodeName" : "RefreshAll",
@@ -800,7 +795,6 @@
             "cssClass" : "fa fa-refresh"
           },
           "getPSUIAction" : {
-            "getNoPrivDisplayMode" : 2,
             "caption" : "刷新",
             "codeName" : "RefreshParent",
             "fullCodeName" : "RefreshParent",
@@ -1070,7 +1064,7 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "getNoPrivDisplayMode" : 1,
+              "noPrivDisplayMode" : 1,
               "caption" : "编辑",
               "codeName" : "OpenQuickCfgView",
               "dataAccessAction" : "SRFUR__TESTMOD_OQCVIEW_BUT",
@@ -1116,7 +1110,6 @@
               "cssClass" : "fa fa-refresh"
             },
             "getPSUIAction" : {
-              "getNoPrivDisplayMode" : 2,
               "caption" : "刷新",
               "codeName" : "RefreshAll",
               "fullCodeName" : "RefreshAll",
@@ -1222,7 +1215,6 @@
               "cssClass" : "fa fa-refresh"
             },
             "getPSUIAction" : {
-              "getNoPrivDisplayMode" : 2,
               "caption" : "刷新",
               "codeName" : "RefreshParent",
               "fullCodeName" : "RefreshParent",
@@ -1328,7 +1320,7 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "getNoPrivDisplayMode" : 1,
+              "noPrivDisplayMode" : 1,
               "caption" : "编辑",
               "codeName" : "OpenQuickCfgView",
               "dataAccessAction" : "SRFUR__TESTMOD_OQCVIEW_BUT",
@@ -1374,7 +1366,6 @@
               "cssClass" : "fa fa-refresh"
             },
             "getPSUIAction" : {
-              "getNoPrivDisplayMode" : 2,
               "caption" : "刷新",
               "codeName" : "RefreshAll",
               "fullCodeName" : "RefreshAll",
@@ -1472,7 +1463,7 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "getNoPrivDisplayMode" : 1,
+              "noPrivDisplayMode" : 1,
               "caption" : "编辑",
               "codeName" : "OpenQuickCfgView",
               "dataAccessAction" : "SRFUR__TESTMOD_OQCVIEW_BUT",
@@ -1518,7 +1509,6 @@
               "cssClass" : "fa fa-refresh"
             },
             "getPSUIAction" : {
-              "getNoPrivDisplayMode" : 2,
               "caption" : "刷新",
               "codeName" : "RefreshAll",
               "fullCodeName" : "RefreshAll",
@@ -1611,7 +1601,6 @@
               "cssClass" : "fa fa-refresh"
             },
             "getPSUIAction" : {
-              "getNoPrivDisplayMode" : 2,
               "caption" : "刷新",
               "codeName" : "RefreshParent",
               "fullCodeName" : "RefreshParent",
@@ -1694,7 +1683,6 @@
               "cssClass" : "fa fa-refresh"
             },
             "getPSUIAction" : {
-              "getNoPrivDisplayMode" : 2,
               "caption" : "刷新",
               "codeName" : "RefreshAll",
               "fullCodeName" : "RefreshAll",

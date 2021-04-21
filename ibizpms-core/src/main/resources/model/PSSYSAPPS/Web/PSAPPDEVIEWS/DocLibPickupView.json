@@ -266,7 +266,6 @@
           },
           "getPSDEUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "查看",
             "codeName" : "LookMainProjectDocLib",
             "getFrontPSAppView" : {
@@ -333,7 +332,6 @@
               "name" : "uda5bc65",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "编辑",
                 "codeName" : "EditProjectDoclib",
                 "dataAccessAction" : "SRFUR__DOCLIB_EDIT_BUT",
@@ -373,7 +371,6 @@
               "name" : "ua016f9e",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "维护分类",
                 "codeName" : "WeiHuFenLei",
                 "dataAccessAction" : "SRFUR__DOCLIBMODULE_MAINTENANCE_BUT",
@@ -439,7 +436,6 @@
               "name" : "u4e7400f",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "收藏",
                 "codeName" : "Collect",
                 "dataAccessAction" : "SRFUR__DOCLIB_FAVOUR_BUT",
@@ -474,7 +470,6 @@
               "name" : "u00bd873",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "取消收藏",
                 "codeName" : "UnCollect",
                 "dataAccessAction" : "SRFUR__DOCLIB_NFAVOUR_BUT",

@@ -195,7 +195,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "关联用例",
         "codeName" : "LinkCaseC",
         "dataAccessAction" : "SRFUR__CASE_UNLINK_BUT",
@@ -257,7 +256,6 @@
         "cssClass" : "fa fa-file-excel-o"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.EXPORT",
           "id" : "工具栏按钮文本[*.EXPORT]"
@@ -305,7 +303,6 @@
         "cssClass" : "fa fa-filter"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.FILTER",
           "id" : "工具栏按钮文本[*.FILTER]"
@@ -633,7 +630,6 @@
       },
       "getPSDEUIAction" : {
         "actionTarget" : "SINGLEKEY",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "概况",
         "codeName" : "Edits",
         "getFrontPSAppView" : {
@@ -871,7 +867,7 @@
           "name" : "uf5bb958",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "确认用例变动",
             "codeName" : "confirmChange",
             "dataAccessAction" : "SRFUR__CASE_CASECOF_BUT",
@@ -918,7 +914,7 @@
           "name" : "ue54667e",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "转Bug",
             "codeName" : "NewBugByTestCaseResult",
             "dataAccessAction" : "SRFUR__CASE_TOBUG_BUT",
@@ -970,7 +966,7 @@
           "name" : "u33ef635",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "结果",
             "codeName" : "CASEOpenTestRunResultView",
             "dataAccessAction" : "SRFUR__CASE_CASERESULT_BUT",
@@ -1016,7 +1012,7 @@
           "name" : "u8afa84b",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "执行",
             "codeName" : "CaseExecute",
             "dataAccessAction" : "SRFUR__CASE_CASERUN_BUT",
@@ -1062,7 +1058,7 @@
           "name" : "u5da14f5",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "移除",
             "codeName" : "unlinkCase",
             "dataAccessAction" : "SRFUR__CASE_UNLINK_BUT",

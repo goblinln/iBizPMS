@@ -774,7 +774,6 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "创建文档库",
     "codeName" : "Create",
     "getFrontPSAppView" : {
@@ -804,7 +803,6 @@
     "id" : "Create@DocLib"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "创建文档",
     "codeName" : "CreateFile",
     "getFrontPSAppView" : {
@@ -834,7 +832,6 @@
     "id" : "CreateFile@DocLib"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "编辑",
     "codeName" : "EditDocLib",
     "dataAccessAction" : "SRFUR__DOCLIB_EDIT_BUT",
@@ -872,7 +869,6 @@
     "id" : "EditDocLib@DocLib"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "维护分类",
     "codeName" : "WeiHuFenLei",
     "dataAccessAction" : "SRFUR__DOCLIBMODULE_MAINTENANCE_BUT",
@@ -931,7 +927,6 @@
     "id" : "WeiHuFenLei@DocLib"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "查看",
     "codeName" : "LookMainProductDocLib",
     "getFrontPSAppView" : {
@@ -970,7 +965,6 @@
     "id" : "LookMainProductDocLib@DocLib"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "查看",
     "codeName" : "LookMainProjectDocLib",
     "getFrontPSAppView" : {
@@ -1004,7 +998,6 @@
     "id" : "LookMainProjectDocLib@DocLib"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "最近更新",
     "codeName" : "RecentUpdateQuickAccess",
     "getFrontPSAppView" : {
@@ -1026,7 +1019,6 @@
     "id" : "RecentUpdateQuickAccess@DocLib"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "我的收藏",
     "codeName" : "MyFavouriteQuickAccess",
     "getFrontPSAppView" : {
@@ -1048,7 +1040,6 @@
     "id" : "MyFavouriteQuickAccess@DocLib"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "编辑",
     "codeName" : "EditProjectDoclib",
     "dataAccessAction" : "SRFUR__DOCLIB_EDIT_BUT",
@@ -1081,7 +1072,6 @@
     "id" : "EditProjectDoclib@DocLib"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "收藏",
     "codeName" : "Collect",
     "dataAccessAction" : "SRFUR__DOCLIB_FAVOUR_BUT",
@@ -1109,7 +1099,6 @@
     "id" : "Collect@DocLib"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "我的文档",
     "codeName" : "MyDocQuickAccess",
     "getFrontPSAppView" : {
@@ -1131,7 +1120,6 @@
     "id" : "MyDocQuickAccess@DocLib"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "取消收藏",
     "codeName" : "UnCollect",
     "dataAccessAction" : "SRFUR__DOCLIB_NFAVOUR_BUT",
@@ -1159,7 +1147,6 @@
     "id" : "UnCollect@DocLib"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "编辑",
     "codeName" : "EditCustomDocLib",
     "dataAccessAction" : "SRFUR__DOCLIB_EDIT_BUT",

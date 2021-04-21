@@ -229,7 +229,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "新建",
         "codeName" : "CreateProject",
         "dataAccessAction" : "SRFUR__REPORT_CREATE_BUT",
@@ -269,7 +268,6 @@
         "cssClass" : "fa fa-refresh"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "caption" : "刷新",
         "codeName" : "Refresh",
         "fullCodeName" : "Refresh",
@@ -305,7 +303,6 @@
         "cssClass" : "fa fa-file-excel-o"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.EXPORT",
           "id" : "工具栏按钮文本[*.EXPORT]"
@@ -353,7 +350,6 @@
         "cssClass" : "fa fa-filter"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.FILTER",
           "id" : "工具栏按钮文本[*.FILTER]"
@@ -586,7 +582,6 @@
       },
       "getPSDEUIAction" : {
         "actionTarget" : "SINGLEKEY",
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.EDIT",
           "id" : "工具栏按钮文本[*.EDIT]"
@@ -709,7 +704,7 @@
           "name" : "u58bc4ed",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "编辑",
             "codeName" : "ProjectEdits",
             "dataAccessAction" : "SRFUR__REPORT_EDIT_BUT",
@@ -745,7 +740,7 @@
           "name" : "u0499c7d",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "删除",
             "codeName" : "Delete",
             "confirmMsg" : "是否删除该报告？",

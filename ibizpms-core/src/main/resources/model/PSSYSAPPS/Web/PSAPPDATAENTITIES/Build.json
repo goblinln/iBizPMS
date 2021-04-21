@@ -822,7 +822,7 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "编辑版本",
     "codeName" : "editBuild",
     "dataAccessAction" : "SRFUR__BUILD_EDIT_BUT",
@@ -849,7 +849,7 @@
     "id" : "editBuild@Build"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "关联需求",
     "codeName" : "linkStories",
     "dataAccessAction" : "SRFUR__BUILD_LINK_BUT",
@@ -912,7 +912,6 @@
     "id" : "linkStories@Build"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "查看Bug",
     "codeName" : "viewBugs",
     "getFrontPSAppView" : {
@@ -960,7 +959,7 @@
     "id" : "viewBugs@Build"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "删除",
     "codeName" : "Delete",
     "dataAccessAction" : "SRFUR__BUILD_DELETE_BUT",
@@ -988,7 +987,6 @@
     "id" : "Delete@Build"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "创建版本",
     "codeName" : "Create",
     "dataAccessAction" : "SRFUR__BUILD_CREATE_BUT",
@@ -1017,7 +1015,7 @@
     "id" : "Create@Build"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "提交测试",
     "codeName" : "submitToTesting",
     "dataAccessAction" : "SRFUR__BUILD_SUBT_BUT",

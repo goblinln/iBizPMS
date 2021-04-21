@@ -486,7 +486,7 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "移除成员",
             "codeName" : "RemoveMember",
             "confirmMsg" : "您确定从该项目中移除该用户吗？",

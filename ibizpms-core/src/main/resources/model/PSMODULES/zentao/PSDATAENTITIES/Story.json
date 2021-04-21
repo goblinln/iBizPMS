@@ -35,6 +35,7 @@
     "actionMode" : "READ",
     "actionType" : "BUILTIN",
     "getAfterPSDEActionLogics" : [ {
+      "actionLogicType" : 0,
       "attachMode" : "AFTER",
       "getDstPSDE" : {
         "modelref" : true,

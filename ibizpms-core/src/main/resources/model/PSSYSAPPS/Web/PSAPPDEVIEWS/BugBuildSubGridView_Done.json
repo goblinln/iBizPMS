@@ -198,7 +198,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "关联bug",
         "codeName" : "openBugGridView",
         "dataAccessAction" : "SRFUR__BUILD_LINK_BUT",
@@ -295,7 +294,6 @@
         "cssClass" : "fa fa-filter"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.FILTER",
           "id" : "工具栏按钮文本[*.FILTER]"
@@ -620,7 +618,6 @@
           "name" : "u7c0c879",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "解除关联",
             "codeName" : "unlinkBug_build",
             "confirmMsg" : "您确认移除该Bug吗？",

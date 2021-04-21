@@ -786,7 +786,6 @@
               },
               "getPSUIAction" : {
                 "actionTarget" : "NONE",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "添加备注",
                 "codeName" : "AddComment",
                 "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
@@ -1192,7 +1191,6 @@
               "detailType" : "DEUIACTION",
               "name" : "u4e19f49",
               "getPSUIAction" : {
-                "getNoPrivDisplayMode" : 2,
                 "getCapPSLanguageRes" : {
                   "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE",
                   "id" : "工具栏按钮文本[EDITVIEW.CLOSE]"
@@ -1222,7 +1220,6 @@
               "name" : "u16e5bb7",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "激活",
                 "codeName" : "ActiviteDash",
                 "dataAccessAction" : "SRFUR__TESTT_ACTIVITE_BUT",
@@ -1258,7 +1255,6 @@
               "name" : "uc92b341",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "开始",
                 "codeName" : "StartDash",
                 "dataAccessAction" : "SRFUR__TESTT_START_BUT",
@@ -1294,7 +1290,6 @@
               "name" : "uca7e656",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "关闭",
                 "codeName" : "CloseDash",
                 "dataAccessAction" : "SRFUR__TESTT_CLOSED_BUT",
@@ -1330,7 +1325,6 @@
               "name" : "u7d6bb89",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "阻塞",
                 "codeName" : "BlockDash",
                 "dataAccessAction" : "SRFUR__TESTT_BLOCK_BUT",

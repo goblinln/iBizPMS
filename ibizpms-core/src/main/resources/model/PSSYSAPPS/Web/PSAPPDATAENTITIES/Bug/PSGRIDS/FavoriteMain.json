@@ -413,7 +413,7 @@
         "name" : "uaa2ed02",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "确认",
           "codeName" : "ConfirmBug",
           "dataAccessAction" : "SRFUR__BUG_CONFIRM_BUT",
@@ -448,7 +448,7 @@
         "name" : "ue1d68fc",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "解决",
           "codeName" : "ResolveBug",
           "dataAccessAction" : "SRFUR__BUG_RESOLVE_BUT",
@@ -482,7 +482,7 @@
         "name" : "u3cd3d7f",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "关闭",
           "codeName" : "CloseBug",
           "dataAccessAction" : "SRFUR__BUG_CLOSE_BUT",
@@ -516,7 +516,7 @@
         "name" : "u0e29832",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "编辑",
           "codeName" : "MainEdit",
           "dataAccessAction" : "SRFUR__BUG_EDIT_BUT",
@@ -550,7 +550,6 @@
         "name" : "uf4572d8",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "getCapPSLanguageRes" : {
             "lanResTag" : "TBB.TEXT.*.COPY",
             "id" : "工具栏按钮文本[*.COPY]"
@@ -581,7 +580,6 @@
         "name" : "u4047a48",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "收藏",
           "codeName" : "BugFavorites",
           "dataAccessAction" : "SRFUR__BUG_NFAVOR_BUT",
@@ -616,7 +614,6 @@
         "name" : "uf6a6cf4",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "取消收藏",
           "codeName" : "BugNFavorites",
           "dataAccessAction" : "SRFUR__BUG_FAVOR_BUT",

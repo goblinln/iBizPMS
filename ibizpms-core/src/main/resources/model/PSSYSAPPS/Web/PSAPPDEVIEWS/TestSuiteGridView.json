@@ -202,7 +202,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "新建",
         "codeName" : "Create",
         "dataAccessAction" : "SRFUR__TESTSU_CREATE_BUT",
@@ -248,7 +247,6 @@
         "cssClass" : "fa fa-refresh"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "caption" : "刷新",
         "codeName" : "Refresh",
         "fullCodeName" : "Refresh",
@@ -284,7 +282,6 @@
         "cssClass" : "fa fa-file-excel-o"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.EXPORT",
           "id" : "工具栏按钮文本[*.EXPORT]"
@@ -332,7 +329,6 @@
         "cssClass" : "fa fa-filter"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.FILTER",
           "id" : "工具栏按钮文本[*.FILTER]"
@@ -651,7 +647,6 @@
           "name" : "u74e6149",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "关联用例",
             "codeName" : "linkCaseDash",
             "dataAccessAction" : "SRFUR__TESTSU_LINKCASE_BUT",
@@ -699,7 +694,6 @@
           "name" : "u0feedf0",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "编辑",
             "codeName" : "EditsuiteDash",
             "dataAccessAction" : "SRFUR__TESTSU_EDITSUITE_BUT",
@@ -737,7 +731,6 @@
           "name" : "udbe88f7",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "删除",
             "codeName" : "DeleteDash",
             "confirmMsg" : "您确认要删除该套件吗？",

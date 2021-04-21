@@ -573,7 +573,6 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "getNoPrivDisplayMode" : 2,
               "caption" : "开始",
               "codeName" : "StartDash",
               "dataAccessAction" : "SRFUR__TESTT_START_BUT",
@@ -621,7 +620,6 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "getNoPrivDisplayMode" : 2,
               "caption" : "关闭",
               "codeName" : "CloseDash",
               "dataAccessAction" : "SRFUR__TESTT_CLOSED_BUT",
@@ -669,7 +667,6 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "getNoPrivDisplayMode" : 2,
               "caption" : "阻塞",
               "codeName" : "BlockDash",
               "dataAccessAction" : "SRFUR__TESTT_BLOCK_BUT",
@@ -717,7 +714,7 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "getNoPrivDisplayMode" : 1,
+              "noPrivDisplayMode" : 1,
               "caption" : "编辑",
               "codeName" : "EditEdit",
               "dataAccessAction" : "SRFUR__TESTT_EDIT_BUT",
@@ -763,7 +760,6 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "getNoPrivDisplayMode" : 2,
               "caption" : "查看",
               "codeName" : "Look",
               "dataAccessAction" : "SRFUR__TESTT_OPEN_BUT",
@@ -1180,7 +1176,6 @@
                   },
                   "getPSUIAction" : {
                     "actionTarget" : "NONE",
-                    "getNoPrivDisplayMode" : 2,
                     "caption" : "添加备注",
                     "codeName" : "AddComment",
                     "dataAccessAction" : "SRFUR__UNIVERSALCREATE",

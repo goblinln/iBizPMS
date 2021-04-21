@@ -508,7 +508,6 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "新建",
     "codeName" : "Create",
     "dataAccessAction" : "SRFUR__TESTSU_CREATE_BUT",
@@ -537,7 +536,6 @@
     "id" : "Create@TestSuite"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "编辑",
     "codeName" : "EditsuiteDash",
     "dataAccessAction" : "SRFUR__TESTSU_EDITSUITE_BUT",
@@ -568,7 +566,6 @@
     "id" : "EditsuiteDash@TestSuite"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "删除",
     "codeName" : "DeleteDash",
     "confirmMsg" : "您确认要删除该套件吗？",
@@ -600,7 +597,6 @@
     "id" : "DeleteDash@TestSuite"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "关联用例",
     "codeName" : "linkCaseDash",
     "dataAccessAction" : "SRFUR__TESTSU_LINKCASE_BUT",

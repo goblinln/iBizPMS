@@ -772,7 +772,6 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "删除",
     "codeName" : "DeleteCz",
     "confirmMsg" : "您确认要删除该测试用例吗？",
@@ -802,7 +801,6 @@
     "id" : "DeleteCz@IbzCase"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "新建",
     "codeName" : "Create",
     "dataAccessAction" : "SRFUR__ADMIN",
@@ -831,7 +829,6 @@
     "id" : "Create@IbzCase"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "编辑",
     "codeName" : "EditcaseCz",
     "dataAccessAction" : "SRFUR__ADMIN",
@@ -858,7 +855,7 @@
     "id" : "EditcaseCz@IbzCase"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "Editcase",
     "dataAccessAction" : "SRFUR__ADMIN",
@@ -881,7 +878,7 @@
     "id" : "Editcase@IbzCase"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "删除",
     "codeName" : "Delete",
     "confirmMsg" : "您确认要删除该测试用例吗？",

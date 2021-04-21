@@ -1345,7 +1345,6 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "删除",
     "codeName" : "DeleteCz",
     "confirmMsg" : "您确认删除该计划吗？",
@@ -1375,7 +1374,7 @@
     "id" : "DeleteCz@ProductPlan"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "MainEdit",
     "dataAccessAction" : "SRFUR__PROP_EDIT_BUT",
@@ -1402,7 +1401,6 @@
     "id" : "MainEdit@ProductPlan"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "子计划",
     "codeName" : "NewSubPlanCz",
     "dataAccessAction" : "SRFUR__PROP_CHILD_BUT",
@@ -1429,7 +1427,7 @@
     "id" : "NewSubPlanCz@ProductPlan"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "删除",
     "codeName" : "Delete",
     "confirmMsg" : "您确认删除该计划吗？",
@@ -1459,7 +1457,6 @@
     "id" : "Delete@ProductPlan"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "导入模板",
     "codeName" : "AddPlanTemplet",
     "dataAccessAction" : "SRFUR__PROP_CREATE_BUT",
@@ -1498,7 +1495,6 @@
     "id" : "AddPlanTemplet@ProductPlan"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "创建计划",
     "codeName" : "Create",
     "dataAccessAction" : "SRFUR__PROP_CREATE_BUT",
@@ -1527,7 +1523,7 @@
     "id" : "Create@ProductPlan"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "关联需求",
     "codeName" : "RelationStory",
     "dataAccessAction" : "SRFUR__PROP_LSTORY_BUT",
@@ -1558,7 +1554,7 @@
     "id" : "RelationStory@ProductPlan"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "添加项目",
     "codeName" : "AddProject",
     "dataAccessAction" : "SRFUR__PROJ_CREATE_BUT",
@@ -1639,7 +1635,7 @@
     "id" : "AddProject@ProductPlan"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "关联Bug",
     "codeName" : "RelationBug",
     "dataAccessAction" : "SRFUR__PROP_LBUG_BUT",
@@ -1671,7 +1667,7 @@
     "id" : "RelationBug@ProductPlan"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "子计划",
     "codeName" : "NewSubPlan",
     "dataAccessAction" : "SRFUR__PROP_CHILD_BUT",

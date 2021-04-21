@@ -20,14 +20,14 @@ public class IBZUAAFallback implements IBZUAAFeignClient {
     }
 
     @Override
+    public String getDynaModelIdByInstId(String instid) {
+        return null;
+    }
+    @Override
     public AuthenticationUser loginByUsername(String system,String orgId,String username) {
         return null;
     }
 
-    @Override
-    public String getDynaModelIdByInstId(String instid) {
-        return null;
-    }
 
     @Override
     public String getPublicKey() {

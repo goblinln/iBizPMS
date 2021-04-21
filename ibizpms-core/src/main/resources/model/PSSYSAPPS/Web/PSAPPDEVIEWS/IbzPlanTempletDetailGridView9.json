@@ -94,7 +94,6 @@
         "cssClass" : "fa fa-plus"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "caption" : "新建行",
         "codeName" : "NewRow",
         "dataAccessAction" : "SRFUR__UNIVERSALCREATE",

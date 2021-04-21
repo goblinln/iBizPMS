@@ -252,7 +252,6 @@
             "cssClass" : "fa fa-refresh"
           },
           "getPSUIAction" : {
-            "getNoPrivDisplayMode" : 2,
             "caption" : "刷新",
             "codeName" : "RefreshAll",
             "fullCodeName" : "RefreshAll",
@@ -281,7 +280,6 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "NONE",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "维护部门",
             "codeName" : "EditDept",
             "getFrontPSAppView" : {
@@ -535,7 +533,6 @@
               "cssClass" : "fa fa-refresh"
             },
             "getPSUIAction" : {
-              "getNoPrivDisplayMode" : 2,
               "caption" : "刷新",
               "codeName" : "RefreshAll",
               "fullCodeName" : "RefreshAll",
@@ -564,7 +561,6 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "NONE",
-              "getNoPrivDisplayMode" : 2,
               "caption" : "维护部门",
               "codeName" : "EditDept",
               "getFrontPSAppView" : {

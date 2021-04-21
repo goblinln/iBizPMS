@@ -403,7 +403,6 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "团队管理",
     "codeName" : "TeamManagement",
     "dataAccessAction" : "SRFUR__PROJT_TM_BUT",

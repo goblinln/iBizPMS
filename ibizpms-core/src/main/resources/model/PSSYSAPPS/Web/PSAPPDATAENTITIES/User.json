@@ -801,7 +801,7 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "Edit",
     "dataAccessAction" : "SRFUR__ADMIN",
@@ -830,7 +830,6 @@
     "id" : "Edit@User"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "同步账号",
     "codeName" : "SyncAccount",
     "dataAccessAction" : "SRFUR__ADMIN",
@@ -854,7 +853,6 @@
     "id" : "SyncAccount@User"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "新建",
     "codeName" : "Create",
     "dataAccessAction" : "SRFUR__ADMIN",
@@ -883,7 +881,7 @@
     "id" : "Create@User"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "删除",
     "codeName" : "Delete",
     "dataAccessAction" : "SRFUR__ADMIN",

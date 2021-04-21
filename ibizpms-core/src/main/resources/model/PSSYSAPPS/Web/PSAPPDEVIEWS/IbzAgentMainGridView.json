@@ -134,7 +134,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "新建",
         "codeName" : "Create",
         "getFrontPSAppView" : {
@@ -378,7 +377,6 @@
           "name" : "uef4000f",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "编辑",
             "codeName" : "Edit",
             "getFrontPSAppView" : {

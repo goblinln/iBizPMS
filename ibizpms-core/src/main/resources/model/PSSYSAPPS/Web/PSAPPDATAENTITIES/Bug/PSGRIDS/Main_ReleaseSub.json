@@ -203,7 +203,7 @@
         "name" : "uf22fc2b",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "移除bug",
           "codeName" : "releaseUnlinkBugByLeftBug",
           "dataAccessAction" : "SRFUR__BUG_UNLINK_BUT",

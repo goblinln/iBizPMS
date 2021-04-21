@@ -321,7 +321,6 @@
                       "cssClass" : "fa fa-plus"
                     },
                     "getPSUIAction" : {
-                      "getNoPrivDisplayMode" : 2,
                       "getCapPSLanguageRes" : {
                         "lanResTag" : "TBB.TEXT.*.NEW",
                         "id" : "工具栏按钮文本[*.NEW]"
@@ -1112,7 +1111,6 @@
               "name" : "u9f43be6",
               "getPSUIAction" : {
                 "actionTarget" : "NONE",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "MORE",
                 "codeName" : "More",
                 "getFrontPSAppView" : {

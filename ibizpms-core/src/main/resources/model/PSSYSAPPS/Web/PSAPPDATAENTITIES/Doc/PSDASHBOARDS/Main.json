@@ -888,7 +888,6 @@
               "detailType" : "DEUIACTION",
               "name" : "uf3df86f",
               "getPSUIAction" : {
-                "getNoPrivDisplayMode" : 2,
                 "getCapPSLanguageRes" : {
                   "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE",
                   "id" : "工具栏按钮文本[EDITVIEW.CLOSE]"
@@ -918,7 +917,6 @@
               "name" : "u4fde162",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "编辑",
                 "codeName" : "Edit",
                 "dataAccessAction" : "SRFUR__DOC_EDIT_BUT",
@@ -952,7 +950,6 @@
               "name" : "u638ba7d",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "删除",
                 "codeName" : "Delete",
                 "confirmMsg" : "您确定删除该文档吗？",
@@ -2619,7 +2616,6 @@
               },
               "getPSUIAction" : {
                 "actionTarget" : "NONE",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "添加备注",
                 "codeName" : "AddComment",
                 "dataAccessAction" : "SRFUR__UNIVERSALCREATE",

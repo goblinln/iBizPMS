@@ -112,7 +112,7 @@
         "name" : "uadedd49",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "编辑",
           "codeName" : "Editlib",
           "dataAccessAction" : "SRFUR__ADMIN",
@@ -146,7 +146,7 @@
         "name" : "ue16a62b",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "删除",
           "codeName" : "Delete",
           "dataAccessAction" : "SRFUR__ADMIN",

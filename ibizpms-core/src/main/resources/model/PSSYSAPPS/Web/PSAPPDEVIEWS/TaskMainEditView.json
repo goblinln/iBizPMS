@@ -85,7 +85,6 @@
         "cssClass" : "sx-tb-saveandclose"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
           "id" : "工具栏按钮文本[EDITVIEW.SAVEANDCLOSE]"
@@ -2244,7 +2243,6 @@
                       "cssClass" : "fa fa-plus"
                     },
                     "getPSUIAction" : {
-                      "getNoPrivDisplayMode" : 2,
                       "caption" : "新建行",
                       "codeName" : "NewRow",
                       "dataAccessAction" : "SRFUR__UNIVERSALCREATE",

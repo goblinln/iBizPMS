@@ -189,7 +189,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "SINGLEKEY",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "更新燃尽图",
         "codeName" : "ComputeBurn",
         "confirmMsg" : "是否更新燃尽图",

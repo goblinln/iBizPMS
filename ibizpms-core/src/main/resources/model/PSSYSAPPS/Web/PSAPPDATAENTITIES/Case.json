@@ -2459,7 +2459,6 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "批量新建用例",
     "codeName" : "BatchNew",
     "dataAccessAction" : "SRFUR__CASE_CREATE_BUT",
@@ -2486,7 +2485,6 @@
     "id" : "BatchNew@Case"
   }, {
     "actionTarget" : "MULTIKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "保存",
     "codeName" : "linkCase",
     "dataAccessAction" : "SRFUR__CASE_UNLINK_BUT",
@@ -2558,7 +2556,6 @@
     "id" : "linkCase@Case"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "收藏",
     "codeName" : "caseFavorite",
     "dataAccessAction" : "SRFUR__CASE_NFAVOR_BUT",
@@ -2608,7 +2605,6 @@
     "id" : "caseFavorite@Case"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "结果",
     "codeName" : "OpenTestRunResultViewCz",
     "dataAccessAction" : "SRFUR__CASE_RESULT_BUT",
@@ -2635,7 +2631,6 @@
     "id" : "OpenTestRunResultViewCz@Case"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "编辑",
     "codeName" : "MainEditCz",
     "dataAccessAction" : "SRFUR__CASE_EDIT_BUT",
@@ -2662,7 +2657,6 @@
     "id" : "MainEditCz@Case"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "关联用例",
     "codeName" : "LinkCaseC",
     "dataAccessAction" : "SRFUR__CASE_UNLINK_BUT",
@@ -2703,7 +2697,6 @@
     "id" : "LinkCaseC@Case"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "概况",
     "codeName" : "Edits",
     "getFrontPSAppView" : {
@@ -2725,7 +2718,7 @@
     "id" : "Edits@Case"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "转Bug",
     "codeName" : "NewBugByTestCaseResult",
     "dataAccessAction" : "SRFUR__CASE_TOBUG_BUT",
@@ -2770,7 +2763,6 @@
     "id" : "NewBugByTestCaseResult@Case"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "执行",
     "codeName" : "ExecuteCz",
     "dataAccessAction" : "SRFUR__CASE_CASERUN_BUT",
@@ -2797,7 +2789,6 @@
     "id" : "ExecuteCz@Case"
   }, {
     "actionTarget" : "MULTIKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "保存",
     "codeName" : "suitelinkCase",
     "dataAccessAction" : "SRFUR__TESTSU_LINKCASE_BUT",
@@ -2869,7 +2860,6 @@
     "id" : "suitelinkCase@Case"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "取消收藏",
     "codeName" : "CaseNFavorite",
     "dataAccessAction" : "SRFUR__CASE_FAVOR_BUT",
@@ -2897,7 +2887,7 @@
     "id" : "CaseNFavorite@Case"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "结果",
     "codeName" : "CASEOpenTestRunResultView",
     "dataAccessAction" : "SRFUR__CASE_CASERESULT_BUT",
@@ -2936,7 +2926,7 @@
     "id" : "CASEOpenTestRunResultView@Case"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "移除",
     "codeName" : "unlinkCase",
     "dataAccessAction" : "SRFUR__CASE_UNLINK_BUT",
@@ -2976,7 +2966,7 @@
     "id" : "unlinkCase@Case"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "结果",
     "codeName" : "OpenTestRunResultView",
     "dataAccessAction" : "SRFUR__CASE_RESULT_BUT",
@@ -3003,7 +2993,7 @@
     "id" : "OpenTestRunResultView@Case"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "移除",
     "codeName" : "unlinkSuiteCase",
     "dataAccessAction" : "SRFUR__CASE_UNLINK_BUT",
@@ -3043,7 +3033,7 @@
     "id" : "unlinkSuiteCase@Case"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "确认",
     "codeName" : "confirmstorychange",
     "dataAccessAction" : "SRFUR__CASE_CONFIRM_BUT",
@@ -3071,7 +3061,7 @@
     "id" : "confirmstorychange@Case"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "确认用例变动",
     "codeName" : "confirmChange",
     "dataAccessAction" : "SRFUR__CASE_CASECOF_BUT",
@@ -3111,7 +3101,7 @@
     "id" : "confirmChange@Case"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "MainEdit",
     "dataAccessAction" : "SRFUR__CASE_EDIT_BUT",
@@ -3142,7 +3132,6 @@
     "id" : "MainEdit@Case"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "转Bug",
     "codeName" : "NewBugByCaseResultCz",
     "dataAccessAction" : "SRFUR__CASE_TOBUG_BUT",
@@ -3173,7 +3162,6 @@
     "id" : "NewBugByCaseResultCz@Case"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "新建",
     "codeName" : "Create",
     "dataAccessAction" : "SRFUR__CASE_CREATE_BUT",
@@ -3202,7 +3190,7 @@
     "id" : "Create@Case"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "执行",
     "codeName" : "CaseExecute",
     "dataAccessAction" : "SRFUR__CASE_CASERUN_BUT",
@@ -3241,7 +3229,7 @@
     "id" : "CaseExecute@Case"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "转Bug",
     "codeName" : "NewBugByCaseResult",
     "dataAccessAction" : "SRFUR__CASE_TOBUG_BUT",
@@ -3286,7 +3274,7 @@
     "id" : "NewBugByCaseResult@Case"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "执行",
     "codeName" : "Execute",
     "dataAccessAction" : "SRFUR__CASE_CASERUN_BUT",
@@ -3313,7 +3301,6 @@
     "id" : "Execute@Case"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "删除",
     "codeName" : "deleteCz",
     "confirmMsg" : "确认要删除，删除操作将不可恢复？",

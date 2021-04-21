@@ -3,6 +3,7 @@
     "actionMode" : "CREATE",
     "actionType" : "BUILTIN",
     "getAfterPSDEActionLogics" : [ {
+      "actionLogicType" : 1,
       "attachMode" : "AFTER",
       "name" : "附加逻辑",
       "getPSDELogic" : {
@@ -23,6 +24,7 @@
     "actionMode" : "UPDATE",
     "actionType" : "BUILTIN",
     "getAfterPSDEActionLogics" : [ {
+      "actionLogicType" : 1,
       "attachMode" : "AFTER",
       "name" : "附加逻辑",
       "getPSDELogic" : {

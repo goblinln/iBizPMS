@@ -2501,7 +2501,6 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "新建",
     "codeName" : "Create",
     "dataAccessAction" : "SRFUR__PROJ_CREATE_BUT",
@@ -2530,7 +2529,6 @@
     "id" : "Create@Project"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "取消置顶",
     "codeName" : "CancelProjectTop",
     "dataAccessAction" : "TOP",
@@ -2559,7 +2557,6 @@
     "id" : "CancelProjectTop@Project"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "删除",
     "codeName" : "delete",
     "confirmMsg" : "确认要删除，删除操作将不可恢复？",
@@ -2599,7 +2596,6 @@
     "id" : "delete@Project"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "置顶",
     "codeName" : "ProjectTop",
     "dataAccessAction" : "NOTOP",
@@ -2628,7 +2624,6 @@
     "id" : "ProjectTop@Project"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "激活",
     "codeName" : "ProjectActivate",
     "dataAccessAction" : "SRFUR__PROJ_ACTIVATION_BUT",
@@ -2655,7 +2650,6 @@
     "id" : "ProjectActivate@Project"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "挂起",
     "codeName" : "ProjectSuspend",
     "dataAccessAction" : "SRFUR__PROJ_SUSPEND_BUT",
@@ -2682,7 +2676,6 @@
     "id" : "ProjectSuspend@Project"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "退出",
     "codeName" : "ReturnEdit",
     "fullCodeName" : "Project_ReturnEdit",
@@ -2698,7 +2691,6 @@
     "id" : "ReturnEdit@Project"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "管理",
     "codeName" : "Manager",
     "dataAccessAction" : "SRFUR__PROJ_MANAGE_BUT",
@@ -2725,7 +2717,6 @@
     "id" : "Manager@Project"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "MORE",
     "codeName" : "MoreUndone",
     "getFrontPSAppView" : {
@@ -2747,7 +2738,6 @@
     "id" : "MoreUndone@Project"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "编辑",
     "codeName" : "ProjectEdit",
     "dataAccessAction" : "SRFUR__PROJ_EDIT_BUT",
@@ -2774,7 +2764,6 @@
     "id" : "ProjectEdit@Project"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "关闭",
     "codeName" : "ProjectClose",
     "dataAccessAction" : "SRFUR__PROJ_CLOSED_BUT",
@@ -2801,7 +2790,6 @@
     "id" : "ProjectClose@Project"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "延期",
     "codeName" : "ProjectPutoff",
     "dataAccessAction" : "SRFUR__PROJ_DELAY_BUT",

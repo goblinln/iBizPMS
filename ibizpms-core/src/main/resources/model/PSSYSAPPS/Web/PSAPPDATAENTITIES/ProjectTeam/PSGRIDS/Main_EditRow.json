@@ -206,7 +206,6 @@
         "detailType" : "DEUIACTION",
         "name" : "u9a84285",
         "getPSUIAction" : {
-          "getNoPrivDisplayMode" : 2,
           "caption" : "新建行",
           "codeName" : "NewRow",
           "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
@@ -229,7 +228,6 @@
         "name" : "u89cbd06",
         "getPSUIAction" : {
           "actionTarget" : "MULTIKEY",
-          "getNoPrivDisplayMode" : 2,
           "getCapPSLanguageRes" : {
             "lanResTag" : "TBB.TEXT.*.REMOVE",
             "id" : "工具栏按钮文本[*.REMOVE]"

@@ -961,7 +961,6 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "转Bug",
     "codeName" : "toBug",
     "dataAccessAction" : "TOBUG",
@@ -1020,7 +1019,7 @@
     "id" : "toBug@Todo"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "激活",
     "codeName" : "activate",
     "confirmMsg" : "您确定要激活这条待办吗？",
@@ -1049,7 +1048,6 @@
     "id" : "activate@Todo"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "编辑",
     "codeName" : "edit1Cz",
     "dataAccessAction" : "UPDATE",
@@ -1080,7 +1078,6 @@
     "id" : "edit1Cz@Todo"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "新建",
     "codeName" : "TodoCreate",
     "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
@@ -1109,7 +1106,7 @@
     "id" : "TodoCreate@Todo"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "指派",
     "codeName" : "assignTo",
     "dataAccessAction" : "ASSIGNTO",
@@ -1138,7 +1135,6 @@
     "id" : "assignTo@Todo"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "MORE",
     "codeName" : "More",
     "getFrontPSAppView" : {
@@ -1160,7 +1156,6 @@
     "id" : "More@Todo"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "完成",
     "codeName" : "finishCz",
     "dataAccessAction" : "FINISH",
@@ -1187,7 +1182,7 @@
     "id" : "finishCz@Todo"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "删除",
     "codeName" : "delete",
     "confirmMsg" : "您确定要删除这条待办吗？",
@@ -1216,7 +1211,7 @@
     "id" : "delete@Todo"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "关闭",
     "codeName" : "close",
     "confirmMsg" : "您确定要关闭这条待办吗？",
@@ -1245,7 +1240,6 @@
     "id" : "close@Todo"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "转任务",
     "codeName" : "toTask",
     "dataAccessAction" : "TOTASK",
@@ -1304,7 +1298,6 @@
     "id" : "toTask@Todo"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "关闭",
     "codeName" : "closeCz",
     "dataAccessAction" : "CLOSE",
@@ -1331,7 +1324,6 @@
     "id" : "closeCz@Todo"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "删除",
     "codeName" : "deleteCz",
     "confirmMsg" : "您确定要删除这条待办吗？",
@@ -1367,7 +1359,6 @@
     "id" : "deleteCz@Todo"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "激活",
     "codeName" : "activateCz",
     "dataAccessAction" : "ACTIVATE",
@@ -1394,7 +1385,6 @@
     "id" : "activateCz@Todo"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "指派",
     "codeName" : "assignToCz",
     "dataAccessAction" : "ASSIGNTO",
@@ -1423,7 +1413,7 @@
     "id" : "assignToCz@Todo"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "edit1",
     "dataAccessAction" : "UPDATE",
@@ -1454,7 +1444,7 @@
     "id" : "edit1@Todo"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "完成",
     "codeName" : "finish",
     "confirmMsg" : "您确定这条待办已经完成了吗？",

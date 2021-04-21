@@ -164,7 +164,7 @@
         "name" : "u323f136",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "修改",
           "codeName" : "Edit",
           "dataAccessAction" : "SRFUR__MONTHLY_EDIT_BUT",
@@ -212,7 +212,7 @@
         "name" : "u57939dc",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "提交",
           "codeName" : "Submit",
           "dataAccessAction" : "SRFUR__MONTHLY_SUBMIT_BUT",

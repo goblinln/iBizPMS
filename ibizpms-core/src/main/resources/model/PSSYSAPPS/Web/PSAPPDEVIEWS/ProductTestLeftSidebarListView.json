@@ -164,7 +164,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "管理",
         "codeName" : "TestManager",
         "getFrontPSAppView" : {
@@ -207,7 +206,6 @@
         "cssClass" : "fa fa-refresh"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "caption" : "刷新",
         "codeName" : "Refresh",
         "fullCodeName" : "Refresh",
@@ -407,7 +405,6 @@
         },
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "置顶",
           "codeName" : "ProductTop",
           "dataAccessAction" : "NOTOP",
@@ -454,7 +451,6 @@
         },
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "取消置顶",
           "codeName" : "CancelProductTop",
           "dataAccessAction" : "TOP",

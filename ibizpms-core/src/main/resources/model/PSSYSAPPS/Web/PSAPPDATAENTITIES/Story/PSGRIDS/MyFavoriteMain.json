@@ -429,7 +429,7 @@
         "name" : "u42aa5b1",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "变更",
           "codeName" : "ChangeStoryDetail",
           "dataAccessAction" : "SRFUR__STORY_CHANGED_BUT",
@@ -463,7 +463,7 @@
         "name" : "ud7566dc",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "评审",
           "codeName" : "ReviewStory",
           "dataAccessAction" : "SRFUR__STORY_REVIEW_BUT",
@@ -497,7 +497,7 @@
         "name" : "u3724273",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "关闭",
           "codeName" : "CloseStory",
           "dataAccessAction" : "SRFUR__STORY_CLOSED_BUT",
@@ -534,7 +534,7 @@
         "name" : "u05cc54b",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "编辑",
           "codeName" : "OpenBaseInfoEditView",
           "dataAccessAction" : "SRFUR__STORY_EDIT_BUT",
@@ -570,7 +570,7 @@
         "name" : "u80dc357",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "建用例",
           "codeName" : "OpenCaseCreateView",
           "dataAccessAction" : "SRFUR__STORY_CCASE_BUT",
@@ -626,7 +626,7 @@
         "name" : "u99b8788",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "需求细分",
           "codeName" : "SubStory",
           "dataAccessAction" : "SRFUR__STORY_XQXF_BUT",
@@ -683,7 +683,6 @@
         "name" : "u37ec274",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "收藏",
           "codeName" : "StoryFavorites",
           "dataAccessAction" : "SRFUR__STORY_NFAVOR_BUT",
@@ -718,7 +717,6 @@
         "name" : "u658f7d3",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "取消收藏",
           "codeName" : "StoryNFavorites",
           "dataAccessAction" : "SRFUR__STORY_FAVOR_BUT",

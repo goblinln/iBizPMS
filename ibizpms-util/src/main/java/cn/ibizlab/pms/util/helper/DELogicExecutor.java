@@ -71,7 +71,7 @@ public class DELogicExecutor {
      */
     public void executeLogic(EntityBase entity, IPSDEAction action, IPSDELogic logic, IDynaInstRuntime runtime) throws Exception {
         Resource bpmn = getBpmn(logic, entity, runtime);
-        if (bpmn != null && bpmn.exists()) {
+        if (bpmn != null && bpmn.exists() && isNeedLoad(bpmn,runtime)) {
             DELogic deLogic = getDELogic(logic, entity, runtime);
             if (deLogic != null) {
                 executeLogic(deLogic, entity , action);
@@ -89,12 +89,30 @@ public class DELogicExecutor {
      */
     public void executeAttachLogic(EntityBase entity, IPSDEAction action, String attachMode, IDynaInstRuntime runtime) throws Exception {
         Resource bpmn = getBpmn(action, attachMode, entity, runtime);
-        if (bpmn != null && bpmn.exists()) {
+        if (bpmn != null && bpmn.exists() && isNeedLoad(bpmn,runtime)) {
             DELogic deLogic = getDELogic(action, attachMode, entity, runtime);
             if (deLogic != null) {
                 executeLogic(deLogic, entity , action);
             }
         }
+    }
+
+
+    /**
+     * 是否需要远程加载逻辑
+     * @param bpmn
+     * @param runtime
+     * @return
+     */
+    private boolean isNeedLoad(Resource bpmn, IDynaInstRuntime runtime) throws IOException {
+        String bpmnId = DigestUtils.md5DigestAsHex(bpmn.getURL().toString().getBytes());
+        if (!StringUtils.isEmpty(bpmnId) && !ObjectUtils.isEmpty(runtime.getLoadedTime())) {
+            DELogic logic = deLogicMap.get(bpmnId);
+            if (logic != null && !ObjectUtils.isEmpty(logic.getLoadedTime())) {
+                return !(logic.getLoadedTime() == runtime.getLoadedTime());
+            }
+        }
+        return true;
     }
 
     /**
@@ -180,13 +198,14 @@ public class DELogicExecutor {
                     }
                 }
                 logic = new DELogic();
-                logic.setId(DigestUtils.md5DigestAsHex(mainProcess.getId().getBytes()));
+                logic.setId(DigestUtils.md5DigestAsHex(bpmnFile.getURL().toString().getBytes()));
                 logic.setName(mainProcess.getName());
                 logic.setProcess(mainProcess);
                 logic.setRefLogic(refLogics);
                 logic.setRefRuleFiles(refFiles);
                 logic.setMd5(getMd5(refFiles));
                 logic.setLogicMode(bpmnFile instanceof UrlResource ? 1 : 0);
+                logic.setLoadedTime(iDynaInstRuntime.getLoadedTime());
             }
         } catch (Exception e) {
             log.error("执行处理逻辑失败" + e);
@@ -269,7 +288,7 @@ public class DELogicExecutor {
                     }
                 }
                 logic = new DELogic();
-                logic.setId(DigestUtils.md5DigestAsHex(mainProcess.getId().getBytes()));
+                logic.setId(DigestUtils.md5DigestAsHex(bpmnFile.getURL().toString().getBytes()));
                 logic.setName(mainProcess.getName());
                 logic.setProcess(mainProcess);
                 logic.setRefLogic(refLogics);

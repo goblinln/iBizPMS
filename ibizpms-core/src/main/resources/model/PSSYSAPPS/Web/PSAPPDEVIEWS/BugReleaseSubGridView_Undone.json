@@ -166,7 +166,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "关联bug",
         "codeName" : "releaseLinkLeftBug",
         "dataAccessAction" : "SRFUR__BUILD_LINK_BUT",
@@ -252,7 +251,6 @@
         "cssClass" : "fa fa-filter"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.FILTER",
           "id" : "工具栏按钮文本[*.FILTER]"
@@ -577,7 +575,7 @@
           "name" : "uf22fc2b",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "移除bug",
             "codeName" : "releaseUnlinkBugByLeftBug",
             "dataAccessAction" : "SRFUR__BUG_UNLINK_BUT",

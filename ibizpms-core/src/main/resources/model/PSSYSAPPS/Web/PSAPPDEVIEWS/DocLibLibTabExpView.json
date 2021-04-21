@@ -154,7 +154,6 @@
         },
         "getPSUIAction" : {
           "actionTarget" : "NONE",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "最近更新",
           "codeName" : "RecentUpdateQuickAccess",
           "getFrontPSAppView" : {
@@ -190,7 +189,6 @@
         },
         "getPSUIAction" : {
           "actionTarget" : "NONE",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "我的文档",
           "codeName" : "MyDocQuickAccess",
           "getFrontPSAppView" : {
@@ -226,7 +224,6 @@
         },
         "getPSUIAction" : {
           "actionTarget" : "NONE",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "我的收藏",
           "codeName" : "MyFavouriteQuickAccess",
           "getFrontPSAppView" : {
@@ -274,7 +271,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "创建文档库",
         "codeName" : "Create",
         "getFrontPSAppView" : {
@@ -322,7 +318,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "创建文档",
         "codeName" : "CreateFile",
         "getFrontPSAppView" : {
@@ -531,7 +526,6 @@
                   "name" : "u1d6b165",
                   "getPSUIAction" : {
                     "actionTarget" : "NONE",
-                    "getNoPrivDisplayMode" : 2,
                     "caption" : "MORE",
                     "codeName" : "MoreRecentUpdate",
                     "getFrontPSAppView" : {
@@ -1037,7 +1031,6 @@
                   "name" : "u4f4066d",
                   "getPSUIAction" : {
                     "actionTarget" : "NONE",
-                    "getNoPrivDisplayMode" : 2,
                     "caption" : "MORE",
                     "codeName" : "MoreMyDoc",
                     "getFrontPSAppView" : {
@@ -1548,7 +1541,6 @@
                   "name" : "u796de2e",
                   "getPSUIAction" : {
                     "actionTarget" : "NONE",
-                    "getNoPrivDisplayMode" : 2,
                     "caption" : "MORE",
                     "codeName" : "MoreMyFavourite",
                     "getFrontPSAppView" : {
@@ -2999,7 +2991,6 @@
                   "name" : "ue80481e",
                   "getPSUIAction" : {
                     "actionTarget" : "NONE",
-                    "getNoPrivDisplayMode" : 2,
                     "caption" : "MORE",
                     "codeName" : "MoreUndone",
                     "getFrontPSAppView" : {

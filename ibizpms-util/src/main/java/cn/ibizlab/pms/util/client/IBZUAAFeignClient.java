@@ -28,11 +28,11 @@ public interface IBZUAAFeignClient
 	AuthenticationUser login(@RequestBody AuthorizationLogin authorizationLogin);
 
 
-	@PostMapping(value = "/uaa/loginbyusername")
-	AuthenticationUser loginByUsername(@RequestHeader(name = "srfsystemid") String system,@RequestHeader(name = "srforgid") String orgid ,@RequestBody String username);
-
     @GetMapping(value = "/uaa/{instid}/dynamodel")
 	String getDynaModelIdByInstId(@PathVariable("instid") String instid);
+
+	@PostMapping(value = "/uaa/loginbyusername")
+	AuthenticationUser loginByUsername(@RequestHeader(name = "srfsystemid") String system,@RequestHeader(name = "srforgid") String orgid ,@RequestBody String username);
 
     @Cacheable(value="ibzuaa_publickey")
 	@GetMapping(value = "/uaa/publickey")

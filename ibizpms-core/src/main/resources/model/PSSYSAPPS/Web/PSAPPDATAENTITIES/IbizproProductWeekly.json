@@ -431,7 +431,6 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "生成周报",
     "codeName" : "CreateProductReport",
     "dataAccessAction" : "SRFUR__PRODUCT_MANAGER",

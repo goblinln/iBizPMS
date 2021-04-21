@@ -251,7 +251,6 @@
       },
       "getPSDEUIAction" : {
         "actionTarget" : "SINGLEKEY",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "查看",
         "codeName" : "LookDetail",
         "getFrontPSAppView" : {

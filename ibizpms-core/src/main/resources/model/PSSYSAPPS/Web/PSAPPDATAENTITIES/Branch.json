@@ -464,7 +464,7 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "删除",
     "codeName" : "Delete",
     "dataAccessAction" : "SRFUR__UNIVERSALDELETE",
@@ -492,7 +492,6 @@
     "id" : "Delete@Branch"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "新建",
     "codeName" : "Create",
     "dataAccessAction" : "SRFUR__UNIVERSALDELETE",
@@ -521,7 +520,7 @@
     "id" : "Create@Branch"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "Edit",
     "dataAccessAction" : "SRFUR__UNIVERSALDELETE",

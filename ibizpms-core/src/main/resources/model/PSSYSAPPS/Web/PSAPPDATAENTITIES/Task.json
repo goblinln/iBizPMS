@@ -3518,7 +3518,6 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "MORE",
     "codeName" : "More",
     "getFrontPSAppView" : {
@@ -3540,7 +3539,7 @@
     "id" : "More@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "关闭",
     "codeName" : "CloseTask",
     "dataAccessAction" : "SRFUR__TASK_CLOSE_BUT",
@@ -3571,7 +3570,7 @@
     "id" : "CloseTask@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "工时",
     "codeName" : "WorkHours1",
     "dataAccessAction" : "SRFUR__TASK_CONSUM_BUT",
@@ -3598,7 +3597,7 @@
     "id" : "WorkHours1@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "MainEdit",
     "dataAccessAction" : "SRFUR__TASK_EDIT_BUT",
@@ -3625,7 +3624,7 @@
     "id" : "MainEdit@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "指派",
     "codeName" : "AssignTask",
     "dataAccessAction" : "SRFUR__TASK_ASSIGN_BUT",
@@ -3652,7 +3651,6 @@
     "id" : "AssignTask@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "开始",
     "codeName" : "MStartTaskDash",
     "dataAccessAction" : "SRFUR__TASK_START_BUT",
@@ -3693,7 +3691,6 @@
     "id" : "MStartTaskDash@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "编辑",
     "codeName" : "MainEditDash",
     "dataAccessAction" : "SRFUR__TASK_EDIT_BUT",
@@ -3720,7 +3717,6 @@
     "id" : "MainEditDash@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "继续",
     "codeName" : "ReStartTeamTask",
     "dataAccessAction" : "SRFUR__TASK_PROCEED_BUT",
@@ -3757,7 +3753,6 @@
     "id" : "ReStartTeamTask@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "关闭",
     "codeName" : "CloseTaskDash",
     "dataAccessAction" : "SRFUR__TASK_CLOSE_BUT",
@@ -3788,7 +3783,6 @@
     "id" : "CloseTaskDash@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "子任务",
     "codeName" : "NewSubTaskDash",
     "dataAccessAction" : "SRFUR__TASK_SUBTASKS_BUT",
@@ -3836,7 +3830,7 @@
     "id" : "NewSubTaskDash@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "确认",
     "codeName" : "confirmStoryChange",
     "dataAccessAction" : "SRFUR__TASK_XQCHANGE_BUT",
@@ -3864,7 +3858,6 @@
     "id" : "confirmStoryChange@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "转交",
     "codeName" : "ForwardDash",
     "dataAccessAction" : "SRFUR__TASK_FORWARD_BUT",
@@ -3891,7 +3884,7 @@
     "id" : "ForwardDash@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "转交",
     "codeName" : "CheckForward",
     "dataAccessAction" : "SRFUR__TASK_FORWARD_BUT",
@@ -3932,7 +3925,7 @@
     "id" : "CheckForward@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "激活",
     "codeName" : "Activation",
     "dataAccessAction" : "SRFUR__TASK_ACTIVATION_BUT",
@@ -3959,7 +3952,6 @@
     "id" : "Activation@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "完成",
     "codeName" : "DoneTaskDash",
     "dataAccessAction" : "SRFUR__TASK_COMPLETE_BUT",
@@ -3992,7 +3984,7 @@
     "id" : "DoneTaskDash@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "开始",
     "codeName" : "MStartTaskDash1",
     "dataAccessAction" : "SRFUR__TASK_START_BUT",
@@ -4033,7 +4025,6 @@
     "id" : "MStartTaskDash1@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "暂停",
     "codeName" : "MPauseTask",
     "dataAccessAction" : "SRFUR__TASK_PAUSE_BUT",
@@ -4074,7 +4065,6 @@
     "id" : "MPauseTask@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "取消",
     "codeName" : "CancelTaskDash",
     "dataAccessAction" : "SRFUR__TASK_CANCEL_BUT",
@@ -4101,7 +4091,6 @@
     "id" : "CancelTaskDash@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "指派",
     "codeName" : "AssignTaskDash",
     "dataAccessAction" : "SRFUR__TASK_ASSIGN_BUT",
@@ -4128,7 +4117,6 @@
     "id" : "AssignTaskDash@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "收藏",
     "codeName" : "TaskFavorites",
     "dataAccessAction" : "SRFUR__TASK_NFAVOR_BUT",
@@ -4156,7 +4144,7 @@
     "id" : "TaskFavorites@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "完成",
     "codeName" : "done",
     "dataAccessAction" : "SRFUR__TASK_COMPLETE_BUT",
@@ -4197,7 +4185,6 @@
     "id" : "done@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "工时",
     "codeName" : "MWorkHours",
     "dataAccessAction" : "SRFUR__TASK_CONSUM_BUT",
@@ -4238,7 +4225,6 @@
     "id" : "MWorkHours@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "更多",
     "codeName" : "ChildMore",
     "getFrontPSAppView" : {
@@ -4266,7 +4252,6 @@
     "id" : "ChildMore@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "提缺陷",
     "codeName" : "TaskToBug",
     "dataAccessAction" : "SRFUR__BUG_CREATE_BUT",
@@ -4415,7 +4400,6 @@
     "id" : "TaskToBug@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "转交",
     "codeName" : "Forward",
     "dataAccessAction" : "SRFUR__TASK_FORWARD_BUT",
@@ -4448,7 +4432,6 @@
     "id" : "Forward@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "下载",
     "codeName" : "BatchDownload",
     "frontProcessType" : "OTHER",
@@ -4468,7 +4451,6 @@
     "id" : "BatchDownload@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "开始",
     "codeName" : "StartTaskDash",
     "dataAccessAction" : "SRFUR__TASK_START_BUT",
@@ -4495,7 +4477,7 @@
     "id" : "StartTaskDash@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "子任务",
     "codeName" : "NewSubTask",
     "dataAccessAction" : "SRFUR__TASK_SUBTASKS_BUT",
@@ -4543,7 +4525,6 @@
     "id" : "NewSubTask@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "取消收藏",
     "codeName" : "TaskNFavorites",
     "dataAccessAction" : "SRFUR__TASK_FAVOR_BUT",
@@ -4571,7 +4552,7 @@
     "id" : "TaskNFavorites@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "完成",
     "codeName" : "DoneTask",
     "dataAccessAction" : "SRFUR__TASK_COMPLETE_BUT",
@@ -4604,7 +4585,6 @@
     "id" : "DoneTask@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "继续",
     "codeName" : "ReStartTask",
     "dataAccessAction" : "SRFUR__TASK_PROCEED_BUT",
@@ -4633,7 +4613,6 @@
     "id" : "ReStartTask@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "确认",
     "codeName" : "confirmStoryChangeCz",
     "dataAccessAction" : "SRFUR__TASK_XQCHANGE_BUT",
@@ -4661,7 +4640,6 @@
     "id" : "confirmStoryChangeCz@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "工时",
     "codeName" : "WorkHours",
     "dataAccessAction" : "SRFUR__TASK_CONSUM_BUT",
@@ -4694,7 +4672,6 @@
     "id" : "WorkHours@Task"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "新建",
     "codeName" : "Create",
     "dataAccessAction" : "SRFUR__TASK_CREATE_BUT",
@@ -4723,7 +4700,6 @@
     "id" : "Create@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "激活",
     "codeName" : "ActivationDash",
     "dataAccessAction" : "SRFUR__TASK_ACTIVATION_BUT",
@@ -4750,7 +4726,6 @@
     "id" : "ActivationDash@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "删除",
     "codeName" : "delete",
     "confirmMsg" : "确认要删除，删除操作将不可恢复？",
@@ -4778,7 +4753,7 @@
     "id" : "delete@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "开始",
     "codeName" : "StartTask",
     "dataAccessAction" : "SRFUR__TASK_START_BUT",
@@ -4811,7 +4786,6 @@
     "id" : "StartTask@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "暂停",
     "codeName" : "PauseTaskDash",
     "dataAccessAction" : "SRFUR__TASK_PAUSE_BUT",
@@ -4842,7 +4816,6 @@
     "id" : "PauseTaskDash@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "转交",
     "codeName" : "checkForwardDash",
     "dataAccessAction" : "SRFUR__TASK_FORWARD_BUT",
@@ -4883,7 +4856,6 @@
     "id" : "checkForwardDash@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "完成",
     "codeName" : "MDoneTask",
     "dataAccessAction" : "SRFUR__TASK_COMPLETE_BUT",

@@ -654,7 +654,6 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "已读",
     "codeName" : "HaveRead",
     "getFrontPSAppView" : {
@@ -678,7 +677,7 @@
     "id" : "HaveRead@IbzReportly"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 6,
+    "noPrivDisplayMode" : 6,
     "caption" : "提交",
     "codeName" : "CalendarShowSubmit",
     "dataAccessAction" : "SRFUR__REPORTLY_SUBMIT_BUT",
@@ -706,7 +705,7 @@
     "id" : "CalendarShowSubmit@IbzReportly"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 6,
+    "noPrivDisplayMode" : 6,
     "caption" : "编辑",
     "codeName" : "CalendarShowEdit",
     "dataAccessAction" : "SRFUR__REPORTLY_EDIT_BUT",
@@ -735,7 +734,7 @@
     "id" : "CalendarShowEdit@IbzReportly"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "提交",
     "codeName" : "Submit",
     "dataAccessAction" : "SRFUR__REPORTLY_SUBMIT_BUT",
@@ -763,7 +762,6 @@
     "id" : "Submit@IbzReportly"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "新建",
     "codeName" : "Create",
     "getFrontPSAppView" : {
@@ -791,7 +789,7 @@
     "id" : "Create@IbzReportly"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "Edit",
     "dataAccessAction" : "SRFUR__REPORTLY_EDIT_BUT",

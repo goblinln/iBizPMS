@@ -356,7 +356,7 @@
     },
     "getPSDEUIAction" : {
       "actionTarget" : "SINGLEKEY",
-      "getNoPrivDisplayMode" : 1,
+      "noPrivDisplayMode" : 1,
       "caption" : "指派",
       "codeName" : "AssignTask",
       "dataAccessAction" : "SRFUR__TASK_ASSIGN_BUT",
@@ -493,7 +493,6 @@
         "name" : "ud5109c5",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "提缺陷",
           "codeName" : "TaskToBug",
           "dataAccessAction" : "SRFUR__BUG_CREATE_BUT",
@@ -649,7 +648,7 @@
         "name" : "ucdca98c",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "确认",
           "codeName" : "confirmStoryChange",
           "dataAccessAction" : "SRFUR__TASK_XQCHANGE_BUT",
@@ -684,7 +683,7 @@
         "name" : "u8316814",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "开始",
           "codeName" : "MStartTaskDash1",
           "dataAccessAction" : "SRFUR__TASK_START_BUT",
@@ -732,7 +731,7 @@
         "name" : "ubd2fb06",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "关闭",
           "codeName" : "CloseTask",
           "dataAccessAction" : "SRFUR__TASK_CLOSE_BUT",
@@ -770,7 +769,7 @@
         "name" : "ubf934a0",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "完成",
           "codeName" : "done",
           "dataAccessAction" : "SRFUR__TASK_COMPLETE_BUT",
@@ -818,7 +817,7 @@
         "name" : "ud0d0133",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "编辑",
           "codeName" : "MainEdit",
           "dataAccessAction" : "SRFUR__TASK_EDIT_BUT",
@@ -852,7 +851,7 @@
         "name" : "u7002282",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "子任务",
           "codeName" : "NewSubTask",
           "dataAccessAction" : "SRFUR__TASK_SUBTASKS_BUT",
@@ -907,7 +906,6 @@
         "name" : "ud67a065",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "getCapPSLanguageRes" : {
             "lanResTag" : "TBB.TEXT.*.COPY",
             "id" : "工具栏按钮文本[*.COPY]"
@@ -938,7 +936,6 @@
         "name" : "u3eb01df",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "收藏",
           "codeName" : "TaskFavorites",
           "dataAccessAction" : "SRFUR__TASK_NFAVOR_BUT",
@@ -973,7 +970,6 @@
         "name" : "ud5bc55a",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "取消收藏",
           "codeName" : "TaskNFavorites",
           "dataAccessAction" : "SRFUR__TASK_FAVOR_BUT",

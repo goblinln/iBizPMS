@@ -187,7 +187,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "管理",
         "codeName" : "Manager",
         "dataAccessAction" : "SRFUR__PROJ_MANAGE_BUT",
@@ -232,7 +231,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "新建",
         "codeName" : "Create",
         "dataAccessAction" : "SRFUR__PROJ_CREATE_BUT",
@@ -278,7 +276,6 @@
         "cssClass" : "fa fa-refresh"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "caption" : "刷新",
         "codeName" : "Refresh",
         "fullCodeName" : "Refresh",
@@ -478,7 +475,6 @@
         },
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "置顶",
           "codeName" : "ProjectTop",
           "dataAccessAction" : "NOTOP",
@@ -525,7 +521,6 @@
         },
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "取消置顶",
           "codeName" : "CancelProjectTop",
           "dataAccessAction" : "TOP",

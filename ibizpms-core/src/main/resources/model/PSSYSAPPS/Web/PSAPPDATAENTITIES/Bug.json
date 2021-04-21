@@ -2505,7 +2505,6 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "下载",
     "codeName" : "BatchDownload",
     "frontProcessType" : "OTHER",
@@ -2525,7 +2524,6 @@
     "id" : "BatchDownload@Bug"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "关联bug",
     "codeName" : "releaseLinkLeftBug",
     "dataAccessAction" : "SRFUR__BUILD_LINK_BUT",
@@ -2590,7 +2588,7 @@
     "id" : "releaseLinkLeftBug@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "确认",
     "codeName" : "ConfirmBug",
     "dataAccessAction" : "SRFUR__BUG_CONFIRM_BUT",
@@ -2618,7 +2616,6 @@
     "id" : "ConfirmBug@Bug"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "关联bug",
     "codeName" : "openBugGridView",
     "dataAccessAction" : "SRFUR__BUILD_LINK_BUT",
@@ -2694,7 +2691,6 @@
     "id" : "openBugGridView@Bug"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "提Bug",
     "codeName" : "createBugByBuild",
     "dataAccessAction" : "SRFUR__BUG_CREATE_BUT",
@@ -2749,7 +2745,6 @@
     "id" : "createBugByBuild@Bug"
   }, {
     "actionTarget" : "MULTIKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "关联bug",
     "codeName" : "buildlinkbugs",
     "dataAccessAction" : "SRFUR__BUG_UNLINK_BUT",
@@ -2855,7 +2850,6 @@
     "id" : "buildlinkbugs@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "关闭",
     "codeName" : "CloseBugDash",
     "dataAccessAction" : "SRFUR__BUG_CLOSE_BUT",
@@ -2882,7 +2876,6 @@
     "id" : "CloseBugDash@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "指派",
     "codeName" : "AssingToBugCz",
     "dataAccessAction" : "SRFUR__BUG_ASSIGNTO_BUT",
@@ -2909,7 +2902,6 @@
     "id" : "AssingToBugCz@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "提需求",
     "codeName" : "toStory",
     "dataAccessAction" : "SRFUR__BUG_TOSTORY_BUT",
@@ -2940,7 +2932,6 @@
     "id" : "toStory@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "取消收藏",
     "codeName" : "BugNFavorites",
     "dataAccessAction" : "SRFUR__BUG_FAVOR_BUT",
@@ -2968,7 +2959,7 @@
     "id" : "BugNFavorites@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "关闭",
     "codeName" : "CloseBug",
     "dataAccessAction" : "SRFUR__BUG_CLOSE_BUT",
@@ -2995,7 +2986,7 @@
     "id" : "CloseBug@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "移除bug",
     "codeName" : "releaseUnlinkBug",
     "dataAccessAction" : "SRFUR__BUG_UNLINK_BUT",
@@ -3035,7 +3026,6 @@
     "id" : "releaseUnlinkBug@Bug"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "新建",
     "codeName" : "Create",
     "dataAccessAction" : "SRFUR__BUG_CREATE_BUT",
@@ -3064,7 +3054,6 @@
     "id" : "Create@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "解除关联",
     "codeName" : "unlinkBug_build",
     "confirmMsg" : "您确认移除该Bug吗？",
@@ -3105,7 +3094,7 @@
     "id" : "unlinkBug_build@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "指派",
     "codeName" : "AssingToBug",
     "dataAccessAction" : "SRFUR__BUG_ASSIGNTO_BUT",
@@ -3132,7 +3121,7 @@
     "id" : "AssingToBug@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "移除bug",
     "codeName" : "releaseUnlinkBugByLeftBug",
     "dataAccessAction" : "SRFUR__BUG_UNLINK_BUT",
@@ -3172,7 +3161,6 @@
     "id" : "releaseUnlinkBugByLeftBug@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "移除关联",
     "codeName" : "UnlinkBug",
     "confirmMsg" : "是否移除关联Bug",
@@ -3217,7 +3205,6 @@
     "id" : "UnlinkBug@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "编辑",
     "codeName" : "MainEditDash",
     "dataAccessAction" : "SRFUR__BUG_EDIT_BUT",
@@ -3244,7 +3231,6 @@
     "id" : "MainEditDash@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "建用例",
     "codeName" : "BuildUseCase",
     "dataAccessAction" : "SRFUR__BUG_CREATECASE_BUT",
@@ -3269,7 +3255,6 @@
     "id" : "BuildUseCase@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "确认",
     "codeName" : "ConfirmBugDash",
     "dataAccessAction" : "SRFUR__BUG_CONFIRM_BUT",
@@ -3297,7 +3282,6 @@
     "id" : "ConfirmBugDash@Bug"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "MORE",
     "codeName" : "More",
     "getFrontPSAppView" : {
@@ -3319,7 +3303,6 @@
     "id" : "More@Bug"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "关联bug",
     "codeName" : "releaseLinkResolvedBug",
     "dataAccessAction" : "SRFUR__BUILD_LINK_BUT",
@@ -3380,7 +3363,6 @@
     "id" : "releaseLinkResolvedBug@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "激活",
     "codeName" : "Activation",
     "dataAccessAction" : "SRFUR__BUG_ACTIVATE_BUT",
@@ -3407,7 +3389,7 @@
     "id" : "Activation@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "解决",
     "codeName" : "ResolveBug",
     "dataAccessAction" : "SRFUR__BUG_RESOLVE_BUT",
@@ -3434,7 +3416,6 @@
     "id" : "ResolveBug@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "收藏",
     "codeName" : "BugFavorites",
     "dataAccessAction" : "SRFUR__BUG_NFAVOR_BUT",
@@ -3462,7 +3443,7 @@
     "id" : "BugFavorites@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "MainEdit",
     "dataAccessAction" : "SRFUR__BUG_EDIT_BUT",
@@ -3489,7 +3470,6 @@
     "id" : "MainEdit@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "删除",
     "codeName" : "delete",
     "confirmMsg" : "确认要删除，删除操作将不可恢复？",
@@ -3517,7 +3497,6 @@
     "id" : "delete@Bug"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "关联Bug",
     "codeName" : "PlanRelationBug",
     "dataAccessAction" : "SRFUR__BUILD_LINK_BUT",
@@ -3566,7 +3545,6 @@
     "id" : "PlanRelationBug@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "解决",
     "codeName" : "ResolveBugDash",
     "dataAccessAction" : "SRFUR__BUG_RESOLVE_BUT",

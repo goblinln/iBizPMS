@@ -430,7 +430,6 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "同步",
     "codeName" : "syncFromIBIZ",
     "getFrontPSAppView" : {

@@ -1231,7 +1231,6 @@
               },
               "getPSUIAction" : {
                 "actionTarget" : "NONE",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "添加备注",
                 "codeName" : "AddComment",
                 "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
@@ -1757,7 +1756,6 @@
               "detailType" : "DEUIACTION",
               "name" : "u9797c2b",
               "getPSUIAction" : {
-                "getNoPrivDisplayMode" : 2,
                 "getCapPSLanguageRes" : {
                   "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE",
                   "id" : "工具栏按钮文本[EDITVIEW.CLOSE]"
@@ -1787,7 +1785,6 @@
               "name" : "u0e69512",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "编辑",
                 "codeName" : "MainEditDash",
                 "dataAccessAction" : "SRFUR__BUG_EDIT_BUT",
@@ -1821,7 +1818,6 @@
               "name" : "u272ff65",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "关闭",
                 "codeName" : "CloseBugDash",
                 "dataAccessAction" : "SRFUR__BUG_CLOSE_BUT",
@@ -1855,7 +1851,6 @@
               "name" : "u20733a7",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "解决",
                 "codeName" : "ResolveBugDash",
                 "dataAccessAction" : "SRFUR__BUG_RESOLVE_BUT",
@@ -1889,7 +1884,6 @@
               "name" : "u038caad",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "指派",
                 "codeName" : "AssingToBugCz",
                 "dataAccessAction" : "SRFUR__BUG_ASSIGNTO_BUT",
@@ -1923,7 +1917,6 @@
               "name" : "u69890c3",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "确认",
                 "codeName" : "ConfirmBugDash",
                 "dataAccessAction" : "SRFUR__BUG_CONFIRM_BUT",
@@ -1958,7 +1951,6 @@
               "name" : "u4117bb0",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "激活",
                 "codeName" : "Activation",
                 "dataAccessAction" : "SRFUR__BUG_ACTIVATE_BUT",
@@ -1992,7 +1984,6 @@
               "name" : "u5229954",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "提需求",
                 "codeName" : "toStory",
                 "dataAccessAction" : "SRFUR__BUG_TOSTORY_BUT",
@@ -2030,7 +2021,6 @@
               "name" : "u76dfc47",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "建用例",
                 "codeName" : "BuildUseCase",
                 "dataAccessAction" : "SRFUR__BUG_CREATECASE_BUT",
@@ -2062,7 +2052,6 @@
               "name" : "uba14cc8",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "删除",
                 "codeName" : "delete",
                 "confirmMsg" : "确认要删除，删除操作将不可恢复？",
@@ -2098,7 +2087,6 @@
               "name" : "batchdownload",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "下载",
                 "codeName" : "BatchDownload",
                 "frontProcessType" : "OTHER",

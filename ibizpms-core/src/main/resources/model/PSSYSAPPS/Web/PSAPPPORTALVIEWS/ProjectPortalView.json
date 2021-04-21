@@ -1234,7 +1234,6 @@
               "name" : "ueb3273b",
               "getPSUIAction" : {
                 "actionTarget" : "NONE",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "MORE",
                 "codeName" : "More",
                 "getFrontPSAppView" : {

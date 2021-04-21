@@ -153,7 +153,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "新建",
         "codeName" : "Create",
         "getFrontPSAppView" : {
@@ -202,7 +201,6 @@
         "cssClass" : "fa fa-file-excel-o"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.EXPORT",
           "id" : "工具栏按钮文本[*.EXPORT]"
@@ -486,7 +484,7 @@
           "name" : "ud27b04a",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "编辑",
             "codeName" : "Edit",
             "dataAccessAction" : "SRFUR__REPORTLY_EDIT_BUT",
@@ -522,7 +520,7 @@
           "name" : "u32d11cb",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "提交",
             "codeName" : "Submit",
             "dataAccessAction" : "SRFUR__REPORTLY_SUBMIT_BUT",

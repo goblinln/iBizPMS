@@ -143,7 +143,7 @@
         "name" : "ud401683",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "删除",
           "codeName" : "Delete",
           "dataAccessAction" : "SRFUR__ADMIN",
@@ -178,7 +178,7 @@
         "name" : "u9c4d5a2",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "编辑",
           "codeName" : "Edit",
           "dataAccessAction" : "SRFUR__ADMIN",

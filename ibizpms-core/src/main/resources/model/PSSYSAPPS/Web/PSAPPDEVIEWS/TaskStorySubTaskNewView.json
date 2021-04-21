@@ -145,7 +145,6 @@
         "cssClass" : "fa fa-plus"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "caption" : "新建行",
         "codeName" : "NewRow",
         "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
@@ -178,7 +177,6 @@
         "cssClass" : "fa fa-save"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "caption" : "保存行",
         "codeName" : "SaveRow",
         "dataAccessAction" : "SRFUR__UNIVERSALSAVE",

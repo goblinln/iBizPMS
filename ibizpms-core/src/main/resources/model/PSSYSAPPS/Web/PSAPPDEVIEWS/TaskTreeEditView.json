@@ -927,7 +927,6 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "getNoPrivDisplayMode" : 2,
               "caption" : "指派",
               "codeName" : "AssignTaskDash",
               "dataAccessAction" : "SRFUR__TASK_ASSIGN_BUT",
@@ -973,7 +972,6 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "getNoPrivDisplayMode" : 2,
               "caption" : "转交",
               "codeName" : "checkForwardDash",
               "dataAccessAction" : "SRFUR__TASK_FORWARD_BUT",
@@ -1033,7 +1031,6 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "getNoPrivDisplayMode" : 2,
               "caption" : "开始",
               "codeName" : "MStartTaskDash",
               "dataAccessAction" : "SRFUR__TASK_START_BUT",
@@ -1093,7 +1090,6 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "getNoPrivDisplayMode" : 2,
               "caption" : "完成",
               "codeName" : "MDoneTask",
               "dataAccessAction" : "SRFUR__TASK_COMPLETE_BUT",
@@ -1154,7 +1150,6 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "getNoPrivDisplayMode" : 2,
               "caption" : "激活",
               "codeName" : "ActivationDash",
               "dataAccessAction" : "SRFUR__TASK_ACTIVATION_BUT",
@@ -1200,7 +1195,6 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "getNoPrivDisplayMode" : 2,
               "caption" : "暂停",
               "codeName" : "MPauseTask",
               "dataAccessAction" : "SRFUR__TASK_PAUSE_BUT",
@@ -1260,7 +1254,6 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "getNoPrivDisplayMode" : 2,
               "caption" : "取消",
               "codeName" : "CancelTaskDash",
               "dataAccessAction" : "SRFUR__TASK_CANCEL_BUT",
@@ -1306,7 +1299,6 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "getNoPrivDisplayMode" : 2,
               "caption" : "关闭",
               "codeName" : "CloseTaskDash",
               "dataAccessAction" : "SRFUR__TASK_CLOSE_BUT",
@@ -1356,7 +1348,6 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "getNoPrivDisplayMode" : 2,
               "caption" : "子任务",
               "codeName" : "NewSubTaskDash",
               "dataAccessAction" : "SRFUR__TASK_SUBTASKS_BUT",

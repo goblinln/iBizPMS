@@ -378,7 +378,6 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "NONE",
-              "getNoPrivDisplayMode" : 2,
               "caption" : "维护产品线",
               "codeName" : "SeLine",
               "getFrontPSAppView" : {

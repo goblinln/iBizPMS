@@ -524,7 +524,6 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "指派",
             "codeName" : "assignToCz",
             "dataAccessAction" : "ASSIGNTO",
@@ -572,7 +571,6 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "完成",
             "codeName" : "finishCz",
             "dataAccessAction" : "FINISH",
@@ -618,7 +616,6 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "激活",
             "codeName" : "activateCz",
             "dataAccessAction" : "ACTIVATE",
@@ -664,7 +661,6 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "关闭",
             "codeName" : "closeCz",
             "dataAccessAction" : "CLOSE",
@@ -710,7 +706,6 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "编辑",
             "codeName" : "edit1Cz",
             "dataAccessAction" : "UPDATE",
@@ -760,7 +755,6 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "删除",
             "codeName" : "deleteCz",
             "confirmMsg" : "您确定要删除这条待办吗？",
@@ -1182,7 +1176,6 @@
                 },
                 "getPSUIAction" : {
                   "actionTarget" : "NONE",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "添加备注",
                   "codeName" : "AddComment",
                   "dataAccessAction" : "SRFUR__UNIVERSALCREATE",

@@ -683,7 +683,6 @@
                             "cssClass" : "fa fa-refresh"
                           },
                           "getPSUIAction" : {
-                            "getNoPrivDisplayMode" : 2,
                             "caption" : "刷新",
                             "codeName" : "Refresh",
                             "fullCodeName" : "Refresh",
@@ -719,7 +718,6 @@
                             "cssClass" : "fa fa-file-excel-o"
                           },
                           "getPSUIAction" : {
-                            "getNoPrivDisplayMode" : 2,
                             "getCapPSLanguageRes" : {
                               "lanResTag" : "TBB.TEXT.*.EXPORT",
                               "id" : "工具栏按钮文本[*.EXPORT]"
@@ -2127,7 +2125,6 @@
                 },
                 "getPSUIAction" : {
                   "actionTarget" : "NONE",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "添加备注",
                   "codeName" : "AddComment",
                   "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
@@ -2553,7 +2550,6 @@
                 "detailType" : "DEUIACTION",
                 "name" : "ue3d94f9",
                 "getPSUIAction" : {
-                  "getNoPrivDisplayMode" : 2,
                   "getCapPSLanguageRes" : {
                     "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE",
                     "id" : "工具栏按钮文本[EDITVIEW.CLOSE]"
@@ -2583,7 +2579,6 @@
                 "name" : "ud0c7313",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "执行",
                   "codeName" : "ExecuteCz",
                   "dataAccessAction" : "SRFUR__CASE_CASERUN_BUT",
@@ -2617,7 +2612,6 @@
                 "name" : "udbf26f2",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "结果",
                   "codeName" : "OpenTestRunResultViewCz",
                   "dataAccessAction" : "SRFUR__CASE_RESULT_BUT",
@@ -2651,7 +2645,6 @@
                 "name" : "ua417f98",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "转Bug",
                   "codeName" : "NewBugByCaseResultCz",
                   "dataAccessAction" : "SRFUR__CASE_TOBUG_BUT",
@@ -2689,7 +2682,6 @@
                 "name" : "u8853531",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "编辑",
                   "codeName" : "MainEditCz",
                   "dataAccessAction" : "SRFUR__CASE_EDIT_BUT",
@@ -2723,7 +2715,6 @@
                 "name" : "u22ddd67",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "删除",
                   "codeName" : "deleteCz",
                   "confirmMsg" : "确认要删除，删除操作将不可恢复？",

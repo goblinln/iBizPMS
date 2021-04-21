@@ -282,7 +282,7 @@
         "name" : "ud66a79a",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "关联需求",
           "codeName" : "linkStories",
           "dataAccessAction" : "SRFUR__BUILD_LINK_BUT",
@@ -352,7 +352,7 @@
         "name" : "u515beb6",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "提交测试",
           "codeName" : "submitToTesting",
           "dataAccessAction" : "SRFUR__BUILD_SUBT_BUT",
@@ -432,7 +432,6 @@
         "name" : "u88d879a",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "查看Bug",
           "codeName" : "viewBugs",
           "getFrontPSAppView" : {
@@ -487,7 +486,7 @@
         "name" : "u1402a26",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "编辑版本",
           "codeName" : "editBuild",
           "dataAccessAction" : "SRFUR__BUILD_EDIT_BUT",
@@ -521,7 +520,7 @@
         "name" : "u399f905",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "删除",
           "codeName" : "Delete",
           "dataAccessAction" : "SRFUR__BUILD_DELETE_BUT",

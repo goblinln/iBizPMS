@@ -1816,7 +1816,6 @@
                           },
                           "getPSUIAction" : {
                             "actionTarget" : "SINGLEKEY",
-                            "getNoPrivDisplayMode" : 2,
                             "caption" : "团队管理",
                             "codeName" : "TeamManagement",
                             "dataAccessAction" : "SRFUR__PROJT_TM_BUT",
@@ -2247,7 +2246,6 @@
                       },
                       "getPSUIAction" : {
                         "actionTarget" : "NONE",
-                        "getNoPrivDisplayMode" : 2,
                         "caption" : "添加备注",
                         "codeName" : "AddComment",
                         "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
@@ -2679,7 +2677,6 @@
                       "name" : "u1fe0a32",
                       "getPSUIAction" : {
                         "actionTarget" : "SINGLEKEY",
-                        "getNoPrivDisplayMode" : 2,
                         "caption" : "延期",
                         "codeName" : "ProjectPutoff",
                         "dataAccessAction" : "SRFUR__PROJ_DELAY_BUT",
@@ -2713,7 +2710,6 @@
                       "name" : "uca4a1f6",
                       "getPSUIAction" : {
                         "actionTarget" : "SINGLEKEY",
-                        "getNoPrivDisplayMode" : 2,
                         "caption" : "挂起",
                         "codeName" : "ProjectSuspend",
                         "dataAccessAction" : "SRFUR__PROJ_SUSPEND_BUT",
@@ -2747,7 +2743,6 @@
                       "name" : "ue19d831",
                       "getPSUIAction" : {
                         "actionTarget" : "SINGLEKEY",
-                        "getNoPrivDisplayMode" : 2,
                         "caption" : "激活",
                         "codeName" : "ProjectActivate",
                         "dataAccessAction" : "SRFUR__PROJ_ACTIVATION_BUT",
@@ -2781,7 +2776,6 @@
                       "name" : "u3fed8d8",
                       "getPSUIAction" : {
                         "actionTarget" : "SINGLEKEY",
-                        "getNoPrivDisplayMode" : 2,
                         "caption" : "关闭",
                         "codeName" : "ProjectClose",
                         "dataAccessAction" : "SRFUR__PROJ_CLOSED_BUT",
@@ -2815,7 +2809,6 @@
                       "name" : "u66eccda",
                       "getPSUIAction" : {
                         "actionTarget" : "SINGLEKEY",
-                        "getNoPrivDisplayMode" : 2,
                         "caption" : "编辑",
                         "codeName" : "ProjectEdit",
                         "dataAccessAction" : "SRFUR__PROJ_EDIT_BUT",
@@ -2849,7 +2842,6 @@
                       "name" : "uc2afabc",
                       "getPSUIAction" : {
                         "actionTarget" : "SINGLEKEY",
-                        "getNoPrivDisplayMode" : 2,
                         "caption" : "删除",
                         "codeName" : "delete",
                         "confirmMsg" : "确认要删除，删除操作将不可恢复？",

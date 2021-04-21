@@ -3081,7 +3081,7 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "批量分解",
     "codeName" : "BatchBreakdowntasks",
     "dataAccessAction" : "SRFUR__STORY_FJTASK_BUT",
@@ -3167,7 +3167,6 @@
     "id" : "BatchBreakdowntasks@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "关闭",
     "codeName" : "CloseStoryDash",
     "dataAccessAction" : "SRFUR__STORY_CLOSED_BUT",
@@ -3197,7 +3196,7 @@
     "id" : "CloseStoryDash@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "需求细分",
     "codeName" : "SubStory",
     "dataAccessAction" : "SRFUR__STORY_XQXF_BUT",
@@ -3247,7 +3246,7 @@
     "id" : "SubStory@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "提缺陷",
     "codeName" : "StoryToBug",
     "dataAccessAction" : "SRFUR__BUG_CREATE_BUT",
@@ -3356,7 +3355,7 @@
     "id" : "StoryToBug@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "变更",
     "codeName" : "ChangeStoryDetail",
     "dataAccessAction" : "SRFUR__STORY_CHANGED_BUT",
@@ -3383,7 +3382,6 @@
     "id" : "ChangeStoryDetail@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "激活",
     "codeName" : "ActiviteDash",
     "dataAccessAction" : "SRFUR__STORY_ACTIVE_BUT",
@@ -3410,7 +3408,6 @@
     "id" : "ActiviteDash@Story"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "关联需求",
     "codeName" : "PlanRelationStory",
     "dataAccessAction" : "SRFUR__PROP_LSTORY_BUT",
@@ -3456,7 +3453,6 @@
     "id" : "PlanRelationStory@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "收藏",
     "codeName" : "StoryFavorites",
     "dataAccessAction" : "SRFUR__STORY_NFAVOR_BUT",
@@ -3484,7 +3480,7 @@
     "id" : "StoryFavorites@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "OpenBaseInfoEditView",
     "dataAccessAction" : "SRFUR__STORY_EDIT_BUT",
@@ -3513,7 +3509,6 @@
     "id" : "OpenBaseInfoEditView@Story"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "关联需求",
     "codeName" : "buildLinkStories",
     "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
@@ -3579,7 +3574,6 @@
     "id" : "buildLinkStories@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "指派",
     "codeName" : "AssignToDash",
     "dataAccessAction" : "SRFUR__STORY_ASS_BUT",
@@ -3609,7 +3603,6 @@
     "id" : "AssignToDash@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "变更",
     "codeName" : "ChangeStoryDetailDash",
     "dataAccessAction" : "SRFUR__STORY_CHANGED_BUT",
@@ -3636,7 +3629,7 @@
     "id" : "ChangeStoryDetailDash@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "指派",
     "codeName" : "AssignTo",
     "dataAccessAction" : "SRFUR__STORY_ASS_BUT",
@@ -3666,7 +3659,6 @@
     "id" : "AssignTo@Story"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "MORE",
     "codeName" : "More",
     "getFrontPSAppView" : {
@@ -3688,7 +3680,7 @@
     "id" : "More@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "移除关联",
     "codeName" : "UnlinkStory",
     "confirmMsg" : "是否移除需求关联",
@@ -3730,7 +3722,6 @@
     "id" : "UnlinkStory@Story"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "关联需求",
     "codeName" : "projectLinkStories",
     "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
@@ -3776,7 +3767,6 @@
     "id" : "projectLinkStories@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "下载",
     "codeName" : "BatchDownload",
     "frontProcessType" : "OTHER",
@@ -3796,7 +3786,6 @@
     "id" : "BatchDownload@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "退出",
     "codeName" : "ReturnEdit",
     "fullCodeName" : "Story_ReturnEdit",
@@ -3812,7 +3801,6 @@
     "id" : "ReturnEdit@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "编辑",
     "codeName" : "OpenBaseInfoC",
     "dataAccessAction" : "SRFUR__STORY_EDIT_BUT",
@@ -3841,7 +3829,6 @@
     "id" : "OpenBaseInfoC@Story"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "关联需求",
     "codeName" : "releaseLinkStories",
     "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
@@ -3902,7 +3889,6 @@
     "id" : "releaseLinkStories@Story"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "新建需求",
     "codeName" : "CreatePlan",
     "dataAccessAction" : "SRFUR__STORY_CREATE_BUT",
@@ -3943,7 +3929,7 @@
     "id" : "CreatePlan@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "关闭",
     "codeName" : "CloseStory",
     "dataAccessAction" : "SRFUR__STORY_CLOSED_BUT",
@@ -3973,7 +3959,6 @@
     "id" : "CloseStory@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "评审",
     "codeName" : "ReviewStoryDash",
     "dataAccessAction" : "SRFUR__STORY_REVIEW_BUT",
@@ -4000,7 +3985,6 @@
     "id" : "ReviewStoryDash@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "细分",
     "codeName" : "SubStoryCz",
     "dataAccessAction" : "SRFUR__STORY_XQXF_BUT",
@@ -4050,7 +4034,7 @@
     "id" : "SubStoryCz@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "建用例",
     "codeName" : "OpenCaseCreateView",
     "dataAccessAction" : "SRFUR__STORY_CCASE_BUT",
@@ -4099,7 +4083,7 @@
     "id" : "OpenCaseCreateView@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "分解任务",
     "codeName" : "Breakdowntasks",
     "dataAccessAction" : "SRFUR__STORY_FJTASK_BUT",
@@ -4185,7 +4169,6 @@
     "id" : "Breakdowntasks@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "移除关联",
     "codeName" : "releaseUnlinkStory",
     "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
@@ -4225,7 +4208,6 @@
     "id" : "releaseUnlinkStory@Story"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "新建",
     "codeName" : "ProjectCreateView",
     "dataAccessAction" : "SRFUR__STORY_CREATE_BUT",
@@ -4276,7 +4258,7 @@
     "id" : "ProjectCreateView@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "解绑需求",
     "codeName" : "buildUnlinkStory",
     "confirmMsg" : "您确认移除该需求吗？",
@@ -4317,7 +4299,7 @@
     "id" : "buildUnlinkStory@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "移除",
     "codeName" : "ProjectUnlinkStory",
     "confirmMsg" : "您确定从该项目中移除该需求吗？",
@@ -4359,7 +4341,7 @@
     "id" : "ProjectUnlinkStory@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "评审",
     "codeName" : "ReviewStory",
     "dataAccessAction" : "SRFUR__STORY_REVIEW_BUT",
@@ -4386,7 +4368,6 @@
     "id" : "ReviewStory@Story"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "新建需求",
     "codeName" : "Create",
     "dataAccessAction" : "SRFUR__STORY_CREATE_BUT",
@@ -4415,7 +4396,6 @@
     "id" : "Create@Story"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "按照计划关联",
     "codeName" : "ProjecPlanLink",
     "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
@@ -4452,7 +4432,6 @@
     "id" : "ProjecPlanLink@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "删除",
     "codeName" : "delete",
     "confirmMsg" : "确认要删除，删除操作将不可恢复？",
@@ -4492,7 +4471,6 @@
     "id" : "delete@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "取消收藏",
     "codeName" : "StoryNFavorites",
     "dataAccessAction" : "SRFUR__STORY_FAVOR_BUT",

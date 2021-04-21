@@ -321,7 +321,6 @@
             "cssClass" : "fa fa-refresh"
           },
           "getPSUIAction" : {
-            "getNoPrivDisplayMode" : 2,
             "caption" : "刷新",
             "codeName" : "RefreshParent",
             "fullCodeName" : "RefreshParent",
@@ -368,7 +367,6 @@
             "cssClass" : "fa fa-refresh"
           },
           "getPSUIAction" : {
-            "getNoPrivDisplayMode" : 2,
             "caption" : "刷新",
             "codeName" : "RefreshParent",
             "fullCodeName" : "RefreshParent",
@@ -415,7 +413,6 @@
             "cssClass" : "fa fa-refresh"
           },
           "getPSUIAction" : {
-            "getNoPrivDisplayMode" : 2,
             "caption" : "刷新",
             "codeName" : "RefreshParent",
             "fullCodeName" : "RefreshParent",
@@ -462,7 +459,6 @@
             "cssClass" : "fa fa-refresh"
           },
           "getPSUIAction" : {
-            "getNoPrivDisplayMode" : 2,
             "caption" : "刷新",
             "codeName" : "RefreshParent",
             "fullCodeName" : "RefreshParent",
@@ -509,7 +505,6 @@
             "cssClass" : "fa fa-refresh"
           },
           "getPSUIAction" : {
-            "getNoPrivDisplayMode" : 2,
             "caption" : "刷新",
             "codeName" : "RefreshParent",
             "fullCodeName" : "RefreshParent",
@@ -556,7 +551,6 @@
             "cssClass" : "fa fa-refresh"
           },
           "getPSUIAction" : {
-            "getNoPrivDisplayMode" : 2,
             "caption" : "刷新",
             "codeName" : "RefreshParent",
             "fullCodeName" : "RefreshParent",
@@ -811,7 +805,6 @@
               "cssClass" : "fa fa-refresh"
             },
             "getPSUIAction" : {
-              "getNoPrivDisplayMode" : 2,
               "caption" : "刷新",
               "codeName" : "RefreshParent",
               "fullCodeName" : "RefreshParent",
@@ -906,7 +899,6 @@
               "cssClass" : "fa fa-refresh"
             },
             "getPSUIAction" : {
-              "getNoPrivDisplayMode" : 2,
               "caption" : "刷新",
               "codeName" : "RefreshParent",
               "fullCodeName" : "RefreshParent",
@@ -996,7 +988,6 @@
               "cssClass" : "fa fa-refresh"
             },
             "getPSUIAction" : {
-              "getNoPrivDisplayMode" : 2,
               "caption" : "刷新",
               "codeName" : "RefreshParent",
               "fullCodeName" : "RefreshParent",
@@ -1123,7 +1114,6 @@
               "cssClass" : "fa fa-refresh"
             },
             "getPSUIAction" : {
-              "getNoPrivDisplayMode" : 2,
               "caption" : "刷新",
               "codeName" : "RefreshParent",
               "fullCodeName" : "RefreshParent",
@@ -1241,7 +1231,6 @@
               "cssClass" : "fa fa-refresh"
             },
             "getPSUIAction" : {
-              "getNoPrivDisplayMode" : 2,
               "caption" : "刷新",
               "codeName" : "RefreshParent",
               "fullCodeName" : "RefreshParent",
@@ -1359,7 +1348,6 @@
               "cssClass" : "fa fa-refresh"
             },
             "getPSUIAction" : {
-              "getNoPrivDisplayMode" : 2,
               "caption" : "刷新",
               "codeName" : "RefreshParent",
               "fullCodeName" : "RefreshParent",

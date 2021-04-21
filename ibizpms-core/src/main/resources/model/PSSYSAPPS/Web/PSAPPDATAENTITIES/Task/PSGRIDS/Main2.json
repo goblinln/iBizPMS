@@ -336,7 +336,7 @@
         "name" : "uaf9f3f9",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "指派",
           "codeName" : "AssignTask",
           "dataAccessAction" : "SRFUR__TASK_ASSIGN_BUT",
@@ -370,7 +370,7 @@
         "name" : "u6428ba2",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "开始",
           "codeName" : "StartTask",
           "dataAccessAction" : "SRFUR__TASK_START_BUT",
@@ -410,7 +410,7 @@
         "name" : "ue9c7208",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "激活",
           "codeName" : "Activation",
           "dataAccessAction" : "SRFUR__TASK_ACTIVATION_BUT",
@@ -444,7 +444,7 @@
         "name" : "u4b268ea",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "工时",
           "codeName" : "WorkHours1",
           "dataAccessAction" : "SRFUR__TASK_CONSUM_BUT",
@@ -478,7 +478,7 @@
         "name" : "u53344aa",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "完成",
           "codeName" : "DoneTask",
           "dataAccessAction" : "SRFUR__TASK_COMPLETE_BUT",
@@ -518,7 +518,7 @@
         "name" : "u77c1d36",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "关闭",
           "codeName" : "CloseTask",
           "dataAccessAction" : "SRFUR__TASK_CLOSE_BUT",
@@ -556,7 +556,7 @@
         "name" : "u5f5e79b",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "编辑",
           "codeName" : "MainEdit",
           "dataAccessAction" : "SRFUR__TASK_EDIT_BUT",

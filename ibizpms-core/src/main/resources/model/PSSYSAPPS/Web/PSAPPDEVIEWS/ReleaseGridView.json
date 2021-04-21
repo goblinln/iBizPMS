@@ -198,7 +198,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "创建发布",
         "codeName" : "quickCreate",
         "dataAccessAction" : "SRFUR__PRODSTA_RELCRT_BUT",
@@ -240,7 +239,6 @@
         "cssClass" : "fa fa-refresh"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "caption" : "刷新",
         "codeName" : "Refresh",
         "fullCodeName" : "Refresh",
@@ -276,7 +274,6 @@
         "cssClass" : "fa fa-file-excel-o"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.EXPORT",
           "id" : "工具栏按钮文本[*.EXPORT]"
@@ -324,7 +321,6 @@
         "cssClass" : "fa fa-filter"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.FILTER",
           "id" : "工具栏按钮文本[*.FILTER]"
@@ -730,7 +726,7 @@
           "name" : "ub25eed2",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "关联需求",
             "codeName" : "linkstory",
             "dataAccessAction" : "SRFUR__RELEASE_COMMON",
@@ -798,7 +794,7 @@
           "name" : "u3abf82d",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "关联bug",
             "codeName" : "linkbug",
             "dataAccessAction" : "SRFUR__RELEASE_COMMON",
@@ -860,7 +856,7 @@
           "name" : "u3ffc596",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "停止维护",
             "codeName" : "terminal",
             "dataAccessAction" : "SRFUR__RELEASE_TERMINATE",
@@ -894,7 +890,7 @@
           "name" : "u5669a69",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "激活",
             "codeName" : "active",
             "dataAccessAction" : "SRFUR__RELEASE_ACTIVE",
@@ -929,7 +925,7 @@
           "name" : "u1f38f89",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "编辑",
             "codeName" : "quickEdit",
             "dataAccessAction" : "SRFUR__RELEASE_COMMON",
@@ -965,7 +961,6 @@
           "name" : "u9b4e4f3",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "getCapPSLanguageRes" : {
               "lanResTag" : "TBB.TEXT.*.COPY",
               "id" : "工具栏按钮文本[*.COPY]"
@@ -996,7 +991,7 @@
           "name" : "udc5c646",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "删除",
             "codeName" : "remove",
             "confirmMsg" : "删除后数据可能无法恢复，是否删除？",

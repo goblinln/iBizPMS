@@ -164,7 +164,7 @@
         "name" : "u31efdd1",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "修改",
           "codeName" : "edit",
           "dataAccessAction" : "SRFUR__WEEKLY_SUBMIT_BUT",
@@ -210,7 +210,7 @@
         "name" : "ufd17a6f",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 1,
           "caption" : "提交",
           "codeName" : "submitZZZ",
           "confirmMsg" : "确认现在提交吗？",

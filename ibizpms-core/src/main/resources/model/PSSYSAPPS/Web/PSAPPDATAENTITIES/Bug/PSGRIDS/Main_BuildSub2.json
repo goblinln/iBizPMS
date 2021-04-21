@@ -203,7 +203,6 @@
         "name" : "u7c0c879",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "解除关联",
           "codeName" : "unlinkBug_build",
           "confirmMsg" : "您确认移除该Bug吗？",

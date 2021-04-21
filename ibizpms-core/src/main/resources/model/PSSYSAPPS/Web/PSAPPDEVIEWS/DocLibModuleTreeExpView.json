@@ -242,7 +242,6 @@
             "cssClass" : "fa fa-refresh"
           },
           "getPSUIAction" : {
-            "getNoPrivDisplayMode" : 2,
             "caption" : "刷新",
             "codeName" : "RefreshAll",
             "fullCodeName" : "RefreshAll",
@@ -441,7 +440,6 @@
               "cssClass" : "fa fa-refresh"
             },
             "getPSUIAction" : {
-              "getNoPrivDisplayMode" : 2,
               "caption" : "刷新",
               "codeName" : "RefreshAll",
               "fullCodeName" : "RefreshAll",

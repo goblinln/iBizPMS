@@ -779,7 +779,6 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "添加产品",
     "codeName" : "AddProduct",
     "dataAccessAction" : "SRFUR__PRODSTA_ADDPROD_BUT",
@@ -808,7 +807,6 @@
     "id" : "AddProduct@ProductStats"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "创建计划",
     "codeName" : "OpenProductPlanCreateView",
     "dataAccessAction" : "SRFUR__PRODSTA_PLANCRT_BUT",
@@ -835,7 +833,6 @@
     "id" : "OpenProductPlanCreateView@ProductStats"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "创建项目",
     "codeName" : "OpenProjectCreateView",
     "dataAccessAction" : "SRFUR__PRODSTA_PROJCRT_BUT",
@@ -862,7 +859,6 @@
     "id" : "OpenProjectCreateView@ProductStats"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "创建发布",
     "codeName" : "OpenReleasedCreateView",
     "dataAccessAction" : "SRFUR__PRODSTA_RELCRT_BUT",
@@ -889,7 +885,6 @@
     "id" : "OpenReleasedCreateView@ProductStats"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "查看全部",
     "codeName" : "OpenProductStoryView",
     "dataAccessAction" : "SRFUR__PRODSTA_STOREOP_BUT",
@@ -925,7 +920,6 @@
     "id" : "OpenProductStoryView@ProductStats"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "提需求",
     "codeName" : "OpenStoryCreateView",
     "dataAccessAction" : "SRFUR__PRODSTA_STORYCRT_BUT",

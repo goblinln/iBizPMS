@@ -1178,7 +1178,6 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "添加项目",
     "codeName" : "AddProject",
     "dataAccessAction" : "SRFUR__PROJ_CREATE_BUT",

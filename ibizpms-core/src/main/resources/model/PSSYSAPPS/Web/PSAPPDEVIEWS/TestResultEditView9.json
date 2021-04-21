@@ -1234,7 +1234,6 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "getNoPrivDisplayMode" : 2,
               "caption" : "转Bug",
               "codeName" : "ToBug",
               "dataAccessAction" : "SRFUR__CUTINTBEHAVIOR",

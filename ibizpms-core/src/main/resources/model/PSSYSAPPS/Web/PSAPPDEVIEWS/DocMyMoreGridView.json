@@ -166,7 +166,6 @@
         "cssClass" : "fa fa-filter"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.FILTER",
           "id" : "工具栏按钮文本[*.FILTER]"
@@ -443,7 +442,6 @@
       },
       "getPSDEUIAction" : {
         "actionTarget" : "SINGLEKEY",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "查看",
         "codeName" : "Look",
         "getFrontPSAppView" : {
@@ -581,7 +579,6 @@
           "name" : "ud6acdb1",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "编辑",
             "codeName" : "Edit",
             "dataAccessAction" : "SRFUR__DOC_EDIT_BUT",
@@ -615,7 +612,6 @@
           "name" : "u02e7012",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "删除",
             "codeName" : "Delete",
             "confirmMsg" : "您确定删除该文档吗？",
@@ -651,7 +647,6 @@
           "name" : "u907ac33",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "收藏",
             "codeName" : "Collect",
             "dataAccessAction" : "SRFUR__DOC_FAVOUR_BUT",
@@ -692,7 +687,6 @@
           "name" : "u0bb60a8",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "取消收藏",
             "codeName" : "UnCollect",
             "dataAccessAction" : "SRFUR__DOC_NFAVOUR_BUT",

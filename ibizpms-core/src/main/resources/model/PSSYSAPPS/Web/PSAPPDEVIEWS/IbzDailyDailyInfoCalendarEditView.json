@@ -572,7 +572,6 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "修改",
             "codeName" : "EditCz",
             "dataAccessAction" : "SRFUR__DAILY_SUBMIT_BUT",
@@ -618,7 +617,6 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "提交",
             "codeName" : "submit",
             "dataAccessAction" : "SRFUR__DAILY_SUBMIT_BUT",
@@ -1259,7 +1257,6 @@
               },
               "getPSUIAction" : {
                 "actionTarget" : "NONE",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "添加备注",
                 "codeName" : "AddComment",
                 "dataAccessAction" : "SRFUR__UNIVERSALCREATE",

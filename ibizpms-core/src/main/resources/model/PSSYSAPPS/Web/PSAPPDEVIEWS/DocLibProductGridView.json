@@ -99,7 +99,6 @@
         "cssClass" : "fa fa-filter"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.FILTER",
           "id" : "工具栏按钮文本[*.FILTER]"
@@ -355,7 +354,6 @@
       },
       "getPSDEUIAction" : {
         "actionTarget" : "SINGLEKEY",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "查看",
         "codeName" : "LookMainProductDocLib",
         "getFrontPSAppView" : {
@@ -427,7 +425,6 @@
           "name" : "u890fb13",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "编辑",
             "codeName" : "EditDocLib",
             "dataAccessAction" : "SRFUR__DOCLIB_EDIT_BUT",
@@ -472,7 +469,6 @@
           "name" : "u0c559b6",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "维护分类",
             "codeName" : "WeiHuFenLei",
             "dataAccessAction" : "SRFUR__DOCLIBMODULE_MAINTENANCE_BUT",
@@ -538,7 +534,6 @@
           "name" : "ua124cd0",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "收藏",
             "codeName" : "Collect",
             "dataAccessAction" : "SRFUR__DOCLIB_FAVOUR_BUT",
@@ -573,7 +568,6 @@
           "name" : "ue4f3099",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "取消收藏",
             "codeName" : "UnCollect",
             "dataAccessAction" : "SRFUR__DOCLIB_NFAVOUR_BUT",

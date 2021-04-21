@@ -203,7 +203,6 @@
         "name" : "ud1a023e",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "移除关联",
           "codeName" : "UnlinkBug",
           "confirmMsg" : "是否移除关联Bug",

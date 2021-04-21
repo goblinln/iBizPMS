@@ -88,7 +88,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "维护产品线",
         "codeName" : "SeLine",
         "getFrontPSAppView" : {
@@ -127,7 +126,6 @@
         "cssClass" : "fa fa-refresh"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "caption" : "刷新",
         "codeName" : "RefreshAll",
         "fullCodeName" : "RefreshAll",
@@ -256,7 +254,6 @@
         },
         "getPSUIAction" : {
           "actionTarget" : "NONE",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "维护产品线",
           "codeName" : "SeLine",
           "getFrontPSAppView" : {
@@ -295,7 +292,6 @@
           "cssClass" : "fa fa-refresh"
         },
         "getPSUIAction" : {
-          "getNoPrivDisplayMode" : 2,
           "caption" : "刷新",
           "codeName" : "RefreshAll",
           "fullCodeName" : "RefreshAll",

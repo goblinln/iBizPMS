@@ -384,7 +384,7 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "Editlib",
     "dataAccessAction" : "SRFUR__ADMIN",
@@ -411,7 +411,7 @@
     "id" : "Editlib@IbzLib"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "删除",
     "codeName" : "Delete",
     "dataAccessAction" : "SRFUR__ADMIN",
@@ -440,7 +440,6 @@
     "id" : "Delete@IbzLib"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "编辑",
     "codeName" : "EditlibCz",
     "dataAccessAction" : "SRFUR__ADMIN",
@@ -467,7 +466,6 @@
     "id" : "EditlibCz@IbzLib"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "新建",
     "codeName" : "Create",
     "dataAccessAction" : "SRFUR__ADMIN",
@@ -496,7 +494,6 @@
     "id" : "Create@IbzLib"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "删除",
     "codeName" : "DeleteCz",
     "dataAccessAction" : "SRFUR__ADMIN",

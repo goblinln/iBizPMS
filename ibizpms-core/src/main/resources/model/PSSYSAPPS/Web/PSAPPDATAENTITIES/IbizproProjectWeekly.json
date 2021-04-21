@@ -451,7 +451,6 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "生成项目周报",
     "codeName" : "createProjectWeekly",
     "dataAccessAction" : "SRFUR__PROJECT_MANAGER",

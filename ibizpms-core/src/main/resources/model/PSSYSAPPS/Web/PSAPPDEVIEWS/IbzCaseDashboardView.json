@@ -1349,7 +1349,6 @@
                 "detailType" : "DEUIACTION",
                 "name" : "u58c89af",
                 "getPSUIAction" : {
-                  "getNoPrivDisplayMode" : 2,
                   "getCapPSLanguageRes" : {
                     "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE",
                     "id" : "工具栏按钮文本[EDITVIEW.CLOSE]"
@@ -1379,7 +1378,6 @@
                 "name" : "uec50324",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "编辑",
                   "codeName" : "EditcaseCz",
                   "dataAccessAction" : "SRFUR__ADMIN",
@@ -1413,7 +1411,6 @@
                 "name" : "u991ca49",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "删除",
                   "codeName" : "DeleteCz",
                   "confirmMsg" : "您确认要删除该测试用例吗？",
@@ -2912,7 +2909,6 @@
                 },
                 "getPSUIAction" : {
                   "actionTarget" : "NONE",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "添加备注",
                   "codeName" : "AddComment",
                   "dataAccessAction" : "SRFUR__UNIVERSALCREATE",

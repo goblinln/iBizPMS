@@ -143,7 +143,6 @@
         "name" : "u75cb000",
         "getPSUIAction" : {
           "actionTarget" : "MULTIKEY",
-          "getNoPrivDisplayMode" : 2,
           "getCapPSLanguageRes" : {
             "lanResTag" : "TBB.TEXT.*.REMOVE",
             "id" : "工具栏按钮文本[*.REMOVE]"

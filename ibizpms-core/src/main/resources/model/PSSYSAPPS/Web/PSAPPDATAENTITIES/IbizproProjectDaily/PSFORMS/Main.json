@@ -711,7 +711,6 @@
               },
               "getPSDEUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "任务详情",
                 "codeName" : "TaskDetail",
                 "getFrontPSAppView" : {
@@ -1380,7 +1379,6 @@
               },
               "getPSDEUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "任务详情",
                 "codeName" : "TaskDetail",
                 "getFrontPSAppView" : {
@@ -2049,7 +2047,6 @@
               },
               "getPSDEUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "任务详情",
                 "codeName" : "TaskDetail",
                 "getFrontPSAppView" : {
@@ -2718,7 +2715,6 @@
               },
               "getPSDEUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "任务详情",
                 "codeName" : "TaskDetail",
                 "getFrontPSAppView" : {
@@ -3387,7 +3383,6 @@
               },
               "getPSDEUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "任务详情",
                 "codeName" : "TaskDetail",
                 "getFrontPSAppView" : {
@@ -4056,7 +4051,6 @@
               },
               "getPSDEUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "任务详情",
                 "codeName" : "TaskDetail",
                 "getFrontPSAppView" : {
@@ -4725,7 +4719,6 @@
               },
               "getPSDEUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "任务详情",
                 "codeName" : "TaskDetail",
                 "getFrontPSAppView" : {
@@ -5394,7 +5387,6 @@
               },
               "getPSDEUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "任务详情",
                 "codeName" : "TaskDetail",
                 "getFrontPSAppView" : {
@@ -6063,7 +6055,6 @@
               },
               "getPSDEUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "任务详情",
                 "codeName" : "TaskDetail",
                 "getFrontPSAppView" : {
@@ -6697,7 +6688,6 @@
               },
               "getPSDEUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "项目日报查看详情",
                 "codeName" : "ProjectDaily",
                 "getFrontPSAppView" : {

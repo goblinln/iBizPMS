@@ -391,7 +391,6 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "维护部门",
     "codeName" : "EditDept",
     "getFrontPSAppView" : {

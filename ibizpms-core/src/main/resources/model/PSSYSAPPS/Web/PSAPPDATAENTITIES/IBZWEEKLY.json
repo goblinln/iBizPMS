@@ -842,7 +842,7 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "修改",
     "codeName" : "edit",
     "dataAccessAction" : "SRFUR__WEEKLY_SUBMIT_BUT",
@@ -881,7 +881,7 @@
     "id" : "edit@IbzWeekly"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "提交",
     "codeName" : "submitZZZ",
     "confirmMsg" : "确认现在提交吗？",
@@ -910,7 +910,6 @@
     "id" : "submitZZZ@IbzWeekly"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "生成周报",
     "codeName" : "createEveryWeekReport",
     "dataAccessAction" : "SRFUR__ADMIN",
@@ -946,7 +945,6 @@
     "id" : "createEveryWeekReport@IbzWeekly"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "已读",
     "codeName" : "haveRead",
     "getFrontPSAppView" : {
@@ -972,7 +970,6 @@
     "id" : "haveRead@IbzWeekly"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "新建",
     "codeName" : "create",
     "getFrontPSAppView" : {

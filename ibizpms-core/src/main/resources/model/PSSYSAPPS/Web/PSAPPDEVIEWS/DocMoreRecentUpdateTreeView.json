@@ -262,7 +262,6 @@
         },
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "编辑",
           "codeName" : "Edit",
           "dataAccessAction" : "SRFUR__DOC_EDIT_BUT",
@@ -307,7 +306,6 @@
         },
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "删除",
           "codeName" : "Delete",
           "confirmMsg" : "您确定删除该文档吗？",
@@ -354,7 +352,6 @@
         },
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "收藏",
           "codeName" : "OnlyCollectDoc",
           "dataAccessAction" : "SRFUR__DOC_FAVOUR_BUT",
@@ -400,7 +397,6 @@
         },
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "取消收藏",
           "codeName" : "OnlyUnCollectDoc",
           "dataAccessAction" : "SRFUR__DOC_NFAVOUR_BUT",
@@ -446,7 +442,6 @@
         },
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "查看文档详情",
           "codeName" : "DocInfo",
           "getFrontPSAppView" : {
@@ -566,7 +561,6 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "编辑",
             "codeName" : "Edit",
             "dataAccessAction" : "SRFUR__DOC_EDIT_BUT",
@@ -611,7 +605,6 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "删除",
             "codeName" : "Delete",
             "confirmMsg" : "您确定删除该文档吗？",
@@ -658,7 +651,6 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "收藏",
             "codeName" : "OnlyCollectDoc",
             "dataAccessAction" : "SRFUR__DOC_FAVOUR_BUT",
@@ -704,7 +696,6 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "取消收藏",
             "codeName" : "OnlyUnCollectDoc",
             "dataAccessAction" : "SRFUR__DOC_NFAVOUR_BUT",
@@ -750,7 +741,6 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "查看文档详情",
             "codeName" : "DocInfo",
             "getFrontPSAppView" : {

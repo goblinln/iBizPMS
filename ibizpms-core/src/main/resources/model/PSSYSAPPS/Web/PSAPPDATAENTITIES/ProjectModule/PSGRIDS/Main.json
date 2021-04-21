@@ -147,7 +147,6 @@
         "name" : "u49bf2f0",
         "getPSUIAction" : {
           "actionTarget" : "MULTIKEY",
-          "getNoPrivDisplayMode" : 2,
           "getCapPSLanguageRes" : {
             "lanResTag" : "TBB.TEXT.*.REMOVE",
             "id" : "工具栏按钮文本[*.REMOVE]"

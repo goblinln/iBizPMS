@@ -360,11 +360,35 @@
     },
     "name" : "数据导入",
     "getPSDEDataImportItems" : [ {
-      "caption" : "所属产品",
-      "name" : "PRODUCT",
+      "caption" : "auto",
+      "name" : "AUTO",
       "getPSAppDEField" : {
-        "name" : "PRODUCT",
-        "codeName" : "Product"
+        "name" : "AUTO",
+        "codeName" : "Auto"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "当前状态",
+      "name" : "STATUS",
+      "getPSAppDEField" : {
+        "name" : "STATUS",
+        "codeName" : "Status"
+      },
+      "getPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testtask__status.json"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "优先级",
+      "name" : "PRI",
+      "getPSAppDEField" : {
+        "name" : "PRI",
+        "codeName" : "Pri"
+      },
+      "getPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testtask__pri.json"
       },
       "uniqueItem" : false
     }, {
@@ -376,19 +400,19 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "report",
-      "name" : "REPORT",
-      "getPSAppDEField" : {
-        "name" : "REPORT",
-        "codeName" : "Report"
-      },
-      "uniqueItem" : false
-    }, {
       "caption" : "描述",
       "name" : "DESC",
       "getPSAppDEField" : {
         "name" : "DESC",
         "codeName" : "Desc"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "开始日期",
+      "name" : "BEGIN",
+      "getPSAppDEField" : {
+        "name" : "BEGIN",
+        "codeName" : "Begin"
       },
       "uniqueItem" : false
     }, {
@@ -400,11 +424,11 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "产品",
-      "name" : "PRODUCTNAME",
+      "caption" : "名称",
+      "name" : "NAME",
       "getPSAppDEField" : {
-        "name" : "PRODUCTNAME",
-        "codeName" : "ProductName"
+        "name" : "NAME",
+        "codeName" : "Name"
       },
       "uniqueItem" : false
     }, {
@@ -417,6 +441,14 @@
       "getPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "版本",
+      "name" : "BUILDNAME",
+      "getPSAppDEField" : {
+        "name" : "BUILDNAME",
+        "codeName" : "BuildName"
       },
       "uniqueItem" : false
     }, {
@@ -440,71 +472,11 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "开始日期",
-      "name" : "BEGIN",
-      "getPSAppDEField" : {
-        "name" : "BEGIN",
-        "codeName" : "Begin"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "子状态",
-      "name" : "SUBSTATUS",
-      "getPSAppDEField" : {
-        "name" : "SUBSTATUS",
-        "codeName" : "SubStatus"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "名称",
-      "name" : "NAME",
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "版本",
-      "name" : "BUILDNAME",
-      "getPSAppDEField" : {
-        "name" : "BUILDNAME",
-        "codeName" : "BuildName"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "所属项目",
-      "name" : "PROJECT",
-      "getPSAppDEField" : {
-        "name" : "PROJECT",
-        "codeName" : "Project"
-      },
-      "uniqueItem" : false
-    }, {
       "caption" : "项目",
       "name" : "PROJECTTNAME",
       "getPSAppDEField" : {
         "name" : "PROJECTTNAME",
         "codeName" : "ProjecttName"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "auto",
-      "name" : "AUTO",
-      "getPSAppDEField" : {
-        "name" : "AUTO",
-        "codeName" : "Auto"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "当前状态",
-      "name" : "STATUS",
-      "getPSAppDEField" : {
-        "name" : "STATUS",
-        "codeName" : "Status"
-      },
-      "getPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testtask__status.json"
       },
       "uniqueItem" : false
     }, {
@@ -516,6 +488,14 @@
       },
       "uniqueItem" : false
     }, {
+      "caption" : "子状态",
+      "name" : "SUBSTATUS",
+      "getPSAppDEField" : {
+        "name" : "SUBSTATUS",
+        "codeName" : "SubStatus"
+      },
+      "uniqueItem" : false
+    }, {
       "caption" : "版本",
       "name" : "BUILD",
       "getPSAppDEField" : {
@@ -524,15 +504,35 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "优先级",
-      "name" : "PRI",
+      "caption" : "所属产品",
+      "name" : "PRODUCT",
       "getPSAppDEField" : {
-        "name" : "PRI",
-        "codeName" : "Pri"
+        "name" : "PRODUCT",
+        "codeName" : "Product"
       },
-      "getPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testtask__pri.json"
+      "uniqueItem" : false
+    }, {
+      "caption" : "所属项目",
+      "name" : "PROJECT",
+      "getPSAppDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "report",
+      "name" : "REPORT",
+      "getPSAppDEField" : {
+        "name" : "REPORT",
+        "codeName" : "Report"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "产品",
+      "name" : "PRODUCTNAME",
+      "getPSAppDEField" : {
+        "name" : "PRODUCTNAME",
+        "codeName" : "ProductName"
       },
       "uniqueItem" : false
     } ],
@@ -1033,7 +1033,6 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "MULTIKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "测试报告",
     "codeName" : "TestReport",
     "dataAccessAction" : "SRFUR__REPORT_CREATE_BUT",
@@ -1079,7 +1078,7 @@
     "id" : "TestReport@TestTask"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "关联用例",
     "codeName" : "LinkCase",
     "dataAccessAction" : "SRFUR__TESTT_LCASE_BUT",
@@ -1122,7 +1121,7 @@
     "id" : "LinkCase@TestTask"
   }, {
     "actionTarget" : "MULTIKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "测试报告",
     "codeName" : "TestReportR",
     "dataAccessAction" : "SRFUR__REPORT_CREATE_BUT",
@@ -1181,7 +1180,7 @@
     "id" : "TestReportR@TestTask"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "概况",
     "codeName" : "OpenInfoView",
     "dataAccessAction" : "SRFUR__TESTT_OPEN_BUT",
@@ -1212,7 +1211,6 @@
     "id" : "OpenInfoView@TestTask"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "新建",
     "codeName" : "ProjectCreate",
     "dataAccessAction" : "SRFUR__TESTT_CREATE_BUT",
@@ -1241,7 +1239,6 @@
     "id" : "ProjectCreate@TestTask"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "报告列表",
     "codeName" : "Reports",
     "dataAccessAction" : "SRFUR__PROJECT_REPORT_BUT",
@@ -1282,7 +1279,7 @@
     "id" : "Reports@TestTask"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "EditEdit",
     "dataAccessAction" : "SRFUR__TESTT_EDIT_BUT",
@@ -1309,7 +1306,6 @@
     "id" : "EditEdit@TestTask"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "开始",
     "codeName" : "StartDash",
     "dataAccessAction" : "SRFUR__TESTT_START_BUT",
@@ -1338,7 +1334,6 @@
     "id" : "StartDash@TestTask"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "关闭",
     "codeName" : "CloseDash",
     "dataAccessAction" : "SRFUR__TESTT_CLOSED_BUT",
@@ -1367,7 +1362,6 @@
     "id" : "CloseDash@TestTask"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "新建",
     "codeName" : "Create",
     "dataAccessAction" : "SRFUR__TESTT_CREATE_BUT",
@@ -1396,7 +1390,6 @@
     "id" : "Create@TestTask"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "激活",
     "codeName" : "ActiviteDash",
     "dataAccessAction" : "SRFUR__TESTT_ACTIVITE_BUT",
@@ -1425,7 +1418,7 @@
     "id" : "ActiviteDash@TestTask"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "删除",
     "codeName" : "Delete",
     "confirmMsg" : "您确认要删除该测试单吗？",
@@ -1455,7 +1448,6 @@
     "id" : "Delete@TestTask"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "查看",
     "codeName" : "Look",
     "dataAccessAction" : "SRFUR__TESTT_OPEN_BUT",
@@ -1486,7 +1478,6 @@
     "id" : "Look@TestTask"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "阻塞",
     "codeName" : "BlockDash",
     "dataAccessAction" : "SRFUR__TESTT_BLOCK_BUT",

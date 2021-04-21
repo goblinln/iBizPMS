@@ -105,7 +105,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "SINGLEKEY",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "置顶",
         "codeName" : "ProductTop",
         "dataAccessAction" : "NOTOP",
@@ -152,7 +151,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "SINGLEKEY",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "取消置顶",
         "codeName" : "CancelProductTop",
         "dataAccessAction" : "TOP",

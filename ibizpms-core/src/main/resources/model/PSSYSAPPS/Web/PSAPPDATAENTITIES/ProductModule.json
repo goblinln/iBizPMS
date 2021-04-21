@@ -662,7 +662,6 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "同步",
     "codeName" : "SyncFromIBIZ",
     "fullCodeName" : "ProductModule_SyncFromIBIZ",
@@ -697,7 +696,6 @@
     "id" : "SyncFromIBIZ@ProductModule"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "修复",
     "codeName" : "Fix",
     "confirmMsg" : "执行修复模块路径",
@@ -726,7 +724,6 @@
     "id" : "Fix@ProductModule"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "编辑",
     "codeName" : "OpenQuickCfgView",
     "dataAccessAction" : "SRFUR__UNIVERSALEDIT",

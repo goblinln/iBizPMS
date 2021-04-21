@@ -227,7 +227,6 @@
               "cssClass" : "fa fa-filter"
             },
             "getPSUIAction" : {
-              "getNoPrivDisplayMode" : 2,
               "getCapPSLanguageRes" : {
                 "lanResTag" : "TBB.TEXT.*.FILTER",
                 "id" : "工具栏按钮文本[*.FILTER]"
@@ -666,7 +665,7 @@
                 "name" : "u3d954ff",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 1,
+                  "noPrivDisplayMode" : 1,
                   "caption" : "关联用例",
                   "codeName" : "LinkCase",
                   "dataAccessAction" : "SRFUR__TESTT_LCASE_BUT",
@@ -716,7 +715,7 @@
                 "name" : "u5de62c9",
                 "getPSUIAction" : {
                   "actionTarget" : "MULTIKEY",
-                  "getNoPrivDisplayMode" : 1,
+                  "noPrivDisplayMode" : 1,
                   "caption" : "测试报告",
                   "codeName" : "TestReportR",
                   "dataAccessAction" : "SRFUR__REPORT_CREATE_BUT",
@@ -782,7 +781,7 @@
                 "name" : "ub317314",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 1,
+                  "noPrivDisplayMode" : 1,
                   "caption" : "概况",
                   "codeName" : "OpenInfoView",
                   "dataAccessAction" : "SRFUR__TESTT_OPEN_BUT",
@@ -821,7 +820,7 @@
                 "name" : "editedit",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 1,
+                  "noPrivDisplayMode" : 1,
                   "caption" : "编辑",
                   "codeName" : "EditEdit",
                   "dataAccessAction" : "SRFUR__TESTT_EDIT_BUT",
@@ -855,7 +854,7 @@
                 "name" : "u5e6cdb9",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 1,
+                  "noPrivDisplayMode" : 1,
                   "caption" : "删除",
                   "codeName" : "Delete",
                   "confirmMsg" : "您确认要删除该测试单吗？",

@@ -1211,7 +1211,6 @@
                 "detailType" : "DEUIACTION",
                 "name" : "u503d592",
                 "getPSUIAction" : {
-                  "getNoPrivDisplayMode" : 2,
                   "getCapPSLanguageRes" : {
                     "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE",
                     "id" : "工具栏按钮文本[EDITVIEW.CLOSE]"
@@ -1241,7 +1240,6 @@
                 "name" : "u1273871",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "编辑",
                   "codeName" : "edit1Cz",
                   "dataAccessAction" : "UPDATE",
@@ -1279,7 +1277,6 @@
                 "name" : "uca5eb55",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "删除",
                   "codeName" : "deleteCz",
                   "confirmMsg" : "您确定要删除这条待办吗？",
@@ -1322,7 +1319,6 @@
                 "name" : "ub41f430",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "指派",
                   "codeName" : "assignToCz",
                   "dataAccessAction" : "ASSIGNTO",
@@ -1358,7 +1354,6 @@
                 "name" : "u51054a9",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "完成",
                   "codeName" : "finishCz",
                   "dataAccessAction" : "FINISH",
@@ -1392,7 +1387,6 @@
                 "name" : "udb40432",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "激活",
                   "codeName" : "activateCz",
                   "dataAccessAction" : "ACTIVATE",
@@ -1426,7 +1420,6 @@
                 "name" : "ud5c5b78",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "关闭",
                   "codeName" : "closeCz",
                   "dataAccessAction" : "CLOSE",
@@ -1460,7 +1453,6 @@
                 "name" : "u64785b5",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "转Bug",
                   "codeName" : "toBug",
                   "dataAccessAction" : "TOBUG",
@@ -1526,7 +1518,6 @@
                 "name" : "u64c909e",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "转任务",
                   "codeName" : "toTask",
                   "dataAccessAction" : "TOTASK",

@@ -849,7 +849,7 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "激活",
     "codeName" : "active",
     "dataAccessAction" : "SRFUR__RELEASE_ACTIVE",
@@ -877,7 +877,6 @@
     "id" : "active@Release"
   }, {
     "actionTarget" : "NONE",
-    "getNoPrivDisplayMode" : 2,
     "caption" : "创建发布",
     "codeName" : "quickCreate",
     "dataAccessAction" : "SRFUR__PRODSTA_RELCRT_BUT",
@@ -902,7 +901,7 @@
     "id" : "quickCreate@Release"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "删除",
     "codeName" : "remove",
     "confirmMsg" : "删除后数据可能无法恢复，是否删除？",
@@ -931,7 +930,7 @@
     "id" : "remove@Release"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "停止维护",
     "codeName" : "terminal",
     "dataAccessAction" : "SRFUR__RELEASE_TERMINATE",
@@ -958,7 +957,7 @@
     "id" : "terminal@Release"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "quickEdit",
     "dataAccessAction" : "SRFUR__RELEASE_COMMON",
@@ -987,7 +986,7 @@
     "id" : "quickEdit@Release"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "关联需求",
     "codeName" : "linkstory",
     "dataAccessAction" : "SRFUR__RELEASE_COMMON",
@@ -1048,7 +1047,7 @@
     "id" : "linkstory@Release"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "关联bug",
     "codeName" : "linkbug",
     "dataAccessAction" : "SRFUR__RELEASE_COMMON",

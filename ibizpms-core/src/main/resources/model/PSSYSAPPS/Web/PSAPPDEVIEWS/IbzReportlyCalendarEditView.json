@@ -473,7 +473,7 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 6,
+            "noPrivDisplayMode" : 6,
             "caption" : "编辑",
             "codeName" : "CalendarShowEdit",
             "dataAccessAction" : "SRFUR__REPORTLY_EDIT_BUT",
@@ -521,7 +521,7 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 6,
+            "noPrivDisplayMode" : 6,
             "caption" : "提交",
             "codeName" : "CalendarShowSubmit",
             "dataAccessAction" : "SRFUR__REPORTLY_SUBMIT_BUT",
@@ -1194,7 +1194,6 @@
                 },
                 "getPSUIAction" : {
                   "actionTarget" : "NONE",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "添加备注",
                   "codeName" : "AddComment",
                   "dataAccessAction" : "SRFUR__UNIVERSALCREATE",

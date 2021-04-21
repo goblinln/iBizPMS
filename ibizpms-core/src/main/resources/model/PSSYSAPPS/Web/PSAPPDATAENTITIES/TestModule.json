@@ -632,7 +632,7 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
-    "getNoPrivDisplayMode" : 1,
+    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "OpenQuickCfgView",
     "dataAccessAction" : "SRFUR__TESTMOD_OQCVIEW_BUT",

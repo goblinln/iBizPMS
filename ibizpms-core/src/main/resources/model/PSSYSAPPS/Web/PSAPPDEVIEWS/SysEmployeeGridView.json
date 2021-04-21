@@ -368,7 +368,6 @@
         "cssClass" : "fa fa-file-text-o"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.NEW",
           "id" : "工具栏按钮文本[*.NEW]"
@@ -418,7 +417,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "SINGLEKEY",
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.EDIT",
           "id" : "工具栏按钮文本[*.EDIT]"
@@ -467,7 +465,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "SINGLEKEY",
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.COPY",
           "id" : "工具栏按钮文本[*.COPY]"
@@ -521,7 +518,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "MULTIKEY",
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.REMOVE",
           "id" : "工具栏按钮文本[*.REMOVE]"
@@ -574,7 +570,6 @@
         "cssClass" : "fa fa-file-excel-o"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.EXPORT",
           "id" : "工具栏按钮文本[*.EXPORT]"
@@ -630,7 +625,6 @@
           "cssClass" : "fa fa-download"
         },
         "getPSUIAction" : {
-          "getNoPrivDisplayMode" : 2,
           "getCapPSLanguageRes" : {
             "lanResTag" : "MENUITEM.CAPTION.*.EXPORTSRF",
             "id" : "菜单项文本[*.EXPORTSRF]"
@@ -666,7 +660,6 @@
           "cssClass" : "fa fa-upload"
         },
         "getPSUIAction" : {
-          "getNoPrivDisplayMode" : 2,
           "caption" : "数据导入",
           "codeName" : "Import",
           "fullCodeName" : "Import",
@@ -710,7 +703,6 @@
         "cssClass" : "fa fa-filter"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.FILTER",
           "id" : "工具栏按钮文本[*.FILTER]"
@@ -760,7 +752,6 @@
         "cssClass" : "fa fa-question"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.HELP",
           "id" : "工具栏按钮文本[*.HELP]"

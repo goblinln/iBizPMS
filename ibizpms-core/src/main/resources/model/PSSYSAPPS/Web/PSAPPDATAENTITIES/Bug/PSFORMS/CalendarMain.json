@@ -581,7 +581,6 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "确认",
             "codeName" : "ConfirmBugDash",
             "dataAccessAction" : "SRFUR__BUG_CONFIRM_BUT",
@@ -628,7 +627,6 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "指派",
             "codeName" : "AssingToBugCz",
             "dataAccessAction" : "SRFUR__BUG_ASSIGNTO_BUT",
@@ -674,7 +672,6 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "解决",
             "codeName" : "ResolveBugDash",
             "dataAccessAction" : "SRFUR__BUG_RESOLVE_BUT",
@@ -720,7 +717,6 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "关闭",
             "codeName" : "CloseBugDash",
             "dataAccessAction" : "SRFUR__BUG_CLOSE_BUT",
@@ -766,7 +762,6 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "激活",
             "codeName" : "Activation",
             "dataAccessAction" : "SRFUR__BUG_ACTIVATE_BUT",
@@ -812,7 +807,6 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 2,
             "caption" : "编辑",
             "codeName" : "MainEditDash",
             "dataAccessAction" : "SRFUR__BUG_EDIT_BUT",
@@ -1229,7 +1223,6 @@
                 },
                 "getPSUIAction" : {
                   "actionTarget" : "NONE",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "添加备注",
                   "codeName" : "AddComment",
                   "dataAccessAction" : "SRFUR__UNIVERSALCREATE",

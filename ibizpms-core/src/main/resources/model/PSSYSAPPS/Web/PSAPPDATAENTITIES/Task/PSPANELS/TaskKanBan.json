@@ -293,7 +293,7 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "getNoPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 1,
             "caption" : "指派",
             "codeName" : "AssignTask",
             "dataAccessAction" : "SRFUR__TASK_ASSIGN_BUT",
@@ -361,7 +361,6 @@
         },
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "转交",
           "codeName" : "Forward",
           "dataAccessAction" : "SRFUR__TASK_FORWARD_BUT",

@@ -642,7 +642,6 @@
                           "cssClass" : "fa fa-refresh"
                         },
                         "getPSUIAction" : {
-                          "getNoPrivDisplayMode" : 2,
                           "caption" : "刷新",
                           "codeName" : "Refresh",
                           "fullCodeName" : "Refresh",
@@ -678,7 +677,6 @@
                           "cssClass" : "fa fa-file-excel-o"
                         },
                         "getPSUIAction" : {
-                          "getNoPrivDisplayMode" : 2,
                           "getCapPSLanguageRes" : {
                             "lanResTag" : "TBB.TEXT.*.EXPORT",
                             "id" : "工具栏按钮文本[*.EXPORT]"
@@ -2086,7 +2084,6 @@
               },
               "getPSUIAction" : {
                 "actionTarget" : "NONE",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "添加备注",
                 "codeName" : "AddComment",
                 "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
@@ -2492,7 +2489,6 @@
               "detailType" : "DEUIACTION",
               "name" : "u4bdfefd",
               "getPSUIAction" : {
-                "getNoPrivDisplayMode" : 2,
                 "getCapPSLanguageRes" : {
                   "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE",
                   "id" : "工具栏按钮文本[EDITVIEW.CLOSE]"
@@ -2522,7 +2518,7 @@
               "name" : "u26afeb4",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 1,
+                "noPrivDisplayMode" : 1,
                 "caption" : "执行",
                 "codeName" : "CaseExecute",
                 "dataAccessAction" : "SRFUR__CASE_CASERUN_BUT",
@@ -2568,7 +2564,7 @@
               "name" : "uaee554d",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 1,
+                "noPrivDisplayMode" : 1,
                 "caption" : "结果",
                 "codeName" : "CASEOpenTestRunResultView",
                 "dataAccessAction" : "SRFUR__CASE_CASERESULT_BUT",
@@ -2614,7 +2610,6 @@
               "name" : "u2cd191b",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "编辑",
                 "codeName" : "MainEditCz",
                 "dataAccessAction" : "SRFUR__CASE_EDIT_BUT",
@@ -2648,7 +2643,6 @@
               "name" : "ub5e46cc",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "删除",
                 "codeName" : "deleteCz",
                 "confirmMsg" : "确认要删除，删除操作将不可恢复？",

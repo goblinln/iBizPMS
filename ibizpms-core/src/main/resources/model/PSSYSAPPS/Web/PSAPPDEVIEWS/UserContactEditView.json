@@ -94,7 +94,6 @@
         "cssClass" : "fa fa-save"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.SAVE",
           "id" : "工具栏按钮文本[*.SAVE]"
@@ -144,7 +143,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "SINGLEKEY",
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.EDITVIEW.REMOVEANDCLOSE",
           "id" : "工具栏按钮文本[EDITVIEW.REMOVEANDCLOSE]"

@@ -333,7 +333,6 @@
             },
             "getPSDEUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "getNoPrivDisplayMode" : 2,
               "caption" : "已读",
               "codeName" : "HaveRead",
               "getFrontPSAppView" : {

@@ -149,7 +149,6 @@
         "cssClass" : "fa fa-plus"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "getCapPSLanguageRes" : {
           "lanResTag" : "TBB.TEXT.*.NEW",
           "id" : "工具栏按钮文本[*.NEW]"
@@ -393,7 +392,6 @@
           "name" : "u2daf155",
           "getPSUIAction" : {
             "actionTarget" : "MULTIKEY",
-            "getNoPrivDisplayMode" : 2,
             "getCapPSLanguageRes" : {
               "lanResTag" : "TBB.TEXT.*.REMOVE",
               "id" : "工具栏按钮文本[*.REMOVE]"

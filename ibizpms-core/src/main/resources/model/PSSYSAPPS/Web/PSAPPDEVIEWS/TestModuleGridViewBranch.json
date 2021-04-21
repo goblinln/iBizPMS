@@ -111,7 +111,6 @@
         "cssClass" : "fa fa-plus"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "caption" : "新建行",
         "codeName" : "NewRow",
         "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
@@ -144,7 +143,6 @@
         "cssClass" : "fa fa-save"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "caption" : "保存行",
         "codeName" : "SaveRow",
         "dataAccessAction" : "SRFUR__UNIVERSALSAVE",
@@ -418,7 +416,6 @@
           "name" : "uf4ae6a1",
           "getPSUIAction" : {
             "actionTarget" : "MULTIKEY",
-            "getNoPrivDisplayMode" : 2,
             "getCapPSLanguageRes" : {
               "lanResTag" : "TBB.TEXT.*.REMOVE",
               "id" : "工具栏按钮文本[*.REMOVE]"

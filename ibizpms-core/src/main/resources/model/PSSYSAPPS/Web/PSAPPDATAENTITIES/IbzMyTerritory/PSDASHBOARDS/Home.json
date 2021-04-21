@@ -1111,7 +1111,6 @@
                         "cssClass" : "fa fa-plus"
                       },
                       "getPSUIAction" : {
-                        "getNoPrivDisplayMode" : 2,
                         "getCapPSLanguageRes" : {
                           "lanResTag" : "TBB.TEXT.*.NEW",
                           "id" : "工具栏按钮文本[*.NEW]"
@@ -1760,7 +1759,6 @@
                         "cssClass" : "fa fa-plus"
                       },
                       "getPSUIAction" : {
-                        "getNoPrivDisplayMode" : 2,
                         "getCapPSLanguageRes" : {
                           "lanResTag" : "TBB.TEXT.*.NEW",
                           "id" : "工具栏按钮文本[*.NEW]"
@@ -2253,7 +2251,6 @@
                           },
                           "getPSDEUIAction" : {
                             "actionTarget" : "SINGLEKEY",
-                            "getNoPrivDisplayMode" : 2,
                             "caption" : "已读",
                             "codeName" : "HaveRead",
                             "getFrontPSAppView" : {
@@ -3032,7 +3029,6 @@
               "name" : "u5b4d679",
               "getPSUIAction" : {
                 "actionTarget" : "NONE",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "MORE",
                 "codeName" : "More",
                 "getFrontPSAppView" : {
@@ -3581,7 +3577,6 @@
               "name" : "u9f43be6",
               "getPSUIAction" : {
                 "actionTarget" : "NONE",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "MORE",
                 "codeName" : "More",
                 "getFrontPSAppView" : {
@@ -4385,7 +4380,6 @@
               "name" : "u1fdc0fe",
               "getPSUIAction" : {
                 "actionTarget" : "NONE",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "MORE",
                 "codeName" : "More",
                 "getFrontPSAppView" : {
@@ -4975,7 +4969,6 @@
               "name" : "ueb3273b",
               "getPSUIAction" : {
                 "actionTarget" : "NONE",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "MORE",
                 "codeName" : "More",
                 "getFrontPSAppView" : {
@@ -6053,7 +6046,6 @@
                 },
                 "getPSDEUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "查看",
                   "codeName" : "LookDetail",
                   "getFrontPSAppView" : {

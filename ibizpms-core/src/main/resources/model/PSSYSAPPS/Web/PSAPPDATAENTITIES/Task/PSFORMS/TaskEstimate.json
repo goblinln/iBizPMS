@@ -1428,7 +1428,6 @@
                 "name" : "u68709de",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "caption" : "编辑",
                   "codeName" : "Edit",
                   "getFrontPSAppView" : {
@@ -1463,7 +1462,6 @@
                 "name" : "u53c485b",
                 "getPSUIAction" : {
                   "actionTarget" : "MULTIKEY",
-                  "getNoPrivDisplayMode" : 2,
                   "getCapPSLanguageRes" : {
                     "lanResTag" : "TBB.TEXT.*.REMOVE",
                     "id" : "工具栏按钮文本[*.REMOVE]"

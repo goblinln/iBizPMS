@@ -187,7 +187,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "管理",
         "codeName" : "Manager",
         "getFrontPSAppView" : {
@@ -231,7 +230,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "新建",
         "codeName" : "Create",
         "dataAccessAction" : "SRFUR__PROD_CREATE_BUT",
@@ -277,7 +275,6 @@
         "cssClass" : "fa fa-refresh"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "caption" : "刷新",
         "codeName" : "Refresh",
         "fullCodeName" : "Refresh",
@@ -477,7 +474,6 @@
         },
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "置顶",
           "codeName" : "ProductTop",
           "dataAccessAction" : "NOTOP",
@@ -524,7 +520,6 @@
         },
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "取消置顶",
           "codeName" : "CancelProductTop",
           "dataAccessAction" : "TOP",

@@ -126,7 +126,6 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "NONE",
-        "getNoPrivDisplayMode" : 2,
         "caption" : "团队管理",
         "codeName" : "ManagerMember",
         "confirmMsg" : "您确定从该项目中移除该用户吗？",
@@ -179,7 +178,6 @@
         "cssClass" : "fa fa-refresh"
       },
       "getPSUIAction" : {
-        "getNoPrivDisplayMode" : 2,
         "caption" : "刷新",
         "codeName" : "Refresh",
         "fullCodeName" : "Refresh",
@@ -686,7 +684,7 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "getNoPrivDisplayMode" : 1,
+              "noPrivDisplayMode" : 1,
               "caption" : "移除成员",
               "codeName" : "RemoveMember",
               "confirmMsg" : "您确定从该项目中移除该用户吗？",

@@ -223,7 +223,6 @@
         "name" : "u3e3ef8e",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "getNoPrivDisplayMode" : 2,
           "caption" : "移除关联",
           "codeName" : "releaseUnlinkStory",
           "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",

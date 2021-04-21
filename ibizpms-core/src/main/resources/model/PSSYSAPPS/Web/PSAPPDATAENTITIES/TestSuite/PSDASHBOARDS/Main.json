@@ -243,7 +243,6 @@
                 "cssClass" : "fa fa-filter"
               },
               "getPSUIAction" : {
-                "getNoPrivDisplayMode" : 2,
                 "getCapPSLanguageRes" : {
                   "lanResTag" : "TBB.TEXT.*.FILTER",
                   "id" : "工具栏按钮文本[*.FILTER]"
@@ -641,7 +640,7 @@
                   "name" : "uef3aae0",
                   "getPSUIAction" : {
                     "actionTarget" : "SINGLEKEY",
-                    "getNoPrivDisplayMode" : 1,
+                    "noPrivDisplayMode" : 1,
                     "caption" : "移除",
                     "codeName" : "unlinkSuiteCase",
                     "dataAccessAction" : "SRFUR__CASE_UNLINK_BUT",
@@ -688,7 +687,7 @@
                   "name" : "udb1307b",
                   "getPSUIAction" : {
                     "actionTarget" : "SINGLEKEY",
-                    "getNoPrivDisplayMode" : 1,
+                    "noPrivDisplayMode" : 1,
                     "caption" : "结果",
                     "codeName" : "OpenTestRunResultView",
                     "dataAccessAction" : "SRFUR__CASE_RESULT_BUT",
@@ -722,7 +721,7 @@
                   "name" : "uceeae1e",
                   "getPSUIAction" : {
                     "actionTarget" : "SINGLEKEY",
-                    "getNoPrivDisplayMode" : 1,
+                    "noPrivDisplayMode" : 1,
                     "caption" : "执行",
                     "codeName" : "Execute",
                     "dataAccessAction" : "SRFUR__CASE_CASERUN_BUT",
@@ -2179,7 +2178,6 @@
               "detailType" : "DEUIACTION",
               "name" : "ud46cf4d",
               "getPSUIAction" : {
-                "getNoPrivDisplayMode" : 2,
                 "getCapPSLanguageRes" : {
                   "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE",
                   "id" : "工具栏按钮文本[EDITVIEW.CLOSE]"
@@ -2209,7 +2207,6 @@
               "name" : "ub905758",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "关联用例",
                 "codeName" : "linkCaseDash",
                 "dataAccessAction" : "SRFUR__TESTSU_LINKCASE_BUT",
@@ -2257,7 +2254,6 @@
               "name" : "u7cb49d8",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "编辑",
                 "codeName" : "EditsuiteDash",
                 "dataAccessAction" : "SRFUR__TESTSU_EDITSUITE_BUT",
@@ -2295,7 +2291,6 @@
               "name" : "ua6cd1b2",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "删除",
                 "codeName" : "DeleteDash",
                 "confirmMsg" : "您确认要删除该套件吗？",
@@ -3098,7 +3093,6 @@
               },
               "getPSUIAction" : {
                 "actionTarget" : "NONE",
-                "getNoPrivDisplayMode" : 2,
                 "caption" : "添加备注",
                 "codeName" : "AddComment",
                 "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
