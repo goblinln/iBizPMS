@@ -62,7 +62,8 @@
         "@interactjs/modifiers": "^1.10.11",
         "@interactjs/dev-tools": "^1.10.11",
         "@ibiz/dynamic-model-api": "0.0.5",
-        "xlsx": "^0.16.9"
+        "xlsx": "^0.16.9",
+        "ibiz-studio-components-vue": "^0.0.1-alpha.9"
     },
     "devDependencies": {
         "@ibiz/cli": "0.1.1",
