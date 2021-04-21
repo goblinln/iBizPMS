@@ -11370,20 +11370,6 @@
     "major_field":0
     },
     {
-    "fieldname":"SRFDCID" ,
-    "codename":"Srfdcid",
-    "field_logic_name":"租户",
-    "entity_name":"IBZPRO_SEQUENCE",
-    "field_type":"TEXT",
-    "nullable":1,
-    "physical_field":1,
-    "data_type":"VARCHAR",
-    "data_length":100,
-    "key_field":0,
-    "show_order":1000,
-    "major_field":0
-    },
-    {
     "fieldname":"CURSEQ" ,
     "codename":"Curseq",
     "field_logic_name":"当前序列号",
